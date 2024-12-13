@@ -3977,7 +3977,7 @@ label ce_mike:
     grace "No! The bus stop!"
     arceus "Oh, so he drives the bus?"
     show cs angry christmas
-    "Everyone" "{cshake}{size=+24}No! The bus stop!" with vpunch  # TODO: Make this a character, so it has a beep
+    everyone2 "{cshake}{size=+24}No! The bus stop!" with vpunch
     mike "You really don't know me, do you?"
     show arceus festive worried flipped
     arceus "Huh?"

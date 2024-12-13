@@ -508,6 +508,7 @@ define avgn = Character("James Rolfe", callback = renpy.partial(char_callback, n
 define tgt_worker = Character("Target Employee", callback = renpy.partial(char_callback, name = "tgt_worker"))
 define walkie = Character("Walkie", callback = renpy.partial(char_callback, beep = "walkie"))
 define everyone = Character("Everyone", callback = renpy.partial(char_callback, beep = "everyone"))
+define everyone2 = Character("Everyone", callback = renpy.partial(char_callback, beep = "csbama17"))
 define santa = Character("Santa Claus", callback = renpy.partial(char_callback, name = "santa", beep = "santa"))
 define mike = Character("Mike",  callback = renpy.partial(char_callback, name = "mike"))
 
