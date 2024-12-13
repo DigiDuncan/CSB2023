@@ -3063,8 +3063,8 @@ label ce_introductions:
     cs "How about you three?"
     show blank festive
     blank "We are working on setting up the sound system."
-    ges "Well okay, I'm not."
-    ges "I just came because Tyler wanted me to."
+    ges "Well, okay, {i}I'm{/i} not."
+    ges "I'm just here because Tyler wanted me to come."
     ges "Err-- Nova, sorry."
     nova "The problem is that I don't really want Blank playing their shitty music during the party."
     show blank festive flipped
@@ -4063,10 +4063,14 @@ label ce_dinner:
     show k17 at manual_pos(-0.5, 0.6, 0.5)
     show left_table
     with dissolve
-    $ collect("peppermint_bark")
-    $ collect("oxygen_canister")
-    $ collect("slider")
+    $ collect("apple_pie")
+    $ collect("big_city_sliders")
     $ collect("carrot_cake")
+    $ collect("mashed_potatoes")
+    $ collect("oxygen_canister")
+    $ collect("peppermint_bark")
+    $ collect("small_city_slider")
+    $ collect("snacks")
     if fun_value(FUN_VALUE_MUSIC):
         cs "Well, I'd love to spread some Christmas spirit by saying--"
     else:

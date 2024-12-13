@@ -39,6 +39,14 @@
         "rarity": "Common",
         "ce": true
     },
+    "apple_pie": {
+        "img": "apple_pie.png",
+        "name": "Hot Apple Pie",
+        "owner": "CS",
+        "desc": "It's totally storebought, but that's okay.",
+        "rarity": "Common",
+        "ce": true
+    },
     "arc_laptop": {
         "img": "arc_laptop",
         "name": "Arc's Laptop",
@@ -60,6 +68,14 @@
         "owner": "CS",
         "desc": "One of many random fucking things CS keeps... somewhere. It's very soft to hug.",
         "rarity": "Uncommon"
+    },
+    "big_city_sliders": {
+        "img": "big_city_sliders.png",
+        "name": "Big City Sliders",
+        "owner": "Billy Mays",
+        "desc": "The restaurant mini-burger {i}everyone{/i} loves!",
+        "rarity": "Uncommon",
+        "ce": true
     },
     "billy_car": {
         "img": "billy_car",
@@ -133,10 +149,10 @@
         "ce": true
     },
     "carrot_cake": {
-        "img": "carrot_cake",
+        "img": "carrot_cake.png",
         "name": "Carrot Cake",
         "owner": "President Obama",
-        "desc": "A delicious cake made from carrots!",
+        "desc": "A moist cake made from carrots. Most people either love it or hate it.",
         "rarity": "Uncommon",
         "ce": true
     },
@@ -590,6 +606,14 @@
         "desc": "Borrowed by CS to take on Copguy and his corrupt crew.",
         "rarity": "Common"
     },
+    "mashed_potatoes": {
+        "img": "mashed_potatoes.png",
+        "name": "Mashed Potatoes",
+        "owner": "Michael Rosen",
+        "desc": "A holiday favorite, even for those relatives who don't have all their teeth.",
+        "rarity": "Common",
+        "ce": true
+    },
     "mean_hat": {
         "img": "mean_hat",
         "name": "Mean's Hat",
@@ -677,19 +701,11 @@
         "desc": "Won by CS while at PencilCon, but is it even real gold?",
         "rarity": "Rare"
     },
-    "original_slider": {
-        "img": "original-slider",
-        "name": "Big City Sliders",
-        "owner": "Billy Mays",
-        "desc": "The restaurant mini-burger, everyone loves!",
-        "rarity": "Uncommon",
-        "ce": true
-    },
     "oxygen_canister": {
-        "img": "oxygen_canister",
+        "img": "oxygen_canister.png",
         "name": "Oxygen Canister",
         "owner": "Michael Rosen",
-        "desc": "If your teacher ever asks you to stop breathing, make sure to keep one of these on hand.",
+        "desc": "Make sure to keep one of these on hand just in case your teacher ever asks you to {a=https://www.youtube.com/watch?v=z1cfVQyrQ3Q}stop breathing.{/a}",
         "rarity": "Epic",
         "ce": true
     },
@@ -710,10 +726,10 @@
         "ce": true
     }, 
     "peppermint_bark": {
-        "img": "peppermint_bark",
+        "img": "peppermint_bark.png",
         "name": "Peppermint Bark",
         "owner": "Tate",
-        "desc": "A sweet Christmas treat!",
+        "desc": "A sweet Christmas treat that might just break your teeth!",
         "rarity": "Uncommon",
         "ce": true
     },
@@ -904,6 +920,22 @@
         "desc": "Careful, the trigger is a little... sticky.",
         "rarity": "Legendary",
         "dx": true
+    },
+    "small_city_slider": {
+        "img": "small_city_slider.png",
+        "name": "Small City Slider",
+        "owner": "Billy Mays",
+        "desc": "An even smaller mini-burger for your even smaller holiday guests.",
+        "rarity": "Uncommon",
+        "ce": true
+    },
+    "snacks": {
+        "img": "snacks.png",
+        "name": "Pile Of Snacks",
+        "owner": "CS",
+        "desc": "An assortment of random snacks that CS had in his pantry. He put them out with the purpose of making the holiday spread look bigger than it actually is.",
+        "rarity": "Common",
+        "ce": true
     },
     "snow_pile": {
         "img": "snow_pile",
