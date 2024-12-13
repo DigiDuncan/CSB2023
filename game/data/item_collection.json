@@ -811,10 +811,10 @@
         "ce": true
     },
     "rosen_car": {
-        "img": "placeholder",
+        "img": "rosen_car",
         "name": "Michael's Car",
         "owner": "Michael Rosen",
-        "desc": "Placeholder text for now.",
+        "desc": "A 1969 Jaguar E-Type.",
         "rarity": "Classic",
         "ce": true
     },

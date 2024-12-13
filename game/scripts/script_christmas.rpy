@@ -2561,7 +2561,8 @@ label ce_party_before:
         hide cs with moveoutleft
         stop sound fadeout 1.0
         scene cs_house_snow_night
-        # TODO: put vehicle img here
+        show rosen_car dark at manual_pos(0.65, 0.8, 0.5):
+            zoom 2.0
         $ collect("rosen_car")
         show michael festive dark at mid_left
         with dissolve
