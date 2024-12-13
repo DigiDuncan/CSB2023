@@ -3305,6 +3305,7 @@ define audio.summer_fun = "summer_fun.ogg"
 define audio.crashing_down = "crashing_down.ogg"
 define audio.ce_passport = "cepassport.ogg"
 define audio.snowman = "snowman.ogg"
+define audio.title_theme_reprise = "title_theme_reprise.ogg"
 
 # CSBIII DX After-True Music
 define audio.lets_hear_spring = "letshearspring.ogg"

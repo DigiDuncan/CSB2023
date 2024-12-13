@@ -7422,11 +7422,12 @@ label ce_roof_moment:
     show cs surprised christmas
     cs "I wonder if Anno would be willing to help again..."
     show cs christmas
+    play music title_theme_reprise
+    music title_theme_reprise
     cs "For now, I should probably get to streaming."
     show cs happy christmas
     cs "Those car crash compilations aren't gonna watch themselves!"
-    show cs happy christmas flipped
-    hide cs with { "master": moveoutleft }
+    hide cs with { "master": moveoutright }
     n "As CS enters his room to start his livestream, our story here comes to a close."
     show black with { "master": Dissolve(10.0) }
     n "It wasn't the Christmas that CS expected, and, certainly, not everything went according to plan."

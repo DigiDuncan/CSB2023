@@ -1267,6 +1267,13 @@
             "album_art": "rhythm_heaven.png",
             "trivia": "Technically, in {i}Rhythm Heaven{/i}, you'd get this rating if you got any score above a certain threshold, not just a Perfect, but the {i}Carrot Chop{/i} minigame doesn't allow for score that granular."
         },
+        "title_theme_reprise" : {
+            "file": "title_theme_reprise.ogg",
+            "title": "Title Theme Reprise",
+            "artist": "Nicholas Karr",
+            "tags": ["CSBIII DX: Holiday Special", "New In DX"],
+            "album_art": "bargain.png"
+        },
         "funvalueland" : {
             "file": "funvalueland.ogg",
             "title": "SPOT.FASSIMRD",
