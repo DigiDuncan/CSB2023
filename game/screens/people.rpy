@@ -279,22 +279,17 @@ screen person(l):
 
                                 # make sure sprite actually exists first
                                 python:
-                                    try:
-                                        this_sprite = list(name_map[l]['sprites'].keys())[current_bios_sprite]
+                                    this_sprite = list(name_map[l]['sprites'].keys())[current_bios_sprite]
 
-                                        # delimiter to handle outfit/expression names
-                                        # ex. "Default: Happy" will be split
-                                        this_sprite_split = this_sprite.split(": ")
-                                        
-                                        if len(this_sprite_split) > 1:
-                                            this_sprite = "{size=-12}" + this_sprite_split[0] + "{/size}\n" + this_sprite_split[1]
-                                        else:
-                                            this_sprite = this_sprite_split
-
-                                    except:
-                                        this_sprite = "Default"
-                                        current_bios_sprite = 0
-
+                                    # delimiter to handle outfit/expression names
+                                    # ex. "Default: Happy" will be split
+                                    this_sprite_split = this_sprite.split(": ")
+                                    
+                                    if len(this_sprite_split) > 1:
+                                        this_sprite = "{size=-12}" + this_sprite_split[0] + "{/size}\n" + this_sprite_split[1]
+                                    else:
+                                        this_sprite = this_sprite_split
+    
                                 # sprite selector 
                                 text this_sprite:
                                     xalign 0.5
