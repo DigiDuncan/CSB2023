@@ -2472,20 +2472,36 @@ label ce_party_before:
         stop sound fadeout 1.0
         hide cs with moveoutleft
         scene cs_house_snow_night
-        # TODO: put vehicle img here
-        $ collect("sheriff_bus")
+        show runaway_bus dark at manual_pos(0.4, 0.6, 0.5)
+        $ collect("runaway_bus")
         show sheriff festive dark flipped at left
         with dissolve
+        play sound sfx_driving
+        show runaway_bus dark at manual_pos(-2.0, 0.6, 0.5) with MoveTransition(3.0)
+        stop sound fadeout 5.0
         show cs christmas dark flipped at right with moveinright
-        sheriff "God damn it! Stupid damn wheels! Stuck in the snow {i}again!"
+        sheriff "God {i}damn{/i} it! {nw}" with vpunch
+        sheriff "God {i}damn{/i} it! {fast}Stupid damn wheels! Stuck in the snow {nw}"
+        sheriff "God {i}damn{/i} it! Stupid damn wheels! Stuck in the snow {fast}{i}again!" with vpunch
         show cs worried christmas dark flipped
         cs "Woah, hey! Who are you?"
-        sheriff "Who am {i}I?{/i} I'm Copguy's {i}boss,{/i} that's who!"
-        sheriff "I asked him to pick me up, but apparently he had to go {i}shopping,{/i} or some shit!"
-        sheriff "So {i}I{/i} had to take the {i}bus!"
+        sheriff "Who am {nw}"
+        sheriff "Who am {fast}{i}I?{/i} {nw}" with vpunch
+        sheriff "Who am {i}I?{/i} {fast}I'm Copguy's {nw}"
+        sheriff "Who am {i}I?{/i} I'm Copguy's {fast}{i}boss,{/i} {nw}" with vpunch
+        sheriff "Who am {i}I?{/i} I'm Copguy's {fast}{i}boss,{/i} {fast}that's who!"
+        sheriff "I asked him to pick me up, but apparently he had to go {nw}"
+        sheriff "I asked him to pick me up, but apparently he had to go {fast}{i}shopping,{/i} {nw}" with vpunch
+        sheriff "I asked him to pick me up, but apparently he had to go {i}shopping,{/i} {fast}or some shit!"
+        sheriff "So {nw}"
+        sheriff "So {fast}{i}I{/i} {nw}" with vpunch
+        sheriff "So {i}I{/i} {fast}had to take the {nw}"
+        sheriff "So {i}I{/i} had to take the {fast}{i}bus!" with vpunch
         show cs disappointed christmas dark flipped
         cs "Oh, wow, okay. Would you like some help?"
-        sheriff "{i}Yes!{/i} I keep getting stuck in the snow! Take me inside!"
+        sheriff "{i}Yes!{/i} {nw}" with vpunch
+        sheriff "{i}Yes!{/i} {fast}I keep getting stuck in the snow! {nw}"
+        sheriff "{i}Yes!{/i} I keep getting stuck in the snow! {fast}Take me inside!" with vpunch
     elif d20 == 11:
         play sound sfx_beam
         n "A familiar sound like a laser beam is heard from outside."

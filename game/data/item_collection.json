@@ -841,11 +841,11 @@
         "desc": "Sans Brick",
         "rarity": "Sans Brick"
     },
-    "sheriff_bus": {
-        "img": "placeholder",
+    "runaway_bus": {
+        "img": "runaway_bus",
         "name": "The Bus",
         "owner": "Unknown",
-        "desc": "Placeholder text for now.",
+        "desc": "Rumored to be owned by a traveling jazz band that has been performing around the country since the 90s.",
         "rarity": "Common",
         "ce": true
     },
