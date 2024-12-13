@@ -13,7 +13,7 @@ init python:
     CARROT_HEIGHT = 120 # 122
     CHOPPED_WIDTH = 64 # 285
     CHOPPED_HEIGHT = 120 # 123
-    BEAT_GAP = 8 * CARROT_WIDTH * 3 # Number of pixels between carrots
+    BEAT_GAP = 433 * 3 # CARROT_WIDTH * 3 # Number of pixels between carrots
     CARROT_OFFSET = 300 # Number of pixels to offset where the hit window is (from the left side of the screen)
     BOUNCE_PIXELS = 50
     HAND_POSITION = 560
