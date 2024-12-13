@@ -5848,9 +5848,9 @@ label ce_point_click:
     cs "Anyway, there should be a hatch or something up here..."
     jump .click_menu
 
-    ### introducing sub-labels here!
+    ##### introducing sub-labels here!
 
-    # default menu
+    ### default menu
     label .click_menu:
         show screen flashlight_demo
         $ mouse_visible = False
@@ -5867,7 +5867,7 @@ label ce_point_click:
         window hide
         pause
 
-    # clicked on cs
+    ### clicked on cs
     label .cs:
         show screen flashlight_demo
         $ mouse_visible = False
@@ -5887,7 +5887,7 @@ label ce_point_click:
 
         jump .click_menu
 
-    # clicked on the flashlight
+    ### clicked on the flashlight
     label .flashlight:
         show screen flashlight_demo
         $ mouse_visible = False
@@ -5905,7 +5905,7 @@ label ce_point_click:
         
         jump .click_menu
 
-    # clicked on mean
+    ### clicked on mean
     label .mean:
         show screen flashlight_demo
         $ mouse_visible = False
@@ -5924,7 +5924,7 @@ label ce_point_click:
 
         jump .click_menu
 
-    # clicked on the poster
+    ### clicked on the poster
     label .poster:
         show screen flashlight_demo
         $ mouse_visible = False
@@ -5948,8 +5948,7 @@ label ce_point_click:
 
         jump .click_menu
 
-
-    # clicked on the rug
+    ### clicked on the rug
     label .rug:
         show screen flashlight_demo
         $ mouse_visible = False

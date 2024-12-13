@@ -149,22 +149,21 @@ label woohoo_counter:
 screen hatch_button():
     modal True
     
-
-    # poster
+    ##### poster button
     imagebutton:
         auto "gui/ce_point_click/poster/poster_%s.png"
         hover_sound "audio/sfx/sfx_select.ogg"
         at manual_pos(720, 323, 0)
         action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("hatch_button"), Jump("ce_point_click.poster")
 
-    # rug
+    ##### rug button
     imagebutton:
         auto "gui/ce_point_click/rug/rug_%s.png"
         hover_sound "audio/sfx/sfx_select.ogg"
         at manual_pos(949, 60, 0)
         action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("hatch_button"), Jump("ce_point_click.rug")
 
-    # cs
+    ##### cs button
     imagebutton:
         idle "images/characters/cs/christmas/disappointed.png"
         hover "gui/ce_point_click/cs_hover.png"
@@ -172,8 +171,7 @@ screen hatch_button():
         at mid_left
         action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("hatch_button"), Jump("ce_point_click.cs")
 
-    
-    # flashlight
+    ##### flashlight button
     imagebutton:
         auto "gui/ce_point_click/flashlight/flashlight_%s.png"
         hover_sound "audio/sfx/sfx_select.ogg"
@@ -181,7 +179,7 @@ screen hatch_button():
 
         action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("hatch_button"), Jump("ce_point_click.flashlight")
 
-    # mean
+    ##### mean button
     imagebutton:
         idle "images/characters/mean/meanhumanannoyed.png"
         hover "gui/ce_point_click/mean_hover.png"
@@ -189,11 +187,7 @@ screen hatch_button():
         at mid_right
         action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("hatch_button"), Jump("ce_point_click.mean")
     
-    # flashlight
-    # poster
-    # rug
-
-    # hatch button (correct one)
+    ##### hatch button (correct one)
     imagebutton:
         auto "gui/ce_point_click/hatch/hatch_%s.png" 
         hover_sound "audio/sfx/sfx_select.ogg"
