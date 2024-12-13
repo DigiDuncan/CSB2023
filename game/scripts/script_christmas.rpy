@@ -7427,8 +7427,11 @@ label ce_roof_moment:
     cs "For now, I should probably get to streaming."
     show cs happy christmas
     cs "Those car crash compilations aren't gonna watch themselves!"
+    # TODO: replace this next line with book close animation
     hide cs with { "master": moveoutright }
+    play music "<from 0.0 to 23.420>title_theme_reprise.ogg"
     n "As CS enters his room to start his livestream, our story here comes to a close."
+    # TODO: remove this next line when book is in
     show black with { "master": Dissolve(10.0) }
     n "It wasn't the Christmas that CS expected, and, certainly, not everything went according to plan."
     n "In spite of it all, with the help of his friends, it was one of the jolliest times he's ever had."
@@ -7436,6 +7439,9 @@ label ce_roof_moment:
     $ achievement_manager.unlock("hoh_hoh")
     $ ending_manager.mark("christmas")
     scene black with dissolve
+
+    call screen credits_roll(route="CSBIII DX: Holiday Special", bgm="<from 23.420>title_theme_reprise.ogg", scroll_start = 12000, duration=90)
+
     jump ce_epilogue
 
 # Epilogue

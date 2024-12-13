@@ -17,6 +17,7 @@ init python:
 
 screen people():
     default current_person = None
+    default current_bios_sprite = None
 
     use people_nav
     tag menu
@@ -27,42 +28,44 @@ screen people():
         use person(current_person)
 
 screen people_nav():
+    default current_bios_sprite = None
     add Color('#323e42', alpha=0.75)
 
-    # sorting modes
-    # 0 = sort by character name, NOT by json name (default)
-    # 1 = RPG characters only
-    # 2 = new to DX only
-    # 3 = new to CE only
-    # maybe future sort modes will be added
+    python:
+        # sorting modes
+        # 0 = sort by character name, NOT by json name (default)
+        # 1 = RPG characters only
+        # 2 = new to DX only
+        # 3 = new to CE only
+        # maybe future sort modes will be added
 
-    if current_bios_sorting_mode == 0:
-        $ sort_mode = sorted(persistent.seen, key=lambda character: name_map[character]["full_name"].upper())
-        $ sort_text = "All"
-    elif current_bios_sorting_mode == 1:
-        $ presort = []
-        for c in name_map:
-            if c in persistent.seen:
-                if "rpg" in name_map[c]:
-                    $ presort.append(c)
-        $ sort_mode = sorted(presort, key=lambda character: name_map[character]["full_name"].upper())
-        $ sort_text = "RPG Fighters Only"
-    elif current_bios_sorting_mode == 2:
-        $ presort = []
-        for c in name_map:
-            if c in persistent.seen:
-                if "dx" in name_map[c]:
-                    $ presort.append(c)
-        $ sort_mode = sorted(presort, key=lambda character: name_map[character]["full_name"].upper())
-        $ sort_text = "New To DX"
-    elif current_bios_sorting_mode == 3:
-        $ presort = []
-        for c in name_map:
-            if c in persistent.seen:
-                if "ce" in name_map[c]:
-                    $ presort.append(c)
-        $ sort_mode = sorted(presort, key=lambda character: name_map[character]["full_name"].upper())
-        $ sort_text = "New To CE"
+        if current_bios_sorting_mode == 0:
+            sort_mode = sorted(persistent.seen, key=lambda character: name_map[character]["full_name"].upper())
+            sort_text = "All"
+        elif current_bios_sorting_mode == 1:
+            presort = []
+            for c in name_map:
+                if c in persistent.seen:
+                    if "rpg" in name_map[c]:
+                        presort.append(c)
+            sort_mode = sorted(presort, key=lambda character: name_map[character]["full_name"].upper())
+            sort_text = "RPG Fighters Only"
+        elif current_bios_sorting_mode == 2:
+            presort = []
+            for c in name_map:
+                if c in persistent.seen:
+                    if "dx" in name_map[c]:
+                        presort.append(c)
+            sort_mode = sorted(presort, key=lambda character: name_map[character]["full_name"].upper())
+            sort_text = "New To DX"
+        elif current_bios_sorting_mode == 3:
+            presort = []
+            for c in name_map:
+                if c in persistent.seen:
+                    if "ce" in name_map[c]:
+                        presort.append(c)
+            sort_mode = sorted(presort, key=lambda character: name_map[character]["full_name"].upper())
+            sort_text = "New To CE"
 
     frame:
         background None
@@ -148,7 +151,7 @@ screen people_welcome():
 ##-----------------------------------------------
 
 screen person(l):
-
+        
     ##### Main Container omitting the menu
     viewport:
         xsize 1350
