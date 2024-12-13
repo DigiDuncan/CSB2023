@@ -5826,8 +5826,13 @@ label ce_lights_out:
     hide mean
     with moveoutright
     pause 0.5
-
     n "CS and Mean make their way up the ladder to the attic."
+
+    jump ce_point_click
+
+label ce_point_click:
+    show screen flashlight_demo
+    $ mouse_visible = False
     scene cs_attic
     show hatch at manual_pos(0.3, -0.2)
     show cs disappointed christmas at mid_left
@@ -5841,16 +5846,136 @@ label ce_lights_out:
     mean "You good, CS?"
     cs "Yeah, I'm just a bit tired."
     cs "Anyway, there should be a hatch or something up here..."
-    mean "Shine your light up."
-    hide screen flashlight_demo
-    show screen hatch_button
-    window hide
-    pause
+    jump .click_menu
+
+    ### introducing sub-labels here!
+
+    # default menu
+    label .click_menu:
+        show screen flashlight_demo
+        $ mouse_visible = False
+        scene cs_attic
+        show hatch at manual_pos(0.3, -0.2)
+        show cs disappointed christmas at mid_left
+        show flashlight_held at manual_pos(0.3, 0.7, 0.5):
+            zoom 0.5
+        show mean human annoyed at mid_right
+
+        mean "Shine your light up."
+        hide screen flashlight_demo
+        show screen hatch_button
+        window hide
+        pause
+
+    # clicked on cs
+    label .cs:
+        show screen flashlight_demo
+        $ mouse_visible = False
+        scene cs_attic
+        show hatch at manual_pos(0.3, -0.2)
+        show mean human annoyed at mid_right
+        show cs disappointed christmas at mid_left
+        show flashlight_held at manual_pos(0.3, 0.7, 0.5):
+            zoom 0.5
+
+        show cs happy christmas at mid_left
+        cs "Hey, that tickles!"
+        show mean human shocked
+        mean "Huh?" with vpunch
+        show cs scared christmas
+        cs "I mean, uh--"
+
+        jump .click_menu
+
+    # clicked on the flashlight
+    label .flashlight:
+        show screen flashlight_demo
+        $ mouse_visible = False
+        scene cs_attic
+        show hatch at manual_pos(0.3, -0.2)
+        show mean human annoyed at mid_right
+        show cs disappointed christmas at mid_left
+        show flashlight_held at manual_pos(0.3, 0.7, 0.5):
+            zoom 0.5
+
+        cs "Like this?"
+        show mean human shocked
+        mean "That's... your flashlight."
+        mean "How the {i}fuck{/i} did you point your flashlight {i}at{/i} your flashlight?"
+        
+        jump .click_menu
+
+    # clicked on mean
+    label .mean:
+        show screen flashlight_demo
+        $ mouse_visible = False
+        scene cs_attic
+        show hatch at manual_pos(0.3, -0.2)
+        show mean human annoyed at mid_right
+        show cs disappointed christmas at mid_left
+        show flashlight_held at manual_pos(0.3, 0.7, 0.5):
+            zoom 0.5
+
+        show mean human angry
+        mean "That's {nw}"
+        mean "That's {fast}{i}me,{/i} {nw}" with vpunch
+        mean "That's {i}me,{/i} {fast}you dumb fuck!"
+        mean "Try again!"
+
+        jump .click_menu
+
+    # clicked on the poster
+    label .poster:
+        show screen flashlight_demo
+        $ mouse_visible = False
+        scene cs_attic
+        show hatch at manual_pos(0.3, -0.2)
+        show mean human annoyed at mid_right
+        show cs disappointed christmas at mid_left
+        show flashlight_held at manual_pos(0.3, 0.7, 0.5):
+            zoom 0.5
+
+        show cs happy christmas
+        cs "Only {i}you{/i} can prevent forest fires!"
+        show mean human
+        mean "Oh, yeah. I think Tate said something about how the only comic book they ever owned as a kid was of Smokey the Bear."
+        show cs worried christmas
+        mean "Apparently, it made them cry when all the animals died in the fire."
+        mean "Fuckin' hippie."
+        show mean human annoyed
+        show cs disappointed christmas
+        mean "Anyway, that won't help us now."
+
+        jump .click_menu
+
+
+    # clicked on the rug
+    label .rug:
+        show screen flashlight_demo
+        $ mouse_visible = False
+        scene cs_attic
+        show hatch at manual_pos(0.3, -0.2)
+        show mean human annoyed at mid_right
+        show cs disappointed christmas at mid_left
+        show flashlight_held at manual_pos(0.3, 0.7, 0.5):
+            zoom 0.5
+
+        show cs christmas
+        cs "Do you think that rug will help us?"
+        show mean angry human
+        mean "{i}How,{/i} exactly, do you think a {i}rug{/i} will help us get to the {i}roof?" with vpunch
+        show cs disappointed christmas
+        cs "I dunno, man! I'm just throwing things at the wall to see what sticks!"
+        show cs surprised christmas
+        cs "Er, well, I suppose it's {i}already{/i} on the wall, isn't i-- {nw}"
+        mean "Well, that won't help us now!" with vpunch
+
+        jump .click_menu
 
 label ce_after_hatch:
     show screen flashlight_demo
     $ mouse_visible = False
-    mean "You mean like {i}that{/i} one?"
+    mean "That's gotta be it."
     cs "Yeah, can you pull it open?"
     play sound sfx_snowfall volume 3.0
     with vpunch

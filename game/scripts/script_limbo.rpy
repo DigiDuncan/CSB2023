@@ -148,12 +148,59 @@ label woohoo_counter:
 
 screen hatch_button():
     modal True
-    viewport:
+    
+
+    # poster
+    imagebutton:
+        auto "gui/ce_point_click/poster/poster_%s.png"
+        hover_sound "audio/sfx/sfx_select.ogg"
+        at manual_pos(720, 323, 0)
+        action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("hatch_button"), Jump("ce_point_click.poster")
+
+    # rug
+    imagebutton:
+        auto "gui/ce_point_click/rug/rug_%s.png"
+        hover_sound "audio/sfx/sfx_select.ogg"
+        at manual_pos(949, 60, 0)
+        action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("hatch_button"), Jump("ce_point_click.rug")
+
+    # cs
+    imagebutton:
+        idle "images/characters/cs/christmas/disappointed.png"
+        hover "gui/ce_point_click/cs_hover.png"
+        hover_sound "audio/sfx/sfx_select.ogg"
+        at mid_left
+        action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("hatch_button"), Jump("ce_point_click.cs")
+
+    
+    # flashlight
+    imagebutton:
+        auto "gui/ce_point_click/flashlight/flashlight_%s.png"
+        hover_sound "audio/sfx/sfx_select.ogg"
+        at manual_pos(0.3, 0.7, 0.5)
+
+        action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("hatch_button"), Jump("ce_point_click.flashlight")
+
+    # mean
+    imagebutton:
+        idle "images/characters/mean/meanhumanannoyed.png"
+        hover "gui/ce_point_click/mean_hover.png"
+        hover_sound "audio/sfx/sfx_select.ogg"
+        at mid_right
+        action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("hatch_button"), Jump("ce_point_click.mean")
+    
+    # flashlight
+    # poster
+    # rug
+
+    # hatch button (correct one)
+    imagebutton:
+        auto "gui/ce_point_click/hatch/hatch_%s.png" 
+        hover_sound "audio/sfx/sfx_select.ogg"
         xpos 0.3
         ypos -0.2
-        hbox:
-            imagebutton auto "hatch_%s.png" hover_sound "audio/sfx/sfx_select.ogg":
-                action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("hatch_button"), Jump("ce_after_hatch")
+        action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("hatch_button"), Jump("ce_after_hatch")
+
     add Flashlight()
 
 screen limbo_csbutton():
