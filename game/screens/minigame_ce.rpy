@@ -2,6 +2,7 @@
 screen ce_minigame_screen():
     tag menu
 
+    $ renpy.music.play("<from 16.53>bubble_tea.ogg", channel="music", if_changed=True)
     add "gui/game_menu.png"
     
     text "{size=+48}Minigames":
@@ -16,7 +17,7 @@ screen ce_minigame_screen():
 
     if persistent.carrot_game_unlocked:
         imagebutton idle "images/minigames/carrot_box.png":
-            action Jump("play_ce_carrot")
+            action Replay("play_ce_carrot")
             yalign 0.55
             xpos 0.33 xanchor 0.5
     else:
@@ -27,7 +28,7 @@ screen ce_minigame_screen():
 
     if persistent.reversi_game_unlocked:
         imagebutton idle "images/minigames/reversi_box.png":
-            action Jump("play_ce_reversi")
+            action Replay("play_ce_reversi")
             yalign 0.55
             xpos 0.67 xanchor 0.5
     else:
