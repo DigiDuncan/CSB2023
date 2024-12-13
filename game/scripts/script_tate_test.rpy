@@ -297,12 +297,17 @@ label awawa_tate_test:
             ########## Credits Roll ##########
             
             "Credits Roll":
-                tate "Here we go!"
-                
-                call screen credits_roll(duration=60)
-                #call screen credits_roll(route="CSBIII DX: Holiday Special", bgm="hohsis_theme.ogg", scroll_start = 12000, duration=30)
+                tate "Which one?"
+                menu:
+                    tate "Which one?{fast}"
+                    "Full Game":
+                        call screen credits_roll(duration=60)
+                    "CE Only":
+                        call screen credits_roll(route="CSBIII DX: Holiday Special", bgm="hohsis_theme.ogg", scroll_start = 25000, duration=30)
+                    "Never mind.":
+                        jump .awawa_menu
 
-                tate "Did we do it?"
+                tate "Did it do what you wanted?"
                 jump .awawa_menu
 
             "Reversi Rules Image":

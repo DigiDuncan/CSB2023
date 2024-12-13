@@ -1249,21 +1249,21 @@
             "file": "minigames/carrot/try_again_music.ogg",
             "title": "Results: Try Again!",
             "artist": "つんく♂",
-            "tags": ["CSBIII DX: Holiday Special", "New In DX"],
+            "tags": ["CSBIII DX: Holiday Special", "New In DX", "Minigames"],
             "album_art": "rhythm_heaven.png"
         },
         "rhythm_heaven_ok" : {
             "file": "minigames/carrot/ok_music.ogg",
             "title": "Results: OK!",
             "artist": "つんく♂",
-            "tags": ["CSBIII DX: Holiday Special", "New In DX"],
+            "tags": ["CSBIII DX: Holiday Special", "New In DX", "Minigames"],
             "album_art": "rhythm_heaven.png"
         },
         "rhythm_heaven_superb" : {
             "file": "minigames/carrot/superb_music.ogg",
-            "title": "Results: Try Again!",
+            "title": "Results: Superb!",
             "artist": "つんく♂",
-            "tags": ["CSBIII DX: Holiday Special", "New In DX"],
+            "tags": ["CSBIII DX: Holiday Special", "New In DX", "Minigames"],
             "album_art": "rhythm_heaven.png",
             "trivia": "Technically, in {i}Rhythm Heaven{/i}, you'd get this rating if you got any score above a certain threshold, not just a Perfect, but the {i}Carrot Chop{/i} minigame doesn't allow for score that granular."
         },

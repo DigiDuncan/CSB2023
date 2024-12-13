@@ -38,6 +38,14 @@
         "bio": "This particular stewardess gives off a motherly vibe. She takes the time to make all her guests feel welcome and cared for, even when those guests try to roleplay as other staff.",
         "dx": true
     },
+    "anne": {
+        "full_name": "Anne",
+        "pronouns": "(???)",
+        "sprites": { "Default": "images/characters/anne.png" },
+        "quote": "???",
+        "bio": "Placeholder text for now.",
+        "ce": true
+    },
     "anno": {
         "full_name": "Annorexorcist",
         "pronouns": "(he/him)",
@@ -416,6 +424,14 @@
         "zoom": 0.85,
         "rpg": "ED"
     },
+    "eliza": {
+        "full_name": "Elizabeth",
+        "pronouns": "(???)",
+        "sprites": { "Default": "images/characters/eliza.png" },
+        "quote": "???",
+        "bio": "Placeholder text for now.",
+        "ce": true
+    },
     "ges": {
         "full_name": "Ges",
         "pronouns": "(he/him)",
@@ -436,6 +452,17 @@
         "sprites": { "Default": "images/characters/gordon.png" },
         "quote": "It's fucking RAW!",
         "bio": "Gordon is {i}The{/i} Master Chef. While his intimidating character is definitely played up a bit for TV, he has earned that title, and he is not afraid to point out when {i}you{/i} have not."
+    },
+    "grace": {
+        "full_name": "Grace",
+        "pronouns": "(???)",
+        "sprites": { 
+            "Default": "images/characters/grace.png",
+            "CShirt": "images/characters/grace_shirt.png"
+        },
+        "quote": "???",
+        "bio": "Placeholder text for now.",
+        "ce": true
     },
     "green": {
         "full_name": "Mr. Green",

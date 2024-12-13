@@ -93,8 +93,9 @@
             "Asset Remastering": ["4Bakers", "DigiDuncan", "Tate \"alleZSoyez\""],
             "Sprite Management": ["Pakoo", "DigiDuncan", "Tate \"alleZSoyez\""],
             "3D Rendering": ["4Bakers", "Tris"],
+            "Video Editing": ["Pakoo", "DigiDuncan", "4Bakers", "Tate \"alleZSoyez\""],
             "UI Design": ["DigiDuncan", "Arceus3251", "Pakoo", "Tate \"alleZSoyez\""],
-            "Cinematography": ["Tate \"alleZSoyez\""]
+            "Cinematography": ["Tate \"alleZSoyez\"", "Pakoo", "DigiDuncan"]
         },
 
         "_audio": {
@@ -203,8 +204,9 @@
             "Asset Remastering": ["4Bakers", "DigiDuncan"],
             "Sprite Management": ["Pakoo", "DigiDuncan", "Tate \"alleZSoyez\""],
             "3D Rendering": ["4Bakers", "Tris"],
+            "Video Editing": ["Pakoo", "DigiDuncan", "4Bakers"],
             "UI Design": ["DigiDuncan", "Arceus3251", "Pakoo", "Tate \"alleZSoyez\""],
-            "Cinematography": ["Tate \"alleZSoyez\""]
+            "Cinematography": ["Tate \"alleZSoyez\"", "Pakoo", "DigiDuncan"]
         },
 
         "_audio": {
