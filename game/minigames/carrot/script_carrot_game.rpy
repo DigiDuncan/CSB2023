@@ -9,11 +9,11 @@ init python:
 
     # DISPLAY VARIABLES
     CS_HEIGHT = 863
-    CARROT_WIDTH = 64 # 433
-    CARROT_HEIGHT = 120 # 122
-    CHOPPED_WIDTH = 64 # 285
-    CHOPPED_HEIGHT = 120 # 123
-    BEAT_GAP = 433 * 3 # CARROT_WIDTH * 3 # Number of pixels between carrots
+    CARROT_WIDTH = 433
+    CARROT_HEIGHT = 122
+    CHOPPED_WIDTH = 285
+    CHOPPED_HEIGHT = 123
+    BEAT_GAP = CARROT_WIDTH * 3 # Number of pixels between carrots
     CARROT_OFFSET = 300 # Number of pixels to offset where the hit window is (from the left side of the screen)
     BOUNCE_PIXELS = 50
     HAND_POSITION = 560
@@ -61,9 +61,9 @@ init python:
             self.fg = Image("minigames/carrot/fg.png")
             self.perfect = Image("minigames/carrot/perfect.png")
 
-            self.carrot = Image("minigames/carrot/carrot_beat.png")
-            self.glowing_carrot = Image("minigames/carrot/carrot_hittable.png")
-            self.chopped_carrot = Image("minigames/carrot/carrot_hit.png")
+            self.carrot = Image("minigames/carrot/carrot.png")
+            self.glowing_carrot = Image("minigames/carrot/glowing_carrot.png")
+            self.chopped_carrot = Image("minigames/carrot/chopped_carrot.png")
             self.hit_window = Image("minigames/carrot/carrot_window.png")
 
             # Precache sounds
@@ -75,6 +75,7 @@ init python:
             renpy.sound.play("minigames/carrot/hit.ogg", relative_volume=0.0)
             renpy.sound.play("minigames/carrot/miss.ogg", relative_volume=0.0)
             renpy.sound.play("minigames/carrot/perfect_fail.ogg", relative_volume=0.0)
+            renpy.sound.stop()
 
         @property
         def song_time(self) -> float:
@@ -149,8 +150,6 @@ init python:
                 _current_song = "Can You Really Call This A Hotel, I Didn't Receive A Mint On My Pillow Or Anything"
                 _current_artist = "Toby Fox"
 
-            if renpy.music.get_pos() is not None:
-                self.started_playing_song = True
 
             # Update song time
             t = renpy.music.get_pos()
@@ -158,6 +157,9 @@ init python:
             dt = t - self.last_tick
             self._song_time = t
             was_fcing = self.is_fcing
+
+            if t is not None:
+                self.started_playing_song = True
 
             r = renpy.Render(1920, 1080)
 
@@ -184,7 +186,7 @@ init python:
             r.blit(hand_renderer, (0, h_pos))
 
             # Render space
-            if not self.pressed_space_once or st - self.start_time > SONG_LENGTH + 0.5:
+            if not self.pressed_space_once:
                 space_renderer = renpy.render(self.space, 240, 70, st, at)
                 r.blit(space_renderer, (CARROT_OFFSET, HAND_POSITION - 80))
 
@@ -217,7 +219,8 @@ init python:
                 else: 
                     r.blit(c_render, (x, y))
 
-            r.blit(renpy.render(self.hit_window, CARROT_WIDTH, CARROT_HEIGHT, 0.0, 0.0), (CARROT_OFFSET, HAND_POSITION + 100 + CARROT_HEIGHT / 2.0))
+            # Hit window render
+            # r.blit(renpy.render(self.hit_window, CARROT_WIDTH, CARROT_HEIGHT, 0.0, 0.0), (CARROT_OFFSET, HAND_POSITION + 100 + CARROT_HEIGHT / 2.0))
 
             if self.current_beat < 8:
                 a = 1.0 if self.current_beat < 7 else 1 - (self.song_time - self.beat_time(7))
@@ -234,19 +237,11 @@ init python:
             elif last_audio != current_audio and current_audio == START_BEAT - 1:
                 renpy.sound.play("minigames/carrot/go.ogg")
 
-            if current < START_BEAT - 2:
-                self.last_tick = t
-                self.last_beat = self.current_beat
-                self.last_audio_beat = self.current_audio_beat
-                self.hit_to_process = False
-                renpy.redraw(self, 0)
-                return r
-
             hit = False
             miss = False
 
             # Process input
-            if self.hit_to_process and START_BEAT - 1 <= current and current <= (NUMBER_OF_BEATS - BEATS_TO_DROP):
+            if self.hit_to_process and START_BEAT <= nearest < (NUMBER_OF_BEATS - BEATS_TO_DROP):
                 input_time = self.song_time
 
                 # Find nearest beat
@@ -270,8 +265,7 @@ init python:
                     self.song_time - dt < self.beat_time(nearest) + HIT_WINDOW < self.song_time and
                     nearest not in self.successful_beats and
                     nearest not in self.missed_beats and
-                    START_BEAT <= current and
-                    current < (NUMBER_OF_BEATS - BEATS_TO_DROP)
+                    START_BEAT <= nearest < (NUMBER_OF_BEATS - BEATS_TO_DROP)
                 ):
                 # Miss!
                 self.misses += 1
@@ -288,7 +282,7 @@ init python:
             elif hit:
                 renpy.sound.play("minigames/carrot/hit.ogg")
 
-            if renpy.music.get_pos() is None and self.started_playing_song:
+            if renpy.music.get_pos() is None and self.started_playing_song and 61.0 < st - self.start_time:
                 if self.is_fcing:
                     self.win = "superb"
                 elif self.accuracy >= ACCURACY_TO_WIN:
