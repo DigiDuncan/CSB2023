@@ -587,7 +587,7 @@
         "img": "ltt_car",
         "name": "Linus' Car",
         "owner": "Linus Sebastian",
-        "desc": "Known as the Lambo, this is an early 2000s Honda Civic that was {i}originally{/i} black, but was repainted (badly) in {a=https://www.youtube.com/watch?v=RU87dFB9yKI}{i}Boss' Car Gets Painted Pink.{/i}{/a}",
+        "desc": "Known as \"The Lambo\", this is an early-2000s Honda Civic that was {i}originally{/i} black, but was repainted (badly) in {a=https://www.youtube.com/watch?v=RU87dFB9yKI}{i}Boss' Car Gets Painted Pink.{/i}{/a}",
         "rarity": "One-of-a-kind",
         "ce": true
     },
@@ -1069,7 +1069,7 @@
         "img": "whiskey",
         "name": "Whiskey?",
         "owner": "Nobody",
-        "desc": "Just what kind of bootleg brew is this?!",
+        "desc": "Just what kind of bootleg brew {i}is{/i} this?!",
         "rarity": "Uncommon",
         "dx": true
     },
