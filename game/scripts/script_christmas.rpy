@@ -2491,7 +2491,7 @@ label ce_party_before:
         n "A familiar sound like a laser beam is heard from outside."
         hide cs with moveoutleft
         scene cs_house_snow_night
-        # TODO: put vehicle img here
+        show joj_ufo_empty dark at manual_pos(0.6, 0.6, 0.5)
         $ collect("joj_ufo")
         show ed festive dark flipped at mid_mid_left
         show rich festive dark flipped at mid_left
@@ -2579,7 +2579,8 @@ label ce_party_before:
         hide cs with moveoutleft
         stop sound fadeout 1.0
         scene cs_house_snow_night
-        # TODO: put vehicle img here
+        show ltt_car dark at manual_pos(0.4, 0.8, 0.5):
+            zoom 1.5
         $ collect("ltt_car")
         show linus festive dark at mid_mid_left
         show luke festive dark flipped at left

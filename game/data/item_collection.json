@@ -489,7 +489,7 @@
         "ce": true
     },
     "joj_ufo": {
-        "img": "/minigames/car/joj_ufo.png",
+        "img": "joj_ufo_empty",
         "name": "JoJ UFO",
         "owner": "HoH SiS",
         "desc": "The primary mode of transportation for HoH SiS. Allows for safe traversal over even the most unstable foundations. This particular model also includes a laser defense system.",
@@ -560,10 +560,10 @@
         "dx": true
     },
     "ltt_car": {
-        "img": "placeholder",
+        "img": "ltt_car",
         "name": "Linus' Car",
         "owner": "Linus Sebastian",
-        "desc": "Placeholder text for now.",
+        "desc": "Known as the Lambo, this is an early 2000s Honda Civic that was {i}originally{/i} black, but was repainted (badly) in {a=https://www.youtube.com/watch?v=RU87dFB9yKI}{i}Boss' Car Gets Painted Pink.{/i}{/a}",
         "rarity": "One-of-a-kind",
         "ce": true
     },
