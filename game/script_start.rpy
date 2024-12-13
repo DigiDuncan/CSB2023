@@ -1567,16 +1567,19 @@ image worker_7 = "characters/hohsis/worker_chicken.png"
 
 # Copguy & Co.
 image copguy = "characters/copguy/copguy.png"
+image copguy flipped = "flip:characters/copguy/copguy.png"
+image copguy dark = "dark:characters/copguy/copguy.png"
+image copguy dark flipped = "dark:flip:characters/copguy/copguy.png"
+image copguy sil_black = "sil_black:characters/copguy/copguy.png"
 image copguy festive = "characters/copguy/copguy_festive.png"
 image copguy festive flipped = "flip:characters/copguy/copguy_festive.png"
 image copguy festive dark = "dark:characters/copguy/copguy_festive.png"
 image copguy festive dark flipped = "dark:flip:characters/copguy/copguy_festive.png"
-image copguy sil_black = "sil_black:characters/copguy/copguy.png"
-image copguy flipped = "flip:characters/copguy/copguy.png"
-image copguy dark = "dark:characters/copguy/copguy.png"
-image copguy dark flipped = "dark:flip:characters/copguy/copguy.png"
+
 image copguy_ai = "characters/ai_cop_guy_full.png"
-image copguycrawl = "characters/copguy/copguycrawl.png"
+image copguyexe = "characters/copguy/copguyexe.png"
+image copguyexe flipped = "flip:characters/copguy/copguyexe.png"
+
 image sheriff = "characters/sheriff.png"
 image sheriff festive = "characters/sheriff_festive.png"
 image sheriff festive flipped = "flip:characters/sheriff_festive.png"
@@ -1585,6 +1588,7 @@ image sheriff dark = "dark:characters/sheriff.png"
 image sheriff festive dark = "dark:characters/sheriff_festive.png"
 image sheriff festive dark flipped = "dark:flip:characters/sheriff_festive.png"
 image sheriff dark flipped = "dark:flip:characters/sheriff.png"
+
 image cop = "characters/cop.png"
 image cop dark = "dark:characters/cop.png"
 image cop_2 = "dark:characters/cop.png"
@@ -1592,8 +1596,7 @@ image guard_soldier = "dark:characters/guard_soldier.png"
 image marine = "characters/marine.png"
 image big_tank = "characters/abrams.png"
 image asylum_worker = "dark:characters/mohs.png"
-image copguyexe = "characters/copguy/copguyexe.png"
-image copguyexe flipped = "flip:characters/copguy/copguyexe.png"
+
 
 # CSB I
 image michael = "characters/michael.png"
