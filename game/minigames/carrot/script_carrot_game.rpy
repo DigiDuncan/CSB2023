@@ -9,9 +9,11 @@ init python:
 
     # DISPLAY VARIABLES
     CS_HEIGHT = 863
-    CARROT_WIDTH = 433
-    CARROT_HEIGHT = 122
-    BEAT_GAP = CARROT_WIDTH * 3 # Number of pixels between carrots
+    CARROT_WIDTH = 64 # 433
+    CARROT_HEIGHT = 120 # 122
+    CHOPPED_WIDTH = 64 # 285
+    CHOPPED_HEIGHT = 120 # 123
+    BEAT_GAP = 8 * CARROT_WIDTH * 3 # Number of pixels between carrots
     CARROT_OFFSET = 300 # Number of pixels to offset where the hit window is (from the left side of the screen)
     BOUNCE_PIXELS = 50
     HAND_POSITION = 560
@@ -59,9 +61,10 @@ init python:
             self.fg = Image("minigames/carrot/fg.png")
             self.perfect = Image("minigames/carrot/perfect.png")
 
-            self.carrot = Image("minigames/carrot/carrot.png")
-            self.glowing_carrot = Image("minigames/carrot/glowing_carrot.png")
-            self.chopped_carrot = Image("minigames/carrot/chopped_carrot.png")
+            self.carrot = Image("minigames/carrot/carrot_beat.png")
+            self.glowing_carrot = Image("minigames/carrot/carrot_hittable.png")
+            self.chopped_carrot = Image("minigames/carrot/carrot_hit.png")
+            self.hit_window = Image("minigames/carrot/carrot_window.png")
 
             # Precache sounds
             renpy.sound.play("minigames/carrot/hotel_disbelief.ogg", relative_volume=0.0)
@@ -199,7 +202,7 @@ init python:
 
             c_render = renpy.render(self.carrot, CARROT_WIDTH, CARROT_HEIGHT, 0.0, 0.0)
             gc_render = renpy.render(self.glowing_carrot, CARROT_WIDTH, CARROT_HEIGHT, 0.0, 0.0)
-            cc_render = renpy.render(self.chopped_carrot, 285, 123, 0.0, 0.0)
+            cc_render = renpy.render(self.chopped_carrot, CHOPPED_WIDTH, CHOPPED_HEIGHT, 0.0, 0.0)
 
             start = max(current - 2, START_BEAT)
             end = min(current + 4, int(NUMBER_OF_BEATS - BEATS_TO_DROP + 1))
@@ -213,6 +216,8 @@ init python:
                     r.blit(gc_render, (x, y))
                 else: 
                     r.blit(c_render, (x, y))
+
+            r.blit(renpy.render(self.hit_window, CARROT_WIDTH, CARROT_HEIGHT, 0.0, 0.0), (CARROT_OFFSET, HAND_POSITION + 100 + CARROT_HEIGHT / 2.0))
 
             if self.current_beat < 8:
                 a = 1.0 if self.current_beat < 7 else 1 - (self.song_time - self.beat_time(7))
