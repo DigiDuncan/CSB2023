@@ -165,8 +165,8 @@ init python:
             bg_renderer = renpy.render(self.bg, 1920, 1080, st, at)
             
 
-            x_bounce = 1.0 # - self.bounce_offset * 0.25
-            y_bounce = 0.75 + self.bounce_offset * 0.25
+            x_bounce = 1.0 # 0.75 + self.bounce_offset * 0.25
+            y_bounce = 1.0 - self.bounce_offset * 0.25
             csbg_renderer = renpy.render(Transform(self.csbg, yzoom = y_bounce, xzoom = x_bounce), 1920, 1080, st, at)
             
             fg_renderer = renpy.render(self.fg, 1920, 1080, st, at)
@@ -174,7 +174,7 @@ init python:
             r.blit(bg_renderer, (0, 0))
 
             down_amount = self.bounce_offset * 0.25
-            r.blit(csbg_renderer, (0, -CS_HEIGHT * (down_amount)))
+            r.blit(csbg_renderer, (0, CS_HEIGHT * (0.25 - down_amount)))
 
             r.blit(fg_renderer, (0, 0))
 
@@ -234,6 +234,14 @@ init python:
             elif last_audio != current_audio and current_audio == START_BEAT - 1:
                 renpy.sound.play("minigames/carrot/go.ogg")
 
+            if current < START_BEAT - 2:
+                self.last_tick = t
+                self.last_beat = self.current_beat
+                self.last_audio_beat = self.current_audio_beat
+                self.hit_to_process = False
+                renpy.redraw(self, 0)
+                return r
+
             hit = False
             miss = False
 
@@ -251,12 +259,10 @@ init python:
                     else:
                         # Overhit!
                         self.misses += 1
-                        self.is_fcing = False
                         miss = True
                 else:
                     # Miss!
                     self.misses += 1
-                    self.is_fcing = False
                     self.missed_beats.add(nearest)
                     miss = True
 
@@ -269,9 +275,11 @@ init python:
                 ):
                 # Miss!
                 self.misses += 1
-                self.is_fcing = False
                 self.missed_beats.add(nearest)
                 miss = True
+
+            if miss:
+                self.is_fcing = False
 
             if was_fcing and not self.is_fcing:
                 renpy.sound.play("minigames/carrot/perfect_fail.ogg")
