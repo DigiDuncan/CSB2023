@@ -3033,6 +3033,7 @@ label ce_introductions:
         zoom 0.75
     $ collect("projector")
     show blank festive flipped at mid_right
+    show ges at right
     show nova at mid_offscreen_right
     show blank_speaker at manual_pos(0.8, 1.0, 0.5):
         zoom 0.3
@@ -3059,9 +3060,12 @@ label ce_introductions:
     show cs happy christmas flipped
     cs "Cool! I hope you all get it working!"
     show cs christmas
-    cs "How about you two?"
+    cs "How about you three?"
     show blank festive
     blank "We are working on setting up the sound system."
+    ges "Well okay, I'm not."
+    ges "I just came because Tyler wanted me to."
+    ges "Err-- Nova, sorry."
     nova "The problem is that I don't really want Blank playing their shitty music during the party."
     show blank festive flipped
     blank "Why not? Not {i}all{/i} of it's crazy shit like {i}yours{/i} is."
