@@ -6720,9 +6720,8 @@ label ce_roof_moment:
     cs "Come on, guys! You've gotta sing!"
     k17 "{image=note_small1.png} He's making a list...{w=0} {image=note_small2.png}"
     k17 "{image=note_small1.png} And checking it twice...{w=0} {image=note_small2.png}"
+    play sound ["<silence 0.85>", sfx_pop_noice]
     grace "{image=note_small1.png} Gonna find out who's naughty and nice...{w=0} {image=note_small2.png}"
-    # TODO: would be funny to put michael rosen noice sfx here once we figure out timings
-    play sound sfx_pop_noice
     rich "{image=note_small1.png} Santa Claus is coming to town!{w=0} {image=note_small2.png}"
     tate "{image=note_small1.png} He sees you when you're sleeping...{w=0} {image=note_small2.png}"
     mean "{image=note_small1.png} He knows when you're awake...{w=0} {image=note_small2.png}"
