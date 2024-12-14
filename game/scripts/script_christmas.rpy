@@ -3141,7 +3141,7 @@ label ce_introductions:
     if d20 == 20:
         pause 2.0
         show avgn at center with moveinbottom
-        show eliza worried at right with vpunch
+        show elizabeth worried at right with vpunch
         avgn "You guys ever heard of {i}Dr. Jekyll and Mr. Hyde{/i} for the NES?"
         eliza "Uhh, no?"
         show avgn flipped
