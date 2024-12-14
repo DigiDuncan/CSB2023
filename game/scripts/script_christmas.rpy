@@ -2401,6 +2401,7 @@ label ce_party_before:
         n "Tate groans and shakes their head."
         n "The remnants of a long and drawn-out argument linger in the air."
         show cs worried christmas dark flipped
+        pause 0.5
         cs "Well, uh..."
         cs "It's... {nw}"
         show cs christmas dark flipped
@@ -4608,7 +4609,7 @@ label ce_dinner:
     show cs disappointed christmas at left
     with moveinleft
     digi "Hey! K-17? Are you in there?"
-    k17 "Nuh uh!"
+    k17 "Nuh-uh!"
     cs "Do you need... any help at all? We are gonna start the gift exchange here in a few minutes!"
     show cs scared christmas
     show digi shock flipped
