@@ -69,7 +69,6 @@ default persistent.woohoo = 0
 default persistent.controller_id = 0
 default persistent.true_ending = False
 default persistent.defeated_perfect_tate = False
-default persistent.saved_christmas = False
 
 # Achievement progress
 default persistent.seen_original_endings = set()
@@ -87,6 +86,7 @@ default persistent.csb3b_unlocked = False
 # Game unlocks: CE
 default persistent.carrot_game_unlocked = False
 default persistent.reversi_game_unlocked = False
+default persistent.saved_christmas = False
 
 # Register CJK fonts
 define config.font_name_map["cn"] = "ZCOOLKuaiLe-Regular.ttf"
