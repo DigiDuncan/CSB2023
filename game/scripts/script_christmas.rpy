@@ -2706,7 +2706,11 @@ label ce_party_before:
         show cs disappointed christmas dark flipped at right with moveinright
         cs "Hey, uhh..."
         eliza "Is this the right place?"
+        show grace happy dark
+        show anne happy dark
         anne "I think so!"
+        show grace dark
+        show anne dark
         cs "Are you..."
         eliza "I'm Elizabeth. Behind me is Anne and Grace."
         cs "You might have the wrong place. Sorry."
@@ -3136,8 +3140,10 @@ label ce_introductions:
         eliza "Well, we kind of {i}are{/i} Mika."
     else:
         show cs worried christmas
+        show grace happy
         grace "CS! You're that YTP guy!"
         show cs disappointed christmas
+        show grace
         cs "Wait, who are {i}you{/i} three?!"
         eliza "Well, do you know Mika at all?"
     show cs angry christmas
@@ -3147,12 +3153,14 @@ label ce_introductions:
     show cs disappointed christmas
     cs "What about the other two?"
     eliza "They, uh... work for me?"
+    show grace sad
     cs "You guys are so complicated."
     show elizabeth disappointed
     arceus "I mean, it wasn't too hard for {i}me{/i} to figure out, funnily enough."
     show cs disappointed christmas
     n "CS sighs."
     cs "Sorry, everyone. I'm just stressed out a bit."
+    show grace
     cs "I just really want this party to go well, but, at this point, I feel like I don't even know half the people here."
     show elizabeth
     cs "I mean, {i}you{/i} split into three people, {i}Pakoo{/i} split into {i}two...{/i}"
@@ -3773,6 +3781,7 @@ label ce_win_carrot:
     sheriff "... but, no, I {i}had{/i} to become a {i}cop."
     grace "Hey, are you almost done in there?"
     sheriff "Just leave me alone..."
+    show grace sad
     grace "But I really need to go!"
     sheriff "Find another bathroom."
     grace "But this is the only one in the house!"
@@ -3830,7 +3839,7 @@ label ce_win_carrot:
     hide sheriff
     with moveoutleft
     grace "Finally!"
-    show grace flipped
+    show grace worried
     grace "Guys, the sheriff is out!"
     show grace at center with move
     hide grace with dissolve
@@ -3940,6 +3949,7 @@ label ce_mike:
     n "Just at that moment, the doorbell rings."
     show cs happy christmas
     cs "Well, tickle my ballsack! What great timing!"
+    show grace sad
     grace "CS... you {i}can't{/i} just say stuff like that."
     n "CS heads to the front door."
     hide cs with moveoutright
@@ -3976,6 +3986,7 @@ label ce_mike:
     with moveinleft
     show k17 happy flipped
     k17 "Hey, it's Mike! How's it going? Long time no see!"
+    show grace happy
     grace "Oh, my God! I love you, Mike!"
     tate "What's up, Mike?"
     obama "Mike, remember when I pardoned you?"
@@ -3999,6 +4010,7 @@ label ce_mike:
     show arceus festive angry
     arceus "Who?"
     show cs disappointed christmas
+    show grace sad
     grace "How do you not know who Mike the Pizzapotamus is?!" with vpunch
     obama "I mentioned him in my re-election speech!"
     cs "The children love him! He's the best in the world!"
@@ -4007,6 +4019,7 @@ label ce_mike:
     show k17 disappointed flipped
     k17 "He works at the {i}bus stop,{/i} dude!"
     arceus "You mean the bus {i}station?"
+    show grace angry flipped
     grace "No! The bus stop!"
     arceus "Oh, so he drives the bus?"
     show cs angry christmas
@@ -5264,8 +5277,10 @@ label ce_exchange:
             zoom 0.5
         hide gift_avgn
         with dissolve
+        show grace happy
         grace "Ooh! Is this a balance board?"
         avgn "It's a Rolling Rock..."
+        show grace
         avgn "With a Roll & Rocker!"
         hide roll_and_rocker
         hide rolling_rock
@@ -6486,13 +6501,22 @@ label ce_billy_time:
     pause 0.5
 
     scene cs_bathroom_off
-    show grace at mid_right
-    show anne at right
-    with dissolve
+    if d20 == 20:
+        show grace shirt at mid_right
+        show anne at right
+        with dissolve
+    else:
+        show grace at mid_right
+        show anne at right
+        with dissolve
     show tate festive at center
     show tate_phone at manual_pos(0.6, 0.6, 0.5)
     show billy festive flipped at mid_left
     with moveinleft
+    if d20 == 20:
+        show grace happy shirt
+    else:
+        show grace happy
     grace "Hey! You're that TV man!"
     anne "Grace always wanted to buy every product you ever sold."
     billy "You {i}should!{/i} Hi, Billy Mays here for the--"
@@ -6612,11 +6636,18 @@ label ce_billy_time:
     hide tate with dissolve
     pause 0.5
 
-    scene cs_hallway
-    show eliza at mid_right_right
-    show grace at mid_right
-    show anne at right
-    with dissolve
+    if d20 == 20:
+        scene cs_hallway
+        show elizabeth at mid_right_right
+        show grace happy shirt at mid_right
+        show anne happy at right
+        with dissolve
+    else:
+        scene cs_hallway
+        show elizabeth at mid_right_right
+        show grace happy at mid_right
+        show anne happy at right
+        with dissolve
     pause 0.5
 
     show tate festive flipped at mid_left
@@ -6624,10 +6655,13 @@ label ce_billy_time:
     with moveinright
     grace "Yay! The power is back!"
     anne "You did it!"
+    show anne
     show tate festive
     show billy festive flipped
     billy "We sure did!"
+    show elizabeth worried
     eliza "I don't know what kind of technology you could have had to fix this, but... good job!"
+    show elizabeth
     grace "So, Billy, you selling any products for the holidays?"
     billy "You betcha! Meet me by my car after the party!"
     show tate festive flipped
@@ -6964,7 +6998,10 @@ label ce_roof_moment:
     show santa at right with moveinright
     stop sound2
     santa "Ho ho ho! Merry Christmas, everyone!"
-    show grace at mid_right with { "master": easeinleft }
+    if d20 == 20:
+        show grace worried shirt flipped at mid_right with { "master": easeinleft }
+    else:
+        show grace worried flipped at mid_right with { "master": easeinleft }
     dxcom tropes
     grace "{cshake}{i}SAANNNNNTAAA!!!" with hpunch
     grace "{cshake}OH MY {i}GOD!!!" with vpunch
