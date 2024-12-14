@@ -1050,9 +1050,9 @@ label csbiii_arc_escape:
     show sheriff at left 
     play sound sfx_desk_slam
     with vpunch
-    sheriff "Damn it!" with hpunch
+    sheriff "Damn it! " with hpunch
     show sheriff flipped
-    sheriff "Damn it!{fast} And, how did you fuck {i}that{/i} up?" with vpunch
+    extend "And how did you fuck {i}that{/i} up?" with vpunch
     copguy "Look, sir, you see, he--{w=0.25}{nw}"
     sheriff "You know what, I don't want to hear this!"
     sheriff "First, this guy manages to escape from one of our top prisons, and {i}now{/i} you're telling me that you {i}lost{/i} him?!"
@@ -1927,8 +1927,12 @@ label csbiii_west:
         with dissolve
         $ achievement_manager.unlock("ocean_man")
         arceus "Player. {w=0.5}Stop. {w=0.5}Going. {w=0.5}West."
-        $ compass_west_counter = 4
+        $ compass_west_counter = 8
         $ compass_current_shader = ""
+
+    # begin beach episode!
+    elif compass_west_counter == 8:
+        jump beach_start
 
     menu:
         "North":
@@ -1939,6 +1943,3 @@ label csbiii_west:
             jump south_start
         "West":
             jump csbiii_west
-
-
-# # TODO: if we ever do a beach episode, maybe this is direction to go lmao

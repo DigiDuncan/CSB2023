@@ -143,20 +143,20 @@ label ce_tree:
         play sound sfx_box_drag volume 5.0
         show cs
         show tree_box at manual_pos(1.2, 0.8)
-        cs "I just..."
+        cs "I just... "
 
         play sound sfx_box_drag volume 5.0
         show cs angry at right
         show tree_box at manual_pos(0.9, 0.8)
         with { "master" : MoveTransition(0.5) }
-        cs "I just...{fast} need to be..."
+        extend "need to be... "
         $ collect("tree_box")
 
         play sound sfx_box_drag volume 5.0
         show cs pissed at mid_right
         show tree_box at manual_pos(0.8, 0.8)
         with { "master" : MoveTransition(0.5) }
-        cs "I just... need to be...{fast} careful..."
+        extend "careful..."
 
         show cs concentrate
         cs "{sc=1.0}Hnng..."
@@ -425,9 +425,9 @@ label ce_anno:
     cs "Hey Anno, CS here!"
     anno "Yes, I know the party is in two days, you just called me. I'm still coming."
     show cs phone
-    cs "Yeah, I know. I was just wondering...{w=1.0}{nw}"
+    cs "Yeah, I know. I was just wondering... {w=1.0}{nw}"
     show cs happy phone
-    cs "Yeah, I know. I was just wondering...{fast} if you wanted to help me decorate my house!"
+    extend "if you wanted to help me decorate my house!"
     anno "Ah, man, I still have to get something for the gift exchange..."
     show cs disappointed phone
     "..."
@@ -558,8 +558,8 @@ label ce_anno:
     cs "Guess I'd better get to it."
     cs "Let's get to it.{w=0.25}{nw}"
     cs "I'm gonna get to it.{w=0.05}{nw}"
-    cs "I'm gonna get to it.{fast}\nI'm gonna get to it.{w=0.05}{nw}"
-    cs "I'm gonna get to it.\nI'm gonna get to it.{fast}\nI'm gonna get to it.{w=1.0}{nw}"
+    extend "\nI'm gonna get to it.{w=0.05}{nw}"
+    extend "\nI'm gonna get to it.{w=1.0}{nw}"
     pause 2.0
     cs "Faaf."
     pause 0.5
@@ -2343,7 +2343,7 @@ label ce_party_before:
         show digi dark flipped
         cs "Hey, Digi! I didn't know you had a... {nw}"
         show cs disappointed christmas dark flipped
-        cs "Hey, Digi! I didn't know you had a... {fast}spaceship?"
+        extend "spaceship?"
         digi "Oh, yeah, this old thing. It's a bit of a nugget, but it gets the job done."
         cs "Why have I {i}never{/i} seen this before?"
         digi "Was never coming from space before."
@@ -2389,7 +2389,7 @@ label ce_party_before:
         mean "Hey, CS! Merry Christmas!"
         cs "Merry Christmas to you, too... {nw}"
         show cs worried christmas dark flipped
-        cs "Merry Christmas to you, too...{fast} Mean, right?"
+        extend "Mean, right?"
         show mean human happy festive dark flipped
         mean "Yup!"
         show cs disappointed christmas dark flipped
@@ -2406,7 +2406,7 @@ label ce_party_before:
         cs "Well, uh..."
         cs "It's... {nw}"
         show cs christmas dark flipped
-        cs "It's... {fast}nice to finally meet you!"
+        extend "nice to finally meet you!"
         cs "Shall we get inside?"
         show tate festive dark
         show mean human happy festive dark flipped
@@ -2504,27 +2504,27 @@ label ce_party_before:
         stop sound fadeout 5.0
         show cs christmas dark flipped at right with moveinright
         sheriff "God {i}damn{/i} it! {nw}" with vpunch
-        sheriff "God {i}damn{/i} it! {fast}Stupid damn wheels! Stuck in the snow {nw}"
-        sheriff "God {i}damn{/i} it! Stupid damn wheels! Stuck in the snow {fast}{i}again!" with vpunch
+        extend "Stupid damn wheels! Stuck in the snow {nw}"
+        extend "{i}again!" with vpunch
         show cs worried christmas dark flipped
         cs "Woah, hey! Who are you?"
         sheriff "Who am {nw}"
-        sheriff "Who am {fast}{i}I?{/i} {nw}" with vpunch
-        sheriff "Who am {i}I?{/i} {fast}I'm Copguy's {nw}"
-        sheriff "Who am {i}I?{/i} I'm Copguy's {fast}{i}boss,{/i} {nw}" with vpunch
-        sheriff "Who am {i}I?{/i} I'm Copguy's {fast}{i}boss,{/i} {fast}that's who!"
+        extend "{i}I?{/i} {nw}" with vpunch
+        extend "I'm Copguy's {nw}"
+        extend "{i}boss,{/i} {nw}" with vpunch
+        extend "that's who!"
         sheriff "I asked him to pick me up, but apparently he had to go {nw}"
-        sheriff "I asked him to pick me up, but apparently he had to go {fast}{i}shopping,{/i} {nw}" with vpunch
-        sheriff "I asked him to pick me up, but apparently he had to go {i}shopping,{/i} {fast}or some shit!"
+        extend "{i}shopping,{/i} {nw}" with vpunch
+        extend "or some shit!"
         sheriff "So {nw}"
-        sheriff "So {fast}{i}I{/i} {nw}" with vpunch
-        sheriff "So {i}I{/i} {fast}had to take the {nw}"
-        sheriff "So {i}I{/i} had to take the {fast}{i}bus!" with vpunch
+        extend "{i}I{/i} {nw}" with vpunch
+        extend "had to take the {nw}"
+        extend "{i}bus!" with vpunch
         show cs disappointed christmas dark flipped
         cs "Oh, wow, okay. Would you like some help?"
         sheriff "{i}Yes!{/i} {nw}" with vpunch
-        sheriff "{i}Yes!{/i} {fast}I keep getting stuck in the snow! {nw}"
-        sheriff "{i}Yes!{/i} I keep getting stuck in the snow! {fast}Take me inside!" with vpunch
+        extend "I keep getting stuck in the snow! {nw}"
+        extend "Take me inside!" with vpunch
     elif d20 == 11:
         play sound sfx_beam
         n "A familiar sound like a laser beam is heard from outside."
@@ -2563,9 +2563,9 @@ label ce_party_before:
         show k17 dark flipped at mid_mid_left
         with dissolve
         show cs christmas dark flipped at right with moveinright
-        cs "Hey, it's..."
+        cs "Hey, it's... "
         show cs disappointed christmas dark flipped
-        cs "Hey, it's...{fast} two Pakoos?"
+        extend "two Pakoos?"
         show k17 happy dark flipped
         k17 "CS!!!" with vpunch
         show k17 dark flipped
@@ -3070,7 +3070,7 @@ label ce_introductions:
     digi "So, this should go {i}here..."
     linus "No, you've got the wrong cable!"
     luke "You idiots are {nw}"
-    luke "You idiots are {fast}{i}both{/i} wrong! That's not even the right {i}port!" with vpunch
+    extend "{i}both{/i} wrong! That's not even the right {i}port!" with vpunch
     digi "Ohhhhh..." (multiple = 2)
     linus "Ohhhhh..." (multiple = 2)
     pause 1.0
@@ -3179,7 +3179,7 @@ label ce_introductions:
         eliza "Uhh, no?"
         show avgn flipped
         avgn "Good, because it's fucking {nw}"
-        avgn "Good, because it's fucking {fast}{i}ass!" with vpunch
+        extend "{i}ass!" with vpunch
 
     pause 0.5
     scene black with dissolve
@@ -3205,11 +3205,11 @@ label ce_banter:
         sheriff "Don't preheat your oven!"
         copguy "...Thanks?"
         sheriff "For real, though! I need to take a {nw}"
-        sheriff "For real, though! I need to take a {fast}{i}shit!" with vpunch
+        extend "{i}shit!" with vpunch
     else:
         copguy "I know, this party is great, right?"
         sheriff "{i}No!{/i} I need to take a {nw}" with vpunch
-        sheriff "{i}No!{/i} I need to take a {fast}{i}shit!" with vpunch
+        extend "{i}shit!" with vpunch
     copguy "Okay, do you want me to tell the whole house?"
     sheriff "Very funny, smartass! I need you to go with me." with vpunch
     sheriff "My legs don't work, remember?"
@@ -3340,7 +3340,7 @@ label ce_banter:
     if d20 == 20:
         avgn "You know what's {i}bullll{/i}shit?" with hpunch
         avgn "This {i}movie, {nw}" with hpunch
-        avgn "This {i}movie,{/i}{fast} that's {i}what!" with hpunch
+        extend "that's {i}what!" with hpunch
     ed "Hey, guys! What movie are we watching?"
     wesley "{i}Nothing{/i} until these bozos fix the projector!"
     luke "Okay, hold on. I've got an idea."
@@ -3522,8 +3522,8 @@ label ce_banter:
     else:
         k22 "Hey, uhh, how is it going over there?"
     addy "{i}WHAT?! {nw}" with vpunch
-    addy "{i}WHAT?!{/i} {fast}I CAN'T HEAR YOU! {nw}" with vpunch
-    addy "{i}WHAT?!{/i} I CAN'T HEAR YOU! {fast}THE MUSIC IS {i}REALLY{/i} LOUD!" with vpunch
+    extend "I CAN'T HEAR YOU! {nw}" with vpunch
+    extend "THE MUSIC IS {i}REALLY{/i} LOUD!" with vpunch
     show k22 phone angry
     k22 "I WAS ASKING IF--{w=1.0}{nw}"
     addy "YEAH, I'LL CALL YOU LATER! HAVE FUN AT CS' PARTY!"
@@ -3551,8 +3551,8 @@ label ce_banter:
     scene cs_bathroom with dissolve
     pause 0.5
     show k17 at mid_right with moveinright
-    sheriff "Hey!" with vpunch
-    sheriff "Hey! {fast}Is someone there?"
+    sheriff "Hey! " with vpunch
+    extend "Is someone there?"
     k17 "Huh?"
     sheriff "Hey, you! Can you help me out of here?"
     show k17 shock
@@ -3675,7 +3675,7 @@ label ce_win_carrot:
     show cs christmas flipped
     cs "Speaking of cooking, I can smell something... {nw}"
     show cs christmas disappointed
-    cs "Speaking of cooking, I can smell something... {fast}burning..."
+    extend "burning..."
     obama "Is it perhaps the smoke billowing out from the oven?"
     show cs scared christmas flipped
     play sound2 sfx_smoke_alarm
@@ -3786,7 +3786,7 @@ label ce_win_carrot:
     sheriff "Find another bathroom."
     grace "But this is the only one in the house!"
     sheriff "In this mansion? There is only {nw}" with vpunch
-    sheriff "In this mansion? There is only {fast}{i}one{/i} {fast}damn bathroom?!" with vpunch
+    extend "{i}one{/i} damn bathroom?!" with vpunch
     show copguy festive at mid_right with moveinright
     copguy "Hey, sorry, excuse me."
     show copguy festive at center with move
@@ -4144,8 +4144,8 @@ label ce_dinner:
     else:
         nova "Well, I don't want to hear catgirl moans at the dinner table!"
         blank "They're mixed into the instrumentation, you can barely--"
-    cs "Hey!" with hpunch
-    cs "Hey! {fast}Can you two stop fighting, get over here, and eat with us?!"
+    cs "Hey! " with hpunch
+    extend "Can you two stop fighting, get over here, and eat with us?!"
     stop music2
     $ renpy.music.set_pause(False, "music")
     music christmas_spirit
@@ -4574,7 +4574,7 @@ label ce_dinner:
     show cs scared christmas flipped
     digi "What?! {i}How?" with vpunch
     cs "What backwards-ass town do you live in where the {i}better{/i} gas is {nw}"
-    cs "What backwards-ass town do you live in where the {i}better{/i} gas is {fast}{i}cheaper?!" with vpunch
+    extend "{i}cheaper?!" with vpunch
     k22 "See? The super unleaded is the cheapest, then regular, {i}then{/i} premium!"
     hide gas_prices with easeoutbottom
     show digi thinking flipped
@@ -4645,7 +4645,7 @@ label ce_dinner:
     cs "Yeah, Mixer shut down some time ago now... sorry about that."
     show digi sad flipped
     k17 "But, why? {nw}"
-    k17 "But, why? {fast}{i}Why?!" with vpunch
+    extend "{i}Why?!" with vpunch
     k17 "It was, like, the {i}perfect{/i} streaming platform!"
     digi "It {i}was,{/i} but it was {i}also{/i} owned by Microsoft. It was bound to happen."
     show cs worried christmas
@@ -4699,9 +4699,9 @@ label ce_exchange:
     show cs christmas flipped at mid_left with moveinleft
     show cs christmas
     pause 0.5
-    cs "I'm gonna pick..."
+    cs "I'm gonna pick... "
     show gift_arc at manual_pos(0.4, 0.6, 0.5) with { "master": moveinbottom }
-    cs "I'm gonna pick...{fast}  this one!"
+    extend "this one!"
     cs "I got..."
     pause 0.5
     hide gift_arc
@@ -4943,7 +4943,7 @@ label ce_exchange:
     ed "Solid enough for a home's foundation, versatile enough for all kinds of other projects."
     hide cement with dissolve
     sheriff "Great! I can drop this on Copguy's head for {i}leaving{/i} me in the damn {nw}"
-    sheriff "Great! I can drop this on Copguy's head for {i}leaving{/i} me in the damn {fast}{i}bathroom!" with vpunch
+    extend "{i}bathroom!" with vpunch
     hide sheriff with moveoutright
     pause 0.5
     $ collect("cement")
@@ -5248,7 +5248,7 @@ label ce_exchange:
 
     if d20 == 20:
         avgn "Outta my way! {nw}" with hpunch
-        avgn "Outta my way! {fast}It's {i}my{/i} turn!" with hpunch
+        extend "It's {i}my{/i} turn!" with hpunch
         show avgn flipped at mid_left with moveinleft
         show gift_cs at manual_pos(0.4, 0.7, 0.5) with moveinbottom
         avgn "Let's do this!"
@@ -5257,7 +5257,7 @@ label ce_exchange:
         hide gift_cs
         with dissolve
         avgn "This shirt is {nw}"
-        avgn "This shirt is {fast}{i}ass!" with vpunch
+        extend "{i}ass!" with vpunch
         cs "Hey! That was {i}my{/i} gift!"
         avgn "Yeah? Well, you're a poopyhead!"
         hide old_shirt with dissolve
@@ -5465,8 +5465,8 @@ label ce_preclimax:
     show mean human angry festive flipped
     mean "How in the {nw}" with hpunch
     show tate shock festive flipped
-    mean "How in the {fast}{i}fuck{/i} {nw}" with vpunch
-    mean "How in the {i}fuck{/i} {fast}do you keep hurting yourself like this?!" with hpunch
+    extend "{i}fuck{/i} {nw}" with vpunch
+    extend "do you keep hurting yourself like this?!" with hpunch
     show tate sad festive flipped
     tate "{sc=1.0}You think {i}I{/i} know?!"
     pause 0.5
@@ -5532,7 +5532,7 @@ label ce_climax:
     michael "I think I'm going to puke."
     wesley "Arghh! My {i}back!" with hpunch
     wesley "CS, you prick, this is {nw}"
-    wesley "CS, you prick, this is {fast}{i}your{/i} fault!" with hpunch
+    extend "{i}your{/i} fault!" with hpunch
     grace "Guys! Stop yelling!" with hpunch
     show tate sheepish festive flipped
     tate "Y'all, please, let's get it together..."
@@ -5541,7 +5541,7 @@ label ce_climax:
     show mean human angry festive
     anne "Hey!" with hpunch
     mean "What'd you say, you little {nw}"
-    mean "What'd you say, you little {fast}{i}fuck?" with hpunch
+    extend "{i}fuck?" with hpunch
     arceus "Oh, my God, this is hurting my {i}head..."
     show cs pissed christmas
     cs "Damn it, everyone!" with vpunch
@@ -5847,7 +5847,7 @@ label ce_lights_out:
     aria "Calm down, CS. Catch your breath."
     show cs worried christmas flipped
     cs "{sc=1.88}The door, it's... {nw}"
-    cs "{sc=1.88}The door, it's... {fast}{i}all{/i} snow!" with vpunch
+    extend "{i}all{/i} snow!" with vpunch
     show digi shock
     show tate shock festive flipped
     show k17 shock
@@ -5963,8 +5963,8 @@ label ce_point_click:
 
         show mean human angry festive
         mean "That's {nw}"
-        mean "That's {fast}{i}me,{/i} {nw}" with vpunch
-        mean "That's {i}me,{/i} {fast}you dumb fuck!"
+        extend "{i}me,{/i} {nw}" with vpunch
+        extend "you dumb fuck!"
         mean "Try again!"
 
         jump .click_menu
@@ -6167,7 +6167,7 @@ label ce_snowed_in:
     show k17
     mean "Everyone, shut the fuck {i}up!" with hpunch
     mean "There's, like, {nw}"
-    mean "There's, like, {fast}{i}20 feet{/i} of snow out there!" with vpunch
+    extend "{i}20 feet{/i} of snow out there!" with vpunch
     pause 1.0
     n "Everyone goes quiet."
     pause 1.0
@@ -6184,10 +6184,10 @@ label ce_snowed_in:
     mean "You can barely even see the tops of the streetlights out there."
     mean "I'm from {i}Canada,{/i} and I've never seen so much snow."
     blank "I didn't even think you could {i}get{/i} that much snow..."
-    cs "So... that means..."
+    cs "So... that means... "
     show cs christmas
     show flashlight_held
-    cs "So... that means... {fast}we're just gonna have to wait it out!"
+    extend "we're just gonna have to wait it out!"
     show cs happy christmas
     cs "And, what better way to kill time than to play some games?"
     show cs christmas
@@ -6494,7 +6494,7 @@ label ce_billy_time:
     eliza "Yeah, down the hall and to the left."
     tate "Thank you... {nw}"
     show tate sheepish festive
-    tate "Thank you... {fast}Mika?"
+    extend "Mika?"
     eliza "It's Elizabeth, but sure."
     hide screen dxcom
     hide tate
@@ -6600,7 +6600,7 @@ label ce_billy_time:
     pause 1.0
     tate "Wh-- {nw}"
     show tate shock festive
-    tate "Wh-- {fast}{i}how?!" with vpunch
+    extend "{i}how?!" with vpunch
     billy "Like {i}magic!"
     show tate sheepish festive
     tate "How... how does this even {i}work,{/i} Billy?"
@@ -6875,7 +6875,7 @@ label ce_roof_moment:
     copguy "That should work!"
     k17 "SoS? Nice DaThings reference."
     k22 "You {i}idiot,{/i} {nw}" with vpunch
-    k22 "You {i}idiot,{/i} {fast}it's an emergency code! If any airplanes see us--"
+    extend "it's an emergency code! If any airplanes see us--"
     k17 "Yeah, I know. I was just making a joke."
     k22 "Also, DaThings is a girl now."
     k17 "{i}Huh?!" with vpunch
@@ -6898,7 +6898,7 @@ label ce_roof_moment:
     aria "Is that..."
     digi "It {i}has{/i} to be Santa! I think he's really up there!"
     if fun_value(FUN_VALUE_COMMON):
-        wesley "What?! I got eyes like a hawk! Two of them, and I {i}still{/i} don't see him!"        
+        wesley "What?! I got eyes like a hawk! Two of 'em, and I {i}still{/i} don't see him!"        
     else:
         wesley "What?! I don't hear or see anything! Where?"
     cs "Hold on... I have an idea!"
@@ -7440,7 +7440,7 @@ label ce_roof_moment:
         show avgn dark flipped at mid_right with moveinright
         avgn "Man, this party was {nw}"
         show cs disappointed christmas dark
-        avgn "Man, this party was {fast}{i}ass!" with vpunch
+        extend "{i}ass!" with vpunch
         # NOTE: Digi and I thought this was so hilarious we decided to have him moonwalk. - pak
         hide avgn with moveoutleft
     pause 0.5

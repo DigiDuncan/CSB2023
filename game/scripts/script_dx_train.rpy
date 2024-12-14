@@ -796,40 +796,40 @@ label train_boarding:
     show tate srs flipped
     tate "A little...?"
     show cs worried
-    cs "You know, just a little-- {i}uhHH!{w=0.25}{nw}"
+    cs "You know, just a little-- {nw}"
     play sound sfx_punch
     $ renpy.music.set_volume(0)
-    show cs scared at mid_offscreen_left
     show tate shock flipped
-    with hpunch
-    show cs concentrate
-    show tate shock flipped at right with MoveTransition(0.25)
+    show cs scared
+    show cs concentrate at manual_pos(0.4, 1.5, 1.0):
+        linear 0.25 rotate -10
+    show tate shock flipped at right
+    with { "master": MoveTransition(0.25) }
+    extend "{i}uhHH!{w=0.5}{nw}" with hpunch 
     play sound sfx_lupin_stinger volume 0.8
-    show lupin run at mid_mid_left:
-        xanchor 0 yanchor 0
-        xpos 200 ypos 322
+    show lupin run at manual_pos(0.6, 1.0, 1.0)
     with dissolve
+    
     n "CS is knocked to the ground as a stranger sprints down the corridor!"
     lupin_offscreen "Sorry, pretty kitty! I've gotta {i}run!"
-    show lupin run flipped:
-        xanchor 0 yanchor 0
+    show lupin run flipped at manual_pos(0.6, 0.2, 1.0) with MoveTransition(0.75):
         parallel:
             linear 0.75 zoom 0
         parallel:
-            linear 1.0 xpos 1700
-        parallel:
-            linear 1.0 ypos 0
-    hide lupin with dissolve
+            linear 0.75 alpha 0
     n "The weird guy hurries away."
+    hide lupin
     pause 0.25
     $ renpy.music.set_volume(100)
     tate "Oh,{w=-0.25} my God! CS, are you alright?!"
     cs "Y-{w=0.1}Yeah..."
+    show cs disappointed behind tate
     cs "More surprised than anything."
-    show tate shock flipped at left with moveinleft
+    show tate shock flipped at mid_mid_left with moveinleft
     n "Tate helps CS up from the floor."
 
-    show cs concentrate at left
+    show cs concentrate at manual_pos(0.5, 1.1, 1.0):
+        linear 1.0 rotate 0
     show tate sheepish flipped at center
     with MoveTransition(1.0)
 
@@ -839,13 +839,9 @@ label train_boarding:
     tate "Y'know, maybe it's our own fault, for just standing out here while people are boarding."
     tate "Let's go into y'all's room."
     cs "Yeah, good idea."
-    show tate sheepish
-    pause 0.25
-
-    hide tate
-    hide cs
-    with moveoutright
-
+    show tate sheepish at offscreenright with move
+    show cs disappointed at manual_pos(1.5, 1.1, 1.0) with move
+    pause 0.5
     scene black with dissolve
     jump train_enter_sleeper
 
@@ -1754,8 +1750,8 @@ label train_allow_staff:
     cs "Do we really have a choice? It's clear that they don't want you interfering."
     show tate furious
     tate "Sometimes, {i}interfering{/i} {nw}" with vpunch
-    tate "Sometimes, {i}interfering{/i} {fast}is the only way things get {nw}"
-    tate "Sometimes, {i}interfering{/i} is the only way things get {fast}{i}done!" with vpunch
+    extend "is the only way things get {nw}"
+    extend "{i}done!" with vpunch
     show arceus angry
     arceus "Okay, I am {i}not{/i} about to spend the rest of this trip listening to you two bickering."
     arceus "Let's just let them do the investigation, and if we get it back, we get it back."
@@ -2007,8 +2003,8 @@ label train_search_cs:
     lupin_offscreen "They don't know it, but they'd be my {i}perfect{/i} accomplice!"
     hide amtrak_dining_food with dissolve
     pause 1.0
-    lupin_offscreen "Mmmm...{done} {i}Burp!{/i}" 
-    lupin_offscreen "Mmmm...{fast} {i}Burp!{/i}" with hpunch
+    lupin_offscreen "Mmmm... " 
+    extend "{i}Burp!{/i}" with hpunch
     lupin_offscreen "Oh, pardon me!"
     lupin_offscreen "I guess asking them on a dinner date would be a bad idea. They'd totally out-cook the chef!"
     lupin_offscreen "I wonder if they like movies..." 
@@ -3205,7 +3201,7 @@ label train_lupin_win:
         show mean human angry
         show amtrak_conductor flipped
         mean "You filthy {i}rat! {nw}" with vpunch
-        mean "You filthy {i}rat! {fast}You tried to frame two innocent guys for your crime, too?!"
+        extend "You tried to frame two innocent guys for your crime, too?!"
         lupin "Wait, that's a {i}guy?!"
         show cs angry
         show arceus angry flipped
@@ -3874,7 +3870,7 @@ label train_tate_ex_win:
     tate "{sc}{size=+36}YOU TOLD ME I'D BE IMPORTANT!" with vpunch
     tate "{sc}{size=+36}YOU TOLD ME I'D HAVE A GOOD ENDING!" with vpunch
     tate "{sc}{size=+36}WAS IT ALL JUST A FUCKING {w=0.05}{nw}" with vpunch
-    tate "{sc}{size=+36}WAS IT ALL JUST A FUCKING {fast}{i}LIE?!" with vpunch
+    extend "{i}LIE?!" with vpunch
     "..."
     hide tate_fallen_2
     show tate_fallen_3 at manual_pos(0.5, 0.65, 0.5)

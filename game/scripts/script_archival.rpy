@@ -136,12 +136,12 @@ label archival:
     with ease
     n "CS quickly stands up. The others stare silently at him for a moment."
     pause 1.0
-    k207 "Shit!" with hpunch
-    k207 "Shit!{fast} Dude, that's him! He's {i}here!" 
+    k207 "Shit! " with hpunch
+    extend "Dude, that's him! He's {i}here!" 
     show cs scared
     cs "Okay, wait! Hold on a second!"
-    k174 "{i}What the FUCK?!{w=0.25}{nw}" with hpunch
-    k174 "{i}What the FUCK?!{fast} Why does he look like that?{/i}"
+    k174 "{i}What the FUCK?! {nw}" with hpunch
+    extend "Why does he look like that?{/i}"
     show cs disappointed
     cs "Damn, okay, now I just feel insulted."
     k199 "Dude, just... find something here to knock him out, or whatever!"
@@ -296,9 +296,9 @@ label archival:
     n "A blue car is parked just outside the house."
     show carguya at right with moveinright
     play sound sfx_nice_car
-    carguy_nobeep "Nice car!"
+    carguy_nobeep "Nice car! "
     play sound "<from 0 to 0.85>sfx/sfx_not_so_nice_scratch.ogg"
-    carguy_nobeep "Nice car!{fast} Nooooot so--{nw}"
+    extend "Nooooot so--{nw}"
     show cs scared at right
     show carguya at offscreenright:
         linear 0.1 xzoom -1

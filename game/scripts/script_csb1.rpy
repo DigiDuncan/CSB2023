@@ -505,8 +505,8 @@ label csbi_room:
     wesley "How about we burn down the house?"
     rich "Eh..."
     show wesley flipped
-    ed "Are you insane?!" with vpunch
-    ed "Are you insane?!{fast} We are a {i}home repair company!{/i}"
+    ed "Are you insane?! {nw}" with vpunch
+    extend "We are a {i}home repair company!{/i}"
     ed "We have a reputation to uphold!"
     wesley "{i}Do{/i} we? After all of those videos he put out making fun of us?"
     show wesley
@@ -900,10 +900,10 @@ label csbi_end:
     show cs angry flipped at right with moveinright
     cs "Which way to the elevator?"
     cs "{i}Now!"
-    worker_5 "Uhh..."
+    worker_5 "Uhh... {nw}"
     hide worker_5
     show worker_5alt at left
-    worker_5 "Uhh...{fast} that way!"
+    extend "that way!"
     cs "Thanks! And, also..."
     n "CS clocks the worker in the face!"
     show cs angry flipped at left

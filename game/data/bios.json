@@ -46,8 +46,8 @@
             "Happy": "images/characters/ag/anne_happy.png",
             "Angry": "images/characters/ag/anne_angry.png"
         },
-        "quote": "Don't get cocky kid.",
-        "bio": "Been round for some time, still has her Union uniform! Married to Grace.",
+        "quote": "Don't get cocky, kid.",
+        "bio": "Been 'round for some time. Still has her Union uniform! Married to Grace.",
         "ce": true
     },
     "anno": {
@@ -436,8 +436,8 @@
             "Disappointed": "images/characters/eliza/eliza_disappointed.png",
             "Worried": "images/characters/eliza/eliza_worried.png"
      },
-        "quote": "Uh, uh... negative, negative. We had a reactor leak here now. Give us a few minutes to lock it down. Large leak, very dangerous.",
-        "bio": "Been round for a bit less than Anne and Grace, served her country proud! Mostly a loner who directs Anne and Grace.",
+        "quote": "Uh, uh... negative, negative. We had a reactor leak here. Now give us a few minutes to lock it down. Large leak, very dangerous.",
+        "bio": "Been 'round for a bit less than Anne and Grace, served her country proud! Mostly a loner who directs Anne and Grace.",
         "ce": true
     },
     "ges": {
@@ -477,7 +477,7 @@
             "CShirt: Worried": "images/characters/ag/grace_worried_shirt.png"
         },
         "quote": "Hokey religions and ancient weapons are no match for a good blaster at your side, kid.",
-        "bio": "Been round for some time, still has her cowboy hat and six shooter. Happily married to Anne.",
+        "bio": "Been 'round for some time, still has her cowboy hat and six-shooter. Happily married to Anne.",
         "ce": true
     },
     "green": {
