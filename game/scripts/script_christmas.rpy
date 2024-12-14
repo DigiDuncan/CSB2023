@@ -5502,9 +5502,12 @@ label ce_climax:
     show k17 disappointed
     show cs angry christmas
     show mean human annoyed festive
-    cs "If you hated my party so much, then just leave!"
     if fun_value(FUN_VALUE_COMMON):
-        cs "If you hated my party so much, then you can just fucking die!" # NOTE: This is supposed to be a reference to the Comfort Click video, but I don't know if he'll read it like that. - pak
+        cs "If you hated my party so much..."
+        play sound sfx_fucking_die
+        cs_nobeep "You can just fucking die!"
+    else:
+        cs "If you hated my party so much, then just leave!"
     nova "Well, I'm {i}also{/i} leaving, because {i}this{/i} asshole won't let me play any {i}good{/i} music!" with hpunch
     blank "Hah! Says you! {i}You{/i} just wanted to play {i}your{/i} trash for the entire party!" with hpunch
     show projector_airplay behind cs:
@@ -6894,7 +6897,10 @@ label ce_roof_moment:
     k17 "Yeah! Right there! I see it!"
     aria "Is that..."
     digi "It {i}has{/i} to be Santa! I think he's really up there!"
-    wesley "What?! I don't hear or see anything! Where?"
+    if fun_value(FUN_VALUE_COMMON):
+        wesley "What?! I got eyes like a hawk! Two of them, and I {i}still{/i} don't see him!"        
+    else:
+        wesley "What?! I don't hear or see anything! Where?"
     cs "Hold on... I have an idea!"
     ed "Yeah! I can see him clear as day!"
     ed "There's Rudolph at the end! See that red light?"
