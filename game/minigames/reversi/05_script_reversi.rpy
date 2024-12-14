@@ -138,6 +138,9 @@ label play_reversigame:
     window hide
     $ quick_menu = False
     play music ce_passport volume 0.75 if_changed
+    $ persistent.heard.add("ce_passport")
+    music ce_passport
+    hide screen music
     call screen reversigame
     stop music
     $ quick_menu = True
