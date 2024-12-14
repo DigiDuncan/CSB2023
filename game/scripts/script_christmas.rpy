@@ -3464,7 +3464,7 @@ label ce_banter:
     show copguy festive flipped with determination
     show copguy festive flipped at offscreenright with { "master" : MoveTransition(0.25) }
     sheriff "God {i}damn{/i} it! {nw}" with vpunch
-    sheriff "God {i}damn{/i} it! {fast}{cshake}Get {i}back{/i} here!" with vpunch
+    sheriff "God {i}damn{/i} it! {fast}{cshake}Get {i}back{/i} here!" with vpunch # extend does not work with custom tags sadly - tate
     pause 3.0
     sheriff "\"Don't move...\""
     sheriff "Thanks, Copguy. You're a {i}real{/i} fuckin' {i}comedian."
