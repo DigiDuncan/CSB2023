@@ -7450,25 +7450,23 @@ label ce_roof_moment:
     show cs surprised christmas
     cs "I wonder if Anno would be willing to help again..."
     show cs christmas
-    play music title_theme_reprise
-    music title_theme_reprise
     cs "For now, I should probably get to streaming."
     show cs happy christmas
     cs "Those car crash compilations aren't gonna watch themselves!"
-    # TODO: replace this next line with book close animation
-    hide cs with { "master": moveoutright }
-    play music "<from 0.0 to 23.420>title_theme_reprise.ogg"
-    n "As CS enters his room to start his livestream, our story here comes to a close."
-    # TODO: remove this next line when book is in
-    show black with { "master": Dissolve(10.0) }
-    n "It wasn't the Christmas that CS expected, and, certainly, not everything went according to plan."
-    n "In spite of it all, with the help of his friends, it was one of the jolliest times he's ever had."
-    n "Merry Christmas to all, and to all, a good night!"
+    scene black
+    $ renpy.movie_cutscene(ce_ending)
+    #    hide cs with { "master": moveoutright }
+    #    play music "<from 0.0 to 23.420>title_theme_reprise.ogg"
+    #    n "As CS enters his room to start his livestream, our story here comes to a close."
+    #    show black with { "master": Dissolve(10.0) }
+    #    n "It wasn't the Christmas that CS expected, and, certainly, not everything went according to plan."
+    #    n "In spite of it all, with the help of his friends, it was one of the jolliest times he's ever had."
+    #    n "Merry Christmas to all, and to all, a good night!"
     $ achievement_manager.unlock("hoh_hoh")
     $ ending_manager.mark("christmas")
-    scene black with dissolve
 
-    call screen credits_roll(route="CSBIII DX: Holiday Special", bgm="<from 23.420>title_theme_reprise.ogg", scroll_start = 12250, duration=90)
+
+    call screen credits_roll(route="CSBIII DX: Holiday Special", bgm="<from 28.700>title_theme_reprise.ogg", scroll_start = 12000, duration=90)
 
     jump ce_epilogue
 
