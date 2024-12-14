@@ -10,29 +10,42 @@ screen _dxcom(c):
         at dxcom_appear
         xsize 1920
         yminimum 10
-        ymaximum 560
+        ymaximum 175
 
-        hbox:
-            spacing 20
-            add "gui/dxcom_icon_static.png":
-                xysize(120, 120)
-                xpos 15
-                yalign 0.5
-            null width 15
-            text c.full_text:
-                size 32
-                xmaximum 1700
-                font FontGroup().add("fonts/DIN-Medium.ttf", 0x0000, 0x024F).add("CP_Font_1.otf", 0x2E80, 0xDFFF).add("fonts/OpenSans-Regular.ttf", 0x0000, 0xffff)
-                layout "greedy"
-                color c.color
+        vbox:
+            hbox:
+                spacing 20
+                add "gui/dxcom_icon_static.png":
+                    xysize(120, 120)
+                    xpos 15
+                    yalign 0.5
+                null width 15
+                text c.full_text:
+                    size 32
+                    xmaximum 1700
+                    font FontGroup().add("fonts/DIN-Medium.ttf", 0x0000, 0x024F).add("CP_Font_1.otf", 0x2E80, 0xDFFF).add("fonts/OpenSans-Regular.ttf", 0x0000, 0xffff)
+                    layout "greedy"
+                    color c.color
+    frame:
+        xsize 46
+        ysize 46
+        xalign 1.0
+        yalign 0.0
+        textbutton "X":
+            xalign 0.5
+            yalign 0.5
+            text_align 0.5
+            text_size 28
+            action [ Hide('_dxcom'), Stop("dxcom"), SetVariable("current_dxcom", None) ]
 
     timer c.length action Hide('_dxcom')
 
 transform dxcom_appear:
+    alpha 0.0
+    xalign 0.0
+    yalign 0.05
+
     on show:
-        alpha 0.0
-        xalign 0.0
-        yalign 0.05
         linear 0.25 alpha 1.0
     on hide:
         linear 0.25 alpha 0.0
