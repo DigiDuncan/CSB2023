@@ -124,7 +124,8 @@
             "Executive Producer": ["SurgeTheRaichu"],
             "Reality Repair Expert": ["Iris"],
             "Technical Support": ["blanknam3d"],
-            "Brick Thrower": ["Lotus"]
+            "Brick Thrower": ["Lotus"],
+            "Active Hindrance": ["meancarnavor"]
         },
 
         "Special Thanks": {
@@ -177,8 +178,7 @@
         "_more_programming": {
             "Kinetic Text Tags": ["Daniel Westfall"],
             "Codex": ["Skolatztika"],
-            "Achievements System Assistance": ["KiloOscarSix"],
-            "Pixellated Transition Programming": ["AxelKong"]
+            "Achievements System Assistance": ["KiloOscarSix"]
         },
 
         "_testing": {
@@ -191,7 +191,6 @@
             "Arceus": ["UndeadKitty"],
             "Kitty": [""],
             "Aria": ["Aria \"Estroteric\""],
-            "Pakoo": ["Pakoo"],
             "Addy": [""],
             "K-22": [""],
             "K-17": [""],
@@ -239,6 +238,8 @@
         "Music": { "DO NOT PUT ANYTHING HERE": ["READ MUSIC FROM JUKEBOX JSON"] },
 
         "_misc": {
+            "Fun Value Consultant": ["Aria \"Estroteric\""],
+            "Active Hindrance": ["meancarnavor"],
             "In Loving Memory /j": ["ItsNovaHere"],
             "Executive Producer": ["SurgeTheRaichu"]
         },

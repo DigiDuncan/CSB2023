@@ -22,8 +22,13 @@ transform credit_scroll(starting = 0, duration = 60):
     # this end position is always the same, do not change it
     linear duration ypos 1075
 
-screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scroll_start = 25500, duration = 343):
-    on "show" action Play("music", bgm, loop=False, if_changed=True)
+screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scroll_start = 25500, duration = 343, replace_music = False):
+    on "show":
+        if replace_music == True:
+            action Play("music", bgm, loop=False, if_changed=True)
+
+    if bgm:
+        $ persistent.heard.add(bgm)
 
     #only get tracks for a given route, or if none specified/invalid tag, get everything
     python:
@@ -35,16 +40,11 @@ screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scro
             else:
                 if route in music_map[song]["tags"]:
                     jukebox_presort.update({ song : { "title": music_map[song]["title"], "artist": music_map[song]["artist"] } })
-     
+
             jukebox_sorted = dict(sorted(jukebox_presort.items(), key = lambda a: (a[1]["artist"].lower(), a[1]["title"].lower())))
 
     modal True
     zorder 1
-
-    for b in music_map:
-        if music_map[b]["file"] == bgm and b not in persistent.heard:
-            $ persistent.heard.add(b)
-            break
 
     # by default, show the full game's credits. this will allow us to write credits per-route at a later date.
     # chosen route MUST match jukebox JSON tagging
@@ -56,7 +56,7 @@ screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scro
         xsize 1920
         xalign 0.5
 
-        ##### BEGIN CONTENTS ##### 
+        ##### BEGIN CONTENTS #####
         frame at credit_scroll(scroll_start, duration):
             background None
             xalign 0.5
@@ -107,7 +107,7 @@ screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scro
                                     yalign 0.5
                                     size 64
                                     font "impact.ttf"
-                            
+
                             for subcategory in credits_map[route][category]:
 
                                 # Handling for everything EXCEPT cast, special thanks, music, logo
@@ -116,7 +116,7 @@ screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scro
                                     if category != "Music":
                                         hbox:
                                             xsize 1600
-                                            
+
                                             $ sub_text = subcategory
 
                                             # manually hide awawa mode / CS 3D / digi sprite if unseen
@@ -175,7 +175,7 @@ screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scro
 
                                             hbox:
                                                 xsize 1600
-                                                frame:  
+                                                frame:
                                                     background None
                                                     xsize 900
                                                     text "{font=credits_music}"+title:
@@ -197,7 +197,7 @@ screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scro
                                             image credits_map[route][category][subcategory][0]:
                                                 xalign 0.5
                                                 yalign 0.5
-                                
+
                                 # for cast
                                 elif category == "Cast":
                                     vbox:
@@ -221,7 +221,7 @@ screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scro
                                                 $ char_text = obfuscator(c)
                                             else:
                                                 $ char_text = c
-                                   
+
                                             text char_text:
                                                 xalign 0.5
                                                 yalign 0.5
@@ -230,7 +230,7 @@ screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scro
                                 elif category == "Special Thanks":
                                     vbox:
                                         xsize 1600
-                                        
+
                                         $ thanks_text = subcategory
                                         $ thanks_for_text = credits_map[route][category][subcategory][0]
 

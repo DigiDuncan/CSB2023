@@ -5947,7 +5947,7 @@ label ce_point_click:
         show mean human shocked festive
         mean "That's... your flashlight."
         mean "How the {i}fuck{/i} did you point your flashlight {i}at{/i} your flashlight?"
-        
+
         jump .click_menu
 
     ### clicked on mean
@@ -6898,7 +6898,7 @@ label ce_roof_moment:
     aria "Is that..."
     digi "It {i}has{/i} to be Santa! I think he's really up there!"
     if fun_value(FUN_VALUE_COMMON):
-        wesley "What?! I got eyes like a hawk! Two of 'em, and I {i}still{/i} don't see him!"        
+        wesley "What?! I got eyes like a hawk! Two of 'em, and I {i}still{/i} don't see him!"
     else:
         wesley "What?! I don't hear or see anything! Where?"
     cs "Hold on... I have an idea!"
@@ -7505,7 +7505,12 @@ label ce_roof_moment:
     show cs happy christmas
     cs "Those car crash compilations aren't gonna watch themselves!"
     scene black
-    $ renpy.movie_cutscene(ce_ending)
+    $ _skipping = False
+    $ renpy.choice_for_skipping()
+    play music "<from 0 to 28.700>title_theme_reprise.ogg" noloop if_changed
+    queue music "<from 28.700>title_theme_reprise.ogg" noloop
+    # TODO: REPLACE THIS VIDEO TO ONE WITHOUT BGM. MUSIC IS OTHERWISE WORKING NOW IN-ENGINE
+    $ renpy.movie_cutscene(ce_ending, stop_music=False)
     #    hide cs with { "master": moveoutright }
     #    play music "<from 0.0 to 23.420>title_theme_reprise.ogg"
     #    n "As CS enters his room to start his livestream, our story here comes to a close."
@@ -7516,14 +7521,16 @@ label ce_roof_moment:
     $ achievement_manager.unlock("hoh_hoh")
     $ ending_manager.mark("christmas")
 
-    call screen credits_roll(route="CSBIII DX: Holiday Special", bgm="<from 28.700>title_theme_reprise.ogg", scroll_start = 12250, duration=84)
+    call screen credits_roll(route="CSBIII DX: Holiday Special", scroll_start = 12675, duration=84)
 
     jump ce_epilogue
 
 # Epilogue
 label ce_epilogue:
+    $ _skipping = True
     # attempted to fade this in better
     scene black
+    pause 2.0
     show billycar1 at Move((-1.5, -1.0), (0.0, -1.25), 10, repeat=False, bounce=False, xanchor="left", yanchor="top"):
         zoom 2.5
     with dissolve
