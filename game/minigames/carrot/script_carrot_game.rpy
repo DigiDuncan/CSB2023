@@ -353,7 +353,9 @@ label play_carrotgame:
         pause 1.0
         show rating_superb at manual_pos(0.8, 0.8, 1.0)
         $ persistent.heard.add("rhythm_heaven_superb")
-        play music "minigames/carrot/superb_music.ogg"
+        play music "minigames/carrot/superb_music.ogg" if_changed
+        music rhythm_heaven_superb
+        hide music
         $ achievement_manager.unlock("shitdown")
         $ achievement_manager.unlock("paradise")
         pause
@@ -374,7 +376,9 @@ label play_carrotgame:
         pause 1.0
         show rating_ok at manual_pos(0.8, 0.8, 1.0)
         $ persistent.heard.add("rhythm_heaven_ok")
-        play music "minigames/carrot/ok_music.ogg"
+        play music "minigames/carrot/ok_music.ogg" if_changed
+        music rhythm_heaven_ok
+        hide music
         $ achievement_manager.unlock("shitdown")
         pause
         hide screen carrotresults
@@ -395,7 +399,9 @@ label play_carrotgame:
         pause 1.0
         show rating_try_again at manual_pos(0.8, 0.8, 1.0)
         $ persistent.heard.add("rhythm_heaven_try_again")
-        play music "minigames/carrot/try_again_music.ogg"
+        play music "minigames/carrot/try_again_music.ogg" if_changed
+        music rhythm_heaven_try_again
+        hide music
         pause
         hide screen carrotresults
         window auto True
