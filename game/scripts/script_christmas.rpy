@@ -7465,8 +7465,7 @@ label ce_roof_moment:
     $ achievement_manager.unlock("hoh_hoh")
     $ ending_manager.mark("christmas")
 
-
-    call screen credits_roll(route="CSBIII DX: Holiday Special", bgm="<from 28.700>title_theme_reprise.ogg", scroll_start = 12000, duration=90)
+    call screen credits_roll(route="CSBIII DX: Holiday Special", bgm="<from 28.700>title_theme_reprise.ogg", scroll_start = 12250, duration=84)
 
     jump ce_epilogue
 
