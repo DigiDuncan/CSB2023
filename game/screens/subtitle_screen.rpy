@@ -8,20 +8,20 @@ screen _dxcom(c):
 
     frame:
         at dxcom_appear
-        xysize(1920, 150)
+        xsize 1920
+        yminimum 10
+        ymaximum 560
 
-        add "gui/dxcom_icon_static.png":
-            xysize(120, 120)
-            pos (15, 15)
-
-        vbox:
-            xysize(1750, 230)
-            pos (140, 10)
-            spacing 15
-
+        hbox:
+            spacing 20
+            add "gui/dxcom_icon_static.png":
+                xysize(120, 120)
+                xpos 15
+                yalign 0.5
+            null width 15
             text c.full_text:
                 size 32
-                xmaximum 1750
+                xmaximum 1700
                 font FontGroup().add("fonts/DIN-Medium.ttf", 0x0000, 0x024F).add("CP_Font_1.otf", 0x2E80, 0xDFFF).add("fonts/OpenSans-Regular.ttf", 0x0000, 0xffff)
                 layout "greedy"
                 color c.color
