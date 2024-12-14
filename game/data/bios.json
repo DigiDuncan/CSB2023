@@ -40,14 +40,14 @@
     },
     "anne": {
         "full_name": "Anne",
-        "pronouns": "(???)",
+        "pronouns": "(she/her)",
         "sprites": { 
             "Neutral": "images/characters/ag/anne.png",
             "Happy": "images/characters/ag/anne_happy.png",
             "Angry": "images/characters/ag/anne_angry.png"
         },
-        "quote": "???",
-        "bio": "Placeholder text for now.",
+        "quote": "Don't get cocky kid.",
+        "bio": "Been round for some time, still has her Union uniform! Married to Grace.",
         "ce": true
     },
     "anno": {
@@ -430,14 +430,14 @@
     },
     "eliza": {
         "full_name": "Elizabeth",
-        "pronouns": "(???)",
+        "pronouns": "(she/her)",
         "sprites": { 
             "Neutral": "images/characters/eliza/eliza.png",
             "Disappointed": "images/characters/eliza/eliza_disappointed.png",
             "Worried": "images/characters/eliza/eliza_worried.png"
      },
-        "quote": "???",
-        "bio": "Placeholder text for now.",
+        "quote": "Uh, uh... negative, negative. We had a reactor leak here now. Give us a few minutes to lock it down. Large leak, very dangerous.",
+        "bio": "Been round for a bit less than Anne and Grace, served her country proud! Mostly a loner who directs Anne and Grace.",
         "ce": true
     },
     "ges": {
@@ -463,7 +463,7 @@
     },
     "grace": {
         "full_name": "Grace",
-        "pronouns": "(???)",
+        "pronouns": "(she/her)",
         "sprites": { 
             "Default: Neutral": "images/characters/ag/grace.png",
             "Default: Happy": "images/characters/ag/grace_happy.png",
@@ -476,8 +476,8 @@
             "CShirt: Angry": "images/characters/ag/grace_angry_shirt.png",
             "CShirt: Worried": "images/characters/ag/grace_worried_shirt.png"
         },
-        "quote": "???",
-        "bio": "Placeholder text for now.",
+        "quote": "Hokey religions and ancient weapons are no match for a good blaster at your side, kid.",
+        "bio": "Been round for some time, still has her cowboy hat and six shooter. Happily married to Anne.",
         "ce": true
     },
     "green": {
