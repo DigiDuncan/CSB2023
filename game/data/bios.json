@@ -41,7 +41,11 @@
     "anne": {
         "full_name": "Anne",
         "pronouns": "(???)",
-        "sprites": { "Default": "images/characters/anne.png" },
+        "sprites": { 
+            "Neutral": "images/characters/ag/anne.png",
+            "Happy": "images/characters/ag/anne_happy.png",
+            "Angry": "images/characters/ag/anne_angry.png"
+        },
         "quote": "???",
         "bio": "Placeholder text for now.",
         "ce": true
@@ -461,8 +465,16 @@
         "full_name": "Grace",
         "pronouns": "(???)",
         "sprites": { 
-            "Default": "images/characters/grace.png",
-            "CShirt": "images/characters/grace_shirt.png"
+            "Neutral": "images/characters/ag/grace.png",
+            "Happy": "images/characters/ag/grace_happy.png",
+            "Sad": "images/characters/ag/grace_sad.png",
+            "Angry": "images/characters/ag/grace_angry.png",
+            "Worried": "images/characters/ag/grace_worried.png",
+            "CShirt": "images/characters/ag/grace_shirt.png",
+            "CShirt Happy": "images/characters/ag/grace_happy_shirt.png",
+            "CShirt Sad": "images/characters/ag/grace_sad_shirt.png",
+            "CShirt Angry": "images/characters/ag/grace_angry_shirt.png",
+            "CShirt Worried": "images/characters/ag/grace_worried_shirt.png"
         },
         "quote": "???",
         "bio": "Placeholder text for now.",
