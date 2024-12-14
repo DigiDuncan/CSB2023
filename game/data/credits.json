@@ -59,6 +59,9 @@
             "Kitty": [""],
             "Aria": ["Aria \"Estroteric\""],
             "Pakoo": ["Pakoo"],
+            "Addy": [""],
+            "K-22": [""],
+            "K-17": [""],
             "Bubble": ["BubbleTheSlime"],
             "Tate": ["Tate \"alleZSoyez\""],
             "Tate EX": [""],
@@ -105,6 +108,10 @@
             "Soundtrack Management": ["Pakoo"],
             "Beep Management": ["Pakoo"],
             "Addt'l Audio Assistance": ["DigiDuncan", "4Bakers", "Tate \"alleZSoyez\"", "blanknam3d"]
+        },
+
+        "_voice": {
+            "Voice Acting": ["meancarnavor"]
         },
 
         "Music": { "DO NOT PUT ANYTHING HERE": ["READ MUSIC FROM JUKEBOX JSON"] },
@@ -185,6 +192,9 @@
             "Kitty": [""],
             "Aria": ["Aria \"Estroteric\""],
             "Pakoo": ["Pakoo"],
+            "Addy": [""],
+            "K-22": [""],
+            "K-17": [""],
             "Tate": ["Tate \"alleZSoyez\""],
             "Mean (Human)": ["Mushroom Man"],
             "Ges": ["Mikapara"],
@@ -221,6 +231,11 @@
             "Beep Management": ["Pakoo"],
             "Addt'l Audio Assistance": ["DigiDuncan", "4Bakers", "Tate \"alleZSoyez\"", "blanknam3d"]
         },
+
+        "_voice": {
+            "Voice Acting": ["meancarnavor"]
+        },
+
 
         "Music": { "DO NOT PUT ANYTHING HERE": ["READ MUSIC FROM JUKEBOX JSON"] },
 

@@ -7468,7 +7468,7 @@ label ce_roof_moment:
     $ ending_manager.mark("christmas")
     scene black with dissolve
 
-    call screen credits_roll(route="CSBIII DX: Holiday Special", bgm="<from 23.420>title_theme_reprise.ogg", scroll_start = 12000, duration=90)
+    call screen credits_roll(route="CSBIII DX: Holiday Special", bgm="<from 23.420>title_theme_reprise.ogg", scroll_start = 12250, duration=90)
 
     jump ce_epilogue
 
