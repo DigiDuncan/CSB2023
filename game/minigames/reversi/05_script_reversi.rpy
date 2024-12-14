@@ -148,9 +148,11 @@ label play_reversigame:
         n "You scored [w], [reversi_difficulty.name] scored [b]."
         if w >= b:
             n "You win!"
+            $ renpy.end_replay()
             $ renpy.jump(minigame_win)
         else:
             n "[reversi_difficulty.name] wins!"
+            $ renpy.end_replay()
             $ renpy.jump(minigame_loss)
 
 label reversigame_done:

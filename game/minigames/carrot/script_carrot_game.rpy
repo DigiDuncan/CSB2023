@@ -334,11 +334,10 @@ screen carrotresults(a):
         color "#ffffff"
 
 label play_carrotgame:
+    window auto False
     window hide
-    $ quick_menu = False
+
     call screen carrotgame
-    $ quick_menu = True
-    window show
     $ persistent.heard.add("hotel_disbelief")
 
     if _return == "superb":
@@ -359,6 +358,8 @@ label play_carrotgame:
         $ achievement_manager.unlock("paradise")
         pause
         hide screen carrotresults
+        window auto True
+        $ renpy.end_replay()
         $ renpy.jump(minigame_win)
     elif _return == "ok":
         stop music
@@ -377,6 +378,8 @@ label play_carrotgame:
         $ achievement_manager.unlock("shitdown")
         pause
         hide screen carrotresults
+        window auto True
+        $ renpy.end_replay()
         $ renpy.jump(minigame_win)
     else:
         # try_again
@@ -395,6 +398,8 @@ label play_carrotgame:
         play music "minigames/carrot/try_again_music.ogg"
         pause
         hide screen carrotresults
+        window auto True
+        $ renpy.end_replay()
         $ renpy.jump(minigame_loss)
 
 label carrotgame_done:
