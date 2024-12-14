@@ -382,6 +382,8 @@ label ce_check_status:
                     jump ce_tree
 
 label ce_before_anno:
+    stop music
+    music end
     scene cs_foyer
     show cs happy at center
     with dissolve
@@ -396,6 +398,8 @@ label ce_before_anno:
     jump ce_anno
 
 label ce_anno:
+    stop music
+    music end
     scene cs_foyer
     show cs disappointed at center
     with dissolve
@@ -1028,6 +1032,8 @@ label ce_setup:
 
 # Day 2
 label ce_before_shopping:
+    stop music
+    music end
     # NOTE: something went wrong with this scene. i have to use manual_pos for everything or CS is floating? how annoying.
     play sound sfx_csnore loop
     play sound2 sfx_clock_ticking volume 0.5
@@ -2120,6 +2126,8 @@ label ce_checkout:
     stop sound fadeout 4.0
 
 label ce_aftershop:
+    stop music
+    music end
     pause 2.0
     scene cs_kitchen
     show cs_kitchen_fg
@@ -2362,18 +2370,18 @@ label ce_party_before:
         scene cs_house_snow_night
         show mean_train dark at manual_pos(-0.3, 0.4, 0.5)
         $ collect("mean_train")
-        show mean human dark flipped at mid_left
+        show mean human festive dark flipped at mid_left
         $ persistent.seen.add("mean_human")
         show tate festive dark at left
         with dissolve
         show cs worried christmas dark flipped at right with moveinright
         cs "That {i}is{/i} a fucking train!"
         if fun_value(FUN_VALUE_EPIC):
-            show mean human angry dark flipped at mid_left
+            show mean human angry festive dark flipped at mid_left
             show tate furious festive dark at left
             tate "I'm not a train!" (multiple = 2)
             mean "The {i}fuck{/i} did you call me?!" (multiple = 2) with vpunch
-            show mean human dark flipped at mid_left
+            show mean human festive dark flipped at mid_left
             show tate festive dark at left
         tate "Hey, CS! How've you been?"
         show cs christmas dark flipped
@@ -2382,13 +2390,21 @@ label ce_party_before:
         cs "Merry Christmas to you, too... {nw}"
         show cs worried christmas dark flipped
         cs "Merry Christmas to you, too...{fast} Mean, right?"
-        show mean human happy dark flipped
+        show mean human happy festive dark flipped
         mean "Yup!"
         show cs disappointed christmas dark flipped
         show tate sheepish festive dark
         cs "Sorry. Tate talks about you a lot, but I didn't know what you look like."
+        show tate srs festive dark
+        tate "I {i}still{/i} don't know why you had to wear the fake beard..."
+        mean "Like I said, because I {i}can!"
+        n "Tate groans and shakes their head."
+        n "The remnants of a long and drawn-out argument linger in the air."
+        show cs worried christmas dark flipped
+        cs "Well, uh..."
+        cs "It's... {nw}"
         show cs christmas dark flipped
-        cs "It's nice to finally meet you!"
+        cs "It's... {fast}nice to finally meet you!"
         cs "Shall we get inside?"
         show tate festive dark
         tate "Yeah!" (multiple = 2)
@@ -2880,17 +2896,17 @@ label ce_introductions:
     show aria festive at mid_left
     show tate festive at mid_mid_left
     show digi flipped at mid_left
-    show mean human at mid_offscreen_right
+    show mean human festive at mid_offscreen_right
     $ persistent.seen.add("mean_human")
     show k17 flipped at mid_mid_right
     show k22 flipped at mid_right
     with { "master": moveinright }
     mean "Hey, what's going on here?"
-    show mean human shocked
+    show mean human shocked festive
     show k17 flipped
     show k22 flipped
     mean "Wait, there's two Pakoos now?"
-    show mean human annoyed
+    show mean human annoyed festive
     show k22 confident flipped
     k22 "Okay, so--{w=0.5}{nw}"
     show k22 flipped
@@ -2912,13 +2928,13 @@ label ce_introductions:
     k17 "So, who are {i}you?"
     if fun_value(FUN_VALUE_COMMON):
         k17 "Are you BigDick?"
-        show mean human happy
+        show mean human happy festive
         show digi shock flipped
         show tate sheepish blush festive
         mean "Not for {i}free,{/i} I'm not!" with vpunch
     else:
         k17 "Are you DigBick?"
-        show mean human angry
+        show mean human angry festive
         show digi sad flipped
         show tate sheepish festive
         mean "{i}What{/i} did you just call me?" with vpunch
@@ -3361,7 +3377,7 @@ label ce_banter:
     scene cs_foyer_festive
     show aria festive at mid_mid_left
     show tate festive sheepish flipped at mid_right
-    show mean human at mid_offscreen_right
+    show mean human festive at mid_offscreen_right
     show k22 flipped at left behind k17
     show k17 flipped at center
     with dissolve
@@ -3372,7 +3388,7 @@ label ce_banter:
     k17 "Oh. Sorry, I forgot about that."
     show k22 flipped
     k17 "Okay, so, if big guy over there is DigBick..."
-    show mean human angry
+    show mean human angry festive
     mean "I'm {i}not{/i} DigBick!" with vpunch
     k17 "Are you DigBick's... girlfriend?"
     show tate furious blush festive flipped
@@ -3383,7 +3399,7 @@ label ce_banter:
     k17 "Yeah, you {i}sound{/i} mean."
     tate "And, I'm not a girl--!{w=0.25}{nw}" with vpunch
     show tate furious festive flipped
-    show mean human annoyed
+    show mean human annoyed festive
     show tate srs festive flipped
     show k17 at mid_mid_right with move
     k17 "Anyway, what about {i}you?"
@@ -4799,7 +4815,7 @@ label ce_exchange:
     $ collect("lego_train")
 
     mean "Alright, well, I guess it's my turn."
-    show mean human flipped at mid_left with moveinleft
+    show mean human festive flipped at mid_left with moveinleft
     show gift_tate at manual_pos(0.4, 0.7, 0.5) with moveinbottom
     mean "I'm picking this big one!"
     show instant_pot at manual_pos(0.4, 0.7, 0.5)
@@ -4807,7 +4823,7 @@ label ce_exchange:
     with dissolve
     mean "An Instant Pot?"
     tate "Mean, ya goofball! You picked {i}my{/i} gift!" with hpunch
-    show mean human happy flipped
+    show mean human happy festive flipped
     mean "Well, it's {i}mine{/i} now, bitch!"
     mean "I'm stealing your spaghetti recipe tomorrow, too!"
     tate "Awawa..."
@@ -5401,10 +5417,10 @@ label ce_preclimax:
     with hpunch
     with vpunch
     pause 5.0
-    show mean human annoyed flipped at offscreenleft
+    show mean human annoyed festive flipped at offscreenleft
     show instant_pot at manual_pos(-0.2, 0.7, 0.5)
     with determination
-    show mean human annoyed flipped at left behind tate
+    show mean human annoyed festive flipped at left behind tate
     show instant_pot at manual_pos(0.3, 0.7, 0.5) behind tate
     with { "master": MoveTransition(1.0) }
     mean "Yo, Tate."
@@ -5422,7 +5438,7 @@ label ce_preclimax:
     show tate sheepish festive flipped
     tate "No standing in front of a stove and throwing your back out, no burning yourself on an oven rack, no slamming your shin into the oven door, no steam burns-- {nw}"
     # these are all REAL injuries i have sustained in the kitchen... many times... - tate
-    show mean human angry flipped
+    show mean human angry festive flipped
     mean "How in the {nw}" with hpunch
     show tate shock festive flipped
     mean "How in the {fast}{i}fuck{/i} {nw}" with vpunch
@@ -5445,7 +5461,7 @@ label ce_climax:
     show luke festive at right
     show k22 at center
     show k17 at mid_mid_right
-    show mean human at mid_offscreen_right behind cs
+    show mean human festive at mid_offscreen_right behind cs
     with dissolve
     k22 "Well, CS, this was wonderful, but we should really get going."
     show cs worried christmas
@@ -5461,7 +5477,7 @@ label ce_climax:
     show k22 disappointed
     show k17 disappointed
     show cs angry christmas
-    show mean human annoyed
+    show mean human annoyed festive
     cs "If you hated my party so much, then just leave!"
     if fun_value(FUN_VALUE_COMMON):
         cs "If you hated my party so much, then you can just fucking die!" # NOTE: This is supposed to be a reference to the Comfort Click video, but I don't know if he'll read it like that. - pak
@@ -5478,7 +5494,7 @@ label ce_climax:
     luke "Oh, {i}shit."
     show tate sad festive flipped
     digi "You were... streaming movies to the projector from your {i}phone?!"
-    show mean human annoyed
+    show mean human annoyed festive
     luke "Look, this looked too complicated to set up, and I just wanted to enjoy the party!"
     luke "I just did it to make it feel like your plan worked!"
     digi "But-- but..."
@@ -5495,7 +5511,7 @@ label ce_climax:
     tate "Y'all, please, let's get it together..."
     show tate cry festive flipped
     nova "{i}No!{/i} Fuck you!" with hpunch
-    show mean human angry
+    show mean human angry festive
     anne "Hey!" with hpunch
     mean "What'd you say, you little {nw}"
     mean "What'd you say, you little {fast}{i}fuck?" with hpunch
@@ -5716,7 +5732,7 @@ label ce_lights_out:
     scene cs_foyer_off_festive
     show anno festive at mid_left
     show aria festive at mid_right behind anno
-    show mean human annoyed at mid_offscreen_right
+    show mean human annoyed festive at mid_offscreen_right
     show tate sad festive flipped at right
     show digi sad at mid_mid_left
     show k17 disappointed at center behind digi
@@ -5789,7 +5805,7 @@ label ce_lights_out:
     scene cs_foyer_off_festive
     show anno festive at mid_left
     show aria festive at mid_right behind anno
-    show mean human annoyed at mid_offscreen_right
+    show mean human annoyed festive at mid_offscreen_right
     show tate sad festive flipped at right
     show digi sad at mid_mid_left
     show k17 disappointed at center behind digi
@@ -5809,11 +5825,11 @@ label ce_lights_out:
     show tate shock festive flipped
     show k17 shock
     anno "{i}All{/i} snow?!"
-    show mean human shocked
+    show mean human shocked festive
     mean "The door?"
     k17 "It's?"
     digi "Are we trapped in here?!"
-    show mean human angry
+    show mean human angry festive
     show tate sad festive
     mean "There's only one way to find out."
     show cs disappointed christmas
@@ -5823,7 +5839,7 @@ label ce_lights_out:
     mean "Yeah, let me climb up there."
     cs "It's worth a try."
     tate "Be careful, Mean."
-    show mean human annoyed flipped with determination
+    show mean human annoyed festive flipped with determination
     hide cs
     hide mean
     with moveoutright
@@ -5840,7 +5856,7 @@ label ce_point_click:
     show cs disappointed christmas at mid_left
     show flashlight_held at manual_pos(0.3, 0.7, 0.5):
         zoom 0.5
-    show mean human annoyed at mid_right
+    show mean human annoyed festive at mid_right
     with dissolve
     pause 0.5
     stop music fadeout 3.0
@@ -5861,7 +5877,7 @@ label ce_point_click:
         show cs disappointed christmas at mid_left
         show flashlight_held at manual_pos(0.3, 0.7, 0.5):
             zoom 0.5
-        show mean human annoyed at mid_right
+        show mean human annoyed festive at mid_right
 
         mean "Shine your light up."
         hide screen flashlight_demo
@@ -5875,14 +5891,14 @@ label ce_point_click:
         $ mouse_visible = False
         scene cs_attic
         show hatch at manual_pos(0.3, -0.2)
-        show mean human annoyed at mid_right
+        show mean human annoyed festive at mid_right
         show cs disappointed christmas at mid_left
         show flashlight_held at manual_pos(0.3, 0.7, 0.5):
             zoom 0.5
 
         show cs happy christmas at mid_left
         cs "Hey, that tickles!"
-        show mean human shocked
+        show mean human shocked festive
         mean "Huh?" with vpunch
         show cs scared christmas
         cs "I mean, uh--"
@@ -5895,13 +5911,13 @@ label ce_point_click:
         $ mouse_visible = False
         scene cs_attic
         show hatch at manual_pos(0.3, -0.2)
-        show mean human annoyed at mid_right
+        show mean human annoyed festive at mid_right
         show cs disappointed christmas at mid_left
         show flashlight_held at manual_pos(0.3, 0.7, 0.5):
             zoom 0.5
 
         cs "Like this?"
-        show mean human shocked
+        show mean human shocked festive
         mean "That's... your flashlight."
         mean "How the {i}fuck{/i} did you point your flashlight {i}at{/i} your flashlight?"
         
@@ -5913,12 +5929,12 @@ label ce_point_click:
         $ mouse_visible = False
         scene cs_attic
         show hatch at manual_pos(0.3, -0.2)
-        show mean human annoyed at mid_right
+        show mean human annoyed festive at mid_right
         show cs disappointed christmas at mid_left
         show flashlight_held at manual_pos(0.3, 0.7, 0.5):
             zoom 0.5
 
-        show mean human angry
+        show mean human angry festive
         mean "That's {nw}"
         mean "That's {fast}{i}me,{/i} {nw}" with vpunch
         mean "That's {i}me,{/i} {fast}you dumb fuck!"
@@ -5932,19 +5948,19 @@ label ce_point_click:
         $ mouse_visible = False
         scene cs_attic
         show hatch at manual_pos(0.3, -0.2)
-        show mean human annoyed at mid_right
+        show mean human annoyed festive at mid_right
         show cs disappointed christmas at mid_left
         show flashlight_held at manual_pos(0.3, 0.7, 0.5):
             zoom 0.5
 
         show cs happy christmas
         cs "Only {i}you{/i} can prevent forest fires!"
-        show mean human
+        show mean human festive
         mean "Oh, yeah. I think Tate said something about how the only comic book they ever owned as a kid was of Smokey the Bear."
         show cs worried christmas
         mean "Apparently, it made them cry when all the animals died in the fire."
         mean "Fuckin' hippie."
-        show mean human annoyed
+        show mean human annoyed festive
         show cs disappointed christmas
         mean "Anyway, that won't help us now."
 
@@ -5956,14 +5972,14 @@ label ce_point_click:
         $ mouse_visible = False
         scene cs_attic
         show hatch at manual_pos(0.3, -0.2)
-        show mean human annoyed at mid_right
+        show mean human annoyed festive at mid_right
         show cs disappointed christmas at mid_left
         show flashlight_held at manual_pos(0.3, 0.7, 0.5):
             zoom 0.5
 
         show cs christmas
         cs "Do you think that rug will help us?"
-        show mean angry human
+        show mean angry human festive
         mean "{i}How,{/i} exactly, do you think a {i}rug{/i} will help us get to the {i}roof?" with vpunch
         show cs disappointed christmas
         cs "I dunno, man! I'm just throwing things at the wall to see what sticks!"
@@ -5974,8 +5990,17 @@ label ce_point_click:
         jump .click_menu
 
 label ce_after_hatch:
+    stop music
+    music end
     show screen flashlight_demo
     $ mouse_visible = False
+    scene cs_attic
+    show hatch at manual_pos(0.3, -0.2)
+    show mean human annoyed festive at mid_right
+    show cs disappointed christmas at mid_left
+    show flashlight_held at manual_pos(0.3, 0.7, 0.5):
+        zoom 0.5
+
     mean "That's gotta be it."
     cs "Yeah, can you pull it open?"
     play sound sfx_snowfall volume 3.0
@@ -5989,17 +6014,17 @@ label ce_after_hatch:
     cs "That is... a {i}lot{/i} of snow."
     mean "C'mon, let's get up here."
     n "Mean climbs up onto the roof."
-    show mean human at Move((0.54, 0.0), (0.35, 0.0), 0.5, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show mean human annoyed festive at Move((0.54, 0.0), (0.35, 0.0), 0.5, repeat=False, bounce=False, xanchor="left", yanchor="top")
     pause 0.5
-    show mean human at Move((0.35, 0.0), (0.35, -0.4), 0.15, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show mean human annoyed festive at Move((0.35, 0.0), (0.35, -0.4), 0.15, repeat=False, bounce=False, xanchor="left", yanchor="top")
     pause 0.15
-    show mean human at Move((0.35, -0.4), (0.35, -0.2), 0.15, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show mean human annoyed festive at Move((0.35, -0.4), (0.35, -0.2), 0.15, repeat=False, bounce=False, xanchor="left", yanchor="top")
     pause 0.75
-    show mean human at Move((0.35, -0.2), (0.35, -0.7), 0.5, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show mean human annoyed festive at Move((0.35, -0.2), (0.35, -0.7), 0.5, repeat=False, bounce=False, xanchor="left", yanchor="top")
     pause 0.5
-    show mean human at Move((0.35, -0.7), (0.35, -0.5), 0.75, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show mean human annoyed festive at Move((0.35, -0.7), (0.35, -0.5), 0.75, repeat=False, bounce=False, xanchor="left", yanchor="top")
     pause 0.75
-    show mean human at Move((0.35, -0.5), (0.35, -1.2), 0.5, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show mean human annoyed festive at Move((0.35, -0.5), (0.35, -1.2), 0.5, repeat=False, bounce=False, xanchor="left", yanchor="top")
     mean "Holy..."
     mean "{i}Fuck."
     cs "What? How bad is it?"
@@ -6020,7 +6045,7 @@ label ce_snowed_in:
         zoom 0.15
         xpos 0.3
         ypos 0.5
-    show mean human flipped sil_black:
+    show mean human festive flipped sil_black:
         zoom 0.15
         xpos 0.4
         ypos 0.5
@@ -6064,7 +6089,7 @@ label ce_snowed_in:
     $ mouse_visible = False
     show screen flashlight_demo
     scene cs_living2_off_festive
-    show mean human annoyed flipped at mid_offscreen_left
+    show mean human annoyed festive flipped at mid_offscreen_left
     show aria festive at center
     show obama festive at mid_mid_right behind digi
     show linus festive at mid_mid_left
@@ -6094,7 +6119,7 @@ label ce_snowed_in:
     digi "If it's {i}that{/i} bad, wouldn't a snow plow be here soon anyways?"
     show cs worried christmas
     show tate shock festive
-    show mean human shocked flipped
+    show mean human shocked festive flipped
     show digi shock flipped
     show linus festive flipped
     show obama festive flipped
@@ -6106,7 +6131,7 @@ label ce_snowed_in:
     show cs scared christmas flipped
     show flashlight_held flipped
     show tate shock festive flipped
-    show mean human angry flipped
+    show mean human angry festive flipped
     show digi shock
     show linus festive
     show obama festive
@@ -6123,7 +6148,7 @@ label ce_snowed_in:
         mean "If you don't believe me, take your thumb, and shove it up your ass!"
     else:
         mean "If you want to go up to the roof and see for yourself, be my guest."
-    show mean human annoyed flipped
+    show mean human annoyed festive flipped
     show tate sad festive flipped
     show digi sad
     show cs disappointed christmas flipped
@@ -6142,13 +6167,13 @@ label ce_snowed_in:
     michael "I spy something... black!"
     nova "Is it Obama?"
     show digi disappointed
-    show mean human flipped
+    show mean human festive flipped
     show cs disappointed christmas
     show tate sheepish festive flipped
     show obama angry festive
     obama "Hey!" with vpunch
     show obama festive
-    show mean human annoyed flipped
+    show mean human annoyed festive flipped
     michael "No, it is not."
     show digi sad
     aria "Is it {i}everything?"
@@ -6177,7 +6202,7 @@ label ce_snowed_in:
     $ mouse_visible = False
     show screen flashlight_demo
     scene cs_living2_off_festive
-    show mean human annoyed flipped at mid_offscreen_left
+    show mean human annoyed festive flipped at mid_offscreen_left
     show aria festive at center
     show obama festive at mid_mid_right behind digi
     show linus festive at mid_mid_left
@@ -6235,7 +6260,7 @@ label ce_reversi:
     $ mouse_visible = True
     show screen flashlight_demo
     scene cs_living2_off_festive
-    show mean human annoyed flipped at mid_offscreen_left
+    show mean human annoyed festive flipped at mid_offscreen_left
     show aria festive at center
     show obama festive at mid_mid_right behind digi
     show linus festive at mid_mid_left
@@ -6276,7 +6301,7 @@ label ce_win_reversi:
     music end
     show screen flashlight_demo
     scene cs_living2_off_festive
-    show mean human annoyed flipped at mid_offscreen_left
+    show mean human annoyed festive flipped at mid_offscreen_left
     show aria festive at center
     show obama festive at mid_mid_right behind digi
     show linus festive at mid_mid_left
@@ -6320,7 +6345,7 @@ label ce_lose_reversi:
     music end
     show screen flashlight_demo
     scene cs_living2_off_festive
-    show mean human annoyed flipped at mid_offscreen_left
+    show mean human annoyed festive flipped at mid_offscreen_left
     show aria festive at center
     show obama festive at mid_mid_right behind digi
     show linus festive at mid_mid_left
@@ -6369,7 +6394,7 @@ label ce_billy_time:
     music end
     show screen flashlight_demo
     scene cs_living2_off_festive
-    show mean human annoyed flipped at mid_offscreen_left
+    show mean human annoyed festive flipped at mid_offscreen_left
     show aria festive at center
     show obama festive at mid_mid_right behind digi
     show linus festive at mid_mid_left
@@ -6605,7 +6630,7 @@ label ce_billy_time:
     pause 0.5
 
     scene cs_living2_festive
-    show mean human at mid_offscreen_right
+    show mean human festive at mid_offscreen_right
     show luke festive at mid_mid_right
     show copguy festive at mid_right
     show sheriff festive at mid_mid_right
@@ -6623,11 +6648,11 @@ label ce_billy_time:
     sheriff "My eyes work again!"
     ed "Hooray!"
     tate "It looks like all we needed was Billy's Handy Switch!"
-    show mean human angry
+    show mean human angry festive
     show tate sheepish festive
     show cs disappointed christmas flipped
-    mean "{i}Please{/i} don't say it like that, Tate."
-    show mean human annoyed
+    mean "{i}Please{/i} don't say it like that, Tate." with vpunch
+    show mean human annoyed festive
     stop music fadeout 3.0
     music end
     luke "This is great and all, but isn't the house still under 20 feet of snow?"
@@ -6645,7 +6670,7 @@ label ce_billy_time:
     mean "If you want, I guess."
     mean "Follow me."
     pause 0.5
-    show mean human annoyed flipped
+    show mean human annoyed festive flipped
     show copguy festive flipped
     show luke festive flipped
     with determination
@@ -6674,7 +6699,7 @@ label ce_roof_moment:
         zoom 0.15
         xpos 0.3
         ypos 0.5
-    show mean human flipped sil_black:
+    show mean human festive flipped sil_black:
         zoom 0.15
         xpos 0.4
         ypos 0.5
@@ -6777,7 +6802,7 @@ label ce_roof_moment:
     show cs sil_black at Move((0.3, 0.5), (0.27, 0.33), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show k22 sil_black at Move((0.45, 0.23), (0.34, 0.29), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show arceus sil_black at Move((0.54, 0.54), (0.3, 0.4), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
-    show mean human flipped sil_black at Move((0.4, 0.5), (0.32, 0.4), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show mean human festive flipped sil_black at Move((0.4, 0.5), (0.32, 0.4), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show anno sil_black at Move((0.53, 0.33), (0.32, 0.48), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show tate festive sil_black at Move((0.34, 0.36), (0.29, 0.5), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show obama sil_black at Move((0.47, 0.47), (0.27, 0.49), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
@@ -7129,7 +7154,7 @@ label ce_roof_moment:
         zoom 0.15
         xpos 0.3
         ypos 0.5
-    show mean human flipped sil_black:
+    show mean human festive flipped sil_black:
         zoom 0.15
         xpos 0.4
         ypos 0.5

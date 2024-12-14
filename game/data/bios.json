@@ -715,7 +715,13 @@
             "Hat: Angry": "images/characters/mean/meanhumanangryhat.png",
             "Hat: Annoyed": "images/characters/mean/meanhumanannoyedhat.png",
             "Hat: Happy": "images/characters/mean/meanhumanhappyhat.png",
-            "Hat: Shocked": "images/characters/mean/meanhumanshockedhat.png"
+            "Hat: Shocked": "images/characters/mean/meanhumanshockedhat.png",
+
+            "Festive: Neutral": "images/characters/mean/meanhumanneutralfestive.png",
+            "Festive: Angry": "images/characters/mean/meanhumanangryfestive.png",
+            "Festive: Annoyed": "images/characters/mean/meanhumanannoyedfestive.png",
+            "Festive: Happy": "images/characters/mean/meanhumanhappyfestive.png",
+            "Festive: Shocked": "images/characters/mean/meanhumanshockedfestive.png"
         },
         "quote": "Damn, you're all so {i}short{/i} from up here.",
         "bio": "He's a pirate by blood and a lover of trains by heart. Mean has the ability to swap between this and his sea urchin form at will. Now that he's got a new job that he can be proud of, he wants to present as human a little more often.\n\nBecause Mean completed all of his job training as a sea urchin, however, it has been taking some time for his coworkers to still be able to recognize him. He hopes that wearing the one-of-a-kind hat that Tate gave him will help ease this transition.",

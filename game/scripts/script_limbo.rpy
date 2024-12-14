@@ -181,7 +181,7 @@ screen hatch_button():
 
     ##### mean button
     imagebutton:
-        idle "images/characters/mean/meanhumanannoyed.png"
+        idle "images/characters/mean/meanhumanannoyedfestive.png"
         hover "gui/ce_point_click/mean_hover.png"
         hover_sound "audio/sfx/sfx_select.ogg"
         at mid_right

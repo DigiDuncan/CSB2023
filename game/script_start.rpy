@@ -1480,6 +1480,7 @@ image mean unamused = "characters/mean/meanunamused.png"
 image mean unamused flipped = "flip:characters/mean/meanunamused.png"
 
 ## Mean (Human Form)
+# normal
 image mean human = "characters/mean/meanhumanneutral.png"
 image mean human dark = "dark:characters/mean/meanhumanneutral.png"
 image mean human flipped = "flip:characters/mean/meanhumanneutral.png"
@@ -1497,6 +1498,7 @@ image mean human angry = "characters/mean/meanhumanangry.png"
 image mean human angry flipped = "flip:characters/mean/meanhumanangry.png"
 image mean human angry dark flipped = "dark:flip:characters/mean/meanhumanangry.png"
 
+# + train conductor hat
 image mean human hat = "characters/mean/meanhumanneutralhat.png"
 image mean human hat flipped = "flip:characters/mean/meanhumanneutralhat.png"
 image mean human hat dark = "dark:characters/mean/meanhumanneutralhat.png"
@@ -1510,6 +1512,26 @@ image mean human shocked hat dark flipped = "dark:flip:characters/mean/meanhuman
 image mean human angry hat = "characters/mean/meanhumanangryhat.png"
 image mean human angry hat flipped = "flip:characters/mean/meanhumanangryhat.png"
 image mean human angry hat dark flipped = "dark:flip:characters/mean/meanhumanangryhat.png"
+
+# festive outfit
+image mean human festive = "characters/mean/meanhumanneutralfestive.png"
+image mean human festive flipped = "flip:characters/mean/meanhumanneutralfestive.png"
+image mean human festive sil_black = "sil_black:characters/mean/meanhumanneutralfestive.png"
+image mean human festive sil_black flipped = "flip:sil_black:characters/mean/meanhumanneutralfestive.png"
+image mean human festive dark = "dark:characters/mean/meanhumanneutralfestive.png"
+image mean human festive dark flipped = "flip:dark:characters/mean/meanhumanneutralfestive.png"
+image mean human happy festive = "characters/mean/meanhumanhappyfestive.png"
+image mean human happy festive flipped = "flip:characters/mean/meanhumanhappyfestive.png"
+image mean human happy festive dark = "dark:characters/mean/meanhumanhappyfestive.png"
+image mean human happy festive dark flipped = "flip:dark:characters/mean/meanhumanhappyfestive.png"
+image mean human annoyed festive  = "characters/mean/meanhumanannoyedfestive.png"
+image mean human annoyed festive flipped = "flip:characters/mean/meanhumanannoyedfestive.png"
+image mean human shocked festive = "characters/mean/meanhumanshockedfestive.png"
+image mean human shocked festive flipped = "flip:characters/mean/meanhumanshockedfestive.png"
+image mean human shocked festive dark flipped = "dark:flip:characters/mean/meanhumanshockedfestive.png"
+image mean human angry festive = "characters/mean/meanhumanangryfestive.png"
+image mean human angry festive flipped = "flip:characters/mean/meanhumanangryfestive.png"
+image mean human angry festive dark flipped = "dark:flip:characters/mean/meanhumanangryfestive.png"
 
 ## Archival
 image k174 = "characters/k174.png"
