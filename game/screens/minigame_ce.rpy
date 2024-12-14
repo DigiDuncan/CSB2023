@@ -5,6 +5,8 @@ screen ce_minigame_screen():
     python:
         if renpy.music.get_playing(channel='music') != "bubble_tea.ogg":
             pass
+        elif renpy.music.get_playing(channel='music') != "<from 16.53>bubble_tea.ogg":
+            pass
         else:
             renpy.music.play("<from 16.53>bubble_tea.ogg", channel="music", loop=False)
 
