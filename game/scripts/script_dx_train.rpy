@@ -137,14 +137,14 @@ label train_intro_start:
         show arceus happy
     else:
         show arceus happy flipped
- 
+
     arceus "We're filthy stinkin' {i}rich!{/i}"
     n "CS can sense that Arceus probably won't take \"no\" for an answer."
     cs "Well... I suppose we {i}do{/i} have all the money we could ever need, and we don't really have any reason to rush getting home..."
-    
+
     # flip
     if train_money_stolen == True:
-        show cs surprised 
+        show cs surprised
     else:
         show cs surprised flipped
 
@@ -152,7 +152,7 @@ label train_intro_start:
 
     # flip
     if train_money_stolen == True:
-        show cs happy 
+        show cs happy
     else:
         show cs happy flipped
 
@@ -243,7 +243,7 @@ label train_story_begin:
 
     $ next_line = substitutions("CS quickly deconstructs the Lego car. He shoves the colorful little bricks into the " + train_money_container + " for later.")
     n "[next_line]"
- 
+
     $ next_line = substitutions("The "+ train_money_container +" is now full to bursting, but CS just barely manages to " + train_money_stolen_dialogue_switch + ".")
     n "[next_line]"
 
@@ -280,7 +280,7 @@ label train_story_begin:
     pause 1.0
     show cs disappointed
     pause 2.0
-    show arceus 
+    show arceus
     arceus "Yeah, uh, remember what I said about this town being small? This station is unmanned."
     arceus "We can buy tickets on the train once it gets here, though."
     cs "Wow, okay. How long until the train is here, then?"
@@ -299,7 +299,7 @@ label train_story_begin:
     cs "What? That's not reliable at all!"
     show arceus angry
     arceus "Yeah, well, this isn't the UK."
-    show arceus 
+    show arceus
     cs "So, what do we do in the meantime, then? Is there anything here?"
 
     pause 1.0
@@ -312,11 +312,11 @@ label train_story_begin:
     show arceus
     pause 1.0
     n "The two glance around the space for a moment."
-    
+
     show cs disappointed flipped
     show arceus
-    n "They spot the entrance to a museum."    
-    
+    n "They spot the entrance to a museum."
+
 label train_museum_menu:
     # this label exists for timeline progression only - tate
     scene kingman_museum_1 with dissolve
@@ -344,11 +344,11 @@ label train_yes_museum:
     show cs flipped
     cs "What should we check out first?"
     arceus "Ooh, how about that train set over there?"
-    
+
     scene kingman_museum_3 with dissolve
     n "Arceus points towards a custom train exhibit with two attached controllers."
     n "It looks... familiar."
-    
+
     scene kingman_museum_2
     show cs disappointed at center
     show arceus at mid_right
@@ -429,9 +429,9 @@ label train_race_win:
     n "CS and Arceus wander around the museum for a little longer."
     n "While not many exhibits can fit inside such a small building, there is just enough to see to pass the remaining time."
     n "About five minutes before the train's expected arrival, the two make their way out onto to the platform, still discussing some of the things they learned today."
-        
+
     jump train_kingman_platform
-    
+
 label train_race_lose:
     play music outdoors if_changed
     music outdoors
@@ -485,7 +485,7 @@ label train_kingman_platform:
 
     # arc and mean wanted this
     if fun_value(FUN_VALUE_COMMON):
-        show cs 
+        show cs
         cs "Steam? Like Gabe Newell?"
         show arceus angry
         arceus "No."
@@ -522,11 +522,11 @@ label train_kingman_platform:
     show cs worried
     cs "Damn, I'd forgotten all about that!"
     cs "What would have happened if it had been on a train?"
-    
+
     # mean wanted this
     if fun_value(FUN_VALUE_COMMON):
         $ train_polar_express_fun_value = True
-        show arceus 
+        show arceus
         arceus "Have you ever seen {i}The Polar Express?"
         show cs disappointed
         cs "No, why?"
@@ -536,7 +536,7 @@ label train_kingman_platform:
         show arceus angry
         arceus "No."
         arceus "I'm just gonna assume that they'd kick the bastard off at the next station."
-    else:   
+    else:
         show arceus angry
         arceus "I dunno, man. I'm just gonna assume that they'd kick the bastard off at the next station."
 
@@ -599,7 +599,7 @@ label train_kingman_platform:
     cs "Oh, this is Arceus. He and I go {i}way{/i} back."
     show cs
     show arceus happy flipped
-    arceus "Hiya. You can just call me Arc." 
+    arceus "Hiya. You can just call me Arc."
     show tate flipped
     tate "Well, it's nice to meet ya, Arc."
     show arceus flipped
@@ -668,11 +668,11 @@ label train_kingman_platform:
 
     pause 0.5
 
-    show cs worried 
+    show cs worried
     show arceus worried
     pause 1.0
-    
-    show cs 
+
+    show cs
     show arceus flipped
     pause 1.0
 
@@ -693,8 +693,8 @@ label train_boarding:
 
     play music bedroom_day if_changed
     music bedroom_day
-    
-    pause 2.0 
+
+    pause 2.0
     # again, separate on purpose
     show amtrak_stewardess at right with moveinleft
     show tate at mid_mid_right with moveinleft
@@ -751,7 +751,7 @@ label train_boarding:
     hide arceus with moveoutright
     n "Arceus scurries off."
     pause 1.0
-    
+
     show amtrak_stewardess at mid_offscreen_right with moveinleft
     pause 0.5
     show amtrak_stewardess flipped
@@ -767,7 +767,7 @@ label train_boarding:
     n "The stewardess strolls away."
     pause 1.0
 
-    show cs disappointed at mid_mid_left 
+    show cs disappointed at mid_mid_left
     with moveinright
     pause 0.5
 
@@ -805,11 +805,11 @@ label train_boarding:
         linear 0.25 rotate -10
     show tate shock flipped at right
     with { "master": MoveTransition(0.25) }
-    extend "{i}uhHH!{w=0.5}{nw}" with hpunch 
+    extend "{i}uhHH!{w=0.5}{nw}" with hpunch
     play sound sfx_lupin_stinger volume 0.8
     show lupin run at manual_pos(0.6, 1.0, 1.0)
     with dissolve
-    
+
     n "CS is knocked to the ground as a stranger sprints down the corridor!"
     lupin_offscreen "Sorry, pretty kitty! I've gotta {i}run!"
     show lupin run flipped at manual_pos(0.6, 0.2, 1.0) with MoveTransition(0.75):
@@ -856,7 +856,7 @@ label train_enter_sleeper:
     with dissolve
 
     n "CS and Tate enter the sleeper unit just as the train takes off."
-    
+
     show tate at mid_mid_left
     show cs at left
     with moveinleft
@@ -872,7 +872,7 @@ label train_enter_sleeper:
     arceus "Oh, yeah. I think I'll be alright, now."
     show cs
     show tate
-    cs "That's good to hear."   
+    cs "That's good to hear."
     show tate stare
     tate "Oh, yeah! Let me know if y'all need more toilet paper, or soap, or... anything."
     show tate
@@ -901,7 +901,7 @@ label train_enter_sleeper:
     show cs disappointed
     show arceus
     cs "Yeah. It's a real shame that Microsoft eventually kills off every product I like."
-    show tate flipped   
+    show tate flipped
     tate "Yeah, it really is."
     tate "At least you're not still shilling for them these days, right?"
     pause 1.0
@@ -934,10 +934,10 @@ label train_enter_sleeper:
     tate "This {i}can't{/i} be good!"
     arceus "So much for a relaxing trip..."
     n "The door is slid open with a heavy hand."
-    
+
     play sound sfx_sliding_door_open
     pause 1.0
-    
+
     show cs scared flipped at mid_mid_right
     show tate shock flipped at right
     show arceus worried at mid_offscreen_right
@@ -945,7 +945,7 @@ label train_enter_sleeper:
 
     show amtrak_conductor flipped at left
     with moveinleft
-    
+
     amtrak_conductor "Alright, every--{w=0.25}{nw}"
     amtrak_conductor "Oh. {w=0.5}{i}Mx. Frost."
     tate "I {i}swear,{/i} sir! Whatever happened just now, I had {i}nothing{/i} to do with it!"
@@ -995,7 +995,7 @@ label train_enter_sleeper:
     amtrak_conductor "... As you can probably tell, there has been a sudden increase in reported thefts."
     amtrak_conductor "Are any of you missing valuables?"
     show arceus worried
-    
+
     # begin this flip nonsense... why do i do this to myself
     $ next_line = substitutions("I mean, all we had was the one " + train_money_container +".")
     arceus "[next_line]"
@@ -1013,7 +1013,7 @@ label train_enter_sleeper:
     show tate shock flipped
     pause 1.0
     show cs worried flipped
-    show tate shock  
+    show tate shock
     pause 1.0
     show cs disappointed
     show tate shock flipped
@@ -1040,7 +1040,7 @@ label train_enter_sleeper:
     show cs disappointed flipped
     $ next_line = substitutions("Yes, sir, we're missing a single " + train_money_stolen_dialogue_switch + " filled with money we" + train_money_stolen_dialogue_switch_2 + " while we were in Vegas.")
     cs "[next_line]"
-    arceus "And Lego bricks." 
+    arceus "And Lego bricks."
     show cs surprised
     cs "And Legos, yes."
     show tate srs flipped
@@ -1135,7 +1135,7 @@ label train_enter_sleeper:
     tate "It was so fucking stupid."
     tate "So, he was working for this home repair company, right?"
     tate "They hired him on as a security guard, since he's all spiky--{w=0.25}{nw}"
-    show arceus 
+    show arceus
     arceus "{i}Spiky?{/i} Wha--{w=0.25}{nw}"
     tate "--and then some weirdo dressed as a catgirl maid broke in and fought the CEO! A lot of people got hurt!"
     show tate shock flipped
@@ -1152,7 +1152,7 @@ label train_enter_sleeper:
     pause 2.0
     show cs scared
     cs "... Woah, Tate, why are you look--{w=0.25}{nw}"
-    
+
     # TODO: bgm?
 
     show tate furious flipped
@@ -1165,7 +1165,7 @@ label train_enter_sleeper:
     tate "{cshake}{size=+36}{i}YOU{/i} {fast}BROKE INTO HOH SIS?!"
     show cs worried
     cs "Oh, yeah, uh--{w=0.25}{nw}"
-    
+
     show tate cry flipped
     n "Tate is on the verge of tears."
     tate "{sc=1.11}My best friend lost his job, and it's your fault..."
@@ -1276,7 +1276,7 @@ label train_enter_sleeper:
 label train_dining:
     play music krabby_klub if_changed
 
-    scene 
+    scene
     show amtrak_desert_night as left:
         perspective (0.0, 1000.0, 0.5)
         matrixanchor (0.5, 0.5)
@@ -1302,7 +1302,7 @@ label train_dining:
     show arceus at left with moveinleft
     n "As he approaches the counter, Arceus finds his attention redirected towards a yellow... {w=0.5}thing."
 
-    scene 
+    scene
     show amtrak_desert_night at manual_pos(0.5, 0.4, 0.5)
     show amtrak_dining_table
     show mean at manual_pos(300,350)
@@ -1360,7 +1360,7 @@ label train_dining:
     music end
     "..."
     mean_offscreen "Wait."
-    show mean angry 
+    show mean angry
     with Dissolve(1.0)
     # the dissolve was arc's idea lol
     pause 1.0
@@ -1368,7 +1368,7 @@ label train_dining:
     arceus "We had some stuff stolen. A lot of people did, actual--{w=0.25}{nw}"
 
     # mean wanted the following section.
-    
+
     play music prof_kranes_kidnap if_changed
     music prof_kranes_kidnap
 
@@ -1434,12 +1434,12 @@ label train_dining:
     show arceus worried flipped at offscreenright with MoveTransition(0.3)
     scene black with dissolve
     jump train_wakeup
-    
+
 label train_wakeup:
     play music prof_kranes_kidnap if_changed
     music prof_kranes_kidnap
     play sound2 sfx_csnore fadein 0.5
-    scene 
+    scene
     show amtrak_desert_night
     show amtrak_sleeper_interior_night
     with dissolve
@@ -1454,7 +1454,7 @@ label train_wakeup:
     n "Arceus flips on the lights."
     show arceus worried dark at left with MoveTransition(0.25)
     play sound sfx_lightswitch
-    scene 
+    scene
     show amtrak_desert_night
     show amtrak_sleeper_interior_day
     show arceus worried at left
@@ -1478,7 +1478,7 @@ label train_wakeup:
     show arceus angry flipped at center
     show cs concentrate flipped at right
     with moveinright
-    
+
     cs "Hnngh, huh, what, {i}why?!"
     show cs disappointed flipped
     cs "Wha-- What's going on?"
@@ -1508,7 +1508,7 @@ label train_wakeup:
     music end
     play sound sfx_sliding_door_open volume 2.0
     n "As if on cue, the room door slides open fully." with hpunch
-    
+
     tate "{cshake}{size=+24}C.{w=0.1}S. ONE HUNDRED AND EIGHTY{w=0.1}-EIGHT!!" with vpunch
 
     show arceus worried at mid_mid_right
@@ -1588,7 +1588,7 @@ label train_wakeup:
     show mean surprised
     mean "There... {i}cough"
     mean "... There you are, Tate..."
-    
+
     # here goes tate having too much fun with sprites again
 
     show tate shock flipped
@@ -1624,14 +1624,14 @@ label train_wakeup:
     tate "{sc=1}{size=-15}I just wanted you to have a good first day..."
     show mean worried
     mean "What do you mean?"
-    show mean 
+    show mean
     mean "Today's been {i}great!"
     show tate shock flipped
     tate "Huh?!" with vpunch
     show mean happy
     mean "Yeah!"
     mean "You made me the best breakfast I've had in ages, I start my dream job in 15 minutes, {i}and{/i} I get to travel the US with one of my best friends!"
-    
+
     if train_pancake_fun_value == True:
         show arceus happy
         arceus "{size=-15}Those were some damn good pancakes, by the way."
@@ -1655,7 +1655,7 @@ label train_wakeup:
     if fun_value(FUN_VALUE_LEGENDARY):
         $ train_tate_is_fragile_fun_value = True
         mean "Like, no offense, Tate, but you only have, like, 5 DEF."
-        show arceus 
+        show arceus
         arceus "They {i}do{/i} have decent ATK and one of the only healing moves in the game, though."
         cs "Huh?"
         show tate srs
@@ -1683,7 +1683,7 @@ label train_wakeup:
         show cs disappointed flipped
         cs "I must be {i}really{/i} sleep-deprived..."
     else:
-        mean "Like, no offense, Tate, but you aren't exactly at the peak of physical condition."    
+        mean "Like, no offense, Tate, but you aren't exactly at the peak of physical condition."
         show mean angry
         mean "Didn't you sprain {i}both{/i} of your ankles at the same time last year just from {i}walking?"
         show arceus worried
@@ -1732,7 +1732,7 @@ label train_wakeup:
 label train_allow_staff:
     play music e_gadds_lab if_changed
     music e_gadds_lab
-    scene 
+    scene
     show amtrak_desert_night
     show amtrak_sleeper_interior_day
     show tate sheepish at left
@@ -1775,7 +1775,7 @@ label train_allow_staff:
 label train_begin_heist:
     play music e_gadds_lab if_changed
     music e_gadds_lab
-    scene 
+    scene
     show amtrak_desert_night
     show amtrak_sleeper_interior_day
     show tate sheepish at left
@@ -1924,7 +1924,7 @@ label train_search_arceus:
     show amtrak_dining_food at manual_pos(805,145)
     show amtrak_dining_pancake at manual_pos(915,575) behind amtrak_dining_food
     with dissolve
-    n "From across the room, Arceus glances towards the abandoned breakfast." 
+    n "From across the room, Arceus glances towards the abandoned breakfast."
     arceus "It's a damn shame that all of that food went to waste."
 
     if train_pancake_fun_value == True:
@@ -1942,12 +1942,12 @@ label train_search_arceus:
     pause 0.5
     arceus "What the fuck?!"
     pause 0.5
-    show arceus angry at right behind amtrak_dining_pancake with moveinright 
+    show arceus angry at right behind amtrak_dining_pancake with moveinright
     arceus "Man... what is {i}wrong{/i} with people?!"
     n "Arceus spots a lone pancake."
     show amtrak_dining_pancake at manual_pos(1433, 683) with ease
     $ collect("amtrak_dining_pancake")
-    arceus "At least there's this one..." 
+    arceus "At least there's this one..."
     hide amtrak_dining_pancake with dissolve
     pause 1.5
     arceus "I need a drink..."
@@ -1957,11 +1957,11 @@ label train_search_arceus:
     pause 2.5
     arceus "What the fuck? He even took all the {i}booze?!"
     jump train_search_cs
-    
+
 label train_search_cs:
     play music onbs if_changed
     music onbs
-    
+
     # TODO: YES I KNOW THIS SCENE IS CRUSTIER THAN FRENCH BREAD PLS HELP
 
     pause 1.5
@@ -1980,15 +1980,15 @@ label train_search_cs:
     show cs disappointed at right with MoveTransition(0.5)
     pause 1.0
     n "CS stops suddenly."
-    n "There is, in fact, a single door open." 
-  
+    n "There is, in fact, a single door open."
+
     scene
     show amtrak_desert_night at manual_pos(0.5, 0.35, 0.5):
         xzoom -1.0
         zoom 0.75
     show amtrak_sleeper_open_bg
     show lupin run hat at mid_right
-    
+
     if train_money_stolen == True:
         show bag at mid_mid_left
     else:
@@ -2003,11 +2003,11 @@ label train_search_cs:
     lupin_offscreen "They don't know it, but they'd be my {i}perfect{/i} accomplice!"
     hide amtrak_dining_food with dissolve
     pause 1.0
-    lupin_offscreen "Mmmm... " 
+    lupin_offscreen "Mmmm... "
     extend "{i}Burp!{/i}" with hpunch
     lupin_offscreen "Oh, pardon me!"
     lupin_offscreen "I guess asking them on a dinner date would be a bad idea. They'd totally out-cook the chef!"
-    lupin_offscreen "I wonder if they like movies..." 
+    lupin_offscreen "I wonder if they like movies..."
     n "CS can't help but notice something..."
     n "He decides to try looking from another angle."
 
@@ -2031,7 +2031,7 @@ label train_search_cs:
     show cs scared at mid_offscreen_left with hpunch
     show cs concentrate
     hide lupin with dissolve
-    
+
     pause 2.0
     n "Before CS can stand up to catch him, the thief disappears into the next car."
     pause 1.0
@@ -2073,15 +2073,15 @@ label train_search_tate:
 
     show tate flipped behind lupin at offscreenright
     show tate flipped at mid_right with moveinright
-    
+
     tate "Excuse me, Mr. Conductor?"
     show lupin stand hat flipped
     tate "Have you seen--{w=0.25}{nw}"
     show tate srs flipped
     "..."
-    pause 2.0   
+    pause 2.0
     tate "... Why are {i}you{/i} here?"
-    
+
     lupin_offscreen "Hey, look, it's my favorite {color=#FFDBFC}pink sweater{/color}!"
     show lupin stand hat flipped at mid_mid_left with { "master" : MoveTransition(0.5) }
 
@@ -2226,7 +2226,7 @@ label train_confront_lupin:
     mean "{size=-15}Mah fuckin' hat..."
     show cs angry flipped
     cs "I wonder if it's the same guy who has our money..."
-    show tate shock 
+    show tate shock
     show mean ayo
     tate "Wait, you saw who had it?!"
     cs "Yeah! Some guy in a red jacket ran off with it!"
@@ -2261,13 +2261,13 @@ label train_confront_lupin:
     show cs disappointed
     show mean unamused
     show tate sheepish
-    
+
     cs "Oh, hey, Arc. You find anything in the dining car?"
     arceus "I sure did! This dude in a red coat just walked away with that {i}entire{/i} goddamn pile of food!"
     show mean angry
     show tate shock
     show cs worried
-    mean "Mah fuckin' {i}food,{/i} too?!" with hpunch   
+    mean "Mah fuckin' {i}food,{/i} too?!" with hpunch
     show cs disappointed
     show tate sheepish
     cs "... Why do {i}you{/i} seem so upset about it, Arc?"
@@ -2299,7 +2299,7 @@ label train_confront_lupin:
 
     show mean unamused flipped
     show cs worried flipped
- 
+
     mean "God damn it, I told him not to mix that protein powder with milk."
     show mean angry
     show cs disappointed flipped
@@ -2348,7 +2348,7 @@ label train_confront_lupin:
     show arceus angry flipped at offscreenright
     with moveoutright
     scene black with dissolve
-       
+
     n "The four make their way towards the very last car on the train."
 
     scene
@@ -2362,44 +2362,44 @@ label train_confront_lupin:
         rotate 25
     show amtrak_coach_2
     with dissolve
-    
+
     show mean angry flipped at left
     show tate sheepish flipped at mid_mid_left
     show cs disappointed flipped at mid_mid_right
     show arceus angry at right
     with moveinright
-    
+
     n "Searching one section after another, they fail to find any sign of the suspect in coach."
-    
+
     show mean angry flipped at offscreenleft
     show tate sheepish flipped at offscreenleft
     show cs disappointed flipped at offscreenleft
     show arceus angry at offscreenleft
     with moveoutleft
     scene black with dissolve
-    
+
     scene
     show amtrak_desert_night at manual_pos(0.5, 0.4, 0.5):
         xzoom -1.0
         rotate -5
     show amtrak_coach_1
     with dissolve
-    
+
     show mean angry flipped at left
     show tate sheepish flipped at mid_mid_left
     show cs disappointed flipped at mid_mid_right
     show arceus angry at right
     with moveinright
-    
+
     pause 1.0
-    
+
     show mean angry flipped at offscreenleft
     show tate sheepish flipped at offscreenleft
     show cs disappointed flipped at offscreenleft
     show arceus angry at offscreenleft
     with moveoutleft
     scene black with dissolve
-    
+
     scene
     show amtrak_desert_night as left:
         perspective (0.0, 1000.0, 0.5)
@@ -2411,17 +2411,17 @@ label train_confront_lupin:
         matrixtransform RotateMatrix(-20, 0, 0) * RotateMatrix(0, 90, 0) * RotateMatrix(0, 0, 0) * OffsetMatrix(0, -250, 400)
     show amtrak_observation_1
     with dissolve
-    
+
     show mean angry flipped at left
     show tate sheepish flipped at mid_mid_left
     show cs disappointed flipped at mid_mid_right
     show arceus angry at right
     with moveinright
-    
+
     n "The group wordlessly follows Mean until they reach the observation lounge, where he suddenly stops."
-    
+
     mean "Hey! You,{w=0} there!" with hpunch
-    
+
     show lupin stand hat flipped at offscreenleft with determination
     show lupin stand hat flipped at left
     show mean angry flipped at center
@@ -2429,7 +2429,7 @@ label train_confront_lupin:
     show cs worried flipped at mid_right
     show arceus worried at manual_pos(1.05, 1.0, 1.0)
     with MoveTransition(1.0)
-    
+
     n "The man casually takes a few steps forward."
     n "He immediately locks eyes with CS."
     show cs scared flipped
@@ -2490,15 +2490,15 @@ label train_confront_lupin:
     mean "Guess we've gotta do this old-fashioned way."
     show mean angry flipped
     mean "Let's get 'em!"
-    
+
     show mean angry flipped at offscreenleft
     show tate srs flipped at offscreenleft
     show cs angry flipped at offscreenleft
     show arceus angry at offscreenleft
     with MoveTransition(0.5)
-    
+
     n "The team gives chase through the next few cars."
-    
+
     scene
     show amtrak_desert_night as left:
         perspective (0.0, 1000.0, 0.5)
@@ -2511,38 +2511,38 @@ label train_confront_lupin:
         matrixtransform RotateMatrix(-17, 0, 0) * RotateMatrix(0, 90, 0) * RotateMatrix(0, 0, 0) * OffsetMatrix(0, -200, 400)
     show amtrak_dining_car with dissolve
     n "Through the dining car..."
-    
+
     show lupin run hat at offscreenright with determination
     show lupin run hat at offscreenleft with MoveTransition(0.5)
-    
+
     show mean angry flipped at offscreenright
     show tate srs flipped at offscreenright
     show cs angry flipped at offscreenright
     show arceus angry at offscreenright
     with determination
-    
+
     show mean angry flipped at offscreenleft with MoveTransition(0.5)
     show tate srs flipped at offscreenleft with MoveTransition(0.5)
     show cs angry flipped at offscreenleft with MoveTransition(0.5)
     show arceus angry at offscreenleft with MoveTransition(0.5)
-    
+
     scene amtrak_sleeper_corridor with dissolve
     n "Through the sleeper units..."
-    
+
     show lupin run hat at offscreenright with determination
     show lupin run hat at offscreenleft with MoveTransition(0.5)
-    
+
     show mean angry flipped at offscreenright
     show tate srs flipped at offscreenright
     show cs angry flipped at offscreenright
     show arceus angry at offscreenright
     with determination
-    
+
     show mean angry flipped at offscreenleft with MoveTransition(0.5)
     show tate srs flipped at offscreenleft with MoveTransition(0.5)
     show cs angry flipped at offscreenleft with MoveTransition(0.5)
     show arceus angry at offscreenleft with MoveTransition(0.5)
-    
+
     scene
     show amtrak_desert_night:
         perspective (0.0, 1000.0, 0.5)
@@ -2550,22 +2550,22 @@ label train_confront_lupin:
         matrixtransform RotateMatrix(-5, 0, 0) * RotateMatrix(0, 60, 0) * RotateMatrix(0, 0, 0) * OffsetMatrix(0, 0, -100)
     show amtrak_baggage
     with dissolve
-    
+
     show lupin run hat flipped at right with moveinleft
     show lupin run hat
-    pause 1.0   
+    pause 1.0
     show tate srs at mid_mid_left
     show cs angry at mid_left
     show arceus angry flipped at left
     show mean angry at center
     with moveinleft
-    
+
     n "At last, the quartet corners him in the luggage car."
     mean "Alright, pal. End of the line."
     mean "Next car is the cab. If {i}we{/i} don't get you, the big guy definitely will."
     lupin_offscreen "Aw, how cute. The prickly pear thinks I {i}forgot{/i} about that!"
     lupin_offscreen "Little do you know, Amtrak employees {i}hate{/i} me! I can get away with {i}this{/i} neat trick!"
-    
+
     play sound sfx_speen
     show lupin run hat at t_lupin_out
     show tate shock at mid_left
@@ -2573,7 +2573,7 @@ label train_confront_lupin:
     show arceus worried flipped at mid_offscreen_left
     show mean wat at mid_mid_left
     with move
-    
+
     n "The crook escapes through a window!"
     pause 0.5
     show mean wat flipped at right
@@ -2581,7 +2581,7 @@ label train_confront_lupin:
     show cs disappointed at mid_mid_left
     show arceus angry flipped at left
     with moveinleft
-        
+
     tate "Now,{w=0} what?!"
     show tate sad flipped
     tate "We can't possibly catch up with him..."
@@ -2595,7 +2595,7 @@ label train_confront_lupin:
         linear 0.1 ypos 1.0
     pause 1.0
     arceus "... Fuck, I can't even {i}reach{/i} the roof!"
-    
+
     show cs disappointed flipped at mid_left_left with moveoutleft
     pause 0.5
     show cs disappointed flipped:
@@ -2604,22 +2604,22 @@ label train_confront_lupin:
     pause 0.5
     show cs worried flipped
     cs "Damn! Me,{w=0} neither!"
-    
+
     show cs disappointed at mid_mid_left
     show arceus worried flipped at left
     with moveinright
-    
+
     show tate sheepish flipped
     tate "Well, shit. If CS can't reach it, I don't even have a shot."
     show tate sad
     tate "Mean, I think all the stolen stuff might be gone forever..."
-    
+
     show mean angry flipped at center
     show tate sheepish flipped at right
     show arceus worried flipped at manual_pos(-175,405)
     show cs disappointed at mid_left
     with move
-    
+
     mean "Nah, watch."
     mean "I didn't want to have to do this, but..."
     mean "I've got this."
@@ -2634,7 +2634,7 @@ label train_confront_lupin:
     with Dissolve(0.5)
     scene white with Dissolve(0.5)
     pause 1.0
-        
+
     scene
     show amtrak_desert_night:
         perspective (0.0, 1000.0, 0.5)
@@ -2673,7 +2673,7 @@ label train_confront_lupin:
     show tate sad flipped
     with hpunch
     pause 0.5
-    
+
     "..."
     pause 2.0
     show mean human annoyed
@@ -2689,7 +2689,7 @@ label train_confront_lupin:
     n "Mean tosses the others onto the roof!"
     show mean human flipped at mid_right behind tate with move
     show tate shock flipped
-    
+
     show mean human
     if fun_value(FUN_VALUE_COMMON):
         play sound sfx_throw_yoshi
@@ -2703,7 +2703,7 @@ label train_confront_lupin:
 
     show mean human at mid_mid_left behind cs with { "master": move }
     cs "Wait--{w=0.25}{nw}"
-    
+
     show cs scared at mid_right
     show mean human at right
     with { "master": move }
@@ -2757,7 +2757,7 @@ label train_confront_lupin:
     pause 0.5
     scene black with dissolve
     pause 2.0
-    
+
 label train_on_top:
     play music encounter_friend_loop if_changed
     music encounter_friend
@@ -2767,15 +2767,15 @@ label train_on_top:
     scene
     show midwest_night
     show amtrak_top
-    
+
     show tate sad dark at manual_pos(500,230)
     show cs worried dark at left
     show arceus worried dark flipped at manual_pos(-175,405)
     show lupin stand hat dark flipped at right
     with dissolve
-    
+
     show mean human angry dark flipped at mid_left behind cs with moveinleft
-    
+
     # mean wanted this. hopefully it's actually fixed this time asldfkasuhfl
     if fun_value(FUN_VALUE_RARE):
         python:
@@ -2798,23 +2798,24 @@ label train_on_top:
     show lupin stand hat dark
     lupin_offscreen "Wow! I didn't think you'd be brave enough to follow me up here!"
     lupin_offscreen "You guys sure are {i}determined!"
-    
+
     hide tate
     hide mean
     hide cs
     hide arceus
-    
+
     #### DRAMATIC SCENE TIME
     #### WHAT WAS I ON WHEN I THOUGHT THIS WOULD BE A GOOD IDEA???
 
     # turn off skipping
     $ _skipping = False
+    $ renpy.choice_for_skipping()
 
     ## SHOT 1
-    
+
     show letterbox1 at Move((0, -120), (0, 0), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show letterbox2 at Move((0, 1200), (0, 1080), 1, repeat=False, bounce=False, xanchor="left", yanchor="bottom")
-    
+
     show lupin run hat dark:
         subpixel True
         xpos 6000
@@ -2822,15 +2823,15 @@ label train_on_top:
         pass
         zoom 10
         linear 4 xpos 7000
-    
+
     show amtrak_top:
         zoom 2
-    
+
     lupin_offscreen "This should be {i}fun!{w=2.5}{nw}"
     hide lupin
-    
+
     ## SHOT 2
-    
+
     show midwest_night
     # TODO: add horizon
     show amtrak_top:
@@ -2838,22 +2839,22 @@ label train_on_top:
         xzoom -1
 
     show tate srs dark at Move((0.65, 0.3), (0.6, 0.3), 10, repeat=False, bounce=False, xanchor="left", yanchor="top")
-    
+
     show cs angry dark at Move((0.2, 0.3), (0.1, 0.3), 12, repeat=False, bounce=False, xanchor="left", yanchor="top")
-    
+
     show arceus angry dark flipped at Move((0.1 ,0.4), (0.0, 0.4), 10, repeat=False, bounce=False, xanchor="left", yanchor="top")
-    
+
     show mean human angry dark flipped at Move((0.4, 0.15), (0.3, 0.15), 8, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show letterbox_screen at manual_pos(0,0)
-    
+
     mean "You've got nowhere to run this time.{w=2.0}{nw}"
     mean "Just give it up.{w=2.0}{nw}"
-    
+
     hide mean
     hide tate
     hide cs
     hide arceus
-    
+
     ## SHOT 3
 
     show midwest_night
@@ -2861,7 +2862,7 @@ label train_on_top:
     show amtrak_top:
         xysize (1920, 300)
         xzoom 1
-    
+
     show lupin run hat dark behind letterbox_screen at Transform:
         subpixel True
         xpos 0.3
@@ -2874,10 +2875,10 @@ label train_on_top:
             linear 10 ypos -0.05
         parallel:
             linear 10 zoom 2
-    
+
     lupin_offscreen "Just when this is getting {i}good?{/i}{w=2.0}{nw}"
     lupin_offscreen "No way!{w=2.0}{nw}"
-    
+
     play sound sfx_hks1 noloop volume 0.7
     with hpunch
     pause 0.25
@@ -2885,12 +2886,12 @@ label train_on_top:
     with hpunch
     play sound sfx_hks1 noloop volume 0.7
     with hpunch
-    
+
     pause 1.0
     n "Gunshots ring out!{w=2.0}{nw}"
     play sound sfx_zenigata_shout
     zenigata_nobeep "{cshake}{size=+24}Lupiiiiin!{w=2.0}{nw}"
-       
+
     show zenigata car dark behind letterbox:
         xpos -800
         ypos 100
@@ -2912,20 +2913,20 @@ label train_on_top:
     pause 1.0
     $ collect("jp_cop_car")
     zenigata_offscreen "I {i}knew{/i} I'd find you on this damn train!{w=3.0}{nw}"
-    
+
     ## SHOT 4
-    
+
     hide lupin
     hide zenigata
     hide amtrak_top
-    
+
     show midwest_night
     show mean human angry dark flipped behind letterbox_screen:
         xpos 0
         ypos 0
         zoom 2
         linear 10 xpos -100
-    
+
     mean "Well, would you look at that?{w=3.0}{nw}"
     show mean human dark flipped
     mean "Looks like we're not the only ones you've managed to piss off today.{w=3.5}{nw}"
@@ -2939,7 +2940,7 @@ label train_on_top:
     stop music fadeout 2.0
     music end
     pause 0.5
-    
+
     minigame "play_rhythmchase_game" "train_lupin_win" "train_lupin_lose"
 
 label train_lupin_win:
@@ -2954,7 +2955,7 @@ label train_lupin_win:
     show lupin run hat dark flipped at mid_mid_right with moveinleft
     show mean human angry dark flipped at center behind lupin with moveinleft
     show lupin stand hat dark flipped with vpunch
-    
+
     n "Mean barely catches Lupin by his coattails."
     mean "Gotcha, ya thieving rat!"
     play sound sfx_walkie_on
@@ -2970,15 +2971,15 @@ label train_lupin_win:
     mean "Copy that. Over and out!"
     play sound sfx_walkie_off
     pause 0.5
-    
+
     scene black with dissolve
     n "The group is met by the conductor, who helps them all back into the train through a window."
     n "Lupin is also brought into custody."
 
     scene
     show car plains night
-    show amtrak_cab 
-    
+    show amtrak_cab
+
     show amtrak_conductor flipped at center
     show mean human angry at mid_offscreen_right
     show tate sad at mid_left
@@ -2986,15 +2987,15 @@ label train_lupin_win:
     show arceus flipped at mid_offscreen_left
     show lupin stand hat at right
     with dissolve
-    
+
     play music in_the_room
     music in_the_room
-    
+
     if fun_value(FUN_VALUE_MUSIC):
         amtrak_conductor "... So, what you're telling me is... this guy got {i}In The Room,{/i} but he wasn't actually {i}you..."
     else:
         amtrak_conductor "... So, what you're telling me is... this guy got into the cab, but he wasn't actually {i}you..."
-    
+
     mean "That's right."
     amtrak_conductor "I see."
     amtrak_conductor "My apologies, Mean."
@@ -3022,7 +3023,7 @@ label train_lupin_win:
     show mean human at mid_offscreen_right with { "master": MoveTransition(0.1) }
 
     # let's give this guy the shakedown!
-    show lupin stand hat: 
+    show lupin stand hat:
         xanchor 0
         yanchor 0
         xpos 1300
@@ -3031,10 +3032,10 @@ label train_lupin_win:
         linear 0.25 yzoom -1
         linear 0.25 ypos 50
     pause 0.5
-    
+
     # watch
     show lupin stand hat:
-        yzoom -1 
+        yzoom -1
         linear 0.1 ypos 50
         linear 0.1 ypos 200
     show watch:
@@ -3045,10 +3046,10 @@ label train_lupin_win:
     play sound sfx_snd_damage
     pause 0.5
     $ collect("watch")
-    
+
     # brooch
     show lupin stand hat:
-        yzoom -1 
+        yzoom -1
         linear 0.1 ypos 50
         linear 0.1 ypos 200
     show brooch:
@@ -3059,10 +3060,10 @@ label train_lupin_win:
     play sound sfx_mc_hit
     pause 0.5
     $ collect("brooch")
-    
+
     # switch
     show lupin stand hat:
-        yzoom -1 
+        yzoom -1
         linear 0.1 ypos 50
         linear 0.1 ypos 200
     show switch:
@@ -3075,7 +3076,7 @@ label train_lupin_win:
 
     # the booze
     show lupin stand hat:
-        yzoom -1 
+        yzoom -1
         linear 0.1 ypos 50
         linear 0.1 ypos 200
     show whiskey:
@@ -3086,10 +3087,10 @@ label train_lupin_win:
     play sound sfx_tf2_hitsound
     pause 0.5
     $ collect("whiskey")
-    
+
     # the money!
     show lupin stand hat:
-        yzoom -1 
+        yzoom -1
         linear 0.1 ypos 50
         linear 0.1 ypos 200
     if train_money_stolen == True:
@@ -3105,10 +3106,10 @@ label train_lupin_win:
             linear 0.25 ypos 1080
     play sound sfx_drop_rings
     pause 0.5
-    
+
     # the hat!
     show lupin stand hat:
-        yzoom -1 
+        yzoom -1
         linear 0.1 ypos 50
         linear 0.1 ypos 200
     show mean_hat:
@@ -3125,32 +3126,32 @@ label train_lupin_win:
     show mean human shocked
     mean "{i}Jesus!"
     show lupin stand:
-        yzoom -1 
+        yzoom -1
         linear 0.1 ypos 50
         linear 0.1 ypos 200
     play sound sfx_hurt1
     show mean human angry
     mean "You got anything {i}else{/i} hidden in there?!"
     show lupin stand:
-        yzoom -1 
+        yzoom -1
         linear 0.1 ypos 50
         linear 0.1 ypos 200
     play sound sfx_hurt1
     lupin "No, sir!"
     show lupin stand:
-        yzoom -1 
+        yzoom -1
         linear 0.1 ypos 50
         linear 0.1 ypos 200
     play sound sfx_hurt1
     lupin "That's all, I swear!"
     show lupin stand:
-        yzoom -1 
+        yzoom -1
         linear 0.1 ypos 50
         linear 0.1 ypos 200
     play sound sfx_hurt1
     lupin "{cshake}Please put me down!"
     show lupin stand:
-        yzoom -1 
+        yzoom -1
         linear 0.1 ypos 50
         linear 0.1 ypos 200
     play sound sfx_hurt1
@@ -3161,7 +3162,7 @@ label train_lupin_win:
     show lupin stand:
         linear 0.5 yzoom 1
     pause 2.0
-    
+
     show cs
     cs "Hey, look! Our cash!"
     show arceus happy flipped
@@ -3218,7 +3219,7 @@ label train_lupin_win:
         pause 0.5
         show amtrak_conductor
         amtrak_conductor "Oh! You must be the boys who won the jackpot at SlotsaFun!"
-        show cs happy 
+        show cs happy
         cs "Yes, sir! That's us!"
         amtrak_conductor "Well, congratulations!"
         cs "Thank you!"
@@ -3242,7 +3243,7 @@ label train_lupin_win:
     pause 0.25
     show mean human angry at mid_offscreen_right
     cs "Everyone, get behind me!"
-    
+
     show amtrak_conductor at manual_pos(-280,56) behind arceus
     show cs angry at center
     if train_money_stolen == True:
@@ -3255,12 +3256,12 @@ label train_lupin_win:
     with move
     show mean human angry flipped
     show amtrak_conductor flipped
-   
+
     if train_money_stolen == True:
         $ train_money_container = "bag"
     elif train_money_stolen == False:
         $ train_money_container = "briefcase"
-   
+
     $ next_line = substitutions("CS reaches into the " + train_money_container + " and pulls out some Legos!")
     n "[next_line]"
     n "He feverishly begins to construct something!"
@@ -3462,6 +3463,7 @@ label train_lupin_win:
     # don't skip the funny
     # TODO: fix this screenshot OR figure out how to do it in-engine
     $ _skipping = False
+    $ renpy.choice_for_skipping()
     play music roundabout
     music roundabout
     mean "{cshake}{size=+24}YOU RAT {i}BASTARD!{w=1.0}{nw}" with hpunch
@@ -3477,7 +3479,7 @@ label train_lupin_win:
             linear 15 ypos -400
     show tbc at manual_pos(1000,800)
     pause 7
-        
+
     stop music fadeout 2
     music end
     scene black with dissolve
@@ -3485,18 +3487,18 @@ label train_lupin_win:
     # </funny>
     if not _skipping:
         $ _skipping = True
-    
+
     n "After a heated discussion, the group decides that maybe it's best to let bygones be bygones and get on with the night."
-    
+
     play music lo_fi_sunset if_changed
     music lo_fi_sunset
-    
+
     if fun_value(FUN_VALUE_MUSIC):
         # oh brother this line STINKS!
         n "Mean finally starts his shift while Tate, CS, and Arceus head to bed, dreaming of lo-fi sunsets."
     else:
         n "Mean finally starts his shift while Tate, CS, and Arceus head to bed."
-    
+
     scene hutchinson_stn
     show hutchinson_stn_lights
     show lupin stand dark at center behind lego_jail
@@ -3504,13 +3506,13 @@ label train_lupin_win:
     show mean human hat dark at right
     show amtrak_conductor dark at mid_offscreen_right
     show zenigata dark at left
-    
+
     with dissolve
     n "Mean stops the train as scheduled in Hutchinson, Kansas, where Lupin is handed over to the cop who was following him."
     n "He introduces himself as Inspector Zenigata."
     $ persistent.seen.add("zenigata")
     n "He tells the Amtrak crew that he's been after Lupin for years, and can't believe a team of goofballs is responsible for finally capturing him."
-    
+
     if train_money_stolen == True:
         show walkie dark with dissolve:
             zoom 0.3
@@ -3520,11 +3522,11 @@ label train_lupin_win:
         n "The stolen funds are reported to Jerma by phone."
         n "He is so overjoyed to hear that the money has been recovered that he urges Zenigata to make sure anyone involved in catching the thief is compensated."
         n "Mean, Tate, CS, Arceus, and the conductor are each awarded $5,000!"
-        
+
         scene black with dissolve
         pause 2.0
-        
-        scene 
+
+        scene
         show amtrak_desert_night
         show amtrak_sleeper_interior_day
         show amtrak_conductor flipped at left
@@ -3532,9 +3534,9 @@ label train_lupin_win:
         show cs happy flipped at mid_right
         show arceus happy at right
         with dissolve
-        
+
         n "CS and Arceus are woken up shortly after by the conductor, who hand-delivers their portion of the reward."
-        
+
         scene black with dissolve
         pause 2.0
         n "The train then continues on its journey."
@@ -3565,12 +3567,12 @@ label train_lupin_lose:
     play sound sfx_chopper_loop loop fadein 5.0
 
     n "Mean sprints after the criminal with everything he's got!"
-    
+
     show lupin run hat dark flipped at offscreenleft with determination
     show mean human angry dark flipped at offscreenleft with determination
     show lupin run hat dark flipped at offscreenright with moveinleft
     show mean human angry dark flipped at offscreenright with moveinleft
-    
+
     scene
     show midwest_night
     # TODO: add horizon
@@ -3581,7 +3583,7 @@ label train_lupin_lose:
 
     show lupin run hat dark flipped at offscreenleft with determination
     show mean human angry dark flipped at offscreenleft with determination
-        
+
     show chopper_ladder dark behind lupin:
         zoom 1.5
         xpos -1
@@ -3592,7 +3594,7 @@ label train_lupin_lose:
     pause 1.0
 
     show lupin run hat dark flipped at mid_right with moveinleft
-    
+
     show chopper_ladder dark at offscreenright
     show lupin run hat flipped dark at offscreenright
     show mean human angry dark flipped at center
@@ -3600,7 +3602,7 @@ label train_lupin_lose:
     pause 0.5
     show mean human shocked dark flipped
     n "A low-flying helicopter grants Lupin an escape!"
-    
+
     # TODO: this color grading kinda blows for this image specifically.
     scene lupin_escape_1 with dissolve
     pause 1.0
@@ -3610,32 +3612,32 @@ label train_lupin_lose:
     n "Lupin then waves down at Mean and the group, taunting them."
     lupin "I'm surprised he didn't even hit {i}you,{/i} Mr. Big & Tall!"
     lupin "Here's a parting gift for you!"
-    n "Lupin tosses Mean's hat back down to him!"    
+    n "Lupin tosses Mean's hat back down to him!"
     lupin "And this one's for {i}you,{/i} {color=#FFDBFC}pink sweater{/color}!"
-    
+
     show lupin_escape_2:
         zoom 1.5
         xcenter 0.5
         ycenter 0.3
     with dissolve
-    
+
     n "Lupin tries to throw a bouquet of roses to Tate, but he aims too high."
     n "It is caught in the helicopter blades and torn to shreds."
     n "The petals sprinkle down like confetti."
     lupin "Oh, oops! Can't win 'em all, right?"
     lupin "See ya!"
-    
+
     scene black with dissolve
-    
+
     play sound sfx_chopper_loop loop volume 0.5
-    
+
     scene
     show midwest_night
     # TODO: add moving floor
     show petals_falling:
         time 15
         ease_expo 5 alpha 0.00
-    
+
     show amtrak_top sil_black:
         xsize 2000
         ysize 500
@@ -3658,13 +3660,13 @@ label train_lupin_lose:
     with dissolve
     stop sound fadeout 15.0
     n "Just like that, the thief disappears into the night."
-    
+
     n "The police car follows the chopper over the horizon."
     n "With nothing left to do now, Mean and the crew sulk back into the train through a window."
-    
+
     scene black with dissolve
     pause 3.0
-    
+
     jump train_completed
 
 label train_win_check_money_legitimacy:
@@ -3675,7 +3677,7 @@ label train_win_check_money_legitimacy:
         jump train_completed
 
 ######## SECRET FIGHT VS TATE ########
-        
+
 label train_check_secret:
     if train_tate_is_fragile_fun_value == True:
         jump train_tate_ex_encounter
@@ -3764,7 +3766,7 @@ label train_tate_ex_encounter:
             jump train_tate_ex_refuse
         "Are you sure?":
             jump train_tate_ex_fight
-            
+
 label train_tate_ex_fight:
     queue music insomnia_loop
     show cs worried flipped
@@ -3835,7 +3837,7 @@ label train_tate_ex_refuse:
     music end
     n "Thoroughly weirded out, CS returns to bed."
     jump train_completed
-    
+
 label train_tate_ex_win:
     stop music
     music end
@@ -3844,7 +3846,7 @@ label train_tate_ex_win:
     $ persistent.seen.add("tate_ex")
 
     call screen warning("The following section contains flashing lights and colors.", "Persons with photosensitive conditions may wish to skip this section.", "back_out_perfect_tate")
-    
+
     scene white with dissolve
     show tate_falling at manual_pos(0.5, -0.5, 0.5)
     play sound sfx_sparkles
@@ -4003,7 +4005,7 @@ label train_defeated_perfect_tate:
     $ achievement_manager.unlock("beat_tate")
     # TODO: audio is not fully ready yet - tate
     dxcom tate_ex
-    
+
     pause 2.0
     scene black with dissolve
     pause 2.0
@@ -4048,7 +4050,7 @@ label train_tate_ex_lose:
     n "Finally tired out, CS returns to the sleeper, where he quickly drifts off...."
     pause 1.0
     jump train_completed
-    
+
 label train_completed:
     centered "The next morning..."
     pause 1.0
@@ -4056,13 +4058,13 @@ label train_completed:
     if train_ending_money_returned == True:
         play music lo_fi_sunset if_changed
         music lo_fi_sunset
-    
+
         n "CS and Arceus wake up feeling completely refreshed."
-        
-        scene 
+
+        scene
         show amtrak_desert_day at manual_pos(0.5, 0.4, 0.5)
-        show amtrak_dining_table 
-        
+        show amtrak_dining_table
+
         show amtrak_dining_food at manual_pos(805,145)
         show mean human hat flipped at left
         show tate at left
@@ -4076,7 +4078,7 @@ label train_completed:
         scene black with dissolve
         pause 1.0
 
-        scene 
+        scene
         show amtrak_desert_day as left:
             perspective (0.0, 1000.0, 0.5)
             matrixanchor (0.5, 0.5)
@@ -4090,7 +4092,7 @@ label train_completed:
         show cs flipped at left
         show arceus flipped at right
         with dissolve
-        
+
         pause 1.0
         n "The rest of the ride is a relaxing one."
         n "CS and Arceus spend part of the day in the lounge, just watching the world go by."
@@ -4101,16 +4103,16 @@ label train_completed:
     else:
         play music homely_yado_inn if_changed
         music homely_yado_inn
-        
+
         if fun_value(FUN_VALUE_MUSIC):
             n "CS and Arceus wake up feeling rather groggy. They'd almost rather be staying at the Homely Yado Inn."
         else:
             n "CS and Arceus wake up feeling rather groggy."
-        
-        scene 
+
+        scene
         show amtrak_desert_day at manual_pos(0.5, 0.4, 0.5)
-        show amtrak_dining_table 
-        
+        show amtrak_dining_table
+
         show amtrak_dining_food at manual_pos(805,145)
         show mean human annoyed hat flipped at left
         show tate sheepish at left
@@ -4126,7 +4128,7 @@ label train_completed:
         scene black with dissolve
         pause 1.0
 
-        scene 
+        scene
         show amtrak_desert_day as left:
             perspective (0.0, 1000.0, 0.5)
             matrixanchor (0.5, 0.5)
@@ -4140,7 +4142,7 @@ label train_completed:
         show cs disappointed flipped at left
         show arceus angry flipped at right
         with dissolve
-        
+
         pause 1.0
         n "The rest of the ride is a quiet one."
         n "CS and Arceus spend much of the day in the lounge, just watching the world go by."
@@ -4148,10 +4150,10 @@ label train_completed:
         n "Nothing but flat land, dry plants, and a cloudless sky."
         scene black with dissolve
         n "Ultimately, the two decide that maybe it's best to just try to take a nap before their next stop..."
-    
+
     pause 2.0
     n "Just before 3 PM, the train arrives at Union Station in Chicago."
-    
+
     scene chicago_union_station
     show cs happy flipped at mid_mid_right
     show arceus happy at right
@@ -4164,7 +4166,7 @@ label train_completed:
     show arceus flipped
     pause 0.1
     hide cs
-    hide arceus 
+    hide arceus
     with moveoutright
     n "The two then head towards another platform for the final train home."
     scene black with dissolve
@@ -4181,7 +4183,7 @@ label train_return_home_transition:
     scene moynihan_interior with dissolve
 
     # TODO: add mean's chosen BGM here :D
-    
+
     n "A day later, the two finally deboard the train in New York City."
     show cs at left
     show arceus flipped at center
@@ -4230,7 +4232,7 @@ label train_return_home_transition:
             billy "That's cash in the trash!"
             hide case with dissolve
     # DID YOU LOSE THE MONEY?
-    else: 
+    else:
         show arceus
         n "CS and Arceus rummage around in their pockets and manage to scrounge together $19.95."
         show arceus flipped
@@ -4247,7 +4249,7 @@ label train_return_home_transition:
     with moveoutright
     stop music fadeout 3.0
     music end
-    
+
     # final endings:
     if train_ending_money_returned == True:
         if train_money_stolen == True:
