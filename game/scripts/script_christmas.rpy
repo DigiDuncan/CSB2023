@@ -2398,6 +2398,7 @@ label ce_party_before:
         show tate srs festive dark
         tate "I {i}still{/i} don't know why you had to wear the fake beard..."
         mean "Like I said, because I {i}can!"
+        show mean human festive dark flipped
         n "Tate groans and shakes their head."
         n "The remnants of a long and drawn-out argument linger in the air."
         show cs worried christmas dark flipped
@@ -2408,6 +2409,7 @@ label ce_party_before:
         cs "It's... {fast}nice to finally meet you!"
         cs "Shall we get inside?"
         show tate festive dark
+        show mean human happy festive dark flipped
         tate "Yeah!" (multiple = 2)
         mean "Yeah!" (multiple = 2)
     elif d20 == 7:
@@ -2697,6 +2699,9 @@ label ce_party_before:
         show elizabeth dark flipped at center
         show anne dark at mid_left
         show grace dark at left
+        $ persistent.seen.add("anne")
+        $ persistent.seen.add("eliza")
+        $ persistent.seen.add("grace")
         with dissolve
         show cs disappointed christmas dark flipped at right with moveinright
         cs "Hey, uhh..."
@@ -3120,6 +3125,9 @@ label ce_introductions:
     show anne at mid_right
     show grace at mid_mid_right
     with moveinright
+    $ persistent.seen.add("anne")
+    $ persistent.seen.add("eliza")
+    $ persistent.seen.add("grace")
     eliza "Hey, what's up."
     if d20 == 18:
         show cs disappointed christmas
