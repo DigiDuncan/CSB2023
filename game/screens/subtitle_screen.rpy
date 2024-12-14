@@ -22,7 +22,7 @@ screen _dxcom(c):
             text c.full_text:
                 size 28
                 xmaximum 1680
-                font "fonts/OpenSans-Regular.ttf"
+                font FontGroup().add("fonts/DIN-Medium.ttf", 0x0000, 0x024F).add("CP_Font_1.otf", 0x2E80, 0xDFFF).add("fonts/OpenSans-Regular.ttf", 0x0000, 0xffff)
                 layout "greedy"
                 color c.color
 
