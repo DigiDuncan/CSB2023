@@ -1359,7 +1359,6 @@ image gas_prices = "gas_prices.png"
 image genergy = "genergy.png"
 image ges_car = "ges_car.png"
 image ges_car dark = "dark:ges_car.png"
-image gleam = "gleam.png"
 image hatch = "gui/ce_point_click/hatch/hatch_idle.png"
 image joj_ufo_empty = "images/joj_ufo/joj_ufo_empty.png"
 image joj_ufo_empty dark = "dark:images/joj_ufo/joj_ufo_empty.png"
@@ -1480,9 +1479,6 @@ define intro_credits_2 = "movies/intro_credits_2.webm"
 define ce_ending = "movies/ce_ending.webm"
 
 # Animated Sprites
-
-## Realistic explosion
-image realistic_explosion_anim = spritesheet_animation("images/realistic_explosion.png", 6, 3, looping = False)
 
 ## For cop car lights
 image blue_light:
