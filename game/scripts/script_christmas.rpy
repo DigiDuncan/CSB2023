@@ -2701,9 +2701,6 @@ label ce_party_before:
         show elizabeth dark flipped at center
         show anne dark at mid_left
         show grace dark at left
-        $ persistent.seen.add("anne")
-        $ persistent.seen.add("eliza")
-        $ persistent.seen.add("grace")
         with dissolve
         show cs disappointed christmas dark flipped at right with moveinright
         cs "Hey, uhh..."
@@ -3131,9 +3128,6 @@ label ce_introductions:
     show anne at mid_right
     show grace at mid_mid_right
     with moveinright
-    $ persistent.seen.add("anne")
-    $ persistent.seen.add("eliza")
-    $ persistent.seen.add("grace")
     eliza "Hey, what's up."
     if d20 == 18:
         show cs disappointed christmas
@@ -3178,6 +3172,7 @@ label ce_introductions:
         show avgn at center with moveinbottom
         show elizabeth worried at right with vpunch
         avgn "You guys ever heard of {i}Dr. Jekyll and Mr. Hyde{/i} for the NES?"
+        show elizabeth angry
         eliza "Uhh, no?"
         show avgn flipped
         avgn "Good, because it's fucking {nw}"
@@ -5748,7 +5743,9 @@ label ce_lights_out:
     eliza "Before you go, CS, if you can, I think you should check outdoors."
     eliza "Even though it's dark in here, no light is coming in from outside."
     eliza "It also sounds {i}terrible{/i} out there."
+    show elizabeth angry
     eliza "I've experienced some harsh Soviet winters, but I've never dealt with anything {i}this{/i} bad before."
+    show elizabeth
     show cs worried christmas
     cs "Well, that's some {i}awesome{/i} news..."
     show cs disappointed christmas

@@ -527,7 +527,7 @@ define zelda = Character("Zelda", callback = renpy.partial(char_callback, play_b
 
 # Our Friends! Character Definitions
 define addy = Character("Addy", callback = renpy.partial(char_callback, name = "addy", beep = "pak"))
-define anne = Character("Anne", callback = char_callback)
+define anne = Character("Anne", callback = renpy.partial(char_callback, name = "anne", beep = "anne"))
 define anno = Character("Anno", callback = renpy.partial(char_callback, name = "anno", beep = "anno"))
 define arceus = Character("Arceus", callback = renpy.partial(char_callback, name = "arceus", beep = "arc"))
 define aria = Character("Aria", callback = renpy.partial(char_callback, name = "aria", beep = "aria"))
@@ -536,7 +536,7 @@ define blank = Character("Blank", callback = renpy.partial(char_callback, name =
 define db = Character("DB05", callback = renpy.partial(char_callback, name = "db", beep = "db05"))
 define digi = Character("Digi", callback = renpy.partial(char_callback, name = "digi", beep = "digi"))
 define eliza = Character("Elizabeth", callback = renpy.partial(char_callback, name = "eliza", beep = "mika"))
-define grace = Character("Grace", callback = char_callback)
+define grace = Character("Grace", callback = renpy.partial(char_callback, name = "grace", beep = "grace"))
 define iris = Character("Iris", callback = renpy.partial(char_callback, name = "iris", beep = "iris"))
 define k17 = Character("K-17", callback = renpy.partial(char_callback, name = "k17", beep = "k17"))
 define k22 = Character("K-22", callback = renpy.partial(char_callback, name = "k22", beep = "k20"))
@@ -1794,6 +1794,10 @@ image elizabeth worried = "characters/eliza/eliza_worried.png"
 image elizabeth worried flipped = "flip:characters/eliza/eliza_worried.png"
 image elizabeth worried dark = "dark:characters/eliza/eliza_worried.png"
 image elizabeth worried dark flipped = "dark:flip:characters/eliza/eliza_worried.png"
+image elizabeth angry = "characters/eliza/eliza_angry.png"
+image elizabeth angry flipped = "flip:characters/eliza/eliza_angry.png"
+image elizabeth angry dark = "dark:characters/eliza/eliza_angry.png"
+image elizabeth angry dark flipped = "dark:flip:characters/eliza/eliza_angry.png"
 image elizabeth sil_black = "sil_black:characters/eliza/eliza.png"
 
 image mika = "characters/mika.png"

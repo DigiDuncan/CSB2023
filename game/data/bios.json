@@ -434,7 +434,8 @@
         "sprites": { 
             "Neutral": "images/characters/eliza/eliza.png",
             "Disappointed": "images/characters/eliza/eliza_disappointed.png",
-            "Worried": "images/characters/eliza/eliza_worried.png"
+            "Worried": "images/characters/eliza/eliza_worried.png",
+            "Angry": "images/characters/eliza/eliza_angry.png"
      },
         "quote": "Uh, uh... negative, negative. We had a reactor leak here. Now give us a few minutes to lock it down. Large leak, very dangerous.",
         "bio": "Been 'round for a bit less than Anne and Grace, served her country proud! Mostly a loner who directs Anne and Grace.",
