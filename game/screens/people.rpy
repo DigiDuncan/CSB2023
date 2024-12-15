@@ -36,7 +36,6 @@ screen people_nav():
         # 0 = sort by character name, NOT by json name (default)
         # 1 = RPG characters only
         # 2 = new to DX only
-        # 3 = new to CE only
         # maybe future sort modes will be added
 
         if current_bios_sorting_mode == 0:
@@ -46,19 +45,11 @@ screen people_nav():
             presort = []
             for c in name_map:
                 if c in persistent.seen:
-                    if "rpg" in name_map[c]:
-                        presort.append(c)
-            sort_mode = sorted(presort, key=lambda character: name_map[character]["full_name"].upper())
-            sort_text = "RPG Fighters Only"
-        elif current_bios_sorting_mode == 2:
-            presort = []
-            for c in name_map:
-                if c in persistent.seen:
                     if "dx" in name_map[c]:
                         presort.append(c)
             sort_mode = sorted(presort, key=lambda character: name_map[character]["full_name"].upper())
             sort_text = "New To DX"
-        elif current_bios_sorting_mode == 3:
+        elif current_bios_sorting_mode == 2:
             presort = []
             for c in name_map:
                 if c in persistent.seen:
@@ -84,7 +75,7 @@ screen people_nav():
                     action SetVariable("current_bios_sorting_mode", current_bios_sorting_mode-1)
 
         # Change this when there's more modes added
-        if current_bios_sorting_mode < 3:
+        if current_bios_sorting_mode < 2:
             imagebutton:
                 xalign 1.0 yalign 0.5
                 xysize 64, 64
@@ -138,7 +129,7 @@ screen people_welcome():
     python:
         bio_count = len(name_map.keys())
         unlocked_bio_count = len(persistent.seen)
-        
+
     vbox:
         xsize 850
         xalign 0.5 yalign 0.5
@@ -151,7 +142,7 @@ screen people_welcome():
 ##-----------------------------------------------
 
 screen person(l):
-        
+
     ##### Main Container omitting the menu
     viewport:
         xsize 1350
@@ -284,13 +275,13 @@ screen person(l):
                                     # delimiter to handle outfit/expression names
                                     # ex. "Default: Happy" will be split
                                     this_sprite_split = this_sprite.split(": ")
-                                    
+
                                     if len(this_sprite_split) > 1:
                                         this_sprite = "{size=-12}" + this_sprite_split[0] + "{/size}\n" + this_sprite_split[1]
                                     else:
                                         this_sprite = this_sprite_split
-    
-                                # sprite selector 
+
+                                # sprite selector
                                 text this_sprite:
                                     xalign 0.5
                                     yalign 0.5

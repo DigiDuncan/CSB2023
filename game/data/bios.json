@@ -14,30 +14,6 @@
         "bio": "Not to be confused with Pakoo, Addy is Pakoo's counterpart who runs a giant underground facility full of archived memories of Pakoo's entire life. Talk about the world's biggest autobiography!",
         "dx_bio": "The creator of the story. The Scriptwriter. Besides archiving their life, they've also taken an interest in writing an adventure novel. This one, to be precise. When they tried to give CS an interesting life by writing him into this crazy story, it seems they didn't take CS' feelings into consideration."
     },
-    "alicia": {
-        "full_name": "Alicia",
-        "pronouns": "(she/her)",
-        "sprites": { "Default": "images/characters/alicia.png" },
-        "quote": "I just want friends :(",
-        "bio": "Alicia is a little girl who lives with her grandmother, the witch, in Moominvalley. She wants to be friends with the Moomins, but her grandma will not allow this, because the Moomins' kindness will somehow sap her magic."
-    },
-    "amtrak_conductor": {
-        "full_name": "Conductor",
-        "pronouns": "(he/him)",
-        "sprites": { "Default": "images/characters/amtrak_conductor.png" },
-        "quote": "All aboard!",
-        "bio": "He's an early bird who runs a tight ship on an even tighter schedule. He does his best to maintain order and to keep a cool head no matter what nonsense may arise. He quietly takes pride in his physique and spends his off-days pumping iron. Unfortunately, his experimentation with protein shakes often lands him in the restroom for long periods...",
-        "dx": true,
-        "zoom": 0.9
-    },
-    "amtrak_stewardess": {
-        "full_name": "Stewardess",
-        "pronouns": "(she/her)",
-        "sprites": { "Default": "images/characters/amtrak_stewardess.png"},
-        "quote": "Can I get you anything?",
-        "bio": "This particular stewardess gives off a motherly vibe. She takes the time to make all her guests feel welcome and cared for, even when those guests try to roleplay as other staff.",
-        "dx": true
-    },
     "anne": {
         "full_name": "Anne",
         "pronouns": "(she/her)",
@@ -55,29 +31,17 @@
         "pronouns": "(he/him)",
         "sprites": {
             "Default": "images/characters/anno/anno.png",
-            "Prison": "images/characters/anno/anno_prison.png",
-            "Guard": "images/characters/anno/anno_guard.png",
             "Phone": "images/characters/anno/anno_phone.png",
             "Coat": "images/characters/anno/anno_coat.png",
             "Festive": "images/characters/anno/anno_festive.png"
         },
         "quote": "Welcome to the internet",
-        "bio": "Anno is one of CS' best friends. He's always there to help CS out during livestreams, and he's an avid fan of Nirvana. He also loves making AI covers of CS and his crew.",
-        "rpg": "ANNO"
+        "bio": "Anno is one of CS' best friends. He's always there to help CS out during livestreams, and he's an avid fan of Nirvana. He also loves making AI covers of CS and his crew."
     },
     "arceus": {
         "full_name": "Arceus3251",
         "pronouns": "(he/him)",
         "sprites": {
-            "Default: Neutral": "images/characters/arc/arceus.png",
-            "Default: Angry": "images/characters/arc/angry.png",
-            "Default: Happy": "images/characters/arc/happy.png",
-            "Default: Worried": "images/characters/arc/worried.png",
-            "Default: Prison": "images/characters/arc/prison.png",
-            "Default: Guard": "images/characters/arc/guard.png",
-
-            "Dirty: Neutral": "images/characters/arc/arceusdirty.png",
-            "Dirty: Worried": "images/characters/arc/worrieddirty.png",
 
             "Festive: Neutral": "images/characters/arc/neutral_festive.png",
             "Festive: Angry": "images/characters/arc/angry_festive.png",
@@ -85,19 +49,16 @@
             "Festive: Worried": "images/characters/arc/worried_festive.png"
         },
         "quote": "I'm literally a hacker, guys! uwu",
-        "bio": "The master hacker and technician himself, Arceus has a lot of tricks up his sleeve. He could do anything he wanted, if he could only be arsed. Some say he's got godlike powers, but others say he'd be way too lazy to use them if he did. Either way, he's happy to help CS out of the horrible mess that he's gotten himself into this time.",
-        "rpg": "ARCEUS"
+        "bio": "The master hacker and technician himself, Arceus has a lot of tricks up his sleeve. He could do anything he wanted, if he could only be arsed. Some say he's got godlike powers, but others say he'd be way too lazy to use them if he did. Either way, he's happy to help CS out of the horrible mess that he's gotten himself into this time."
     },
     "aria": {
         "full_name": "Aria",
         "pronouns": "(she/her)",
         "sprites": {
-            "Default": "images/characters/aria.png",
             "Festive": "images/characters/aria_festive.png"
         },
         "quote": "Yeah, that sounds about right.",
-        "bio": "Aria knows her shit. Whether it's book smarts or street smarts, she's got it all. While studying for college is important to Aria, she seems to invest even more of her time into hanging out with those bozos from DPN.",
-        "rpg": "ARIA"
+        "bio": "Aria knows her shit. Whether it's book smarts or street smarts, she's got it all. While studying for college is important to Aria, she seems to invest even more of her time into hanging out with those bozos from DPN."
     },
     "avgn": {
         "full_name": "James Rolfe",
@@ -118,41 +79,20 @@
         "full_name": "Billy Mays",
         "pronouns": "(he/him)",
         "sprites": {
-            "Default: Neutral": "images/characters/billy/billy.png",
-            "Default: Laser!": "images/characters/billy/BillyMaysWithLaser.png",
             "Festive": "images/characters/billy/festive.png"
         },
         "quote": "Hi, Billy Mays here!",
         "bio": "Billy perfected the art of the salespitch 10 years ago. He is a master of the infomerical. Since finding success, he has moved on to greater horizons. He has been seen recently travelling the country, living off the various gadgets he sold in the past.",
-        "dx_bio": "This is the Billy that came after the Billy that made his mark. Throughout history, Perfect Billy would assign a host to be \"Billy Mays\". Although most of us only know the one from the infomericals, when he passed away, this Billy took his place.",
-        "rpg": "BILLY"
+        "dx_bio": "This is the Billy that came after the Billy that made his mark. Throughout history, Perfect Billy would assign a host to be \"Billy Mays\". Although most of us only know the one from the infomericals, when he passed away, this Billy took his place."
     },
     "blank": {
         "full_name": "Blank Named",
         "pronouns": "(they/he)",
         "sprites": {
-            "Default": "images/characters/blank.png",
             "Festive": "images/characters/blank_festive.png"
         },
         "quote": "I Am Catboy Musical",
-        "bio": "Ever needed music that's also a shitpost? No? Well, too bad, because Blank has ya covered. He {i}can{/i} make regular music, but it isn't {i}Blank{/i} music if it doesn't sample catgirl moans.",
-        "rpg": "BLANK"
-    },
-    "border_guard": {
-        "full_name": "Canadian Border Guard",
-        "pronouns": "(he/him)",
-        "sprites": { "Default": "images/characters/border_guard.png" },
-        "quote": "Out for a rip are ya, bud?",
-        "bio": "This man is as stereotypical as a Canadian gets. He drinks a liter of maple syrup every day, eats poutine for lunch with a side of ketchup chips, and loves to fight random moose. He picked up a Mountie outfit somewhere along the way, but he might not even be a real border guard.",
-        "zoom": 0.8
-    },
-    "bubble": {
-        "full_name": "Bub Ble",
-        "pronouns": "(she/her)",
-        "sprites": { "Default": "images/characters/bubble.png" },
-        "quote": "{size=144}{bt=a3-p10-s4}\u00e6{/bt}{/size}",
-        "bio": "Also known as Jade, this massive slime has been seen roaming around Las Vegas. Only a few claim to have spotted her, which is funny, since she is about a mile tall.",
-        "rpg": "BUBBLE"
+        "bio": "Ever needed music that's also a shitpost? No? Well, too bad, because Blank has ya covered. He {i}can{/i} make regular music, but it isn't {i}Blank{/i} music if it doesn't sample catgirl moans."
     },
     "carguy": {
         "full_name": "Carguy",
@@ -169,8 +109,7 @@
             "Pencil": "images/characters/pencilcashier.png"
         },
         "quote": "That'll be $11.88",
-        "bio": "He's your average run-of-the-mill working-class citizen. Whenever you need to pay for something, he's got your back. At a completely different store in a completely new location? He's there for you.",
-        "rpg": "CASHIER"
+        "bio": "He's your average run-of-the-mill working-class citizen. Whenever you need to pay for something, he's got your back. At a completely different store in a completely new location? He's there for you."
     },
     "colton": {
         "full_name": "Colton Potter",
@@ -178,14 +117,6 @@
         "sprites": { "Default": "images/characters/lmg/colton.png"},
         "quote": "Guys, this isn't funny!",
         "bio": "Although he's the scapegoat of LTT, Colton doesn't mind this treatment too much. He's happy to work with Linus and the gang, and, honestly, he needs their company to even get through the day."
-    },
-    "cop": {
-        "full_name": "Copdude",
-        "pronouns": "(he/him)",
-        "sprites": {"Default": "images/characters/cop.png"},
-        "quote": "You're under arrest!",
-        "bio": "Not to be confused with Copguy, this is just your regular ol' Copdude. While not as strong as Copguy, Copdudes will still act as a powerful arm to the police force. They can also sense a Krispy Kreme donut from a mile away.",
-        "rpg": "COP"
     },
     "copguy": {
         "full_name": "Copguy",
@@ -195,52 +126,7 @@
             "Festive": "images/characters/copguy/copguy_festive.png"
         },
         "quote": "You're headin' to the slammer, bucko.",
-        "bio": "Copguy is both the good cop and the bad cop. You think all cops are bad? Copguy does not care. Nothing will stop him from completing his final mission.",
-        "rpg": "COPGUY"
-    },
-    "copguy_ex": {
-        "full_name": "Copguy EX",
-        "pronouns": "(he/him)",
-        "sprites": { "Default": "images/characters/copguy/copguy_ex1.png" },
-        "quote": "This ends {i}here.{/i}",
-        "bio": "Millions of dollars in government surveillance has allowed Copguy to observe and practice nearly all of CS' and his friends' abilities. The only thing he {i}can't{/i} mimic is the power of friendship!",
-        "rpg": "COPGUY_EX"
-    },
-    "copguy_exe": {
-        "full_name": "Copguy.EXE",
-        "pronouns": "(he/him)",
-        "sprites": { "Default": "images/characters/copguy/copguyexe.png" },
-        "quote": "I WILL FIND YOU.",
-        "bio": "What {i}happened?",
-        "rpg": "COPGUY_EXE",
-        "dx": true
-    },
-    "craptop": {
-        "full_name": "Craptop",
-        "sprites": {
-            "Sentient": "images/characters/craptop/laptop.png",
-            "Off": "images/characters/craptop/off.png",
-            "Dashcam": "images/characters/craptop/car.png",
-            "Desktop": "images/characters/craptop/desktop.png",
-            "Discord": "images/characters/craptop/discord.png",
-            "Editing": "images/characters/craptop/edit.png",
-            "Error": "images/characters/craptop/error.png",
-            "Broken": "images/characters/craptop/sad.png",
-            "Evidence": "images/characters/craptop/evidence.png",
-            "Updating": "images/characters/craptop/updating.png",
-            "YTP": "images/characters/craptop/ytp.png"
-        },
-        "quote": "Your PC sux. lol.",
-        "bio": "Did you know that CS has one of the nicest houses on the planet, but he still has this 20 year old laptop? It's time to get an upgrade, dude.",
-        "zoom": 1.333
-    },
-    "cruise": {
-        "full_name": "Tom Cruise",
-        "pronouns": "(he/him)",
-        "sprites": {"Default": "images/characters/cruise.png" },
-        "quote": "Talk to me, Goose!",
-        "bio": "While Mr. Cruise is mostly known for his acting career, especially for his role in {i}Top Gun,{/i} he has begun spreading his roots into the cult of Scientology. Nobody really knows what his motive is. Maybe he saw some things up there while flying his Tomcat that we weren't supposed to see...",
-        "dx": true
+        "bio": "Copguy is both the good cop and the bad cop. You think all cops are bad? Copguy does not care. Nothing will stop him from completing his final mission."
     },
     "cs": {
         "full_name": "cs188",
@@ -284,111 +170,18 @@
             "Coat + Hat: Pissed": "images/characters/cs/coat_hat/pissed.png",
             "Coat + Hat: Surprised": "images/characters/cs/coat_hat/surprised.png",
             "Coat + Hat: Scared": "images/characters/cs/coat_hat/scared.png",
-            "Coat + Hat: Worried": "images/characters/cs/coat_hat/worried.png",
-
-            "Gown: Neutral": "images/characters/cs/gown/neutral.png",
-            "Gown: Happy": "images/characters/cs/gown/happy.png",
-            "Gown: Disappointed": "images/characters/cs/gown/disappointed.png",
-            "Gown: Concentrate": "images/characters/cs/gown/concentrate.png",
-            "Gown: Angry": "images/characters/cs/gown/angry.png",
-            "Gown: Pissed": "images/characters/cs/gown/pissed.png",
-            "Gown: Surprised": "images/characters/cs/gown/surprised.png",
-            "Gown: Scared": "images/characters/cs/gown/scared.png",
-            "Gown: Worried": "images/characters/cs/gown/worried.png",
-            "Gown: Eyepatch": "images/characters/cs/gown/eyepatch.png",
-
-            "Guard: Neutral": "images/characters/cs/guard/neutral.png",
-            "Guard: Happy": "images/characters/cs/guard/happy.png",
-            "Guard: Disappointed": "images/characters/cs/guard/disappointed.png",
-            "Guard: Concentrate": "images/characters/cs/guard/concentrate.png",
-            "Guard: Angry": "images/characters/cs/guard/angry.png",
-            "Guard: Pissed": "images/characters/cs/guard/pissed.png",
-            "Guard: Surprised": "images/characters/cs/guard/surprised.png",
-            "Guard: Scared": "images/characters/cs/guard/scared.png",
-            "Guard: Worried": "images/characters/cs/guard/worried.png",
-
-            "Insane: Neutral": "images/characters/cs/insane/neutral.png",
-            "Insane: Happy": "images/characters/cs/insane/happy.png",
-            "Insane: Disappointed": "images/characters/cs/insane/disappointed.png",
-            "Insane: Concentrate": "images/characters/cs/insane/concentrate.png",
-            "Insane: Angry": "images/characters/cs/insane/angry.png",
-            "Insane: Pissed": "images/characters/cs/insane/pissed.png",
-            "Insane: Surprised": "images/characters/cs/insane/surprised.png",
-            "Insane: Scared": "images/characters/cs/insane/scared.png",
-            "Insane: Worried": "images/characters/cs/insane/worried.png",
-
-            "Pencil: Neutral": "images/characters/cs/pencil/neutral.png",
-            "Pencil: Happy": "images/characters/cs/pencil/happy.png",
-            "Pencil: Disappointed": "images/characters/cs/pencil/disappointed.png",
-            "Pencil: Concentrate": "images/characters/cs/pencil/concentrate.png",
-            "Pencil: Angry": "images/characters/cs/pencil/angry.png",
-            "Pencil: Pissed": "images/characters/cs/pencil/pissed.png",
-            "Pencil: Surprised": "images/characters/cs/pencil/surprised.png",
-            "Pencil: Scared": "images/characters/cs/pencil/scared.png",
-            "Pencil: Worried": "images/characters/cs/pencil/worried.png",
-
-            "Prison: Neutral": "images/characters/cs/prison/neutral.png",
-            "Prison: Happy": "images/characters/cs/prison/happy.png",
-            "Prison: Disappointed": "images/characters/cs/prison/disappointed.png",
-            "Prison: Concentrate": "images/characters/cs/prison/concentrate.png",
-            "Prison: Angry": "images/characters/cs/prison/angry.png",
-            "Prison: Pissed": "images/characters/cs/prison/pissed.png",
-            "Prison: Surprised": "images/characters/cs/prison/surprised.png",
-            "Prison: Scared": "images/characters/cs/prison/scared.png",
-            "Prison: Worried": "images/characters/cs/prison/worried.png",
-
-            "Robe: Neutral": "images/characters/cs/robe/neutral.png",
-            "Robe: Happy": "images/characters/cs/robe/happy.png",
-            "Robe: Disappointed": "images/characters/cs/robe/disappointed.png",
-            "Robe: Concentrate": "images/characters/cs/robe/concentrate.png",
-            "Robe: Angry": "images/characters/cs/robe/angry.png",
-            "Robe: Pissed": "images/characters/cs/robe/pissed.png",
-            "Robe: Surprised": "images/characters/cs/robe/surprised.png",
-            "Robe: Scared": "images/characters/cs/robe/scared.png",
-            "Robe: Worried": "images/characters/cs/robe/worried.png",
-
-            "Fake God": "images/characters/cs/base/fake_god.png",
-            "Guitar": "images/characters/cs/base/guitar.png",
-            "Horse": "images/characters/cs/base/horse.png",
-            "Young": "images/characters/cs/misc/cs_young.png"
+            "Coat + Hat: Worried": "images/characters/cs/coat_hat/worried.png"
         },
         "quote": "Hey guys, CS here!",
         "bio": "cs188 is the main dude here. His name is even in the title! CS makes YTPs in his spare time. He occasionally streams as well, however, whether he'll actually show up on time is up for debate. If you were wondering why this guy is wearing a cat maid dress, we really don't know either at this point. Just let the man be himself.",
-        "flip": true,
-        "rpg": "CS"
-    },
-    "csgod": {
-        "full_name": "CSGod",
-        "pronouns": "(he/him)",
-        "sprites": {
-            "Neutral": "images/characters/cs/misc/csgod.png",
-            "Angry": "images/characters/cs/misc/csgod_angry.png"
-        },
-        "quote": "I have the power of YTP!",
-        "bio": "﷽"
-    },
-    "cultist": {
-        "full_name": "Cultist Leader",
-        "sprites": {
-            "Default": "images/characters/cultist.png",
-            "Gun": "images/characters/cultistgun.png"
-        },
-        "quote": "I hate everything that exists!",
-        "bio": "Not to be confused with the YT Channel \"I Hate Everything\", these guys truly hate {i}everything.{/i} It's surprising that the leader has kept the cult together for this long without the members hating the cult or each other."
-    },
-    "cultist2": {
-        "full_name": "Cultists",
-        "sprites": { "Default": "images/characters/cultist2.png" },
-        "quote": "I love hating everything!",
-        "bio": "These folks hate a lot of things, and they probably hate {i}you,{/i} too! They may also just be fans of the YT channel \"I Hate Everything\", and joined because they thought it was about the channel."
+        "flip": true
     },
     "db": {
         "full_name": "db05",
         "pronouns": "(he/him)",
         "sprites": { "Default": "images/characters/db.png" },
         "quote": "Sorry, guys! I'm late!",
-        "bio": "Db05 is a busy man, but who can blame him? He has places to be, things to see, and most importantly, he has to feed his pets.",
-        "rpg": "DB05"
+        "bio": "Db05 is a busy man, but who can blame him? He has places to be, things to see, and most importantly, he has to feed his pets."
     },
     "digi": {
         "full_name": "DigiDuncan",
@@ -405,15 +198,7 @@
             "Thinking": "images/characters/digi/thinking.png"
         },
         "quote": "But, here's the thing though, right?",
-        "bio": "DigiDuncan is the man with the plan. Too many plans, actually. They also love to drink an absurd amount of Powerade. Maybe that's where all those ideas come from. Digi is always working on countless projects ranging from game development to tinkering with his cybernetic augmentations. They are also really smol.",
-        "rpg": "DIGI"
-    },
-    "doug": {
-        "full_name": "Doug McMillon",
-        "pronouns": "(he/him)",
-        "sprites": { "Default": "images/characters/doug.png" },
-        "quote": "Walllll-mart!",
-        "bio": "As the CEO of Walmart, Doug has made it pretty big in life. In spite of this, he can occasionally be found at one of his stores, filling in as a greeter."
+        "bio": "DigiDuncan is the man with the plan. Too many plans, actually. They also love to drink an absurd amount of Powerade. Maybe that's where all those ideas come from. Digi is always working on countless projects ranging from game development to tinkering with his cybernetic augmentations. They are also really smol."
     },
     "ed": {
         "full_name": "Ed",
@@ -425,8 +210,7 @@
         },
         "quote": "We make sure to get the JoJ done right, the first time.",
         "bio": "As the CEO of HoH SiS, he makes sure the crew gets the JoJ done right, no matter the cost. He always looks out for his fellow workers. He holds a grudge against CS, and is determined to get his revenge.",
-        "zoom": 0.85,
-        "rpg": "ED"
+        "zoom": 0.85
     },
     "eliza": {
         "full_name": "Elizabeth",
@@ -446,21 +230,7 @@
         "pronouns": "(he/him)",
         "sprites": { "Default": "images/characters/ges.png" },
         "quote": "weenor :)",
-        "bio": "Ges is a massive history buff. He loves to tell stories about past events, especially of World War I and II. While he'd love to go out and visit historical landmarks, he's stuck working at the shoe store for now.",
-        "rpg": "GES"
-    },
-    "gnome": {
-        "full_name": "Gnome",
-        "sprites": { "Default": "images/characters/gnome.png" },
-        "quote": "Hoo!",
-        "bio": "You might think this is Blank, but it's not. These gnomes live out in the forest and possess magical powers. To the general public, much of their lives are unknown. Most people simply get gnomed when they see them. These gnomes are also big fans of nutmeg and mac and cheese."
-    },
-    "gordon": {
-        "full_name": "Gordon Ramsay",
-        "pronouns": "(he/him)",
-        "sprites": { "Default": "images/characters/gordon.png" },
-        "quote": "It's fucking RAW!",
-        "bio": "Gordon is {i}The{/i} Master Chef. While his intimidating character is definitely played up a bit for TV, he has earned that title, and he is not afraid to point out when {i}you{/i} have not."
+        "bio": "Ges is a massive history buff. He loves to tell stories about past events, especially of World War I and II. While he'd love to go out and visit historical landmarks, he's stuck working at the shoe store for now."
     },
     "grace": {
         "full_name": "Grace",
@@ -481,14 +251,6 @@
         "bio": "Been 'round for some time. Still has her cowboy hat and six-shooter. Trying to rebuild her gun collection after having to sell it all to avoid complete bankruptcy after the AG&A Co. situation. Happily married to Anne.",
         "ce": true
     },
-    "green": {
-        "full_name": "Mr. Green",
-        "pronouns": "(he/him)",
-        "sprites": { "Default": "images/characters/green.png" },
-        "quote": "Just shut up and give me my cut!",
-        "bio": "Mr. Green became the embodiment of greed and luck long ago. After World War II, he started up a chocolate factory and spent his profits at a local casino until he became a billionaire. He once survived a heart attack simply because luck was in his favor. He has yet to be beaten by someone with better fortune.",
-        "zoom": 0.75
-    },
     "guest": {
         "full_name": "Ecstatic Fan",
         "pronouns": "(they/them)",
@@ -496,78 +258,12 @@
         "quote": "We take those W rizz banbans",
         "bio": "A true rizz god. They'll banban your skibidi toilet into those gyatts as much as possible. You mess with them, you'll get that L rizz for sure."
     },
-    "hammond": {
-        "full_name": "The Top Gear Crew",
-        "pronouns": "(he/him (all))",
-        "sprites": {
-            "The Crew": "images/characters/topgear.png",
-            "Hammond": "images/characters/hammond.png",
-            "James": "images/characters/james.png",
-            "Jeremy": "images/characters/jeremy.png"
-        },
-        "quote": "Welcome to {i}Top Gear.{/i}",
-        "bio": "Whether it's racing cars or wrecking them, they love anything car-related. They have pushed the limits of many vehicles as well as of their components. Sometimes they overdo it, and because of this, they were kicked out of the original {i}Top Gear{/i} and had to make a new spin-off.",
-        "zoom": 0.733
-    },
-    "hoh_worker": {
-        "full_name": "HoH SiS Workers",
-        "sprites": {
-            "Group": "images/characters/hohsis/hoh_worker.png",
-            "Eddie 1": "images/characters/hohsis/eddie_down.png",
-            "Eddie 2": "images/characters/hohsis/eddie_up.png",
-            "Blank": "images/characters/hohsis/worker_blank.png",
-            "A Fucking Chicken": "images/characters/hohsis/worker_chicken.png",
-            "Corn": "images/characters/hohsis/worker_corn.png",
-            "Eville": "images/characters/hohsis/worker_eville.png",
-            "Giuthais": "images/characters/hohsis/worker_pineapple.png",
-            "Mean": "images/characters/mean/meanhohsis.png"
-        },
-        "quote": "I don't know, don't ask me!",
-        "bio": "The workers of HoH SiS aren't too compliant with the new changes to the workplace. The CEO has recently wanted to make attacks on a man named \"cs188\". They didn't sign up for this! They just wanna improve foundations, for God's sake!",
-        "zoom": 0.667
-    },
-    "howie": {
-        "full_name": "Howie Mandell",
-        "pronouns": "(he/him)",
-        "sprites": {
-            "Wait, wrong sprite": "images/characters/howie_bio.png",
-            "Howie": "images/characters/howie.png"
-        },
-        "quote": "I'm gonna make you a star!",
-        "bio": "Howie is dedicated to making talent into celebrities. He's a businessman with a passion for music. Despite everyone knowing his name, he keeps being mistaken for other bald guys with goatees."
-    },
     "iris": {
         "full_name": "???",
         "pronouns": "(she/her)",
         "sprites": { "Default": "images/characters/iris.png" },
         "quote": "Oh, hello!",
         "bio": "The bio didn't load correctly. Ask Digi to fix the game."
-    },
-    "jay": {
-        "full_name": "The Insane Clown Posse",
-        "pronouns": "(he/him (both))",
-        "sprites": {
-            "The Posse": "images/characters/posse.png",
-            "Violent Jay": "images/characters/jay.png",
-            "Shaggy Too Dope": "images/characters/shaggydope.png"
-        },
-        "quote": "Welcome to the Clown Zone!",
-        "bio": "Even though they are called \"The Insane Clown Posse\", they are really nice people to talk to. They go around trying their best to help those in need. Even though they can't help you smile like a normal clown would, they help out in other ways.",
-        "zoom": 0.733
-    },
-    "jerma": {
-        "full_name": "Jeremy Elbertson",
-        "pronouns": "(he/him)",
-        "sprites": { "Default": "images/characters/jerma.png" },
-        "quote": "Looga me!",
-        "bio": "The popular Twitch Streamer Jerma985, also known as Jeremy Elbertson, didn't just move to Vegas because he loved gambling. He wanted his {i}own{/i} casino, and went out of his way to recreate the one from his {i}Casino Inc.{/i} livestream. People still think Jerma is doing this for the bit, but he still needs to pay off around two billion dollars."
-    },
-    "joel": {
-        "full_name": "Vargskelethor Joel",
-        "pronouns": "(he/him)",
-        "sprites": { "Default": "images/characters/joel.png" },
-        "quote": "GRAND DAD!",
-        "bio": "Joel is the certified funny man of the internet. He's destroyed PCs, made the {i}Super Ghostbusters{/i} album, and also loves aliens. Well, he loves them so much that he wants to kill them."
     },
     "k17": {
         "full_name": "K-17",
@@ -600,136 +296,38 @@
         "bio": "While K-22 doesn't like to bring it up, they are {i}obsessed{/i} with Addy. They like to talk to Addy all the time, help them out with any problems they might have, and is only really happy when they're around. All K-22 wanted was to stay home on Christmas Eve...",
         "ce": true
     },
-    "k174": {
-        "full_name": "Pakoo's Memories",
-        "pronouns": "(he/they (all))",
-        "sprites": {
-            "Group": "images/characters/memory.png",
-            "K17-4": "images/characters/k174.png",
-            "K19-9": "images/characters/k199.png",
-            "Default: K20-7": "images/characters/k207.png",
-            "Hazmat: K20-7": "images/characters/k207h.png"
-        },
-        "quote": "U3VubnkgRCEgQWxyaWdodCEgVGhlIEYyNSBL\nZXk/IEknbSB0aGUgc3Ryb25nZXN0IQ",
-        "bio": "These memories of Pakoo's life each only possess knowledge of what happened during a specific month. The K17s love talking about catgirls and citrus drinks, while the K20s won't shut up about Half-Life or Touhou. It never goes well when they meet up to solve a problem.",
-        "zoom": 0.733,
-        "rpg": "K174"
-    },
     "kitty": {
         "full_name": "Undead Kitty",
         "pronouns": "(she/her)",
         "sprites": {
-            "Default": "images/characters/kitty.png",
             "Festive": "images/characters/kitty_festive.png"
         },
         "quote": "So, there's this plushie I saw.",
-        "bio": "Kitty is a fursuit maker from the United Kingdom. She has been in a relationship with Arceus for many years. While she's quiet around new people, she becomes the life of the party around friends. She constantly gravitates towards Squishmallows.",
-        "rpg": "KITTY"
-    },
-    "lancer": {
-        "full_name": "Lancer",
-        "pronouns": "(he/him)",
-        "sprites": { "Default": "images/characters/lancer.png" },
-        "quote": "I'm the bad guy!",
-        "bio": "After Chapter 3, Lancer made his way out the Dark World and into Las Vegas. Since he gave up on looking for the Fun Gang after about five minutes, he went around the strip trying to dig as many holes as possible."
-    },
-    "lego": {
-        "full_name": "Lego NXT Minifigure",
-        "sprites": {
-            "Default": "images/characters/lego.png",
-            "Awakened": "images/characters/legoeyes.png"
-        },
-        "quote": "HEEYYY!!",
-        "bio": "These Lego robots are creepy, and not much is known regarding why they get quirky at night. There are rumors of these robots pushing men into the Lego CITY river back in 1987."
+        "bio": "Kitty is a fursuit maker from the United Kingdom. She has been in a relationship with Arceus for many years. While she's quiet around new people, she becomes the life of the party around friends. She constantly gravitates towards Squishmallows."
     },
     "linus": {
         "full_name": "Linus Sebastian",
         "pronouns": "(he/him)",
         "sprites": {
-            "Default": "images/characters/lmg/linus.png",
             "Festive": "images/characters/lmg/linus_festive.png"
         },
         "quote": "lttstore.com",
         "bio": "Linus is the CEO of Linus Tech Tips and of Linus Media Group. This man really loves his tech, so much that his entire life revolves around it. Even so, he can never seem to handle any kind of device without dropping it... much like he can never seem to handle this segue to our sponsor!"
     },
-    "luigi": {
-        "full_name": "Luigi Mario",
-        "pronouns": "(he/him)",
-        "sprites": { "Default": "images/characters/luigi.png" },
-        "quote": "Gouigi!",
-        "bio": "After {i}The Super Mario Bros. Movie,{/i} Luigi left his home in Brooklyn to join Jerma at his casino in Vegas. It is well known that Luigi is also trying to win it big so he can buy himself a mansion."
-    },
     "luke": {
         "full_name": "Luke Lafreniere",
         "pronouns": "(he/him)",
         "sprites": {
-            "Default": "images/characters/lmg/luke.png",
             "Festive": "images/characters/lmg/luke_festive.png"
         },
         "quote": "I wanna go home!",
         "bio": "Luke, also known as the Floatplane guy, is Linus' right-hand man. He works a little too hard for Linus' liking. He also apparently has a family.",
         "zoom": 0.85
     },
-    "lupin": {
-        "full_name": "Lupin III",
-        "pronouns": "(he/him)",
-        "sprites": {
-            "Default: Standing": "images/characters/lupin/lupin_stand.png",
-            "Default: Running": "images/characters/lupin/lupin_run.png",
-            "Hat: Standing": "images/characters/lupin/lupin_stand_hat.png",
-            "Hat: Running": "images/characters/lupin/lupin_run_hat.png"
-        },
-        "quote": "Hey, train dudes! Like, wait up, y'know?",
-        "bio": "It's the world-famous phantom thief! This time, his endless search for riches has led him to the USA. After learning that SlotsaFun Casino was cleaned out just before he arrived, Lupin decided that he would get the money back by any means necessary... despite being easily distracted by pancakes and pink sweaters.",
-        "dx": true,
-        "zoom": 1.067
-    },
-    "mario": {
-        "full_name": "Mario Mario",
-        "pronouns": "(he/him)",
-        "sprites": { "Default": "images/characters/mario.png" },
-        "quote": "Wahoo!",
-        "bio": "Although Mario is the star of the most popular video game franchise on the planet, he never hit it off too well in real life. While his brother Luigi found success as a casino dealer, Mario struggled to pay for his bills every month. At least he's staying optimistic, and he loves running his coin laundry."
-    },
-    "mean": {
-        "full_name": "Meancarnavor",
-        "pronouns": "(he/him)",
-        "sprites": {
-            "Neutral": "images/characters/mean/mean.png",
-            "Angry": "images/characters/mean/meanangry.png",
-            "Ayo?": "images/characters/mean/meanayo.png",
-            "Furious": "images/characters/mean/meanfurious.png",
-            "Happy 1": "images/characters/mean/meanhappy.png",
-            "Happy 2": "images/characters/mean/meanhappy2.png",
-            "Happy 2": "images/characters/mean/meanhappy2.png",
-            "Scared": "images/characters/mean/meanscared.png",
-            "Surprised": "images/characters/mean/meansurprised.png",
-            "Tired": "images/characters/mean/meantired.png",
-            "Wat.": "images/characters/mean/meanwat.png",
-            "Worried": "images/characters/mean/meanworried.png"
-        },
-        "quote": "I like trains!",
-        "bio": "Alongside Mika, Mean is your train dude. He's obsessed with trains and can go on for hours if you ask him about train facts. He is also very spiky.\n\nMean and Tate spend a lot of time doing random wacky things, usually train-related.",
-        "dx_bio": "Being a sea urchin, Mean naturally also enjoys sea shanties.",
-        "zoom": 1.333,
-        "rpg": "MEAN"
-    },
     "mean_human": {
         "full_name": "Mean (Human Form)",
         "pronouns": "(he/him)",
         "sprites": {
-            "Default: Neutral": "images/characters/mean/meanhumanneutral.png",
-            "Default: Angry": "images/characters/mean/meanhumanangry.png",
-            "Default: Annoyed": "images/characters/mean/meanhumanannoyed.png",
-            "Default: Happy": "images/characters/mean/meanhumanhappy.png",
-            "Default: Shocked": "images/characters/mean/meanhumanshocked.png",
-
-            "Hat: Neutral": "images/characters/mean/meanhumanneutralhat.png",
-            "Hat: Angry": "images/characters/mean/meanhumanangryhat.png",
-            "Hat: Annoyed": "images/characters/mean/meanhumanannoyedhat.png",
-            "Hat: Happy": "images/characters/mean/meanhumanhappyhat.png",
-            "Hat: Shocked": "images/characters/mean/meanhumanshockedhat.png",
-
             "Festive: Neutral": "images/characters/mean/meanhumanneutralfestive.png",
             "Festive: Angry": "images/characters/mean/meanhumanangryfestive.png",
             "Festive: Annoyed": "images/characters/mean/meanhumanannoyedfestive.png",
@@ -741,41 +339,22 @@
         "dx": true,
         "zoom": 0.9
     },
-    "mettaton": {
-        "full_name": "Mettaton",
-        "pronouns": "(he/him)",
-        "sprites": { "Default": "images/characters/mettaton.png" },
-        "quote": "HOLY TICONDEROGA!",
-        "bio": "Some people think Mettaton only has a thing for humans and entertainment. However, after his retirement from MTT News, he showed to the world his secret interest in pencil collecting. Ever since, he's been the main organizer for PencilCon."
-    },
     "michael": {
         "full_name": "Michael Rosen",
         "pronouns": "(he/him)",
         "sprites": {
-            "Default": "images/characters/michael.png",
             "Festive": "images/characters/michael_festive.png"
         },
         "quote": "I love chocolate cake!",
         "bio": "Mr. Rosen is a poem fanatic. He's got a story to tell whenever you meet him. This man will pull the craziest tale from nothing in a matter of seconds. How does he do this? What secret talent does he have? All that is certain is that he needs his chocolate cake.",
-        "dx_bio": "The prophet that predicted CS' life, as well as the end of the world.",
-        "rpg": "MICHAEL"
-    },
-    "midge": {
-        "full_name": "Midgalicis",
-        "pronouns": "(she/her)",
-        "sprites": { "Default": "images/characters/midge.png" },
-        "quote": "Oh hai!",
-        "bio": "Midge has some crazy artistic talent. She can draw, animate, and edit videos, all for the CS community. We're still trying to figure out who \"Chum\" is, though.",
-        "zoom": 0.9,
-        "rpg": "MIDGE"
+        "dx_bio": "The prophet that predicted CS' life, as well as the end of the world."
     },
     "mika": {
         "full_name": "Mikapara",
         "pronouns": "(any/all)",
         "sprites": { "Default": "images/characters/mika.png" },
         "quote": "TULE T\u00c4NNE, SENKIN SAASTAINEN SEKAROTUINEN!",
-        "bio": "Pakoo's fianc\u00e9e who loves to give CS five dollars and talk in a very highlighted tone. A pilot, gambler, and stand-up kinda guy.",
-        "rpg": "MIKA"
+        "bio": "Pakoo's fianc\u00e9e who loves to give CS five dollars and talk in a very highlighted tone. A pilot, gambler, and stand-up kinda guy."
     },
     "mike": {
         "full_name": "Mike",
@@ -785,43 +364,13 @@
         "bio": "This pizzapotamus can often be spotted giving away free samples of pizza from his pizza Thermos. Works at the bus stop.",
         "ce": true
     },
-    "miku": {
-        "full_name": "Hatsune Miku",
-        "pronouns": "(she/her)",
-        "sprites": { "Default": "images/characters/miku.png" },
-        "quote": "It's time to sing!",
-        "bio": "It's the hit Vocaloid from Japan! The lady with the leek! She also promoted pizza? From 7-Eleven to Domino's, she's had her fair share of sponsorships from across the country. Although many know her as a hologram, she's actually the real deal"
-    },
-    "mohs": {
-        "full_name": "Mr. Mohs",
-        "pronouns": "(he/him)",
-        "sprites": { "Default": "images/characters/mohs.png" },
-        "quote": "CS, YOU CHEAP BITCH!",
-        "bio": "This dude really doesn't like the letters \"C\" and \"S\". He hates those letters so much he wrote it on his shirt. No one knows why, but he'll make sure to show anyone with these letters in their name who's boss."
-    },
-    "monika": {
-        "full_name": "Monika",
-        "pronouns": "(she/her)",
-        "sprites": { "Default": "images/characters/monika.png" },
-        "quote": "Welcome to the Literature Club!",
-        "bio": "Monika, can you please get out of this game? I know this is a Ren'Py visual novel, but you don't have to come in and ruin it! So nosy, God...",
-        "xoffset": 100
-    },
-    "moomin": {
-        "full_name": "Moomin",
-        "pronouns": "(he/him)",
-        "sprites": { "Default": "images/characters/moomin.png" },
-        "quote": "Snufkin...",
-        "bio": "Moomin is a Moomin who lives in Moominvalley with his family, the Moomins."
-    },
     "nova": {
         "full_name": "ItsNovaHere",
         "pronouns": "(they/them)",
         "sprites": { "Default": "images/characters/nova.png" },
         "quote": "k.",
         "bio": "Nova is a former member of the CScord and was one of CS' earliest followers. They were known for being pretty loud back then, but, nowadays, they are making music under another alias. They are also very talented at rhythm games.",
-        "zoom": 0.85,
-        "rpg": "NOVA"
+        "zoom": 0.85
     },
     "obama": {
         "full_name": "Barack Obama",
@@ -832,8 +381,7 @@
             "Festive: Angry": "images/characters/obama_festive_angry.png"
         },
         "quote": "Hello, my fellow Americans!",
-        "bio": "As the 44th President of the United States, he's a pretty chill dude, even while under the stress of governing such a massive country. He apparently loves to play video games with his fellow candidates. For some reason, people can't figure out what his last name is.",
-        "rpg": "OBAMA"
+        "bio": "As the 44th President of the United States, he's a pretty chill dude, even while under the stress of governing such a massive country. He apparently loves to play video games with his fellow candidates. For some reason, people can't figure out what his last name is."
     },
     "pakoo": {
         "full_name": "Pakoo",
@@ -848,34 +396,7 @@
         },
         "quote": "I remember this one time...",
         "bio": "Pakoo remembers everything. They keep track of pretty much every event that has happened to them. They plan to build a whole archive documenting their entire life. Sadly, they can't remember what happened about five minutes ago.",
-        "dx_bio": "Really likes Christmas.",
-        "rpg": "PAKOO"
-    },
-    "pencil": {
-        "full_name": "Pencil Greeter",
-        "pronouns": "(he/him)",
-        "sprites": { "Default": "images/characters/pencil.png" },
-        "quote": "Have a free pencil!",
-        "bio": "One has to wonder how this man lives his life when he's not at PencilCon. Could he have a pencil-shaped house? Is everything he owns pencil-themed? Perhaps he's just a regular person with a passion for pencils. He really hates it when anyone brings up pens.",
-        "dx_bio": "Leader of the Pencil Cult. Captures people to try to recruit enough members to win the local cult convention."
-    },
-    "peppino": {
-        "full_name": "Peppino Spaghetti",
-        "pronouns": "(he/him)",
-        "sprites": {
-            "1": "images/characters/peppino.png",
-            "2": "images/characters/peppino2.png"
-        },
-        "quote": "Pizza, pasta!",
-        "bio": "After the incident at the tower, he and his friends moved to the city to hopefully attract more customers. He's afraid of tall buildings now, and will constantly keep an eye on any skyscrapers located near his business."
-    },
-    "phil": {
-        "full_name": "Phil Swift",
-        "pronouns": "(he/him)",
-        "sprites": { "Default": "images/characters/phil.png" },
-        "quote": "Seals and bonds!",
-        "bio": "Phil loves tape. When he was young, he always asked for different kinds of tape to play with. He would gather random objects around his house to stick together. He always wanted to make a super tape that could adhere to any type of surface. With his newest invention, he has obtained the power to seal and bond almost anything.",
-        "rpg": "PHIL"
+        "dx_bio": "Really likes Christmas."
     },
     "pomni": {
         "full_name": "Pomni",
@@ -888,8 +409,7 @@
             "Thinking": "images/characters/pomni/pomni_think.png"
         },
         "quote": "There's got to be an exit somewhere...",
-        "bio": "Pomni has been going insane ever since she was brought into the Amazing Digital Circus not too long ago. Somehow, she made it into an IKEA and got stuck there. She honestly should have just stayed at the circus.",
-        "rpg": "POMNI"
+        "bio": "Pomni has been going insane ever since she was brought into the Amazing Digital Circus not too long ago. Somehow, she made it into an IKEA and got stuck there. She honestly should have just stayed at the circus."
     },
     "rich": {
         "full_name": "Richard",
@@ -900,8 +420,7 @@
         },
         "quote": "Yes, I'm happy now.",
         "bio": "Richard doesn't want as much trouble from CS as his coworkers do, but he's prepared to act if he must. Richard just wants to go home and chill after a long day of hard work.",
-        "zoom": 0.85,
-        "rpg": "RICHARD"
+        "zoom": 0.85
     },
     "round": {
         "full_name": "Mr. Round",
@@ -917,27 +436,6 @@
         "bio": "The personification of holiday cheer. Every year, he travels the world on the night before Christmas to give gifts to all the children (and, perhaps, to sample some cookies and milk).\n\nMany people wonder how one man can visit every house in a single night. Have you {i}seen{/i} speedrunners? Santa might just be the {i}original{/i} speedrunner. He has to know some {i}insane{/i} glitches to be able to hit every house before dawn!",
         "ce": true
     },
-    "sayori": {
-        "full_name": "Sayori",
-        "pronouns": "(she/her)",
-        "sprites": { "Default": "images/characters/sayori.png" },
-        "quote": "Welcome to cat paradise",
-        "bio": "As the creator of Nekopara, she has built one of the most popular catgirl paradises in history. Her series of visual novels depicts the story of a bakery run by six crazy catgirls. If you choose to give any of these titles a try, however, do be mindful of who is watching your screen."
-    },
-    "scott": {
-        "full_name": "Scott Wozniak",
-        "pronouns": "(he/him)",
-        "sprites": { "Default": "images/characters/scott.png" },
-        "quote": "Hey all, Scott here!",
-        "bio": "Scott loves Nintendo games. He loves them so much that he has purchased seven Wii Us so far. He just can't stop talking about them. Maybe some {i}Donkey Kong Barrel Blast{/i} would him help out with this issue."
-    },
-    "scott_pres": {
-        "full_name": "Scott Oelkers",
-        "pronouns": "(he/him)",
-        "sprites": { "Default": "images/characters/scott_pres.png" },
-        "quote": "Have some fun with Miku!",
-        "bio": "In his younger years, Scott enjoyed putting on productions in China. Over the course of his career, he climbed the ladder and became the CEO of Domino's Japan. Ever since, he's tripled the profits of Domino's and has attracted pizza lovers and Miku fans alike."
-    },
     "sheriff": {
         "full_name": "Sheriff",
         "pronouns": "(he/him)",
@@ -947,43 +445,6 @@
         },
         "quote": "I need pictures of CS, ASAP!",
         "bio": "Your hardened, toughened-up sheriff. Not too much to say about him. He has an air about him that makes you not want to end up on his bad side."
-    },
-    "smiley": {
-        "full_name": "Smiley The Hip Hop Clown",
-        "pronouns": "(he/him)",
-        "sprites": { "Default": "images/characters/smiley.png" },
-        "quote": "I'm Clownin!",
-        "bio": "Smiley may seem aggressive to some, but as Detroit's #1 clown, he's really passionate about his career. For a guy who dropped out of clown school, he seems to be doing pretty well."
-    },
-    "snufkin": {
-        "full_name": "Snufkin",
-        "pronouns": "(he/him)",
-        "sprites": { "Default": "images/characters/snufkin.png" },
-        "quote": "Moomin...",
-        "bio": "Snufkin is a silly little guy who lives in Moominvalley. He leaves for a long journey every year, but he always comes back to see Moomin."
-    },
-    "sticky": {
-        "full_name": "Sticky Note",
-        "sprites": {
-            "Default": "images/post-it.png",
-            "???": "images/post-it2.png"
-        },
-        "quote": "The most important character",
-        "bio": "Hi, guys! It's me, the sticky note, remember? I mean, how could you {i}forget?{/i} I'm the most important character in the game! Remember when I told CS to delete the CScord, and how the Discord route was the coolest route in the game? Yeah, I know. It's super cool. Hey, wait! CS, what are you doing? Why are you throwing me awayyyyy...?!"
-    },
-    "streetguy": {
-        "full_name": "Streetguy",
-        "pronouns": "(he/him)",
-        "sprites": { "Default": "images/characters/streetguy.png" },
-        "quote": "I'm walkin' here!",
-        "bio": "Carguy's cousin, Streetguy, is much more of a free spirit. Carguy was always hard-set on having a goal or a motive; Streetguy always wanted to see the sights and get out in the world. He's been rather out of touch with reality lately. Most people think he's finally gone insane."
-    },
-    "taran": {
-        "full_name": "Taran Von Hemert",
-        "pronouns": "(he/him)",
-        "sprites": { "Default": "images/characters/lmg/taran.png" },
-        "quote": "Need help with anything?",
-        "bio": "Taran is the main editor for LTT. He's been there since the beginning and throughout LTT's growth, but he is planning on leaving soon. He's a super-chill guy who loves helping out with various projects."
     },
     "tgt_worker": {
         "full_name": "Target Employee",
@@ -1006,17 +467,6 @@
         "full_name": "alleZSoyez",
         "pronouns": "(they/them)",
         "sprites": {
-            "Default: Neutral": "images/characters/tate/tatehappy.png",
-            "Default: Cry": "images/characters/tate/tatecry.png",
-            "Default: Furious": "images/characters/tate/tatefurious.png",
-            "Default: Sad": "images/characters/tate/tatesad.png",
-            "Default: Stare": "images/characters/tate/tatestare.png",
-            "Default: Serious": "images/characters/tate/tateserious.png",
-            "Default: Shock": "images/characters/tate/tateshock.png",
-            "Default: Smug": "images/characters/tate/tatesmug.png",
-            "Default: Sheepish": "images/characters/tate/tatesheepish.png",
-            "Default: Sheepish Blush": "images/characters/tate/tatesheepishblush.png",
-
             "Festive: Neutral": "images/characters/tate/festive_tatehappy.png",
             "Festive: Cry": "images/characters/tate/festive_tatecry.png",
             "Festive: Furious": "images/characters/tate/festive_tatefurious.png",
@@ -1031,84 +481,15 @@
         },
         "quote": "a",
         "bio": "Better known as Tate, alleZSoyez is a close friend of CS. Impatient, excitable, and always hungry, Tate will try their best to help their friends whenever they can... as long as they get a tasty cheeseburger and a cozy nap on the floor at the end. While Tate isn't good at fighting or driving, when all else fails, they can always let out a good {i}screm!{/i}",
-        "dx_bio": "While known to stay eerily calm during world-ending crises, when it comes to more mundane stressors, Tate becomes a bit of a {sc=1}quick-tempered anxiety-riddled control\nfreak.{/sc}",
-        "rpg": "TATE"
-    },
-    "tate_ex": {
-        "full_name": "Tate EX",
-        "pronouns": "(they/them)",
-        "sprites": { "Default": "secret/pt/tate_ex.png" },
-        "quote": "Don't underestimate me.",
-        "bio": "A defector from a violent cult who grew disgusted with their clan's practices. After spending many years being ostracized and even punished for protesting the cult's gruesome \"activities\", out of fear for their life, Tate fled.\n\nTate now strives to lead a peaceful existence while posing as a human. Although they are a pacifist down to the core, sometimes the echoes of the past become too much to bear...",
-        "dx": true,
-        "zoom": 0.65,
-        "xoffset": 100,
-        "rpg": "TATE_EX"
-    },
-    "perfect_tate": {
-        "full_name": "Perfect Tate",
-        "pronouns": "(they/them (plural))",
-        "sprites": { "Default": "minigames/perfecttate/perfecttate.png" },
-        "quote": "...",
-        "bio": "A temporal abomination.",
-        "dx": true,
-        "zoom": 1.25
-    },
-    "terry": {
-        "full_name": "Terry Lesler",
-        "pronouns": "(he/him)",
-        "sprites": { "Default": "images/characters/terry.png" },
-        "quote": "Terry Lesler: Vegan.",
-        "bio": "Terry is a hardcore vegan. It's in his job description, and he follows the vegan code down to the bon-- I mean... core. He is also a murder victim."
-    },
-    "tom": {
-        "full_name": "Tom Scott",
-        "pronouns": "(he/him)",
-        "sprites": { "Default": "images/characters/tom.png" },
-        "quote": "I am currently inside of a {i}CSB{/i} bio screen...",
-        "bio": "Where {i}hasn't{/i} this man been? He has explored odd places no one else bothers to visit and has examined the things that no one else wants to question. He's probably right behind you, {i}right now{/i}, explaining the history of your house."
-    },
-    "trailtrash": {
-        "full_name": "Trailer Trash",
-        "pronouns": "(she/her)",
-        "sprites": { "Default": "images/characters/trailtrash.png" },
-        "quote": "I NEED A NEW TRAILER!",
-        "bio": "This trailer trash only likes to talk about wanting a new trailer. Nobody's sure if there's anything else she is interested in. Maybe she's excited for some movie and it's been a while since the last trailer."
-    },
-    "tsa": {
-        "full_name": "TSA Agent",
-        "pronouns": "(he/him)",
-        "sprites": { "Default": "images/characters/tsa.png" },
-        "quote": "Sorry, but we have to check your bag.",
-        "bio": "The TSA is not a real branch of the military, despite what these agents may think."
+        "dx_bio": "While known to stay eerily calm during world-ending crises, when it comes to more mundane stressors, Tate becomes a bit of a {sc=1}quick-tempered anxiety-riddled control\nfreak.{/sc}"
     },
     "wesley": {
         "full_name": "Wesley",
         "pronouns": "(he/him)",
         "sprites": {
-            "Default": "images/characters/hohsis/wesley.png",
             "Festive": "images/characters/hohsis/wesley_festive.png"
         },
         "quote": "Do it all over again.",
-        "bio": "Wesley is Ed's right-hand man. He's armed, courageous, and most importantly, he will get the JoJ done 15 times over again if he has to.",
-        "rpg": "WESLEY"
-    },
-    "witch": {
-        "full_name": "Witch",
-        "pronouns": "(she/her)",
-        "sprites": { "Default": "images/characters/witch.png" },
-        "quote": "Abracadabra and the like",
-        "bio": "The witch lives in Moominvalley with her granddaughter, Alicia. She spends her days training Alicia in the craft. She also loves to cook. Her signature dish is steamed hams, an old family recipe."
-    },
-    "zenigata": {
-        "full_name": "Zenigata",
-        "pronouns": "(he/him)",
-        "sprites": {
-            "Standing": "images/characters/zenigata.png",
-            "Cruiser": "images/characters/zenigata_car.png"
-        },
-        "quote": "You're under arrest, Lupin!",
-        "bio": "A seasoned detective whose life mission is to put Lupin behind bars once and for all. This quest has led him to the ends of the earth. Against the advice of local law enforcement, he insists on driving his own trusted vehicle, even if it's rather conspicuous outside of Japan.",
-        "dx": true
+        "bio": "Wesley is Ed's right-hand man. He's armed, courageous, and most importantly, he will get the JoJ done 15 times over again if he has to."
     }
 }
