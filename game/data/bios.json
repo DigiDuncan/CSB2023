@@ -2,7 +2,7 @@
     "addy": {
         "full_name": "Addy",
         "pronouns": "(they/them)",
-        "sprites": { 
+        "sprites": {
             "Neutral": "images/characters/pakoo/pakoo.png",
             "Angry": "images/characters/pakoo/pakoo_angry.png",
             "Disappointed": "images/characters/pakoo/pakoo_disappointed.png",
@@ -41,7 +41,7 @@
     "anne": {
         "full_name": "Anne",
         "pronouns": "(she/her)",
-        "sprites": { 
+        "sprites": {
             "Neutral": "images/characters/ag/anne.png",
             "Happy": "images/characters/ag/anne_happy.png",
             "Angry": "images/characters/ag/anne_angry.png"
@@ -53,7 +53,7 @@
     "anno": {
         "full_name": "Annorexorcist",
         "pronouns": "(he/him)",
-        "sprites": { 
+        "sprites": {
             "Default": "images/characters/anno/anno.png",
             "Prison": "images/characters/anno/anno_prison.png",
             "Guard": "images/characters/anno/anno_guard.png",
@@ -91,7 +91,7 @@
     "aria": {
         "full_name": "Aria",
         "pronouns": "(she/her)",
-        "sprites": { 
+        "sprites": {
             "Default": "images/characters/aria.png",
             "Festive": "images/characters/aria_festive.png"
         },
@@ -117,7 +117,7 @@
     "billy": {
         "full_name": "Billy Mays",
         "pronouns": "(he/him)",
-        "sprites": { 
+        "sprites": {
             "Default: Neutral": "images/characters/billy/billy.png",
             "Default: Laser!": "images/characters/billy/BillyMaysWithLaser.png",
             "Festive": "images/characters/billy/festive.png"
@@ -130,9 +130,9 @@
     "blank": {
         "full_name": "Blank Named",
         "pronouns": "(they/he)",
-        "sprites": { 
+        "sprites": {
             "Default": "images/characters/blank.png",
-            "Festive": "images/characters/blank_festive.png" 
+            "Festive": "images/characters/blank_festive.png"
         },
         "quote": "I Am Catboy Musical",
         "bio": "Ever needed music that's also a shitpost? No? Well, too bad, because Blank has ya covered. He {i}can{/i} make regular music, but it isn't {i}Blank{/i} music if it doesn't sample catgirl moans.",
@@ -164,7 +164,7 @@
     "cashier": {
         "full_name": "Cashier",
         "pronouns": "(he/him)",
-        "sprites": { 
+        "sprites": {
             "Default": "images/characters/cashier.png",
             "Pencil": "images/characters/pencilcashier.png"
         },
@@ -190,7 +190,7 @@
     "copguy": {
         "full_name": "Copguy",
         "pronouns": "(he/him)",
-        "sprites": { 
+        "sprites": {
             "Default": "images/characters/copguy/copguy.png",
             "Festive": "images/characters/copguy/copguy_festive.png"
         },
@@ -228,7 +228,7 @@
             "Broken": "images/characters/craptop/sad.png",
             "Evidence": "images/characters/craptop/evidence.png",
             "Updating": "images/characters/craptop/updating.png",
-            "YTP": "images/characters/craptop/ytp.png"            
+            "YTP": "images/characters/craptop/ytp.png"
         },
         "quote": "Your PC sux. lol.",
         "bio": "Did you know that CS has one of the nicest houses on the planet, but he still has this 20 year old laptop? It's time to get an upgrade, dude.",
@@ -245,7 +245,7 @@
     "cs": {
         "full_name": "cs188",
         "pronouns": "(he/him)",
-        "sprites": { 
+        "sprites": {
             "Default: Neutral": "images/characters/cs/base/neutral.png",
             "Default: Happy": "images/characters/cs/base/happy.png",
             "Default: Disappointed": "images/characters/cs/base/disappointed.png",
@@ -360,16 +360,16 @@
     "csgod": {
         "full_name": "CSGod",
         "pronouns": "(he/him)",
-        "sprites": { 
+        "sprites": {
             "Neutral": "images/characters/cs/misc/csgod.png",
-            "Angry": "images/characters/cs/misc/csgod_angry.png" 
+            "Angry": "images/characters/cs/misc/csgod_angry.png"
         },
         "quote": "I have the power of YTP!",
         "bio": "﷽"
     },
     "cultist": {
         "full_name": "Cultist Leader",
-        "sprites": { 
+        "sprites": {
             "Default": "images/characters/cultist.png",
             "Gun": "images/characters/cultistgun.png"
         },
@@ -393,8 +393,8 @@
     "digi": {
         "full_name": "DigiDuncan",
         "pronouns": "(they/them)",
-        "sprites": { 
-            "Neutral": "images/characters/digi/neutral.png", 
+        "sprites": {
+            "Neutral": "images/characters/digi/neutral.png",
             "Angry": "images/characters/digi/angry.png",
             "Cheese": "images/characters/digi/cheese.png",
             "Disappointed": "images/characters/digi/disappointed.png",
@@ -418,10 +418,10 @@
     "ed": {
         "full_name": "Ed",
         "pronouns": "(he/him)",
-        "sprites": { 
+        "sprites": {
             "Default": "images/characters/hohsis/ed.png",
             "Phone": "images/characters/hohsis/ed_phone.png",
-            "Festive": "images/characters/hohsis/ed_festive.png" 
+            "Festive": "images/characters/hohsis/ed_festive.png"
         },
         "quote": "We make sure to get the JoJ done right, the first time.",
         "bio": "As the CEO of HoH SiS, he makes sure the crew gets the JoJ done right, no matter the cost. He always looks out for his fellow workers. He holds a grudge against CS, and is determined to get his revenge.",
@@ -431,14 +431,14 @@
     "eliza": {
         "full_name": "Elizabeth",
         "pronouns": "(she/her)",
-        "sprites": { 
+        "sprites": {
             "Neutral": "images/characters/eliza/eliza.png",
             "Disappointed": "images/characters/eliza/eliza_disappointed.png",
             "Worried": "images/characters/eliza/eliza_worried.png",
             "Angry": "images/characters/eliza/eliza_angry.png"
      },
         "quote": "{font=OpenSans-Regular.ttf}Счастливого пути, советский ковбой.{/font}",
-        "bio": "Been 'round for a bit less than Anne and Grace, served her country proud! Started as boots on the ground all the way to the airforce. Last spotted doing an undercover mission in the Soviet Union, 1986. Mostly a loner who directs Anne and Grace.",
+        "bio": "Been 'round for a bit less than Anne and Grace. Served her country proud! Started as boots-on-the-ground and worked her way up through the Air Force. Last spotted doing an undercover mission in the Soviet Union, 1986. Mostly a loner who directs Anne and Grace.",
         "ce": true
     },
     "ges": {
@@ -465,7 +465,7 @@
     "grace": {
         "full_name": "Grace",
         "pronouns": "(she/her)",
-        "sprites": { 
+        "sprites": {
             "Default: Neutral": "images/characters/ag/grace.png",
             "Default: Happy": "images/characters/ag/grace_happy.png",
             "Default: Sad": "images/characters/ag/grace_sad.png",
@@ -477,8 +477,8 @@
             "CShirt: Angry": "images/characters/ag/grace_angry_shirt.png",
             "CShirt: Worried": "images/characters/ag/grace_worried_shirt.png"
         },
-        "quote": "You've Yee'd your last Haw partner.",
-        "bio": "Been 'round for some time, still has her cowboy hat and six-shooter. Trying to rebuild her gun collection after having to sell it all to avoid complete bankruptcy from the AG&A Co. situation. Happily married to Anne.",
+        "quote": "You've {i}yee'd{/i} your last {i}haw,{/i} partner.",
+        "bio": "Been 'round for some time. Still has her cowboy hat and six-shooter. Trying to rebuild her gun collection after having to sell it all to avoid complete bankruptcy after the AG&A Co. situation. Happily married to Anne.",
         "ce": true
     },
     "green": {
@@ -499,7 +499,7 @@
     "hammond": {
         "full_name": "The Top Gear Crew",
         "pronouns": "(he/him (all))",
-        "sprites": { 
+        "sprites": {
             "The Crew": "images/characters/topgear.png",
             "Hammond": "images/characters/hammond.png",
             "James": "images/characters/james.png",
@@ -511,7 +511,7 @@
     },
     "hoh_worker": {
         "full_name": "HoH SiS Workers",
-        "sprites": { 
+        "sprites": {
             "Group": "images/characters/hohsis/hoh_worker.png",
             "Eddie 1": "images/characters/hohsis/eddie_down.png",
             "Eddie 2": "images/characters/hohsis/eddie_up.png",
@@ -546,7 +546,7 @@
     "jay": {
         "full_name": "The Insane Clown Posse",
         "pronouns": "(he/him (both))",
-        "sprites": { 
+        "sprites": {
             "The Posse": "images/characters/posse.png",
             "Violent Jay": "images/characters/jay.png",
             "Shaggy Too Dope": "images/characters/shaggydope.png"
@@ -572,7 +572,7 @@
     "k17": {
         "full_name": "K-17",
         "pronouns": "(he/they)",
-        "sprites": { 
+        "sprites": {
             "Neutral": "images/characters/pakoo/k17.png",
             "Happy": "images/characters/pakoo/k17_happy.png",
             "Sad": "images/characters/pakoo/k17_sad.png",
@@ -585,7 +585,7 @@
     "k22": {
         "full_name": "K-22",
         "pronouns": "(he/they)",
-        "sprites": { 
+        "sprites": {
             "Neutral": "images/characters/pakoo/k22.png",
             "Angry": "images/characters/pakoo/k22_angry.png",
             "Confident": "images/characters/pakoo/k22_confident.png",
@@ -603,7 +603,7 @@
     "k174": {
         "full_name": "Pakoo's Memories",
         "pronouns": "(he/they (all))",
-        "sprites": { 
+        "sprites": {
             "Group": "images/characters/memory.png",
             "K17-4": "images/characters/k174.png",
             "K19-9": "images/characters/k199.png",
@@ -618,7 +618,7 @@
     "kitty": {
         "full_name": "Undead Kitty",
         "pronouns": "(she/her)",
-        "sprites": { 
+        "sprites": {
             "Default": "images/characters/kitty.png",
             "Festive": "images/characters/kitty_festive.png"
         },
@@ -635,8 +635,8 @@
     },
     "lego": {
         "full_name": "Lego NXT Minifigure",
-        "sprites": { 
-            "Default": "images/characters/lego.png", 
+        "sprites": {
+            "Default": "images/characters/lego.png",
             "Awakened": "images/characters/legoeyes.png"
         },
         "quote": "HEEYYY!!",
@@ -645,7 +645,7 @@
     "linus": {
         "full_name": "Linus Sebastian",
         "pronouns": "(he/him)",
-        "sprites": { 
+        "sprites": {
             "Default": "images/characters/lmg/linus.png",
             "Festive": "images/characters/lmg/linus_festive.png"
         },
@@ -662,7 +662,7 @@
     "luke": {
         "full_name": "Luke Lafreniere",
         "pronouns": "(he/him)",
-        "sprites": { 
+        "sprites": {
             "Default": "images/characters/lmg/luke.png",
             "Festive": "images/characters/lmg/luke_festive.png"
         },
@@ -673,7 +673,7 @@
     "lupin": {
         "full_name": "Lupin III",
         "pronouns": "(he/him)",
-        "sprites": { 
+        "sprites": {
             "Default: Standing": "images/characters/lupin/lupin_stand.png",
             "Default: Running": "images/characters/lupin/lupin_run.png",
             "Hat: Standing": "images/characters/lupin/lupin_stand_hat.png",
@@ -694,7 +694,7 @@
     "mean": {
         "full_name": "Meancarnavor",
         "pronouns": "(he/him)",
-        "sprites": { 
+        "sprites": {
             "Neutral": "images/characters/mean/mean.png",
             "Angry": "images/characters/mean/meanangry.png",
             "Ayo?": "images/characters/mean/meanayo.png",
@@ -717,7 +717,7 @@
     "mean_human": {
         "full_name": "Mean (Human Form)",
         "pronouns": "(he/him)",
-        "sprites": { 
+        "sprites": {
             "Default: Neutral": "images/characters/mean/meanhumanneutral.png",
             "Default: Angry": "images/characters/mean/meanhumanangry.png",
             "Default: Annoyed": "images/characters/mean/meanhumanannoyed.png",
@@ -751,9 +751,9 @@
     "michael": {
         "full_name": "Michael Rosen",
         "pronouns": "(he/him)",
-        "sprites": { 
-            "Default": "images/characters/michael.png", 
-            "Festive": "images/characters/michael_festive.png" 
+        "sprites": {
+            "Default": "images/characters/michael.png",
+            "Festive": "images/characters/michael_festive.png"
         },
         "quote": "I love chocolate cake!",
         "bio": "Mr. Rosen is a poem fanatic. He's got a story to tell whenever you meet him. This man will pull the craziest tale from nothing in a matter of seconds. How does he do this? What secret talent does he have? All that is certain is that he needs his chocolate cake.",
@@ -826,7 +826,7 @@
     "obama": {
         "full_name": "Barack Obama",
         "pronouns": "(he/him)",
-        "sprites": { 
+        "sprites": {
             "Default": "images/characters/obama.png",
             "Festive: Neutral": "images/characters/obama_festive.png",
             "Festive: Angry": "images/characters/obama_festive_angry.png"
@@ -862,7 +862,7 @@
     "peppino": {
         "full_name": "Peppino Spaghetti",
         "pronouns": "(he/him)",
-        "sprites": { 
+        "sprites": {
             "1": "images/characters/peppino.png",
             "2": "images/characters/peppino2.png"
         },
@@ -880,7 +880,7 @@
     "pomni": {
         "full_name": "Pomni",
         "pronouns": "(she/her)",
-        "sprites": { 
+        "sprites": {
             "???": "images/characters/pomni/pomni_bio.png",
             "Neutral": "images/characters/pomni/pomni.png",
             "Concerned": "images/characters/pomni/pomni_concern.png",
@@ -894,9 +894,9 @@
     "rich": {
         "full_name": "Richard",
         "pronouns": "(he/him)",
-        "sprites": { 
+        "sprites": {
             "Default": "images/characters/hohsis/rich.png",
-            "Festive": "images/characters/hohsis/rich_festive.png" 
+            "Festive": "images/characters/hohsis/rich_festive.png"
         },
         "quote": "Yes, I'm happy now.",
         "bio": "Richard doesn't want as much trouble from CS as his coworkers do, but he's prepared to act if he must. Richard just wants to go home and chill after a long day of hard work.",
@@ -941,9 +941,9 @@
     "sheriff": {
         "full_name": "Sheriff",
         "pronouns": "(he/him)",
-        "sprites": { 
-            "Default": "images/characters/sheriff.png", 
-            "Festive": "images/characters/sheriff_festive.png" 
+        "sprites": {
+            "Default": "images/characters/sheriff.png",
+            "Festive": "images/characters/sheriff_festive.png"
         },
         "quote": "I need pictures of CS, ASAP!",
         "bio": "Your hardened, toughened-up sheriff. Not too much to say about him. He has an air about him that makes you not want to end up on his bad side."
@@ -964,7 +964,7 @@
     },
     "sticky": {
         "full_name": "Sticky Note",
-        "sprites": { 
+        "sprites": {
             "Default": "images/post-it.png",
             "???": "images/post-it2.png"
         },
@@ -988,7 +988,7 @@
     "tgt_worker": {
         "full_name": "Target Employee",
         "pronouns": "(he/him)",
-        "sprites": { 
+        "sprites": {
             "Neutral": "images/characters/pakoo/tgt_pakoo_neutral.png",
             "Confused": "images/characters/pakoo/tgt_pakoo_confused.png",
             "Happy": "images/characters/pakoo/tgt_pakoo_happy.png",
@@ -1005,7 +1005,7 @@
     "tate": {
         "full_name": "alleZSoyez",
         "pronouns": "(they/them)",
-        "sprites": { 
+        "sprites": {
             "Default: Neutral": "images/characters/tate/tatehappy.png",
             "Default: Cry": "images/characters/tate/tatecry.png",
             "Default: Furious": "images/characters/tate/tatefurious.png",
@@ -1085,7 +1085,7 @@
     "wesley": {
         "full_name": "Wesley",
         "pronouns": "(he/him)",
-        "sprites": { 
+        "sprites": {
             "Default": "images/characters/hohsis/wesley.png",
             "Festive": "images/characters/hohsis/wesley_festive.png"
         },
@@ -1103,7 +1103,7 @@
     "zenigata": {
         "full_name": "Zenigata",
         "pronouns": "(he/him)",
-        "sprites": { 
+        "sprites": {
             "Standing": "images/characters/zenigata.png",
             "Cruiser": "images/characters/zenigata_car.png"
         },
