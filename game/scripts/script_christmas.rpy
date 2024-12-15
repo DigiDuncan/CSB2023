@@ -3243,7 +3243,7 @@ label ce_banter:
     show sheriff festive flipped at mid_left
     show copguy festive
     show tate shock festive at center with determination
-    show copguy at right
+    show copguy festive at right
     show tate shock festive at offscreenright
     with { "master" : MoveTransition(0.25) }
     with vpunch
@@ -3742,7 +3742,7 @@ label ce_win_carrot:
 
     scene cs_hallway
     show arceus festive at mid_right
-    show kitty at mid_left
+    show kitty festive at mid_left
     with dissolve
     pause 0.5
     kitty "Arcie, you're a fucking walnut."
