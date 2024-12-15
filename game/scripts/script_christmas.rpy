@@ -2773,6 +2773,7 @@ label ce_party_before:
         scene cs_house_snow_night
         show iris dark flipped at mid_left
         with dissolve
+        $ achievement_manager.unlock("broke")
         show cs disappointed christmas dark flipped at right with moveinright
         cs "Who the heck are you?"
         iris "Oh, hello."
