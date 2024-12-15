@@ -6945,6 +6945,7 @@ label ce_roof_moment:
     show snow6
     show snow_wind
     show sleigh
+    $ collect("santa_sleigh")
     with dissolve
     pause 0.5
     play sound sfx_jingle loop

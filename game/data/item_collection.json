@@ -1,4 +1,4 @@
-{       
+{
     "adderall": {
         "img": "adderall",
         "name": "Bottle Of Adderall",
@@ -6,7 +6,7 @@
         "desc": "To certain populations, this stuff is worth its weight in gold. Can be used to numb the effects of ADHD.",
         "rarity": "Common",
         "ce": true
-    },     
+    },
     "amtrak_dining_food": {
         "img": "amtrak_dining_food",
         "name": "Enormous Breakfast",
@@ -732,7 +732,7 @@
         "desc": "Try spreading it on toast or crumpets, enjoying it by the spoonful, {a=https://www.youtube.com/watch?v=JlfJx1aDmR4&t=11s}stick a finger in and lick it, or even lift it up and drink a bit.{/a} Your secrets are safe here.",
         "rarity": "Common",
         "ce": true
-    }, 
+    },
     "peppermint_bark": {
         "img": "peppermint_bark.png",
         "name": "Peppermint Bark",
@@ -896,6 +896,14 @@
         "owner": "{a=https://ko-fi.com/lurkinglotus}Lotus{/a}",
         "desc": "Sans Brick",
         "rarity": "Sans Brick"
+    },
+    "santa_sleigh": {
+        "img": "santa_sleigh",
+        "name": "Santa's Sleigh",
+        "owner": "Santa Claus",
+        "desc": "There probably isn't a single vehicle on Earth that has more miles on it than {i}this{/i} one.",
+        "rarity": "One-of-a-kind",
+        "ce": true
     },
     "runaway_bus": {
         "img": "runaway_bus",
