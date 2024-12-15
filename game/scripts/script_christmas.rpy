@@ -4064,7 +4064,7 @@ label ce_mike:
     music end
     pause 2.0
     play sound sfx_csnore loop
-    play sound2 sfx_flashback_arthur
+    play sound2 sfx_flashback_arthur noloop
     cs "Zzz..."
     rich "Hey, CS, are you sleeping?"
 
