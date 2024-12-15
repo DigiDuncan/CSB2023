@@ -1323,6 +1323,8 @@ image cs_somewhere = "bg/cs_somewhere.png"
 
 ## Archival
 image bedroom_old = "bg/cs_bedroom.png"
+image archival_5 = "bg/archival/archival_5.png"
+image archival_14 = "bg/archival/archival_14.png"
 
 # Back to the future: CS edition backgrounds
 image cs_room_cars = "bg/cs_bedroom_cars.png"
