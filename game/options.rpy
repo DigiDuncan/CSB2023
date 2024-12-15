@@ -160,7 +160,7 @@ default preferences.afm_time = 15
 ## This generally should not be changed, and if it is, should always be a
 ## literal string, not an expression.
 
-define config.save_directory = "CSBIII-1685832860"
+define config.save_directory = "CSBIIICE-1685832860"
 
 
 ## Icon ########################################################################
