@@ -3575,7 +3575,7 @@ label before_main_menu:
     python:
         if ending_manager.all_seen() == True:
             if "fin" not in persistent.unlocked_achievements:
-                achievement_manager.unlock("fin", show_screen = False)
+                # achievement_manager.unlock("fin", show_screen = False)
                 if persistent.creative_mode == False:
                     persistent.creative_mode = True
                     renpy.call_screen("special_unlock", "Noice! You've unlocked Creative Mode! Check out all the new stuff in Extras!")
