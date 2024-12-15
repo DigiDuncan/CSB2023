@@ -1494,7 +1494,7 @@ label ce_before_shopping:
     cs "You don't see a lot of weirdos like that at Target."
     cs "I guess this place is more like Walmart than I thought."
     show cs coat surprised flipped
-    cs "Guess I have a lookalike who shops at IKEA, too?"
+    cs "Guess I have a lookalike who shops at IKEA, too?".
     show cs coat flipped
     cs "Oh, well. I should probably also get back to shopping."
 
@@ -3089,9 +3089,9 @@ label ce_introductions:
     cs "How about you three?"
     show blank festive
     blank "We are working on setting up the sound system."
-    ges "Well, okay, {i}I'm{/i} not."
-    ges "I'm just here because Tyler wanted me to come."
-    ges "Err-- Nova, sorry."
+    ges "Well, okay, {i}I'm{/i} not, eh?"
+    ges "I'm just here because Tyler wanted me to come, eh?"
+    ges "Err-- Nova, sorry, eh?"
     nova "The problem is that I don't really want Blank playing their shitty music during the party."
     show blank festive flipped
     blank "Why not? Not {i}all{/i} of it's crazy shit like {i}yours{/i} is."
@@ -5181,7 +5181,7 @@ label ce_exchange:
     nova "What the fuck {i}is{/i} it? Some World War II radio?"
     eliza "Yep. Used by the Soviets in the latter half of World War II."
     nova "Hey Ges, do you want this?"
-    ges "Sure, thank you!"
+    ges "Sure, thank you, eh!"
     hide russian_radio with dissolve
     hide nova with moveoutright
     n "Nova sits down and gives the radio to Ges."

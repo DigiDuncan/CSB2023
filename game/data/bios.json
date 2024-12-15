@@ -46,8 +46,8 @@
             "Happy": "images/characters/ag/anne_happy.png",
             "Angry": "images/characters/ag/anne_angry.png"
         },
-        "quote": "Don't get cocky, kid.",
-        "bio": "Been 'round for some time. Still has her Union uniform! Married to Grace.",
+        "quote": "Gentlemen, affix bayonets!",
+        "bio": "Been 'round for some time. Still has her Union uniform and Army saber! Lives in New York city in a small apartment with Grace. Works for Elizabeth and is married to Grace.",
         "ce": true
     },
     "anno": {
@@ -437,8 +437,8 @@
             "Worried": "images/characters/eliza/eliza_worried.png",
             "Angry": "images/characters/eliza/eliza_angry.png"
      },
-        "quote": "Uh, uh... negative, negative. We had a reactor leak here. Now give us a few minutes to lock it down. Large leak, very dangerous.",
-        "bio": "Been 'round for a bit less than Anne and Grace, served her country proud! Mostly a loner who directs Anne and Grace.",
+        "quote": "Счастливого пути, советский ковбой.",
+        "bio": "Been 'round for a bit less than Anne and Grace, served her country proud! Started as boots on the ground all the way to the airforce. Last spotted doing an undercover mission in the Soviet Union, 1986. Mostly a loner who directs Anne and Grace.",
         "ce": true
     },
     "ges": {
@@ -477,8 +477,8 @@
             "CShirt: Angry": "images/characters/ag/grace_angry_shirt.png",
             "CShirt: Worried": "images/characters/ag/grace_worried_shirt.png"
         },
-        "quote": "Hokey religions and ancient weapons are no match for a good blaster at your side, kid.",
-        "bio": "Been 'round for some time, still has her cowboy hat and six-shooter. Happily married to Anne.",
+        "quote": "You've Yee'd your last Haw partner.",
+        "bio": "Been 'round for some time, still has her cowboy hat and six-shooter. Trying to rebuild her gun collection after having to sell it all to avoid complete bankruptcy from the AG&A Co. situation. Happily married to Anne.",
         "ce": true
     },
     "green": {
