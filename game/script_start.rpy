@@ -2394,169 +2394,11 @@ image reversi_rules:
     contains:
         Text("• Each player places down one piece per turn.\n• The goal is to capture your opponent's pieces by trapping them in between your own pieces on the board. \n• A legal move will capture at least one of your opponent's pieces. Depending on placement, you can capture entire rows in any direction on the grid.\n• The game ends when either the board is full or there are no legal moves left.\n• Whoever controls the most pieces at the end wins!", xanchor=0.5, yanchor=1.0, xalign=0.5, yalign=0.925, xmaximum=1450)
 
-# CS wacky Kuwait Adventures: Mika Edition (Deluxe Content [With Funky Kong {And Dante from Devil may Cry}])
-image kuwait_lieutenant_snow = "characters/kuwait_lieutenant_snow.png"
-image kuwait_nurse_1 = "characters/k_nurse.png"
-image kuwait_doctor_1 = "characters/k_doctor.png"
-image RCOMEM = "characters/RCOMEM.png"
-image suzuki = "characters/suzuki.png"
-# BGs
-image kuwait_city = "bg/kuwait_city.png"
-image kuwait_explosion = "bg/kuwait_explosion.png"
-image kuwait_hospital_inside = "bg/kuwait_hospital_inside.png"
-image kuwait_hospital_corridor = "bg/kuwait_hospital_corridor.png"
-image kuwait_islandbase_leaders = "bg/kuwait_islandbase_leaders.png"
-image kuwait_hallway = "bg/kuwait_hallway.png"
-image kuwait_island_outside = "bg/kuwait_island_outside.png"
-# Main locations
-image al_abdally = "bg/kuwait/al_abdally.png"
-image al_wafra = "bg/kuwait/al_wafra.png"
-image bayan_water = "bg/kuwait/bayan_water.png"
-image boubyan_island = "bg/kuwait/boubyan_island.png"
-image burgan_oil = "bg/kuwait/burgan_oil.png"
-image hawally = "bg/kuwait/hawally.png"
-image icarus = "bg/kuwait/icarus.png"
-image jahra_industrial = "bg/kuwait/jahra_industrial.png"
-image khiran_camp = "bg/kuwait/khiran_camp.png"
-image kubar_island = "bg/kuwait/kubar_island.png"
-image kuwait_cityu = "bg/kuwait/kuwait_cityu.png"
-image mutla_ridge = "bg/kuwait/mutla_ridge.png"
-image salmiya = "bg/kuwait/salmiya.png"
-image saqr_airbase = "bg/kuwait/saqr_airbase.png"
-image sharq = "bg/kuwait/sharq.png"
-image sulaibiya = "bg/kuwait/sulaibiya.png"
-image um_al_maradim = "bg/kuwait/um_al_maradim.png"
-image um_al_namil = "bg/kuwait/um_al_namil.png"
-#Sub locations
-image abdally_1 = "bg/kuwait/abdally_1.png"
-image abdally_2 = "bg/kuwait/abdally_2.png"
-image abdally_3 = "bg/kuwait/abdally_3.png"
-image bayan_1 = "bg/kuwait/bayan_1.png"
-image burgan_1 = "bg/kuwait/burgan_1.png"
-image burgan_2 = "bg/kuwait/burgan_2.png"
-image hawally_1 = "bg/kuwait/hawally_1.png"
-image hawally_2 = "bg/kuwait/hawally_2.png"
-image hawally_3 = "bg/kuwait/hawally_3.png"
-image hawally_4 = "bg/kuwait/hawally_4.png"
-image icarus_1 = "bg/kuwait/icarus_1.png"
-image icarus_2 = "bg/kuwait/icarus_2.png"
-image icarus_3 = "bg/kuwait/icarus_3.png"
-image jahra_1 = "bg/kuwait/jahra_1.png"
-image jahra_2 = "bg/kuwait/jahra_2.png"
-image khiran_1 = "bg/kuwait/khiran_1.png"
-image khiran_2 = "bg/kuwait/khiran_2.png"
-image khiran_3 = "bg/kuwait/khiran_3.png"
-image kubar_1 = "bg/kuwait/kubar_1.png"
-image maradim_1 = "bg/kuwait/maradim_1.png"
-image maradim_2 = "bg/kuwait/maradim_2.png"
-image city_1 = "bg/kuwait/mirai_1.png"
-image city_2 = "bg/kuwait/mirai_2.png"
-image city_3 = "bg/kuwait/mirai_3.png"
-image city_4 = "bg/kuwait/mirai_4.png"
-image city_5 = "bg/kuwait/mirai_5.png"
-image city_6 = "bg/kuwait/mirai_6.png"
-image city_7 = "bg/kuwait/mirai_7.png"
-image salmiya_1 = "bg/kuwait/salmiya_1.png"
-image salmiya_2 = "bg/kuwait/salmiya_2.png"
-image salmiya_3 = "bg/kuwait/salmiya_3.png"
-image salmiya_4 = "bg/kuwait/salmiya_4.png"
-image saqr_1 = "bg/kuwait/saqr_1.png"
-image saqr_2 = "bg/kuwait/saqr_2.png"
-image saqr_3 = "bg/kuwait/saqr_3.png"
-image wafra_1 = "bg/kuwait/wafra_1.png"
-image wafra_2 = "bg/kuwait/wafra_2.png"
-image wafra_3 = "bg/kuwait/wafra_3.png"
-image outside_survivor = "bg/kuwait/outside_survivor.png"
-image inside_survivor = "bg/kuwait/inside_survivor.png"
-image ag_bar = "bg/kuwait/ag_bar.png"
-image mechanic_shop = "bg/kuwait/mechanic.png"
-image gunsmith = "bg/kuwait/gunsmith.png"
-
 # Misc.
 image game_menu = "gui/game_menu.png"
 image black = "bg/black.png"
 image green_screen = "bg/green.png"
 image michael_calendar = "bg/michael_calendar.png"
-
-# DX Train Route
-image kingman_exterior = "bg/train/kingman_exterior.png"
-image kingman_interior = "bg/train/kingman_interior.png"
-image kingman_museum_1 = "bg/train/kingman_museum_1.png"
-image kingman_museum_2 = "bg/train/kingman_museum_2.png"
-image kingman_museum_3 = "bg/train/kingman_museum_3.png"
-image kingman_platform_1 = "bg/train/kingman_platform_1.png"
-image kingman_platform_2 = "bg/train/kingman_platform_2.png"
-image kingman_train_arrive = "bg/train/kingman_train_arrive.png"
-image amtrak_arrive_close = "bg/train/amtrak_arrive_close.png"
-image amtrak_sleeper_corridor = "bg/train/amtrak_sleeper_corridor.png"
-image amtrak_sleeper_interior_day = "bg/train/amtrak_sleeper_interior.png"
-image amtrak_sleeper_interior_night = "dark:bg/train/amtrak_sleeper_interior.png"
-image amtrak_dining_car = "bg/train/amtrak_dining_car.png"
-image amtrak_dining_table = "bg/train/amtrak_dining_table.png"
-image moynihan_interior = "bg/train/moynihan_interior.png"
-image amtrak_cab = "bg/train/amtrak_cab.png"
-image amtrak_sleeper_open_bg = "bg/train/amtrak_sleeper_open_bg.png" #these two images are bigger on purpose
-image amtrak_sleeper_open_fg = "bg/train/amtrak_sleeper_open_fg.png" #remastering is encouraged but don't change size unless you must
-image amtrak_coach_1 = "bg/train/amtrak_coach_1.png"
-image amtrak_coach_2 = "bg/train/amtrak_coach_2.png"
-image amtrak_baggage = "bg/train/amtrak_baggage.png"
-image amtrak_top = "dark:bg/train/amtrak_top.png"
-image amtrak_top sil_black = "sil_black:bg/train/amtrak_top.png"
-image midwest_night = "bg/train/midwest_night.png"
-image sepia_zoom = "bg/train/sepia_zoom.png"
-image hutchinson_stn = "dark:bg/train/hutchinson_stn.png"
-image hutchinson_stn_lights = "bg/train/hutchinson_stn_lights.png"
-image lupin_escape_1 = "dark:bg/train/lupin_escape_1.png"
-image lupin_escape_2 = "dark:bg/train/lupin_escape_2.png"
-image amtrak_dining_day = "bg/train/amtrak_dining_day.png"
-
-# Train Route NPCs
-image amtrak_conductor = "characters/amtrak_conductor.png"
-image amtrak_conductor flipped = "flip:characters/amtrak_conductor.png"
-image amtrak_conductor dark = "dark:characters/amtrak_conductor.png"
-image amtrak_stewardess = "characters/amtrak_stewardess.png"
-image amtrak_stewardess flipped = "flip:characters/amtrak_stewardess.png"
-
-image lupin run = "characters/lupin/lupin_run.png"
-image lupin run flipped = "flip:characters/lupin/lupin_run.png"
-image lupin run hat = "characters/lupin/lupin_run_hat.png"
-image lupin run hat flipped = "flip:characters/lupin/lupin_run_hat.png"
-image lupin run hat dark = "dark:characters/lupin/lupin_run_hat.png"
-image lupin run hat dark flipped = "dark:flip:characters/lupin/lupin_run_hat.png"
-image lupin stand = "characters/lupin/lupin_stand.png"
-image lupin stand flipped = "flip:characters/lupin/lupin_stand.png"
-image lupin stand dark = "dark:characters/lupin/lupin_stand.png"
-image lupin stand hat = "characters/lupin/lupin_stand_hat.png"
-image lupin stand hat flipped = "flip:characters/lupin/lupin_stand_hat.png"
-image lupin stand hat dark = "dark:characters/lupin/lupin_stand_hat.png"
-image lupin stand hat dark flipped = "dark:flip:characters/lupin/lupin_stand_hat.png"
-
-image zenigata = "characters/zenigata.png"
-image zenigata dark = "dark:characters/zenigata.png"
-image zenigata dark flipped = "dark:flip:characters/zenigata.png"
-image zenigata car dark = "dark:characters/zenigata_car.png"
-
-# Train Route Tate EX extra images
-image tate_falling = "secret/pt/tate_falling.png"
-image tate_fallen_1 = "secret/pt/tate_fallen_1.png"
-image tate_fallen_2 = "secret/pt/tate_fallen_2.png"
-image tate_fallen_3 = "secret/pt/tate_fallen_3.png"
-image tate_fallen_4 = "secret/pt/tate_fallen_4.png"
-image tate_fallen_5 = "secret/pt/tate_fallen_5.png"
-image yeetable_textbox = "/secret/pt/yeetable_textbox.png"
-
-# Train Route generated images
-image fake_rpg_miss = Text("{size=50}{color=#FFAAAA}Miss!", text_align=0.5)
-image oof_45 = Text("{size=50}{color=#FFEE00}4'5\"", text_align=0.5)
-image oof_54 = Text("{size=50}{color=#CE256E}5'4\"", text_align=0.5)
-image oof_52 = Text("{size=50}{color=#233260}5'2\"", text_align=0.5)
-image spent_19_95 = Text("{size=50}{color=#369100}-$19.95", text_align=0.5)
-
-# TODO: this still sucks, but it's not NEARLY as bad as it was
-image petals_falling = Fixed(
-    SnowBlossom(Transform("petal1.png", xysize=(20, 20), fit="contain", rotate=renpy.random.randint(1,360)), count = 50, xspeed = (-100, -300), fast = True),
-    SnowBlossom(Transform("petal2.png", xysize=(20, 20), fit="contain", rotate=renpy.random.randint(1,360)), count = 50, xspeed = (-100, -300), fast = True)
-)
 
 # DX Digi Backgrounds
 image classroom = "bg/classroom.png"
@@ -3253,15 +3095,6 @@ define audio.in_the_room = "<from 0.491 to 30.501>in_the_room.ogg"
 define audio.roundabout = "<from 41.076>roundabout.ogg"
 define audio.lo_fi_sunset = "lo_fi_sunset.ogg"
 define audio.homely_yado_inn = "<from 0.499 to 40.502>homely_yado_inn.ogg"
-
-# For Tate EX / Perfect Tate
-define audio.insomnia_intro = "<from 0 to 11.299>secret/pt/insomnia.ogg"
-define audio.insomnia_loop = "<from 22.6>secret/pt/insomnia.ogg"
-define audio.space = "secret/pt/space.ogg"
-define audio.nyan = "<from 3.6 to 228.52>/secret/pt/nyan_of_a_lifetime.ogg"
-
-# CSBIII DX Kuwait Music
-define audio.tmwstw = "tmwstw.ogg"
 
 # CSBIII DX Holiday Special Music
 define audio.lets_hear_winter = "lets_hear_my_christ.ogg"
