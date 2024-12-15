@@ -1,7 +1,7 @@
 init python:
     # For unused assets gallery
     unused_page = 0
-    
+
     # For jukebox tagging
     current_jukebox_tag_index = 0
 
@@ -36,8 +36,6 @@ init 10 python:
         persistent.csb2_unlocked = True
         persistent.csb3a_unlocked = True
         persistent.csb3b_unlocked = True
-        persistent.defeated_perfect_tate = True
-        persistent.awawa_mode = True
         persistent.carrot_game_unlocked = True
         persistent.reversi_game_unlocked = True
         persistent.saved_christmas = True
@@ -121,7 +119,7 @@ transform mid_offscreen_left:
     xanchor 0.5 xpos -0.0
 
 # i got tired.
-# if ALL you need is a simple custom placement, no zoom/motion/effects, just use this please. 
+# if ALL you need is a simple custom placement, no zoom/motion/effects, just use this please.
 # for compatibility with the existing positions, set anchor to 1.0 - tate
 transform manual_pos(x, y, this_anchor = 0):
     xanchor this_anchor
@@ -223,7 +221,7 @@ transform t_punchup:
     yanchor 1.0 ypos 0.0
     rotate 0
     linear 1 rotate 960
-    
+
 # TODO: make sure this transform exactly matches the rpg engine transform. i don't think i quite nailed it -tate
 transform t_fake_rpg_text(x,y,speed = 0.25):
     on show:
@@ -234,7 +232,7 @@ transform t_fake_rpg_text(x,y,speed = 0.25):
             linear speed ypos (y-0.05)
         parallel:
             ease_expo 0.75 alpha 0.00
-        
+
 transform lego_run:
     pos (0.5, 0.5)
     anchor(0.5, 0.5)
@@ -417,7 +415,7 @@ define customer = Character("Customer", callback = char_callback)
 define crowd = Character("Crowd", callback = char_callback)
 define ges = Character("Ges", callback = renpy.partial(char_callback, name = "ges", beep = "ges"))
 define guest = Character("Guest", callback = renpy.partial(char_callback, name = "guest"))
-define howie = Character("Howie", callback = renpy.partial(char_callback, name = "howie", beep = "howie")) 
+define howie = Character("Howie", callback = renpy.partial(char_callback, name = "howie", beep = "howie"))
 define janitor = Character("Janitor", callback = char_callback)
 
 # CSBIII Country Route Character Definitons
@@ -1547,7 +1545,7 @@ image carguya = "characters/carguya.png"
 image hart1 = "characters/hart1.png"
 image hart2 = "characters/hart2.png"
 
-# HoH SiS 
+# HoH SiS
 image rich = "characters/hohsis/rich.png"
 image rich dark = "dark:characters/hohsis/rich.png"
 image rich sil_black = "sil_black:characters/hohsis/rich.png"
@@ -2594,7 +2592,7 @@ image sleigh:
 image snow_pile = "snow_pile.png"
 
 # Static Images
-image amtrak_dining_food = "food.png" 
+image amtrak_dining_food = "food.png"
 image amtrak_dining_pancake = "pancake.png"
 image anno_car = "anno_car.png"
 image anno_car dark = "dark:anno_car.png"
@@ -2892,9 +2890,6 @@ image bubble = Transform("images/characters/bubble.png", zoom = 2.0)
 ## Realistic explosion
 image realistic_explosion_anim = spritesheet_animation("images/realistic_explosion.png", 6, 3, looping = False)
 
-## CS running loop for Perfect Tate
-image cs_run = spritesheet_animation("minigames/perfecttate/cs_spritesheet.png", 8, 3, fps=45, looping = True)
-
 ## For cop car lights
 image blue_light:
     "blue_light.png"
@@ -2940,83 +2935,6 @@ layeredimage copguy_ex:
     group ignore_me:
         attribute wow default:
             "copguy_ex_front"
-            
-## For Tate EX
-image tate_ex_front:
-    "secret/pt/tate_ex.png"
-    alignaround (0.5, 0.5)
-    align (0.5, 0.5)
-    pos (0.5, 0.5)
-    pass
-    # this is on purpose
-    ease 0.5 xpos 0.5
-    ease 0.5 ypos 0.5
-    repeat
-    
-image tate_ex_ca_c:
-    "secret/pt/tate_ex_c.png"
-    alignaround (0.5, 0.5)
-    align (0.5, 0.5)
-    pos (0.5, 0.5)
-    blur 5
-    pass
-    xpos 0.505
-    ypos 0.505
-    linear 0.5 ypos 0.495
-    linear 0.5 xpos 0.495
-    linear 0.5 ypos 0.505
-    linear 0.5 xpos 0.505
-    repeat
-
-image tate_ex_ca_m:
-    "secret/pt/tate_ex_m.png"
-    alignaround (0.5, 0.5)
-    align (0.5, 0.5)
-    pos (0.5, 0.5)
-    blur 5
-    pass
-    xpos 0.505
-    ypos 0.505
-    linear 1.0 ypos 0.495
-    linear 1.0 xpos 0.495
-    linear 1.0 ypos 0.505
-    linear 1.0 xpos 0.505
-    repeat
-
-image tate_ex_ca_y:
-    "secret/pt/tate_ex_y.png"
-    alignaround (0.5, 0.5)
-    align (0.5, 0.5)
-    pos (0.5, 0.5)
-    blur 5
-    pass
-    xpos 0.505
-    ypos 0.505
-    linear 0.25 ypos 0.495
-    linear 0.25 xpos 0.495
-    linear 0.25 ypos 0.505
-    linear 0.25 xpos 0.505
-    repeat
-
-layeredimage tate_ex_preparation:
-    group cmy:
-        attribute c default:
-            "tate_ex_ca_c"
-        attribute m default:
-            "tate_ex_ca_m"
-        attribute y default:
-            "tate_ex_ca_y"
-
-    group ignore_me:
-        attribute wow default:
-            "tate_ex_front"
-            
-image tate_ex:
-    contains:
-        "tate_ex_preparation"
-    xysize (744, 800)
-    xcenter 0.25
-    ycenter 0.6
 
 ## For train boss
 image train_boss_1:
@@ -3866,7 +3784,7 @@ label before_main_menu:
                 if persistent.creative_mode == False:
                     persistent.creative_mode = True
                     renpy.call_screen("special_unlock", "Noice! You've unlocked Creative Mode! Check out all the new stuff in Extras!")
-                    
+
         if not persistent.seen_splash:
             if not renpy.music.is_playing():
                 renpy.music.play("bubble_tea.ogg", loop = False)
