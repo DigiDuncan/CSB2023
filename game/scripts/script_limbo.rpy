@@ -41,12 +41,12 @@ label woohoo_counter:
     play music interference2
     scene conferencetv
     show cs at left
-    show arceus at right
+    show arceus festive at right
     with dissolve
     arceus "Well, boss, let's see how many \"woohoos\" you got!"
     scene conferencetv at Move((0.0 , -1.0), (0.0, 0.0), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show cs at Move((0.0 , 0.25), (0.0, 1.75), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
-    show arceus at Move((0.735 , 0.4), (0.735, 1.75), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show arceus festive at Move((0.735 , 0.4), (0.735, 1.75), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     pause 3.0
     show screen woohoo_counter
     play sound sfx_fabeep

@@ -3103,6 +3103,7 @@ define audio.space_classroom = "space_classroom.ogg"
 define audio.billymusicu = "billymusicu.ogg"
 define audio.ocean_man = "credits.ogg"
 define audio.albuquerque_full = "albuquerque.ogg"
+define audio.interference2 = "<from 275>interference.ogg"
 
 # SFX
 define audio.sfx_addy_snap = "sfx/sfx_addy_snap.ogg"
