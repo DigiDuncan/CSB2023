@@ -223,3 +223,7 @@ init python:
 ## by a slash.
 
 # define build.itch_project = "renpytom/test-project"
+
+define config.default_music_volume = 0.50
+define config.default_sfx_volume = 0.75
+define config.default_voice_volume = 0.75
