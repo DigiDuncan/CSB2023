@@ -2315,7 +2315,7 @@ label before_main_menu:
                 renpy.music.play("christmas_tea.ogg", loop = False)
         else:
             if not renpy.music.is_playing():
-                renpy.music.play("<from 14.7>christmas_tea.ogg", loop = False)
+                renpy.music.play("<from 14.7>christmas_tea.ogg", loop = True)
                 persistent.seen_splash = False
     return
 
