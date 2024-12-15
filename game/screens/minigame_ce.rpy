@@ -24,7 +24,7 @@ screen ce_minigame_screen():
 
     if persistent.carrot_game_unlocked:
         imagebutton idle "images/minigames/carrot_box.png":
-            action Replay("play_carrotgame")
+            action Replay("play_ce_carrot", locked = False)
             yalign 0.55
             xpos 0.33 xanchor 0.5
     else:
@@ -35,7 +35,7 @@ screen ce_minigame_screen():
 
     if persistent.reversi_game_unlocked:
         imagebutton idle "images/minigames/reversi_box.png":
-            action Replay("play_ce_reversi")
+            action Replay("play_ce_reversi", locked = False)
             yalign 0.55
             xpos 0.67 xanchor 0.5
     else:
