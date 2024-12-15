@@ -62,9 +62,9 @@ screen item_nav():
                         
                         # create the actual button here
                         button:
-                            idle_background "#003D51"
-                            hover_background "#0099CC"
-                            selected_idle_background "#65C0DF"
+                            idle_background "#510000"
+                            hover_background "#cc0000"
+                            selected_idle_background "#df6565"
                             insensitive_background "#888888"
 
                             xalign 0.5 yalign 0.5

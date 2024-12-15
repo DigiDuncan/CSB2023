@@ -543,7 +543,7 @@ define mean = Character("Mean", callback = renpy.partial(char_callback, name = "
 define midge = Character("Midge", callback = renpy.partial(char_callback, name = "midge", beep = "midge"))
 define mika = Character("Mika", callback = renpy.partial(char_callback, name = "mika", beep = "mika"))
 define nova = Character("Nova", callback = renpy.partial(char_callback, name = "nova"))
-define pakoo = Character("Pakoo", callback = renpy.partial(char_callback, name = "pakoo", beep = "pak"))
+define pakoo = Character("Pakoo", callback = renpy.partial(char_callback, name = "addy", beep = "pak"))
 define tate = Character("Tate", callback = renpy.partial(char_callback, name = "tate", beep = "tate"))
 
 # Character Images

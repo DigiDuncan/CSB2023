@@ -3,7 +3,7 @@
 ##-------CODEX ENTRY NAVIGATION------------------
 ##-----------------------------------------------
 screen achievements_nav():
-    add Color('#5F777F', alpha=0.75)
+    add Color('#423232', alpha=0.75)
     textbutton "Return to Extras" action ShowMenu("category_welcome") yoffset 950 xoffset 25
     textbutton "Return" action Return() yoffset 1000 xoffset 25
 
