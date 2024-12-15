@@ -2872,6 +2872,7 @@ define splash = "movies/splash.webm"
 define perfect_tate_intro = "minigames/perfecttate/Tate1.webm"
 define decoratingscene = "movies/decoratingscene.webm"
 define intro_credits_1 = "movies/intro_credits_1.webm"
+define intro_credits_2 = "movies/intro_credits_2.webm"
 define ce_ending = "movies/ce_ending.webm"
 
 # Fun Values

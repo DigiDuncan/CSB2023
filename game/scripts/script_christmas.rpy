@@ -21,6 +21,7 @@
 label ce_start:
     scene black
     $ renpy.movie_cutscene(intro_credits_1)
+    $ renpy.movie_cutscene(intro_credits_2)
     $ persistent.heard.add("polar_express")
     $ persistent.heard.add("sleigh_ride")
     pause 1.0
