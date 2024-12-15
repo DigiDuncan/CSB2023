@@ -94,18 +94,10 @@
         "quote": "Nice car!",
         "bio": "Carguy isn't your average car salesman. He isn't even a car salesman at all! He's actually an advertiser for a product called \"Crotch Doctor\". Now, what does this have to do with cars? Do cars even have crotches? Does Carguy even know what a car {i}is?{/i}"
     },
-    "colton": {
-        "full_name": "Colton Potter",
-        "pronouns": "(he/him)",
-        "sprites": { "Default": "images/characters/lmg/colton.png"},
-        "quote": "Guys, this isn't funny!",
-        "bio": "Although he's the scapegoat of LTT, Colton doesn't mind this treatment too much. He's happy to work with Linus and the gang, and, honestly, he needs their company to even get through the day."
-    },
     "copguy": {
         "full_name": "Copguy",
         "pronouns": "(he/him)",
         "sprites": {
-            "Default": "images/characters/copguy/copguy.png",
             "Festive": "images/characters/copguy/copguy_festive.png"
         },
         "quote": "You're headin' to the slammer, bucko.",
@@ -187,8 +179,6 @@
         "full_name": "Ed",
         "pronouns": "(he/him)",
         "sprites": {
-            "Default": "images/characters/hohsis/ed.png",
-            "Phone": "images/characters/hohsis/ed_phone.png",
             "Festive": "images/characters/hohsis/ed_festive.png"
         },
         "quote": "We make sure to get the JoJ done right, the first time.",
@@ -325,13 +315,6 @@
         "bio": "Mr. Rosen is a poem fanatic. He's got a story to tell whenever you meet him. This man will pull the craziest tale from nothing in a matter of seconds. How does he do this? What secret talent does he have? All that is certain is that he needs his chocolate cake.",
         "dx_bio": "The prophet that predicted CS' life, as well as the end of the world."
     },
-    "mika": {
-        "full_name": "Mikapara",
-        "pronouns": "(any/all)",
-        "sprites": { "Default": "images/characters/mika.png" },
-        "quote": "TULE T\u00c4NNE, SENKIN SAASTAINEN SEKAROTUINEN!",
-        "bio": "Pakoo's fianc\u00e9e who loves to give CS five dollars and talk in a very highlighted tone. A pilot, gambler, and stand-up kinda guy."
-    },
     "mike": {
         "full_name": "Mike",
         "pronouns": "(he/him)",
@@ -352,27 +335,11 @@
         "full_name": "Barack Obama",
         "pronouns": "(he/him)",
         "sprites": {
-            "Default": "images/characters/obama.png",
             "Festive: Neutral": "images/characters/obama_festive.png",
             "Festive: Angry": "images/characters/obama_festive_angry.png"
         },
         "quote": "Hello, my fellow Americans!",
         "bio": "As the 44th President of the United States, he's a pretty chill dude, even while under the stress of governing such a massive country. He apparently loves to play video games with his fellow candidates. For some reason, people can't figure out what his last name is."
-    },
-    "pakoo": {
-        "full_name": "Pakoo",
-        "pronouns": "(he/they)",
-        "sprites": {
-            "Neutral": "images/characters/pakoo/pakoo.png",
-            "Angry": "images/characters/pakoo/pakoo_angry.png",
-            "Disappointed": "images/characters/pakoo/pakoo_disappointed.png",
-            "Happy": "images/characters/pakoo/pakoo_happy.png",
-            "Laughing": "images/characters/pakoo/pakoo_laughing.png",
-            "Worried": "images/characters/pakoo/pakoo_worried.png"
-        },
-        "quote": "I remember this one time...",
-        "bio": "Pakoo remembers everything. They keep track of pretty much every event that has happened to them. They plan to build a whole archive documenting their entire life. Sadly, they can't remember what happened about five minutes ago.",
-        "dx_bio": "Really likes Christmas."
     },
     "pomni": {
         "full_name": "Pomni",
@@ -391,7 +358,6 @@
         "full_name": "Richard",
         "pronouns": "(he/him)",
         "sprites": {
-            "Default": "images/characters/hohsis/rich.png",
             "Festive": "images/characters/hohsis/rich_festive.png"
         },
         "quote": "Yes, I'm happy now.",
@@ -416,7 +382,6 @@
         "full_name": "Sheriff",
         "pronouns": "(he/him)",
         "sprites": {
-            "Default": "images/characters/sheriff.png",
             "Festive": "images/characters/sheriff_festive.png"
         },
         "quote": "I need pictures of CS, ASAP!",
