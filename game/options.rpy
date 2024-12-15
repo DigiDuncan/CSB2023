@@ -12,7 +12,7 @@
 ##
 ## The _() surrounding the string marks it as eligible for translation.
 
-define config.name = _("CSBounciness III DX")
+define config.name = _("CSBounciness III CE")
 
 
 ## Determines if the title given above is shown on the main menu screen. Set
@@ -29,17 +29,9 @@ define config.version = "1.0a1"
 ## Text that is placed on the game's about screen. Place the text between the
 ## triple-quotes, and leave a blank line between paragraphs.
 
-define gui.about = _p("""CSBounciness III DX
+define gui.about = _p("""CSBounciness III CE
 
-Over five years in the making, relive the wild rides of CSBounciness I and II,
-and embark on a new wacky adventure with CS and the gang in the all new CSBounciness
-III! Remastered in glorious 1080p, and now with music, sound effects, a redesigned
-GUI, a fresh pass on the writing, and new art!
-
-This version includes bonus content, asset remasters, developer commentary, and more!
-
-Thank you to the CS community and to cs188 himself for the last several years of love
-and laughs, and we can't wait to show you what we can do now!
+# TODO: Write something nice here!
 
 <3 DPN Games
 """)
@@ -49,7 +41,7 @@ and laughs, and we can't wait to show you what we can do now!
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,
 ## or semicolons.
 
-define build.name = "CSBIIIDX"
+define build.name = "CSBIIICE"
 
 
 ## Sounds and music ############################################################

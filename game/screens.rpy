@@ -838,7 +838,6 @@ screen preferences():
                     style_prefix "check"
                     label "Game Settings"
                     textbutton _("Text Beeps") action ToggleField(preferences, "text_beeps")
-                    textbutton _("Streamer Mode") action ToggleField(preferences, "streamer_mode")
                     textbutton _("Dyslexia Mode") action gui.TogglePreference("font", "fonts/comic.ttf", "fonts/Yokelvision.otf"), gui.TogglePreference("fsm", 0.75, 1)
                     textbutton _("Developer Mode") action ToggleField(preferences, "developer_mode")
 
@@ -862,22 +861,6 @@ screen preferences():
                             xsize 450
                         null width 20
                         label "[preferences.__dict__['afm_time']:.1f]s" yoffset -10 xminimum 200
-
-                    # TODO: THIS IS NOT STAYING HERE.
-                    if persistent.awawa_mode == True:
-                        hbox:
-                            style_prefix "check"
-                            textbutton _("Awawa Mode") action ToggleField(preferences, "awawa_mode"):
-                                hovered [Function(get_mouse), info.Action("Replace the dialogue with nonsense!"), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
-                        hbox:
-                            bar:
-                                style "slider"
-                                xsize 450
-                                value preferences.awawa_chance
-                                range 100
-                                changed(change_awawa_chance)
-                            null width 20
-                            label "[awawa_chance_label]" yoffset -10 xminimum 200
                 vbox:
                     if config.has_music:
                         hbox:
