@@ -539,7 +539,7 @@ define iris = Character("Iris", callback = renpy.partial(char_callback, name = "
 define k17 = Character("K-17", callback = renpy.partial(char_callback, name = "k17", beep = "k17"))
 define k22 = Character("K-22", callback = renpy.partial(char_callback, name = "k22", beep = "k20"))
 define kitty = Character("Kitty", callback = renpy.partial(char_callback, name = "kitty", beep = "kitty"))
-define mean = Character("Mean", callback = renpy.partial(char_callback, name = "mean", beep = "mean"))
+define mean = Character("Mean", callback = renpy.partial(char_callback, name = "mean_human", beep = "mean"))
 define midge = Character("Midge", callback = renpy.partial(char_callback, name = "midge", beep = "midge"))
 define mika = Character("Mika", callback = renpy.partial(char_callback, name = "mika", beep = "mika"))
 define nova = Character("Nova", callback = renpy.partial(char_callback, name = "nova"))
