@@ -3567,9 +3567,9 @@ python early:
     )
 
 label splashscreen:
-    $ renpy.movie_cutscene(splash)
+    # $ renpy.movie_cutscene(splash) TODO: Digi: Christmas splash
     $ persistent.seen_splash = True
-    $ persistent.heard.add("bubble_tea")
+    $ persistent.heard.add("christmas_tea")
     return
 
 label before_main_menu:
@@ -3583,10 +3583,10 @@ label before_main_menu:
 
         if not persistent.seen_splash:
             if not renpy.music.is_playing():
-                renpy.music.play("bubble_tea.ogg", loop = False)
+                renpy.music.play("christmas_tea.ogg", loop = False)
         else:
             if not renpy.music.is_playing():
-                renpy.music.play("<from 16.53>bubble_tea.ogg", loop = False)
+                renpy.music.play("<from 14.7>bubble_tea.ogg", loop = False)
                 persistent.seen_splash = False
     return
 

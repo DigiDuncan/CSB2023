@@ -7,13 +7,13 @@
         "CSBIII DX: Holiday Special"
     ],
     "tracks": {
-        "bubble_tea" : {
-            "file": "bubble_tea.ogg",
-            "title": "Bubble Tea",
-            "artist": "dark cat",
+        "christmas_tea" : {
+            "file": "christmas_tea.ogg",
+            "title": "Christmas Tea",
+            "artist": "dark cat x DigiDuncan",
             "tags": ["Menus & Misc."],
             "album_art": "bubbletea.png",
-            "trivia": "The unofficial DPN / {i}CSBIII{/i} theme song."
+            "trivia": "The unofficial DPN / {i}CSBIII{/i} theme song, remixed for the season. Digi got a lot of help from Baker to understand how FL Studio works, and Tate and Pakoo on choosing some samples and harmonies, but they're still proud that they were able to make something musical."
         },
         "what_the_night_will_bring" : {
             "file": "what_the_night_will_bring.ogg",
@@ -26,7 +26,6 @@
             "file": "<from 275>interference.ogg",
             "title": "Interference",
             "artist": "Sanity",
-            "tags": ["Menus & Misc."],
             "tags": ["Menus & Misc."],
             "album_art": "tracker.png"
         },
