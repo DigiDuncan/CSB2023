@@ -303,7 +303,7 @@ label awawa_tate_test:
                     "Full Game":
                         call screen credits_roll(duration=60)
                     "CE Only":
-                        call screen credits_roll(route="CSBIII DX: Holiday Special", scroll_start = 12525, duration=84)
+                        call screen credits_roll(route="CSBIII DX: Holiday Special", scroll_start = 12525, duration=84) with dissolve
                     "Never mind.":
                         jump .awawa_menu
 

@@ -7506,6 +7506,9 @@ label ce_roof_moment:
     cs "For now, I should probably get to streaming."
     show cs happy christmas
     cs "Those car crash compilations aren't gonna watch themselves!"
+    jump ce_end_credits
+
+label ce_end_credits:
     scene black
     $ _skipping = False
     $ renpy.choice_for_skipping()
@@ -7523,7 +7526,7 @@ label ce_roof_moment:
     $ achievement_manager.unlock("hoh_hoh")
     $ ending_manager.mark("christmas")
 
-    call screen credits_roll(route="CSBIII DX: Holiday Special", scroll_start = 12525, duration=84)
+    call screen credits_roll(route="CSBIII DX: Holiday Special", scroll_start = 12525, duration=84) with dissolve
 
     jump ce_epilogue
 
