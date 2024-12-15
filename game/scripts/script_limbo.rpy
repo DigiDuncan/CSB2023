@@ -39,6 +39,7 @@ label show_dxcom:
 
 label woohoo_counter:
     play music interference2
+    $ persistent.heard.add("interference2")
     scene conferencetv
     show cs at left
     show arceus festive at right
@@ -62,7 +63,7 @@ label woohoo_counter:
 
 screen hatch_button():
     modal True
-    
+
     ##### poster button
     imagebutton:
         auto "gui/ce_point_click/poster/poster_%s.png"
@@ -100,10 +101,10 @@ screen hatch_button():
         hover_sound "audio/sfx/sfx_select.ogg"
         at mid_right
         action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("hatch_button"), Jump("ce_point_click.mean")
-    
+
     ##### hatch button (correct one)
     imagebutton:
-        auto "gui/ce_point_click/hatch/hatch_%s.png" 
+        auto "gui/ce_point_click/hatch/hatch_%s.png"
         hover_sound "audio/sfx/sfx_select.ogg"
         xpos 0.3
         ypos -0.2

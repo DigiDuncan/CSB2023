@@ -7529,7 +7529,7 @@ label ce_end_credits:
     $ achievement_manager.unlock("hoh_hoh")
     $ ending_manager.mark("christmas")
 
-    call screen credits_roll(route="CSBIII DX: Holiday Special", scroll_start = 12525, duration=84) with dissolve
+    call screen credits_roll(scroll_start = 12525, duration=84) with dissolve
 
     jump ce_epilogue
 
