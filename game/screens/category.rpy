@@ -44,7 +44,7 @@ screen category_nav():
             textbutton "Achievements\n{size=-12}Look at all you've accomplished!" action ShowMenu("achievements_welcome")
 
             textbutton "Bios\n{size=-12}Learn more about the characters you've met!" action ShowMenu("people")
-            
+
             textbutton "{image=gui/dx_text.png} Item Collection\n{size=-12}Inspect items you've found while playing!" action ShowMenu("item_collection")
 
             textbutton "Jukebox\n{size=-12}Jam out to songs you've heard along the way!" action ShowMenu("jukebox"), PauseAudio("music", True)
@@ -53,23 +53,14 @@ screen category_nav():
 
             textbutton "Minigames\n{size=-12}Got a favorite minigame? Do it all over again!" action ShowMenu("ce_minigame_screen")
 
-            textbutton "{image=gui/dx_text.png} Timeline Tracer\n{size=-12}Revisit endings and track where you've been!" action ShowMenu("timeline_tracer")
-
             if preferences.developer_mode or persistent.saved_christmas:
                 textbutton "{image=gui/ce_text.png} D20 Viewer\n{size=-12}See who could have showed up first to the party!" action ShowMenu("d20_viewer_screen")
 
-            if preferences.developer_mode or achievement_manager.get("Hopes and Dreams").unlocked:
-                textbutton "Ultimate Custom Night\n{size=-12}Put together your own RPG battles!" action Start("rpg_ucn")
-
             textbutton "{image=gui/dx_text.png} Woohoo Counter\n{size=-12}How many can you find?" action Jump("woohoo_counter")
-
-            textbutton "{image=gui/dx_text.png} Controller Test\n{size=-12}Check your controller's compatibility." action Jump("play_controllertest")
 
             if preferences.developer_mode or persistent.creative_mode:
 
                 textbutton "Debug Menu\n{size=-12}[[DEV] Jump to specific sections of the game." action ShowMenu("debug_menu")
-
-                textbutton "{image=gui/dx_text.png} Asset Debugger\n{size=-12}[[DEV] Make sure all assets load correctly." action Jump("asset_debugger")
 
             if preferences.developer_mode:
                 textbutton "Test Scene\n{size=-12}[[DEV] A sandbox for testing various features." action Jump("test")

@@ -7,6 +7,21 @@
         "CSBIII DX: Holiday Special"
     ],
     "tracks": {
+        "bubble_tea" : {
+            "file": "bubble_tea.ogg",
+            "title": "Bubble Tea",
+            "artist": "dark cat",
+            "tags": ["Menus & Misc."],
+            "album_art": "bubbletea.png",
+            "trivia": "The unofficial DPN / {i}CSBIII{/i} theme song."
+        },
+        "what_the_night_will_bring" : {
+            "file": "what_the_night_will_bring.ogg",
+            "title": "What The Night Will Bring",
+            "artist": "Rubber Kiss Goodbye",
+            "tags": ["Menus & Misc.", "New In DX"],
+            "album_art": "csbi.png"
+        },
         "star_spangled_banner" : {
             "file": "star_spangled_banner.ogg",
             "title": "The Star Spangled Banner",
@@ -22,7 +37,7 @@
             "tags": ["Menus & Misc.", "CSBIII DX: Holiday Special", "New In DX"],
             "album_art": "polar_express.png"
         },
-      "sleigh_ride" : {
+        "sleigh_ride" : {
             "file": "sleigh_ride.ogg",
             "title": "Sleigh Ride",
             "artist": "Leroy Anderson",
