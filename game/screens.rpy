@@ -362,7 +362,7 @@ screen navigation():
 
         if main_menu:
 
-            textbutton _("Start") action Start("chapter_select")
+            textbutton _("Start") action Start("ce_start")
 
         else:
 
@@ -432,22 +432,9 @@ screen main_menu():
     tag menu
     add gui.main_menu_background
 
-    add "gui/dx_title.png" xalign 0.8 yalign 0.225 zoom 0.4:
+    add "gui/ce_title.png" xalign 0.8 yalign 0.225 zoom 0.4:
         at dx_fade
-    viewport:
-        xysize(666,720)
-        yanchor -0.025
-        xanchor -2.1
-        hbox:
-            text "{bt=a3-p10-s1}Are you CS? Click here!":
-                size 40
-            null:
-                width 20
-            imagebutton auto "menu/cs_button_%s.png" hover_sound "audio/sfx/sfx_popcat_0.ogg":
-                at transform:
-                    zoom 0.15
-                    xalign 0.5
-                action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("cs_button"), ShowMenu("limbo_csbutton")
+
     ## This empty frame darkens the main menu.
     frame:
         style "main_menu_frame"
