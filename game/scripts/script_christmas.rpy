@@ -2305,6 +2305,7 @@ label ce_party_before:
         show arceus festive dark flipped at mid_left
         show kitty festive dark at left
         with dissolve
+        $ persistent.seen.add("round")
         show cs christmas dark flipped at right with moveinright
         arceus "Hey, CS!"
         cs "Hey, Arc! Hey, Kitty!"
@@ -3116,6 +3117,7 @@ label ce_introductions:
     show arceus festive at mid_left
     show kitty festive at left
     with dissolve
+    $ persistent.seen.add("round")
     pause 1.0
     show cs christmas flipped at center with moveinright
     cs "Hey, how are you guys? I was looking all over and couldn't find you."
