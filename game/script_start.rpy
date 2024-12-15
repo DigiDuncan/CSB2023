@@ -946,7 +946,7 @@ image cs sil_black flipped = "sil_black:flip:characters/cs/base/neutral.png"
 ## Arc
 image arceus sil_black = "sil_black:characters/arc/neutral_festive.png"
 image arceus festive = "characters/arc/neutral_festive.png"
-image arceus festive dusk flipped = "characters/arc/neutral_festive.png"
+image arceus festive dusk flipped = "flip:dusk:characters/arc/neutral_festive.png"
 image arceus festive flipped = "flip:characters/arc/neutral_festive.png"
 image arceus festive dark = "dark:characters/arc/neutral_festive.png"
 image arceus festive dark flipped = "flip:dark:characters/arc/neutral_festive.png"
