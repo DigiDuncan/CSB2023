@@ -1,14 +1,14 @@
 {
+    "itemcoll.png": {
+        "type": "image",
+        "title": "Item Collection Mockup",
+        "caption": "Item Collection was an idea that Pakoo had a long time ago, but didn't have enough time to implement in {i}CSBIII.{/i} Luckily, Tate also loved the idea, so they made it a reality for {i}DX.{/i} This was the initial MS Paint doodle showcasing Tate's concept for the screen's layout."
+    },
     "1.ogg": {
         "type": "audio",
         "title": "Test Developer Commentary",
         "caption": "This was the audio file used to test developer commentary during the first CSBIII DX Jam. It might give an insight into Digi's feelings on the game at the time.\n\nTranscript: In this game, we decided to make it suck. No one had to play this game, so it didn't have to be good. That was our philosophy going into it.",
         "album_art": "dxcom_icon_static.png"
-    },
-    "itemcoll.png": {
-        "type": "image",
-        "title": "Item Collection Mockup",
-        "caption": "Item Collection was an idea that Pakoo had a long time ago, but didn't have enough time to implement in {i}CSBIII.{/i} Luckily, Tate also loved the idea, so they made it a reality for {i}DX.{/i} This was the initial MS Paint doodle showcasing Tate's concept for the screen's layout."
     },
     "arceus_festive_neutral.png": {
         "type": "image",
