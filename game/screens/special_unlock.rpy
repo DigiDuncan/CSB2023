@@ -1,7 +1,7 @@
 screen special_unlock(flavor_text):
 
     if renpy.context_nesting_level() != 0:
-        dismiss action Play("music", "bubble_tea.ogg", loop = False), Jump("start")
+        dismiss action Play("music", "christmas_tea.ogg", loop = False), Jump("start")
     else:
         dismiss action Return()
 

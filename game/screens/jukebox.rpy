@@ -27,7 +27,7 @@ screen jukebox():
 
 screen jukebox_nav():
 
-    add Color('#323e42', alpha=0.75)
+    add Color('#423232', alpha=0.75)
 
     # frames > viewports and i will hear no arguments to the contrary. - tate
 

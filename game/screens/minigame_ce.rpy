@@ -3,12 +3,12 @@ screen ce_minigame_screen():
     tag menu
 
     python:
-        if renpy.music.get_playing(channel='music') != "bubble_tea.ogg":
+        if renpy.music.get_playing(channel='music') != "christmas_tea.ogg":
             pass
-        elif renpy.music.get_playing(channel='music') != "<from 16.53>bubble_tea.ogg":
+        elif renpy.music.get_playing(channel='music') != "<from 14.7>christmas_tea.ogg":
             pass
         else:
-            renpy.music.play("<from 16.53>bubble_tea.ogg", channel="music", loop=False)
+            renpy.music.play("<from 14.7>christmas_tea.ogg", channel="music", loop=False)
 
     add "gui/game_menu.png"
     

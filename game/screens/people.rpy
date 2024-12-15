@@ -29,7 +29,7 @@ screen people():
 
 screen people_nav():
     default current_bios_sprite = None
-    add Color('#323e42', alpha=0.75)
+    add Color('#423232', alpha=0.75)
 
     python:
         # sorting modes

@@ -27,7 +27,7 @@ screen item_collection():
         use items(current_item)
 
 screen item_nav():
-    add Color('#323e42', alpha=0.75)
+    add Color('#423232', alpha=0.75)
     text "{size=+12}Item Collection":
         xpos 0.18 ypos 80
 
