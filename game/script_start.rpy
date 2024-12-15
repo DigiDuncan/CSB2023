@@ -3077,25 +3077,6 @@ define audio.moving_right_along = "moving_right_along.ogg"
 define audio.upon_me = "upon_me.ogg"
 define audio.error = "error.ogg"
 
-# CSBIII DX Train Music
-define audio.sub_game_select = "sub_game_select.ogg"
-define audio.outdoors = "<loop 54.031>outdoors.ogg"
-define audio.hide_and_seek = "hide_and_seek.ogg"
-define audio.ochre_woods_day = "<loop 27.401>ochre_woods_day.ogg"
-define audio.bedroom_day = "<loop 0.916>bedroom_day.ogg"
-define audio.item_bounce = "item_bounce.ogg"
-define audio.krabby_klub = "<loop 3.1>krabby_klub.ogg"
-define audio.prof_kranes_kidnap = "prof_kranes_kidnap.ogg"
-define audio.e_gadds_lab = "<loop 1.071>e_gadds_lab.ogg"
-define audio.onbs = "onbs.ogg"
-define audio.encounter_friend_intro = "<from 0 to 44.501>encounter_friend.ogg"
-define audio.encounter_friend_loop = "<from 44.502 to 77.599>encounter_friend.ogg"
-define audio.samba_temperado = "samba_temperado.ogg"
-define audio.in_the_room = "<from 0.491 to 30.501>in_the_room.ogg"
-define audio.roundabout = "<from 41.076>roundabout.ogg"
-define audio.lo_fi_sunset = "lo_fi_sunset.ogg"
-define audio.homely_yado_inn = "<from 0.499 to 40.502>homely_yado_inn.ogg"
-
 # CSBIII DX Holiday Special Music
 define audio.lets_hear_winter = "lets_hear_my_christ.ogg"
 define audio.winters_halloween = "winters_halloween.ogg"
@@ -3116,25 +3097,6 @@ define audio.crashing_down = "crashing_down.ogg"
 define audio.ce_passport = "cepassport.ogg"
 define audio.snowman = "snowman.ogg"
 define audio.title_theme_reprise = "title_theme_reprise.ogg"
-
-# CSBIII DX After-True Music
-define audio.lets_hear_spring = "letshearspring.ogg"
-define audio.echoing_spring = "echoingspring.ogg"
-define audio.alien_atmosphere = "alien_atmosphere.ogg"
-define audio.apple_kid = "apple_kid.ogg"
-define audio.ten_feet_away = "10_feet_away.ogg"
-define audio.get_the_funk = "get_the_funk.ogg"
-define audio.hitsquad_2 = "hitsquad_2.ogg"
-define audio.ten_feet_away_1 = "10_feet_away_1.ogg"
-define audio.ten_feet_away_2 = "10_feet_away_2.ogg"
-define audio.ten_feet_away_3 = "10_feet_away_3.ogg"
-define audio.ten_feet_away_4 = "10_feet_away_4.ogg"
-define audio.interference2 = "<from 276>interference.ogg"
-
-# CSBIII DX Finale Music
-define audio.funvalueland = "funvalueland.ogg"
-define audio.unobtrusive_fun = "unobtrusive_fun.ogg"
-define audio.interference = "<from 0 to 275>interference.ogg"
 
 # Other?
 define audio.space_classroom = "space_classroom.ogg"
