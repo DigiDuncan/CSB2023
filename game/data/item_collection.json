@@ -7,22 +7,6 @@
         "rarity": "Common",
         "ce": true
     },
-    "amtrak_dining_food": {
-        "img": "amtrak_dining_food",
-        "name": "Enormous Breakfast",
-        "owner": "Mean",
-        "desc": "Tate made this for Mean to celebrate his first shift at Amtrak.",
-        "rarity": "Common",
-        "dx": true
-    },
-    "amtrak_dining_pancake": {
-        "img": "amtrak_dining_pancake",
-        "name": "Lone Pancake",
-        "owner": "Arceus",
-        "desc": "Abandoned by Mean, left behind by Lupin, but finally loved (and eaten) by Arceus.",
-        "rarity": "Common",
-        "dx": true
-    },
     "anno_car": {
         "img": "anno_car",
         "name": "Anno's Car",
@@ -46,28 +30,6 @@
         "desc": "It's totally storebought, but that's okay.",
         "rarity": "Common",
         "ce": true
-    },
-    "arc_laptop": {
-        "img": "arc_laptop",
-        "name": "Arc's Laptop",
-        "owner": "Arceus",
-        "desc": "An HP N5Y13UA laptop acquired through unknown means.",
-        "rarity": "Common",
-        "dx": true
-    },
-    "bag": {
-        "img": "bag",
-        "name": "Body Bag",
-        "owner": "SlotsaFun Casino",
-        "desc": "Stolen from the casino.",
-        "rarity": "Uncommon"
-    },
-    "bear": {
-        "img": "bear",
-        "name": "Teddy Bear",
-        "owner": "CS",
-        "desc": "One of many random fucking things CS keeps... somewhere. It's very soft to hug.",
-        "rarity": "Uncommon"
     },
     "big_city_sliders": {
         "img": "big_city_sliders.png",
@@ -100,14 +62,6 @@
         "rarity": "Common",
         "ce": true
     },
-    "boom": {
-        "img": "boom",
-        "name": "Boom Mic",
-        "owner": "???",
-        "desc": "Where'd {i}this{/i} come from?!",
-        "rarity": "Legendary",
-        "dx": true
-    },
     "bread": {
         "img": "bread",
         "name": "Loaf Of Bread",
@@ -115,14 +69,6 @@
         "desc": "Ideal for making garlic bread!",
         "rarity": "Common",
         "ce": true
-    },
-    "brooch": {
-        "img": "brooch",
-        "name": "Mother's Brooch",
-        "owner": "An Amtrak passenger",
-        "desc": "A priceless family heirloom.",
-        "rarity": "Uncommon",
-        "dx": true
     },
     "burnt_turkey": {
         "img": "burnt_turkey",
@@ -156,13 +102,6 @@
         "rarity": "Uncommon",
         "ce": true
     },
-    "case": {
-        "img": "case",
-        "name": "Briefcase Of Money",
-        "owner": "CS and Arceus",
-        "desc": "A winner is you!",
-        "rarity": "Uncommon"
-    },
     "cement": {
         "img": "cement",
         "name": "Bag Of Cement",
@@ -179,13 +118,6 @@
         "rarity": "Common",
         "ce": true
     },
-    "cheetos": {
-        "img": "cheetos",
-        "name": "Bag Of Cheetos",
-        "owner": "CS",
-        "desc": "One of many random fucking things CS keeps... somewhere. These are probably stale as hell.",
-        "rarity": "Uncommon"
-    },
     "colt": {
         "img": "colt",
         "name": "Colt .45 Revolver",
@@ -193,14 +125,6 @@
         "desc": "As he nears retirement, the Sheriff secretly just wanted his trusted side-arm to go to someone who would appreciate it. Either that, or he dropped it into his gift box without realizing it.",
         "rarity": "Common",
         "ce": true
-    },
-    "cool_crab": {
-        "img": "cool_crab",
-        "name": "Cool Crab",
-        "owner": "Nobody",
-        "desc": "His name is Arthur and his pen is his prized possession.",
-        "rarity": "Rare",
-        "dx": true
     },
     "cop_car": {
         "img": "cop_car",
@@ -210,13 +134,6 @@
         "rarity": "Common",
         "dx": true
     },
-    "craptop": {
-        "img": "craptop",
-        "name": "CS' Craptop",
-        "owner": "CS",
-        "desc": "It's had a good run...\n\nNotably, these older Dell machines are still rather common. It can at least run {i}DOOM.",
-        "rarity": "Common"
-    },
     "crotch_doctor": {
         "img": "crotch_doctor",
         "name": "Crotch Doctor",
@@ -225,27 +142,12 @@
         "rarity": "Common",
         "ce": true
     },
-    "crt_magnet": {
-        "img": "crt_magnet",
-        "name": "CRT Magnet",
-        "owner": "Nobody",
-        "desc": "Don't put it near any computers you care about!",
-        "rarity": "Common",
-        "dx": true
-    },
     "cs_car": {
         "img": "cs_car_item",
         "name": "CS' Car",
         "owner": "CS",
         "desc": "A 2009 Honda Civic LX-S.",
         "rarity": "Common"
-    },
-    "cs_car_old": {
-        "img": "cs_car_old_item",
-        "name": "CS' Car...?",
-        "owner": "CS",
-        "desc": "A 2014 BMW 4? That... doesn't seem right. How did this get here?",
-        "rarity": "Uncommon"
     },
     "cs_id": {
         "img": "cs_id",
@@ -270,13 +172,6 @@
         "rarity": "Common",
         "dx": true
     },
-    "cswanted": {
-        "img": "cswanted",
-        "name": "CS Wanted Poster",
-        "owner": "Copguy",
-        "desc": "Wanted, dead or alive. $188,000 reward.",
-        "rarity": "Common"
-    },
     "cutting_board": {
         "img": "cutting_board",
         "name": "Cutting Board",
@@ -292,14 +187,6 @@
         "desc": "Since CS doesn't play tabletop games, there's no telling where this came from.\nI wonder what would happen if he rolled it again.",
         "rarity": "Common",
         "ce": true
-    },
-    "dasani": {
-        "img": "dasani",
-        "name": "Bottle Of Dasani",
-        "owner": "???",
-        "desc": "{a=https://www.youtube.com/watch?v=fIfMOGUi98Y}Imagine an ass drinking...{/a}\n\nActually, no. I'd rather {i}not{/i} imagine that.",
-        "rarity": "Legendary",
-        "dx": true
     },
     "db_car": {
         "img": "db_car",
@@ -325,13 +212,6 @@
         "rarity": "Rare",
         "ce": true
     },
-    "dog": {
-        "img": "dog",
-        "name": "A Dog?!",
-        "owner": "CS",
-        "desc": "One of many random fucking things CS keeps... somewhere. Her name is Fluffy and she loves hot dogs.",
-        "rarity": "Uncommon"
-    },
     "dog_food": {
         "img": "dog_food",
         "name": "Bag Of Dog Food",
@@ -347,52 +227,6 @@
         "desc": "Wait, how the hell is the president allowed to just {i}give{/i} this away?!",
         "rarity": "Common",
         "ce": true
-    },
-    "donut_1": {
-        "img": "donut_1",
-        "name": "Chocolate Glazed Donut",
-        "owner": "Arceus",
-        "desc": "Voted the most popular Timbit flavor of 2023. {a=https://www.newswire.ca/news-releases/tops-at-tims-in-2023-apple-fritter-unseats-the-boston-cream-as-the-top-donut-sausage-farmer-s-wrap-was-the-1-breakfast-what-were-some-of-canada-s-other-tim-hortons-favourites-this-year--816736424.html}(Source){/a}",
-        "rarity": "Common",
-        "dx": true
-    },
-    "donut_2": {
-        "img": "donut_2",
-        "name": "Honey Cruller",
-        "owner": "CS",
-        "desc": "Also known as the French cruller. The honey flavor is rather subtle.",
-        "rarity": "Common",
-        "dx": true
-    },
-    "donut_3": {
-        "img": "donut_3",
-        "name": "Boston Cream Donut",
-        "owner": "Anno",
-        "desc": "Named as the official state donut of Massachusetts in 2003. {a=https://web.archive.org/web/20101230190718/https://www.dunkindonuts.com/aboutus/press/PressRelease.aspx?viewtype=current&id=100010}(Source){/a}\n\nIt's also Mean's favorite variety.",
-        "rarity": "Common",
-        "dx": true
-    },
-    "dookie_milk_jar": {
-        "img": "dookie_milk_jar",
-        "name": "Jar Of {sc}{chaos}OMGWTFISTHAT{/chaos}{/sc}",
-        "owner": "Pakoo",
-        "desc": "OH, {i}GOD!{/i} JUST WHAT {i}IS{/i} THIS?!\n\nWhy do you have this?\nWhy would you {i}want{/i} this?!",
-        "rarity": "WHAT DO YOU {i}MEAN{/i} IT'S A {i}LEGENDARY?!{/i}",
-        "dx": true
-    },
-    "drill": {
-        "img": "drill",
-        "name": "Arc's Drill",
-        "owner": "Arceus",
-        "desc": "A cheaply-manufactured drill affectionately known as Drilly Mays.",
-        "rarity": "Uncommon"
-    },
-    "duck": {
-        "img": "duck",
-        "name": "Rubber Duck",
-        "owner": "CS and Arceus",
-        "desc": "Quack, quack, quack, quack...",
-        "rarity": "Rare"
     },
     "festive_bag": {
         "img": "festive_bag",
@@ -410,14 +244,6 @@
         "rarity": "Common",
         "ce": true
     },
-    "flexcake": {
-        "img": "flexcake",
-        "name": "Flex Cake",
-        "owner": "Phil Swift",
-        "desc": "For those days when you just want to \"seal and bond\" your entire digestive tract...",
-        "rarity": "Common",
-        "dx": true
-    },
     "folded_paper": {
         "img": "folded_paper",
         "name": "Mysterious Paper",
@@ -433,14 +259,6 @@
         "desc": "Who {i}made{/i} this?",
         "rarity": "Common",
         "ce": true
-    },
-    "gamebarrel": {
-        "img": "gamebarrel",
-        "name": "Barrel Of Toxic Game Boys",
-        "owner": "???",
-        "desc": "Be not tempted by the retro games. Your skin will melt off.",
-        "rarity": "Legendary",
-        "dx": true
     },
     "gamersupps": {
         "img": "gamersupps",
@@ -474,13 +292,6 @@
         "rarity": "Common",
         "ce": true
     },
-    "hair_dryer": {
-        "img": "hair_dryer",
-        "name": "Hair Dryer",
-        "owner": "CS",
-        "desc": "Don't listen to ChatGPT. This is {i}not{/i} actually a viable PC cooling solution. Even if it was, would you {i}really{/i} want to do this?!",
-        "rarity": "Rare"
-    },
     "handy_switch": {
         "img": "handy_switch",
         "name": "Handy Switch",
@@ -497,13 +308,6 @@
         "rarity": "Common",
         "ce": true
     },
-    "horse_mask": {
-        "img": "horse_mask",
-        "name": "Horse Head Mask",
-        "owner": "CS",
-        "desc": "One of many random fucking things CS keeps... somewhere. Fun fact: Tate {i}hates{/i} this thing.",
-        "rarity": "Uncommon"
-    },
     "instant_pot": {
         "img": "instant_pot",
         "name": "Instant Pot",
@@ -519,14 +323,6 @@
         "desc": "The primary mode of transportation for HoH SiS. Allows for safe traversal over even the most unstable foundations. This particular model also includes a laser defense system.",
         "rarity": "Uncommon"
     },
-    "jp_cop_car": {
-        "img": "/images/jp_cop_car.png",
-        "name": "Zenigata's Cruiser",
-        "owner": "Inspector Zenigata",
-        "desc": "A classic car from the Tokyo Metro Police. While it was expensive to import into the US and is absolutely useless for stealth missions due to how much it stands out, Zenigata doesn't want to drive anything else.",
-        "rarity": "Uncommon",
-        "dx": true
-    },
     "knife": {
         "img": "knife",
         "name": "Kitchen Knife",
@@ -534,14 +330,6 @@
         "desc": "Perhaps it's a bit {i}too{/i} sharp.",
         "rarity": "Common",
         "ce": true
-    },
-    "lego_jail": {
-        "img": "lego_jail",
-        "name": "Lego City Jail Cell",
-        "owner": "Inspector Zenigata",
-        "desc": "Built by CS to contain Lupin III.",
-        "rarity": "Uncommon",
-        "dx": true
     },
     "lego_train": {
         "img": "lego_train",
@@ -567,14 +355,6 @@
         "rarity": "Common",
         "ce": true
     },
-    "linus_box": {
-        "img": "linus_box",
-        "name": "Linus' Box",
-        "owner": "Linus Sebastian",
-        "desc": "Definitely was not purchased from a haunted garage sale.",
-        "rarity": "Uncommon",
-        "dx": true
-    },
     "ltt_bottle": {
         "img": "ltt_bottle",
         "name": "LTT Water Bottle",
@@ -582,14 +362,6 @@
         "desc": "This particular bottle boasts a colorway that has since been discontinued. {a=https://lttstore.com}lttstore.com{/a} {size=-24}(not sponsored){/size}",
         "rarity": "Uncommon",
         "ce": true
-    },
-    "ltt_bottle_linus": {
-        "img": "ltt_bottle_linus",
-        "name": "LTT Water Bottle",
-        "owner": "Linus Sebastian",
-        "desc": "Built to last, but not dishwasher-safe. {a=https://lttstore.com}lttstore.com{/a} {size=-24}(not sponsored){/size}",
-        "rarity": "Common",
-        "dx": true
     },
     "ltt_car": {
         "img": "ltt_car",
@@ -607,13 +379,6 @@
         "rarity": "Common",
         "ce": true
     },
-    "m4": {
-        "img": "m4",
-        "name": "M249 SAW",
-        "owner": "Pakoo",
-        "desc": "Borrowed by CS to take on Copguy and his corrupt crew.",
-        "rarity": "Common"
-    },
     "mashed_potatoes": {
         "img": "mashed_potatoes.png",
         "name": "Mashed Potatoes",
@@ -621,14 +386,6 @@
         "desc": "A holiday favorite, even for those relatives who don't have all their teeth.",
         "rarity": "Common",
         "ce": true
-    },
-    "mean_hat": {
-        "img": "mean_hat",
-        "name": "Mean's Hat",
-        "owner": "Mean",
-        "desc": "Commissioned by Tate as a gift to Mean. Can withstand the harshest Canadian winters.",
-        "rarity": "1 of 1",
-        "dx": true
     },
     "mean_train": {
         "img": "mean_train",
@@ -702,13 +459,6 @@
         "rarity": "Common",
         "ce": true
     },
-    "onscreen_sharpener": {
-        "img": "onscreen_sharpener",
-        "name": "Golden Pencil Sharpener",
-        "owner": "CS",
-        "desc": "Won by CS while at PencilCon, but is it even real gold?",
-        "rarity": "Rare"
-    },
     "oxygen_canister": {
         "img": "oxygen_canister.png",
         "name": "Oxygen Canister",
@@ -749,13 +499,6 @@
         "rarity": "Common",
         "ce": true
     },
-    "pig": {
-        "img": "pig",
-        "name": "Pig",
-        "owner": "The Witch",
-        "desc": "Ideally eaten steamed.",
-        "rarity": "Uncommon"
-    },
     "pills": {
         "img": "pills",
         "name": "Bottle Of Pain Pills",
@@ -763,29 +506,6 @@
         "desc": "Always remember to keep track of all of your prescription medications.",
         "rarity": "Common",
         "ce": true
-    },
-    "pipe_gun": {
-        "img": "pipe_gun",
-        "name": "Pipe Gun",
-        "owner": "Multiple",
-        "desc": "It's held together with duct tape, rope, and a prayer, but it gets the job done.",
-        "rarity": "Uncommon"
-    },
-    "poo": {
-        "img": "poo",
-        "name": "Poop Emoji Stress Ball",
-        "owner": "???",
-        "desc": "This particular pile of poo seems to have gotten plopped into a time warp.",
-        "rarity": "Legendary",
-        "dx": true
-    },
-    "pot": {
-        "img": "pot",
-        "name": "Mysterious Pot",
-        "owner": "Billy Mays",
-        "desc": "An experiment gone awry...",
-        "rarity": "Mythic",
-        "dx": true
     },
     "potato_bag": {
         "img": "potato_bag",
@@ -818,14 +538,6 @@
         "desc": "A palm-sized processing powerhouse.",
         "rarity": "Common",
         "ce": true
-    },
-    "renault": {
-        "img": "renault",
-        "name": "Renault 5E",
-        "owner": "Carguy",
-        "desc": "Silent, high-tech, environmentally-friendly, and cheeky.",
-        "rarity": "Epic",
-        "dx": true
     },
     "rental_car": {
         "img": "car",
@@ -874,14 +586,6 @@
         "rarity": "Classic",
         "ce": true
     },
-    "rosen_phone": {
-        "img": "rosen_phone",
-        "name": "Michael's Phone",
-        "owner": "Michael Rosen",
-        "desc": "It makes sense for an older gentleman to prefer a landline.",
-        "rarity": "Common",
-        "dx": true
-    },
     "russian_radio": {
         "img": "russian_radio",
         "name": "Soviet Radio",
@@ -889,13 +593,6 @@
         "desc": "A relic of a great, terrible, and rather chilly war.",
         "rarity": "Uncommon",
         "ce": true
-    },
-    "sansbrick": {
-        "img": "sansbrick",
-        "name": "Sans Brick",
-        "owner": "{a=https://ko-fi.com/lurkinglotus}Lotus{/a}",
-        "desc": "Sans Brick",
-        "rarity": "Sans Brick"
     },
     "santa_sleigh": {
         "img": "santa_sleigh",
@@ -929,14 +626,6 @@
         "rarity": "Common",
         "ce": true
     },
-    "slime16": {
-        "img": "slime16",
-        "name": "Slime-16",
-        "owner": "Captain Underpants",
-        "desc": "Careful, the trigger is a little... sticky.",
-        "rarity": "Legendary",
-        "dx": true
-    },
     "small_city_slider": {
         "img": "small_city_slider.png",
         "name": "Small Town Slider",
@@ -961,14 +650,6 @@
         "rarity": "Common",
         "ce": true
     },
-    "spoon": {
-        "img": "spoon",
-        "name": "Plastic Spoon",
-        "owner": "CS, Anno, and Arceus",
-        "desc": "Surprisingly durable for what it is.",
-        "rarity": "Common",
-        "dx": true
-    },
     "spray_cheese": {
         "img": "spray_cheese",
         "name": "Can Of Easy Cheese",
@@ -984,14 +665,6 @@
         "desc": "Don't drink too much of this, or you'll start looking like a {a=https://web.archive.org/web/20071213095714/http://news.bbc.co.uk/1/hi/wales/578945.stm}{i}Simpsons{/i} character{/a}.",
         "rarity": "Common",
         "ce": true
-    },
-    "switch": {
-        "img": "switch",
-        "name": "Nintendo Switch",
-        "owner": "An Amtrak passenger",
-        "desc": "Its value lies in its manufacturing date. Early systems are much easier to jailbreak.",
-        "rarity": "Uncommon",
-        "dx": true
     },
     "target_bags": {
         "img": "target_bags",
@@ -1033,22 +706,6 @@
         "rarity": "Common",
         "ce": true
     },
-    "tims_dozen": {
-        "img": "tims_dozen",
-        "name": "Tim Horton's Assorted Dozen",
-        "owner": "CS, Anno, and Arceus",
-        "desc": "The breakfast of champions... and Canadians.",
-        "rarity": "Common",
-        "dx": true
-    },
-    "toxic_mikas": {
-        "img": "toxic_mikas",
-        "name": "Pile Of Toxic Mikas",
-        "owner": "???",
-        "desc": "I sure hope somebody cleaned these up.",
-        "rarity": "Legendary",
-        "dx": true
-    },
     "tree_box": {
         "img": "tree_box",
         "name": "Christmas Tree Box",
@@ -1056,60 +713,5 @@
         "desc": "Big, heavy, and waterproof. Guaranteed to keep your artificial Christmas tree in tip-top shape, year after year.",
         "rarity": "Common",
         "ce": true
-    },
-    "walkie": {
-        "img": "walkie",
-        "name": "Walkie-Talkie",
-        "owner": "Multiple",
-        "desc": "Standard-issue across many industries, including security, transportation, and law enforcement.",
-        "rarity": "Common",
-        "dx": true
-    },
-    "walmart_bag": {
-        "img": "walmart_bag",
-        "name": "Reusable Walmart Bag",
-        "owner": "CS",
-        "desc": "It took a while for CS to get into the habit of keeping a few of these in his car.",
-        "rarity": "Common",
-        "dx": true
-    },
-    "watch": {
-        "img": "watch",
-        "name": "Fancy Watch",
-        "owner": "An Amtrak passenger",
-        "desc": "It looks expensive, but it's actually a replica. The owner does not know this.",
-        "rarity": "Uncommon",
-        "dx": true
-    },
-    "whiskey": {
-        "img": "whiskey",
-        "name": "Whiskey?",
-        "owner": "Nobody",
-        "desc": "Just what kind of bootleg brew {i}is{/i} this?!",
-        "rarity": "Uncommon",
-        "dx": true
-    },
-    "yeetable_textbox": {
-        "img": "yeetable_textbox",
-        "name": "The Textbox?!",
-        "owner": "???",
-        "desc": "You should not have this...",
-        "rarity": "???",
-        "dx": true
-    },
-    "ytx": {
-        "img": "ytx",
-        "name": "YTX-9001 Ti",
-        "owner": "CS",
-        "desc": "A cutting-edge PCI add-in featuring poop-tracing and other YTP-enhancing features.",
-        "rarity": "Epic"
-    },
-    "ytx_drive": {
-        "img": "ytx_drive",
-        "name": "USB Drivers For YTX-9001 Ti",
-        "owner": "CS",
-        "desc": "Contains everything you need to configure your new YTX-9001 Ti!",
-        "rarity": "Uncommon",
-        "dx": true
     }
 }
