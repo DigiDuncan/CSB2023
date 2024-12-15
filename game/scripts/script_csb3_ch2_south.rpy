@@ -10,13 +10,13 @@ label south_start:
     show expression "arceus %s" % compass_current_shader at right
     arceus "Alright, what's your plan? Where are we going, exactly?"
     cs "I've always kinda wanted to go down to Vegas. We could have a ton of fun down there!"
-    
+
     scene expression "washington_road %s" % compass_current_time
     show expression "cs %s" % compass_current_shader at left
     show expression "arceus worried %s" % compass_current_shader at right
     arceus "Don't you want to go back home?"
     cs "Listen, we are free again, and we're in the middle of nowhere. If we can find a way to make a bit of cash and get a car, maybe we can make it big!"
-    
+
     scene expression "washington_road %s" % compass_current_time
     show expression "cs disappointed %s" % compass_current_shader at left
     show expression "arceus angry %s" % compass_current_shader at right
@@ -52,7 +52,7 @@ label south_start:
     show arceus at right with moveinright
     arceus "Finally, some good fucking food."
     cs "Donuts and chips have never tasted better."
-    arceus "Thank God the slushie machine was working for once." 
+    arceus "Thank God the slushie machine was working for once."
     n "After they finish their food, they start to plan their epic journey to Vegas."
     scene gasoutside with dissolve
     show cs surprised at left
@@ -129,7 +129,7 @@ label south_utah:
         arceus "Tomorrow, we'll head to Vegas."
         arceus "Let's find somewhere to eat before we hit the hay tonight."
         n "They continue driving for a bit until they come across a small town."
-    else:      
+    else:
         scene utahsign
         show cscar1
         show cscar2
@@ -282,7 +282,7 @@ label south_utah:
     cs "But I haven't finished my pizz--"
     arceus "I don't care! Let's go!"
     stop music fadeout 3.0
-    music end 
+    music end
     n "Arceus drags CS by the arm as they run out of the office and down the hallway."
     show cs disappointed dark flipped with determination
     hide cs
@@ -292,7 +292,7 @@ label south_utah:
     show lego at truecenter
     with dissolve
     show cs disappointed dark at mid_left_left with moveinleft
-    show arceus worried dark at mid_right_right with moveinright   
+    show arceus worried dark at mid_right_right with moveinright
     n "Before they make it to the door, Arceus stops dead in his tracks."
     cs "Hey! Why'd we stop?"
     n "CS looks ahead of him to see the giant minifigure standing in front of them."
@@ -752,7 +752,7 @@ label south_poker3:
         show cs with determination
         hide case with dissolve
         hide cs with moveoutright
-        scene casino1 with dissolve    
+        scene casino1 with dissolve
         n "CS continues to look for Arceus."
         show cs disappointed at center with moveinleft
         cs "Arc? Where are you?"
@@ -834,7 +834,7 @@ label south_poker3:
         hide cs with moveoutright
         stop music fadeout 3.0
         music end
-        scene casino1 with dissolve    
+        scene casino1 with dissolve
         n "CS continues to look for Arceus."
         show cs disappointed at center with moveinleft
         cs "Arc? Where are you?"
@@ -918,7 +918,7 @@ label south_poker3:
 
 label south_airport:
     stop music fadeout 3.0
-    scene carpark 
+    scene carpark
     show arceus flipped at left
     show cs flipped at right
     cs "We should head back home now. I have a plan for our newfound riches."
@@ -1045,7 +1045,7 @@ label south_airport:
 
 label south_airport_bad:
     stop music fadeout 3.0
-    scene carpark 
+    scene carpark
     show arceus at right
     show cs at center
     cs "We should head back home now. I have a plan for our newfound riches."
@@ -1104,14 +1104,14 @@ label south_airport_bad:
     n "Arceus shoots finger guns at CS."
     arceus "Aaannd...."
     stop music fadeout 3.0
-    music end    
+    music end
     jump csbiii_choose_direction
 
 label south_noairport:
     stop music fadeout 1.0
     music end
     scene carpark
-    
+
     # force flip
     if south_car_stole_money == False:
         show arceus flipped at left
@@ -1119,7 +1119,7 @@ label south_noairport:
     else:
         show arceus at right
         show cs at center
-        
+
     cs "Nah, I don't wanna go to the airport."
     cs "We should take the car and drive."
     arceus "Okay, well, let's get going!"
@@ -1170,7 +1170,7 @@ label south_noairport:
     mika "Oi, chaps!"
     play music pokey volume 0.6 if_changed
     music pokey
-    mika "Ok, so, CS looks out the window and he spots a yellow Hummer."
+    mika "Okay, so, CS looks out the window and he spots a yellow Hummer."
     mika "The guy, with his arm out the window, says \"Dude, this car kicks ass! And I can watch Madagascar while driving!\""
     show arceus worried
     show cs surprised
@@ -1194,7 +1194,7 @@ label south_noairport:
     show arceus at right
     cs "Alright! Now we are inside Arceus' house!"
     stop music fadeout 1.0
-    music end  
+    music end
     pause 2.0
     show cs angry
     pause 2.0
@@ -1241,7 +1241,7 @@ label south_noairport:
     if fun_value(FUN_VALUE_MUSIC):
         craptop "Pierrot of the Star Spangled Banner - ZUN!"
         show cs happy
-        show arceus angry        
+        show arceus angry
         arceus "Oh, fuck off!"
     else:
         craptop "I hate all of you!"
@@ -1278,7 +1278,7 @@ label south_noairport:
 
 label south_reality_break:
     stop music
-    music end  
+    music end
     direct "Cut!"
     scene soundstage
     show cs happy at left

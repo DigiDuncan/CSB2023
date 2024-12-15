@@ -127,7 +127,7 @@ screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scro
                                                 $ sub_text = obfuscator(subcategory)
 
                                             # manually hide characters SPRITES if not seen, scroll down for CAST list
-                                            $ hide_these = { "Arceus": "arceus", "Kitty": "kitty", "DigiDuncan": "digi", "Aria": "aria", "Pakoo": "pakoo", "Blank": "blank", "Bubble": "bubble", "Tate": "tate", "Tate EX": "tate_ex", "Perfect Tate": "perfect_tate", "Mean": "mean", "Mean \(Human\)": "mean_human", "Ges": "ges", "blanknam3d": "blank", "Midge": "midge", "Elizabeth": "eliza", "Anne": "anne", "Grace": "grace", "K-22": "k22", "K-17": "k17", "Addy": "addy" }
+                                            $ hide_these = { "Arceus": "arceus", "Kitty": "kitty", "DigiDuncan": "digi", "Aria": "aria", "Pakoo": "pakoo", "Blank": "blank", "Bubble": "bubble", "Tate": "tate", "Tate EX": "tate_ex", "Perfect Tate": "perfect_tate", "Mean": "mean", "Mean \(Human\)": "mean_human", "Ges": "ges", "blanknam3d": "blank", "Midge": "midge", "Elizabeth": "eliza", "Anne": "anne", "Grace": "grace", "K-22": "k22", "K-17": "k17", "Addy": "addy", "Pakoopara": "k17", "Mikapara": "eliza" }
 
                                             for h in hide_these:
                                                 if hide_these[h] not in persistent.seen and re.fullmatch(h, subcategory):

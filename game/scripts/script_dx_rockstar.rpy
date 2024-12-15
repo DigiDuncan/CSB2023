@@ -28,7 +28,7 @@ label rockstar_start:
     howie "It's just you, Diet Cobain, and Fluffy Butt, right? Surely you three can find some time to make some dimes!"
     cs "I don't really need the money... we made quite a bit off that tour, and I still make money from YouTube Poops."
     howie "It's not about the money, baby! It's about the love of the craft, the feeling in your soul, the jazz up your--"
-    cs "OK, OK, I get it. I'll give it some thought."
+    cs "Okay, okay, I get it. I'll give it some thought."
     howie "Well once you've thought enough thinks and drank enough drinks, hit me up. I got a pretty sweet deal on the table for both of us if ya do."
 
     # Bye, Howie. End Howie music.
@@ -45,7 +45,7 @@ label rockstar_start:
     cs "I need to get Anno and Arc."
 
     # Fade, new scene in CS' car
-    cs "OK, I'll start driving to Anno's, and get Arc on the phone."
+    cs "Okay, I'll start driving to Anno's, then I'll get Arc on the phone."
     cs "Arc's in the UK, so I'm a bit worried about getting him..."
     n "CS starts driving."
     cs "Good thing I got a Jupiter Jack from Billy."
@@ -73,7 +73,7 @@ label rockstar_start:
     arceus "I'm gonna let you go. I'll get back to you."
     cs "Sounds good, let me know."
     arceus "See you, man!"
-    
+
     # Hide Arc on phone
     n "CS drives on, listening to some tunes to get his mind in a music-making mood."
     cs "I hope Anno takes well to this."
@@ -97,8 +97,8 @@ label rockstar_start:
     anno "What? Really? Did Howi--"
     cs "Arc said the same thing. {i}I{/i} want to do this. Howie just reminded me."
     anno "{i}sigh"
-    anno "OK."
-    cs "OK? That easy?"
+    anno "Okay."
+    cs "\"Okay\"? That easy?"
     anno "I mean, I want to, too. If Arc is down, I don't see why not."
     cs "He should be calling me back soo--"
 

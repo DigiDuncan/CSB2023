@@ -11,7 +11,7 @@ label friend2_dpn_call:
     play music tuna_fish loop volume 0.6 if_changed
     music tuna_fish
     cs "What a crazy day so far, man."
-    show cs worried 
+    show cs worried
     if fun_value(FUN_VALUE_MUSIC):
         cs "I can't believe we had to fight all of those cops! If it weren't for Tate and the gang, we'd be tuna fish already."
     else:
@@ -198,7 +198,7 @@ label friend2_dpn_diner:
     jump rpg_cop_fight_3
 
 label friend2_cs_meetup:
-    scene cs_somewhere 
+    scene cs_somewhere
     show aria dark flipped at right
     with dissolve
     play music dense_woods_b volume 0.5 if_changed
@@ -252,7 +252,7 @@ label friend2_cs_meetup_2:
     scene dinerinside
     show digi at center
     show nova flipped at left
-    with dissolve    
+    with dissolve
     n "After the fight, the rest of the people in the diner flee from the scene."
     digi "Wow, holy shit, we did it!"
     nova "Welp, there goes all of my energy for the day."
@@ -327,7 +327,7 @@ label friend2_cs_meetup_2:
         cs "Yeah, there's only, like, six more lines after this, and then we change scenes."
         hide boom
         n "The boom mic is raised out of frame."
-        direct "Thank you! OK, just restart the line you were on, Arc!"
+        direct "Thank you! Okay, just restart the line you were on, Arc!"
         arceus "You got it, boss."
         play sound sfx_clapperboard
         $ renpy.music.set_pause(False, "music")
@@ -523,7 +523,7 @@ label friend2_cs_rage:
     hide digi
     with moveoutleft
     show cs worried dark at left with move
-    show csgod at right with dissolve  
+    show csgod at right with dissolve
     csgod "You're welcome."
     cs "Woah, hey! Are you CSGod?"
     csgod "Indeed, I am. You seem to have channeled my power through determination."
@@ -552,7 +552,7 @@ label friend2_cs_rage:
     show tate dark at mid_left
     show arceus dark flipped at mid_left_left
     show digi dark flipped at mid_offscreen_left
-    with moveinleft    
+    with moveinleft
     show tate shock dark
     tate "CS, you good? You were just staring up at the sky, talking to yourself about magic, or something."
     show tate dark
@@ -679,7 +679,7 @@ label friend2_car_ride_3:
     show tate shock flipped
     tate "Wait, you don't like Cheese Whales?! I {i}love{/i} those!"
     show tate sheepish flipped
-    
+
     if fun_value(FUN_VALUE_UNOBTRUSIVE):
         tate "{size=-12}I even brought extras to share..."
 
@@ -826,14 +826,14 @@ label friend2_between_2:
     show cs worried at center
     show tate shock at mid_left
     show arceus angry flipped at left
-    show copguy_ex at right 
-    with dissolve 
+    show copguy_ex at right
+    with dissolve
     show arceus worried flipped with vpunch
     arceus "Ow! How did you--{w=1.0}{nw}"
     copguy "I think that's all you need to see. Let's end this, CS."
     stop music fadeout 3.0
     scene black with dissolve
-    jump rpg_final_fight_3 
+    jump rpg_final_fight_3
 
 label friend2_weapon_of_choice:
     window hide
@@ -892,8 +892,8 @@ label friend2_car_slam:
     cs "Yeah! How about you guys?"
     nova "I wanna fall over. I'm so tired."
     if fun_value(FUN_VALUE_COMMON):
-        aria_alt "I never thought that our first meetup would be at a mall, and our second would be the destruction of Chigaco."  
-    else:  
+        aria_alt "I never thought that our first meetup would be at a mall, and our second would be the destruction of Chigaco."
+    else:
         aria_alt "I never thought that our first meetup would be at a mall, and our second would be the destruction of Chicago."
     show cs happy
     n "CS laughs."

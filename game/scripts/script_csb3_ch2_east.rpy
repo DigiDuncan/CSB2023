@@ -225,7 +225,7 @@ label true_montana:
     cs "{cshake}Letsgoletsgoletsgoweneedtogetoutofhere"
     hide cs with moveoutright
     hide billy with moveoutright
-    stop music fadeout 3.0   
+    stop music fadeout 3.0
     music end
     play sound sfx_doorslam
     scene hardwareoutside
@@ -338,7 +338,7 @@ label true_montana:
     cs "Huh?"
     cs "I mean,"
     cs_fakegod "Yeah, that's right, it's me, CSGod!"
-    
+
     # tate was here
     # this fun value references CS messing up reading during the livestream (around 2:37:45 of part 2 stream)
     # thanks brodie for finding the timestamp for me
@@ -356,7 +356,7 @@ label true_montana:
     n "Billy comes up behind CS with one of his gadgets."
     show cs fakegod at mid_offscreen_left with move
     show billy laser at mid_left with moveinleft
-    stop music fadeout 1.0 
+    stop music fadeout 1.0
     play music blazing_corridor volume 0.4 if_changed
     music blazing_corridor
     billy "Fire a laser! Fire a laser!"
@@ -376,7 +376,7 @@ label true_montana:
     hide cultist with moveoutright
     hide laser_beam
     n "The cultists disappear into the forest."
-    stop music fadeout 3.0 
+    stop music fadeout 3.0
     music end
     billy "{i}That's{/i} the power of the Awesome Augement!"
     play music showtime volume 0.4 if_changed
@@ -509,14 +509,14 @@ label true_south_dakota:
     else:
         n "They continue to drive through the massive and empty plains of South Dakota."
     play music track_4 volume 0.4 if_changed
-    music track_4 
+    music track_4
     n "By the time they reach Sioux City, it is already evening."
     cs "There really {i}is{/i} nothing out here, is there?"
     arceus "Nope. I don't get how people can even {i}live{/i} here."
     billy "We're, like, halfway through the Midwest. We've only got a couple states left to travel before we are in the heartland."
     if fun_value(FUN_VALUE_COMMON):
-        n "Billy follows the Missouri River down until they arrive in Nebraskaska."       
-    else:    
+        n "Billy follows the Missouri River down until they arrive in Nebraskaska."
+    else:
         n "Billy follows the Missouri River down until they arrive in Omaha."
     jump true_nebraska
 
@@ -565,7 +565,7 @@ label true_nebraska:
         baumer "Get out of Nebraskaska!"
         cs "We are working on it!"
         hide baumer with moveoutright
-        show arceus  
+        show arceus
         show pakoo disappointed flipped
         pakoo "Who was that?"
         cs "I don't know, what were you saying?"
@@ -577,7 +577,7 @@ label true_nebraska:
         cs "We've been through a lot recently. Do you know somewhere we can eat and rest for the night?"
         n "Pakoo thinks for a moment."
         pakoo "I think I know a place."
-        n "Pakoo takes the gang over to the old market section of Omaha."        
+        n "Pakoo takes the gang over to the old market section of Omaha."
     show cs
     show arceus flipped
     with determination
@@ -597,7 +597,7 @@ label true_nebraska:
     pakoo "At least, that I know of."
     scene peppinopizzabg
     show peppinopizzafg
-    with dissolve   
+    with dissolve
     play music funiculi_holiday volume 0.3 if_changed
     music funiculi_holiday
     show peppino at t_pepzone1 behind peppinopizzafg with moveinleft
@@ -645,15 +645,15 @@ label true_nebraska:
 label true_iowa:
     scene car plains
     show billy car
-    with dissolve 
+    with dissolve
     n "They get back in car and continue into Iowa."
     billy "Alright, well, ever since that cult encounter, it's been pretty smooth sailing!"
     billy "The rest of this trip shouldn't be too long!"
     n "As if on cue, a strange sound is heard from overhead."
     if fun_value(FUN_VALUE_MUSIC):
-        n "CS looks out the window, to see what looks like a speedy comet." 
+        n "CS looks out the window, to see what looks like a speedy comet."
     else:
-        n "CS looks out the window."    
+        n "CS looks out the window."
     play music speedy_comet volume 0.5 if_changed
     music speedy_comet
     cs "You have to be kidding me!"
@@ -694,7 +694,7 @@ label true_after_ufo:
     scene black with dissolve
     n "The gang stops in Indiana for the night. They take off again in the morning."
     jump michigan
-  
+
 label true_ohio:
     if fun_value(FUN_VALUE_LEGENDARY, confusing = True):
         scene car plains
@@ -745,7 +745,7 @@ label true_ohio:
             n "After that fiasco, they continue their trip, soon passing through Ohio."
         show scott_border
         play music breakout volume 0.3 if_changed
-        music breakout 
+        music breakout
         n "Suddenly, a huge blue border enters everyone's vision."
         arceus "Oh, what in the world? There is some red border in my eyes..."
         cs "I have a blue one. What is going on?"
@@ -883,7 +883,7 @@ label true_pennsylvania:
     if fun_value(FUN_VALUE_MUSIC):
         cs "Wait, Pokey?"
         digi "Huh?"
-        cs "I mean, Digi!"        
+        cs "I mean, Digi!"
     else:
         cs "Wait, Digi?!"
     digi "CS?!"
@@ -900,7 +900,7 @@ label true_pennsylvania:
     show cs disappointed
     cs "Oh, jeez, I guess we {i}will{/i} be against each other, if I make it that far."
     digi "Well, good luck to you!"
-    show cs 
+    show cs
     cs "You as well!"
     stop music fadeout 3.0
     music end
@@ -926,11 +926,11 @@ label true_pennsylvania:
     cs "Yow!"
     digi "Oops, sorry, let me just..."
     show cs disappointed
-    n "Digi pokes a panel on his arm."
+    n "Digi pokes a panel on their arm."
     digi "Sorry about that, arm must have been on the wrong setting."
     n "CS thinks to himself."
     show cs concentrate
-    cs "{i}Shoot, I forgot Digi is a cyborg! How am I going to have any shot at beating him?{/i}"
+    cs "{i}Shoot, I forgot Digi is a cyborg! How am I going to have any shot at beating them?{/i}"
     cs "{i}I'm just going to have to try my hardest!{/i}"
     hide digi
     hide cs
@@ -959,10 +959,10 @@ label true_pennsylvania:
     hide crowd onlayer broadcast
     host "AND WITH THAT, LET'S BEGIN! READY?"
     stop music fadeout 3.0
-    n "CS glances over at Digi and they nod at each other."
+    n "CS glances over at Digi. The two nod at each other."
     host "3..."
     if fun_value(FUN_VALUE_EPIC):
-        n "Digi looks to be smacking his arm."
+        n "Digi looks to be smacking their arm."
         $ archack = True
     else:
         n "A whirr is heard as Digi's arm motors charge up."
@@ -972,7 +972,7 @@ label true_pennsylvania:
     host "1..."
     n "Both competitors hover their hands over the pencils..."
     if fun_value(FUN_VALUE_MUSIC):
-        host "BUST THOSE PENCILS RUDELY!"      
+        host "BUST THOSE PENCILS RUDELY!"
     else:
         host "GO!"
     minigame "minigame_pencil" "true_win_pencil" "lose_pencil_game"
@@ -985,7 +985,7 @@ label true_win_pencil:
     show con_screen at t_stage_screen_c
     show stage_screen as stage_screen_r at t_stage_screen_r
     show cc_stage
-    show mettaton at t_stagescreen onlayer broadcast 
+    show mettaton at t_stagescreen onlayer broadcast
     host "HOLY TICONDEROGA! WE HAVE A WINNER!"
     show crowd at t_stagescreen onlayer broadcast
     play sound sfx_cheer2 noloop volume 0.6
@@ -1013,7 +1013,7 @@ label true_win_pencil:
     cs "You good, Digi? Your arm is kinda..."
     hide cs onlayer broadcast
     show digi at t_stagescreen onlayer broadcast
-    n "Digi looks at his arm."
+    n "Digi looks down at their arm."
     digi "Oh shi-- {w=0.5}uh, I'll be back."
     hide digi onlayer broadcast with moveoutright
     n "Digi runs off."

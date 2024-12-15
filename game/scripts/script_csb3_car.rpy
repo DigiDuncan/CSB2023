@@ -117,7 +117,7 @@ label car_dialogue:
     $ renpy.music.set_pause(False, "music")
     n "Billy hangs up the phone."
     billy "Unbelievable."
-    
+
     pause 3.0
 
     arceus "CS, why do you still pay for Adobe Premiere?"
@@ -247,7 +247,7 @@ label car_dialogue:
     cs "Nope!"
     cs "Why would I? It looks cool now!"
     arceus "..."
-    
+
     pause 2.0
 
     $ renpy.music.set_pause(True, "music")
@@ -573,7 +573,7 @@ label car_dialogue:
     digi "What the fuck, Mean. How did you know I was with Billy?"
     mean "Bro, I'mma keep it a hundred. I was just dialing random numbers until I got you."
     mean "Also, turn on your ringer. I called {i}you{/i} first."
-    n "Digi checks his phone."
+    n "Digi checks their phone."
     pause 1.0
     digi "Whoops."
     digi "So, what did ya need me for?"
@@ -623,7 +623,7 @@ label car_dialogue:
     play sound sfx_gaster_blast
     with hpunch
     with vpunch
-    show billy car turn 
+    show billy car turn
     billy "What the {i}hell{/i} are you guys doing?!"
     billy "I'm gonna {i}double{/i} the offer of this car ride if you do that again!"
     show billy car
@@ -650,7 +650,7 @@ label car_dialogue:
     with dissolve
 
     pause 5.0
-    
+
     $ renpy.music.set_pause(True, "music")
     play music2 sfx_ringtone_billy loop
     n "Billy gets a call on his Jupiter Jack."

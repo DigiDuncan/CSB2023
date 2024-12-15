@@ -137,7 +137,7 @@ label archival:
     n "CS quickly stands up. The others stare silently at him for a moment."
     pause 1.0
     k207 "Shit! " with hpunch
-    extend "Dude, that's him! He's {i}here!" 
+    extend "Dude, that's him! He's {i}here!"
     show cs scared
     cs "Okay, wait! Hold on a second!"
     k174 "{i}What the FUCK?! {nw}" with hpunch
@@ -149,7 +149,7 @@ label archival:
     k174 "Take {i}this!"
 
     show expression DynamicDisplayable(Pixellated.pixellated, widget='worker_1', delay=0.5, steps=16) at manual_pos(0.7, 1.0, 1.0)
-    
+
     show k207 at right
     show k174 at mid_right_right
     show k199 at mid_right
@@ -423,7 +423,7 @@ label archival_finale:
     play sound sfx_hks1 noloop volume 0.7
     pause 0.1
     play sound sfx_hks2 noloop volume 0.7
-    show hart1 at offscreenright 
+    show hart1 at offscreenright
     show m4 as first at offscreenright
     with MoveTransition(0.25)
     show hart2 at offscreenright
@@ -447,11 +447,11 @@ label archival_finale:
     pause 0.1
     play sound sfx_hks1 noloop volume 0.7
 
-    show hart1 at offscreenright 
+    show hart1 at offscreenright
     show m4 as first at offscreenright
     with MoveTransition(0.25)
 
-    show hart2 at offscreenright 
+    show hart2 at offscreenright
     show m4 as second at offscreenright
     with MoveTransition(0.25)
 
@@ -479,11 +479,11 @@ label archival_finale:
     pause 0.1
     play sound sfx_hks1 noloop volume 0.7
 
-    show hart1 at offscreenright 
+    show hart1 at offscreenright
     show m4 as first at offscreenright
     with MoveTransition(0.25)
 
-    show hart2 at offscreenright 
+    show hart2 at offscreenright
     show m4 as second at offscreenright
     with MoveTransition(0.25)
 
@@ -503,11 +503,11 @@ label archival_finale:
     n "The alert plays repeatedly as CS keeps zigzagging around the chaos."
     show cs scared at offscreenright with MoveTransition(0.25)
 
-    show hart1 at offscreenright 
+    show hart1 at offscreenright
     show m4 as first at offscreenright
     with MoveTransition(0.25)
 
-    show hart2 at offscreenright 
+    show hart2 at offscreenright
     show m4 as second at offscreenright
     with MoveTransition(0.25)
 
@@ -611,7 +611,7 @@ label archival_finale:
     pause 1.0
     n "He escapes into the car as the doors shut behind him, finally separating him from the guards."
     show archival_19
-    with dissolve    
+    with dissolve
     n "CS steps over to the console at the front of the tram and pulls the giant \"Forward\" lever."
     scene archival_15
     show hart1 at left
@@ -768,7 +768,7 @@ label archival_finale:
     $ persistent.heard.add("goodbye_summer_hello_winter")
     pause 2.0
     play music everybody_wants if_changed
-    music everybody_wants 
+    music everybody_wants
     pause 5.0
     play sound sfx_ringtone_addy loop volume 0.5
     $ persistent.heard.add("sfx_ringtone_addy")
@@ -797,7 +797,7 @@ label archival_finale:
     "..."
     iris "Hmm..."
     iris "Can you bring him back?"
-    iris "Digi's been crying all day because he found out CS doesn't exist anymore."
+    iris "Digi's been crying all day because they found out CS doesn't exist anymore."
     addy "Yeah, I should have a backup somewhere."
     iris "Nice, thank you."
     iris "I'll go tend to Digi."

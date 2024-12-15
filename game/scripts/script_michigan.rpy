@@ -37,7 +37,7 @@ label michigan:
     billy "Sounds like a plan. The drive is gonna take longer with the detour though, so we should definitely get going."
     scene car plains
     show billy car
-    with dissolve    
+    with dissolve
     n "They get on the highway and start heading towards Michigan."
     arceus "We're making progress. Finally in Michigan."
     stop music fadeout 3.0
@@ -84,7 +84,7 @@ label michigan_bronson:
     show billy at left
     show cs scared flipped at right
     show cscar2
-    with dissolve 
+    with dissolve
     cs "Holy shit... I think we are in hell."
     arceus "What the..."
     billy "Actual fuck."
@@ -278,7 +278,7 @@ label michigan_interstate_69_old:
     show billy at left
     show cs disappointed flipped at right
     show cscar2
-    with dissolve 
+    with dissolve
     play music honk_song volume 0.8 if_changed
     music honk_song
     cs "I was expecting there to be people around, but I wasn't expecting traffic like this. I wonder what's going on?"
@@ -310,14 +310,14 @@ label michigan_interstate_69_old:
     stop music fadeout 3.0
     billy "I'm gonna see what he wants."
     play sound sfx_roll_window volume 0.7
-    pause 2.0 
+    pause 2.0
     # DX: It could be funny to have an option to ignore the gnome for a while
     play music wayward_wanderer volume 0.7 if_changed
     music wayward_wanderer
     if fun_value(FUN_VALUE_MUSIC):
         gnome "Hallo, I am a Wayward Wanderer, may I enter your Automobile?"
     else:
-        gnome "Hallo, may I enter your Automobile?" 
+        gnome "Hallo, may I enter your Automobile?"
     billy "What do you want with us?"
     gnome "I mean you no harm. May I sit and explain myself?"
     arceus "I don't think this guy is a threat. We may as well let him in."
@@ -326,7 +326,7 @@ label michigan_interstate_69_old:
     billy "Alright, fine, come on in."
     gnome "I thank you. As you may be aware, I am not of your Species."
     arceus "I don't think I'm the same species as these two."
-    gnome "That may be true, however, it appears that neither of your Species are the same as mein." 
+    gnome "That may be true, however, it appears that neither of your Species are the same as mein."
     gnome "Therefore mein Point still stands, und thus I still must briefly introduce mein Volk und our Relationship to this Place."
     gnome "I am of the Forest, und I have recently become acquainted mit some of your Kind."
     gnome "Deine Group has a similarly unique Redolence to those I encountered."
@@ -336,7 +336,7 @@ label michigan_interstate_69_old:
     gnome "My kind is not of this World, but rather of the Forest Dimension. I cannot clear this Path, but I can bring you to another."
     cs "Yeah, that may as well happen to us at this point."
     show cs happy flipped
-    cs "Thanks for your help." 
+    cs "Thanks for your help."
     gnome "No need to thank me. It is mein Pleasure."
     n "Everyone feels an energy emanate from the gnome as they watch the environment around them transform from a modern university into a dense forest."
     scene gnome_forest
@@ -349,7 +349,7 @@ label michigan_interstate_69_old:
     n "Eventually, the growth comes to a halt as any semblance of their old surroundings is buried in a lush and lively grove."
     n "They find themselves on a clear path through the trees as the sunlight shining through the canopy up ahead starkly contrasts the heavy darkness of the woods behind them."
     gnome "If you continue to drive, you will reach a Clearing with a large Sugar Maple surrounded by a Bed of Clovers."
-    billy "Where will it take us once we return to our own world?" 
+    billy "Where will it take us once we return to our own world?"
     gnome "We will simply return to the Edge of the Campus. You will be able to continue your Journey smoothly."
     scene forest_clearing_magic
     show billy car
@@ -435,19 +435,19 @@ label michigan_interstate_69_old:
     show aria flipped at left
     show gnome at center
     with dissolve
-    show waitress at right with moveinright    
+    show waitress at right with moveinright
     aria "Alright."
 
     $ translate_this_line = "Waitress, they'll sit with me!"
     aria "{a=show:show_tl}{font=cn}老板娘！他们会跟我一起坐。{/font}{/a}"
 
-    $ translate_this_line = "OK!"
+    $ translate_this_line = "Okay!"
     waitress "{a=show:show_tl}{font=cn}可以啊！{/font}{/a}"
 
     scene cafe_sitting_2
     show cs at left
     show billy at center
-    show arceus at right  
+    show arceus at right
     billy "Oh, you speak Chinese?"
     scene cafe_sitting
     show aria flipped at left
@@ -726,7 +726,7 @@ label michigan_interstate_69_old:
     cs "That's not a good thing..."
     scene doll_eye_tree
     n "Aria stopped listening because it's distracted by a tree up ahead."
-    if fun_value(FUN_VALUE_COMMON): 
+    if fun_value(FUN_VALUE_COMMON):
         aria "Here's one of the white baneberries that I was talking about. They're also known as {i}Actaea Pakoopoda,{/i} or Doll's Eyes."
     else:
         aria "Here's one of the white baneberries that I was talking about. They're also known as {i}Actaea Pachypoda,{/i} or Doll's Eyes."
@@ -744,7 +744,7 @@ label michigan_interstate_69_old:
     aria "I simply appreciate the beauty of the world around me."
     billy "I think that's fair. That {i}is{/i} a very pretty tree."
     aria "Thank you! See? {i}Someone{/i} gets it!"
-    cs "Oh no, I think the woods are getting to him. He's getting some kind of environmental Stockholm syndrome." 
+    cs "Oh no, I think the woods are getting to him. He's getting some kind of environmental Stockholm syndrome."
     cs "We've gotta get out of here, quick, before he gets worse."
     billy "I wouldn't be too worried about it."
     billy "I'm also terrified right now, but there's a certain macabre beauty that cuts through it..."
@@ -810,7 +810,7 @@ label michigan_interstate_69_old:
     n "They all walk down and reach the apartment, then make their way to where the car is parked."
     scene aria_apartment_outside
     show billy at left
-    show cs 
+    show cs
     show arceus flipped at mid_left
     show aria at right
     with dissolve
@@ -825,7 +825,7 @@ label michigan_interstate_69_old:
     aria "Anytime."
     aria "Billy, it was nice meeting you. You're welcome to come back and visit the woods again."
     billy "It was nice meeting you too. I'll definitely come back next time I'm in Michigan."
-    aria "CS, it was also nice seeing you again." 
+    aria "CS, it was also nice seeing you again."
     aria "And, Arceus, it was nice finally meeting you in person."
     arceus "You, as well, until we went to the woods."
     aria "Yeah, sorry about that..."
@@ -857,7 +857,7 @@ label michigan_interstate_69:
     show billy at left
     show cs disappointed flipped at right
     show cscar2
-    with dissolve 
+    with dissolve
     play music honk_song volume 0.8 if_changed
     music honk_song
     cs "Ugh, traffic? Billy, you have a dashcam, right?"
@@ -884,14 +884,14 @@ label michigan_interstate_69:
     stop music fadeout 3.0
     billy "I'm gonna see what he wants. Grab the Awesome Augement if he tries to do anything funny."
     play sound sfx_roll_window volume 0.7
-    pause 2.0 
+    pause 2.0
     # DX: It could be funny to have an option to ignore the gnome for a while
     play music wayward_wanderer volume 0.7 if_changed
     music wayward_wanderer
     if fun_value(FUN_VALUE_MUSIC):
         gnome "Hallo, I am a Wayward Wanderer. May I enter your Automobile?"
     else:
-        gnome "Hallo, may I enter your Automobile?" 
+        gnome "Hallo, may I enter your Automobile?"
     billy "Hi, Billy Mays here! What are doing next to my car?"
     gnome "I mean you no harm. May I sit and explain myself?"
     arceus "See, CS? He's not Blank. I don't think Blank has a German accent."
@@ -900,7 +900,7 @@ label michigan_interstate_69:
     billy "Alright, fine, come on in."
     gnome "I thank you. As you may be aware, I am not of your Species."
     arceus "I don't think I'm the same species as these two."
-    gnome "That may be true, however, it appears that neither of your Species are the same as mein." 
+    gnome "That may be true, however, it appears that neither of your Species are the same as mein."
     show cs flipped
     gnome "Therefore, mein Point still stands, und thus I still must briefly introduce mein Volk und our Relationship to this Place."
     gnome "I am of the Forest, und I have recently become acquainted mit some of your Kind."
@@ -992,7 +992,7 @@ label michigan_interstate_69:
         n "As everyone is waiting, the strange glowing grey blob in the corner notices the group and floats over."
     show aria at right with moveinright
     play music mis_leader volume 0.7 if_changed
-    music mis_leader 
+    music mis_leader
     aria "CS! Arc! What are you doing here?"
     gnome "Aria! I knew I recognized that Scent."
     aria "OMG, hi! So, you brought them here?"
@@ -1029,7 +1029,7 @@ label michigan_interstate_69:
     scene cafe_sitting_2
     show cs at left
     show billy at center
-    show arceus at right  
+    show arceus at right
     billy "Oh, you speak Chinese?"
     scene cafe_sitting
     show aria flipped at left
@@ -1280,7 +1280,7 @@ label michigan_interstate_69:
     cs "That's not a good thing..."
     scene doll_eye_tree
     n "Aria stopped listening because it's distracted by a tree up ahead."
-    if fun_value(FUN_VALUE_COMMON): 
+    if fun_value(FUN_VALUE_COMMON):
         aria "Here's one of the white baneberries that I was talking about. They're also known as {i}Actaea Pakoopoda,{/i} or Doll's Eyes."
     else:
         aria "Here's one of the white baneberries that I was talking about. They're also known as {i}Actaea Pachypoda,{/i} or Doll's Eyes."
@@ -1290,7 +1290,7 @@ label michigan_interstate_69:
     arceus "That tree is watching us."
     aria "I like to think that Mother Nature watc--{w=2.0}{nw}"
     $ renpy.music.set_pause(True, "music")
-    play music2 sfx_ringtone_cs loop volume 3 
+    play music2 sfx_ringtone_cs loop volume 3
     $ persistent.heard.add("sfx_ringtone_cs")
     n "All of a sudden, CS' phone starts going off."
     cs "Oh, shit. Sorry, I forgot I left my ringer on."
@@ -1373,7 +1373,7 @@ label michigan_interstate_69:
     n "They all walk down and reach the apartment, then make their way to where the car is parked."
     scene aria_apartment_outside
     show billy at left
-    show cs 
+    show cs
     show arceus flipped at mid_left
     show aria at right
     with dissolve
@@ -1388,7 +1388,7 @@ label michigan_interstate_69:
     aria "Anytime."
     aria "Billy, it was nice meeting you. You're welcome to come back and visit the woods again."
     billy "It was nice meeting you too. I'll definitely come back next time I'm in Michigan."
-    aria "CS, it was also nice seeing you again." 
+    aria "CS, it was also nice seeing you again."
     aria "And, Arceus, it was nice finally meeting you in person."
     arceus "You, as well, until we went to the woods."
     aria "Yeah, sorry about that..."
@@ -1419,7 +1419,7 @@ label michigan_interstate_94:
     billy "Looks like there's a traffic jam up ahead. I'm gonna get off and take a detour."
     arceus "I'm gonna roll a window down now that we're off the noisy highway."
     play sound sfx_roll_window volume 0.7
-    pause 1.0 
+    pause 1.0
     arceus "It's crazy hot in here right now."
     cs "Huh, I didn't notice."
     arceus "I am literally always wearing a fur coat, so I guess we have different scales."
@@ -1500,7 +1500,7 @@ label michigan_interstate_94:
     mario "Whatever, what do y'all need?"
     arceus "I just need to wash my hoodie before we get back on the road."
     mario "Alright. Detergent is over in the corner."
-    n "Arceus and the others go to the back corner and wait for the hoodie to get clean."    
+    n "Arceus and the others go to the back corner and wait for the hoodie to get clean."
     n "Mario goes back to quietly sobbing in the back room."
     show mario flipped with determination
     hide mario with moveoutright
@@ -1548,7 +1548,7 @@ label michigan_interstate_94:
     show violent_jay at mid_left
     with moveinleft
     violent_jay "We're here to see Mario."
-    mario "Hey, paisanos, what can I--" 
+    mario "Hey, paisanos, what can I--"
     pause 0.5
     mario "Oh God, more clowns. This is {i}not{/i} what I needed today."
     shaggy_too_dope "We're not just any clowns, we're Juggalos."

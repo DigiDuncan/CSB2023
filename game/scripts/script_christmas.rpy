@@ -1122,6 +1122,7 @@ label ce_before_shopping:
     stop sound fadeout 5.0
     pause 5.0
     play music winter_unclearance_sale loop volume 0.85 fadein 1.0
+    music winter_unclearance_sale
     play sound sfx_hubbub loop volume 0.2 fadein 1.0
     scene tgt_inside
     with dissolve
@@ -4619,7 +4620,7 @@ label ce_dinner:
     show cs disappointed christmas flipped
     cs "Huh?"
     cs "Oh, is {i}that{/i} where they ran off to?"
-    digi "We should probably go check and see if they are okay..."
+    digi "We should probably go check and see if they're okay..."
 
     scene cs_bathroom
     with dissolve
@@ -5332,7 +5333,7 @@ label ce_preclimax:
 
     digi "This Riffmaster is {i}great!{/i}"
     digi "Just listen to that strumbar!"
-    n "Digi strums the controller in joy."
+    n "Digi strums the controller with joy."
     digi "Oh, yeah. You gonna take that Adderall, Aria?"
     aria "That implies that I haven't already."
     digi "What about you, Arc? What are you going to do with that Raspberry Pi?"
