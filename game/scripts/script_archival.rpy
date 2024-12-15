@@ -140,8 +140,8 @@ label archival:
     extend "Dude, that's him! He's {i}here!"
     show cs scared
     cs "Okay, wait! Hold on a second!"
-    k174 "{i}What the FUCK?! {nw}" with hpunch
-    extend "Why does he look like that?{/i}"
+    k174 "{i}What the FUCK?! {/i}{nw}" with hpunch
+    extend "{i}Why does he look like that?{/i}"
     show cs disappointed
     cs "Damn, okay, now I just feel insulted."
     k199 "Dude, just... find something here to knock him out, or whatever!"
