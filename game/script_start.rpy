@@ -1,7 +1,7 @@
 init python:
     # For unused assets gallery
     unused_page = 0
-    
+
     # For jukebox tagging
     current_jukebox_tag_index = 0
 
@@ -121,7 +121,7 @@ transform mid_offscreen_left:
     xanchor 0.5 xpos -0.0
 
 # i got tired.
-# if ALL you need is a simple custom placement, no zoom/motion/effects, just use this please. 
+# if ALL you need is a simple custom placement, no zoom/motion/effects, just use this please.
 # for compatibility with the existing positions, set anchor to 1.0 - tate
 transform manual_pos(x, y, this_anchor = 0):
     xanchor this_anchor
@@ -223,7 +223,7 @@ transform t_punchup:
     yanchor 1.0 ypos 0.0
     rotate 0
     linear 1 rotate 960
-    
+
 # TODO: make sure this transform exactly matches the rpg engine transform. i don't think i quite nailed it -tate
 transform t_fake_rpg_text(x,y,speed = 0.25):
     on show:
@@ -234,7 +234,7 @@ transform t_fake_rpg_text(x,y,speed = 0.25):
             linear speed ypos (y-0.05)
         parallel:
             ease_expo 0.75 alpha 0.00
-        
+
 transform lego_run:
     pos (0.5, 0.5)
     anchor(0.5, 0.5)
@@ -417,7 +417,7 @@ define customer = Character("Customer", callback = char_callback)
 define crowd = Character("Crowd", callback = char_callback)
 define ges = Character("Ges", callback = renpy.partial(char_callback, name = "ges", beep = "ges"))
 define guest = Character("Guest", callback = renpy.partial(char_callback, name = "guest"))
-define howie = Character("Howie", callback = renpy.partial(char_callback, name = "howie", beep = "howie")) 
+define howie = Character("Howie", callback = renpy.partial(char_callback, name = "howie", beep = "howie"))
 define janitor = Character("Janitor", callback = char_callback)
 
 # CSBIII Country Route Character Definitons
@@ -1292,6 +1292,7 @@ image arceus dusk flipped = "dusk:flip:characters/arc/arceus.png"
 
 image arceus festive = "characters/arc/neutral_festive.png"
 image arceus festive flipped = "flip:characters/arc/neutral_festive.png"
+image arceus festive sil_black = "sil_black:characters/arc/neutral_festive.png"
 image arceus festive dark = "dark:characters/arc/neutral_festive.png"
 image arceus festive dark flipped = "flip:dark:characters/arc/neutral_festive.png"
 image arceus festive angry = "characters/arc/angry_festive.png"
@@ -1307,6 +1308,7 @@ image anno phone = "characters/anno/anno_phone.png"
 image anno coat = "characters/anno/anno_coat.png"
 image anno festive = "characters/anno/anno_festive.png"
 image anno festive dark = "dark:characters/anno/anno_festive.png"
+image anno festive sil_black = "sil_black:characters/anno/anno_festive.png"
 image anno dark = "dark:characters/anno/anno.png"
 image anno sil_black = "sil_black:characters/anno/anno.png"
 image anno prison = "characters/anno/anno_prison.png"
@@ -1547,7 +1549,7 @@ image carguya = "characters/carguya.png"
 image hart1 = "characters/hart1.png"
 image hart2 = "characters/hart2.png"
 
-# HoH SiS 
+# HoH SiS
 image rich = "characters/hohsis/rich.png"
 image rich dark = "dark:characters/hohsis/rich.png"
 image rich sil_black = "sil_black:characters/hohsis/rich.png"
@@ -1556,12 +1558,14 @@ image rich flipped = "flip:characters/hohsis/rich.png"
 image rich festive = "characters/hohsis/rich_festive.png"
 image rich festive dark = "dark:characters/hohsis/rich_festive.png"
 image rich festive dark flipped = "dark:flip:characters/hohsis/rich_festive.png"
+image rich festive sil_black = sil_black:characters/hohsis/rich_festive.png"
 image rich festive flipped = "flip:characters/hohsis/rich_festive.png"
 image ed = "characters/hohsis/ed.png"
 image ed festive = "characters/hohsis/ed_festive.png"
 image ed festive flipped = "flip:characters/hohsis/ed_festive.png"
 image ed festive dark = "dark:characters/hohsis/ed_festive.png"
 image ed festive dark flipped = "dark:flip:characters/hohsis/ed_festive.png"
+image ed festive sil_black = "sil_black:characters/hohsis/ed_festive.png"
 image ed dark = "dark:characters/hohsis/ed.png"
 image ed sil_black = "sil_black:characters/hohsis/ed.png"
 image ed flipped = "flip:characters/hohsis/ed.png"
@@ -1578,6 +1582,8 @@ image wesley festive = "characters/hohsis/wesley_festive.png"
 image wesley festive flipped = "flip:characters/hohsis/wesley_festive.png"
 image wesley festive dark = "dark:characters/hohsis/wesley_festive.png"
 image wesley festive dark flipped = "dark:flip:characters/hohsis/wesley_festive.png"
+image wesley festive sil_black = "sil_black:characters/hohsis/wesley_festive.png"
+
 image worker_1 = "characters/hohsis/worker_corn.png"
 image worker_2 = "characters/hohsis/worker_blank.png"
 image worker_3 = "flip:characters/mean/meanhohsis.png" # It's Mean!
@@ -1597,6 +1603,7 @@ image copguy festive = "characters/copguy/copguy_festive.png"
 image copguy festive flipped = "flip:characters/copguy/copguy_festive.png"
 image copguy festive dark = "dark:characters/copguy/copguy_festive.png"
 image copguy festive dark flipped = "dark:flip:characters/copguy/copguy_festive.png"
+image copguy festive sil_black = "sil_black:characters/copguy/copguy_festive.png"
 
 image copguy_ai = "characters/ai_cop_guy_full.png"
 image copguyexe = "characters/copguy/copguyexe.png"
@@ -1647,6 +1654,7 @@ image linus festive = "characters/lmg/linus_festive.png"
 image linus festive dark = "dark:characters/lmg/linus_festive.png"
 image linus festive flipped = "flip:characters/lmg/linus_festive.png"
 image linus festive dark flipped = "dark:flip:characters/lmg/linus_festive.png"
+image linus festive sil_black = "sil_black:characters/lmg/linus_festive.png"
 
 image luke = "characters/lmg/luke.png"
 image luke dark = "dark:characters/lmg/luke.png"
@@ -1657,6 +1665,7 @@ image luke festive = "characters/lmg/luke_festive.png"
 image luke festive dark = "dark:characters/lmg/luke_festive.png"
 image luke festive flipped = "flip:characters/lmg/luke_festive.png"
 image luke festive dark flipped = "dark:flip:characters/lmg/luke_festive.png"
+image luke festive sil_black = "sil_black:characters/lmg/luke_festive.png"
 
 image taran = "characters/lmg/taran.png"
 image taran flipped = "flip:characters/lmg/taran.png"
@@ -1674,6 +1683,7 @@ image billy festive = "characters/billy/festive.png"
 image billy festive flipped = "flip:characters/billy/festive.png"
 image billy festive dark = "dark:characters/billy/festive.png"
 image billy festive dark flipped = "flip:dark:characters/billy/festive.png"
+image billy festive sil_black = "sil_black:characters/billy/festive.png"
 image billy car = "characters/billy/billy_car.png"
 image billy car happy = "characters/billy/billy_car_happy.png"
 image billy car turn = "characters/billy/billy_car_turn.png"
@@ -1809,6 +1819,7 @@ image kitty festive = "characters/kitty_festive.png"
 image kitty festive dark = "dark:characters/kitty_festive.png"
 image kitty festive flipped = "flip:characters/kitty_festive.png"
 image kitty festive dark flipped = "dark:flip:characters/kitty_festive.png"
+image kitty festive sil_black = "sil_black:characters/kitty_festive.png"
 image kitty dark = "dark:characters/kitty.png"
 image kitty sil_black = "sil_black:characters/kitty.png"
 image kitty flipped = "flip:characters/kitty.png"
@@ -2594,7 +2605,7 @@ image sleigh:
 image snow_pile = "snow_pile.png"
 
 # Static Images
-image amtrak_dining_food = "food.png" 
+image amtrak_dining_food = "food.png"
 image amtrak_dining_pancake = "pancake.png"
 image anno_car = "anno_car.png"
 image anno_car dark = "dark:anno_car.png"
@@ -2940,7 +2951,7 @@ layeredimage copguy_ex:
     group ignore_me:
         attribute wow default:
             "copguy_ex_front"
-            
+
 ## For Tate EX
 image tate_ex_front:
     "secret/pt/tate_ex.png"
@@ -2952,7 +2963,7 @@ image tate_ex_front:
     ease 0.5 xpos 0.5
     ease 0.5 ypos 0.5
     repeat
-    
+
 image tate_ex_ca_c:
     "secret/pt/tate_ex_c.png"
     alignaround (0.5, 0.5)
@@ -3010,7 +3021,7 @@ layeredimage tate_ex_preparation:
     group ignore_me:
         attribute wow default:
             "tate_ex_front"
-            
+
 image tate_ex:
     contains:
         "tate_ex_preparation"
@@ -3866,7 +3877,7 @@ label before_main_menu:
                 if persistent.creative_mode == False:
                     persistent.creative_mode = True
                     renpy.call_screen("special_unlock", "Noice! You've unlocked Creative Mode! Check out all the new stuff in Extras!")
-                    
+
         if not persistent.seen_splash:
             if not renpy.music.is_playing():
                 renpy.music.play("bubble_tea.ogg", loop = False)

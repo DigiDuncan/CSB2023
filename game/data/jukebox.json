@@ -1099,7 +1099,7 @@
             "file": "interference.ogg",
             "title": "Interference",
             "artist": "Sanity",
-            "tags": ["CSBIII DX: After Story", "CSBIII DX: Finale", "New In DX"],
+            "tags": ["Menus & Misc.", "CSBIII DX: After Story", "CSBIII DX: Finale", "New In DX"],
             "album_art": "tracker.png"
         },
         "polar_express" : {
@@ -1109,7 +1109,7 @@
             "tags": ["Menus & Misc.", "CSBIII DX: Holiday Special", "New In DX"],
             "album_art": "polar_express.png"
         },
-      "sleigh_ride" : {
+        "sleigh_ride" : {
             "file": "sleigh_ride.ogg",
             "title": "Sleigh Ride",
             "artist": "Leroy Anderson",
@@ -1287,6 +1287,14 @@
             "artist": "Nicholas Karr",
             "tags": ["Menus & Misc.", "CSBIII DX: Holiday Special", "New In DX"],
             "album_art": "bargain.png"
+        },
+        "christmas_tea": {
+            "file": "christmas_tea.ogg",
+            "title": "Christmas Tea",
+            "artist": "dark cat x DigiDuncan",
+            "tags": ["Menus & Misc.", "CSBIII DX: Holiday Special", "New In DX"],
+            "album_art": "bubbletea.png",
+            "trivia": "The unofficial DPN / {i}CSBIII{/i} theme song, remixed for the season. Digi had a lot of help from Baker to understand how FL Studio works, as well as from Tate and Pakoo with choosing samples and harmonies, but they're still proud that they were able to make something musical."
         },
         "funvalueland" : {
             "file": "funvalueland.ogg",

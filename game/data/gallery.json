@@ -8,7 +8,7 @@
     "1.ogg": {
         "type": "audio",
         "title": "Test Developer Commentary",
-        "caption": "This was the audio file used to test developer commentary during the first CSBIII DX Jam. It might give an insight into Digi's feelings on the game at the time.\n\nTranscript: In this game, we decided to make it suck. No one had to play this game, so it didn't have to be good. That was our philosophy going into it.",
+        "caption": "This was the audio file used to test developer commentary during the first {i}CSBIII DX{/i} Jam. It might give an insight into Digi's feelings on the game at the time.\n\nTranscript: In this game, we decided to make it suck. No one had to play this game, so it didn't have to be good. That was our philosophy going into it.",
         "album_art": "dxcom_icon_static.png"
     },
     "main_menu.png": {
@@ -350,20 +350,20 @@
     "bathroom_hijinks.png": {
         "type": "route",
         "title": "Bathroom Hijinks",
-        "caption": "While Pakoo was writing {i}CE,{/i} Mika wanted him to write a segment where, if you clicked on Pomni's face at Target, this route would play out. There wasn't enough time to implement this.",
+        "caption": "While Pakoo was writing {i}CE,{/i} Mika wanted him to write a segment in which, if you clicked on Pomni's face at Target, this route would play out. There wasn't enough time to implement this.",
         "need_label": "ce_introductions",
         "jump_to": "ce_extras_poop"
     },
     "eliza.png": {
         "type": "image",
         "title": "Beta Elizabeth",
-        "caption": "This drawing of Elizabeth was a sketch by Pakoo, which was a drawing that was also one of Bubble's earlier drawings. Very complicated.",
+        "caption": "This drawing of Elizabeth was a sketch by Pakoo which was a drawing that was also one of Bubble's earlier drawings. Very complicated.",
         "need_label": "ce_introductions"
     },
     "db.png": {
         "type": "image",
         "title": "Beta DB",
-        "caption": "This was a mugshot of DB that was found from 2018 CScord.",
+        "caption": "This was a mugshot of DB that was found in 2018 CScord.",
         "need_label": "ce_introductions"
     },
     "k22_angry.png": {

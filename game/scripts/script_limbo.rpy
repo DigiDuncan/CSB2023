@@ -125,6 +125,7 @@ label show_dxcom:
 
 label woohoo_counter:
     play music interference2
+    $ persistent.heard.add("interference2")
     scene conferencetv
     show cs at left
     show arceus at right
@@ -148,7 +149,7 @@ label woohoo_counter:
 
 screen hatch_button():
     modal True
-    
+
     ##### poster button
     imagebutton:
         auto "gui/ce_point_click/poster/poster_%s.png"
@@ -186,10 +187,10 @@ screen hatch_button():
         hover_sound "audio/sfx/sfx_select.ogg"
         at mid_right
         action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("hatch_button"), Jump("ce_point_click.mean")
-    
+
     ##### hatch button (correct one)
     imagebutton:
-        auto "gui/ce_point_click/hatch/hatch_%s.png" 
+        auto "gui/ce_point_click/hatch/hatch_%s.png"
         hover_sound "audio/sfx/sfx_select.ogg"
         xpos 0.3
         ypos -0.2
@@ -221,55 +222,55 @@ screen rockstar_check():
         spacing 50
     text "EP Name: [ep_name]" textalign 0.5 size 36 xalign 0.0 yalign 0.1
     hbox xalign 0.0 yalign 0.25:
-        spacing 50 
+        spacing 50
     text "Song Name 1: [song_name_1]" textalign 0.5 size 36 xalign 0.0 yalign 0.15
     hbox xalign 0.0 yalign 0.25:
-        spacing 50 
+        spacing 50
     text "Song Name 2: [song_name_2]" textalign 0.5 size 36 xalign 0.0 yalign 0.2
     hbox xalign 0.0 yalign 0.25:
-        spacing 50 
+        spacing 50
     text "Song Name 3: [song_name_3]" textalign 0.5 size 36 xalign 0.0 yalign 0.25
     hbox xalign 0.0 yalign 0.25:
-        spacing 50 
+        spacing 50
     text "Song Name 4: [song_name_4]" textalign 0.5 size 36 xalign 0.0 yalign 0.3
     hbox xalign 0.0 yalign 0.25:
-        spacing 50 
+        spacing 50
     text "Song Name 5: [song_name_5]" textalign 0.5 size 36 xalign 0.0 yalign 0.35
     hbox xalign 0.0 yalign 0.25:
-        spacing 50 
+        spacing 50
     text "Line 1: [line_1]" textalign 0.5 size 36 xalign 0.0 yalign 0.4
     hbox xalign 0.0 yalign 0.25:
-        spacing 50 
+        spacing 50
     text "Line 2: [line_2]" textalign 0.5 size 36 xalign 0.0 yalign 0.45
     hbox xalign 0.0 yalign 0.25:
-        spacing 50 
+        spacing 50
     text "Line 3: [line_3]" textalign 0.5 size 36 xalign 0.0 yalign 0.5
     hbox xalign 0.0 yalign 0.25:
-        spacing 50 
+        spacing 50
     text "Line 4: [line_4]" textalign 0.5 size 36 xalign 0.0 yalign 0.55
     hbox xalign 0.0 yalign 0.25:
-        spacing 50 
+        spacing 50
     text "Line 5: [line_5]" textalign 0.5 size 36 xalign 0.0 yalign 0.6
     hbox xalign 0.0 yalign 0.25:
-        spacing 50 
+        spacing 50
     text "Line 6: [line_6]" textalign 0.5 size 36 xalign 0.0 yalign 0.65
     hbox xalign 0.0 yalign 0.25:
-        spacing 50 
+        spacing 50
     text "Line 7: [line_7]" textalign 0.5 size 36 xalign 0.0 yalign 0.7
     hbox xalign 0.0 yalign 0.25:
-        spacing 50 
+        spacing 50
     text "Line 8: [line_8]" textalign 0.5 size 36 xalign 0.0 yalign 0.75
     hbox xalign 0.0 yalign 0.25:
         spacing 50
     text "Line 9: [line_9]" textalign 0.5 size 36 xalign 0.0 yalign 0.8
     hbox xalign 0.0 yalign 0.25:
-        spacing 50 
+        spacing 50
     text "Line 10: [line_10]" textalign 0.5 size 36 xalign 0.0 yalign 0.85
     hbox xalign 0.0 yalign 0.25:
-        spacing 50 
+        spacing 50
     text "Line 11: [line_11]" textalign 0.5 size 36 xalign 0.0 yalign 0.9
     hbox xalign 0.0 yalign 0.25:
-        spacing 50 
+        spacing 50
     text "Line 12: [line_12]" textalign 0.5 size 36 xalign 0.0 yalign 0.95
     hbox xalign 0.0 yalign 0.25:
         spacing 50

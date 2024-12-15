@@ -2305,6 +2305,7 @@ label ce_party_before:
         show arceus festive dark flipped at mid_left
         show kitty festive dark at left
         with dissolve
+        $ persistent.seen.add("round")
         show cs christmas dark flipped at right with moveinright
         arceus "Hey, CS!"
         cs "Hey, Arc! Hey, Kitty!"
@@ -3116,6 +3117,7 @@ label ce_introductions:
     show arceus festive at mid_left
     show kitty festive at left
     with dissolve
+    $ persistent.seen.add("round")
     pause 1.0
     show cs christmas flipped at center with moveinright
     cs "Hey, how are you guys? I was looking all over and couldn't find you."
@@ -6751,11 +6753,11 @@ label ce_roof_moment:
         zoom 0.15
         xpos 0.4
         ypos 0.5
-    show arceus sil_black:
+    show arceus festive sil_black:
         zoom 0.15
         xpos 0.54
         ypos 0.54
-    show anno sil_black:
+    show anno festive sil_black:
         zoom 0.15
         xpos 0.53
         ypos 0.33
@@ -6767,15 +6769,15 @@ label ce_roof_moment:
         zoom 0.15
         xpos 0.47
         ypos 0.47
-    show ed sil_black:
+    show ed festive sil_black:
         zoom 0.15
         xpos 0.34
         ypos 0.42
-    show rich sil_black:
+    show rich festive sil_black:
         zoom 0.15
         xpos 0.45
         ypos 0.34
-    show wesley sil_black:
+    show wesley festive sil_black:
         zoom 0.15
         xpos 0.56
         ypos 0.45
@@ -6787,11 +6789,11 @@ label ce_roof_moment:
         zoom 0.15
         xpos 0.55
         ypos 0.43
-    show copguy sil_black:
+    show copguy festive sil_black:
         zoom 0.15
         xpos 0.33
         ypos 0.35
-    show billy sil_black:
+    show billy festive sil_black:
         zoom 0.15
         xpos 0.63
         ypos 0.46
@@ -6799,7 +6801,7 @@ label ce_roof_moment:
         zoom 0.15
         xpos 0.42
         ypos 0.36
-    show kitty sil_black:
+    show kitty festive sil_black:
         zoom 0.15
         xpos 0.43
         ypos 0.46
@@ -6819,11 +6821,11 @@ label ce_roof_moment:
         zoom 0.15
         xpos 0.47
         ypos 0.46
-    show linus sil_black:
+    show linus festive sil_black:
         zoom 0.15
         xpos 0.46
         ypos 0.35
-    show luke sil_black:
+    show luke festive sil_black:
         zoom 0.15
         xpos 0.32
         ypos 0.45
@@ -6849,28 +6851,28 @@ label ce_roof_moment:
     copguy "You guys, move over there..."
     show cs sil_black at Move((0.3, 0.5), (0.27, 0.33), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show k22 sil_black at Move((0.45, 0.23), (0.34, 0.29), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
-    show arceus sil_black at Move((0.54, 0.54), (0.3, 0.4), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show arceus festive sil_black at Move((0.54, 0.54), (0.3, 0.4), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show mean human festive flipped sil_black at Move((0.4, 0.5), (0.32, 0.4), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show anno sil_black at Move((0.53, 0.33), (0.32, 0.48), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show tate festive sil_black at Move((0.34, 0.36), (0.29, 0.5), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show obama sil_black at Move((0.47, 0.47), (0.27, 0.49), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
-    show ed sil_black at Move((0.34, 0.43), (0.25, 0.47), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show ed festive sil_black at Move((0.34, 0.43), (0.25, 0.47), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     copguy "And, all of you, move {i}there..."
-    show rich sil_black at Move((0.45, 0.34), (0.45, 0.31), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
-    show wesley sil_black at Move((0.56, 0.45), (0.5, 0.36), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show rich festive sil_black at Move((0.45, 0.34), (0.45, 0.31), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show wesley festive sil_black at Move((0.56, 0.45), (0.5, 0.36), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show blank sil_black at Move((0.43, 0.34), (0.52, 0.40), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show nova sil_black at Move((0.55, 0.43), (0.5, 0.45), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
-    show copguy sil_black at Move((0.33, 0.35), (0.45, 0.5), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
-    show billy sil_black at Move((0.63, 0.46), (0.42, 0.36), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show copguy festive sil_black at Move((0.33, 0.35), (0.45, 0.5), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show billy festive sil_black at Move((0.63, 0.46), (0.42, 0.36), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show aria sil_black at Move((0.42, 0.36), (0.41, 0.40), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
-    show kitty sil_black at Move((0.43, 0.46), (0.42, 0.48), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show kitty festive sil_black at Move((0.43, 0.46), (0.42, 0.48), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     pause 1.0
     show anne sil_black at Move((0.34, 0.42), (0.65, 0.31), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show k17 sil_black at Move((0.43, 0.2), (0.68, 0.29), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show elizabeth sil_black at Move((0.38, 0.45), (0.6, 0.35), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show digi sil_black at Move((0.47, 0.46), (0.63, 0.39), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
-    show linus sil_black at Move((0.46, 0.35), (0.66, 0.39), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
-    show luke sil_black at Move((0.32, 0.45), (0.64, 0.44), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show linus festive sil_black at Move((0.46, 0.35), (0.66, 0.39), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show luke festive sil_black at Move((0.32, 0.45), (0.64, 0.44), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show db sil_black at Move((0.5, 0.6), (0.63, 0.5), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show obama sil_black at Move((0.47, 0.47), (0.58, 0.47), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     pause 4.0
@@ -7213,7 +7215,7 @@ label ce_roof_moment:
         zoom 0.15
         xpos 0.4
         ypos 0.5
-    show arceus sil_black:
+    show arceus festive sil_black:
         zoom 0.15
         xpos 0.54
         ypos 0.54
@@ -7229,15 +7231,15 @@ label ce_roof_moment:
         zoom 0.15
         xpos 0.47
         ypos 0.47
-    show ed sil_black:
+    show ed festive sil_black:
         zoom 0.15
         xpos 0.34
         ypos 0.42
-    show rich sil_black:
+    show rich festive sil_black:
         zoom 0.15
         xpos 0.45
         ypos 0.34
-    show wesley sil_black:
+    show wesley festive sil_black:
         zoom 0.15
         xpos 0.56
         ypos 0.45
@@ -7249,11 +7251,11 @@ label ce_roof_moment:
         zoom 0.15
         xpos 0.55
         ypos 0.43
-    show copguy sil_black:
+    show copguy festive sil_black:
         zoom 0.15
         xpos 0.33
         ypos 0.35
-    show billy sil_black:
+    show billy festive sil_black:
         zoom 0.15
         xpos 0.63
         ypos 0.46
@@ -7261,7 +7263,7 @@ label ce_roof_moment:
         zoom 0.15
         xpos 0.42
         ypos 0.36
-    show kitty sil_black:
+    show kitty festive sil_black:
         zoom 0.15
         xpos 0.43
         ypos 0.46
@@ -7281,11 +7283,11 @@ label ce_roof_moment:
         zoom 0.15
         xpos 0.47
         ypos 0.46
-    show linus sil_black:
+    show linus festive sil_black:
         zoom 0.15
         xpos 0.46
         ypos 0.35
-    show luke sil_black:
+    show luke festive sil_black:
         zoom 0.15
         xpos 0.32
         ypos 0.45
@@ -7526,6 +7528,7 @@ label ce_end_credits:
     #    n "Merry Christmas to all, and to all, a good night!"
     $ achievement_manager.unlock("hoh_hoh")
     $ ending_manager.mark("christmas")
+    $ persistent.heard.add("christmas_tea")
 
     call screen credits_roll(route="CSBIII DX: Holiday Special", scroll_start = 12525, duration=84) with dissolve
 

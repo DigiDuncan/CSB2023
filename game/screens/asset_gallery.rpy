@@ -39,13 +39,13 @@ screen unused_gallery():
         size 48
         xalign 0.5
         yalign 0.07
-        
+
     # File Name
     text list(asset_dict.values())[unused_page]["title"]:
         size 72
         xalign 0.5
         yalign 0.125
-    
+
     # Caption
     text list(asset_dict.values())[unused_page]["caption"]:
         textalign 0.5
@@ -71,7 +71,7 @@ screen unused_gallery():
             xpos 0.3
             ypos 0.415
             textbutton "{color=#fff}Click To Play!{/color}":
-                action Replay(str(list(asset_dict.values())[unused_page]["jump_to"])), Stop("music2"), PauseAudio("music", False), Stop("jukebox"), SetVariable("unused_page", 0)
+                action Replay(str(list(asset_dict.values())[unused_page]["jump_to"]), locked = False), Stop("music2"), PauseAudio("music", False), Stop("jukebox"), SetVariable("unused_page", 0)
 
     # Main Image (if audio)
     if list(asset_dict.values())[unused_page]["type"] == "audio":
