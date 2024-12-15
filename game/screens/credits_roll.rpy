@@ -127,7 +127,7 @@ screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scro
                                                 $ sub_text = obfuscator(subcategory)
 
                                             # manually hide characters SPRITES if not seen, scroll down for CAST list
-                                            $ hide_these = { "Arceus": "arceus", "Kitty": "kitty", "DigiDuncan": "digi", "Aria": "aria", "Pakoo": "pakoo", "Blank": "blank", "Bubble": "bubble", "Tate": "tate", "Tate EX": "tate_ex", "Perfect Tate": "perfect_tate", "Mean": "mean", "Mean \(Human\)": "mean_human", "Ges": "ges", "blanknam3d": "blank", "Midge": "midge", "Elizabeth": "eliza", "Anne": "anne", "Grace": "grace", "K-22": "k22", "K-17": "k17", "Addy": "addy", "Pakoopara": "k17", "Mikapara": "eliza" }
+                                            $ hide_these = { "Arceus": "arceus", "Kitty": "kitty", "DigiDuncan": "digi", "Aria": "aria", "Pakoo": "pakoo", "Blank": "blank", "Bubble": "bubble", "Tate": "tate", "Tate EX": "tate_ex", "Perfect Tate": "perfect_tate", "Mean": "mean", "Mean \(Human\)": "mean_human", "Ges": "ges", "blanknam3d": "blank", "Midge": "midge", "Elizabeth": "eliza", "Anne": "anne", "Grace": "grace", "K-22": "k22", "K-17": "k17", "Addy": "addy" }
 
                                             for h in hide_these:
                                                 if hide_these[h] not in persistent.seen and re.fullmatch(h, subcategory):
@@ -215,13 +215,18 @@ screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scro
 
                                         # only print names if they've been seen
                                         python:
-                                            hide_these = { "ItsNovaHere": "nova", "meancarnavor": "mean", "EddieJustEddie": "hoh_worker", "AFuckingChicken": "hoh_worker", "Guithais": "hoh_worker", "Arceus3251": "arceus", "Annorexorcist": "anno", "Aria \"Estroteric\"": "aria", "DigiDuncan": "digi", "Pakoopara": "pakoo", "Mikapara": "mika", "Tate \"alleZSoyez\"": "tate", "UndeadKitty": "kitty", "blanknam3d": "blank", "Ges \"DefinitelyNotGes\"": "ges", "Midgalicis": "midge", "db05": "db", "BubbleTheSlime": "bubble", "4Bakers": "iris" }
+                                            hide_these = { "4Bakers": ["iris"], "AFuckingChicken": ["hoh_worker"], "Annorexorcist": ["anno"], "Arceus3251": ["arceus"], "Aria \"Estroteric\"": ["aria"], "blanknam3d": ["blank"], "BubbleTheSlime": ["bubble"], "db05": ["db"], "DigiDuncan": ["digi"], "EddieJustEddie": ["hoh_worker"], "Ges \"DefinitelyNotGes\"": ["ges"], "Guithais": ["hoh_worker"], "ItsNovaHere": ["nova"], "meancarnavor": ["mean", "mean_human"], "Midgalicis": ["midge"], "Mikapara": ["mika", "eliza", "grace", "anne"], "Pakoopara": ["pakoo", "addy", "k17", "k22"], "Tate \"alleZSoyez\"": ["tate"], "UndeadKitty": ["kitty"] }
 
                                             char_text = ""
 
+                                        # no matter how tempting, do NOT put this in a python block.
                                         for c in credits_map[route][category][subcategory]:
-                                            if c in hide_these and hide_these[c] not in persistent.seen:
-                                                $ char_text = obfuscator(c)
+                                            if c in hide_these:
+                                                for c_linked in hide_these[c]:
+                                                    if any(character in c_linked for character in persistent.seen):
+                                                        $ char_text = c
+                                                    else:
+                                                        $ char_text = obfuscator(c)
                                             else:
                                                 $ char_text = c
 
