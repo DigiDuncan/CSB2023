@@ -94,6 +94,21 @@
         "type": "extra",
         "ce": true
     },
+    "fun":{
+        "name": "F.U.N.",
+        "locked": "???",
+        "unlocked": "Roll a fun value.",
+        "img": "fun",
+        "type": "extra",
+        "hidden": true
+    },
+    "bouncy":{
+        "name": "Boingy Boingy Boingy",
+        "locked": "???",
+        "unlocked": "Max out CSBounciness play again!",
+        "img": "max_bounce",
+        "type": "extra"
+    },
     "broke":{
         "name": "You Broke It!",
         "locked": "Woah, dude, you broke it.",
@@ -129,15 +144,5 @@
         "dx": true,
         "steps": "item_count",
         "tracker": "collected"
-    },
-    "pun_values":{
-        "name": "Tons Of Pun Fun",
-        "locked": "Find every music fun value.",
-        "unlocked": "Find every music fun value.",
-        "img": "music_pun_fun",
-        "type": "extra",
-        "dx": true,
-        "steps": "pun_count",
-        "tracker": "seen_music_pun"
     }
 }
