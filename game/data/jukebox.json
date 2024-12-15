@@ -22,6 +22,14 @@
             "tags": ["Menus & Misc.", "New In DX"],
             "album_art": "csbi.png"
         },
+      "interference2" : {
+            "file": "interference.ogg",
+            "title": "Interference",
+            "artist": "Sanity",
+            "tags": ["Menus & Misc."],
+            "tags": ["Menus & Misc."],
+            "album_art": "tracker.png"
+        },
         "star_spangled_banner" : {
             "file": "star_spangled_banner.ogg",
             "title": "The Star Spangled Banner",
