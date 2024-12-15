@@ -476,7 +476,7 @@
             "artist": "Lizardking",
             "tags": ["CSBIII: East"],
             "album_art": "lizardking.png"
-        }, 
+        },
         "home_depot" : {
             "file": "home_depot.ogg",
             "title": "Let's Do This",
@@ -490,7 +490,7 @@
             "artist": "Kikiyama",
             "tags": ["CSBIII: East", "CSBIII: Country"],
             "album_art": "yume.png"
-        }, 
+        },
         "blazing_corridor" : {
             "file": "blazing_corridor.ogg",
             "title": "Blazing Corridor",
@@ -498,7 +498,7 @@
             "tags": ["CSBIII: East"],
             "album_art": "yume.png",
             "trivia": "This is more of a sound effect than a song, but it {i}is{/i} listed as a song in the offical {i}Yume Nikki{/i} OST."
-        }, 
+        },
         "showtime" : {
             "file": "showtime.ogg",
             "title": "It's Showtime",
@@ -512,7 +512,7 @@
             "artist": "ClascyJitto",
             "tags": ["CSBIII: East"],
             "album_art": "pizzatower.png"
-        }, 
+        },
         "taiikusai_desu_yo" : {
             "file": "taiikusai_desu_yo.ogg",
             "title": "体育祭ですよ",
@@ -527,21 +527,21 @@
             "artist": "Weatherscan",
             "tags": ["CSBIII: East", "CSBIII: Michigan", "CSBIII: Fired"],
             "album_art": "weather.png"
-        }, 
+        },
         "funiculi_holiday" : {
             "file": "funiculi_holiday.ogg",
             "title": "Funiculi Holiday",
             "artist": "ClascyJitto",
             "tags": ["CSBIII: East", "CSBIII: Country"],
             "album_art": "pizzatower.png"
-        }, 
+        },
         "speedy_comet" : {
             "file": "speedy_comet.ogg",
             "title": "Speedy Comet",
             "artist": "Mahito Yokota",
             "tags": ["CSBIII: East", "Minigames"],
             "album_art": "mariogalaxy.png"
-        }, 
+        },
         "breakout" : {
             "file": "breakout.ogg",
             "title": "Breakout",
@@ -549,14 +549,14 @@
             "tags": ["CSBIII: East"],
             "album_art": "breakout.png",
             "trivia": "The old outro theme for {i}Scott The Woz.{/i}"
-        }, 
+        },
         "fourside" : {
             "file": "fourside.ogg",
             "title": "The Metropolis of Fourside",
             "artist": "Keiichi Suzuki",
             "tags": ["CSBIII: East"],
             "album_art": "earthbound.png"
-        }, 
+        },
         "pokey" : {
             "file": "pokey.ogg",
             "title": "Pokey's House",
@@ -771,14 +771,14 @@
             "artist": "Dr. Awesome",
             "tags": ["CSBIII: Friend"],
             "album_art": "awesome.png"
-        }, 
+        },
         "klaxon_beat" : {
             "file": "klaxon_beat.ogg",
             "title": "Klaxon Beat",
             "artist": "Kelly Bailey",
             "tags": ["CSBIII: Friend", "CSBIII: Country"],
             "album_art": "half.png"
-        }, 
+        },
         "cp_violation" : {
             "file": "cp_violation.ogg",
             "title": "CP Violation",
@@ -786,42 +786,42 @@
             "tags": ["CSBIII: Friend"],
             "album_art": "half.png",
             "trivia": "CP in this context stands for \"Civil Protection.\""
-        }, 
+        },
         "mm_complete" : {
             "file": "mm_complete.ogg",
             "title": "Mm Complete",
             "artist": "Matthew Simmonds",
             "tags": ["CSBIII: Friend"],
             "album_art": "tracker.png"
-        }, 
+        },
         "compulsion_to_obey" : {
             "file": "compulsion_to_obey.ogg",
             "title": "Compulsion To Obey",
             "artist": "Lizardking",
             "tags": ["CSBIII: Friend", "Minigames"],
             "album_art": "lizardking.png"
-        }, 
+        },
         "for_the_people" : {
             "file": "for_the_people.ogg",
             "title": "For The People",
             "artist": "Lizardking",
             "tags": ["CSBIII: Friend", "Minigames"],
             "album_art": "lizardking.png"
-        }, 
+        },
         "tuna_fish" : {
             "file": "tuna_fish.ogg",
             "title": "Tuna Fish",
             "artist": "Dr. Awesome",
             "tags": ["CSBIII: Friend"],
             "album_art": "awesome.png"
-        }, 
+        },
         "full_rulle_med_klas" : {
             "file": "full_rulle_med_klas.ogg",
             "title": "Full Rulle Med Klas",
             "artist": "Lizardking",
             "tags": ["CSBIII: Friend"],
             "album_art": "lizardking.png"
-        }, 
+        },
         "dense_woods_b" : {
             "file": "dense_woods_b.ogg",
             "title": "Dense Woods B",
@@ -1102,6 +1102,20 @@
             "tags": ["CSBIII DX: After Story", "CSBIII DX: Finale", "New In DX"],
             "album_art": "tracker.png"
         },
+        "polar_express" : {
+            "file": "polar_express.ogg",
+            "title": "The Polar Express - Main Title",
+            "artist": "Alan Silvestri",
+            "tags": ["Menus & Misc.", "CSBIII DX: Holiday Special", "New In DX"],
+            "album_art": "polar_express.png"
+        },
+      "sleigh_ride" : {
+            "file": "sleigh_ride.ogg",
+            "title": "Sleigh Ride",
+            "artist": "Leroy Anderson",
+            "tags": ["Menus & Misc", "CSBIII DX: Holiday Special", "New In DX"],
+            "album_art": "sleigh_ride.png"
+        },
         "lets_hear_winter" : {
             "file": "lets_hear_my_christ.ogg",
             "title": "Let's Hear My Baby: Christmas Remix",
@@ -1224,7 +1238,7 @@
             "album_art": "pizzatower.png",
             "trivia": "The full name of this song is {i}Don't Preheat Your Oven Because If You Do The Song Won't Play.{/i}"
         },
-        "summer_fun" : { 
+        "summer_fun" : {
             "file": "summer_fun.ogg",
             "title": "Summer Fun // Lecherous Beaches",
             "artist": "blanknam3d",
@@ -1271,7 +1285,7 @@
             "file": "title_theme_reprise.ogg",
             "title": "Title Theme Reprise",
             "artist": "Nicholas Karr",
-            "tags": ["CSBIII DX: Holiday Special", "New In DX"],
+            "tags": ["Menus & Misc.", "CSBIII DX: Holiday Special", "New In DX"],
             "album_art": "bargain.png"
         },
         "funvalueland" : {

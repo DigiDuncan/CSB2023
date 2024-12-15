@@ -28,7 +28,10 @@ screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scro
             action Play("music", bgm, loop=False, if_changed=True)
 
     if bgm:
-        $ persistent.heard.add(bgm)
+        for b in music_map:
+            if music_map[b]["file"] == bgm and b not in persistent.heard:
+                $ persistent.heard.add(b)
+                break
 
     #only get tracks for a given route, or if none specified/invalid tag, get everything
     python:
@@ -124,7 +127,7 @@ screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scro
                                                 $ sub_text = obfuscator(subcategory)
 
                                             # manually hide characters SPRITES if not seen, scroll down for CAST list
-                                            $ hide_these = { "Arceus": "arceus", "Kitty": "kitty", "DigiDuncan": "digi", "Aria": "aria", "Pakoo": "pakoo", "Blank": "blank", "Bubble": "bubble", "Tate": "tate", "Tate EX": "tate_ex", "Perfect Tate": "perfect_tate", "Mean": "mean", "Mean \(Human\)": "mean_human", "Ges": "ges", "blanknam3d": "blank", "Midge": "midge", "Elizabeth": "eliza", "Anne": "anne", "Grace": "grace" }
+                                            $ hide_these = { "Arceus": "arceus", "Kitty": "kitty", "DigiDuncan": "digi", "Aria": "aria", "Pakoo": "pakoo", "Blank": "blank", "Bubble": "bubble", "Tate": "tate", "Tate EX": "tate_ex", "Perfect Tate": "perfect_tate", "Mean": "mean", "Mean \(Human\)": "mean_human", "Ges": "ges", "blanknam3d": "blank", "Midge": "midge", "Elizabeth": "eliza", "Anne": "anne", "Grace": "grace", "K-22": "k22", "K-17": "k17", "Addy": "addy" }
 
                                             for h in hide_these:
                                                 if hide_these[h] not in persistent.seen and re.fullmatch(h, subcategory):

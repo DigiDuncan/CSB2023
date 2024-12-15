@@ -21,6 +21,8 @@
 label ce_start:
     scene black
     $ renpy.movie_cutscene(intro_credits_1)
+    $ persistent.heard.add("polar_express")
+    $ persistent.heard.add("sleigh_ride")
     pause 1.0
     $ collect("letter")
     play music lets_hear_winter volume 0.7 if_changed
@@ -7509,7 +7511,7 @@ label ce_roof_moment:
     $ renpy.choice_for_skipping()
     play music "<from 0 to 28.700>title_theme_reprise.ogg" noloop if_changed
     queue music "<from 28.700>title_theme_reprise.ogg" noloop
-    # TODO: REPLACE THIS VIDEO TO ONE WITHOUT BGM. MUSIC IS OTHERWISE WORKING NOW IN-ENGINE
+    $ persistent.heard.add("title_theme_reprise")
     $ renpy.movie_cutscene(ce_ending, stop_music=False)
     #    hide cs with { "master": moveoutright }
     #    play music "<from 0.0 to 23.420>title_theme_reprise.ogg"
@@ -7521,7 +7523,7 @@ label ce_roof_moment:
     $ achievement_manager.unlock("hoh_hoh")
     $ ending_manager.mark("christmas")
 
-    call screen credits_roll(route="CSBIII DX: Holiday Special", scroll_start = 12675, duration=84)
+    call screen credits_roll(route="CSBIII DX: Holiday Special", scroll_start = 12525, duration=84)
 
     jump ce_epilogue
 
@@ -7530,18 +7532,18 @@ label ce_epilogue:
     $ _skipping = True
     # attempted to fade this in better
     scene black
-    pause 2.0
+    pause 1.0
     show billycar1 at Move((-1.5, -1.0), (0.0, -1.25), 10, repeat=False, bounce=False, xanchor="left", yanchor="top"):
         zoom 2.5
     with dissolve
     billy "Damn it, where did I put my other Handy Switch?{w=9}{nw}"
-    show billycar2:
+    show billycar2 at Move((0.0, -0.25), (-1.5, 0.0), 10, repeat=False, bounce=False, xanchor="left", yanchor="top"):
         zoom 2.5
-    show billycar2 at Move((0.0, -0.25), (-1.5, 0.0), 10, repeat=False, bounce=False, xanchor="left", yanchor="top") with dissolve
+    with dissolve
     billy "I could've {i}sworn{/i} I had a spare in here somewhere...{w=9}{nw}"
-    show billycar3:
+    show billycar3 at Move((0.0, -0.25), (-1.25, -0.5), 10, repeat=False, bounce=False, xanchor="left", yanchor="top"):
         zoom 2.5
-    show billycar3 at Move((0.0, -0.25), (-1.25, -0.5), 10, repeat=False, bounce=False, xanchor="left", yanchor="top") with dissolve
+    with dissolve
     billy "Lemme check the back seat...{w=9}{nw}"
     window hide
     # Pan over shot of the schematic for the Billy pot

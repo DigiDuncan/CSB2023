@@ -96,11 +96,11 @@ label awawa_tate_test:
 
     stop music
     scene black with dissolve
-    
+
     n "You enter Tate's secret test area."
 
     scene roombacks
-    show tate 
+    show tate
     with dissolve
 
     tate "Welcome to my test chamber."
@@ -134,7 +134,7 @@ label awawa_tate_test:
                 "Shock"
                 show tate_comp serious -blush
                 "Serious, force-remove blush"
-                show tate_comp smug 
+                show tate_comp smug
                 "Smug"
                 show tate_comp stare
                 "Stare"
@@ -229,16 +229,16 @@ label awawa_tate_test:
                 $ awawa_is_on = preferences.awawa_mode
                 $ awawa_setting = preferences.awawa_chance
 
-                # begin test 
+                # begin test
                 $ preferences.awawa_mode = False
                 $ preferences.awawa_chance = 0
                 $ test_string = substitutions("Test dialogue. THIS CODE IS SO STUPID, OMG. \n{i}Italic,{/i} {font=azsz}different font.{/font}{w=0.25} {b}Bold{/b} also exists, but it's {sc=3}ugly as sin.{/sc} {w=0.25}{color=FFFF00}Yellow{/color} is pretty cool, but so is {a=https://allezsoyez.com}my website.{/a}")
-                
+
                 n "0%% awawa."
                 tate "[test_string]"
 
                 $ preferences.awawa_mode = True
-                
+
                 $ preferences.awawa_chance = 0
                 n "25%% awawa."
                 $ preferences.awawa_chance = 25
@@ -259,7 +259,7 @@ label awawa_tate_test:
                 tate "[test_string]"
 
                 $ preferences.awawa_mode = awawa_is_on
-                $ preferences.awawa_chance = awawa_setting 
+                $ preferences.awawa_chance = awawa_setting
                 n "Awawa Mode has been reset to its initial values."
 
                 show tate srs
@@ -278,7 +278,7 @@ label awawa_tate_test:
             ########## FORCE-TEST ACHIEVEMENTS ##########
 
             "Achievement Pop-Ups":
-                    
+
                 tate "Sure, let's try it."
 
                 python:
@@ -291,11 +291,11 @@ label awawa_tate_test:
                         renpy.say(tate, "Did it work?")
                     except:
                         renpy.say(tate, substitutions("Couldn't pull achievement. Double-check the name and try again."))
-                                
+
                 jump .awawa_menu
 
             ########## Credits Roll ##########
-            
+
             "Credits Roll":
                 tate "Which one?"
                 menu:
@@ -303,7 +303,7 @@ label awawa_tate_test:
                     "Full Game":
                         call screen credits_roll(duration=60)
                     "CE Only":
-                        call screen credits_roll(route="CSBIII DX: Holiday Special", bgm="title_theme_reprise.ogg", scroll_start = 12250, duration=90)
+                        call screen credits_roll(route="CSBIII DX: Holiday Special", scroll_start = 12525, duration=84)
                     "Never mind.":
                         jump .awawa_menu
 
@@ -317,7 +317,7 @@ label awawa_tate_test:
                 hide reversi_rules
                 tate "Did it work?"
                 jump .awawa_menu
-            
+
             ########## Cancel ##########
 
             "None, I'm Done":
