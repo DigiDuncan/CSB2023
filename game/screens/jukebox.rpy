@@ -178,9 +178,7 @@ screen music_screen(selected_track):
                 xalign(0.5)
                 yalign(0.4)
 
-    frame:
-
-        background None
+    vbox:
         xsize 1250 ysize 150
         xoffset 650 yoffset 850
 
