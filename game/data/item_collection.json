@@ -507,6 +507,13 @@
         "rarity": "Common",
         "ce": true
     },
+    "pipe_gun": {
+        "img": "pipe_gun",
+        "name": "Pipe Gun",
+        "owner": "Multiple",
+        "desc": "It's held together with duct tape, rope, and a prayer, but it gets the job done.",
+        "rarity": "Uncommon"
+    },
     "potato_bag": {
         "img": "potato_bag",
         "name": "Bag Of Potatoes",
