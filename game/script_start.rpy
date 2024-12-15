@@ -535,7 +535,7 @@ define aria_alt = Character("Aria", callback = renpy.partial(char_callback, name
 define blank = Character("Blank", callback = renpy.partial(char_callback, name = "blank", beep = "blank"))
 define db = Character("DB05", callback = renpy.partial(char_callback, name = "db", beep = "db05"))
 define digi = Character("Digi", callback = renpy.partial(char_callback, name = "digi", beep = "digi"))
-define eliza = Character("Elizabeth", callback = char_callback)
+define eliza = Character("Elizabeth", callback = renpy.partial(char_callback, name = "eliza", beep = "mika"))
 define grace = Character("Grace", callback = char_callback)
 define iris = Character("Iris", callback = renpy.partial(char_callback, name = "iris", beep = "iris"))
 define k17 = Character("K-17", callback = renpy.partial(char_callback, name = "k17", beep = "k17"))
