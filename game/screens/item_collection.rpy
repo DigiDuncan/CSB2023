@@ -22,7 +22,7 @@ screen item_collection():
 
     if current_item == None:
         use item_welcome
-    
+
     else:
         use items(current_item)
 
@@ -59,21 +59,21 @@ screen item_nav():
                         background None
                         margin 5, 5
                         xysize 153, 153
-                        
+
                         # create the actual button here
                         button:
                             idle_background "#510000"
-                            hover_background "#cc0000"
-                            selected_idle_background "#df6565"
+                            hover_background "#33CC00"
+                            selected_idle_background "#84E066"
                             insensitive_background "#888888"
 
                             xalign 0.5 yalign 0.5
                             xysize 140,140
 
                             image item_img
-                            
+
                             action [ SensitiveIf( k in persistent.collected ), SetScreenVariable("current_item", k) ]
-                            
+
     textbutton "Return to Extras" action ShowMenu("category_welcome") yoffset 950 xoffset 25
     textbutton "Main Menu" action Return() yoffset 1000 xoffset 25
 
@@ -140,7 +140,7 @@ screen items(l):
                 first_spacing 10
                 text "{size=+24}" + ITEM_MAP[l]['name']:
                     xalign 0.5
-                    
+
                 text "{size=-12}(" + ITEM_MAP[l]['rarity'] + ")":
                     xalign 0.5
                     color("#BBBBBB")
