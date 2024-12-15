@@ -1494,7 +1494,7 @@ label ce_before_shopping:
     cs "You don't see a lot of weirdos like that at Target."
     cs "I guess this place is more like Walmart than I thought."
     show cs coat surprised flipped
-    cs "Guess I have a lookalike who shops at IKEA, too?".
+    cs "Guess I have a lookalike who shops at IKEA, too?"
     show cs coat flipped
     cs "Oh, well. I should probably also get back to shopping."
 
