@@ -1152,19 +1152,26 @@ label ce_before_shopping:
     play sound sfx_shopping_cart
     n "CS grabs a cart before venturing further into the store."
     pause 1.0
-    show cs coat at offscreenleft
-    show shopping_cart at manual_pos(-0.2, 1.1, 0.75)
+    show cs coat at manual_pos(-0.5, 1.0, 1.0)
+    show shopping_cart at manual_pos(-0.3, 1.1, 0.5)
+    with determination
 
-    show shopping_cart at Move((-0.2, 0.6), (1.1, 0.6), 0.5, repeat=False, bounce=False, xanchor="left", yanchor="top")
-    hide cs with moveoutright
+    show shopping_cart at manual_pos(1.4, 1.1, 0.5)
+    show cs coat at offscreenright
+    with move
     $ collect("shopping_cart")
 
-    # Shopping
+    ### POTATOES
     scene tgt_tater with dissolve
+    pause 0.25
+
+    show cs coat at manual_pos(-0.5, 1.0, 1.0)
+    show shopping_cart at manual_pos(-0.3, 1.1, 0.5)
+    with determination
+
     show cs coat at center
     show shopping_cart at manual_pos(0.8, 1.1, 0.5)
     with moveinleft
-
 
     n "He starts at the produce section."
     show cs coat surprised
