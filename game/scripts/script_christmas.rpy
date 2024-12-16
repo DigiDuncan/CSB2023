@@ -173,7 +173,7 @@ label ce_tree:
         show garage_shelf:
             linear 0.25 rotate -30
         pause 0.25
-        play sound2 sfx_metalpipe noloop
+        play sound2 sfx_metalpipe noloop volume 0.3
         $ collect("cheap_shelf")
 
         scene black with vpunch
@@ -1024,9 +1024,14 @@ label ce_setup:
     cs "Oh no! It's 3AM!" with vpunch
     show cs disappointed flipped
     cs "Damn it! The time really flew!"
-    show cs worried flipped
+    cs "Athena, sleep mode."
+    scene cs_bedroom1_ce dark
+    show cs disappointed dark flipped
+    play sound sfx_fabeep
+    pause 0.75
+    show cs worried dark flipped
     cs "I'll have to go during the rush tomorrow!"
-    show cs disappointed flipped
+    show cs disappointed dark flipped
     cs "I guess I can finish my shopping list right now, then I'll go get some sleep..."
     cs "Hmm... what else do I need?"
     scene black with dissolve
@@ -2368,7 +2373,7 @@ label ce_party_before:
         with hpunch
         n "As soon as he says this, the whole house starts to shake!" with vpunch
         cs "Wh--{w=0.5} what's going on?!" with hpunch
-        play sound2 sfx_train_whistle noloop volume 0.75
+        play sound2 sfx_train_whistle noloop volume 0.5
         n "As the quaking grows stronger, a train whistle bellows out!" with vpunch
         cs "Holy shit, is that a {i}train?!" with hpunch
         hide cs with moveoutleft
@@ -3681,7 +3686,7 @@ label ce_win_carrot:
     extend "burning..."
     obama "Is it perhaps the smoke billowing out from the oven?"
     show cs scared christmas flipped
-    play sound2 sfx_smoke_alarm
+    play sound2 sfx_smoke_alarm 0.4
     with vpunch
     n "All of a sudden, the smoke detectors start beeping!"
     digi "{cshake}AHHH! Turn it {i}off!" with hpunch
