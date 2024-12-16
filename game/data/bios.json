@@ -85,7 +85,7 @@
             "Festive: Worried": "images/characters/arc/worried_festive.png"
         },
         "quote": "I'm literally a hacker, guys! uwu",
-        "bio": "The master hacker and technician himself, Arceus has a lot of tricks up his sleeve. He could do anything he wanted, if he could only be arsed. Some say he's got godlike powers, but others say he'd be way too lazy to use them if he did. Either way, he's happy to help CS out of the horrible mess that he's gotten himself into this time.",
+        "bio": "The master hacker and technician himself. Arceus has a lot of tricks up his sleeve. He could do anything he wanted, if he could only be arsed. Some say he's got godlike powers, but others say he'd be way too lazy to use them if he did. Either way, he's happy to help CS out of the horrible mess that he's gotten himself into this time.",
         "rpg": "ARCEUS"
     },
     "aria": {
@@ -104,7 +104,7 @@
         "pronouns": "(he/him)",
         "sprites": { "Default": "images/characters/avgn.png" },
         "quote": "This is a huge load of fuck shit!",
-        "bio": "More commonly known as {i}The Angry Video Game Nerd{/i}, he plans to take you back to the past, to play the shitty games that suck ass. He loves to scream and swear, and fucking despises Bugs Bunny.",
+        "bio": "More commonly known as {i}The Angry Video Game Nerd{/i}, he plans to take you back to the past, to play the shitty games that suck ass. He loves to scream and swear, and fucking {i}despises{/i} Bugs Bunny.",
         "ce": true
     },
     "benrey": {
@@ -438,7 +438,7 @@
             "Angry": "images/characters/eliza/eliza_angry.png"
      },
         "quote": "{font=OpenSans-Regular.ttf}Счастливого пути, советский ковбой.{/font}",
-        "bio": "Been 'round for a bit less than Anne and Grace. Served her country proud! Started as boots-on-the-ground and worked her way up through the Air Force. Last spotted doing an undercover mission in the Soviet Union, 1986. Mostly a loner who directs Anne and Grace.",
+        "bio": "Been 'round for a bit less than Anne and Grace. Served her country proud! Started as boots on the ground and worked her way up through the Air Force. Last spotted doing an undercover mission in the Soviet Union, 1986. Mostly a loner who directs Anne and Grace.",
         "ce": true
     },
     "ges": {
