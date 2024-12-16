@@ -31,12 +31,11 @@ define config.version = "1.0a1"
 
 define gui.about = _p("""CSBounciness III CE
 
-Welcome to the CS Bounciness Holiday Special! (Also known as Christmas Edition)
-As our list for CSBIII: DX grew, we knew we weren't finishing the game for the holidays,
-so we decided to put all of our effort into making a festive-themed story! With a
-sample of what's to come in DX, most of the improved features are shown in this
-game. We hope you are excited for our newest story, the upcoming DX edition,
-and hope to all a Merry Christmas!
+Welcome to the {i}CS Bounciness{/i} Holiday Special! (Also known as {i}Christmas Edition.){/i}
+
+As our list for {i}CSBIII: DX{/i} grew larger, we knew we weren't finishing the full game before the holidays. We decided to put all of our effort into making a festive story fit for the season! This game features a sampling of many of the new and improved features that will be in {i}DX.{/i} We hope you are excited for our newest story, as well as the upcoming {i}CSBIII: Deluxe Edition!{/i}
+
+We hope you all have a Merry Christmas, Happy Holidays, and a Happy New Year!
 
 <3 DPN Games
 """)
