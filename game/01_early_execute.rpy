@@ -217,6 +217,7 @@ python early:
         if parsed_object is None:
             return
         renpy.with_statement(determination)
+        renpy.play("sfx/sfx_bubble.ogg", channel = "sound")
         renpy.show_screen("dxcom", parsed_object)
         renpy.with_statement(determination)
 
