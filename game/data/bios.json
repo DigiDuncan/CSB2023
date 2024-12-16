@@ -11,7 +11,7 @@
             "Worried": "images/characters/pakoo/pakoo_worried.png"
         },
         "quote": "Hold on, I remember this...",
-        "bio": "Addy {i}loves{/i} Christmas. It's the only time of the year they look forward to changing outfits. Unfortunately, they love their parties more than they love their friends, so they couldn't make it to CS' party."
+        "bio": "Addy {i}loves{/i} Christmas. It's the only time of the year when they actually look forward to changing outfits. Unfortunately, they love their parties more than they love their friends, so they couldn't make it to CS' party."
     },
     "anne": {
         "full_name": "Anne",
@@ -48,7 +48,7 @@
             "Festive: Worried": "images/characters/arc/worried_festive.png"
         },
         "quote": "I'm literally a hacker, guys! uwu",
-        "bio": "The master hacker and technician himself, Arceus has a lot of tricks up his sleeve. He could do anything he wanted, if he could only be arsed. Despite being Jewish, he's still excited to celebrate Christmas with all of his friends. As a bonus, Hanukkah and Christmas just happen to overlap this year!"
+        "bio": "The master hacker and technician himself. Arceus has a lot of tricks up his sleeve. He could do anything he wanted, if he could only be arsed. Despite being Jewish, he's still excited to celebrate Christmas with all of his friends. As a bonus, Hanukkah and Christmas just happen to overlap this year!"
     },
     "aria": {
         "full_name": "Aria",
@@ -57,7 +57,7 @@
             "Festive": "images/characters/aria_festive.png"
         },
         "quote": "Yeah, that sounds about right.",
-        "bio": "Aria knows her shit. Whether it's book smarts or street smarts, she's got it all. Despite her mindbogglingly busy schedule, she always makes some time for her friends from DPN. Luckily, she could make it to this party, too. Her ability to teleport is coming in clutch!"
+        "bio": "Aria knows her shit. Whether it's book smarts or street smarts, she's got it all. Despite her mind-bogglingly busy schedule, she always makes some time for her friends from DPN. Luckily, she could make it to this party, too. Her ability to teleport is coming in clutch!"
     },
     "avgn": {
         "full_name": "James Rolfe",
@@ -154,7 +154,7 @@
         "pronouns": "(he/him)",
         "sprites": { "Default": "images/characters/db.png" },
         "quote": "Sorry, guys! I'm late!",
-        "bio": "Db05 is a busy man, but who can blame him? He has places to be, things to see, and most importantly, he has to feed his pets."
+        "bio": "Db05 is a busy man, but who can blame him? He has places to be, things to see, and most importantly, he has to feed his pets. Unfortunately, he was a bit too busy to buy a proper gift for CS' party, so he had to improvise."
     },
     "digi": {
         "full_name": "DigiDuncan",
@@ -193,7 +193,7 @@
             "Angry": "images/characters/eliza/eliza_angry.png"
      },
         "quote": "{font=OpenSans-Regular.ttf}Счастливого пути, советский ковбой.{/font}",
-        "bio": "Been 'round for a bit less than Anne and Grace. Served her country proud! Started as boots-on-the-ground and worked her way up through the Air Force. Last spotted doing an undercover mission in the Soviet Union, 1986. Mostly a loner who directs Anne and Grace.",
+        "bio": "Been 'round for a bit less than Anne and Grace. Served her country proud! Started as boots on the ground and worked her way up through the Air Force. Last spotted doing an undercover mission in the Soviet Union, 1986. Mostly a loner who directs Anne and Grace.",
         "ce": true
     },
     "ges": {
@@ -201,7 +201,7 @@
         "pronouns": "(he/him)",
         "sprites": { "Default": "images/characters/ges.png" },
         "quote": "weenor :)",
-        "bio": "As seen on TV. This lanky figure is here to have a good time and talk about history. Quite fun, eh? He came all the way from Canada alongside Nova. He {i}definitely{/i} knows cs188, too. Totally. So, that's a plus!"
+        "bio": "As seen on TV. This lanky figure is here to have a good time and talk about history. Quite fun, eh? He came all the way from Canada, alongside Nova. He {i}definitely{/i} knows cs188, too. Totally. So, that's a plus!"
     },
     "grace": {
         "full_name": "Grace",
