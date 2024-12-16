@@ -26,7 +26,7 @@ label asset_debugger:
         show tate at mid_mid_right
         show mean at mid_right
         show k174 at mid_right_right
-        show arceus at right 
+        show arceus at right
         n "test 1{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -47,7 +47,7 @@ label asset_debugger:
         show tate dark at mid_mid_right
         show mean flipped at mid_right
         show k174 flipped at mid_right_right
-        show arceus flipped at right 
+        show arceus flipped at right
         cs "test 2{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -88,7 +88,7 @@ label asset_debugger:
         show tate dark flipped at mid_mid_right
         show mean happy flipped at mid_right
         show k199 flipped at mid_right_right
-        show arceus dirty at right 
+        show arceus dirty at right
         craptop "test 4{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -109,7 +109,7 @@ label asset_debugger:
         show tate srs at mid_mid_right
         show mean happy2 at mid_right
         show k207 at mid_right_right
-        show arceus dirty flipped at right 
+        show arceus dirty flipped at right
         sticky "test 5{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -130,7 +130,7 @@ label asset_debugger:
         show tate srs dark at mid_mid_right
         show mean happy2 flipped at mid_right
         show k207 flipped at mid_right_right
-        show arceus full happy at right 
+        show arceus full happy at right
         discord "test 6{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -151,7 +151,7 @@ label asset_debugger:
         show tate srs flipped at mid_mid_right
         show mean surprised at mid_right
         show k207h at mid_right_right
-        show arceus full happy flipped at right 
+        show arceus full happy flipped at right
         nova "test 7{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -172,7 +172,7 @@ label asset_debugger:
         show tate srs dark flipped at mid_mid_right
         show mean surprised flipped at mid_right
         show k207h flipped at mid_right_right
-        show arceus full at right 
+        show arceus full at right
         carguy "test 8{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -193,7 +193,7 @@ label asset_debugger:
         show tate shock at mid_mid_right
         show michael at mid_right
         show nova_head at mid_right_right
-        show arceus full flipped at right 
+        show arceus full flipped at right
         carguy_nobeep "test 9{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -212,7 +212,7 @@ label asset_debugger:
         show pakoo happy flipped at mid_mid_left
         show tate shock dark at mid_mid_right
         show phil at mid_right
-        show arceus full angry at right 
+        show arceus full angry at right
         greeter "test 10{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -232,7 +232,7 @@ label asset_debugger:
         show linus at mid_mid_left
         show tate shock flipped at mid_mid_right
         show carguy at mid_right
-        show arceus full angry flipped at right 
+        show arceus full angry flipped at right
         doug "test 11{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -253,7 +253,7 @@ label asset_debugger:
         show tate shock dark flipped at mid_mid_right
         show carguy flipped at mid_right
         show carguya at mid_right_right
-        show arceus angry at right 
+        show arceus angry at right
         cashier "test 12{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -274,7 +274,7 @@ label asset_debugger:
         show tate smug at mid_mid_right
         show doug at mid_right
         show hart1 at mid_right_right
-        show arceus angry flipped at right 
+        show arceus angry flipped at right
         ycs "test 13{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -295,7 +295,7 @@ label asset_debugger:
         show tate smug dark at mid_mid_right
         show billy at mid_right
         show hart2 at mid_right_right
-        show arceus angry dark at right 
+        show arceus angry dark at right
         hoh_operator "test 14{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -316,7 +316,7 @@ label asset_debugger:
         show taran flipped at mid_mid_left
         show tate smug flipped at mid_mid_right
         show cultist at mid_right_right
-        show arceus angry dark flipped at right 
+        show arceus angry dark flipped at right
         rich "test 15{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -337,7 +337,7 @@ label asset_debugger:
         show colton at mid_mid_left
         show tate smug dark flipped at mid_mid_right
         show cultist gun at mid_right_right
-        show arceus guard at right 
+        show arceus guard at right
         ed "test 16{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -358,7 +358,7 @@ label asset_debugger:
         show nfanboy at mid_mid_left
         show tate sheepish at mid_mid_right
         show cultist_2 at mid_right_right
-        show arceus guard flipped at right 
+        show arceus guard flipped at right
         wesley "test 17{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -379,7 +379,7 @@ label asset_debugger:
         show tate sheepish flipped at mid_mid_right
         show billy laser at mid_right
         show cultist_3 at mid_right_right
-        show arceus happy at right 
+        show arceus happy at right
         michael "test 18{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -400,7 +400,7 @@ label asset_debugger:
         show tate sad at mid_mid_right
         show billy dark at mid_right
         show kitty at mid_right_right
-        show arceus happy flipped at right 
+        show arceus happy flipped at right
         michael_nobeep "test 19{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -421,7 +421,7 @@ label asset_debugger:
         show tate sad flipped at mid_mid_right
         show cashier at mid_right
         show kitty flipped at mid_right_right
-        show arceus happy dark at right 
+        show arceus happy dark at right
         phil "test 20{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -442,7 +442,7 @@ label asset_debugger:
         show tate stare at mid_mid_right
         show scott at mid_right
         show blank at mid_right_right
-        show arceus happy dark flipped at right 
+        show arceus happy dark flipped at right
         worker_1 "test 21{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -463,7 +463,7 @@ label asset_debugger:
         show tate stare flipped at mid_mid_right
         show obama at mid_right
         show midge at mid_right_right
-        show arceus prison at right 
+        show arceus prison at right
         worker_2 "test 22{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -484,7 +484,7 @@ label asset_debugger:
         show gnome at mid_mid_right
         show discord at mid_right
         show mika at mid_right_right
-        show arceus prison flipped at right 
+        show arceus prison flipped at right
         worker_3 "test 23{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -505,7 +505,7 @@ label asset_debugger:
         show waitress at mid_mid_right
         show border_guard at mid_right
         show mika dark at mid_right_right
-        show arceus worried at right 
+        show arceus worried at right
         worker_4 "test 24{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -526,7 +526,7 @@ label asset_debugger:
         show terry at mid_mid_right
         show border_guard dusk at mid_right
         show db at mid_right_right
-        show arceus worried flipped at right 
+        show arceus worried flipped at right
         worker_5 "test 25{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -547,7 +547,7 @@ label asset_debugger:
         show mettaton at mid_mid_right
         show benrey at mid_right
         show db_cooper at mid_right_right
-        show arceus dirty worried at right 
+        show arceus dirty worried at right
         worker_6 "test 26{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -568,7 +568,7 @@ label asset_debugger:
         show scott_pres at mid_mid_right
         show joel at mid_right
         show ges at mid_right_right
-        show arceus dirty worried flipped at right 
+        show arceus dirty worried flipped at right
         worker_7 "test 27{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -589,7 +589,7 @@ label asset_debugger:
         show miku at mid_mid_right
         show joel flipped at mid_right
         show renovator at mid_right_right
-        show arceus worried dark at right 
+        show arceus worried dark at right
         digi "test 28{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -610,7 +610,7 @@ label asset_debugger:
         show sayori at mid_mid_right
         show ikea_greeter at mid_right
         show shadowman at mid_right_right
-        show arceus worried dark flipped at right 
+        show arceus worried dark flipped at right
         pakoo "test 29{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -631,7 +631,7 @@ label asset_debugger:
         show fumobee at mid_mid_right
         show ikea_greeter blahaj at mid_right
         show pencilcashier at mid_right_right
-        show arceus dark at right 
+        show arceus dark at right
         addy "test 30{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -651,7 +651,7 @@ label asset_debugger:
         show jeremy at mid_mid_left
         show ikea_greeter flipped at mid_right
         show cruise at mid_right_right
-        show arceus dark flipped at right 
+        show arceus dark flipped at right
         copguy "test 31{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -672,7 +672,7 @@ label asset_debugger:
         show cards5alt at mid_mid_right
         show swede at mid_right
         show cruise flipped at mid_right_right
-        show arceus dusk at right 
+        show arceus dusk at right
         arceus "test 32{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -693,7 +693,7 @@ label asset_debugger:
         show lancer at mid_mid_right
         show alien at mid_right
         show lunatic_cultist at mid_right_right
-        show arceus angry dusk at right 
+        show arceus angry dusk at right
         anno "test 33{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -714,7 +714,7 @@ label asset_debugger:
         show lancer flipped at mid_mid_right
         show alien dead at mid_right
         show lunatic_cultist flipped at mid_right_right
-        show arceus dusk flipped at right 
+        show arceus dusk flipped at right
         border_guard "test 34{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -1454,7 +1454,7 @@ label asset_debugger:
         show mean human hat dark at mid_left
         show cs at rotate_5
         $ transformtotal += 1
-        aria_alt "test 75{w=0.5}{nw}"
+        aria "test 75{w=0.5}{nw}"
         $ charactertotal += 1
     else:
         jump exit_debug
@@ -3128,7 +3128,7 @@ label asset_debugger:
         jump exit_debug
     if fun_value(255):
         $ bgtotal += 1
-        scene endingai 
+        scene endingai
         pause 0.1
     else:
         jump exit_debug
@@ -3374,180 +3374,180 @@ label asset_debugger:
     if fun_value(296):
         $ bgtotal += 1
         scene pencilroom
-        pause 0.1 
+        pause 0.1
     else:
         jump exit_debug
     if fun_value(297):
         $ bgtotal += 1
         scene pencilroomblur
-        pause 0.1 
+        pause 0.1
     else:
         jump exit_debug
     if fun_value(298):
         $ bgtotal += 1
         scene cult_con
-        pause 0.1 
+        pause 0.1
     else:
         jump exit_debug
     if fun_value(299):
         $ bgtotal += 1
         scene blue_branch
-        pause 0.1 
+        pause 0.1
     else:
         jump exit_debug
     if fun_value(300):
         $ bgtotal += 1
         scene renault_inside
-        pause 0.1 
+        pause 0.1
     else:
         jump exit_debug
     if fun_value(301):
         $ bgtotal += 1
         scene kuwait_city
-        pause 0.1 
+        pause 0.1
     else:
         jump exit_debug
     if fun_value(302):
         $ bgtotal += 1
         scene kuwait_explosion
-        pause 0.1 
+        pause 0.1
     else:
         jump exit_debug
     if fun_value(303):
         $ bgtotal += 1
         scene kuwait_hospital_inside
-        pause 0.1 
+        pause 0.1
     else:
         jump exit_debug
     if fun_value(304):
         $ bgtotal += 1
         scene kuwait_hospital_corridor
-        pause 0.1 
+        pause 0.1
     else:
         jump exit_debug
     if fun_value(305):
         $ bgtotal += 1
         scene kuwait_islandbase_leaders
-        pause 0.1 
+        pause 0.1
     else:
         jump exit_debug
     if fun_value(306):
         $ bgtotal += 1
         scene green_screen
-        pause 0.1 
+        pause 0.1
     else:
         jump exit_debug
     if fun_value(307):
         $ bgtotal += 1
         scene kingman_exterior
-        pause 0.1 
+        pause 0.1
     else:
         jump exit_debug
     if fun_value(308):
         $ bgtotal += 1
         scene kingman_interior
-        pause 0.1 
+        pause 0.1
     else:
         jump exit_debug
     if fun_value(309):
         $ bgtotal += 1
         scene kingman_museum_1
-        pause 0.1 
+        pause 0.1
     else:
         jump exit_debug
     if fun_value(310):
         $ bgtotal += 1
         scene kingman_platform_1
-        pause 0.1 
+        pause 0.1
     else:
         jump exit_debug
     if fun_value(311):
         $ bgtotal += 1
         scene kingman_platform_2
-        pause 0.1 
+        pause 0.1
     else:
         jump exit_debug
     if fun_value(312):
         $ bgtotal += 1
         scene kingman_train_arrive
-        pause 0.1 
+        pause 0.1
     else:
         jump exit_debug
     if fun_value(313):
         $ bgtotal += 1
         scene amtrak_arrive_close
-        pause 0.1 
+        pause 0.1
     else:
         jump exit_debug
     if fun_value(314):
         $ bgtotal += 1
         scene amtrak_sleeper_corridor
-        pause 0.1 
+        pause 0.1
     else:
         jump exit_debug
     if fun_value(315):
         $ bgtotal += 1
         scene amtrak_sleeper_interior_day
-        pause 0.1 
+        pause 0.1
     else:
         jump exit_debug
     if fun_value(316):
         $ bgtotal += 1
         scene amtrak_sleeper_interior_night
-        pause 0.1 
+        pause 0.1
     else:
         jump exit_debug
     if fun_value(317):
         $ bgtotal += 1
         scene amtrak_dining_car
-        pause 0.1 
+        pause 0.1
     else:
         jump exit_debug
     if fun_value(318):
         $ bgtotal += 1
         scene amtrak_dining_table
-        pause 0.1 
+        pause 0.1
     else:
         jump exit_debug
     if fun_value(319):
         $ bgtotal += 1
         scene moynihan_interior
-        pause 0.1 
+        pause 0.1
     else:
         jump exit_debug
     if fun_value(320):
         $ bgtotal += 1
         scene amtrak_cab
-        pause 0.1 
+        pause 0.1
     else:
         jump exit_debug
     if fun_value(321):
         $ bgtotal += 1
         scene amtrak_sleeper_open_bg
-        pause 0.1 
+        pause 0.1
     else:
         jump exit_debug
     if fun_value(322):
         $ bgtotal += 1
         scene amtrak_sleeper_open_fg
-        pause 0.1 
+        pause 0.1
     else:
         jump exit_debug
     if fun_value(323):
         $ bgtotal += 0
-        pause 0.1 
+        pause 0.1
     else:
         jump exit_debug
     if fun_value(324):
         $ bgtotal += 1
         scene utajsign
-        pause 0.1 
+        pause 0.1
     else:
         jump exit_debug
     if fun_value(325):
         $ bgtotal += 1
         scene vegasjade
-        pause 0.1 
+        pause 0.1
     else:
         jump exit_debug
     if fun_value(326):
@@ -3559,127 +3559,127 @@ label asset_debugger:
     if fun_value(327):
         $ movietotal += 1
         scene car background
-        pause 5.0 
+        pause 5.0
     else:
         jump exit_debug
     if fun_value(328):
         $ movietotal += 1
         scene car background night
-        pause 5.0 
+        pause 5.0
     else:
         jump exit_debug
     if fun_value(329):
         $ movietotal += 1
         scene car plains
-        pause 5.0 
+        pause 5.0
     else:
         jump exit_debug
     if fun_value(330):
         $ movietotal += 1
         scene car plains night
-        pause 5.0 
+        pause 5.0
     else:
         jump exit_debug
     if fun_value(331):
         $ movietotal += 1
         scene tvcar
-        pause 5.0 
+        pause 5.0
     else:
         jump exit_debug
     if fun_value(332):
         $ movietotal += 1
         scene drive_night
-        pause 5.0 
+        pause 5.0
     else:
         jump exit_debug
     if fun_value(333):
         $ movietotal += 1
         scene drive_day
-        pause 5.0 
+        pause 5.0
     else:
         jump exit_debug
     if fun_value(334):
         $ movietotal += 1
         scene csb1tube
-        pause 5.0 
+        pause 5.0
     else:
         jump exit_debug
     if fun_value(335):
         $ movietotal += 1
         scene train_start
-        pause 5.0 
+        pause 5.0
     else:
         jump exit_debug
     if fun_value(336):
         $ movietotal += 1
         scene train_in_tunnel
-        pause 5.0 
+        pause 5.0
     else:
         jump exit_debug
     if fun_value(337):
         $ movietotal += 1
         scene train_outside_tunnel
-        pause 5.0 
+        pause 5.0
     else:
         jump exit_debug
     if fun_value(338):
         $ movietotal += 1
         scene train_loop
-        pause 5.0 
+        pause 5.0
     else:
         jump exit_debug
     if fun_value(339):
         $ movietotal += 1
         scene the_tram
-        pause 5.0 
+        pause 5.0
     else:
         jump exit_debug
     if fun_value(340):
         $ movietotal += 1
         scene sign_closeup
-        pause 5.0 
+        pause 5.0
     else:
         jump exit_debug
     if fun_value(341):
         $ movietotal += 1
         $ renpy.movie_cutscene(woc)
-        pause 5.0 
+        pause 5.0
     else:
         jump exit_debug
     if fun_value(342):
         $ movietotal += 1
         $ renpy.movie_cutscene(where)
-        pause 5.0 
+        pause 5.0
     else:
         jump exit_debug
     if fun_value(343):
         $ movietotal += 1
         scene karaoke
-        pause 5.0 
+        pause 5.0
     else:
         jump exit_debug
     if fun_value(344):
         $ movietotal += 1
         scene bad_end_screen
-        pause 5.0 
+        pause 5.0
     else:
         jump exit_debug
     if fun_value(345):
         $ movietotal += 1
         scene bronson_hell
-        pause 5.0 
+        pause 5.0
     else:
         jump exit_debug
     if fun_value(346):
         $ movietotal += 1
         scene fun_cs_house
-        pause 5.0 
+        pause 5.0
     else:
         jump exit_debug
     if fun_value(347):
         $ movietotal += 1
         scene fun_hoh_sis
-        pause 5.0 
+        pause 5.0
     else:
         jump exit_debug
     if fun_value (348):
@@ -3841,7 +3841,7 @@ label asset_debugger:
         scene letterbox1
         pause 0.1
     else:
-        jump exit_debug 
+        jump exit_debug
     if fun_value (377):
         $ bgtotal += 1
         scene letterbox2
@@ -3859,19 +3859,19 @@ label asset_debugger:
         scene sepia_zoom
         pause 0.1
     else:
-        jump exit_debug   
+        jump exit_debug
     if fun_value (380):
         $ bgtotal += 1
         scene amtrak_top sil_black
         pause 0.1
     else:
-        jump exit_debug   
+        jump exit_debug
     if fun_value (381):
         $ bgtotal += 1
         scene hutchinson_stn
         pause 0.1
     else:
-        jump exit_debug   
+        jump exit_debug
     if fun_value (382):
         $ bgtotal += 1
         scene lupin_escape_1
@@ -3883,7 +3883,7 @@ label asset_debugger:
         scene hutchinson_stn_lights
         pause 0.1
     else:
-        jump exit_debug 
+        jump exit_debug
     if fun_value (384):
         $ bgtotal += 1
         scene lupin_escape_2
@@ -3905,7 +3905,7 @@ label asset_debugger:
     if fun_value(387):
         $ movietotal += 1
         scene train_brake
-        pause 5.0 
+        pause 5.0
     else:
         jump exit_debug
     if fun_value(388):
