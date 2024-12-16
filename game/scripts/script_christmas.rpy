@@ -3344,7 +3344,8 @@ label ce_banter:
     rich "Hey, nice movie!"
     wesley "Looks like you'll have to set that up all over again."
     show digi disappointed flipped
-    db "I got here early for {i}this?"
+    if d20 == 19:
+        db "I got here early for {i}this?"
     if d20 == 20:
         avgn "You know what's {i}bullll{/i}shit?" with hpunch
         avgn "This {i}movie, {nw}" with hpunch
@@ -3447,7 +3448,7 @@ label ce_banter:
     scene cs_bathroom with dissolve
     copguy "{i}Please{/i} tell me that's it. I can't bear this anymore."
     sheriff "Yep, I'm done!"
-    sheriff "Now, are you gonna help me wipe, or, what?"
+    sheriff "Now, are you gonna help me wipe, or what?"
     play sound sfx_walkie_on
     n "All of a sudden, Copguy's walkie goes off."
     walkie "Officer Copguy, we have a break-in at a house near your current location."
@@ -3727,9 +3728,9 @@ label ce_win_carrot:
     ed "Damn it! My roast is {i}ruined!"
     billy "Not to fear, Ed! I made my famous restaurant mini-burgers!"
     show ed festive
-    ed "You mean, steamed hams?"
+    ed "You mean steamed hams?"
     billy "Who the actual {i}fuck{/i} calls burgers \"steamed hams?\""
-    ed "It's a... regional dialect?"
+    ed "It's a... regional dialect."
     billy "..."
     billy "Steamed hams... for God's sake..."
     billy "You Texans are {i}crazy."
@@ -3867,7 +3868,7 @@ label ce_win_carrot:
     show arceus festive at right
     with dissolve
     pause 0.5
-    arceus "Yeah, so, to get the code done, I got drunk off a bottle of wine, and Digi and I chewed through it in a single night."
+    arceus "Yeah, so, to get the code done, I got drunk off a bottle of wine, then Digi and I chewed through it in a single night."
     aria "Damn. That's the best way to do it."
     show digi thinking
     digi "I mean, {i}I{/i} was sober the whole time. I just had to put up with {i}this{/i} fluffy bastard."
@@ -3879,7 +3880,7 @@ label ce_win_carrot:
     show arceus happy festive
     arceus "And, you {i}love{/i} putting up with this fluffy bastard."
     show arceus festive
-    digi "While that's true, I think half of that night was spent coding, and the other half was spent confusing the names of four different bald dudes."
+    digi "While that's true, I think {i}half{/i} of that night was spent coding, and the {i}other{/i} half was spent confusing the names of four different bald dudes."
     show arceus happy festive
     arceus "To be fair, that was hilarious."
     digi "You got me there."
@@ -3889,8 +3890,8 @@ label ce_win_carrot:
     cs "Hey guys! What are you all talking about?"
     digi "Oh, we were just discussing what developing the first game was li--{w=0.5}{nw}"
     show digi shock with hpunch
-    n "Aria shoots a look at Digi... well, as much as she can do that in her current form."
-    digi "Er, uh, just talking about a coding project we all worked on."
+    n "Aria shoots a look at Digi-- well, as much as a faceless entity can, anyway."
+    digi "Er, uh... just talking about a coding project we all worked on."
     cs "Oh, okay. Probably a bunch of stuff I wouldn't understand, then."
     show digi
     aria "Certainly not."
@@ -3917,7 +3918,7 @@ label ce_win_carrot:
     hide screen dxcom
     with dissolve
     pause 0.5
-    billy "So, then I said, \"That's a resturaunt mini burger {w=1.0}{i}no one{/i} loves!\""
+    billy "So, then I said, \"That's a restaurant mini burger {w=0.5}{i}no one{/i} loves!\""
     n "Obama lets out a hearty laugh."
     obama "Billy, you crack me up. You're one of America's greatest."
     billy "That means a lot coming from you, Mr. President!"
@@ -3925,11 +3926,12 @@ label ce_win_carrot:
     billy "The man in the suit always lurking behind you said if I do that, he'll kill me!"
     obama "Oh, he's just teasing. Isn't that right, Luther?"
     n "Luther says nothing and nods once."
+    pause 0.25
     billy "Well, then, thanks for the compliment, Barack!"
-    obama "You've gotta tell me the one about the cabinet full of cleaners again."
+    obama "You've {i}gotta{/i} tell me the one about the cabinet full of cleaners again."
     show cs christmas at center with moveinleft
     n "CS walks in to greet the unlikely friends."
-    cs "Obama, Billy! You two getting along?"
+    cs "Obama! Billy! You two getting along?"
     obama "Oh, CS, this guy's a {i}hoot!"
     billy "Barack here has some great stories, as well!"
     cs "Glad to hear it! Always love to see two people from different walks of life enjoying each other's company."
@@ -3939,7 +3941,7 @@ label ce_win_carrot:
     cs "Well, I gotta go make sure the others are getting along, too. You two have fun!"
     hide cs with moveoutright
     pause 0.5
-    billy "Right, so I said: \"You shittin' me?\""
+    billy "Right, so I said, \"You shittin' me?\""
     pause 0.5
 
 label ce_mike:
