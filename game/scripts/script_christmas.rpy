@@ -1287,10 +1287,10 @@ label ce_before_shopping:
     show cs coat happy
     cs "Let's check it out!"
 
-    hide screen dxcom
     hide cs
     hide shopping_cart
     with moveoutright
+    hide screen dxcom
     pause 0.5
 
     scene tgt_endcap with dissolve
@@ -1364,10 +1364,10 @@ label ce_before_shopping:
     n "CS grabs a can of his favorite flavor before moving on to the next aisle."
     show cs coat with determination
     pause 0.5
-    hide screen dxcom
     hide cs
     hide shopping_cart
     with moveoutright
+    hide screen dxcom
 
     scene tgt_shelf with dissolve
     show cs coat at mid_left
@@ -1429,6 +1429,7 @@ label ce_before_shopping:
         show genergy at manual_pos(0.55, 0.8) with MoveTransition(0.05)
         show genergy at manual_pos(0.4, 0.3) with Dissolve(0.05)
         show genergy at manual_pos(0.55, 0.8) with MoveTransition(0.05)
+    hide genergy with Dissolve(0.25)
 
     scene tgt_tree with dissolve
     show cs coat flipped at mid_right_right
@@ -1464,8 +1465,8 @@ label ce_before_shopping:
     cs "Oh, I'm so sorry!"
     show pomni concern
     pomni "Oh, uh... i-{w=0.1}it's o-okay! Y-{w=0.1}You probably just didn't see me--"
-    show pomni think
-    pomni "Wait, aren't you that guy from IKEA?"
+    show pomni flipped
+    pomni "... Wait, aren't you that guy from IKEA?"
     show cs coat scared
     cs "Huh?!"
     show cs coat worried
@@ -1486,7 +1487,7 @@ label ce_before_shopping:
     show pomni concern flipped
     pause 0.5
     show pomni concern
-    n "Pomni glances at her surroundings."
+    n "Pomni glances around her surroundings."
     show pomni flipped
     pomni "... Shopping to do! Yeah! I just love, uh... capitalism?"
     show cs coat worried
@@ -2102,16 +2103,22 @@ label ce_checkout:
     show spent_target at t_fake_rpg_text(0.5, 0.1, 0.5)
     n "CS pays with his card before heading out to the parking lot."
     hide cs_wallet with dissolve
+    show cs coat at mid_mid_right with move
+    show target_bags at right with dissolve
+    $ collect("target_bags")
+    show cs coat flipped
+    show target_bags at manual_pos(0.4, 0.7, 0.5) with move
+    hide target_bags with dissolve
     show cs coat flipped at left with move
     scene tgt_checkout_finish
     show cs coat flipped at left
     show shopping_cart at manual_pos(0.4, 1.1, 0.5)
     show cs coat with determination
     pause 0.25
-    hide screen dxcom
     hide cs
     hide shopping_cart
     with moveoutright
+    hide screen dxcom
 
     stop sound fadeout 3.0
     stop sound2 fadeout 3.0
@@ -2154,7 +2161,6 @@ label ce_aftershop:
     pause 2.0
     show cs flipped at mid_right behind cs_kitchen_fg
     show target_bags at right
-    $ collect("target_bags")
     with moveinright
     n "When CS gets home, he walks to the kitchen to put groceries away."
     # fuck it, i am NOT animating this. if someone else wants to move eaech item, be my guest - tate
@@ -2205,7 +2211,16 @@ label ce_aftershop:
         $ achievement_manager.unlock("shitical")
     elif d20 == 20:
         $ achievement_manager.unlock("critical")
-    cs "Hey, look, I rolled a [d20]!"
+
+    # grammar fix handler
+    python:
+        if d20 == 8 or d20 == 11 or d20 == 18:
+            next_line = substitutions("Hey, look, I rolled an "+str(d20)+"!")
+        else:
+            next_line = substitutions("Hey, look, I rolled a "+str(d20)+"!")
+
+    cs "[next_line]"
+
     hide d20 with dissolve
     pause 1.0
 
@@ -3072,7 +3087,7 @@ label ce_introductions:
         show cs christmas
     cs "I can't wait for dinner! I hope you all have a great time cooking!"
     show cs christmas
-    cs "I'm gonna go see how the others are doing."
+    cs "I'll be in the living room for a bit if you need me."
     show cs christmas flipped with determination
     hide cs with moveoutleft
     pause 0.5
@@ -3131,7 +3146,7 @@ label ce_introductions:
     cs "This {i}is{/i} a Christmas party, after all. Let's try to get along."
     show cs christmas flipped
     show digi flipped
-    cs "I'm gonna go check on a few more people."
+    cs "In the meantime, I'm gonna go see if anyone else has arrived yet."
     hide cs with moveoutleft
     pause 0.5
 
@@ -3150,7 +3165,6 @@ label ce_introductions:
     cs "Ah, it's okay. I'm just happy you made it to the party."
     show arceus festive flipped
     arceus "We'll come back around when the main event starts."
-    # TODO: redo these sprites' positioning once they're no longer placeholder sprites
     show elizabeth at right
     show anne at mid_right
     show grace at mid_mid_right
@@ -3234,8 +3248,10 @@ label ce_banter:
         copguy "I know, this party is great, right?"
         sheriff "{i}No!{/i} I need to take a {nw}" with vpunch
         extend "{i}shit!" with vpunch
+    pause 0.5
     copguy "Okay, do you want me to tell the whole house?"
-    sheriff "Very funny, smartass! I need you to go with me." with vpunch
+    sheriff "Very funny, {nw}"
+    extend "{i}smartass!{/i} I need you to go with me." with vpunch
     sheriff "My legs don't work, remember?"
     copguy "Damn it... this sucks."
     copguy "Alright, let's go."
@@ -3243,7 +3259,7 @@ label ce_banter:
     show copguy festive flipped with determination
     pause 0.5
     hide copguy
-    hide sheriff
+    show sheriff flipped at manual_pos(1.5, 1.0, 1.0)
     with moveoutright
     scene cs_bathroom with dissolve
     show copguy festive flipped at left
@@ -3285,10 +3301,10 @@ label ce_banter:
     show copguy festive flipped at mid_mid_left
     show sheriff festive flipped at center
     with move
-    hide screen dxcom
     hide copguy
     hide sheriff
     with dissolve
+    hide screen dxcom
     play sound sfx_house_door_close
     scene cs_bathroom
     copguy "Alright, make it quick! I don't wanna be in here all night!"
@@ -3483,10 +3499,8 @@ label ce_banter:
     show copguy festive
     copguy "I'll just be a moment! Don't move."
     play sound sfx_house_door_close
-    scene cs_bathroom
+    show cs_bathroom behind copguy # don't use scene here or it'll fade weirdly
     show copguy festive at mid_right
-    pause 0.5
-    show copguy festive flipped with determination
     show copguy festive flipped at offscreenright with { "master" : MoveTransition(0.25) }
     sheriff "God {i}damn{/i} it! {nw}" with vpunch
     sheriff "God {i}damn{/i} it! {fast}{cshake}Get {i}back{/i} here!" with vpunch # extend does not work with custom tags sadly - tate
@@ -3719,7 +3733,7 @@ label ce_win_carrot:
     show cs scared christmas flipped at mid_offscreen_right
     show obama festive at right
     show ed festive flipped at center behind cs_kitchen_fg
-    with easeinleft
+    with { "master": easeinleft }
     ed "{cshake}NOOOO!" with hpunch
     ed "{cshake}My turkey!" with vpunch
     play sound sfx_oven_open
@@ -3752,12 +3766,13 @@ label ce_win_carrot:
     billy "You Texans are {i}crazy."
     michael "I also have my mashed potatoes!"
     cs "Well, at least we'll still have {i}some{/i} kind of Christmas dinner."
-    hide ed
-    hide burnt_turkey
+    show ed festive at offscreenleft
+    show burnt_turkey at manual_pos(-0.3, 0.4)
     show obama festive at center
     show cs christmas flipped at right
     with moveoutleft
     n "Ed sheepishly heads outside to throw away the ruined turkey." # i changed this bc it's a huge turkey and it would fill the whole trash - tate
+    pause 0.5
     cs "I guess, as soon as the President's cake is done, we can all sit down to eat."
     cs "I'm gonna go check up on the others in the meantime."
     hide cs with moveoutleft
@@ -3861,7 +3876,7 @@ label ce_win_carrot:
     show copguy festive at mid_right with move
     pause 0.25
     hide copguy
-    hide sheriff
+    show sheriff at manual_pos(-0.2, 1.0, 1.0)
     with moveoutleft
     grace "Finally!"
     show grace worried
@@ -3931,8 +3946,8 @@ label ce_win_carrot:
     show cs_kitchen_fg
     show obama festive flipped at mid_left behind cs_kitchen_fg
     show billy festive at mid_right behind cs_kitchen_fg
-    hide screen dxcom
     with dissolve
+    hide screen dxcom
     pause 0.5
     billy "So, then I said, \"That's a restaurant mini burger {w=0.5}{i}no one{/i} loves!\""
     n "Obama lets out a hearty laugh."
@@ -4544,7 +4559,7 @@ label ce_dinner:
     show cs christmas flipped
     cs "Don't you guys mean \"unleaded plus\"?"
     digi "Yeah! See? {i}CS{/i} knows!"
-    k22 "No, it's called \"super unleaded,\" {i}and{/i} it's cheaper than regular unleaded!"
+    k22 "No, it's called \"super unleaded\", {i}and{/i} it's cheaper than regular unleaded!"
     digi "But it's {i}not!{/i} Why {i}would{/i} it be?!"
 
     scene night_bg
@@ -4556,7 +4571,7 @@ label ce_dinner:
     show wesley festive at mid_right
     show rich festive at mid_offscreen_right
     show right_table at center
-    ed "Are you thinking of \"premium unleaded?\""
+    ed "Are you thinking of \"premium unleaded\"?"
 
     scene night_bg
     show left_room at left
@@ -4591,7 +4606,7 @@ label ce_dinner:
     show k22 angry at center
     show digi disappointed flipped at manual_pos(0.175, 0.65, 0.5)
     show left_table at left
-    k22 "It's called super unleaded, it has ethanol in it, and, it's better{w=0.15} for{w=0.15} your{w=0.15} {i}car!{/i}"
+    k22 "It's called \"super unleaded\", it has ethanol in it, and, it's better{w=0.15} for{w=0.15} your{w=0.15} {i}car!{/i}"
     k22 "Every gas station we've been to, it's {i}always{/i} regular, super, the third option, and diesel!"
     digi "I {i}still{/i} think you may be thinking of premium."
     k22 "No, I'm-- Give me a second, I have a picture of this on my phone."
@@ -4604,7 +4619,7 @@ label ce_dinner:
     show gas_prices at mid_right:
         xzoom 0.0
         linear 0.25 xzoom 1.0
-    n "K-22 flips their phone around to show the table an image."
+    n "K-22 flips their phone around to show the table a photo."
     show digi shock flipped
     show cs scared christmas flipped
     digi "What?! {i}How?" with vpunch
@@ -5687,8 +5702,8 @@ label ce_lights_out:
     show flashlight_held at manual_pos(0.2, 0.7, 0.5):
         zoom 0.5
     with moveinleft
-    cs "Found it!"
     hide screen dxcom
+    cs "Found it!"
     show cs christmas at right
     show flashlight_held at manual_pos(0.8, 0.7, 0.5)
     with move
@@ -6497,8 +6512,8 @@ label ce_billy_time:
     show flashlight_held at manual_pos(0.2, 0.7, 0.5):
         zoom 0.5
     show arceus festive at right
-    hide screen dxcom
     with dissolve
+    hide screen dxcom
     pause 0.5
     show billy festive at mid_right with moveinright
     billy "Wait! Everyone, hold on!"
@@ -7063,8 +7078,8 @@ label ce_roof_moment:
     else:
         n "Santa's sleigh begins its descent, slowing down to a crawl as the reindeer gently touch down onto the snow."
     stop sound fadeout 0.5
-    play sound2 sfx_snow_walk
-    pause 0.5
+    play sound2 sfx_snow_walk fadein 3.0
+    pause 3.0
     play music snow_blind
     music snow_blind
     show santa at right with moveinright
@@ -7094,7 +7109,7 @@ label ce_roof_moment:
     santa "..."
     santa "Mr. President? What are you doing here?"
 
-    show billy festive at manual_pos(0.5, 0.7) behind obama:
+    show billy festive flipped at manual_pos(0.5, 0.7) behind obama:
         xanchor 0.5
         yanchor 1.0
         zoom 0.5
@@ -7130,16 +7145,17 @@ label ce_roof_moment:
     pause 0.25
 
     obama "I was invited to my good friend CS' Christmas party, of course!"
-    santa "Ho ho, well..."
+    santa "Ho, ho! Well..."
     hide obama with moveoutright
+    pause 0.5
     n "Santa looks around at the crowd."
-    hide screen dxcom
     show k17
     show k22
     with determination
     hide k17
     hide k22
     with moveoutleft
+    hide screen dxcom
     santa "Ed? Richard? Welsey?"
 
     show billy festive at manual_pos(0.5, 0.7) behind ed:
@@ -7165,10 +7181,10 @@ label ce_roof_moment:
     ed "Yes, sir?"
     pause 0.5
 
-    santa "Keep up the good work! Might even need some foundation repair at my workshop very soon! Ho ho!"
+    santa "Keep up the good work! Might even need some foundation repair at my workshop very soon! Ho, ho!"
     show rich festive flipped at mid_mid_left with moveinleft
     show wesley festive flipped at mid_left with moveinleft
-    rich "Really!?"
+    rich "Really?!"
     ed "We appreciate the offer, Mr. Claus. Let's keep in touch!"
 
     hide ed
@@ -7436,6 +7452,7 @@ label ce_roof_moment:
     santa "I should also make sure my steed didn't drown in car cleaner..."
     cs "Good luck to you, Santa!"
     hide santa with moveoutleft
+    pause 0.5
     show copguy festive dark
     show k17 happy dark
     k17 "CS? Did you {i}see{/i} that?!"
@@ -7496,7 +7513,7 @@ label ce_roof_moment:
     show sheriff festive dark flipped
     with determination
     pause 0.5
-    hide sheriff
+    show sheriff festive dark flipped at manual_pos(1.5, 1.0, 1.0)
     hide copguy
     with moveoutright
     pause 1.0
@@ -7548,6 +7565,7 @@ label ce_roof_moment:
     k22 "Alrighty, well, thanks."
     k22 "See you later, Billy."
     billy "See ya!"
+    pause 0.25
     show billy festive dark
     show k22 flipped dark
     with determination
