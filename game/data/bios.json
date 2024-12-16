@@ -35,7 +35,7 @@
             "Festive": "images/characters/anno/anno_festive.png"
         },
         "quote": "Welcome to the internet",
-        "bio": "Anno is one of CS' best friends. He's always there to help CS out during livestreams, and when he needs help decorating. He's also an avid fan of Nirvana."
+        "bio": "Anno is one of CS' best friends. He's always there to help CS out with livestreams, audio editing... and when he needs help decorating, too, apparently. He's also an avid fan of Nirvana."
     },
     "arceus": {
         "full_name": "Arceus3251",
@@ -48,7 +48,7 @@
             "Festive: Worried": "images/characters/arc/worried_festive.png"
         },
         "quote": "I'm literally a hacker, guys! uwu",
-        "bio": "The master hacker and technician himself, Arceus has a lot of tricks up his sleeve. He could do anything he wanted, if he could only be arsed. Despite being Jewish, he's still excited to celebrate Christmas with all of his friends. Bonus points that Haunakah and Christmas overlap this year!"
+        "bio": "The master hacker and technician himself, Arceus has a lot of tricks up his sleeve. He could do anything he wanted, if he could only be arsed. Despite being Jewish, he's still excited to celebrate Christmas with all of his friends. As a bonus, Hanukkah and Christmas just happen to overlap this year!"
     },
     "aria": {
         "full_name": "Aria",
@@ -57,14 +57,14 @@
             "Festive": "images/characters/aria_festive.png"
         },
         "quote": "Yeah, that sounds about right.",
-        "bio": "Aria knows her shit. Whether it's book smarts or street smarts, she's got it all. Despite her mindbogglingly busy schedule, she always makes some time for her friends from DPN. Luckily, she could make it to this party, too!"
+        "bio": "Aria knows her shit. Whether it's book smarts or street smarts, she's got it all. Despite her mindbogglingly busy schedule, she always makes some time for her friends from DPN. Luckily, she could make it to this party, too. Her ability to teleport is coming in clutch!"
     },
     "avgn": {
         "full_name": "James Rolfe",
         "pronouns": "(he/him)",
         "sprites": { "Default": "images/characters/avgn.png" },
         "quote": "This is a huge load of fuck shit!",
-        "bio": "More commonly known as {i}The Angry Video Game Nerd{/i}, he plans to take you back to the past, to play the shitty games that suck ass. He loves to scream and swear, and fucking despises Bugs Bunny.",
+        "bio": "More commonly known as {i}The Angry Video Game Nerd{/i}, he plans to take you back to the past, to play the shitty games that suck ass. He loves to scream and swear, and he fucking {i}despises{/i} Bugs Bunny.",
         "ce": true
     },
     "billy": {
@@ -74,8 +74,7 @@
             "Festive": "images/characters/billy/festive.png"
         },
         "quote": "Hi, Billy Mays here!",
-        "bio": "Billy perfected the art of the salespitch 10 years ago. He is a master of the infomerical. Since finding success, he has moved on to greater horizons. He has been seen recently travelling the country, living off the various gadgets he sold in the past.",
-        "dx_bio": "This is the Billy that came after the Billy that made his mark. Throughout history, Perfect Billy would assign a host to be \"Billy Mays\". Although most of us only know the one from the infomericals, when he passed away, this Billy took his place."
+        "bio": "Billy loves a good holiday get-together! He's been itching to make a big batch of Big City Sliders for some time now. What better place to do that than at his good friend CS' Christmas party?"
     },
     "blank": {
         "full_name": "Blank Named",
@@ -84,14 +83,14 @@
             "Festive": "images/characters/blank_festive.png"
         },
         "quote": "I Am Catboy Musical",
-        "bio": "Ever needed music that's also a shitpost? No? Well, too bad, because Blank has ya covered. He {i}can{/i} make regular music, but it isn't {i}Blank{/i} music if it doesn't sample catgirl moans."
+        "bio": "Ever needed music that's also a shitpost? No? Well, too bad, because Blank has ya covered. They {i}can{/i} make regular music, but it isn't {i}Blank{/i} music if it doesn't sample catgirl moans. They're a little annoyed about having to share the sound system with Nova, though."
     },
     "carguy": {
         "full_name": "Carguy",
         "pronouns": "(he/him)",
         "sprites": { "Default": "images/characters/carguy.png" },
         "quote": "Nice car!",
-        "bio": "Carguy isn't your average car salesman. He isn't even a car salesman at all! He's actually an advertiser for a product called \"Crotch Doctor\". Now, what does this have to do with cars? Do cars even have crotches? Does Carguy even know what a car {i}is?{/i}"
+        "bio": "No matter how high the snow piles up, Carguy has just the product for you! He'll gladly demonstrate Crotch Doctor's amazing snow-melting technology... as long as he remembers to pick up some more from Walmart's Auto Center before going door-to-door."
     },
     "copguy": {
         "full_name": "Copguy",
@@ -100,7 +99,7 @@
             "Festive": "images/characters/copguy/copguy_festive.png"
         },
         "quote": "You're headin' to the slammer, bucko.",
-        "bio": "Copguy is both the good cop and the bad cop. You think all cops are bad? Copguy does not care. Nothing will stop him from completing his final mission."
+        "bio": "Copguy knows that crime is statistically higher on Christmas Eve, so he really just wanted to keep working through the holiday. However, he has no choice but to (sometimes maliciously) comply with his boss' demands."
     },
     "cs": {
         "full_name": "cs188",
@@ -147,7 +146,7 @@
             "Coat + Hat: Worried": "images/characters/cs/coat_hat/worried.png"
         },
         "quote": "Hey guys, CS here!",
-        "bio": "cs188 is the main dude here. His name is even in the title! CS makes YTPs in his spare time. He occasionally streams as well, however, whether he'll actually show up on time is up for debate. If you were wondering why this guy is wearing a cat maid dress, we really don't know either at this point. Just let the man be himself.",
+        "bio": "The main man himself! He's back to get all his friends together and spread some holiday cheer. He even bought a new outfit for the occasion!",
         "flip": true
     },
     "db": {
@@ -172,7 +171,7 @@
             "Thinking": "images/characters/digi/thinking.png"
         },
         "quote": "But, here's the thing though, right?",
-        "bio": "Digi showed up to this party in a spaceship. What were they doing in {i}space?{/i} What {i}does{/i} Digi do on a daily basis? The answer is \"too much stuff, really.\" With their cybernetic implants and knowledge of technology, they're certain to bring a lot of fun in a smol package."
+        "bio": "Digi showed up to this party in a spaceship. What were they doing in {i}space?{/i} What {i}does{/i} Digi do on a daily basis? The answer is \"too much stuff, really.\" They brought their new projector for a holiday movie night, but they've never actually successfully set it up before."
     },
     "ed": {
         "full_name": "Ed",
@@ -181,7 +180,7 @@
             "Festive": "images/characters/hohsis/ed_festive.png"
         },
         "quote": "We make sure to get the JoJ done right, the first time.",
-        "bio": "As the CEO of HoH SiS, he makes sure the crew gets the JoJ done right, no matter the cost. He always looks out for his fellow workers. He holds a grudge against CS, and is determined to get his revenge.",
+        "bio": "The CEO of HoH SiS. He agreed to come to CS' Christmas party in hopes of drumming up some good PR for the company, especially after the incident. Perhaps he'll even pick up some new clients among CS' friends.",
         "zoom": 0.85
     },
     "eliza": {
@@ -202,7 +201,7 @@
         "pronouns": "(he/him)",
         "sprites": { "Default": "images/characters/ges.png" },
         "quote": "weenor :)",
-        "bio": "Ges is a massive history buff. He loves to tell stories about past events, especially of World War I and II. While he'd love to go out and visit historical landmarks, he's stuck working at the shoe store for now."
+        "bio": "As seen on TV. This lanky figure is here to have a good time and talk about history. Quite fun, eh? He came all the way from Canada alongside Nova. He {i}definitely{/i} knows cs188, too. Totally. So, that's a plus!"
     },
     "grace": {
         "full_name": "Grace",
@@ -268,7 +267,7 @@
             "Festive": "images/characters/kitty_festive.png"
         },
         "quote": "So, there's this plushie I saw.",
-        "bio": "Kitty is a fursuit maker from the United Kingdom. She has been in a relationship with Arceus for many years. While she's quiet around new people, she becomes the life of the party around friends. She constantly gravitates towards Squishmallows."
+        "bio": "Arceus' partner of many years. While she's happy to meet Arc's friends, she didn't expect there to be quite so many of them. She just wants to find a quiet corner to chill out in."
     },
     "linus": {
         "full_name": "Linus Sebastian",
@@ -300,7 +299,7 @@
             "Festive: Shocked": "images/characters/mean/meanhumanshockedfestive.png"
         },
         "quote": "Damn, you're all so {i}short{/i} from up here.",
-        "bio": "He's a pirate by blood and a lover of trains by heart. Mean has the ability to swap between this and his sea urchin form at will. Now that he's got a new job that he can be proud of, he wants to present as human a little more often.\n\nBecause Mean completed all of his job training as a sea urchin, however, it has been taking some time for his coworkers to still be able to recognize him. He hopes that wearing the one-of-a-kind hat that Tate gave him will help ease this transition.",
+        "bio": "Mean is a close friend of Tate. He loves trains and wants to share the joy of railroading with everyone he meets. He {i}also{/i} loves Christmas, mostly because of the gifts and food, but also because he can cosplay as Santa. He can't wait to watch {i}The Polar Express{/i} again.",
         "dx": true,
         "zoom": 0.9
     },
@@ -311,8 +310,7 @@
             "Festive": "images/characters/michael_festive.png"
         },
         "quote": "I love chocolate cake!",
-        "bio": "Mr. Rosen is a poem fanatic. He's got a story to tell whenever you meet him. This man will pull the craziest tale from nothing in a matter of seconds. How does he do this? What secret talent does he have? All that is certain is that he needs his chocolate cake.",
-        "dx_bio": "The prophet that predicted CS' life, as well as the end of the world."
+        "bio": "This esteemed poet just {i}loves{/i} hot food, especially a well-mashed potato!"
     },
     "mike": {
         "full_name": "Mike",
@@ -327,7 +325,7 @@
         "pronouns": "(they/them)",
         "sprites": { "Default": "images/characters/nova.png" },
         "quote": "k.",
-        "bio": "Nova is a former member of the CScord and was one of CS' earliest followers. They were known for being pretty loud back then, but, nowadays, they are making music under another alias. They are also very talented at rhythm games.",
+        "bio": "After getting CS' invitation, Nova figured that, sure, maybe they could visit CS one more time. They've been mostly excited to show off their newest track to a bunch of people. They're not too thrilled with having to share the spotlight with Blank, though.",
         "zoom": 0.85
     },
     "obama": {
@@ -338,7 +336,7 @@
             "Festive: Angry": "images/characters/obama_festive_angry.png"
         },
         "quote": "Hello, my fellow Americans!",
-        "bio": "As the 44th President of the United States, he's a pretty chill dude, even while under the stress of governing such a massive country. He apparently loves to play video games with his fellow candidates. For some reason, people can't figure out what his last name is."
+        "bio": "A jolly politician enjoying his... {i}fourth{/i} term? Not sure anyone's even still counting at this point. While the president was surprised to have been invited to CS' party, he is more than happy to have an excuse to step out of the White House for a few hours. He also makes a {i}mean{/i} carrot cake."
     },
     "pomni": {
         "full_name": "Pomni",
@@ -351,7 +349,7 @@
             "Thinking": "images/characters/pomni/pomni_think.png"
         },
         "quote": "There's got to be an exit somewhere...",
-        "bio": "Pomni has been going insane ever since she was brought into the Amazing Digital Circus not too long ago. Somehow, she made it into an IKEA and got stuck there. She honestly should have just stayed at the circus."
+        "bio": "After escaping from IKEA's flagship location in Sweden, Pomni has found herself trapped in a Target in the US. She's secretly grateful to have seen a familiar face, even if CS can't remember her..."
     },
     "rich": {
         "full_name": "Richard",
@@ -360,7 +358,7 @@
             "Festive": "images/characters/hohsis/rich_festive.png"
         },
         "quote": "Yes, I'm happy now.",
-        "bio": "Richard doesn't want as much trouble from CS as his coworkers do, but he's prepared to act if he must. Richard just wants to go home and chill after a long day of hard work.",
+        "bio": "In spite of everything that's happened, Richard doesn't really hold a grudge towards CS. He'd probably have come to this party even {i}if{/i} his boss didn't tell him to.",
         "zoom": 0.85
     },
     "round": {
@@ -384,7 +382,7 @@
             "Festive": "images/characters/sheriff_festive.png"
         },
         "quote": "I need pictures of CS, ASAP!",
-        "bio": "Your hardened, toughened-up sheriff. Not too much to say about him. He has an air about him that makes you not want to end up on his bad side."
+        "bio": "Normally, the Sheriff enjoys the holidays. He was really looking forward to this party, too, but today just {i}isn't{/i} his day, no thanks to Copguy. Maybe he should have just stayed at work and taken the holiday bonus."
     },
     "tgt_worker": {
         "full_name": "Target Employee",
@@ -420,8 +418,7 @@
             "Festive: Sheepish Blush": "images/characters/tate/festive_tatesheepishblush.png"
         },
         "quote": "a",
-        "bio": "Better known as Tate, alleZSoyez is a close friend of CS. Impatient, excitable, and always hungry, Tate will try their best to help their friends whenever they can... as long as they get a tasty cheeseburger and a cozy nap on the floor at the end. While Tate isn't good at fighting or driving, when all else fails, they can always let out a good {i}screm!{/i}",
-        "dx_bio": "While known to stay eerily calm during world-ending crises, when it comes to more mundane stressors, Tate becomes a bit of a {sc=1}quick-tempered anxiety-riddled control\nfreak.{/sc}"
+        "bio": "Tate {i}hates{/i} Christmas. They'd much rather be curled up taking a nap right now. Unfortunately, they love their friends more than they hate the holidays, so Mean was able to convince Tate to attend the party. They {i}really{/i} wish that Mean would've left the fake beard on the train, though."
     },
     "wesley": {
         "full_name": "Wesley",
@@ -430,6 +427,6 @@
             "Festive": "images/characters/hohsis/wesley_festive.png"
         },
         "quote": "Do it all over again.",
-        "bio": "Wesley is Ed's right-hand man. He's armed, courageous, and most importantly, he will get the JoJ done 15 times over again if he has to."
+        "bio": "After the incident at HoH SiS, Wesley needed back surgery. He's recovering well, but the winter cold doesn't play too well with the new hardware in his spine. It's understandable that he'd be a bit ornery. If it wasn't for Ed's insistence, Wesley would have probably just stayed home."
     }
 }
