@@ -4094,7 +4094,7 @@ label ce_mike:
     cs "Huh?!" with vpunch
     show cs disappointed christmas
     cs "Oh, sorry. I must have dozed off."
-    cs "I had this {i}insane{/i} dream, and there was this pizza guy..."
+    cs "I had this {i}insane{/i} dream! There was this pizza guy--"
     wesley "Speaking of pizza, should we have dinner now? I'm starving."
     cs "Yeah, that's a great idea. Let me go see if everything is ready."
     $ achievement_manager.unlock("cheesy_dream")
@@ -4283,7 +4283,7 @@ label ce_dinner:
     show k22 at mid_offscreen_left
     show k17 at manual_pos(-0.5, 0.6, 0.5)
     show left_table
-    cs "Well, again, I hope I've been able to make it up to you guys, mostly."
+    cs "Well, again, I hope I've been able to mostly make it up to you guys."
 
     scene night_bg
     show right_room at center
@@ -4626,7 +4626,7 @@ label ce_dinner:
     show digi flipped at manual_pos(0.175, 0.65, 0.5)
     show left_table at left
     k22 "It's for cars made after 2001, that's all I know."
-    mean "Man, fuck gasoline, I just use good old-fashioned {i}steam power,{/i} baby!"
+    mean "Man, {i}fuck{/i} gasoline! I just use good old-fashioned {i}steam power,{/i} baby!"
 
     show digi sad flipped
     digi "Hey, CS, did K-17 ever come back from the bathroom?"
@@ -4650,7 +4650,7 @@ label ce_dinner:
     k17 "Mixer... {i}died...!"
     show cs christmas worried
     show digi sad flipped
-    cs "Uh oh."
+    cs "Uh-oh."
     digi "Shiiiiit."
     show cs christmas disappointed
     cs "Yeah, Mixer shut down some time ago now... sorry about that."
@@ -5470,7 +5470,7 @@ label ce_preclimax:
     tate "Buying one of these was {i}actually{/i} life-changing!"
     show tate festive flipped
     tate "You can throw everything in, turn it on, go relax..."
-    tate "Then, a while later, you have hot food!"
+    tate "Then, a while later, you have a hot meal!"
     show tate sheepish festive flipped
     tate "No standing in front of a stove and throwing your back out, no burning yourself on an oven rack, no slamming your shin into the oven door, no steam burns-- {nw}"
     # these are all REAL injuries i have sustained in the kitchen... many times... - tate
@@ -5599,7 +5599,7 @@ label ce_lights_out:
     arceus "She said she was going to grab more food, but it's been 20 minutes since..."
     cs "Sure thing. I'll let you know."
     pause 2.0
-    cs "The door to the basement should be here somewhere..."
+    cs "The door to the basement should be here, somewhere..."
     pause 0.5
     n "CS feels around the wall."
     n "Finally he finds the doorknob."
@@ -5625,15 +5625,15 @@ label ce_lights_out:
         grace "You're squeezing my {i}head!" with vpunch
         cs "Oops, sorry!"
         cs "I'm just trying to get to the basement!"
-        grace "Let me move before you try breaking my head again."
+        grace "Let me move before you snap my head clean off!"
     pause 0.5
     play sound sfx_house_door_open
     pause 1.0
-    n "Slowly but surely, CS carefully makes his way down the stairs."
+    n "Slowly, but surely, CS carefully makes his way down the stairs."
     pause 1.0
-    cs "Alright, now, I just need to find the breaker..."
+    cs "Alright... now, I just need to find the breaker..."
     pause 0.5
-    n "CS feels around and manages to pick up a flashlight from the table."
+    n "CS manages to locate a flashlight on a table."
 
     scene cs_basement
     show cs christmas at center
@@ -5734,7 +5734,7 @@ label ce_lights_out:
     show cs christmas
     cs "Nope, but I found Kitty!"
     cs "She's relaxing in the basement since her head was hurting."
-    arceus "That makes sense. I'll go talk to her here soon."
+    arceus "That makes sense. I'll go check on her soon."
     eliza "I see you found a torch."
     cs "Yeah, it was just sitting on a table downstairs. I'm so thankful it was there."
     show arceus festive flipped
@@ -5745,7 +5745,7 @@ label ce_lights_out:
         zoom 0.5
     with dissolve
     eliza "Just make sure to bring it back when the lights come on."
-    arceus "Got it."
+    arceus "Roger."
     show flashlight_held flipped as second at manual_pos(0.5, 0.7, 0.5) behind cs with move
     arceus "Thanks!"
     pause 0.5
@@ -5789,7 +5789,7 @@ label ce_lights_out:
     anno "My phone's about to die."
     cs "I'm gonna check outside and see how bad it is."
     k22 "Oh, yeah. I was thinking about trying the same thing, but I couldn't find the door."
-    cs "If we can get outside, we might be able to dig our vehicles out."
+    cs "If we can get outside, maybe we can all warm up in our cars."
     cs "I'll be back in a sec."
     hide cs
     hide flashlight_held
@@ -5865,8 +5865,8 @@ label ce_lights_out:
     show digi shock
     show tate shock festive flipped
     show k17 shock
-    anno "{i}All{/i} snow?!"
     show mean human shocked festive
+    anno "{i}All{/i} snow?!"
     mean "The door?"
     k17 "It's?"
     digi "Are we trapped in here?!"
@@ -5960,7 +5960,7 @@ label ce_point_click:
         cs "Like this?"
         show mean human shocked festive
         mean "That's... your flashlight."
-        mean "How the {i}fuck{/i} did you point your flashlight {i}at{/i} your flashlight?"
+        mean "How the {i}fuck{/i} did you point your flashlight... {i}at{/i} your flashlight?"
 
         jump .click_menu
 
@@ -6046,11 +6046,11 @@ label ce_after_hatch:
     cs "Yeah, can you pull it open?"
     play sound sfx_snowfall volume 3.0
     with vpunch
+    show cs scared christmas
     show snow_pile at center with easeintop
     pause 1.0
     n "As Mean yanks on the hatch, it bursts open downwards!"
     n "A huge pile of snow falls onto the attic floor."
-    show cs scared christmas
     pause 0.5
     cs "That is... a {i}lot{/i} of snow."
     mean "C'mon, let's get up here."
