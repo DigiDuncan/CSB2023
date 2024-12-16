@@ -18,8 +18,6 @@ init python:
     else:
         max_fun_label = "Off"
 
-    awawa_chance_label = f"{preferences.awawa_chance}%" if preferences.awawa_mode else "Off"
-
     def change_bounciness(new_bounciness):
         global bounciness_label
         preferences.csbounciness = new_bounciness
@@ -44,12 +42,6 @@ init python:
             max_fun_label = "Unobtrusive"
         else:
             max_fun_label = "Off"
-        renpy.restart_interaction()
-
-    def change_awawa_chance(new_awawa_chance):
-        global awawa_chance_label
-        preferences.awawa_chance = new_awawa_chance
-        awawa_chance_label = f"{preferences.awawa_chance}%" if preferences.awawa_mode else "Off"
         renpy.restart_interaction()
 
 ################################################################################
@@ -375,7 +367,7 @@ screen navigation():
         textbutton _("Extras") action ShowMenu("category_welcome")
 
         if main_menu:
-            
+
             textbutton _("Replay Intro") action Start("splashscreen")
 
         textbutton _("CSettings") action ShowMenu("preferences")

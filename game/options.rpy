@@ -134,8 +134,6 @@ default preferences.streamer_mode = False
 default preferences.dyslexia_mode = False
 default preferences.developer_commentary = True
 default preferences.developer_mode = True
-default preferences.awawa_mode = False
-default preferences.awawa_chance = 100
 
 default preferences.text_cps = 40.0
 
