@@ -1152,19 +1152,26 @@ label ce_before_shopping:
     play sound sfx_shopping_cart
     n "CS grabs a cart before venturing further into the store."
     pause 1.0
-    show cs coat at offscreenleft
-    show shopping_cart at manual_pos(-0.2, 1.1, 0.75)
+    show cs coat at manual_pos(-0.5, 1.0, 1.0)
+    show shopping_cart at manual_pos(-0.3, 1.1, 0.5)
+    with determination
 
-    show shopping_cart at Move((-0.2, 0.6), (1.1, 0.6), 0.5, repeat=False, bounce=False, xanchor="left", yanchor="top")
-    hide cs with moveoutright
+    show shopping_cart at manual_pos(1.4, 1.1, 0.5)
+    show cs coat at offscreenright
+    with move
     $ collect("shopping_cart")
 
-    # Shopping
+    ### POTATOES
     scene tgt_tater with dissolve
+    pause 0.25
+
+    show cs coat at manual_pos(-0.5, 1.0, 1.0)
+    show shopping_cart at manual_pos(-0.3, 1.1, 0.5)
+    with determination
+
     show cs coat at center
     show shopping_cart at manual_pos(0.8, 1.1, 0.5)
     with moveinleft
-
 
     n "He starts at the produce section."
     show cs coat surprised
@@ -1248,15 +1255,22 @@ label ce_before_shopping:
     show cs coat
     n "After grabbing some \"tates\" of his own, CS heads over to the grocery aisles."
     # i hope this line ain't too weird. just felt too abrupt without SOMETHING here. - tate
-    hide cs
-    hide shopping_cart
-    with moveoutright
+    show cs coat at offscreenright
+    show shopping_cart at manual_pos(1.4, 1.1, 0.5)
+    with move
     pause 1.0
 
+    ### BREAD
+
     scene tgt_bread with dissolve
+    show cs coat at manual_pos(-0.5, 1.0, 1.0)
+    show shopping_cart at manual_pos(-0.3, 1.1, 0.5)
+    with determination
+
     show cs coat at center
     show shopping_cart at manual_pos(0.8, 1.1, 0.5)
     with moveinleft
+
     pause 1.0
     # NOTE: Good bread (intentional)
     cs "Oh, good, bread. Can't have a holiday dinner without some good bread!"
@@ -1287,14 +1301,20 @@ label ce_before_shopping:
     show cs coat happy
     cs "Let's check it out!"
 
-    hide cs
-    hide shopping_cart
-    with moveoutright
+    show shopping_cart at manual_pos(1.4, 1.1, 0.5)
+    show cs coat at offscreenright
+    with move
     hide screen dxcom
     pause 0.5
 
+    ### ENDCAP
+
     scene tgt_endcap with dissolve
     pause 0.5
+
+    show cs coat at manual_pos(-0.5, 1.0, 1.0)
+    show shopping_cart at manual_pos(-0.3, 1.1, 0.5)
+    with determination
 
     show cs coat at left
     show shopping_cart at manual_pos(0.5, 1.1, 0.5)
@@ -1321,13 +1341,21 @@ label ce_before_shopping:
     "..."
     show cs coat disappointed
     cs "Alright, CS, stay focused."
-    hide cs
-    hide shopping_cart
-    with moveoutright
+
+    show shopping_cart at manual_pos(1.5, 1.1, 0.5)
+    show cs coat at offscreenright
+    with move
     pause 1.0
+
+    ### CHIPS
 
     scene tgt_chips with dissolve
     pause 1.0
+
+    show cs coat at manual_pos(-0.5, 1.0, 1.0)
+    show shopping_cart at manual_pos(-0.3, 1.1, 0.5)
+    with determination
+
     show cs coat at center
     show shopping_cart at manual_pos(0.8, 1.1, 0.5)
     with moveinleft
@@ -1364,15 +1392,25 @@ label ce_before_shopping:
     n "CS grabs a can of his favorite flavor before moving on to the next aisle."
     show cs coat with determination
     pause 0.5
-    hide cs
-    hide shopping_cart
-    with moveoutright
+
+    show shopping_cart at manual_pos(1.5, 1.1, 0.5)
+    show cs coat at offscreenright
+    with move
+
     hide screen dxcom
 
+    ### GENERGY
+
     scene tgt_shelf with dissolve
+
+    show cs coat at manual_pos(-0.5, 1.0, 1.0)
+    show shopping_cart at manual_pos(-0.3, 1.1, 0.5)
+    with determination
+
     show cs coat at mid_left
     show shopping_cart at manual_pos(0.5, 1.1, 0.5)
     with moveinleft
+
     n "Finally, CS stumbles upon something that was actually on his shopping list."
     cs "Genergy, of course. Always need that."
     show cs coat disappointed
@@ -1431,7 +1469,12 @@ label ce_before_shopping:
         show genergy at manual_pos(0.55, 0.8) with MoveTransition(0.05)
     hide genergy with Dissolve(0.25)
 
+    ### MEET POMNI
     scene tgt_tree with dissolve
+    show cs coat at manual_pos(1.5, 1.0, 1.0)
+    show shopping_cart flipped at manual_pos(1.2, 1.1, 0.5)
+    with determination
+
     show cs coat flipped at mid_right_right
     show shopping_cart flipped at manual_pos(0.7, 1.1, 0.5)
     with moveinright
@@ -1507,11 +1550,17 @@ label ce_before_shopping:
     show cs coat flipped
     cs "Oh, well. I should probably also get back to shopping."
 
-    hide cs
-    hide shopping_cart
-    with moveoutleft
+    show cs coat flipped at manual_pos(-0.2, 1.0, 1.0)
+    show shopping_cart flipped at manual_pos(-0.5, 1.1, 0.5)
+    with move
 
+    ### ELECTRONICS
     scene tgt_tech with dissolve
+
+    show cs coat at manual_pos(1.5, 1.0, 1.0)
+    show shopping_cart flipped at manual_pos(1.2, 1.1, 0.5)
+    with determination
+
     show cs coat flipped at right
     show shopping_cart flipped at manual_pos(0.6, 1.1, 0.5)
     with moveinright
@@ -1553,15 +1602,22 @@ label ce_before_shopping:
     show cs worried coat flipped with determination
     pause 0.25
 
-    hide cs
-    hide shopping_cart
-    with moveoutleft
+    show cs coat flipped at manual_pos(-0.2, 1.0, 1.0)
+    show shopping_cart flipped at manual_pos(-0.6, 1.1, 0.5)
+    with move
+
+    ### BUTTER
 
     scene tgt_dairy with dissolve
     pause 0.5
+
+    show cs coat at manual_pos(-0.4, 1.0, 1.0)
+    show shopping_cart at manual_pos(-0.3, 1.1, 0.5)
+    with determination
+
     show cs coat at left
     show shopping_cart at manual_pos(0.4, 1.1, 0.5)
-    with moveinleft
+    with move
 
     n "Still thinking about that last {i}Tetris{/i} match, CS approaches the cold items."
 
@@ -1591,17 +1647,23 @@ label ce_before_shopping:
     hide butter with dissolve
     pause 0.25
 
-    hide cs
-    hide shopping_cart
-    with moveoutright
+    show shopping_cart at manual_pos(1.4, 1.1, 0.5)
+    show cs coat at offscreenright
+    with move
     pause 0.5
+
+    ### PIES
 
     scene tgt_frozen with dissolve
     pause 0.5
 
+    show cs coat at manual_pos(-0.4, 1.0, 1.0)
+    show shopping_cart at manual_pos(-0.3, 1.1, 0.5)
+    with determination
+
     show cs coat at left
     show shopping_cart at manual_pos(0.4, 1.1, 0.5)
-    with moveinleft
+    with move
     pause 0.5
 
     n "CS finds the pies."
@@ -1623,13 +1685,18 @@ label ce_before_shopping:
     hide pie with dissolve
     pause 0.25
 
-    hide cs
-    hide shopping_cart
-    with moveoutright
+    show shopping_cart at manual_pos(1.4, 1.1, 0.5)
+    show cs coat at offscreenright
+    with move
     pause 0.5
 
+    ### ALCOHOL
     scene tgt_alcy with dissolve
     pause 0.5
+
+    show cs coat at manual_pos(-0.5, 1.0, 1.0)
+    show shopping_cart at manual_pos(-0.3, 1.1, 0.5)
+    with determination
 
     show cs coat at center
     show shopping_cart at manual_pos(0.8, 1.1, 0.5)
@@ -1644,9 +1711,9 @@ label ce_before_shopping:
     $ collect("nog")
     pause 0.25
 
-    hide cs
-    hide shopping_cart
-    with moveoutright
+    show shopping_cart at manual_pos(1.5, 1.1, 0.5)
+    show cs coat at offscreenright
+    with move
     pause 0.5
 
 # Checkout
@@ -1660,6 +1727,10 @@ label ce_checkout:
     with dissolve
     play music winter_unclearance_sale if_changed loop volume 0.3 fadein 1.0
     pause 0.5
+
+    show cs coat at manual_pos(-0.5, 1.0, 1.0)
+    show shopping_cart at manual_pos(-0.3, 1.1, 0.5)
+    with determination
 
     show cs coat at left
     show shopping_cart at manual_pos(0.4, 1.1, 0.5)
@@ -1728,6 +1799,11 @@ label ce_checkout:
     stop music fadeout 10.0
     play sound2 sfx_tgt_bg fadein 3.0
     scene tgt_checkerror with dissolve
+
+    show cs coat at manual_pos(-0.5, 1.0, 1.0)
+    show shopping_cart at manual_pos(-0.3, 1.1, 0.5)
+    with determination
+
     show cs coat at left
     show shopping_cart at manual_pos(0.4, 1.1, 0.5)
     with moveinleft
@@ -1735,12 +1811,19 @@ label ce_checkout:
     n "CS sees an error on the display."
     show cs coat disappointed
     cs "Welp, can't use that one!"
-    hide cs
-    hide shopping_cart
-    with moveoutright
+
+    show shopping_cart at manual_pos(1.4, 1.1, 0.5)
+    show cs coat at offscreenright
+    with move
+
     n "He moves on to try the next machine."
 
     scene tgt_checkout with dissolve
+
+    show cs coat at manual_pos(-0.5, 1.0, 1.0)
+    show shopping_cart at manual_pos(-0.3, 1.1, 0.5)
+    with determination
+
     show cs coat at left
     show shopping_cart at manual_pos(0.4, 1.1, 0.5)
     with moveinleft
@@ -2115,29 +2198,36 @@ label ce_checkout:
     show shopping_cart at manual_pos(0.4, 1.1, 0.5)
     show cs coat with determination
     pause 0.25
-    hide cs
-    hide shopping_cart
-    with moveoutright
+    show shopping_cart at manual_pos(1.4, 1.1, 0.5)
+    show cs coat at offscreenright
+    with move
     hide screen dxcom
 
     stop sound fadeout 3.0
     stop sound2 fadeout 3.0
     scene black with dissolve
+
     scene tgt_outside
     with dissolve
     pause 0.5
 
-    show cs coat hat
+    show cs coat hat at manual_pos(-0.5, 1.0, 1.0)
+    show shopping_cart at manual_pos(-0.3, 1.1, 0.5)
+    with determination
+
+    show cs coat hat at center
     show shopping_cart at manual_pos(0.7, 1.1, 0.5)
-    with moveinleft
+    with move
     pause 1.0
 
     cs "I'd better go straight home and put everything away."
     show cs coat hat happy
     cs "Tomorrow's the big day! This is gonna be the best party {i}ever!"
-    hide cs
-    hide shopping_cart
-    with moveoutright
+
+    show shopping_cart at manual_pos(1.4, 1.1, 0.5)
+    show cs coat hat at offscreenright
+    with move
+
     pause 2.0
     play sound sfx_driving
     scene black with Dissolve(5.0)
@@ -3929,7 +4019,7 @@ label ce_win_carrot:
     show cs happy christmas
     cs "You guys do good work, though. I can't wait to see what DPN Games will come up with next!"
     show arceus festive worried
-    arceus "Yeah, me too."
+    arceus "Yeah... me, too."
     hide cs with moveoutright
     n "CS walks off."
     pause 1.0
@@ -4167,19 +4257,22 @@ label ce_dinner:
     else:
         cs "Well, I'd love to start off this wonderful meal by saying--"
     play sound sfx_static
+    play music2 crashing_down if_changed
+    music crashing_down
     show cs scared christmas
     show tate shock festive flipped
     with hpunch
     $ renpy.music.set_pause(True, "music")
     pause 0.25
-    play music2 crashing_down if_changed
-    music crashing_down
+
     blank "Hey, stop it! We are {i}not{/i} playing your music!" with hpunch
     play sound sfx_static
     stop music2
-    pause 0.25
     play music2 summer_fun if_changed
     music summer_fun
+    with hpunch
+    pause 0.25
+
     if fun_value(FUN_VALUE_COMMON):  # I made this joke a fun value, it just seems too mean to be the main route
         nova "Blank, Blank..."
         nova "This song is so..."
@@ -4683,13 +4776,13 @@ label ce_dinner:
     show cs disappointed christmas at left
     with moveinleft
     digi "Hey! K-17? Are you in there?"
-    k17 "Nuh-uh!"
-    cs "Do you need... any help at all? We are gonna start the gift exchange here in a few minutes!"
+    k17 "{sc=1.0}Nuh-uh!"
+    cs "Do you... need any help at all? We are gonna start the gift exchange here in a few minutes!"
     show cs scared christmas
     show digi shock flipped
     n "K-17 starts sobbing." with vpunch
-    k17 "N-{w=0.1}No one... told me..."
-    k17 "Mixer... {i}died...!"
+    k17 "{sc=1.88}N-{w=0.1}No one... told me..."
+    k17 "{sc=1.88}Mixer... {i}died...!"
     show cs christmas worried
     show digi sad flipped
     cs "Uh-oh."
@@ -4697,9 +4790,9 @@ label ce_dinner:
     show cs christmas disappointed
     cs "Yeah, Mixer shut down some time ago now... sorry about that."
     show digi sad flipped
-    k17 "But, why? {nw}"
-    extend "{i}Why?!" with vpunch
-    k17 "It was, like, the {i}perfect{/i} streaming platform!"
+    k17 "{sc=1.0}But, why? {nw}"
+    extend "{sc=1.88}{i}Why?!" with vpunch
+    k17 "{sc=1.0}It was, like, the {i}perfect{/i} streaming platform!"
     digi "It {i}was,{/i} but it was {i}also{/i} owned by Microsoft. It was bound to happen."
     show cs worried christmas
     cs "Hey!" with vpunch
@@ -4710,7 +4803,7 @@ label ce_dinner:
     show cs christmas
     show digi flipped
     cs "Well, I stream on {a=https://twitch.tv/cs188/}Twitch.{/a}"
-    digi "{a=https://twitch.tv/DigiDuncan}Me too{/a}, when I get the chance."
+    digi "{a=https://twitch.tv/DigiDuncan}Me, too{/a}, when I get the chance."
     n "K-17 sniffles."
     k17 "At least Crazy Saturday lives on..."
     show cs christmas disappointed
