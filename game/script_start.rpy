@@ -1961,6 +1961,7 @@ image baumer flipped = "flip:characters/ballmer_cutout.png"
 ## CSBI
 image cs_room = "bg/cs_bedroom1.png"
 image cs_room_2 = "bg/cs_bedroom2.png"
+image cs_room_2 dark = "dark:bg/cs_bedroom2.png"
 image craptop_bg = "bg/craptop_bg.png"
 image cs_house = "bg/cs_house.png"
 image cs_car = "bg/car_driveway.png"
