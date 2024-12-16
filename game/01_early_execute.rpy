@@ -45,7 +45,7 @@ init -1 python:
         print(f"Loaded {timeline_trace_count} events.")
 
     TIMELINE_MAP = j
-    
+
 init python:
     renpy.add_layer("popup", above = "overlay")
     renpy.add_layer("music", above = "master")
@@ -139,9 +139,9 @@ init:
     transform _music_top_left:
         xanchor 0 xpos 0
 
-    # For fun value 
+    # For fun value
     transform _fun_value_fade:
-        on show: 
+        on show:
             xanchor 0 xpos 18
             yanchor 0 ypos 980
             alpha 0.00
@@ -203,11 +203,12 @@ python early:
 
             # for debugging
             #print(f"Currently held data: {_current_song} by {_current_artist} | Internal ID: {_current_internal_id}")
-        
+
         if (_current_song, _current_artist) not in _played_songs:
             _played_songs.add((_current_song, _current_artist))
             persistent.heard.add(_current_internal_id)
             renpy.with_statement(determination)
+            renpy.play("sfx/sfx_bubble.ogg", channel = "sound")
             renpy.show_screen("music")
             renpy.with_statement(determination)
         if all([a in persistent.heard for a in music_map.keys()]):
@@ -333,12 +334,12 @@ init python:
 
     # Fun value handler
     def fun_value(rarity: int, id: str = None, *, confusing = False, fish = False) -> bool:
-    
+
         # hide any previous instance of the indicator
         renpy.hide("_fun_value")
         renpy.hide("_fun_value_music")
         renpy.hide("_fun_value_fish")
-        
+
         if not preferences.bounciness_enable:
             return False
         if rarity > preferences.max_fun and rarity < 99:
@@ -394,12 +395,12 @@ init python:
         currentwidth, currentheight = get_size(img)
         xscale = float(maxwidth) / float(currentwidth)
         yscale = float(maxheight) / float(currentheight)
-        
+
         if xscale < yscale:
             minscale = xscale
         else:
             minscale = yscale
-        
+
         return Transform(img, zoom = minscale)
 
     from typing import Generic, Sequence, Tuple, TypeVar, Union

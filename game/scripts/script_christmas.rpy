@@ -1867,6 +1867,7 @@ label ce_checkout:
         "Yes":
             # NOTE: I don't think we need to do anything special for this check in CE. We can have it change the story more in DX. - pak
             $ got_target_circle = True
+            $ achievement_manager.unlock("target_circle")
             cs "Alright, fine. How do I sign up? Is it through the Target app?"
             show pakoo tgt happy
             tgt_worker "Yeah, just install the app, set up an account, and you can get a bunch of deals in the store."

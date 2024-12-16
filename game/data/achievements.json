@@ -487,6 +487,14 @@
         "type": "story",
         "ce": true
     },
+    "target_circle":{
+        "name": "Expect More, Play Less",
+        "locked": "???",
+        "unlocked": "Sign up for Target Circle",
+        "img": "target",
+        "type": "extra",
+        "ce": true
+    },
     "party_start":{
         "name": "Party Rockers",
         "locked": "It's \"Party Rock is\".",
