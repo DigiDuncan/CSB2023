@@ -3,7 +3,7 @@
 ##-------CODEX ENTRY NAVIGATION------------------
 ##-----------------------------------------------
 screen achievements_nav():
-    add Color('#5F777F', alpha=0.75)
+    add Color('#323e42', alpha=0.75)
     textbutton "Return to Extras" action ShowMenu("category_welcome") yoffset 950 xoffset 25
     textbutton "Return" action Return() yoffset 1000 xoffset 25
 
@@ -16,7 +16,7 @@ screen achievements_welcome():
     tag menu
     use achievements_nav
     python:
-    
+
         story_count = 0
         extra_count = 0
         story_unlocked_count = 0
@@ -25,7 +25,7 @@ screen achievements_welcome():
         unlocked_count = 0
         hidden_count = 0
         total_count = 0
-        
+
         for a in achievement_manager.achievements.values():
             # total items
             total_count += 1
@@ -48,9 +48,9 @@ screen achievements_welcome():
             # count hidden
             if not a.unlocked and a.hidden == True:
                 hidden_count += 1
-            
+
         # fix remaining locked
-        locked_remaining_count = total_count - unlocked_count    
+        locked_remaining_count = total_count - unlocked_count
 
         # funny 188% achievements
         # make it 100% on the backend for math reasons then convert it
@@ -64,7 +64,7 @@ screen achievements_welcome():
         xsize 1300
         ysize 116
         xalign 0.5
-        xoffset 298 
+        xoffset 298
         yoffset 50
         text "{size=+12}Achievements"
         text "[percent_unlocked_display]% Unlocked":
@@ -75,7 +75,7 @@ screen achievements_welcome():
         xsize 1300
         ysize 800
         xalign 0.5
-        xoffset 305 
+        xoffset 305
         yoffset 200
         scrollbars "vertical"
         side_yfill True

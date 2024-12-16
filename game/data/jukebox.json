@@ -1166,7 +1166,7 @@
             "title": "Rice and Wine",
             "artist": "Sight of Wonders",
             "tags": ["CSBIII DX: Holiday Special", "New In DX"],
-            "album_art": "csbi.png",
+            "album_art": "mike.png",
             "trivia": "Whenever you put a compass near the jukebox with this song playing, it points east. Great for presentations!"
         },
         "winter_unclearance_sale" : {
@@ -1174,7 +1174,7 @@
             "title": "All I Want For Christmas Is You",
             "artist": "Mariah Carey",
             "tags": ["CSBIII DX: Holiday Special", "New In DX"],
-            "album_art": "csbi.png",
+            "album_art": "carey.png",
             "trivia": "Whenever you put a compass near the jukebox with this song playing, it points north. Great for Christmas!"
         },
         "frollo_rave" : {
@@ -1182,7 +1182,7 @@
             "title": "H2o",
             "artist": "dj ddx",
             "tags": ["CSBIII DX: Holiday Special", "New In DX"],
-            "album_art": "csbi.png",
+            "album_art": "frollo.png",
             "trivia": "Reference to {i}The Frollo Show.{/i}"
         },
         "superstar_road" : {
@@ -1190,7 +1190,7 @@
             "title": "Superstar Road",
             "artist": "Mahito Yokota",
             "tags": ["CSBIII DX: Holiday Special", "New In DX"],
-            "album_art": "csbi.png",
+            "album_art": "nsmb.png",
             "trivia": "Whenever you put a compass near the jukebox with this song playing, it points up. Great for secret worlds!"
         },
         "ce_passport" : {
@@ -1198,7 +1198,7 @@
             "title": "Christmas Passport",
             "artist": "Pakoo",
             "tags": ["CSBIII DX: Holiday Special", "New In DX", "Minigames"],
-            "album_art": "csbi.png"
+            "album_art": "windows.png"
         },
         "snowman" : {
             "file": "snowman.ogg",

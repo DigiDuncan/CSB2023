@@ -505,12 +505,12 @@ define imperfect_tate = Character("Tate", callback = renpy.partial(char_callback
 
 # DX Holiday Special Definitions
 define avgn = Character("James Rolfe", callback = renpy.partial(char_callback, name = "avgn", beep = "avgn"))
-define tgt_worker = Character("Target Employee", callback = renpy.partial(char_callback, name = "tgt_worker"))
+define tgt_worker = Character("Target Employee", callback = renpy.partial(char_callback, name = "tgt_worker", beep="pak"))
 define walkie = Character("Walkie", callback = renpy.partial(char_callback, beep = "walkie"))
 define everyone = Character("Everyone", callback = renpy.partial(char_callback, beep = "everyone"))
 define everyone2 = Character("Everyone", callback = renpy.partial(char_callback, beep = "csbama17"))
 define santa = Character("Santa Claus", callback = renpy.partial(char_callback, name = "santa", beep = "santa"))
-define mike = Character("Mike",  callback = renpy.partial(char_callback, name = "mike"))
+define mike = Character("Mike",  callback = renpy.partial(char_callback, name = "mike", beep = "mike"))
 
 # DX Finale Character Definitions
 define perfect_billy = Character("Perfect Billy", callback = renpy.partial(char_callback, name = "billy", beep = "billy"), screen = "perfect_billy_text")
@@ -531,7 +531,6 @@ define anne = Character("Anne", callback = renpy.partial(char_callback, name = "
 define anno = Character("Anno", callback = renpy.partial(char_callback, name = "anno", beep = "anno"))
 define arceus = Character("Arceus", callback = renpy.partial(char_callback, name = "arceus", beep = "arc"))
 define aria = Character("Aria", callback = renpy.partial(char_callback, name = "aria", beep = "aria"))
-define aria_alt = Character("Aria", callback = renpy.partial(char_callback, name = "aria", beep = "aria_alt"))
 define blank = Character("Blank", callback = renpy.partial(char_callback, name = "blank", beep = "blank"))
 define db = Character("DB05", callback = renpy.partial(char_callback, name = "db", beep = "db05"))
 define digi = Character("Digi", callback = renpy.partial(char_callback, name = "digi", beep = "digi"))
