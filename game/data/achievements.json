@@ -6,6 +6,14 @@
         "img": "pound",
         "type": "extra"
     },
+    "target_circle":{
+        "name": "Expect More, Play Less",
+        "locked": "???",
+        "unlocked": "Sign up for Target Circle",
+        "img": "target",
+        "type": "extra",
+        "ce": true
+    },
     "timber":{
         "name": "Timber!",
         "locked": "Make a mess in the garage.",
