@@ -978,7 +978,7 @@ label ce_setup:
     show cs
     cs "Yeah, I think I'm gonna head out here in a moment. I just need to make a list."
     if fun_value(FUN_VALUE_COMMON):
-        cs "And,{w=0} check it twice!"
+        cs "And check it twice!"
     anno "Alrighty, well, good luck with that!"
     anno "I'll see you in two days!"
     cs "Yeah, see you then! Bye for now, Anno!"
@@ -5092,7 +5092,7 @@ label ce_exchange:
     with dissolve
     if fun_value(FUN_VALUE_RARE):
         billy "An oil drum full of peach syrup!"
-        billy "An {i}incredible{/i} value! I'll {i}never{/i} run out again!"
+        billy "An {i}incredible{/i} value! I'll {i}never{/i} run out!"
     else:
         billy "Peach syrup!"
     michael "Noice, you got my gift!"
@@ -6183,7 +6183,7 @@ label ce_snowed_in:
     n "Everyone goes quiet."
     pause 1.0
     if fun_value(FUN_VALUE_RARE):
-        mean "If you don't believe me, take your thumb, and shove it up your ass!"
+        mean "If you don't believe me, take your thumb and shove it up your ass!"
     else:
         mean "If you want to go up to the roof and see for yourself, be my guest."
     show mean human annoyed festive flipped
@@ -7133,7 +7133,7 @@ label ce_roof_moment:
         linear 0.5 zoom 1.0
     with move
 
-    santa "Don't let those YouTube Poopers get to your head! You're a {i}brilliant{/i} author."
+    santa "Don't let those YouTube Poopers get you down! You're a {i}brilliant{/i} author."
     show cs worried christmas
     n "Santa glances at CS." with hpunch
     cs "Hey! I love his work, too!"
@@ -7162,7 +7162,7 @@ label ce_roof_moment:
         linear 0.5 zoom 1.0
     with { "master": move }
     show billy festive flipped
-    santa "There are certainly a lot of... people here that I would not expect to see."
+    santa "There are certainly a lot of people here that I... would not expect to see."
     santa "Billy Mays, I almost forgot about... you coming back."
     billy "Don't worry, Santa! My drug days are {i}over!"
     santa "Ho ho ho! That's the spirit!"
@@ -7171,7 +7171,7 @@ label ce_roof_moment:
     santa "Well, I could keep going, but I should ask..."
     santa "What {i}happened{/i} here? New York shouldn't get this much snow..."
     cs "None of us know, but we've been trapped inside the house for God knows how long."
-    cs "I mean, you're Santa Claus! Surely, {i}you{/i} can fix this?"
+    cs "I mean, you're Santa Claus! Surely, {i}you{/i} can fix this!"
     santa "Ho ho ho..."
     santa "I... don't believe that I can, unfortunately."
     santa "I may be Father Christmas, but my magic can't melt snow away."
@@ -7374,9 +7374,10 @@ label ce_roof_moment:
     show santa dark at right
     with dissolve
     show cs happy christmas dark
-    cs "Woohoo! We did it! The avalanche covering the house is gone!"
+    cs "Woohoo! We did it!"
+    cs "The avalanche covering the house is {i}gone!"
     santa "Ho, ho! Well, it looks like you've saved Christmas, CS."
-    santa "I need to get going now. I am slightly off-schedule."
+    santa "I need to get going now. I am slightly behind schedule!"
     santa "I'm supposed to meet this girl named Belle. I heard that she's feeling pretty down."
     santa "I should also make sure my steed didn't drown in car cleaner..."
     cs "Good luck to you, Santa!"
@@ -7405,7 +7406,7 @@ label ce_roof_moment:
     sheriff "Hey, guys, what'd I miss?"
     sheriff "Where's all this snow you were all so worried about?"
     show cs disappointed christmas dark
-    cs "Uhhh-- {nw}"
+    cs "Uh-- {nw}"
     play sound sfx_jingle volume 0.7 loop
     show tate shock festive dark
     show cs worried christmas dark
@@ -7506,7 +7507,7 @@ label ce_roof_moment:
     show cs happy christmas at center
     with dissolve
     pause 0.5
-    cs "Man, that was such a blast!"
+    cs "Man, that was such a {i}blast!"
     cs "I even got a free car wash!"
     show cs disappointed christmas
     cs "The house is kind of a mess, though. I'll wait until tomorrow to clean all this up."
