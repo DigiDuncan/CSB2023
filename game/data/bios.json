@@ -11,8 +11,7 @@
             "Worried": "images/characters/pakoo/pakoo_worried.png"
         },
         "quote": "Hold on, I remember this...",
-        "bio": "Not to be confused with Pakoo, Addy is Pakoo's counterpart who runs a giant underground facility full of archived memories of Pakoo's entire life. Talk about the world's biggest autobiography!",
-        "dx_bio": "The creator of the story. The Scriptwriter. Besides archiving their life, they've also taken an interest in writing an adventure novel. This one, to be precise. When they tried to give CS an interesting life by writing him into this crazy story, it seems they didn't take CS' feelings into consideration."
+        "bio": "Addy {i}loves{/i} Christmas. It's the only time of the year they look forward to changing outfits. Unfortunately, they love their parties more than they love their friends, so they couldn't make it to CS' party."
     },
     "anne": {
         "full_name": "Anne",
@@ -36,7 +35,7 @@
             "Festive": "images/characters/anno/anno_festive.png"
         },
         "quote": "Welcome to the internet",
-        "bio": "Anno is one of CS' best friends. He's always there to help CS out during livestreams, and he's an avid fan of Nirvana. He also loves making AI covers of CS and his crew."
+        "bio": "Anno is one of CS' best friends. He's always there to help CS out during livestreams, and when he needs help decorating. He's also an avid fan of Nirvana."
     },
     "arceus": {
         "full_name": "Arceus3251",
