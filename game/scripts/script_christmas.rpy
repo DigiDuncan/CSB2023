@@ -2281,7 +2281,7 @@ label ce_aftershop:
     cs "You need to sleep!"
     show cs concentrate dark flipped
     scene black with Dissolve(2.0)
-    n "After some time, CS finally dozes off..."
+    n "A while later, CS finally dozes off..."
     pause 1.0
     $ in_d20_viewer = False
     jump ce_party_before
@@ -4108,6 +4108,7 @@ label ce_mike:
     stop sound
     show cs scared christmas
     cs "Huh?!" with vpunch
+    pause 0.5
     show cs disappointed christmas
     cs "Oh, sorry. I must have dozed off."
     cs "I had this {i}insane{/i} dream! There was this pizza guy--"
@@ -4132,6 +4133,11 @@ label ce_dinner:
     show k17 at manual_pos(-0.5, 0.6, 0.5)
     show left_table
     with dissolve
+
+    # turning off the auto box hider until this is over.
+    window auto False
+    window show
+
     $ collect("apple_pie")
     $ collect("big_city_sliders")
     $ collect("carrot_cake")
@@ -4140,6 +4146,7 @@ label ce_dinner:
     $ collect("peppermint_bark")
     $ collect("small_city_slider")
     $ collect("snacks")
+    pause 0.5
     if fun_value(FUN_VALUE_MUSIC):
         cs "Well, I'd love to spread some Christmas spirit by saying--"
     else:
@@ -4169,8 +4176,9 @@ label ce_dinner:
         show cs christmas angry flipped
         nova "Turn that shit {i}off!" with hpunch
     else:
-        nova "Well, I don't want to hear catgirl moans at the dinner table!"
-        blank "They're mixed into the instrumentation, you can barely--"
+        nova "Well, {i}I{/i} don't want to hear catgirl moans at the dinner table!"
+        blank "They're mixed into the instrumentation! You can barely--"
+    show cs christmas angry flipped
     cs "Hey! " with hpunch
     extend "Can you two stop fighting, get over here, and eat with us?!"
     stop music2
@@ -4651,6 +4659,9 @@ label ce_dinner:
     cs "Oh, is {i}that{/i} where they ran off to?"
     digi "We should probably go check and see if they're okay..."
 
+    # turning auto window back on.
+    window auto True
+
     scene cs_bathroom
     with dissolve
     show digi sad flipped at mid_mid_left
@@ -4965,7 +4976,8 @@ label ce_exchange:
     show cement at manual_pos(0.4, 0.7, 0.5)
     hide gift_ed
     with dissolve
-    sheriff "A bag of {i}cement?!" with vpunch
+    sheriff "A bag of {nw}"
+    extend "{i}cement?!" with vpunch
     ed "Yep! We had some leftover from the last house we worked on."
     ed "Solid enough for a home's foundation, versatile enough for all kinds of other projects."
     hide cement with dissolve
@@ -5045,7 +5057,7 @@ label ce_exchange:
     show k22 flipped at offscreenright
     show fumo at offscreenright
     with  MoveTransition(0.25)
-    n "K-22 springs up and steals the gift from K-17 before sprinting out of the room!"
+    n "K-22 springs up from the couch and steals the gift from K-17 before sprinting away!"
     k22 "I'm sorry! I'll be right back!" with hpunch
     show k17 shock flipped
     k17 "What the hey?!" with vpunch
@@ -5269,9 +5281,9 @@ label ce_exchange:
     arceus "Alright, then..."
     billy "Antique coins lying around, tech lying on the curb..."
     billy "Where the hell do you guys live where you can just {i}find{/i} this kinda shit?"
-    hide db
-    hide digi
-    with moveoutright
+    show db at offscreenleft
+    show digi flipped at offscreenright
+    with move
     pause 0.5
 
     if d20 == 20:
@@ -5349,7 +5361,6 @@ label ce_preclimax:
 
     scene cs_foyer
     show digi happy flipped at left
-    dxcom gifts
     show riffmaster at manual_pos(0.15, 0.8, 0.5):
         rotate 45
     show aria festive at center
@@ -5359,6 +5370,7 @@ label ce_preclimax:
     show raspberry_pi at manual_pos(0.75, 0.7, 0.5):
         zoom 0.5
     with dissolve
+    dxcom gifts
     pause 0.5
 
     digi "This Riffmaster is {i}great!{/i}"
@@ -5373,7 +5385,7 @@ label ce_preclimax:
     show luke festive at mid_right behind arceus
     show monitor as first at manual_pos(0.7, 0.7, 0.5) behind luke
     show monitor as second at manual_pos(0.85, 0.7, 0.5) behind arceus
-    show hard_drive at manual_pos(0.575, 0.6, 0.5):
+    show hard_drive at manual_pos(0.575, 0.6, 0.5) behind arceus:
         zoom 0.5
     with moveinright
 
@@ -5442,8 +5454,8 @@ label ce_preclimax:
     obama "On our way!"
     show michael festive flipped at offscreenleft
     show ltt_bottle at manual_pos(-0.2, 0.7, 0.5)
-    show billy festive at offscreenleft
-    show peach_syrup at manual_pos(-0.2, 0.7, 0.5)
+    show obama festive at offscreenleft
+    show mgs1 at manual_pos(-0.2, 0.7, 0.5)
     with move
     pause 0.5
 
@@ -5453,6 +5465,7 @@ label ce_preclimax:
     copguy "Stop chasing me, you old fart!" with hpunch
 
     show tate shock festive
+    show billy festive flipped
     show handy_switch at manual_pos(0.6, 0.7, 0.5):
         zoom 0.4
     show cement at manual_pos(-0.1, 0.4, 0.5)
@@ -5468,7 +5481,11 @@ label ce_preclimax:
     play sound sfx_cat_crash
     with hpunch
     with vpunch
-    pause 5.0
+    with hpunch
+    with vpunch
+    with hpunch
+    with vpunch
+    pause 4.0
     show mean human annoyed festive flipped at offscreenleft
     show instant_pot at manual_pos(-0.2, 0.7, 0.5)
     with determination
@@ -5479,7 +5496,7 @@ label ce_preclimax:
     show tate sheepish festive flipped
     show handy_switch at manual_pos(0.4, 0.7, 0.5):
         zoom 0.4
-    mean "This Instant Pot is cool and all, but why would you bring a {i}kitchen appliance{/i} to a gift exchange?"
+    mean "This Instant Pot is cool and all, but... why would you bring a {i}kitchen appliance{/i} to a gift exchange?"
     mean "Ain't that kinda... tacky?"
     show tate srs festive flipped
     tate "Normally, I'd agree with you, but hear me out!"
@@ -5535,7 +5552,8 @@ label ce_climax:
         play sound sfx_fucking_die
         cs_nobeep "You can just fucking die!"
     else:
-        cs "If you hated my party so much, then just leave!"
+        cs "If you hate my party so much, then just {nw}"
+        cs "leave!" with vpunch
     nova "Well, I'm {i}also{/i} leaving, because {i}this{/i} asshole won't let me play any {i}good{/i} music!" with hpunch
     blank "Hah! Says you! {i}You{/i} just wanted to play {i}your{/i} trash for the entire party!" with hpunch
     show projector_airplay behind cs:
@@ -5568,7 +5586,7 @@ label ce_climax:
     nova "{i}No!{/i} Fuck you!" with hpunch
     show mean human angry festive
     anne "Hey!" with hpunch
-    mean "What'd you say, you little {nw}"
+    mean "What'd you say, you little {nw}" with vpunch
     extend "{i}fuck?" with hpunch
     arceus "Oh, my God, this is hurting my {i}head..."
     show cs pissed christmas
@@ -5838,20 +5856,27 @@ label ce_lights_out:
     show screen flashlight_demo
     scene cs_door
     show cs scared christmas at left
+    show flashlight_held at manual_pos(0.2, 0.7, 0.5):
+        zoom 0.5
     with dissolve
     n "He falls backwards as he is met with an unwelcome sight."
-    show cs worried christmas at mid_left with MoveTransition(1.0)
+    show cs worried christmas at mid_left
+    show flashlight_held at manual_pos(0.3, 0.7, 0.5)
+    with MoveTransition(1.0)
     n "As CS regains his footing, he can't believe what he's looking at."
     cs "What the hell? Is that {i}snow?!"
-    show cs worried christmas at mid_mid_left with MoveTransition(1.0)
+    show cs worried christmas at mid_mid_left
+    show flashlight_held at manual_pos(0.4, 0.7, 0.5)
+    with MoveTransition(1.0)
     n "CS sticks his finger out into the mysterious substance."
     n "It responds with a freezing confirmation."
     show cs scared christmas
     cs "Oh, my God."
     cs "How much... did it..."
     play sound sfx_house_door_slam
-    scene black with Dissolve(0.25)
+    scene black
     hide screen flashlight_demo
+    with Dissolve(0.25)
     pause 0.5
     $ mouse_visible = True
     n "CS slams the door shut and runs back to deliver the news."
@@ -6069,6 +6094,7 @@ label ce_after_hatch:
     n "A huge pile of snow falls onto the attic floor."
     pause 0.5
     cs "That is... a {i}lot{/i} of snow."
+    show cs worried christmas
     mean "C'mon, let's get up here."
     n "Mean climbs up onto the roof."
     show mean human annoyed festive at Move((0.54, 0.0), (0.35, 0.0), 0.5, repeat=False, bounce=False, xanchor="left", yanchor="top")
@@ -6084,11 +6110,13 @@ label ce_after_hatch:
     show mean human annoyed festive at Move((0.35, -0.5), (0.35, -1.2), 0.5, repeat=False, bounce=False, xanchor="left", yanchor="top")
     mean "Holy..."
     mean "{i}Fuck."
+    show cs scared christmas
     cs "What? How bad is it?"
-    mean "Grab my hand, I'll pull you up."
+    mean "Grab my hand. I'll pull you up."
     pause 0.5
-    scene black with dissolve
+    scene black
     hide screen flashlight_demo
+    with dissolve
     $ mouse_visible = True
     pause 1.0
 
@@ -6236,12 +6264,15 @@ label ce_snowed_in:
     show digi sad
     aria "Is it {i}everything?"
     michael "Correct!"
+    pause 0.5
+    show cs christmas
     cs "Okay, actually, I have something I've been wanting to play again."
-    cs "I have a few board games somewhere. I just need to go grab it."
+    cs "I have a few board games somewhere, but there's one in particular I'd love to show you all."
+    cs "Lemme go grab it!"
     show tate sad festive flipped
     tate "{i}Please{/i} tell me it's not chess..."
-    show cs christmas
-    cs "It's better than chess! I'll be back."
+    show cs christmas happy
+    cs "It's {i}better{/i} than chess! I'll be right back."
     show cs christmas flipped
     show flashlight_held flipped
     with determination
@@ -6249,9 +6280,10 @@ label ce_snowed_in:
     hide flashlight_held
     with moveoutleft
     pause 0.5
-    scene black with dissolve
-    $ mouse_visible = True
+    scene black
     hide screen flashlight_demo
+    with dissolve
+    $ mouse_visible = True
     pause 1.0
 
     play sound sfx_items_rustling volume 5.0
@@ -6470,6 +6502,7 @@ label ce_billy_time:
     pause 0.5
     show billy festive at mid_right with moveinright
     billy "Wait! Everyone, hold on!"
+    show cs christmas
     if fun_value(FUN_VALUE_MUSIC, confusing = True):
         cs "What? What's on the rocks, Billy?"
     else:
@@ -6489,10 +6522,11 @@ label ce_billy_time:
     tate "Guess I'm following Billy, so, I'll be back, too...?"
     hide tate with moveoutleft
     pause 0.5
-    scene black with dissolve
+    scene black
+    hide screen flashlight_demo
+    with dissolve
     pause 0.5
 
-    hide screen flashlight_demo
     billy "Oh, dang it! I forgot to bring a light!"
     scene cs_hallway_off
     show billy festive at mid_left
@@ -6527,11 +6561,11 @@ label ce_billy_time:
     show tate sheepish festive
     extend "Mika?"
     eliza "It's Elizabeth, but sure."
-    hide screen dxcom
     hide tate
     hide billy
     hide tate_phone
     with moveoutright
+    hide screen dxcom
     pause 0.5
 
     scene cs_bathroom_off
@@ -6594,8 +6628,8 @@ label ce_billy_time:
     show tate festive flipped with determination
     hide tate
     hide tate_phone
-    hide billy
     with moveoutleft
+    hide billy with moveoutleft
     pause 0.5
 
     scene breakerbox
