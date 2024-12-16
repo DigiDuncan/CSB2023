@@ -1987,7 +1987,7 @@ label ce_checkout:
     pause 2.5
     show pakoo tgt
     n "The employee signs into the machine and opens the prompt to enter a number."
-    n "They then wait patiently for CS."
+    n "He then waits patiently for CS."
     cs "What? Do you need something from me?"
     show pakoo tgt think2
     tgt_worker "Yeah, I need to check your ID."
@@ -2214,7 +2214,7 @@ label ce_aftershop:
     cs "Welp, the groceries are all put away..."
     cs "The decorations look all nice..."
     show cs happy flipped
-    cs "I think I'm all ready for this party!"
+    cs "I think I'm {i}all{/i} ready for this party!"
     n "CS lets out a satisfied yawn."
     show cs
     cs "It's getting late. I should probably call it an early night."
@@ -2904,7 +2904,7 @@ label ce_introductions:
     show cs disappointed christmas
     k22 "They run this archiving facility far away from here. I guess {i}they{/i} would be the closest version of Pakoo you'd know, but they couldn't join us here tonight."
     show k22 disappointed
-    k22 "They're running their {i}own{/i} Christmas party, which I {i}wanted{/i} to be a part of, but this {i}creature{/i} right here just {i}had{/i} to come to this party..."
+    k22 "They're running their {i}own{/i} Christmas party, which I {i}wanted{/i} to be a part of, but this {i}creature{/i} right here just {i}had{/i} to come to {i}this{/i} one..."
     k22 "So, I have to make sure he doesn't get too crazy."
     cs "Great."
     cs "Is that it?"
@@ -4695,7 +4695,7 @@ label ce_exchange:
     show festive_bag at manual_pos(0.6, 0.6, 0.5) with moveinbottom
     $ collect("festive_bag")
     cs "Cool!"
-    cs "I've put all of your names in this bag. I'll bring it over so you all can draw one!"
+    cs "I've put all of your names into this bag. I'll bring it over so you all can draw one!"
     show cs christmas at offscreenright
     show festive_bag at manual_pos(1.3, 0.6, 0.5)
     with moveoutright
@@ -5060,7 +5060,8 @@ label ce_exchange:
     billy "What the actual fuck?"
     show doi at manual_pos(0.5, 0.7, 0.5) with dissolve
     show doi at manual_pos(0.2, 0.7, 0.5) with move
-    billy "Stop stealing gifts!" with vpunch
+    billy "We all need to {i}stop{/i} stealing gifts, "
+    extend "right now!" with vpunch
     hide doi with dissolve
     hide copguy with moveoutright
     pause 0.5
@@ -5164,7 +5165,7 @@ label ce_exchange:
     $ collect("monitor")
     $ collect("hard_drive")
 
-    blank "It looks like it's my turn next."
+    blank "It looks like it's my turn, next."
     show blank festive flipped at mid_left with moveinleft
     show gift_nova at manual_pos(0.4, 0.7, 0.5) with moveinbottom
     pause 0.5
@@ -5174,7 +5175,7 @@ label ce_exchange:
     with dissolve
     blank "Gamer Supps?"
     show gamersupps at manual_pos(0.35, 0.65, 0.5) with move
-    n "Blank holds the canister a little closer and reads it carefully."
+    n "Blank holds the canister a little closer to read it carefully."
     blank "\"Guacamole... Gamer Fart... 9000\"...?"
     nova "Damn it! You got {i}my{/i} gift, Blank!" with hpunch
     show gamersupps at manual_pos(0.4, 0.7, 0.5) with { "master": move }
@@ -5194,8 +5195,8 @@ label ce_exchange:
     with dissolve
     nova "What the fuck {i}is{/i} it? Some World War II radio?"
     eliza "Yep. Used by the Soviets in the latter half of World War II."
-    nova "Hey Ges, do you want this?"
-    ges "Sure, thank you, eh!"
+    nova "Hey, Ges, do you want this?"
+    ges "Sure! Thank you, eh!"
     hide russian_radio with dissolve
     hide nova with moveoutright
     n "Nova sits down and gives the radio to Ges."
@@ -5212,7 +5213,7 @@ label ce_exchange:
     hide dog_food with dissolve
     show elizabeth disappointed flipped
     eliza "Dog food?"
-    db "Ah, yeah, I had a lot extra lying around in my car, so I figured, why not?"
+    db "Ah, yeah! I had a lot extra lying around in my car, so I figured, why not?"
     hide elizabeth with moveoutright
     pause 0.5
     $ collect("dog_food")
@@ -5244,7 +5245,7 @@ label ce_exchange:
     digi "So, I have, like, 5000 pennies."
     digi "One day, when America stops making pennies, they'll go up in value."
     obama "Why would we stop making pennies?"
-    digi "Well, you guys spend 1.6 cents per penny to make them, so you're losing money."
+    digi "Well, you guys spend 1.6 cents per penny to make them, so you're actually {i}losing{/i} money."
     digi "Canada already stopped making their pennies."
     mean "Well, yeah, that's because Canada's smarter than America."
     show digi happy flipped
@@ -5308,7 +5309,7 @@ label ce_exchange:
         with dissolve
         grace "I got a cool new t-shirt!"
         cs "Nice! Someone finally got my gift!"
-        cs "Not all of my Depop shirts sold, and I think this one is really cool, so, now it's a gift!"
+        cs "Not all of my Depop shirts sold, and I think this one is really cool! I thought it would make a great gift!"
         cs "Does it fit you okay?"
         n "Grace puts on the shirt."
         hide old_shirt
@@ -5345,7 +5346,7 @@ label ce_preclimax:
     pause 0.5
 
     digi "This Riffmaster is {i}great!{/i}"
-    digi "Just listen to that strumbar!"
+    digi "Just {i}listen{/i} to that strumbar!"
     n "Digi strums the controller with joy."
     digi "Oh, yeah. You gonna take that Adderall, Aria?"
     aria "That implies that I haven't already."
