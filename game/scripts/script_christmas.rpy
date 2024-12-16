@@ -474,12 +474,12 @@ label ce_anno:
             cs "I hate Legos, but only when they're in my feet!"
         else:
             cs "I love Legos, but not when they're embedded in my {i}feet!"
-        cs "Now, where did I last put..."
     else:
         scene cs_garage
         show garage_shelf at manual_pos(0.9, 0.5, 0.5)
         with dissolve
         show cs disappointed coat hat at mid_mid_left with moveinleft
+    cs "Now, where did I last put..."
     pause 0.5
     show cs disappointed coat hat at right with move
     pause 0.5
@@ -753,8 +753,8 @@ label ce_anno:
         zoom 0.2
         yzoom 1
         pos (0.25,0.45)
-        linear 0.5 xzoom 0.2
-        linear 0.5 xzoom 1
+        linear 0.25 xzoom 0.2
+        linear 0.25 xzoom 1
     pause 2.0
     play sound2 sfx_droplet noloop volume 10.0
     pause 1.0
@@ -844,8 +844,9 @@ label ce_anno:
     cs "Let's get inside, please! My hands are gonna fall off!"
     anno "Right behind you."
     show cs worried coat hat at offscreenright
-    show anno coat at offscreenright
     show shovel at offscreenright
+    with moveoutright
+    show anno coat at offscreenright
     with moveoutright
     play sound sfx_house_door_open
 
@@ -2229,13 +2230,18 @@ label ce_aftershop:
     pause 0.5
 
     show cs at mid_left with moveinleft
-    show cs flipped with determination
+    cs "Athena, lights out."
+    pause 0.25
+    play sound sfx_fabeep
+    scene cs_room_2 dark
+    show cs dark at mid_left
+    show cs dark flipped with determination
     pause 0.5
 
     # totally stolen from archival shhh
-    show cs happy flipped at manual_pos(160, 200)
+    show cs happy dark flipped at manual_pos(160, 200)
     play sound sfx_blanket volume 10.0
-    show cs happy flipped at manual_pos(160, 200):
+    show cs happy dark flipped at manual_pos(160, 200):
         rotate 0
         parallel:
             linear 1.0 rotate 60
@@ -2245,35 +2251,35 @@ label ce_aftershop:
             linear 1.0 xpos -350
 
     pause 2.0
-    show cs happy flipped
+    show cs happy dark flipped
     n "CS settles in under the covers..."
     pause 2.0
-    show cs concentrate flipped
+    show cs concentrate dark flipped
     n "However, his mind won't let him rest."
     pause 1.0
-    show cs disappointed flipped
+    show cs disappointed dark flipped
     pause 2.0
     cs "I just can't stop thinking about tomorrow."
-    show cs surprised flipped
+    show cs surprised dark flipped
     cs "I wonder who's gonna get here first, and if everyone will show up as promised..."
     pause 2.0
-    show cs scared flipped
+    show cs scared dark flipped
     cs "What if {i}no one{/i} shows up?"
-    show cs disappointed flipped
+    show cs disappointed dark flipped
     cs "That would really suck..."
     pause 1.0
-    show cs flipped
+    show cs dark flipped
     cs "But there's no {i}way{/i} that would happen."
     if d20 == 1:
         cs "... Right?"
     cs "Everyone confirmed they got my invitations, and they all said on the phone that they're coming!"
-    show cs happy flipped
+    show cs happy dark flipped
     cs "If nothing else, I know Anno is coming for sure!"
     pause 1.0
-    show cs disappointed flipped
+    show cs disappointed dark flipped
     cs "Okay, CS, stop thinking about all these what-ifs..."
     cs "You need to sleep!"
-    show cs concentrate flipped
+    show cs concentrate dark flipped
     scene black with Dissolve(2.0)
     n "After some time, CS finally dozes off..."
     pause 1.0
@@ -2293,10 +2299,15 @@ label ce_party_before:
     pause 1.0
     if d20 == 1:
         n "CS waits patiently."
+        pause 2.0
         n "He keeps on waiting."
+        pause 2.0
         show cs disappointed christmas flipped
+        pause 1.0
         cs "Alright, any minute now..."
+        pause 2.0
         cs "The party starts in about 15 minutes, so people should start showing up soon..."
+        pause 2.0
         n "CS keeps on waiting, but it looks like no one shows up early."
     elif d20 == 2:
         play sound sfx_car_approach_stop volume 5.0 fadein 1.0
@@ -2319,7 +2330,7 @@ label ce_party_before:
         cs "Well, Merry Christmas, guys! I'm glad you could make it back to the US for this!"
         arceus "No problem! I mean, after everything we went through, how could I {i}not?"
         cs "Yeah! Well, should we get inside? It's pretty cold out."
-        kitty "Well, {i}we{/i} are rather warm, but, yeah."  # british + furry = well equipped for cold
+        kitty "Well, {i}we{/i} are rather warm, but yeah."  # british + furry = well equipped for cold
         kitty "Let's go inside."
     elif d20 == 3:
         play sound sfx_car_approach_stop volume 5.0 fadein 1.0
@@ -2481,11 +2492,12 @@ label ce_party_before:
             zoom 0.5
         show red_light at manual_pos(0, 0):
             zoom 0.5
+        with hpunch
         n "Sirens start blaring outside."
         show cs worried christmas flipped
-        cs "Uh oh! Why are the cops here?"
+        cs "Uh-oh! Why are the cops here?"
+        show cs worried christmas flipped at offscreenleft with { "master": MoveTransition(0.35) }
         n "CS rushes outside."
-        show cs worried christmas flipped at offscreenleft with MoveTransition(0.35)
         scene cs_house_snow_night
         show cop_car dark at manual_pos(0.3, 0.8, 0.5)
         $ collect("cop_car")
@@ -2574,7 +2586,7 @@ label ce_party_before:
         show k17 dark flipped at mid_mid_left
         with dissolve
         show cs christmas dark flipped at right with moveinright
-        cs "Hey, it's... "
+        cs "Hey, it's... {nw}"
         show cs disappointed christmas dark flipped
         extend "two Pakoos?"
         show k17 happy dark flipped
@@ -2607,7 +2619,7 @@ label ce_party_before:
         play sound sfx_car_approach_stop volume 5.0 fadein 1.0
         show cs christmas flipped at mid_left with move
         n "Someone's car pulls into the driveway."
-        cs "I wonder who that could be?"
+        cs "I wonder who that could be!"
         hide cs with moveoutleft
         stop sound fadeout 1.0
         scene cs_house_snow_night
@@ -2617,9 +2629,9 @@ label ce_party_before:
         show michael festive dark at mid_left
         with dissolve
         show cs christmas dark flipped at right with moveinright
-        cs "Oh, hey, it's Michael!"
+        cs "Oh, hey! It's Michael!"
         cs "You're still visiting the United States? I thought you were only here for the summer!"
-        michael "I decided to spend a whole {i}year{/i} over here."
+        michael "I've decided to spend a whole {i}year{/i} over here."
         michael "It's pretty cold out, innit?"
         cs "Yeah, let's get inside now."
     elif d20 == 15:
@@ -2640,7 +2652,8 @@ label ce_party_before:
         linus "Hey, CS! Long time no see!"
         show cs happy christmas dark flipped
         cs "You too! Also, hey, Luke! I didn't expect to see you here!"
-        luke "Hey, man! I know we didn't talk much during your short employment, but it was fun having you around!"
+        luke "Hey, man! Great to see you again!"
+        luke "I know we didn't talk much during your short employment, but it was fun having you around!"
         luke "Linus talks a lot about you."
         show cs christmas dark flipped
         cs "Oh, really?"
@@ -2666,7 +2679,7 @@ label ce_party_before:
         show cs christmas dark flipped at right with moveinright
         blank "Hey, CS! How've you been?"
         cs "I've been doing well! Was the drive safe up here?"
-        blank "It was for me, but, for lots of people on the interstate, it sure wasn't!"
+        blank "It was for {i}me,{/i} but, for lots of people on the interstate, it sure wasn't!"
         blank "I got quite a bit of dashcam footage if you want to watch some with me."
         show cs happy christmas dark flipped
         cs "Sure thing! Let's get inside and watch while we wait for the others."
@@ -2771,8 +2784,11 @@ label ce_party_before:
         cs "Alright, then..."
     else:
         n "CS waits patiently."
+        pause 2.0
         n "He keeps on waiting."
+        pause 2.0
         show cs disappointed christmas flipped
+        pause 1.0
         cs "Okay, what's going on? I figured {i}someone{/i} would show up early."
         show cs disappointed christmas flipped at mid_left with MoveTransition(1.0)
         n "CS looks out into the distance."
@@ -6764,11 +6780,11 @@ label ce_roof_moment:
         zoom 0.15
         xpos 0.4
         ypos 0.5
-    show arceus sil_black:
+    show arceus festive sil_black:
         zoom 0.15
         xpos 0.54
         ypos 0.54
-    show anno sil_black:
+    show anno festive sil_black:
         zoom 0.15
         xpos 0.53
         ypos 0.33
@@ -6780,15 +6796,15 @@ label ce_roof_moment:
         zoom 0.15
         xpos 0.47
         ypos 0.47
-    show ed sil_black:
+    show ed festive sil_black:
         zoom 0.15
         xpos 0.34
         ypos 0.42
-    show rich sil_black:
+    show rich festive sil_black:
         zoom 0.15
         xpos 0.45
         ypos 0.34
-    show wesley sil_black:
+    show wesley festive sil_black:
         zoom 0.15
         xpos 0.56
         ypos 0.45
@@ -6800,11 +6816,11 @@ label ce_roof_moment:
         zoom 0.15
         xpos 0.55
         ypos 0.43
-    show copguy sil_black:
+    show copguy festive sil_black:
         zoom 0.15
         xpos 0.33
         ypos 0.35
-    show billy sil_black:
+    show billy festive sil_black:
         zoom 0.15
         xpos 0.63
         ypos 0.46
@@ -6812,7 +6828,7 @@ label ce_roof_moment:
         zoom 0.15
         xpos 0.42
         ypos 0.36
-    show kitty sil_black:
+    show kitty festive sil_black:
         zoom 0.15
         xpos 0.43
         ypos 0.46
@@ -6832,11 +6848,11 @@ label ce_roof_moment:
         zoom 0.15
         xpos 0.47
         ypos 0.46
-    show linus sil_black:
+    show linus festive sil_black:
         zoom 0.15
         xpos 0.46
         ypos 0.35
-    show luke sil_black:
+    show luke festive sil_black:
         zoom 0.15
         xpos 0.32
         ypos 0.45
@@ -6862,28 +6878,28 @@ label ce_roof_moment:
     copguy "You guys, move over there..."
     show cs sil_black at Move((0.3, 0.5), (0.27, 0.33), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show k22 sil_black at Move((0.45, 0.23), (0.34, 0.29), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
-    show arceus sil_black at Move((0.54, 0.54), (0.3, 0.4), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show arceus festive sil_black at Move((0.54, 0.54), (0.3, 0.4), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show mean human festive flipped sil_black at Move((0.4, 0.5), (0.32, 0.4), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show anno sil_black at Move((0.53, 0.33), (0.32, 0.48), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show tate festive sil_black at Move((0.34, 0.36), (0.29, 0.5), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show obama sil_black at Move((0.47, 0.47), (0.27, 0.49), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
-    show ed sil_black at Move((0.34, 0.43), (0.25, 0.47), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show ed festive sil_black at Move((0.34, 0.43), (0.25, 0.47), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     copguy "And, all of you, move {i}there..."
-    show rich sil_black at Move((0.45, 0.34), (0.45, 0.31), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
-    show wesley sil_black at Move((0.56, 0.45), (0.5, 0.36), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show rich festive sil_black at Move((0.45, 0.34), (0.45, 0.31), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show wesley festive sil_black at Move((0.56, 0.45), (0.5, 0.36), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show blank sil_black at Move((0.43, 0.34), (0.52, 0.40), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show nova sil_black at Move((0.55, 0.43), (0.5, 0.45), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
-    show copguy sil_black at Move((0.33, 0.35), (0.45, 0.5), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
-    show billy sil_black at Move((0.63, 0.46), (0.42, 0.36), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show copguy festive sil_black at Move((0.33, 0.35), (0.45, 0.5), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show billy festive sil_black at Move((0.63, 0.46), (0.42, 0.36), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show aria sil_black at Move((0.42, 0.36), (0.41, 0.40), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
-    show kitty sil_black at Move((0.43, 0.46), (0.42, 0.48), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show kitty festive sil_black at Move((0.43, 0.46), (0.42, 0.48), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     pause 1.0
     show anne sil_black at Move((0.34, 0.42), (0.65, 0.31), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show k17 sil_black at Move((0.43, 0.2), (0.68, 0.29), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show elizabeth sil_black at Move((0.38, 0.45), (0.6, 0.35), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show digi sil_black at Move((0.47, 0.46), (0.63, 0.39), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
-    show linus sil_black at Move((0.46, 0.35), (0.66, 0.39), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
-    show luke sil_black at Move((0.32, 0.45), (0.64, 0.44), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show linus festive sil_black at Move((0.46, 0.35), (0.66, 0.39), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show luke festive sil_black at Move((0.32, 0.45), (0.64, 0.44), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show db sil_black at Move((0.5, 0.6), (0.63, 0.5), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show obama sil_black at Move((0.47, 0.47), (0.58, 0.47), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     pause 4.0
@@ -7226,7 +7242,7 @@ label ce_roof_moment:
         zoom 0.15
         xpos 0.4
         ypos 0.5
-    show arceus sil_black:
+    show arceus festive sil_black:
         zoom 0.15
         xpos 0.54
         ypos 0.54
@@ -7242,15 +7258,15 @@ label ce_roof_moment:
         zoom 0.15
         xpos 0.47
         ypos 0.47
-    show ed sil_black:
+    show ed festive sil_black:
         zoom 0.15
         xpos 0.34
         ypos 0.42
-    show rich sil_black:
+    show rich festive sil_black:
         zoom 0.15
         xpos 0.45
         ypos 0.34
-    show wesley sil_black:
+    show wesley festive sil_black:
         zoom 0.15
         xpos 0.56
         ypos 0.45
@@ -7262,11 +7278,11 @@ label ce_roof_moment:
         zoom 0.15
         xpos 0.55
         ypos 0.43
-    show copguy sil_black:
+    show copguy festive sil_black:
         zoom 0.15
         xpos 0.33
         ypos 0.35
-    show billy sil_black:
+    show billy festive sil_black:
         zoom 0.15
         xpos 0.63
         ypos 0.46
@@ -7274,7 +7290,7 @@ label ce_roof_moment:
         zoom 0.15
         xpos 0.42
         ypos 0.36
-    show kitty sil_black:
+    show kitty festive sil_black:
         zoom 0.15
         xpos 0.43
         ypos 0.46
@@ -7294,11 +7310,11 @@ label ce_roof_moment:
         zoom 0.15
         xpos 0.47
         ypos 0.46
-    show linus sil_black:
+    show linus festive sil_black:
         zoom 0.15
         xpos 0.46
         ypos 0.35
-    show luke sil_black:
+    show luke festive sil_black:
         zoom 0.15
         xpos 0.32
         ypos 0.45
@@ -7490,7 +7506,7 @@ label ce_roof_moment:
     n "Billy opens up the paper and skims through it."
     pause 1.0
     billy "Wow..."
-    billy "This is {i}great!{/i} I can get to work on this {0.25}{i}real{/i} soon!"
+    billy "This is {i}great!{/i} I can get to work on this {w=0.25}{i}real{/i} soon!"
     hide folded_paper with dissolve
     billy "I gotta take a trip to France, first."
     billy "I need to... fix an old friend."

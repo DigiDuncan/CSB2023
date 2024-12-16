@@ -797,7 +797,7 @@ image cs sil_black = "sil_black:characters/cs/base/neutral.png"
 image cs sil_black flipped = "sil_black:flip:characters/cs/base/neutral.png"
 
 ## Arc
-image arceus sil_black = "sil_black:characters/arc/neutral_festive.png"
+image arceus festive sil_black = "sil_black:characters/arc/neutral_festive.png"
 image arceus festive = "characters/arc/neutral_festive.png"
 image arceus festive dusk flipped = "flip:dusk:characters/arc/neutral_festive.png"
 image arceus festive flipped = "flip:characters/arc/neutral_festive.png"
@@ -817,7 +817,7 @@ image anno coat = "characters/anno/anno_coat.png"
 image anno festive = "characters/anno/anno_festive.png"
 image anno festive dark = "dark:characters/anno/anno_festive.png"
 image anno dark = "dark:characters/anno/anno.png"
-image anno sil_black = "sil_black:characters/anno/anno_festive.png"
+image anno festive sil_black = "sil_black:characters/anno/anno_festive.png"
 
 ## Pakoo
 image pakoo = "characters/pakoo/pakoo.png"
@@ -933,7 +933,7 @@ image mean human angry festive flipped = "flip:characters/mean/meanhumanangryfes
 image mean human angry festive dark flipped = "dark:flip:characters/mean/meanhumanangryfestive.png"
 
 # HoH SiS
-image rich sil_black = "sil_black:characters/hohsis/rich_festive.png"
+image rich festive sil_black = "sil_black:characters/hohsis/rich_festive.png"
 image rich festive = "characters/hohsis/rich_festive.png"
 image rich festive dark = "dark:characters/hohsis/rich_festive.png"
 image rich festive dark flipped = "dark:flip:characters/hohsis/rich_festive.png"
@@ -943,16 +943,16 @@ image ed festive = "characters/hohsis/ed_festive.png"
 image ed festive flipped = "flip:characters/hohsis/ed_festive.png"
 image ed festive dark = "dark:characters/hohsis/ed_festive.png"
 image ed festive dark flipped = "dark:flip:characters/hohsis/ed_festive.png"
-image ed sil_black = "sil_black:characters/hohsis/ed_festive.png"
+image ed festive sil_black = "sil_black:characters/hohsis/ed_festive.png"
 
-image wesley sil_black = "sil_black:characters/hohsis/wesley_festive.png"
+image wesley festive sil_black = "sil_black:characters/hohsis/wesley_festive.png"
 image wesley festive = "characters/hohsis/wesley_festive.png"
 image wesley festive flipped = "flip:characters/hohsis/wesley_festive.png"
 image wesley festive dark = "dark:characters/hohsis/wesley_festive.png"
 image wesley festive dark flipped = "dark:flip:characters/hohsis/wesley_festive.png"
 
 # Copguy & Co.
-image copguy sil_black = "sil_black:characters/copguy/copguy_festive.png"
+image copguy festive sil_black = "sil_black:characters/copguy/copguy_festive.png"
 image copguy festive = "characters/copguy/copguy_festive.png"
 image copguy festive flipped = "flip:characters/copguy/copguy_festive.png"
 image copguy festive dark = "dark:characters/copguy/copguy_festive.png"
@@ -975,20 +975,20 @@ image carguy = "characters/carguy.png"
 image carguy flipped = "flip:characters/carguy.png"
 
 # LMG & The Fanboys
-image linus sil_black = "sil_black:characters/lmg/linus_festive.png"
+image linus festive sil_black = "sil_black:characters/lmg/linus_festive.png"
 image linus festive = "characters/lmg/linus_festive.png"
 image linus festive dark = "dark:characters/lmg/linus_festive.png"
 image linus festive flipped = "flip:characters/lmg/linus_festive.png"
 image linus festive dark flipped = "dark:flip:characters/lmg/linus_festive.png"
 
-image luke sil_black = "sil_black:characters/lmg/luke_festive.png"
+image luke festive sil_black = "sil_black:characters/lmg/luke_festive.png"
 image luke festive = "characters/lmg/luke_festive.png"
 image luke festive dark = "dark:characters/lmg/luke_festive.png"
 image luke festive flipped = "flip:characters/lmg/luke_festive.png"
 image luke festive dark flipped = "dark:flip:characters/lmg/luke_festive.png"
 
 # Billy Mays
-image billy sil_black = "sil_black:characters/billy/festive.png"
+image billy festive sil_black = "sil_black:characters/billy/festive.png"
 image billy festive = "characters/billy/festive.png"
 image billy festive flipped = "flip:characters/billy/festive.png"
 image billy festive dark = "dark:characters/billy/festive.png"
@@ -1109,7 +1109,7 @@ image kitty festive = "characters/kitty_festive.png"
 image kitty festive dark = "dark:characters/kitty_festive.png"
 image kitty festive flipped = "flip:characters/kitty_festive.png"
 image kitty festive dark flipped = "dark:flip:characters/kitty_festive.png"
-image kitty sil_black = "sil_black:characters/kitty_festive.png"
+image kitty festive sil_black = "sil_black:characters/kitty_festive.png"
 
 image blank sil_black = "sil_black:characters/blank_festive.png"
 image blank festive = "characters/blank_festive.png"
@@ -1159,6 +1159,7 @@ image snufkin flipped = "flip:characters/snufkin.png"
 ## CSBI
 image cs_room = "bg/cs_bedroom1.png"
 image cs_room_2 = "bg/cs_bedroom2.png"
+image cs_room_2 dark = "dark:bg/cs_bedroom2.png"
 image cs_house = "bg/cs_house.png"
 image cs_car = "bg/car_driveway.png"
 image cs_street = "bg/cs_street.png"

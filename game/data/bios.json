@@ -83,7 +83,7 @@
             "Festive": "images/characters/blank_festive.png"
         },
         "quote": "I Am Catboy Musical",
-        "bio": "Ever needed music that's also a shitpost? No? Well, too bad, because Blank has ya covered. They {i}can{/i} make regular music, but it isn't {i}Blank{/i} music if it doesn't sample catgirl moans. They're a little annoyed about having to share the sound system with Nova, though."
+        "bio": "Ever needed music that's also a shitpost? No? Well, too bad, because Blank has ya covered. They {i}can{/i} make regular music, but it isn't {i}Blank{/i} music if it doesn't sample catgirl moans. They're a little annoyed about having to share the party's sound system with Nova."
     },
     "carguy": {
         "full_name": "Carguy",
@@ -146,7 +146,7 @@
             "Coat + Hat: Worried": "images/characters/cs/coat_hat/worried.png"
         },
         "quote": "Hey guys, CS here!",
-        "bio": "The main man himself! He's back to get all his friends together and spread some holiday cheer. He even bought a new outfit for the occasion!",
+        "bio": "The main man himself! He's back to get all his friends together and spread some holiday cheer. He even bought himself a new outfit for the occasion!",
         "flip": true
     },
     "db": {
@@ -325,7 +325,7 @@
         "pronouns": "(they/them)",
         "sprites": { "Default": "images/characters/nova.png" },
         "quote": "k.",
-        "bio": "After getting CS' invitation, Nova figured that, sure, maybe they could visit CS one more time. They've been mostly excited to show off their newest track to a bunch of people. They're not too thrilled with having to share the spotlight with Blank, though.",
+        "bio": "After getting CS' invitation, Nova figured that, sure, maybe they could visit CS one more time. They've been excited to show off their newest track to a bunch of people. They're not too thrilled with having to share the spotlight with Blank, though.",
         "zoom": 0.85
     },
     "obama": {
