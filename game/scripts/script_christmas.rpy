@@ -2712,7 +2712,7 @@ label ce_party_before:
         show grace dark at left
         with dissolve
         show cs disappointed christmas dark flipped at right with moveinright
-        cs "Hey, uhh..."
+        cs "Hey, uh..."
         eliza "Is this the right place?"
         show grace happy dark
         show anne happy dark
@@ -3184,7 +3184,7 @@ label ce_introductions:
         show elizabeth worried at right with vpunch
         avgn "You guys ever heard of {i}Dr. Jekyll and Mr. Hyde{/i} for the NES?"
         show elizabeth angry
-        eliza "Uhh, no?"
+        eliza "Uh, no?"
         show avgn flipped
         avgn "Good, because it's fucking {nw}"
         extend "{i}ass!" with vpunch
@@ -3433,7 +3433,7 @@ label ce_banter:
     show k17 shock
     k17 "Who?"
     show k22 confident flipped
-    k22 "Uhh, well..."
+    k22 "Uh, well..."
     aria "I'm an old friend. You know, the other one, who {i}wasn't{/i} Arceus?"
     aria "I got different."
     show k22 disappointed flipped
@@ -3487,7 +3487,7 @@ label ce_banter:
     with dissolve
     pause 0.5
     k17 "This is {i}so{/i} unfair!"
-    k17 "CS said it's annoying that we've changed or whatever, but just look at everyone {i}else!"
+    k17 "CS said it's annoying that we've changed, or whatever, but just look at everyone {i}else!"
     k17 "All of my friends have changed so much I don't even {i}recognize{/i} them anymore!"
     k22 "Yeah, well, when you are constrained to just one year of your life, that can happen."
     k17 "It's just... how do I, like, {i}deal{/i} with all of this?"
@@ -3527,9 +3527,9 @@ label ce_banter:
     with moveinright
     addy "HELLO?!" with vpunch
     if fun_value(FUN_VALUE_MUSIC, confusing = True):
-        k22 "Hey, uhh, do you need some H2O?"
+        k22 "Hey, uh, do you need some H2O?"
     else:
-        k22 "Hey, uhh, how is it going over there?"
+        k22 "Hey, uh, how is it going over there?"
     addy "{i}WHAT?! {nw}" with vpunch
     extend "I CAN'T HEAR YOU! {nw}" with vpunch
     extend "THE MUSIC IS {i}REALLY{/i} LOUD!" with vpunch
@@ -3565,7 +3565,7 @@ label ce_banter:
     k17 "Huh?"
     sheriff "Hey, you! Can you help me out of here?"
     show k17 shock
-    k17 "Uhh... uhh..."
+    k17 "Um... uh..."
     k17 "I'll go get someone!"
     hide k17 with easeoutleft
     pause 0.5
@@ -3923,7 +3923,7 @@ label ce_win_carrot:
     obama "Billy, you crack me up. You're one of America's greatest."
     billy "That means a lot coming from you, Mr. President!"
     obama "Please, call me Barack."
-    billy "The man in the suit always lurking behind you said if I do that, he'll kill me!"
+    billy "The man in the suit always lurking behind you said if I do {i}that,{/i} he'll kill me!"
     obama "Oh, he's just teasing. Isn't that right, Luther?"
     n "Luther says nothing and nods once."
     pause 0.25
@@ -4060,7 +4060,7 @@ label ce_mike:
     play sound sfx_punch
     with vpunch
     pause 0.5
-    n "As Arceus is dying on the floor, he faintly hears people talking."
+    n "As Arceus lies dying on the floor, he faintly hears people talking."
     grace "I expected more from you."
     obama "Should've listened to my campaign speeches, bitch."
     mike "Alright, who wants to try pizza from my Thermos?"
@@ -4072,6 +4072,7 @@ label ce_mike:
     music end
     pause 2.0
     play sound sfx_csnore loop
+    play sound2 sfx_flashback_arthur noloop
     cs "Zzz..."
     rich "Hey, CS, are you sleeping?"
 
@@ -4188,7 +4189,7 @@ label ce_dinner:
     show k17 disappointed flipped at mid_left_left
     with move
     k22 "Hey K-17, are you gonna eat your food?"
-    k17 "I... uhh..."
+    k17 "I... uh..."
     k17 "I need to go to the bathroom..."
     show k17 disappointed with determination
     hide k17 with moveoutleft
@@ -4298,7 +4299,7 @@ label ce_dinner:
     ed "You've {i}more{/i} than made it up to us, CS."
     rich "Yeah, you helped propel our business to new heights!"
     rich "Or, I guess, new foundations?"
-    wesley "Mmm."
+    wesley "Mm..."
 
     scene night_bg
     show right_room at right
@@ -4386,7 +4387,7 @@ label ce_dinner:
     show ed festive at mid_offscreen_right
     show right_table at left
 
-    arceus "Hey, at least you can go to LTT and not have to {i}walk{/i} like last time!"
+    arceus "Hey, at least you'll get to {i}fly{/i} to LTT and not have to {i}walk{/i} like last time!"
     scene night_bg
     show left_room
     show left_chair_back
@@ -4572,7 +4573,7 @@ label ce_dinner:
     k22 "No, I'm-- Give me a second, I have a picture of this on my phone."
     show digi thinking flipped
     digi "CS, have {i}you{/i} ever seen super unleaded?"
-    cs "Uhh... no?"
+    cs "Uh... no?"
     show k22 confident
     k22 "Aha! See?"
     pause 0.5
@@ -5695,7 +5696,7 @@ label ce_lights_out:
     if fun_value(FUN_VALUE_MUSIC, confusing = True):
         cs "Kitty? What are the chances that I found you down here? Arceus was looking all over for you!"
         cs "Think of the synchronicity of this situation!"
-        kitty "Uhh..."
+        kitty "Uh..."
     else:
         cs "Kitty? What are you doing down here? Arceus was looking all over for you!"
     kitty "Sorry..."
@@ -6149,7 +6150,7 @@ label ce_snowed_in:
     cs "We might be stuck here for a while."
     k22 "Like... for a couple of hours? All night?"
     show cs worried christmas
-    cs "Uhh..."
+    cs "Uh..."
     cs "Well..."
     show cs disappointed christmas
     cs "At least for the night."
@@ -6204,6 +6205,7 @@ label ce_snowed_in:
     show cs happy christmas
     cs "And, what better way to kill time than to play some games?"
     show cs christmas
+    michael "Oh! I know of an easy game we can play."
     michael "I spy something... black!"
     nova "Is it Obama?"
     show digi disappointed
@@ -6358,8 +6360,8 @@ label ce_win_reversi:
     $ achievement_manager.unlock("reversi")
 
     cs "I won!"
-    cs "Now how much do {i}you{/i} think Microsoft Windows is worth?"
-    linus "Isn't it like $99-- {nw}"
+    cs "Now, how much do {i}you{/i} think Microsoft Windows is worth?"
+    linus "Isn't it, like, $99-- {nw}"
     cs "{i}Don't answer!" with vpunch
 
     if reversi_difficulty == ReversiAI.TATE:
@@ -7034,7 +7036,7 @@ label ce_roof_moment:
         yanchor 1.0
         zoom 0.75
     with moveinleft
-    k17 "Haha, see, K-22? Who needs Addy's party when we can literally meet The Big Man himself?"
+    k17 "Haha, see, K-22? Who needs Addy's party when we can {i}literally{/i} meet the big man himself?"
     show k22 happy flipped
     k22 "Heh, I guess you've got a point, there. They aren't gonna {i}believe{/i} this!"
     show cs christmas
@@ -7470,7 +7472,7 @@ label ce_roof_moment:
     n "As the guests say their goodbyes and gear up to get home, K-22 approaches Billy."
     k22 "Hey, Billy. Can I talk to you for a minute?"
     billy "Sure thing! How can I help?"
-    k22 "I, uhh... had a customer who wanted you to make something for them."
+    k22 "I, uh... had a customer who wanted you to make something for them."
     show folded_paper dark at manual_pos(0.65, 0.75, 0.5) with dissolve:
         zoom 0.6
     $ collect("folded_paper")
@@ -7488,7 +7490,7 @@ label ce_roof_moment:
     n "Billy opens up the paper and skims through it."
     pause 1.0
     billy "Wow..."
-    billy "This is {i}great!{/i} I can get to work on this real soon!"
+    billy "This is {i}great!{/i} I can get to work on this {0.25}{i}real{/i} soon!"
     hide folded_paper with dissolve
     billy "I gotta take a trip to France, first."
     billy "I need to... fix an old friend."
