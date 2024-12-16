@@ -1008,7 +1008,7 @@ label ce_setup:
     scene black with dissolve
     pause 3.0
     scene cs_bedroom1_ce_car
-    show cs dark
+    show cs
     with dissolve
     cs "... So, out of 500 crashes..."
     show cs happy
@@ -1027,7 +1027,7 @@ label ce_setup:
     cs "Athena, sleep mode."
     scene cs_bedroom1_ce dark
     show cs disappointed dark flipped
-    play sound sfx_fabeep 
+    play sound sfx_fabeep
     pause 0.75
     show cs worried dark flipped
     cs "I'll have to go during the rush tomorrow!"
