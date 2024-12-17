@@ -5931,7 +5931,7 @@ label ce_lights_out:
     anno "My phone's about to die."
     cs "I'm gonna check outside and see how bad it is."
     k22 "Oh, yeah. I was thinking about trying the same thing, but I couldn't find the door."
-    cs "If we can get outside, maybe we can all dig our vehicles out and then warm up in our cars."
+    cs "If we can get outside, maybe we can all warm up in our cars."
     cs "I'll be back in a sec."
     hide cs
     hide flashlight_held
