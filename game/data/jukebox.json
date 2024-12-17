@@ -128,6 +128,13 @@
             "album_art": "nsmb.png",
             "trivia": "Whenever you put a compass near the jukebox with this song playing, it points up. Great for secret worlds!"
         },
+        "girl_next_door" : {
+            "file": "girl_next_door.ogg",
+            "title": "Girl Next Door",
+            "artist": "Toby Fox",
+            "tags": ["CSBIII DX: Holiday Special", "New In DX"],
+            "album_art": "deltarune.png"
+        },
         "ce_passport" : {
             "file": "cepassport.ogg",
             "title": "Christmas Passport",

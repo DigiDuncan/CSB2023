@@ -4814,9 +4814,165 @@ label ce_dinner:
     cs "{i}Well--{w=0.25}{nw}"
     show digi flipped
     digi "Let him believe, CS. Let him believe."
-    pause 0.5
+    cs "Well K-17, I'm really sorry that things aren't going to plan for you."
+    show cs christmas
+    cs "...But the gift exchange is about to start! So maybe that will cheer you up!"
+    cs "I'm gonna start letting everyone know."
+    cs "Digi, if you want to stay here and cheer him up, go ahead."
+    digi "Yeah, I'll be down in a moment."
+    hide cs with moveoutright
+    show digi flipped at mid_left with move
+    digi "Hey K-17, is there anything you want to talk about?"
+    k17 "{sc=1.88}I don't... know..."
+    k17 "{sc=1.88}Do you think... I can..."
+    k17 "{sc=1.88}Be alone... for a minute?"
+    digi "Okay, I can leave you alone."
+    digi "Just make sure to come down soon, you don't want to miss the gift exchange!"
+    k17 "Yeah..."
+    hide digi with moveoutright
+    window hide
+    stop music fadeout 3.0
+    music end
+    pause 5.0
+    show elizabeth flipped at mid_left with moveinleft
+    eliza "Man, it's weird that this huge house only has one bathroom."
+    show elizabeth flipped at mid_mid_left with move
+    play sound sfx_door_jiggle
+    n "Elizabeth jiggles the door."
+    eliza "Hello? Is there anyone in there?"
+    n "She gets no response."
+    eliza "Hey, is someone in the bathroom?"
+    n "Still no response."
+    show elizabeth angry flipped
+    eliza "Did someone lock the bathroom from the inside?"
+    eliza "What asshole would do {i}that?{/i}"
+    show elizabeth flipped
+    eliza "Oh well."
+    show elizabeth angry flipped    
+    eliza "I'm sorry CS, but I'm gonna kick down your door!"
+    window hide
+    show elizabeth angry flipped at mid_left_left with move
+    pause 0.75
+    show elizabeth angry flipped at mid_mid_left with ease
+    scene cs_bathroom_open
+    show cs_bathroom_open_fg
+    play sound sfx_house_door_open
+    show elizabeth worried flipped at mid_mid_left
+    show k17 shock at center with vpunch
+    eliza "{cshake}Woah!" (multiple = 2)
+    k17 "{cshake}Ahhh!" (multiple = 2)
+    show k17 disappointed at mid_right
+    show elizabeth angry flipped at mid_left
+    with move
+    eliza "Hey, why weren't you responding to me?"
+    eliza "I could've kicked you in the--{w=1.5}{nw}"
+    n "Elizabeth looks at K-17's face, covered with tears."
+    show elizabeth worried flipped
+    eliza "Hey, are you okay?"
+    show elizabeth flipped
+    k17 "{sc=1.25}{size=-6}I..."
+    k17 "{sc=1.25}{size=-3}I have to get ready for the gift exchange..."
+    show k17 disappointed flipped
+    k17 "{sc=1.25}Sorry for bothering you..."
+    eliza "Woah, hey!"
+    show k17 disappointed
+    eliza "Something else seems up with you."
+    eliza "Do you want to..."
+    show elizabeth disappointed flipped
+    eliza "Uhh..."
+    play music girl_next_door volume 0.75
+    music girl_next_door
+    eliza "Talk... about it..."
+    k17 "{sc=0.75}I... don't..."
+    eliza "Or I mean, if you don't {i}want{/i} to... you don't... {i}have{/i} to?"
+    show elizabeth flipped
+    n "K-17 takes a deep breath."
+    k17 "It's just... I was really excited to go meet CS, and catch up with my old friends."
+    show k17 shock
+    k17 "...But when I got here, everyone seemed to change {i}so{/i} much!"
+    show k17 disappointed
+    k17 "I don't even recognize half of the people here now!"
+    eliza "Well, hey."
+    eliza "That's how the world works. Everything is always changing."
+    eliza "I've experienced a lot of change in my life."
+    eliza "Sometimes in the end though, change can be good."
+    show grace at mid_mid_left
+    show anne at left
+    with moveinleft
+    show grace happy
+    grace "Hey Elizabeth, are you ready for the gift exchange?"
+    show grace
+    eliza "Speaking of change..."
+    eliza "These two have been through a lot of change."
+    eliza "I guess I'm due for some introductions."
+    eliza "I'm Elizabeth. These two are my... {i}friends,{/i} Anne and Grace."
+    anne "Hi."
+    show grace happy flipped
+    grace "How's it hanging?"
+    grace "What's your name, blue-haired dude?"
+    show grace
+    k17 "I'm K-17."
+    show grace worried flipped
+    grace "That's a weird name, never heard of someone with numbers in their name before..."
+    anne "What about CS? I thought his last name was 188?"
+    show grace worried
+    grace "{size=-8}Wait, {i}is it?{/i}"
+    show grace
+    eliza "If I may ask, how long has it been since you talked to CS?"
+    k17 "Oh, uhh... it was a {i}long{/i} time ago..."
+    k17 "It was back in 2017..."
+    show grace worried flipped
+    grace "2017 was a long time ago for you?"
+    show grace angry flipped with vpunch
+    grace "That's pussy shit! Anne and I have been around for {i}wayyy{/i} longer!"
+    show elizabeth worried flipped
+    show anne angry with vpunch
+    anne "{size=+4}Grace, knock it off!" (multiple = 2)
+    eliza "{size=+4}Grace!" (multiple = 2)
+    show grace sad
+    show k17
+    grace "Sorry, I guess I was a {i}little{/i} too rude..."
+    show grace
+    show anne
+    show elizabeth flipped
+    k17 "Heh, it's okay."
+    k17 "That's pretty interesting actually, how much have you guys been through?"
+    show grace happy flipped
+    grace "Oh, we've been through multiple wars... nothing too crazy..."
+    show grace
+    eliza "I haven't been around as long as them, but I've got a few stories I could tell one day."
+    show k17 happy
+    k17 "I would love to hear!"
+    show k17
+    k17 "Telling stories is {i}basically{/i} my job."
+    eliza "Well, are you feeling any better?"
+    k17 "Yeah, I guess I should head downstairs now."
+    k17 "Everyone is probably waiting for us."
+    eliza "Yeah, probably."
+    show elizabeth worried flipped with vpunch
+    eliza "I forgot I needed to go to the bathroom..."
+    eliza "I'll meet you all downstairs!"
+    show elizabeth worried flipped at center with ease
+    play sound sfx_house_door_close
+    scene cs_bathroom
+    show anne at left
+    show grace at mid_mid_left
+    show k17 at mid_right
+    anne "Okay!"
+    show grace happy flipped
+    grace "Let's go open gifts, Mr. Numbers in his name!"
+    stop music fadeout 2.0
+    music end
+    show grace
+    show k17 flipped
+    with determination
+    hide grace
+    hide k17
+    hide anne
+    with moveoutright
+    pause 0.75
     scene black with dissolve
-    pause 0.5
+    pause 0.75
 
 # Gift Exchange
 label ce_exchange:
