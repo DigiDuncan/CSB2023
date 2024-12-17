@@ -93,7 +93,7 @@ screen jukebox_nav():
                     if k in persistent.heard:
                         # display all
                         if current_jukebox_tag_index == 0:
-                            textbutton "{font=music_text}" + MUSIC_MAP[k]["title"]+"\n{size=-12}"+MUSIC_MAP[k]["artist"] action SetScreenVariable("current_song_name", k), SetVariable("jukebox_playing", True), Play("jukebox", MUSIC_MAP[k]["file"], relative_volume=0.5)
+                            textbutton "{font=music_text}" + MUSIC_MAP[k]["title"]+"\n{size=-12}"+MUSIC_MAP[k]["artist"] action SetScreenVariable("current_song_name", k), SetVariable("jukebox_playing", True), Play("jukebox", MUSIC_MAP[k]["file"])
                         # only display per tag
                         else:
                             if TAGS_MAP[current_jukebox_tag_index] in MUSIC_MAP[k]["tags"]:
