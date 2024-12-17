@@ -4872,7 +4872,7 @@ label ce_dinner:
     with move
     eliza "Hey, why weren't you responding to me?"
     eliza "I could've kicked you in the--{w=1.5}{nw}"
-    n "Elizabeth notiches K-17's face, stained with tears."
+    n "Elizabeth notiches K-17's face stained with tears."
     show elizabeth worried flipped
     eliza "Hey, are you okay?"
     show elizabeth flipped
@@ -4895,7 +4895,7 @@ label ce_dinner:
     n "K-17 takes a deep breath."
     k17 "It's just... I was really excited to meet with CS and catch up with my old friends."
     show k17 shock
-    k17 "But, when I got here, everyone seemed to change!"
+    k17 "But, when I got here, everyone seemed to have changed!"
     show k17 disappointed
     k17 "I don't even recognize half of the people here now!"
     eliza "Well, hey."
@@ -5822,12 +5822,12 @@ label ce_climax:
     show cs angry christmas
     show mean human annoyed festive
     if fun_value(FUN_VALUE_COMMON):
-        cs "If you hated my party so much..."
+        cs "If you hate my party so much..."
         play sound sfx_fucking_die
         cs_nobeep "{cps=20}You can just {cps=10}fucking {cps=20}die!"
     else:
         cs "If you hate my party so much, then just {w=0.5}{nw}"
-        cs "leave!" with vpunch
+        extend "leave!" with vpunch
     nova "Well, I'm {i}also{/i} leaving, because {i}this{/i} asshole won't let me play any {i}good{/i} music!" with hpunch
     blank "Hah! Says you! {i}You{/i} just wanted to play {i}your{/i} trash for the entire party!" with hpunch
     show projector_airplay behind cs:
