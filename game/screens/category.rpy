@@ -49,7 +49,7 @@ screen category_nav():
 
             textbutton "Jukebox\n{size=-12}Jam out to songs you've heard along the way!" action ShowMenu("jukebox"), PauseAudio("music", True)
 
-            textbutton "{image=gui/dx_text.png} Asset Gallery\n{size=-12}A gallery of beta assets, unused sprites, programmer art, concept art, and more!" action ShowMenu("unused_gallery"), PauseAudio("music", True), Play("music2", "audio/what_the_night_will_bring.ogg", relative_volume=8.0)
+            textbutton "{image=gui/dx_text.png} Asset Gallery\n{size=-12}A gallery of beta assets, unused sprites, programmer art, concept art, and more!" action ShowMenu("unused_gallery"), PauseAudio("music", True), Play("music2", "audio/what_the_night_will_bring.ogg")
 
             textbutton "Minigames\n{size=-12}Got a favorite minigame? Do it all over again!" action ShowMenu("ce_minigame_screen")
 
