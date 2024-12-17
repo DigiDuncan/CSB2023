@@ -17,7 +17,7 @@ init python:
     renpy.music.register_channel("music2", "music", movie=True)
     renpy.music.register_channel("jukebox", "music")
     renpy.music.register_channel("notification", "sound")
-    renpy.music.register_channel("dxcom", "sound")
+    renpy.music.register_channel("dxcom", "voice")
 
 init 10 python:
     def unlock_all():
