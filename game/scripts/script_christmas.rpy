@@ -4814,42 +4814,48 @@ label ce_dinner:
     cs "{i}Well--{w=0.25}{nw}"
     show digi flipped
     digi "Let him believe, CS. Let him believe."
-    cs "Well K-17, I'm really sorry that things aren't going to plan for you."
+    cs "Well, K-17, I'm really sorry that things aren't going the way you wanted."
     show cs christmas
-    cs "...But the gift exchange is about to start! So maybe that will cheer you up!"
-    cs "I'm gonna start letting everyone know."
+    cs "... But the gift exchange is about to start! So, maybe that will cheer you up!"
+    cs "I'm gonna let the others know."
     cs "Digi, if you want to stay here and cheer him up, go ahead."
+    show digi
     digi "Yeah, I'll be down in a moment."
-    hide cs with moveoutright
+    show cs christmas flipped
+    hide cs with moveoutleft
     show digi flipped at mid_left with move
-    digi "Hey K-17, is there anything you want to talk about?"
-    k17 "{sc=1.88}I don't... know..."
+    pause 0.5
+    digi "Hey, K-17, is there anything you'd like to talk about?"
+    k17 "{sc=1.88}I-{w=0.1}I... don't know..."
     k17 "{sc=1.88}Do you think... I can..."
     k17 "{sc=1.88}Be alone... for a minute?"
-    digi "Okay, I can leave you alone."
+    digi "Sure, I can give you some time."
     digi "Just make sure to come down soon, you don't want to miss the gift exchange!"
     k17 "Yeah..."
     hide digi with moveoutright
+    pause 0.5
     window hide
     stop music fadeout 3.0
     music end
     pause 5.0
     show elizabeth flipped at mid_left with moveinleft
     eliza "Man, it's weird that this huge house only has one bathroom."
-    show elizabeth flipped at mid_mid_left with move
+    show elizabeth flipped at center with move
     play sound sfx_door_jiggle
     n "Elizabeth jiggles the door."
-    eliza "Hello? Is there anyone in there?"
-    n "She gets no response."
+    eliza "Hello? Who's in there?"
+    pause 1.0
+    n "There's no response."
     eliza "Hey, is someone in the bathroom?"
+    pause 1.0
     n "Still no response."
     show elizabeth angry flipped
     eliza "Did someone lock the bathroom from the inside?"
     eliza "What asshole would do {i}that?{/i}"
     show elizabeth flipped
-    eliza "Oh well."
-    show elizabeth angry flipped    
-    eliza "I'm sorry CS, but I'm gonna kick down your door!"
+    eliza "Oh, well."
+    show elizabeth angry flipped
+    eliza "I'm sorry, CS, but I'll have to kick down your door!"
     window hide
     show elizabeth angry flipped at mid_left_left with move
     pause 0.75
@@ -4866,7 +4872,7 @@ label ce_dinner:
     with move
     eliza "Hey, why weren't you responding to me?"
     eliza "I could've kicked you in the--{w=1.5}{nw}"
-    n "Elizabeth looks at K-17's face, covered with tears."
+    n "Elizabeth notiches K-17's tear-streaked face."
     show elizabeth worried flipped
     eliza "Hey, are you okay?"
     show elizabeth flipped
@@ -4882,25 +4888,25 @@ label ce_dinner:
     eliza "Uhh..."
     play music girl_next_door volume 0.75
     music girl_next_door
-    eliza "Talk... about it..."
+    eliza "Talk... about it...?"
     k17 "{sc=0.75}I... don't..."
-    eliza "Or I mean, if you don't {i}want{/i} to... you don't... {i}have{/i} to?"
+    eliza "Or, I mean, if you don't {i}want{/i} to... you don't... {i}have{/i} to?"
     show elizabeth flipped
     n "K-17 takes a deep breath."
-    k17 "It's just... I was really excited to go meet CS, and catch up with my old friends."
+    k17 "It's just... I was really excited to meet with CS and catch up with my old friends."
     show k17 shock
-    k17 "...But when I got here, everyone seemed to change {i}so{/i} much!"
+    k17 "But, when I got here, everyone was so different than I remembered!"
     show k17 disappointed
     k17 "I don't even recognize half of the people here now!"
     eliza "Well, hey."
-    eliza "That's how the world works. Everything is always changing."
-    eliza "I've experienced a lot of change in my life."
-    eliza "Sometimes in the end though, change can be good."
+    eliza "That's how the world works. The only constant {i}is{/i} change."
+    eliza "I've experienced a lot of change in my life, too."
+    eliza "Sometimes, in the end, change can be good."
     show grace at mid_mid_left
     show anne at left
     with moveinleft
     show grace happy
-    grace "Hey Elizabeth, are you ready for the gift exchange?"
+    grace "Hey, Elizabeth, are you ready for the gift exchange?"
     show grace
     eliza "Speaking of change..."
     eliza "These two have been through a lot of change."
@@ -4913,13 +4919,13 @@ label ce_dinner:
     show grace
     k17 "I'm K-17."
     show grace worried flipped
-    grace "That's a weird name, never heard of someone with numbers in their name before..."
+    grace "That's a weird name. Never heard of someone with numbers in their name before."
     anne "What about CS? I thought his last name was 188?"
     show grace worried
-    grace "{size=-8}Wait, {i}is it?{/i}"
+    grace "{size=-12}Wait, {i}is it?{/i}"
     show grace
-    eliza "If I may ask, how long has it been since you talked to CS?"
-    k17 "Oh, uhh... it was a {i}long{/i} time ago..."
+    eliza "If I may ask, how long has it been since you last talked to CS?"
+    k17 "Oh, uh... it was a {i}long{/i} time ago..."
     k17 "It was back in 2017..."
     show grace worried flipped
     grace "2017 was a long time ago for you?"
@@ -4936,22 +4942,22 @@ label ce_dinner:
     show anne
     show elizabeth flipped
     k17 "Heh, it's okay."
-    k17 "That's pretty interesting actually, how much have you guys been through?"
+    k17 "It sounds pretty interesting, actually. How much have you guys been through?"
     show grace happy flipped
     grace "Oh, we've been through multiple wars... nothing too crazy..."
     show grace
-    eliza "I haven't been around as long as them, but I've got a few stories I could tell one day."
+    eliza "I haven't been around as long as these two, but I've got a few stories to tell."
     show k17 happy
-    k17 "I would love to hear!"
+    k17 "I'd love to hear 'em!"
     show k17
     k17 "Telling stories is {i}basically{/i} my job."
-    eliza "Well, are you feeling any better?"
+    eliza "Well, you seem to be feeling a bit better."
     k17 "Yeah, I guess I should head downstairs now."
     k17 "Everyone is probably waiting for us."
     eliza "Yeah, probably."
     show elizabeth worried flipped with vpunch
     eliza "I forgot I needed to go to the bathroom..."
-    eliza "I'll meet you all downstairs!"
+    eliza "I'll meet you all at the gift exchange!"
     show elizabeth worried flipped at center with ease
     play sound sfx_house_door_close
     scene cs_bathroom
@@ -4960,7 +4966,7 @@ label ce_dinner:
     show k17 at mid_right
     anne "Okay!"
     show grace happy flipped
-    grace "Let's go open gifts, Mr. Numbers in his name!"
+    grace "Let's go open gifts, Mr. Numbers-in-his-name!"
     stop music fadeout 2.0
     music end
     show grace

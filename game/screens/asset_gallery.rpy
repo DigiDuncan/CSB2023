@@ -39,13 +39,13 @@ screen unused_gallery():
         size 48
         xalign 0.5
         yalign 0.07
-        
+
     # File Name
     text list(asset_dict.values())[unused_page]["title"]:
         size 72
         xalign 0.5
         yalign 0.125
-    
+
     # Caption
     text list(asset_dict.values())[unused_page]["caption"]:
         textalign 0.5
