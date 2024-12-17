@@ -4865,8 +4865,8 @@ label ce_dinner:
     play sound sfx_house_door_open
     show elizabeth worried flipped at mid_mid_left
     show k17 shock at center with vpunch
-    eliza "{cshake}Woah!" (multiple = 2)
     k17 "{cshake}Ahhh!" (multiple = 2)
+    eliza "{cshake}Woah!" (multiple = 2)
     show k17 disappointed at mid_right
     show elizabeth angry flipped at mid_left
     with move

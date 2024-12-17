@@ -135,6 +135,7 @@ screen reversigame():
     add reversigamedisplay
 
 label play_reversigame:
+    hide screen dxcom
     window hide
     $ quick_menu = False
     play music ce_passport volume 0.75 if_changed
