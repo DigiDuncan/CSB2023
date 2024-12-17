@@ -134,6 +134,12 @@ label ce_start:
 
 label ce_tree:
     # GET TREE FIRST
+    play music lets_hear_winter volume 0.7 if_changed
+    scene cs_garage
+    show cs at mid_left
+    show garage_shelf behind cs at manual_pos(0.9, 0.5, 0.5)
+    with dissolve
+
     if tree_first:
 
         cs "I should get the Christmas tree first."
@@ -173,7 +179,7 @@ label ce_tree:
         show garage_shelf:
             linear 0.25 rotate -30
         pause 0.25
-        play sound2 sfx_metalpipe noloop volume 0.3
+        play sound2 sfx_metalpipe noloop
         $ collect("cheap_shelf")
 
         scene black with vpunch
@@ -278,6 +284,12 @@ label ce_tree:
         jump ce_check_status
 
 label ce_lights:
+    play music lets_hear_winter volume 0.7 if_changed
+    scene cs_garage
+    show cs at mid_left
+    show garage_shelf behind cs at manual_pos(0.9, 0.5, 0.5)
+    with dissolve
+
     if lights_first:
         cs "I should probably get the lights and garland first. That box is easiest to reach, anyway."
     if got_tree or got_decor:
@@ -301,6 +313,12 @@ label ce_lights:
     jump ce_check_status
 
 label ce_decor:
+    play music lets_hear_winter volume 0.7 if_changed
+    scene cs_garage
+    show cs at mid_left
+    show garage_shelf behind cs at manual_pos(0.9, 0.5, 0.5)
+    with dissolve
+
     if decor_first:
         cs "I'm gonna get the decorations first! I have a {i}huge{/i} assortment of Legos in there, too!"
     if got_tree or got_lights:
@@ -325,6 +343,11 @@ label ce_decor:
 
 # CHECK STATUS HERE
 label ce_check_status:
+    play music lets_hear_winter volume 0.7 if_changed
+    scene cs_garage
+    show cs at mid_left
+    show garage_shelf behind cs at manual_pos(0.9, 0.5, 0.5)
+    with dissolve
 
     # If you have everything, just get outta here!
     if got_lights and got_decor and got_tree:
@@ -532,7 +555,7 @@ label ce_anno:
     show shovel at manual_pos(0.9, 0.7, 0.5):
         rotate 15
     with dissolve
-    play music snowy
+    play music snowy if_changed
     music snowy
     if fun_value(FUN_VALUE_MUSIC):
         n "As CS closes the door behind him, he is greeted by a massive pile of snowy snow blocking the garage."
@@ -1128,7 +1151,7 @@ label ce_before_shopping:
     scene black with Dissolve(2.0)
     stop sound fadeout 5.0
     pause 5.0
-    play music winter_unclearance_sale loop volume 0.85 fadein 1.0
+    play music winter_unclearance_sale loop volume 0.85 fadein 1.0 if_changed
     music winter_unclearance_sale
     play sound sfx_hubbub loop volume 0.2 fadein 1.0
     scene tgt_inside
@@ -1722,6 +1745,10 @@ label ce_before_shopping:
 
 # Checkout
 label ce_checkout:
+    play music winter_unclearance_sale loop volume 0.85 if_changed
+    play sound sfx_hubbub loop volume 0.2 fadein 1.0
+    scene tgt_alcy
+
     n "With everything on his shopping list finally crossed off... and then some, CS finally heads over to the checkout lanes."
     scene tgt_line
     show streetguy flipped at mid_right_right
@@ -1729,7 +1756,7 @@ label ce_checkout:
     show snufkin flipped at mid_mid_right
     show customer at center
     with dissolve
-    play music winter_unclearance_sale if_changed loop volume 0.3 fadein 1.0
+    play music winter_unclearance_sale loop volume 0.3 fadein 1.0 if_changed
     pause 0.5
 
     show cs coat at manual_pos(-0.5, 1.0, 1.0)
@@ -2486,14 +2513,14 @@ label ce_party_before:
         show cs christmas dark flipped
         cs "Yeah, let's go."
     elif d20 == 5 or d20 == 6:
-        play sound sfx_train_chugging loop fadein 5.0 volume 0.4
+        play sound sfx_train_chugging loop fadein 3.0 volume 0.4
         with hpunch
         show cs scared christmas flipped with vpunch
         with vpunch
         with hpunch
         n "As soon as he says this, the whole house starts to shake!" with vpunch
-        cs "Wh--{w=0.5} what's going on?!" with hpunch
-        play sound2 sfx_train_whistle noloop volume 0.5
+        cs "Wh-- What's going on?!" with hpunch
+        play sound2 sfx_train_whistle noloop
         n "As the quaking grows stronger, a train whistle bellows out!" with vpunch
         cs "Holy shit, is that a {i}train?!" with hpunch
         hide cs with moveoutleft
@@ -3335,7 +3362,7 @@ label ce_banter:
     sheriff "Hey, Copguy!"
     if fun_value(FUN_VALUE_MUSIC):
         sheriff "Don't preheat your oven!"
-        copguy "...Thanks?"
+        copguy "... Thanks?"
         sheriff "For real, though! I need to take a {nw}"
         extend "{i}shit!" with vpunch
     else:
@@ -3811,7 +3838,7 @@ label ce_win_carrot:
     extend "burning..."
     obama "Is it perhaps the smoke billowing out from the oven?"
     show cs scared christmas flipped
-    play sound2 sfx_smoke_alarm volume 0.4
+    play sound2 sfx_smoke_alarm volume 0.5
     with vpunch
     n "All of a sudden, the smoke detectors start beeping!"
     digi "{cshake}AHHH! Turn it {i}off!" with hpunch
@@ -3847,7 +3874,7 @@ label ce_win_carrot:
         n "When the smoke finally clears, Ed pulls out a blackened turkey."
     hide smoke with dissolve
     show cs disappointed christmas flipped
-    play music snowdin_town
+    play music snowdin_town if_changed
     music snowdin_town
     ed "Damn it! My roast is {i}ruined!"
     billy "Not to fear, Ed! I made my famous restaurant mini-burgers!"
@@ -4103,7 +4130,7 @@ label ce_mike:
     show mike at right
     show cs christmas at mid_mid_left
     with moveinright
-    play music rice_and_wine volume 0.5
+    play music rice_and_wine volume 0.5 if_changed
     music rice_and_wine
     dxcom pizza1
     mike "I'm Chinese."
@@ -4229,7 +4256,7 @@ label ce_mike:
 
 # Dinner/More Banter
 label ce_dinner:
-    play music christmas_spirit
+    play music christmas_spirit if_changed
     music christmas_spirit
     scene night_bg
     show left_room
@@ -4886,7 +4913,7 @@ label ce_dinner:
     eliza "Do you want to..."
     show elizabeth disappointed flipped
     eliza "Uhh..."
-    play music girl_next_door volume 0.75
+    play music girl_next_door volume 0.75 if_changed
     music girl_next_door
     eliza "Talk... about it...?"
     k17 "{sc=0.75}I... don't..."
@@ -4985,7 +5012,7 @@ label ce_exchange:
     scene cs_living
     show cs christmas at center
     with dissolve
-    play music superstar_road volume 0.5
+    play music superstar_road volume 0.5 if_changed
     music superstar_road
     if fun_value(FUN_VALUE_MUSIC, confusing = True):
         cs "Alright! It's time for the superstar road!"
@@ -6397,7 +6424,7 @@ label ce_after_hatch:
 label ce_snowed_in:
     hide screen flashlight_demo
     $ mouse_visible = True
-    play music winters_halloween
+    play music winters_halloween if_changed
     music winters_halloween
     scene snowed_in
     show cs sil_black:
@@ -6781,7 +6808,7 @@ label ce_billy_time:
         cs "What? What's on the rocks, Billy?"
     else:
         cs "What? What is it, Billy?"
-    play music on_the_rocks
+    play music on_the_rocks if_changed
     music on_the_rocks
     billy "The Handy Switch!"
     billy "Who got my Handy Switch for their gift?"
@@ -7339,7 +7366,7 @@ label ce_roof_moment:
     stop sound fadeout 0.5
     play sound2 sfx_snow_walk fadein 3.0
     pause 3.0
-    play music snow_blind
+    play music snow_blind if_changed
     music snow_blind
     show santa at right with moveinright
     stop sound2
@@ -7875,6 +7902,7 @@ label ce_end_credits:
 
 # Epilogue
 label ce_epilogue:
+    stop music
     $ _skipping = True
     # attempted to fade this in better
     scene black
