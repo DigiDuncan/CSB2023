@@ -4814,9 +4814,171 @@ label ce_dinner:
     cs "{i}Well--{w=0.25}{nw}"
     show digi flipped
     digi "Let him believe, CS. Let him believe."
+    cs "Well, K-17, I'm really sorry that things aren't going the way you wanted."
+    show cs christmas
+    cs "... But the gift exchange is about to start! So, maybe that will cheer you up!"
+    cs "I'm gonna let the others know."
+    cs "Digi, if you want to stay here and cheer him up, go ahead."
+    show digi
+    digi "Yeah, I'll be down in a moment."
+    show cs christmas flipped
+    hide cs with moveoutleft
+    show digi flipped at mid_left with move
     pause 0.5
+    digi "Hey, K-17, is there anything you'd like to talk about?"
+    k17 "{sc=1.88}I-{w=0.1}I... don't know..."
+    k17 "{sc=1.88}Do you think... I can..."
+    k17 "{sc=1.88}Be alone... for a minute?"
+    digi "Sure, I can give you some time."
+    digi "Just make sure to come down soon, you don't want to miss the gift exchange!"
+    k17 "Yeah..."
+    hide digi with moveoutright
+    pause 0.5
+    window hide
+    stop music fadeout 3.0
+    music end
+    pause 5.0
+    show elizabeth flipped at mid_left with moveinleft
+    eliza "Man, it's weird that this huge house only has one bathroom."
+    show elizabeth flipped at center with move
+    play sound sfx_door_jiggle
+    n "Elizabeth jiggles the door."
+    eliza "Hello? Who's in there?"
+    pause 1.0
+    n "There's no response."
+    eliza "Hey, is someone in the bathroom?"
+    pause 1.0
+    n "Still no response."
+    show elizabeth angry flipped
+    eliza "Did someone lock the bathroom from the inside?"
+    eliza "What asshole would do {i}that?{/i}"
+    show elizabeth flipped
+    eliza "Oh, well."
+    show elizabeth angry flipped
+    eliza "I'm sorry, CS, but I'll have to kick down your door!"
+    window hide
+    show elizabeth angry flipped at mid_left_left with move
+    pause 0.75
+    show elizabeth angry flipped at mid_mid_left with ease
+    scene cs_bathroom_open
+    show cs_bathroom_open_fg
+    play sound sfx_house_door_open
+    show elizabeth worried flipped at mid_mid_left
+    show k17 shock at center with vpunch
+    eliza "{cshake}Woah!" (multiple = 2)
+    k17 "{cshake}Ahhh!" (multiple = 2)
+    show k17 disappointed at mid_right
+    show elizabeth angry flipped at mid_left
+    with move
+    eliza "Hey, why weren't you responding to me?"
+    eliza "I could've kicked you in the--{w=1.5}{nw}"
+    n "Elizabeth notiches K-17's tear-streaked face."
+    show elizabeth worried flipped
+    eliza "Hey, are you okay?"
+    show elizabeth flipped
+    k17 "{sc=1.25}{size=-6}I..."
+    k17 "{sc=1.25}{size=-3}I have to get ready for the gift exchange..."
+    show k17 disappointed flipped
+    k17 "{sc=1.25}Sorry for bothering you..."
+    eliza "Woah, hey!"
+    show k17 disappointed
+    eliza "Something else seems up with you."
+    eliza "Do you want to..."
+    show elizabeth disappointed flipped
+    eliza "Uhh..."
+    play music girl_next_door volume 0.75
+    music girl_next_door
+    eliza "Talk... about it...?"
+    k17 "{sc=0.75}I... don't..."
+    eliza "Or, I mean, if you don't {i}want{/i} to... you don't... {i}have{/i} to?"
+    show elizabeth flipped
+    n "K-17 takes a deep breath."
+    k17 "It's just... I was really excited to meet with CS and catch up with my old friends."
+    show k17 shock
+    k17 "But, when I got here, everyone was so different than I remembered!"
+    show k17 disappointed
+    k17 "I don't even recognize half of the people here now!"
+    eliza "Well, hey."
+    eliza "That's how the world works. The only constant {i}is{/i} change."
+    eliza "I've experienced a lot of change in my life, too."
+    eliza "Sometimes, in the end, change can be good."
+    show grace at mid_mid_left
+    show anne at left
+    with moveinleft
+    show grace happy
+    grace "Hey, Elizabeth, are you ready for the gift exchange?"
+    show grace
+    eliza "Speaking of change..."
+    eliza "These two have been through a lot of change."
+    eliza "I guess I'm due for some introductions."
+    eliza "I'm Elizabeth. These two are my... {i}friends,{/i} Anne and Grace."
+    anne "Hi."
+    show grace happy flipped
+    grace "How's it hanging?"
+    grace "What's your name, blue-haired dude?"
+    show grace
+    k17 "I'm K-17."
+    show grace worried flipped
+    grace "That's a weird name. Never heard of someone with numbers in their name before."
+    anne "What about CS? I thought his last name was 188?"
+    show grace worried
+    grace "{size=-12}Wait, {i}is it?{/i}"
+    show grace
+    eliza "If I may ask, how long has it been since you last talked to CS?"
+    k17 "Oh, uh... it was a {i}long{/i} time ago..."
+    k17 "It was back in 2017..."
+    show grace worried flipped
+    grace "2017 was a long time ago for you?"
+    show grace angry flipped with vpunch
+    grace "That's pussy shit! Anne and I have been around for {i}wayyy{/i} longer!"
+    show elizabeth worried flipped
+    show anne angry with vpunch
+    anne "{size=+4}Grace, knock it off!" (multiple = 2)
+    eliza "{size=+4}Grace!" (multiple = 2)
+    show grace sad
+    show k17
+    grace "Sorry, I guess I was a {i}little{/i} too rude..."
+    show grace
+    show anne
+    show elizabeth flipped
+    k17 "Heh, it's okay."
+    k17 "It sounds pretty interesting, actually. How much have you guys been through?"
+    show grace happy flipped
+    grace "Oh, we've been through multiple wars... nothing too crazy..."
+    show grace
+    eliza "I haven't been around as long as these two, but I've got a few stories to tell."
+    show k17 happy
+    k17 "I'd love to hear 'em!"
+    show k17
+    k17 "Telling stories is {i}basically{/i} my job."
+    eliza "Well, you seem to be feeling a bit better."
+    k17 "Yeah, I guess I should head downstairs now."
+    k17 "Everyone is probably waiting for us."
+    eliza "Yeah, probably."
+    show elizabeth worried flipped with vpunch
+    eliza "I forgot I needed to go to the bathroom..."
+    eliza "I'll meet you all at the gift exchange!"
+    show elizabeth worried flipped at center with ease
+    play sound sfx_house_door_close
+    scene cs_bathroom
+    show anne at left
+    show grace at mid_mid_left
+    show k17 at mid_right
+    anne "Okay!"
+    show grace happy flipped
+    grace "Let's go open gifts, Mr. Numbers-in-his-name!"
+    stop music fadeout 2.0
+    music end
+    show grace
+    show k17 flipped
+    with determination
+    hide grace
+    hide k17
+    hide anne
+    with moveoutright
+    pause 0.75
     scene black with dissolve
-    pause 0.5
+    pause 0.75
 
 # Gift Exchange
 label ce_exchange:
@@ -5660,12 +5822,12 @@ label ce_climax:
     show cs angry christmas
     show mean human annoyed festive
     if fun_value(FUN_VALUE_COMMON):
-        cs "If you hated my party so much..."
+        cs "If you hate my party so much..."
         play sound sfx_fucking_die
-        cs_nobeep "You can just fucking die!"
+        cs_nobeep "{cps=20}You can just {cps=10}fucking {cps=20}die!"
     else:
-        cs "If you hate my party so much, then just {nw}"
-        cs "leave!" with vpunch
+        cs "If you hate my party so much, then just {w=0.25}{nw}"
+        extend "leave!" with vpunch
     nova "Well, I'm {i}also{/i} leaving, because {i}this{/i} asshole won't let me play any {i}good{/i} music!" with hpunch
     blank "Hah! Says you! {i}You{/i} just wanted to play {i}your{/i} trash for the entire party!" with hpunch
     show projector_airplay behind cs:
@@ -7101,7 +7263,7 @@ label ce_roof_moment:
     cs "Come on, guys! You've gotta sing!"
     k17 "{image=note_small1.png} He's making a list...{w=0} {image=note_small2.png}"
     k17 "{image=note_small1.png} And checking it twice...{w=0} {image=note_small2.png}"
-    play sound ["<silence 0.85>", sfx_pop_noice]
+    play sound2 ["<silence 0.85>", sfx_pop_noice] noloop
     grace "{image=note_small1.png} Gonna find out who's naughty and nice...{w=0} {image=note_small2.png}"
     rich "{image=note_small1.png} Santa Claus is coming to town!{w=0} {image=note_small2.png}"
     tate "{image=note_small1.png} He sees you when you're sleeping...{w=0} {image=note_small2.png}"
