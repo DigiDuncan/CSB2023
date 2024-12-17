@@ -355,5 +355,19 @@
             "transcript": "Because it's... true. Don't-- hold-- Нет! Yeah, just-- Нет! Just-- Не-- Оставь меня в покое, женщина! найди кого-нибудь еще, кто будет беспокоить! Look, I'm still within the continental United States of America. Please... tell them that if they ask, okay? Thanks, CS. Enjoy the rest of the game. I don't think I have time to bother you again. Bye.",
             "length": 32.0
         }
+    ],
+    "endcap": [
+        {
+            "audio_path": "endcap1",
+            "speaker": "Digi",
+            "transcript": "When I was writing this scene, I remembered in my head that they'd put things that are about to go bad or aren't selling well on endcaps, so I figured this shot would be easy enough to get.",
+            "length": 7.3
+        },
+        {
+            "audio_path": "endcap2",
+            "speaker": "Pakoo",
+            "transcript": "When I went to the store to take pictures, I realized Easy Cheese wasn't on an endcap, but rather in the middle of the shelf. So I just took one and moved it onto the endcap, and called it a day.",
+            "length": 11
+        }
     ]
 }

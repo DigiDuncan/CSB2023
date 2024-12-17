@@ -1320,6 +1320,8 @@ label ce_before_shopping:
     show shopping_cart at manual_pos(0.5, 1.1, 0.5)
     with moveinleft
 
+    dxcom endcap
+
     n "CS spots some Easy Cheese."
     show cs coat happy
     cs "Oh, {i}sweet!{/i} This stuff {i}never{/i} expires!"
