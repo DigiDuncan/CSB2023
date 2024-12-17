@@ -5818,9 +5818,9 @@ label ce_climax:
     if fun_value(FUN_VALUE_COMMON):
         cs "If you hated my party so much..."
         play sound sfx_fucking_die
-        cs_nobeep "You can just fucking die!"
+        cs_nobeep "{cps=20}You can just {cps=10}fucking {cps=20}die!"
     else:
-        cs "If you hate my party so much, then just {nw}"
+        cs "If you hate my party so much, then just {w=0.5}{nw}"
         cs "leave!" with vpunch
     nova "Well, I'm {i}also{/i} leaving, because {i}this{/i} asshole won't let me play any {i}good{/i} music!" with hpunch
     blank "Hah! Says you! {i}You{/i} just wanted to play {i}your{/i} trash for the entire party!" with hpunch
