@@ -4872,7 +4872,7 @@ label ce_dinner:
     with move
     eliza "Hey, why weren't you responding to me?"
     eliza "I could've kicked you in the--{w=1.5}{nw}"
-    n "Elizabeth notiches K-17's face stained with tears."
+    n "Elizabeth notices K-17's face stained with tears."
     show elizabeth worried flipped
     eliza "Hey, are you okay?"
     show elizabeth flipped
