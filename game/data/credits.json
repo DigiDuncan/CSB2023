@@ -41,8 +41,8 @@
         },
 
         "_testing": {
-            "Alpha Testing": ["Arceus3251"],
-            "Beta Testing": ["Tate \"alleZSoyez\"", "4Bakers", "BubbleTheSlime", "meancarnavor", "Mikapara", "UndeadKitty"]
+            "Alpha Testing": ["Arceus3251", "Tate \"alleZSoyez\""],
+            "Beta Testing": ["xohorses", "BubbleTheSlime", "WaterfalLStream", "SEHT"]
         },
 
         "Character Sprites": {
@@ -65,7 +65,7 @@
         "DigiDuncan Character Sprite": {
             "3D Model": ["Tris", "LurkingLotus", "4Bakers"],
             "Texture": ["DigiDuncan"],
-            "Concept Art": ["Mushroom Man"],
+            "Concept Art": ["Mushroom Man", "WaterfallStream"],
             "Posing": ["Tate \"alleZSoyez\""]
         },
 
