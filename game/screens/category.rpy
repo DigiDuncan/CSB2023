@@ -44,12 +44,12 @@ screen category_nav():
             textbutton "Achievements\n{size=-12}Look at all you've accomplished!" action ShowMenu("achievements_welcome")
 
             textbutton "Bios\n{size=-12}Learn more about the characters you've met!" action ShowMenu("people")
-            
+
             textbutton "{image=gui/dx_text.png} Item Collection\n{size=-12}Inspect items you've found while playing!" action ShowMenu("item_collection")
 
             textbutton "Jukebox\n{size=-12}Jam out to songs you've heard along the way!" action ShowMenu("jukebox"), PauseAudio("music", True)
 
-            textbutton "{image=gui/dx_text.png} Asset Gallery\n{size=-12}A gallery of beta assets, unused sprites, programmer art, concept art, and more!" action ShowMenu("unused_gallery"), PauseAudio("music", True), Play("music2", "audio/what_the_night_will_bring.ogg", relative_volume=8.0)
+            textbutton "{image=gui/dx_text.png} Asset Gallery\n{size=-12}A gallery of beta assets, unused sprites, programmer art, concept art, and more!" action ShowMenu("unused_gallery"), PauseAudio("music", True), Play("music2", "audio/what_the_night_will_bring.ogg")
 
             textbutton "Minigames\n{size=-12}Got a favorite minigame? Do it all over again!" action ShowMenu("ce_minigame_screen")
 
