@@ -1320,6 +1320,8 @@ label ce_before_shopping:
     show shopping_cart at manual_pos(0.5, 1.1, 0.5)
     with moveinleft
 
+    dxcom endcap
+
     n "CS spots some Easy Cheese."
     show cs coat happy
     cs "Oh, {i}sweet!{/i} This stuff {i}never{/i} expires!"
@@ -1351,6 +1353,8 @@ label ce_before_shopping:
 
     scene tgt_chips with dissolve
     pause 1.0
+
+    hide screen dxcom
 
     show cs coat at manual_pos(-0.5, 1.0, 1.0)
     show shopping_cart at manual_pos(-0.3, 1.1, 0.5)
