@@ -4872,7 +4872,7 @@ label ce_dinner:
     with move
     eliza "Hey, why weren't you responding to me?"
     eliza "I could've kicked you in the--{w=1.5}{nw}"
-    n "Elizabeth notiches K-17's tear-streaked face."
+    n "Elizabeth notiches K-17's face stained with tears."
     show elizabeth worried flipped
     eliza "Hey, are you okay?"
     show elizabeth flipped
@@ -4895,11 +4895,11 @@ label ce_dinner:
     n "K-17 takes a deep breath."
     k17 "It's just... I was really excited to meet with CS and catch up with my old friends."
     show k17 shock
-    k17 "But, when I got here, everyone was so different than I remembered!"
+    k17 "But, when I got here, everyone seemed to have changed!"
     show k17 disappointed
     k17 "I don't even recognize half of the people here now!"
     eliza "Well, hey."
-    eliza "That's how the world works. The only constant {i}is{/i} change."
+    eliza "That's how the world works. Things are always changing."
     eliza "I've experienced a lot of change in my life, too."
     eliza "Sometimes, in the end, change can be good."
     show grace at mid_mid_left
@@ -4957,7 +4957,7 @@ label ce_dinner:
     eliza "Yeah, probably."
     show elizabeth worried flipped with vpunch
     eliza "I forgot I needed to go to the bathroom..."
-    eliza "I'll meet you all at the gift exchange!"
+    eliza "I'll meet you all downstairs!"
     show elizabeth worried flipped at center with ease
     play sound sfx_house_door_close
     scene cs_bathroom
@@ -5826,7 +5826,7 @@ label ce_climax:
         play sound sfx_fucking_die
         cs_nobeep "{cps=20}You can just {cps=10}fucking {cps=20}die!"
     else:
-        cs "If you hate my party so much, then just {w=0.25}{nw}"
+        cs "If you hate my party so much, then just {w=0.5}{nw}"
         extend "leave!" with vpunch
     nova "Well, I'm {i}also{/i} leaving, because {i}this{/i} asshole won't let me play any {i}good{/i} music!" with hpunch
     blank "Hah! Says you! {i}You{/i} just wanted to play {i}your{/i} trash for the entire party!" with hpunch
