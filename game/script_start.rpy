@@ -1860,7 +1860,7 @@ label before_main_menu:
         # We need to reevaluate how this works in DX, though...
         # Allowing debug mode when you only have all endings unlocked seems
         # a bit too OP?
-        if achievement_manager.unlocked == []:
+        if achievement_manager.locked == []:
             if persistent.creative_mode == False:
                 persistent.creative_mode = True
                 renpy.call_screen("special_unlock", "Noice! You've unlocked Creative Mode! Check out all the new stuff in Extras!")
