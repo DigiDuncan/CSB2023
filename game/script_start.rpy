@@ -3360,7 +3360,7 @@ define audio.nyan = "<from 3.6 to 228.52>/secret/pt/nyan_of_a_lifetime.ogg"
 define audio.tmwstw = "tmwstw.ogg"
 
 # CSBIII DX Holiday Special Music
-define audio.lets_hear_winter = "lets_hear_my_christ.ogg"
+define audio.lets_hear_winter = "<loop 7.674>lets_hear_my_christ.ogg"
 define audio.winters_halloween = "winters_halloween.ogg"
 define audio.synchronicity = "synchronicity.ogg"
 define audio.dont_preheat_your_oven = "dont_preheat_your_oven.ogg"
