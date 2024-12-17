@@ -1505,7 +1505,7 @@ image red_light:
 define audio.star_spangled_banner = "star_spangled_banner.ogg"
 
 # CSBIII DX Holiday Special Music
-define audio.lets_hear_winter = "lets_hear_my_christ.ogg"
+define audio.lets_hear_winter = "<loop 7.674>lets_hear_my_christ.ogg"
 define audio.winters_halloween = "winters_halloween.ogg"
 define audio.synchronicity = "synchronicity.ogg"
 define audio.dont_preheat_your_oven = "dont_preheat_your_oven.ogg"
