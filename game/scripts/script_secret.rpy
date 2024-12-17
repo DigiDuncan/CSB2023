@@ -1,16 +1,17 @@
-label secret_dx:
+label secret_ce:
     scene black with dissolve
     show digi at center with Dissolve(3)
     $ achievement_manager.unlock("broke")
-    digi "Oh, hi."
-    digi "You, uh... {w=0.5}weren't supposed to see this."
-    digi "Jeez, in {image=gui/dx_text.png}, too."
-    digi "I {i}thought{/i} we would have ironed out all the bugs by now, but we're DPN, so..."
-    pause 2.0
-    digi "How are you? You look lovely today."
-    digi "No, yeah, I'm sorry. I'll bring you back to the menu."
-    digi "Hey, if this was a legit bug, let me know, okay?"
-    digi "I want to get these all fixed up."
+    digi "Oh, hey! Uh..."
+    digi "Merry Christmas?"
+    digi "You weren't supposed to be here."
+    digi "Since you're here... I guess it means there's a bug in the game."
+    digi "Damn, in {image=gui/ce_text.png}, as well."
+    digi "I thought we had ironed everything out."
+    digi "I guess we just only hope {image=gui/dx_text.png} will be better."
+    digi "Well, you got an achivement for it, so that's something!"
+    digi "Anywho, I'll stop wasting your time."
+    digi "Happy holidays!"
     hide digi with dissolve
     window hide
     pause 3.0

@@ -1786,8 +1786,8 @@ init python:
             bgm_list.append("audio/" + bgm)
 
 # Minigames
-default minigame_win = "secret_dx"
-default minigame_loss = "secret_dx"
+default minigame_win = "secret_ce"
+default minigame_loss = "secret_ce"
 
 default current_dxcom = "1"
 
