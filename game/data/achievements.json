@@ -113,7 +113,7 @@
     "bouncy":{
         "name": "Boingy Boingy Boingy",
         "locked": "???",
-        "unlocked": "Max out CSBounciness play again!",
+        "unlocked": "Max out CSBounciness and play again!",
         "img": "max_bounce",
         "type": "extra"
     },
