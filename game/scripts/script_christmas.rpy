@@ -7860,7 +7860,8 @@ label ce_end_credits:
     #    n "In spite of it all, with the help of his friends, it was one of the jolliest times he's ever had."
     #    n "Merry Christmas to all, and to all, a good night!"
     $ achievement_manager.unlock("hoh_hoh")
-    $ ending_manager.mark("christmas")
+    if preferences.csbounciness == 100:
+        $ achievement_manager.unlock("bouncy")
 
     call screen credits_roll(scroll_start = 12525, duration=84) with dissolve
 

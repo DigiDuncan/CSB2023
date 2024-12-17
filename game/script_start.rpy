@@ -1855,12 +1855,15 @@ label splashscreen:
 
 label before_main_menu:
     python:
-        if ending_manager.all_seen() == True:
-            if "fin" not in persistent.unlocked_achievements:
-                # achievement_manager.unlock("fin", show_screen = False)
-                if persistent.creative_mode == False:
-                    persistent.creative_mode = True
-                    renpy.call_screen("special_unlock", "Noice! You've unlocked Creative Mode! Check out all the new stuff in Extras!")
+        # This has been changed for CE to require 188%ing the game.
+        # This is INTENTIONAL, and should not be backported to DX.
+        # We need to reevaluate how this works in DX, though...
+        # Allowing debug mode when you only have all endings unlocked seems
+        # a bit too OP?
+        if achievement_manager.unlocked == []:
+            if persistent.creative_mode == False:
+                persistent.creative_mode = True
+                renpy.call_screen("special_unlock", "Noice! You've unlocked Creative Mode! Check out all the new stuff in Extras!")
 
         if not persistent.seen_splash:
             if not renpy.music.is_playing():
