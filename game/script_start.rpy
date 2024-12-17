@@ -11,12 +11,12 @@ init python:
 
 # If music is so good, why is there no Music 2?
 init python:
-    renpy.music.register_channel("sound2", "sound")
+    renpy.music.register_channel("sound2", "sfx")
     renpy.music.register_channel("music4", "music")
     renpy.music.register_channel("music3", "music")
     renpy.music.register_channel("music2", "music", movie=True)
     renpy.music.register_channel("jukebox", "music")
-    renpy.music.register_channel("notification", "sound")
+    renpy.music.register_channel("notification", "sfx")
     renpy.music.register_channel("dxcom", "voice")
 
 init 10 python:
