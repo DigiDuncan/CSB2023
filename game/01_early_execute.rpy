@@ -216,7 +216,7 @@ python early:
     def execute_dxcom(parsed_object):
         if parsed_object is None:
             return
-        renpy.play("sfx/sfx_bubble.ogg", channel = "sfx")
+        renpy.play("sfx/sfx_bubble.ogg", channel = "notification")
         renpy.with_statement(determination)
         renpy.show_screen("dxcom", parsed_object)
         renpy.with_statement(determination)
@@ -360,7 +360,7 @@ init python:
                 else:
                     # Normal indicator
                     renpy.show("_fun_value",[_fun_value_fade,_fun_value_motion],"fun_icon")
-            renpy.play("audio/sfx/sfx_sparkle.ogg", channel = "sfx")
+            renpy.play("audio/sfx/sfx_sparkle.ogg", channel = "notification")
         return ret
 
     # File listing
