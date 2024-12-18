@@ -6958,7 +6958,7 @@ label ce_billy_time:
     show tate_phone at manual_pos(0.4, 0.8, 0.5) with { "master": MoveTransition(0.25) }
     billy "Yes! It's {i}that{/i} easy!"
     tate "Here goes nothin'..."
-    show handy_switch at manual_pos(0.2, 0.7, 0.5) with dissolve:
+    show handy_switch at manual_pos(0.2, 0.7, 0.5) behind billy with dissolve:
         zoom 0.5
     show handy_switch at manual_pos(0.45, 0.5, 0.5):
         linear 0.125 xzoom -1
@@ -6988,7 +6988,6 @@ label ce_billy_time:
     tate "Well, what're we waiting for?"
     tate "Let's get back upstairs and share the good news!"
     hide tate_phone
-    hide handy_switch
     with dissolve
     show tate festive flipped with determination
     hide tate
