@@ -374,19 +374,19 @@
         {
             "audio_path": "diagonaltable1",
             "speaker": "Baker",
-            "transcript": "I found this goofy-ahh picture of a... long table... diagonally in the middle of a room, and I thought it was so funny, that I replicated the entire shot verbatim as closely as I could.",
+            "transcript": "I found this goofy-ahh picture of a... long table... diagonally in the middle of a room, and I thought it was {i}so{/i} funny that I replicated the {i}entire{/i} shot verbatim as closely as I could.",
             "length": 14.1
         },
         {
             "audio_path": "diagonaltable2",
             "speaker": "Digi",
-            "transcript": "Baker asked if we could put a picture of the table up during the developer commentary here, but because that feature does not currently exist, and this is being recorded three days before we have to be finished the game, the answer was no. You can find the picture in the asset gallery.",
+            "transcript": "Baker asked if we could put a picture of the table up during the developer commentary here, but because that feature does not currently exist, and this is being recorded three days before we have to be finished [with] the game, the answer was no. You can find that picture in the asset gallery.",
             "length": 11.9
         },
         {
             "audio_path": "diagonaltable3",
             "speaker": "Baker",
-            "transcript": "And that's how we got this... thing. It's so weird. I don't regret it {i} at all.",
+            "transcript": "And that's how we got this... thing. It's {i}so{/i} weird. I... I don't regret it {i} at all.",
             "length": 9
         }
     ],
@@ -394,7 +394,7 @@
         {
             "audio_path": "dxcom1",
             "speaker": "Baker",
-            "transcript": "What you just clicked was the developer commentary node, from Source games such as {i}Half Life 2{/i} and {i}Portal.",
+            "transcript": "What you just clicked was the developer commentary node from Source games such as {i}Half Life 2{/i} and {i}Portal.",
             "length": 6.6
         },
         {
@@ -412,7 +412,7 @@
         {
             "audio_path": "dxcom4",
             "speaker": "Baker",
-            "transcript": "But the model from Source was asymmetrical and lumpy, so I remodeled it from scratch, and rendered it spinning as a spritesheet animation.",
+            "transcript": "But the model from Source was asymmetrical and lumpy, so I remodeled it from scratch and rendered it spinning as a spritesheet animation.",
             "length": 7.3
         }
     ],
@@ -420,7 +420,7 @@
         {
             "audio_path": "projector",
             "speaker": "Baker",
-            "transcript": "Digi does not need to hear all this, he's a highly trained professional!",
+            "transcript": "Digi does not need to hear all this! He's a highly-trained professional!",
             "length": 5.1
         }
     ]
