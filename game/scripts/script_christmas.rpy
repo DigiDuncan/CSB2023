@@ -5684,6 +5684,7 @@ label ce_preclimax:
 
     digi "This Riffmaster is {i}great!{/i}"
     digi "Just {i}listen{/i} to that strumbar!"
+    play sound sfx_start_rocking volume 0.6
     n "Digi strums the controller with joy."
     digi "Oh, yeah. You gonna take that Adderall, Aria?"
     aria "That implies that I haven't already."
