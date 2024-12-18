@@ -2195,6 +2195,7 @@ label ce_checkout:
     show genergy at manual_pos(0.7, 0.5) with move
     hide genergy with dissolve
 
+    window hide
     show cs coat at mid_mid_right with move
     show cs coat flipped
     scene tgt_checkout_circle
