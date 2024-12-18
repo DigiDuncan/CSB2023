@@ -2328,10 +2328,6 @@ label ce_aftershop:
     show cs flipped behind cs_kitchen_fg
 
     $ reroll()
-    if d20 == 1:
-        $ achievement_manager.unlock("shitical")
-    elif d20 == 20:
-        $ achievement_manager.unlock("critical")
 
     # grammar fix handler
     python:
@@ -2445,6 +2441,7 @@ label ce_party_before:
         cs "The party starts in about 15 minutes, so people should start showing up soon..."
         pause 2.0
         n "CS keeps on waiting, but it looks like no one shows up early."
+        $ achievement_manager.unlock("shitical")
     elif d20 == 2:
         play sound sfx_car_approach_stop volume 5.0 fadein 1.0
         n "As CS asks himself this, a small car pulls up in the driveway."
@@ -2918,6 +2915,7 @@ label ce_party_before:
         cs "Do you, uh, wanna go inside?"
         avgn "Hell yeah!" with vpunch
         cs "Alright, then..."
+        $ achievement_manager.unlock("critical")
     else:
         n "CS waits patiently."
         pause 2.0
