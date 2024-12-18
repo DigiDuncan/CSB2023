@@ -349,10 +349,8 @@ label ce_decor:
 # CHECK STATUS HERE
 label ce_check_status:
     play music lets_hear_winter volume 0.7 if_changed
-    scene cs_garage
-    show cs at mid_left
-    show garage_shelf behind cs at manual_pos(0.9, 0.5, 0.5)
-    with dissolve
+
+
 
     # If you have everything, just get outta here!
     if got_lights and got_decor and got_tree:
@@ -363,7 +361,7 @@ label ce_check_status:
 
         # Decor was first, and that's all you have
         if decor_first and not (got_tree or got_lights):
-            show cs at left with moveinleft
+            show cs at mid_left with moveinleft
             n "CS returns to the garage to grab the next box."
             menu:
                 "Christmas tree":
@@ -375,7 +373,7 @@ label ce_check_status:
 
         # Lights were first, and that's all you have
         if lights_first and not (got_tree or got_decor):
-            show cs at left with moveinleft
+            show cs at mid_left with moveinleft
             n "CS returns to the garage to grab the next box."
             menu:
                 "Christmas tree":
@@ -387,7 +385,7 @@ label ce_check_status:
 
         # Have lights and tree
         if got_lights and got_tree:
-            show cs at left with moveinleft
+            show cs at mid_left with moveinleft
             n "CS returns to the garage to retrieve the last box."
             menu:
                 "Ornaments and decorations":
@@ -396,7 +394,7 @@ label ce_check_status:
 
         # Have decor and tree
         if got_decor and got_tree:
-            show cs at left with moveinleft
+            show cs at mid_left with moveinleft
             n "CS returns to the garage to retrieve the last box."
             menu:
                 "Lights and garland":
@@ -405,7 +403,7 @@ label ce_check_status:
 
         # Have lights and decor
         if got_lights and got_decor:
-            show cs at left with moveinleft
+            show cs at mid_left with moveinleft
             n "CS returns to the garage to retrieve the last box."
             menu:
                 "Christmas tree":
