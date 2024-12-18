@@ -6079,7 +6079,7 @@ label ce_lights_out:
     cs "Nope, but I found Kitty!"
     cs "She's relaxing in the basement since her head was hurting."
     arceus "That makes sense. I'll go check on her soon."
-    eliza "I see you found a torch."
+    eliza "I see you found a flashlight."
     cs "Yeah, it was just sitting on a table downstairs. I'm so thankful it was there."
     show arceus festive flipped
     eliza "Arceus, would you like to borrow mine, so you can go be with Kitty?"
