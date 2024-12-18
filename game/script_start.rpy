@@ -27,10 +27,6 @@ init 10 python:
             persistent.seen.add(p)
         for i in ITEM_MAP.keys():
             persistent.collected.add(i)
-        for o in ORIGINAL_27:
-            persistent.seen_original_endings.add(o)
-        for e in ALL_ENDINGS:
-            persistent.seen_all_endings.add(e)
         achievement_manager.unlock_all()
         persistent.true_ending = True
         persistent.csb2_unlocked = True
