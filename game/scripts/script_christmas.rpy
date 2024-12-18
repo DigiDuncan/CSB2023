@@ -2033,6 +2033,7 @@ label ce_checkout:
     show pakoo tgt flipped with determination
     hide pakoo tgt with moveoutright
 
+    window hide
     show pie at manual_pos(0.7, 0.6) with move
     hide pie with dissolve
 
