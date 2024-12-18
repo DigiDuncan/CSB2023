@@ -100,6 +100,7 @@ label ce_start:
     scene cs_living2
     show cs at center
     with dissolve
+    dxcom dxcom
 
     cs "This should be plenty of space!"
     cs "Now, I've just gotta make the place look {i}festive!"
@@ -109,6 +110,7 @@ label ce_start:
     n "CS heads towards the garage."
     hide cs with moveoutright
     pause 0.5
+    hide screen dxcom
     play sound sfx_house_door_open
     pause 0.5
 
@@ -217,6 +219,7 @@ label ce_tree:
     # IF TREE IS NOT FIRST
     if lights_first or decor_first:
         cs "Nice! Time to get the Christmas tree!"
+        window hide
         show cs at mid_offscreen_right with move
         show tree_box at manual_pos(1.2, 0.8)
         pause 1.0
@@ -296,6 +299,7 @@ label ce_lights:
         cs "Alright, I should probably get the lights and garland next."
 
     # Animation
+    window hide
     show cs at mid_offscreen_right with move
     show lights_box at manual_pos(1.2, 0.5)
     pause 1.0
@@ -325,6 +329,7 @@ label ce_decor:
         cs "Alright, I should probably get the decorations next."
 
     # Animation
+    window hide
     show cs at mid_offscreen_right with move
     show decor_boxes at manual_pos(1.2, 0.5)
     pause 1.0
@@ -344,10 +349,8 @@ label ce_decor:
 # CHECK STATUS HERE
 label ce_check_status:
     play music lets_hear_winter volume 0.7 if_changed
-    scene cs_garage
-    show cs at mid_left
-    show garage_shelf behind cs at manual_pos(0.9, 0.5, 0.5)
-    with dissolve
+
+
 
     # If you have everything, just get outta here!
     if got_lights and got_decor and got_tree:
@@ -358,7 +361,7 @@ label ce_check_status:
 
         # Decor was first, and that's all you have
         if decor_first and not (got_tree or got_lights):
-            show cs at left with moveinleft
+            show cs at mid_left with moveinleft
             n "CS returns to the garage to grab the next box."
             menu:
                 "Christmas tree":
@@ -370,7 +373,7 @@ label ce_check_status:
 
         # Lights were first, and that's all you have
         if lights_first and not (got_tree or got_decor):
-            show cs at left with moveinleft
+            show cs at mid_left with moveinleft
             n "CS returns to the garage to grab the next box."
             menu:
                 "Christmas tree":
@@ -382,7 +385,7 @@ label ce_check_status:
 
         # Have lights and tree
         if got_lights and got_tree:
-            show cs at left with moveinleft
+            show cs at mid_left with moveinleft
             n "CS returns to the garage to retrieve the last box."
             menu:
                 "Ornaments and decorations":
@@ -391,7 +394,7 @@ label ce_check_status:
 
         # Have decor and tree
         if got_decor and got_tree:
-            show cs at left with moveinleft
+            show cs at mid_left with moveinleft
             n "CS returns to the garage to retrieve the last box."
             menu:
                 "Lights and garland":
@@ -400,7 +403,7 @@ label ce_check_status:
 
         # Have lights and decor
         if got_lights and got_decor:
-            show cs at left with moveinleft
+            show cs at mid_left with moveinleft
             n "CS returns to the garage to retrieve the last box."
             menu:
                 "Christmas tree":
@@ -594,6 +597,7 @@ label ce_anno:
 
     # FIRST
     # walk to it
+    window hide
     play sound "<from 0.74 to 1.723>sfx/sfx_snow_walk.ogg" volume 2.0
     show cs disappointed coat hat flipped at center
     show shovel at manual_pos(0.6, 0.7, 0.5)
@@ -1785,7 +1789,7 @@ label ce_checkout:
     customer "Yeah, they're always like this. I come here every day, and it seems like there are fewer and fewer people working."
     show cs coat worried
     cs "Yikes, I wonder why..."
-
+    window hide
     play sound sfx_target_beep volume 0.5
     hide streetguy with moveoutright
     show amtrak_stewardess at mid_right_right
@@ -2029,6 +2033,7 @@ label ce_checkout:
     show pakoo tgt flipped with determination
     hide pakoo tgt with moveoutright
 
+    window hide
     show pie at manual_pos(0.7, 0.6) with move
     hide pie with dissolve
 
@@ -2190,6 +2195,7 @@ label ce_checkout:
     show genergy at manual_pos(0.7, 0.5) with move
     hide genergy with dissolve
 
+    window hide
     show cs coat at mid_mid_right with move
     show cs coat flipped
     scene tgt_checkout_circle
@@ -2595,7 +2601,7 @@ label ce_party_before:
         show cs worried christmas flipped
         cs "Woah, what the hell?!"
         show cs worried christmas flipped at mid_left with move
-        n "A BlackHawk helicopter is seen landing out in the middle of the street."
+        n "A Black Hawk helicopter is seen landing out in the middle of the street."
         show cs scared christmas flipped
         cs "Who the {i}hell{/i} would be arriving in a helicopter?!"
         stop sound2 fadeout 1.0
@@ -2940,7 +2946,7 @@ label ce_party_before:
         iris "Um... a [d20]."
         cs "Rolled... like on a die?"
         iris "You rolled a D20 earlier, no?"
-        cs "I did, but... how did I roll on [d20] on a D20? That's not even a thing you {i}can{/i} roll!"
+        cs "I did, but... how did I roll a [d20] on a D20? That's not even a thing you {i}can{/i} roll!"
         show cs worried christmas dark flipped
         cs "And... how did you know I even did that?"
         iris "Ah, that's a lot to discuss. Shall we go inside? I'm sure you're rather cold."
@@ -3997,7 +4003,7 @@ label ce_win_carrot:
     show copguy festive at mid_right with move
     pause 0.25
     hide copguy
-    show sheriff at manual_pos(-0.2, 1.0, 1.0)
+    show sheriff festive at manual_pos(-0.2, 1.0, 1.0)
     with moveoutleft
     grace "Finally!"
     show grace worried
@@ -5678,6 +5684,7 @@ label ce_preclimax:
 
     digi "This Riffmaster is {i}great!{/i}"
     digi "Just {i}listen{/i} to that strumbar!"
+    play sound sfx_start_rocking volume 0.6
     n "Digi strums the controller with joy."
     digi "Oh, yeah. You gonna take that Adderall, Aria?"
     aria "That implies that I haven't already."
@@ -6072,7 +6079,7 @@ label ce_lights_out:
     cs "Nope, but I found Kitty!"
     cs "She's relaxing in the basement since her head was hurting."
     arceus "That makes sense. I'll go check on her soon."
-    eliza "I see you found a torch."
+    eliza "I see you found a flashlight."
     cs "Yeah, it was just sitting on a table downstairs. I'm so thankful it was there."
     show arceus festive flipped
     eliza "Arceus, would you like to borrow mine, so you can go be with Kitty?"
@@ -6227,6 +6234,7 @@ label ce_lights_out:
     show mean human annoyed festive flipped with determination
     hide cs
     hide mean
+    hide flashlight_held
     with moveoutright
     pause 0.5
     n "CS and Mean make their way up the ladder to the attic."
@@ -6950,7 +6958,7 @@ label ce_billy_time:
     show tate_phone at manual_pos(0.4, 0.8, 0.5) with { "master": MoveTransition(0.25) }
     billy "Yes! It's {i}that{/i} easy!"
     tate "Here goes nothin'..."
-    show handy_switch at manual_pos(0.2, 0.7, 0.5) with dissolve:
+    show handy_switch at manual_pos(0.2, 0.7, 0.5) behind billy with dissolve:
         zoom 0.5
     show handy_switch at manual_pos(0.45, 0.5, 0.5):
         linear 0.125 xzoom -1
@@ -6980,7 +6988,6 @@ label ce_billy_time:
     tate "Well, what're we waiting for?"
     tate "Let's get back upstairs and share the good news!"
     hide tate_phone
-    hide handy_switch
     with dissolve
     show tate festive flipped with determination
     hide tate
