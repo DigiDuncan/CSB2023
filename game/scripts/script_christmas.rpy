@@ -219,6 +219,7 @@ label ce_tree:
     # IF TREE IS NOT FIRST
     if lights_first or decor_first:
         cs "Nice! Time to get the Christmas tree!"
+        window hide
         show cs at mid_offscreen_right with move
         show tree_box at manual_pos(1.2, 0.8)
         pause 1.0
@@ -298,6 +299,7 @@ label ce_lights:
         cs "Alright, I should probably get the lights and garland next."
 
     # Animation
+    window hide
     show cs at mid_offscreen_right with move
     show lights_box at manual_pos(1.2, 0.5)
     pause 1.0
@@ -327,6 +329,7 @@ label ce_decor:
         cs "Alright, I should probably get the decorations next."
 
     # Animation
+    window hide
     show cs at mid_offscreen_right with move
     show decor_boxes at manual_pos(1.2, 0.5)
     pause 1.0
