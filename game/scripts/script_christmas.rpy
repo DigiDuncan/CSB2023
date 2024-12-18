@@ -1789,7 +1789,7 @@ label ce_checkout:
     customer "Yeah, they're always like this. I come here every day, and it seems like there are fewer and fewer people working."
     show cs coat worried
     cs "Yikes, I wonder why..."
-
+    window hide
     play sound sfx_target_beep volume 0.5
     hide streetguy with moveoutright
     show amtrak_stewardess at mid_right_right
