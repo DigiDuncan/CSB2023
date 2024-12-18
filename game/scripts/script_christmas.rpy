@@ -6234,6 +6234,7 @@ label ce_lights_out:
     show mean human annoyed festive flipped with determination
     hide cs
     hide mean
+    hide flashlight_held
     with moveoutright
     pause 0.5
     n "CS and Mean make their way up the ladder to the attic."
