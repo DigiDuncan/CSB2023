@@ -4003,7 +4003,7 @@ label ce_win_carrot:
     show copguy festive at mid_right with move
     pause 0.25
     hide copguy
-    show sheriff at manual_pos(-0.2, 1.0, 1.0)
+    show sheriff festive at manual_pos(-0.2, 1.0, 1.0)
     with moveoutleft
     grace "Finally!"
     show grace worried
