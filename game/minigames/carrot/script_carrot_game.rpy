@@ -301,7 +301,7 @@ init python:
         def event(self, ev, x, y, st):
             import pygame
             if ev.type == pygame.KEYDOWN and not self.pressing_down:
-                if ev.key == pygame.K_END:
+                if ev.key == pygame.K_END and preferences.developer_mode:
                     self.win = "ok"
                     pygame.event.post(pygame.event.Event(FINISH_EVENT))
                 if ev.key == pygame.K_SPACE:
@@ -353,6 +353,7 @@ label play_carrotgame:
         pause 1.0
         show rating_superb at manual_pos(0.8, 0.8, 1.0)
         $ persistent.heard.add("rhythm_heaven_superb")
+        $ persistent.carrot_fails = 0
         play music "minigames/carrot/superb_music.ogg" if_changed
         music rhythm_heaven_superb
         hide screen music
@@ -376,6 +377,7 @@ label play_carrotgame:
         pause 1.0
         show rating_ok at manual_pos(0.8, 0.8, 1.0)
         $ persistent.heard.add("rhythm_heaven_ok")
+        $ persistent.carrot_fails = 0
         play music "minigames/carrot/ok_music.ogg" if_changed
         music rhythm_heaven_ok
         hide screen music
@@ -399,11 +401,24 @@ label play_carrotgame:
         pause 1.0
         show rating_try_again at manual_pos(0.8, 0.8, 1.0)
         $ persistent.heard.add("rhythm_heaven_try_again")
+        $ persistent.carrot_fails += 1
         play music "minigames/carrot/try_again_music.ogg" if_changed
         music rhythm_heaven_try_again
         hide screen music
         pause
         hide screen carrotresults
+        if persistent.carrot_fails >= 3:
+            show screen carrotresults("You seem to be having issues passing this one. Wanna move on?")
+            menu:
+                "Yes, please!":
+                    hide screen carrotresults
+                    $ renpy.end_replay()
+                    $ renpy.jump(minigame_win)
+                "I got this!":
+                    hide screen carrotresults
+                    $ renpy.end_replay()
+                    $ renpy.jump(minigame_loss)
+
         window auto True
         $ renpy.end_replay()
         $ renpy.jump(minigame_loss)

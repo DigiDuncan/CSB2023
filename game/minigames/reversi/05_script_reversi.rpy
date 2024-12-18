@@ -118,7 +118,7 @@ init python:
                             self.turn = self.turn.invert()
                             self.clink()
 
-            if ev.type == pygame.KEYDOWN and ev.key == pygame.K_END:
+            if ev.type == pygame.KEYDOWN and ev.key == pygame.K_END and preferences.developer_mode:
                 self.win = True
             if ev.type == pygame.KEYUP and ev.key == pygame.K_i:
                 self.showing_help = not self.showing_help
