@@ -3226,12 +3226,14 @@ label ce_introductions:
     $ collect("blank_speaker")
     with dissolve
     pause 0.5
+    dxcom projector
     digi "So, this should go {i}here..."
     linus "No, you've got the wrong cable!"
     luke "You idiots are {nw}"
     extend "{i}both{/i} wrong! That's not even the right {i}port!" with vpunch
     digi "Ohhhhh..." (multiple = 2)
     linus "Ohhhhh..." (multiple = 2)
+    hide screen dxcom
     pause 1.0
     show cs christmas flipped at center behind linus
     with moveinright
@@ -4333,6 +4335,7 @@ label ce_dinner:
     show db at manual_pos(0.85, 0.6, 0.5)
     show k22 at manual_pos(-0.25, 0.575, 0.5)
     with move
+    dxcom diagonaltable
     db "So, CS, how have your streams been going recently?"
     cs "Well, it's mainly been dashcam reaction streams on Sundays as usual."
     show cs disappointed christmas
@@ -4357,6 +4360,7 @@ label ce_dinner:
     pause 0.5
 
     scene night_bg
+    hide screen dxcom
     show right_room at left
     show right_chair_back at left
     show arceus festive at mid_offscreen_left
