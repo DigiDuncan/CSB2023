@@ -271,7 +271,7 @@
         {
             "audio_path": "writing",
             "speaker": "Pakoo",
-            "transcript": "So, the funny thing about this route is that around ninety percent of it was written by me on my breaks at work.",
+            "transcript": "So, the funny thing about this route is that around 90 percent of it was written by me on my breaks at work.",
             "length": 7.5
         }
     ],
@@ -583,7 +583,7 @@
         {
             "audio_path": "dxcom1",
             "speaker": "Baker",
-            "transcript": "What you just clicked was the developer commentary node from Source games such as {i}Half Life 2{/i} and {i}Portal.",
+            "transcript": "What you just clicked was the developer commentary node from Source games such as {i}Half-Life 2{/i} and {i}Portal.",
             "length": 6.6
         },
         {
