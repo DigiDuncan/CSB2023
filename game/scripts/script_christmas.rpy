@@ -2946,7 +2946,7 @@ label ce_party_before:
         iris "Um... a [d20]."
         cs "Rolled... like on a die?"
         iris "You rolled a D20 earlier, no?"
-        cs "I did, but... how did I roll on [d20] on a D20? That's not even a thing you {i}can{/i} roll!"
+        cs "I did, but... how did I roll a [d20] on a D20? That's not even a thing you {i}can{/i} roll!"
         show cs worried christmas dark flipped
         cs "And... how did you know I even did that?"
         iris "Ah, that's a lot to discuss. Shall we go inside? I'm sure you're rather cold."
