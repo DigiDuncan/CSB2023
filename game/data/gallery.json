@@ -64,6 +64,13 @@
         "album_art": "anno.png",
         "need_label": "ce_start"
     },
+    "vo_is_hard.ogg": {
+        "type": "audio",
+        "title": "vo_is_hard.ogg",
+        "caption": "Baker was struggling to record the commentary about the commentary. It's pretty funny to hear, though, so we included it here!",
+        "album_art": "dxcom_icon_broken.png",
+        "need_label": "ce_tree"
+    },
     "tgt_1.jpg": {
         "type": "image",
         "title": "Unused Target Employee Pose 1",
@@ -167,6 +174,12 @@
         "title": "Concept for K-17 and K-22",
         "caption": "Pakoo: I have drawn sketches of K-17 and K-22 in the past, but I never drew them with color. I think I made this in about five minutes as a reference for the sprites in-game.",
         "need_label": "ce_introductions"
+    },
+    "table.png": {
+        "type": "image",
+        "title": "Diagonal Table Reference",
+        "caption": "This is the table picture that Baker based the render for the dinner table scene off of. He thought it looked very silly.",
+        "need_label": "ce_dinner"
     },
     "diginothumbs.png": {
         "type": "image",
