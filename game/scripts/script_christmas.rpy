@@ -2601,7 +2601,7 @@ label ce_party_before:
         show cs worried christmas flipped
         cs "Woah, what the hell?!"
         show cs worried christmas flipped at mid_left with move
-        n "A BlackHawk helicopter is seen landing out in the middle of the street."
+        n "A Black Hawk helicopter is seen landing out in the middle of the street."
         show cs scared christmas flipped
         cs "Who the {i}hell{/i} would be arriving in a helicopter?!"
         stop sound2 fadeout 1.0
