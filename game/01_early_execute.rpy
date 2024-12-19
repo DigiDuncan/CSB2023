@@ -76,6 +76,7 @@ default persistent.carrot_fails = 0
 default persistent.carrot_game_unlocked = False
 default persistent.reversi_game_unlocked = False
 default persistent.saved_christmas = False
+default persistent.point_and_clicked = set()
 
 # Register CJK fonts
 define config.font_name_map["cn"] = "ZCOOLKuaiLe-Regular.ttf"
