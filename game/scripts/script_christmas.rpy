@@ -4821,7 +4821,8 @@ label ce_dinner:
     show digi shock flipped
     n "K-17 starts sobbing." with vpunch
     k17 "{sc=1.88}N-{w=0.1}No one... told me..."
-    k17 "{sc=1.88}Mixer... {vpunch}{i}died...!"
+    k17 "{sc=1.88}Mixer... {nw}" 
+    extend "{i}died...!" with vpunch
     show cs christmas worried
     show digi sad flipped
     cs "Uh-oh."
