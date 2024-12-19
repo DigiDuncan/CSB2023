@@ -3259,7 +3259,7 @@ label ce_introductions:
     blank "We are working on setting up the sound system."
     ges "Well, okay, {i}I'm{/i} not, eh?"
     ges "I'm just here because Tyler wanted me to come, eh?"
-    ges "Err-- Nova, sorry, eh?"
+    ges "Er-- Nova. Sorry, eh?"
     nova "The problem is that I don't really want Blank playing their shitty music during the party."
     show blank festive flipped
     blank "Why not? Not {i}all{/i} of it's crazy shit like {i}yours{/i} is."
@@ -3532,7 +3532,10 @@ label ce_banter:
     with vpunch
     pause 0.5
     play sound sfx_projector_boot
-    n "After a little bit of tech magic, the projector comes to life."
+    if fun_value(FUN_VALUE_UNOBTRUSIVE):
+        n "After a little bit of percussive maintenance, the projector comes to life."
+    else:
+        n "After a little bit of tech magic, the projector comes to life."
     scene cs_living
     show elf_0:
         zoom 1.3
@@ -4136,7 +4139,7 @@ label ce_mike:
     show mike at right
     show cs christmas at mid_mid_left
     with moveinright
-    play music rice_and_wine volume 0.5 if_changed
+    play music rice_and_wine volume 0.35 if_changed
     music rice_and_wine
     dxcom pizza1
     mike "I'm Chinese."
