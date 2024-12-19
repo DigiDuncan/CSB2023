@@ -102,6 +102,14 @@
         "type": "extra",
         "ce": true
     },
+    "pointclick":{
+        "name": "The Ultimate Festive House",
+        "locked": "???",
+        "unlocked": "Click everything there is to click in the attic.",
+        "img": "pointclick",
+        "type": "extra",
+        "ce": true
+    },
     "fun":{
         "name": "F.U.N.",
         "locked": "???",

@@ -1154,31 +1154,15 @@ image snufkin flipped = "flip:characters/snufkin.png"
 
 # Background Images
 ## CSBI
-image cs_room = "bg/cs_bedroom1.png"
 image cs_room_2 = "bg/cs_bedroom2.png"
 image cs_room_2 dark = "dark:bg/cs_bedroom2.png"
-image cs_house = "bg/cs_house.png"
-image cs_car = "bg/car_driveway.png"
-image cs_street = "bg/cs_street.png"
-
-## CSBIII Chapter 1
-image csdesk = "bg/cs_desk.png"
 
 # Fired route
 image cs_door_outside = "bg/cs_door_outside.png"
 
-## CSBIII Chapter 2
-image cshouse_vaporized = "bg/cs_house_vaporized.png"
-image cs_somewhere = "bg/cs_somewhere.png"
-
 ## Archival
-image bedroom_old = "bg/cs_bedroom.png"
 image archival_5 = "bg/archival/archival_5.png"
 image archival_14 = "bg/archival/archival_14.png"
-
-# Back to the future: CS edition backgrounds
-image cs_room_cars = "bg/cs_bedroom_cars.png"
-image conferencetv = "bg/conferencetv.png"
 
 # Back to the future: CS edition generated assets
 image christmas_finisher = Text("{size=+108}To be continued...", text_align=0.5)
@@ -1789,37 +1773,6 @@ default minigame_loss = "secret_ce"
 default current_dxcom = "1"
 
 python early:
-    # BAD END
-    def parse_bad_end(lexer):
-        text = lexer.string()
-        label = lexer.string()
-
-        return (text, label)
-
-    def execute_bad_end(parsed_object):
-        global typewriter_text
-        text, label = parsed_object
-        _window_hide()
-        seen_all = True
-        for i in Replay_items:
-            if not renpy.seen_label(i.replay):
-                seen_all = False
-        if seen_all:
-            achievement_manager.unlock("fin")
-        renpy.show("bad_end_screen")
-        renpy.pause(1.0)
-        typewriter_text = text
-        renpy.show("typewriter", [typewriter_location])
-        renpy.pause()
-        renpy.end_replay()
-        renpy.jump(label)
-
-    renpy.register_statement(
-        name = "bad_end",
-        parse = parse_bad_end,
-        execute = execute_bad_end,
-        block = False
-    )
 
     # MINIGAME
     def parse_minigame(lexer):
