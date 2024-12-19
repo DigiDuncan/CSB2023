@@ -84,6 +84,7 @@ default persistent.csb3a_unlocked = False
 default persistent.csb3b_unlocked = False
 
 # Game unlocks: CE
+default persistent.carrot_fails = 0
 default persistent.carrot_game_unlocked = False
 default persistent.reversi_game_unlocked = False
 default persistent.saved_christmas = False
