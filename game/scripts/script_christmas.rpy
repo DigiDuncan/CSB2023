@@ -6305,6 +6305,15 @@ label ce_point_click:
             zoom 0.5
         show mean human annoyed festive at mid_right
 
+        # THIS CHECK IS STUPID AND BAD
+        if ("cs" in persistent.point_and_clicked and
+            "flashlight" in persistent.point_and_clicked and
+            "mean" in persistent.point_and_clicked and
+            "poster" in persistent.point_and_clicked and
+            "rug" in persistent.point_and_clicked and
+            "hatch" in persistent.point_and_clicked):
+            $ achievement_manager.unlock("point_click")
+
         mean "Shine your light up."
         hide screen flashlight_demo
         show screen hatch_button
@@ -6313,6 +6322,7 @@ label ce_point_click:
 
     ### clicked on cs
     label .cs:
+        $ persistent.point_and_clicked.add("cs")
         show screen flashlight_demo
         $ mouse_visible = False
         scene cs_attic
@@ -6333,6 +6343,7 @@ label ce_point_click:
 
     ### clicked on the flashlight
     label .flashlight:
+        $ persistent.point_and_clicked.add("flashlight")
         show screen flashlight_demo
         $ mouse_visible = False
         scene cs_attic
@@ -6351,6 +6362,7 @@ label ce_point_click:
 
     ### clicked on mean
     label .mean:
+        $ persistent.point_and_clicked.add("mean")
         show screen flashlight_demo
         $ mouse_visible = False
         scene cs_attic
@@ -6370,6 +6382,7 @@ label ce_point_click:
 
     ### clicked on the poster
     label .poster:
+        $ persistent.point_and_clicked.add("poster")
         show screen flashlight_demo
         $ mouse_visible = False
         scene cs_attic
@@ -6394,6 +6407,7 @@ label ce_point_click:
 
     ### clicked on the rug
     label .rug:
+        $ persistent.point_and_clicked.add("rug")
         show screen flashlight_demo
         $ mouse_visible = False
         scene cs_attic
@@ -6418,6 +6432,7 @@ label ce_point_click:
 label ce_after_hatch:
     stop music
     music end
+    $ persistent.point_and_clicked.add("hatch")
     show screen flashlight_demo
     $ mouse_visible = False
     scene cs_attic
@@ -6426,6 +6441,15 @@ label ce_after_hatch:
     show cs disappointed christmas at mid_left
     show flashlight_held at manual_pos(0.3, 0.7, 0.5):
         zoom 0.5
+
+    # THIS CHECK IS STUPID AND BAD
+    if ("cs" in persistent.point_and_clicked and
+        "flashlight" in persistent.point_and_clicked and
+        "mean" in persistent.point_and_clicked and
+        "poster" in persistent.point_and_clicked and
+        "rug" in persistent.point_and_clicked and
+        "hatch" in persistent.point_and_clicked):
+        $ achievement_manager.unlock("point_click")
 
     mean "That's gotta be it."
     cs "Yeah, can you pull it open?"

@@ -575,7 +575,7 @@
         "type": "extra",
         "ce": true
     },
-    "pointclick":{
+    "point_click":{
         "name": "The Ultimate Holiday House",
         "locked": "???",
         "unlocked": "Click everything there is to click in the attic.",
