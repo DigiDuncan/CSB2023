@@ -4139,7 +4139,7 @@ label ce_mike:
     show mike at right
     show cs christmas at mid_mid_left
     with moveinright
-    play music rice_and_wine volume 0.5 if_changed
+    play music rice_and_wine volume 0.35 if_changed
     music rice_and_wine
     dxcom pizza1
     mike "I'm Chinese."
