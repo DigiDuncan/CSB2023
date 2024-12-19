@@ -4821,7 +4821,7 @@ label ce_dinner:
     show digi shock flipped
     n "K-17 starts sobbing." with vpunch
     k17 "{sc=1.88}N-{w=0.1}No one... told me..."
-    k17 "{sc=1.88}Mixer... {nw}" 
+    k17 "{sc=1.88}Mixer... {nw}"
     extend "{i}died...!" with vpunch
     show cs christmas worried
     show digi sad flipped
@@ -5933,22 +5933,50 @@ label ce_lights_out:
     cs "Okay, I'm trying to relax... and think..."
     cs "Let me feel my way to the basement, and I'll try to check the breaker."
     cs "I'll be right back."
-    pause 0.5
-    play sound sfx_bump
+
+    pause 0.75
+    play sound sfx_rug_walk
+    pause 0.75
+    play sound sfx_rug_walk
+    pause 0.75
+    play sound sfx_rug_walk
+    pause 0.75
+    play sound sfx_rug_walk
+
+    play sound2 sfx_bump noloop
     k17 "{i}Oof!" with vpunch
+
     cs "Sorry!"
-    pause 2.0
+    play sound sfx_rug_walk
+    pause 0.75
+    play sound sfx_rug_walk
+    pause 0.75
+    play sound sfx_rug_walk
+    pause 0.75
+    play sound sfx_rug_walk
+
     arceus "CS? Is that you?"
     cs "Hey, Arc. I'm making my way to the breaker to try to get the power back on."
     arceus "Great. If you find Kitty, lemme know. I don't know where she went."
     arceus "She said she was going to grab more food, but it's been 20 minutes since..."
     cs "Sure thing. I'll let you know."
-    pause 2.0
+
+    play sound sfx_rug_walk
+    pause 0.75
+    play sound sfx_rug_walk
+    pause 0.75
+    play sound sfx_rug_walk
+
     cs "The door to the basement should be here, somewhere..."
-    pause 0.5
+
+    play sound sfx_rug_walk
+    pause 0.75
+    play sound sfx_rug_walk
+    pause 0.75
+
     n "CS feels around the wall."
     n "Finally he finds the doorknob."
-    cs "A-ha!"
+    cs "Aha!"
     if fun_value(FUN_VALUE_EPIC):
         cs "Huh, why is my doorknob..."
         cs "Squeezable?"
@@ -5972,8 +6000,12 @@ label ce_lights_out:
         cs "I'm just trying to get to the basement!"
         grace "Let me move before you snap my head clean off!"
     pause 0.5
+
     play sound sfx_house_door_open
-    pause 1.0
+    play sound sfx_rug_walk
+    pause 0.75
+    play sound sfx_rug_walk
+    pause 0.75
     n "Slowly, but surely, CS carefully makes his way down the stairs."
     pause 1.0
     cs "Alright... now, I just need to find the breaker..."
