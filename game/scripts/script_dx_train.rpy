@@ -2313,7 +2313,7 @@ label train_confront_lupin:
     mean "Nah, you don't understand."
     mean "That hat is one-of-a-kind."
     arceus "That doesn't explain why you need it to drive the train..."
-    mean "I'm talking triple-stitched, reinforced, dual-layered denim, lined with 100-percent pure Merino wool!"
+    mean "I'm talking triple-stitched, reinforced, dual-layered denim, lined with 100%% pure Merino wool!"
     arceus "That... still doesn't explain anything."
     show mean unamused
     mean "I'm spiky. I need a hat that'll hold up."
@@ -4239,7 +4239,7 @@ label train_return_home_transition:
         cs "Here you go!"
         play sound sfx_moneyfalls
         show spent_19_95 at t_fake_rpg_text(0.1, 0.1, 0.5)
-        billy "Thank you! Every Uber ride comes with my 100-percent satisfaction guarantee, or your money back!"
+        billy "Thank you! Every Uber ride comes with my 100%% satisfaction guarantee, or your money back!"
 
     billy "Well, then! Where are we going?"
     n "CS tells Billy his address. The group then heads down to the parking lot to begin the final leg home."

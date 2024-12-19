@@ -913,7 +913,7 @@ label ce_anno:
     cs "We eventually proved to the cops that I wasn't guilty, and then Billy Mays took us all the way home."
     anno "How the {i}hell{/i} did you manage to run into Billy Mays?!"
     show cs happy
-    cs "Crazy coincidence, I guess! It was a lot of fun though!"
+    cs "Crazy coincidence, I guess! It was a lot of fun, though!"
     cs "We went to PencilCon, I won a golden pencil sharpener, visited some old friends, and did a lot of sightseeing!"
     show cs
     anno "Sounds like one hell of a time."
@@ -983,14 +983,14 @@ label ce_setup:
     show cs happy at left
     show anno at right
     with dissolve
-    cs "Wow, thanks, Anno!"
+    cs "Wow! Thanks, Anno!"
     cs "You really rizzed up my crib, for real! On {i}God!"
     "..."
     anno "Maybe {i}don't{/i} say that."
     show cs disappointed
     cs "Sorry."
     show cs
-    anno "But yeah, I think we did a pretty darn good job."
+    anno "But, yeah, I think we did a pretty darn good job."
     show cs happy
     cs "Hell yeah, we did!"
     cs "Everyone is gonna have a {i}blast{/i} at this party!"
@@ -3278,8 +3278,8 @@ label ce_introductions:
     pause 0.5
 
     scene cs_hallway
-    show arceus festive at mid_left
     show kitty festive at left
+    show arceus festive at mid_left
     with dissolve
     $ persistent.seen.add("round")
     pause 1.0
@@ -3553,10 +3553,10 @@ label ce_banter:
     show digi
     show luke festive flipped
     rich "Finally! We can watch something!"
-    wesley "Are you 100 percent satisfied, Richard?"
+    wesley "Are you 100%% satisfied, Richard?"
     show cs disappointed christmas flipped
     show digi angry flipped
-    rich "Eh, only about 80 percent."
+    rich "Eh, only about 80%%."
     pause 0.5
 
     scene cs_foyer_festive
@@ -4173,7 +4173,7 @@ label ce_mike:
     arceus "What's going on in here?"
     show arceus festive angry flipped at mid_mid_right with moveinleft
     show cs happy christmas
-    cs "It's Mike, Arceus! Mike the Pizzapotamus!"
+    cs "It's {i}Mike,{/i} Arceus! Mike the Pizzapotamus!"
     show cs christmas
     show arceus festive angry
     arceus "Who?"
@@ -4358,7 +4358,7 @@ label ce_dinner:
     show k22 at center
     show k17 disappointed flipped at mid_left_left
     with move
-    k22 "Hey K-17, are you gonna eat your food?"
+    k22 "Hey, K-17, are you gonna eat your food?"
     k17 "I... uh..."
     k17 "I need to go to the bathroom..."
     show k17 disappointed with determination
@@ -4392,7 +4392,7 @@ label ce_dinner:
     show k22 at mid_offscreen_left
     show k17 at manual_pos(-0.5, 0.6, 0.5)
     show left_table
-    cs "Phil? Oh, yeah! I was going to invite him to this party, but he's been so busy pitching Flex products."
+    cs "Phil? Oh, yeah! I was going to invite him to this party, but he's just been so busy pitching Flex products."
     cs "I think he's actually in Europe right now."
 
     scene night_bg
@@ -4469,7 +4469,7 @@ label ce_dinner:
     show luke festive at manual_pos(1.45, 0.6, 0.5)
     ed "You've {i}more{/i} than made it up to us, CS."
     rich "Yeah, you helped propel our business to new heights!"
-    rich "Or, I guess, new foundations?"
+    rich "Or, I guess, new {i}foundations?"
     wesley "Mm..."
 
     scene night_bg
@@ -4748,7 +4748,7 @@ label ce_dinner:
     show k22 confident
     k22 "Aha! See?"
     pause 0.5
-    show gas_prices at mid_right:
+    show gas_prices at right:
         xzoom 0.0
         linear 0.25 xzoom 1.0
     n "K-22 flips their phone around to show the table a photo."
@@ -4821,7 +4821,7 @@ label ce_dinner:
     show digi shock flipped
     n "K-17 starts sobbing." with vpunch
     k17 "{sc=1.88}N-{w=0.1}No one... told me..."
-    k17 "{sc=1.88}Mixer... {i}died...!"
+    k17 "{sc=1.88}Mixer... {vpunch}{i}died...!"
     show cs christmas worried
     show digi sad flipped
     cs "Uh-oh."
@@ -4842,7 +4842,7 @@ label ce_dinner:
     show cs christmas
     show digi flipped
     cs "Well, I stream on {a=https://twitch.tv/cs188/}Twitch.{/a}"
-    digi "{a=https://twitch.tv/DigiDuncan}Me, too{/a}, when I get the chance."
+    digi "{a=https://twitch.tv/DigiDuncan}Me, too,{/a} when I get the chance."
     n "K-17 sniffles."
     k17 "At least Crazy Saturday lives on..."
     show cs christmas disappointed
@@ -4865,7 +4865,7 @@ label ce_dinner:
     k17 "{sc=1.88}Do you think... I can..."
     k17 "{sc=1.88}Be alone... for a minute?"
     digi "Sure, I can give you some time."
-    digi "Just make sure to come down soon, you don't want to miss the gift exchange!"
+    digi "Just make sure to come down soon! You don't want to miss the gift exchange!"
     k17 "Yeah..."
     hide digi with moveoutright
     pause 0.5
@@ -4957,7 +4957,7 @@ label ce_dinner:
     grace "That's a weird name. Never heard of someone with numbers in their name before."
     anne "What about CS? I thought his last name was 188?"
     show grace worried
-    grace "{size=-12}Wait, {i}is it?{/i}"
+    grace "{size=-12}Wait, {i}is{/i} it?"
     show grace
     eliza "If I may ask, how long has it been since you last talked to CS?"
     k17 "Oh, uh... it was a {i}long{/i} time ago..."
@@ -5453,7 +5453,7 @@ label ce_exchange:
     with dissolve
     michael "I've gotten a new water bottle!"
     linus "You got my {i}LTT{/i} water bottle!"
-    linus "{a=https://www.lttstore.com}lttstore.com.{/a}"
+    linus "{a=https://www.lttstore.com}lttstore.com{/a}."
     hide ltt_bottle with dissolve
     hide michael with moveoutright
     pause 0.5
@@ -5525,7 +5525,7 @@ label ce_exchange:
     nova "As much as I want to steal that Adderall, I'm gonna pick an unopened gift."
     show nova flipped at mid_left with moveinleft
     show gift_eliza at manual_pos(0.4, 0.7, 0.5) with moveinbottom
-    nova "Oh boy! I wonder what it is!"
+    nova "Oh, boy! I wonder what it is!"
     pause 0.5
     show russian_radio at manual_pos(0.4, 0.7, 0.5)
     hide gift_eliza
@@ -5833,7 +5833,7 @@ label ce_climax:
     stop music fadeout 3.0
     music end
     n "After some time, everyone gets their fill of food and conversation."
-    n "Although it is unspoken, the guests seem to mutually feel that it's time for the festivies came to a close."
+    n "Although it is unspoken, the guests seem to mutually feel that it's time for the festivies to come to a close."
     scene cs_living
     show cs christmas at left
     show tate festive flipped at mid_right

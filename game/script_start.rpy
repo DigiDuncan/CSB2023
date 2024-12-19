@@ -3824,6 +3824,8 @@ python early:
         text, label = parsed_object
         _window_hide()
         seen_all = True
+        # TODO: THIS SECTION RIGHT HERE, OFFICER!
+        # It crashes!
         for i in Replay_items:
             if not renpy.seen_label(i.replay):
                 seen_all = False

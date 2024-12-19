@@ -575,6 +575,14 @@
         "type": "extra",
         "ce": true
     },
+    "pointclick":{
+        "name": "The Ultimate Festive House",
+        "locked": "???",
+        "unlocked": "Click everything there is to click in the attic.",
+        "img": "pointclick",
+        "type": "extra",
+        "ce": true
+    },
     "broke":{
         "name": "You Broke It!",
         "locked": "Woah, dude, you broke it.",
