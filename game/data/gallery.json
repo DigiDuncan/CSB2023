@@ -193,6 +193,12 @@
         "caption": "When everyone was freaking out about fixing last-minute bugs, Pakoo was busy shoving a bunch of random crap into the game.",
         "need_label": "ce_epilogue"
     },
+    "pakoo_not_working.jpg": {
+        "type": "image",
+        "title": "{size=-30}Pakoo making a sandwich wearing the shirt that he bought off of CS' Depop page",
+        "caption": "It's true, that shirt really doesn't fit him.",
+        "need_label": "ce_epilogue"
+    },
     "sfx_wiggle_wiggle_wiggle.ogg": {
         "type": "audio",
         "title": "Wiggle Wiggle Wiggle!",
