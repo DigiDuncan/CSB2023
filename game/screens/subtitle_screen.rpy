@@ -5,6 +5,7 @@ screen _dxcom(c):
     zorder 100
     layer "popup"
     style_prefix "dxcom"
+    modal True
 
     frame:
         at dxcom_appear
