@@ -880,7 +880,7 @@ screen preferences():
                                 textbutton _("Test") action Play("sound", config.sample_sound)
 
                     if config.has_voice:
-                        label _("Voice Volume")
+                        label _("Beep Volume")
                         hbox:
                             bar value Preference("voice volume"):
                                 xsize 450
