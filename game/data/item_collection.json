@@ -382,7 +382,7 @@
     "ltt_screwdriver": {
         "img": "ltt_screwdriver",
         "name": "LTT Screwdriver",
-        "owner": "Linus",
+        "owner": "Linus Sebastian",
         "desc": "This collaborative effort with Megapro promises to deliver a top-of-the-line screwdriving experience. {a=https://lttstore.com}lttstore.com{/a} {size=-24}(not sponsored){/size}",
         "rarity": "Common",
         "ce": true
