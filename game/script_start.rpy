@@ -1799,7 +1799,7 @@ python early:
     )
 
 label splashscreen:
-    # $ renpy.movie_cutscene(splash) TODO: Digi: Christmas splash
+    $ renpy.movie_cutscene("movies/ce_splash.webm")
     $ persistent.seen_splash = True
     $ persistent.heard.add("christmas_tea")
     return
