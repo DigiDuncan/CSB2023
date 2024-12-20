@@ -2664,7 +2664,12 @@ label ce_party_before:
         show sheriff festive dark flipped at left
         with dissolve
         play sound sfx_driving
-        show runaway_bus dark at manual_pos(-2.0, 0.6, 0.5) with MoveTransition(3.0)
+        show runaway_bus dark at manual_pos(-2.0, 0.6, 0.5):
+            block:
+                linear 0.1 ypos 0.5
+                linear 0.1 ypos 0.6
+                repeat
+        with MoveTransition(3.0)
         stop sound fadeout 5.0
         show cs christmas dark flipped at right with moveinright
         sheriff "God {i}damn{/i} it! {nw}" with vpunch
@@ -2677,7 +2682,7 @@ label ce_party_before:
         extend "I'm Copguy's {nw}"
         extend "{i}boss,{/i} {nw}" with vpunch
         extend "that's who!"
-        sheriff "I asked him to pick me up, but apparently he had to go {nw}"
+        sheriff "I asked him to pick me up, but, apparently, he had to go {nw}"
         extend "{i}shopping,{/i} {nw}" with vpunch
         extend "or some shit!"
         sheriff "So {nw}"
