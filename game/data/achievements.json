@@ -488,7 +488,7 @@
         "ce": true
     },
     "target_circle":{
-        "name": "Expect More, Play Less",
+        "name": "Expect More, Pay Less",
         "locked": "???",
         "unlocked": "Sign up for Target Circle",
         "img": "target",
@@ -572,6 +572,14 @@
         "locked": "???",
         "unlocked": "Get a perfect score at the Carrot Chop game.",
         "img": "perfect",
+        "type": "extra",
+        "ce": true
+    },
+    "point_click":{
+        "name": "The Ultimate Holiday House",
+        "locked": "???",
+        "unlocked": "Click everything there is to click in the attic.",
+        "img": "pointclick",
         "type": "extra",
         "ce": true
     },

@@ -159,7 +159,7 @@ label csbii_special:
     with vpunch
     if e1:
         jump e1
-    else:    
+    else:
         show ed_phone at offscreenright with determination
         show ed_phone at right with MoveTransition(0.5)
     ed "Hello, 911? My coworkers are--{w=0.5}{nw}"
@@ -301,7 +301,7 @@ label csbii_asylum:
             linear 2.0 alpha 1.0
         parallel:
             linear 0.5 xpos 0.6
-    show cs insane worried dark at left 
+    show cs insane worried dark at left
     with MoveTransition(2.0)
     pause 1.0
     cs "What?"
@@ -310,7 +310,7 @@ label csbii_asylum:
     cs "{i}What?!{/i} How?"
     show cs insane disappointed dark
     cs "I am so confused..."
-    
+
     # tate was here
     if fun_value(FUN_VALUE_UNOBTRUSIVE):
         csgod "You channeled my power. You had it all, right there at your fingertits."
@@ -334,7 +334,7 @@ label csbii_asylum:
     $ ending_manager.mark("asylum")
     bad_end "Silly CS!\nYTP Magic doesn't exist!" "csbii_start"
     return
-    
+
 # Caught
 label csbii_caught:
     play music time_for_a_smackdown volume 0.2 if_changed
@@ -409,10 +409,10 @@ label csbii_jail:
     cs "Your what?"
     arceus "... Never mind."
     arceus "Why'd you do it, anyhow?"
-    cs "I was 100-percent unsatisfied."
+    cs "I was 100%% unsatisfied."
     arceus "As was I. As was I..."
     pause 1.0
-    "..." 
+    "..."
     pause 1.0
     show cs prison at left
     arceus "Welp. I'm tired of this place. Wanna break out?"
@@ -442,13 +442,13 @@ label csbii_breakout:
     pause 1.0
     arceus "So, what's the plan? I've been trying to break outta here for five years."
     cs "Well, for starters, I need to get a feel for the routine here."
-    arceus "I really can't stand being here another minute. I'll give you the rundown. Hasn't changed then, won't change now." 
-    
+    arceus "I really can't stand being here another minute. I'll give you the rundown. Hasn't changed then, won't change now."
+
     scene black with dissolve
     pause 0.5
     n "Arceus describes the prison routine to CS."
     pause 0.5
-    
+
     scene jail_cell
     show cs prison at left
     show arceus prison at right
@@ -513,7 +513,7 @@ label csbii_breakout:
     pause 0.5
     scene black with dissolve
     pause 0.5
-    
+
     n "In the dark of night, the three begin chipping away at their cell floor."
     n "Upon breaking through, they set up makeshift dummies in their beds with their prison jumpsuits, then don their acquired guard uniforms."
 
@@ -526,8 +526,8 @@ label csbii_breakout:
     cs "Jeez... I didn't think that would actually work."
 
     show arceus guard at right with easeinright
-    arceus "You {i}what?" 
-    
+    arceus "You {i}what?"
+
     show anno guard dark with easeinbottom
     anno "How are we supposed to cross the border with the new wall?"
     arceus "Not the Mexican border, the Canadian border. We're in Washington, it's way closer, and they're too polite to send us back."
@@ -542,7 +542,7 @@ label csbii_breakout:
     arceus "Based on my instinct, and on my tiredness, this should be far enough."
     n "The now-escaped fugitives dig upwards for their ascent towards the surface."
     pause 0.5
-    
+
     hide screen dxcom
     scene black
     with dissolve
@@ -569,7 +569,7 @@ label csbii_bordercrossing:
     pause 1.0
     border_guard "I'm going to need proof of citizenship, eh."
     show border_guard at right
-    show arceus flipped at left 
+    show arceus flipped at left
     with moveinleft
     arceus "Colour is spelled with a u, eh."
     border_guard "Works for me, eh."
@@ -629,7 +629,7 @@ label csbii_bordercrossing:
     show cs flipped
     if fun_value(FUN_VALUE_MUSIC):
         anno "Arceus, buy something, will ya?"
-    else: 
+    else:
         anno "Finally."
     show cs flipped at mid_offscreen_right
     show anno at mid_offscreen_left
@@ -733,7 +733,7 @@ label csbii_ltt:
         music passport
     if fun_value(FUN_VALUE_MUSIC):
         linus "Sure, you can have a job. Just show us your passport and you're ready to go!"
-    else: 
+    else:
         linus "Sure, you can have a job. Just show us proof of citizenship and you're ready to go!"
     cs "Colour is spelled with a u, eh."
     linus "I need actual papers. Last time I hired someone who used {i}that{/i} as proof of citizenship, I got fined and had to sell one of my thousands of 4090s!"
@@ -802,7 +802,7 @@ label csbii_ltt:
     n "Arceus finds an old laptop."
     arceus "Perfect."
 
-    show arceus flipped at center 
+    show arceus flipped at center
     show craptop at manual_pos(0.55, 0.5)
     with move
     pause 0.5
@@ -885,9 +885,9 @@ label csbii_ltt:
     show arceus happy flipped
     arceus "I had a feeling that that would work!"
     anno "Let's celebrate!"
-    
+
     dxcom donuts
-    
+
     show donut_1 at manual_pos(0.2, 0.7)
     show donut_2 at manual_pos(0.5, 0.7)
     show donut_3 at manual_pos(0.7, 0.7)
@@ -895,14 +895,14 @@ label csbii_ltt:
     $ collect("donut_1")
     $ collect("donut_2")
     $ collect("donut_3")
-    
+
     show arceus happy flipped at mid_left
     show anno at mid_right
     show donut_1 at manual_pos(0.4, 0.25)
     show donut_2 at manual_pos(0.45, 0.25)
     show donut_3 at manual_pos(0.5, 0.25)
     with MoveTransition(0.25)
-    
+
     n "The three cheer and raise up their donuts, pressing them together in a sort of toast."
     # I FINALLY FIGURED OUT HOW TO REWRITE THAT FUCKING LINE HOLY SHIT - TATE
     pause 1.0

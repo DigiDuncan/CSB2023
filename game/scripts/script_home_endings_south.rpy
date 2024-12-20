@@ -45,7 +45,7 @@ label south_back_home_alt:
     rich "You tried to humiliate us with your videos. You made others think we were a joke!"
     ed "You see, my ancestors came from the planet JoJ many years ago to start a foundation company."
     ed "It was the best damn foundation company in the world."
-    ed "We repaired more than 50 percent of all foundations on the planet, and now... {i}you.{/i}"
+    ed "We repaired more than 50%% of all foundations on the planet, and now... {i}you.{/i}"
     ed "You. You embarrassed us with those silly, stupid videos that dragged our family company through the mud."
     rich "That's why Ed wanted to get revenge on you. That's why we destroyed your computer, CS."
     cs "I don't understand..."
@@ -77,7 +77,7 @@ label south_donatehohsis:
     show cs flipped with determination
     hide cs with moveoutleft
     n "CS grabs the briefcase from Arceus, takes out a few gold bars, and gives them to Ed."
-    show cs at left 
+    show cs at left
     show case at left
     with moveinleft
     cs "Here, I hope this helps you guys a bit."

@@ -3569,6 +3569,7 @@ define audio.sfx_ringtone_tate = "sfx/sfx_ringtone_tate.ogg"
 define audio.sfx_ringtone_tate_alt = "sfx/sfx_ringtone_tate_alt.ogg"
 define audio.sfx_roll_window = "sfx/sfx_roll_window.ogg"
 define audio.sfx_rubiks_cube = "sfx/sfx_rubiks_cube.ogg"
+define audio.sfx_rug_walk = "sfx/sfx_rug_walk3.ogg"
 define audio.sfx_seymour = "sfx/sfx_seymour.ogg"
 define audio.sfx_scan_twice = "sfx/sfx_scan_twice.ogg"
 define audio.sfx_select = "sfx/sfx_select.ogg"
@@ -3824,6 +3825,8 @@ python early:
         text, label = parsed_object
         _window_hide()
         seen_all = True
+        # TODO: THIS SECTION RIGHT HERE, OFFICER!
+        # It crashes!
         for i in Replay_items:
             if not renpy.seen_label(i.replay):
                 seen_all = False

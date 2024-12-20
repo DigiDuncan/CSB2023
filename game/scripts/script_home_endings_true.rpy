@@ -4,7 +4,7 @@ label true_back_home:
     play music park_theme volume 0.5 if_changed
     music park_theme
     if fun_value(FUN_VALUE_MUSIC):
-        n "After listening to Billy's many themes, they drive past the park next to CS' house."      
+        n "After listening to Billy's many themes, they drive past the park next to CS' house."
     else:
         n "After the long and treacherous journey, CS finally arrives at his house."
     show arceus flipped at left with moveinleft
@@ -38,7 +38,7 @@ label true_back_home:
     show rich at mid_mid_right behind ed
     with moveinright
     if fun_value(FUN_VALUE_MUSIC):
-        ed "I've been listening to Alfred's theme while waiting for you."      
+        ed "I've been listening to Alfred's theme while waiting for you."
     else:
         ed "I have been waiting for you for quite some time now."
     rich "We've been trying to stop you for a while now, but this is the final stop for you."
@@ -53,7 +53,7 @@ label true_back_home:
     rich "You tried to humiliate us with your videos. You made others think we were a joke!"
     ed "You see, my ancestors came from the planet JoJ many years ago to start a foundation company."
     ed "It was the best damn foundation company in the world."
-    ed "We repaired more than 50 percent of all foundations on the planet, and now... {i}you.{/i}"
+    ed "We repaired more than 50%% of all foundations on the planet, and now... {i}you.{/i}"
     ed "You. You embarrassed us with those silly, stupid videos that dragged our family company through the mud."
     rich "That's why Ed wanted to get revenge on you. That's why we destroyed your computer, CS."
     cs "I don't understand..."
@@ -85,7 +85,7 @@ label true_talktohohsis:
     stop music fadeout 1.0
     show anno at offscreenleft
     play music track_3 volume 0.4 if_changed
-    music track_3 
+    music track_3
     if fun_value(FUN_VALUE_MUSIC):
         show anno at center behind doug with moveinleft
         anno "Track 3!!!"
@@ -95,7 +95,7 @@ label true_talktohohsis:
         anno "Sorry guys, I honestly didn't get enough sleep for the final act."
         show cs disappointed
         cs "Well it's over now, we'll do another take later, let's keep going so we have more practice for the final take."
-    
+
     else:
         anno_offscreen "Wait!!!"
         n "A voice can be heard behind the group running up to them."
@@ -121,7 +121,7 @@ label true_talktohohsis:
     colton "Finally, something that wasn't my fault."
     show michael at mid_mid_left behind cs with moveinleft
     michael "If I get my chocolate cake, you fellows at HoH SiS can fix up my house too."
-    show phil at mid_left behind cs with moveinleft     
+    show phil at mid_left behind cs with moveinleft
     phil "I can help too, with the power of Flex Tape!"
     show doug at center behind cs with moveinbottom
     doug "I don't know what I'm doing here, but, yeah, good job, guys!"
@@ -439,7 +439,7 @@ label true_fuckuphohsis:
     pause 1.0
     cs "Fuck."
     $ ending_manager.mark("rip_house")
-    bad_end "Time to bunk\nat Rosen's!" "true_back_home"  
+    bad_end "Time to bunk\nat Rosen's!" "true_back_home"
 
 label true_copsathohsis:
     stop music fadeout 3.0

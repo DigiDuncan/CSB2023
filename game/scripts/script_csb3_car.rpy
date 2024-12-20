@@ -304,7 +304,7 @@ label car_dialogue:
     arceus "{i}No,{/i} no we shouldn't."
     cs "What do you mean? We're just chatting right now, and I think it's pretty funny!"
     arceus "You only think it's funny because we're the ones talking."
-    arceus "Every group of idiot friends thinks they're funny enough to have a podcast, and 99 percent of the time, they're wrong."
+    arceus "Every group of idiot friends thinks they're funny enough to have a podcast, and 99%% of the time, they're wrong."
     billy "Yeah, I gotta agree with him on this one. I don't think anyone would find this funny."
     n "Arceus glances at the top-right corner of the screen."
     cs "What are you looking at?"

@@ -677,7 +677,7 @@ label south_folded:
     cs "Yeah, I guess you're right. Oh, well."
     cs "Did anyone notice?"
     show arceus happy
-    arceus "Nope! I 100-percent {i}stealthed{/i} that!"
+    arceus "Nope! I 100%% {i}stealthed{/i} that!"
     show cs
     cs "Well, damn! Sweet! Thank you so much, Arceus!"
     cs "We are millionaires now!"
