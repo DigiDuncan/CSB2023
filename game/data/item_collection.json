@@ -27,7 +27,7 @@
         "img": "apple_pie.png",
         "name": "Hot Apple Pie",
         "owner": "CS",
-        "desc": "It's totally storebought, but that's okay.",
+        "desc": "It's totally store-bought, but that's okay.",
         "rarity": "Common",
         "ce": true
     },
