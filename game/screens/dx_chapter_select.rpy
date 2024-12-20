@@ -1,5 +1,5 @@
 screen dx_select():
-    
+
     default tt = Tooltip("Or something else?")
 
     textbutton "{color=#fff}Back{/color}":
@@ -33,7 +33,7 @@ screen dx_select():
                 xfill True
                 yfill True
                 # We can have 10 entries here
-            
+
                 ### SPEEDRUN ###
                 imagebutton auto "menu/dx/speedrun_%s.png" hover_sound "audio/sfx/sfx_select.ogg":
                     hovered tt.Action("Speedrun")
@@ -90,10 +90,13 @@ screen dx_select():
                         xalign 0.5
                     action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("dx_select"), Jump("ce_start")
 
-                imagebutton auto "menu/csbiiidx_%s.png":
+                ### BEACH EPISODE ###
+                imagebutton auto "menu/csbiiidx_%s.png" hover_sound "audio/sfx/sfx_select.ogg":
+                    hovered tt.Action("Beach Episode")
                     at transform:
                         zoom 0.333
                         xalign 0.5
+                    action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("dx_select"), Jump("beach_start")
 
                 imagebutton auto "menu/csbiiidx_%s.png":
                     at transform:

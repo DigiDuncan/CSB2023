@@ -138,7 +138,7 @@ screen people_welcome():
     python:
         bio_count = len(name_map.keys())
         unlocked_bio_count = len(persistent.seen)
-        
+
     vbox:
         xsize 850
         xalign 0.5 yalign 0.5
@@ -151,7 +151,7 @@ screen people_welcome():
 ##-----------------------------------------------
 
 screen person(l):
-        
+
     ##### Main Container omitting the menu
     viewport:
         xsize 1350
@@ -222,16 +222,33 @@ screen person(l):
                     # quote + bio text
                     frame:
                         background None
-                        vbox:
-                            python:
-                                try:
-                                    if "dx_bio" in name_map[l]:
-                                        fetched = name_map[l]["bio"] + "\n\n{image=gui/dx_text.png} " + name_map[l]["dx_bio"]
-                                    else:
+
+                        # TODO: put main/dx/ce bios on different pages. scrollbars are NOT staying
+                        viewport:
+                            scrollbars "vertical"
+                            side_yfill False
+                            mousewheel True
+                            draggable False
+                            pagekeys True
+
+                            vbox:
+                                python:
+                                    try:
                                         fetched = name_map[l]["bio"]
-                                except:
-                                    fetched = "The bio didn't load correctly. Ask Digi to fix the game."
-                            text "\"" + name_map[l]["quote"] + "\"\n\n" + (fetched)
+
+                                        # TODO: should we implement anti-spoiler tech into bio sections?
+
+                                        if "dx_bio" in name_map[l]:
+                                            fetched = fetched + "\n\n{image=gui/dx_text.png} " + name_map[l]["dx_bio"]
+
+                                        if "ce_bio" in name_map[l]:
+                                            fetched = fetched + "\n\n{image=gui/ce_text.png} " + name_map[l]["ce_bio"]
+
+                                        else:
+                                            fetched = name_map[l]["bio"]
+                                    except:
+                                        fetched = "The bio didn't load correctly. Ask Digi to fix the game."
+                                text "\"" + name_map[l]["quote"] + "\"\n\n" + (fetched)
 
                 ### bounding box for sprites and rpg info
                 frame:
@@ -284,13 +301,13 @@ screen person(l):
                                     # delimiter to handle outfit/expression names
                                     # ex. "Default: Happy" will be split
                                     this_sprite_split = this_sprite.split(": ")
-                                    
+
                                     if len(this_sprite_split) > 1:
                                         this_sprite = "{size=-12}" + this_sprite_split[0] + "{/size}\n" + this_sprite_split[1]
                                     else:
                                         this_sprite = this_sprite_split
-    
-                                # sprite selector 
+
+                                # sprite selector
                                 text this_sprite:
                                     xalign 0.5
                                     yalign 0.5
@@ -318,34 +335,38 @@ screen person(l):
                             # show rpg data if it exists
                             if "rpg" in name_map[l]:
                                 null height 10
-                                vbox:
-                                    xsize 1.0
-                                    frame:
+                                frame:
+                                    vbox:
                                         xsize 1.0
-                                        background "#f70"
-                                        text "{size=-8}RPG Stats"
-                                    frame:
-                                        xsize 1.0
-                                        background "#07f"
-                                        hbox:
-                                            xalign 0.5
-                                            spacing 50
+                                        frame:
+                                            xsize 1.0
+                                            background None
+                                            text "{size=-8}RPG Stats":
+                                                xalign 0.5
+                                                yalign 0.5
+                                                text_align 0.5
+                                        frame:
+                                            xsize 1.0
+                                            background None
+                                            hbox:
+                                                xalign 0.5
+                                                spacing 50
 
-                                            frame:
-                                                background "#070"
-                                                xsize 100
-                                                text str(hp) + "\n{size=-8}HP":
-                                                    xalign 0.5
-                                                    text_align 0.5
-                                            frame:
-                                                background "#700"
-                                                xsize 100
-                                                text str(attack) + "\n{size=-8}ATK":
-                                                    xalign 0.5
-                                                    text_align 0.5
-                                            frame:
-                                                background "#007"
-                                                xsize 100
-                                                text str(defense) + "\n{size=-8}DEF":
-                                                    xalign 0.5
-                                                    text_align 0.5
+                                                frame:
+                                                    background "#070"
+                                                    xsize 100
+                                                    text str(hp) + "\n{size=-8}HP":
+                                                        xalign 0.5
+                                                        text_align 0.5
+                                                frame:
+                                                    background "#700"
+                                                    xsize 100
+                                                    text str(attack) + "\n{size=-8}ATK":
+                                                        xalign 0.5
+                                                        text_align 0.5
+                                                frame:
+                                                    background "#007"
+                                                    xsize 100
+                                                    text str(defense) + "\n{size=-8}DEF":
+                                                        xalign 0.5
+                                                        text_align 0.5

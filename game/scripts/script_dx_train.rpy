@@ -3934,8 +3934,8 @@ label train_tate_ex_win:
     imperfect_tate "{perfect_tate}I'm sorry."
 
     scene white
-    # TODO: re-render this again when it's finished, make sure it has audio
-    $ renpy.movie_cutscene(perfect_tate_intro)
+    play music nyan_intro noloop if_changed
+    $ renpy.movie_cutscene(perfect_tate_intro, stop_music=False)
 
     # Disable pause menu because it'll ruin audio sync
     # TODO: this only works when it wants to...

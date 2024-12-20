@@ -34,10 +34,12 @@ init python:
             self.total_laps = 3
             self.current_lap = 1
             self.current_key = None
-            
+
             self.bg = Image("minigames/toytrains/bg_do_not_resize.png")
             self.train_cs = Image("minigames/toytrains/train_cs.png")
             self.train_arceus = Image("minigames/toytrains/train_arceus.png")
+            self.health_hit = Image("minigames/toytrains/health_hit.png")
+            self.health_ok = Image("minigames/toytrains/health_ok.png")
 
             self.up = False
             self.left = False
@@ -46,7 +48,7 @@ init python:
 
             self.jig = Jig()
             self.jig.position = (2760, 1590)
-            
+
             self.start_time = None
             self.win = None
 
@@ -64,13 +66,13 @@ init python:
                 self.jig.x -= 5
             if self.right:
                 self.jig.x += 5
-            
+
             # Moving Backgound
             bg_displayable = renpy.displayable(self.bg)
             bg_transform = Transform(bg_displayable)
             bg_renderer = renpy.render(bg_transform, 0, 0, st, at)
             r.blit(bg_renderer, self.jig.pos(0, 0))
-            
+
             # CS Train
             train_cs_displayable = renpy.displayable(self.train_cs)
             train_cs_transform = Transform(train_cs_displayable, zoom = 0.8)
@@ -82,22 +84,40 @@ init python:
             train_arceus_transform = Transform(train_arceus_displayable, zoom = 0.8)
             train_arceus_renderer = renpy.render(train_arceus_transform, 475, 597, st, at)
             r.blit(train_arceus_renderer, self.jig.pos(4338, 2015))
-            
+
             ### Text Elements
-            
+
             # Lap Counter
             laps_left_txt_render = renpy.render(Text("LAP: "+str(self.current_lap)+"/"+str(self.total_laps), color = "#FFFFFF", size = 72), 300, 100, st, at)
-            r.blit(laps_left_txt_render, (16, 0))
-            
+            r.blit(laps_left_txt_render, (16, 4))
+
             # HP
-            hp_left_txt_render = renpy.render(Text("HP: "+str(self.hp), color = "#FFFFFF", size = 72), 300, 100, st, at)
-            r.blit(hp_left_txt_render, (16, 60))
-            
-            
+            if self.hp == 3:
+                r.blit(renpy.load_image(self.health_ok), (8, 88))
+                r.blit(renpy.load_image(self.health_ok), (76, 88))
+                r.blit(renpy.load_image(self.health_ok), (144, 88))
+            elif self.hp == 2:
+                r.blit(renpy.load_image(self.health_ok), (8, 88))
+                r.blit(renpy.load_image(self.health_ok), (76, 88))
+                r.blit(renpy.load_image(self.health_hit), (144, 88))
+            elif self.hp == 1:
+                r.blit(renpy.load_image(self.health_ok), (8, 88))
+                r.blit(renpy.load_image(self.health_hit), (76, 88))
+                r.blit(renpy.load_image(self.health_hit), (144, 88))
+            elif self.hp == 0:
+                r.blit(renpy.load_image(self.health_hit), (8, 88))
+                r.blit(renpy.load_image(self.health_hit), (76, 88))
+                r.blit(renpy.load_image(self.health_hit), (144, 88))
+                self.win = False
+
+            # debug health display
+            # hp_left_txt_render = renpy.render(Text("HP: "+str(self.hp), color = "#FFFFFF", size = 72), 300, 100, st, at)
+            # r.blit(hp_left_txt_render, (16, 60))
+
             # Temporary
-            temp_txt = "Hi, this doesn't work yet.\nUse arrow keys to check out the map, at least.\nPress END to \"win\", Space to \"lose.\""
+            temp_txt = "Hi, this doesn't work yet.\nUse arrow keys to check out the map, at least.\nPress END to \"win\", Space to \"lose.\"\nClick anywhere to test HP drop."
             temp_txt_render = renpy.render(Text(temp_txt, color = "#FFFFFF", size = 50), 1920, 100, st, at)
-            r.blit(temp_txt_render, (16, 128))
+            r.blit(temp_txt_render, (16, 156))
 
             renpy.redraw(self, 0)
             return r
@@ -126,6 +146,9 @@ init python:
             elif ev.type == pygame.KEYUP and ev.key == pygame.K_RIGHT:
                 self.right = False
 
+            elif ev.type == pygame.MOUSEBUTTONDOWN and ev.button == 1:
+                self.hp = self.hp - 1
+
             if self.win is not None:
                 return self.win
 
@@ -149,17 +172,17 @@ label play_toytrains_game:
 
     if _return == True:
         $ achievement_manager.unlock("trains_minigame")
-        
+
         if CS_TRAIN_HP == 3:
             $ achievement_manager.unlock("trains_perfect")
-        
+
         stop music fadeout 2.0
-        
+
         $ renpy.jump(minigame_win)
     else:
         $ achievement_manager.unlock("trains_minigame")
         stop music fadeout 2.0
-        
+
         $ renpy.jump(minigame_loss)
 
 label toytrainsgame_done:

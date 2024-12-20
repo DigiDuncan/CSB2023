@@ -107,120 +107,126 @@ label awawa_tate_test:
 
     # Let's test out local labels, too.
     label .awawa_menu:
+        scene roombacks
         show tate
         tate "Which test would you like?"
         menu:
             tate "Which test would you like?{fast}"
 
-            ########## SPRITE TEST ##########
+            #################### SPRITE TESTS ####################
+            "Tate's Sprite Experiments":
+                menu:
+                    tate "Okay, which one?{fast}"
+                    ########## SPRITE LAYERS ##########
+                    "Layered Sprite Test":
+                        hide tate with dissolve
+                        n "This test is for Tate's layered sprite."
 
-            "Layered Sprite Test":
-                hide tate with dissolve
-                n "This test is for Tate's layered sprite."
+                        show tate_comp
+                        "Default"
+                        show tate_comp sad
+                        "Sad"
+                        show tate_comp cry
+                        "Cry"
+                        show tate_comp cry tears
+                        "Cry + tears"
+                        show tate_comp sheepish -tears
+                        "Sheepish, force-remove tears"
+                        show tate_comp sheepish blush
+                        "Sheepish + blushing"
+                        show tate_comp shock
+                        "Shock"
+                        show tate_comp serious -blush
+                        "Serious, force-remove blush"
+                        show tate_comp smug
+                        "Smug"
+                        show tate_comp stare
+                        "Stare"
+                        show tate_comp furious
+                        "Furious!"
 
-                show tate_comp
-                "Default"
-                show tate_comp sad
-                "Sad"
-                show tate_comp cry
-                "Cry"
-                show tate_comp cry tears
-                "Cry + tears"
-                show tate_comp sheepish -tears
-                "Sheepish, force-remove tears"
-                show tate_comp sheepish blush
-                "Sheepish + blushing"
-                show tate_comp shock
-                "Shock"
-                show tate_comp serious -blush
-                "Serious, force-remove blush"
-                show tate_comp smug
-                "Smug"
-                show tate_comp stare
-                "Stare"
-                show tate_comp furious
-                "Furious!"
+                        show tate_comp happy festive
+                        "Festive! But, the happy face has to be forced..."
+                        show tate_comp sad festive
+                        "Sad Festive"
+                        show tate_comp cry tears festive
+                        "Cry + tears + Festive"
+                        show tate_comp sheepish festive -tears
+                        "Sheepish + Festive, force-remove tears"
+                        show tate_comp sheepish blush festive
+                        "Sheepish + blushing + Festive"
+                        show tate_comp shock festive -blush
+                        "Shock + Festive, force-remove blush"
+                        show tate_comp serious festive
+                        "Serious + Festive"
+                        show tate_comp smug festive
+                        "Smug + Festive"
+                        show tate_comp stare festive
+                        "Stare + Festive"
+                        show tate_comp furious festive
+                        "Furious + Festive"
+                        show tate_comp furious gloom festive
+                        "One angy lil bah humbug (festive + furious + experimental \"gloom\" overlay)"
 
-                show tate_comp happy festive
-                "Festive! But, the happy face has to be forced..."
-                show tate_comp sad festive
-                "Sad Festive"
-                show tate_comp cry tears festive
-                "Cry + tears + Festive"
-                show tate_comp sheepish festive -tears
-                "Sheepish + Festive, force-remove tears"
-                show tate_comp sheepish blush festive
-                "Sheepish + blushing + Festive"
-                show tate_comp shock festive -blush
-                "Shock + Festive, force-remove blush"
-                show tate_comp serious festive
-                "Serious + Festive"
-                show tate_comp smug festive
-                "Smug + Festive"
-                show tate_comp stare festive
-                "Stare + Festive"
-                show tate_comp furious festive
-                "Furious + Festive"
-                show tate_comp furious gloom festive
-                "One angy lil bah humbug (festive + furious + experimental \"gloom\" overlay)"
+                        show tate_comp casual happy -gloom
+                        "Back to normal!"
+                        tate "Shader test!"
 
-                show tate_comp casual happy -gloom
-                "Back to normal!"
-                tate "Shader test!"
+                        show tate_comp
+                        "Normal"
+                        show tate_comp dusk
+                        "Dusk"
+                        show tate_comp dark
+                        "Dark"
+                        show tate_comp sil_white
+                        "White"
+                        show tate_comp sil_black
+                        "Black"
+                        show tate_comp sepia
+                        "Sepia"
+                        show tate_comp -sepia flipped
+                        "Also, let's flip!"
+                        show tate_comp -flipped
+                        "Flip them back!"
 
-                show tate_comp
-                "Normal"
-                show tate_comp dusk
-                "Dusk"
-                show tate_comp dark
-                "Dark"
-                show tate_comp sil_white
-                "White"
-                show tate_comp sil_black
-                "Black"
-                show tate_comp sepia
-                "Sepia"
-                show tate_comp -sepia flipped
-                "Also, let's flip!"
-                show tate_comp -flipped
-                "Flip them back!"
+                        show tate_comp casual sheepish
+                        tate "Did {i}any{/i} of that work?"
+                        hide tate_comp
 
-                show tate_comp casual sheepish
-                tate "Did {i}any{/i} of that work?"
-                hide tate_comp
+                        jump .awawa_menu
 
-                jump .awawa_menu
+                    ########## SPRITE RANDOMIZER ##########
+                    "Sprite Randomizer":
+                        show tate sad
+                        tate "Ew, {w=0.25}I hate the randomizer."
 
-            ########## SPRITE RANDOMIZER ##########
-            "Sprite Randomizer":
-                show tate sad
-                tate "Ew, {w=0.25}I hate the randomizer."
+                        python:
+                            iterations = ""
+                            iterations = renpy.input("How many iterations?", iterations)
 
-                python:
-                    iterations = ""
-                    iterations = renpy.input("How many iterations?", iterations)
+                            try:
+                                renpy.hide("tate")
+                                renpy.hide("tate_comp")
+                                iterations = int(iterations)
 
-                    try:
-                        renpy.hide("tate")
-                        renpy.hide("tate_comp")
-                        iterations = int(iterations)
+                                for i in range(iterations):
+                                    this_iteration = awawa()
+                                    renpy.show(this_iteration)
+                                    narrator(str(i+1) + ": " + this_iteration)
 
-                        for i in range(iterations):
-                            this_iteration = awawa()
-                            renpy.show(this_iteration)
-                            narrator(str(i+1) + ": " + this_iteration)
+                                renpy.hide("tate_comp")
+                                renpy.show("tate", what="tate sheepish")
+                                renpy.say(tate, "Wow, {w=0.25}that sucked. {w=0.5}But, {w=0.25}did it work?")
+                            except:
+                                renpy.show("tate", what="tate sheepish")
+                                renpy.say(tate, "Something went wrong, {w=0.25}sorry.")
+                        jump .awawa_menu
 
-                        renpy.hide("tate_comp")
-                        renpy.show("tate", what="tate sheepish")
-                        renpy.say(tate, "Wow, {w=0.25}that sucked. {w=0.5}But, {w=0.25}did it work?")
-                    except:
-                        renpy.show("tate", what="tate sheepish")
-                        renpy.say(tate, "Something went wrong, {w=0.25}sorry.")
+                    ########## GO BACK ##########
+                    "Never mind.":
+                        jump .awawa_menu
 
-                jump .awawa_menu
-
-            ########## AWAWA MODE ##########
-
+            #################### AWAWA MODE ####################
             "Awawa Mode":
                 tate "Let's try out Awawa Mode."
                 n "Storing initial Awawa Mode values..."
@@ -266,59 +272,84 @@ label awawa_tate_test:
                 tate "I sure hope that worked. That's hard to read..."
                 jump .awawa_menu
 
-            ########## UNLOCK SCREEN ##########
 
-            "Unlock Screen":
-                call screen special_unlock("Pretend something cool got unlocked here! Click anywhere to continue.")
-                tate "Lookin' good!"
-                tate "Let's try another!"
-                $ renpy.call_screen("special_unlock", "This screen is called with a Python statement! Use this in menus!")
-                jump .awawa_menu
-
-            ########## FORCE-TEST ACHIEVEMENTS ##########
-
-            "Achievement Pop-Ups":
-
-                tate "Sure, let's try it."
-
-                python:
-                    this_cheev = ""
-                    this_cheev = renpy.input("Enter the {i}exact{/i} ID of the achievement you want to test.", this_cheev)
-
-                    try:
-                        chievos = (a for a in achievement_manager.achievements.values() if a.id == this_cheev)
-                        renpy.show_screen("popup", next(chievos))
-                        renpy.say(tate, "Did it work?")
-                    except:
-                        renpy.say(tate, substitutions("Couldn't pull achievement. Double-check the name and try again."))
-
-                jump .awawa_menu
-
-            ########## Credits Roll ##########
-
-            "Credits Roll":
-                tate "Which one?"
+            #################### SCREEN TESTS ####################
+            "Screen Tests":
                 menu:
-                    tate "Which one?{fast}"
-                    "Full Game":
-                        call screen credits_roll(duration=60)
-                    "CE Only":
-                        call screen credits_roll(route="CSBIII DX: Holiday Special", scroll_start = 12525, duration=84) with dissolve
+                    tate "Which?{fast}"
+
+                    ########## UNLOCK SCREEN ##########
+                    "Unlock Screen":
+                        call screen special_unlock("Pretend something cool got unlocked here! Click anywhere to continue.")
+                        tate "Lookin' good!"
+                        tate "Let's try another!"
+                        $ renpy.call_screen("special_unlock", "This screen is called with a Python statement! Use this in menus!")
+                        jump .awawa_menu
+
+                    ########## FORCE-TEST ACHIEVEMENTS ##########
+                    "Achievement Pop-Ups":
+
+                        tate "Sure, let's try it."
+
+                        python:
+                            this_cheev = ""
+                            this_cheev = renpy.input("Enter the {i}exact{/i} ID of the achievement you want to test.", this_cheev)
+
+                            try:
+                                chievos = (a for a in achievement_manager.achievements.values() if a.id == this_cheev)
+                                renpy.show_screen("popup", next(chievos))
+                                renpy.say(tate, "Did it work?")
+                            except:
+                                renpy.say(tate, substitutions("Couldn't pull achievement. Double-check the name and try again."))
+
+                        jump .awawa_menu
+
+                    ########## Credits Roll ##########
+                    "Credits Roll":
+                        tate "Which one?"
+                        menu:
+                            tate "Which one?{fast}"
+                            "Full Game":
+                                call screen credits_roll(duration=60)
+                            "CE Only":
+                                call screen credits_roll(route="CSBIII DX: Holiday Special", scroll_start = 12525, duration=84) with dissolve
+                            "Never mind.":
+                                jump .awawa_menu
+
+                        tate "Did it do what you wanted?"
+                        jump .awawa_menu
+
+                    ########## REVERSI RULES ##########
+                    "Reversi Rules Image":
+                        tate "Let's check it out!"
+                        show reversi_rules at truecenter
+                        pause
+                        hide reversi_rules
+                        tate "Did it work?"
+                        jump .awawa_menu
+
+                    ########## GO BACK ##########
                     "Never mind.":
                         jump .awawa_menu
 
-                tate "Did it do what you wanted?"
+            #################### PERFECT TATE TESTS ####################
+            "VS Perfect Tate Image Tests":
+                menu:
+                    tate "Which one?{fast}"
+                    "CS Running Animation":
+                        show cs_run at manual_pos(0.75, 0.5, 0.5)
+                        tate "Is this what you wanted?"
+                        hide cs_run
+                    "CS Health Indicator":
+                        image health_test = Fixed("/minigames/perfecttate/heart.png", Text("100", size=69, xanchor=0.5, yanchor=0.5, xalign=0.5, yalign=0.4, text_align=0.5), xysize=(128,128))
+                        show health_test at manual_pos(8, 8, 0)
+                        tate "Is that correct?"
+                        hide health_test
+                    "Never mind.":
+                        jump .awawa_menu
                 jump .awawa_menu
 
-            "Reversi Rules Image":
-                tate "Let's check it out!"
-                show reversi_rules at truecenter
-                pause
-                hide reversi_rules
-                tate "Did it work?"
-                jump .awawa_menu
-
-            ########## Cancel ##########
+            #################### Cancel ####################
 
             "None, I'm Done":
                 tate "Cool. See ya later!"

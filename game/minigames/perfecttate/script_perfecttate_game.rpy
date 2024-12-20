@@ -52,11 +52,10 @@ init python:
 
             # TODO: besides replacing the assets, the "laser" needs to be a small projectile instead
             # no idea how the hitbox will work
-            # TODO: CS' sprite should be no more than 300 wide.
 
             self.win = None
-            #self.cs = store.cs_run
-            self.cs = Image("minigames/perfecttate/cs1.png")
+
+            self.cs = renpy.get_registered_image("cs_run")
             self.tate = Image("minigames/perfecttate/perfecttate_small.png")
             self.laser = Image("minigames/perfecttate/laser.png")
             self.laser_ball = Image("minigames/perfecttate/energy_ball.png")
@@ -94,34 +93,34 @@ init python:
             r = renpy.Render(1920, 1080)
 
             # Load players
-            cs_renderer = renpy.load_image(self.cs)
+            cs_renderer = renpy.render(self.cs, self.current_lane, CS_Y, st, at)
             tate_renderer = renpy.load_image(self.tate)
             arrow_renderer = renpy.load_image(self.arrows)
 
-            # TODO: this is ugly as hell
-            health_renderer = renpy.render(Text("Health: "+str(self.health), color="FF0000", size=100), 1920, 1080, st, at)
+            # TODO: it's also a long shot but it might be cool if the heart can beat with the bpm of the song
+            health_renderer = renpy.render(Fixed("/minigames/perfecttate/heart.png", Text(str(self.health), size=69, xanchor=0.5, yanchor=0.5, xalign=0.5, yalign=0.4, text_align=0.5), xysize=(128,128)), 0, 0, st, at)
 
             # Shoot projectile
             laser_renderer = renpy.load_image(self.laser)
-            
+
             # Enter animation/logic
             if not self.entered:
                 if (st - self.start_time < 9.581):
                     pass
                 else:
                     self.entered = True
-            
+
             # Exit animation/logic
             # TODO: instead of having the enemy exit, the plan will be to turn the background white and play an animation
             # this will be synced up with the metal pipe sound in the song
             elif self.exited:
-                if (st - self.round_timer > 205.2): # amount of time the song actually plays 205.2 secs
+                if (st - self.round_timer > 205.721): # amount of time the song actually plays 205.721 secs
                 # TODO: THIS DOESNT WORK YET, THE GAME CRASHES HALFWAY
 
                     # kill the background/music for the cutscene
                     renpy.music.stop(fadeout=None)
 
-                    renpy.notify("you made it to the end") 
+                    renpy.notify("you made it to the end")
 
                     #curr_y = ease_linear(TATE_Y, -TATE_Y, self.round_timer+2, self.round_timer+3.5, st)
                     #r.blit(tate_renderer, (PT_LANE_X[2], curr_y))
@@ -198,8 +197,8 @@ init python:
                 # Render Tate
                 r.blit(tate_renderer, (current_tate_x, TATE_Y))
 
-                # Render CS' health bar
-                r.blit(health_renderer, (0, 0))
+                # Render CS' health
+                r.blit(health_renderer, (8, 8))
 
                 # No more danger
                 if danger_cutoff < st:
@@ -211,7 +210,7 @@ init python:
                 renpy.sound.play("audio/sfx/sfx_hurt1.ogg")
                 self.health -= 1
                 if self.health < 0:
-                    renpy.notify("you lost") 
+                    renpy.notify("you lost")
                     self.win = False
                     renpy.timeout(0)
             if self.fires >= FIRE_COUNT:
@@ -223,7 +222,7 @@ init python:
 
             renpy.redraw(self, 0)
             return r
-            
+
         def event(self, ev, x, y, st):
             import pygame
             if ev.type == pygame.KEYDOWN and ev.key == pygame.K_LEFT:
@@ -246,10 +245,11 @@ init python:
 
 screen PerfectTateGame():
     default PerfectTateGame = PerfectTateGameDisplayable()
-    add Movie(play="minigames/perfecttate/Tate2.webm")
+    add Movie(play="minigames/perfecttate/Tate2.webm", loop=False)
     add PerfectTateGame
 
 label play_perfecttate_game:
+    play music nyan_fight noloop if_changed
     $ persistent.heard.add("nyan_of_a_lifetime")
     window hide
     $ quick_menu = False

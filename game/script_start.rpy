@@ -2552,7 +2552,7 @@ image zenigata dark = "dark:characters/zenigata.png"
 image zenigata dark flipped = "dark:flip:characters/zenigata.png"
 image zenigata car dark = "dark:characters/zenigata_car.png"
 
-# Train Route Tate EX extra images
+# Train Route Tate EX/Perfect Tate extra images
 image tate_falling = "secret/pt/tate_falling.png"
 image tate_fallen_1 = "secret/pt/tate_fallen_1.png"
 image tate_fallen_2 = "secret/pt/tate_fallen_2.png"
@@ -2561,7 +2561,7 @@ image tate_fallen_4 = "secret/pt/tate_fallen_4.png"
 image tate_fallen_5 = "secret/pt/tate_fallen_5.png"
 image yeetable_textbox = "/secret/pt/yeetable_textbox.png"
 
-# Train Route generated images
+# Train Route misc generated images
 image fake_rpg_miss = Text("{size=50}{color=#FFAAAA}Miss!", text_align=0.5)
 image oof_45 = Text("{size=50}{color=#FFEE00}4'5\"", text_align=0.5)
 image oof_54 = Text("{size=50}{color=#CE256E}5'4\"", text_align=0.5)
@@ -2907,7 +2907,7 @@ image bubble = Transform("images/characters/bubble.png", zoom = 2.0)
 image realistic_explosion_anim = spritesheet_animation("images/realistic_explosion.png", 6, 3, looping = False)
 
 ## CS running loop for Perfect Tate
-image cs_run = spritesheet_animation("minigames/perfecttate/cs_spritesheet.png", 8, 3, fps=45, looping = True)
+image cs_run = spritesheet_animation("minigames/perfecttate/cs_spritesheet.png", 8, 3, fps = 60, looping = True)
 
 ## For cop car lights
 image blue_light:
@@ -3355,6 +3355,8 @@ define audio.insomnia_intro = "<from 0 to 11.299>secret/pt/insomnia.ogg"
 define audio.insomnia_loop = "<from 22.6>secret/pt/insomnia.ogg"
 define audio.space = "secret/pt/space.ogg"
 define audio.nyan = "<from 3.6 to 228.52>/secret/pt/nyan_of_a_lifetime.ogg"
+define audio.nyan_intro = "<from 3.6 to 22.799>/secret/pt/nyan_of_a_lifetime.ogg"
+define audio.nyan_fight = "<from 22.799 to 228.52>/secret/pt/nyan_of_a_lifetime.ogg"
 
 # CSBIII DX Kuwait Music
 define audio.tmwstw = "tmwstw.ogg"
