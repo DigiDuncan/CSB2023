@@ -4081,7 +4081,7 @@ label ce_win_carrot:
     with dissolve
     hide screen dxcom
     pause 0.5
-    billy "So, then I said, \"That's a restaurant mini burger {w=0.5}{i}no one{/i} loves!\""
+    billy "So, then I said, \"That's a restaurant mini-burger {w=0.5}{i}no one{/i} loves!\""
     n "Obama lets out a hearty laugh."
     obama "Billy, you crack me up. You're one of America's greatest."
     billy "That means a lot coming from you, Mr. President!"
