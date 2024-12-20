@@ -247,6 +247,14 @@
         "desc": "A 2014 BMW 4? That... doesn't seem right. How did this get here?",
         "rarity": "Uncommon"
     },
+    "cs_cold_hat": {
+        "img": "cs_cold_hat",
+        "name": "Cirrus Hat",
+        "owner": "CS",
+        "desc": "Is it a cloud that's a cat, or a cat that's a cloud?",
+        "rarity": "Common",
+        "ce": true
+    },
     "cs_id": {
         "img": "cs_id",
         "name": "CS' ID Card",
