@@ -491,6 +491,7 @@ label ce_anno:
     if tree_first:
         scene cs_garage_mess with dissolve
         show cs disappointed coat hat at offscreenleft
+        $ collect("cs_cold_hat")
         show cs disappointed coat hat at mid_mid_left with moveinleft
         show cs scared coat hat
         play sound sfx_spikes
@@ -505,6 +506,7 @@ label ce_anno:
         show garage_shelf at manual_pos(0.9, 0.5, 0.5)
         with dissolve
         show cs disappointed coat hat at mid_mid_left with moveinleft
+        $ collect("cs_cold_hat")
     cs "Now, where did I last put..."
     pause 0.5
     show cs disappointed coat hat at right with move
