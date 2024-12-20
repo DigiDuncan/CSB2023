@@ -375,7 +375,7 @@ screen navigation():
         textbutton _("Extras") action ShowMenu("category_welcome")
 
         if main_menu:
-            
+
             textbutton _("Replay Intro") action Start("splashscreen")
 
         textbutton _("CSettings") action ShowMenu("preferences")
@@ -918,7 +918,7 @@ screen preferences():
                                 textbutton _("Test") action Play("sound", config.sample_sound)
 
                     if config.has_voice:
-                        label _("Voice Volume")
+                        label _("Beep Volume")
                         hbox:
                             bar value Preference("voice volume"):
                                 xsize 450
