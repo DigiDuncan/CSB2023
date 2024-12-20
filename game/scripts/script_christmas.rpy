@@ -2682,7 +2682,7 @@ label ce_party_before:
         extend "I'm Copguy's {nw}"
         extend "{i}boss,{/i} {nw}" with vpunch
         extend "that's who!"
-        sheriff "I asked him to pick me up, but, apparently, he had to go {nw}"
+        sheriff "I asked him to pick me up, but, {i}apparently,{/i} he had to go {nw}"
         extend "{i}shopping,{/i} {nw}" with vpunch
         extend "or some shit!"
         sheriff "So {nw}"
