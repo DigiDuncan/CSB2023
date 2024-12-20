@@ -423,5 +423,13 @@
             "transcript": "Digi does not need to hear all this! He's a highly-trained professional!",
             "length": 5.1
         }
+    ],
+    "timber": [
+        {
+            "audio_path": "timber",
+            "speaker": "Pakoo",
+            "transcript": "Fun fact about this background: When I was trying to find a picture of a mess in the garage, I stumbled upon a photo of when a tree fell through my grandparents' roof. It was exactly what I was looking for, so this became the background you see here.",
+            "length": 11.8
+        }
     ]
 }

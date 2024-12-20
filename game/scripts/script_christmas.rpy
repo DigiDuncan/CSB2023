@@ -196,6 +196,7 @@ label ce_tree:
         with dissolve
         $ achievement_manager.unlock("timber")
         pause 1.0
+        dxcom timber
         cs "Ow..."
         pause 1.0
         show cs disappointed at manual_pos(0.3, 1.2, 0.5):
@@ -212,6 +213,7 @@ label ce_tree:
         cs "Fuck!"
         show cs disappointed flipped
         cs "Man, what a mess!"
+        hide screen dxcom
         cs "This is gonna take {i}forever{/i} to clean up!"
         hide cs with moveoutleft
         jump ce_anno
@@ -411,8 +413,7 @@ label ce_check_status:
                     jump ce_tree
 
 label ce_before_anno:
-    stop music
-    music end
+    play music lets_hear_winter volume 0.7 if_changed
     scene cs_foyer
     show cs happy at center
     with dissolve
@@ -427,8 +428,7 @@ label ce_before_anno:
     jump ce_anno
 
 label ce_anno:
-    stop music
-    music end
+    play music lets_hear_winter volume 0.7 if_changed
     scene cs_foyer
     show cs disappointed at center
     with dissolve
