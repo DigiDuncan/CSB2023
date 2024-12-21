@@ -286,7 +286,7 @@ screen person(l):
                                         fetched = "{image=gui/ce_text.png} " + name_map[l]["ce_bio"]
 
                                     if current_page_type == "rpg":
-                                        fetched = "This is where RPG data will go."
+                                        fetched = ""
 
                                 except:
                                     fetched = "The bio didn't load correctly. Ask Digi to fix the game."
@@ -297,9 +297,53 @@ screen person(l):
                                 yoffset 64
                                 xsize 1.0
                                 ysize 0.9
-                                text "\"" + name_map[l]["quote"] + "\"\n\n" + (fetched)
 
-                ### bounding box for sprites and rpg info
+                                # show RPG data if present
+                                if current_page_type == "rpg":
+                                    frame:
+                                        background None
+                                        vbox:
+                                            xsize 1.0
+                                            frame:
+                                                xsize 1.0
+                                                background None
+                                                text "{size=+8}RPG Stats":
+                                                    xalign 0.5
+                                                    yalign 0.5
+                                                    text_align 0.5
+                                            frame:
+                                                xsize 1.0
+                                                background None
+                                                hbox:
+                                                    xalign 0.5
+                                                    spacing 50
+
+                                                    frame:
+                                                        background None
+                                                        xsize 200
+                                                        text "{image=gui/hp.png} "+str(hp):
+                                                            xalign 0.5
+                                                            text_align 0.5
+                                                    frame:
+                                                        background None
+                                                        xsize 200
+                                                        text "{image=gui/atk.png} "+str(attack):
+                                                            xalign 0.5
+                                                            text_align 0.5
+                                                    frame:
+                                                        background None
+                                                        xsize 200
+                                                        text "{image=gui/def.png} "+str(defense):
+                                                            xalign 0.5
+                                                            text_align 0.5
+
+                                            # begin attacks description here
+                                            text "awawa!"
+                                else:
+                                    text "\"" + name_map[l]["quote"] + "\"\n\n" + (fetched)
+
+
+                ### bounding box for sprites
                 frame:
                     background None
                     xsize 500
@@ -329,7 +373,7 @@ screen person(l):
 
                             fit "contain"
 
-                    ### for sprite selection / rpg data
+                    ### for sprite selection
                     frame:
                         background None
                         xsize 1.0
@@ -380,44 +424,3 @@ screen person(l):
                                             idle "/gui/right_off_small.png"
                                             hover "/gui/right_on_small.png"
                                             action IncrementVariable("current_bios_sprite")
-
-                            # show rpg data if it exists
-                            if "rpg" in name_map[l]:
-                                null height 10
-                                $ current_bios_total_pages = current_bios_total_pages + 1
-
-                                frame:
-                                    vbox:
-                                        xsize 1.0
-                                        frame:
-                                            xsize 1.0
-                                            background None
-                                            text "{size=-8}RPG Stats":
-                                                xalign 0.5
-                                                yalign 0.5
-                                                text_align 0.5
-                                        frame:
-                                            xsize 1.0
-                                            background None
-                                            hbox:
-                                                xalign 0.5
-                                                spacing 50
-
-                                                frame:
-                                                    background "#070"
-                                                    xsize 100
-                                                    text str(hp) + "\n{size=-8}HP":
-                                                        xalign 0.5
-                                                        text_align 0.5
-                                                frame:
-                                                    background "#700"
-                                                    xsize 100
-                                                    text str(attack) + "\n{size=-8}ATK":
-                                                        xalign 0.5
-                                                        text_align 0.5
-                                                frame:
-                                                    background "#007"
-                                                    xsize 100
-                                                    text str(defense) + "\n{size=-8}DEF":
-                                                        xalign 0.5
-                                                        text_align 0.5
