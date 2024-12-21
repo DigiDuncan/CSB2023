@@ -3827,10 +3827,9 @@ python early:
         text, label = parsed_object
         _window_hide()
         seen_all = True
-        # TODO: THIS SECTION RIGHT HERE, OFFICER!
-        # It crashes!
-        for i in Replay_items:
-            if not renpy.seen_label(i.replay):
+        # TODO: handle the unlock of creative mode better, probably. at least it no longer crashes.
+        for ending in ORIGINAL_27:
+            if not EndingManager.all_seen:
                 seen_all = False
         if seen_all:
             achievement_manager.unlock("fin")
