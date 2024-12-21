@@ -517,7 +517,7 @@ class ComboAttack:
 
     def _get_property_string(self) -> str:
         s = []
-        for a in attacks:
+        for a in self.attacks:
             s.append(a._get_property_string())
 
         return " + ".join(s)
