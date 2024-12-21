@@ -398,8 +398,18 @@ class Attack:
         x = self.options.get("mult", 1)
         if self.options.get("min_mult", None) and self.options.get("max_mult"):
             x = f"{min_mult}~{max_mult}"
-        t = {"heal": "heal", "buff": self.options.get("stat"), "debuff": self.options.get("stat"),
-            "aoe": "AOE", "confuse": "confusion", "dot": "DOT", "damage": "DMG"}
+        t = {"heal": "heal", "buff": "buff", "debuff": "buff",
+            "aoe": "AOE", "confuse": "confusion", "dot": "DOT", "damage": "DMG"}[self.type]
+        if t == "buff":
+            stat = self.options.get("stat")
+            if stat == "hp":
+                t = "HP"
+            elif stat == "ap":
+                t = "DEF"
+            elif stat == "atk":
+                t = "ATK"
+            else:
+                t = stat.upper()
 
         e = ""
         if self.target_count == 0:
@@ -418,6 +428,8 @@ class Attack:
 
         if self.cooldown:
             return_string += f", {self.cooldown} turn cooldown"
+
+        return return_string
 
     @property
     def type(self) -> str:
@@ -516,6 +528,8 @@ class ComboAttack:
 
         if self.cooldown:
             return_string += f", {self.attacks[0].cooldown} turn cooldown"
+
+        return return_string
 
     def __str__(self) -> str:
         return f"<ComboAttack {self.name} ({self.attacks})>"

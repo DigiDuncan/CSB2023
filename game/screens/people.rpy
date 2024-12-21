@@ -223,6 +223,9 @@ screen person(l):
                     hp = _fighter.health_points
                     attack = _fighter.attack_points
                     defense = _fighter.armor_points
+                    attack_data = []
+                    for a in _fighter.attacks:
+                        attack_data.append((a.name, a.properties, a.description))
                 else:
                     hp = None
                     attack = None
@@ -338,7 +341,13 @@ screen person(l):
                                                             text_align 0.5
 
                                             # begin attacks description here
-                                            text "awawa!"
+                                            for a in attack_data:
+                                                python:
+                                                    a_name = a[0]
+                                                    a_props = a[1]
+                                                    a_desc = a[2]
+                                                text "[a_name] {size=-8}{color=BBBBBB}([a_props])"
+                                                text "    {color=BBBBBB}[a_desc]"
                                 else:
                                     text "\"" + name_map[l]["quote"] + "\"\n\n" + (fetched)
 
