@@ -33,7 +33,7 @@ label asset_debugger:
         jump exit_debug
     if fun_value(2):
         $ sfxtotal += 1
-        play sound sfx_alt_punch
+        play sound sfx_punch_alt
         $ musictotal += 1
         play music ac_title
         $ bgtotal += 1

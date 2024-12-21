@@ -29,7 +29,7 @@ label dx_underpants:
     $ collect("toxic_mikas")
     weird_al "Whoops!"
     n "Suddenly, the pile begins to morph into a giant evil Mika!"
-    
+
     # not sure why it doesnt like zorder here but w/e
     show toxic_mikas at center behind pakoo
     show weird_al behind toxic_mikas
@@ -101,10 +101,10 @@ label dx_underpants:
     show slime16 at manual_pos(-0.5, 0.25, 0.5):
         linear 0.5 rotate 720
     with MoveTransition(0.25)
-    play sound sfx_alt_punch
+    play sound sfx_punch_alt
     with vpunch
     pause 1.0
-    show pakoo flipped at mid_left zorder 3 
+    show pakoo flipped at mid_left zorder 3
     show cpt_underpants at manual_pos(0.4, 1.0, 1.0)
     show gamebarrel at manual_pos(-0.5, 0.9, 0.5) zorder 4:
         zoom 0.6
@@ -174,7 +174,7 @@ label dx_underpants:
     mr_krupp "I'll bet that George, Harold, and Pakoo are responsible for this mess!"
     show pakoo worried flipped
     mr_krupp "For your punishment, you all must chop in the broom closet for {i}negative eight hours!"
-    
+
     pause 0.5
     scene black with dissolve
     pause 1.0

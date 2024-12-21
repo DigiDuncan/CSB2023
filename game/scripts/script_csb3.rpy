@@ -68,7 +68,7 @@ label csbiii_no_meeting:
         "TechQuickie's Intro To Livestreaming" (type = "true"):
             pass
         "Comprehensive Keyboard Macro Guide":
-            jump csbiii_boring_video 
+            jump csbiii_boring_video
 
     # end section added by tate
 
@@ -90,7 +90,7 @@ label csbiii_no_meeting:
     cs "Thanks, Linus."
     linus "Speaking of livestreaming, we need a new PC for {i}The WAN Show.{/i} Can you go and buy parts for one?"
 
-    menu: 
+    menu:
         "What will CS do?"
         "Go to the store.":
             jump friend_microcenter
@@ -144,7 +144,7 @@ label csbiii_edit_video:
     music passport
     show csdesk
     show linus at right
-    show cs at left  
+    show cs at left
     cs "Nah, I wanna finish this project first. That way, I can help you pump out videos faster."
     linus "Alright, that's fine. I'll probably send Colton to get the parts instead. He's good at sucking up and doing this kinda thing."
     cs "Alright, yeah. I definitely wasn't using this as an excuse to get out of shopping!"
@@ -272,7 +272,7 @@ label csbiii_bad_video:
     linus "{sc=1}Just get out of here, you stupid, dumb animal!"
     cs "..."
     n "CS turns around and stomps out of the building."
-    show cs angry flipped 
+    show cs angry flipped
     play sound sfx_punch
     with hpunch
     pause 0.5
@@ -401,7 +401,7 @@ label csbiii_boost:
     n "CS cautiously reaches into the box."
     show ytx at truecenter
     $ collect("ytx")
-    hide linus_box 
+    hide linus_box
     with dissolve
     n "He pulls out what looks to be a graphics card, but with a brown YouTube logo engraved onto the side."
     show cs
@@ -594,7 +594,7 @@ label csbiii_reviews:
     scene black with dissolve
     pause 0.5
     jump csbiii_arceus_appears
-    
+
 label csbiii_ytp_edit:
     play music airport_counter volume 0.5 if_changed
     music airport_counter
@@ -772,7 +772,7 @@ label csbiii_both_fan:
     linus "Whatever, let's just go check out who it is."
     scene black with dissolve
 
-    n "CS and Linus rush to the front door." 
+    n "CS and Linus rush to the front door."
     scene black with dissolve
     pause 0.5
     jump csbiii_arceus_appears
@@ -816,7 +816,7 @@ label csbiii_cops_ltt:
 label csbiii_arc_escape:
     play music hired_guns volume 0.5 if_changed
     music hired_guns
-    scene frontdoor 
+    scene frontdoor
     show cs worried at center
     show linus at right
     show arceus worried at mid_right
@@ -893,7 +893,7 @@ label csbiii_arc_escape:
     show copguy at right with MoveTransition(0.25)
     if fun_value(FUN_VALUE_MUSIC):
         n "Undyne bursts in."
-    else:    
+    else:
         n "Copguy bursts in."
     play music undyne volume 0.5 if_changed
     music undyne
@@ -1005,7 +1005,7 @@ label csbiii_arc_escape:
     border_guard "I'm gonna need proof of--"
     if fun_value(FUN_VALUE_MUSIC):
         border_guard "Atarashii Kaze! It's you two buds again!"
-    else:  
+    else:
         border_guard "Ey, it's you two buds again!"
     arceus "Yep, quite the vacation we had! We had so much fun in Canada, didn't we, CS?"
     cs "Sure did!"
@@ -1039,7 +1039,7 @@ label csbiii_arc_escape:
     show sheriff at left
     with dissolve
     play music police_station volume 0.5 if_changed
-    music police_station 
+    music police_station
     n "Back at the police station, Copguy meets with the sheriff, hoping to formulate a plan to capture CS."
     show sheriff at left
     show copguy at right with moveinright
@@ -1047,7 +1047,7 @@ label csbiii_arc_escape:
     sheriff "Howdy, Officer Copguy."
     sheriff "Tell me, you guys arrested CS this evening, right?"
     copguy "Unfortunately, no, we did not, sir."
-    show sheriff at left 
+    show sheriff at left
     play sound sfx_desk_slam
     with vpunch
     sheriff "Damn it! " with hpunch
@@ -1080,7 +1080,7 @@ label csbiii_arc_escape:
     scene washington_road with dissolve
     if fun_value(FUN_VALUE_MUSIC):
         n "Meanwhile, as CS and Arceus make their way through the US, strange sounds seem to be echoing throughout the forest."
-    else:  
+    else:
         n "Meanwhile, without any sense of direction, CS and Arceus make their way through the US."
     play music echoing volume 0.5 if_changed
     music echoing
@@ -1204,7 +1204,7 @@ label no_mercy_attack_arc:
     stop music fadeout 3.0
     music end
     scene washington_road
-    show cs dark at left 
+    show cs dark at left
     show arceus dark flipped at right
     $ achievement_manager.unlock("no_mercy")
     cs "{size=-15}It's now or never."
@@ -1221,7 +1221,7 @@ label no_mercy_attack_arc:
     stop music2
     music end
     show csgod flipped at left with vpunch
-    play sound sfx_alt_punch
+    play sound sfx_punch_alt
     show csgod at t_punchup with move
     show arceus angry dark at right with hpunch
     arceus "{i}Really?"
@@ -1234,7 +1234,7 @@ label no_mercy_wait_arc:
     stop music fadeout 3.0
     music end
     scene washington_road
-    show cs dark at left 
+    show cs dark at left
     show arceus dark flipped at right
     cs "{size=-15}I need to wait. I'm not powerful enough to attack."
     arceus "Man, I hope you're doing alright..."
@@ -1254,7 +1254,7 @@ label no_mercy_wait_arc:
     scene town
     show arceus at right
     show cs at left
-    with dissolve    
+    with dissolve
     pause 2.0
     arceus "Hey, we found a town! That's good, right?"
     cs "Yep."
@@ -1295,7 +1295,7 @@ label no_mercy_wait_arc:
         xanchor 0.5 yanchor 0.5
         xpos 0.7 ypos 0.7
         zoom 0.6
-        
+
     billy "Hey, that's my car!"
     play sound sfx_doorslam
 
@@ -1311,7 +1311,7 @@ label no_mercy_wait_arc:
     billy "What are you doing?"
     cs "Take us to these coordinates: 46.5754, -112.3008."
     billy "I, uhh--{w=0.5}{nw}"
-    
+
     play sound sfx_tape_rewind volume 0.5
     with hpunch
 
@@ -1340,7 +1340,7 @@ label no_mercy_wait_arc:
     stop music fadeout 3.0
     music end
     scene cultforest
-    show billy car 
+    show billy car
     with dissolve
     pause 3.0
     billy "{ytpmagic}We are here."
@@ -1357,7 +1357,7 @@ label no_mercy_wait_arc:
     n "Arceus watches as CS crosses the street and starts heading up a nearby trail."
 
     pause 2.0
-    
+
     arceus "Hey, uhh, I'm gonna get out too."
     play sound sfx_car_door_open
     pause 0.5
@@ -1365,10 +1365,10 @@ label no_mercy_wait_arc:
     pause 2.0
     play sound sfx_doorslam
     stop sound2
- 
+
     scene black with dissolve
     pause 1.0
-    
+
     scene cultforest with dissolve
     show arceus flipped at mid_left with moveinleft
     arceus "CS? Where'd ya go?"
@@ -1479,7 +1479,7 @@ label csbiii_wait_forest:
     music danger_mystery
     if fun_value(FUN_VALUE_MUSIC):
         copguy "Hey, ain't this a dangerous mystery."
-    else:  
+    else:
         copguy "Hey, you're finally awake."
     arceus "Hey, CS..."
     show arceus worried dark flipped
@@ -1556,7 +1556,7 @@ label csbiii_bad_convince:
     show cs scared
     if fun_value(FUN_VALUE_MUSIC):
         cs "Wait a second! I'm not actually CS! I'm cornered and I'm Pressing Pursuit!"
-    else: 
+    else:
         cs "Wait a second! I'm not actually CS!"
     cs "I just {i}look{/i} like CS!"
     show arceus worried
@@ -1589,7 +1589,7 @@ label csbiii_good_convince:
     hide hold_it
     if fun_value(FUN_VALUE_MUSIC):
         cs "Wait a second! The reason all this happened was because HoH SiS sabotaged my computer and cornered me! I'm Pressing Pursuit!"
-    else: 
+    else:
         cs "Wait a second! The reason all this happened was because HoH SiS sabotaged my computer!"
     show arceus worried
     arceus "Wait, what?"
@@ -1641,7 +1641,7 @@ label csbiii_good_convince:
     stop music fadeout 3.0
     music end
     pause 2.0
-    
+
     show copguy with MoveTransition(1.0):
         xanchor 0.5 xpos 0.325
     pause 1.0
@@ -1652,7 +1652,7 @@ label csbiii_good_convince:
     n "He then proceeds to open the doors to let CS and Arceus out, freeing them of their shackles."
     pause 0.5
     play sound sfx_car_door_open
-    
+
     scene washington_road
     show cop_car dark at mid_offscreen_left
     with dissolve
@@ -1669,7 +1669,7 @@ label csbiii_good_convince:
     copguy "You are free to go for now."
     copguy "But, know this: I am putting my job on the line for you."
     # fun fact, i stole this next line from my awful mother :D - tate
-    copguy "Don't do anything stupid, because I have eyes everywhere." 
+    copguy "Don't do anything stupid, because I have eyes everywhere."
 
     n "Copguy gets back into his car, heading off into the dead of night."
     show copguy dark at left with move
@@ -1690,8 +1690,8 @@ label csbiii_good_convince:
     show cs dark
     pause 0.5
     if fun_value(FUN_VALUE_MUSIC):
-        n "CS and Arceus look at each other and smile, doing their best Bun Guster pose."  
-    else: 
+        n "CS and Arceus look at each other and smile, doing their best Bun Guster pose."
+    else:
         n "CS and Arceus look at each other and smile."
     play music bun_guster volume 0.3 if_changed
     music bun_guster
@@ -1702,7 +1702,7 @@ label csbiii_good_convince:
     arceus "Hooray for CS and Arc!"
 
     show cs happy dark at center
-    show arceus happy dark at center 
+    show arceus happy dark at center
     with MoveTransition(0.5)
     play sound sfx_high_five
     show cs happy dark at mid_left_left
@@ -1731,8 +1731,8 @@ label csbiii_choose_direction:
     play music happy_roaming volume 0.5 if_changed
     music happy_roaming
     if fun_value(FUN_VALUE_MUSIC):
-        cs "We've been happily roaming all night, but I'm exhausted." 
-    else: 
+        cs "We've been happily roaming all night, but I'm exhausted."
+    else:
         cs "We've been walking all night. I'm exhausted."
     arceus "Yeah, let's hope we find food and water soon."
     cs "Hey, uhh, do you know exactly where we're going?"
@@ -1760,7 +1760,7 @@ label csbiii_choose_direction:
 # everything below here has been rewritten significantly to fix both the EXCESSIVE LABELS and the abrupt shader/sky color changes. it is important to use scene EVERY TIME a sprite changes, or sprites will be duplicated. - tate
 
 label csbiii_north:
-    
+
     play music happy_roaming volume 0.5 if_changed
     scene expression "washington_road %s" % compass_current_time
 

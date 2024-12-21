@@ -233,7 +233,7 @@ label south_fighthohsis_alt:
     play sound sfx_punch
     play sound sfx_punch_alt
     show cs with hpunch
-    play sound sfx_alt_punch
+    play sound sfx_punch_alt
     show cs at t_punchup with move
     show cs with vpunch
     show ed at right with move
