@@ -389,6 +389,36 @@ class Attack:
     def available(self) -> bool:
         return self._turns_until_available == 0
 
+    def _get_property_string(self) -> str:
+        if self.func == ai_mimic:
+            return "AI Mimic"
+        if self.func == draw_in:
+            return "Draw In"
+
+        x = self.options.get("mult", 1)
+        if self.options.get("min_mult", None) and self.options.get("max_mult"):
+            x = f"{min_mult}~{max_mult}"
+        t = {"heal": "heal", "buff": self.options.get("stat"), "debuff": self.options.get("stat"),
+            "aoe": "AOE", "confuse": "confusion", "dot": "DOT", "damage": "DMG"}
+
+        e = ""
+        if self.target_count == 0:
+            if self.target_type == "allies":
+                e = "party "
+            elif self.target_type == "enemies":
+                e = "enemy party "
+            else:
+                e = "all "
+
+        return f"{x}x {e}{t}" if t != "confuse" else t
+
+    @property
+    def properties(self) -> str:
+        return_string = self._get_property_string()
+
+        if self.cooldown:
+            return_string += f", {self.cooldown} turn cooldown"
+
     @property
     def type(self) -> str:
         if self.func == heal_fighters:
@@ -472,6 +502,20 @@ class ComboAttack:
     @property
     def options(self) -> dict:
         return self.attacks[0].options
+
+    def _get_property_string(self) -> str:
+        s = []
+        for a in attacks:
+            s.append(a._get_property_string())
+
+        return " + ".join(s)
+
+    @property
+    def properties(self) -> str:
+        return_string = self._get_property_string()
+
+        if self.cooldown:
+            return_string += f", {self.attacks[0].cooldown} turn cooldown"
 
     def __str__(self) -> str:
         return f"<ComboAttack {self.name} ({self.attacks})>"
