@@ -8,6 +8,8 @@ init python:
     # For bios page
     current_bios_sorting_mode = 0
     current_bios_sprite = 0
+    current_bios_page = 0
+    current_bios_total_pages = 0
 
 # If music is so good, why is there no Music 2?
 init python:

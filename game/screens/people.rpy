@@ -18,6 +18,8 @@ init python:
 screen people():
     default current_person = None
     default current_bios_sprite = None
+    default current_bios_total_pages = 0
+    default current_bios_page = 0
 
     use people_nav
     tag menu
@@ -29,6 +31,9 @@ screen people():
 
 screen people_nav():
     default current_bios_sprite = None
+    default current_bios_total_pages = 0
+    default current_bios_page = 0
+
     add Color('#323e42', alpha=0.75)
 
     python:
@@ -123,7 +128,8 @@ screen people_nav():
                 if k == "iris":
                     textbutton name_label action Function(mark_read, k), SetScreenVariable("current_person", k), ShowMenu("fake_error", "people.rpy", 126, "`bios/iris.txt` could not be rendered as a Text object.", "Hi, I'm Iris, a cosmic being with interest in the happenings of this reality, as well as some of the people involved in this story.\nDoes that sound too formal? I don't know. Hey, Digi, writing this shit's hard. You can fill in the rest from here.", _transition = determination)
                 else:
-                    textbutton name_label action Function(mark_read, k), SetScreenVariable("current_person", k), SetVariable("current_bios_sprite", 0)
+                    textbutton name_label action Function(mark_read, k), SetScreenVariable("current_person", k), SetVariable("current_bios_sprite", 0), SetVariable("current_bios_page", 0), SetVariable("current_bios_total_pages", 0)
+
 
     textbutton "Return to Extras" action ShowMenu("category_welcome") yoffset 950 xoffset 25
     textbutton "Main Menu" action Return() yoffset 1000 xoffset 25
@@ -138,6 +144,8 @@ screen people_welcome():
     python:
         bio_count = len(name_map.keys())
         unlocked_bio_count = len(persistent.seen)
+        current_bios_total_pages = 0
+        current_bios_page = 0
 
     vbox:
         xsize 850
@@ -163,6 +171,19 @@ screen person(l):
         mousewheel True
         draggable False
         pagekeys True
+
+        ##### get number of pages for this character
+        python:
+            # reset
+            current_bios_total_pages = 0
+            page_list = ["bio", "dx_bio", "ce_bio", "rpg"]
+
+            for item in page_list:
+                if item in name_map[l]:
+                    current_bios_total_pages = current_bios_total_pages + 1
+
+        # debug line
+        # text "This character has "+str(current_bios_total_pages)+" pages."
 
         ##### bounding box for content
         frame:
@@ -223,31 +244,57 @@ screen person(l):
                     frame:
                         background None
 
-                        # TODO: put main/dx/ce bios on different pages. scrollbars are NOT staying
-                        viewport:
-                            scrollbars "vertical"
-                            side_yfill False
-                            mousewheel True
-                            draggable False
-                            pagekeys True
+                        # TODO: put main/dx/ce bios on different pages
 
-                            vbox:
-                                python:
-                                    try:
+                        if current_bios_total_pages > 0:
+                            # left arrow
+                            if current_bios_page>0:
+                                imagebutton:
+                                    xalign 0.0 yalign 0.0
+                                    xysize 64, 64
+                                    idle "/gui/left_off_small.png"
+                                    hover "/gui/left_on_small.png"
+                                    action IncrementVariable("current_bios_page", -1)
+
+                            text "Page [current_bios_page+1] of [current_bios_total_pages]":
+                                xalign 0.5
+                                text_align 0.5
+
+                            # right arrow
+                            if current_bios_page < current_bios_total_pages-1:
+                                imagebutton:
+                                    xalign 1.0 yalign 0.0
+                                    xysize 64, 64
+                                    idle "/gui/right_off_small.png"
+                                    hover "/gui/right_on_small.png"
+                                    action IncrementVariable("current_bios_page")
+                        vbox:
+                            python:
+                                try:
+
+                                    if current_bios_page == 0:
                                         fetched = name_map[l]["bio"]
 
-                                        # TODO: should we implement anti-spoiler tech into bio sections?
+                                    # TODO: should we implement anti-spoiler tech into bio sections?
 
-                                        if "dx_bio" in name_map[l]:
-                                            fetched = fetched + "\n\n{image=gui/dx_text.png} " + name_map[l]["dx_bio"]
+                                    if "dx_bio" in name_map[l] and current_bios_page == 1:
+                                        fetched = "{image=gui/dx_text.png} " + name_map[l]["dx_bio"]
 
-                                        if "ce_bio" in name_map[l]:
-                                            fetched = fetched + "\n\n{image=gui/ce_text.png} " + name_map[l]["ce_bio"]
+                                    if "ce_bio" in name_map[l] and current_bios_page == 2:
+                                        fetched = "{image=gui/ce_text.png} " + name_map[l]["ce_bio"]
 
-                                        else:
-                                            fetched = name_map[l]["bio"]
-                                    except:
-                                        fetched = "The bio didn't load correctly. Ask Digi to fix the game."
+                                    if "rpg" in name_map[l] and current_bios_page == 3:
+                                        fetched = "This is where RPG data will go."
+
+                                except:
+                                    fetched = "The bio didn't load correctly. Ask Digi to fix the game."
+
+                            frame:
+                                background None
+                                xalign 0.5
+                                yoffset 64
+                                xsize 1.0
+                                ysize 0.9
                                 text "\"" + name_map[l]["quote"] + "\"\n\n" + (fetched)
 
                 ### bounding box for sprites and rpg info
@@ -335,6 +382,8 @@ screen person(l):
                             # show rpg data if it exists
                             if "rpg" in name_map[l]:
                                 null height 10
+                                $ current_bios_total_pages = current_bios_total_pages + 1
+
                                 frame:
                                     vbox:
                                         xsize 1.0
