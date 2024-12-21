@@ -177,10 +177,12 @@ screen person(l):
             # reset
             current_bios_total_pages = 0
             page_list = ["bio", "dx_bio", "ce_bio", "rpg"]
+            valid_pages = []
 
             for item in page_list:
                 if item in name_map[l]:
                     current_bios_total_pages = current_bios_total_pages + 1
+                    valid_pages.append(item)
 
         # debug line
         # text "This character has "+str(current_bios_total_pages)+" pages."
@@ -270,20 +272,20 @@ screen person(l):
                                     action IncrementVariable("current_bios_page")
                         vbox:
                             python:
+                                # TODO: should we implement anti-spoiler tech into bio sections?
                                 try:
 
-                                    if current_bios_page == 0:
+                                    current_page_type = valid_pages[current_bios_page]
+                                    if current_page_type == "bio":
                                         fetched = name_map[l]["bio"]
 
-                                    # TODO: should we implement anti-spoiler tech into bio sections?
-
-                                    if "dx_bio" in name_map[l] and current_bios_page == 1:
+                                    if current_page_type == "dx_bio":
                                         fetched = "{image=gui/dx_text.png} " + name_map[l]["dx_bio"]
 
-                                    if "ce_bio" in name_map[l] and current_bios_page == 2:
+                                    if current_page_type == "ce_bio":
                                         fetched = "{image=gui/ce_text.png} " + name_map[l]["ce_bio"]
 
-                                    if "rpg" in name_map[l] and current_bios_page == 3:
+                                    if current_page_type == "rpg":
                                         fetched = "This is where RPG data will go."
 
                                 except:
