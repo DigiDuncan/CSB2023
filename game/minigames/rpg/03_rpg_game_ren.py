@@ -397,7 +397,7 @@ class Attack:
 
         x = self.options.get("mult", 1)
         if self.options.get("min_mult", None) and self.options.get("max_mult"):
-            x = f"{self.options.get("min_mult", None)}~{self.options.get("max_mult")}"
+            x = f"{self.options.get('min_mult', None)}~{self.options.get('max_mult')}"
         t = {"heal": "heal", "buff": "buff", "debuff": "buff",
             "aoe": "AOE", "confuse": "confusion", "dot": "DOT", "damage": "DMG"}[self.type]
         if t == "buff":
