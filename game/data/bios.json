@@ -71,7 +71,12 @@
         "quote": "Welcome to the internet",
         "bio": "Anno is one of CS' best friends. He's always there to help CS out during livestreams, and he's an avid fan of Nirvana. He also loves making AI covers of CS and his crew.",
         "ce_bio": "He's always there to help CS with decorating, too, apparently.",
-        "rpg": ["ANNO"]
+        "rpg": {
+            "ANNO": {
+                "name": "Base Stats",
+                "need_label": "friend2_cs_rage"
+            }
+        }
     },
     "arceus": {
         "full_name": "Arceus3251",
@@ -93,7 +98,12 @@
         "quote": "I'm literally a hacker, guys! uwu",
         "bio": "The master hacker and technician himself. Arceus has a lot of tricks up his sleeve. He could do anything he wanted, if he could only be arsed. Some say he's got godlike powers, but others say he'd be way too lazy to use them if he did. Either way, he's happy to help CS out of the horrible mess that he's gotten himself into this time.",
         "ce_bio": "Despite being Jewish, he's still excited to celebrate Christmas with all of his friends. As a bonus, Hanukkah and Christmas just happen to overlap this year!",
-        "rpg": ["ARCEUS"]
+        "rpg": {
+            "ARCEUS": {
+                "name": "Base Stats",
+                "need_label": "friend_so_join"
+            }
+        }
     },
     "aria": {
         "full_name": "Aria",
@@ -105,7 +115,12 @@
         "quote": "Yeah, that sounds about right.",
         "bio": "Aria knows her shit. Whether it's book smarts or street smarts, she's got it all. While studying for college is important to Aria, she seems to invest even more of her time into hanging out with those bozos from DPN.",
         "ce_bio": "Despite her mind-bogglingly busy schedule, she always makes some time for her friends from DPN. Luckily, she could make it to this party, too. Her ability to teleport is coming in clutch!",
-        "rpg": ["ARIA"]
+        "rpg": {
+            "ARIA": {
+                "name": "Base Stats",
+                "need_label": "friend2_cs_meetup"
+            }
+        }
     },
     "avgn": {
         "full_name": "James Rolfe",
@@ -138,7 +153,12 @@
         "bio": "Billy perfected the art of the salespitch 10 years ago. He is a master of the infomerical. Since finding success, he has moved on to greater horizons. He has been seen recently travelling the country, living off the various gadgets he sold in the past.",
         "dx_bio": "This is the Billy that came after the Billy that made his mark. Throughout history, Perfect Billy would assign a host to be \"Billy Mays\". Although most of us only know the one from the infomericals, when he passed away, this Billy took his place.",
         "ce_bio": "Billy loves a good holiday get-together! He's been itching to make a big batch of Big City Sliders for some time now. What better place to do that than at his good friend CS' Christmas party?",
-        "rpg": ["BILLY"]
+        "rpg": {
+            "BILLY": {
+                "name": "Base Stats",
+                "need_label": "michigan_bronson_win"
+            }
+        }
     },
     "blank": {
         "full_name": "Blank Named",
@@ -150,7 +170,12 @@
         "quote": "I Am Catboy Musical",
         "bio": "Ever needed music that's also a shitpost? No? Well, too bad, because Blank has ya covered. They {i}can{/i} make regular music, but it isn't {i}Blank{/i} music if it doesn't sample catgirl moans.",
         "ce_bio": "They're a little annoyed about having to share the party's sound system with Nova.",
-        "rpg": ["BLANK"]
+        "rpg": {
+            "BLANK": {
+                "name": "Base Stats",
+                "need_label": "friend2_between_1"
+            }
+        }
     },
     "border_guard": {
         "full_name": "Canadian Border Guard",
@@ -170,7 +195,12 @@
         },
         "quote": "{size=144}{bt=a3-p10-s4}\u00e6{/bt}{/size}",
         "bio": "Also known as Jade, this massive slime has been seen roaming around Las Vegas. Only a few claim to have spotted her, which is funny, since she is about a mile tall.",
-        "rpg": ["BUBBLE"]
+        "rpg": {
+            "BUBBLE": {
+                "name": "Base Stats",
+                "need_label": "friend2_car_slam"
+            }
+        }
     },
     "carguy": {
         "full_name": "Carguy",
@@ -191,7 +221,12 @@
         },
         "quote": "That'll be $11.88",
         "bio": "He's your average run-of-the-mill working-class citizen. Whenever you need to pay for something, he's got your back. At a completely different store in a completely new location? He's there for you.",
-        "rpg": ["CASHIER"]
+        "rpg": {
+            "CASHIER": {
+                "name": "Base Stats",
+                "need_label": "friend2_car_slam"
+            }
+        }
     },
     "colton": {
         "full_name": "Colton Potter",
@@ -210,7 +245,12 @@
         },
         "quote": "You're under arrest!",
         "bio": "Not to be confused with Copguy, this is just your regular ol' Copdude. While not as strong as Copguy, Copdudes will still act as a powerful arm to the police force. They can also sense a Krispy Kreme donut from a mile away.",
-        "rpg": ["COP"]
+        "rpg": {
+            "COP": {
+                "name": "Base Stats",
+                "need_label": "friend_so_join"
+            }
+        }
     },
     "copguy": {
         "full_name": "Copguy",
@@ -222,7 +262,16 @@
         "quote": "You're headin' to the slammer, bucko.",
         "bio": "Copguy is both the good cop and the bad cop. You think all cops are bad? Copguy does not care. Nothing will stop him from completing his final mission.",
         "ce_bio": "Copguy knows that crime is statistically higher on Christmas Eve, so he really just wanted to keep working through the holiday. However, he has no choice but to (sometimes maliciously) comply with his boss' demands.",
-        "rpg": ["COPGUY", "COPGUYGODMODE"]
+        "rpg": {
+            "COPGUY": {
+                "name": "Base Stats",
+                "need_label": "friend_after_cop_fight"
+            },
+            "COPGUYGODMODE": {
+                "name": "Reinforcements",
+                "need_label": "friend_so_join"
+            }
+        }
     },
     "copguy_ex": {
         "full_name": "Copguy EX",
@@ -232,7 +281,12 @@
         },
         "quote": "This ends {i}here.{/i}",
         "bio": "Millions of dollars in government surveillance has allowed Copguy to observe and practice nearly all of CS' and his friends' abilities. The only thing he {i}can't{/i} mimic is the power of friendship!",
-        "rpg": ["COPGUY_EX"]
+        "rpg": {
+            "COPGUY_EX": {
+                "name": "Base Stats",
+                "need_label": "friend2_weapon_of_choice"
+            }
+        }
     },
     "copguy_exe": {
         "full_name": "Copguy.EXE",
@@ -242,7 +296,12 @@
         },
         "quote": "I WILL FIND YOU.",
         "bio": "What {i}happened?",
-        "rpg": ["COPGUY_EXE"],
+        "rpg": {
+            "COPGUY_EXE": {
+                "name": "Base Stats",
+                "need_label": "michigan_bronson_win"
+            }
+        },
         "dx": true
     },
     "craptop": {
@@ -378,7 +437,48 @@
         "bio": "cs188 is the main dude here. His name is even in the title! CS makes YTPs in his spare time. He occasionally streams as well, however, whether he'll actually show up on time is up for debate. If you were wondering why this guy is wearing a cat maid dress, we really don't know either at this point. Just let the man be himself.",
         "ce_bio": "The main man himself! He's back to get all his friends together and spread some holiday cheer. He even bought himself a new outfit for the occasion!",
         "flip": true,
-        "rpg": ["CS", "CS_NG", "CS_STRONG", "CS_FINAL", "CS_FINAL2", "CS_WEAK", "CS_ARCHIVAL", "CS_VS_TATE_PUNCH", "CS_VS_TATE_KICK", "CS_VS_TATE_CHOP"]
+        "rpg": {
+            "CS": {
+                "name": "Base Stats",
+                "need_label": "friend_so_join"
+            },
+            "CS_WEAK": {
+                "name": "Weak",
+                "need_label": "friend_after_fanboy"
+            },
+            "CS_NG": {
+                "name": "VS National Guard",
+                "need_label": "friend2_cs_rage"
+            },
+            "CS_STRONG": {
+                "name": "Strong",
+                "need_label": "friend2_between_1"
+            },
+            "CS_FINAL": {
+                "name": "Final",
+                "need_label": "friend2_weapon_of_choice"
+            },
+            "CS_ARCHIVAL": {
+                "name": "Archival",
+                "need_label": "archival_finale"
+            },
+            "CS_FINAL2": {
+                "name": "Error",
+                "need_label": "after_error_fight"
+            },
+            "CS_VS_TATE_CHOP": {
+                "name": "VS Tate EX (Chop)",
+                "need_label": "train_tate_ex_win"
+            },
+            "CS_VS_TATE_KICK": {
+                "name": "VS Tate EX (Kick)",
+                "need_label": "train_tate_ex_win"
+            },
+            "CS_VS_TATE_PUNCH": {
+                "name": "VS Tate EX (Punch)",
+                "need_label": "train_tate_ex_win"
+            }
+        }
     },
     "csgod": {
         "full_name": "CSGod",
@@ -416,7 +516,12 @@
         "quote": "Sorry, guys! I'm late!",
         "bio": "Db05 is a busy man, but who can blame him? He has places to be, things to see, and most importantly, he has to feed his pets.",
         "ce_bio": "Unfortunately, he was a bit too busy to buy a proper gift for CS' party, so he had to improvise.",
-        "rpg": ["DB05"]
+        "rpg": {
+            "DB05": {
+                "name": "Base Stats",
+                "need_label": "friend2_weapon_of_choice"
+            }
+        }
     },
     "digi": {
         "full_name": "DigiDuncan",
@@ -435,7 +540,12 @@
         "quote": "But, here's the thing though, right?",
         "bio": "DigiDuncan is the man with the plan. Too many plans, actually. They also love to drink an absurd amount of Powerade. Maybe that's where all those ideas come from. Digi is always working on countless projects ranging from game development to tinkering with his cybernetic augmentations. They are also really smol.",
         "ce_bio": "Digi showed up to this party in a spaceship. What were they doing in {i}space?{/i} What {i}does{/i} Digi do on a daily basis? The answer is \"too much stuff, really.\" They brought their new projector for a holiday movie night, but they've never actually successfully set it up before.",
-        "rpg": ["DIGI"]
+        "rpg": {
+            "DIGI": {
+                "name": "Final",
+                "need_label": "friend2_cs_meetup_2"
+            }
+        }
     },
     "doug": {
         "full_name": "Doug McMillon",
@@ -458,7 +568,12 @@
         "bio": "As the CEO of HoH SiS, he makes sure the crew gets the JoJ done right, no matter the cost. He always looks out for his fellow workers. He holds a grudge against CS, and is determined to get his revenge.",
         "ce_bio": "He agreed to come to CS' Christmas party in hopes of drumming up some good PR for the company, especially after the incident. Perhaps he'll even pick up some new clients among CS' friends.",
         "zoom": 0.85,
-        "rpg": ["ED"]
+        "rpg": {
+            "ED": {
+                "name": "Base Stats",
+                "need_label": "friend2_car_slam"
+            }
+        }
     },
     "eliza": {
         "full_name": "Elizabeth",
@@ -482,7 +597,12 @@
         "quote": "weenor :)",
         "bio": "Ges is a massive history buff. He loves to tell stories about past events, especially of World War I and II. While he'd love to go out and visit historical landmarks, he's stuck working at the shoe store for now.",
         "ce_bio": "As seen on TV. This lanky figure is here to have a good time and talk about history. Quite fun, eh? He came all the way from Canada, alongside Nova. He {i}definitely{/i} knows cs188, too. Totally. So, that's a plus!",
-        "rpg": ["GES"]
+        "rpg": {
+            "GES": {
+                "name": "Base Stats",
+                "need_label": "friend2_car_slam"
+            }
+        }
     },
     "gnome": {
         "full_name": "Gnome",
@@ -660,7 +780,20 @@
         "quote": "U3VubnkgRCEgQWxyaWdodCEgVGhlIEYyNSBL\nZXk/IEknbSB0aGUgc3Ryb25nZXN0IQ",
         "bio": "These memories of Pakoo's life each only possess knowledge of what happened during a specific month. The K17s love talking about catgirls and citrus drinks, while the K20s won't shut up about Half-Life or Touhou. It never goes well when they meet up to solve a problem.",
         "zoom": 0.733,
-        "rpg": ["K174", "K199", "K207"]
+        "rpg": {
+            "K174": {
+                "name": "Base Stats",
+                "need_label": "archival_finale"
+            },
+            "K199": {
+                "name": "Base Stats",
+                "need_label": "archival_finale"
+            },
+            "K207": {
+                "name": "Base Stats",
+                "need_label": "archival_finale"
+            }
+        }
     },
     "kitty": {
         "full_name": "Undead Kitty",
@@ -672,7 +805,12 @@
         "quote": "So, there's this plushie I saw.",
         "bio": "Kitty is a fursuit maker from the United Kingdom. She has been in a relationship with Arceus for many years. While she's quiet around new people, she becomes the life of the party around friends. She constantly gravitates towards Squishmallows.",
         "ce_bio": "Arceus' partner of many years. While she's happy to meet Arc's friends, she didn't expect there to be quite so many of them. She just wants to find a quiet corner to chill out in.",
-        "rpg": ["KITTY"]
+        "rpg": {
+            "KITTY": {
+                "name": "Base Stats",
+                "need_label": "friend_after_cop_fight"
+            }
+        }
     },
     "lancer": {
         "full_name": "Lancer",
@@ -765,7 +903,12 @@
         "bio": "Alongside Mika, Mean is your train dude. He's obsessed with trains and can go on for hours if you ask him about train facts. He is also very spiky.\n\nMean and Tate spend a lot of time doing random wacky things, usually train-related.",
         "dx_bio": "Being a sea urchin, Mean naturally also enjoys sea shanties.",
         "zoom": 1.333,
-        "rpg": ["MEAN"]
+        "rpg": {
+            "MEAN": {
+                "name": "Base Stats",
+                "need_label": "friend2_car_slam"
+            }
+        }
     },
     "mean_human": {
         "full_name": "Mean (Human Form)",
@@ -813,7 +956,12 @@
         "bio": "Mr. Rosen is a poem fanatic. He's got a story to tell whenever you meet him. This man will pull the craziest tale from nothing in a matter of seconds. How does he do this? What secret talent does he have? All that is certain is that he needs his chocolate cake.",
         "dx_bio": "The prophet that predicted CS' life, as well as the end of the world.",
         "ce_bio": "This esteemed poet just {i}loves{/i} hot food, especially a well-mashed potato!",
-        "rpg": ["MICHAEL"]
+        "rpg": {
+            "MICHAEL": {
+                "name": "Base Stats",
+                "need_label": "friend2_car_slam"
+            }
+        }
     },
     "midge": {
         "full_name": "Midgalicis",
@@ -824,7 +972,12 @@
         "quote": "Oh hai!",
         "bio": "Midge has some crazy artistic talent. She can draw, animate, and edit videos, all for the CS community. We're still trying to figure out who \"Chum\" is, though.",
         "zoom": 0.9,
-        "rpg": ["MIDGE"]
+        "rpg": {
+            "MIDGE": {
+                "name": "Base Stats",
+                "need_label": "friend2_between_1"
+            }
+        }
     },
     "mika": {
         "full_name": "Mikapara",
@@ -834,7 +987,12 @@
         },
         "quote": "TULE T\u00c4NNE, SENKIN SAASTAINEN SEKAROTUINEN!",
         "bio": "Pakoo's fianc\u00e9e who loves to give CS five dollars and talk in a very highlighted tone. A pilot, gambler, and stand-up kinda guy.",
-        "rpg": ["MIKA"]
+        "rpg": {
+            "MIKA": {
+                "name": "Base Stats",
+                "need_label": "friend_after_cop_fight"
+            }
+        }
     },
     "mike": {
         "full_name": "Mike",
@@ -893,7 +1051,12 @@
         "bio": "Nova is a former member of the CScord and was one of CS' earliest followers. They were known for being pretty loud back then, but, nowadays, they are making music under another alias. They are also very talented at rhythm games.",
         "ce_bio": "After getting CS' invitation, Nova figured that, sure, maybe they could visit CS one more time. They've been excited to show off their newest track to a bunch of people. They're not too thrilled with having to share the spotlight with Blank, though.",
         "zoom": 0.85,
-        "rpg": ["NOVA"]
+        "rpg": {
+            "NOVA": {
+                "name": "Base Stats",
+                "need_label": "friend2_cs_meetup_2"
+            }
+        }
     },
     "obama": {
         "full_name": "Barack Obama",
@@ -906,7 +1069,12 @@
         "quote": "Hello, my fellow Americans!",
         "bio": "As the 44th President of the United States, he's a pretty chill dude, even while under the stress of governing such a massive country. He apparently loves to play video games with his fellow candidates. For some reason, people can't figure out what his last name is.",
         "ce_bio": "A jolly politician enjoying his... {i}fourth{/i} term? Not sure anyone's even still counting at this point. While the president was surprised to have been invited to CS' party, he is more than happy to have an excuse to step out of the White House for a few hours. He also makes a {i}mean{/i} carrot cake.",
-        "rpg": ["OBAMA"]
+        "rpg": {
+            "OBAMA": {
+                "name": "Base Stats",
+                "need_label": "friend2_car_slam"
+            }
+        }
     },
     "pakoo": {
         "full_name": "Pakoo",
@@ -922,7 +1090,16 @@
         "quote": "I remember this one time...",
         "bio": "Pakoo remembers everything. They keep track of pretty much every event that has happened to them. They plan to build a whole archive documenting their entire life. Sadly, they can't remember what happened about five minutes ago.",
         "dx_bio": "Really likes Christmas.",
-        "rpg": ["PAKOO", "PAKOOE"]
+        "rpg": {
+            "PAKOO": {
+                "name": "Base Stats",
+                "need_label": "friend_so_join"
+            },
+            "PAKOOE": {
+                "name": "Error",
+                "need_label": "after_error_fight"
+            }
+        }
     },
     "pencil": {
         "full_name": "Pencil Greeter",
@@ -952,7 +1129,12 @@
         },
         "quote": "Seals and bonds!",
         "bio": "Phil loves tape. When he was young, he always asked for different kinds of tape to play with. He would gather random objects around his house to stick together. He always wanted to make a super tape that could adhere to any type of surface. With his newest invention, he has obtained the power to seal and bond almost anything.",
-        "rpg": ["PHIL"]
+        "rpg": {
+            "PHIL": {
+                "name": "Base Stats",
+                "need_label": "friend2_car_slam"
+            }
+        }
     },
     "pomni": {
         "full_name": "Pomni",
@@ -967,7 +1149,12 @@
         "quote": "There's got to be an exit somewhere...",
         "bio": "Pomni has been going insane ever since she was brought into the Amazing Digital Circus not too long ago. Somehow, she made it into an IKEA and got stuck there. She honestly should have just stayed at the circus.",
         "ce_bio": "After escaping from IKEA's flagship location in Sweden, Pomni has found herself trapped in a Target in the US. She's secretly grateful to have seen a familiar face, even if CS can't remember her...",
-        "rpg": ["POMNI"]
+        "rpg": {
+            "POMNI": {
+                "name": "Base Stats",
+                "need_label": "friend2_car_slam"
+            }
+        }
     },
     "rich": {
         "full_name": "Richard",
@@ -980,7 +1167,12 @@
         "bio": "Richard doesn't want as much trouble from CS as his coworkers do, but he's prepared to act if he must. Richard just wants to go home and chill after a long day of hard work.",
         "ce_bio": "In spite of everything that's happened, Richard doesn't really hold a grudge towards CS. He'd probably have come to this party even {i}if{/i} his boss didn't tell him to.",
         "zoom": 0.85,
-        "rpg": ["RICHARD"]
+        "rpg": {
+            "RICHARD": {
+                "name": "Base Stats",
+                "need_label": "friend2_car_slam"
+            }
+        }
     },
     "round": {
         "full_name": "Mr. Round",
@@ -1130,7 +1322,12 @@
         "bio": "Better known as Tate, alleZSoyez is a close friend of CS. Impatient, excitable, and always hungry, Tate will try their best to help their friends whenever they can... as long as they get a tasty cheeseburger and a cozy nap on the floor at the end. While Tate isn't good at fighting or driving, when all else fails, they can always let out a good {i}screm!{/i}",
         "dx_bio": "While known to stay eerily calm during world-ending crises, when it comes to more mundane stressors, Tate becomes a bit of a {sc=1}quick-tempered anxiety-riddled control\nfreak.{/sc}",
         "ce_bio": "Tate {i}hates{/i} Christmas. They'd much rather be curled up taking a nap right now. Fortunately, they love their friends more than they hate the holidays, so Mean was able to convince them to attend the party. They {i}really{/i} wish that Mean would've left the fake beard on the train, though.",
-        "rpg": ["TATE"]
+        "rpg": {
+            "TATE": {
+                "name": "Base Stats",
+                "need_label": "friend_after_cop_fight"
+            }
+        }
     },
     "tate_ex": {
         "full_name": "Tate EX",
@@ -1143,7 +1340,12 @@
         "dx": true,
         "zoom": 0.65,
         "xoffset": 100,
-        "rpg": ["TATE_EX"]
+        "rpg": {
+            "TATE_EX": {
+                "name": "Base Stats",
+                "need_label": "train_tate_ex_win"
+            }
+        }
     },
     "perfect_tate": {
         "full_name": "Perfect Tate",
@@ -1202,7 +1404,12 @@
         "quote": "Do it all over again.",
         "bio": "Wesley is Ed's right-hand man. He's armed, courageous, and most importantly, he will get the JoJ done 15 times over again if he has to.",
         "ce_bio": "After the incident at HoH SiS, Wesley needed back surgery. He's recovering well, but the winter cold doesn't play too well with the new hardware in his spine. It's understandable that he'd be a bit ornery. If it wasn't for Ed's insistence, Wesley would have probably just stayed home.",
-        "rpg": ["WESLEY"]
+        "rpg": {
+            "WESLEY": {
+                "name": "Base Stats",
+                "need_label": "friend2_car_slam"
+            }
+        }
     },
     "witch": {
         "full_name": "Witch",

@@ -215,22 +215,6 @@ screen person(l):
                 size 32
                 color "#BBBBBB"
 
-            ### rpg, if present
-            python:
-                if "rpg" in name_map[l]:
-                    _rpg_var = name_map[l]['rpg'][0] # TODO: this shows base form only for right now
-                    _fighter = getattr(Fighters, _rpg_var)
-                    hp = _fighter.health_points
-                    attack = _fighter.attack_points
-                    defense = _fighter.armor_points
-                    attack_data = []
-                    for a in _fighter.attacks:
-                        attack_data.append((a.name, a.properties, a.description))
-                else:
-                    hp = None
-                    attack = None
-                    defense = None
-
             ### bounding box for inner content
             frame:
                 background None
@@ -275,7 +259,6 @@ screen person(l):
                                     action IncrementVariable("current_bios_page")
                         vbox:
                             python:
-                                # TODO: should we implement anti-spoiler tech into bio sections?
                                 try:
 
                                     current_page_type = valid_pages[current_bios_page]
@@ -283,10 +266,16 @@ screen person(l):
                                         fetched = name_map[l]["bio"]
 
                                     if current_page_type == "dx_bio":
-                                        fetched = "{image=gui/dx_text.png} " + name_map[l]["dx_bio"]
+                                        if renpy.seen_label( name_map[l]['dx_bio_label'] ) == True:
+                                            fetched = "{image=gui/dx_text.png} " + name_map[l]["dx_bio"]
+                                        else:
+                                            fetched = "???"
 
                                     if current_page_type == "ce_bio":
-                                        fetched = "{image=gui/ce_text.png} " + name_map[l]["ce_bio"]
+                                        if renpy.seen_label( name_map[l]['ce_bio_label'] ) == True:
+                                            fetched = "{image=gui/ce_text.png} " + name_map[l]["ce_bio"]
+                                        else:
+                                            fetched = "???"
 
                                     if current_page_type == "rpg":
                                         fetched = ""
@@ -301,62 +290,98 @@ screen person(l):
                                 xsize 1.0
                                 ysize 0.9
 
-                                viewport:
-                                    side_yfill False
-                                    mousewheel True
-                                    draggable True
-                                    pagekeys True
-                                    scrollbars "vertical"
+                                # show RPG data if present
+                                if current_page_type == "rpg":
+                                    frame:
+                                        xsize 1.0
+                                        background None
 
-                                    # show RPG data if present
-                                    if current_page_type == "rpg":
+                                        text "{size=+8}RPG Stats":
+                                            xalign 0.5
+                                            yalign 0.5
+                                            text_align 0.5
+
+                                    viewport:
+                                        yoffset 64
+                                        ysize 0.9
+                                        side_yfill False
+                                        mousewheel True
+                                        draggable True
+                                        pagekeys True
+                                        scrollbars "vertical"
+
                                         frame:
                                             background None
+
                                             vbox:
                                                 xsize 1.0
-                                                frame:
-                                                    xsize 1.0
-                                                    background None
-                                                    text "{size=+8}RPG Stats":
-                                                        xalign 0.5
-                                                        yalign 0.5
-                                                        text_align 0.5
-                                                frame:
-                                                    xsize 1.0
-                                                    background None
-                                                    hbox:
-                                                        xalign 0.5
-                                                        spacing 50
+
+                                                # iterate through all the different forms
+                                                for stat_set in list(name_map[l]['rpg'].keys()):
+
+                                                    # but only if you've seen the label!
+                                                    if renpy.seen_label( name_map[l]['rpg'][stat_set]['need_label'] ) == True:
+
+                                                        text name_map[l]['rpg'][stat_set]['name']:
+                                                            xalign 0.5
+                                                            text_align 0.5
+
+                                                        # actually fetch data
+                                                        python:
+                                                            _rpg_var = stat_set
+                                                            _fighter = getattr(Fighters, _rpg_var)
+                                                            hp = _fighter.health_points
+                                                            attack = _fighter.attack_points
+                                                            defense = _fighter.armor_points
+                                                            attack_data = []
+                                                            for a in _fighter.attacks:
+                                                                attack_data.append((a.name, a.properties, a.description))
 
                                                         frame:
+                                                            xsize 1.0
                                                             background None
-                                                            xsize 200
-                                                            text "{image=gui/hp.png} "+str(hp):
+                                                            hbox:
                                                                 xalign 0.5
-                                                                text_align 0.5
-                                                        frame:
-                                                            background None
-                                                            xsize 200
-                                                            text "{image=gui/atk.png} "+str(attack):
-                                                                xalign 0.5
-                                                                text_align 0.5
-                                                        frame:
-                                                            background None
-                                                            xsize 200
-                                                            text "{image=gui/def.png} "+str(defense):
-                                                                xalign 0.5
-                                                                text_align 0.5
+                                                                spacing 50
 
-                                                # begin attacks description here
-                                                for a in attack_data:
-                                                    python:
-                                                        a_name = a[0]
-                                                        a_props = a[1]
-                                                        a_desc = a[2]
-                                                    text "[a_name] {size=-8}{color=BBBBBB}([a_props])"
-                                                    text "    {color=BBBBBB}[a_desc]"
-                                    else:
-                                        text "\"" + name_map[l]["quote"] + "\"\n\n" + (fetched)
+                                                                frame:
+                                                                    background None
+                                                                    xsize 200
+                                                                    text "{image=gui/hp.png} "+str(hp):
+                                                                        xalign 0.5
+                                                                        text_align 0.5
+                                                                frame:
+                                                                    background None
+                                                                    xsize 200
+                                                                    text "{image=gui/atk.png} "+str(attack):
+                                                                        xalign 0.5
+                                                                        text_align 0.5
+                                                                frame:
+                                                                    background None
+                                                                    xsize 200
+                                                                    text "{image=gui/def.png} "+str(defense):
+                                                                        xalign 0.5
+                                                                        text_align 0.5
+
+                                                        # begin attacks description here
+                                                        for a in attack_data:
+                                                            python:
+                                                                a_name = a[0]
+                                                                a_props = a[1]
+                                                                a_desc = a[2]
+                                                            text "[a_name] {size=-12}{color=BBBBBB}([a_props])"
+                                                            text "    {i}{color=BBBBBB}[a_desc]{/i}"
+                                                        null height 32
+                                                    else:
+                                                        text "???":
+                                                            xalign 0.5
+                                                            text_align 0.5
+                                                        text "{size=-12}{color=BBBBBB}Keep playing to see these stats.":
+                                                            xalign 0.5
+                                                            text_align 0.5
+                                                        null height 32
+                                else:
+                                    text "\"" + name_map[l]["quote"] + "\"\n\n" + (fetched)
 
 
                 ### bounding box for sprites

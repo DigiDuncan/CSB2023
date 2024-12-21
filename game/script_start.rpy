@@ -3828,9 +3828,8 @@ python early:
         _window_hide()
         seen_all = True
         # TODO: handle the unlock of creative mode better, probably. at least it no longer crashes.
-        for ending in ORIGINAL_27:
-            if not EndingManager.all_seen:
-                seen_all = False
+        if not EndingManager.all_seen:
+            seen_all = False
         if seen_all:
             achievement_manager.unlock("fin")
         renpy.show("bad_end_screen")
