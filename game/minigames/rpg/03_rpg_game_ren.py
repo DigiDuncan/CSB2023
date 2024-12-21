@@ -391,9 +391,9 @@ class Attack:
 
     def _get_property_string(self) -> str:
         if self.func == ai_mimic:
-            return "AI Mimic"
+            return "Mirror"
         if self.func == draw_in:
-            return "Draw In"
+            return "Random Effect"
 
         x = self.options.get("mult", 1)
         if self.options.get("min_mult", None) and self.options.get("max_mult"):
@@ -632,7 +632,7 @@ class Fighter:
                     self.health_points -= h
                     # answer.append((int(-h), "hp"))
                     displayable.show_damage_indicator((int(-h), "dot"))
-                    
+
                 else:
                     self.damage_per_turn.remove((h, t))
         # Confusion
@@ -884,7 +884,7 @@ class Fighters:
     K174 = Fighter("K17-4", True, 174, 17, 20, [Attacks.PUNCH], Image("images/characters/k174.png"), ai = AIType.NEUTRAL)
     K199 = Fighter("K19-9", True, 199, 19, 30, [Attacks.KICK], Image("images/characters/k199.png"), ai = AIType.AGGRO)
     K207 = Fighter("K20-7", True, 207, 20, 10, [Attacks.PUNCH], Image("images/characters/k207.png"), ai = AIType.DEFENSIVE)
-    TATE_EX = Fighter("{image=gui/dx_text.png} Tate EX", True, 9999, 11, 111, [Attacks.DAMAGE_SCREM, Attacks.REVERB_RECALL, Attacks.ECHO_BLAST], Image("secret/pt/tate_ex.png"), ai = AIType.AGGRO, display_name = "Tate EX") 
+    TATE_EX = Fighter("{image=gui/dx_text.png} Tate EX", True, 9999, 11, 111, [Attacks.DAMAGE_SCREM, Attacks.REVERB_RECALL, Attacks.ECHO_BLAST], Image("secret/pt/tate_ex.png"), ai = AIType.AGGRO, display_name = "Tate EX")
 
     # Enemies (UCN)
     WESLEY = Fighter("{image=gui/dx_text.png} Wesley", True, 200, 20, 40, [Attacks.PISTOL, Attacks.ALL_OVER_AGAIN], Image("images/characters/hohsis/wesley.png"), ai = AIType.AGGRO, display_name = "Wesley")
@@ -1082,7 +1082,7 @@ class StatBlockDisplayable(renpy.Displayable):
         renpy.redraw(self, 0)
         self.last_tick = st
         return r
-    
+
     def refresh(self):
         self.health_text = Text("HP: " + str(self.fighter.health_points) + "/" + str(self.fighter.max_health), color = "#FFFFFF", size = self.text_size)
         self.AP_text = Text("DEF: " + str(self.fighter.armor_points), color = "#FFFFFF", size=self.text_size)
@@ -1280,7 +1280,7 @@ def execute_rpg(parsed_object):
         ll,
         it
     )
-    rpggame.reset()            
+    rpggame.reset()
     renpy.jump("play_rpggame")
 
 def lint_rpg(parsed_object):
