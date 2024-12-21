@@ -355,7 +355,6 @@ screen person(l):
 
                     python:
                         x = -1 if name_map[l].get("flip", False) else 1
-                        yo = -110 if "rpg" in name_map[l] else 0
 
                     # show sprite
                     frame:
@@ -365,11 +364,10 @@ screen person(l):
 
                         image name_map[l]['sprites'][list(name_map[l]['sprites'].keys())[current_bios_sprite]]:
                             xalign 0.5
-                            yalign 0.0
+                            yalign 1.0
                             xsize 1.0
                             ysize 1.0
                             xzoom x
-                            yoffset yo
 
                             fit "contain"
 
