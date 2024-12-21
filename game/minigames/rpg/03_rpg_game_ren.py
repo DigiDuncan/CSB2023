@@ -526,7 +526,7 @@ class ComboAttack:
     def properties(self) -> str:
         return_string = self._get_property_string()
 
-        if self.cooldown:
+        if self.attacks[0].cooldown:
             return_string += f", {self.attacks[0].cooldown} turn cooldown"
 
         return return_string
