@@ -12,7 +12,7 @@
         },
         "quote": "Hold on, I remember this...",
         "bio": "Not to be confused with Pakoo, Addy is Pakoo's counterpart who runs a giant underground facility full of archived memories of Pakoo's entire life. Talk about the world's biggest autobiography!",
-        "dx_bio_label": "HEY, PAKOO! PUT A LABEL IN HERE!",
+        "dx_bio_label": "PLACEHOLDER",
         "dx_bio": "The creator of the story. The Scriptwriter. Besides archiving their life, they've also taken an interest in writing an adventure novel. This one, to be precise. When they tried to give CS an interesting life by writing him into this crazy story, it seems they didn't take CS' feelings into consideration.",
         "ce_bio_label": "ce_cooking",
         "ce_bio": "Addy {i}loves{/i} Christmas. It's the only time of the year when they actually look forward to changing outfits. Unfortunately, they love their parties more than they love their friends, so they couldn't make it to CS' party."
@@ -156,7 +156,7 @@
         },
         "quote": "Hi, Billy Mays here!",
         "bio": "Billy perfected the art of the salespitch 10 years ago. He is a master of the infomerical. Since finding success, he has moved on to greater horizons. He has been seen recently travelling the country, living off the various gadgets he sold in the past.",
-        "dx_bio_label": "NEED A LABEL HERE",
+        "dx_bio_label": "PLACEHOLDER",
         "dx_bio": "This is the Billy that came after the Billy that made his mark. Throughout history, Perfect Billy would assign a host to be \"Billy Mays\". Although most of us only know the one from the infomericals, when he passed away, this Billy took his place.",
         "ce_bio_label": "ce_banter",
         "ce_bio": "Billy loves a good holiday get-together! He's been itching to make a big batch of Big City Sliders for some time now. What better place to do that than at his good friend CS' Christmas party?",
@@ -701,7 +701,7 @@
             "Mean": "images/characters/mean/meanhohsis.png"
         },
         "quote": "I don't know, don't ask me!",
-        "bio": "The workers of HoH SiS aren't too compliant with the new changes to the workplace. The CEO has recently wanted to make attacks on a man named \"cs188\". They didn't sign up for this! They just wanna improve foundations, for God's sake!",
+        "bio": "The workers of HoH SiS aren't too happy with the new changes to the workplace. The CEO has recently wanted to make attacks on a man named \"cs188\". They didn't sign up for this! They just wanna improve foundations, for God's sake!",
         "zoom": 0.667
     },
     "howie": {
@@ -917,6 +917,7 @@
         },
         "quote": "I like trains!",
         "bio": "Alongside Mika, Mean is your train dude. He's obsessed with trains and can go on for hours if you ask him about train facts. He is also very spiky.\n\nMean and Tate spend a lot of time doing random wacky things, usually train-related.",
+        "dx_bio_label": "PLACEHOLDER",
         "dx_bio": "Being a sea urchin, Mean naturally also enjoys sea shanties.",
         "zoom": 1.333,
         "rpg": {
@@ -971,7 +972,7 @@
         },
         "quote": "I love chocolate cake!",
         "bio": "Mr. Rosen is a poem fanatic. He's got a story to tell whenever you meet him. This man will pull the craziest tale from nothing in a matter of seconds. How does he do this? What secret talent does he have? All that is certain is that he needs his chocolate cake.",
-        "dx_bio_label": "NEED A LABEL",
+        "dx_bio_label": "PLACEHOLDER",
         "dx_bio": "The prophet that predicted CS' life, as well as the end of the world.",
         "ce_bio_label": "ce_banter",
         "ce_bio": "This esteemed poet just {i}loves{/i} hot food, especially a well-mashed potato!",
@@ -1110,7 +1111,7 @@
         },
         "quote": "I remember this one time...",
         "bio": "Pakoo remembers everything. They keep track of pretty much every event that has happened to them. They plan to build a whole archive documenting their entire life. Sadly, they can't remember what happened about five minutes ago.",
-        "dx_bio_label": "NEEDS A LABEL",
+        "dx_bio_label": "PLACEHOLDER",
         "dx_bio": "Really likes Christmas.",
         "rpg": {
             "PAKOO": {
