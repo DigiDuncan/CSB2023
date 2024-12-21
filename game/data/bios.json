@@ -1131,6 +1131,7 @@
         },
         "quote": "Have a free pencil!",
         "bio": "One has to wonder how this man lives his life when he's not at PencilCon. Could he have a pencil-shaped house? Is everything he owns pencil-themed? Perhaps he's just a regular person with a passion for pencils. He really hates it when anyone brings up pens.",
+        "dx_bio_label": "dx_after_back_to_story",
         "dx_bio": "Leader of the Pencil Cult. Captures people to try to recruit enough members to win the local cult convention."
     },
     "peppino": {
