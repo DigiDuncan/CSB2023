@@ -316,8 +316,10 @@ label awawa_tate_test:
                         tate "Which one?"
                         menu:
                             tate "Which one?{fast}"
-                            "Full Game (Timing will NOT be accurate)":
+                            "Full Game (Values Test Only)":
                                 call screen credits_roll(duration=60)
+                            "Full Game (Correct Timing)":
+                                call screen credits_roll()
                             "CE Only":
                                 play music "<from 28.700>title_theme_reprise.ogg" noloop
                                 call screen credits_roll(route="CSBIII DX: Holiday Special", scroll_start = 12525, duration=84, replace_music=False) with dissolve

@@ -153,7 +153,7 @@
             "file": "star_spangled_banner.ogg",
             "title": "The Star Spangled Banner",
             "artist": "THE UNITED STATES OF AMERICA",
-            "tags": ["CSBII", "CSBIII DX: Holiday Special", "Fun Values" ],
+            "tags": ["CSBII", "CSBIII DX: Holiday Special", "Fun Values"],
             "album_art": "america.png",
             "trivia": "While Tate was adamant about finding the actual orchestra that performed this rendition, they were ultimately overruled. It {i}is{/i} funnier to just credit this song to THE UNITED STATES OF AMERICA."
         },
@@ -1025,14 +1025,14 @@
             "file": "goodbye_summer_hello_winter.ogg",
             "title": "Goodbye Summer, Hello Winter",
             "artist": "FantomenK",
-            "tags": ["Menus & Misc.", "CSBI", "CSBII", "CSBIII: Archival", "CSBIII: Country", "CSBIII: East", "CSBIII: Fired", "CSBIII: Friend", "CSBIII: South" ],
+            "tags": ["Menus & Misc.", "CSBI", "CSBII", "CSBIII: Archival", "CSBIII: Country", "CSBIII: East", "CSBIII: Fired", "CSBIII: Friend", "CSBIII: South"],
             "album_art": "fantomenk.png"
         },
         "goodbye_speedrun" : {
             "file": "goodbye_speedrun.ogg",
             "title": "Goodbye Speedrun, Hello WR",
             "artist": "FantomenK",
-            "tags": ["Menus & Misc.", "CSBIII DX: Speedrun", "New In DX" ],
+            "tags": ["Menus & Misc.", "CSBIII DX: Speedrun", "New In DX"],
             "album_art": "fantomenk.png",
             "trivia": "Tate thought it would be funny to have a sped-up version of the credits for {i}Speedrun.{/i}"
         },

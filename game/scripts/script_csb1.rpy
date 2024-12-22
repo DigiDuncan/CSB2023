@@ -81,7 +81,7 @@ label csbi_craptop:
             pass
         "Just... don't." (type = "dx"):
             jump csbi_nah
-            
+
     play sound sfx_ping
     cs "Okay, bedtime! Bye, guys!"
     show nova discord at manual_pos(0.6, 0) with Dissolve(0.1)
@@ -119,7 +119,7 @@ label csbi_craptop:
     music canyon
     if fun_value(FUN_VALUE_MUSIC):
         cs "Woah! Is that a canyon over there?"
-    else:    
+    else:
         cs "Nice day!"
     show cs
     cs "Well, I guess it's car time."
@@ -177,7 +177,7 @@ label csbi_walmart:
 
     play music summer_clearance_sale if_changed
     music summer_clearance_sale
-    
+
     show cs at left with moveinleft
     n "CS walks inside."
     show doug at right with moveinright
@@ -235,7 +235,7 @@ label csbi_walmart:
     show cs at left with moveinleft
     pause 1.0
     cs "Here's my stuff!"
-    show pringles at manual_pos(500, 500) 
+    show pringles at manual_pos(500, 500)
     show genergy at manual_pos(450, 500)
     show genergy at manual_pos(425, 500) as duplicate
     with dissolve
@@ -309,7 +309,7 @@ label csbi_room:
     play sound sfx_house_door_open
     pause 1.0
     play sound sfx_house_door_close
-    n "CS arrives home and walks into the living room."
+    n "Safe from wandering salesmen at last, he walks into the living room."
     pause 1.0
     show cs happy flipped with moveinright
     cs "Ahhh. It's good to be home!"
@@ -323,9 +323,9 @@ label csbi_room:
     music scales_of_joy
     n "CS sits down at his craptop and opens up Premiere."
     if fun_value(FUN_VALUE_MUSIC):
-        cs "Ooooh! I can really feel the scales of joy! People would be excited to finally see this as a finished product."
+        cs "Ooh! I can really feel the scales of joy! People would be excited to finally see this as a finished product."
     else:
-        cs "Ooooh! Here's the one from my last editing stream. People would be excited to finally see this as a finished product."
+        cs "Ooh! Here's the one from my last editing stream. People would be excited to finally see this as a finished product."
     n "CS watches the unfinished video."
     cs "This is pretty good, but I'm feeling uninspired... I don't know where to go from here..."
     cs "Hmm..."
@@ -351,11 +351,12 @@ label csbi_room:
     show cs disappointed
     cs "Oh, flashback over."
     play sound sfx_foundationfail volume 0.5
-    show cs worried
+    show cs scared
     show cs_room behind cs at rotate_10 with hpunch
     n "A loud crash is heard as CS' foundation splits beneath his feet!"
     show cs worried
     cs "Woah! I was dreaming for so long that the foundation fell apart. My house just fell to the side!"
+    show cs worried
     cs "I really need to get some foundation repair."
     menu:
         "Who you gonna call?"
@@ -371,7 +372,7 @@ label csbi_room:
     n "CS dials 1-800-HoH-SiiS."
     play sound sfx_dial_hohsis
     pause 16
-    
+
     # prevent dial tone overflow
     stop sound
 
@@ -392,8 +393,9 @@ label csbi_room:
     stop music fadeout 3.0
     music end
     scene door_closed with dissolve
-    show cs happy with moveinleft
+    pause 1.0
     cs "Oh, they're here!"
+    show cs happy with { "master": moveinleft }
     cs "Let me go get the door..."
     show cs at left with move
     play sound sfx_house_door_open
@@ -412,7 +414,7 @@ label csbi_room:
         show cs disappointed
         cs "What?"
         show cs
-    else:    
+    else:
         ed "Alright, that will be 200,000 Bits."
     cs "Okay, I guess they already told you what I need done. Lemme get my wallet..."
     show cs flipped at mid_left_left with moveoutleft
@@ -427,7 +429,7 @@ label csbi_room:
     show cs disappointed flipped at offscreenleft with move
     show cs_wallet at offscreenleft with determination
     pause 2.0
-    show cs at left 
+    show cs at left
     show cs_wallet at manual_pos(0.25, 0.6, 0.5):
         zoom 0.2
     with moveinleft
@@ -492,7 +494,7 @@ label csbi_room:
     show rich flipped at left
     with moveinleft
     show ed with determination
-    n "The three HoH SiS workers enter CS' bedroom."
+    n "The three workers enter CS' bedroom."
     show wesley
     show rich
     wesley "Wow, I didn't know CS had a Union Jack!"
@@ -521,7 +523,7 @@ label csbi_room:
     with dissolve
     n "Ed launches the craptop."
     play sound sfx_windows_logon
-    ed "Heheh... He won't know what hit him."
+    ed "Heheh... he won't know what hit him."
     wesley "Quick! Let's get out of here before he comes back!"
     show craptop updating
     rich "Hurry up!"
@@ -578,7 +580,7 @@ label csbi_michael_house:
     cs "Thankfully, Michael lives pretty close."
     cs "His vacation home in the US is only a few streets away!"
     cs "I should probably call him first. I don't want to just show up unannounced!"
-    show cs phone at left
+    show cs phone at left with { "master": dissolve }
     n "CS pulls out his phone and calls Michael."
     play sound sfx_dial_rosen
     pause 12.5
@@ -600,7 +602,7 @@ label csbi_michael_house:
     cs "That's good to hear! You mind if I head over to your place?"
     show cs phone
     cs "I'm having the JoJ done on my house, so I figured we can chat for a bit in the meantime."
-    michael "Sure! I have a another guest visiting as well. He's bringing chocolate cake!"
+    michael "Sure! I have a another guest on his way, as well. He's bringing chocolate cake!"
     show cs happy phone
     cs "Mmm! That sounds delicious!"
     show cs phone flipped
@@ -610,12 +612,14 @@ label csbi_michael_house:
     show cs happy phone
     cs "Alright, well, I'll be there soon!"
     michael "See you soon!"
-    show cs at left
+    show cs phone
     hide rosen_abode
     hide rosen_phone
     hide michael
     with moveoutright
     play sound sfx_end_call
+    pause 1.0
+    show cs with { "master": dissolve }
     n "CS puts his phone away and drives over to Michael's house."
     play sound sfx_driving volume 0.5
     pause 2.0
@@ -645,12 +649,13 @@ label csbi_rosen_house:
     show cs flipped at right
     with MoveTransition(1.0)
     cs "Hey, Michael!"
-    michael "Sit down, make yourself comfy. I've got a new poem I'd like you to hear!"
-    cs "Sure thing, enlighten me."
+    michael "Sit down and make yourself comfy. I've got a new poem I'd like you to hear!"
+    cs "Sure thing! Enlighten me."
     michael "Right. This one is called{w=0.5} {i}The Library.{/i}"
     michael "There once was a man who would go on a grand adventure."
+    # making him slowly doze off...
+    show cs concentrate flipped with { "master": Dissolve(5.0) }
     michael "He would meet all sorts of friends, and flee from his enemies."
-    show cs disappointed flipped
     michael "After his long adventure, he took a long nap."
     michael "When he woke up, he was in a {i}huge{/i} library."
     if e2:
@@ -660,7 +665,7 @@ label csbi_rosen_house:
         michael "While he was walking, he found a--{nw}"
         show black
     else:
-        show cs concentrate flipped
+        show cs concentrate flipped with determination
         show black with dissolve
     pause 1.0
     play sound sfx_csnore
@@ -678,13 +683,17 @@ label csbi_rosen_house:
     play sound sfx_michael_facepalm
     show cs disappointed flipped
     pause 3.0
-    play sound sfx_doorbell volume 0.5 
+    play sound sfx_doorbell volume 0.5
     n "The doorbell rings."
     michael "Oh! My other guest is here! Please excuse me for just one moment..."
     show cs flipped
     show michael at offscreenright with moveoutright
     show phil at offscreenright with determination
     pause 2.0
+    play sound sfx_house_door_open
+    pause 2.0
+    play sound sfx_house_door_close
+    pause 1.0
     show michael at left behind cs with MoveTransition(1.0)
     show phil at center behind cs with MoveTransition(1.0)
     pause 1.0
@@ -692,7 +701,7 @@ label csbi_rosen_house:
     michael "CS, meet my other friend, Phil!"
     cs "Oh, wow! I didn't know you were friends with Phil Swift!"
     michael "Well, it might be because he said he could make the best chocolate cake."
-    michael "Speaking of which, Phil, do you have the cake?"
+    michael "Speaking of which, Phil, have you brought the cake?"
     phil "Here it is!"
     show flexcake at manual_pos(0.35, 0.6, 0.5) with dissolve
     $ collect("flexcake")
@@ -711,7 +720,7 @@ label csbi_rosen_house:
         linear 1 rotate 80
     with MoveTransition(0.25)
     play sound2 sfx_plate_break noloop
-    michael_nobeep "Blarrrgh!" with hpunch
+    michael_nobeep "{cshake}Blarrrgh!" with hpunch
     n "Michael spits out the Flex Cake."
     michael "This is {i}horrible!"
     michael "Get {i}out!{/i} Get out of here!"
@@ -756,6 +765,7 @@ label csbi_rosen_house:
     play sound sfx_house_door_open
     pause 1.0
     play sound sfx_house_door_close
+    stop music fadeout 2.0
     scene black with dissolve
     pause 1.0
     jump csbi_end
@@ -764,15 +774,16 @@ label csbi_end:
     scene car_inside
     show cs surprised at left
     with dissolve
-    play music canyon_car volume 0.2 if_changed
     play sound sfx_driving volume 0.5
     $ achievement_manager.unlock("overcaffeinated")
     stop music fadeout 3.0
     music end
     pause 1.0
     cs "I should check on the HoH SiS folks. They should be making some progress by now."
-    scene black with dissolve
+    stop sound fadeout 3.0
+    scene black with Dissolve(2.0)
     pause 1.0
+
     scene cs_room with dissolve
     stop sound fadeout 2.0
     play sound sfx_house_door_open
@@ -799,14 +810,14 @@ label csbi_end:
     "..."
     cs "Wait..."
     cs "The last people in this room were the HoH SiS guys!"
-    cs "They must have done something to it!"
+    cs "{i}They{/i} must've done something to it!"
     show craptop_bg at rotate_6
     show craptop off at rotate_6
     with hpunch
     window hide
     play sound sfx_foundationfail volume 0.5
     pause 3.0
-    cs "And, they didn't even do the JoJ!"
+    cs "And they didn't even do the JoJ!"
     show craptop sad at rotate_6 with hpunch
     play sound sfx_punch
     if fun_value(FUN_VALUE_RARE):
@@ -830,12 +841,13 @@ label csbi_end:
     play music time_for_a_smackdown volume 0.2 if_changed
     music time_for_a_smackdown
     if fun_value(FUN_VALUE_MUSIC):
-        cs "Alright! It's time for a Smackdown!"       
-    else:    
+        cs "Alright! It's time for a Smackdown!"
+    else:
         cs "Alright! Where are the head JoJites?!"
     show worker_1 at right with moveinright
+    # TODO: either this particular dxcom is really quiet or the bgm is really loud
     dxcom hohsisfight
-    worker_1 "I don't know!!"
+    worker_1 "I don't know!"
     $ persistent.seen.add("hoh_worker")
     cs "BullShisH!"
     n "CS punches the worker!"
@@ -861,7 +873,7 @@ label csbi_end:
     cs "Get out of my way!"
     n "CS bodyslams the workers as he runs past!"
     play sound sfx_punch
-    show cs angry flipped at mid_left 
+    show cs angry flipped at mid_left
     show worker_4 at offscreenleft:
         linear 0.1 xzoom -1
         linear 0.1 xzoom 1
@@ -869,7 +881,7 @@ label csbi_end:
         linear 0.1 xzoom 1
     with MoveTransition(0.25)
     with hpunch
-    
+
     show cs angry with determination
 
     if fun_value(FUN_VALUE_UNOBTRUSIVE):
@@ -900,11 +912,11 @@ label csbi_end:
     show cs angry flipped at right with moveinright
     cs "Which way to the elevator?"
     cs "{i}Now!"
-    worker_5 "Uhh... {nw}"
+    worker_5 "Uh... {nw}"
     hide worker_5
     show worker_5alt at left
     extend "that way!"
-    cs "Thanks! And, also..."
+    cs "Thanks! Also..."
     n "CS clocks the worker in the face!"
     show cs angry flipped at left
     with MoveTransition(0.25)
@@ -942,7 +954,7 @@ label csbi_direction:
     with dissolve
     show cs angry at left with moveinleft
     cs "[ch1_direction_line]"
-    show cs angry at right 
+    show cs angry at right
     with MoveTransition(0.25)
     play sound sfx_punch
     show expression "worker_%s" % ch1_direction_sprite at offscreenright:
@@ -1005,7 +1017,7 @@ label csbi_home_savers:
     cs "I'm not sure! It's a pretty big house, so it must have happened so slowly that I only {i}just{/i} noticed!"
     show cs
     cs "By the way, it's nice to see you again!"
-    ed "Hey, you too!"
+    ed "Hey, you, too!"
     ed "I've been watching some of your new videos lately. They're always a hoot!"
     ed "I'm glad to see you're still going strong!"
     show cs happy
@@ -1017,8 +1029,8 @@ label csbi_home_savers:
     scene black with Dissolve(3.0)
     $ ending_manager.mark("savers")
     $ renpy.movie_cutscene(hoh_repair)
-    $ renpy.movie_cutscene(creditsm)
     $ persistent.heard.add("goodbye_summer_hello_winter")
+    call screen credits_roll() with determination
     $ renpy.end_replay()
     return
 

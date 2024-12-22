@@ -22,7 +22,7 @@ transform credit_scroll(starting = 0, duration = 60):
     # this end position is always the same, do not change it
     linear duration ypos 1075
 
-screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scroll_start = 25500, duration = 343, replace_music = True):
+screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scroll_start = 25000, duration = 343, replace_music = True):
     on "show":
         if replace_music == True:
             action Play("music", bgm, loop=False, if_changed=True)
