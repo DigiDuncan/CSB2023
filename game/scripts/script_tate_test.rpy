@@ -228,50 +228,57 @@ label awawa_tate_test:
 
             #################### AWAWA MODE ####################
             "Awawa Mode":
-                tate "Let's try out Awawa Mode."
-                n "Storing initial Awawa Mode values..."
-
-                # store current awawa settings
-                $ awawa_is_on = preferences.awawa_mode
-                $ awawa_setting = preferences.awawa_chance
-
-                # begin test
-                $ preferences.awawa_mode = False
-                $ preferences.awawa_chance = 0
-                $ test_string = substitutions("Test dialogue. THIS CODE IS SO STUPID, OMG. \n{i}Italic,{/i} {font=azsz}different font.{/font}{w=0.25} {b}Bold{/b} also exists, but it's {sc=3}ugly as sin.{/sc} {w=0.25}{color=FFFF00}Yellow{/color} is pretty cool, but so is {a=https://allezsoyez.com}my website.{/a}")
-
-                n "0%% awawa."
-                tate "[test_string]"
-
-                $ preferences.awawa_mode = True
-
-                $ preferences.awawa_chance = 0
-                n "25%% awawa."
-                $ preferences.awawa_chance = 25
-                $ test_string = awawa_mode(test_string, preferences.awawa_chance)
-                tate "[test_string]"
-
                 show tate sheepish
-                $ preferences.awawa_chance = 0
-                n "50%% awawa."
-                $ preferences.awawa_chance = 50
-                $ test_string = awawa_mode(test_string, preferences.awawa_chance)
-                tate "[test_string]"
+                tate "Are you sure? I'll take a while."
 
-                $ preferences.awawa_chance = 100
-                $ test_string = awawa_mode(test_string, preferences.awawa_chance)
-                n "100%% awawa."
-                show tate sheepish blush
-                tate "[test_string]"
+                menu:
+                    "No, take me back!":
+                        jump .awawa_menu
+                    "Yes, let's do it.":
+                        tate "Alright, we'll try out Awawa Mode."
+                        show tate
+                        n "Storing initial Awawa Mode values..."
 
-                $ preferences.awawa_mode = awawa_is_on
-                $ preferences.awawa_chance = awawa_setting
-                n "Awawa Mode has been reset to its initial values."
+                        # store current awawa settings
+                        $ awawa_is_on = preferences.awawa_mode
+                        $ awawa_setting = preferences.awawa_chance
 
-                show tate srs
-                tate "I sure hope that worked. That's hard to read..."
-                jump .awawa_menu
+                        # begin test
+                        $ preferences.awawa_mode = False
+                        $ preferences.awawa_chance = 0
+                        $ test_string = substitutions("Test dialogue. THIS CODE IS SO STUPID, OMG. \n{i}Italic,{/i} {font=azsz}different font.{/font}{w=0.25} {b}Bold{/b} also exists, but it's {sc=3}ugly as sin.{/sc} {w=0.25}{color=FFFF00}Yellow{/color} is pretty cool, but so is {a=https://allezsoyez.com}my website.{/a}")
 
+                        n "0%% awawa."
+                        tate "[test_string]"
+
+                        $ preferences.awawa_mode = True
+
+                        $ preferences.awawa_chance = 0
+                        n "25%% awawa."
+                        $ preferences.awawa_chance = 25
+                        $ test_string = awawa_mode(test_string, preferences.awawa_chance)
+                        tate "[test_string]"
+
+                        show tate sheepish
+                        $ preferences.awawa_chance = 0
+                        n "50%% awawa."
+                        $ preferences.awawa_chance = 50
+                        $ test_string = awawa_mode(test_string, preferences.awawa_chance)
+                        tate "[test_string]"
+
+                        $ preferences.awawa_chance = 100
+                        $ test_string = awawa_mode(test_string, preferences.awawa_chance)
+                        n "100%% awawa."
+                        show tate sheepish blush
+                        tate "[test_string]"
+
+                        $ preferences.awawa_mode = awawa_is_on
+                        $ preferences.awawa_chance = awawa_setting
+                        n "Awawa Mode has been reset to its initial values."
+
+                        show tate srs
+                        tate "I sure hope that worked. That's hard to read..."
+                        jump .awawa_menu
 
             #################### SCREEN TESTS ####################
             "Screen Tests":
@@ -309,13 +316,18 @@ label awawa_tate_test:
                         tate "Which one?"
                         menu:
                             tate "Which one?{fast}"
-                            "Full Game":
+                            "Full Game (Timing will NOT be accurate)":
                                 call screen credits_roll(duration=60)
                             "CE Only":
-                                call screen credits_roll(route="CSBIII DX: Holiday Special", scroll_start = 12525, duration=84) with dissolve
+                                play music "<from 28.700>title_theme_reprise.ogg" noloop
+                                call screen credits_roll(route="CSBIII DX: Holiday Special", scroll_start = 12525, duration=84, replace_music=False) with dissolve
+                            "Speedrun Only":
+                                call screen credits_roll(bgm="goodbye_speedrun.ogg", duration=9.5) with dissolve
+                                stop music
                             "Never mind.":
                                 jump .awawa_menu
 
+                        stop music
                         tate "Did it do what you wanted?"
                         jump .awawa_menu
 

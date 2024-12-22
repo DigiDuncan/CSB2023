@@ -1028,6 +1028,14 @@
             "tags": ["Menus & Misc.", "CSBI", "CSBII", "CSBIII: Archival", "CSBIII: Country", "CSBIII: East", "CSBIII: Fired", "CSBIII: Friend", "CSBIII: South" ],
             "album_art": "fantomenk.png"
         },
+        "goodbye_speedrun" : {
+            "file": "goodbye_speedrun.ogg",
+            "title": "Goodbye Speedrun, Hello WR",
+            "artist": "FantomenK",
+            "tags": ["Menus & Misc.", "CSBIII DX: Speedrun", "New In DX" ],
+            "album_art": "fantomenk.png",
+            "trivia": "Tate thought it would be funny to have a sped-up version of the credits for {i}Speedrun.{/i}"
+        },
         "upon_me" : {
             "file": "upon_me.ogg",
             "title": "Upon Me",

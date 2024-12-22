@@ -5,7 +5,7 @@ label vibration:
     scene craptop_bg
     show craptop discord
     show cs at left
-    cs "Bye guys! I gotta head to the store!"
+    cs "Bye, guys! I've gotta head to the store!"
     show cs at offscreenright with MoveTransition(0.25)
     scene black with dissolve
     pause 1.0
@@ -75,11 +75,11 @@ label vibration:
     show michael at left
     with dissolve
     play sound sfx_csnore
-    michael "So, if you play the True route again, you'll get a secret ending!"
+    michael "So, if you play the True Route again, you'll get a secret ending!"
     show cs flipped
     stop sound
     cs "Huh? Sorry, I was sleeping."
-    cs "I've gotta head home now, bye!"
+    cs "I've gotta head home now. Bye!"
     show cs at offscreenright with MoveTransition(0.25)
     play sound sfx_house_door_open
     play sound sfx_house_door_close
@@ -98,7 +98,7 @@ label vibration:
     scene black with dissolve
     pause 1.0
     scene hoh_hq3
-    show hoh_hq 
+    show hoh_hq
     with dissolve
     show cs angry at offscreenleft
     show cs angry at center with MoveTransition(0.25)
@@ -135,7 +135,7 @@ label vibration:
     show cs flipped at offscreenright
     with dissolve
     play music fastbudget_song volume 0.7 if_changed
-    music fastbudget_song 
+    music fastbudget_song
     show cs flipped at mid_left with MoveTransition(0.25)
     show cs
     pause 1.0
@@ -155,7 +155,7 @@ label vibration:
     show cs flipped with determination
     show cs flipped at offscreenleft with MoveTransition(0.25)
     show arceus prison at offscreenleft with MoveTransition(0.25)
-    show anno prison at offscreenright 
+    show anno prison at offscreenright
     show anno prison at right with MoveTransition(0.25)
     anno "Wait for me!"
     show anno prison at offscreenleft with MoveTransition(0.25)
@@ -230,7 +230,7 @@ label vibration:
     cs "Oh..."
     cs "What if I show you more YTPs?"
     linus "Sure, I guess..."
-    scene black 
+    scene black
     play sound sfx_ytpintro
     pause 2.0
     scene loffice
@@ -240,7 +240,7 @@ label vibration:
     linus "Damn, I guess that worked."
     show arceus at offscreenright
     show arceus at center with MoveTransition(0.25)
-    arceus "Hey, CS! We gotta go! Cops are here!"
+    arceus "Hey, CS! We've gotta go! Cops are here!"
     cs "Alright! Bye, guys!"
     show cs at offscreenright
     show arceus flipped at offscreenright
@@ -248,7 +248,7 @@ label vibration:
     show copguy flipped at center with moveinleft
     copguy "Hey, have you seen a cosplayer and a furry come through here?"
     linus "Nope."
-    copguy "Dammit... I've gotta keep going..."
+    copguy "Damn it... I've gotta keep going..."
     hide copguy with moveoutright
     scene black with dissolve
     stop music fadeout 3.0
@@ -261,7 +261,7 @@ label vibration:
     show arceus dark flipped at right
     with moveinleft
     show arceus dark with determination
-    arceus "Alright, we made it!"
+    arceus "Alright! We made it!"
     cs "Yeah! Now we have to trek home."
     show copguy dark flipped at center with moveinleft
     show copguy dark
@@ -297,7 +297,7 @@ label vibration:
     show copguy at t_copguy_frontseat
     show copcar_mask
     show arceus worried flipped at right
-    show cs disappointed at left   
+    show cs disappointed at left
     with dissolve
     copguy "Alright, looks good to me!"
     scene black with dissolve
@@ -320,7 +320,7 @@ label vibration:
     show billy at center with moveinleft
     billy "Hi, it's Billy! If you give me $20 I'll take you home!"
     show cs happy
-    cs "Awesome, let's go!"
+    cs "Awesome! Let's go!"
     scene black
     play sound sfx_doorslam
     pause 1.0
@@ -372,7 +372,7 @@ label vibration:
     show billy car
     with dissolve
     pause 2.0
-    arceus "Woah, what's that flying past us?"
+    arceus "Woah! What's that flying past us?"
     play sound sfx_roll_window volume 0.7
     pause 0.5
     play sound sfx_joj_loop
@@ -413,7 +413,7 @@ label vibration:
     pause 2.0
     scene billboard
     show billy car
-    cs "Holy shit! Pencilcon! We've gotta go!"
+    cs "Holy shit! Pencilcon! We've {i}gotta{/i} go!"
     billy "Alright..."
     scene black with dissolve
     pause 1.0
@@ -449,7 +449,7 @@ label vibration:
     show ed
     with dissolve
     show beam at xstretch_out
-    ed "Damn, I don't know how you beat us."
+    ed "Damn, I don't know how you beat us..."
     ed "But I {i}finally{/i} caught up with you!"
     show cs angry
     cs "Are you gonna fix my house?"
@@ -463,7 +463,7 @@ label vibration:
     scene black with dissolve
     stop music fadeout 3.0
     music end
-    pause 2.0
     $ ending_manager.mark("speedrun")
+    call screen credits_roll(bgm="goodbye_speedrun.ogg", duration=9.5)
     $ renpy.end_replay()
     return
