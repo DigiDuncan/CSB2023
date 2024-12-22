@@ -1,11 +1,12 @@
 label csbiii_ai:
     scene linusmedia with dissolve
+    pause 0.5
     show cs at left with moveinleft
     play music school volume 0.4 if_changed
     music school
     if fun_value(FUN_VALUE_MUSIC):
         n "CS is at school, surrounded by computer parts and confused colleagues."
-    else:    
+    else:
         n "CS is in the Linus Tech Tips office, surrounded by computer parts and confused colleagues."
     show cs surprised
     n "CS scratches his head."
@@ -25,7 +26,7 @@ label csbiii_ai:
     $ collect("hair_dryer")
     n "CS188 and the team are attaching a hairdryer to the gaming PC, with everyone watching nervously."
     cs "Aright, folks, brace yourselves. It's time to unleash the \"Hairdryer Cooling System\"!"
-    play sound sfx_hairdryer    
+    play sound sfx_hairdryer
     n "CS188 presses the power button, and the hairdryer roars to life, blowing a stream of cool air into the PC."
     scene tempsdown
     luke "Wait, it's actually working! The temperatures are dropping!"
@@ -41,8 +42,10 @@ label csbiii_ai:
     linus "CS, you've proven once again that there's always room for unconventional solutions in the world of tech."
     cs "Thank you, thank you. Just doing my part to keep things interesting."
     n "The team celebrates their successful, albeit unconventional, tech solution."
-    n "Arceus bursts in."
     play sound sfx_house_door_open
+    pause 0.25
+    with vpunch
+    n "Arceus bursts in."
     show arceus worried at center with moveinright
     arceus "CS! We've got to get out of here, and fast! The cops are hot on our tails!"
     show cs worried at left
@@ -50,7 +53,9 @@ label csbiii_ai:
     arceus "Long story short, our disguise as janitors didn't quite fool them. We need to make a run for it before they catch up!"
     n "The colleagues in the office glance at each other, surprised and confused by the sudden turn of events."
     show cs disappointed
-    cs "Okay, okay. We need a plan. I've got it! We'll use the secret escape tunnel we installed under the office!"
+    cs "Okay, okay. We need a plan. "
+    show cs happy
+    extend "I've got it! We'll use the secret escape tunnel we installed under the office!"
     show arceus happy
     arceus "Brilliant idea, CS! Lead the way!"
     show cs flipped with determination
@@ -118,20 +123,27 @@ label csbiii_ai:
     cs "{size=-12}I've got it! Remember that prank we pulled back in prison using inflatable rubber ducks?"
     arceus "{size=-12}How could I forget?"
     cs "{size=-12}Well, let's unleash the \"Quack Attack\" on our pursuers!"
-    play sound sfx_duck loop volume 0.7
+    play sound2 sfx_duck volume 0.7
     show ai_ducks with dissolve
     $ collect("duck")
     n "CS188 and Arceus discreetly inflate dozens of rubber ducks and release them, causing a colorful and noisy chaos."
+    play sound sfx_whoosh
+    show copguy_ai at manual_pos(0.7, 1.5, 0.5) with MoveTransition(0.25):
+        linear 0.25 rotate -75
+    play sound sfx_punch
+    with vpunch
     n "The cops are distracted, slipping and sliding on the rubber ducks, as CS188 and Arceus make their getaway."
-    show arceus happy flipped at right
+    show arceus happy at right
     show cs happy at left
-    with moveinbottom 
+    with moveinbottom
+
     show arceus flipped
     hide cs with moveoutright
-    hide arceus with moveoutright
-    with ease
-    stop sound fadeout 7.0
+    show arceus flipped at offscreenright with MoveTransition(0.25)
+    stop sound2 fadeout 7.0
     hide ai_ducks with dissolve
+    show copguy_ai at manual_pos(1.0, 1.1, 1.0) with move:
+        linear 0.5 rotate 0
     hide copguy_ai with moveoutright
     n "The chase scene intensifies as CS188 and Arceus dash through the amusement park, narrowly avoiding capture at every turn."
     # totally didnt steal this transition from train route - tate
@@ -156,9 +168,12 @@ label csbiii_ai:
     if fun_value(FUN_VALUE_MUSIC):
         n "We sure did, buddy. Another adventure for the books! Hooray for friendship!"
     else:
-        cs "We sure did, buddy. Another adventure for the books!"  
-    play music friendship volume 0.4 if_changed
+        cs "We sure did, buddy. Another adventure for the books!"
+    window hide
+    pause 0.5
+
     scene endingai with Fade(1.0, 1.0, 1.0)
+    play music friendship volume 0.4 if_changed
     music friendship
     n "CS188 and Arceus exchange a high-five and disappear into the distance, ready for their next escapade."
     "ChatGPT" "Note: The script is a fictional representation and does not reflect the actual personalities or actions of CS188 or any real-life individuals."
