@@ -10,6 +10,7 @@ label e1:
     n "Deleting persistent{w=0.5}.{w=0.5}.{w=0.5}.{nw=0.5}"
     $ e2 = True
     n "Restarting script{w=0.5}.{w=0.5}.{w=0.5}.{nw=0.5}"
+    window hide
     show script
     pause 1.5
     jump csbi_start
@@ -60,6 +61,7 @@ label e2_rosen:
     n "Deleting persistent{w=0.5}.{w=0.5}.{w=0.5}.{nw=0.5}"
     $ e3 = True
     n "Resetting script{w=0.5}.{w=0.5}.{w=0.5}.{nw=0.5}"
+    window hide
     show script
     pause 1.5
     jump csbi_start
@@ -86,7 +88,7 @@ label e3_rosen:
     pakoo "I'm sorry, CS."
     pakoo "It's time to delete you."
     show cs pissed flipped
-    cs "NO!{w=1.0}{nw}"
+    cs "{cshake}NO!{w=1.0}{nw}"
 
     show csgod at right:
         alpha 0
@@ -110,6 +112,7 @@ label e3_rosen:
     with hpunch
 
     hide csgod with dissolve
+    pause 1.0
 
     n "Pakoo shakes his head and sighs."
     pakoo "Let's finish this."
@@ -135,6 +138,7 @@ label after_error_fight:
     hide cs with Dissolve(1.0)
     pause 5.0
     pakoo "Alright, let's restart the script."
+    window hide
     show script
     pause 1.5
     $ ending_manager.mark("error")

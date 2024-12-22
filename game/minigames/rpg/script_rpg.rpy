@@ -218,7 +218,7 @@ label rpg_final_fight_3:
 
 label rpg_error:
     rpg:
-        bg "falling_apart.png"
+        bg "images/bg/falling_apart.png"
         music "prophetpart2"
         fighters:
             cs_final2
@@ -255,7 +255,7 @@ label rpg_bronsonbattle:
         on_lose "rpg_bronsonbattle"
         music "error"
         intro_text "You are challenged by... Copguy?"
-        
+
 label rpg_tate_ex:
 
     python:
@@ -268,7 +268,7 @@ label rpg_tate_ex:
 
     rpg:
         bg "images/bg/train/amtrak_observation_2.png"
-                
+
         fighters:
             $cs_chosen_form
             tate_ex
