@@ -312,7 +312,7 @@
     "db_car": {
         "img": "db_car",
         "name": "DB's Car",
-        "owner": "db05",
+        "owner": "DB05",
         "desc": "A 2017 Mini Cooper.",
         "rarity": "Common",
         "ce": true

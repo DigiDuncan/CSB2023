@@ -1248,9 +1248,9 @@ label ce_before_shopping:
         dxcom tato
 
         # let's try the audio filtering feature! let's make this next thing muffled.
-        $ renpy.music.set_audio_filter("sound2", renpy.audio.filter.Lowpass(1200))
+        $ renpy.music.set_audio_filter("sound", renpy.audio.filter.Lowpass(1200))
 
-        play sound2 [ "<silence 0.5>", sfx_tato_screm ] noloop
+        play sound [ "<silence 0.5>", sfx_tato_screm ] noloop
         show tato_bag at manual_pos(50, 300) with Dissolve(0.25)
         pause 0.5
         show cs coat at center
@@ -1270,7 +1270,7 @@ label ce_before_shopping:
         cs "Must have come from somewhere else in the store."
 
         # turn filter off again
-        $ renpy.music.set_audio_filter("sound2", None)
+        $ renpy.music.set_audio_filter("sound", None)
 
     else:
         show potato_bag at manual_pos(50, 300) with Dissolve(0.25)
@@ -6801,7 +6801,6 @@ label ce_win_reversi:
         arceus "Damn, GG!"
     elif reversi_difficulty == ReversiAI.ARIA:
         aria "Excellent playing, CS!"
-        $ achievement_manager.unlock("grandmaster")
     else:
         iris "Ah... who did you play against? {i}[reversi_difficulty.name]?{/i}"
         iris "They aren't here... or, a person... so, uh, good job?"

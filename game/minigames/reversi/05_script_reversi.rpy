@@ -21,12 +21,12 @@ init python:
 
             self.wait_timer = 1.0
 
-            self.player_name_text = Text("You", color = "#ff0000", size = 72)
-            self.player_score_text = Text("2", color = "#ff0000", size = 72)
-            self.enemy_name_text = Text(self.ai.name, color = "#0000ff", size = 72)
-            self.enemy_score_text = Text("2", color = "#0000ff", size = 72)
+            self.player_name_text = Text("You", color = "#FFFFFF", size = 67, outlines=[(5, "#000000", absolute(0), absolute(0))])
+            self.player_score_text = Text("2", color = "#FFFFFF", size = 67, outlines=[(5, "#000000", absolute(0), absolute(0))])
+            self.enemy_name_text = Text(self.ai.name, color = "#000000", size = 72)
+            self.enemy_score_text = Text("2", color = "#000000", size = 72)
 
-            self.help_text = Text("Press I for info!", color = "#000000", size = 36)
+            self.help_text = Text("Press I for info!", color = "#FFFFFF", size = 36, outlines=[(4, "#000000", absolute(0), absolute(0))])
             self.help_modal = renpy.get_registered_image("reversi_rules")
             self.showing_help = False
 
@@ -72,14 +72,17 @@ init python:
                         s.circle((255,255,255), (circ_x, circ_y), board_length/16)
 
             w, b = self.game.get_counts()
-            self.player_score_text = Text(str(w), color = "#ff0000", size = 72)
-            self.enemy_score_text = Text(str(b), color = "#0000ff", size = 72)
+            self.player_score_text = Text(str(w), color = "#FFFFFF", size = 67, outlines=[(5, "#000000", absolute(0), absolute(0))])
+            self.enemy_score_text = Text(str(b), color = "#000000", size = 72)
 
-            r.place(self.player_name_text, x = 5, y = 5)
-            r.place(self.player_score_text, x = 5, y = 75)
-            r.place(self.enemy_name_text, x = 5, y = 145)
-            r.place(self.enemy_score_text, x = 5, y = 215)
-            r.place(self.help_text, x = 1650, y = 5)
+            r.place(self.player_name_text, x = 15, y = 5)
+            s.circle((0,0,0), (42, 114), board_length/32)
+            s.circle((255,255,255), (42, 114), board_length/42)
+            r.place(self.player_score_text, x = 79, y = 75)
+            r.place(self.enemy_name_text, x = 15, y = 145)
+            s.circle((0,0,0), (42, 252), board_length/32)
+            r.place(self.enemy_score_text, x = 79, y = 215)
+            r.place(self.help_text, x = 1675, y = 5)
 
             if self.showing_help:
                 r.place(self.help_modal, x = (1920 / 2), y = (1080 / 2))
@@ -118,7 +121,7 @@ init python:
                             self.turn = self.turn.invert()
                             self.clink()
 
-            if ev.type == pygame.KEYDOWN and ev.key == pygame.K_END:
+            if ev.type == pygame.KEYDOWN and ev.key == pygame.K_END and preferences.developer_mode:
                 self.win = True
             if ev.type == pygame.KEYUP and ev.key == pygame.K_i:
                 self.showing_help = not self.showing_help
@@ -152,6 +155,11 @@ label play_reversigame:
         n "You scored [w], [reversi_difficulty.name] scored [b]."
         if w >= b:
             n "You win!"
+
+            # stick achievement here instead so it works from minigame screen
+            if reversi_difficulty == ReversiAI.ARIA:
+                $ achievement_manager.unlock("grandmaster")
+
             $ renpy.end_replay()
             $ renpy.jump(minigame_win)
         else:
