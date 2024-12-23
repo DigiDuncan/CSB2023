@@ -453,7 +453,7 @@
     "gamersupps": {
         "img": "gamersupps",
         "name": "Canister Of Gamer Supps",
-        "owner": "CS",
+        "owner": "Blank",
         "desc": "If you're not into \"Guacamole Gamer Fart 9000\", Gamer Supps offers a variety of other delightful flavors, including \"Titty Milk\" and \"Grandpa's Ashes\" {a=https://gamersupps.gg/collections/caffeine-free}(yes, {i}really){/a}.{/i}",
         "rarity": "Common",
         "ce": true
@@ -893,7 +893,7 @@
     "russian_radio": {
         "img": "russian_radio",
         "name": "Soviet Radio",
-        "owner": "Nova",
+        "owner": "Ges",
         "desc": "A relic of a great, terrible, and rather chilly war.",
         "rarity": "Uncommon",
         "ce": true

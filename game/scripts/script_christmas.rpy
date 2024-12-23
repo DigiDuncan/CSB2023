@@ -793,7 +793,7 @@ label ce_anno:
     n "A single drop falls onto the snow, revealing only a hint of the asphalt below."
     pause 0.5
 
-    cs "Umm..."
+    cs "Um..."
     carguy "Hold on, it's just..."
     play sound sfx_bottle_hit volume 4.0
     show crotch_doctor:
@@ -1159,7 +1159,7 @@ label ce_before_shopping:
     pause 5.0
     play music winter_unclearance_sale loop volume 0.85 fadein 1.0 if_changed
     music winter_unclearance_sale
-    play sound sfx_hubbub loop volume 0.2 fadein 1.0
+    play sound2 sfx_hubbub loop volume 0.2 fadein 1.0
     scene tgt_inside
     with dissolve
     pause 3.0
@@ -2739,7 +2739,7 @@ label ce_party_before:
         k17 "CS!!!" with vpunch
         show k17 dark flipped
         k22 "Hey, CS. Merry Christmas!"
-        cs "Hi, so, umm..."
+        cs "Hi, so, um..."
         cs "Are you guys {i}both{/i} Pakoo?"
         k22 "It's... kind of complicated."
         k22 "Let's go inside, then we can explain."
@@ -3402,7 +3402,7 @@ label ce_banter:
     pause 1.0
     show copguy festive flipped at center with move
     play sound sfx_door_jiggle volume 0.8
-    n "Copguy jiggles the bathroom door."
+    n "Copguy jiggles the bathroom doorknob."
     tate "Occupied!"
     show copguy festive
     copguy "Sorry, sir. We've gotta wait."
@@ -3896,7 +3896,7 @@ label ce_win_carrot:
     billy "Not to fear, Ed! I made my famous restaurant mini-burgers!"
     show ed festive
     ed "You mean steamed hams?"
-    billy "Who the actual {i}fuck{/i} calls burgers \"steamed hams?\""
+    billy "Who the actual {i}fuck{/i} calls burgers \"steamed hams\"?"
     ed "It's a... regional dialect."
     billy "..."
     billy "Steamed hams... for God's sake..."
@@ -3939,7 +3939,7 @@ label ce_win_carrot:
     arceus "Even weirder, when you think about it, that next year will have {i}two{/i} Hanukkahs."
     kitty "... How so?"
     arceus "Well, you figure, eight nights of Hanukkah."
-    kitty "Uh huh..."
+    kitty "Uh-huh..."
     arceus "And, today's the 25th of December."
     kitty "I see."
     arceus "So, the last night of Hanukkah would be the 2nd of January."
@@ -4888,7 +4888,7 @@ label ce_dinner:
     eliza "Man, it's weird that this huge house only has one bathroom."
     show elizabeth flipped at center with move
     play sound sfx_door_jiggle
-    n "Elizabeth jiggles the door."
+    n "Elizabeth jiggles the doorknob."
     eliza "Hello? Who's in there?"
     pause 1.0
     n "There's no response."
@@ -4931,7 +4931,7 @@ label ce_dinner:
     eliza "Something else seems up with you."
     eliza "Do you want to..."
     show elizabeth disappointed flipped
-    eliza "Uhh..."
+    eliza "Uh..."
     play music girl_next_door volume 0.75 if_changed
     music girl_next_door
     eliza "Talk... about it...?"
@@ -7372,7 +7372,7 @@ label ce_roof_moment:
     tate "{image=note_small1.png} He sees you when you're sleeping...{w=0} {image=note_small2.png}"
     mean "{image=note_small1.png} He knows when you're awake...{w=0} {image=note_small2.png}"
     db "{image=note_small1.png} He knows if you've been bad or good...{w=0} {image=note_small2.png}"
-    obama "{image=note_small1.png} So, you'd better be good. For goodness sake!{w=0} {image=note_small2.png}"
+    obama "{image=note_small1.png} So, you'd better be good. For goodness' sake!{w=0} {image=note_small2.png}"
     cs "{image=note_small1.png} Ohhh...{w=0} {image=note_small2.png}"
     everyone "{image=note_small1.png} You better watch out...{w=0} {image=note_small2.png}"
     everyone "{image=note_small1.png} You better not cry...{w=0} {image=note_small2.png}"
@@ -7518,7 +7518,7 @@ label ce_roof_moment:
     hide k22
     with moveoutleft
     hide screen dxcom
-    santa "Ed? Richard? Welsey?"
+    santa "Ed? Richard? Wesley?"
 
     show billy festive at manual_pos(0.5, 0.7) behind ed:
         xanchor 0.5
