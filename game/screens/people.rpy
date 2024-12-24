@@ -312,9 +312,11 @@ screen person(l):
 
                                         frame:
                                             background None
+                                            xsize 1.0
 
                                             vbox:
                                                 xsize 1.0
+                                                xalign 0.5
 
                                                 # iterate through all the different forms
                                                 for stat_set in list(name_map[l]['rpg'].keys()):
@@ -341,6 +343,7 @@ screen person(l):
                                                             xsize 1.0
                                                             background None
                                                             hbox:
+                                                                xsize 1.0
                                                                 xalign 0.5
                                                                 spacing 50
 
