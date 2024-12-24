@@ -55,14 +55,16 @@ label archival:
     show cs worried
     cs "Why do I feel like I've {i}been{/i} here? Something isn't right..."
     n "CS spots a laptop on a nearby desk."
+    show cs worried at offscreenright with { "master": MoveTransition(1.0) }
     n "He is somehow drawn towards it."
+
     scene craptop_old with dissolve
     show cs disappointed at left with moveinleft
     pause 0.5
     cs "I {i}feel{/i} like this is my craptop, but I don't even {i}have{/i} my craptop anymore!"
-    cs "It looks {i}off{/i}, though..."
+    cs "It looks... {i}off{/i}, though..."
     n "CS lifts the lid and powers it on, curious about the strange connection he is feeling with it."
-    n "The laptop slowly boots, playing the classic Windows XP start sound."
+    n "The laptop slowly boots, playing the classic Windows XP startup sound."
     n "The machine immediately bluescreens and blares out the following:"
     play sound sfx_windows_logon
     with hpunch
@@ -91,7 +93,15 @@ label archival:
     k199_offscreen "What the hell, 17-M4! I thought this place didn't have any triggers!"
     k174 "It... shouldn't. This place barely has {i}any{/i} functionality!"
     k199_offscreen "Then {i}why{/i} is the craptop on? CS-ocola would be here right now!"
+
+    # filter audio bc funny
+    $ renpy.music.set_audio_filter("beep", renpy.audio.filter.Lowpass(500))
+
     k207_offscreen "Mrrrph mrrph, mrphh mrphh mrphh {i}mrrrrrph!"
+
+    # unfilter audio
+    $ renpy.music.set_audio_filter("beep", None)
+
     show k174 flipped
     k174 "{i}What?"
     show k174
@@ -125,19 +135,21 @@ label archival:
     k199 "Wait a second..."
     show k199
     pause 1.0
-    n "K19-M9 sees something shift in the corner and leans in to look."
+    n "K19-M9 sees something shift in the corner and leans in to take a look."
     show k199 at mid_offscreen_left with moveinright
-    n "CS turns around for a moment and sees a face staring right at him."
-    cs "Gahhhh!" with vpunch
-    k199 "Oh, fuck! What the hell?!"
+    n "CS turns around for a moment to see a face staring right at him."
+    cs "{cshake}Gah!" with vpunch
+    k199 "Oh, {nw}"
+    extend "{i}fuck!{/i} {nw}" with vpunch
+    extend "What the hell?!"
     show cs worried at left
     show k174 at mid_right
     show k199 at center
     with ease
     n "CS quickly stands up. The others stare silently at him for a moment."
     pause 1.0
-    k207 "Shit! " with hpunch
-    extend "Dude, that's him! He's {i}here!"
+    k207 "{i}Shit!{/i} " with hpunch
+    extend "Dude, that's {i}him!{/i} He's {i}here!"
     show cs scared
     cs "Okay, wait! Hold on a second!"
     k174 "{i}What the FUCK?! {/i}{nw}" with hpunch
@@ -164,7 +176,7 @@ label archival:
 
     worker_1 "I don't know!"
     show k199 flipped
-    k199 "What the fuck is {i}that{/i} thing?!"
+    k199 "What the fuck is {i}that{/i} thing?!" with vpunch
     k199 "Why is it looking at us?"
     k199 "Make it {i}do{/i} something!"
     play sound snd_power
@@ -222,7 +234,8 @@ label archival:
     nova "Nova Nova?"
     k199 "God, what the fuck are {i}those{/i} things?!"
     k199 "Make them attack CS!"
-    nova "Nova Nova {i}Novaaa!"
+    nova "Nova Nova {nw}"
+    extend "{i}Novaaa!" with hpunch
 
     show nova_head as second at random_pos(1300, 1800, 500, 900, 0.5)
     with MoveTransition(0.1)
@@ -234,20 +247,26 @@ label archival:
     with MoveTransition(0.1)
     play sound sfx_bite
     with vpunch
-    k207 "{cshake}Ah! Ahh! Fuck, get them off!"
+    k207 "{cshake}AHH!! {nw}" with vpunch
+    extend "AHHHH!! {nw}" with vpunch
+    extend "Fuck, get them {nw}"
+    extend "{i}off!" with vpunch
 
     show nova_head as third at random_pos(1300, 1800, 500, 900, 0.5)
     with MoveTransition(0.1)
     play sound sfx_bite
     with vpunch
-    k199 "{cshake}Kill them! {i}Kill{/i} themmm!"
-    k199 "{cshake}17M, you piece of shit, make them {i}stop!"
+    k199 "{cshake}Kill them! {nw}"
+    extend "{i}Kill{/i} them!!" with vpunch
+
+    k199 "{cshake}17M, you piece of shit, make them {nw}"
+    extend "{i}stop!" with vpunch
 
     show nova_head as first at random_pos(1300, 1800, 500, 900, 0.5)
     with MoveTransition(0.1)
     play sound sfx_bite
     with vpunch
-    k174 "{cshake}Oh, God, what have I done?! I can't stop them!"
+    k174 "{cshake}Oh, {i}God,{/i} what have I done?! I can't stop them!"
 
     show nova_head as second at random_pos(1300, 1800, 500, 900, 0.5)
     with MoveTransition(0.1)
@@ -287,7 +306,7 @@ label archival:
     n "He quickly slams the door behind him as screams echo throughout the house."
     n "He somehow finds himself in the living room, even though the bedroom was on another floor."
     show cs worried
-    cs "Shit, where do I go? I need to get out of here!"
+    cs "Shit! Where do I go? I need to get out of here!"
     n "CS runs outside."
     show cs worried at mid_mid_left with MoveTransition(0.25)
     scene car_old with dissolve
@@ -317,7 +336,7 @@ label archival:
     play sound sfx_driving
     pause 1.0
     n "Despite the interior of the car being drastically different from the outside, the car thankfully starts up."
-    n "CS starts to drive off, but he is instantly teleported away."
+    n "CS steps on the gas and begins to drive off, but he is instantly teleported away."
     scene csmart_old
     show cs scared at left
     stop sound
@@ -328,7 +347,7 @@ label archival:
     cs "What {i}is{/i} this place?! What's going on?!"
     n "CS looks around for a second and sees what looks like a crack in the sky."
     cs "What the hell?!"
-    n "Before he can figure out what to do, three familiar figures catch up with him."
+    n "Before he can figure out what to do next, three familiar figures catch up with him."
     stop music fadeout 3.0
     music end
     show k199 at center
@@ -355,7 +374,7 @@ label archival_finale:
         zoom 1.5
     show cs disappointed at left
     with dissolve
-    n "After the battle, CS makes his way towards the crack, and realizes that there is an invisible wall."
+    n "After the battle, CS makes his way towards the crack and realizes that there is an invisible wall."
     hide cs with dissolve
     if fun_value(FUN_VALUE_MUSIC):
         n "Without any second thoughts, he breaks off enough pieces of the wall to widen the hole, then takes a trip. From me."
@@ -388,8 +407,9 @@ label archival_finale:
     scene archival_2 with dissolve
     show cs disappointed at mid_left with moveinleft
     n "CS walks around this giant place, glancing at all of the tanks around him."
+    show cs disappointed at center with { "master": move }
     n "He steps closer to one, peering inside, wondering if he can see anything."
-    show cs disappointed at center with move
+
     scene csb1tube with dissolve
     n "A faint voice can be heard, one that sounds like his own."
     n "CS then sees a blurry vision of what looks like a version of himself, without his dress or cat ears, playing some kind of game."
@@ -487,7 +507,7 @@ label archival_finale:
     show m4 as second at offscreenright
     with MoveTransition(0.25)
 
-    n "The men continue their pursuit as a bunch of alarms sound, echoing throughout the whole place."
+    n "The men continue their pursuit as an alarm sounds off, amplified by the echoes in this giant room."
     n "A voice over the loudspeaker cuts through the sirens:"
     scene archival_5 with dissolve
     show cs scared at offscreenleft
@@ -512,7 +532,8 @@ label archival_finale:
     with MoveTransition(0.25)
 
     scene archival_9 with dissolve
-    n "CS enters a hallway with a lot of turns. He goes straight for a bit, then veers left when he hears more gunfire."
+    n "At last, he spots an open door."
+    n "It leads to a hallway with a lot of turns. CS goes straight for a bit, then veers left when he hears more gunfire."
     n "He alternates between going left and right, hoping to lose his attackers."
     window hide
     scene archival_10a with dissolve
@@ -588,7 +609,7 @@ label archival_finale:
     scene archival_11 with dissolve
     scene archival_12 with dissolve
     n "CS runs until he spots a sign that says \"Station 1 >>\"."
-    n "He sprints through the exit, following the signs all the way down the hallway."
+    n "He sprints through the exit, following these signs all the way down the hallway."
     scene archival_14 with dissolve
     n "Eventually he approaches a staircase."
     n "CS manages to make it down the stairs in time, but so do the men still chasing him."
@@ -620,6 +641,7 @@ label archival_finale:
     show m4 as second at center
     with dissolve
     n "The tram takes off, slowly gaining speed."
+
     show walkie as first_wt:
         zoom 0.3
         rotate 10
@@ -631,12 +653,13 @@ label archival_finale:
         xpos 0.5
         ypos 0.5
     with Dissolve(0.25)
+
     n "The men back away from the rail and pull out their walkie-talkies."
     scene black
     show archival_18
     show cs disappointed at center
     with dissolve
-    n "CS catches his breath, then looks at what lies ahead from the window."
+    n "CS catches his breath, then looks through the window at what lies ahead."
     scene train_start
     show cs disappointed at center
     with dissolve
@@ -647,7 +670,7 @@ label archival_finale:
     n "The tram turns to the left as it is switched onto another rail."
     show cs scared
     with shake1
-    n "As soon as it enters this lane, the tram begins to accelerate."
+    n "As soon as it enters this lane, it begins to accelerate."
     scene archival_18
     show train_outside_tunnel
     show cs worried at center
@@ -705,7 +728,7 @@ label archival_finale:
     show cs scared
     with shake2
     n "The tram starts up again, now reaching ludicrous speeds."
-    n "CS sees the light begin to envelop the outside of the tram, seeming to consume it."
+    n "CS sees the light begin to envelop the outside of the tram, as if consuming it."
     n "He starts to panic."
     show cs scared flipped
     pause 0.5
@@ -762,18 +785,25 @@ label archival_finale:
     scene black with Dissolve(1.0)
     pause 3.0
     $ achievement_manager.unlock("archived")
-    n "CS has been deleted, and has been sent to the beginning of time itself."
+    n "CS has been deleted and has been sent to the beginning of time itself."
     pause 2.0
-    $ renpy.movie_cutscene(creditsm)
-    $ persistent.heard.add("goodbye_summer_hello_winter")
+    call screen credits_roll() with determination
     pause 2.0
     play music everybody_wants if_changed
     music everybody_wants
     pause 5.0
-    play sound sfx_ringtone_addy loop volume 0.5
+
+    # audio ducking during ringtone
+    $ renpy.music.set_volume(0.25)
+
+    play sound sfx_ringtone_addy loop
     $ persistent.heard.add("sfx_ringtone_addy")
     n "Addy gets a phone call."
     pause 1.0
+
+    # unduck the audio
+    $ renpy.music.set_volume(1.0)
+
     play sound sfx_pickup_call
     pause 3.0
     if fun_value(FUN_VALUE_MUSIC):

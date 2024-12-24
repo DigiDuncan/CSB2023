@@ -1029,7 +1029,6 @@ label csbi_home_savers:
     scene black with Dissolve(3.0)
     $ ending_manager.mark("savers")
     $ renpy.movie_cutscene(hoh_repair)
-    $ persistent.heard.add("goodbye_summer_hello_winter")
     call screen credits_roll() with determination
     $ renpy.end_replay()
     return
@@ -1057,7 +1056,6 @@ label csbi_nah:
     scene black with dissolve
     pause 2.0
     $ ending_manager.mark("nah")
-    $ renpy.movie_cutscene(creditsm)
-    $ persistent.heard.add("goodbye_summer_hello_winter")
+    call screen credits_roll() with determination
     $ renpy.end_replay()
     return

@@ -464,6 +464,6 @@ label vibration:
     stop music fadeout 3.0
     music end
     $ ending_manager.mark("speedrun")
-    call screen credits_roll(bgm="goodbye_speedrun.ogg", duration=9.5)
+    call screen credits_roll(bgm="goodbye_speedrun.ogg", replace_music = True, duration=9.5)
     $ renpy.end_replay()
     return

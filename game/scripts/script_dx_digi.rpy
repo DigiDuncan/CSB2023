@@ -17,6 +17,7 @@ label dx_underpants:
     show toxic_mikas at manual_pos(1.5, 1.0, 1.0):
         zoom 0.6
     with dissolve
+    pause 0.5
     n "George, Harold, and Pakoo are busy studying the wonders of gooey jugular veins."
     play sound sfx_small_spill volume 8
     n "Their new science teacher, Mr. Weird Al Yankovic, spills some smelly sulfuric acid on a pile of toxic Mikas!"
@@ -150,7 +151,7 @@ label dx_underpants:
     show realistic_explosion_anim at manual_pos(0.8, 0.7, 0.5) behind weird_al:
         subpixel True
         zoom 20
-    play sound sfx_explosion
+    play sound2 sfx_explosion noloop
     with vpunch
     mika "Woohoo!"
     n "The monster dies of a massive right toe attack!"
