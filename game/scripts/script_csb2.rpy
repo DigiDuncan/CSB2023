@@ -9,10 +9,11 @@ label csbii_start:
     cs "You'll pay for what you did!"
     n "Wesley sweats nervously."
     wesley "Do you want a refund?"
-    cs "I'll refund your face to the floor!"
+    cs "I'll refund your {nw}"
+    extend "face to the {i}floor!" with vpunch
 
     menu:
-        "What attack would you like to use?"
+        "Which attack will you use?"
         "Punch" (type = "true"):
             $ ch2_cs_attack_used = "punched"
             jump csbii_punch
@@ -73,10 +74,10 @@ label csbii_punch:
     show cs angry at left with MoveTransition(0.35)
     pause 1.0
     cs "That'll teach you not to mess with a nerd's computer!"
-    show ed_phone at offscreenright with determination
-    show ed_phone at right
+    show ed phone at offscreenright with determination
+    show ed phone at right
     show cs angry at left
-    with MoveTransition(0.5)
+    with { "master": MoveTransition(0.5) }
     ed "Hello, 911? My coworker just got knocked out by a disgruntled customer and appears to be dying! Send help!"
     jump csbii_caught
 
@@ -97,12 +98,11 @@ label csbii_chop:
     show wesleytop at Move((0.7 , 0.15), (1.75, -0.3), 2, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show wesleybottom at Move((0.7 , 0.15), (1.75, 0.5), 2, repeat=False, bounce=False, xanchor="left", yanchor="top")
 
-
     pause 0.5
     cs "I sawed this foundation repairman in half!"
-    show ed_phone at offscreenright with determination
+    show ed phone at offscreenright with determination
     show cs angry at left
-    show ed_phone at right
+    show ed phone at right
     with MoveTransition(0.5)
     ed "Hello, 911? My coworker just got karate-chopped off the roof by a disgruntled customer! Send help!"
     jump csbii_caught
@@ -126,9 +126,9 @@ label csbii_kick:
     $ achievement_manager.unlock("sparta")
 
     cs "That'll teach you not to mess with a nerd's computer!"
-    show ed_phone at offscreenright with determination
+    show ed phone at offscreenright with determination
     show cs angry at left
-    show ed_phone at right
+    show ed phone at right
     with MoveTransition(0.5)
     ed "Hello, 911? My coworker just got kicked off the roof by a disgruntled customer! Send help!"
     hide screen dxcom
@@ -148,8 +148,8 @@ label csbii_special:
     rich "Hey! Cut it out!"
     play sound sfx_punchalt
     with vpunch
-    wesley "I'm not trying to fight you! I don't know what's happening!"
-    wesley "{i}HELP!{/i}"
+    wesley "I'm not {i}trying{/i} to fight you! I don't know what's happening!"
+    wesley "{cshake}{i}HELP!{/i}" with hpunch
     play sound sfx_punch
     with hpunch
     play sound sfx_punch
@@ -160,26 +160,28 @@ label csbii_special:
     if e1:
         jump e1
     else:
-        show ed_phone at offscreenright with determination
-        show ed_phone at right with MoveTransition(0.5)
+        show ed phone at offscreenright with determination
+        show ed phone at right with MoveTransition(0.5)
     ed "Hello, 911? My coworkers are--{w=0.5}{nw}"
     play sound sfx_tape_rewind volume 0.5
     with hpunch
     n "CS sentence-mixes Ed's words!"
     ed "{ytpmagic}Everything is fine here, officer. No need to come here."
+    pause 0.5
     ed "Wait, what just happened?!"
     n "CS quickly puts all the workers to sleep."
-    show ed_phone at manual_pos(0.6, 0.40):
-        linear 0.5 rotate 45
+    show ed phone at manual_pos(1.0, 1.0, 1.0) with determination
+    show ed phone at manual_pos(1.2, 1.7, 1.0):
+        linear 0.5 rotate 60
     with MoveTransition(0.5)
     play sound sfx_punch
     with vpunch
-    show wesley at manual_pos(0.7, 0.40):
-        linear 0.5 rotate-45
+    show wesley at manual_pos(0.7, 0.4):
+        linear 0.5 rotate -45
     with MoveTransition(0.5)
     play sound sfx_punch
     with vpunch
-    pause 1.0
+    pause 2.0
     show cs at left
     cs "Huh. That worked a lot better than I thought."
     cs "I should use this power more often!"
@@ -191,13 +193,15 @@ label csbii_special:
     music end
     scene black with dissolve
     pause 1.0
+
     scene hoh_hq with dissolve
+    pause 0.5
     show cs at left with moveinleft
     n "As CS makes to leave the building, the cops come rushing in."
     play sound sfx_siren loop
     show blue_light at left
     show red_light at right
-    show copguy behind blue_light, red_light at right with easeinright
+    show copguy behind cs at right with easeinright
     show cs surprised
     copguy "Freeze! Put your hands in the air!"
     stop sound fadeout 1.0
@@ -228,28 +232,32 @@ label csbii_questioning:
         copguy "This is the Card Castle."
     else:
         copguy "A lot of crazy things have happened today."
-    copguy "The CEO of HoH SiS called us and he was immediately interrupted by something, or some{i}one,{/i} telling us that everything was under control."
-    copguy "After reviewing the phone call, his voice sounds kinda messed up."
-    cs "I, uhh, I don't know what all {i}that{/i} is about..."
+    copguy "The CEO of HoH SiS called us."
+    copguy "He was immediately interrupted by something, or some{i}one,{/i} telling us that everything was under control."
+    copguy "After reviewing the audio, his voice sounds kinda messed up."
+    cs "I, uh, I don't know what all {i}that{/i} is about..."
     copguy "Oh, really?"
     copguy "What about all of the workers in the building? Most of them were out cold on the floor."
     show cs worried dark
     cs "Okay, fine!"
     cs "I confess!"
     cs "I was using YTP Magic on the employees to make them fight each other, and I--{w=1.0}{nw}"
-    copguy "You {i}what?!{/i} What the hell are you on about?"
+    copguy "You {i}what?!{/i} {nw}" with vpunch
+    extend "What the hell are you on about?"
     cs "I have this power, and I just figured out how to--{w=0.5}{nw}"
     copguy "Alright, I've heard enough."
     copguy "Lemme call in someone more qualified to deal with this."
+    show copguy dark flipped
     copguy "Mr. Mohs, this one's all yours."
     hide copguy with moveoutright
-    show asylum_worker at right with moveinright
+    pause 0.5
+    show asylum_worker at right with { "master": moveinright }
+    show cs scared dark
     asylum_worker "Sure thing, boss."
     pause 1.0
     asylum_worker "Alright, buddy. Come follow me."
-    hide asylum_worker
-    hide cs
-    with moveoutright
+    hide asylum_worker with moveoutright
+    hide cs with moveoutright
     stop music fadeout 3.0
     music end
     scene black with dissolve
@@ -262,23 +270,21 @@ label csbii_asylum:
     play music basement volume 0.5 if_changed
     music basement
     pause 2.0
-    show cs insane worried flipped dark at left with moveinright
-    show cs insane worried dark with determination
+    show cs worried insane dark flipped at left with moveinright
+    show cs worried insane dark with determination
     show asylum_worker at right with moveinright
     pause 1.0
     if fun_value(FUN_VALUE_MUSIC):
         asylum_worker "Here's your basement. Enjoy living out the rest of your life here."
     else:
         asylum_worker "Here's your room. Enjoy living out the rest of your life here."
-    show cs insane worried dark at center with moveinleft
+    show cs scared insane dark at center with moveinleft
     cs "Sir, you need to listen to me! I'm not crazy!"
     asylum_worker "That's what they all say."
     asylum_worker "Get off of me."
     show asylum_worker at mid_mid_right with MoveTransition(0.1)
     play sound sfx_punch
-    show cs insane worried dark:
-        linear 0.25 ypos 2.0
-    with MoveTransition(0.25)
+    show cs scared insane dark at manual_pos(1.0, 2.0, 1.0) with MoveTransition(0.25)
     with vpunch
     show asylum_worker at right with MoveTransition(0.1)
     pause 1.0
@@ -287,7 +293,9 @@ label csbii_asylum:
     pause 0.5
     play sound sfx_house_door_close
     pause 3.0
-    show cs insane disappointed dark at center with MoveTransition(1.0)
+    show cs disappointed insane dark at manual_pos(0.8, 1.115, 1.0) with MoveTransition(1.0):
+        rotate 45
+        linear 1.0 rotate 0
     pause 1.0
     cs "Ow..."
     cs "This isn't fair!"
@@ -301,14 +309,16 @@ label csbii_asylum:
             linear 2.0 alpha 1.0
         parallel:
             linear 0.5 xpos 0.6
-    show cs insane worried dark at left
+    show cs worried insane dark at manual_pos(0.5, 1.115, 1.0)
     with MoveTransition(2.0)
     pause 1.0
     cs "What?"
     cs "Who are you?"
-    csgod "I am CSGod. It was I who used the YTP power."
-    cs "{i}What?!{/i} How?"
-    show cs insane disappointed dark
+    csgod "I am CSGod."
+    csgod "It was I who used the YTP power."
+    show cs scared insane dark
+    cs "{i}What?!{/i} How?" with vpunch
+    show cs disappointed insane dark
     cs "I am so confused..."
 
     # tate was here
@@ -318,13 +328,12 @@ label csbii_asylum:
         csgod "You channeled my power through your fingertips."
     csgod "That was how you were able to use those abilities back at HoH SiS HQ."
     csgod "However, it seems that you weren't good enough at lying to get yourself out of this situation."
-    show cs insane disappointed dark
+    show cs disappointed insane dark
     cs "Well, I wanted to be honest!"
     csgod "Yeah, well, look where honesty got you."
-    show cs insane disappointed dark
     csgod "No mortal would ever believe in something as silly as YTP Magic."
     csgod "For your punishment, I shall leave you here you a while."
-    show cs insane worried dark
+    show cs scared insane dark
     cs "No! Please!"
     csgod "You will get out soon enough, but maybe you should think about making a {i}better choice{/i} next time."
     hide csgod with dissolve
@@ -340,21 +349,24 @@ label csbii_caught:
     play music time_for_a_smackdown volume 0.2 if_changed
     music time_for_a_smackdown
     scene helipad
-    show ed_phone at right
+    show ed phone at right
     show cs angry at left
     cs "Damn it! Ed's calling the police! I've gotta go after him!"
-    ed "911! Come quickly! He's chasing after me!"
+    show cs angry at center with { "master": move }
+    ed "911! Come quickly! {nw}"
+    show ed phone flipped at offscreenright with { "master": MoveTransition(0.25) }
+    extend "He's chasing after me!"
     play sound sfx_siren loop
     show blue_light at left
     show red_light at right
     n "The police arrive and CS runs away."
     show cs angry flipped with determination
     show cs angry flipped at offscreenleft with MoveTransition(0.25)
-    show ed_phone behind blue_light, red_light at left with move
-    show copguy behind blue_light, red_light, ed_phone at right with moveinright
+    show ed phone behind blue_light, red_light at left with move
+    show copguy behind blue_light, red_light, ed at right with moveinright
     copguy "Get back here!"
     show copguy at offscreenleft with MoveTransition(0.25)
-    cs "You can't catch me, I'm the speedy Michael Rosen!"
+    cs "You can't catch me! I'm the speedy Michael Rosen!"
     stop music fadeout 3.0
     music end
     n "As CS is not actually the speedy Michael Rosen, he is quickly apprehended by the police."
@@ -384,9 +396,10 @@ label csbii_jail:
     cs "How tough am I? {cshake}How tough am I?!{/bt}"
     cs "I beat {i}Cuphead!{/i}"
     copguy "So?"
+    show cs happy prison
     cs "{i}In under 90 minutes!"
     copguy "Hmm... okay. You're a tough enough guy to handle this cellmate, then."
-
+    show cs prison
     show copguy flipped
     hide copguy with moveoutright
     pause 1.0
@@ -418,7 +431,8 @@ label csbii_jail:
     arceus "Welp. I'm tired of this place. Wanna break out?"
     cs "Eh... sure, why not. I've played plenty of {i}The Escapists.{/i} I should be able to figure it out."
     cs "We should break out at least one other person though."
-    arceus "If you say so... Who were you thinking of breaking out?"
+    arceus "If you say so..."
+    arceus "Who were you thinking of breaking out?"
     cs "Let's just break out that guy next to us. I think his name was Anno{w=0.1}.{w=0.1}.{w=0.1}.{w=0.1}?"
     arceus "Anno? Sure. I've seen what he's capable of, so he may be of use to us."
     cs "Alright, then! Let's get going!"
@@ -521,16 +535,17 @@ label csbii_breakout:
     # If anyone asks, Arceus is part god and can dig really easily, I guess.
 
     n "They begin digging quickly, putting distance between themselves and their cells."
-    show cs guard dark at left with easeinleft
+    show cs disappointed guard dark at left with easeinleft
     dxcom tint
     cs "Jeez... I didn't think that would actually work."
 
-    show arceus guard at right with easeinright
+    show arceus guard dark at right with easeinright
     arceus "You {i}what?"
 
     show anno guard dark with easeinbottom
     anno "How are we supposed to cross the border with the new wall?"
     arceus "Not the Mexican border, the Canadian border. We're in Washington, it's way closer, and they're too polite to send us back."
+    show cs guard dark
     cs "Works for me. Free healthcare!"
     arceus "Well, you have to live there for a few years before you get access to that, but you {i}should{/i} last a few years without getting sick living on that healthy diet of Ritz and EZ cheese."
     hide cs
@@ -557,16 +572,17 @@ label csbii_bordercrossing:
     play music onett volume 0.6 if_changed
     music onett
     if fun_value(FUN_VALUE_MUSIC):
-        n "CS, Anno, and Arceus emerge and begin heading north towards Onett. Theme."
+        n "CS, Anno, and Arceus emerge from the earth and begin heading north towards Onett. Theme."
     else:
-        n "CS, Anno, and Arceus emerge and begin heading north towards the border crossing."
-    n "A wild border guard appears."
-    show border_guard at center with dissolve
+        n "CS, Anno, and Arceus emerge from the earth and begin heading north towards the border crossing."
     pause 0.5
+
     # INTENTIONAL DISSOLVE: Pokemon reference
+    show border_guard at center with { "master": dissolve }
+    n "A wild border guard appears."
+
     if fun_value(FUN_VALUE_COMMON):
         border_guard "Eh, Schnitzelburg!"
-    pause 1.0
     border_guard "I'm going to need proof of citizenship, eh."
     show border_guard at right
     show arceus flipped at left
@@ -592,6 +608,7 @@ label csbii_bordercrossing:
     scene canada
     stop music2
     $ renpy.music.set_pause(False, "music")
+    music onett
     "..."
     cs "Prison food just isn't all that filling."
     arceus "I suppose we could find a Tim Horton's. It's as common in Canada as McDonald's is in America."
@@ -649,10 +666,10 @@ label csbii_bordercrossing:
     arceus "That's me!"
     show arceus full flipped
     arceus "How much is it?"
-    cashier "It'll be $18.{nw}"
+    cashier "It'll be $18. {nw}"
     show arceus full happy flipped
     arceus "Here you go! Keep the change."
-    arceus "Hi doggy!"
+    arceus "Hi, doggy!"
     cashier "You're my favorite customer."
     show arceus full flipped
     arceus "Thanks a lot! Bye~"
@@ -668,7 +685,7 @@ label csbii_bordercrossing:
 
     cs "..."
     cs "I think I'm {i}really{/i} sleep-deprived."
-
+    pause 0.5
     $ achievement_manager.unlock("ohai_mark")
     scene black with dissolve
     pause 1.0
@@ -753,12 +770,10 @@ label csbii_ltt:
     show cs worried
     cs "Arc, what am I gonna do? They need proof I'm legal to work."
     show cs disappointed
-    arceus "Hmmm..."
+    arceus "Hmm..."
     n "A lightbulb goes off in Arceus' head."
     arceus "Leave it to me."
-    hide arceus
-    show arceus flipped at right
-    hide arceus flipped with moveoutright
+    show arceus flipped at offscreenright with moveoutright
 
     scene alley
     with dissolve
@@ -859,7 +874,7 @@ label csbii_ltt:
     linus "I didn't think you could have a number as a last name..."
     linus "Yep, there you are, cs188, with a valid working visa."
     linus "Looks like you're hired!"
-    cs "Ohhh yes!"
+    cs "Oh, {i}yes!"
     cs "{i}ahem{/i}{w=0.5}\nI mean, thank you, Linus!"
     pause 1.0
     scene black with dissolve
