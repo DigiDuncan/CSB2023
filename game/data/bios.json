@@ -793,19 +793,19 @@
             "Hazmat: K20-7": "images/characters/k207h.png"
         },
         "quote": "U3VubnkgRCEgQWxyaWdodCEgVGhlIEYyNSBL\nZXk/IEknbSB0aGUgc3Ryb25nZXN0IQ",
-        "bio": "These memories of Pakoo's life each only possess knowledge of what happened during a specific month. The K17s love talking about catgirls and citrus drinks, while the K20s won't shut up about Half-Life or Touhou. It never goes well when they meet up to solve a problem.",
+        "bio": "These memories of Pakoo's life each only possess knowledge of what happened during a specific month. The K17s love talking about catgirls and citrus drinks, while the K20s won't shut up about {i}Half-Life{/i} or {i}Touhou.{/i} It never goes well when they meet up to solve a problem.",
         "zoom": 0.733,
         "rpg": {
             "K174": {
-                "name": "Base Stats",
+                "name": "K17-4 (Base Stats)",
                 "need_label": "archival_finale"
             },
             "K199": {
-                "name": "Base Stats",
+                "name": "K19-9 (Base Stats)",
                 "need_label": "archival_finale"
             },
             "K207": {
-                "name": "Base Stats",
+                "name": "K20-7 (Base Stats)",
                 "need_label": "archival_finale"
             }
         }
