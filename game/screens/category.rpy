@@ -58,7 +58,7 @@ screen category_nav():
             if preferences.developer_mode or persistent.saved_christmas:
                 textbutton "{image=gui/ce_text.png} D20 Viewer\n{size=-12}See who could have showed up first to the party!" action ShowMenu("d20_viewer_screen")
 
-            if preferences.developer_mode or achievement_manager.get("Hopes and Dreams").unlocked:
+            if preferences.developer_mode or achievement_manager.get("beat_copguy").unlocked:
                 textbutton "Ultimate Custom Night\n{size=-12}Put together your own RPG battles!" action Start("rpg_ucn")
 
             textbutton "{image=gui/dx_text.png} Woohoo Counter\n{size=-12}How many can you find?" action Jump("woohoo_counter")
