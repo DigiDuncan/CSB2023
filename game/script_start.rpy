@@ -2907,6 +2907,7 @@ image cards5alt = "images/cards5alt.png"
 image lancer = "images/characters/lancer.png"
 image lancer flipped = "flip:images/characters/lancer.png"
 image bubble = Transform("images/characters/bubble.png", zoom = 2.0)
+image bubble flipped = Transform("flip:images/characters/bubble.png", zoom = 2.0)
 
 # Animated Sprites
 
