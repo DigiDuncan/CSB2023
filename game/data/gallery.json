@@ -45,6 +45,41 @@
         "caption": "Mean's original HoH SiS sprite, as seen in {i}CSBounciness III,{/i} before Tate redrew it.",
         "need_label": "csbi_end"
     },
+    "addyfucku.png": {
+        "type": "image",
+        "title": "Beta Addy Sprite",
+        "caption": "Pakoo: I drew my OC (with color) for the first time actually, and I made it in about 10 minutes for some dumb bit that was for finishing the True Route script.",
+        "need_character": "addy"
+    },
+    "road_to_canada.png": {
+        "type": "image",
+        "title": "Beta Road to Canada",
+        "caption": "This was the original background for when CS, Arceus, and Anno emerge from the surface out of jail. It was a lot muddier.",
+        "need_label": "csbii_bordercrossing"
+    },
+    "digisquare.png": {
+        "type": "image",
+        "title": "Digi Square Room",
+        "caption": "When Digi was working on his Digi EX boss battle, he drew this for reference. Welcome to the square room.",
+        "need_label": "dx_digi_corruption"
+    },
+    "fumobee2.png": {
+        "type": "image",
+        "title": "Fumo Bee 2",
+        "caption": "This was supposed to be used... somewhere? Fumo Bee 1 is used for a Fun Value in South route at the Lego pizzeria, though. Fun fact: did you know Pakoo hates bees?",
+        "need_label": "south_utah"
+    },
+    "TV_SMPTE.png": {
+        "type": "image",
+        "title": "TV SMPTE",
+        "caption": "This background is from {i}CSBII{/i}. We don't know why it's still in the game. It was just sitting here in the files and looks awful. Who edited this? Why are the bars not tilted {i}at all?"
+    },
+    "best_music.png": {
+        "type": "image",
+        "title": "best_music.png",
+        "caption": "Before Tate figured out how to add support for Japanese text, the pop-up for this song was using an image instead. Nobody wanted to have to render images for all the other songs with Japanese titles, so this was the only one ever made.",
+        "need_label": "csbi_walmart"
+    },
     "mean_clothes.png": {
         "type": "image",
         "title": "Mean's Clothes",
@@ -89,41 +124,6 @@
         "caption": "Placeholder sprite for Zenigata's car during the rooftop train chase scene.",
         "need_character": "zenigata"
     },
-    "addyfucku.png": {
-        "type": "image",
-        "title": "Beta Addy Sprite",
-        "caption": "Pakoo: I drew my OC (with color) for the first time actually, and I made it in about 10 minutes for some dumb bit that was for finishing the True Route script.",
-        "need_character": "addy"
-    },
-    "road_to_canada.png": {
-        "type": "image",
-        "title": "Beta Road to Canada",
-        "caption": "This was the original background for when CS, Arceus, and Anno emerge from the surface out of jail. It was a lot muddier.",
-        "need_label": "csbii_bordercrossing"
-    },
-    "digisquare.png": {
-        "type": "image",
-        "title": "Digi Square Room",
-        "caption": "When Digi was working on his Digi EX boss battle, he drew this for reference. Welcome to the square room.",
-        "need_label": "dx_digi_corruption"
-    },
-    "fumobee2.png": {
-        "type": "image",
-        "title": "Fumo Bee 2",
-        "caption": "This was supposed to be used... somewhere? Fumo Bee 1 is used for a Fun Value in South route at the Lego pizzeria, though. Fun fact: did you know Pakoo hates bees?",
-        "need_label": "south_utah"
-    },
-    "TV_SMPTE.png": {
-        "type": "image",
-        "title": "TV SMPTE",
-        "caption": "This background is from {i}CSBII{/i}. We don't know why it's still in the game. It was just sitting here in the files and looks awful. Who edited this? Why are the bars not tilted {i}at all?"
-    },
-    "best_music.png": {
-        "type": "image",
-        "title": "best_music.png",
-        "caption": "Before Tate figured out how to add support for Japanese text, the pop-up for this song was using an image instead. Nobody wanted to have to render images for all the other songs with Japanese titles, so this was the only one ever made.",
-        "need_label": "csbi_walmart"
-    },
     "fancy_watch.png": {
         "type": "image",
         "title": "fancy_watch.png",
@@ -134,6 +134,18 @@
         "type": "image",
         "title": "Perfect Tate Beta Stage",
         "caption": "This was the original highway for the battle against Perfect Tate. Replacing it with the actual timeline of the video in the background turned out to be a much better idea.",
+        "need_character": "perfect_tate"
+    },
+    "pt_concept.png": {
+        "type": "image",
+        "title": "Perfect Tate Concept",
+        "caption": "While there were a few concepts for Perfect Tate's design, most of them were... too much for Twitch.\n\nThis is the phone doodle that eventually resulted in several images being stitched together to create the final abomination we all know and... {i}love?{/i}",
+        "need_character": "perfect_tate"
+    },
+    "missingtate.png": {
+        "type": "image",
+        "title": "missingtate.png",
+        "caption": "If you look closely, it's in the background during Perfect Tate's intro video.",
         "need_character": "perfect_tate"
     },
     "cs_news1.png": {
@@ -208,12 +220,6 @@
         "caption": "Doodled by Tate and later colored by 4Bakers. This was almost going to be Mean's official sprite, but Tate felt it was simply {i}too{/i} cute.",
         "need_character": "mean",
         "need_label": "csbi_end"
-    },
-    "missingtate.png": {
-        "type": "image",
-        "title": "missingtate.png",
-        "caption": "If you look closely, it's in the background during Perfect Tate's intro video.",
-        "need_character": "perfect_tate"
     },
     "cs_popsicle.png": {
         "type": "image",
