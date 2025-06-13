@@ -602,7 +602,9 @@ class Fighter:
 
     def attack(self, style: int, targets: list[Fighter]) -> AnswerList:
         hit = (renpy.random.choice([True, False]) if self.confused else True) and not self.dead
-        hit = hit and renpy.random.random() <= (self.attacks[style].accuracy / 100)
+        d1 = renpy.random.random()
+        d2 = renpy.random.random()
+        hit = hit and ((d1 <= (self.attacks[style].accuracy  / 100)) or (d2 <= (self.attacks[style].accuracy  / 100)))
         if hit:
             return self.attacks[style].run(self, targets)
         elif self.confused:
