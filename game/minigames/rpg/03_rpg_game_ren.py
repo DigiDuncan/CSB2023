@@ -10,6 +10,7 @@ from renpy.text import Text
 
 # This is the equivalent of a python early block in a .rpy file.
 """renpy
+rpy python annotations
 python early:
 """
 
