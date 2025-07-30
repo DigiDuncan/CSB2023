@@ -94,7 +94,8 @@ label friend_microcenter:
     pause 2.0
     cs "Okay, we have a NVIDIA RTX 4080, and an AMD Radeon RX 7900."
 
-    menu:
+    if e1:
+            menu:
         "Which card do you want to choose?"
         "RTX 4080":
             $ fanboy_type = "amd"
@@ -102,8 +103,21 @@ label friend_microcenter:
         "Radeon RX 7900":
             $ fanboy_type = "nvidia"
             jump friend_high_gpu
+        "Voodoo5 6000"
+            jump error_voodoo
         "GTX 760"  (type = "bad"):
             jump friend_low_gpu
+    else:     
+        menu:
+            "Which card do you want to choose?"
+            "RTX 4080":
+                $ fanboy_type = "amd"
+                jump friend_high_gpu
+            "Radeon RX 7900":
+                $ fanboy_type = "nvidia"
+                jump friend_high_gpu
+            "GTX 760"  (type = "bad"):
+                jump friend_low_gpu
 
 label friend_high_gpu:
     play music morning_highway loop volume 0.4 if_changed
@@ -404,6 +418,8 @@ label friend_after_fanboy:
     hide cs
     hide arceus
     with moveoutright
+    if e1:
+        jump error_lowbudget
     scene alley with dissolve
     play music Lowbudget_song loop volume 0.4 if_changed
     music Lowbudget_song
