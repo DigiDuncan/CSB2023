@@ -95,18 +95,18 @@ label friend_microcenter:
     cs "Okay, we have a NVIDIA RTX 4080, and an AMD Radeon RX 7900."
 
     if e1:
-            menu:
-        "Which card do you want to choose?"
-        "RTX 4080":
-            $ fanboy_type = "amd"
-            jump friend_high_gpu
-        "Radeon RX 7900":
-            $ fanboy_type = "nvidia"
-            jump friend_high_gpu
-        "Voodoo5 6000"
-            jump error_voodoo
-        "GTX 760"  (type = "bad"):
-            jump friend_low_gpu
+        menu:
+            "Which card do you want to choose?"
+            "RTX 4080":
+                $ fanboy_type = "amd"
+                jump friend_high_gpu
+            "Radeon RX 7900":
+                $ fanboy_type = "nvidia"
+                jump friend_high_gpu
+            "Voodoo5 6000":
+                jump error_voodoo
+            "GTX 760"  (type = "bad"):
+                jump friend_low_gpu
     else:     
         menu:
             "Which card do you want to choose?"
