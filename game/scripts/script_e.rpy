@@ -286,13 +286,27 @@ label error_wait:
 label error_search:
     #Point and click thing here
     cs "Maybe Arc is hiding somewhere."
+    label .error_sewer:
+        n "CS lifts up the manhole cover."
+        cs "Why would he go down here? That's dumb."
+        n "Before CS can cover the sewer again, he slips and falls through the hole!"
+        cs "Aieeeeee!!"
+        jump error_sewer_start
+    label .error_moonside:
+        n "CS looks inside the trashcan."
+        cs "Nah, that's silly. Why would he be in--{nw}{w=1.5}"
+        n "All of a sudden, CS gets sucked into the trashcan!"
+        cs "Ahhhhhh!!"
+        return
 
-    n "CS lifts up the manhole cover."
-    cs "Why would he go down here? That's dumb."
-    n "Before CS can cover the sewer again, he slips and falls through the hole!"
-    cs "Aieeeeee!!"
+label error_sewer_start:
+    cs "Ow... that hurt a bit..."
+    cs "Oh wow, it smells like if shit took a shit down here."
+    n "CS gathers his surroundings."
+    cs "Looks like the ladder to get out of here broke a long time ago..."
+    cs "I guess I should try to follow the sewer system and see if I can find another way out."
+    cs "I need to find like a gas mask or something, I cannot handle the smell for this long."
     
-    n "CS looks inside the trashcan."
-    cs "Nah, that's silly. Why would he be in--{nw}{w=1.5}"
-    n "All of a sudden, CS gets sucked into the trashcan!"
-    cs "Ahhhhhh!!"
+label error_sewer_pipe_1:
+    n "After treading the naseous sewer waters for some while, CS finally finds a tube that leads out into the night."
+    cs "Oh thank god, an exit."
