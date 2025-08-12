@@ -35,6 +35,8 @@ label test:
                 "Aria (Expert)":
                     $ reversi_difficulty = ReversiAI.ARIA
                     jump play_reversigame
+        "New Menu Option Because Arc is Lazy":
+            jump play_newrpggame
         "New cool thing OwO"  (type = "dx"):
             menu:
                 "Train Boss Test":
