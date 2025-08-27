@@ -12,9 +12,11 @@ init python:
                 self.start_time = st
             r = renpy.Render(1920, 1080)
             s = r.canvas()
-            r.place(NewStatBlockDisplayable(Fighters.get("ARCEUS")))
-
-            renpy.redraw(self, 0)
+            fight_menu = NewFightMenuDisplayable(Fighters.get("ARCEUS"))
+            fighterbox_1 = NewStatBlockDisplayable(Fighters.get("ARCEUS"))
+            fighterbox_1.define_box_height()
+            r.place(fight_menu, 0, 1080-fight_menu.height)
+            r.place(fighterbox_1, 0, (1080-fight_menu.height)-fighterbox_1.render_height - 2)
             return r
 
         def event(self, ev, x, y, st):
@@ -41,8 +43,9 @@ init python:
             self.attack_text = Text(str(self.fighter.attack_points), textalign = 0.0, size = 32, yanchor = 0.5)
             self.stat_back_big = Image("gui/rpg/tall_box.png")
             self.stat_back_small = Image("gui/rpg/small_box.png")
-            self.attack_button = ImageButton("gui/rpg/attack_button.png")
+            self.attack_button = AttackButtonDisplayable()
             self.defend_button = ImageButton("gui/rpg/defend_button.png")
+            self.render_height = 105
             if self.fighter.sprite:
                 self.fighter_image = self.fighter.sprite
             else:
@@ -51,10 +54,8 @@ init python:
             super().__init__(self)
 
         def render(self, width, height, st, at):
-            render_height = 105
-            if self.is_turn:
-                render_height = 201
-            r = renpy.Render(475, render_height)
+            self.define_box_height()
+            r = renpy.Render(475, self.render_height)
             if self.is_turn:
                 r.place(self.stat_back_big)
                 r.place(self.attack_button, x = 10, y = 105) 
@@ -73,10 +74,36 @@ init python:
             r.place(self.attack_text, x = 138, y = (105/16)*5)
             r.place(self.defense_stat_icon, x = 108, y = (105/16)*11)
             r.place(self.defense_text, x = 138, y = (105/16)*11)
-
-            renpy.redraw(self, 0)
             return r
 
+        def define_box_height(self):
+            self.render_height = 105
+            if self.is_turn:
+                self.render_height = 201
+            
+
+
+    class NewFightMenuDisplayable(renpy.Displayable):
+        def __init__(self, fighter: Fighter):
+            self.fighter = fighter
+            self.attack_count = len(self.fighter.attacks)
+            self.height = 262
+            self.width = 1916
+            super().__init__(self)
+        
+        def render(self, width, height, st, at):
+            r = renpy.Render(self.width, self.height)
+            r.place(Image("gui/rpg/main_box.png"))
+            return r
+
+    class AttackButtonDisplayable(renpy.Displayable):
+        def __init__(self):
+            super().__init__(self)
+        
+        def render(self, width, height, st, at):
+            r = renpy.Render(215,87)
+            r.place(Image("gui/rpg/attack_button.png"))
+            return r
 
 screen newrpggame():
     default newrpggame = NewRPGGameDisplayable()
