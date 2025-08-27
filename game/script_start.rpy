@@ -2612,6 +2612,11 @@ image sleigh:
     ease 3.0 rotate 3
     repeat
 
+# New in DX!
+image hendry = "characters/hendry.png"
+image hendry clap1 = "characters/hendry_clap1.png"
+image hendry clap2 = "characters/hendry_clap2.png"
+
 image snow_pile = "snow_pile.png"
 
 # Static Images

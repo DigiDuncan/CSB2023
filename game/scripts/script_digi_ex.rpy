@@ -89,7 +89,7 @@ init python:
 
     def digi_ex_displayable(st, at):
         # img = "secret/dd/digi_back.png" if 5 < st % 20 < 15 else "images/characters/digi.png"
-        img = "images/characters/digi.png"
+        img = "images/characters/digi/thinking.png"
         return Transform(img,
             xanchor = 0.5, yanchor = 0.5,
             xpos = 0.5 + move_dir(st, enemy_chart_index, 0.05)[1],
