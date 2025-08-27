@@ -426,5 +426,11 @@
         "caption": "Tate needed this sound effect for something in the game, but we forgot where it was supposed to go.",
         "album_art": "goober.png",
         "need_label": "ce_introductions"
+    },
+    "hendry_full.png": {
+        "type": "image",
+        "title": "Full Hendry",
+        "caption": "Digi thought it would be a good idea to give Joe Hendry legs. It wasn't!",
+        "need_character": "hendry"
     }
 }

@@ -687,6 +687,17 @@
         "bio": "Whether it's racing cars or wrecking them, they love anything car-related. They have pushed the limits of many vehicles as well as of their components. Sometimes they overdo it, and because of this, they were kicked out of the original {i}Top Gear{/i} and had to make a new spin-off.",
         "zoom": 0.733
     },
+    "hendry": {
+        "full_name": "Joe Hendry",
+        "pronouns": "(he/him)",
+        "sprites": {
+            "Default": "images/characters/hendry.png",
+            "About To Clap": "images/characters/hendry_clap1.png",
+            "Clap": "images/characters/hendry_clap2.png"
+        },
+        "quote": "I believe in Joe Hendry!",
+        "bio": "Joe Hendry is a well known hero, from London, to Paris, to Tokyo! Just say his name and he appears!"
+    },
     "hoh_worker": {
         "full_name": "HoH SiS Workers",
         "sprites": {
