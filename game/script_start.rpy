@@ -516,6 +516,7 @@ define mike = Character("Mike",  callback = renpy.partial(char_callback, name = 
 
 # DX Finale Character Definitions
 define perfect_billy = Character("Perfect Billy", callback = renpy.partial(char_callback, name = "billy", beep = "billy"), screen = "perfect_billy_text")
+define fiddle = Character("Fiddleford", callback = char_callback)
 
 # DX Albu
 define cashier_nobeep = Character("Cashier", callback = renpy.partial(char_callback, name = "cashier", play_beeps = False))
@@ -3778,6 +3779,7 @@ default lunatic_votes = 0
 default pencil_votes = 0
 default science_votes = 0
 default cath_votes = 0
+default blind_votes = 0
 default total_votes = 0
 default cath_counter = 0
 default god_money = False
@@ -3794,6 +3796,8 @@ default blind_check = False
 default blue_check = False
 default con_start = False
 default gun_get = False
+default fiddle_search = False
+default quest_finished = False
 
 # Checks: DX Christmas
 default tree_first = False

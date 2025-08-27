@@ -534,6 +534,8 @@ label dx_after_seek_competitors:
     menu:
         "Pick a cult:"
         "Scientology":
+            if gun_get == True:
+                jump dx_after_science_quest
             jump dx_after_science_ask
         "Pencil Cult":
             jump dx_after_pencil_ask
@@ -1426,6 +1428,7 @@ label dx_after_blindeye_ask:
     blind_eye "That would be great! We really need them to help fix our gun."
     cs "Sure, I'll be back soon!"
     $ blind_check = True
+    $ fiddle_search = True
     n "CS heads back to the convention floor."
     cs "Well, now I have to find this guy..."
     cs "Fiddleford? I think their name was?"
@@ -1433,6 +1436,8 @@ label dx_after_blindeye_ask:
     jump dx_after_seek_competitors
 
 label dx_after_blindeye_reask:
+    if quest_finished == True:
+        jump dx_after_blindeye_quest
     cs "Maybe I should check on the Blind Eye guys again."
     n "CS rushes over to the Society of the Blind Eye."
     # After asking Blue Branch
@@ -1533,6 +1538,7 @@ label dx_after_science_quest:
     n "CS heads back to the convention floor."
     cruise "Fuckin' weirdo..."
     cs "Now that I've done what they asked, I should go talk to them."
+    $ quest_finished = True
     jump dx_after_seek_competitors
 
 
@@ -1548,6 +1554,8 @@ label dx_after_blindeye_quest:
     blind_eye "You didn't mess with anyone else's mind, correct?"
     cs "Nope!"
     blind_eye "Great. In return, we will give you most of our votes."
+    $ blind_votes += 15
+    $ total_votes += blind_votes
     cs "Woohoo!"
     blind_eye "Actually, we wouldn't mind giving you the rest of our votes, if you will comply to one final task."
     cs "Um, sure? What is it?"
@@ -1580,6 +1588,8 @@ label dx_after_blindeye_quest:
             cs "I'm gonna go now."
             blind_eye "Alright! See you at the end!"
             n "CS goes back to the convention floor."
+            $ blind_votes += 5
+            $ total_votes += blind_votes
             cs "I don't really like this song, but I guess this is a small price to pay for the chance to go home..."
             jump dx_after_seek_competitors
 
@@ -1603,7 +1613,7 @@ label dx_after_branch_ask:
     jump menu_branch_ask
 
 label menu_branch_ask:
-    if blind_check:
+    if fiddle_search:
         menu:
             "Ask for help again":
                 jump dx_after_cult_questions
@@ -1655,6 +1665,7 @@ label dx_after_branch_fiddleford:
     cs "Well, that was weird, the leader just tried to push me away..."
     cs "I wonder if the Blind Eye people have found him themselves..."
     cs "Oh well..."
+    $ fiddle_search = False
     jump dx_after_seek_competitors
 
 label dx_after_branch_ask2:
