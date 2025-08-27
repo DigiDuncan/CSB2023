@@ -291,7 +291,7 @@ label dx_after_back_to_story:
     scene cult_con
     show cs disappointed at center
     with dissolve
-    play music ten_feet_away if_changed
+    play music ten_feet_away_1 if_changed
     music ten_feet_away
     cs "God, what the fuck is all of this?"
     if fun_value(FUN_VALUE_MUSIC):
@@ -311,7 +311,7 @@ label dx_after_back_to_story:
     scene cult_con
     show cs
     with dissolve
-    play music ten_feet_away if_changed
+    play music ten_feet_away_1 if_changed
     music ten_feet_away
     $ total_votes = 0
     cs "Well, I guess I can't leave, now!"
@@ -372,7 +372,7 @@ label dx_after_back_to_story:
     scene blue_branch
     show cultist_2 at right
     show cultist_3 at mid_mid_right
-    show cultist at mid_right
+    show cultist behind cultist_2 at mid_right
     with dissolve
     cultist_2 "Guys, how are we gonna win this year? CultCon is filled with {i}actual{/i} competitors!"
     cultist_3 "Yeah, usually the cults with the most followers would turn out to be human traffickers, or would torture their followers, and lose."
@@ -402,12 +402,10 @@ label dx_after_back_to_story:
 # CULT CON INTRO
 
 label dx_after_cult_questions:
-    play music ten_feet_away if_changed
-    music ten_feet_away
     scene blue_branch
     show cultist_2 at right
     show cultist_3 at mid_mid_right
-    show cultist at mid_right
+    show cultist behind cultist_2 at mid_right
     show cs cultist at left
     cultist "Is there anything else you would like to know about?"
     menu:
@@ -422,12 +420,10 @@ label dx_after_cult_questions:
             jump dx_after_competiton_start
 
 label dx_after_cultcon_ask:
-    play music ten_feet_away if_changed
-    music ten_feet_away
     scene blue_branch
     show cultist_2 at right
     show cultist_3 at mid_mid_right
-    show cultist at mid_right
+    show cultist behind cultist_2 at mid_right
     show cs cultist at left
     cs "Tell me more about how CultCon works."
     cultist "Well, you see, CultCon is mainly just an event for cultists to meet up and share ideas, teachings, and other cult-related topics."
@@ -438,17 +434,14 @@ label dx_after_cultcon_ask:
     jump dx_after_cult_questions
 
 label dx_after_competitors_ask:
-    play music ten_feet_away if_changed
-    music ten_feet_away
     scene blue_branch
     show cultist_2 at right
     show cultist_3 at mid_mid_right
-    show cultist at mid_right
+    show cultist behind cultist_2 at mid_right
     show cs cultist at left
     cs "Who are the main competitors this year?"
     cultist "Well, there are the pencil guys who usually end up in dead last, so they give their vote to us most of the time."
-    cultist "Our main opponent is the Scientologists, because they have so many numbers, and aren't {i}completely{/i} psycho."
-    # this next line is... difficult to reword. i need context - tate
+    cultist "Our main opponent is the Scientologists. They have so many numbers, and they aren't {i}completely{/i} psycho."
     cultist "We had the Branch Davidians here that one year, and, lemme just tell you... Yikes, those guys are fucking oblivious to anything their leader says."
     cultist "Anyway, yeah, they mainly have an advantage because they got that guy from Top Gun in their ranks now."
     cs "Tom Cruise?"
@@ -457,12 +450,10 @@ label dx_after_competitors_ask:
     jump dx_after_cult_questions
 
 label dx_after_win_ask:
-    play music ten_feet_away if_changed
-    music ten_feet_away
     scene blue_branch
     show cultist_2 at right
     show cultist_3 at mid_mid_right
-    show cultist at mid_right
+    show cultist behind cultist_2 at mid_right
     show cs cultist at left
     cs "So, how do we win the competition?"
     cultist "Well, all of the cults have a certain number of votes they can give out to other cults that they are impressed by."
@@ -474,12 +465,12 @@ label dx_after_win_ask:
     jump dx_after_cult_questions
 
 label dx_after_competiton_start:
-    play music ten_feet_away if_changed
+    play music ten_feet_away_1 if_changed
     music ten_feet_away
     scene blue_branch
     show cultist_2 at right
     show cultist_3 at mid_mid_right
-    show cultist at mid_right
+    show cultist behind cultist_2 at mid_right
     show cs cultist at left
     cs "I think I'm good."
     cultist "Alright, awesome."
@@ -758,8 +749,8 @@ label dx_after_science_ask:
         cs "I could try asking them for money, it's worth a shot."
         hide cs with moveoutright
         n "CS runs over to Scientology stand."
+        show cruise flipped at mid_right with dissolve
         show cs cultist at left with moveinleft
-        show cruise flipped at mid_right
         show cruise with determination
         cruise "Hey, welcome back! Want to give up already?"
         show cs cultist
@@ -808,8 +799,8 @@ label dx_after_science_ask:
         cs "I guess I could see if Tom Cruise has anything else to say."
         hide cs with moveoutright
         n "CS runs over to Scientology stand."
+        show cruise flipped at mid_right with dissolve
         show cs cultist at left with moveinleft
-        show cruise flipped at mid_right
         cs "Hey! I'm back!"
         show cruise
         cruise "What do you want?"
@@ -831,8 +822,8 @@ label dx_after_science_ask:
     cs "Y'know, the Scientologists think they are all that, but maybe if I talk to them, I can convince them to vote for us."
     hide cs with moveoutright
     n "CS runs over to Scientology stand."
+    show cruise flipped at mid_right with dissolve
     show cs cultist at left with moveinleft
-    show cruise flipped at mid_right
     n "When he gets there, he sees Tom Cruise standing nearby, greeting other cult members walking by."
     cruise "Yeah, and make sure to watch my movies, too!"
     cs "Hey, guy! CS here!"
@@ -892,7 +883,7 @@ label dx_after_catholic_ask:
     if god_money:
         hide cs with moveoutright
         n "CS goes to check out the Catholics."
-        show priest at mid_right
+        show priest at mid_right with dissolve
         show cs cultist at left with moveinleft
         if cath_check2:
             priest "You have already donated. Thank you for your contribution!"
@@ -921,7 +912,7 @@ label dx_after_catholic_ask:
         cs "Ugh, alright, let's see what those Christians have to offer."
         hide cs with moveoutright
         n "CS goes to check out the Catholics."
-        show priest at mid_right
+        show priest at mid_right with dissolve
         show cs cultist at left with moveinleft
         priest "I thought I told you to leave!"
         cs "Look, I'm sorry, I'm just a bit stressed actually because a lot has happened today..."
@@ -934,7 +925,7 @@ label dx_after_catholic_ask:
     cs "They just look like Christians!"
     hide cs with moveoutright
     n "CS goes to check out the Catholics."
-    show priest at mid_right
+    show priest at mid_right with dissolve
     show cs cultist at left with moveinleft
     n "As CS approaches the priest, he immediately greets him."
     priest "Hello! Would you like to donate to the church?"
@@ -1223,13 +1214,15 @@ label dx_after_lunatic_jump:
     show cs disappointed cultist
     cs "Woah, wait--"
     scene black with dissolve
-    n "The cultists take CS into a limbo-like area, where he remembers all of the adventures from other timelines."
-    show lunatic_cultist at center with moveinright
-    stop music
-    stop music2
-    stop music3
-    stop music4
+    stop music fadeout 2.0
+    stop music2 fadeout 2.0
+    stop music3 fadeout 2.0
+    stop music4 fadeout 2.0
     music end
+    n "The cultists take CS into a limbo-like area, where he remembers all of the adventures from other timelines."
+    show portalbg with dissolve
+    show lunatic_cultist at center with moveinright
+
     play music space_classroom if_changed
     music space_classroom
     l_cultist "Alright, cs... 188?"
@@ -1602,7 +1595,7 @@ label dx_after_branch_ask:
     scene blue_branch
     show cultist_2 at right
     show cultist_3 at mid_mid_right
-    show cultist at mid_right
+    show cultist behind cultist_2 at mid_right
     with dissolve
     show cs cultist at left with moveinleft
     $ blue_check = True
@@ -1668,7 +1661,7 @@ label dx_after_branch_ask2:
     scene blue_branch
     show cultist_2 at right
     show cultist_3 at mid_mid_right
-    show cultist at mid_right
+    show cultist behind cultist_2 at mid_right
     show cs cultist at left
     cs "I think I have impressed all the groups enough!"
     cultist_2 "Nice job!"

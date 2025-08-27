@@ -191,7 +191,7 @@ screen pencil2game():
 label play_pencil2_game:
     window hide
     $ quick_menu = False
-    play music get_the_funk volume 0.5 if_changed
+    play music get_the_funk noloop volume 0.5 if_changed
     $ persistent.heard.add("get_the_funk")
     call screen pencil2game
     stop music
