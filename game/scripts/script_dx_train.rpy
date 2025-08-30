@@ -714,7 +714,7 @@ label train_boarding:
         tate "Hm?"
         amtrak_stewardess "Bedroom {i}~ Day.{/i}"
         show tate sheepish
-        tate "I know, but–-{w=1.0}{nw}"
+        tate "I know, but--{w=1.0}{nw}"
         amtrak_stewardess "Keep up with the bit."
         show tate sad
         tate "But, CS gets away with it all the time--!"
