@@ -14,6 +14,7 @@ init python:
 # If music is so good, why is there no Music 2?
 init python:
     renpy.music.register_channel("sound2", "sfx")
+    renpy.music.register_channel("music5", "music")
     renpy.music.register_channel("music4", "music")
     renpy.music.register_channel("music3", "music")
     renpy.music.register_channel("music2", "music", movie=True)
@@ -2305,6 +2306,10 @@ image priest = "characters/priest.png"
 image priest flipped = "flip:characters/priest.png"
 image lunatic_cultist = "characters/lunatic_cultist.png"
 image lunatic_cultist flipped = "flip:characters/lunatic_cultist.png"
+image blind_eye = "characters/blind_eye.png"
+image blind_eye flipped = "flip:characters/blind_eye.png"
+image blind_eye_leader = "characters/blind_eye_leader.png"
+image blind_eye_leader flipped = "flip:characters/blind_eye_leader.png"
 
 # Back to the future: CS edition generated assets
 image after_true_title = Text("{size=+196}Spring 202X", text_align=0.5)
@@ -3411,6 +3416,7 @@ define audio.ten_feet_away_2 = "10_feet_away_2.ogg"
 define audio.ten_feet_away_3 = "10_feet_away_3.ogg"
 define audio.ten_feet_away_4 = "10_feet_away_4.ogg"
 define audio.interference2 = "<from 276>interference.ogg"
+define audio.blanchin_remix = "blanchin_remix.ogg"
 
 # CSBIII DX Finale Music
 define audio.funvalueland = "funvalueland.ogg"
@@ -3793,11 +3799,14 @@ default lunatic_check3 = False
 default science_check = False
 default science_check2 = False
 default blind_check = False
+default blind_check2 = False
+default blind_check3 = False
 default blue_check = False
 default con_start = False
 default gun_get = False
 default fiddle_search = False
 default quest_finished = False
+default blanchin = False
 
 # Checks: DX Christmas
 default tree_first = False

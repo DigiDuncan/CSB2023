@@ -528,6 +528,8 @@ label dx_after_seek_competitors:
         play music3 [ "<sync music>audio/10_feet_away_3.ogg", ten_feet_away_3 ] if_changed
     if total_votes >= 75:
         play music4 [ "<sync music>audio/10_feet_away_4.ogg", ten_feet_away_4 ] if_changed
+    if blanchin == True:
+        play music5 [ "<sync music>audio/blanchin_remix.ogg", blanchin_remix ] if_changed
     scene cult_con
     show cs cultist at center
     cs "Which cult should I look for?"
@@ -657,6 +659,7 @@ label dx_after_pencil_ask:
     stop music2 fadeout 3.0
     stop music3 fadeout 3.0
     stop music4 fadeout 3.0
+    stop music5 fadeout 3.0
     music end
     hide onscreen_sharpener with dissolve
     n "The pencil man places the sharpener onto the table next to them, and then pulls out a pack of 60 pencils."
@@ -675,6 +678,7 @@ label dx_after_pencil_ask:
     stop music2 fadeout 3.0
     stop music3 fadeout 3.0
     stop music4 fadeout 3.0
+    stop music5 fadeout 3.0
     music end
     show pencilroom
     show pencilguy at right
@@ -1220,6 +1224,7 @@ label dx_after_lunatic_jump:
     stop music2 fadeout 2.0
     stop music3 fadeout 2.0
     stop music4 fadeout 2.0
+    stop music5 fadeout 2.0
     music end
     n "The cultists take CS into a limbo-like area, where he remembers all of the adventures from other timelines."
     show portalbg with dissolve
@@ -1405,7 +1410,12 @@ label dx_after_blindeye_ask:
         jump dx_after_blindeye_reask
     cs "Those guys look pretty strange."
     cs "They look like they have eyes on their hoods!"
+    hide cs with moveoutright
     n "CS walks over to the optical-hooded fellows."
+    show blind_eye_leader at mid_right
+    show blind_eye at right behind blind_eye_leader
+    with dissolve
+    show cs cultist at mid_left with moveinleft
     cs "Hey guys! See Ess here!"
     blind_eye "Well, we prefer not to see."
     blind_eye "We are the Society of the Blind Eye, and we remove traumatizing memories from our local town."
@@ -1427,9 +1437,15 @@ label dx_after_blindeye_ask:
     cs "I can ask around for them, if you want me to."
     blind_eye "That would be great! We really need them to help fix our gun."
     cs "Sure, I'll be back soon!"
+    if god_money:
+        jump spare_change
     $ blind_check = True
     $ fiddle_search = True
+    show cs cultist flipped with determination
+    hide cs cultist with moveoutleft
     n "CS heads back to the convention floor."
+    scene cult_con with dissolve
+    show cs cultist at center with moveinleft
     cs "Well, now I have to find this guy..."
     cs "Fiddleford? I think their name was?"
     cs "Well anyways..."
@@ -1438,14 +1454,20 @@ label dx_after_blindeye_ask:
 label dx_after_blindeye_reask:
     if quest_finished == True:
         jump dx_after_blindeye_quest
+    cs "Maybe I should check on the Blind Eye guys again."
+    hide cs cultist with moveoutright
+    n "CS rushes over to the Society of the Blind Eye."
     if gun_get == True:
+        show blind_eye_leader at mid_right
+        show blind_eye at right behind blind_eye_leader
+        with dissolve
+        show cs cultist at mid_left with moveinleft
         blind_eye "Did you deal with the Scientologists yet?"
         cs "Oh yeah, I gotta go do that!"
         jump dx_after_seek_competitors    
-    cs "Maybe I should check on the Blind Eye guys again."
-    n "CS rushes over to the Society of the Blind Eye."
     # After asking Blue Branch
     if blue_check:
+        show cs cultist at mid_left with moveinleft
         cs "Huh, where did they go?"
         cs "Maybe they went looking for him themselves?"
         n "CS spots a door slightly cracked open next to the wall where they were standing."
@@ -1459,6 +1481,7 @@ label dx_after_blindeye_reask:
         fiddle "Okay wait I can--"
         cs "Whaaaat?!?"
         cs "You're the leader of Blue Branch??"
+        $ blue_check = False
         fiddle "Okay well-- Yes-- It's a long story..."
         cs "This is fucking insane, hold on..."
         blind_eye "You seem to be not handling the situation well."
@@ -1493,16 +1516,34 @@ label dx_after_blindeye_reask:
         blind_eye "It's not a toy, it's used to remove traumatizing memories."
         cs "Don't worry, I won't use this thing on anyone else. Promise."
         blind_eye "Alright well, good luck."
+        show cs cultist flipped with determination
+        hide cs cultist with moveoutleft
         n "CS takes the gun and heads back to the convention."
         $ gun_get = True
+        scene cult_con with dissolve
+        show cs cultist at center with moveinleft
         cs "Alright, time to find those Scientologists."
         jump dx_after_seek_competitors
-
+    show blind_eye_leader at mid_right
+    show blind_eye at right behind blind_eye_leader
+    with dissolve
+    show cs cultist at mid_left with moveinleft
     blind_eye "Hey again, did you find Fiddleford yet?"
     cs "Not yet, but..."
     # Ask for money
+label spare_change:
     if god_money:
         cs "Do you guys have any spare change?"
+        if blind_check2 == True:
+            blind_eye "I believe you've already come to ask us that question."
+            cs "Whoops, my bad."
+            cs "Pretend I didn't do that."
+            show cs cultist flipped with determination
+            hide cs cultist with moveoutleft
+            n "CS heads back to the convention floor."
+            scene cult_con with dissolve
+            show cs cultist at center with moveinleft
+            jump dx_after_seek_competitors
         blind_eye "..."
         pause 2.0
         cs "Sorry, I'm not trying to be a beggar, there is just this--{w=1.0}{nw}"
@@ -1519,14 +1560,36 @@ label dx_after_blindeye_reask:
         blind_eye "Yes, they are an extremely wealthy family from the town we come from."
         blind_eye "We don't really want to do anything with them, so I guess it's better that you have this now."
         cs "Alright, well, thanks!"
+        if blind_check == False:
+            $ blind_check = True
+            $ fiddle_search = True
+            show cs cultist flipped with determination
+            hide cs cultist with moveoutleft
+            n "CS heads back to the convention floor."
+            scene cult_con with dissolve
+            show cs cultist at center with moveinleft
+            cs "Well, now I have to find this guy..."
+            cs "Fiddleford? I think their name was?"
+            cs "Well anyways..."
+            $ blind_check2 = True            
+            jump dx_after_seek_competitors
+        show cs cultist flipped with determination
+        hide cs cultist with moveoutleft
         n "CS heads back to the convention floor."
+        scene cult_con with dissolve
+        show cs cultist at center with moveinleft
         cs "Well, that was weird..."
+        $ blind_check2 = True     
         jump dx_after_seek_competitors
     # Keep looking
     cs "... I'll keep looking!"
     blind_eye "Thank you. Your service is very much appreciated."
     cs "No problem!"
+    scene cult_con with dissolve
+    show cs cultist at center with moveinleft
     n "CS keeps looking for Fiddleford."
+    scene cult_con with dissolve
+    show cs cultist at center with moveinleft
     cs "Alright, I just gotta find this guy..."
     jump dx_after_seek_competitors
 
@@ -1536,15 +1599,23 @@ label dx_after_science_quest:
         cs "He gives me the creeps..."
         jump dx_after_seek_competitors
     cs "Let's go talk to Mr. Cruise."
+    hide cs cultist with moveoutright
     n "CS walks over to the Scientologists."
+    show cruise flipped at mid_right with dissolve
+    show cs cultist at mid_left with moveinleft
+    show cruise with determination
     cruise "Hey, what do you want now?"
     n "CS types in \"blind eye\" into the gun and blasts Tom Cruise right in the head."
     cruise "Hey! What the hell did you do to me?"
     cruise "Do you know anything about the Society of the Blind Eye?"
     cruise "Who? What are you even talking about?"
     cs "That's all I needed to hear! Thank you!"
+    show cs cultist flipped with determination
+    hide cs cultist with moveoutleft
     n "CS heads back to the convention floor."
     cruise "Fuckin' weirdo..."
+    scene cult_con with dissolve
+    show cs cultist at center with moveinleft
     cs "Now that I've done what they asked, I should go talk to them."
     $ quest_finished = True
     jump dx_after_seek_competitors
@@ -1552,8 +1623,27 @@ label dx_after_science_quest:
 
 label dx_after_blindeye_quest:
     # After Blind Eye Quest
+    if blind_check3 == True:
+        cs "I think I am finished talking to those guys..."
+        if god_money == False:
+            cs "For now, at least."
+            jump dx_after_seek_competitors
+        if blind_check2 == False and god_money == True:
+            cs "...But I could still ask them for money."
+            hide cs cultist with moveoutright
+            n "CS runs over to the Blind Eye cult."
+            show blind_eye_leader at mid_right
+            show blind_eye at right behind blind_eye_leader
+            with dissolve
+            show cs cultist at mid_left with moveinleft
+            jump spare_change
     cs "Time to go tell them that I'm done!"
+    hide cs cultist with moveoutright
     n "CS runs over to the Blind Eye cult."
+    show blind_eye_leader at mid_right
+    show blind_eye at right behind blind_eye_leader
+    with dissolve
+    show cs cultist at mid_left with moveinleft
     cs "Hey, I finished your task!"
     blind_eye "Oh, cool. Thank you for doing that for us."
     n "CS hands the gun back to the Blind Eye Guys."
@@ -1576,14 +1666,25 @@ label dx_after_blindeye_quest:
         "No":
             cs "Sorry, I already have a lot going on in my head right now, I'll pass."
             blind_eye "Alright, fine..."
+            if god_money == True:
+                cs "Also..."
+                jump spare_change
+            show cs cultist flipped with determination
+            hide cs cultist with moveoutleft
             n "CS heads back to the convention."
             blind_eye "One day, someone will listen to our epic remix..."
+            scene cult_con with dissolve
+            show cs cultist at center with moveinleft
+            $ blind_check3 = True
             jump dx_after_seek_competitors
         "Yes":
             cs "Eh, why not?"
             blind_eye "Awesome!"
             n "The cultist tweaks the gun and types in his prompt in."
             blind_eye "Here goes nothing..."
+            $ blanchin = True
+            if blanchin == True:
+                play music5 [ "<sync music>audio/blanchin_remix.ogg", blanchin_remix ] if_changed  
             blind_eye "Did it work?"
             cs "Yeah..."
             blind_eye "...Do you like it?"
@@ -1595,10 +1696,18 @@ label dx_after_blindeye_quest:
             blind_eye "Yesss! Finally someone likes our song!"
             cs "I'm gonna go now."
             blind_eye "Alright! See you at the end!"
+            if god_money == True:
+                cs "Also..."
+                jump spare_change
+            show cs cultist flipped with determination
+            hide cs cultist with moveoutleft
             n "CS goes back to the convention floor."
             $ blind_votes += 5
             $ total_votes += blind_votes
+            scene cult_con with dissolve
+            show cs cultist at center with moveinleft
             cs "I don't really like this song, but I guess this is a small price to pay for the chance to go home..."
+            $ blind_check3 = True
             jump dx_after_seek_competitors
 
 # BLUE BRANCH
@@ -1624,6 +1733,7 @@ label dx_after_branch_ask:
         cultist_3 "No, did you?"
         cultist_2 "...no..."
         cs "Oh well, I guess I'll come back later."
+        show cs cultist flipped with determination
         hide cs with moveoutleft
         scene cult_con
         with dissolve
@@ -1687,7 +1797,11 @@ label dx_after_branch_fiddleford:
     cs "So, uhh..."
     cultist "Why don't you head back to the convention? You gotta get more votes for us!"
     cs "Yeah, you're right."
+    show cs cultist flipped with determination
+    hide cs with moveoutleft
     n "CS heads back to the convention floor."
+    scene cult_con with dissolve
+    show cs cultist at center with moveinleft
     cs "Well, that was weird, the leader just tried to push me away..."
     cs "I wonder if the Blind Eye people have found him themselves..."
     cs "Oh well..."
@@ -1714,6 +1828,7 @@ label dx_after_branch_ask2:
     stop music2 fadeout 3.0
     stop music3 fadeout 3.0
     stop music4 fadeout 3.0
+    stop music5 fadeout 3.0
     music end
     scene black with dissolve
     jump dx_after_convention_end
@@ -1725,6 +1840,7 @@ label dx_after_convention_end:
     music interference2
     scene conferencetv with dissolve
     cultist "Here are the results!"
+    window hide
     scene conferencetv at Move((0.0 , -1.0), (0.0, 0.0), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     pause 3.0
     show screen cultcon_votes
