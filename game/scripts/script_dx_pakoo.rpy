@@ -1438,6 +1438,10 @@ label dx_after_blindeye_ask:
 label dx_after_blindeye_reask:
     if quest_finished == True:
         jump dx_after_blindeye_quest
+    if gun_get == True:
+        blind_eye "Did you deal with the Scientologists yet?"
+        cs "Oh yeah, I gotta go do that!"
+        jump dx_after_seek_competitors    
     cs "Maybe I should check on the Blind Eye guys again."
     n "CS rushes over to the Society of the Blind Eye."
     # After asking Blue Branch
@@ -1527,6 +1531,10 @@ label dx_after_blindeye_reask:
     jump dx_after_seek_competitors
 
 label dx_after_science_quest:
+    if quest_finished == True:
+        cs "I already did the Blind Eye's deed, no need to go talk to Tom Cruise again!"
+        cs "He gives me the creeps..."
+        jump dx_after_seek_competitors
     cs "Let's go talk to Mr. Cruise."
     n "CS walks over to the Scientologists."
     cruise "Hey, what do you want now?"
@@ -1602,13 +1610,31 @@ label dx_after_branch_ask:
     show cs cultist flipped with determination
     hide cs with moveoutleft
     n "CS walks back to check on Blue Branch."
+    if blue_check == True:
+        scene blue_branch
+        show cultist_2 at right
+        show cultist_3 at mid_mid_right
+        with dissolve
+        show cs cultist at left with moveinleft
+        cs "Huh."
+        cs "Where'd the main guy go?"
+        cultist_2 "I think they went to the bathroom or something?"
+        cultist_3 "Wait, our leader is gone?"
+        cultist_2 "Yeah idiot! Did you not see them leave?"
+        cultist_3 "No, did you?"
+        cultist_2 "...no..."
+        cs "Oh well, I guess I'll come back later."
+        hide cs with moveoutleft
+        scene cult_con
+        with dissolve
+        show cs cultist at center with moveinleft
+        jump dx_after_seek_competitors
     scene blue_branch
     show cultist_2 at right
     show cultist_3 at mid_mid_right
     show cultist behind cultist_2 at mid_right
     with dissolve
     show cs cultist at left with moveinleft
-    $ blue_check = True
     cultist "Welcome back! Did you need anyone else?"
     jump menu_branch_ask
 
@@ -1665,6 +1691,7 @@ label dx_after_branch_fiddleford:
     cs "Well, that was weird, the leader just tried to push me away..."
     cs "I wonder if the Blind Eye people have found him themselves..."
     cs "Oh well..."
+    $ blue_check = True
     $ fiddle_search = False
     jump dx_after_seek_competitors
 

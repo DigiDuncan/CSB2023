@@ -1226,7 +1226,7 @@ label england_japan:
     cs "I don't really know where to go there, I guess I'll have to see when I get there."
     arceus "Well you have to get the Domino's Hatsune Miku Pizza."
     kitty "Or sing some Japanese Karaoke!"
-    cs ",, I'll have to let you guys know how I'm doing after the trip."
+    cs "I'll have to let you guys know how I'm doing after the trip."
     arceus "Welp, should we take you back to the airport?"
     cs "Sure, let's go."
     stop music fadeout 3.0
