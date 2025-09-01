@@ -518,6 +518,7 @@ define mike = Character("Mike",  callback = renpy.partial(char_callback, name = 
 # DX Finale Character Definitions
 define perfect_billy = Character("Perfect Billy", callback = renpy.partial(char_callback, name = "billy", beep = "billy"), screen = "perfect_billy_text")
 define fiddle = Character("Fiddleford", callback = char_callback)
+define cultcon_leader = Character("Cultcon Leader", callback = char_callback)
 
 # DX Albu
 define cashier_nobeep = Character("Cashier", callback = renpy.partial(char_callback, name = "cashier", play_beeps = False))
@@ -2298,6 +2299,7 @@ image conferencetv = "bg/conferencetv.png"
 image science_zone = "bg/science_rules.png"
 image cath_zone = "bg/cathlicks.png"
 image blind_zone = "bg/blind_zone.png"
+image janitor_closet = "bg/janitor_closet.png"
 
 # Back to the future: CS edition characters
 image renovator = "characters/renovator.png"

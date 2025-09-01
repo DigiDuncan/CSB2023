@@ -1488,11 +1488,17 @@ label dx_after_blindeye_reask:
         cs "Maybe they went looking for him themselves?"
         n "CS spots a door slightly cracked open next to the wall where they were standing."
         cs "Hmm..."
-        cs "I'm gonna go take a peak..."
+        cs "I'm gonna go take a peek..."
+        hide cs with moveoutright
+        scene black with dissolve
         n "CS gently opens the door."
         cs "Man, I can't see a thing in here!"
         cs "Where's the light switch?"
         cs "Aha! Found it!"
+        scene janitor_closet
+        show cs cultist at left
+        show blind_eye_leader at right
+        show cultist at mid_right
         cs "Huh?"
         fiddle "Okay wait I can--"
         cs "Whaaaat?!?"
@@ -1514,6 +1520,7 @@ label dx_after_blindeye_reask:
         fiddle "Well, I'll head back to the cult, I shouldn't leave my fellow cultists alone for too long."
         fiddle "...And remember, don't tell anyone about this.  Okay?"
         cs "Got it."
+        hide cultist with moveoutleft
         n "Fiddleford leaves the scene."
         blind_eye "Well CS, thank you for sending Fiddleford."
         cs "I didn't even know--"
@@ -1859,7 +1866,7 @@ label dx_after_convention_end:
     play music interference2 if_changed
     music interference2
     scene conferencetv with dissolve
-    cultist "Here are the results!"
+    cultcon_leader "Here are the results!"
     window hide
     scene conferencetv at Move((0.0 , -1.0), (0.0, 0.0), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     pause 3.0
@@ -1882,6 +1889,17 @@ label dx_after_convention_end:
     pause
     return
 
+label dx_after_win:
+    cultcon_leader "Well cultists and religious orgs, we have our winner for Cultcon 2003!"
+    cultcon_leader "For the first time in a while, we have ourselves a winner from a small indie cult!"
+    cultcon_leader "That's right! Our winner is..."
+    cultcon_leader "Blue Branch!"
+    cultcon_leader "Can we get someone from the cult to come up and claim the prize?"
+    cs "Woohoo! We did it guys!"
+    cultist_2 "You did it, newbie! You made us win!"
+    cultist "Well what are you waiting for? Go up there, make me proud!"
+    n "CS struts up to the main stage."
+    cultcon_leader "Congratulations! Do you have anything to say to Cultcon this year?"
 # RENAULT
 
 label dx_after_renault:
