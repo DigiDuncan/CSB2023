@@ -2295,6 +2295,9 @@ image blue_branch = "bg/bluebranch.png"
 image renault_inside = "bg/renault_inside.png"
 image cult_zone1 = "bg/cultzone1.png"
 image conferencetv = "bg/conferencetv.png"
+image science_zone = "bg/science_rules.png"
+image cath_zone = "bg/cathlicks.png"
+image blind_zone = "bg/blind_zone.png"
 
 # Back to the future: CS edition characters
 image renovator = "characters/renovator.png"

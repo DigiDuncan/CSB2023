@@ -755,7 +755,9 @@ label dx_after_science_ask:
         cs "I could try asking them for money, it's worth a shot."
         hide cs with moveoutright
         n "CS runs over to Scientology stand."
-        show cruise flipped at mid_right with dissolve
+        scene science_zone
+        show cruise flipped at mid_right 
+        with dissolve
         show cs cultist at left with moveinleft
         show cruise with determination
         cruise "Hey, welcome back! Want to give up already?"
@@ -805,7 +807,9 @@ label dx_after_science_ask:
         cs "I guess I could see if Tom Cruise has anything else to say."
         hide cs with moveoutright
         n "CS runs over to Scientology stand."
-        show cruise flipped at mid_right with dissolve
+        scene science_zone
+        show cruise flipped at mid_right
+        with dissolve
         show cs cultist at left with moveinleft
         cs "Hey! I'm back!"
         show cruise
@@ -828,7 +832,9 @@ label dx_after_science_ask:
     cs "Y'know, the Scientologists think they are all that, but maybe if I talk to them, I can convince them to vote for us."
     hide cs with moveoutright
     n "CS runs over to Scientology stand."
-    show cruise flipped at mid_right with dissolve
+    scene science_zone
+    show cruise flipped at mid_right
+    with dissolve
     show cs cultist at left with moveinleft
     n "When he gets there, he sees Tom Cruise standing nearby, greeting other cult members walking by."
     cruise "Yeah, and make sure to watch my movies, too!"
@@ -889,7 +895,9 @@ label dx_after_catholic_ask:
     if god_money:
         hide cs with moveoutright
         n "CS goes to check out the Catholics."
-        show priest at mid_right with dissolve
+        scene cath_zone
+        show priest at mid_right 
+        with dissolve
         show cs cultist at left with moveinleft
         if cath_check2:
             priest "You have already donated. Thank you for your contribution!"
@@ -918,7 +926,9 @@ label dx_after_catholic_ask:
         cs "Ugh, alright, let's see what those Christians have to offer."
         hide cs with moveoutright
         n "CS goes to check out the Catholics."
-        show priest at mid_right with dissolve
+        scene cath_zone
+        show priest at mid_right 
+        with dissolve
         show cs cultist at left with moveinleft
         priest "I thought I told you to leave!"
         cs "Look, I'm sorry, I'm just a bit stressed actually because a lot has happened today..."
@@ -931,7 +941,9 @@ label dx_after_catholic_ask:
     cs "They just look like Christians!"
     hide cs with moveoutright
     n "CS goes to check out the Catholics."
-    show priest at mid_right with dissolve
+    scene cath_zone
+    show priest at mid_right
+    with dissolve
     show cs cultist at left with moveinleft
     n "As CS approaches the priest, he immediately greets him."
     priest "Hello! Would you like to donate to the church?"
@@ -977,7 +989,7 @@ label dx_after_catholic_find:
     jump dx_after_seek_competitors
 
 label dx_after_catholic_tally:
-    scene cult_con
+    scene cath_zone
     show priest at mid_right
     show cs cultist at left
     n "Are you sure? Once you donate, you cannot come back to give more money!"
@@ -1412,6 +1424,7 @@ label dx_after_blindeye_ask:
     cs "They look like they have eyes on their hoods!"
     hide cs with moveoutright
     n "CS walks over to the optical-hooded fellows."
+    scene blind_zone
     show blind_eye_leader at mid_right
     show blind_eye at right behind blind_eye_leader
     with dissolve
@@ -1458,6 +1471,7 @@ label dx_after_blindeye_reask:
     hide cs cultist with moveoutright
     n "CS rushes over to the Society of the Blind Eye."
     if gun_get == True:
+        scene blind_zone
         show blind_eye_leader at mid_right
         show blind_eye at right behind blind_eye_leader
         with dissolve
@@ -1467,6 +1481,8 @@ label dx_after_blindeye_reask:
         jump dx_after_seek_competitors    
     # After asking Blue Branch
     if blue_check:
+        scene blind_zone
+        with dissolve
         show cs cultist at mid_left with moveinleft
         cs "Huh, where did they go?"
         cs "Maybe they went looking for him themselves?"
@@ -1524,6 +1540,7 @@ label dx_after_blindeye_reask:
         show cs cultist at center with moveinleft
         cs "Alright, time to find those Scientologists."
         jump dx_after_seek_competitors
+    scene blind_zone
     show blind_eye_leader at mid_right
     show blind_eye at right behind blind_eye_leader
     with dissolve
@@ -1601,7 +1618,9 @@ label dx_after_science_quest:
     cs "Let's go talk to Mr. Cruise."
     hide cs cultist with moveoutright
     n "CS walks over to the Scientologists."
-    show cruise flipped at mid_right with dissolve
+    scene science_zone
+    show cruise flipped at mid_right
+    with dissolve
     show cs cultist at mid_left with moveinleft
     show cruise with determination
     cruise "Hey, what do you want now?"
@@ -1632,6 +1651,7 @@ label dx_after_blindeye_quest:
             cs "...But I could still ask them for money."
             hide cs cultist with moveoutright
             n "CS runs over to the Blind Eye cult."
+            scene blind_zone
             show blind_eye_leader at mid_right
             show blind_eye at right behind blind_eye_leader
             with dissolve
@@ -1640,6 +1660,7 @@ label dx_after_blindeye_quest:
     cs "Time to go tell them that I'm done!"
     hide cs cultist with moveoutright
     n "CS runs over to the Blind Eye cult."
+    scene blind_zone
     show blind_eye_leader at mid_right
     show blind_eye at right behind blind_eye_leader
     with dissolve
