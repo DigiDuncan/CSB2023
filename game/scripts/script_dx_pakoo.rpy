@@ -1723,8 +1723,7 @@ label dx_after_blindeye_quest:
             show cs cultist flipped with determination
             hide cs cultist with moveoutleft
             n "CS goes back to the convention floor."
-            $ blind_votes += 5
-            $ total_votes += blind_votes
+            $ total_votes += 5
             scene cult_con with dissolve
             show cs cultist at center with moveinleft
             cs "I don't really like this song, but I guess this is a small price to pay for the chance to go home..."
