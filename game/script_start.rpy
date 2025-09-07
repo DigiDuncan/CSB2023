@@ -2300,6 +2300,7 @@ image science_zone = "bg/science_rules.png"
 image cath_zone = "bg/cathlicks.png"
 image blind_zone = "bg/blind_zone.png"
 image janitor_closet = "bg/janitor_closet.png"
+image stand = "bg/stand.png"
 
 # Back to the future: CS edition characters
 image renovator = "characters/renovator.png"
@@ -2315,6 +2316,8 @@ image blind_eye = "characters/blind_eye.png"
 image blind_eye flipped = "flip:characters/blind_eye.png"
 image blind_eye_leader = "characters/blind_eye_leader.png"
 image blind_eye_leader flipped = "flip:characters/blind_eye_leader.png"
+image cultcon_leader = "characters/cultleader.png"
+image cultcon_leader flipped = "flip:characters/cultleader.png"
 
 # Back to the future: CS edition generated assets
 image after_true_title = Text("{size=+196}Spring 202X", text_align=0.5)

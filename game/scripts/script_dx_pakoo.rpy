@@ -1865,10 +1865,17 @@ label dx_after_branch_ask2:
 label dx_after_convention_end:
     play music interference2 if_changed
     music interference2
-    scene conferencetv with dissolve
+    scene conferencetv
+    show cultcon_leader:
+        xpos 762
+        ypos 269
+    show stand
+    with dissolve
     cultcon_leader "Here are the results!"
     window hide
     scene conferencetv at Move((0.0 , -1.0), (0.0, 0.0), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show cultcon_leader at Move((0.397 , 0.25), (0.397, 1.25), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show stand at Move((0.341 , 0.587), (0.341 , 1.587), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     pause 3.0
     show screen cultcon_votes
     pause 3.0
