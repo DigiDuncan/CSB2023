@@ -3106,6 +3106,42 @@ image train_boss_7:
     ease 2.0 rotate -5
     repeat
 
+image cultist_fire:
+    "cultist_fire.png"
+    
+image car_chase1:
+    "mazda_cruise_firing.png"
+    ypos 0.45
+    ypos 0.455
+    ease 0.1 ypos 0.45
+    ease 0.1 ypos 0.455
+    repeat
+
+image car_chase11:
+    "car_chase1"
+    xpos 0.55
+    xpos 0.45
+    ease 1.5 xpos 0.55
+    ease 1.5 xpos 0.45
+    repeat
+
+image car_chase2:
+    "renault_moomin_firing.png"
+    xysize (788, 350)
+    ypos 0.65
+    ypos 0.655
+    ease 0.1 ypos 0.65
+    ease 0.1 ypos 0.655
+    repeat
+
+image car_chase21:
+    "car_chase2"
+    xpos 0.55
+    xpos 0.45
+    ease 1.5 xpos 0.55
+    ease 1.5 xpos 0.45
+    repeat
+
 layeredimage train_boss_final:
     yanchor 1.10
     zoom 1.25
