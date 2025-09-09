@@ -198,6 +198,14 @@ screen hatch_button():
 
     add Flashlight()
 
+screen lightgungame():
+    modal True
+    imagebutton:
+        auto "gui/light_gun/pot_%s.png"
+        hover_sound "audio/sfx/sfx_select.ogg"
+        at barrel_moving
+        action Play("sound", "audio/sfx/sfx_bucket.ogg"), Hide("lightgungame"), Jump("lightgamehit")
+
 screen limbo_csbutton():
     add "#000000"
     vbox xalign 0.5 yalign 0.5:

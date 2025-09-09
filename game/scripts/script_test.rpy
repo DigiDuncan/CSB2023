@@ -116,3 +116,13 @@ label test:
                     arceus "What a deal!" (multiple=3)
                     pause
                     $ renpy.full_restart()
+                "Light Gun Test":
+                    stop music
+                    show screen lightgungame
+                    pause
+                    $ renpy.full_restart()
+
+label lightgamehit:
+    show pot at barrel_hit
+    pause
+    $ renpy.full_restart()

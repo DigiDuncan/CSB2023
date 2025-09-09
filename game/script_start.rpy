@@ -325,6 +325,21 @@ transform t_people_scurvy:
     ease 2.0 rotate -15
     repeat
 
+transform barrel_moving:
+    xysize (256, 256)
+    xpos 1.0
+    ypos 0.75
+    ease 3 xpos 0.0
+    ease 3 xpos 1.0
+    repeat
+
+transform barrel_hit:
+    xysize (256, 256)
+    xpos 0.5
+    ypos 0.7
+    ease 1.5: 
+        ypos 1.25
+        rotate -300
 # Character Definitions
 
 # Generic Character Definitions
@@ -3140,6 +3155,15 @@ image car_chase21:
     xpos 0.45
     ease 1.5 xpos 0.55
     ease 1.5 xpos 0.45
+    repeat
+
+image barrel_moving:
+    "pot.png"
+    xysize (256, 256)
+    xpos 1.0
+    ypos 0.75
+    ease 3 xpos 0.0
+    ease 3 xpos 1.0
     repeat
 
 layeredimage train_boss_final:
