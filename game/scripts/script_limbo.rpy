@@ -204,7 +204,19 @@ screen lightgungame():
         auto "gui/light_gun/pot_%s.png"
         hover_sound "audio/sfx/sfx_select.ogg"
         at barrel_moving
-        action Play("sound", "audio/sfx/sfx_bucket.ogg"), Hide("lightgungame"), Jump("lightgamehit")
+        action Play("sound", "audio/sfx/sfx_bucket.ogg"), Jump("lightgamehit")
+
+screen reloadbutton():
+    add Image("gui/frame.png"):
+        yalign 0.5
+        xalign 0.5
+    vbox xalign 0.5 yalign 0.5:
+        spacing 25    
+        textbutton "Reload!":
+            xalign 0.5
+            text_textalign 0.5
+            text_size 150
+            action Hide("reloadbutton")    
 
 screen limbo_csbutton():
     add "#000000"

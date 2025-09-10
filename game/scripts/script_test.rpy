@@ -1,17 +1,20 @@
 label test:
-    scene washington_road dusk
-    show arceus dusk flipped at right
-    show cs dusk at left
-    with dissolve
-    arceus "This is a dusk test"
-    scene washington_road
-    show arceus dark at right
-    show cs dark at left
-    with dissolve
-    arceus "This is a dark test"
+    scene washington_road day
+    show cs at left
+    show arceus at right
     menu:
         "Menu test?"
         "Yes"  (type = "good"):
+            scene washington_road dusk
+            show arceus dusk flipped at right
+            show cs dusk at left
+            with dissolve
+            arceus "This is a dusk test"
+            scene washington_road
+            show arceus dark at right
+            show cs dark at left
+            with dissolve
+            arceus "This is a dark test"
             $ renpy.full_restart()
         "No"  (type = "bad"):
             $ renpy.full_restart()
@@ -123,6 +126,16 @@ label test:
                     $ renpy.full_restart()
 
 label lightgamehit:
-    show pot at barrel_hit
+    if reloading == 0:
+        show screen reloadbutton
+        $ reloading = 6
+    if hitpoints == 0:
+        hide screen lightgungame
+        show billy at center with moveinright
+        billy "You won!"
+        pause
+        $ renpy.full_restart()
+    $ hitpoints -= 1
+    $ reloading -= 1
     pause
     $ renpy.full_restart()

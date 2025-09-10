@@ -3892,6 +3892,10 @@ default in_d20_viewer = False
 default d20 = 1
 default playing_reversi_again = False
 
+# Checks: Testing
+default hitpoints = 20
+default reloading = 6
+
 # Helpful lists
 init python:
     bg_list = []
