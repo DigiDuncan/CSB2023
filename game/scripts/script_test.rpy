@@ -64,8 +64,10 @@ label test:
                             $ renpy.full_restart()
                         "Driving Test":
                             stop music
-                            show car_chase11
+                            scene hoh_hq
+                            show screen carchasegame
                             show car_chase21
+                            show cultist_fire2
                             pause
                             $ renpy.full_restart()
                 "Screen Test":

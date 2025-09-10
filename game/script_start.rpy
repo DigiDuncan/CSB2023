@@ -340,6 +340,19 @@ transform barrel_hit:
     ease 1.5: 
         ypos 1.25
         rotate -300
+
+transform cruise_car:
+    ypos 0.85
+    ypos 0.855
+    xpos 0.85
+    xpos 0.75
+    parallel:
+        ease 0.1 ypos 0.85
+        ease 0.1 ypos 0.855
+    parallel:
+        ease 1.5 xpos 0.85
+        ease 1.5 xpos 0.75
+    repeat
 # Character Definitions
 
 # Generic Character Definitions
@@ -3121,40 +3134,55 @@ image train_boss_7:
     ease 2.0 rotate -5
     repeat
 
-image cultist_fire:
+image cultist_fire1:
     "cultist_fire.png"
-    
+    xysize (240, 60)
+    align (-0.39, 4.0)
+    ypos 0.85
+    ypos 0.855
+    ease 0.1 ypos 0.85
+    ease 0.1 ypos 0.855
+    repeat   
+
+image cultist_fire2:
+    "cultist_fire1"
+    xpos 0.35
+    xpos 0.25
+    ease 1.5 xpos 0.35
+    ease 1.5 xpos 0.25
+    repeat 
+
 image car_chase1:
     "mazda_cruise_firing.png"
-    ypos 0.45
-    ypos 0.455
-    ease 0.1 ypos 0.45
-    ease 0.1 ypos 0.455
+    ypos 0.85
+    ypos 0.855
+    ease 0.1 ypos 0.85
+    ease 0.1 ypos 0.855
     repeat
 
 image car_chase11:
     "car_chase1"
-    xpos 0.55
-    xpos 0.45
-    ease 1.5 xpos 0.55
-    ease 1.5 xpos 0.45
+    xpos 0.85
+    xpos 0.75
+    ease 1.5 xpos 0.85
+    ease 1.5 xpos 0.75
     repeat
 
 image car_chase2:
     "renault_moomin_firing.png"
     xysize (788, 350)
-    ypos 0.65
-    ypos 0.655
-    ease 0.1 ypos 0.65
-    ease 0.1 ypos 0.655
+    ypos 0.85
+    ypos 0.855
+    ease 0.1 ypos 0.85
+    ease 0.1 ypos 0.855
     repeat
 
 image car_chase21:
     "car_chase2"
-    xpos 0.55
-    xpos 0.45
-    ease 1.5 xpos 0.55
-    ease 1.5 xpos 0.45
+    xpos 0.35
+    xpos 0.25
+    ease 1.5 xpos 0.35
+    ease 1.5 xpos 0.25
     repeat
 
 image barrel_moving:

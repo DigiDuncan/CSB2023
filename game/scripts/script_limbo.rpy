@@ -206,6 +206,15 @@ screen lightgungame():
         at barrel_moving
         action Play("sound", "audio/sfx/sfx_bucket.ogg"), Jump("lightgamehit")
 
+screen carchasegame():
+    modal True
+    imagebutton:
+        idle "images/mazda_cruise_firing.png"
+        hover "images/mazda_cruise_firing.png"
+        hover_sound "audio/sfx/sfx_select.ogg"
+        at cruise_car
+        action Play("sound", "audio/sfx/sfx_bucket.ogg")
+
 screen reloadbutton():
     add Image("gui/frame.png"):
         yalign 0.5
