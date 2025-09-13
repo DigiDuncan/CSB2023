@@ -342,17 +342,23 @@ transform barrel_hit:
         rotate -300
 
 transform cruise_car:
-    ypos 0.85
-    ypos 0.855
-    xpos 0.85
-    xpos 0.75
+    ypos 0.7
+    ypos 0.705
+    xpos 0.7
     parallel:
-        ease 0.1 ypos 0.85
-        ease 0.1 ypos 0.855
-    parallel:
-        ease 1.5 xpos 0.85
-        ease 1.5 xpos 0.75
+        ease 0.1 ypos 0.7
+        ease 0.1 ypos 0.705
     repeat
+
+transform cultist_fire:
+    xysize (240, 60)
+    yanchor 1.25
+    xanchor 1.25
+    #ypos 1.45
+    #xpos 0.5
+    linear 0.25 rotate -45
+    linear 0.25 rotate 0
+
 # Character Definitions
 
 # Generic Character Definitions
@@ -3144,13 +3150,6 @@ image cultist_fire1:
     ease 0.1 ypos 0.855
     repeat   
 
-image cultist_fire2:
-    "cultist_fire1"
-    xpos 0.35
-    xpos 0.25
-    ease 1.5 xpos 0.35
-    ease 1.5 xpos 0.25
-    repeat 
 
 image car_chase1:
     "mazda_cruise_firing.png"
@@ -3171,18 +3170,11 @@ image car_chase11:
 image car_chase2:
     "renault_moomin_firing.png"
     xysize (788, 350)
+    xpos 0.2
     ypos 0.85
     ypos 0.855
     ease 0.1 ypos 0.85
     ease 0.1 ypos 0.855
-    repeat
-
-image car_chase21:
-    "car_chase2"
-    xpos 0.35
-    xpos 0.25
-    ease 1.5 xpos 0.35
-    ease 1.5 xpos 0.25
     repeat
 
 image barrel_moving:
@@ -3193,6 +3185,13 @@ image barrel_moving:
     ease 3 xpos 0.0
     ease 3 xpos 1.0
     repeat
+
+layeredimage renault_driver:
+    group ab:
+        attribute a default:
+            "car_chase21"
+        attribute b default:
+            "cultist_fire2"
 
 layeredimage train_boss_final:
     yanchor 1.10

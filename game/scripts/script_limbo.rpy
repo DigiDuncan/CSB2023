@@ -213,7 +213,7 @@ screen carchasegame():
         hover "images/mazda_cruise_firing.png"
         hover_sound "audio/sfx/sfx_select.ogg"
         at cruise_car
-        action Play("sound", "audio/sfx/sfx_bucket.ogg")
+        action Play("sound", "audio/sfx/sfx_bucket.ogg"), Jump("cultist_firing")
 
 screen reloadbutton():
     add Image("gui/frame.png"):

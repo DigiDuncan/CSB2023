@@ -64,10 +64,24 @@ label test:
                             $ renpy.full_restart()
                         "Driving Test":
                             stop music
-                            scene hoh_hq
+                            scene car plains
                             show screen carchasegame
-                            show car_chase21
-                            show cultist_fire2
+                            show car_chase2
+                            show cultist_fire1
+                            pause
+                            label cultist_firing:
+                                if reloading == 0:
+                                    show screen reloadbutton
+                                    $ reloading = 6
+                                if hitpoints == 0:
+                                    hide screen carchasegame
+                                    scene black
+                                    play sound sfx_car_crash
+                                    pause
+                                    $ renpy.full_restart()
+                                $ hitpoints -= 1
+                                $ reloading -= 1
+                                show cultist_fire at cultist_fire
                             pause
                             $ renpy.full_restart()
                 "Screen Test":
