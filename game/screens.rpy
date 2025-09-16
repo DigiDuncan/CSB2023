@@ -363,6 +363,7 @@ screen navigation():
         if main_menu:
 
             textbutton _("Start") action Start("chapter_select")
+            textbutton _("Subgame Selection") action ShowMenu("subgame")
 
         else:
 
