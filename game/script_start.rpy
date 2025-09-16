@@ -11,6 +11,12 @@ init python:
     current_bios_page = 0
     current_bios_total_pages = 0
 
+    # For the subgame page
+    current_subgame_name = None
+    current_subgame_desc = None
+    current_subgame_art = None
+    current_subgame_label = None
+
 # If music is so good, why is there no Music 2?
 init python:
     renpy.music.register_channel("sound2", "sfx")
