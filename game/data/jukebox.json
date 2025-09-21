@@ -1559,6 +1559,13 @@
             "tags": ["CSBIII DX: Train", "CSBIII DX: Ringtones", "Fun Values", "New In DX"],
             "album_art": "ringtone_tate_alt.png",
             "trivia": "This is a real ringtone that Tate used... at some point."
+        },
+        "we_will_meet_again" : {
+            "file": "we_will_meet_again.ogg",
+            "title": "We Will Meet Again.",
+            "artist": "Fresca",
+            "tags": ["New In DX", "CSBIII DX: Misc."],
+            "album_art": "csbdx.png"
         }
     }
 }

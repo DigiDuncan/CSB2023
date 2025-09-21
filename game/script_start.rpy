@@ -343,7 +343,7 @@ transform barrel_hit:
     xysize (256, 256)
     xpos 0.5
     ypos 0.7
-    ease 1.5: 
+    ease 1.5:
         ypos 1.25
         rotate -300
 
@@ -496,6 +496,7 @@ define k207 = Character("K20-M7", callback = renpy.partial(char_callback, beep =
 
 # Offscreen Character Definitions
 define tate_offscreen = Character("???", callback = renpy.partial(char_callback, beep="tate"))
+define tate_real_offscreen = Character("???", callback = renpy.partial(char_callback, beep="tate"))
 define pakoo_offscreen = Character("???", callback = renpy.partial(char_callback, beep="pak"))
 define green_offscreen = Character("???", callback = renpy.partial(char_callback, beep = "green"), what_color="#00FF00")
 define anno_offscreen = Character("???", callback = renpy.partial(char_callback, beep = "anno"))
@@ -510,6 +511,7 @@ define bomahanobeep = Character("\"Omaha\"", callback = renpy.partial(char_callb
 
 # DX Misc Character Definitions
 define copguyexe = Character("Copguy", callback = renpy.partial(char_callback, name = "copguy", beep = "copexe"))
+define tate_real = Character("Tate?", callback = renpy.partial(char_callback, beep="tate"))
 
 # DX Digi Character Definitions
 define david = Character("David", callback = char_callback)
@@ -2554,6 +2556,7 @@ image game_menu = "gui/game_menu.png"
 image black = "bg/black.png"
 image green_screen = "bg/green.png"
 image michael_calendar = "bg/michael_calendar.png"
+image nursing_home = "bg/books/nursing_home.png"
 
 # DX Train Route
 image kingman_exterior = "bg/train/kingman_exterior.png"
@@ -3154,7 +3157,7 @@ image cultist_fire1:
     ypos 0.855
     ease 0.1 ypos 0.85
     ease 0.1 ypos 0.855
-    repeat   
+    repeat
 
 
 image car_chase1:
@@ -3532,6 +3535,7 @@ define audio.space_classroom = "space_classroom.ogg"
 define audio.billymusicu = "billymusicu.ogg"
 define audio.ocean_man = "credits.ogg"
 define audio.albuquerque_full = "albuquerque.ogg"
+define audio.we_will_meet_again = "we_will_meet_again.ogg"
 
 # SFX
 define audio.sfx_addy_snap = "sfx/sfx_addy_snap.ogg"

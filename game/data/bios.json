@@ -696,7 +696,7 @@
             "Clap": "images/characters/hendry_clap2.png"
         },
         "quote": "I believe in Joe Hendry!",
-        "bio": "Joe Hendry is a well known hero, from London, to Paris, to Tokyo! Just say his name and he appears!"
+        "bio": "Joe Hendry is a well-known hero, from London, to Paris, to Tokyo! Just say his name and he will appear!"
     },
     "hoh_worker": {
         "full_name": "HoH SiS Workers",
@@ -1397,6 +1397,16 @@
         "bio": "A temporal abomination.",
         "dx": true,
         "zoom": 1.25
+    },
+    "tate_real": {
+        "full_name": "Tate?",
+        "pronouns": "(they/them)",
+        "sprites": {
+            "Default": "images/characters/tate/tatehappy.png"
+        },
+        "quote": "Ah--!",
+        "bio": "After barely surviving their most recent multiverse jump, this iteration of Tate has decided to remain in their current timeline indefinitely. An IV drip delivering nutrition directly into their bloodstream helps to keep them alive. They absolutely {i}loathe{/i} being leashed by the IV pole. Hopefully they won't need it for too much longer.",
+        "dx": true
     },
     "terry": {
         "full_name": "Terry Lesler",
