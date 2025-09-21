@@ -1894,19 +1894,28 @@ label dx_after_convention_end:
     show screen cultcon_votes_5
     play sound sfx_fabeep
     pause
-    return
+
 
 label dx_after_win:
+    scene conferencetv at Move((0.0 , 0.0), (0.0, -1.0), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show cultcon_leader at Move((0.397 , 1.25), (0.397 , 0.25), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show stand at Move((0.341 , 1.587), (0.341 , 0.587), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    play music tv_hall_of_fame
+    music tv_hall_of_fame
     cultcon_leader "Well cultists and religious orgs, we have our winner for Cultcon 2003!"
     cultcon_leader "For the first time in a while, we have ourselves a winner from a small indie cult!"
     cultcon_leader "That's right! Our winner is..."
     cultcon_leader "Blue Branch!"
     cultcon_leader "Can we get someone from the cult to come up and claim the prize?"
+    show cs cultist at left with moveinleft
     cs "Woohoo! We did it guys!"
     cultist_2 "You did it, newbie! You made us win!"
     cultist "Well what are you waiting for? Go up there, make me proud!"
     n "CS struts up to the main stage."
     cultcon_leader "Congratulations! Do you have anything to say to Cultcon this year?"
+    cs "Today I learned that no matter how many followers you have in your cult, you can always manage to gather more if you try hard enough."
+    cultcon_leader "Some inspiring words from Blue Branch! Let's hear it for them!"
+    
 # RENAULT
 
 label dx_after_renault:

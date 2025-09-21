@@ -3524,6 +3524,7 @@ define audio.ten_feet_away_3 = "10_feet_away_3.ogg"
 define audio.ten_feet_away_4 = "10_feet_away_4.ogg"
 define audio.interference2 = "<from 276>interference.ogg"
 define audio.blanchin_remix = "blanchin_remix.ogg"
+define audio.tv_hall_of_fame = "tv_hall_of_fame.ogg"
 
 # CSBIII DX Finale Music
 define audio.funvalueland = "funvalueland.ogg"
