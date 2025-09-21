@@ -1,11 +1,6 @@
 # TODO: make this book only appear if you've defeated Perfect Tate.
 # TODO: make art for said book.
 #
-# Celestial Sightseeing: The Aspiring Planeswalker's Guide To Chronomancy, Synchrony, & Cosmic Safety
-# Written by Sir Tandeth, The Inevitable
-# Translated by N. Zane Rambling
-# Foreword by W. D. Foredey
-#
 # TODO: also give tate_real a different beep and make sprites
 
 label book_celestial_sightseeing:

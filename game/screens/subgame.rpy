@@ -1,37 +1,56 @@
 python early:
+    import re
+    import json
+
+    with renpy.open_file("data/books.json") as json_file:
+         books_file = json.load(json_file)
+
+    global books_map
+    bookshelf = []
+    books_map = books_file
+
+    # default spine size is 300x46
     class Book:
-        def __init__(self, book_id: str, title: str, description: str, jump_label: str):
+        def __init__(self, book_id: str, title: str, description: str, jump_label: str, spine_width: int, spine_height: int, x_pos: int, y_pos: int):
             self.book_id = book_id
             self.title = title
             self.description = description
             self.jump_label = jump_label
+            self.spine_width = spine_width
+            self.spine_height = spine_height
+            self.x_pos = x_pos
+            self.y_pos = y_pos
 
             self.spine = f"gui/books/{book_id}/side.png"
             self.hover_spine = f"gui/books/{book_id}/hover.png"
             self.front = f"gui/books/{book_id}/cover.png"
 
-    books = [
-        # Each are 46 wide and 300 tall
-        Book("ce", "CSBounciness: Christmas Edition", "jingle jingle ho ho ho", "ce_start"),
-        Book("sp", "CSBounciness: Space Program", "spaaaaaaaaaace", "secret_dx"),
-        Book("pt", "Celestial Sightseeing", "The Aspiring Planeswalker's Guide To\nChronomancy, Synchrony, & Cosmic Safety", "book_celestial_sightseeing")
-    ]
+    for book in books_map:
+
+        # only show the book if's unlocked
+        # default is unlocked
+        this_unlocked = True
+
+        # TODO: idk why this doesn't work, it's literally taken from timeline that uses the same tech
+        # unlock by label, will probably add more conditions later
+        if "need_label" in books_map[book] and renpy.seen_label(books_map[book]["need_label"]) == False:
+            this_unlocked = False
+
+        # append to shelf if unlocked
+        if this_unlocked == True:
+            bookshelf.append(Book(book, books_map[book]["title"], books_map[book]["desc"], books_map[book]["jump_to"], books_map[book]["spine_width"], books_map[book]["spine_height"], books_map[book]["x_pos"], books_map[book]["y_pos"]))
 
 screen subgame():
     tag menu
     image "gui/subgame_menu.png"
-    # Defines where the first book will be
-    $ x_pos = 864
-    $ y_pos = 390
-    for book in books:
+
+    for book in bookshelf:
         imagebutton:
             hover book.hover_spine
             idle book.spine
             action SetVariable("current_subgame_name", book.title), SetVariable("current_subgame_desc", book.description), SetVariable("current_subgame_art", book.front), SetVariable("current_subgame_label", book.jump_label)
-            xpos x_pos
-            ypos y_pos
-        # Spaces things out by a hardcoded number (This is just the book width + 4)
-        $ x_pos = x_pos - 50
+            xpos book.x_pos
+            ypos book.y_pos
 
     if current_subgame_name:
         # Name of the game

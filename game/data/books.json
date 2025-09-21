@@ -1,0 +1,31 @@
+{
+    "ce": {
+        "title": "CSBounciness: Christmas Edition",
+        "desc": "jingle jingle ho ho ho",
+        "spine_width": 46,
+        "spine_height": 300,
+        "x_pos": 864,
+        "y_pos": 390,
+        "jump_to": "ce_start",
+        "need_label": "true_streaming"
+    },
+    "sp": {
+        "title": "CSBounciness: Space Program",
+        "desc": "spaaaaaaaaaace",
+        "spine_width": 46,
+        "spine_height": 300,
+        "x_pos": 818,
+        "y_pos": 390,
+        "jump_to": "ce_start"
+    },
+    "pt": {
+        "title": "Celestial Sightseeing",
+        "desc": "The Aspiring Planeswalker's Guide To\nChronomancy, Synchrony, & Cosmic Safety",
+        "spine_width": 82,
+        "spine_height": 300,
+        "x_pos": 0,
+        "y_pos": 390,
+        "jump_to": "book_celestial_sightseeing",
+        "need_label": "train_defeated_perfect_tate"
+    }
+}
