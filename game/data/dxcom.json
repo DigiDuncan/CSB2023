@@ -265,13 +265,12 @@
             "transcript": "This joke is super-meta, and calls a lot into question lore-wise, but don't think about it too hard.",
             "length": 5.4
         }
-
     ],
     "writing": [
         {
             "audio_path": "writing",
             "speaker": "Pakoo",
-            "transcript": "So, the funny thing about this route is that around 90%% of it was written by me on my breaks at work.",
+            "transcript": "So, the funny thing about this route is that around 90% of it was written by me on my breaks at work.",
             "length": 7.5
         }
     ],
@@ -619,6 +618,14 @@
             "speaker": "Pakoo",
             "transcript": "Fun fact about this background: When I was trying to find a picture of a mess in the garage, I stumbled upon a photo of when a tree fell through my grandparents' roof. It was exactly what I was looking for, so this became the background you see here.",
             "length": 11.8
+        }
+    ],
+    "tate_sick": [
+        {
+            "audio_path": "tate_sick",
+            "speaker": "Tate",
+            "transcript": "During the development of {i}DX,{/i} I became very sick. After I got out of the hospital, I had to stay in a nursing home for a little over a month. This is my actual room.",
+            "length": 8.5
         }
     ]
 }

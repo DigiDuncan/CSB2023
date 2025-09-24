@@ -1557,6 +1557,7 @@ label train_wakeup:
     arceus "I didn't know he's, uh... whatever he is."
     pause 2.0
 
+    # TODO: this doesn't loop correctly, can someone check it pls? - tate
     play music e_gadds_lab if_changed
     music e_gadds_lab
 
@@ -2021,7 +2022,7 @@ label train_search_cs:
     pause 2.0
     cs "Hey! That's our cash!"
     cs "Hey,{w=0} you! Give that back!" with hpunch
-    lupin_offscreen "Well, would you look at that? It's my pretty kitty!"
+    lupin_offscreen "Well, would ya look at that? It's my pretty kitty!"
     lupin_offscreen "Sorry, babe, but I've gotta split!"
 
     scene amtrak_sleeper_corridor
@@ -2031,14 +2032,22 @@ label train_search_cs:
     show lupin run hat at center with MoveTransition(0.25)
 
     play sound sfx_punch
-    show cs scared at mid_offscreen_left with hpunch
-    show cs concentrate
+    #show cs scared at mid_offscreen_left with hpunch
+    #show cs concentrate
+
+    show cs concentrate at manual_pos(0.4, 1.5, 1.0):
+        linear 0.25 rotate -10
+    with { "master": MoveTransition(0.25) }
+    cs "{i}AHH!!{w=0.5}{nw}" with hpunch
+
     hide lupin with dissolve
 
     pause 2.0
     n "Before CS can stand up to catch him, the thief disappears into the next car."
     pause 1.0
-    show cs concentrate at center with MoveTransition(1.0)
+    show cs concentrate at manual_pos(0.5, 1.1, 1.0):
+        linear 1.0 rotate 0
+    with MoveTransition(1.0)
     pause 1.0
     show cs disappointed
     pause 1.0
@@ -2489,7 +2498,7 @@ label train_confront_lupin:
     "..."
     pause 1.0
     mean "Wow."
-    mean "So, are you three {i}always{/i} this useless?"
+    mean "So, uh, are you three {i}always{/i} this useless?"
 
     # idk i just wanted to do a funny - tate
     if fun_value(FUN_VALUE_COMMON):
@@ -4196,6 +4205,11 @@ label train_completed:
 
 ######## GO HOME ########
 label train_return_home_transition:
+
+    # TODO: if the money was returned, CS can rebuild the lego car and they can drive home in that.
+    # TODO: if the money was not returned, then they need to find some other way home.
+    # TODO: do we really NEED to write CS actually arriving all the way at his house again??
+
     # yes i stole much of this from south route, oh well, i'm tired ok - tate
     stop music fadeout 1.0
     music end

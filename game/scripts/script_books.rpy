@@ -14,6 +14,9 @@ label book_celestial_sightseeing:
     show tate at mid_mid_left
     with dissolve
 
+    # TODO: hey can baker or someone pls go through all my dxcom audios and make em louder? thanks
+    dxcom tate_sick
+
     tate_real_offscreen "It's kinda perfect, actually."
     cs "Huh?"
     tate_real_offscreen "Hello, CS."
@@ -50,7 +53,7 @@ label book_celestial_sightseeing:
         cs "Magick...? With a K?"
         cs "Tate's a {i}witch?!"
         show cs disappointed flipped
-        tate_real "Yes, yes, I know {i}you{/i} can read the text box, too, and that we can both break the fourth wall, but could you maybe {i}not{/i} do that here?"
+        tate_real "Look, I know {i}you{/i} can read the text box, too, and that we can {i}both{/i} break the fourth wall, but could you maybe {i}not{/i} do that here?"
         tate_real "This connection isn't exactly stable to begin with, y'know."
         tate_real "Anyway, no, we are not witches."
     else:
@@ -93,9 +96,9 @@ label book_celestial_sightseeing:
     cs "I still don't get how you ended up... like {i}this."
     tate_real "Ah..."
     tate_real "You see, this very book was discovered to be missing during the last moments of the ritual."
-    tate_real "While we did barricade the door before we began, we knew that it wouldn't hold much longer--{w=0.5}{nw}"
+    tate_real "While we did barricade the door before we began, we knew that it wouldn't hold for long if--{w=0.5}{nw}"
     show cs surprised flipped
-    cs "So, you {i}stole{/i} the book."
+    cs "So you {i}stole{/i} the book."
     tate_real "...!" with vpunch
     n "Tate anxiously scratches at something under the neck of their shirt."
     cs "... What happened next?"
@@ -159,9 +162,10 @@ label book_celestial_sightseeing:
 
     scene black with dissolve
 
+    pause 0.5
     tate_real "And don't go jumping through any wormholes, y'hear?!"
     pause 1.0
     n "CS closes the book."
     n "As he does, it suddenly feels heavier in his hands."
-    n "As his curiosity continues to eat at him, he tries to reopen it, but the pages do not budge. It is as if they have turned to stone."
+    n "Curiosity continuing to eat at him, he tries to reopen it, but the pages do not budge. It is as if they have turned to stone."
     n "Defeated, he slips the strange tome back into its place on the shelf."

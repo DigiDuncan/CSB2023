@@ -496,7 +496,7 @@ define k207 = Character("K20-M7", callback = renpy.partial(char_callback, beep =
 
 # Offscreen Character Definitions
 define tate_offscreen = Character("???", callback = renpy.partial(char_callback, beep="tate"))
-define tate_real_offscreen = Character("???", callback = renpy.partial(char_callback, beep="tate"))
+define tate_real_offscreen = Character("???", callback = renpy.partial(char_callback, beep="tate_cyan"))
 define pakoo_offscreen = Character("???", callback = renpy.partial(char_callback, beep="pak"))
 define green_offscreen = Character("???", callback = renpy.partial(char_callback, beep = "green"), what_color="#00FF00")
 define anno_offscreen = Character("???", callback = renpy.partial(char_callback, beep = "anno"))
@@ -511,7 +511,7 @@ define bomahanobeep = Character("\"Omaha\"", callback = renpy.partial(char_callb
 
 # DX Misc Character Definitions
 define copguyexe = Character("Copguy", callback = renpy.partial(char_callback, name = "copguy", beep = "copexe"))
-define tate_real = Character("Tate?", callback = renpy.partial(char_callback, beep="tate"))
+define tate_real = Character("Tate?", callback = renpy.partial(char_callback, beep="tate_cyan"))
 
 # DX Digi Character Definitions
 define david = Character("David", callback = char_callback)
