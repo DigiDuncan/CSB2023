@@ -1217,7 +1217,7 @@
             "Default": "images/characters/round.png"
         },
         "quote": "...",
-        "bio": "Our KENJI (Not sponsored) Yabu Brown Round Cat is a gorgeously soft and squidgy Kawaii plush friend. Velvety soft and squishy, our collectable plush toys are made from high-quality super-soft materials that make them perfect for snuggling. Super-soft and squidgy, our lovable huggable KENJI (Not sponsored) Yabu is the softest and cutest Japanese-inspired Kawaii plushie around. Meow!"
+        "bio": "Our KENJI {size=-24}(not sponsored){/size} Yabu Brown Round Cat is a gorgeously soft and squidgy Kawaii plush friend. Velvety soft and squishy, our collectable plush toys are made from high-quality super-soft materials that make them perfect for snuggling. Super-soft and squidgy, our lovable huggable KENJI {size=-24}(not sponsored){/size} Yabu is the softest and cutest Japanese-inspired Kawaii plushie around. Meow!"
     },
     "santa": {
         "full_name": "Santa Claus",
@@ -1454,7 +1454,7 @@
         "quote": "Do it all over again.",
         "bio": "Wesley is Ed's right-hand man. He's armed, courageous, and most importantly, he will get the JoJ done 15 times over again if he has to.",
         "ce_bio_label": "ce_exchange",
-        "ce_bio": "After the incident at HoH SiS, Wesley needed back surgery. He's recovering well, but the winter cold doesn't play too well with the new hardware in his spine. It's understandable that he'd be a bit ornery. If it wasn't for Ed's insistence, Wesley would have probably just stayed home.",
+        "ce_bio": "After the incident at HoH SiS, Wesley needed back surgery. He's recovering well, but the winter cold doesn't play too nicely with the new hardware in his spine. It's understandable that he'd be a bit ornery. If it wasn't for Ed's insistence, Wesley would have probably just stayed home.",
         "rpg": {
             "WESLEY": {
                 "name": "Base Stats",

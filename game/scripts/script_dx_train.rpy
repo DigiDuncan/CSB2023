@@ -61,7 +61,7 @@ label train_intro_start:
         show arceus worried flipped
 
     pause 1.0
-    arceus "... But, how {i}will{/i} we get back, exactly?"
+    arceus "... But how {i}will{/i} we get back, exactly?"
     arceus "That's a pretty long drive. I'm already beat."
 
     # flip
@@ -156,7 +156,7 @@ label train_intro_start:
     else:
         show cs happy flipped
 
-    cs "Yeah, you know what? Let's do it!"
+    cs "Yeah, y'know what? Let's do it!"
     arceus "Let's go!"
 
     show cs happy
@@ -639,13 +639,14 @@ label train_kingman_platform:
     show tate sheepish
     pause 1.0
     amtrak_conductor "You're already on thin ice after what happened in the dining car."
-    tate "But, I just wanted--{w=0.25}{nw}"
+    tate "But I just wanted--{w=0.25}{nw}"
     amtrak_conductor "The {i}only{/i} reason why you're still on this train is because the new guy won't let us kick you off."
     tate "Listen, I was just trying to he--{w=0.25}{nw}"
     amtrak_conductor "Yeah, well, {i}don't."
     amtrak_conductor "Or we'll leave {i}both{/i} of you at the next station."
 
     if train_polar_express_fun_value == True:
+        $ fun_value_found()
         show arceus flipped
         arceus "I told you!"
         show arceus worried flipped
@@ -717,7 +718,7 @@ label train_boarding:
         tate "I know, but--{w=1.0}{nw}"
         amtrak_stewardess "Keep up with the bit."
         show tate sad
-        tate "But, CS gets away with it all the time--!"
+        tate "But CS gets away with it all the time--!"
         amtrak_stewardess "Also, please stop trying to do {i}my{/i} job."
     else:
         tate "... And, {i}this{/i} way is the sleeper car! Your room is--{w=0.25}{nw}"
@@ -1144,7 +1145,7 @@ label train_enter_sleeper:
     $ next_line = substitutions("I think Mean said that someone even got " + ch2_cs_attack_used + " off of the roof!")
     tate "[next_line]"
     show tate sheepish flipped
-    tate "But, since Mean couldn't... {w=0.5}{size=-5}hold him off... {w=0.5}{size=-5}he was... {w=1.0}{size=-5}fired..."
+    tate "But since Mean couldn't... {w=0.5}{size=-5}hold him off... {w=0.5}{size=-5}he was... {w=1.0}{size=-5}fired..."
     "..."
     pause 2.0
     show tate shock flipped
@@ -1552,7 +1553,7 @@ label train_wakeup:
     pause 2.0
 
     tate "Like... what?"
-    arceus "I thought he'd be... just... you know... {i}some guy."
+    arceus "I thought he'd be... just... y'know... {i}some guy."
     arceus "I didn't know he's, uh... whatever he is."
     pause 2.0
 
@@ -1633,11 +1634,12 @@ label train_wakeup:
     mean "You made me the best breakfast I've had in ages, I start my dream job in 15 minutes, {i}and{/i} I get to travel the US with one of my best friends!"
 
     if train_pancake_fun_value == True:
+        $ fun_value_found()
         show arceus happy
         arceus "{size=-15}Those were some damn good pancakes, by the way."
         show arceus worried
 
-    mean "If it weren't for you, I'd still be sitting at home playing fucking {i}Minecraft{/i} and listening to whatever weird shit's popular on Spoofy!"
+    mean "If it weren't for you, I'd still be sitting at home playing fuckin' {i}Minecraft{/i} and listening to whatever weird shit's popular on Spoofy!"
     mean "What could be better?"
     show tate sad flipped
     tate "What about the {i}thief?!" with vpunch
@@ -1875,7 +1877,7 @@ label train_meanwhile:
     pause 1.5
     lupin_offscreen "... Seems like he'll be a while."
     show lupin run hat flipped at center with moveinright
-    lupin_offscreen "And,{w=0} that's just what I need."
+    lupin_offscreen "And that's just what I need."
     scene black with dissolve
     pause 1.0
     jump train_search_arceus
@@ -1928,6 +1930,7 @@ label train_search_arceus:
     arceus "It's a damn shame that all of that food went to waste."
 
     if train_pancake_fun_value == True:
+        $ fun_value_found()
         arceus "Mean probably wouldn't care if I took a bit more..."
     else:
         arceus "I wonder if Mean would mind if I grabbed a bit before it goes bad..."
@@ -2116,6 +2119,7 @@ label train_search_tate:
     lupin_offscreen "Pfft, hurt by who? {i}You?"
 
     if train_tate_is_fragile_fun_value == True:
+        $ fun_value_found()
         show tate sheepish flipped
         lupin_offscreen "With your whopping {i}5 DEF?"
 
@@ -2138,7 +2142,7 @@ label train_search_tate:
     with vpunch
     with vpunch
     pause 3.0
-    tate "{size=-15}...{w=0} Or,{w=0} not."
+    tate "{size=-15}...{w=0} Or not."
     pause 1.0
     show lupin stand hat flipped at center with MoveTransition(1.0)
     n "The suave criminal leans in closer to Tate."
@@ -2300,14 +2304,14 @@ label train_confront_lupin:
     show mean unamused flipped
     show cs worried flipped
 
-    mean "God damn it, I told him not to mix that protein powder with milk."
+    mean "God damn it, I {i}told{/i} him not to mix that protein powder with milk."
     show mean angry
     show cs disappointed flipped
     mean "Well, I guess it's up to us to find the guy."
     mean "I can't start work without my hat!"
     show arceus worried
     arceus "What's so special about the hat?"
-    cs "And, isn't our money a {i}little{/i} more important than your hat?"
+    cs "And isn't our money a {i}little{/i} more important than your hat?"
     show mean worried
     show cs disappointed flipped
     mean "Nah, you don't understand."
@@ -2442,7 +2446,7 @@ label train_confront_lupin:
     lupin_offscreen "Today must be my lucky--{w=0.5}{nw}"
     mean "Alright, {i}CAN{/i} IT!" with hpunch
     mean "We have some questions for you."
-    mean "And, {i}you{/i} have {w=0.25}{i}my hat{/i}{w=0.25} for {i}me."
+    mean "And {i}you{/i} have {w=0.25}{i}my hat{/i}{w=0.25} for {i}me."
     mean "You're coming with us."
     show lupin run hat flipped
     lupin_offscreen "Not without a fight!"
@@ -2486,7 +2490,16 @@ label train_confront_lupin:
     pause 1.0
     mean "Wow."
     mean "So, are you three {i}always{/i} this useless?"
-    tate "In fairness... we probably should've practiced that one more."
+
+    # idk i just wanted to do a funny - tate
+    if fun_value(FUN_VALUE_COMMON):
+        python:
+            this_day = get_today()
+        tate "Only on [this_day]s."
+        mean "Great."
+    else:
+        tate "In fairness... we probably should've practiced that one more."
+
     mean "Guess we've gotta do this old-fashioned way."
     show mean angry flipped
     mean "Let's get 'em!"
@@ -2957,7 +2970,7 @@ label train_lupin_win:
     show lupin stand hat dark flipped with vpunch
 
     n "Mean barely catches Lupin by his coattails."
-    mean "Gotcha, ya thieving rat!"
+    mean "Gotcha, ya thievin' {i}rat!"
     play sound sfx_walkie_on
     show walkie dark with Dissolve(0.25):
         zoom 0.3
@@ -3295,7 +3308,7 @@ label train_lupin_win:
     hide briefcase with dissolve
     hide bag with dissolve
     show lego_jail at mid_offscreen_right behind cs
-    show lupin at mid_offscreen_right behind lego_jail
+    show lupin stand at mid_offscreen_right behind lego_jail
     show cs flipped at right
     show mean human flipped at mid_mid_left
     show tate at mid_left
@@ -3426,6 +3439,7 @@ label train_lupin_win:
     mean "How could today have {i}possibly{/i} turned out better?"
     tate "I-{w=0.1}I... suppose you're right...."
     if train_tate_is_fragile_fun_value == True:
+        $ fun_value_found()
         mean "Y'know... you can't always go back and make everything perfect."
     else:
         mean "Y'know... you can't always predict the future."
@@ -3689,6 +3703,7 @@ label train_tate_ex_encounter:
     music end
     scene black
     pause 5.0
+    $ fun_value_found()
     n "While Arceus is out like a light, try as he may, CS just can't seem to settle down."
     n "He decides to go for a walk, meandering through each quiet corridor until he eventually finds himself in the observation car."
     n "He is not alone."
@@ -3880,6 +3895,11 @@ label train_tate_ex_win:
     "..."
     tate "{sc=2}I guess I should have expected as much."
     tate "{sc=2}I should have known that I can't rely on anyone."
+
+    # a little something for repeat players...
+    if persistent.defeated_perfect_tate == True:
+        tate "{sc=3}{i}Especially{/i} not {color=#00FFFF}that one."
+
     tate "{sc=3}I guess, if I want a good ending..."
     tate "{sc}{size=+18}{font=azsz}I'LL JUST HAVE TO WRITE IT MYSELF."
     "..."
@@ -3989,7 +4009,7 @@ label train_defeated_perfect_tate:
     tate "I have as little power here as I did in the last one."
     cs "Tate..."
     cs "I may not understand what just happened, or anything about this \"timeline\" stuff..."
-    cs "And, I don't know who you're fighting against, but..."
+    cs "And I don't know who you're fighting against, but..."
     cs "You have all of us by your side now."
     cs "It {i}does{/i} matter what happens to you."
     cs "You {i}are{/i} important... to {i}us.{/i}"
@@ -4122,7 +4142,7 @@ label train_completed:
         n "After Mean's shift ends, Tate invites him, as well as CS and Arceus, to join them for breakfast."
         n "Mean looks exhausted, and Tate seems to be barely holding it together."
         n "While the four try to make pleasantries, there is an unshakable tension in the air."
-        n "The food is bland. CS suspects that Mean only eats Tate's cooking to spare their feelings."
+        n "The food is bland. Arceus suspects that Mean only eats Tate's cooking to spare their feelings."
         n "CS prays that nobody notices his frequent use of the little salt packets on the table."
 
         scene black with dissolve

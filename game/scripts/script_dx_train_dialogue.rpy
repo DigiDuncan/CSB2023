@@ -23,6 +23,7 @@ label train_dialogue:
         show cs disappointed
         cs "Don't tell them I said this, but... it sure beats the pants off of Tate's cooking."
         if train_pancake_fun_value == True:
+            $ fun_value_found()
             arceus "I'm sure they were just having an off day."
             arceus "I stole one of the pancakes Tate made for Mean yesterday. Now, {i}those{/i} were awesome."
             cs "Damn, I wish I'd gotten one, too..."
@@ -44,7 +45,7 @@ label train_dialogue:
     cs "That is true. It's a lot more green."
     cs "Yeah, let's just hang out here awhile."
 
-    
+
 
     pause 3.0
 
@@ -55,7 +56,7 @@ label train_dialogue:
     cs "You know how there are some images that you can hear?"
     arceus "What?"
     cs "You know, like that one GIF with the jump-roping power thing?"
-    arceus "The what, now?"
+    arceus "The {i}what,{/i} now?"
     show cs disappointed
     cs "You know, that big-ass power line!"
     cs "And, every time it lands, you can hear it go {i}boom,{/i} except you... don't?"
@@ -75,7 +76,7 @@ label train_dialogue:
     arceus "Again, that's {i}just{/i} how words work."
     cs "No! I mean like--"
     show cs disappointed
-    cs "You know what, never mind..."
+    cs "Y'know what, never mind..."
     pause 1.0
     show cs
     show arceus
@@ -123,7 +124,7 @@ label train_dialogue:
         show tate srs
         tate "Awa..."
         show mean human hat
-        mean "Yeah, you know, I never thought of it like that before."
+        mean "Yeah, y'know, I never thought of it like that before."
         show tate sad
         tate "Awawawawawa awawa?"
         show mean human hat shocked
@@ -174,7 +175,7 @@ label train_dialogue:
                 linear 0.25 alpha 1.0
             parallel:
                 linear 0.25 ypos 0.45
-        
+
         $ collect("tate_phone")
         pause 1.0
         tate "..."
@@ -252,14 +253,14 @@ label train_dialogue:
     show cs disappointed
     cs "It would be weird to call them back right away..."
     show arceus
-    arceus "Let's call again when we get to New York." 
+    arceus "Let's call again when we get to New York."
     show cs
     cs "Yeah, let's do that."
 
 
 
     pause 3.0
-    
+
 
 
     show arc_laptop at manual_pos(0.65, 0.55, 0.5) behind arceus with dissolve
@@ -303,7 +304,7 @@ label train_dialogue:
     show cs disappointed
     cs "I hope you're right..."
     "..."
-    
+
     if train_ending_money_returned == True:
         cs "I must have bought it at that gas station we stopped at..."
         cs "Is {i}this{/i} what it's like to be rich? Just being able to buy expensive things without giving it any thought?"

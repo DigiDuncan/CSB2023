@@ -333,6 +333,7 @@ init python:
     renpy.image("_fun_value", "gui/fun_value/fun_value.png")
     renpy.image("_fun_value_music","gui/fun_value/fun_value_music.png")
     renpy.image("_fun_value_fish","gui/fun_value/fun_value_fish.png")
+    renpy.image("_fun_value_found","gui/fun_value/fun_value_found.png")
 
     # Fun value handler
     def fun_value(rarity: int, id: str = None, *, confusing = False, fish = False) -> bool:
@@ -341,6 +342,7 @@ init python:
         renpy.hide("_fun_value")
         renpy.hide("_fun_value_music")
         renpy.hide("_fun_value_fish")
+        renpy.hide("_fun_value_found")
 
         if not preferences.bounciness_enable:
             return False
@@ -375,6 +377,16 @@ init python:
                     renpy.show("_fun_value",[_fun_value_fade,_fun_value_motion],"fun_icon")
             renpy.play("audio/sfx/sfx_sparkle.ogg", channel = "notification")
         return ret
+
+    def fun_value_found():
+        # hide any previous instance of the indicator
+        renpy.hide("_fun_value")
+        renpy.hide("_fun_value_music")
+        renpy.hide("_fun_value_fish")
+        renpy.hide("_fun_value_found")
+
+        renpy.show("_fun_value_found",[_fun_value_fade,_fun_value_motion],"fun_icon")
+        renpy.play("audio/sfx/sfx_sparkle.ogg", channel = "notification")
 
     # File listing
     def file_list(dir=""):
