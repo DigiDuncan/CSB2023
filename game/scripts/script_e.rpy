@@ -144,6 +144,8 @@ label after_error_fight:
     $ ending_manager.mark("error")
     return
 
+# TODO: tate needs to proofread everything below here!
+
 label error_voodoo:
     play music morning_highway loop volume 0.4 if_changed
     music morning_highway
@@ -154,7 +156,7 @@ label error_voodoo:
     cs "I know this isn't what we need, but Linus will probably find this cool."
     hide cs with moveoutright
     n "CS heads to the checkout."
-    scene cashzone 
+    scene cashzone
     show cashier at center
     show cashzone_foreground
     with dissolve
@@ -279,7 +281,7 @@ label error_wait:
     arceus "I was upstairs, I didn't know you were outside."
     cs "Sorry, I just assumed this is where you wanted to go."
     arceus "Anyways, the cops are searching for us, Pakoo is here, and Linus wants to train you downstairs."
-    arecus "Let's go catch up with them."
+    arceus "Let's go catch up with them."
     cs "Oh-hkay."
     jump friend_training
 
@@ -306,7 +308,7 @@ label error_sewer_start:
     cs "Looks like the ladder to get out of here broke a long time ago..."
     cs "I guess I should try to follow the sewer system and see if I can find another way out."
     cs "I need to find like a gas mask or something, I cannot handle the smell for this long."
-    
+
 label error_sewer_pipe_1:
     n "After treading the naseous sewer waters for some while, CS finally finds a tube that leads out into the night."
     cs "Oh thank god, an exit."

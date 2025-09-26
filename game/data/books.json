@@ -16,7 +16,7 @@
         "spine_height": 300,
         "x_pos": 818,
         "y_pos": 390,
-        "jump_to": "ce_start"
+        "jump_to": "secret_dx"
     },
     "pt": {
         "title": "Celestial Sightseeing",

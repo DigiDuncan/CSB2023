@@ -233,7 +233,7 @@ screen person(l):
                     frame:
                         background None
 
-                        # TODO: put main/dx/ce bios on different pages
+                        # put main/dx/ce bios on different pages
 
                         if current_bios_total_pages > 0:
                             # left arrow

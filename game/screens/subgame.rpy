@@ -40,6 +40,18 @@ python early:
         if this_unlocked == True:
             bookshelf.append(Book(book, books_map[book]["title"], books_map[book]["desc"], books_map[book]["jump_to"], books_map[book]["spine_width"], books_map[book]["spine_height"], books_map[book]["x_pos"], books_map[book]["y_pos"]))
 
+style subgame_return is button:
+    # this is the closest thing to a blank line i can do here, but the tag needs to exist or it'll crash - tate
+    background None
+
+# TODO: make this prettier later
+style subgame_return_text is text:
+    color "#000000"
+    outlines [(5, "#FFFFFF", absolute(0), absolute(0))]
+
+    hover_color "#FFFFFF"
+    hover_outlines [(5, "#000000", absolute(0), absolute(0))]
+
 screen subgame():
     tag menu
     image "gui/subgame_menu.png"
@@ -81,7 +93,11 @@ screen subgame():
             xanchor 0.5
             xpos info_x_pos
             ypos 925
-            action Start(current_subgame_label)
+            hover_sound "audio/sfx/sfx_select.ogg"
+            action [ Play("sound", "audio/sfx/sfx_valid.ogg"), Start(current_subgame_label) ]
 
-    # TODO: make this match the rest of the page later
-    textbutton "Main Menu" action Return() yoffset 1000 xoffset 25
+    textbutton "Main Menu":
+        style "subgame_return"
+        action Return()
+        yoffset 1000
+        xoffset 25

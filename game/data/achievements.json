@@ -570,7 +570,7 @@
     "paradise":{
         "name": "It's Paradise!",
         "locked": "???",
-        "unlocked": "Get a perfect score at the Carrot Chop game.",
+        "unlocked": "Get a perfect score in the Carrot Chop game.",
         "img": "perfect",
         "type": "extra",
         "ce": true
