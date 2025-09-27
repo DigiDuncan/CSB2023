@@ -437,6 +437,14 @@
         "type": "extra",
         "dx": true
     },
+    "cheerful_spirit":{
+        "name": "Cheerful Spirit 188",
+        "locked": "Nothing can possibly go wrong!",
+        "unlocked": "Foreshadowing is a literary device in whi--",
+        "img": "cheerful_spirit",
+        "type": "story",
+        "dx": true
+    },
     "beat_lupin":{
         "name": "Chasing The Hustler",
         "locked": "Catch that dirty crook!",

@@ -38,11 +38,11 @@ class Achievement:
     @property
     def stepped(self) -> bool:
         return self.steps != 1
-   
+
     @property
     def unlocked(self) -> bool:
         if not self.stepped:
-            return self.id in persistent.unlocked_achievements 
+            return self.id in persistent.unlocked_achievements
         else:
             return self.current_steps >= self.steps or self.id in persistent.unlocked_achievements
 
@@ -146,11 +146,16 @@ class AchievementManager:
                 return achievement
 
         raise ValueError(f"Unrecognized achievement {id}")
-    
+
     def unlock(self, id: str, show_screen = True):
         ach = self.get(id)
         if not ach.unlocked:
             renpy.sound.play("audio/sfx/sfx_achieve.ogg", channel = "notification", loop = False)
+            ach.unlock(show_screen)
+
+    def unlock_silently(self, id: str, show_screen = False):
+        ach = self.get(id)
+        if not ach.unlocked:
             ach.unlock(show_screen)
 
     def unlock_all(self):

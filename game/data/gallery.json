@@ -130,6 +130,12 @@
         "caption": "While writing Train Route, Tate needed a picture of a fancy watch. They downloaded this image, somehow {i}forgot{/i} where the file got saved to, spent half an hour looking for it, assumed that Google Chrome ate it, gave up, downloaded a {i}different{/i} watch, and then found this image again several months later.",
         "need_label": "train_lupin_win"
     },
+    "sepia_zoom.png": {
+        "type": "image",
+        "title": "sepia_zoom.png",
+        "caption": "Originally, this bit had to be its own separate image, but then Tate figured out how to generate the image in-engine.",
+        "need_label": "train_lupin_win"
+    },
     "background.png": {
         "type": "image",
         "title": "Perfect Tate Beta Stage",

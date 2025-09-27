@@ -822,7 +822,7 @@ label train_boarding:
     hide lupin
     pause 0.25
     $ renpy.music.set_volume(100)
-    tate "Oh,{w=-0.25} my God! CS, are you alright?!"
+    tate "Oh,{w=0} my God! CS, are you alright?!"
     cs "Y-{w=0.1}Yeah..."
     show cs disappointed behind tate
     cs "More surprised than anything."
@@ -1218,11 +1218,25 @@ label train_enter_sleeper:
     cs "I think that tomorrow, we'll wake up, someone will have found our cash overnight, Tate will have had some time to cool off, we'll all get together and have a huge complimentary breakfast..."
     cs "...{w=0} and all will be right with the world!"
 
-    # TODO: some funny cheery fanfare jingle?
+    show arceus angry
+    play sound sfx_xbox_achieve
+    show cs_achievement:
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.5
+        ypos -0.05
+
+        linear 0.25 ypos 0.075
+        linear 0.25 ypos 0.065
+        linear 3.0 ypos 0.065
+        linear 0.25 ypos -0.05
+
+    # unlock silent achievement
+    $ achievement_manager.unlock_silently("cheerful_spirit")
 
     pause 1.0
-    show arceus angry
-    arceus "... {i}I{/i} think you're being way too optimistic about all of this."
+    "..."
+    arceus "...{fast} {i}I{/i} think you're being way too optimistic about all of this."
     arceus "I'm going to bed."
     show cs disappointed
     cs "Yeah, me,{w=0} too..."
@@ -1389,10 +1403,8 @@ label train_dining:
         arceus "Wait, hey, can you do a Dallas impression?"
         show mean wat
         mean "Like this?"
+        play sound sfx_mean_dallas_scream
         show mean furious
-
-        # TODO: record the dallas AUUUUUUUUUGH when mean is better
-
         mean "{cshake}{size=+36}AUUUUUUUUUGH!!" with hpunch
         show arceus happy
         arceus "Yeah!"
@@ -1556,8 +1568,6 @@ label train_wakeup:
     arceus "I thought he'd be... just... y'know... {i}some guy."
     arceus "I didn't know he's, uh... whatever he is."
     pause 2.0
-
-    # TODO: this doesn't loop correctly, can someone check it pls? - tate
     play music e_gadds_lab if_changed
     music e_gadds_lab
 
@@ -1844,13 +1854,27 @@ label train_meanwhile:
         lupin_offscreen "This is {i}perfect!{/i} I can't believe I could just ON-{i}BS{/i} my way in here like that!"
     else:
         lupin_offscreen "This is {i}perfect!{/i} I can't believe I could just waltz on in here like that!"
-    show lupin stand hat with dissolve
-    # TODO: make lupin actually put on the hat
+
+    show mean_hat at manual_pos(0.45, 0.6, 0.5):
+        yzoom 0.70
+        xzoom -0.70
+        zoom 1
+    with dissolve
+
     lupin_offscreen "And, with {i}this..."
     lupin_offscreen "Nobody would ever suspect the driver, right?"
     play sound sfx_sliding_door_open
     n "The cab door suddenly opens from behind."
+
+    show mean_hat at manual_pos(0.49, 0.29, 0.5):
+        yzoom 0.70
+        xzoom -0.70
+        zoom 1
+    with MoveTransition(0.25)
+    play sound sfx_hat_on
+
     show lupin stand hat flipped
+    hide mean_hat
     pause 1.0
     show lupin stand hat flipped at mid_left
     show amtrak_conductor at right
@@ -3484,29 +3508,49 @@ label train_lupin_win:
     show cs scared flipped
 
     # don't skip the funny
-    # TODO: fix this screenshot OR figure out how to do it in-engine
     $ _skipping = False
     $ renpy.choice_for_skipping()
     play music roundabout
     music roundabout
+    # hide it instantly so it doesn't fuck up the next part
+    hide music
     mean "{cshake}{size=+24}YOU RAT {i}BASTARD!{w=1.0}{nw}" with hpunch
     mean "I {i}THOUGHT{/i} I RECOGNIZED YOU!{w=1.0}{nw}"
-    # i got lazy ok
-    scene
-    show sepia_zoom:
+
+    # set up the scene
+    show car background night:
+        matrixcolor SepiaMatrix() # TODO: fix this, it's transparent for some reason in the screenshot
+    show amtrak_cab:
+        matrixcolor SepiaMatrix()
+    show arceus worried flipped:
+        matrixcolor SepiaMatrix()
+    show mean human angry hat flipped:
+        matrixcolor SepiaMatrix()
+    show tate shock:
+        matrixcolor SepiaMatrix()
+    show cs scared flipped:
+        matrixcolor SepiaMatrix()
+
+    # create screenshot and zoom it
+    # yes the 0-second pause is mandatory
+    pause 0.0
+    $ funny_screenshot = renpy.screenshot_to_bytes((1920, 1080))
+    scene # reset scene
+    show expression im.Data(funny_screenshot, "to_be_continued.png"):
         parallel:
             linear 15 zoom 2
         parallel:
-            linear 15 xpos -1920
+            linear 15 xpos -1.0
         parallel:
-            linear 15 ypos -400
+            linear 15 ypos -0.5
+
     show tbc at manual_pos(1000,800)
+
     pause 7
 
     stop music fadeout 2
     music end
     scene black with dissolve
-
     # </funny>
     if not _skipping:
         $ _skipping = True
@@ -3721,7 +3765,6 @@ label train_tate_ex_encounter:
     show tate srs flipped at left
     with dissolve
     pause 1.0
-    # TODO: this loop sounds like shit
     play music insomnia_intro if_changed
     music insomnia
     show cs disappointed flipped at offscreenright with determination
