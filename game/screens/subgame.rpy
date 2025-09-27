@@ -3,10 +3,9 @@ python early:
     import json
 
     with renpy.open_file("data/books.json") as json_file:
-         books_file = json.load(json_file)
+        books_file = json.load(json_file)
 
     global books_map
-    bookshelf = []
     books_map = books_file
 
     # default spine size is 300x46
@@ -25,21 +24,6 @@ python early:
             self.hover_spine = f"gui/books/{book_id}/hover.png"
             self.front = f"gui/books/{book_id}/cover.png"
 
-    for book in books_map:
-
-        # only show the book if's unlocked
-        # default is unlocked
-        this_unlocked = True
-
-        # TODO: idk why this doesn't work, it's literally taken from timeline that uses the same tech
-        # unlock by label, will probably add more conditions later
-        if "need_label" in books_map[book] and renpy.seen_label(books_map[book]["need_label"]) == False:
-            this_unlocked = False
-
-        # append to shelf if unlocked
-        if this_unlocked == True:
-            bookshelf.append(Book(book, books_map[book]["title"], books_map[book]["desc"], books_map[book]["jump_to"], books_map[book]["spine_width"], books_map[book]["spine_height"], books_map[book]["x_pos"], books_map[book]["y_pos"]))
-
 style subgame_return is button:
     # this is the closest thing to a blank line i can do here, but the tag needs to exist or it'll crash - tate
     background None
@@ -55,6 +39,32 @@ style subgame_return_text is text:
 screen subgame():
     tag menu
     image "gui/subgame_menu.png"
+
+    python:
+        bookshelf = []
+        for book in books_map:
+            # only show the book if's unlocked
+            # default is unlocked
+            this_unlocked = True
+
+            # TODO: idk why this doesn't work, it's literally taken from timeline that uses the same tech
+            # unlock by label, will probably add more conditions later
+            if "need_label" in books_map[book] and not renpy.seen_label(books_map[book]["need_label"]):
+                this_unlocked = False
+                print(f"Not showing {book} :(")
+            else:
+                print(f"Showing {book} :)")
+
+            # append to shelf if unlocked
+            if this_unlocked == True:
+                bookshelf.append(Book(book,
+                books_map[book]["title"],
+                books_map[book]["desc"],
+                books_map[book]["jump_to"],
+                books_map[book]["spine_width"],
+                books_map[book]["spine_height"],
+                books_map[book]["x_pos"],
+                books_map[book]["y_pos"]))
 
     for book in bookshelf:
         imagebutton:
