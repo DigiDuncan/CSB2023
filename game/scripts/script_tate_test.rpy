@@ -359,6 +359,22 @@ label awawa_tate_test:
                         show health_test at manual_pos(8, 8, 0)
                         tate "Is that correct?"
                         hide health_test
+                    "Sigil Test":
+
+                        # TODO: somehow combine t_tate_sigil_text into here...? can this even be done??
+                        image tate_sigil = Fixed(
+                            At(Image("/secret/pt/sigil_inner.png", xanchor=0.5, yanchor=0.5, xalign=0.5, yalign=0.5, alpha=0.6), Transform(alpha=0.6)),
+                            At(Image("/secret/pt/sigil_text.png", xanchor=0.5, yanchor=0.5, xalign=0.5, yalign=0.5), t_tate_sigil_text)
+                        )
+
+                        show tate_sigil at truecenter behind tate:
+                            xysize (2000,2000)
+                            zoom 0.75
+                            blur 5
+
+                        show tate srs
+                        tate "It {i}is{/i} drawn {i}correctly{/i} this time, right?"
+                        hide tate_sigil
                     "Never mind.":
                         jump .awawa_menu
                 jump .awawa_menu

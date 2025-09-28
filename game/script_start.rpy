@@ -244,6 +244,14 @@ transform t_fake_rpg_text(x,y,speed = 0.25):
         parallel:
             ease_expo 0.75 alpha 0.00
 
+
+transform t_tate_sigil_text:
+    alpha 0.6
+    block:
+        linear 11 rotate -360
+        linear 0 rotate 0
+        repeat
+
 transform lego_run:
     pos (0.5, 0.5)
     anchor(0.5, 0.5)
