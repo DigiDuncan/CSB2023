@@ -2808,10 +2808,10 @@ label train_on_top:
     play music encounter_friend_loop if_changed
     music encounter_friend
     # TODO: yes i know this edit is shit
-    # TODO: need moving background
+    # TODO: need to fix perspective
 
     scene
-    show midwest_night
+    show amtrak_desert_night
     show amtrak_top
 
     show tate sad dark at manual_pos(500,230)
@@ -2878,8 +2878,7 @@ label train_on_top:
 
     ## SHOT 2
 
-    show midwest_night
-    # TODO: add horizon
+    show amtrak_desert_night
     show amtrak_top:
         xysize (1920, 200)
         xzoom -1
@@ -2903,8 +2902,7 @@ label train_on_top:
 
     ## SHOT 3
 
-    show midwest_night
-    # TODO: add horizon
+    show amtrak_desert_night
     show amtrak_top:
         xysize (1920, 300)
         xzoom 1
@@ -2938,9 +2936,11 @@ label train_on_top:
     play sound sfx_zenigata_shout
     zenigata_nobeep "{cshake}{size=+24}Lupiiiiin!{w=2.0}{nw}"
 
+    # TODO: sfx car engine, tires squealing
+
     show zenigata car dark behind letterbox:
         xpos -800
-        ypos 100
+        ypos 300
         rotate -5
         zoom .8
         linear 2 xpos 100
@@ -2949,12 +2949,12 @@ label train_on_top:
             parallel:
                 linear 2 xpos 125
             parallel:
-                linear 2 ypos 125
+                linear 2 ypos 275
             pass
             parallel:
-                linear 2 xpos 100
+                linear 2 xpos 150
             parallel:
-                linear 2 ypos 100
+                linear 2 ypos 300
             repeat
     pause 1.0
     $ collect("jp_cop_car")
@@ -2966,7 +2966,6 @@ label train_on_top:
     hide zenigata
     hide amtrak_top
 
-    show midwest_night
     show mean human angry dark flipped behind letterbox_screen:
         xpos 0
         ypos 0
@@ -2993,8 +2992,10 @@ label train_lupin_win:
     $ train_ending_money_returned = True
     scene black
     pause 0.5
+
+    # TODO: fix perspective on background
     scene
-    show car plains night
+    show amtrak_desert_night
     show amtrak_top
     with dissolve
 
@@ -3623,9 +3624,10 @@ label train_lupin_lose:
     $ train_ending_money_returned = False
     scene black
     pause 0.5
+
+    # TODO: fix perspective on background
     scene
-    show midwest_night
-    # TODO: add horizon
+    show amtrak_desert_night
     show amtrak_top:
         ypos 880
         xysize (2020, 200)
@@ -3640,9 +3642,9 @@ label train_lupin_lose:
     show lupin run hat dark flipped at offscreenright with moveinleft
     show mean human angry dark flipped at offscreenright with moveinleft
 
+    # TODO: fix perspective on background
     scene
-    show midwest_night
-    # TODO: add horizon
+    show amtrak_desert_night
     show amtrak_top:
         ypos 780
         xysize (1920, 300)
@@ -3698,8 +3700,10 @@ label train_lupin_lose:
 
     play sound sfx_chopper_loop loop volume 0.5
 
+    # TODO: fix perspective on background
     scene
-    show midwest_night
+    show amtrak_desert_night
+
     # TODO: add moving floor
     show petals_falling:
         time 15
@@ -4261,7 +4265,7 @@ label train_return_home_transition:
 
     # TODO: add mean's chosen BGM here :D
 
-    n "A day later, the two finally deboard the train in New York City."
+    n "A day later, they finally deboard the train in New York City."
     show cs at left
     show arceus flipped at center
     with moveinleft

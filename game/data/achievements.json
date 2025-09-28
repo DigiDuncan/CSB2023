@@ -498,7 +498,7 @@
     "target_circle":{
         "name": "Expect More, Pay Less",
         "locked": "???",
-        "unlocked": "Sign up for Target Circle",
+        "unlocked": "Sign up for Target Circle.",
         "img": "target",
         "type": "extra",
         "ce": true
