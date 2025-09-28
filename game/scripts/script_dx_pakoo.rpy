@@ -1897,6 +1897,12 @@ label dx_after_convention_end:
 
 
 label dx_after_win:
+    hide screen cultcon_votes
+    hide screen cultcon_votes_1
+    hide screen cultcon_votes_2
+    hide screen cultcon_votes_3
+    hide screen cultcon_votes_4
+    hide screen cultcon_votes_5
     scene conferencetv at Move((0.0 , 0.0), (0.0, -1.0), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show cultcon_leader at Move((0.397 , 1.25), (0.397 , 0.25), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show stand at Move((0.341 , 1.587), (0.341 , 0.587), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
@@ -1915,7 +1921,22 @@ label dx_after_win:
     cultcon_leader "Congratulations! Do you have anything to say to Cultcon this year?"
     cs "Today I learned that no matter how many followers you have in your cult, you can always manage to gather more if you try hard enough."
     cultcon_leader "Some inspiring words from Blue Branch! Let's hear it for them!"
-    
+    # Cheering
+    n "While everyone is praising CS for his victory, someone is seen pushing everyone out of the way."
+    cultcon_leader "Thank you everyone for coming, and have a safe--{nw}"
+    show cruise flipped at left with moveinleft
+    show cs cultist disappointed at hpunch
+    show cs cultist disappointed flipped at mid_left with move
+    cruise "You promised, buddy!"
+    cruise "I want you to show off \"Your Special Thing\" to everyone here!"
+    cultcon_leader "Woah woah, calm down, Tom."
+    cultcon_leader "That's really messed up, man."
+    cultcon_leader "We really don't our winner here to show off their genitals just to prove that they won."
+    cruise "Wait wha--{nw}"
+    cs "Yeah man, I'm not even gay enough to even promise something like that."
+    cultcon_leader "Not sure what kind of promise you made Tom, but this an extremely unappropriate time for this."
+    cultcon_leader "Can someone get this guy out of here?"
+    cruise "Nooo!"
 # RENAULT
 
 label dx_after_renault:

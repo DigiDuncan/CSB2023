@@ -1110,6 +1110,13 @@
             "tags": ["Menus & Misc.", "CSBIII DX: After Story", "CSBIII DX: Finale", "New In DX"],
             "album_art": "tracker.png"
         },
+        "tv_hall_of_fame" : {
+            "file": "tv_hall_of_fame.ogg",
+            "title": "Hall of Fame",
+            "artist": "Toby Fox",
+            "tags": ["CSBIII DX: After Story", "CSBIII DX: Finale", "New In DX"],
+            "album_art": "deltarune.png"
+        },
         "polar_express" : {
             "file": "polar_express.ogg",
             "title": "The Polar Express - Main Title",
