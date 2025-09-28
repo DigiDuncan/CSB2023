@@ -1937,6 +1937,15 @@ label dx_after_win:
     cultcon_leader "Not sure what kind of promise you made Tom, but this an extremely unappropriate time for this."
     cultcon_leader "Can someone get this guy out of here?"
     cruise "Nooo!"
+    hide cruise
+    cultcon_leader "Anyways, without further ado..."
+    cultcon_leader "Here is your grand prize!"
+    cs "Woohoo!"
+    n "CS tries to pick the bucket up, but remembers how heavy it is."
+    cs "Ah crap, can someone help me carry this?"
+    n "One of the other Blue Branch cultists runs out and helps CS carry it outside."
+    n "After they manage to carry the bucket outside, CS tries to figure out how to turn the machine on."
+    
 # RENAULT
 
 label dx_after_renault:
