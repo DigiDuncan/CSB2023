@@ -47,7 +47,6 @@ screen subgame():
             # default is unlocked
             this_unlocked = True
 
-            # TODO: idk why this doesn't work, it's literally taken from timeline that uses the same tech
             # unlock by label, will probably add more conditions later
             if "need_label" in books_map[book] and not renpy.seen_label(books_map[book]["need_label"]):
                 this_unlocked = False

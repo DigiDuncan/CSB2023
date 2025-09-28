@@ -48,7 +48,7 @@ label ce_start:
     cs "Woohoo!"
     cs "Christmas is almost here!"
     show cs
-    cs "... And, you know what that means!"
+    cs "... And you know what that means!"
     if fun_value(FUN_VALUE_COMMON, fish = True):
         play sound ["<silence 0.125>", sfx_fish]
         cs_nobeep "Fish!"
@@ -1449,7 +1449,7 @@ label ce_before_shopping:
     show cs coat disappointed
     cs "Walmart usually has a better deal on these, but, {i}gosh,{/i} I hate going there."
     show cs coat happy
-    cs "And, I'm gonna need a {i}lot{/i} of Genergy to get through all this party prep!"
+    cs "And I'm gonna need a {i}lot{/i} of Genergy to get through all this party prep!"
 
     show genergy at manual_pos(0.4, 0.3) with Dissolve(0.25)
     show genergy at manual_pos(0.55, 0.8) with MoveTransition(0.25)
@@ -1660,7 +1660,7 @@ label ce_before_shopping:
     show cs coat happy
     cs "Well, if there's one thing I learned about cooking from Paula Deen, it's that {i}everything's{/i} better with butter!"
     show cs coat worried
-    cs "... And, that Paula Deen is scary. I learned {i}that,{/i} too."
+    cs "... And that Paula Deen is scary. I learned {i}that,{/i} too."
     show cs coat happy
     cs "Good thing she's not attending {i}this{/i} party!"
     show cs coat
@@ -3018,7 +3018,7 @@ label ce_introductions:
         show cs scared christmas
         cs "Okay, wait, why are there {i}two{/i} Pakoos?"
         show cs worried christmas
-    cs "... And, you also don't have green hair anymore, again?"
+    cs "... And you also don't have green hair anymore, again?"
     show k22 disappointed
     k22 "Oh, boy. Alright."
     k22 "K-17, calm down for one second. I think everyone here needs an explanation."
@@ -3592,7 +3592,7 @@ label ce_banter:
     show k17 disappointed flipped
     mean "I'm Mean, and this is Tate. We are friends."
     k17 "Yeah, you {i}sound{/i} mean."
-    tate "And, I'm not a girl--!{w=0.25}{nw}" with vpunch
+    tate "And I'm not a girl--!{w=0.25}{nw}" with vpunch
     show tate furious festive flipped
     show mean human annoyed festive
     show tate srs festive flipped
@@ -3940,7 +3940,7 @@ label ce_win_carrot:
     kitty "... How so?"
     arceus "Well, you figure, eight nights of Hanukkah."
     kitty "Uh-huh..."
-    arceus "And, today's the 25th of December."
+    arceus "And today's the 25th of December."
     kitty "I see."
     arceus "So, the last night of Hanukkah would be the 2nd of January."
     kitty "..."
@@ -3952,7 +3952,7 @@ label ce_win_carrot:
     show grace at mid_left
     with dissolve
     pause 0.5
-    sheriff "... and, that's how I ended up this way."
+    sheriff "... and that's how I ended up this way."
     sheriff "I could've gone to college, studied the paranormal..."
     sheriff "... started up a shower curtain business, run a newspaper..."
     sheriff "... but, no, I {i}had{/i} to become a {i}cop."
@@ -4046,7 +4046,7 @@ label ce_win_carrot:
     aria "Usually."
     show digi happy
     show arceus happy festive
-    arceus "And, you {i}love{/i} putting up with this fluffy bastard."
+    arceus "And you {i}love{/i} putting up with this fluffy bastard."
     show arceus festive
     digi "While that's true, I think {i}half{/i} of that night was spent coding, and the {i}other{/i} half was spent confusing the names of four different bald dudes."
     show arceus happy festive
@@ -6625,7 +6625,7 @@ label ce_snowed_in:
     show flashlight_held
     extend "we're just gonna have to wait it out!"
     show cs happy christmas
-    cs "And, what better way to kill time than to play some games?"
+    cs "And what better way to kill time than to play some games?"
     show cs christmas
     michael "Oh! I know of an easy game we can play."
     michael "I spy something... black!"
@@ -7170,7 +7170,7 @@ label ce_billy_time:
     hide billy
     with moveoutright
     pause 0.5
-    n "Everyone clammers up the stairs."
+    n "Everyone clambers up the stairs."
     pause 1.0
     sheriff "Welp."
     sheriff "I'll just... wait here."
@@ -7971,7 +7971,7 @@ label ce_end_credits:
     $ ending_manager.mark("christmas")
     $ persistent.heard.add("christmas_tea")
 
-    call screen credits_roll(route="CSBIII DX: Holiday Special", scroll_start = 12525, duration=84) with dissolve
+    call screen credits_roll(route="CSBIII DX: Holiday Special", scroll_start = 12525, duration=84, replace_music=False) with dissolve
 
     jump ce_epilogue
 

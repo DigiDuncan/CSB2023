@@ -149,7 +149,7 @@ label book_celestial_sightseeing:
     tate_cyan "I don't need that one asking too many questions."
     tate_cyan "I {i}certainly{/i} don't need them trying to... {nw}"
     show cs worried flipped
-    extend "break anything else on their own."
+    extend "{i}break anything else{/i} on their own."
     tate_cyan "I simply don't have the time to babysit that one right now. I need to focus on my recovery."
     cs "Well... "
     show cs disappointed flipped
