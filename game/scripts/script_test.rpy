@@ -140,6 +140,8 @@ label test:
                     show screen lightgungame
                     pause
                     $ renpy.full_restart()
+                "Loop Test":
+                    jump looptest
 
 label lightgamehit:
     if reloading == 0:
@@ -155,3 +157,14 @@ label lightgamehit:
     $ reloading -= 1
     pause
     $ renpy.full_restart()
+
+transform t_loop:
+    xanchor 1.0
+    xpos 1.0
+    linear 3.0 xpos 3.0
+    linear 0.0 xpos 1.0
+    repeat
+
+label looptest:
+    show looptest behind cs at t_loop
+    pause
