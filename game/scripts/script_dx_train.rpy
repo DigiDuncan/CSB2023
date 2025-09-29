@@ -1,9 +1,24 @@
-# TODO: mean needs a better text beep
 # TODO: make sure all music/bios are added by the end
-# TODO: ALL INSTANCES OF CAR PLAINS / CAR PLAINS NIGHT ARE PLACEHOLDERS
-# TODO: moving scenery, mostly at night, including on top of the train. will need custom scenes. for now it's just the car scenery
-# TODO: mean thinks the normal car moving background is too fast, maybe slow down moving videos?
 # TODO: replace all instances of hearts and music notes with jp font glyphs as soon as it looks good?
+
+# TODO: ALL INSTANCES OF CAR PLAINS / CAR PLAINS NIGHT ARE PLACEHOLDERS
+# TODO: THE FOLLOWING LABELS NEED TO BE CHECKED FOR MOVING BACKGROUNDS:
+
+# train_enter_sleeper
+# train_dining
+# train_wakeup
+# train_allow_staff
+# train_begin_heist
+# train_meanwhile
+# train_search_arceus
+# train_search_cs
+# train_search_tate
+# train_confront_lupin
+# train_on_top
+# train_lupin_win
+# train_lupin_lose
+# train_completed
+# train_dialogue (separate file)
 
 ######## VARIABLES ########
 label train_start_good:
@@ -324,7 +339,7 @@ label train_museum_menu:
 
     menu:
         "Would you like to visit Kingman Railroad Museum?"
-        "Sure.":
+        "Sure!":
             jump train_yes_museum
         "Not really...":
             jump train_no_museum
@@ -391,7 +406,8 @@ label train_no_museum:
     scene black with dissolve
     n "As CS takes a quick nap in a lobby chair, Arceus wanders around the museum."
     n "While not many exhibits can fit inside such a small building, there is just enough to see to pass the remaining time."
-    n "About five minutes before the train's expected arrival, the two make their way out onto to the platform as Arceus shares some of the things he learned today."
+    n "About five minutes before the train's expected arrival, the two make their way out onto to the platform."
+    n "As expected, Arceus shares some of the things he learned today."
     jump train_kingman_platform
 
 label train_race_win:
@@ -440,7 +456,7 @@ label train_race_lose:
     show arceus happy at right
     with dissolve
     arceus "Let's fuckin' {i}go!"
-    cs "Aww, damn it..."
+    cs "Aw, damn it..."
     cs "This has {i}got{/i} to be rigged! I play with RC cars all the time!"
     cs "Model trains can't be {i}that{/i} different, can they?"
     show arceus worried
@@ -870,7 +886,7 @@ label train_enter_sleeper:
     show tate stare
     cs "Damn. Are you feeling any better?"
     show arceus
-    arceus "Oh, yeah. I think I'll be alright, now."
+    arceus "Oh, yeah. I think I'll be alright now."
     show cs
     show tate
     cs "That's good to hear."
@@ -883,7 +899,7 @@ label train_enter_sleeper:
     pause 1.0
     show tate sad flipped
     pause 0.5
-    tate "{w=0.5}... Yes. Yes, you should."
+    tate "{w=0.5}... Yes. Yes,{w=0} you should."
     show tate sad
     n "Tate sheepishly looks down at the floor."
     pause 1.0

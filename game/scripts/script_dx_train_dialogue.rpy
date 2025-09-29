@@ -1,5 +1,4 @@
-# TODO: better moving backgrounds
-# TODO: ALL INSTANCES OF CAR PLAINS / CAR PLAINS NIGHT ARE PLACEHOLDERS
+# TODO: CHECK ALL MOVING BACKGROUNDS
 
 label train_dialogue:
     stop music fadeout 1.0
