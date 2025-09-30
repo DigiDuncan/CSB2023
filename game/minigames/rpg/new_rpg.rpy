@@ -4,6 +4,7 @@ init python:
     class NewRPGGameDisplayable(renpy.Displayable):
         def __init__(self):
             renpy.Displayable.__init__(self)
+            self.fighter_list = [Fighters.get("ARCEUS"), Fighters.get("KITTY"), Fighters.get("DIGI"), Fighters.get("MEAN")]
             self.start_time = None
             self.win = None
 
@@ -12,17 +13,48 @@ init python:
                 self.start_time = st
             r = renpy.Render(1920, 1080)
             s = r.canvas()
-            fight_menu = NewFightMenuDisplayable(Fighters.get("ARCEUS"))
-            fighterbox_1 = NewStatBlockDisplayable(Fighters.get("ARCEUS"))
-            fighterbox_1.define_box_height()
-            r.place(fight_menu, 0, 1080-fight_menu.height)
-            r.place(fighterbox_1, 0, (1080-fight_menu.height)-fighterbox_1.render_height - 2)
+            fighter_x = 2
+            for fighter in self.fighter_list:
+                fight_menu = NewFightMenuDisplayable(fighter)
+                fighterbox = NewStatBlockDisplayable(fighter)
+                if fighter_x != 2:
+                    fighterbox.is_turn = False
+                fighterbox.define_box_height()
+                if fighterbox.is_turn:
+                    r.place(fight_menu, 2, 1080-fight_menu.height)
+                r.place(fighterbox, fighter_x, (1080-fight_menu.height)-fighterbox.render_height-2)
+                fighter_x = fighter_x + 479
+
+            # fight_menu = NewFightMenuDisplayable(Fighters.get("ARCEUS"))
+            # fighterbox_1 = NewStatBlockDisplayable(Fighters.get("ARCEUS"))
+            # fighterbox_1.define_box_height()
+            # r.place(fight_menu, 0, 1080-fight_menu.height)
+            # r.place(fighterbox_1, 0, (1080-fight_menu.height)-fighterbox_1.render_height - 2)
+            renpy.redraw(self, 0)
             return r
 
         def event(self, ev, x, y, st):
             import pygame
             if ev.type == pygame.KEYDOWN and ev.key == pygame.K_END:
                 self.win = True
+            if ev.type == pygame.MOUSEBUTTONUP:
+                # Determine where the mouse is
+                mouse_x,mouse_y = renpy.get_mouse_pos()
+                # Is the mouse in the area where the buttons will be?
+                if mouse_y < (1080 - 262) and mouse_y > (1080 - 262 - 87):
+                    # The mouse is in the Y zone.
+                    # Weed out some outliers.
+                    is_attack = True if mouse_x in range(0, int(1920/8)*1) or mouse_x in range(int(1920/8)*2, int(1920/8)*3) or mouse_x in range(int(1920/8)*4, int(1920/8)*5) or mouse_x in range(int(1920/8)*6, int(1920/8)*7) else False
+                    quadrant = 0
+                    if mouse_x in range(0, 480):
+                        quadrant = 1
+                    elif mouse_x in range(481, 960):
+                        quadrant = 2
+                    elif mouse_x in range(961, 1440):
+                        quadrant = 3
+                    else:
+                        quadrant = 4
+                    renpy.notify(("Attack" if is_attack == True else "Defend")+" in quadrant "+ str(quadrant))
             if self.win is not None:
                 return self.win
 
@@ -31,6 +63,7 @@ init python:
     
     class NewStatBlockDisplayable(renpy.Displayable):
         def __init__(self, fighter: Fighter):
+            super().__init__(self)
             # This is where I define everything that needs to be in the stat block
             self.fighter = fighter
             self.fighter_name = Text(self.fighter.display_name, color = "#FFFFFF", size = 52, xanchor = 1.0, textalign = 1.0)
@@ -43,15 +76,14 @@ init python:
             self.attack_text = Text(str(self.fighter.attack_points), textalign = 0.0, size = 32, yanchor = 0.5)
             self.stat_back_big = Image("gui/rpg/tall_box.png")
             self.stat_back_small = Image("gui/rpg/small_box.png")
-            self.attack_button = AttackButtonDisplayable()
-            self.defend_button = ImageButton("gui/rpg/defend_button.png")
+            self.attack_button = Image("gui/rpg/attack_button.png")
+            self.defend_button = Image("gui/rpg/defend_button.png")
             self.render_height = 105
             if self.fighter.sprite:
                 self.fighter_image = self.fighter.sprite
             else:
                 self.fighter_image = Image("gui/rpg/portraits/unknown.png")
             self.sprite_back = Image("gui/rpg/fighter_icon_frame.png", yanchor=0.5)
-            super().__init__(self)
 
         def render(self, width, height, st, at):
             self.define_box_height()
@@ -62,12 +94,12 @@ init python:
                 r.place(self.defend_button, x = 250, y = 105)
             else:
                 r.place(self.stat_back_small)
-            r.place(self.fighter_name, x = 470,y = 0)
+            r.place(self.fighter_name, x = 460,y = 0)
             health_bar_size = int(lerp(0, 228, self.fighter.health_points / self.fighter.max_health))
             health_crop = Crop((0, 0, health_bar_size, 50), self.health_bar)
             health_bar_renderer = renpy.render(health_crop, 1920, 1080, st, at)
-            r.blit(health_bar_renderer, (470-health_bar_size, 55))
-            r.place(self.health_text, x = 470, y = 55)
+            r.blit(health_bar_renderer, (460-health_bar_size, 55))
+            r.place(self.health_text, x = 460, y = 55)
             r.place(self.sprite_back, x = 10, y = 105/2)
             r.place(self.fighter_image, x = 10, y = 10)
             r.place(self.attack_stat_icon, x = 108, y = (105/16)*5)
@@ -93,16 +125,19 @@ init python:
         
         def render(self, width, height, st, at):
             r = renpy.Render(self.width, self.height)
+            # Determine how big the text needs to be.
+            small_text = False
+            if len(self.fighter.attacks) != 2:
+                small_text = True
             r.place(Image("gui/rpg/main_box.png"))
-            return r
-
-    class AttackButtonDisplayable(renpy.Displayable):
-        def __init__(self):
-            super().__init__(self)
-        
-        def render(self, width, height, st, at):
-            r = renpy.Render(215,87)
-            r.place(Image("gui/rpg/attack_button.png"))
+            attack_text = TextButton(
+                "{size=32}"+self.fighter.attacks[0].name+" {size=16}("+self.fighter.attacks[0].properties+")",
+                idle_color="#FFFFFF",
+                hover_color="#00BDFF")
+            r.place(attack_text)
+            # The Name of the attack
+            # r.place(Text("{size=32}"+self.fighter.attacks[0].name+" {size=16}("+self.fighter.attacks[0].properties+")"))
+            # r.place(Text(self.fighter.attacks[0].description))
             return r
 
 screen newrpggame():
