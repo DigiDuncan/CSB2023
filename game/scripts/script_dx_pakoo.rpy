@@ -1894,9 +1894,9 @@ label dx_after_convention_end:
     show screen cultcon_votes_5
     play sound sfx_fabeep
     pause
-    if total_votes <= 70:
+    if total_votes >= 70:
         jump dx_after_win
-    if total_vote > 69:
+    if total_votes < 69:
         jump dx_after_lose
     else:
         jump dx_dogcheck
