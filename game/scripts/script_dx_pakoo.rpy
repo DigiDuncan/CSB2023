@@ -1894,7 +1894,19 @@ label dx_after_convention_end:
     show screen cultcon_votes_5
     play sound sfx_fabeep
     pause
+    if total_votes <= 70:
+        jump dx_after_win
+    if total_vote > 69:
+        jump dx_after_lose
+    else:
+        jump dx_dogcheck
 
+label dx_dogcheck:
+    stop music
+    music end
+    show csbdxdogheck
+    pause
+    return
 
 label dx_after_win:
     hide screen cultcon_votes
@@ -1943,6 +1955,8 @@ label dx_after_win:
     cs "Woohoo!"
     n "CS tries to pick the bucket up, but remembers how heavy it is."
     cs "Ah crap, can someone help me carry this?"
+    stop music fadeout 3.0
+    music end
     n "One of the other Blue Branch cultists runs out and helps CS carry it outside."
     n "After they manage to carry the bucket outside, CS tries to figure out how to turn the machine on."
     cs "I could've sworn there was a switch right here..."
@@ -2027,6 +2041,52 @@ label dx_after_win_finale:
     cs "Damnit! Everyo--"
     n "Before CS can finish his exclamation, everyone and everything is engulfed in brightness, CS' surroundings becoming nothing but a white void."
     jump dx_after_super_heaven
+
+label dx_after_lose:
+    hide screen cultcon_votes
+    hide screen cultcon_votes_1
+    hide screen cultcon_votes_2
+    hide screen cultcon_votes_3
+    hide screen cultcon_votes_4
+    hide screen cultcon_votes_5
+    scene conferencetv at Move((0.0 , 0.0), (0.0, -1.0), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show cultcon_leader at Move((0.397 , 1.25), (0.397 , 0.25), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show stand at Move((0.341 , 1.587), (0.341 , 0.587), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    play music tv_hall_of_fame
+    music tv_hall_of_fame
+    cultcon_leader "Well everyone, we have our winner for this year!"
+    cultcon_leader "It seems once again, Scientology has won with an outstanding 70 votes!"
+    cultcon_leader "Tom, you can come up and claim your prize?"
+    cruise "Hell yeah!"
+    cruise "And please, call me Mr. Cruise."
+    cs "Aw man, I guess I couldn't get enough votes."
+    cultist "It's alright, The Scientologists probably cheated anyways, knowing them."
+    cultist "There is always next year."
+    cs "I guess so."
+    cultist_2 "Fuck those stupid guys! This is why I hate everything!"
+    cultist "Come on guys, let's get to the car."
+    cultist_3 "I'll meet you guys there, I have to go to the bathroom first."
+    stop music fadeout 3.0
+    music end
+    n "CS and the Blue Branch Cult Leader head out into the parking lot."
+    cultist "Damnit, where the hell is my car?"
+    cs "What kind of car do you have?"
+    cultist "It's a Blue 1998 Fiat Multipla, but I can't find it."
+    cs "Wow, you guys really do hate everything."
+    cs "Did the other guy also have to go to the bathroom? I can't find them anywhere..."
+    cultist "I dont know, but I wanna find our car first."
+    n "In that moment, the other two cultists run out of the convention entrance, carrying the time machine."
+    cultist_2 "We got it!"
+    cultist_3 "Guys, we got the grand prize!"
+    cs "Wait what? How did you manage that?"
+    cultist_2 "We snuck backstage and stole this bucket when they weren't looking!"
+    cultist_3 "But we gotta get going, now!"
+    n "As they are being told this, Tom Cruise is heard yelling in the distance."
+    cruise "You little shits! Give me my winnings back!"
+    cultist "Sh-- Alright fine! Everyone, we are stealing this car!"
+    n "The leader smashes the window open and unlocks it."
+    cultist "Newbie, you drive, you two, cram the bucket in, and I'll keep him distracted!"
+
 # RENAULT
 
 label dx_after_renault:

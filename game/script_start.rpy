@@ -2948,6 +2948,7 @@ image amtrak_northeast = Movie(play="movies/northeast.webm")
 image amtrak_desert_day = Movie(play="movies/desert_day.webm")
 image amtrak_desert_night = Movie(play="movies/desert_night.webm")
 image portalbg = Movie(play="movies/portal.webm")
+image csbdxdogheck = Movie(play="movies/csbdxdogheck.webm")
 
 # Movie Cutscenes
 define anno_bl = "movies/anno.webm"
