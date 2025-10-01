@@ -1103,6 +1103,13 @@
             "tags": ["CSBIII DX: After Story", "New In DX", "Minigames"],
             "album_art": "awesome.png"
         },
+        "sneak_theme" : {
+            "file": "sneak_theme.mp3",
+            "title": "Snooping Around As Usual",
+            "artist": "Pakoo",
+            "tags": ["CSBIII DX: After Story", "New In DX"],
+            "album_art": "csbii.png"
+        },
         "interference2" : {
             "file": "interference.ogg",
             "title": "Interference",
@@ -1114,7 +1121,7 @@
             "file": "tv_hall_of_fame.ogg",
             "title": "Hall of Fame",
             "artist": "Toby Fox",
-            "tags": ["CSBIII DX: After Story", "CSBIII DX: Finale", "New In DX"],
+            "tags": ["CSBIII DX: After Story", "New In DX"],
             "album_art": "deltarune.png"
         },
         "polar_express" : {

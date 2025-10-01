@@ -1489,6 +1489,12 @@ label dx_after_blindeye_reask:
         n "CS spots a door slightly cracked open next to the wall where they were standing."
         cs "Hmm..."
         cs "I'm gonna go take a peek..."
+        stop music fadeout 2.0
+        stop music2 fadeout 2.0
+        stop music3 fadeout 2.0
+        stop music4 fadeout 2.0
+        stop music5 fadeout 2.0
+        music end    
         hide cs with moveoutright
         scene black with dissolve
         n "CS gently opens the door."
@@ -1502,6 +1508,8 @@ label dx_after_blindeye_reask:
         cs "Huh?"
         fiddle "Okay wait I can--"
         cs "Whaaaat?!?"
+        play music sneak_theme
+        music sneak_theme
         cs "You're the leader of Blue Branch??"
         $ blue_check = False
         fiddle "Okay well-- Yes-- It's a long story..."
@@ -1541,8 +1549,18 @@ label dx_after_blindeye_reask:
         blind_eye "Alright well, good luck."
         show cs cultist flipped with determination
         hide cs cultist with moveoutleft
+        stop music fadeout 3.0
+        music end
         n "CS takes the gun and heads back to the convention."
         $ gun_get = True
+        play music ten_feet_away_1
+        music ten_feet_away
+        if total_votes >= 25:
+            play music2 [ "<sync music>audio/10_feet_away_2.ogg", ten_feet_away_2 ]
+        if total_votes >= 50:
+            play music3 [ "<sync music>audio/10_feet_away_3.ogg", ten_feet_away_3 ]
+        if total_votes >= 75:
+            play music4 [ "<sync music>audio/10_feet_away_4.ogg", ten_feet_away_4 ]
         scene cult_con with dissolve
         show cs cultist at center with moveinleft
         cs "Alright, time to find those Scientologists."
@@ -1925,11 +1943,21 @@ label dx_after_win:
     cultcon_leader "That's right! Our winner is..."
     cultcon_leader "Blue Branch!"
     cultcon_leader "Can we get someone from the cult to come up and claim the prize?"
-    show cs cultist at left with moveinleft
+    scene blue_branch
+    show cultist_2 at right
+    show cultist_3 at mid_mid_right
+    show cultist behind cultist_2 at mid_right
+    show cs cultist at left
     cs "Woohoo! We did it guys!"
     cultist_2 "You did it, newbie! You made us win!"
     cultist "Well what are you waiting for? Go up there, make me proud!"
+    show cs cultist flipped with determination
+    hide cs with moveoutleft
     n "CS struts up to the main stage."
+    scene conferencetv at Move((0.0, -1.0), (0.0, -1.0), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show cultcon_leader at Move((0.397 , 0.25), (0.397 , 0.25), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show stand at Move((0.341 , 0.587), (0.341 , 0.587), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show cs cultist at left with moveinleft
     cultcon_leader "Congratulations! Do you have anything to say to Cultcon this year?"
     cs "Today I learned that no matter how many followers you have in your cult, you can always manage to gather more if you try hard enough."
     cultcon_leader "Some inspiring words from Blue Branch! Let's hear it for them!"
@@ -1948,17 +1976,40 @@ label dx_after_win:
     cs "Yeah man, I'm not even gay enough to even promise something like that."
     cultcon_leader "Not sure what kind of promise you made Tom, but this an extremely unappropriate time for this."
     cultcon_leader "Can someone get this guy out of here?"
+    show bouncer1 at mid_offscreen_left with moveinright
+    show bouncer2 at mid_left with moveinright
     cruise "Nooo!"
     hide cruise
+    hide bouncer1
+    hide bouncer2
+    with moveoutleft
+    pause 0.5
+    show cs cultist at mid_left
     cultcon_leader "Anyways, without further ado..."
+    show bouncer1 at mid_right_right
+    show pot at mid_right
+    with moveinright
+    play sound sfx_bucket volume 0.9
+    pause 0.75
+    hide bouncer1 with moveoutright
     cultcon_leader "Here is your grand prize!"
     cs "Woohoo!"
+    show cs cultist at mid_mid_right with move
+    show cs cultist disappointed
     n "CS tries to pick the bucket up, but remembers how heavy it is."
     cs "Ah crap, can someone help me carry this?"
     stop music fadeout 3.0
     music end
+    scene black with dissolve
     n "One of the other Blue Branch cultists runs out and helps CS carry it outside."
     n "After they manage to carry the bucket outside, CS tries to figure out how to turn the machine on."
+    scene parking_lot
+    show cs cultist disappointed flipped at right
+    show pot at mid_right
+    show cultist flipped at left
+    show cultist_2 flipped at mid_left
+    show cultist_3 flipped at mid_mid_left
+    with dissolve
     cs "I could've sworn there was a switch right here..."
     cultist "Hey, thank you again for helping us win Cultcon."
     cultist "We've never actually managed to get enough votes to even hit the Top 5, probably because of our stubborn attitudes."
@@ -2004,6 +2055,7 @@ label dx_after_win:
     cs "If you can buy me enough time, I can teleport us out of here!"
     cultist_2 "That rusty bucket was a teleporter THE WHOLE TIME??"
     cultist "Shut up and let him figure it out! I'll do my best to keep us alive, but you gotta hurry!"
+    jump dx_after_win_finale
     #Cue minigame here
 
 label dx_after_win_finale:
@@ -2086,6 +2138,18 @@ label dx_after_lose:
     cultist "Sh-- Alright fine! Everyone, we are stealing this car!"
     n "The leader smashes the window open and unlocks it."
     cultist "Newbie, you drive, you two, cram the bucket in, and I'll keep him distracted!"
+    jump dx_after_lose_finale
+    #Car chase minigame
+label dx_after_lose_finale:
+    n "After that insane car chase, everyone calms down and takes a deep breath."
+    cultist "I think I got him... he's probably dead."
+    cs "Alright, thank god."
+    cs "Here in a bit, once I can find a place to stop, I'll check out the machine we stole."
+    n "In that moment, the machine starts to sputter, shooting blinding light out from the top!"
+    cultist "What the hell is going on?!"
+    cs "It's happening! Everyone, prepare yourselves!"
+    n "Before CS can explain any more, he finds himself in a blank white void."
+    jump dx_after_super_heaven
 
 # RENAULT
 
