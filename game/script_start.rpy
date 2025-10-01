@@ -1750,9 +1750,12 @@ image billy laser = "characters/billy/BillyMaysWithLaser.png"
 
 # Cultists
 image cultist = "characters/cultist.png"
+image cultist flipped = "flip:characters/cultist.png"
 image cultist gun = "characters/cultistgun.png"
 image cultist_2 = "characters/cultist2.png"
 image cultist_3 = "characters/cultist2.png"
+image cultist_2 flipped = "flip:characters/cultist2.png"
+image cultist_3 flipped = "flip:characters/cultist2.png"
 
 # Digi
 image digi = "characters/digi/neutral.png"
