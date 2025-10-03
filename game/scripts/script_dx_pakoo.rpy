@@ -2012,17 +2012,21 @@ label dx_after_win:
     with dissolve
     cs "I could've sworn there was a switch right here..."
     cultist "Hey, thank you again for helping us win Cultcon."
+    show cs cultist
     cultist "We've never actually managed to get enough votes to even hit the Top 5, probably because of our stubborn attitudes."
     cultist "But you were different. Despite being a fellow hater just like us, you've managed to get the majority of the culting world to appreciate our work."
     cs "No problem, Thanks for letting me keep the grand prize!"
     cultist "Would you like us to give you a ride home?"
+    show cs cultist disappointed flipped
     cs "Well uhh, about that..."
+    show cs cultist
     cs "Yeah, that would work for me. I live in Western Montana."
     cultist "Wait really?"
     cultist "That's were we live!"
     cs "Wow, what a crazy coincidence!"
     cs "Alright, well let's get this thing in the car then."
     cultist_2 "You're coming with us? Awesome!"
+    scene black with dissolve
     n "All the cultist members jump into the car and head out on their way home."
     cultist_2 "That was the best Cultcon I've ever had!"
     cultist_2 "I hope we'll be able to meet you again sometime!"
@@ -2109,25 +2113,47 @@ label dx_after_lose:
     cultcon_leader "Well everyone, we have our winner for this year!"
     cultcon_leader "It seems once again, Scientology has won with an outstanding 70 votes!"
     cultcon_leader "Tom, you can come up and claim your prize?"
+    show cruise flipped at mid_left with moveinleft
     cruise "Hell yeah!"
     cruise "And please, call me Mr. Cruise."
+    scene blue_branch
+    show cultist_2 at right
+    show cultist_3 at mid_mid_right
+    show cultist behind cultist_2 at mid_right
+    show cs cultist disappointed at left
+    with dissolve
     cs "Aw man, I guess I couldn't get enough votes."
     cultist "It's alright, The Scientologists probably cheated anyways, knowing them."
     cultist "There is always next year."
     cs "I guess so."
     cultist_2 "Fuck those stupid guys! This is why I hate everything!"
     cultist "Come on guys, let's get to the car."
+    show cs disappointed flipped with determination
+    hide cs
+    hide cultist
+    with moveoutleft
     cultist_3 "I'll meet you guys there, I have to go to the bathroom first."
     stop music fadeout 3.0
     music end
+    scene black with dissolve
     n "CS and the Blue Branch Cult Leader head out into the parking lot."
+    scene parking_lot
+    show cs cultist disappointed flipped at right
+    show cultist flipped at left
+    with dissolve    
     cultist "Damnit, where the hell is my car?"
+    show cs cultist flipped
     cs "What kind of car do you have?"
     cultist "It's a Blue 1998 Fiat Multipla, but I can't find it."
+    show cs cultist disappointed flipped
     cs "Wow, you guys really do hate everything."
     cs "Did the other guy also have to go to the bathroom? I can't find them anywhere..."
     cultist "I dont know, but I wanna find our car first."
     n "In that moment, the other two cultists run out of the convention entrance, carrying the time machine."
+    show pot at center
+    show cultist_2 flipped at mid_mid_right
+    show cultist_3 flipped at mid_mid_left
+    with moveinright
     cultist_2 "We got it!"
     cultist_3 "Guys, we got the grand prize!"
     cs "Wait what? How did you manage that?"
