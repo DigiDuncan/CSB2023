@@ -16,6 +16,7 @@ screen screen_rpg():
         background "gui/rpg/tall_box.png"
         # Otherwise
         # background "gui/rpg/small_box.png"
+        # ysize 105
         has grid 2 2
         xfill True
         yfill True
@@ -48,9 +49,16 @@ screen screen_rpg():
             align(1.0, 0.0)
             text Fighter1.display_name:
                 xalign 1.0
-            # TODO: Figure out how to make a healthbar for the background.
-            text str(Fighter1.health_points)+"/"+str(Fighter1.max_health)+" HP":
+            frame:
+                background None
+                padding(0,0)
+                xysize(228, 32)
                 xalign 1.0
+                yalign 1.0
+                add "gui/rpg/hp_bar.png" corner1(int(228-(228*(Fighter1.health_points/Fighter1.max_health))),0) corner2(228,32) xalign 1.0
+                text str(Fighter1.health_points)+"/"+str(Fighter1.max_health)+" HP":
+                    xalign 1.0
+                    yalign 0.5
 
         # The attack button
         imagebutton:
