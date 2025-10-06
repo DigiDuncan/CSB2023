@@ -39,7 +39,11 @@ label test:
                     $ reversi_difficulty = ReversiAI.ARIA
                     jump play_reversigame
         "New Menu Option Because Arc is Lazy":
-            jump play_newrpggame
+            menu:
+                "RPG Using Python":
+                    jump play_newrpggame
+                "RPG Using Screen":
+                    jump play_screenrpnggame
         "New cool thing OwO"  (type = "dx"):
             menu:
                 "Layered Image Scene Testing":
