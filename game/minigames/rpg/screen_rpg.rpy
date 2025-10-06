@@ -310,6 +310,7 @@ screen screen_rpg():
 
     # Dev Backdoor
     key "K_END" action Return(True)
+    key "K_i" action IncrementVariable("CurrentTurn")
     pass
 
 label play_screenrpnggame:
