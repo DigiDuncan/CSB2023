@@ -1,5 +1,5 @@
 init python:
-    # Functions python will probably need later on in the code.
+    Fighter1 = Fighters.get("MEAN")
     pass
 
 screen screen_rpg():
@@ -26,23 +26,30 @@ screen screen_rpg():
             ysize 88
             spacing 2
             # Icon
-            add "gui/rpg/portraits/arceus.png" # TODO: Programatically obtain fighter icon
+            if Fighter1.sprite:
+                add Fighter1.sprite
+            else:
+                add "gui/rpg/portraits/unknown.png"
             # Stats
             grid 2 2:
                 yalign 0.5
                 xspacing 2
                 add "gui/rpg/attack.png" yalign 0.5
-                text "35" size 32 yalign 0.5 # TODO: Programatically obtain fighter attack stat
+                text str(Fighter1.attack_points):
+                    size 32
+                    yalign 0.5
                 add "gui/rpg/defense.png" yalign 0.5
-                text "15" size 32 yalign 0.5# TODO: Programatically obtain fighter defense stat
+                text str(Fighter1.armor_points):
+                    size 32
+                    yalign 0.5
 
         # The Fighter's name and healthbar        
         vbox:
             align(1.0, 0.0)
-            text "Arceus": # TODO: Programatically obtain fighter name
+            text Fighter1.display_name:
                 xalign 1.0
             # TODO: Figure out how to make a healthbar for the background.
-            text "160/160 HP": # TODO: Programatically obtain the fighter current health and max health
+            text str(Fighter1.health_points)+"/"+str(Fighter1.max_health)+" HP":
                 xalign 1.0
 
         # The attack button
@@ -64,6 +71,8 @@ screen screen_rpg():
 label play_screenrpnggame:
     window hide
     $ quick_menu = False
+    hide arceus
+    hide cs
     call screen screen_rpg
     $ quick_menu = True
     window show
