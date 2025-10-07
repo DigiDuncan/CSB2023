@@ -7,7 +7,7 @@ TODO list
 """
 
 init python:
-    CombatAllies = [Fighters.get("ARCEUS"), Fighters.get("KITTY"), Fighters.get("DIGI"), Fighters.get("MEAN")]
+    CombatAllies = [Fighters.get("CS"), Fighters.get("ARCEUS"), Fighters.get("PHIL"), Fighters.get("MICHAEL")]
     CurrentTurn = 0
     pass
 
@@ -24,7 +24,7 @@ screen screen_rpg():
 
         # The Fight box
         frame:
-            padding(91, 5)
+            padding(80, 5)
             xysize(1916, 262)
             background "gui/rpg/main_box.png"
             vbox:
@@ -48,7 +48,7 @@ screen screen_rpg():
 
             for i in range(len(CombatAllies)):
                 if not CombatAllies[i].dead:
-                    frame:
+                    button:
                         padding(7,7)
                         xalign 0.5
                         yalign 1.0
@@ -61,6 +61,7 @@ screen screen_rpg():
                         else:
                             background "gui/rpg/small_box.png"
                             ysize 105
+                            action SetVariable("CurrentTurn", i)
                         has grid 2 2
                         xfill True
                         yfill True
@@ -91,8 +92,12 @@ screen screen_rpg():
                         # The Fighter's name and healthbar        
                         vbox:
                             align(1.0, 0.0)
-                            text CombatAllies[i].display_name:
+                            hbox:
                                 xalign 1.0
+                                if CombatAllies[i].confused:
+                                    add "gui/rpg/confusion_status.png"
+                                text CombatAllies[i].display_name:
+                                    xalign 1.0
                             frame:
                                 background None
                                 padding(0,0)
@@ -120,7 +125,6 @@ screen screen_rpg():
 
     # Dev Backdoor
     key "K_END" action Return(True)
-    key "K_i" action IncrementVariable("CurrentTurn")
     pass
 
 label play_screenrpnggame:
