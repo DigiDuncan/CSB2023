@@ -2,7 +2,6 @@
 TODO list
 - Add the possibility of a fighter being confused.
 - Rescale the attack text based on the number of attacks
-- Recolor the attack text
 - Add functionality to the attack text
 - Depending on the action selected add the action to a list (To pass back to the back end)
 """
