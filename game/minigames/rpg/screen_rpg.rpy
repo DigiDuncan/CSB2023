@@ -1,9 +1,15 @@
+"""
+TODO list
+- Add the possibility of a fighter being confused.
+- Rescale the attack text based on the number of attacks
+- Recolor the attack text
+- Add functionality to the attack text
+- Depending on the action selected add the action to a list (To pass back to the back end)
+"""
+
 init python:
-    Fighter1 = Fighters.get("ARCEUS")
-    Fighter2 = Fighters.get("KITTY")
-    Fighter3 = Fighters.get("DIGI")
-    Fighter4 = Fighters.get("MEAN")
-    CurrentTurn = 1
+    CombatAllies = [Fighters.get("ARCEUS"), Fighters.get("KITTY"), Fighters.get("DIGI"), Fighters.get("MEAN")]
+    CurrentTurn = 0
     pass
 
 screen screen_rpg():
@@ -18,21 +24,37 @@ screen screen_rpg():
         box_reverse True
         # The Fight box
         frame:
-            padding(5,5)
+            padding(91, 5)
             xysize(1916, 262)
             background "gui/rpg/main_box.png"
+            vbox:
+                yalign 0.5
+                for i in range(len(CombatAllies[CurrentTurn].attacks)):
+                    # If the attack is not available, make this insensitive
+                    button:
+                        action NullAction()
+                        has vbox
+                        text "{size=42}"+CombatAllies[CurrentTurn].attacks[i].name+" {/size}{size=21}("+CombatAllies[CurrentTurn].attacks[i].properties+"){/size}":
+                            color "#FFFFFF"
+                            hover_color "#00B7EC"
+                        text "{size=21}"+CombatAllies[CurrentTurn].attacks[i].description+"{/size}":
+                            first_indent 32
+                            color "#848484"
+                            hover_color "#006582"
+                    #textbutton "{color=#FFFFFF}{size=42}"+CombatAllies[CurrentTurn].attacks[i].name+" {size=21}("+CombatAllies[CurrentTurn].attacks[i].properties+")\n{color=#848484}"+CombatAllies[CurrentTurn].attacks[i].description:
+                        #text_rest_indent 32
         grid 4 1:
             xfill True
 
         # Fighter 1
-            if Fighter1 and not Fighter1.dead:
+            if CombatAllies[0] and not CombatAllies[0].dead:
                 frame:
                     padding(7,7)
                     xalign 0.5
                     yalign 1.0
                     xsize 475
                     # If it's the fighter's turn
-                    if CurrentTurn == 1:
+                    if CurrentTurn == 0:
                         ysize 201
                         background "gui/rpg/tall_box.png"
                     # Otherwise
@@ -49,8 +71,8 @@ screen screen_rpg():
                         ysize 88
                         spacing 2
                         # Icon
-                        if Fighter1.sprite:
-                            add Fighter1.sprite
+                        if CombatAllies[0].sprite:
+                            add CombatAllies[0].sprite
                         else:
                             add "gui/rpg/portraits/unknown.png"
                         # Stats
@@ -58,18 +80,18 @@ screen screen_rpg():
                             yalign 0.5
                             xspacing 2
                             add "gui/rpg/attack.png" yalign 0.5
-                            text str(Fighter1.attack_points):
+                            text str(CombatAllies[0].attack_points):
                                 size 32
                                 yalign 0.5
                             add "gui/rpg/defense.png" yalign 0.5
-                            text str(Fighter1.armor_points):
+                            text str(CombatAllies[0].armor_points):
                                 size 32
                                 yalign 0.5
         
                     # The Fighter's name and healthbar        
                     vbox:
                         align(1.0, 0.0)
-                        text Fighter1.display_name:
+                        text CombatAllies[0].display_name:
                             xalign 1.0
                         frame:
                             background None
@@ -77,12 +99,12 @@ screen screen_rpg():
                             xysize(228, 32)
                             xalign 1.0
                             yalign 1.0
-                            add "gui/rpg/hp_bar.png" corner1(int(228-(228*(Fighter1.health_points/Fighter1.max_health))),0) corner2(228,32) xalign 1.0
-                            text str(Fighter1.health_points)+"/"+str(Fighter1.max_health)+" HP":
+                            add "gui/rpg/hp_bar.png" corner1(int(228-(228*(CombatAllies[0].health_points/CombatAllies[0].max_health))),0) corner2(228,32) xalign 1.0
+                            text str(CombatAllies[0].health_points)+"/"+str(CombatAllies[0].max_health)+" HP":
                                 xalign 1.0
                                 yalign 0.5
 
-                    if CurrentTurn == 1:
+                    if CurrentTurn == 0:
                         # The attack button
                         imagebutton:
                             align(0.0, 1.0)
@@ -96,14 +118,14 @@ screen screen_rpg():
                             action Notify("Defend pressed on fighter 1!")
 
         #Fighter 2
-            if Fighter2 and not Fighter2.dead:
+            if CombatAllies[1] and not CombatAllies[1].dead:
                 frame:
                     padding(7,7)
                     xalign 0.5
                     yalign 1.0
                     xsize 475
                     # If it's the fighter's turn
-                    if CurrentTurn == 2:
+                    if CurrentTurn == 1:
                         ysize 201
                         background "gui/rpg/tall_box.png"
                     # Otherwise
@@ -120,8 +142,8 @@ screen screen_rpg():
                         ysize 88
                         spacing 2
                         # Icon
-                        if Fighter2.sprite:
-                            add Fighter2.sprite
+                        if CombatAllies[1].sprite:
+                            add CombatAllies[1].sprite
                         else:
                             add "gui/rpg/portraits/unknown.png"
                         # Stats
@@ -129,18 +151,18 @@ screen screen_rpg():
                             yalign 0.5
                             xspacing 2
                             add "gui/rpg/attack.png" yalign 0.5
-                            text str(Fighter2.attack_points):
+                            text str(CombatAllies[1].attack_points):
                                 size 32
                                 yalign 0.5
                             add "gui/rpg/defense.png" yalign 0.5
-                            text str(Fighter2.armor_points):
+                            text str(CombatAllies[1].armor_points):
                                 size 32
                                 yalign 0.5
 
                     # The Fighter's name and healthbar        
                     vbox:
                         align(1.0, 0.0)
-                        text Fighter2.display_name:
+                        text CombatAllies[1].display_name:
                             xalign 1.0
                         frame:
                             background None
@@ -148,12 +170,12 @@ screen screen_rpg():
                             xysize(228, 32)
                             xalign 1.0
                             yalign 1.0
-                            add "gui/rpg/hp_bar.png" corner1(int(228-(228*(Fighter2.health_points/Fighter2.max_health))),0) corner2(228,32) xalign 1.0
-                            text str(Fighter2.health_points)+"/"+str(Fighter2.max_health)+" HP":
+                            add "gui/rpg/hp_bar.png" corner1(int(228-(228*(CombatAllies[1].health_points/CombatAllies[1].max_health))),0) corner2(228,32) xalign 1.0
+                            text str(CombatAllies[1].health_points)+"/"+str(CombatAllies[1].max_health)+" HP":
                                 xalign 1.0
                                 yalign 0.5
 
-                    if CurrentTurn == 2:
+                    if CurrentTurn == 1:
                         # The attack button
                         imagebutton:
                             align(0.0, 1.0)
@@ -167,14 +189,14 @@ screen screen_rpg():
                             action Notify("Defend pressed on fighter 2!")
 
         # Fighter 3
-            if Fighter3 and not Fighter3.dead:
+            if CombatAllies[2] and not CombatAllies[2].dead:
                 frame:
                     padding(7,7)
                     xalign 0.5
                     yalign 1.0
                     xsize 475
                     # If it's the fighter's turn
-                    if CurrentTurn == 3:
+                    if CurrentTurn == 2:
                         ysize 201
                         background "gui/rpg/tall_box.png"
                     # Otherwise
@@ -191,8 +213,8 @@ screen screen_rpg():
                         ysize 88
                         spacing 2
                         # Icon
-                        if Fighter3.sprite:
-                            add Fighter3.sprite
+                        if CombatAllies[2].sprite:
+                            add CombatAllies[2].sprite
                         else:
                             add "gui/rpg/portraits/unknown.png"
                         # Stats
@@ -200,18 +222,18 @@ screen screen_rpg():
                             yalign 0.5
                             xspacing 2
                             add "gui/rpg/attack.png" yalign 0.5
-                            text str(Fighter3.attack_points):
+                            text str(CombatAllies[2].attack_points):
                                 size 32
                                 yalign 0.5
                             add "gui/rpg/defense.png" yalign 0.5
-                            text str(Fighter3.armor_points):
+                            text str(CombatAllies[2].armor_points):
                                 size 32
                                 yalign 0.5
         
                     # The Fighter's name and healthbar        
                     vbox:
                         align(1.0, 0.0)
-                        text Fighter3.display_name:
+                        text CombatAllies[2].display_name:
                             xalign 1.0
                         frame:
                             background None
@@ -219,12 +241,12 @@ screen screen_rpg():
                             xysize(228, 32)
                             xalign 1.0
                             yalign 1.0
-                            add "gui/rpg/hp_bar.png" corner1(int(228-(228*(Fighter3.health_points/Fighter3.max_health))),0) corner2(228,32) xalign 1.0
-                            text str(Fighter3.health_points)+"/"+str(Fighter3.max_health)+" HP":
+                            add "gui/rpg/hp_bar.png" corner1(int(228-(228*(CombatAllies[2].health_points/CombatAllies[2].max_health))),0) corner2(228,32) xalign 1.0
+                            text str(CombatAllies[2].health_points)+"/"+str(CombatAllies[2].max_health)+" HP":
                                 xalign 1.0
                                 yalign 0.5
 
-                    if CurrentTurn == 3:
+                    if CurrentTurn == 2:
                         # The attack button
                         imagebutton:
                             align(0.0, 1.0)
@@ -238,14 +260,14 @@ screen screen_rpg():
                             action Notify("Defend pressed on fighter 3!")
 
         # Fighter 4
-            if Fighter4 and not Fighter4.dead:
+            if CombatAllies[3] and not CombatAllies[3].dead:
                 frame:
                     padding(7,7)
                     xalign 0.5
                     yalign 1.0
                     xsize 475
                     # If it's the fighter's turn
-                    if CurrentTurn == 4:
+                    if CurrentTurn == 3:
                         ysize 201
                         background "gui/rpg/tall_box.png"
                     # Otherwise
@@ -262,8 +284,8 @@ screen screen_rpg():
                         ysize 88
                         spacing 2
                         # Icon
-                        if Fighter4.sprite:
-                            add Fighter4.sprite
+                        if CombatAllies[3].sprite:
+                            add CombatAllies[3].sprite
                         else:
                             add "gui/rpg/portraits/unknown.png"
                         # Stats
@@ -271,18 +293,18 @@ screen screen_rpg():
                             yalign 0.5
                             xspacing 2
                             add "gui/rpg/attack.png" yalign 0.5
-                            text str(Fighter4.attack_points):
+                            text str(CombatAllies[3].attack_points):
                                 size 32
                                 yalign 0.5
                             add "gui/rpg/defense.png" yalign 0.5
-                            text str(Fighter4.armor_points):
+                            text str(CombatAllies[3].armor_points):
                                 size 32
                                 yalign 0.5
         
                     # The Fighter's name and healthbar        
                     vbox:
                         align(1.0, 0.0)
-                        text Fighter4.display_name:
+                        text CombatAllies[3].display_name:
                             xalign 1.0
                         frame:
                             background None
@@ -290,12 +312,12 @@ screen screen_rpg():
                             xysize(228, 32)
                             xalign 1.0
                             yalign 1.0
-                            add "gui/rpg/hp_bar.png" corner1(int(228-(228*(Fighter4.health_points/Fighter4.max_health))),0) corner2(228,32) xalign 1.0
-                            text str(Fighter4.health_points)+"/"+str(Fighter4.max_health)+" HP":
+                            add "gui/rpg/hp_bar.png" corner1(int(228-(228*(CombatAllies[3].health_points/CombatAllies[3].max_health))),0) corner2(228,32) xalign 1.0
+                            text str(CombatAllies[3].health_points)+"/"+str(CombatAllies[3].max_health)+" HP":
                                 xalign 1.0
                                 yalign 0.5
 
-                    if CurrentTurn == 4:
+                    if CurrentTurn == 3:
                         # The attack button
                         imagebutton:
                             align(0.0, 1.0)
