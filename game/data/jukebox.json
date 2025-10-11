@@ -42,14 +42,16 @@
             "title": "What The Night Will Bring",
             "artist": "Rubber Kiss Goodbye",
             "tags": ["Menus & Misc.", "New In DX"],
-            "album_art": "csbi.png"
+            "album_art": "csbi.png",
+            "trivia": "CS was obsessed with this song he heard at his store, and set up a bounty to whoever found it!"
         },
         "space_classroom" : {
             "file": "space_classroom.ogg",
             "title": "Space Classroom",
             "artist": "Dan Salvato",
             "tags": ["Menus & Misc.", "CSBIII DX: After Story"],
-            "album_art": "ddlc.png"
+            "album_art": "ddlc.png",
+            "trivia": "haha Digi likes Monika!!!"
         },
         "lets_hear_my_baby" : {
             "file": "lets_hear_my_baby.ogg",
@@ -80,7 +82,8 @@
             "title": "scales of joy.mod",
             "artist": "Mel O Dee",
             "tags": ["CSBI", "CSBIII DX: After Story", "Fun Values"],
-            "album_art": "tracker.png"
+            "album_art": "tracker.png",
+            "trivia": "This song makes me feel whack!"
         },
         "hohsis_theme" : {
             "file": "hohsis_theme.ogg",
@@ -95,7 +98,8 @@
             "title": "Super Friendly",
             "artist": "Kevin MacLeod",
             "tags": ["CSBI"],
-            "album_art": "kevin.png"
+            "album_art": "kevin.png",
+            "trivia": "From before he started using AI..."
         },
         "time_for_a_smackdown" : {
             "file": "time_for_a_smackdown.ogg",
@@ -118,14 +122,16 @@
             "title": "Card Castle",
             "artist": "Toby Fox",
             "tags": ["CSBII"],
-            "album_art": "deltarune.png"
+            "album_art": "deltarune.png",
+            "trivia": "This is one of the earliest tracks made for Deltarune by Robert."
         },
         "basement" : {
             "file": "basement.ogg",
             "title": "Basement",
             "artist": "Toby Fox",
             "tags": ["CSBII"],
-            "album_art": "deltarune.png"
+            "album_art": "deltarune.png",
+            "trivia": "This song is just scary, I don't want to listen to it anymore :("
         },
         "stal" : {
             "file": "stal.ogg",
@@ -140,14 +146,16 @@
             "title": "Moongazer",
             "artist": "Dr. Awesome",
             "tags": ["CSBII"],
-            "album_art": "awesome.png"
+            "album_art": "awesome.png",
+            "trivia": "The song from the jail breakout... I broke out of jail once!"
         },
         "onett" : {
             "file": "onett.ogg",
             "title": "Onett Theme",
             "artist": "Keiichi Suzuki",
             "tags": ["CSBII"],
-            "album_art": "earthbound.png"
+            "album_art": "earthbound.png",
+            "trivia": "Despite trying multiple times, I have never beaten Earthbound. Pakoo hates me for this."
         },
         "star_spangled_banner" : {
             "file": "star_spangled_banner.ogg",
@@ -162,7 +170,8 @@
             "title": "Buy Something Will Ya!",
             "artist": "Keiichi Suzuki",
             "tags": ["CSBII"],
-            "album_art": "earthbound.png"
+            "album_art": "earthbound.png",
+            "trivia": "Despite being in Canada, Ges barely appears in this route... What's up with that?"
         },
         "passport" : {
             "file": "passport.ogg",
@@ -185,35 +194,40 @@
             "title": "School",
             "artist": "Toby Fox",
             "tags": ["CSBIII: AI", "CSBIII DX: Misc."],
-            "album_art": "deltarune.png"
+            "album_art": "deltarune.png",
+            "trivia": "I made the Card Castle fact up, sorry..."
         },
         "circus" : {
             "file": "circus.ogg",
             "title": "Circus",
             "artist": "Toby Fox",
             "tags": ["CSBIII: AI"],
-            "album_art": "deltarune.png"
+            "album_art": "deltarune.png",
+            "trivia": "This song plays at the carnival in AI route, despite not seeing the carnival in Deltarune at the time of writing this..."
         },
         "cliffs" : {
             "file": "cliffs.ogg",
             "title": "Cliffs",
             "artist": "Toby Fox",
             "tags": ["CSBIII: AI"],
-            "album_art": "deltarune.png"
+            "album_art": "deltarune.png",
+            "trivia": "Why use all the Toby Fox songs for AI route? This the alternate universe where Toby Fox and Sebastian Wolf switch places?"
         },
         "friendship" : {
             "file": "friendship.ogg",
             "title": "Friendship",
             "artist": "Toby Fox",
             "tags": ["CSBIII: AI"],
-            "album_art": "deltarune.png"
+            "album_art": "deltarune.png",
+            "trivia": "One of the most wholesome songs in the whole of Deltarune and CSB:III."
         },
         "good_eatin" : {
             "file": "good_eatin.ogg",
             "title": "Good Eatin'",
             "artist": "ClascyJitto",
             "tags": ["CSBIII"],
-            "album_art": "pizzatower.png"
+            "album_art": "pizzatower.png",
+            "trivia": "Pakoo really liked Pizza game (I forgot) when developing some sections of CSB:III, but now he hasn't thought of that game in about a year."
         },
         "supernova": {
             "file": "supernova.ogg",
@@ -228,21 +242,24 @@
             "title": "Airport Counter",
             "artist": "Kazumi Totaka",
             "tags": ["CSBIII"],
-            "album_art": "newhorizons.png"
+            "album_art": "newhorizons.png",
+            "trivia": "Despite me begging many times, Pakoo has not yet properly played Animal Crossing: New Horizons... sadly."
         },
         "hired_guns" : {
             "file": "hired_guns.ogg",
             "title": "Hired Guns",
             "artist": "Brian Johnston",
             "tags": ["CSBIII"],
-            "album_art": "tracker.png"
+            "album_art": "tracker.png",
+            "trivia": "Pakoo added a lot of Tracker music to the game. I am very neutral on them."
         },
         "undyne" : {
             "file": "undyne.ogg",
             "title": "Undyne",
             "artist": "Toby Fox",
             "tags": ["CSBIII"],
-            "album_art": "undertale.png"
+            "album_art": "undertale.png",
+            "trivia": "I like watching LTT, so watching this scene makes me feel... Empathy?"
         },
         "atarashii_kaze" : {
             "file": "atarashii_kaze.ogg",
@@ -257,14 +274,16 @@
             "title": "Police Station",
             "artist": "Lorin Nelson",
             "tags": ["CSBIII", "CSBIII: Friend"],
-            "album_art": "legoisland.png"
+            "album_art": "legoisland.png",
+            "trivia": "One of the only songs where the title of the original song matches the location they are in!"
         },
         "echoing" : {
             "file": "echoing.ogg",
             "title": "Echoing",
             "artist": "Banana",
             "tags": ["CSBIII"],
-            "album_art": "tracker.png"
+            "album_art": "tracker.png",
+            "trivia": "This song makes me feel weird!"
         },
         "kill_cops" : {
             "file": "killcops.ogg",
@@ -279,49 +298,56 @@
             "title": "Insane Personalities",
             "artist": "Pakoo",
             "tags": ["CSBIII"],
-            "album_art": "trackerevil.png"
+            "album_art": "trackerevil.png",
+            "trivia": "Apparently used in the CSB Geno route... What a bunch of copycats these \"DPN\" are..."
         },
         "danger_mystery" : {
             "file": "danger_mystery.ogg",
             "title": "Danger Mystery",
             "artist": "Toby Fox",
             "tags": ["CSBIII"],
-            "album_art": "undertale.png"
+            "album_art": "undertale.png",
+            "trivia": "Originally, CS and Arceus were supposed to get arrested for public urination. Good thing we fired whoever wrote that nightmare."
         },
         "pressing_pursuit_cornered" : {
             "file": "pressing_pursuit_cornered.ogg",
             "title": "Pressing Pursuit ~ Cornered",
             "artist": "Masakazu Sugimori",
             "tags": ["CSBIII"],
-            "album_art": "aceattorney.png"
+            "album_art": "aceattorney.png",
+            "trivia": "Tomato juice debate."
         },
         "bun_guster" : {
             "file": "bun_guster.ogg",
             "title": "Bun Guster",
             "artist": "Satoru Kosaki",
             "tags": ["CSBIII"],
-            "album_art": "luckystar.png"
+            "album_art": "luckystar.png",
+            "trivia": "To impress Pakoo, I put the entire Lucky Star soundtrack in the GTA: Online radio. I do like the music though!"
         },
         "happy_roaming" : {
             "file": "happy_roaming.ogg",
             "title": "Happy Roaming",
             "artist": "Lorin Nelson",
             "tags": ["CSBIII", "CSBIII: South"],
-            "album_art": "legoisland.png"
+            "album_art": "legoisland.png",
+            "trivia": "Everyone likes this song, including me... Obviously."
         },
         "facing_worlds" : {
             "file": "facing_worlds.ogg",
             "title": "Facing Worlds",
             "artist": "Michiel van den Bos",
             "tags": ["CSBIII: Archival"],
-            "album_art": "tracker.png"
+            "album_art": "tracker.png",
+            "trivia": "This song makes me feel existentialism! (It's also in Fortnite.)"
         },
         "broken_sky" : {
             "file": "broken_sky.ogg",
             "title": "BATTLE UNDER A BROKEN SKY",
             "artist": "AZALI",
             "tags": ["CSBIII: Archival", "Minigames"],
-            "album_art": "brokensky.png"
+            "album_art": "brokensky.png",
+            "trivia": "Baker knows more about this song, ask them! @Baker please add details."
         },
         "take_trip" : {
             "file": "take_trip.ogg",
@@ -336,42 +362,48 @@
             "title": "Everybody Wants To Rule The World",
             "artist": "Tears For Fears",
             "tags": ["CSBIII: Archival"],
-            "album_art": "tearsforfears.png"
+            "album_art": "tearsforfears.png",
+            "trivia": "Pakoo's favorite song, I like it a lot too."
         },
         "albuquerque" : {
             "file": "albuquerque.ogg",
             "title": "Albuquerque",
             "artist": "Weird Al Yankovic",
             "tags": ["CSBIII: Country", "New In DX", "Fun Values"],
-            "album_art": "weirdal.png"
+            "album_art": "weirdal.png",
+            "trivia": "This entire song was added for an airplane bit that you don't even see in the main game. That's right, the biggest song in the whole game is just wasting space waiting to be played by no one..."
         },
         "wool_gloves" : {
             "file": "wool_gloves.ogg",
             "title": "Wool Gloves",
             "artist": "imagiro",
             "tags": ["CSBIII: Country"],
-            "album_art": "woolgloves.png"
+            "album_art": "woolgloves.png",
+            "trivia": "Beats to play in your Tokyo apartment that doesn't have a kitchen for some reason."
         },
         "conflict" : {
             "file": "conflict.ogg",
             "title": "Conflict",
             "artist": "David Vanacore",
             "tags": ["CSBIII: Country"],
-            "album_art": "conflict.png"
+            "album_art": "conflict.png",
+            "trivia": "This entire section is completely innacurate to the show... We should probably remaster this some day!"
         },
         "tumultuous" : {
             "file": "tumultuous.ogg",
             "title": "Tumultuous",
             "artist": "David Vanacore",
             "tags": ["CSBIII: Country"],
-            "album_art": "conflict.png"
+            "album_art": "conflict.png",
+            "trivia": "Read text above..."
         },
         "lisbon_fever" : {
             "file": "lisbon_fever.ogg",
             "title": "Lisbon Fever",
             "artist": "Dr. Awesome",
             "tags": ["CSBIII: Country"],
-            "album_art": "awesome.png"
+            "album_art": "awesome.png",
+            "trivia": "There was supposed to be a Minigame here, but they were too lazy to make one I guess"
         },
         "yuuka_town" : {
             "file": "yuuka_town.ogg",
@@ -379,14 +411,15 @@
             "artist": "Yuuka Kazami",
             "tags": ["CSBIII: Country", "New In DX"],
             "album_art": "yuuka_town.png",
-            "trivia": "Available in the Twilight Shrine: Japanese Resource Pack for RPG Maker."
+            "trivia": "Available in the Twilight Shrine: Japanese Resource Pack for RPG Maker. When is natyusyo going to release a new game?"
         },
         "automatic_love" : {
             "file": "automatic_love.ogg",
             "title": "Automatic Love",
             "artist": "Siix0",
             "tags": ["CSBIII: Country"],
-            "album_art": "csbi.png"
+            "album_art": "csbi.png",
+            "trivia": "Royalty free song :thingking: Royalty free song, Japan :woagh!:"
         },
       "bakamitai" : {
             "file": "bakamitai.ogg",
@@ -401,7 +434,8 @@
             "title": "The Chase",
             "artist": "Toby Fox",
             "tags": ["CSBIII: Country", "CSBIII: AI"],
-            "album_art": "deltarune.png"
+            "album_art": "deltarune.png",
+            "trivia": "This is usually the chase song."
         },
         "neko_to_sanpo" : {
             "file": "neko_to_sanpo.ogg",
@@ -416,7 +450,8 @@
             "title": "Real World",
             "artist": "Project SEKAI COLORFUL STAGE!",
             "tags": ["CSBIII: Country"],
-            "album_art": "projectsekai.png"
+            "album_art": "projectsekai.png",
+            "trivia": "haha Digi likes Miku!!!"
         },
         "muumin_tani_fuyu" : {
             "file": "muumin_tani_fuyu.ogg",
@@ -431,21 +466,24 @@
             "title": "Snufkin The Traveler",
             "artist": "Sumio Shiratori",
             "tags": ["CSBIII: Country"],
-            "album_art": "moomin.png"
+            "album_art": "moomin.png",
+            "trivia": "I know nothing about Moomin, besides the fact that Dodie made one of the songs for it!"
         },
         "lady_of_the_cold" : {
             "file": "lady_of_the_cold.ogg",
             "title": "Lady Of The Cold",
             "artist": "Sumio Shiratori",
             "tags": ["CSBIII: Country"],
-            "album_art": "moomin2.png"
+            "album_art": "moomin2.png",
+            "trivia": "I don't know why this has separate album art..."
         },
         "afternoon_hills" : {
             "file": "afternoon_hills.ogg",
             "title": "Afternoon Hills",
             "artist": "BEST MUSIC",
             "tags": ["CSBIII: Country"],
-            "album_art": "summerclearance.png"
+            "album_art": "summerclearance.png",
+            "trivia": "Feels like this song would play at a shop in Lucky Star and Yuru Camp and K-on and..."
         },
         "xddcc" : {
             "file": "xddcc.ogg",
@@ -468,28 +506,32 @@
             "title": "Billy Mays Gangsta Remix",
             "artist": "mastamokei",
             "tags": ["CSBIII: East"],
-            "album_art": "billymays.png"
+            "album_art": "billymays.png",
+            "trivia": "{a=https://www.youtube.com/watch?v=_tyct9l-fD8}{i}Watch the video here!{/i}{/a}"
         },
         "weird_personalities" : {
             "file": "weird_personalities.ogg",
             "title": "Weird Personalities",
             "artist": "Lizardking",
             "tags": ["CSBIII: East"],
-            "album_art": "lizardking.png"
+            "album_art": "lizardking.png",
+            "trivia": "Driving song, hell yeah :sunglasses:"
         },
         "home_depot" : {
             "file": "home_depot.ogg",
             "title": "Let's Do This",
             "artist": "Home Depot",
             "tags": ["CSBIII: East"],
-            "album_art": "homedepot.png"
+            "album_art": "homedepot.png",
+            "trivia": "Famously played when cleaning an evil masterminds lair."
         },
         "candle_world" : {
             "file": "candle_world.ogg",
             "title": "Candle World",
             "artist": "Kikiyama",
             "tags": ["CSBIII: East", "CSBIII: Country"],
-            "album_art": "yume.png"
+            "album_art": "yume.png",
+            "trivia": "Pakoo has tried to get me to play Yume Nikki many many times, but it makes me very uncomfortable and anxious."
         },
         "blazing_corridor" : {
             "file": "blazing_corridor.ogg",
@@ -504,14 +546,16 @@
             "title": "It's Showtime",
             "artist": "Toby Fox",
             "tags": ["CSBIII: East"],
-            "album_art": "undertale.png"
+            "album_art": "undertale.png",
+            "trivia": "Everyone's favorite... Gay? Trans? robot!"
         },
         "mort_farm" : {
             "file": "mort_farm.ogg",
             "title": "Mort's Farm",
             "artist": "ClascyJitto",
             "tags": ["CSBIII: East"],
-            "album_art": "pizzatower.png"
+            "album_art": "pizzatower.png",
+            "trivia": "Add details yet Bakers?"
         },
         "taiikusai_desu_yo" : {
             "file": "taiikusai_desu_yo.ogg",
@@ -526,21 +570,24 @@
             "title": "Track 4",
             "artist": "Weatherscan",
             "tags": ["CSBIII: East", "CSBIII: Michigan", "CSBIII: Fired"],
-            "album_art": "weather.png"
+            "album_art": "weather.png",
+            "trivia": "Speed this up by 50% and you get yourself an Ace Combat prep screen song."
         },
         "funiculi_holiday" : {
             "file": "funiculi_holiday.ogg",
             "title": "Funiculi Holiday",
             "artist": "ClascyJitto",
             "tags": ["CSBIII: East", "CSBIII: Country"],
-            "album_art": "pizzatower.png"
+            "album_art": "pizzatower.png",
+            "trivia": "Why mafia isn't a fucking aesthetic: a thread."
         },
         "speedy_comet" : {
             "file": "speedy_comet.ogg",
             "title": "Speedy Comet",
             "artist": "Mahito Yokota",
             "tags": ["CSBIII: East", "Minigames"],
-            "album_art": "mariogalaxy.png"
+            "album_art": "mariogalaxy.png",
+            "trivia": "Song for the first minigame ever made for CSB III!"
         },
         "breakout" : {
             "file": "breakout.ogg",
@@ -555,35 +602,40 @@
             "title": "The Metropolis of Fourside",
             "artist": "Keiichi Suzuki",
             "tags": ["CSBIII: East"],
-            "album_art": "earthbound.png"
+            "album_art": "earthbound.png",
+            "trivia": "The best song in Earthbound,{a=https://www.youtube.com/watch?v=_Cazb8GDxJ4}{i}the smash version is great too!{/i}{/a}" 
         },
         "pokey" : {
             "file": "pokey.ogg",
             "title": "Pokey's House",
             "artist": "Keiichi Suzuki",
             "tags": ["CSBIII: East", "CSBIII: South"],
-            "album_art": "earthbound.png"
+            "album_art": "earthbound.png",
+            "trivia": "Pakoo was very mean and made this Digi's intro song."
         },
         "rude_buster" : {
             "file": "rude_buster.ogg",
             "title": "Rude Buster",
             "artist": "Toby Fox",
             "tags": ["CSBIII: East", "Minigames"],
-            "album_art": "deltarune.png"
+            "album_art": "deltarune.png",
+            "trivia": "We need to add Ruder Buster to this game, that song goes crazy insane."
         },
         "park_theme" : {
             "file": "park_theme.ogg",
             "title": "Park Theme",
             "artist": "Lorin Nelson",
             "tags": ["CSBIII: East", "CSBIII: South", "CSBIII: Country", "CSBIII DX: Train", "CSBIII: Fired"],
-            "album_art": "legoisland.png"
+            "album_art": "legoisland.png",
+            "trivia": "Someone should make a show about Parks."
         },
         "hohsis_remix" : {
             "file": "hohsisremix.ogg",
             "title": "Alfred's Theme",
             "artist": "Eminem",
             "tags": ["CSBIII: East", "CSBIII: South"],
-            "album_art": "mtbmb.png"
+            "album_art": "mtbmb.png",
+            "trivia": "We got Eminem to compose this song for us. Thank you @Bornana42!"
         },
         "billy_mix" : {
             "file": "billy_mix.ogg",
@@ -598,28 +650,32 @@
             "title": "Movin' Right Along",
             "artist": "The Muppet Movie",
             "tags": ["CSBIII: East"],
-            "album_art": "muppetmovie.png"
+            "album_art": "muppetmovie.png",
+            "trivia": "They're making a sequel."
         },
         "track_3" : {
             "file": "track3.ogg",
             "title": "Track 3",
             "artist": "Weatherscan",
             "tags": ["CSBIII: East"],
-            "album_art": "weather.png"
+            "album_art": "weather.png",
+            "trivia": "This is THE Electromagnetic Pulse Lemon song apparently."
         },
         "ac_title" : {
             "file": "ac_title.ogg",
             "title": "New Leaf Title Theme",
             "artist": "Kazumi Totaka",
             "tags": ["CSBIII: East", "CSBIII: South"],
-            "album_art": "newleaf.png"
+            "album_art": "newleaf.png",
+            "trivia": "The only person I have ever seen play this game is Projared."
         },
         "dealin_dope" : {
             "file": "dealin_dope.ogg",
             "title": "Dealin Dope",
             "artist": "Dr. Awesome",
             "tags": ["CSBIII: Fired"],
-            "album_art": "awesome.png"
+            "album_art": "awesome.png",
+            "trivia": "Do not deal dope, it doesn't look good on resumes."
         },
         "hit_me_with_your_best_shot" : {
             "file": "hitmewithyourbestshot.ogg",
@@ -634,28 +690,32 @@
             "title": "Hightop",
             "artist": "Dr. Awesome",
             "tags": ["CSBIII: Fired"],
-            "album_art": "awesome.png"
+            "album_art": "awesome.png",
+            "trivia": "Beats to make your first album!"
         },
         "everlong" : {
             "file": "everlong.ogg",
             "title": "Everlong",
             "artist": "Foo Fighters",
             "tags": ["CSBIII: Fired"],
-            "album_art": "foofighter.png"
+            "album_art": "foofighter.png",
+            "trivia": "If I had a band it'd be called the food fighters, and we'd talk about food in our songs."
         },
         "local_forecast" : {
             "file": "local_forecast.ogg",
             "title": "Local Forecast",
             "artist": "Kevin MacLeod",
             "tags": ["CSBIII: Fired"],
-            "album_art": "kevin.png"
+            "album_art": "kevin.png",
+            "trivia": "Feels like I'm in an elevator."
         },
         "now_what" : {
             "file": "now_what.ogg",
             "title": "Now What? 1",
             "artist": "Dr. Awesome",
             "tags": ["CSBIII: Fired"],
-            "album_art": "awesome.png"
+            "album_art": "awesome.png",
+            "trivia": "Pretty sure I've heard this song when riding with Pakoo."
         },
         "happy_rock" : {
             "file": "happy_rock.ogg",
@@ -670,7 +730,8 @@
             "title": "Energetic Rock",
             "artist": "Every Day Music",
             "tags": ["CSBIII: Fired"],
-            "album_art": "csbi.png"
+            "album_art": "csbi.png",
+            "trivia": "The most generic song in the world."
         },
         "fnaf_6" : {
             "file": "fnaf_6.ogg",
@@ -693,91 +754,104 @@
             "title": "Dragon Castle",
             "artist": "Makai Symphony",
             "tags": ["CSBIII: Fired"],
-            "album_art": "csbi.png"
+            "album_art": "csbi.png",
+            "trivia": "Type of music Dragon would listen to... I think."
         },
         "gold_room" : {
             "file": "gold_room.ogg",
             "title": "You're At A Ball In The Gold Room",
             "artist": "Nemo's Dreamscapes",
             "tags": ["CSBIII: Fired"],
-            "album_art": "csbi.png"
+            "album_art": "csbi.png",
+            "trivia": "Hotel lobby music hasn't been a thing in decades."
         },
         "sweet_victory" : {
             "file": "sweet_victory.ogg",
             "title": "Sweet Victory",
             "artist": "David Glen Eisley",
             "tags": ["CSBIII: Fired"],
-            "album_art": "bubblebowl.png"
+            "album_art": "bubblebowl.png",
+            "trivia": "We were robbed of this song for the superbowl."
         },
         "dig_this" : {
             "file": "dig_this.ogg",
             "title": "Dig This",
             "artist": "Dr. Awesome",
             "tags": ["CSBIII: Fired"],
-            "album_art": "awesome.png"
+            "album_art": "awesome.png",
+            "trivia": "Okay, I have definitely heard this song while riding in Pakoo's car"
         },
         "exotic" : {
             "file": "exotic.ogg",
             "title": "Exotic",
             "artist": "Panda Beats ft. Newenx",
             "tags": ["CSBIII: Fired"],
-            "album_art": "pandabeats.png"
+            "album_art": "pandabeats.png",
+            "trivia": "Second most generic song in the world."
         },
         "another_him" : {
-            "file": "ANOTHER HIM.ogg",
+            "file": "another_him.ogg",
             "title": "Another Him",
             "artist": "Toby Fox",
             "tags": ["CSBIII: Fired"],
-            "album_art": "deltarune.png"
+            "album_art": "deltarune.png",
+            "trivia": "CSgod type beat."
         },
         "morning_highway" : {
             "file": "morning_highway.ogg",
             "title": "Morning Highway",
             "artist": "BEST MUSIC",
             "tags": ["CSBIII: Friend"],
-            "album_art": "summerclearance.png"
+            "album_art": "summerclearance.png",
+            "trivia": "Generic song. Generic song, Japan."
         },
         "creative_exercise" : {
             "file": "creative_exercise.ogg",
             "title": "Creative Exercise",
             "artist": "Hirokazu Tanaka",
             "tags": ["CSBIII: Friend", "CSBIII: Country"],
-            "album_art": "mariopaint.png"
+            "album_art": "mariopaint.png",
+            "trivia": "The person making the ad for the Nintendo Switch version is really funny!"
         },
         "pixel_peeker_polka" : {
             "file": "pixel_peeker_polka.ogg",
             "title": "Pixel Peeker Polka",
             "artist": "Kevin MacLeod",
             "tags": ["CSBIII: Friend"],
-            "album_art": "kevin.png"
+            "album_art": "kevin.png",
+            "trivia": "ExplodingTNT."
         },
         "nordic_report_1" : {
             "file": "nordic_report_1.ogg",
             "title": "Nordic Report 1",
             "artist": "Lizardking",
             "tags": ["CSBIII: Friend", "Minigames"],
-            "album_art": "lizardking.png"
+            "album_art": "lizardking.png",
+            "trivia": "Fighting for the right side of history!"
         },
         "nordic_report_2" : {
             "file": "nordic_report_2.ogg",
             "title": "Nordic Report 2",
             "artist": "Lizardking",
             "tags": ["CSBIII: Friend", "Minigames"],
-            "album_art": "lizardking.png"
+            "album_art": "lizardking.png",
+            "trivia": "Sometimes, you fight for the wrong side."
         },
         "Lowbudget_song" : {
             "file": "lowbudget_song.ogg",
             "title": "Lowbudget Song",
             "artist": "Dr. Awesome",
             "tags": ["CSBIII: Friend"],
-            "album_art": "awesome.png"
+            "album_art": "awesome.png",
+            "trivia": "At least the title is accurate."
         },
         "klaxon_beat" : {
             "file": "klaxon_beat.ogg",
             "title": "Klaxon Beat",
             "artist": "Kelly Bailey",
             "tags": ["CSBIII: Friend", "CSBIII: Country"],
-            "album_art": "half.png"
+            "album_art": "half.png",
+            "trivia": "The definitive Half-Life 1 song."
         },
         "cp_violation" : {
             "file": "cp_violation.ogg",
@@ -792,49 +866,56 @@
             "title": "Mm Complete",
             "artist": "Matthew Simmonds",
             "tags": ["CSBIII: Friend"],
-            "album_art": "tracker.png"
+            "album_art": "tracker.png",
+            "trivia": "Feels like something I'd hear in McPixel."
         },
         "compulsion_to_obey" : {
             "file": "compulsion_to_obey.ogg",
             "title": "Compulsion To Obey",
             "artist": "Lizardking",
             "tags": ["CSBIII: Friend", "Minigames"],
-            "album_art": "lizardking.png"
+            "album_art": "lizardking.png",
+            "trivia": "I don't feel the compulsion to do anything."
         },
         "for_the_people" : {
             "file": "for_the_people.ogg",
             "title": "For The People",
             "artist": "Lizardking",
             "tags": ["CSBIII: Friend", "Minigames"],
-            "album_art": "lizardking.png"
+            "album_art": "lizardking.png",
+            "trivia": "Get on the ground? More like diebastard."
         },
         "tuna_fish" : {
             "file": "tuna_fish.ogg",
             "title": "Tuna Fish",
             "artist": "Dr. Awesome",
             "tags": ["CSBIII: Friend"],
-            "album_art": "awesome.png"
+            "album_art": "awesome.png",
+            "trivia": "Give a man a Tuna and he'll eat for a day. Teach a man to do music and he'll make this."
         },
         "full_rulle_med_klas" : {
             "file": "full_rulle_med_klas.ogg",
             "title": "Full Rulle Med Klas",
             "artist": "Lizardking",
             "tags": ["CSBIII: Friend"],
-            "album_art": "lizardking.png"
+            "album_art": "lizardking.png",
+            "trivia": "I don't remember diners in the 50's sounding like this."
         },
         "dense_woods_b" : {
             "file": "dense_woods_b.ogg",
             "title": "Dense Woods B",
             "artist": "Kikiyama",
             "tags": ["CSBIII: Friend", "CSBIII: Michigan"],
-            "album_art": "yume.png"
+            "album_art": "yume.png",
+            "trivia": "It's so creepy... Fitting for the Aria section."
         },
         "desert_dawn" : {
             "file": "desert_dawn.ogg",
             "title": "Desert Dawn",
             "artist": "Lizardking",
             "tags": ["CSBIII: Friend", "Minigames"],
-            "album_art": "lizardking.png"
+            "album_art": "lizardking.png",
+            "trivia": "Aria vs. The Cops. Why do I feel like that'll happen soon."
         },
         "dinerfight" : {
             "file": "dinerfight.ogg",
@@ -849,49 +930,56 @@
             "title": "L.A. By Night",
             "artist": "Dr. Awesome",
             "tags": ["CSBIII: Friend"],
-            "album_art": "awesome.png"
+            "album_art": "awesome.png",
+            "trivia": "If LA doesn't play this at night, then why even bother going?"
         },
         "thousand_march" : {
             "file": "thousand_march.ogg",
             "title": "Thousand March",
             "artist": "Mr. Sauceman",
             "tags": ["CSBIII: Friend", "Minigames"],
-            "album_art": "pizzatower.png"
+            "album_art": "pizzatower.png",
+            "trivia": "What is the price of a mile..."
         },
         "triage_at_dawn" : {
             "file": "triage_at_dawn.ogg",
             "title": "Triage At Dawn",
             "artist": "Kelly Bailey",
             "tags": ["CSBIII: Friend"],
-            "album_art": "half.png"
+            "album_art": "half.png",
+            "trivia": "The saddest song in the whole world."
         },
         "the_whale" : {
             "file": "the_whale.ogg",
             "title": "The Whale",
             "artist": "Dr. Awesome",
             "tags": ["CSBIII: Friend"],
-            "album_art": "awesome.png"
+            "album_art": "awesome.png",
+            "trivia": "Featuring Brendan Fraser."
         },
         "prophet_2001" : {
             "file": "prophet_2001.ogg",
             "title": "Prophet 2001",
             "artist": "Dr. Awesome",
             "tags": ["CSBIII: Friend"],
-            "album_art": "awesome.png"
+            "album_art": "awesome.png",
+            "trivia": "Turns out, Jesus did come back! But he died in the twin towers."
         },
         "trans_atlantic" : {
             "file": "trans_atlantic.ogg",
             "title": "Trans Atlantic",
             "artist": "Lizardking",
             "tags": ["CSBIII: Friend", "Minigames"],
-            "album_art": "lizardking.png"
+            "album_art": "lizardking.png",
+            "trivia": "Fighting an unwinnable fight."
         },
         "prophetpart2" : {
             "file": "prophetpart2.ogg",
             "title": "Prophet 2001 (Part 2)",
             "artist": "Dr. Awesome",
             "tags": ["CSBIII: Friend"],
-            "album_art": "awesome.png"
+            "album_art": "awesome.png",
+            "trivia": "Copguy EX did not stand a chance."
         },
         "weapon_of_choice" : {
             "file": "weapon_of_choice.ogg",
@@ -906,42 +994,48 @@
             "title": "The Legend",
             "artist": "Toby Fox",
             "tags": ["CSBIII: Friend"],
-            "album_art": "deltarune.png"
+            "album_art": "deltarune.png",
+            "trivia": "Spongebob, Patrick, Mr Krabs..."
         },
         "honk_song" : {
             "file": "honk_song.ogg",
             "title": "Honk Song",
             "artist": "Toby Fox",
             "tags": ["CSBIII: Michigan"],
-            "album_art": "deltarune.png"
+            "album_art": "deltarune.png",
+            "trivia": "You can faintly hear the Cerealcore 2 theme song here!"
         },
         "wayward_wanderer" : {
             "file": "wayward_wanderer.ogg",
             "title": "Wayward Wanderer",
             "artist": "Deep Gnome",
             "tags": ["CSBIII: Michigan"],
-            "album_art": "deepgnome.png"
+            "album_art": "deepgnome.png",
+            "trivia": "I have been informed that Gnomes play a part on this game."
         },
         "mis_leader" : {
             "file": "mis_leader.ogg",
             "title": "MisLeader",
             "artist": "Triosk and Jan Jelinek",
             "tags": ["CSBIII: Michigan"],
-            "album_art": "misleader.png"
+            "album_art": "misleader.png",
+            "trivia": "As described by Pakoo \"The weird Aria music\" and as asked by Mika \"Who listens to this?!\""
         },
         "melancholy" : {
             "file": "melancholy.ogg",
             "title": "Melancholy",
             "artist": "Imori",
             "tags": ["CSBIII: Michigan"],
-            "album_art": "melancholy.png"
+            "album_art": "melancholy.png",
+            "trivia": "Created by Aria's friend! One of many."
         },
         "trash_zone" : {
             "file": "trash_zone.ogg",
             "title": "Tubular Trash Zone",
             "artist": "Mr. Sauceman",
             "tags": ["CSBIII: Michigan"],
-            "album_art": "pizzatower.png"
+            "album_art": "pizzatower.png",
+            "trivia": "Throwing a brick into washing machines have been my favorite kinds of videos."
         },
         "brick_by_dick" : {
             "file": "brick_by_dick.ogg",
@@ -956,77 +1050,88 @@
             "title": "Tunnely Shimbers",
             "artist": "Mr. Sauceman",
             "tags": ["CSBIII: South"],
-            "album_art": "pizzatower.png"
+            "album_art": "pizzatower.png",
+            "trivia": "Five Night at Lego: Help not Wanted"
         },
         "hard_drive" : {
             "file": "hard_drive.ogg",
             "title": "Hard Drive to Munch You",
             "artist": "Mr. Sauceman",
             "tags": ["CSBIII: South"],
-            "album_art": "pizzatower.png"
+            "album_art": "pizzatower.png",
+            "trivia": "AAAAAAAAAAAHHHHHHHHHH"
         },
         "penthouse" : {
             "file": "penthouse.ogg",
             "title": "Al's Penthouse",
             "artist": "Andy Blythe",
             "tags": ["CSBIII: South"],
-            "album_art": "toystory.png"
+            "album_art": "toystory.png",
+            "trivia": "Genuinely, this song has no right going as hard as it does."
         },
         "game_corner" : {
             "file": "game_corner.ogg",
             "title": "Rocket Game Corner",
             "artist": "Junichi Masuda",
             "tags": ["CSBIII: South", "New In DX", "Minigames"],
-            "album_art": "pkmnredblue.png"
+            "album_art": "pkmnredblue.png",
+            "trivia": "Gambling, oh yeah!"
         },
         "laurel_palace" : {
             "file": "laurel_palace.ogg",
             "title": "Laurel Palace",
             "artist": "Manami Matsumae",
             "tags": ["CSBIII: South"],
-            "album_art": "vegasstrikes.png"
+            "album_art": "vegasstrikes.png",
+            "trivia": "This song is stuck in my head from rewatching the Jerma stream too many times."
         },
         "lancer" : {
             "file": "lancer.ogg",
             "title": "Lancer",
             "artist": "Toby Fox",
             "tags": ["CSBIII: South", "Fun Values"],
-            "album_art": "deltarune.png"
+            "album_art": "deltarune.png",
+            "trivia": "the pointy-headed will say \"Toothpaste,\" and then \"boy.\""
         },
         "price_right" : {
             "file": "price_right.ogg",
             "title": "Price Is Right Theme",
             "artist": "Edd Kalehoff",
             "tags": ["CSBIII: South"],
-            "album_art": "priceisright.png"
+            "album_art": "priceisright.png",
+            "trivia": "You won the priz- Wait no, CS did."
         },
         "airport" : {
             "file": "airport.ogg",
             "title": "Airport Infiltration",
             "artist": "Andy Blythe & Marten Joustra",
             "tags": ["CSBIII: South", "CSBIII: Country", "CSBIII DX: Kuwait"],
-            "album_art": "toystory.png"
+            "album_art": "toystory.png",
+            "trivia": "Being at the airport is way too nerve wracking, what if they figure out I'm in the no-fly list?!"
         },
         "clownpiece" : {
             "file": "clownpiece.ogg",
             "title": "Pierrot of the Star Spangled Banner",
             "artist": "ZUN",
             "tags": ["CSBIII: South"],
-            "album_art": "touhou15.png"
+            "album_art": "touhou15.png",
+            "trivia": "All CS had to do was stick to the script!"
         },
         "lego_island" : {
             "file": "lego_island.ogg",
             "title": "Lego Island Theme",
             "artist": "Lorin Nelson",
             "tags": ["CSBIII: South"],
-            "album_art": "legoisland.png"
+            "album_art": "legoisland.png",
+            "trivia": "Basement I"
         },
         "goodbye_summer_hello_winter" : {
             "file": "goodbye_summer_hello_winter.ogg",
             "title": "Goodbye Summer, Hello Winter",
             "artist": "FantomenK",
             "tags": ["Menus & Misc.", "CSBI", "CSBII", "CSBIII: Archival", "CSBIII: Country", "CSBIII: East", "CSBIII: Fired", "CSBIII: Friend", "CSBIII: South"],
-            "album_art": "fantomenk.png"
+            "album_art": "fantomenk.png",
+            "trivia": "HE DID NOT CHEAT ON HIS WIFE GOD DAMMIT"
         },
         "goodbye_speedrun" : {
             "file": "goodbye_speedrun.ogg",
@@ -1041,7 +1146,8 @@
             "title": "Upon Me",
             "artist": "Dr. Awesome",
             "tags": ["CSBIII DX: Bronson", "New In DX"],
-            "album_art": "awesome.png"
+            "album_art": "awesome.png",
+            "trivia": "Bronson is not even a real place anyway. Show me it on a map, a real map. None of the Google maps bullshit."
         },
         "error" : {
             "file": "error.ogg",
@@ -1072,14 +1178,16 @@
             "title": "Alien Atmosphere",
             "artist": "Dr. Awesome",
             "tags": ["CSBIII DX: After Story", "New In DX"],
-            "album_art": "awesome.png"
+            "album_art": "awesome.png",
+            "trivia": "This would've been funnier when the backrooms had relevancy and were still interesting... So like for 30 minutes."
         },
         "apple_kid" : {
             "file": "apple_kid.ogg",
             "title": "Apple Kid",
             "artist": "Keiichi Suzuki",
             "tags": ["CSBIII DX: After Story", "New In DX"],
-            "album_art": "earthbound.png"
+            "album_art": "earthbound.png",
+            "trivia": "Hello, I'm a Mac!"
         },
         "ten_feet_away" : {
             "file": "10_feet_away.ogg",
@@ -1094,49 +1202,56 @@
             "title": "Hitsquad 2",
             "artist": "Dr. Awesome",
             "tags": ["CSBIII DX: After Story", "New In DX"],
-            "album_art": "awesome.png"
+            "album_art": "awesome.png",
+            "trivia": "Tom Cruise's unnoficial theme."
         },
         "get_the_funk" : {
             "file": "get_the_funk.ogg",
             "title": "Get The Funk",
             "artist": "Dr. Awesome",
             "tags": ["CSBIII DX: After Story", "New In DX", "Minigames"],
-            "album_art": "awesome.png"
+            "album_art": "awesome.png",
+            "trivia": "Songs to sharpen your pencil to, Vol. XVII"
         },
         "sneak_theme" : {
             "file": "sneak_theme.mp3",
             "title": "Snooping Around As Usual",
             "artist": "Pakoo",
             "tags": ["CSBIII DX: After Story", "New In DX"],
-            "album_art": "csbii.png"
+            "album_art": "csbii.png",
+            "trivia": "Man, these guys are some kind of sneak... kings."
         },
         "interference2" : {
             "file": "interference.ogg",
             "title": "Interference",
             "artist": "Sanity",
             "tags": ["Menus & Misc.", "CSBIII DX: After Story", "CSBIII DX: Finale", "New In DX"],
-            "album_art": "tracker.png"
+            "album_art": "tracker.png",
+            "trivia": "This song makes me feel energized!"
         },
         "tv_hall_of_fame" : {
             "file": "tv_hall_of_fame.ogg",
             "title": "Hall of Fame",
             "artist": "Toby Fox",
             "tags": ["CSBIII DX: After Story", "New In DX"],
-            "album_art": "deltarune.png"
+            "album_art": "deltarune.png",
+            "trivia": "Play this at my Oscar winning speech!"
         },
         "polar_express" : {
             "file": "polar_express.ogg",
             "title": "The Polar Express - Main Title",
             "artist": "Alan Silvestri",
             "tags": ["Menus & Misc.", "CSBIII DX: Holiday Special", "New In DX"],
-            "album_art": "polar_express.png"
+            "album_art": "polar_express.png",
+            "trivia": "This song brings me legit memories."
         },
         "sleigh_ride" : {
             "file": "sleigh_ride.ogg",
             "title": "Sleigh Ride",
             "artist": "Leroy Anderson",
             "tags": ["Menus & Misc", "CSBIII DX: Holiday Special", "New In DX"],
-            "album_art": "sleigh_ride.png"
+            "album_art": "sleigh_ride.png",
+            "trivia": "At least I'll have good Christmas music this year!"
         },
         "lets_hear_winter" : {
             "file": "lets_hear_my_christ.ogg",
@@ -1159,7 +1274,8 @@
             "title": "Teeth Dust In The Stronghold",
             "artist": "ClascyJitto",
             "tags": ["CSBIII DX: Holiday Special", "New In DX"],
-            "album_art": "pizzatower.png"
+            "album_art": "pizzatower.png",
+            "trivia": "CS throws a party! Let's hope he doesn't do anything with the bathroom door."
         },
         "hotel_disbelief": {
             "file": "minigames/carrot/hotel_disbelief.ogg",
@@ -1174,14 +1290,16 @@
             "title": "Snow Blind",
             "artist": "Dr. Awesome",
             "tags": ["CSBIII DX: Holiday Special", "New In DX"],
-            "album_art": "awesome.png"
+            "album_art": "awesome.png",
+            "trivia": "Grace could not stop hugging Santa for the entire scene... It was nice to watch."
         },
         "christmas_spirit" : {
             "file": "christmas_spirit.ogg",
             "title": "Christmas Spirit",
             "artist": "Dr. Awesome",
             "tags": ["CSBIII DX: Holiday Special", "New In DX"],
-            "album_art": "awesome.png"
+            "album_art": "awesome.png",
+            "trivia": "Dog food is nice... but I don't even own a dog?"
         },
         "rice_and_wine" : {
             "file": "rice_and_wine.ogg",
@@ -1220,28 +1338,32 @@
             "title": "Girl Next Door",
             "artist": "Toby Fox",
             "tags": ["CSBIII DX: Holiday Special", "New In DX"],
-            "album_art": "deltarune.png"
+            "album_art": "deltarune.png",
+            "trivia": "Lesbian deer theme."
         },
         "ce_passport" : {
             "file": "cepassport.ogg",
             "title": "Christmas Passport",
             "artist": "Pakoo",
             "tags": ["CSBIII DX: Holiday Special", "New In DX", "Minigames"],
-            "album_art": "windows.png"
+            "album_art": "windows.png",
+            "trivia": "Aria cheats and Tate cheats and everyone cheats! God dammit!"
         },
         "snowman" : {
             "file": "snowman.ogg",
             "title": "Snowman",
             "artist": "Keiichi Suzuki",
             "tags": ["CSBIII DX: Holiday Special", "New In DX"],
-            "album_art": "earthbound.png"
+            "album_art": "earthbound.png",
+            "trivia": "This song makes me feel peaceful..."
         },
         "snowdin_town" : {
             "file": "snowdin_town.ogg",
             "title": "Snowdin Town",
             "artist": "Toby Fox",
             "tags": ["CSBIII DX: Holiday Special", "New In DX"],
-            "album_art": "undertale.png"
+            "album_art": "undertale.png",
+            "trivia": "DPN cooking moments, Part 7!"
         },
         "winters_halloween" : {
             "file": "winters_halloween.ogg",
@@ -1272,35 +1394,40 @@
             "title": "Summer Fun // Lecherous Beaches",
             "artist": "blanknam3d",
             "tags": ["CSBIII DX: Holiday Special", "New In DX"],
-            "album_art": "summer_fun.png"
+            "album_art": "summer_fun.png",
+            "trivia": "How can anyone listen to this?!"
         },
         "crashing_down": {
             "file": "crashing_down.ogg",
             "title": "Crashing Down",
             "artist": "xtkakeru",
             "tags": ["CSBIII DX: Holiday Special", "New In DX"],
-            "album_art": "crashing_down.png"
+            "album_art": "crashing_down.png",
+            "trivia": "How can anyone listen to this part 2?!"
         },
         "on_the_rocks" : {
             "file": "on_the_rocks.ogg",
             "title": "On The Rocks",
             "artist": "Mr. Sauceman",
             "tags": ["CSBIII DX: Holiday Special", "New In DX"],
-            "album_art": "pizzatower.png"
+            "album_art": "pizzatower.png",
+            "trivia": "I still don't know how the Handy Switch worked... One of life's great mysteries I suppose."
         },
         "rhythm_heaven_try_again" : {
             "file": "minigames/carrot/try_again_music.ogg",
             "title": "Results: Try Again!",
             "artist": "つんく♂",
             "tags": ["CSBIII DX: Holiday Special", "New In DX", "Minigames"],
-            "album_art": "rhythm_heaven.png"
+            "album_art": "rhythm_heaven.png",
+            "trivia": "You did shit"
         },
         "rhythm_heaven_ok" : {
             "file": "minigames/carrot/ok_music.ogg",
             "title": "Results: OK!",
             "artist": "つんく♂",
             "tags": ["CSBIII DX: Holiday Special", "New In DX", "Minigames"],
-            "album_art": "rhythm_heaven.png"
+            "album_art": "rhythm_heaven.png",
+            "trivia": "You did less shit"
         },
         "rhythm_heaven_superb" : {
             "file": "minigames/carrot/superb_music.ogg",
@@ -1315,7 +1442,8 @@
             "title": "Title Theme Reprise",
             "artist": "Nicholas Karr",
             "tags": ["Menus & Misc.", "CSBIII DX: Holiday Special", "New In DX"],
-            "album_art": "bargain.png"
+            "album_art": "bargain.png",
+            "trivia": "I unironically listen to Scott the Woz music a lot. It's surprisingly good!"
         },
         "christmas_tea": {
             "file": "christmas_tea.ogg",
@@ -1346,7 +1474,8 @@
             "title": "The Man Who Sold The World",
             "artist": "Midge Ure",
             "tags": ["CSBIII DX: Kuwait", "New In DX"],
-            "album_art": "mgsv.png"
+            "album_art": "mgsv.png",
+            "trivia": "It's got a nice radio filter. Tate changed the author to David Bowie, but this is the version by Midge Ure that is in Metal Gear Solid V: The Phantom Pain."
         },
         "lets_hear_my_sped" : {
             "file": "lets_hear_my_sped.ogg",
@@ -1409,28 +1538,32 @@
             "title": "Hide And Seek",
             "artist": "Chiro",
             "tags": ["CSBIII DX: Train", "New In DX", "Minigames"],
-            "album_art": "hideandseek.png"
+            "album_art": "hideandseek.png",
+            "trivia": "Unifished trivia text."
         },
         "ochre_woods_day" : {
             "file": "ochre_woods_day.ogg",
             "title": "Ochre Woods ~ Day",
             "artist": "Miki Obata",
             "tags": ["CSBIII DX: Train", "New In DX"],
-            "album_art": "heyyoupikachu.png"
+            "album_art": "heyyoupikachu.png",
+            "trivia": "One time a classmate posted a story from the inside of an Amtrak train and were somewhat impressed by me guessing what train it was."
         },
         "bedroom_day" : {
             "file": "bedroom_day.ogg",
             "title": "Bedroom ~ Day",
             "artist": "Miki Obata",
             "tags": ["CSBIII DX: Train", "New In DX"],
-            "album_art": "heyyoupikachu.png"
+            "album_art": "heyyoupikachu.png",
+            "trivia": "Beats to travel across the country to."
         },
         "item_bounce" : {
             "file": "item_bounce.ogg",
             "title": "Item Bounce",
             "artist": "Akira Miyagawa",
             "tags": ["CSBIII DX: Train", "New In DX"],
-            "album_art": "kirbyairride.png"
+            "album_art": "kirbyairride.png",
+            "trivia": "This song makes me feel jumpy!"
         },
         "krabby_klub" : {
             "file": "krabby_klub.ogg",
@@ -1445,63 +1578,72 @@
             "title": "Prof. Krane's Kidnap",
             "artist": "Tsukasa Tawada",
             "tags": ["CSBIII DX: Train", "New In DX"],
-            "album_art": "pokemonxd.png"
+            "album_art": "pokemonxd.png",
+            "trivia": "Also do not become a criminal, it also doesn't look good in your rap sheet."
         },
         "e_gadds_lab" : {
             "file": "e_gadds_lab.ogg",
             "title": "E. Gadd's Lab",
             "artist": "Kazumi Totaka & Shinobu Tanaka",
             "tags": ["CSBIII DX: Train", "New In DX"],
-            "album_art": "luigismansion.png"
+            "album_art": "luigismansion.png",
+            "trivia": "Whenever you put a compass near the jukebox with this song playing, it points down. E. Gadd is in hell."
         },
         "onbs" : {
             "file": "onbs.ogg",
             "title": "ONBS",
             "artist": "Tsukasa Tawada",
             "tags": ["CSBIII DX: Train", "New In DX"],
-            "album_art": "pokemonxd.png"
+            "album_art": "pokemonxd.png",
+            "trivia": "Something Something Lupin Something Something Hitler."
         },
         "encounter_friend" : {
             "file": "encounter_friend.ogg",
             "title": "Encounter! Friend",
             "artist": "Waichiro Ozaki",
             "tags": ["CSBIII DX: Train", "New In DX"],
-            "album_art": "falsebound.png"
+            "album_art": "falsebound.png",
+            "trivia": "They should've just shot Lupin, would've saved everyone a lot of time."
         },
         "samba_temperado": {
             "file": "samba_temperado.ogg",
             "title": "Samba Temperado 2019",
             "artist": "Yuji Ohno & Explosion Band",
             "tags": ["CSBIII DX: Train", "New In DX", "Minigames"],
-            "album_art": "lupin_iii.png"
+            "album_art": "lupin_iii.png",
+            "trivia": "Insanely funky beat."
         },
         "in_the_room" : {
             "file": "in_the_room.ogg",
             "title": "In The Room",
             "artist": "Shogo Sakai",
             "tags": ["CSBIII DX: Train", "New In DX"],
-            "album_art": "mother3.png"
+            "album_art": "mother3.png",
+            "trivia": "Nintendo please...'Mother 3."
         },
         "roundabout" : {
             "file": "roundabout.ogg",
             "title": "Roundabout",
             "artist": "Yes",
             "tags": ["CSBIII DX: Train", "New In DX"],
-            "album_art": "roundabout.png"
+            "album_art": "roundabout.png",
+            "trivia": "It's the song from {a=https://www.youtube.com/watch?v=sqTEoZ78ihs}{i}Family Guy!{/i}{/a}!"
         },
         "lo_fi_sunset" : {
             "file": "lo_fi_sunset.ogg",
             "title": "Lo-Fi Sunset",
             "artist": "Dango Studio",
             "tags": ["CSBIII DX: Train", "New In DX"],
-            "album_art": "lofisunset.png"
+            "album_art": "lofisunset.png",
+            "trivia": "Nothing like watching the sunset from a window."
         },
         "homely_yado_inn" : {
             "file": "homely_yado_inn.ogg",
             "title": "Homely Yado Inn",
             "artist": "Shogo Sakai",
             "tags": ["CSBIII DX: Train", "New In DX"],
-            "album_art": "mother3.png"
+            "album_art": "mother3.png",
+            "trivia": "It's all over apparently."
         },
         "insomnia" : {
             "file": "secret/pt/insomnia.ogg",
@@ -1548,7 +1690,8 @@
             "title": "Billy Milly Mays",
             "artist": "tadintid.se",
             "tags": ["CSBIII: East", "CSBIII DX: Ringtones", "New In DX"],
-            "album_art": "ringtone_billy.png"
+            "album_art": "ringtone_billy.png",
+            "trivia": "This song must be the last thing that he heard, because I am about to feel like him listening to this."
         },
         "sfx_ringtone_cs" : {
             "file": "sfx/sfx_ringtone_cs.ogg",
@@ -1579,7 +1722,8 @@
             "title": "We Will Meet Again.",
             "artist": "Fresca",
             "tags": ["New In DX", "CSBIII DX: Misc."],
-            "album_art": "fresca.png"
+            "album_art": "fresca.png",
+            "trivia": "Get well soon."
         }
     }
 }
