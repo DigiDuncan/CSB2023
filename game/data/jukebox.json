@@ -283,7 +283,7 @@
             "artist": "Banana",
             "tags": ["CSBIII"],
             "album_art": "tracker.png",
-            "trivia": "This song makes me feel weird! -- Mika"
+            "trivia": "The first song that was modified for the game.\nThis song makes me feel weird! -- Mika"
         },
         "kill_cops" : {
             "file": "killcops.ogg",
@@ -339,7 +339,7 @@
             "artist": "Michiel van den Bos",
             "tags": ["CSBIII: Archival"],
             "album_art": "tracker.png",
-            "trivia": "This song makes me feel existentialism! -- Mika\n(It's also in Fortnite.)"
+            "trivia": "This song was created for {i}Unreal Tournament{/i}, an arena shooter created by Epic MegaGames. In fact, you can still listen to this song in Fortnite when you listen to the car's radio. \nThis song makes me feel existentialism! -- Mika"
         },
         "broken_sky" : {
             "file": "broken_sky.ogg",
@@ -659,7 +659,7 @@
             "artist": "Weatherscan",
             "tags": ["CSBIII: East"],
             "album_art": "weather.png",
-            "trivia": "This is THE Electromagnetic Pulse Lemon song, apparently."
+            "trivia": "{a=https://www.youtube.com/watch?v=Tq-qU_GCCLI}You're what's wrong with America, Simpson.{/a}"
         },
         "ac_title" : {
             "file": "ac_title.ogg",
