@@ -27,5 +27,15 @@
         "y_pos": 390,
         "jump_to": "book_celestial_sightseeing",
         "need_label": "train_defeated_perfect_tate"
+    },
+    "ep": {
+        "title": "Elizabeth's Birthday \nExtravaganza 2024!",
+        "desc": "\n \nThe silly spin-off where Digi makes it \njust in time for Elizabeth's birthday!",
+        "spine_width": 19,
+        "spine_height": 250,
+        "x_pos": 800,
+        "y_pos": 440,
+        "jump_to": "CSB3_EBEEP12024FDEADNYWFFEAGM",
+        "need_label": "ce_epilogue"
     }
 }
