@@ -670,7 +670,7 @@ label train_kingman_platform:
     show tate sad
     tate "Yes, sir..."
     amtrak_conductor "Now, let's get a move on."
-
+    window hide
     show amtrak_conductor flipped
     pause 0.25
 
@@ -705,6 +705,7 @@ label train_kingman_platform:
     jump train_boarding
 
 label train_boarding:
+    window hide
     scene amtrak_sleeper_corridor
     with dissolve
 
@@ -767,6 +768,7 @@ label train_boarding:
     show tate
     hide arceus with moveoutright
     n "Arceus scurries off."
+    window hide
     pause 1.0
 
     show amtrak_stewardess at mid_offscreen_right with moveinleft
@@ -782,6 +784,7 @@ label train_boarding:
     pause 0.25
     hide amtrak_stewardess with moveoutright
     n "The stewardess strolls away."
+    window hide
     pause 1.0
 
     show cs disappointed at mid_mid_left
@@ -844,6 +847,7 @@ label train_boarding:
     cs "More surprised than anything."
     show tate shock flipped at mid_mid_left with moveinleft
     n "Tate helps CS up from the floor."
+    window hide
 
     show cs concentrate at manual_pos(0.5, 1.1, 1.0):
         linear 1.0 rotate 0
@@ -1059,10 +1063,10 @@ label train_enter_sleeper:
     cs "[next_line]"
     arceus "And Lego bricks."
     show cs surprised
-    cs "And Legos, yes."
+    cs "And Lego, yes."
     show tate srs flipped
     tate "Wait, so..."
-    tate "You win it big in Vegas, and the {i}first{/i} thing you do is buy {i}Legos?"
+    tate "You win it big in Vegas, and the {i}first{/i} thing you do is buy {i}Lego?"
     show cs worried
     cs "Well, no--{w=0.25}{nw}"
     tate "I suppose I shouldn't have expected anything else from you."
@@ -1096,9 +1100,9 @@ label train_enter_sleeper:
     with moveinleft
 
     play sound sfx_sliding_door_close
-    n "The conductor leaves to return to his duties."
+    n "The conductor leaves and returns to his duties."
     tate "I can't believe this..."
-    arceus "Me, neither. All of that money, just... {i}gone..."
+    arceus "Me neither. All of that money, just... {i}gone..."
     show cs happy
     cs "Nah, I'm sure they'll find it. Nobody started complaining until the train was already moving, so, all of our stuff should still be on board, right?"
     arceus "I sure hope so..."
@@ -1133,7 +1137,7 @@ label train_enter_sleeper:
     tate "I mean, I looked over his résumé, but that's all."
     show cs happy
     show tate sheepish flipped
-    cs "Exaaaaactly. You've done all you can, so, just let things happen."
+    cs "Exaaaaactly. You've done all you can, so just, let things happen."
     show tate srs flipped
     tate "How can you be so... {i}unbothered{/i} by all of this? After you just lost so much money?!"
     show arceus worried
@@ -1144,7 +1148,7 @@ label train_enter_sleeper:
     show tate sheepish flipped
     tate "Even so, I really do hope they find everyone's things..."
     show tate sad flipped
-    tate "I'm just so scared that they'll accuse Mean of stealing it, or something, since he's so new..."
+    tate "I'm just so scared that they'll accuse Mean of stealing it or something, since he's so new..."
     tate "I really don't know if he could handle losing {i}this{/i} job, too."
     show cs disappointed
     cs "Wait, what happened at his {i}last{/i} job?"
@@ -1255,7 +1259,7 @@ label train_enter_sleeper:
     arceus "...{fast} {i}I{/i} think you're being way too optimistic about all of this."
     arceus "I'm going to bed."
     show cs disappointed
-    cs "Yeah, me,{w=0} too..."
+    cs "Yeah, me{w=0} too..."
 
     scene black with dissolve
     stop sound2 fadeout 0.5
@@ -1432,7 +1436,7 @@ label train_dining:
     arceus "{i}Fuck."
     show mean scared at offscreenright with MoveTransition(0.2)
     n "Mean dashes out of the dining car!"
-
+    window hide
     scene
     show amtrak_desert_night as left:
         perspective (0.0, 1000.0, 0.5)
@@ -1460,6 +1464,7 @@ label train_dining:
         n "He did at least steal a couple pancakes."
 
     n "He rushes back to the sleeper car as quickly as he can."
+    window hide
     show arceus worried flipped at offscreenright with MoveTransition(0.3)
     scene black with dissolve
     jump train_wakeup
@@ -3247,13 +3252,13 @@ label train_lupin_win:
         show cs scared
         cs "Cash? What cash?"
         amtrak_conductor "Didn't you two report a bag of money stolen earlier?"
-        cs "Oh, no! We only had Legos in our bag!"
+        cs "Oh, no! We only had Lego in our bag!"
         show tate sheepish
         amtrak_conductor "I'm certain you just said this was your cash."
         cs "No, sir! I said {i}\"stash\"!{/i}"
-        cs "Our {i}stash{/i} of Legos that we bought in Vegas!"
+        cs "Our {i}stash{/i} of Lego that we bought in Vegas!"
         arceus "Yep! We never had any cash!"
-        arceus "Well, we {i}did,{/i} but we spent it all on Legos!"
+        arceus "Well, we {i}did,{/i} but we spent it all on Lego!"
         amtrak_conductor "..."
         show tate shock
         tate "Wait, hold on!"
@@ -3325,7 +3330,7 @@ label train_lupin_win:
     elif train_money_stolen == False:
         $ train_money_container = "briefcase"
 
-    $ next_line = substitutions("CS reaches into the " + train_money_container + " and pulls out some Legos!")
+    $ next_line = substitutions("CS reaches into the " + train_money_container + " and pulls out some Lego!")
     n "[next_line]"
     n "He feverishly begins to construct something!"
     show tate shock
