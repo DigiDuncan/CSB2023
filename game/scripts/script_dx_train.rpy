@@ -1914,6 +1914,7 @@ label train_meanwhile:
     show lupin stand hat
     play sound sfx_sliding_door_open
     n "The conductor retires to the cab toilet for a while."
+    window hide
     play sound sfx_sliding_door_close
     pause 4.0
     play sound sfx_fart_with_reverb
@@ -1948,14 +1949,17 @@ label train_search_arceus:
     with dissolve
     n "Arceus returns to the dining car."
     arceus "Well, let's see if anything is hidden around here..."
+    window hide
     show arceus at left with ease
     show arceus at manual_pos(-50,950) with ease
     n "Arceus checks under the tables..."
+    window hide
     show arceus at left with ease
     show arceus flipped at center with ease
     show arceus flipped at right with ease
     show arceus flipped at manual_pos(1460,950) with ease
     n "Then, he checks under the seats..."
+    window hide
     show lupin run hat at offscreenright behind arceus with determination
     show lupin run hat at offscreenleft
     with MoveTransition(2.0)
@@ -2000,6 +2004,7 @@ label train_search_arceus:
     hide amtrak_dining_pancake with dissolve
     pause 1.5
     arceus "I need a drink..."
+    window hide
     show arceus angry flipped
     hide arceus with moveoutright
     scene black with dissolve
@@ -2010,7 +2015,7 @@ label train_search_arceus:
 label train_search_cs:
     play music onbs if_changed
     music onbs
-
+    window hide
     # TODO: YES I KNOW THIS SCENE IS CRUSTIER THAN FRENCH BREAD PLS HELP
 
     pause 1.5
@@ -2069,7 +2074,7 @@ label train_search_cs:
     cs "Hey,{w=0} you! Give that back!" with hpunch
     lupin_offscreen "Well, would ya look at that? It's my pretty kitty!"
     lupin_offscreen "Sorry, babe, but I've gotta split!"
-
+    window hide
     scene amtrak_sleeper_corridor
     show cs angry at center
     play sound sfx_whoosh
@@ -2084,7 +2089,7 @@ label train_search_cs:
         linear 0.25 rotate -10
     with { "master": MoveTransition(0.25) }
     cs "{i}AHH!!{w=0.5}{nw}" with hpunch
-
+    window hide
     hide lupin with dissolve
 
     pause 2.0
@@ -2110,6 +2115,7 @@ label train_search_cs:
     cs "... That guy must have stolen the money when he knocked me down earlier!"
     cs "At least I got a good look at his face this time!"
     cs "I need to find Arc and Tate!"
+    window hide
     show cs angry at offscreenright with MoveTransition(0.35)
     scene black with dissolve
     jump train_search_tate
@@ -2137,6 +2143,7 @@ label train_search_tate:
     show tate srs flipped
     "..."
     pause 2.0
+    window hide
     tate "... Why are {i}you{/i} here?"
 
     lupin_offscreen "Hey, look, it's my favorite {color=#FFDBFC}pink sweater{/color}!"
@@ -2178,6 +2185,7 @@ label train_search_tate:
         lupin_offscreen "With your whopping {i}5 DEF?"
 
     lupin_offscreen "The sea urchin isn't here yet--{w=0.5}{nw}"
+    window hide
     show tate shock flipped
     play sound sfx_fart
     with vpunch
@@ -2191,6 +2199,7 @@ label train_search_tate:
     show tate sheepish flipped
     tate "N-{w=0.1}Now, you listen here. Don't underestimate me..."
     tate "Just give me the hat, yeah? Besides, even if you're not scared of {i}me,{/i} Mr. Conductor will probably be done in there at any moment."
+    window hide
     play sound sfx_fart_deep
     with vpunch
     with vpunch
@@ -2244,6 +2253,7 @@ label train_search_tate:
     tate "Uweh?"
     amtrak_conductor "Go find another staff member if you can, too. I'll be with you shortly."
     tate "Yes, sir!"
+    window hide
     show tate sheepish at offscreenright with moveoutright
     pause 0.5
     play sound sfx_sliding_door_close
@@ -2254,6 +2264,7 @@ label train_search_tate:
     with hpunch
     pause 2.0
     amtrak_conductor "I guess it's time to switch protein shakes..."
+    window hide
     pause 0.5
     scene black with dissolve
     pause 1.0
@@ -2273,6 +2284,7 @@ label train_confront_lupin:
     show mean worried flipped at truecenter
     with dissolve
     n "CS shows up in economy to find Tate with Mean. The pair appears to be frustrated over something."
+    window hide
     pause 1.0
     show cs disappointed flipped at right behind arceus with moveinright
     pause 1.0
@@ -2428,7 +2440,7 @@ label train_confront_lupin:
     with moveinright
 
     n "Searching one section after another, they fail to find any sign of the suspect in coach."
-
+    window hide
     show mean angry flipped at offscreenleft
     show tate sheepish flipped at offscreenleft
     show cs disappointed flipped at offscreenleft
@@ -2578,6 +2590,7 @@ label train_confront_lupin:
         matrixtransform RotateMatrix(-17, 0, 0) * RotateMatrix(0, 90, 0) * RotateMatrix(0, 0, 0) * OffsetMatrix(0, -200, 400)
     show amtrak_dining_car with dissolve
     n "Through the dining car..."
+    window hide
 
     show lupin run hat at offscreenright with determination
     show lupin run hat at offscreenleft with MoveTransition(0.5)
@@ -2595,7 +2608,7 @@ label train_confront_lupin:
 
     scene amtrak_sleeper_corridor with dissolve
     n "Through the sleeper units..."
-
+    window hide
     show lupin run hat at offscreenright with determination
     show lupin run hat at offscreenleft with MoveTransition(0.5)
 
@@ -2649,7 +2662,7 @@ label train_confront_lupin:
     show arceus angry flipped at left
     with moveinleft
 
-    tate "Now,{w=0} what?!"
+    tate "Now,{w=0} what?!" #Should there be a comma here?
     show tate sad flipped
     tate "We can't possibly catch up with him..."
     show arceus worried flipped
@@ -2722,11 +2735,13 @@ label train_confront_lupin:
         n "A friend is encountered!"
     else:
         n "Mean transforms!"
+    window hide
     pause 2.0
     mean "Damn..."
     mean "I couldn't see it before, but..."
     show mean human happy
     mean "I can't believe y'all motherfuckers are so {i}short!"
+    window hide
 
     # stupid height gag
     $ renpy.music.set_volume(0)
