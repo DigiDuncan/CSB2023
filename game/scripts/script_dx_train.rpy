@@ -249,6 +249,7 @@ label train_story_begin:
     cs "Oh, right."
     cs "I guess we won't be needing this for a while."
     play sound sfx_lego_break
+    with vpunch
     pause 1.0
 
     if train_money_stolen == True:
@@ -276,12 +277,13 @@ label train_story_begin:
     show arceus angry
     arceus "Whatever, man. Let's just go."
     show cs happy flipped
-    pause 0.25
+    pause 0.5
 
     hide cs
     hide arceus
     with moveoutleft
     scene black with dissolve
+    pause 1.0
 
     scene kingman_interior with dissolve
 
@@ -929,7 +931,7 @@ label train_enter_sleeper:
     "..."
     pause 1.0
     show tate sheepish flipped
-    tate "... Right?"
+    tate "...{fast} Right?"
 
     stop music fadeout 3.0
     music end
@@ -937,7 +939,7 @@ label train_enter_sleeper:
     show cs scared
     show tate shock flipped
     show arceus worried
-    with shake2
+    with shake1
     play sound sfx_hard_knock
     if fun_value(FUN_VALUE_MUSIC):
         n "A sudden item bouncing on the door startles the group."
@@ -970,7 +972,7 @@ label train_enter_sleeper:
     amtrak_conductor "Alright, every--{w=0.25}{nw}"
     amtrak_conductor "Oh. {w=0.5}{i}Mx. Frost."
     tate "I {i}swear,{/i} sir! Whatever happened just now, I had {i}nothing{/i} to do with it!"
-    tate "I've been in this room! Just talking with CS, here!"
+    tate "I've been in this room! Just talking with CS,{w=0} here!"
     show cs happy flipped
     cs "Hey guys, CS here!"
     amtrak_conductor "Huh?{w=0.25}{nw}"
@@ -999,10 +1001,18 @@ label train_enter_sleeper:
     show amtrak_conductor
     show cs disappointed flipped
     play sound sfx_hubbub loop volume 0.3
+
     amtrak_npc_1 "Hey, my watch is gone, too!" with hpunch
-    amtrak_npc_2 "Man, {i}fuck{/i} your watch! They took my damn {i}Switch!{/i}"
-    amtrak_npc_3 "Such {i}language!" with hpunch
-    amtrak_npc_3 "My dearest mother's priceless brooch is {i}also{/i} missing, and you don't hear {i}me{/i} speaking like an utter {i}barbarian!"
+
+    amtrak_npc_2 "Man, {nw}"
+    extend "{i}fuck{/i} your watch! They took my damn {nw}" with vpunch
+    extend "{i}Switch!{/i}" with vpunch
+
+    amtrak_npc_3 "Such {nw}"
+    extend "{i}language!" with hpunch
+    amtrak_npc_3 "My dearest mother's priceless brooch is {i}also{/i} missing, and you don't hear {i}me{/i} speaking like an utter {nw}"
+    extend "{i}barbarian!" with hpunch
+
     n "The complaints of a few more troubled travelers echo throughout the cabin."
     show amtrak_conductor at mid_offscreen_left with moveinleft
     amtrak_conductor "Please remain calm, everyone! We will find out who the thief is, and they {i}will{/i} be brought to justice!"
@@ -1100,7 +1110,7 @@ label train_enter_sleeper:
     with moveinleft
 
     play sound sfx_sliding_door_close
-    n "The conductor leaves and returns to his duties."
+    n "The conductor leaves to return to his duties."
     tate "I can't believe this..."
     arceus "Me neither. All of that money, just... {i}gone..."
     show cs happy
@@ -1137,7 +1147,7 @@ label train_enter_sleeper:
     tate "I mean, I looked over his résumé, but that's all."
     show cs happy
     show tate sheepish flipped
-    cs "Exaaaaactly. You've done all you can, so just, let things happen."
+    cs "Exaaaaactly. You've done all you can, so just... let things happen."
     show tate srs flipped
     tate "How can you be so... {i}unbothered{/i} by all of this? After you just lost so much money?!"
     show arceus worried
@@ -1423,9 +1433,13 @@ label train_dining:
         arceus "Wait, hey, can you do a Dallas impression?"
         show mean wat
         mean "Like this?"
+
         play sound sfx_mean_dallas_scream
         show mean furious
-        mean "{cshake}{size=+36}AUUUUUUUUUGH!!" with hpunch
+        # this is stupid - tate
+        $ renpy.show_layer_at(sustained_vpunch(iterations=14), layer="master")
+        mean_nobeep "{cps=7}{cshake}{size=+36}AUUUUUUUUUGH!!"
+        pause 1.0
         show arceus happy
         arceus "Yeah!"
         show arceus worried
@@ -1747,6 +1761,7 @@ label train_wakeup:
         linear 1 rotate -180
     hide mean with moveoutleft
     n "Mean rolls away down the hall."
+    pause 1.0
     show tate sheepish at left with moveoutleft
     pause 1.0
     show tate sheepish
@@ -2662,7 +2677,7 @@ label train_confront_lupin:
     show arceus angry flipped at left
     with moveinleft
 
-    tate "Now,{w=0} what?!" #Should there be a comma here?
+    tate "{i}Now{/i} what?!"
     show tate sad flipped
     tate "We can't possibly catch up with him..."
     show arceus worried flipped
