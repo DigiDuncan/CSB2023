@@ -1,31 +1,3 @@
-"""
-Optimus Prime
-Wheeljack
-Bumblebee
-Tonneman/Holdsworth
-Cliffjumper
-Prowl
-Jazz
-Sideswipe
-Ratchet
-Ironhide
-Hound
-Mirage
-Trailbreaker
-SunstreakerBluestreak
-Windcharger
-Brawn
-Huffer
-Gears
-Skyfire
-Grimlock
-Slag
-Sludge
-Snarl
-Swoop
-Warpath
-"""
-
 init:
     transform rotate_10:
         subpixel True
