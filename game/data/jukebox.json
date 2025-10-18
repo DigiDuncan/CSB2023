@@ -1524,7 +1524,7 @@
             "artist": "Jun Ishikawa",
             "tags": ["CSBIII DX: Plane", "New In DX"],
             "album_art": "kirby64.png",
-            "trivia": "..."
+            "trivia": "For Plane Route, I wanted to use the same OSTs that Tate used for Train Route. -- Pakoo"
         },
             "title_screen" : {
             "file": "title_screen.ogg",
@@ -1532,7 +1532,7 @@
             "artist": "Miki Obata",
             "tags": ["CSBIII DX: Plane", "New In DX"],
             "album_art": "pkmnchannel.png",
-            "trivia": "..."
+            "trivia": "I had to find a way to talk about the airport the same way Tate made it interesting to walk around the train station. -- Pakoo"
         },
             "cobalt_coast_day" : {
             "file": "cobalt_coast_day.ogg",
@@ -1540,7 +1540,7 @@
             "artist": "Miki Obata",
             "tags": ["CSBIII DX: Plane", "New In DX"],
             "album_art": "heyyoupikachu.png",
-            "trivia": "..."
+            "trivia": "Since Train Route had multiple cars and rooms for CS and Arceus to stay in, the most logical solution to make this work on a plane was for them to ride in an Airbus."
         },
         "abra_shop" : {
             "file": "abra_shop.ogg",
@@ -1548,7 +1548,7 @@
             "artist": "Miki Obata",
             "tags": ["CSBIII DX: Plane", "New In DX"],
             "album_art": "heyyoupikachu.png",
-            "trivia": "..."
+            "trivia": "As much as I wanted to bring back {i}Bedroom ~ Day{/i} for this route as it has become one of my favorite songs used in the game, I had to find something similar enough to fit for the route. -- Pakoo"
         },
         "huge_pillar" : {
             "file": "huge_pillar.ogg",
@@ -1556,7 +1556,7 @@
             "artist": "Akira Miyagawa",
             "tags": ["CSBIII DX: Plane", "New In DX"],
             "album_art": "kirbyairride.png",
-            "trivia": "..."
+            "trivia": "I had to find a song that fit the same vibe as {i}Item Bounce{/i}, and this was the closest I got. -- Pakoo"
         },
         "pyrite_town" : {
             "file": "pyrite_town.ogg",
@@ -1564,7 +1564,7 @@
             "artist": "Tsukasa Tawada",
             "tags": ["CSBIII DX: Plane", "New In DX"],
             "album_art": "pokemonxd.png",
-            "trivia": "..."
+            "trivia": "Arceus goes to the dining car to meet Mean in Train Route, so I created K-19 to serve as the \"Mean\" for Plane Route. -- Pakoo"
         },
         "cipher_lab" : {
             "file": "cipher_lab.ogg",
@@ -1572,7 +1572,7 @@
             "artist": "Tsukasa Tawada",
             "tags": ["CSBIII DX: Plane", "New In DX"],
             "album_art": "pokemonxd.png",
-            "trivia": "..."
+            "trivia": "Since Train Route had a few scenes from the point-of-view of Lupin III, I decided to swap the perspective to the main crew doing detective work. -- Pakoo"
         },
         "run_for_your_life" : {
             "file": "run_for_your_life.mp3",
@@ -1580,7 +1580,7 @@
             "artist": "Arr. Pakoo",
             "tags": ["CSBIII DX: Plane", "New In DX"],
             "album_art": "csbii.png",
-            "trivia": "..."
+            "trivia": "The original MIDI is from the OpenTTD OST."
         },
         "sub_game_select" : {
             "file": "sub_game_select.ogg",

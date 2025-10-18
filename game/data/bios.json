@@ -193,7 +193,8 @@
             "Booger with SOCOM": "images/characters/booger_socom.png" 
         },
         "quote": "12 Hours?",
-        "bio": "..."
+        "bio": "After The Mucinex Corporation was established, Mr. Booger had to find new ways to cause respiratory damage: bullets. However, they always managed to plan their crimes in the stupidest ways possible.",
+        "dx": true
     },
     "border_guard": {
         "full_name": "Canadian Border Guard",
@@ -1491,6 +1492,17 @@
         },
         "quote": "Abracadabra and the like",
         "bio": "The witch lives in Moominvalley with her granddaughter, Alicia. She spends her days training Alicia in the craft. She also loves to cook. Her signature dish is steamed hams, an old family recipe."
+    },
+    "wright": {
+        "full_name": "Orville and Wilbur Wright",
+        "pronouns": "(he/him)",
+        "sprites": {
+            "Orville": "images/characters/orville.png",
+            "Wilbur": "images/characters/wilbur.png" 
+        },
+        "quote": "We've taken to the skies!",
+        "bio": "These two men serve a very important role in human history. They managed to take flight in a controllable kite, which led to become one of the most influential inventions in mankind. Unfortunately, their second successful flight landed them unsuccessfully into a cave filled with resin.",
+        "dx": true
     },
     "zenigata": {
         "full_name": "Zenigata",
