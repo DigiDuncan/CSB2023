@@ -23,6 +23,7 @@
         "CSBIII DX: Kuwait",
         "CSBIII DX: Rockstar II",
         "CSBIII DX: Speedrun",
+        "CSBIII DX: Plane",
         "CSBIII DX: Train",
         "CSBIII DX: Misc.",
         "CSBIII DX: Ringtones"
@@ -1516,6 +1517,70 @@
             "tags": ["CSBIII DX: Speedrun", "New In DX"],
             "album_art": "vibration.png",
             "trivia": "A sped-up version of {i}Happy Roaming.{/i}"
+        },
+        "mid_boss_battle" : {
+            "file": "mid_boss_battle.ogg",
+            "title": "Mid Boss Battle",
+            "artist": "Jun Ishikawa",
+            "tags": ["CSBIII DX: Plane", "New In DX"],
+            "album_art": "kirby64.png",
+            "trivia": "..."
+        },
+            "title_screen" : {
+            "file": "title_screen.ogg",
+            "title": "Title Screen",
+            "artist": "Miki Obata",
+            "tags": ["CSBIII DX: Plane", "New In DX"],
+            "album_art": "pkmnchannel.png",
+            "trivia": "..."
+        },
+            "cobalt_coast_day" : {
+            "file": "cobalt_coast_day.ogg",
+            "title": "Cobalt Coast ~ Day",
+            "artist": "Miki Obata",
+            "tags": ["CSBIII DX: Plane", "New In DX"],
+            "album_art": "heyyoupikachu.png",
+            "trivia": "..."
+        },
+        "abra_shop" : {
+            "file": "abra_shop.ogg",
+            "title": "Abra Shop",
+            "artist": "Miki Obata",
+            "tags": ["CSBIII DX: Plane", "New In DX"],
+            "album_art": "heyyoupikachu.png",
+            "trivia": "..."
+        },
+        "huge_pillar" : {
+            "file": "huge_pillar.ogg",
+            "title": "Huge Pillar",
+            "artist": "Akira Miyagawa",
+            "tags": ["CSBIII DX: Plane", "New In DX"],
+            "album_art": "kirbyairride.png",
+            "trivia": "..."
+        },
+        "pyrite_town" : {
+            "file": "pyrite_town.ogg",
+            "title": "Pyrite Town",
+            "artist": "Tsukasa Tawada",
+            "tags": ["CSBIII DX: Plane", "New In DX"],
+            "album_art": "pokemonxd.png",
+            "trivia": "..."
+        },
+        "cipher_lab" : {
+            "file": "cipher_lab.ogg",
+            "title": "Cipher Lab",
+            "artist": "Tsukasa Tawada",
+            "tags": ["CSBIII DX: Plane", "New In DX"],
+            "album_art": "pokemonxd.png",
+            "trivia": "..."
+        },
+        "run_for_your_life" : {
+            "file": "run_for_your_life.mp3",
+            "title": "Run For Your Life!",
+            "artist": "Arr. Pakoo",
+            "tags": ["CSBIII DX: Plane", "New In DX"],
+            "album_art": "csbii.png",
+            "trivia": "..."
         },
         "sub_game_select" : {
             "file": "sub_game_select.ogg",

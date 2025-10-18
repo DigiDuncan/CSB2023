@@ -909,12 +909,12 @@ label south_poker3:
     arceus "Alright, well, what's the plan now? We have so much money, we can do anything with it!"
     menu:
         arceus "What would you like to do, CS?"
-        "Take a plane home":
-            jump south_airport
-        "Take the car" (type = "bad"):
-            jump south_noairport
-        "Take something else...?" (type = "dx"):
+        "Take the plane":
+            jump plane_intro_start
+        "Take the train" (type = "dx"):
             jump train_start_good
+        "Take the automobile" (type = "bad"):
+            jump south_noairport
 
 label south_airport:
     stop music fadeout 3.0

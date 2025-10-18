@@ -103,7 +103,9 @@ screen dx_select():
                         zoom 0.333
                         xalign 0.5
 
-                imagebutton auto "menu/csbiiidx_%s.png":
+                imagebutton auto "menu/csbiiidx_%s.png" hover_sound "audio/sfx/sfx_select.ogg":
+                    hovered tt.Action("Plane")
                     at transform:
                         zoom 0.333
                         xalign 0.5
+                    action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("dx_select"), Jump("plane_intro_start")

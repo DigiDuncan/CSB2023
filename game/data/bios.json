@@ -185,6 +185,16 @@
             }
         }
     },
+    "booger": {
+        "full_name": "The Mucinex Booger",
+        "pronouns": "(he/him)",
+        "sprites": {
+            "Default": "images/characters/booger.png",
+            "Booger with SOCOM": "images/characters/booger_socom.png" 
+        },
+        "quote": "12 Hours?",
+        "bio": "..."
+    },
     "border_guard": {
         "full_name": "Canadian Border Guard",
         "pronouns": "(he/him)",
@@ -777,6 +787,17 @@
         "bio": "This silly creature is the embodiment of Pakoo's memories from 2017. They're a hard worker, but they only have about three things ever to talk about: SunnyD, {i}Nekopara,{/i} and CS.",
         "ce": true
     },
+    "k19": {
+        "full_name": "K-19",
+        "pronouns": "(he/they)",
+        "sprites": {
+            "Beta": "images/characters/pakoo/k19beta.png",
+            "Beta with gun": "images/characters/pakoo/k19gunbeta.png"
+        },
+        "quote": "Whatever. I don't really give a shit.",
+        "bio": "K-19 hates their boss, Addy. Honestly, they don't really like anyone, except for themselves. A huge and total prick, but they still manage to get their job done at the end of the day.",
+        "dx": true
+    },   
     "k22": {
         "full_name": "K-22",
         "pronouns": "(he/they)",
