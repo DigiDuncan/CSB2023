@@ -950,7 +950,7 @@ label plane_brothers:
     with dissolve
     k19 "What are you guys doing back here?"
     "???" "Well, well, well..."
-    "???" "We were just taking what is rightfuly ours!"
+    "???" "We were just taking what is rightfully ours!"
     cs "Just who the hell are you guys?!"
     "???" "We are:"
     #awesome ass MGSV title card thing.
@@ -1077,7 +1077,7 @@ label plane_fight_win:
         zoom 0.2
     show ges flipped at manual_pos(0.9, 0.3)with MoveTransition(1.0):
         zoom 0.2
-    n "K-19 grabs onto wilbur and Ges grabs onto Orville."
+    n "K-19 grabs onto Wilbur and Ges grabs onto Orville."
     arceus "We got them, can we get back inside the plane now before we fucking die?!"
     cs "Oh yeah, let's get back inside."
     scene black with dissolve
