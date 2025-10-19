@@ -44,7 +44,7 @@
             "Default": "images/characters/amtrak_stewardess.png"
         },
         "quote": "Can I get you anything?",
-        "bio": "This particular stewardess gives off a motherly vibe. She takes the time to make all her guests feel welcome and cared for, even when those guests try to roleplay as other staff.",
+        "bio": "This particular stewardess gives off a motherly vibe. She always takes the time to make sure all her guests feel welcome and cared for, even when those guests try to roleplay as other staff.",
         "dx": true
     },
     "anne": {
@@ -190,10 +190,10 @@
         "pronouns": "(he/him)",
         "sprites": {
             "Default": "images/characters/booger.png",
-            "Booger with SOCOM": "images/characters/booger_socom.png" 
+            "With SOCOM": "images/characters/booger_socom.png"
         },
         "quote": "12 Hours?",
-        "bio": "After The Mucinex Corporation was established, Mr. Booger had to find new ways to cause respiratory damage: bullets. However, they always managed to plan their crimes in the stupidest ways possible.",
+        "bio": "After The Mucinex Corporation was established, Mr. Booger had to find new ways to cause respiratory damage. His solution? Bullets. However, he always manages to plan his crimes in the stupidest ways possible.",
         "dx": true
     },
     "border_guard": {
@@ -798,7 +798,7 @@
         "quote": "Whatever. I don't really give a shit.",
         "bio": "K-19 hates their boss, Addy. Honestly, they don't really like anyone, except for themselves. A huge and total prick, but they still manage to get their job done at the end of the day.",
         "dx": true
-    },   
+    },
     "k22": {
         "full_name": "K-22",
         "pronouns": "(he/they)",
@@ -1494,14 +1494,14 @@
         "bio": "The witch lives in Moominvalley with her granddaughter, Alicia. She spends her days training Alicia in the craft. She also loves to cook. Her signature dish is steamed hams, an old family recipe."
     },
     "wright": {
-        "full_name": "Orville and Wilbur Wright",
-        "pronouns": "(he/him)",
+        "full_name": "Orville & Wilbur Wright",
+        "pronouns": "(he/him) (both)",
         "sprites": {
             "Orville": "images/characters/orville.png",
-            "Wilbur": "images/characters/wilbur.png" 
+            "Wilbur": "images/characters/wilbur.png"
         },
         "quote": "We've taken to the skies!",
-        "bio": "These two men serve a very important role in human history. They managed to take flight in a controllable kite, which led to become one of the most influential inventions in mankind. Unfortunately, their second successful flight landed them unsuccessfully into a cave filled with resin.",
+        "bio": "These two men serve a very important role in human history. They managed to take flight in a controllable kite, which later led to one of the most influential inventions of all time. Unfortunately, their second successful flight landed them {i}unsuccessfully{/i} into a cave filled with resin.",
         "dx": true
     },
     "zenigata": {
