@@ -1754,6 +1754,8 @@ label csbiii_choose_direction:
             jump true_east
         "South":
             jump south_start
+        "South-West":
+            jump southwest_start
         "West":
             jump csbiii_west
 
@@ -1809,6 +1811,8 @@ label csbiii_north:
             jump true_east
         "South":
             jump south_start
+        "South-West":
+            jump southwest_start
         "West":
             jump csbiii_west
 
@@ -1941,5 +1945,7 @@ label csbiii_west:
             jump true_east
         "South":
             jump south_start
+        "South-West":
+            jump southwest_start
         "West":
             jump csbiii_west
