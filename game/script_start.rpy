@@ -2821,7 +2821,8 @@ image tate_ex_front:
     repeat
 
 image tate_ex_ca_c:
-    "secret/pt/tate_ex_c.png"
+    "secret/pt/tate_ex.png"
+    matrixcolor TintMatrix("#00FFFF") * BrightnessMatrix(1.0)
     alignaround (0.5, 0.5)
     align (0.5, 0.5)
     pos (0.5, 0.5)
@@ -2836,7 +2837,8 @@ image tate_ex_ca_c:
     repeat
 
 image tate_ex_ca_m:
-    "secret/pt/tate_ex_m.png"
+    "secret/pt/tate_ex.png"
+    matrixcolor TintMatrix("#FF00FF") * BrightnessMatrix(1.0)
     alignaround (0.5, 0.5)
     align (0.5, 0.5)
     pos (0.5, 0.5)
@@ -2851,7 +2853,8 @@ image tate_ex_ca_m:
     repeat
 
 image tate_ex_ca_y:
-    "secret/pt/tate_ex_y.png"
+    "secret/pt/tate_ex.png"
+    matrixcolor TintMatrix("#FFFF00") * BrightnessMatrix(1.0)
     alignaround (0.5, 0.5)
     align (0.5, 0.5)
     pos (0.5, 0.5)

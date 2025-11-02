@@ -1073,7 +1073,7 @@ label train_enter_sleeper:
     cs "[next_line]"
     arceus "And Lego bricks."
     show cs surprised
-    cs "And Lego, yes."
+    cs "And Lego bricks, yes."
     show tate srs flipped
     tate "Wait, so..."
     tate "You win it big in Vegas, and the {i}first{/i} thing you do is buy {i}Lego?"
@@ -1269,7 +1269,7 @@ label train_enter_sleeper:
     arceus "...{fast} {i}I{/i} think you're being way too optimistic about all of this."
     arceus "I'm going to bed."
     show cs disappointed
-    cs "Yeah, me{w=0} too..."
+    cs "Yeah, me too..."
 
     scene black with dissolve
     stop sound2 fadeout 0.5
@@ -3282,7 +3282,7 @@ label train_lupin_win:
         show cs scared
         cs "Cash? What cash?"
         amtrak_conductor "Didn't you two report a bag of money stolen earlier?"
-        cs "Oh, no! We only had Lego in our bag!"
+        cs "Oh, no! We only had Lego bricks in our bag!"
         show tate sheepish
         amtrak_conductor "I'm certain you just said this was your cash."
         cs "No, sir! I said {i}\"stash\"!{/i}"
@@ -3360,7 +3360,7 @@ label train_lupin_win:
     elif train_money_stolen == False:
         $ train_money_container = "briefcase"
 
-    $ next_line = substitutions("CS reaches into the " + train_money_container + " and pulls out some Lego!")
+    $ next_line = substitutions("CS reaches into the " + train_money_container + " and pulls out some Lego bricks!")
     n "[next_line]"
     n "He feverishly begins to construct something!"
     show tate shock
