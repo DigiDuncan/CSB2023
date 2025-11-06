@@ -1288,6 +1288,25 @@ label plane_fight_win:
     cs "Don't worry about it, see it as us repaying you for leading us to the hooligan."
     show arceus happy
     arceus "Yeah, thanks for that. Have a good day!"
+    n "After CS and Arc give back all the stolen items, they head back to the cockpit to check up on the crew."
+    cs "We returned everything back to their rightful owners!"
+    eliza "Thank you guys."
+    eliza "Your guy's names are CS and Arceus, correct?"
+    cs "That's me." (multiple=2)
+    arceus "That's me." (multiple=2)
+    eliza "Thank you CS and Arceus, we appreciate the work you guys did. We will try to make it back to you in time."
+    cs "No need, we kinda won 100 million dollars at the casino."
+    eliza "Alright well, we hope that you can stay comfortable for the rest of the flight."
+    eliza "You can head back to your seats now."
+    cs "Cool, let's go Arc."
+    n "As CS and Arc are heading back to their rooms, they see Ges and K-19 taping The Wright Brothers their chairs."
+    ges "You fellows aren't going anywhere, eh?"
+    k19 "I'll sit here and watch you guys like a hawk if I have to."
+    wilbur "Oh, Good heavens..."
+    ges "I think these men are strapped-up well enough, eh."
+    arceus "So, you guys are gonna make sure they can't break out of that tape, right?"
+    k19 "Don't worry, I'll be here."
+    arceus "Good, I want to have try to have a relaxing rest of my flight."
     jump south_back_home_alt
 
 
