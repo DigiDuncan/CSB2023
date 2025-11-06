@@ -34,11 +34,38 @@ label southwest_start:
 
     cs "We made it to Los Angeles in one piece!"
     menu:
-        "No Fight yet, sorry."
+        "No cool dialogue yet, sorry."
         "Go to San Diego":
             jump southwest_san_diego
         "Go to Vegas":
             jump southwest_vegas 
-        "Go to McDonalds":
-            jump southwest_mcdonalds
+        "Go to In-N-Out":
+            jump southwest_cali_foodplace
 
+label southwest_cali_foodplace:
+    cs "I guess we could go to In-N-Out. I've never been and I might as well try out their food."
+    arceus "I'll eat anything at this point."
+    frank "In-N-Out it is! Let's get some burgers!"
+    n "Frank drives to the closest location and pulls into the line."
+    cs "Holy crap, this line is so friggin' long!"
+    frank "Don't worry boys, this is normal here."
+    frank "That's why the employees come out to take your order!"
+    n "One of the workers comes up to the car with a menu."
+    cashier "Hey guys, may I take your order?"
+    arceus "I will just have a coke and some fries." #Placeholder
+    cs "I will take Fanta and a hamburger."
+    frank "I'll have a cheeseburger, two orders of fries, and uhh, a large shake."
+    cashier "Uhh, alrighty."
+    cashier "So that will be PLACEHOLDER, hamburger and a regular Fanta, and a cheeseburger, two fries, and a large shake?"
+    frank "Sounds correct!"
+    cashier "Alright, you should be good to pick up your food when you get to the window!"
+    n "As the cars pass, Frank finally pulls up to the window to get their meal."
+    cashier "Here you go, sir."
+    n "The cashier hands Frank a flyer for Fentanyl awareness."
+    frank "Uhh, okay."
+    frank "CS, you can have this."
+    cs "What in the world? 34,000 deaths alone in Los Angeles County?"
+    cashier "You can pull up to the next window please."
+    n "Frank drives up to the second window, and gets his food."
+    frank "Alrighty everyone, eat up!"
+    #THen they win clue
