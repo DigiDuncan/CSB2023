@@ -376,8 +376,7 @@ label awawa_tate_test:
                         tate "It {i}is{/i} drawn {i}correctly{/i} this time, right?"
                         hide tate_sigil
                     "Green Screen Test":
-                        image greenscreen_temp = Solid(("#00FF00"))
-                        scene greenscreen_temp
+                        scene green_screen
                         pakoo_offscreen "Hey! You,{w=0} there!"
                         pakoo_offscreen "Just what do you think you're doing down there?!"
                     "Never mind.":

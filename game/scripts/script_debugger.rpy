@@ -2644,7 +2644,7 @@ label asset_debugger:
         $ musictotal += 1
         play music encounter_friend_loop
         $ bgtotal += 1
-        scene white_bg
+        scene white
         pause 0.5
     else:
         jump exit_debug

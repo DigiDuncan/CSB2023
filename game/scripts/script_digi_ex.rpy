@@ -107,7 +107,7 @@ init python:
         else:
             a = a1 if st < 66.25 else a2
             return Solid((255, 255, 255, a)), 0.01
-        
+
 
     renpy.add_layer("back", above = "master")
     renpy.add_layer("fore1", above = "back")
@@ -162,16 +162,16 @@ init python:
                 pos = pos_origin;
                 pos .x +=sin(gTime * 0.4) * 2.5;
                 pos.xy *=   rot(.8);
-                float box3 = box(pos,2. - abs(sin(gTime * 0.4)) * 1.5);	
+                float box3 = box(pos,2. - abs(sin(gTime * 0.4)) * 1.5);
                 pos = pos_origin;
                 pos .x -=sin(gTime * 0.4) * 2.5;
                 pos.xy *=   rot(.8);
-                float box4 = box(pos,2. - abs(sin(gTime * 0.4)) * 1.5);	
+                float box4 = box(pos,2. - abs(sin(gTime * 0.4)) * 1.5);
                 pos = pos_origin;
                 pos.xy *=   rot(.8);
-                float box5 = box(pos,.5) * 6.;	
+                float box5 = box(pos,.5) * 6.;
                 pos = pos_origin;
-                float box6 = box(pos,.5) * 6.;	
+                float box6 = box(pos,.5) * 6.;
                 float result = max(max(max(max(max(box1,box2),box3),box4),box5),box6);
                 return result;
             }
@@ -201,7 +201,7 @@ init python:
                 vec3 pos = ro + ray * t;
                 pos = mod(pos-2., 4.) -2.;
                 gTime = u_time -float(i) * 0.01;
-                
+
                 float d = map(pos, u_time, gTime);
 
                 d = max(abs(d), 0.01);
@@ -236,15 +236,15 @@ init python:
             }
 
             float noise(vec2 uv, float blockiness, float seed)
-            {   
+            {
                 vec2 lv = fract(uv);
                 vec2 id = floor(uv);
-                
+
                 float n1 = rand(id, seed);
                 float n2 = rand(id+vec2(1,0), seed);
                 float n3 = rand(id+vec2(0,1), seed);
                 float n4 = rand(id+vec2(1,1), seed);
-                
+
                 vec2 u = smoothstep(0.0, 1.0 + blockiness, lv);
 
                 return mix(mix(n1, n2, u.x), mix(n3, n4, u.x), u.y);
@@ -254,15 +254,15 @@ init python:
             {
                 float val = 0.0;
                 float amp = 0.5;
-                
+
                 while(count != 0)
                 {
                     val += amp * noise(uv, blockiness, seed);
                     amp *= 0.5;
-                    uv *= complexity;    
+                    uv *= complexity;
                     count--;
                 }
-                
+
                 return val;
             }
         """,
@@ -284,19 +284,19 @@ init python:
 
             // Generate shift amplitude
             float shift = glitchAmplitude * pow(fbm(uv2, int(rand(id, u_time) * 6.), glitchBlockiness, glitchNarrowness, u_time), glitchMinimizer);
-            
+
             // Create a scanline effect
             float scanline = abs(cos(uv.y * 400.));
             scanline = smoothstep(0.0, 2.0, scanline);
             shift = smoothstep(0.00001, 0.2, shift);
-            
+
             // Apply glitch and RGB shift
             float colR = texture2D(tex0, vec2(uv.x + shift, uv.y)).r * (1. - shift);
             float colG = texture2D(tex0, vec2(uv.x - shift, uv.y)).g * (1. - shift) + rand(id, u_time) * shift;
             float colB = texture2D(tex0, vec2(uv.x - shift, uv.y)).b * (1. - shift);
             // Mix with the scanline effect
             vec3 f = vec3(colR, colG, colB) - (0.1 * scanline);
-            
+
             // Output to screen
             gl_FragColor = vec4(f, texture2D(tex0, uv).a);
         """
@@ -324,15 +324,15 @@ init python:
             }
 
             float noise(vec2 uv, float blockiness, float seed)
-            {   
+            {
                 vec2 lv = fract(uv);
                 vec2 id = floor(uv);
-                
+
                 float n1 = rand(id, seed);
                 float n2 = rand(id+vec2(1,0), seed);
                 float n3 = rand(id+vec2(0,1), seed);
                 float n4 = rand(id+vec2(1,1), seed);
-                
+
                 vec2 u = smoothstep(0.0, 1.0 + blockiness, lv);
 
                 return mix(mix(n1, n2, u.x), mix(n3, n4, u.x), u.y);
@@ -342,15 +342,15 @@ init python:
             {
                 float val = 0.0;
                 float amp = 0.5;
-                
+
                 while(count != 0)
                 {
                     val += amp * noise(uv, blockiness, seed);
                     amp *= 0.5;
-                    uv *= complexity;    
+                    uv *= complexity;
                     count--;
                 }
-                
+
                 return val;
             }
         """,
@@ -372,19 +372,19 @@ init python:
 
         // Generate shift amplitude
         float shift = glitchAmplitude * pow(fbm(uv2, int(rand(id, u_time) * 6.), glitchBlockiness, glitchNarrowness, u_time), glitchMinimizer);
-        
+
         // Create a scanline effect
         float scanline = abs(cos(uv.y * 400.));
         scanline = smoothstep(0.0, 2.0, scanline);
         shift = smoothstep(0.00001, 0.2, shift);
-        
+
         // Apply glitch and RGB shift
         float colR = texture2D(tex0, vec2(uv.x + shift, uv.y)).r * (1. - shift);
         float colG = texture2D(tex0, vec2(uv.x - shift, uv.y)).g * (1. - shift) + rand(id, u_time) * shift;
         float colB = texture2D(tex0, vec2(uv.x - shift, uv.y)).b * (1. - shift);
         // Mix with the scanline effect
         vec3 f = vec3(colR, colG, colB) - (0.1 * scanline);
-        
+
         // Output to screen
         vec4 col = vec4(f, texture2D(tex0, uv).a);
 
@@ -399,7 +399,7 @@ init python:
     )
 
 init 0:
-    image fractal = "bg/green.png"
+    image fractal = "secret/dd/green.png"
     image num = spritesheet_animation("secret/dd/num.png", 10, 1, looping = True)
     image arrow_bf = DynamicDisplayable(charm_arrow_bf)
     image arrow_mno = DynamicDisplayable(charm_arrow_mno)
@@ -468,7 +468,7 @@ define audio.missingno_start = "secret/dd/missingno_start.ogg"
 define audio.missingno_loop = "secret/dd/missingno_loop.ogg"
 define audio.missingno_end = "secret/dd/missingno_end.ogg"
 
-define digi_ex = Character("Digi EX", 
+define digi_ex = Character("Digi EX",
     callback = renpy.partial(char_callback, name = "digi", beep = "digi"),
     window_background = "secret/dd/TextBox_Sci-Fi_02_transparent.png",
     who_left_padding = 210, who_top_padding = 25,

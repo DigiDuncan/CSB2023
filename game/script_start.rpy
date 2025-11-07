@@ -1742,6 +1742,11 @@ image hoh_hq4 = "bg/office4.png"
 image hoh_hq5 = "bg/office5.png"
 image hoh_elevator = "bg/elevator.png"
 
+## Generated images for general use
+image white = Solid(("#FFFFFF"))
+image black = Solid(("#000000"))
+image green_screen = Solid(("#00FF00"))
+
 ## Generated images for CSBI
 image spent_11_88 = Text("{size=50}{color=#369100}-$11.88", text_align=0.5)
 image spent_bits = Text("{image=bits.png} {size=50}{color=#BD62FF}-200,000", text_align=0.5)
@@ -1912,7 +1917,6 @@ image car_insidearc_fg flipped = "flip:bg/car_insidearc_fg.png"
 image joj_chargerarc_fg = "bg/joj_chargerarc_fg.png"
 image gas_station_2 = "bg/gas_station_2.png"
 image traffic = "bg/traffic_jam_bad_img.png"
-image white_bg = "bg/white.png"
 image parking_lot = "bg/parking_lot.png"
 image path_entrance = "bg/path_entrance.png"
 image path_forest = "bg/path_forest.png"
@@ -2259,8 +2263,6 @@ image gunsmith = "bg/kuwait/gunsmith.png"
 
 # Misc.
 image game_menu = "gui/game_menu.png"
-image black = "bg/black.png"
-image green_screen = "bg/green.png"
 image michael_calendar = "bg/michael_calendar.png"
 image nursing_home = "bg/books/nursing_home.png"
 
@@ -3259,6 +3261,14 @@ define audio.roundabout = "<from 41.076>roundabout.ogg"
 define audio.lo_fi_sunset = "lo_fi_sunset.ogg"
 define audio.homely_yado_inn = "<from 0.499 to 40.502>homely_yado_inn.ogg"
 
+# For Tate EX / Perfect Tate
+define audio.insomnia_intro = "<from 0 to 11.299>secret/pt/insomnia.ogg"
+define audio.insomnia_loop = "<from 22.6>secret/pt/insomnia.ogg"
+define audio.space = "secret/pt/space.ogg"
+define audio.nyan = "<from 3.6 to 228.52>/secret/pt/nyan_of_a_lifetime.ogg"
+define audio.nyan_intro = "<from 3.6 to 22.799>/secret/pt/nyan_of_a_lifetime.ogg"
+define audio.nyan_fight = "<from 22.799 to 228.52>/secret/pt/nyan_of_a_lifetime.ogg"
+
 # CSBIII DX Plane Music
 define audio.mid_boss_battle = "mid_boss_battle.ogg"
 define audio.title_screen = "title_screen.ogg"
@@ -3267,15 +3277,7 @@ define audio.abra_shop = "abra_shop.ogg"
 define audio.huge_pillar = "huge_pillar.ogg"
 define audio.pyrite_town = "pyrite_town.ogg"
 define audio.cipher_lab = "cipher_lab.ogg"
-define audio.run_for_your_life = "run_for_your_life.mp3"
-
-# For Tate EX / Perfect Tate
-define audio.insomnia_intro = "<from 0 to 11.299>secret/pt/insomnia.ogg"
-define audio.insomnia_loop = "<from 22.6>secret/pt/insomnia.ogg"
-define audio.space = "secret/pt/space.ogg"
-define audio.nyan = "<from 3.6 to 228.52>/secret/pt/nyan_of_a_lifetime.ogg"
-define audio.nyan_intro = "<from 3.6 to 22.799>/secret/pt/nyan_of_a_lifetime.ogg"
-define audio.nyan_fight = "<from 22.799 to 228.52>/secret/pt/nyan_of_a_lifetime.ogg"
+define audio.run_for_your_life = "run_for_your_life.mp3" # TODO: convert to ogg for consistency
 
 # CSBIII DX Kuwait Music
 define audio.tmwstw = "tmwstw.ogg"

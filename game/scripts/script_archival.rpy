@@ -697,7 +697,7 @@ label archival_finale:
     show white_vignette at center:
         alpha 0
         linear 5 alpha 0.25
-    show white_bg at center:
+    show white at center:
         alpha 0
         linear 5 alpha 0.05
     with dissolve
@@ -708,7 +708,7 @@ label archival_finale:
     show white_vignette at center:
         alpha 0.25
         linear 5 alpha 0.35
-    show white_bg at center:
+    show white at center:
         alpha 0.05
         linear 5 alpha 0.15
     with dissolve
@@ -742,7 +742,7 @@ label archival_finale:
     show white_vignette at center:
         alpha 0.35
         linear 5 alpha 0.45
-    show white_bg at center:
+    show white at center:
         alpha 0.15
         linear 5 alpha 0.20
     with dissolve
@@ -751,7 +751,7 @@ label archival_finale:
     scene sign_closeup
     show white_vignette at center:
         alpha 0.45
-    show white_bg at center:
+    show white at center:
         alpha 0.20
     with dissolve
     n "He notices a panel above the door. A figure resembling one of the guards waves at him."
@@ -761,7 +761,7 @@ label archival_finale:
     show white_vignette at center:
         alpha 0.45
         linear 5 alpha 0.55
-    show white_bg at center:
+    show white at center:
         alpha 0.20
         linear 5 alpha 0.30
     with dissolve
@@ -769,7 +769,7 @@ label archival_finale:
     with shake2
     show white_vignette at center:
         linear 10 alpha 1.0
-    show white_bg at center:
+    show white at center:
         linear 10 alpha 0.40
     n "CS realizes that there is nothing he can do."
     n "He closes his eyes."
