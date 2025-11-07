@@ -347,7 +347,7 @@ label awawa_tate_test:
                         jump .awawa_menu
 
             #################### PERFECT TATE TESTS ####################
-            "VS Perfect Tate Image Tests":
+            "VS Perfect Tate Tests":
                 menu:
                     tate "Which one?{fast}"
                     "CS Running Animation":
@@ -375,6 +375,11 @@ label awawa_tate_test:
                         show tate srs
                         tate "It {i}is{/i} drawn {i}correctly{/i} this time, right?"
                         hide tate_sigil
+                    "Green Screen Test":
+                        image greenscreen_temp = Solid(("#00FF00"))
+                        scene greenscreen_temp
+                        pakoo_offscreen "Hey! You,{w=0} there!"
+                        pakoo_offscreen "Just what do you think you're doing down there?!"
                     "Never mind.":
                         jump .awawa_menu
                 jump .awawa_menu
