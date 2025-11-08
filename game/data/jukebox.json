@@ -244,7 +244,7 @@
             "artist": "Kazumi Totaka",
             "tags": ["CSBIII"],
             "album_art": "newhorizons.png",
-            "trivia": "\"Despite me begging many times, Pakoo has not yet properly played Animal Crossing: New Horizons... sadly.\" -- Mika"
+            "trivia": "\"Despite me begging many times, Pakoo has not yet properly played {i}Animal Crossing: New Horizons...{/i} sadly.\" -- Mika"
         },
         "hired_guns" : {
             "file": "hired_guns.ogg",
@@ -524,7 +524,7 @@
             "artist": "Home Depot",
             "tags": ["CSBIII: East"],
             "album_art": "homedepot.png",
-            "trivia": "{a=https://youtu.be/KCqeX9m9gko?si=42thjKxDXN36SRwt&t=986}Famously played when cleaning an evil mastermind's lair.{/a}"
+            "trivia": "Famously played when cleaning {a=https://youtu.be/KCqeX9m9gko?si=42thjKxDXN36SRwt&t=986}an evil mastermind's lair.{/a}"
         },
         "candle_world" : {
             "file": "candle_world.ogg",
@@ -572,7 +572,7 @@
             "artist": "Weatherscan",
             "tags": ["CSBIII: East", "CSBIII: Michigan", "CSBIII: Fired"],
             "album_art": "weather.png",
-            "trivia": "Speed this up by 50% and you get yourself an {i}Ace Combat{/i} prep screen song."
+            "trivia": "Speed this up by 50% and you've got yourself an {i}Ace Combat{/i} prep screen song."
         },
         "funiculi_holiday" : {
             "file": "funiculi_holiday.ogg",
@@ -852,7 +852,7 @@
             "artist": "Kelly Bailey",
             "tags": ["CSBIII: Friend", "CSBIII: Country"],
             "album_art": "half.png",
-            "trivia": "The definitive Half-Life 1 song."
+            "trivia": "The definitive {i}Half-Life 1{/i} song."
         },
         "cp_violation" : {
             "file": "cp_violation.ogg",
@@ -1100,7 +1100,7 @@
             "artist": "Edd Kalehoff",
             "tags": ["CSBIII: South"],
             "album_art": "priceisright.png",
-            "trivia": "You won the priz-- wait no, CS did."
+            "trivia": "You won the priz-- wait, no, CS did."
         },
         "airport" : {
             "file": "airport.ogg",
@@ -1372,7 +1372,7 @@
             "artist": "Toby Fox",
             "tags": ["CSBIII DX: Holiday Special", "New In DX"],
             "album_art": "hw_hack.png",
-            "trivia": "From the {i}Earthbound Halloween Hack{/i}."
+            "trivia": "From the {i}Earthbound Halloween Hack.{/i}"
         },
         "synchronicity" : {
             "file": "synchronicity.ogg",
@@ -1380,7 +1380,7 @@
             "artist": "Toby Fox",
             "tags": ["CSBIII DX: Holiday Special", "New In DX"],
             "album_art": "hw_hack.png",
-            "trivia": "From the {i}Earthbound Halloween Hack{/i}."
+            "trivia": "From the {i}Earthbound Halloween Hack.{/i}"
         },
         "dont_preheat_your_oven" : {
             "file": "dont_preheat_your_oven.ogg",
@@ -1556,7 +1556,7 @@
             "artist": "Akira Miyagawa",
             "tags": ["CSBIII DX: Plane", "New In DX"],
             "album_art": "kirbyairride.png",
-            "trivia": "\"I had to find a song that fit the same vibe as {i}Item Bounce{/i}, and this was the closest I got.\" -- Pakoo"
+            "trivia": "\"I had to find a song that fit the same vibe as {i}Item Bounce,{/i} and this was the closest I got.\" -- Pakoo"
         },
         "pyrite_town" : {
             "file": "pyrite_town.ogg",
@@ -1644,7 +1644,7 @@
             "artist": "Tsukasa Tawada",
             "tags": ["CSBIII DX: Train", "New In DX"],
             "album_art": "pokemonxd.png",
-            "trivia": "Also do not become a criminal. It doesn't look good on your rap sheet."
+            "trivia": "Also, do not become a criminal. It doesn't look good on your rap sheet."
         },
         "e_gadds_lab" : {
             "file": "e_gadds_lab.ogg",
