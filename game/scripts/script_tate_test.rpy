@@ -146,7 +146,7 @@ label awawa_tate_test:
                         "Furious!"
 
                         show tate_comp happy festive
-                        "Festive! But, the happy face has to be forced..."
+                        "Festive! But the happy face has to be forced..."
                         show tate_comp sad festive
                         "Sad Festive"
                         show tate_comp cry tears festive
@@ -198,7 +198,7 @@ label awawa_tate_test:
                     ########## SPRITE RANDOMIZER ##########
                     "Sprite Randomizer":
                         show tate sad
-                        tate "Ew, {w=0.25}I hate the randomizer."
+                        tate "Ew, I hate the randomizer."
 
                         python:
                             iterations = ""
@@ -216,10 +216,10 @@ label awawa_tate_test:
 
                                 renpy.hide("tate_comp")
                                 renpy.show("tate", what="tate sheepish")
-                                renpy.say(tate, "Wow, {w=0.25}that sucked. {w=0.5}But, {w=0.25}did it work?")
+                                renpy.say(tate, substitutions("Wow, that sucked. But did it work?"))
                             except:
                                 renpy.show("tate", what="tate sheepish")
-                                renpy.say(tate, "Something went wrong, {w=0.25}sorry.")
+                                renpy.say(tate, substitutions("Something went wrong, sorry."))
                         jump .awawa_menu
 
                     ########## GO BACK ##########
@@ -299,13 +299,14 @@ label awawa_tate_test:
                         tate "Sure, let's try it."
 
                         python:
+                            # TODO: figure out why this pickle crashes on rollback, may be able to fix other pickles in the game too
                             this_cheev = ""
                             this_cheev = renpy.input("Enter the {i}exact{/i} ID of the achievement you want to test.", this_cheev)
 
                             try:
                                 chievos = (a for a in achievement_manager.achievements.values() if a.id == this_cheev)
                                 renpy.show_screen("popup", next(chievos))
-                                renpy.say(tate, "Did it work?")
+                                renpy.say(tate, substitutions("Did it work?"))
                             except:
                                 renpy.say(tate, substitutions("Couldn't pull achievement. Double-check the name and try again."))
 
@@ -377,6 +378,8 @@ label awawa_tate_test:
                         hide tate_sigil
                     "Green Screen Test":
                         scene green_screen
+                        pause
+                        pakoo_offscreen "" # this is on purpose, i need the delay for screen recording
                         pakoo_offscreen "Hey! You,{w=0} there!"
                         pakoo_offscreen "Just what do you think you're doing down there?!"
                     "Never mind.":
