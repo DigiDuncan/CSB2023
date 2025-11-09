@@ -1477,7 +1477,7 @@ label train_dining:
         $ train_pancake_fun_value = True
         n "He did at least steal a couple pancakes."
 
-    n "He rushes back to the sleeper car as quickly as he can."
+    n "He rushes back to the sleeper car as fast as he can!"
     window hide
     show arceus worried flipped at offscreenright with MoveTransition(0.3)
     scene black with dissolve
@@ -1549,13 +1549,12 @@ label train_wakeup:
     arceus "Tate's friend, {i}Mean!"
     arceus "The new night driver!"
     show cs scared flipped
-    pause 0.5
-    cs "{w=0.25}... Oh,{w=0} no."
+    cs "...{fast}{w=0.5} Oh,{w=0} no."
     cs "We are {i}definitely{/i} in trouble n--{w=0.25}{nw}"
-    show arceus worried with hpunch
+    show arceus worried
     music end
     play sound sfx_sliding_door_open volume 2.0
-    n "As if on cue, the room door slides open fully." with hpunch
+    n "As if on cue, the room door slams open!" with hpunch
 
     tate "{cshake}{size=+24}C.{w=0.1}S. ONE HUNDRED AND EIGHTY{w=0.1}-EIGHT!!" with vpunch
 
@@ -1565,19 +1564,22 @@ label train_wakeup:
     play sound sfx_punch
     with hpunch
 
-    n "Tate stomps into the room, making a beeline for CS."
+    n "Tate stomps into the room and makes a beeline for CS!"
+
     show tate furious at mid_mid_left with moveinleft
     play sound sfx_punch
     with hpunch
 
     if fun_value(FUN_VALUE_COMMON):
         tate "YOU HAD {cshake}{i}ONE{/i}{/bt} JOJ!" with vpunch
+
         show tate furious at center with moveinleft
         play sound sfx_punch
         with hpunch
         tate "YOU'RE GONNA NEED A WHOLE LOT MORE THAN {cshake}{i}FOUNDATION\nREPAIR{/i}{/bt} AFTER {i}I'M{/i} DONE WITH YOU!" with vpunch
     else:
         tate "YOU HAD {cshake}{i}ONE{/i}{/bt} JOB!" with vpunch
+
         show tate furious at center with moveinleft
         play sound sfx_punch
         with hpunch
@@ -1591,7 +1593,7 @@ label train_wakeup:
 
     stop music
 
-    show tate shock
+    show tate shock with vpunch
     pause 1.0
     n "Tate is caught off-guard by Arceus' comment."
     pause 1.0
@@ -1599,7 +1601,7 @@ label train_wakeup:
     show tate srs at mid_mid_left with moveinright
     pause 2.0
 
-    tate "Like... what?"
+    tate "Like... {i}what?"
     arceus "I thought he'd be... just... y'know... {i}some guy."
     arceus "I didn't know he's, uh... whatever he is."
     pause 2.0
@@ -1633,7 +1635,8 @@ label train_wakeup:
     mean "{i}Wheeze... "
 
     show mean surprised
-    mean "There... {i}cough"
+    mean "There... {nw}"
+    extend "{i}cough" with vpunch
     mean "... There you are, Tate..."
 
     # here goes tate having too much fun with sprites again
@@ -1648,16 +1651,16 @@ label train_wakeup:
     tate "I'm so sorry!"
     tate "I told them not to tell you!"
     show mean wat
-    mean "Tate--{w=0.25}"
-    tate "I wanted it to be kept secret so you could focus on work and{w=0.1}{nw}"
-    tate "I think the day shift people think I'm to blame for everything and{w=0.1}{nw}"
+    mean "Tate--{w=0.25}{nw}"
+    tate "I wanted it to be kept secret so you could focus on work and{nw}"
+    tate "I think the day shift people think I'm to blame for everything and{nw}"
     show mean angry
     show cs worried flipped
-    mean "{size=+12}{i}Tate--!{w=0.1}"
-    tate "I was really scared that they might blame you too since{w=0.1}{nw}"
+    mean "{size=+12}{i}Tate--!{w=0.25}{nw}"
+    tate "I was really scared that they might blame you too since{nw}"
     show cs disappointed flipped
     show arceus angry
-    tate "you were asleep all day and that means that you were the only one not accounted for when--{w=0.1}{nw}"
+    tate "you were asleep all day and that means that you were the only one not accounted for when--{nw}"
     show mean furious
     show tate shock flipped
     show cs scared flipped
@@ -1861,9 +1864,8 @@ label train_begin_heist:
     tate "Well, let's get to it, then."
     show tate flipped
     pause 0.5
-    hide tate
-    hide arceus
-    with moveoutleft
+    hide tate with moveoutleft
+    hide arceus with moveoutleft
 
     n "CS, Arceus, and Tate split up to search the different areas of the train."
     pause 0.5
@@ -2007,10 +2009,10 @@ label train_search_arceus:
     play sound sfx_whoosh
     show lupin run hat at offscreenleft
     with ease
-    pause 0.5
-    arceus "What the fuck?!"
-    pause 0.5
+    arceus "What the fuck?!" with hpunch
+    pause 1.0
     show arceus angry at right behind amtrak_dining_pancake with moveinright
+    pause 0.5
     arceus "Man... what is {i}wrong{/i} with people?!"
     n "Arceus spots a lone pancake."
     show amtrak_dining_pancake at manual_pos(1433, 683) with ease
@@ -2024,7 +2026,8 @@ label train_search_arceus:
     hide arceus with moveoutright
     scene black with dissolve
     pause 2.5
-    arceus "What the fuck? He even took all the {i}booze?!"
+    arceus "What the fuck? He even took all the {nw}"
+    extend "{i}booze?!" with vpunch
     jump train_search_cs
 
 label train_search_cs:
@@ -2046,7 +2049,7 @@ label train_search_cs:
     cs "That lady in Room 3 threw a {i}shoe{/i} at me, for fuck's sake!"
     show cs disappointed
     cs "Maybe I should just go find the others..."
-    show cs disappointed at right with MoveTransition(0.5)
+    show cs disappointed at right with MoveTransition(1.0)
     pause 1.0
     n "CS stops suddenly."
     n "There is, in fact, a single door open."
@@ -2188,7 +2191,7 @@ label train_search_tate:
     tate "There are only three things in my life that I have {i}ever{/i} been more sure of."
     tate "Now... I don't know who you are, but I'm getting really sick of seeing you."
     tate "I had {i}hoped{/i} you'd finally taken the hint while I was cooking this morning, but I guess I have to spell it out for you."
-    tate "I am {i}not{/i} interested."
+    tate "I {w=0.25}am {w=0.25}{i}not{/i} {w=0.25}interested."
     tate "Second order of business..."
     tate "You will give me that hat right this instant."
     tate "You will leave the cab, you will not come back, and nobody will get hurt."
@@ -2591,7 +2594,7 @@ label train_confront_lupin:
     show arceus angry at offscreenleft
     with MoveTransition(0.5)
 
-    n "The team gives chase through the next few cars."
+    n "The team gives chase through the next few cars!"
 
     scene
     show amtrak_desert_night as left:
@@ -2655,7 +2658,7 @@ label train_confront_lupin:
     show mean angry at center
     with moveinleft
 
-    n "At last, the quartet corners him in the luggage car."
+    n "At last, the quartet corners him in the luggage car!"
     mean "Alright, pal. End of the line."
     mean "Next car is the cab. If {i}we{/i} don't get you, the big guy definitely will."
     lupin_offscreen "Aw, how cute. The prickly pear thinks I {i}forgot{/i} about that!"

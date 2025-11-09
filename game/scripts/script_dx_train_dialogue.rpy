@@ -160,6 +160,7 @@ label train_dialogue:
     if fun_value(FUN_VALUE_RARE):
         play sound sfx_ringtone_tate_alt loop
         $ persistent.heard.add("sfx_ringtone_tate_alt")
+        pause 0.18 # i'm too tired to just cut the audio ok - tate
         show tate shock
         show mean human hat shocked
         n "Tate gets a call on their cell phone."
@@ -230,7 +231,7 @@ label train_dialogue:
     tate "Well, nice hearing from ya!"
     cs "Yeah! Have a safe trip!"
     show tate
-    tate "You, too!"
+    tate "You too!"
 
     scene black with dissolve
 
