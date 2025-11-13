@@ -16,17 +16,19 @@
         "CSBIII: Friend",
         "CSBIII: Michigan",
         "CSBIII: South",
-        "CSBIII DX: Bronson",
-        "CSBIII DX: After Story",
-        "CSBIII DX: Holiday Special",
-        "CSBIII DX: Finale",
-        "CSBIII DX: Kuwait",
-        "CSBIII DX: Rockstar II",
-        "CSBIII DX: Speedrun",
-        "CSBIII DX: Plane",
-        "CSBIII DX: Train",
-        "CSBIII DX: Misc.",
-        "CSBIII DX: Ringtones"
+        "CSBDX: After Story",
+        "CSBDX: Beach Episode",
+        "CSBDX: Bronson",
+        "CSBDX: Finale",
+        "CSBDX: Holiday Special",
+        "CSBDX: Kuwait",
+        "CSBDX: Plane",
+        "CSBDX: Rockstar II",
+        "CSBDX: Southwest",
+        "CSBDX: Speedrun",
+        "CSBDX: Train",
+        "CSBDX: Misc.",
+        "CSBDX: Ringtones"
     ],
 
     "tracks": {
@@ -50,7 +52,7 @@
             "file": "space_classroom.ogg",
             "title": "Space Classroom",
             "artist": "Dan Salvato",
-            "tags": ["Menus & Misc.", "CSBIII DX: After Story"],
+            "tags": ["Menus & Misc.", "CSBDX: After Story"],
             "album_art": "ddlc.png",
             "trivia": "\"Haha, Digi likes Monika!\" -- Everyone in 2020"
         },
@@ -82,7 +84,7 @@
             "file": "scales_of_joy.ogg",
             "title": "scales of joy.mod",
             "artist": "Mel O Dee",
-            "tags": ["CSBI", "CSBIII DX: After Story", "Fun Values"],
+            "tags": ["CSBI", "CSBDX: After Story", "Fun Values"],
             "album_art": "tracker.png",
             "trivia": "\"This song makes me feel whack!\" -- Mika"
         },
@@ -162,7 +164,7 @@
             "file": "star_spangled_banner.ogg",
             "title": "The Star Spangled Banner",
             "artist": "THE UNITED STATES OF AMERICA",
-            "tags": ["CSBII", "CSBIII DX: Holiday Special", "Fun Values"],
+            "tags": ["CSBII", "CSBDX: Holiday Special", "Fun Values"],
             "album_art": "america.png",
             "trivia": "While Tate was adamant about finding the actual orchestra that performed this rendition, they were ultimately overruled. It {i}is{/i} funnier to just credit this song to THE UNITED STATES OF AMERICA."
         },
@@ -194,7 +196,7 @@
             "file": "school.ogg",
             "title": "School",
             "artist": "Toby Fox",
-            "tags": ["CSBIII: AI", "CSBIII DX: Misc."],
+            "tags": ["CSBIII: AI", "CSBDX: Misc."],
             "album_art": "deltarune.png",
             "trivia": "I made the {i}Card Castle{/i} fact up, sorry..."
         },
@@ -458,7 +460,7 @@
             "file": "muumin_tani_fuyu.ogg",
             "title": "ムーミン谷・冬",
             "artist": "Sumio Shiratori",
-            "tags": ["CSBIII: Country", "CSBIII DX: After Story", "Fun Values"],
+            "tags": ["CSBIII: Country", "CSBDX: After Story", "Fun Values"],
             "album_art": "moomin.png",
             "trivia": "Romanized Title: Muumin Tani Fuyu\nEnglish Title: Winter In Moominvalley"
         },
@@ -498,7 +500,7 @@
             "file": "mm_select.ogg",
             "title": "Mm Select",
             "artist": "Matthew Simmonds",
-            "tags": ["CSBIII: East", "CSBIII: South", "CSBIII DX: Train"],
+            "tags": ["CSBIII: East", "CSBIII: South", "CSBDX: Train"],
             "album_art": "tracker.png",
             "trivia": "The unofficial theme song for Billy Mays. The original internal name was \"CS Did Something.\""
         },
@@ -626,7 +628,7 @@
             "file": "park_theme.ogg",
             "title": "Park Theme",
             "artist": "Lorin Nelson",
-            "tags": ["CSBIII: East", "CSBIII: South", "CSBIII: Country", "CSBIII DX: Train", "CSBIII: Fired"],
+            "tags": ["CSBIII: East", "CSBIII: South", "CSBIII: Country", "CSBDX: Train", "CSBIII: Fired"],
             "album_art": "legoisland.png",
             "trivia": "Someone should make a show about Parks. Maybe Recreation, as well?"
         },
@@ -1106,7 +1108,7 @@
             "file": "airport.ogg",
             "title": "Airport Infiltration",
             "artist": "Andy Blythe & Marten Joustra",
-            "tags": ["CSBIII: South", "CSBIII: Country", "CSBIII DX: Kuwait"],
+            "tags": ["CSBIII: South", "CSBIII: Country", "CSBDX: Kuwait"],
             "album_art": "toystory.png",
             "trivia": "Being at the airport is way too nerve-wracking. What if they figure out I'm on the no-fly list?!"
         },
@@ -1138,7 +1140,7 @@
             "file": "goodbye_speedrun.ogg",
             "title": "Goodbye Speedrun, Hello WR",
             "artist": "FantomenK",
-            "tags": ["Menus & Misc.", "CSBIII DX: Speedrun", "New In DX"],
+            "tags": ["Menus & Misc.", "CSBDX: Speedrun", "New In DX"],
             "album_art": "fantomenk.png",
             "trivia": "Tate thought it would be funny to have a sped-up version of the credits for {i}Speedrun.{/i}"
         },
@@ -1146,7 +1148,7 @@
             "file": "upon_me.ogg",
             "title": "Upon Me",
             "artist": "Dr. Awesome",
-            "tags": ["CSBIII DX: Bronson", "New In DX"],
+            "tags": ["CSBDX: Bronson", "New In DX"],
             "album_art": "awesome.png",
             "trivia": "\"Bronson is not even a real place anyway. Show me it on a map, a real map. None of the Google Maps bullshit.\" -- Mika"
         },
@@ -1154,7 +1156,7 @@
             "file": "error.ogg",
             "title": "Prophet ERROR",
             "artist": "Pakoo",
-            "tags": ["CSBIII DX: Bronson", "New In DX", "Minigames"],
+            "tags": ["CSBDX: Bronson", "New In DX", "Minigames"],
             "album_art": "trackerevil.png",
             "trivia": "Pakoo's screwed-up MOD of {i}Prophet 2001.{/i}"
         },
@@ -1162,7 +1164,7 @@
             "file": "letshearspring.ogg",
             "title": "Let's Hear My Baby: Spring Remix",
             "artist": "Pakoo",
-            "tags": ["CSBIII DX: After Story", "New In DX"],
+            "tags": ["CSBDX: After Story", "New In DX"],
             "album_art": "csbii.png",
             "trivia": "Pakoo's edited MOD of {i}Let's Hear My Baby.{/i}"
         },
@@ -1170,7 +1172,7 @@
             "file": "echoingspring.ogg",
             "title": "Echoing: Spring Remix",
             "artist": "Pakoo",
-            "tags": ["CSBIII DX: After Story", "New In DX"],
+            "tags": ["CSBDX: After Story", "New In DX"],
             "album_art": "csbii.png",
             "trivia": "Pakoo's edited MOD of {i}Echoing.{/i}"
         },
@@ -1178,7 +1180,7 @@
             "file": "alien_atmosphere.ogg",
             "title": "Alien Atmosphere",
             "artist": "Dr. Awesome",
-            "tags": ["CSBIII DX: After Story", "New In DX"],
+            "tags": ["CSBDX: After Story", "New In DX"],
             "album_art": "awesome.png",
             "trivia": "This would've been funnier when the backrooms were still relevant and interesting... so, like, for 30 minutes."
         },
@@ -1186,7 +1188,7 @@
             "file": "apple_kid.ogg",
             "title": "Apple Kid",
             "artist": "Keiichi Suzuki",
-            "tags": ["CSBIII DX: After Story", "New In DX"],
+            "tags": ["CSBDX: After Story", "New In DX"],
             "album_art": "earthbound.png",
             "trivia": "Hello, I'm a Mac!"
         },
@@ -1194,7 +1196,7 @@
             "file": "10_feet_away.ogg",
             "title": "10 Feet Away",
             "artist": "Dr. Awesome",
-            "tags": ["CSBIII DX: After Story", "New In DX"],
+            "tags": ["CSBDX: After Story", "New In DX"],
             "album_art": "awesome.png",
             "trivia": "One of, if not the only song in {i}CSB{/i} to have the stems of the song get progressively added until the full song is completed."
         },
@@ -1202,7 +1204,7 @@
             "file": "hitsquad_2.ogg",
             "title": "Hitsquad 2",
             "artist": "Dr. Awesome",
-            "tags": ["CSBIII DX: After Story", "New In DX"],
+            "tags": ["CSBDX: After Story", "New In DX"],
             "album_art": "awesome.png",
             "trivia": "Tom Cruise's unofficial theme."
         },
@@ -1210,7 +1212,7 @@
             "file": "get_the_funk.ogg",
             "title": "Get The Funk",
             "artist": "Dr. Awesome",
-            "tags": ["CSBIII DX: After Story", "New In DX", "Minigames"],
+            "tags": ["CSBDX: After Story", "New In DX", "Minigames"],
             "album_art": "awesome.png",
             "trivia": "{i}Songs To Sharpen Your Pencil To: Vol. XVII{/i}"
         },
@@ -1218,7 +1220,7 @@
             "file": "sneak_theme.mp3",
             "title": "Snooping Around As Usual",
             "artist": "Pakoo",
-            "tags": ["CSBIII DX: After Story", "New In DX"],
+            "tags": ["CSBDX: After Story", "New In DX"],
             "album_art": "csbii.png",
             "trivia": "Man, these guys are some kind of sneak... kings."
         },
@@ -1226,7 +1228,7 @@
             "file": "interference.ogg",
             "title": "Interference",
             "artist": "Sanity",
-            "tags": ["Menus & Misc.", "CSBIII DX: After Story", "CSBIII DX: Finale", "New In DX"],
+            "tags": ["Menus & Misc.", "CSBDX: After Story", "CSBDX: Finale", "New In DX"],
             "album_art": "tracker.png",
             "trivia": "\"This song makes me feel energized!\" -- Mika"
         },
@@ -1234,7 +1236,7 @@
             "file": "tv_hall_of_fame.ogg",
             "title": "Hall of Fame",
             "artist": "Toby Fox",
-            "tags": ["CSBIII DX: After Story", "New In DX"],
+            "tags": ["CSBDX: After Story", "New In DX"],
             "album_art": "deltarune.png",
             "trivia": "\"Play this at my Oscar winning speech!\" -- Mika"
         },
@@ -1242,7 +1244,7 @@
             "file": "polar_express.ogg",
             "title": "The Polar Express - Main Title",
             "artist": "Alan Silvestri",
-            "tags": ["Menus & Misc.", "CSBIII DX: Holiday Special", "New In DX"],
+            "tags": ["Menus & Misc.", "CSBDX: Holiday Special", "New In DX"],
             "album_art": "polar_express.png",
             "trivia": "\"This song brings me legit memories.\" -- Mika"
         },
@@ -1250,7 +1252,7 @@
             "file": "sleigh_ride.ogg",
             "title": "Sleigh Ride",
             "artist": "Leroy Anderson",
-            "tags": ["Menus & Misc", "CSBIII DX: Holiday Special", "New In DX"],
+            "tags": ["Menus & Misc", "CSBDX: Holiday Special", "New In DX"],
             "album_art": "sleigh_ride.png",
             "trivia": "\"At least I'll have good Christmas music this year!\" -- Mika"
         },
@@ -1258,7 +1260,7 @@
             "file": "lets_hear_my_christ.ogg",
             "title": "Let's Hear My Baby: Christmas Remix",
             "artist": "Pakoo",
-            "tags": ["CSBIII DX: Holiday Special", "New In DX"],
+            "tags": ["CSBDX: Holiday Special", "New In DX"],
             "album_art": "csbii.png",
             "trivia": "Pakoo's edited MOD of {i}Let's Hear My Baby.{/i}"
         },
@@ -1266,7 +1268,7 @@
             "file": "snowy.ogg",
             "title": "Snowy",
             "artist": "Toby Fox",
-            "tags": ["CSBIII DX: Holiday Special", "New In DX"],
+            "tags": ["CSBDX: Holiday Special", "New In DX"],
             "album_art": "undertale.png",
             "trivia": "Not from the {i}Earthbound Halloween Hack{/i}."
         },
@@ -1274,7 +1276,7 @@
             "file": "teeth_dust.ogg",
             "title": "Teeth Dust In The Stronghold",
             "artist": "ClascyJitto",
-            "tags": ["CSBIII DX: Holiday Special", "New In DX"],
+            "tags": ["CSBDX: Holiday Special", "New In DX"],
             "album_art": "pizzatower.png",
             "trivia": "CS throws a party! Let's hope he doesn't do anything with the {a=https://www.youtube.com/watch?v=rklpVaVwnP0}bathroom door.{/a}"
         },
@@ -1282,7 +1284,7 @@
             "file": "minigames/carrot/hotel_disbelief.ogg",
             "title": "Can You Really Call This A Hotel",
             "artist": "Toby Fox",
-            "tags": ["CSBIII DX: Holiday Special", "Minigames", "New In DX"],
+            "tags": ["CSBDX: Holiday Special", "Minigames", "New In DX"],
             "album_art": "undertale.png",
             "trivia": "This song's full title is {i}Can You Really Call This A Hotel, I Didn't Receive A Mint On My Pillow Or Anything.{/i}"
         },
@@ -1290,7 +1292,7 @@
             "file": "snow_blind.ogg",
             "title": "Snow Blind",
             "artist": "Dr. Awesome",
-            "tags": ["CSBIII DX: Holiday Special", "New In DX"],
+            "tags": ["CSBDX: Holiday Special", "New In DX"],
             "album_art": "awesome.png",
             "trivia": "Grace could not stop hugging Santa for the entire scene... It was nice to watch."
         },
@@ -1298,7 +1300,7 @@
             "file": "christmas_spirit.ogg",
             "title": "Christmas Spirit",
             "artist": "Dr. Awesome",
-            "tags": ["CSBIII DX: Holiday Special", "New In DX"],
+            "tags": ["CSBDX: Holiday Special", "New In DX"],
             "album_art": "awesome.png",
             "trivia": "\"Dog food is nice... but I don't even own a dog?\" -- Elizabeth"
         },
@@ -1306,7 +1308,7 @@
             "file": "rice_and_wine.ogg",
             "title": "Rice and Wine",
             "artist": "Sight of Wonders",
-            "tags": ["CSBIII DX: Holiday Special", "New In DX"],
+            "tags": ["CSBDX: Holiday Special", "New In DX"],
             "album_art": "mike.png",
             "trivia": "Whenever you put a compass near a jukebox with this song playing, it points east. Great for presentations!"
         },
@@ -1314,7 +1316,7 @@
             "file": "winter_unclearance_sale.ogg",
             "title": "All I Want For Christmas Is You",
             "artist": "Mariah Carey",
-            "tags": ["CSBIII DX: Holiday Special", "New In DX"],
+            "tags": ["CSBDX: Holiday Special", "New In DX"],
             "album_art": "carey.png",
             "trivia": "Whenever you put a compass near a jukebox with this song playing, it points north. Great for Christmas!"
         },
@@ -1322,7 +1324,7 @@
             "file": "frollo_rave.ogg",
             "title": "H2o",
             "artist": "dj ddx",
-            "tags": ["CSBIII DX: Holiday Special", "New In DX"],
+            "tags": ["CSBDX: Holiday Special", "New In DX"],
             "album_art": "frollo.png",
             "trivia": "From {i}The Frollo Show.{/i}"
         },
@@ -1330,7 +1332,7 @@
             "file": "superstar_road.ogg",
             "title": "Superstar Road",
             "artist": "Mahito Yokota",
-            "tags": ["CSBIII DX: Holiday Special", "New In DX"],
+            "tags": ["CSBDX: Holiday Special", "New In DX"],
             "album_art": "nsmb.png",
             "trivia": "Whenever you put a compass near a jukebox with this song playing, it points up. Great for secret worlds!"
         },
@@ -1338,7 +1340,7 @@
             "file": "girl_next_door.ogg",
             "title": "Girl Next Door",
             "artist": "Toby Fox",
-            "tags": ["CSBIII DX: Holiday Special", "New In DX"],
+            "tags": ["CSBDX: Holiday Special", "New In DX"],
             "album_art": "deltarune.png",
             "trivia": "Lesbian deer theme."
         },
@@ -1346,7 +1348,7 @@
             "file": "cepassport.ogg",
             "title": "Christmas Passport",
             "artist": "Pakoo",
-            "tags": ["CSBIII DX: Holiday Special", "New In DX", "Minigames"],
+            "tags": ["CSBDX: Holiday Special", "New In DX", "Minigames"],
             "album_art": "windows.png",
             "trivia": "Aria cheats and Tate cheats and everyone cheats! God {i}damn{/i} it!"
         },
@@ -1354,7 +1356,7 @@
             "file": "snowman.ogg",
             "title": "Snowman",
             "artist": "Keiichi Suzuki",
-            "tags": ["CSBIII DX: Holiday Special", "New In DX"],
+            "tags": ["CSBDX: Holiday Special", "New In DX"],
             "album_art": "earthbound.png",
             "trivia": "\"This song makes me feel peaceful...\" -- Mika"
         },
@@ -1362,7 +1364,7 @@
             "file": "snowdin_town.ogg",
             "title": "Snowdin Town",
             "artist": "Toby Fox",
-            "tags": ["CSBIII DX: Holiday Special", "New In DX"],
+            "tags": ["CSBDX: Holiday Special", "New In DX"],
             "album_art": "undertale.png",
             "trivia": "DPN Cooking Moments: Part 7!"
         },
@@ -1370,7 +1372,7 @@
             "file": "winters_halloween.ogg",
             "title": "Winters",
             "artist": "Toby Fox",
-            "tags": ["CSBIII DX: Holiday Special", "New In DX"],
+            "tags": ["CSBDX: Holiday Special", "New In DX"],
             "album_art": "hw_hack.png",
             "trivia": "From the {i}Earthbound Halloween Hack.{/i}"
         },
@@ -1378,7 +1380,7 @@
             "file": "synchronicity.ogg",
             "title": "Synchronicity",
             "artist": "Toby Fox",
-            "tags": ["CSBIII DX: Holiday Special", "New In DX"],
+            "tags": ["CSBDX: Holiday Special", "New In DX"],
             "album_art": "hw_hack.png",
             "trivia": "From the {i}Earthbound Halloween Hack.{/i}"
         },
@@ -1386,7 +1388,7 @@
             "file": "dont_preheat_your_oven.ogg",
             "title": "Don't Preheat Your Oven",
             "artist": "ClascyJitto",
-            "tags": ["CSBIII DX: Holiday Special", "New In DX"],
+            "tags": ["CSBDX: Holiday Special", "New In DX"],
             "album_art": "pizzatower.png",
             "trivia": "The full name of this song is {i}Don't Preheat Your Oven Because If You Do The Song Won't Play.{/i}"
         },
@@ -1394,7 +1396,7 @@
             "file": "summer_fun.ogg",
             "title": "Summer Fun // Lecherous Beaches",
             "artist": "blanknam3d",
-            "tags": ["CSBIII DX: Holiday Special", "New In DX"],
+            "tags": ["CSBDX: Holiday Special", "New In DX"],
             "album_art": "summer_fun.png",
             "trivia": "How can anyone listen to this?! (/s)"
         },
@@ -1402,7 +1404,7 @@
             "file": "crashing_down.ogg",
             "title": "Crashing Down",
             "artist": "xtkakeru",
-            "tags": ["CSBIII DX: Holiday Special", "New In DX"],
+            "tags": ["CSBDX: Holiday Special", "New In DX"],
             "album_art": "crashing_down.png",
             "trivia": "How can anyone listen to this, part 2?! (/s, part 2)"
         },
@@ -1410,7 +1412,7 @@
             "file": "on_the_rocks.ogg",
             "title": "On The Rocks",
             "artist": "Mr. Sauceman",
-            "tags": ["CSBIII DX: Holiday Special", "New In DX"],
+            "tags": ["CSBDX: Holiday Special", "New In DX"],
             "album_art": "pizzatower.png",
             "trivia": "\"I still don't know how the Handy Switch worked... one of life's great mysteries I suppose.\" -- Mika"
         },
@@ -1418,7 +1420,7 @@
             "file": "minigames/carrot/try_again_music.ogg",
             "title": "Results: Try Again!",
             "artist": "つんく♂",
-            "tags": ["CSBIII DX: Holiday Special", "New In DX", "Minigames"],
+            "tags": ["CSBDX: Holiday Special", "New In DX", "Minigames"],
             "album_art": "rhythm_heaven.png",
             "trivia": "You did shit!"
         },
@@ -1426,7 +1428,7 @@
             "file": "minigames/carrot/ok_music.ogg",
             "title": "Results: OK!",
             "artist": "つんく♂",
-            "tags": ["CSBIII DX: Holiday Special", "New In DX", "Minigames"],
+            "tags": ["CSBDX: Holiday Special", "New In DX", "Minigames"],
             "album_art": "rhythm_heaven.png",
             "trivia": "You did less shit."
         },
@@ -1434,7 +1436,7 @@
             "file": "minigames/carrot/superb_music.ogg",
             "title": "Results: Superb!",
             "artist": "つんく♂",
-            "tags": ["CSBIII DX: Holiday Special", "New In DX", "Minigames"],
+            "tags": ["CSBDX: Holiday Special", "New In DX", "Minigames"],
             "album_art": "rhythm_heaven.png",
             "trivia": "Technically, in {i}Rhythm Heaven{/i}, you'd get this rating if you got any score above a certain threshold, not just a Perfect, but the {i}Carrot Chop{/i} minigame doesn't allow for score that granular."
         },
@@ -1442,7 +1444,7 @@
             "file": "title_theme_reprise.ogg",
             "title": "Title Theme Reprise",
             "artist": "Nicholas Karr",
-            "tags": ["Menus & Misc.", "CSBIII DX: Holiday Special", "New In DX"],
+            "tags": ["Menus & Misc.", "CSBDX: Holiday Special", "New In DX"],
             "album_art": "bargain.png",
             "trivia": "\"I unironically listen to {i}Scott the Woz{/i} music a lot. It's surprisingly good!\" -- Mika"
         },
@@ -1450,7 +1452,7 @@
             "file": "christmas_tea.ogg",
             "title": "Christmas Tea",
             "artist": "dark cat x DigiDuncan",
-            "tags": ["Menus & Misc.", "CSBIII DX: Holiday Special", "New In DX"],
+            "tags": ["Menus & Misc.", "CSBDX: Holiday Special", "New In DX"],
             "album_art": "bubbletea.png",
             "trivia": "The unofficial DPN / {i}CSBIII{/i} theme song, remixed for the season. Digi had a lot of help from Baker to understand how FL Studio works, as well as from Tate and Pakoo with choosing samples and harmonies, but they're still proud that they were able to make something musical."
         },
@@ -1458,7 +1460,7 @@
             "file": "funvalueland.ogg",
             "title": "SPOT.FASSIMRD",
             "artist": "Fun Value Land",
-            "tags": ["CSBIII DX: Finale", "New In DX"],
+            "tags": ["CSBDX: Finale", "New In DX"],
             "album_art": "csbii.png",
             "trivia": "Pakoo's screwed-up midi of {i}PASSPORT.MID.{/i}"
         },
@@ -1466,7 +1468,7 @@
             "file": "unobtrusive_fun.ogg",
             "title": "Unobtrusive Fun",
             "artist": "Fun Value Land",
-            "tags": ["CSBIII DX: Finale", "New In DX"],
+            "tags": ["CSBDX: Finale", "New In DX"],
             "album_art": "csbii.png",
             "trivia": "Pakoo's screwed-up remix of {i}Bedroom ~ Day.{/i}"
         },
@@ -1474,7 +1476,7 @@
             "file": "tmwstw.ogg",
             "title": "The Man Who Sold The World",
             "artist": "Midge Ure",
-            "tags": ["CSBIII DX: Kuwait", "New In DX"],
+            "tags": ["CSBDX: Kuwait", "New In DX"],
             "album_art": "mgsv.png",
             "trivia": "It's got a nice radio filter. Tate thought the artist was David Bowie, but this is the version by Midge Ure that is in {i}Metal Gear Solid V: The Phantom Pain.{/i}"
         },
@@ -1482,7 +1484,7 @@
             "file": "lets_hear_my_sped.ogg",
             "title": "Let's Hear My Speed",
             "artist": "Pakoo",
-            "tags": ["CSBIII DX: Speedrun", "New In DX"],
+            "tags": ["CSBDX: Speedrun", "New In DX"],
             "album_art": "vibration.png",
             "trivia": "A sped-up version of {i}Let's Hear My Baby.{/i}"
         },
@@ -1490,7 +1492,7 @@
             "file": "fastbudget_song.ogg",
             "title": "Fastbudget Song",
             "artist": "Pakoo",
-            "tags": ["CSBIII DX: Speedrun", "New In DX"],
+            "tags": ["CSBDX: Speedrun", "New In DX"],
             "album_art": "vibration.png",
             "trivia": "A sped-up version of {i}Lowbudget Song.{/i}"
         },
@@ -1498,7 +1500,7 @@
             "file": "fastport.ogg",
             "title": "Fastport.MID",
             "artist": "Pakoo",
-            "tags": ["CSBIII DX: Speedrun", "New In DX"],
+            "tags": ["CSBDX: Speedrun", "New In DX"],
             "album_art": "vibration.png",
             "trivia": "A sped-up version of {i}PASSPORT.MID.{/i}"
         },
@@ -1506,7 +1508,7 @@
             "file": "fasting.ogg",
             "title": "Fasting",
             "artist": "Pakoo",
-            "tags": ["CSBIII DX: Speedrun", "New In DX"],
+            "tags": ["CSBDX: Speedrun", "New In DX"],
             "album_art": "vibration.png",
             "trivia": "A sped-up version of {i}Echoing.{/i}"
         },
@@ -1514,7 +1516,7 @@
             "file": "happy_running.ogg",
             "title": "Happy Running",
             "artist": "Pakoo",
-            "tags": ["CSBIII DX: Speedrun", "New In DX"],
+            "tags": ["CSBDX: Speedrun", "New In DX"],
             "album_art": "vibration.png",
             "trivia": "A sped-up version of {i}Happy Roaming.{/i}"
         },
@@ -1522,7 +1524,7 @@
             "file": "mid_boss_battle.ogg",
             "title": "Mid Boss Battle",
             "artist": "Jun Ishikawa",
-            "tags": ["CSBIII DX: Plane", "New In DX"],
+            "tags": ["CSBDX: Plane", "New In DX"],
             "album_art": "kirby64.png",
             "trivia": "\"For Plane Route, I wanted to use the same OSTs that Tate used for Train Route.\" -- Pakoo"
         },
@@ -1530,7 +1532,7 @@
             "file": "title_screen.ogg",
             "title": "Title Screen",
             "artist": "Miki Obata",
-            "tags": ["CSBIII DX: Plane", "New In DX"],
+            "tags": ["CSBDX: Plane", "New In DX"],
             "album_art": "pkmnchannel.png",
             "trivia": "\"I had to find a way to talk about the airport the same way Tate made it interesting to walk around the train station.\" -- Pakoo"
         },
@@ -1538,7 +1540,7 @@
             "file": "cobalt_coast_day.ogg",
             "title": "Cobalt Coast ~ Day",
             "artist": "Miki Obata",
-            "tags": ["CSBIII DX: Plane", "New In DX"],
+            "tags": ["CSBDX: Plane", "New In DX"],
             "album_art": "heyyoupikachu.png",
             "trivia": "\"Since Train Route had multiple cars and rooms for CS and Arceus to stay in, the most logical solution to make this work on a plane was for them to ride in an Airbus.\" -- Pakoo"
         },
@@ -1546,7 +1548,7 @@
             "file": "abra_shop.ogg",
             "title": "Abra Shop",
             "artist": "Miki Obata",
-            "tags": ["CSBIII DX: Plane", "New In DX"],
+            "tags": ["CSBDX: Plane", "New In DX"],
             "album_art": "heyyoupikachu.png",
             "trivia": "\"As much as I wanted to bring back {i}Bedroom ~ Day{/i} for this route as it has become one of my favorite songs used in the game, I had to find something similar enough to fit for the route.\" -- Pakoo"
         },
@@ -1554,7 +1556,7 @@
             "file": "huge_pillar.ogg",
             "title": "Huge Pillar",
             "artist": "Akira Miyagawa",
-            "tags": ["CSBIII DX: Plane", "New In DX"],
+            "tags": ["CSBDX: Plane", "New In DX"],
             "album_art": "kirbyairride.png",
             "trivia": "\"I had to find a song that fit the same vibe as {i}Item Bounce,{/i} and this was the closest I got.\" -- Pakoo"
         },
@@ -1562,7 +1564,7 @@
             "file": "pyrite_town.ogg",
             "title": "Pyrite Town",
             "artist": "Tsukasa Tawada",
-            "tags": ["CSBIII DX: Plane", "New In DX"],
+            "tags": ["CSBDX: Plane", "New In DX"],
             "album_art": "pokemonxd.png",
             "trivia": "\"Arceus goes to the dining car to meet Mean in Train Route, so I created K-19 to serve as the \"Mean\" for Plane Route.\" -- Pakoo"
         },
@@ -1570,7 +1572,7 @@
             "file": "cipher_lab.ogg",
             "title": "Cipher Lab",
             "artist": "Tsukasa Tawada",
-            "tags": ["CSBIII DX: Plane", "New In DX"],
+            "tags": ["CSBDX: Plane", "New In DX"],
             "album_art": "pokemonxd.png",
             "trivia": "\"Since Train Route had a few scenes from the point-of-view of Lupin III, I decided to swap the perspective to the main crew doing detective work.\" -- Pakoo"
         },
@@ -1578,7 +1580,7 @@
             "file": "run_for_your_life.mp3",
             "title": "Run For Your Life!",
             "artist": "Tistou Blomberg (Arr. Pakoo)",
-            "tags": ["CSBIII DX: Plane", "New In DX"],
+            "tags": ["CSBDX: Plane", "New In DX"],
             "album_art": "openttd.png",
             "trivia": "The original MIDI is from the {i}OpenTTD{/i} OST."
         },
@@ -1586,7 +1588,7 @@
             "file": "sub_game_select.ogg",
             "title": "Sub-Game Select",
             "artist": "Jun Ishikawa",
-            "tags": ["CSBIII DX: Train", "New In DX"],
+            "tags": ["CSBDX: Train", "New In DX"],
             "album_art": "kirby64.png",
             "trivia": "{i}Kirby 64: The Crystal Shards{/i} is Tate's all-time favorite video game."
         },
@@ -1594,7 +1596,7 @@
             "file": "outdoors.ogg",
             "title": "Outdoors",
             "artist": "Miki Obata",
-            "tags": ["CSBIII DX: Train", "New In DX"],
+            "tags": ["CSBDX: Train", "New In DX"],
             "album_art": "pkmnchannel.png",
             "trivia": "Getting this track to loop cleanly in Train Route was a painful experience."
         },
@@ -1602,7 +1604,7 @@
             "file": "hide_and_seek.ogg",
             "title": "Hide And Seek",
             "artist": "Chiro",
-            "tags": ["CSBIII DX: Train", "New In DX", "Minigames"],
+            "tags": ["CSBDX: Train", "New In DX", "Minigames"],
             "album_art": "hideandseek.png",
             "trivia": "Tate wanted something cute-sounding for the toy trains minigame. One day, YouTube delivered with a legendary algorithm pull."
         },
@@ -1610,7 +1612,7 @@
             "file": "ochre_woods_day.ogg",
             "title": "Ochre Woods ~ Day",
             "artist": "Miki Obata",
-            "tags": ["CSBIII DX: Train", "New In DX"],
+            "tags": ["CSBDX: Train", "New In DX"],
             "album_art": "heyyoupikachu.png",
             "trivia": "\"One time a classmate posted an Instagram story from the inside of an Amtrak train and were somewhat impressed by me guessing what train it was.\" -- Mika"
         },
@@ -1618,7 +1620,7 @@
             "file": "bedroom_day.ogg",
             "title": "Bedroom ~ Day",
             "artist": "Miki Obata",
-            "tags": ["CSBIII DX: Train", "New In DX"],
+            "tags": ["CSBDX: Train", "New In DX"],
             "album_art": "heyyoupikachu.png",
             "trivia": "{i}Beats To Travel Across The Country To.{/i}"
         },
@@ -1626,7 +1628,7 @@
             "file": "item_bounce.ogg",
             "title": "Item Bounce",
             "artist": "Akira Miyagawa",
-            "tags": ["CSBIII DX: Train", "New In DX"],
+            "tags": ["CSBDX: Train", "New In DX"],
             "album_art": "kirbyairride.png",
             "trivia": "\"This song makes me feel jumpy!\" -- Mika"
         },
@@ -1634,7 +1636,7 @@
             "file": "krabby_klub.ogg",
             "title": "Krabby Klub",
             "artist": "Tsukasa Tawada",
-            "tags": ["CSBIII DX: Train", "New In DX"],
+            "tags": ["CSBDX: Train", "New In DX"],
             "album_art": "pokemonxd.png",
             "trivia": "This track, with its short intro piece, required a total refactor of the way looping songs are handled in-game."
         },
@@ -1642,7 +1644,7 @@
             "file": "prof_kranes_kidnap.ogg",
             "title": "Prof. Krane's Kidnap",
             "artist": "Tsukasa Tawada",
-            "tags": ["CSBIII DX: Train", "New In DX"],
+            "tags": ["CSBDX: Train", "New In DX"],
             "album_art": "pokemonxd.png",
             "trivia": "Also, do not become a criminal. It doesn't look good on your rap sheet."
         },
@@ -1650,7 +1652,7 @@
             "file": "e_gadds_lab.ogg",
             "title": "E. Gadd's Lab",
             "artist": "Kazumi Totaka & Shinobu Tanaka",
-            "tags": ["CSBIII DX: Train", "New In DX"],
+            "tags": ["CSBDX: Train", "New In DX"],
             "album_art": "luigismansion.png",
             "trivia": "Whenever you put a compass near a jukebox with this song playing, it points down. E. Gadd is in hell."
         },
@@ -1658,7 +1660,7 @@
             "file": "onbs.ogg",
             "title": "ONBS",
             "artist": "Tsukasa Tawada",
-            "tags": ["CSBIII DX: Train", "New In DX"],
+            "tags": ["CSBDX: Train", "New In DX"],
             "album_art": "pokemonxd.png",
             "trivia": "{a=https://youtu.be/f1j0e7LpOYo?si=E00JoNw35freKUoc&t=64}Something Something Lupin, Something Something Hitler.{/a}"
         },
@@ -1666,7 +1668,7 @@
             "file": "encounter_friend.ogg",
             "title": "Encounter! Friend",
             "artist": "Waichiro Ozaki",
-            "tags": ["CSBIII DX: Train", "New In DX"],
+            "tags": ["CSBDX: Train", "New In DX"],
             "album_art": "falsebound.png",
             "trivia": "They should've just shot Lupin. It would've saved everyone a lot of time."
         },
@@ -1674,7 +1676,7 @@
             "file": "samba_temperado.ogg",
             "title": "Samba Temperado 2019",
             "artist": "Yuji Ohno & Explosion Band",
-            "tags": ["CSBIII DX: Train", "New In DX", "Minigames"],
+            "tags": ["CSBDX: Train", "New In DX", "Minigames"],
             "album_art": "lupin_iii.png",
             "trivia": "Insanely funky beat."
         },
@@ -1682,7 +1684,7 @@
             "file": "in_the_room.ogg",
             "title": "In The Room",
             "artist": "Shogo Sakai",
-            "tags": ["CSBIII DX: Train", "New In DX"],
+            "tags": ["CSBDX: Train", "New In DX"],
             "album_art": "mother3.png",
             "trivia": "Nintendo, please... {i}Mother 3.{/i}"
         },
@@ -1690,7 +1692,7 @@
             "file": "roundabout.ogg",
             "title": "Roundabout",
             "artist": "Yes",
-            "tags": ["CSBIII DX: Train", "New In DX"],
+            "tags": ["CSBDX: Train", "New In DX"],
             "album_art": "roundabout.png",
             "trivia": "It's the song from {a=https://www.youtube.com/watch?v=sqTEoZ78ihs}{i}Family Guy{/i}{/a}!"
         },
@@ -1698,7 +1700,7 @@
             "file": "lo_fi_sunset.ogg",
             "title": "Lo-Fi Sunset",
             "artist": "Dango Studio",
-            "tags": ["CSBIII DX: Train", "New In DX"],
+            "tags": ["CSBDX: Train", "New In DX"],
             "album_art": "lofisunset.png",
             "trivia": "Nothing like watching the sunset from a window."
         },
@@ -1706,7 +1708,7 @@
             "file": "homely_yado_inn.ogg",
             "title": "Homely Yado Inn",
             "artist": "Shogo Sakai",
-            "tags": ["CSBIII DX: Train", "New In DX"],
+            "tags": ["CSBDX: Train", "New In DX"],
             "album_art": "mother3.png",
             "trivia": "It's all over, apparently."
         },
@@ -1714,7 +1716,7 @@
             "file": "secret/pt/insomnia.ogg",
             "title": "Insomnia",
             "artist": "W∆W",
-            "tags": ["CSBIII DX: Train", "New In DX", "Fun Values"],
+            "tags": ["CSBDX: Train", "New In DX", "Fun Values"],
             "album_art": "moon.png",
             "trivia": "Tate was never originally intended to be a character that could be battled. {a=https://www.youtube.com/watch?v=O6i-aE4Hw18}{i}Moon EP{/i}{/a} changed that."
         },
@@ -1722,7 +1724,7 @@
             "file": "secret/pt/space.ogg",
             "title": "Space",
             "artist": "W∆W",
-            "tags": ["CSBIII DX: Train", "New In DX", "Fun Values", "Minigames"],
+            "tags": ["CSBDX: Train", "New In DX", "Fun Values", "Minigames"],
             "album_art": "moon.png",
             "trivia": "Tate EX's theme."
         },
@@ -1730,7 +1732,7 @@
             "file": "secret/pt/nyan_of_a_lifetime.ogg",
             "title": "Nyan Of A Lifetime",
             "artist": "DJ NYANKO SWITCHER",
-            "tags": ["CSBIII DX: Train", "New In DX", "Fun Values", "Minigames"],
+            "tags": ["CSBDX: Train", "New In DX", "Fun Values", "Minigames"],
             "album_art": "nyan.png",
             "trivia": "The Tate EX story arc was nearly complete when this track showed up in Tate's SoundCloud recommended feed one day. This is {i}only{/i} reason why Perfect Tate exists."
         },
@@ -1746,7 +1748,7 @@
             "file": "sfx/sfx_ringtone_addy.ogg",
             "title": "Hare Hare Yukai (Konata's Polyphonic Ringtone)",
             "artist": "Tomokazu Tashiro & Satoru Kosaki",
-            "tags": ["CSBIII: Archival", "CSBIII DX: Ringtones", "New In DX"],
+            "tags": ["CSBIII: Archival", "CSBDX: Ringtones", "New In DX"],
             "album_art": "ringtone_addy.png",
             "trivia": "Mika's real-life ringtone."
         },
@@ -1754,7 +1756,7 @@
             "file": "sfx/sfx_ringtone_billy.ogg",
             "title": "Billy Milly Mays",
             "artist": "tadintid.se",
-            "tags": ["CSBIII: East", "CSBIII DX: Ringtones", "New In DX"],
+            "tags": ["CSBIII: East", "CSBDX: Ringtones", "New In DX"],
             "album_art": "ringtone_billy.png",
             "trivia": "Originally, this ringtone was CS and Arceus publically urinating, but we fired the guy who did that."
         },
@@ -1762,7 +1764,7 @@
             "file": "sfx/sfx_ringtone_cs.ogg",
             "title": "Oh Yes Rave",
             "artist": "cs188",
-            "tags": ["CSBIII: Michigan", "CSBIII DX: Ringtones", "New In DX"],
+            "tags": ["CSBIII: Michigan", "CSBDX: Ringtones", "New In DX"],
             "album_art": "ringtone_cs.png",
             "trivia": "Originally created for CS' Mixer livestream soundboard, but was also featured in {a=https://www.youtube.com/watch?v=mh6aM8uhrEI}{i}[[YTP] National Giraffeic Teaches You Slnimals.{/i}{/a}"
         },
@@ -1770,7 +1772,7 @@
             "file": "sfx/sfx_ringtone_tate.ogg",
             "title": "Now Or Never (sleepingSYUN Arrange)",
             "artist": "M-Flo loves CHEMISTRY",
-            "tags": ["CSBIII DX: Train", "CSBIII DX: Ringtones", "New In DX"],
+            "tags": ["CSBDX: Train", "CSBDX: Ringtones", "New In DX"],
             "album_art": "ringtone_tate.png",
             "trivia": "The real-life Tate has used this ringtone for over a decade."
         },
@@ -1778,7 +1780,7 @@
             "file": "sfx/sfx_ringtone_tate_alt.ogg",
             "title": "Only One",
             "artist": "ミカヅキBIGWAVE",
-            "tags": ["CSBIII DX: Train", "CSBIII DX: Ringtones", "Fun Values", "New In DX"],
+            "tags": ["CSBDX: Train", "CSBDX: Ringtones", "Fun Values", "New In DX"],
             "album_art": "ringtone_tate_alt.png",
             "trivia": "This is a real ringtone that Tate used... at some point."
         },
@@ -1786,7 +1788,7 @@
             "file": "we_will_meet_again.ogg",
             "title": "We Will Meet Again.",
             "artist": "Fresca",
-            "tags": ["New In DX", "CSBIII DX: Misc."],
+            "tags": ["New In DX", "CSBDX: Misc."],
             "album_art": "fresca.png",
             "trivia": "Get well soon."
         }

@@ -229,7 +229,7 @@ label awawa_tate_test:
             #################### AWAWA MODE ####################
             "Awawa Mode":
                 show tate sheepish
-                tate "Are you sure? I'll take a while."
+                tate "Are you sure? It'll take a while."
 
                 menu:
                     "No, take me back!":
