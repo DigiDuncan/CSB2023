@@ -323,7 +323,7 @@ label awawa_tate_test:
                                 call screen credits_roll()
                             "CE Only":
                                 play music "<from 28.700>title_theme_reprise.ogg" noloop
-                                call screen credits_roll(route="CSBIII DX: Holiday Special", scroll_start = 12525, duration=84, replace_music=False) with dissolve
+                                call screen credits_roll(route="CSBDX: Holiday Special", scroll_start = 12525, duration=84, replace_music=False) with dissolve
                             "Speedrun Only":
                                 call screen credits_roll(bgm="goodbye_speedrun.ogg", duration=9.5) with dissolve
                                 stop music
