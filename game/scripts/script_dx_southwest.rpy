@@ -69,3 +69,8 @@ label southwest_cali_foodplace:
     n "Frank drives up to the second window, and gets his food."
     frank "Alrighty everyone, eat up!"
     #THen they win clue
+    n "Arceus unpacks his food, and finds a Clue piece on his bag of fries."
+    arceus "Hey, did you guys get... Clue pieces on your food?"
+    frank "Oh yeah, In-N-Out is doing that thing that McDonald's does with Monopoly, but with Clue this time."
+    frank "You gotta find the six Clue items, and you win a cruise or something."
+    cs "Well I got a Lead pipe on my burger."
