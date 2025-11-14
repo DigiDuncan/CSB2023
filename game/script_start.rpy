@@ -2628,7 +2628,7 @@ image ytx = Transform("ytx.png", zoom = 0.333)
 image ytx_drive = "ytx_drive.png"
 image map_kuwait = "gui/map_kuwait.png"
 
-# CSBIII DX: Holiday Special Gift Boxes
+# CSBDX: Holiday Special Gift Boxes
 image gift_anne_grace = "images/gifts/present_boxes/anne_grace.png"
 image gift_anno = "images/gifts/present_boxes/anno.png"
 image gift_arc = "images/gifts/present_boxes/arc.png"
@@ -2656,7 +2656,7 @@ image gift_sheriff = "images/gifts/present_boxes/sheriff.png"
 image gift_tate = "images/gifts/present_boxes/tate.png"
 image gift_wesley = "images/gifts/present_boxes/wesley.png"
 
-# CSBIII DX: Holiday Special Gifts
+# CSBDX: Holiday Special Gifts
 image 1850_coin = "images/gifts/1850_coin.png"
 image adderall = "images/gifts/adderall.png"
 image cement = "images/gifts/cement.png"
@@ -3238,17 +3238,18 @@ define audio.night = "night.ogg"
 define audio.billy_mix = "billy_mix.ogg"
 define audio.moving_right_along = "moving_right_along.ogg"
 
-# CSBIII DX: Bronson (Michigan)
+# CSBDX: Bronson (Michigan)
 define audio.upon_me = "upon_me.ogg"
 define audio.error = "error.ogg"
 
-# CSBIII DX Train Music
+# CSBDX Train Music
 define audio.sub_game_select = "sub_game_select.ogg"
 define audio.outdoors = "<loop 54.031>outdoors.ogg"
 define audio.hide_and_seek = "hide_and_seek.ogg"
 define audio.ochre_woods_day = "<loop 27.401>ochre_woods_day.ogg"
 define audio.bedroom_day = "<loop 0.916>bedroom_day.ogg"
 define audio.item_bounce = "item_bounce.ogg"
+define audio.oh_its_you = "oh_its_you.ogg"
 define audio.krabby_klub = "<loop 3.1>krabby_klub.ogg"
 define audio.prof_kranes_kidnap = "prof_kranes_kidnap.ogg"
 define audio.e_gadds_lab = "<loop 1.071>e_gadds_lab.ogg"
@@ -3269,7 +3270,7 @@ define audio.nyan = "<from 3.6 to 228.52>/secret/pt/nyan_of_a_lifetime.ogg"
 define audio.nyan_intro = "<from 3.6 to 22.799>/secret/pt/nyan_of_a_lifetime.ogg"
 define audio.nyan_fight = "<from 22.799 to 228.52>/secret/pt/nyan_of_a_lifetime.ogg"
 
-# CSBIII DX Plane Music
+# CSBDX Plane Music
 define audio.mid_boss_battle = "mid_boss_battle.ogg"
 define audio.title_screen = "title_screen.ogg"
 define audio.cobalt_coast_day = "cobalt_coast_day.ogg"
@@ -3279,10 +3280,10 @@ define audio.pyrite_town = "pyrite_town.ogg"
 define audio.cipher_lab = "cipher_lab.ogg"
 define audio.run_for_your_life = "run_for_your_life.mp3" # TODO: convert to ogg for consistency
 
-# CSBIII DX Kuwait Music
+# CSBDX Kuwait Music
 define audio.tmwstw = "tmwstw.ogg"
 
-# CSBIII DX Holiday Special Music
+# CSBDX Holiday Special Music
 define audio.lets_hear_winter = "<loop 7.674>lets_hear_my_christ.ogg"
 define audio.winters_halloween = "<loop 19.729>winters_halloween.ogg"
 define audio.synchronicity = "synchronicity.ogg"
@@ -3304,7 +3305,7 @@ define audio.snowman = "snowman.ogg"
 define audio.title_theme_reprise = "title_theme_reprise.ogg"
 define audio.girl_next_door = "girl_next_door.ogg"
 
-# CSBIII DX After-True Music
+# CSBDX After-True Music
 define audio.lets_hear_spring = "letshearspring.ogg"
 define audio.echoing_spring = "echoingspring.ogg"
 define audio.alien_atmosphere = "alien_atmosphere.ogg"
@@ -3321,7 +3322,7 @@ define audio.blanchin_remix = "blanchin_remix.ogg"
 define audio.tv_hall_of_fame = "tv_hall_of_fame.ogg"
 define audio.sneak_theme = "sneak_theme.mp3"
 
-# CSBIII DX Finale Music
+# CSBDX Finale Music
 define audio.funvalueland = "funvalueland.ogg"
 define audio.unobtrusive_fun = "unobtrusive_fun.ogg"
 define audio.interference = "<from 0 to 275>interference.ogg"

@@ -1184,16 +1184,18 @@ label train_enter_sleeper:
     show cs scared
     cs "... Woah, Tate, why are you look--{w=0.25}{nw}"
 
-    # TODO: bgm?
+    music oh_its_you
+    play music oh_its_you
 
     show tate furious flipped
     tate "{cshake}{size=+36}IT WAS {nw}"
-    tate "{cshake}{size=+36}IT WAS {fast}{i}YOU!!" with hpunch
-    cs "Wha-- {i}huh?!"
+    extend "{i}YOU!!" with hpunch
+    cs "Wha-- {nw}"
+    extend "{i}huh?!" with vpunch
     tate "{cshake}{size=+36}CS, WHAT THE {nw}"
-    tate "{cshake}{size=+36}CS, WHAT THE {fast}{i}FUCK?!" with vpunch
+    extend "{i}FUCK?!" with vpunch
     tate "{cshake}{size=+36}{i}YOU{/i} {nw}" with vpunch
-    tate "{cshake}{size=+36}{i}YOU{/i} {fast}BROKE INTO HOH SIS?!"
+    extend "BROKE INTO HOH SIS?!"
     show cs worried
     cs "Oh, yeah, uh--{w=0.25}{nw}"
 
@@ -1206,7 +1208,7 @@ label train_enter_sleeper:
     cs "Tate..."
     cs "Listen to me, please--{w=0.25}{nw}"
     show tate srs flipped
-    tate "{sc=1.11}{i}No!"
+    tate "{sc=1.11}{i}No!" with vpunch
     tate "{sc=1.11}I don't want to hear it!"
     tate "{sc=1.11}Is {i}this{/i} what you've been up to since--{w=0.5}{nw}"
     "..."
@@ -1271,8 +1273,9 @@ label train_enter_sleeper:
     show cs disappointed
     cs "Yeah, me too..."
 
-    scene black with dissolve
-    stop sound2 fadeout 0.5
+    stop sound2 fadeout 2.0
+    stop music fadeout 2.0
+    scene black with Dissolve(1.0)
     n "CS and Arceus decide to call it an early night."
     n "CS effortlessly falls into a deep slumber."
     n "While the fold-out bed is indeed quite comfortable, Arceus struggles to get any rest."

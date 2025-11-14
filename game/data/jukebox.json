@@ -1632,6 +1632,14 @@
             "album_art": "kirbyairride.png",
             "trivia": "\"This song makes me feel jumpy!\" -- Mika"
         },
+        "oh_its_you" : {
+            "file": "oh_its_you.ogg",
+            "title": "Oh It's You",
+            "artist": "Pascal Michael Stiefel",
+            "tags": ["CSBDX: Train", "New In DX"],
+            "album_art": "ahatintime.png",
+            "trivia": "Originally, the scene where Tate realizes CS got Mean fired didn't have BGM. Very late into the development of Train Route, Tate realized that it was just way way {i}way{/i} too tense without any music."
+        },
         "krabby_klub" : {
             "file": "krabby_klub.ogg",
             "title": "Krabby Klub",
