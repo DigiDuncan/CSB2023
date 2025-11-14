@@ -1,9 +1,10 @@
 screen acent_attorneynt(current_evidence):
     default current_evidence = current_evidence
-    modal True
-    zorder 1
+    #modal True
+    #zorder 1
 
     python:
+        global current_evidence
         show_window = False
         renpy.choice_for_skipping()
 
@@ -49,6 +50,20 @@ screen acent_attorneynt(current_evidence):
         xpos 570
         ypos 310
 
+    # select button
+    frame:
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.5
+        ypos 0.8
+
+        button:
+            text "Present Evidence":
+                text_align 0.5
+
+            hovered [ Play("sound", "audio/sfx/sfx_select.ogg")]
+            action [ Play("sound", "audio/sfx/sfx_valid.ogg"), Return() ]
+
     # frame + item image
     frame:
         background None
@@ -56,6 +71,10 @@ screen acent_attorneynt(current_evidence):
         ypos 150
         xysize (375, 375)
         image items_list[current_evidence][1]:
+            xanchor 0.5
+            yanchor 0.5
+            xpos 0.5
+            ypos 0.5
             fit "contain"
 
     ##### container for buttons
@@ -75,44 +94,28 @@ screen acent_attorneynt(current_evidence):
 
                 # non-selectable
                 if items_list[i][0] == "":
-                    image "/gui/acent_attorneynt/empty.png":
+                    imagebutton idle "/gui/acent_attorneynt/empty.png":
+                        sensitive False
                         xalign 0.5
                         yalign 1.0
                         yoffset -5
 
                 # selectable
                 else:
-                    if items_list[i][0] != "":
-                        # idle
-                        if current_evidence != i:
-                            button:
-                                sensitive True
-                                hovered [ Play("sound", "audio/sfx/sfx_select.ogg")]
-                                action [ Play("sound", "audio/sfx/sfx_valid.ogg"), SetScreenVariable("current_evidence", i), Notify(current_evidence), renpy.restart_interaction ]
+                    button:
+                        imagebutton:
+                            idle "/gui/acent_attorneynt/unselected.png"
+                            hover "/gui/acent_attorneynt/selected.png"
+                            selected "/gui/acent_attorneynt/selected.png"
 
-                                image "/gui/acent_attorneynt/unselected.png":
-                                    xalign 0.5
-                                    yalign 1.0
+                            xalign 0.5
+                            yalign 1.0
 
-                                image items_list[i][1]:
-                                    xalign 0.5
-                                    yalign 0.7
-                                    size (120,120)
-                                    fit "contain"
-                        # active
-                        else:
-                            button:
-                                sensitive True
-                                hovered [ Play("sound", "audio/sfx/sfx_select.ogg")]
-                                action [ Play("sound", "audio/sfx/sfx_valid.ogg"), SetScreenVariable("current_evidence", i), Notify(current_evidence), renpy.restart_interaction ]
+                            hovered [ Play("sound", "audio/sfx/sfx_select.ogg"), SetScreenVariable("current_evidence", i), SetVariable("current_evidence", i), Notify(i) ]
+                            action [ Play("sound", "audio/sfx/sfx_valid.ogg"), SetScreenVariable("current_evidence", i), SetVariable("current_evidence", i), Notify(current_evidence) ]
 
-                                image "/gui/acent_attorneynt/selected.png":
-                                    xalign 0.5
-                                    yalign 1.0
-
-                                image items_list[i][1]:
-                                    xalign 0.5
-                                    yalign 0.7
-                                    size (120,120)
-                                    fit "contain"
-
+                        image items_list[i][1]:
+                            xalign 0.5
+                            yalign 0.7
+                            size (120,120)
+                            fit "contain"

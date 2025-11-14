@@ -351,7 +351,7 @@ label awawa_tate_test:
                         tate "Alrighty, then..."
                         call screen acent_attorneynt(current_evidence)
                         hide screen acent_attorneynt
-                        tate "Did it work?"
+                        tate "Did it work? On my end, you selected item [current_evidence]."
                         jump .awawa_menu
 
                     ########## GO BACK ##########
