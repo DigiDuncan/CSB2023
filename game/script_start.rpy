@@ -17,6 +17,9 @@ init python:
     current_subgame_art = None
     current_subgame_label = None
 
+    # For Ace Attorney parody
+    current_evidence = 0
+
 # If music is so good, why is there no Music 2?
 init python:
     renpy.music.register_channel("sound2", "sfx")
@@ -2293,6 +2296,28 @@ image airbus_back = "bg/plane/airbus_back.png"
 image airbus_back dark = "dark:bg/plane/airbus_back.png"
 image airbus_roof = "bg/plane/airbus_roof.png"
 
+# Plane Route NPCs
+image k19 = "characters/pakoo/k19beta.png"
+image k19 flipped = "flip:characters/pakoo/k19beta.png"
+image k19 dark = "dark:characters/pakoo/k19beta.png"
+image k19 dark flipped = "dark:flip:characters/pakoo/k19beta.png"
+image k19 sil_black = "sil_black:characters/pakoo/k19beta.png"
+image k19 sil_black flipped = "sil_black:flip:characters/pakoo/k19beta.png"
+image k19 gun = "characters/pakoo/k19gunbeta.png"
+image k19 gun flipped = "flip:characters/pakoo/k19gunbeta.png"
+image wilbur = "characters/wilbur.png"
+image wilbur flipped = "flip:characters/pakoo/wilbur.png"
+image wilbur sil_black = "sil_black:characters/wilbur.png"
+image wilbur sil_black flipped = "sil_black:flip:characters/pakoo/wilbur.png"
+image orville = "characters/orville.png"
+image orville flipped = "flip:characters/pakoo/orville.png"
+image orville sil_black = "sil_black:characters/orville.png"
+image orville sil_black flipped = "sil_black:flip:characters/pakoo/orville.png"
+image booger = "characters/booger.png"
+image booger flipped = "flip:characters/booger.png"
+image booger gun = "characters/booger_socom.png"
+image booger gun flipped = "flip:characters/booger_socom.png"
+
 # DX Train Route
 image kingman_exterior = "bg/train/kingman_exterior.png"
 image kingman_interior = "bg/train/kingman_interior.png"
@@ -2323,28 +2348,6 @@ image hutchinson_stn_lights = "bg/train/hutchinson_stn_lights.png"
 image lupin_escape_1 = "dark:bg/train/lupin_escape_1.png"
 image lupin_escape_2 = "dark:bg/train/lupin_escape_2.png"
 image amtrak_dining_day = "bg/train/amtrak_dining_day.png"
-
-# Plane Route NPCs
-image k19 = "characters/pakoo/k19beta.png"
-image k19 flipped = "flip:characters/pakoo/k19beta.png"
-image k19 dark = "dark:characters/pakoo/k19beta.png"
-image k19 dark flipped = "dark:flip:characters/pakoo/k19beta.png"
-image k19 sil_black = "sil_black:characters/pakoo/k19beta.png"
-image k19 sil_black flipped = "sil_black:flip:characters/pakoo/k19beta.png"
-image k19 gun = "characters/pakoo/k19gunbeta.png"
-image k19 gun flipped = "flip:characters/pakoo/k19gunbeta.png"
-image wilbur = "characters/wilbur.png"
-image wilbur flipped = "flip:characters/pakoo/wilbur.png"
-image wilbur sil_black = "sil_black:characters/wilbur.png"
-image wilbur sil_black flipped = "sil_black:flip:characters/pakoo/wilbur.png"
-image orville = "characters/orville.png"
-image orville flipped = "flip:characters/pakoo/orville.png"
-image orville sil_black = "sil_black:characters/orville.png"
-image orville sil_black flipped = "sil_black:flip:characters/pakoo/orville.png"
-image booger = "characters/booger.png"
-image booger flipped = "flip:characters/booger.png"
-image booger gun = "characters/booger_socom.png"
-image booger gun flipped = "flip:characters/booger_socom.png"
 
 # Train Route NPCs
 image amtrak_conductor = "characters/amtrak_conductor.png"
@@ -2890,48 +2893,8 @@ image tate_ex:
     xcenter 0.25
     ycenter 0.6
 
-## For train boss
-image train_boss_1:
-    "characters/finale/trainboss1.png"
-    ease 2.0 rotate -1
-    ease 2.0 rotate 1
-    repeat
-
-image train_boss_2:
-    "characters/finale/trainboss2.png"
-    ease 2.0 rotate -1
-    ease 2.0 rotate 1
-    repeat
-
-image train_boss_3:
-    "characters/finale/trainboss3.png"
-    ease 2.0 rotate -15
-    ease 2.0 rotate 15
-    repeat
-
-image train_boss_4:
-    "characters/finale/trainboss4.png"
-    ease 2.0 rotate -10
-    ease 2.0 rotate 10
-    repeat
-
-image train_boss_5:
-    "characters/finale/trainboss5.png"
-    ease 2.0 rotate -10
-    ease 2.0 rotate 10
-    repeat
-
-image train_boss_6:
-    "characters/finale/trainboss6.png"
-    ease 2.0 rotate -5
-    ease 1.0 rotate 5
-    repeat
-
-image train_boss_7:
-    "characters/finale/trainboss7.png"
-    ease 1.0 rotate 5
-    ease 2.0 rotate -5
-    repeat
+## Misc Animated Sprites
+image ai_ducks = SnowBlossom("duck.png", 50, fast = True)
 
 image cultist_fire1:
     "cultist_fire.png"
@@ -2942,7 +2905,6 @@ image cultist_fire1:
     ease 0.1 ypos 0.85
     ease 0.1 ypos 0.855
     repeat
-
 
 image car_chase1:
     "mazda_cruise_firing.png"
@@ -2986,6 +2948,49 @@ layeredimage renault_driver:
         attribute b default:
             "cultist_fire2"
 
+## For train boss
+image train_boss_1:
+    "characters/finale/trainboss1.png"
+    ease 2.0 rotate -1
+    ease 2.0 rotate 1
+    repeat
+
+image train_boss_2:
+    "characters/finale/trainboss2.png"
+    ease 2.0 rotate -1
+    ease 2.0 rotate 1
+    repeat
+
+image train_boss_3:
+    "characters/finale/trainboss3.png"
+    ease 2.0 rotate -15
+    ease 2.0 rotate 15
+    repeat
+
+image train_boss_4:
+    "characters/finale/trainboss4.png"
+    ease 2.0 rotate -10
+    ease 2.0 rotate 10
+    repeat
+
+image train_boss_5:
+    "characters/finale/trainboss5.png"
+    ease 2.0 rotate -10
+    ease 2.0 rotate 10
+    repeat
+
+image train_boss_6:
+    "characters/finale/trainboss6.png"
+    ease 2.0 rotate -5
+    ease 1.0 rotate 5
+    repeat
+
+image train_boss_7:
+    "characters/finale/trainboss7.png"
+    ease 1.0 rotate 5
+    ease 2.0 rotate -5
+    repeat
+
 layeredimage train_boss_final:
     yanchor 1.10
     zoom 1.25
@@ -3007,8 +3012,7 @@ layeredimage train_boss_final:
         attribute wow default:
             "train_boss_3"
 
-## For Finale Flying Train
-
+# For Finale Flying Train
 image train_fly_1:
     "characters/finale/train_fly_1.png"
     ease 3.0 rotate -3
@@ -3071,14 +3075,9 @@ layeredimage flying_train_final:
             "train_fly_6"
         attribute 6 default:
             "train_fly_7"
-
-
     group ignore_me:
         attribute wow default:
             "train_fly_1"
-
-# misc
-image ai_ducks = SnowBlossom("duck.png", 50, fast = True)
 
 # Audio
 # CSBI Music

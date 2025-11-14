@@ -346,6 +346,14 @@ label awawa_tate_test:
                         tate "Did it work?"
                         jump .awawa_menu
 
+                    ########## ACEN'T ATTORNEYN'T SCREEN ##########
+                    "Ace Attorney Parody":
+                        tate "Alrighty, then..."
+                        call screen acent_attorneynt(current_evidence)
+                        hide screen acent_attorneynt
+                        tate "Did it work?"
+                        jump .awawa_menu
+
                     ########## GO BACK ##########
                     "Never mind.":
                         jump .awawa_menu
