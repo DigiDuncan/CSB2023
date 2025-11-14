@@ -44,11 +44,8 @@ label train_dialogue:
     cs "That is true. It's a lot more green."
     cs "Yeah, let's just hang out here awhile."
 
-
-
     pause 3.0
-
-
+    ###########################################################
 
     cs "Hey, Arc?"
     arceus "Yeh?"
@@ -81,11 +78,8 @@ label train_dialogue:
     show arceus
     with dissolve
 
-
-
     pause 3.0
-
-
+    ###########################################################
 
     show cs surprised
     cs "I wonder what Tate and Mean are up to."
@@ -257,11 +251,8 @@ label train_dialogue:
     show cs
     cs "Yeah, let's do that."
 
-
-
     pause 3.0
-
-
+    ###########################################################
 
     show arc_laptop at manual_pos(0.65, 0.55, 0.5) behind arceus with dissolve
     $ collect("arc_laptop")
@@ -320,11 +311,8 @@ label train_dialogue:
     pause 2.0
     show cs with dissolve
 
-
-
     pause 3.0
-
-
+    ###########################################################
 
     n "CS and Arceus take it easy for the rest of the ride..."
 

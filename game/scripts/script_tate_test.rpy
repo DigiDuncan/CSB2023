@@ -327,6 +327,9 @@ label awawa_tate_test:
                             "Speedrun Only":
                                 call screen credits_roll(bgm="goodbye_speedrun.ogg", duration=9.5) with dissolve
                                 stop music
+                            "Train Route Only (Incomplete)":
+                                call screen credits_roll(route="CSBDX: Train", scroll_start = 12000, duration=60) with dissolve
+                                stop music
                             "Never mind.":
                                 jump .awawa_menu
 

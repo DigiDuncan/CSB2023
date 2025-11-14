@@ -79,7 +79,7 @@
 
         "CS-ocola (3D Sprite)": {
             "Model": ["Tate \"alleZSoyez\""],
-            "Wardrobe": ["rezosempai"]
+            "Wardrobe": ["rezosempai\nrezosempai.booth.pm"]
         },
 
         "DigiDuncan Character Sprite": {
@@ -87,6 +87,12 @@
             "Texture": ["DigiDuncan"],
             "Concept Art": ["Mushroom Man", "WaterfallStream"],
             "Posing": ["Tate \"alleZSoyez\""]
+        },
+
+        "Genergy Can": {
+            "3D Model": ["アジャリ雑貨店\nkomuso.booth.pm"],
+            "Texture": ["Tate \"alleZSoyez\""],
+            "Rendering": ["4Bakers"]
         },
 
         "_more_art":{
@@ -178,7 +184,8 @@
         "_more_programming": {
             "Kinetic Text Tags": ["Daniel Westfall"],
             "Codex": ["Skolatztika"],
-            "Achievements System Assistance": ["KiloOscarSix"]
+            "Achievements System Assistance": ["KiloOscarSix"],
+            "Awawa Mode Programming Assistance": ["greyfade"]
         },
 
         "_testing": {
@@ -208,6 +215,12 @@
             "Texture": ["DigiDuncan"],
             "Concept Art": ["Mushroom Man", "WaterfallStream"],
             "Posing": ["Tate \"alleZSoyez\""]
+        },
+
+        "Genergy Can": {
+            "3D Model": ["アジャリ雑貨店\nkomuso.booth.pm"],
+            "Texture": ["Tate \"alleZSoyez\""],
+            "Rendering": ["4Bakers"]
         },
 
         "_more_art":{
@@ -252,5 +265,108 @@
             "Our significant others": ["for holding us together"],
             "YOU!":["for waiting five (six?) years for this. We hope it was worth it."]
         }
+    },
+
+
+    "CSBDX: Train": {
+
+        "_logo": { "image" : ["gui/credits/csbiiidx_small.png"] },
+
+        "Cast": {
+            "In order of appearance (roughly)" : [
+                "cs188",
+                "Arceus3251",
+                "Tate \"alleZSoyez\"",
+                "meancarnavor"
+            ]
+        },
+
+        "_writing": {
+            "Lead Writer": ["Tate \"alleZSoyez\""],
+            "Addt'l Writing": ["Meancarnavor", "Arceus3251", "DigiDuncan", "Pakoo"],
+            "Lead Editor": ["Tate \"alleZSoyez\""]
+        },
+
+        "_programming": {
+            "Backend Programming": ["DigiDuncan"],
+            "Frontend Programming": ["Arceus3251"],
+            "Addt'l Programming": ["Pakoo", "Tate \"alleZSoyez\"", "DragonMoffon"]
+        },
+
+        "_more_programming": {
+            "Kinetic Text Tags": ["Daniel Westfall"],
+            "Codex": ["Skolatztika"],
+            "Achievements System Assistance": ["KiloOscarSix"],
+            "Awawa Mode Programming Assistance": ["greyfade"]
+        },
+
+        "_testing": {
+            "Alpha Testing": ["Arceus3251", "Tate \"alleZSoyez\""],
+            "Beta Testing": ["xohorses", "BubbleTheSlime", "WaterfallStream", "meancarnavor"]
+        },
+
+        "Character Sprites": {
+            "CS-ocola": ["Greta \"loveycloud\""],
+            "Arceus": ["UndeadKitty"],
+            "Addy": ["Pakoo"],
+            "Tate": ["Tate \"alleZSoyez\""],
+            "Mean": [""],
+            "Mean (Human)": ["Mushroom Man"]
+        },
+
+        "CS-ocola (3D Sprite)": {
+            "Model": ["Tate \"alleZSoyez\""],
+            "Wardrobe": ["rezosempai\nrezosempai.booth.pm"]
+        },
+
+        "Genergy Can": {
+            "3D Model": ["アジャリ雑貨店\nkomuso.booth.pm"],
+            "Texture": ["Tate \"alleZSoyez\""],
+            "Rendering": ["4Bakers"]
+        },
+
+        "_more_art":{
+            "Addt'l Art": ["cs188", "blanknam3d", "Tate \"alleZSoyez\"", "UndeadKitty", "Pakoo", "4Bakers"]
+        },
+
+        "_visual": {
+            "Background Management": ["Tate \"alleZSoyez\""],
+            "Addt'l Background Assistance": ["Arceus3251", "DigiDuncan", "Aria \"Estroteric\"", "4Bakers"],
+            "Asset Remastering": ["4Bakers", "DigiDuncan"],
+            "Sprite Management": ["Tate \"alleZSoyez\"", "4Bakers", "DigiDuncan", "Pakoo"],
+            "3D Rendering": ["4Bakers"],
+            "Video Editing": ["alleZSoyez"],
+            "UI Design": ["DigiDuncan", "Arceus3251", "Pakoo", "Tate \"alleZSoyez\""],
+            "Cinematography": ["Tate \"alleZSoyez\"", "Pakoo", "DigiDuncan"]
+        },
+
+        "_audio": {
+            "Soundtrack Management": ["Tate \"alleZSoyez\""],
+            "Beep Management": ["Pakoo"],
+            "Addt'l Audio Assistance": ["DigiDuncan", "4Bakers", "Tate \"alleZSoyez\"", "blanknam3d"]
+        },
+
+        "_voice": {
+            "Voice Acting": ["meancarnavor"]
+        },
+
+        "Music": { "DO NOT PUT ANYTHING HERE": ["READ MUSIC FROM JUKEBOX JSON"] },
+
+        "_misc": {
+            "Fun Value Consultant": ["Aria \"Estroteric\""],
+            "Locomotive Consultant": ["meancarnavor"],
+            "In Loving Memory /j": ["ItsNovaHere"],
+            "Executive Producer": ["SurgeTheRaichu"]
+        },
+
+        "Special Thanks": {
+            "cs188": ["for inspiring this game"],
+            "The CSCord": ["for starting it all"],
+            "DPN": ["and its loving circle of support"],
+            "Tris": ["and the Shattered Realms community"],
+            "Our significant others": ["for holding us together"],
+            "YOU!":["for waiting five (six?) years for this. We hope it was worth it."]
+        }
     }
+
 }

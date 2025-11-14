@@ -151,7 +151,7 @@ screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scro
                                                     if (persistent.defeated_perfect_tate == False and category == "CS-ocola (3D Sprite)") or ("digi" not in persistent.seen and category == "DigiDuncan Character Sprite"):
                                                         $ contributor = obfuscator(contributor)
 
-                                                    text contributor:
+                                                    text "{font=music_text}"+contributor: # handler for CJK text in contributor names
                                                         xalign 1.0
                                                         yalign 0.5
 
