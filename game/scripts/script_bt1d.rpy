@@ -15,7 +15,7 @@ label bt1d_wakeup:
     with dissolve
     n "CS wakes up in his bedroom after a long slumber."
     n "Exhausted from the previous days' events, he groggily makes his way towards the kitchen."
-    show cs flipped with determination
+    show cs disappointed flipped with determination
     hide cs with moveoutleft
 
     scene cs_kitchen
@@ -23,6 +23,7 @@ label bt1d_wakeup:
     show cs disappointed behind cs_kitchen_fg
     with dissolve
     cs "I'm starving! I've gotta eat something..."
+    show cs disappointed at mid_right with move
     # TODO: digi needs to get a pic of the fridge open
     play sound sfx_foghorn
     n "A terrible stench assaults his nostrils."
@@ -30,31 +31,63 @@ label bt1d_wakeup:
     cs "Augh!" with hpunch
     if fun_value(FUN_VALUE_COMMON):
         cs "Good Lord, what is happening in there?!"
-    n "CS grabs an item from the fridge, rubs his eyes, and looks at the date."
     show cs disappointed
-    pause 0.5
-    show cs disappointed at mid_right
-    pause 1.5
-    show cs disappointed at center
+    n "CS grabs an item from the fridge, rubs his eyes, and looks at the date."
+    show cs concentrate
+    pause 0.1
+    show cs disappointed
+    pause 0.1
+    show cs concentrate
+    pause 0.1
+    show cs disappointed
     pause 1.0
-    # Show an expiry date here
-    show cs angry
+
+    # TODO: Show an expiry date here
+    show cs worried
     cs "July?! {nw}"
+    show cs scared
     extend "{i}Disgusting!" with vpunch
     show cs disappointed
     cs "Gross! I was gone for so long that all my food went bad!"
     cs "Ugh, now I gotta go to the store before I can even have breakfast..."
     hide cs with moveoutright
+
+
     scene cs_door_outside
     show cs flipped at center
     with dissolve
-    n "CS starts to walk out the door, but before he does, his phone buzzes."
+    n "As CS makes his way out the door, his phone buzzes."
     # TODO: SFX phone vibrate
     show cs disappointed flipped
-    phone "New game from Annorexorcist: ANNO 188: Poop Romana!"
+
+    show cs_phone with MoveTransition(0.25):
+        xpos 0.35
+        ypos 0.65
+        alpha 0.0
+        parallel:
+            linear 0.25 alpha 1.0
+        parallel:
+            linear 0.25 ypos 0.45
+    pause 0.5
+
+    phone "New game from Annorexorcist: {i}ANNO 188: Poop Romana!"
     show cs angry flipped
     cs "I don't care right now! I'm hungry and tired!"
+
+    if fun_value(FUN_VALUE_RARE):
+        play sound sfx_whoosh
+        show cs_phone at manual_pos(2.0,0.5,0.5) with MoveTransition(0.5):
+            linear 0.5 rotate 180
+        pause 0.25
+        play sound sfx_cat_crash
+        with hpunch
+        pause 0.5
+    else:
+        hide cs_phone with dissolve
+        pause 0.5
+
     hide cs with moveoutleft
+
     scene black with dissolve
     stop music fadeout 3.0
     music end
@@ -67,21 +100,23 @@ label bt1d_wakeup:
     music canyon
     pause 1.0
     if fun_value(FUN_VALUE_RARE):
-        cs "I don't want to go Walmart any more, but at this point, I don't want to go to Walmart anymore."
+        cs "I don't want to go Walmart anymore, but, at this point, I don't want to go to Walmart anymore."
     else:
-        cs "I don't want to go Walmart any more, but at this point, I don't want to go to Target, either."
+        cs "I don't want to go Walmart anymore, but, at this point, I don't want to go to Target, either."
     show cs
     cs "You know what, I'm going to ALDI. They always have great deals."
     n "CS speeds off to the nearest ALDI."
-    # TODO: SFX car drives away like we did in Ch 1
+    play sound sfx_driving volume 0.5
     scene black with dissolve
+    stop sound fadeout 2.0
     stop music fadeout 3.0
     music end
+    pause 3.0
     jump bt1d_aldi
 
 label bt1d_aldi:
     n "Once he arrives at the ALDI, he grabs a quarter from his center console, and heads to the cart return."
-    # TODO: add items: quarter, cart
+    # TODO: add items: quarter?, cart
     show aldi_outside
     show cs at mid_left
     with dissolve
@@ -93,7 +128,16 @@ label bt1d_aldi:
     n "CS walks into the ALDI and is enamored by the selection and prices."
     show horse at offscreenright behind cs
     cs "Oh my gosh, there's so much I can get! I'm so hungry, I could eat a horse!"
-    show horse at center with { "master": MoveTransition(1.0) }
+
+    # this bit is so silly - tate
+    if fun_value(FUN_VALUE_LEGENDARY):
+        python:
+            horse_sprite = "horse real"
+    else:
+        python:
+            horse_sprite = "horse"
+
+    show expression horse_sprite at mid_right with { "master": MoveTransition(1.0) }
     n "A horse...? walks by CS."
     show cs worried
     horse "You could what?"
@@ -102,10 +146,11 @@ label bt1d_aldi:
     horse "Mm-hmm."
     play sound sfx_waterphone
     pause 2.5
-    show horse at offscreenleft with { "master": MoveTransition(1.0) }
-    n "The horseperson walks away."
+    show expression horse_sprite at offscreenleft with { "master": MoveTransition(1.0) }
+
     cs "Anyway..."
 
+    # TODO: need a scene change here!
     # CS buys a lot of food I don't know figure it out
     hide cs with moveoutright
     n "CS goes to check out with a cart full of food."

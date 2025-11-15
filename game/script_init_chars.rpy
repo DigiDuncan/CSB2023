@@ -155,7 +155,7 @@ define weird_al = Character("Weird Al", callback = char_callback)
 
 # DX BT1D Character Definitions
 # TODO: need beeps
-define phone = Character("Phone", callback = char_callback) # what if spamton?
+define phone = Character("Phone", callback = renpy.partial(char_callback, beep="snd_txtspam"))
 define cvs = Character("CVS Employee", callback = char_callback)
 define leedle = Character("Leedlelee Employee", callback = char_callback)
 define diabetes_ceo = Character("CEO of Diabetes", callback = char_callback)
