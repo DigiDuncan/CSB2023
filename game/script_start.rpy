@@ -284,6 +284,7 @@ define db = Character("DB05", callback = renpy.partial(char_callback, name = "db
 define digi = Character("Digi", callback = renpy.partial(char_callback, name = "digi", beep = "digi"))
 define eliza = Character("Elizabeth", callback = renpy.partial(char_callback, name = "eliza", beep = "mika"))
 define grace = Character("Grace", callback = renpy.partial(char_callback, name = "grace", beep = "grace"))
+define horse = Character("Horse", callback = renpy.partial(char_callback, name = "horse", beep = "horse"))
 define iris = Character("Iris", callback = renpy.partial(char_callback, name = "iris", beep = "iris"))
 define k17 = Character("K-17", callback = renpy.partial(char_callback, name = "k17", beep = "k17"))
 define k22 = Character("K-22", callback = renpy.partial(char_callback, name = "k22", beep = "k20"))
@@ -1606,6 +1607,10 @@ image ges flipped = "flip:characters/ges.png"
 image ges dark = "dark:characters/ges.png"
 image ges dark flipped = "flip:dark:characters/ges.png"
 
+image horse = "characters/horse/neutral.png"
+image horse real = "characters/horse/real.png"
+image horse colonthree = "characters/horse/colonthree.png"
+
 image midge = "characters/midge.png"
 
 # Unsorted NPCs
@@ -2410,7 +2415,7 @@ image harold = "characters/harold.png"
 image mr_krupp = "characters/mr_krupp.png"
 image mr_krupp grin = "characters/mr_krupp_grin.png"
 
-#DX Holiday Special Misc.
+# DX Holiday Special Misc.
 image smoke = SnowBlossom("smoke.png", count = 400, fast = False, xspeed = (0,0), yspeed = (0, -100), border = 32)
 image bigsmoke = SnowBlossom("bigsmoke.png", count = 200, fast = True, xspeed = (0,0), yspeed = (0, -50), border = 256)
 image snow1 = SnowBlossom("snow1.png", count = 200, fast = True, xspeed = (20000, 100))
@@ -2690,7 +2695,7 @@ image sunny_d = "images/gifts/sunny_d.png"
 image tea_and_crumpets = "images/gifts/tea_and_crumpets.png"
 image thigh_highs = "images/gifts/thigh_highs.png"
 
-# CSBIII: CE: Carrot Game
+# CSBDX: CE: Carrot Game
 image obama_says = "minigames/carrot/obama_says.png"
 image rating_ok = "minigames/carrot/ok.png"
 image rating_superb = "minigames/carrot/superb.png"
