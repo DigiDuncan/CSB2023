@@ -591,6 +591,14 @@
         "type": "extra",
         "ce": true
     },
+    "breakthrough":{
+        "name": "Breakthrough!!",
+        "locked": "Destroy diabetes!",
+        "unlocked": "Destroy diabetes!",
+        "img": "pointclick",
+        "type": "story",
+        "dx": true
+    },
     "broke":{
         "name": "You Broke It!",
         "locked": "Woah, dude, you broke it.",

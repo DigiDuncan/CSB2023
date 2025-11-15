@@ -1,24 +1,30 @@
+# TODO: replace image/description for achievement for completing this route
+# TODO: resize horse sprites appropriately
+
 label bt1d_wakeup:
     stop music fadeout 3.0
     music end
     play music lets_hear_my_baby volume 0.15 if_changed
     music lets_hear_my_baby
+
     scene cs_room_2
     show cs at center
     with dissolve
-    n "CS wakes up in his bedroom after a long slumber. Exhausted from the previous days' events, he groggily makes his way to the kitchen."
+    n "CS wakes up in his bedroom after a long slumber."
+    n "Exhausted from the previous days' events, he groggily makes his way towards the kitchen."
     show cs flipped with determination
-    hide cs with moveoutright
+    hide cs with moveoutleft
+
     scene cs_kitchen
     show cs_kitchen_fg
     show cs disappointed behind cs_kitchen_fg
     with dissolve
-    cs "I'm starving, I need to get something to eat."
-    n "CS opens his fridge, and is assailed by a nasty smell."
-    show cs concentrate with hpunch
-    cs "Augh!"
+    cs "I'm starving! I need to get something to eat."
+    n "CS opens his fridge and is assalted by a nasty smell."
+    show cs concentrate
+    cs "Augh!" with hpunch
     if fun_value(FUN_VALUE_COMMON):
-        cs "Good lord, what is happening in there?!"
+        cs "Good Lord, what is happening in there?!"
     n "CS grabs an item from the fridge, rubs his eyes, and looks at the date."
     show cs disappointed
     pause 0.5
@@ -167,6 +173,7 @@ label bt1d_wakeup:
     music end
     digi "Well..."
     play music basketball_music if_changed
+    music basketball_music
     scene basketball_court
     # cut to a cutaway. a machine is on the left, a basketball hoop on the right. the background
     # is like, a chalkboard or something.
@@ -228,7 +235,7 @@ label bt1d_wakeup:
     cs "You got here quick!"
     digi "Yeah man, it's a spaceship."
     cs "Fair. Why do you have that anyway?"
-    
+
     if "iris" in persistent.seen:
         digi "Long story. You remember Iris?"
         cs "Vaguely...?"

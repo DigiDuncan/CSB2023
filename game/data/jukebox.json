@@ -61,7 +61,7 @@
             "file": "lets_hear_my_baby.ogg",
             "title": "Let's hear my baby",
             "artist": "Walkman",
-            "tags": ["CSBI"],
+            "tags": ["CSBI", "CSBDX: BT1D"],
             "album_art": "tracker.png",
             "trivia": "The unofficial {i}CSBI{/i} theme song."
         },
@@ -69,7 +69,7 @@
             "file": "canyon.ogg",
             "title": "CANYON.MID",
             "artist": "George Stone",
-            "tags": ["CSBI"],
+            "tags": ["CSBI", "CSBDX: BT1D"],
             "album_art": "windows.png",
             "trivia": "The full title of this song is {i}Trip Through the Grand Canyon.{/i}"
         },
@@ -1189,7 +1189,7 @@
             "file": "apple_kid.ogg",
             "title": "Apple Kid",
             "artist": "Keiichi Suzuki",
-            "tags": ["CSBDX: After Story", "New In DX"],
+            "tags": ["CSBDX: After Story", "CSBDX: BT1D", "New In DX"],
             "album_art": "earthbound.png",
             "trivia": "Hello, I'm a Mac!"
         },
@@ -1800,6 +1800,14 @@
             "tags": ["New In DX", "CSBDX: Misc."],
             "album_art": "fresca.png",
             "trivia": "Get well soon."
+        },
+        "basketball_music" : {
+            "file": "basketball_music.ogg",
+            "title": "Basketball Music",
+            "artist": "Pakoo",
+            "tags": ["CSBDX: BT1D", "New In DX"],
+            "album_art": "csbdx.png",
+            "trivia": "Placeholder text. Hey, Pakoo, put something cool here and fix the album art!"
         }
     }
 }
