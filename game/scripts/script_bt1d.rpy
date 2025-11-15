@@ -100,6 +100,8 @@ label bt1d_wakeup:
     show cs at center
     with dissolve
     cs "Finally, now I can feast."
+    cs "I'm very hungry!"
+    cs "Give me the snacks!"
     n "CS spends the next few hours sitting on his couch and eating his spoils, all the while watching car crash videos on his TV."
     show cs concentrate
     n "Eventually, he passes out right where he's sitting!"
@@ -142,7 +144,7 @@ label bt1d_wakeup:
 
     # splitscreen
     show cs_room at left
-    show cs_worried at mid_left
+    show cs worried at mid_left
     with moveinleft
     show nugget_inside at mid_offscreen_right
     show digi at mid_right
@@ -153,7 +155,7 @@ label bt1d_wakeup:
     cs "I ate a ton of food last night because I got home from the adventure and--"
     digi "Oh yeah, did you ever get your pencil sharpener in the mail?"
     cs "No, I didn't, I'm-- "
-    show cs_scared at mid_left with vpunch
+    show cs scared at mid_left with vpunch
     extend "Digi, this is important!"
     n "Digi sets down the screwdriver they were poking their arm with."
     digi "Man, you can't get diabetes. At least, not Type 1."
@@ -161,11 +163,14 @@ label bt1d_wakeup:
     digi "Type 1 is genetic. You kinda have it lingering in you until it crops up."
     digi "For me, it cropped up when I was two."
     cs "Wait, OK, then what's the difference between Type 1 and Type 2?"
+    stop music fadeout 3.0
+    music end
     digi "Well..."
-
+    play music basketball_music if_changed
+    scene basketball_court
     # cut to a cutaway. a machine is on the left, a basketball hoop on the right. the background
     # is like, a chalkboard or something.
-
+    
     digi "Imagine your body has a basketball machine in it. You need basketballs to live."
 
     # the words NO DIABETES appear at the top of the screen.
@@ -211,3 +216,32 @@ label bt1d_wakeup:
     cs "We need to get to the bottom of this!"
     n "Digi looks at their holoband."
     digi "Well, I don't have anything to do today. I'll come over there and we can sort it out."
+    cs "Great. See you soon."
+
+    # The phone call ends, and CS' half of the split screen slides away.
+
+    digi "Well, I guess I have plans today now. Come on, Lad."
+    n "Lad gives a happy jingle." # sfx here of kricketot's cry
+
+    # cut to Nugget landing in front of CS' house
+    n "CS meets Digi in front of his house."
+    cs "You got here quick!"
+    digi "Yeah man, it's a spaceship."
+    cs "Fair. Why do you have that anyway?"
+    
+    if "iris" in persistent.seen:
+        digi "Long story. You remember Iris?"
+        cs "Vaguely...?"
+        digi "Her."
+    else:
+        digi "Long story. Do you know a purple woman?"
+        cs "I don't think so...?"
+        digi "Don't worry about it."
+
+    cs "OK then. Where do we start?"
+    digi "I'm thinking we go to the pharmacy. They have to know why insulin is this expensive."
+    cs "That does make sense."
+    digi "Hop in the Nugget!"
+    cs "Do I need like, a space suit?"
+    digi "No, dingus, we're not leaving atmosphere."
+    

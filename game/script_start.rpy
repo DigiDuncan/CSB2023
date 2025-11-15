@@ -2408,7 +2408,14 @@ image broom_closet = "bg/broom_closet.png"
 
 # DX Digi Characters
 image weird_al = "characters/weird_al.png"
-image cpt_underpants = "characters/cpt_underpants.png"
+image cpt_underpants = "characters/cpt_underpants.pn
+
+# DX B1TD Backgrounds
+image basketball_court = "bg/basketball_court.png"
+image aldi_inside = "bg/aldi_inside.png"
+image aldi_outside = "bg/aldi_outside.png"
+image cvs_inside = "bg/cvs_inside.png"
+image cvs_outside = "bg/cvs_outside.png"g"
 image david = "characters/david.png"
 image george = "characters/george.png"
 image harold = "characters/harold.png"
@@ -2444,7 +2451,9 @@ image snow_pile = "snow_pile.png"
 image amber_block = "amber_block.png"
 image amber_block dark = "dark:amber_block.png"
 image amtrak_dining_food = "food.png"
-image amtrak_dining_pancake = "pancake.png"
+image amtrak_dining_pancake = "pancake
+image basketball = "basketball.png"
+image basketball_machine = "basketball_machine.png".png"
 image anno_car = "anno_car.png"
 image anno_car dark = "dark:anno_car.png"
 image arc_laptop = "arc_laptop.png"
@@ -3332,6 +3341,7 @@ define audio.unobtrusive_fun = "unobtrusive_fun.ogg"
 define audio.interference = "<from 0 to 275>interference.ogg"
 
 # Other?
+define audio.basketball_music = "basketball_music.ogg"
 define audio.space_classroom = "space_classroom.ogg"
 define audio.billymusicu = "billymusicu.ogg"
 define audio.ocean_man = "credits.ogg"
