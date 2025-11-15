@@ -2408,14 +2408,14 @@ image broom_closet = "bg/broom_closet.png"
 
 # DX Digi Characters
 image weird_al = "characters/weird_al.png"
-image cpt_underpants = "characters/cpt_underpants.pn
+image cpt_underpants = "characters/cpt_underpants.png"
 
 # DX B1TD Backgrounds
 image basketball_court = "bg/basketball_court.png"
 image aldi_inside = "bg/aldi_inside.png"
 image aldi_outside = "bg/aldi_outside.png"
 image cvs_inside = "bg/cvs_inside.png"
-image cvs_outside = "bg/cvs_outside.png"g"
+image cvs_outside = "bg/cvs_outside.png"
 image david = "characters/david.png"
 image george = "characters/george.png"
 image harold = "characters/harold.png"
