@@ -89,5 +89,13 @@ label bt1d_cvs:
     digi "I know him."
     cs "{i}You know him?!"
     digi "Yeah. I've fought with him before."
+    digi "CS, let's go."
+    digi "Thank you... what's your name?"
+    leedle "(name)." # FIX
+    digi "Thanks, (name)."
+    n "Digi heads out back to the elevator, and CS quickly follows."
+
+    n "The elevator ride is quiet, but the energy is tense."
+    n "Even CS recognizes now isn't the time to speak."
 
     jump secret_dx
