@@ -1,8 +1,5 @@
 # TODO: replace image/description for achievement for completing this route
-# TODO: fill in bio info, the skeletons already exist
-# TODO: sprites/beeps for everyone
-# TODO: fix horse's beep
-# TODO: fix RPG stats for CEO/Secretary
+# TODO: resize horse sprites appropriately
 
 label bt1d_wakeup:
     stop music fadeout 3.0
@@ -11,7 +8,7 @@ label bt1d_wakeup:
     music lets_hear_my_baby
 
     scene cs_room_2
-    show cs disappointed at center
+    show cs at center
     with dissolve
     n "CS wakes up in his bedroom after a long slumber."
     n "Exhausted from the previous days' events, he groggily makes his way towards the kitchen."
@@ -22,9 +19,8 @@ label bt1d_wakeup:
     show cs_kitchen_fg
     show cs disappointed behind cs_kitchen_fg
     with dissolve
-    cs "I'm starving! I've gotta eat something..."
-    # TODO: SFX that funny foghorn that plays whenever something smells bad
-    n "A terrible stench assaults his nostrils."
+    cs "I'm starving! I need to get something to eat."
+    n "CS opens his fridge and is assalted by a nasty smell."
     show cs concentrate
     cs "Augh!" with hpunch
     if fun_value(FUN_VALUE_COMMON):
@@ -38,17 +34,15 @@ label bt1d_wakeup:
     pause 1.0
     # Show an expiry date here
     show cs angry
-    cs "July?! {nw}"
-    extend "{i}Disgusting!" with vpunch
+    cs "July?? Disgusting!"
     show cs disappointed
-    cs "Gross! I was gone for so long that all my food went bad!"
-    cs "Ugh, now I gotta go to the store before I can even have breakfast..."
+    cs "I don't know how I didn't think of this, but all my food went bad!"
+    cs "Ugh, I'm going to need to go to the store to get more before I can even get a bite to eat..."
     hide cs with moveoutright
     scene cs_door_outside
     show cs flipped at center
     with dissolve
     n "CS starts to walk out the door, but before he does, his phone buzzes."
-    # TODO: SFX phone vibrate
     show cs disappointed flipped
     phone "New game from Annorexorcist: ANNO 188: Poop Romana!"
     show cs angry flipped
@@ -72,7 +66,6 @@ label bt1d_wakeup:
     show cs
     cs "You know what, I'm going to ALDI. They always have great deals."
     n "CS speeds off to the nearest ALDI."
-    # TODO: SFX car drives away like we did in Ch 1
     scene black with dissolve
     stop music fadeout 3.0
     music end
@@ -80,19 +73,16 @@ label bt1d_wakeup:
 
 label bt1d_aldi:
     n "Once he arrives at the ALDI, he grabs a quarter from his center console, and heads to the cart return."
-    # TODO: add items: quarter, cart
     show aldi_outside
     show cs at mid_left
     with dissolve
-    cs "What a smart system! Those Europeans sure know what they're doing."
+    cs "What a smart system! The Europeans really know what they're doing."
     hide cs with moveoutright
     scene aldi_inside
     with dissolve
     show cs at mid_left with moveinleft
-    n "CS walks into the ALDI and is enamored by the selection and prices."
-    show horse at offscreenright behind cs
+    n "CS walks into the ALDI, and is enamored by the selection and prices."
     cs "Oh my gosh, there's so much I can get! I'm so hungry, I could eat a horse!"
-    show horse at center with { "master": MoveTransition(1.0) }
     n "A horse...? walks by CS."
     show cs worried
     horse "You could what?"
@@ -101,7 +91,6 @@ label bt1d_aldi:
     horse "Mm-hmm."
     play sound sfx_waterphone
     pause 2.5
-    show horse at offscreenleft with { "master": MoveTransition(1.0) }
     n "The horseperson walks away."
     cs "Anyway..."
 
@@ -114,7 +103,7 @@ label bt1d_aldi:
     n "Wow, that's pretty cheap for this much food!"
     cashier "That's what we do here at ALDI."
     cashier "Tell your friends; we don't have a marketing budget."
-
+    
     jump bt1d_backhome
 
 label bt1d_backhome:
@@ -122,16 +111,13 @@ label bt1d_backhome:
     scene cs_room
     show cs at center
     with dissolve
-    cs "Finally, now I can feast!"
-    if fun_value(FUN_VALUE_COMMON):
-        cs "I'm very hungry!"
-        cs "Give me the snacks!"
+    cs "Finally, now I can feast."
+    cs "I'm very hungry!"
+    cs "Give me the snacks!"
     n "CS spends the next few hours sitting on his couch and eating his spoils, all the while watching car crash videos on his TV."
-    # TODO: matrix math some crash video onto the screen
     show cs concentrate
     n "Eventually, he passes out right where he's sitting!"
     scene black with dissolve
-    # TODO: SFX snoring
 
     # he passes out, show the passage of time
     play music apple_kid if_changed
@@ -140,94 +126,61 @@ label bt1d_backhome:
     show cs disappointed
     with dissolve
     n "CS awakes surrounded by wrappers and plates, and some random video playing on the TV."
-    # TODO: matrix math some baby fruit video onto the screen
     cs "What the heck is this?"
     n "The TV displays some kind of baby sensory video."
-    cs "Something must have autoplayed..."
-    cs "What time is it?"
+    cs "Something must have autoplayed... what time is it?"
     n "CS checks his phone."
     cs "9AM?! I slept all night?"
     cs "Ugh, I feel awful..."
-    cs "How much did I eat yesterday?"
+    cs "How much did I eat last night?"
     n "CS stands up and looks around, taking inventory of the damage."
     cs "Oreos... Cheez-Its... Animal crackers... oh jeez..."
     n "CS thinks for a moment, then is taken aback with horror!"
     show cs worried with hpunch
     cs "Oh no! Wait, what if I have diabetes?!"
     n "CS rushes to this computer."
-    # TODO: change scene, put him at a computer. he doesn't have the craptop anymore at this point so we need a shot of his new PC
     n "CS begins researching diabetes."
     cs "How much would insulin cost? It's not like I have a ton of cash..."
 
-    camera:
-        parallel:
-            linear 2.0 zoom 1.1
-        parallel:
-            linear 2.0 xpos -0.05
-        parallel:
-            linear 2.0 ypos -0.05
-    pause 2.0
+    # pause beat, maybe zoom in?
 
-    show cs scared
-    camera:
-        reset
-    cs "{cshake}$300?!" with hpunch
+    cs "{cshake}$300?!"
     cs "This is insane! I need to call Digi. They have diabetes, maybe they can make this make sense to me."
-
-    # TODO: cs pulls out phone; SFX: DialingDuncan lol
-
-    scene black with dissolve
-
     show nugget_inside
-    show digi thinking at center
-    show cs worried at offscreenleft
-    with dissolve
-    # TODO: ambient spaceship sfx
-
-    n "Digi is tinkering with their arm when their phone rings."
-    # TODO: play Digi's actual ringtone here; digi also needs a phone item
-    show digi
-    digi "What the heck? No one ever calls me..."
+    show digi at center
+    # cut to Digi on the nugget
+    n "Digi is tinkering with their arm, when their phone rings."
+    # play Digi's actual ringtone here
+    digi "What the heck? No one calls me..."
     digi "CS? What could this be about?"
 
     # splitscreen
-    show cs_room at offscreenleft
-    show cs scared at offscreenleft
-    with determination
-
-    show cs_room at mid_offscreen_left behind cs
-    show nugget_inside at mid_offscreen_right behind cs
-    show cs scared at mid_left
+    show cs_room at left
+    show cs worried at mid_left
+    with moveinleft
+    show nugget_inside at mid_offscreen_right
     show digi at mid_right
     with move
 
-    show digi shock
-    cs "Digi! {nw}" with hpunch
-    extend "I think I gave myself diabetes!"
-    digi "What?! Huh--{nw}"
-    cs "I ate a ton of food last night after I got home from our adventure and--"
-    show digi
+    cs "Digi, I'm worried I got diabetes!"
+    digi "What, huh--"
+    cs "I ate a ton of food last night because I got home from the adventure and--"
     digi "Oh yeah, did you ever get your pencil sharpener in the mail?"
-    show cs surprised
-    cs "No, I didn't, actual-- "
-    show cs scared at mid_left
-    show digi shock
-    extend "Digi, this is important!" with vpunch
-    show digi disappointed
+    cs "No, I didn't, I'm-- "
+    show cs scared at mid_left with vpunch
+    extend "Digi, this is important!"
     n "Digi sets down the screwdriver they were poking their arm with."
-    digi "Listen, man. You can't just {i}get{/i} diabetes."
-    digi "At least, not Type 1."
-    show cs disappointed
-    cs "What do you mean? How did {i}you{/i} get it, then?"
-    digi "Type 1 is genetic. You kinda have it just lingering inside you until it decides to rear its ugly head."
-    digi "For me, it cropped up when I was 2."
-    cs "Wait, okay, then what's the difference between Type 1 and Type 2?"
+    digi "Man, you can't get diabetes. At least, not Type 1."
+    cs "What do you mean? How did you get it?"
+    digi "Type 1 is genetic. You kinda have it lingering in you until it crops up."
+    digi "For me, it cropped up when I was two."
+    cs "Wait, OK, then what's the difference between Type 1 and Type 2?"
     stop music fadeout 3.0
     music end
-    digi "Well..."
     jump bt1d_basketball
 
 label bt1d_basketball:
+    digi "Well..."
     play music basketball_music if_changed
     music basketball_music
     scene basketball_court
@@ -332,7 +285,7 @@ label bt1d_cvs:
     cs "{size=-10}I feel like you should..."
     digi "Anywho, to CVS!"
 
-    # This scene should be beefed up a bit, I think.
+    # TODO: This scene should be beefed up a bit, I think.
     n "The Nugget lands in the CVS parking lot, and the two clammer out into the daytime."
     cs "To the pharmacy department!"
 
@@ -413,7 +366,7 @@ label bt1d_insulin:
     leedle "Yeah? How do I know you aren't recording this with your cyborg gobbledygook, and you're going to blackmail me!"
     cs "{size=-20}{cshake}Guilty concious..."
     digi "Listen. I'll make you a deal."
-    digi "If you tell us who's up to this, we'll (insert bribe here.)" # FIX
+    digi "If you tell us who's up to this, we'll (insert bribe here.)" # TODO
     leedle "Fine."
     leedle "Fine!"
     leedle "I don't know his name."
@@ -425,11 +378,117 @@ label bt1d_insulin:
     digi "Yeah. I've fought with him before."
     digi "CS, let's go."
     digi "Thank you... what's your name?"
-    leedle "(name)." # FIX
+    leedle "(name)." # TODO
     digi "Thanks, (name)."
     n "Digi heads out back to the elevator, and CS quickly follows."
 
     n "The elevator ride is quiet, but the energy is tense."
     n "Even CS recognizes now isn't the time to speak."
+
+    # getting into the nugget
+    # interior nugget
+    cs "So, can we talk about that?"
+    digi "Yeah. I'm just annoyed."
+    digi "I keep fighting this guy. Every year, he seems to crop back up."
+    cs "Who is he?"
+    digi "I don't know, either, man. He calls himself the CEO of Diabetes. He's a big, tough business man."
+    digi "He's a weird one. One day, he'll be gunning for my destruction, the next he'll be calling me to see how I'm doing."
+    cs "What does he want with you?"
+    digi "Who knows, man. I'm diabetic. That's all I know."
+    cs "Don't you raise money for charity, too?"
+    digi "Yeah, that's probably part of it."
+    cs "So, what does he do?"
+    digi "Who knows, man? He makes... diabetes... worse for people? His job has always been very confusing."
+    digi "But it seems his next scheme is to pay off insulin companies to not drop the price."
+    cs "What now?"
+    digi "If I know the CEO, I know where to find him."
+
+    # smash cut, Digi kicks in the door to the CEO's office
+    digi "CEO of Diabetes, I have come to--{w=0.5}{nw}"
+    ceo "Oh my God, will you stop kicking down my door?!"
+    ceo "Why do you keep doing this?! Just open it, it's not even locked!"
+    digi "It's dramatic, I--{w=0.5}{nw}"
+    ceo "I don't care! I'm going to start invoicing you for cleaning the door!"
+    digi "I-- I'm here to yell at you!"
+    n "CS walks in the office behind Digi."
+    cs "Me too!"
+    ceo "Who the heck are-- are you cs188?!"
+    cs "Yeah."
+    ceo "Why are you wearing a cat maid outfit?!"
+    cs "I'm not going into that right now."
+    ceo "OK, why are you here then?"
+    cs "I researched the price of insulin, and it's egregious!"
+    ceo "Heh heh heh, yeah. I did a good job with that, didn't I?"
+    cs "No! You're extorting diabetics for cash!"
+    ceo "Yeah. That's kinda what I do. And I'm damn good at it, too."
+    digi "Alright, I'm not doing this song and dance again."
+    digi "No bribes, no contracts."
+    digi "Let's brawl."
+    ceo "Heh! You think you can take me?"
+    ceo "Alright, bet."
+    ceo "You win, and I'll even call off the price hike."
+    ceo "But if you lose..."
+    n "A button rises like a piston on his desk."
+    ceo "I release {i}Type 4 Diabetes{/i} on to the masses!"
+    digi "You're on."
+    cs "Y--Yeah! You're on!"
+
+    # black knife starts playing idk
+
+    # rpg battle 1 - ceo
+
+    n "The CEO is panting on the floor."
+    ceo "Heh... heh... you've gotten good, you little rat."
+    ceo "But I'm not bested yet!"
+    n "The CEO pushes a different button on his desk, and intercoms somebody."
+    ceo "Secretary?"
+    secretary "Yes, Mr. CEO?"
+    ceo "I need you up here."
+    digi "You have a secretary?"
+    ceo "Do now."
+    n "The door opens, and the Secretary of Diabetes walks through the door."
+    n "The secretary glances at the situation around her."
+    secretary "Kick their asses, sir?"
+    ceo "Kick their asses."
+
+    # rpg battle 2 - secretary
+
+    # TODO: Beef up this dialouge?
+    ceo "Ready for Round 2?"
+
+    # rpg battle 3 - ceo + secretary
+
+    ceo "Fine. You did well."
+    secretary "These ones are good, sir."
+    ceo "I'll call off the price hike."
+    secretary "You're calling it off?"
+    ceo "That was the deal."
+    ceo "But I never said how long that will last..."
+    ceo "Heh."
+    ceo "Heh heh."
+    ceo "Heh heh heh heh heh!"
+    digi "Let's get out of here, CS."
+    cs "Yeah, this guy is nuts."
+    
+    # interior nugget
+    n "Back on the Nugget, the two sit in silence for a bit, Digi petting Lad for comfort."
+    n "After a while, the silence breaks."
+    digi "Well, we did it."
+    cs "Yeah, we did. But how long until he tries something again?"
+    digi "Pffft, not long. That's kinda his thing."
+    cs "Then what's the point? Does this fight ever end?"
+    digi "Yeah, one day. Not sure how long it'll take, but eventually."
+    digi "That's why I raise money for Breakthrough T1D all the time."
+    digi "Once we have a cure, there's not much more he can do."
+    cs "Right. Well, good luck on the good fight."
+    digi "Thanks, man."
+    cs "I didn't realize this is what you do all the time!"
+    digi "I do a lot of things people don't realize."
+
+    # fade to exterior CS' house - night
+    digi "Well, this is your stop. Have a nice night, CS!"
+    cs "Thanks, Digi, glad I could help!"
+
+    # TODO: this is barely an ending
 
     jump secret_dx
