@@ -23,7 +23,8 @@ label bt1d_wakeup:
     show cs disappointed behind cs_kitchen_fg
     with dissolve
     cs "I'm starving! I've gotta eat something..."
-    # TODO: SFX that funny foghorn that plays whenever something smells bad
+    # TODO: digi needs to get a pic of the fridge open
+    play sound sfx_foghorn
     n "A terrible stench assaults his nostrils."
     show cs concentrate
     cs "Augh!" with hpunch
@@ -150,7 +151,7 @@ label bt1d_backhome:
     cs "Ugh, I feel awful..."
     cs "How much did I eat yesterday?"
     n "CS stands up and looks around, taking inventory of the damage."
-    cs "Oreos... Cheez-Its... Animal crackers... oh jeez..."
+    cs "Oreos... Cheez-Its... Animal crackers... oh, jeez..."
     n "CS thinks for a moment, then is taken aback with horror!"
     show cs worried with hpunch
     cs "Oh no! Wait, what if I have diabetes?!"
@@ -185,10 +186,14 @@ label bt1d_backhome:
     # TODO: ambient spaceship sfx
 
     n "Digi is tinkering with their arm when their phone rings."
-    # TODO: play Digi's actual ringtone here; digi also needs a phone item
+    # TODO: digi also needs a phone item
     show digi
+    play sound sfx_ringtone_digi
+    $ persistent.heard.add("sfx_ringtone_digi")
     digi "What the heck? No one ever calls me..."
     digi "CS? What could this be about?"
+
+    play sound sfx_pickup_call
 
     # splitscreen
     show cs_room at offscreenleft
@@ -516,7 +521,7 @@ label bt1d_insulin:
     ceo "Heh heh heh heh heh!"
     digi "Let's get out of here, CS."
     cs "Yeah, this guy is nuts."
-    
+
     # interior nugget
     n "Back on the Nugget, the two sit in silence for a bit, Digi petting Lad for comfort."
     n "After a while, the silence breaks."

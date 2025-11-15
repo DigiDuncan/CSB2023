@@ -1777,6 +1777,14 @@
             "album_art": "ringtone_cs.png",
             "trivia": "Originally created for CS' Mixer livestream soundboard, but was also featured in {a=https://www.youtube.com/watch?v=mh6aM8uhrEI}{i}[[YTP] National Giraffeic Teaches You Slnimals.{/i}{/a}"
         },
+        "sfx_ringtone_digi" : {
+            "file": "sfx/sfx_ringtone_digi.ogg",
+            "title": "Third Sanctuary (Baker Edit)",
+            "artist": "Toby Fox",
+            "tags": ["CSBDX: BT1D", "CSBDX: Ringtones", "New In DX"],
+            "album_art": "ringtone_digi.png",
+            "trivia": "Since the original song sounded a lot like a ringtone, Digi asked Baker to put it in the Nokia soundfont."
+        },
         "sfx_ringtone_tate" : {
             "file": "sfx/sfx_ringtone_tate.ogg",
             "title": "Now Or Never (sleepingSYUN Arrange)",
