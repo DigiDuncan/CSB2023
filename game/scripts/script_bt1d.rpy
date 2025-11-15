@@ -1,4 +1,8 @@
 # TODO: replace image/description for achievement for completing this route
+# TODO: fill in bio info, the skeletons already exist
+# TODO: sprites/beeps for everyone
+# TODO: fix horse's beep
+# TODO: fix RPG stats for CEO/Secretary
 
 label bt1d_wakeup:
     stop music fadeout 3.0
@@ -46,7 +50,7 @@ label bt1d_wakeup:
     n "CS starts to walk out the door, but before he does, his phone buzzes."
     # TODO: SFX phone vibrate
     show cs disappointed flipped
-    "phone" "New game from Annorexorcist: ANNO 188: Poop Romana!" # TODO: a proper entry for this npc, the quotes are just to prevent crash
+    phone "New game from Annorexorcist: ANNO 188: Poop Romana!"
     show cs angry flipped
     cs "I don't care right now! I'm hungry and tired!"
     hide cs with moveoutleft

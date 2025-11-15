@@ -211,6 +211,14 @@ define harold = Character("Harold", callback = char_callback)
 define mr_krupp = Character("Mr. Krupp", callback = char_callback)
 define weird_al = Character("Weird Al", callback = char_callback)
 
+# DX BT1D Character Definitions
+# TODO: need beeps
+define phone = Character("Phone", callback = char_callback) # what if spamton?
+define cvs = Character("CVS Employee", callback = char_callback)
+define leedle = Character("Leedlelee Employee", callback = char_callback)
+define diabetes_ceo = Character("CEO of Diabetes", callback = char_callback)
+define diabetes_secretary = Character("Secretary of Diabetes", callback = char_callback)
+
 # DX CultCon Character Definitions
 define baumer = Character("Steve Baumer", callback = char_callback)
 define blind_eye = Character("Blind Eye Cultist", callback = char_callback)

@@ -529,6 +529,16 @@
         "quote": "I love hating everything!",
         "bio": "These folks hate a lot of things, and they probably hate {i}you,{/i} too! They may also just be fans of the YT channel \"I Hate Everything\", and joined because they thought it was about the channel."
     },
+    "cvs": {
+        "full_name": "CVS Employee",
+        "pronouns": "(he/him)",
+        "sprites": {
+            "Default": "images/duck.png"
+        },
+        "quote": "Fill this in later!",
+        "bio": "Fill this in later!",
+        "dx": true
+    },
     "db": {
         "full_name": "db05",
         "pronouns": "(he/him)",
@@ -543,6 +553,38 @@
             "DB05": {
                 "name": "Base Stats",
                 "need_label": "friend2_weapon_of_choice"
+            }
+        }
+    },
+    "diabetes_ceo": {
+        "full_name": "CEO of Diabetes",
+        "pronouns": "(he/him)",
+        "sprites": {
+            "Default": "images/duck.png"
+        },
+        "quote": "Fill this in later!",
+        "bio": "Fill this in later!",
+        "dx": true,
+        "rpg": {
+            "CEO": {
+                "name": "Base Stats",
+                "need_label": "bt1d_insulin"
+            }
+        }
+    },
+    "diabetes_secretary": {
+        "full_name": "Secretary of Diabetes",
+        "pronouns": "(she/her)",
+        "sprites": {
+            "Default": "images/characters/amtrak_stewardess.png"
+        },
+        "quote": "Fill this in later!",
+        "bio": "Fill this in later!",
+        "dx": true,
+        "rpg": {
+            "SECRETARY": {
+                "name": "Base Stats",
+                "need_label": "bt1d_insulin"
             }
         }
     },
@@ -726,6 +768,18 @@
         "bio": "The workers of HoH SiS aren't too happy with the new changes to the workplace. The CEO has recently wanted to make attacks on a man named \"cs188\". They didn't sign up for this! They just wanna improve foundations, for God's sake!",
         "zoom": 0.667
     },
+    "horse": {
+        "full_name": "xohorses",
+        "pronouns": "(he/they)",
+        "sprites": {
+            "Neutral": "images/characters/horse/neutral.png",
+            ":3": "images/characters/horse/colonthree.png",
+            "Real": "images/characters/horse/real.png"
+        },
+        "quote": "Fill this in later!",
+        "bio": "Fill this in later!",
+        "dx": true
+    },
     "howie": {
         "full_name": "Howie Mandell",
         "pronouns": "(he/him)",
@@ -869,6 +923,16 @@
         },
         "quote": "I'm the bad guy!",
         "bio": "After Chapter 3, Lancer made his way out the Dark World and into Las Vegas. Since he gave up on looking for the Fun Gang after about five minutes, he went around the strip trying to dig as many holes as possible."
+    },
+    "leedle": {
+        "full_name": "Leedlelee Employee",
+        "pronouns": "(he/him)",
+        "sprites": {
+            "Default": "images/duck.png"
+        },
+        "quote": "Fill this in later!",
+        "bio": "Fill this in later!",
+        "dx": true
     },
     "lego": {
         "full_name": "Lego NXT Minifigure",
