@@ -98,11 +98,15 @@ screen dx_select():
                         xalign 0.5
                     action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("dx_select"), Jump("beach_start")
 
-                imagebutton auto "menu/csbiiidx_%s.png":
+                ### BT1D ###
+                imagebutton auto "menu/csbiiidx_%s.png" hover_sound "audio/sfx/sfx_select.ogg":
+                    hovered tt.Action("BT1D")
                     at transform:
                         zoom 0.333
                         xalign 0.5
+                    action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("dx_select"), Jump("bt1d_wakeup")
 
+                ### PLANE ###
                 imagebutton auto "menu/csbiiidx_%s.png" hover_sound "audio/sfx/sfx_select.ogg":
                     hovered tt.Action("Plane")
                     at transform:
