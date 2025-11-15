@@ -1,5 +1,4 @@
 # TODO: replace image/description for achievement for completing this route
-# TODO: resize horse sprites appropriately
 
 label bt1d_wakeup:
     stop music fadeout 3.0
@@ -8,7 +7,7 @@ label bt1d_wakeup:
     music lets_hear_my_baby
 
     scene cs_room_2
-    show cs at center
+    show cs disappointed at center
     with dissolve
     n "CS wakes up in his bedroom after a long slumber."
     n "Exhausted from the previous days' events, he groggily makes his way towards the kitchen."
@@ -19,8 +18,9 @@ label bt1d_wakeup:
     show cs_kitchen_fg
     show cs disappointed behind cs_kitchen_fg
     with dissolve
-    cs "I'm starving! I need to get something to eat."
-    n "CS opens his fridge and is assalted by a nasty smell."
+    cs "I'm starving! I've gotta eat something..."
+    # TODO: SFX that funny foghorn that plays whenever something smells bad
+    n "A terrible stench assaults his nostrils."
     show cs concentrate
     cs "Augh!" with hpunch
     if fun_value(FUN_VALUE_COMMON):
@@ -34,17 +34,19 @@ label bt1d_wakeup:
     pause 1.0
     # Show an expiry date here
     show cs angry
-    cs "July?? Disgusting!"
+    cs "July?! {nw}"
+    extend "{i}Disgusting!" with vpunch
     show cs disappointed
-    cs "I don't know how I didn't think of this, but all my food went bad!"
-    cs "Ugh, I'm going to need to go to the store to get more before I can even get a bite to eat..."
+    cs "Gross! I was gone for so long that all my food went bad!"
+    cs "Ugh, now I gotta go to the store before I can even have breakfast..."
     hide cs with moveoutright
     scene cs_door_outside
     show cs flipped at center
     with dissolve
     n "CS starts to walk out the door, but before he does, his phone buzzes."
+    # TODO: SFX phone vibrate
     show cs disappointed flipped
-    phone "New game from Annorexorcist: ANNO 188: Poop Romana!"
+    "phone" "New game from Annorexorcist: ANNO 188: Poop Romana!" # TODO: a proper entry for this npc, the quotes are just to prevent crash
     show cs angry flipped
     cs "I don't care right now! I'm hungry and tired!"
     hide cs with moveoutleft
@@ -66,6 +68,7 @@ label bt1d_wakeup:
     show cs
     cs "You know what, I'm going to ALDI. They always have great deals."
     n "CS speeds off to the nearest ALDI."
+    # TODO: SFX car drives away like we did in Ch 1
     scene black with dissolve
     stop music fadeout 3.0
     music end
@@ -73,16 +76,19 @@ label bt1d_wakeup:
 
 label bt1d_aldi:
     n "Once he arrives at the ALDI, he grabs a quarter from his center console, and heads to the cart return."
+    # TODO: add items: quarter, cart
     show aldi_outside
     show cs at mid_left
     with dissolve
-    cs "What a smart system! The Europeans really know what they're doing."
+    cs "What a smart system! Those Europeans sure know what they're doing."
     hide cs with moveoutright
     scene aldi_inside
     with dissolve
     show cs at mid_left with moveinleft
-    n "CS walks into the ALDI, and is enamored by the selection and prices."
+    n "CS walks into the ALDI and is enamored by the selection and prices."
+    show horse at offscreenright behind cs
     cs "Oh my gosh, there's so much I can get! I'm so hungry, I could eat a horse!"
+    show horse at center with { "master": MoveTransition(1.0) }
     n "A horse...? walks by CS."
     show cs worried
     horse "You could what?"
@@ -91,6 +97,7 @@ label bt1d_aldi:
     horse "Mm-hmm."
     play sound sfx_waterphone
     pause 2.5
+    show horse at offscreenleft with { "master": MoveTransition(1.0) }
     n "The horseperson walks away."
     cs "Anyway..."
 
@@ -103,7 +110,7 @@ label bt1d_aldi:
     n "Wow, that's pretty cheap for this much food!"
     cashier "That's what we do here at ALDI."
     cashier "Tell your friends; we don't have a marketing budget."
-    
+
     jump bt1d_backhome
 
 label bt1d_backhome:
@@ -111,13 +118,16 @@ label bt1d_backhome:
     scene cs_room
     show cs at center
     with dissolve
-    cs "Finally, now I can feast."
-    cs "I'm very hungry!"
-    cs "Give me the snacks!"
+    cs "Finally, now I can feast!"
+    if fun_value(FUN_VALUE_COMMON):
+        cs "I'm very hungry!"
+        cs "Give me the snacks!"
     n "CS spends the next few hours sitting on his couch and eating his spoils, all the while watching car crash videos on his TV."
+    # TODO: matrix math some crash video onto the screen
     show cs concentrate
     n "Eventually, he passes out right where he's sitting!"
     scene black with dissolve
+    # TODO: SFX snoring
 
     # he passes out, show the passage of time
     play music apple_kid if_changed
@@ -126,61 +136,94 @@ label bt1d_backhome:
     show cs disappointed
     with dissolve
     n "CS awakes surrounded by wrappers and plates, and some random video playing on the TV."
+    # TODO: matrix math some baby fruit video onto the screen
     cs "What the heck is this?"
     n "The TV displays some kind of baby sensory video."
-    cs "Something must have autoplayed... what time is it?"
+    cs "Something must have autoplayed..."
+    cs "What time is it?"
     n "CS checks his phone."
     cs "9AM?! I slept all night?"
     cs "Ugh, I feel awful..."
-    cs "How much did I eat last night?"
+    cs "How much did I eat yesterday?"
     n "CS stands up and looks around, taking inventory of the damage."
     cs "Oreos... Cheez-Its... Animal crackers... oh jeez..."
     n "CS thinks for a moment, then is taken aback with horror!"
     show cs worried with hpunch
     cs "Oh no! Wait, what if I have diabetes?!"
     n "CS rushes to this computer."
+    # TODO: change scene, put him at a computer. he doesn't have the craptop anymore at this point so we need a shot of his new PC
     n "CS begins researching diabetes."
     cs "How much would insulin cost? It's not like I have a ton of cash..."
 
-    # pause beat, maybe zoom in?
+    camera:
+        parallel:
+            linear 2.0 zoom 1.1
+        parallel:
+            linear 2.0 xpos -0.05
+        parallel:
+            linear 2.0 ypos -0.05
+    pause 2.0
 
-    cs "{cshake}$300?!"
+    show cs scared
+    camera:
+        reset
+    cs "{cshake}$300?!" with hpunch
     cs "This is insane! I need to call Digi. They have diabetes, maybe they can make this make sense to me."
+
+    # TODO: cs pulls out phone; SFX: DialingDuncan lol
+
+    scene black with dissolve
+
     show nugget_inside
-    show digi at center
-    # cut to Digi on the nugget
-    n "Digi is tinkering with their arm, when their phone rings."
-    # play Digi's actual ringtone here
-    digi "What the heck? No one calls me..."
+    show digi thinking at center
+    show cs worried at offscreenleft
+    with dissolve
+    # TODO: ambient spaceship sfx
+
+    n "Digi is tinkering with their arm when their phone rings."
+    # TODO: play Digi's actual ringtone here; digi also needs a phone item
+    show digi
+    digi "What the heck? No one ever calls me..."
     digi "CS? What could this be about?"
 
     # splitscreen
-    show cs_room at left
-    show cs worried at mid_left
-    with moveinleft
-    show nugget_inside at mid_offscreen_right
+    show cs_room at offscreenleft
+    show cs scared at offscreenleft
+    with determination
+
+    show cs_room at mid_offscreen_left behind cs
+    show nugget_inside at mid_offscreen_right behind cs
+    show cs scared at mid_left
     show digi at mid_right
     with move
 
-    cs "Digi, I'm worried I got diabetes!"
-    digi "What, huh--"
-    cs "I ate a ton of food last night because I got home from the adventure and--"
+    show digi shock
+    cs "Digi! {nw}" with hpunch
+    extend "I think I gave myself diabetes!"
+    digi "What?! Huh--{nw}"
+    cs "I ate a ton of food last night after I got home from our adventure and--"
+    show digi
     digi "Oh yeah, did you ever get your pencil sharpener in the mail?"
-    cs "No, I didn't, I'm-- "
-    show cs scared at mid_left with vpunch
-    extend "Digi, this is important!"
+    show cs surprised
+    cs "No, I didn't, actual-- "
+    show cs scared at mid_left
+    show digi shock
+    extend "Digi, this is important!" with vpunch
+    show digi disappointed
     n "Digi sets down the screwdriver they were poking their arm with."
-    digi "Man, you can't get diabetes. At least, not Type 1."
-    cs "What do you mean? How did you get it?"
-    digi "Type 1 is genetic. You kinda have it lingering in you until it crops up."
-    digi "For me, it cropped up when I was two."
-    cs "Wait, OK, then what's the difference between Type 1 and Type 2?"
+    digi "Listen, man. You can't just {i}get{/i} diabetes."
+    digi "At least, not Type 1."
+    show cs disappointed
+    cs "What do you mean? How did {i}you{/i} get it, then?"
+    digi "Type 1 is genetic. You kinda have it just lingering inside you until it decides to rear its ugly head."
+    digi "For me, it cropped up when I was 2."
+    cs "Wait, okay, then what's the difference between Type 1 and Type 2?"
     stop music fadeout 3.0
     music end
+    digi "Well..."
     jump bt1d_basketball
 
 label bt1d_basketball:
-    digi "Well..."
     play music basketball_music if_changed
     music basketball_music
     scene basketball_court
