@@ -170,9 +170,9 @@ label bt1d_wakeup:
     scene basketball_court
     # cut to a cutaway. a machine is on the left, a basketball hoop on the right. the background
     # is like, a chalkboard or something.
-    
-    digi "Imagine your body has a basketball machine in it. You need basketballs to live."
 
+    digi "Imagine your body has a basketball machine in it. You need basketballs to live."
+    show basketball_machine at right with moveinright
     # the words NO DIABETES appear at the top of the screen.
     # round basketballs fire out of the machine, and into the hoop.
 
@@ -244,4 +244,24 @@ label bt1d_wakeup:
     digi "Hop in the Nugget!"
     cs "Do I need like, a space suit?"
     digi "No, dingus, we're not leaving atmosphere."
-    
+    cs "OK..."
+    n "CS hesitantly steps onto the ship."
+
+    # interior nugget
+    cs "So, where are we going?"
+    digi "I'm thinking CVS."
+    cs "CVS--"
+    cs "That's right down the road!" with hpunch
+    digi "Yeah?"
+    cs "Why do we need a whole spaceship for this?!"
+    digi "We don't? I needed it to get to your house, I was on Microtech."
+    cs "Where?"
+    digi "It's in Stanton."
+    cs "Wh-- why didn't we just use a car?!"
+    digi "I can't drive."
+    cs "But you can pilot a spaceship?!"
+    digi "It's a lot easier, in my opinion. And I don't need a license for a spaceship."
+    cs "{size=-10}I feel like you should..."
+    digi "Anywho, to CVS!"
+
+    jump bt1d_cvs
