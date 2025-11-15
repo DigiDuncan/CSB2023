@@ -399,6 +399,7 @@
             "In order of appearance (roughly)" : [
                 "cs188",
                 "DigiDuncan",
+                "xohorses",
                 "Arceus3251"
             ]
         },
@@ -428,7 +429,8 @@
         },
 
         "Character Sprites": {
-            "CS-ocola": ["Greta \"loveycloud\""]
+            "CS-ocola": ["Greta \"loveycloud\""],
+            "xohorses": ["Tate \"alleZSoyez\"]
         },
 
         "DigiDuncan Character Sprite": {
