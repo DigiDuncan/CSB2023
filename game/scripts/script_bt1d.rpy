@@ -147,7 +147,7 @@ label bt1d_wakeup:
     show nugget_inside at mid_offscreen_right
     show digi at mid_right
     with move
-    
+
     cs "Digi, I'm worried I got diabetes!"
     digi "What, huh--"
     cs "I ate a ton of food last night because I got home from the adventure and--"
@@ -170,7 +170,7 @@ label bt1d_wakeup:
 
     # the words NO DIABETES appear at the top of the screen.
     # round basketballs fire out of the machine, and into the hoop.
-    
+
     digi "In a normal body, your body happily makes nice, round basketballs. They go through the hoop just fine!"
 
     # the words TYPE 1 appear at the top of the screen.
@@ -198,7 +198,7 @@ label bt1d_wakeup:
     digi "Eh, didn't feel right to cure."
     digi "If the people in real life don't have a cure, why should I?"
     cs "Wait, what do you mean by \"real life\", aren't we currently in real--{nw}"
-    digi "Donate to {a="https://tilt.fyi/UEZfMk99zW"}Breakthrough T1D!"
+    digi "Donate to {a=https://tilt.fyi/UEZfMk99zW}Breakthrough T1D!"
     cs "Uh, I have done that."
     digi "Good. Anywho, you very likely don't have diabetes."
     cs "Well, that's good."
