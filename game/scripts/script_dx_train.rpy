@@ -843,7 +843,7 @@ label train_boarding:
     hide lupin
     pause 0.25
     $ renpy.music.set_volume(100)
-    tate "Oh,{w=0} my God! CS, are you alright?!"
+    tate "Oh my God! CS, are you alright?!"
     cs "Y-{w=0.1}Yeah..."
     show cs disappointed behind tate
     cs "More surprised than anything."

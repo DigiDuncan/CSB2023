@@ -3806,7 +3806,7 @@ label ce_cooking:
     obama "Second of all, I accidently cut myself while chopping these carrots."
     obama "What a fool I am."  # One of my favorite lines -- Digi
     show cs disappointed christmas
-    cs "Oh, my God! Are you okay?"
+    cs "Oh my God! Are you okay?"
     obama "Yes, I'm fine. However, I need someone to take over carrot-chopping duties."
     obama "Will you do this for me?"
     show cs christmas
@@ -4151,7 +4151,7 @@ label ce_mike:
     dxcom pizza1
     mike "I'm Chinese."
     show cs happy christmas
-    cs "Oh, my God! It's Mike!"
+    cs "Oh my God! It's Mike!"
     show cs happy christmas flipped
     cs "Everyone, quick, come look at Mike!"
     show cs happy christmas
@@ -4165,7 +4165,7 @@ label ce_mike:
     show k17 happy flipped
     k17 "Hey, it's Mike! How's it going? Long time no see!"
     show grace happy
-    grace "Oh, my God! I love you, Mike!"
+    grace "Oh my God! I love you, Mike!"
     tate "What's up, Mike?"
     obama "Mike, remember when I pardoned you?"
     billy "This guy can sell pizza even better than {i}I{/i} can!"
@@ -5909,7 +5909,7 @@ label ce_climax:
     anne "Hey!" with hpunch
     mean "What'd you say, you little {nw}" with vpunch
     extend "{i}fuck?" with hpunch
-    arceus "Oh, my God, this is hurting my {i}head..."
+    arceus "Oh my God, this is hurting my {i}head..."
     show cs pissed christmas
     cs "Damn it, everyone!" with vpunch
     cs "Shut the {i}fuck{/i} u--{nw}" with vpunch
@@ -6224,7 +6224,7 @@ label ce_lights_out:
     n "CS sticks his finger out into the mysterious substance."
     n "It responds with a freezing confirmation."
     show cs scared christmas
-    cs "Oh, my God."
+    cs "Oh my God."
     cs "How much... did it..."
     play sound sfx_house_door_slam
     scene black

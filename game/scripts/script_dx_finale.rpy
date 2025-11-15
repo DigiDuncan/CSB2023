@@ -11,7 +11,7 @@ label finale_fun_value_land:
     scene fun_cs_house with dissolve
     pause 3.0
     show cs disappointed at mid_left with moveinbottom
-    cs "Oh, my God..."
+    cs "Oh my God..."
     cs "This isn't home."
     cs "I think I'm gonna throw up."
 

@@ -350,7 +350,7 @@ label england_first:
     music stal
     arceus "Hey, CS? Is that you?"
     show cs
-    cs "Oh, my God! Why-- How are you here?"
+    cs "Oh my God! Why-- How are you here?"
     show arceus happy
     arceus "I live here with my girlfriend now! What are {i}you{/i} doing here?"
     show arceus
@@ -417,7 +417,7 @@ label england_second:
     music stal
     arceus "Hey CS? Is that you?"
     show cs
-    cs "Oh, my God! Why-- How are you here?"
+    cs "Oh my God! Why-- How are you here?"
     show arceus happy
     arceus "I live here with my girlfriend now! What are you doing here?"
     show arceus
@@ -592,7 +592,7 @@ label england_hell_zone:
     show arceus
     arceus "Yeah, yeah. Let's take you there, and we'll see how good you really are."
     show arceus flipped with determination
-    hide cs 
+    hide cs
     hide arceus
     with moveoutright
     scene black with dissolve
@@ -666,7 +666,7 @@ label england_hell_zone:
     show cs disappointed flipped at center with move
     n "Gordon grumbles under his breath as he stomps out of the kitchen into the backroom."
     stop music fadeout 3.0
-    music end    
+    music end
     n "CS goes to one of the stations and starts trying to figure out what to make."
     scene talking_head
     show cs disappointed
@@ -727,7 +727,7 @@ label england_bad_ramsay:
 
 label england_good_ramsay:
     stop music fadeout 3.0
-    music end 
+    music end
     scene hell_kitchen
     show cs flipped
     cs "Yeah, you know what? I'm gonna make some Genergy."
@@ -786,7 +786,7 @@ label england_good_ramsay:
     hide gordon with moveoutleft
     n "Gordon turns around walks into the backroom area again."
     stop music fadeout 3.0
-    music end 
+    music end
     show cs happy flipped
     cs "Holy shit, I did it!"
     cs "Arceus is gonna be so surprised when he hears the news!"
@@ -848,7 +848,7 @@ label england_good_ramsay:
     arceus "Well, you did quite a bit already. Is there anything else you want to do here?"
     $ achievement_manager.unlock("ramsay")
     jump england_menu
-    
+
 label england_top_zone:
     play music wool_gloves volume 0.4 if_changed
     music wool_gloves
@@ -943,10 +943,10 @@ label england_top_gear_menu:
             jump england_top_lose
         "Win the race":
             jump england_top_win
-    
+
 label england_top_lose:
     stop music fadeout 3.0
-    music end    
+    music end
     n "As the race finishes, the contestants get out of their cars."
     scene top_gear_track
     show james at right
@@ -965,7 +965,7 @@ label england_top_lose:
 
 label england_top_win:
     stop music fadeout 3.0
-    music end    
+    music end
     n "As the race finishes, the contestants get out of their cars."
     scene top_gear_track
     show james at right
@@ -1001,7 +1001,7 @@ label england_top_win:
     show top_gear_track behind car_insidearc_fg
     show arceus at right
     show kitty at left
-    with dissolve    
+    with dissolve
     play music wool_gloves volume 0.4 if_changed
     music wool_gloves
     kitty "Woo! You won the race!"
@@ -1321,7 +1321,7 @@ label japan:
     if fun_value(FUN_VALUE_COMMON):
         play music yuuka_town volume 0.4 if_changed
         music yuuka_town
-    else:        
+    else:
         play music automatic_love volume 0.4 if_changed
         music automatic_love
     if fun_value(FUN_VALUE_MUSIC):
@@ -1358,7 +1358,7 @@ label japan_two:
     if fun_value(FUN_VALUE_COMMON):
         play music yuuka_town volume 0.4 if_changed
         music yuuka_town
-    else:  
+    else:
         play music automatic_love volume 0.4 if_changed
         music automatic_love
     if fun_value(FUN_VALUE_MUSIC):
@@ -1379,7 +1379,7 @@ label japan_anime_adventure:
     if fun_value(FUN_VALUE_COMMON):
         play music yuuka_town volume 0.4 if_changed
         music yuuka_town
-    else:  
+    else:
         play music automatic_love volume 0.4 if_changed
         music automatic_love
     scene tokyo_street
@@ -1402,7 +1402,7 @@ label japan_anime_adventure:
         show cs flipped with determination
         hide cs with moveoutleft
         stop music fadeout 3.0
-        music end   
+        music end
         scene game_store_front
         show cashier at right
         with dissolve
@@ -1413,7 +1413,7 @@ label japan_anime_adventure:
         show cs flipped with determination
         hide cs with moveoutleft
         stop music fadeout 3.0
-        music end    
+        music end
         scene game_store_front
         show cashier at right
         with dissolve
@@ -1455,7 +1455,7 @@ label japan_anime_adventure:
     show cs scared
     cs "What? How?"
     hide cs
-    hide cashier 
+    hide cashier
     with moveoutright
     scene black with dissolve
     n "The cashier chases CS up the stairs, all the way to the top floor."
@@ -1484,10 +1484,10 @@ label japan_anime_adventure:
     cs "It all started several years ago..."
     scene black with dissolve
     centered "Two hours later..."
-    scene ceo_office_2 
+    scene ceo_office_2
     show cs disappointed at center
     show cashier at left
-    with dissolve    
+    with dissolve
     cs "So, yeah. That's why I wear this outfit."
     cs "You guys better not tell {i}anyone{/i} about this."
     cashier "That was amazing!"
@@ -1510,7 +1510,7 @@ label japan_anime_adventure:
     show cs happy flipped with determination
     hide cs with moveoutleft
     stop music fadeout 3.0
-    music end    
+    music end
     scene black with dissolve
     n "CS walks away proudly."
     $ achievement_manager.unlock("nekopara")
@@ -1520,7 +1520,7 @@ label japan_anime_adventure:
     if fun_value(FUN_VALUE_COMMON):
         play music yuuka_town volume 0.4 if_changed
         music yuuka_town
-    else:  
+    else:
         play music automatic_love volume 0.4 if_changed
         music automatic_love
     if england_check:
@@ -1534,7 +1534,7 @@ label japan_karaoke:
     if fun_value(FUN_VALUE_COMMON):
         play music yuuka_town volume 0.4 if_changed
         music yuuka_town
-    else:  
+    else:
         play music automatic_love volume 0.4 if_changed
         music automatic_love
     scene tokyo_street
@@ -1551,7 +1551,7 @@ label japan_karaoke:
     cs "Ah! Bar and Karaoke!"
     cs "Let's go see what they have!"
     stop music fadeout 3.0
-    music end    
+    music end
     scene black with dissolve
     n "CS enters the karaoke bar and makes his way over to the karaoke area."
     scene karaoke_bar_inside with dissolve
@@ -1585,7 +1585,7 @@ label japan_karaoke:
     if fun_value(FUN_VALUE_COMMON):
         play music yuuka_town volume 0.4 if_changed
         music yuuka_town
-    else:  
+    else:
         play music automatic_love volume 0.4 if_changed
         music automatic_love
     cs "Well, is there anything else I should do here?"
@@ -1595,7 +1595,7 @@ label japan_miku_pizza:
     if fun_value(FUN_VALUE_COMMON):
         play music yuuka_town volume 0.4 if_changed
         music yuuka_town
-    else:  
+    else:
         play music automatic_love volume 0.4 if_changed
         music automatic_love
     scene tokyo_street
@@ -1606,11 +1606,11 @@ label japan_miku_pizza:
     cs "But that was, like, ten years ago..."
     cs "People still love Miku, so I'm sure she'll uphold the deal!"
     stop music fadeout 3.0
-    music end    
+    music end
     scene black with dissolve
     n "CS starts making his way to the nearest Domino's."
 
-    scene dominos_counter 
+    scene dominos_counter
     show cashier at right
     with dissolve
     show cs at left with moveinleft
@@ -1718,7 +1718,7 @@ label japan_miku_pizza:
     if fun_value(FUN_VALUE_COMMON):
         play music yuuka_town volume 0.4 if_changed
         music yuuka_town
-    else:  
+    else:
         play music automatic_love volume 0.4 if_changed
         music automatic_love
     miku "... so I said, \"You think {i}that{/i} was fast? Wait until I sing {i}INTENSE VOICE!\""
@@ -1740,7 +1740,7 @@ label japan_leave:
     if fun_value(FUN_VALUE_COMMON):
         play music yuuka_town volume 0.4 if_changed
         music yuuka_town
-    else:  
+    else:
         play music automatic_love volume 0.4 if_changed
         music automatic_love
     scene tokyo_street
@@ -1875,7 +1875,7 @@ label sweden:
     cs "Now that I'm here, I should go explore."
     scene black with dissolve
     n "CS exits the airport and finds himself in the middle of the city."
-    scene stockholm 
+    scene stockholm
     with dissolve
     show cs at center with moveinleft
     play music creative_exercise loop volume 0.3 if_changed
@@ -1887,8 +1887,8 @@ label sweden:
         cs "I guess I should try to find something to do..."
     cs "I don't have much money left, but maybe I can take the bus to somewhere cool."
     hide cs with moveoutright
-    scene bus_zone 
-    show swede at left    
+    scene bus_zone
+    show swede at left
     with dissolve
     show cs flipped at right with moveinright
     cs "That guy looks like he'd be able to help."
@@ -1918,7 +1918,7 @@ label sweden_second:
     cs "Now that I'm here, I should go explore."
     scene black with dissolve
     n "CS exits the airport and finds himself in the middle of the city."
-    scene stockholm 
+    scene stockholm
     with dissolve
     show cs at center with moveinleft
     play music creative_exercise loop volume 0.3 if_changed
@@ -1930,8 +1930,8 @@ label sweden_second:
         cs "I guess I should try to find something to do..."
     cs "I should be able to find a bus to somewhere cool. I have some money this time!"
     hide cs with moveoutright
-    scene bus_zone 
-    show swede at left    
+    scene bus_zone
+    show swede at left
     with dissolve
     show cs flipped at right with moveinright
     cs "That guy looks like he'd be able to help."
@@ -1948,7 +1948,7 @@ label sweden_second:
     pause 2.0
     scene bus_map with dissolve
     n "CS looks over the map, trying to figure out which bus to take."
-    jump sweden_menu 
+    jump sweden_menu
 
 label sweden_aurora_borealis:
     stop music fadeout 3.0
@@ -1992,7 +1992,7 @@ label sweden_aurora_borealis:
     moomin "I don't mean to alarm you. I just wanted to say hi."
     show cs flipped
     moomin "Who are you?"
-    if fun_value(FUN_VALUE_EPIC): 
+    if fun_value(FUN_VALUE_EPIC):
         cs "My name is Walter Hartwell White. I live at 308 Negra Arroyo Lane, Albuquerque, New Mexico, 87104."
         moomin "I don't believe you."
         cs "Oh, okay. You're right, I'm actually CS. What's your name?"
@@ -2048,7 +2048,7 @@ label sweden_aurora_borealis:
         moomin "Hello, Snufkin!"
     snufkin "Hello, Moomin. I see you've brought a new friend."
     moomin "Yes, this is CS. He's looking for something, and I thought you could help."
-    cs "I'd like to see the Aurora Borealis." 
+    cs "I'd like to see the Aurora Borealis."
     cs "I was hoping to see it tonight, but Moomin said he's never heard of it. Maybe it doesn't happen around here."
     snufkin "Why, sure it can! It can happen anywhere."
     show cs disappointed
@@ -2072,10 +2072,10 @@ label sweden_aurora_borealis:
     hide moomin
     hide snufkin
     with moveoutright
-    scene moomin_zone5 
+    scene moomin_zone5
     show alicia at right
     with dissolve
-    show cs at left 
+    show cs at left
     show moomin flipped at mid_left
     show snufkin flipped at mid_mid_left
     with moveinleft
@@ -2107,7 +2107,7 @@ label sweden_aurora_borealis:
     cs "One of these should do!"
     cs "This was surprisingly easy. Now I just need to go find that witch."
     n "CS heads back to the cabin."
-    scene moomin_zone4 
+    scene moomin_zone4
     show witch at center
     with dissolve
     show cs at left
@@ -2185,7 +2185,7 @@ label sweden_ikea:
     cs "Alright, thanks!"
     hide cs with moveoutright
     n "CS sprints excitedly to the food court."
-    scene food_court 
+    scene food_court
     show ikea_worker at right
     with dissolve
     show cs at left with moveinleft
@@ -2249,7 +2249,7 @@ label sweden_ikea:
     hide cs with moveoutleft
     stop music fadeout 3.0
     music end
-    scene plushie_zone 
+    scene plushie_zone
     show pomni at right
     with dissolve
     play music xddcc volume 0.8 if_changed
@@ -2288,7 +2288,7 @@ label sweden_ikea:
     scene home_decor with dissolve
     show cs disappointed at left with moveinleft
     show cs worried
-    cs "Oh, my gosh! That clown was right! I can't get out of here!"
+    cs "Oh my gosh! That clown was right! I can't get out of here!"
     show cs disappointed
     cs "Well, I may as well eat about it."
     hide cs with moveoutright
@@ -2317,7 +2317,7 @@ label sweden_ikea:
     with dissolve
     pause 1.0
     show cs disappointed
-    cs "Woah, where am I?" 
+    cs "Woah, where am I?"
     show cs disappointed flipped
     pause 1.0
     show cs disappointed
@@ -2370,7 +2370,7 @@ label sweden_joel:
     joel "Wanna come to my house?"
     cs "Sounds like a plan. It's freezing out and I have nowhere else to go."
     joel "You really didn't think this plan through at all, huh."
-    cs "Didn't think I needed to." 
+    cs "Didn't think I needed to."
     cs "It's working out really well, so I still don't, really."
     joel "We'll see how long that works out for you."
     scene black with dissolve

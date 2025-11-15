@@ -24,7 +24,7 @@ label fired_new_plan:
     show cs scared
     cs "Ah! Arceus?!"
     arceus "CS, we've gotta get outta here, fast."
-    show cs worried 
+    show cs worried
     cs "Okay, what? What's going on?"
     arceus "Cops. They're still after us."
     show cs angry
@@ -90,7 +90,7 @@ label fired_new_plan:
     anno "Wait, yeah, I can totally do that. I have the models ready for that and everything."
     n "Anno starts typing away at his laptop, and within a few minutes, a voice plays out of the speaker."
     ed_ai "I think CS is a pretty good guy. You shouldn't arrest him."
-    cs "Oh, my God, that's amazing! What about you two?"
+    cs "Oh my God, that's amazing! What about you two?"
     anno "Gotcha covered."
     if fun_value(FUN_VALUE_RARE):
         play sound sfx_obama volume 0.5
@@ -492,7 +492,7 @@ label fired_ep_time:
     cs "I guess."
     arceus "We should head back upstairs with Anno. Maybe there is something we can do to help!"
     cs "Yeah, let's go see!"
-    jump fired_back_to_room 
+    jump fired_back_to_room
 
 label fired_back_to_room:
     stop music fadeout 3.0
@@ -649,14 +649,14 @@ label fired_mcd:
     n "On their way out of the store, CS turns to Arceus."
     cs "You know, I think {i}[song_name_4]{/i} might be our best one yet."
     stop music fadeout 3.0
-    music end    
+    music end
     scene black with dissolve
     jump fired_hotel_lobby_2
 
 label fired_hotel_lobby_2:
     stop music fadeout 3.0
 
-    scene hotel_lobby    
+    scene hotel_lobby
     show anno at left
     show arceus flipped
     show cs at mid_mid_left
@@ -687,7 +687,7 @@ label fired_hotel_lobby_2:
     cs "Uh, sure? I guess?"
     n "The crowd cheers."
     stop music fadeout 3.0
-    music end    
+    music end
     cs "Alright, well, here's our song..."
     n "CS turns to the others to cue them."
     cs "{i}[song_name_2]!{/i}"
@@ -748,7 +748,7 @@ label fired_song_5:
     anno "I guess I'll get this mastered and release it tonight!"
     cs "[band_name] forever!"
     stop music fadeout 3.0
-    music end 
+    music end
     arceus "You know, I'm starting to really believe in this whole thing."
     $ achievement_manager.unlock("indie_artist")
     jump fired_fan_interaction
@@ -784,7 +784,7 @@ label fired_fan_interaction:
     mean "Bye!"
     hide mean with moveoutright
     n "CS closes the door."
-    show cs flipped 
+    show cs flipped
     cs "Anno?"
     n "Anno wakes up, but just barely."
     anno "Huh?"
@@ -797,7 +797,7 @@ label fired_fan_interaction:
     scene hotel_room
     show anno at left
     show arceus at right
-    show cs 
+    show cs
     with dissolve
 
     n "The gang regroups to discuss."
@@ -811,7 +811,7 @@ label fired_fan_interaction:
     anno "Sorry."
     cs "How much money is that?"
     anno "About $15,000."
-    cs "Oh, my God!"
+    cs "Oh my God!"
     arceus "Well, we're going to need to file taxes on it."
     anno "Do we?"
     show arceus angry
@@ -830,7 +830,7 @@ label fired_fan_interaction:
     cs "Woah, really?"
     howie "I'm emailing to inquire about whether you'd be interested in touring the country with your band. Your latest EP, {i}[ep_name],{/i} has been making big waves on streaming services."
     howie "I think live performances might be just what you need to take the next step."
-    anno "Oh, my God!"
+    anno "Oh my God!"
     howie "If you're willing to negotiate, I think we could strike a very mutually beneficial deal."
     show arceus happy
     arceus "That sounds amazing!"
@@ -840,7 +840,7 @@ label fired_fan_interaction:
     anno "We can't pass this up. I'll email him back."
     cs "[band_name] is going on tour!"
     stop music fadeout 3.0
-    music end    
+    music end
     jump fired_howie
 
 label fired_howie:
@@ -911,7 +911,7 @@ label fired_limo_time:
     howie "Smart man, smart man. Here it is."
     n "Howie hands Anno the contract."
     stop music fadeout 3.0
-    music end    
+    music end
 
     scene black with dissolve
     n "As Anno reads over the contract, CS, Arceus, and Howie talk more about the deal."
@@ -921,7 +921,7 @@ label fired_limo_time:
             jump fired_signed_the_contract
         "No"  (type = "bad"):
             jump fired_no_contract
-            
+
 label fired_no_contract:
     $ ending_manager.mark("threw_away_fame")
     bad_end "Well,\nthat was kinda dumb!" "fired_limo_time"
@@ -931,7 +931,7 @@ label fired_signed_the_contract:
     scene black
     n "After some time, Anno signs the contract, and they all return to the hotel."
 
-    scene hotel_lobby    
+    scene hotel_lobby
     show anno at left
     show arceus flipped
     show cs at mid_mid_left
@@ -990,7 +990,7 @@ label fired_signed_the_contract:
     csgod "You can call me...{w=1.5} !!!"
     hide csgod with dissolve
     stop music fadeout 3.0
-    music end    
+    music end
     show janitor at right with moveinright
     janitor "You alright, man? Who are you talking to?"
     cs "N-no one. Just heading to bed."
@@ -1151,7 +1151,7 @@ label fired_first_tour_day:
 
 label fired_second_tour_day:
     n "The group rests while on their way to their next venue."
-    
+
     scene tour_bus_inside
     show anno at left
     show arceus at right
@@ -1287,7 +1287,7 @@ label fired_second_tour_day:
     nova "Of course! Well, you guys go clean up out there."
     show arceus happy
     arceus "Will do!"
-    
+
     hide nova with moveoutright
     cs "Well, let's go out there and show them what we're made of!"
 
@@ -1363,7 +1363,7 @@ label fired_third_tour_day:
     n "Mean tackle-hugs CS."
     if fun_value(FUN_VALUE_UNOBTRUSIVE):
         cs "Ow."
-    
+
     show mean at right with move
     mean "Thank you so much! I know you guys will do amazing."
     hide mean with moveoutright

@@ -223,7 +223,7 @@ label car_dialogue:
     stop music2
     pause 1.0
     iris "Arceus?"
-    digi "Oh, my {i}God."
+    digi "Oh my {i}God."
     arceus "How did you-- who is this?"
     iris "We need to talk later."
     pause 1.0
