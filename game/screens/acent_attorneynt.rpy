@@ -111,7 +111,7 @@ screen acent_attorneynt(current_evidence):
                             xalign 0.5
                             yalign 1.0
 
-                            hovered [ Play("sound", "audio/sfx/sfx_select.ogg"), SetScreenVariable("current_evidence", i), SetVariable("current_evidence", i), Notify(i) ]
+                            hovered [ Play("sound", "audio/sfx/sfx_select.ogg"), Notify(i) ]
                             action [ Play("sound", "audio/sfx/sfx_valid.ogg"), SetScreenVariable("current_evidence", i), SetVariable("current_evidence", i), Notify(current_evidence) ]
 
                         image items_list[i][1]:

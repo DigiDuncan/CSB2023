@@ -330,6 +330,9 @@ label awawa_tate_test:
                             "Train Route Only (Incomplete)":
                                 call screen credits_roll(route="CSBDX: Train", scroll_start = 12000, duration=60) with dissolve
                                 stop music
+                            "BT1D Only (Incomplete)":
+                                call screen credits_roll(route="CSBDX: BT1D", scroll_start = 10000, duration=60) with dissolve
+                                stop music
                             "Never mind.":
                                 jump .awawa_menu
 
