@@ -1814,8 +1814,8 @@
             "title": "Basketball Music",
             "artist": "Pakoo",
             "tags": ["CSBDX: BT1D", "New In DX"],
-            "album_art": "csbdx.png",
-            "trivia": "Placeholder text. Hey, Pakoo, put something cool here and fix the album art!"
+            "album_art": "pvz.png",
+            "trivia": "This song is actually {i}Brainiac Maniac{/i}, but with half the stems."
         },
         "drive" : {
             "file": "drive.ogg",
