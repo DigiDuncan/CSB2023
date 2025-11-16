@@ -191,11 +191,25 @@ label bt1d_backhome:
     n "The TV displays some kind of baby sensory video."
     cs "Something must have autoplayed..."
     cs "What time is it?"
+
+    show cs_phone flipped with { "master": MoveTransition(0.25)}:
+        xpos 0.55
+        ypos 0.65
+        alpha 0.0
+        parallel:
+            linear 0.25 alpha 1.0
+        parallel:
+            linear 0.25 ypos 0.45
+
     n "CS checks his phone."
-    cs "9AM?! I slept all night?"
+    show cs scared
+    cs "9AM?! I slept all night?" with vpunch
+
+    show cs disappointed
     cs "Ugh, I feel awful..."
     cs "How much did I eat yesterday?"
     n "CS stands up and looks around, taking inventory of the damage."
+    # TODO: assets: piles of food
     cs "Oreos... Cheez-Its... Animal crackers... oh, jeez..."
     n "CS thinks for a moment, then is taken aback with horror!"
     show cs worried with hpunch
@@ -231,24 +245,66 @@ label bt1d_backhome:
     # TODO: ambient spaceship sfx
 
     n "Digi is tinkering with their arm when their phone rings."
-    # TODO: digi also needs a phone item
     show digi
-    play sound sfx_ringtone_digi
+    play sound sfx_ringtone_digi loop
     $ persistent.heard.add("sfx_ringtone_digi")
     digi "What the heck? No one ever calls me..."
+
+    # :D
+    #- tate
+    $ collect("digi_phone")
+
+    if fun_value(FUN_VALUE_RARE):
+        $ digi_smol = True
+    else:
+        $ digi_smol = False
+
+    if digi_smol == True:
+        show digi flipped
+        show digi_phone with MoveTransition(0.25):
+            xpos 0.55
+            ypos 0.85
+            alpha 0.0
+            parallel:
+                linear 0.5 alpha 1.0
+            parallel:
+                linear 0.5 ypos 0.45
+    else:
+        show digi_phone flipped with MoveTransition(0.25):
+            zoom 0.3
+            xpos 0.35
+            ypos 0.65
+            alpha 0.0
+            rotate -15
+            parallel:
+                linear 0.25 alpha 1.0
+            parallel:
+                linear 0.25 ypos 0.55
+    pause 1.0
     digi "CS? What could this be about?"
 
     play sound sfx_pickup_call
 
     # splitscreen
     show cs_room at offscreenleft
-    show cs scared at offscreenleft
+    show cs scared phone at offscreenleft
     with determination
 
     show cs_room at mid_offscreen_left behind cs
     show nugget_inside at mid_offscreen_right behind cs
-    show cs scared at mid_left
+    show cs scared phone at mid_left
     show digi at mid_right
+    if digi_smol == True:
+        show digi_phone:
+            xpos 0.625
+            ypos 0.45
+            linear 0.25 rotate 10
+    else:
+        show digi_phone:
+            zoom 0.3
+            xpos 0.725
+            ypos 0.55
+            linear 0.25 rotate 15
     with move
 
     show digi shock
@@ -257,17 +313,17 @@ label bt1d_backhome:
     digi "What?! Huh--{nw}"
     cs "I ate a ton of food last night after I got home from our adventure and--"
     show digi
-    digi "Oh yeah, did you ever get your pencil sharpener in the mail?"
-    show cs surprised
+    digi "Oh, yeah! Did you ever get your pencil sharpener in the mail?"
+    show cs surprised phone
     cs "No, I didn't, actual-- "
-    show cs scared at mid_left
+    show cs scared phone at mid_left
     show digi shock
-    extend "Digi, this is important!" with vpunch
+    extend "Digi, this is {i}important!" with vpunch
     show digi disappointed
     n "Digi sets down the screwdriver they were poking their arm with."
     digi "Listen, man. You can't just {i}get{/i} diabetes."
     digi "At least, not Type 1."
-    show cs disappointed
+    show cs disappointed phone
     cs "What do you mean? How did {i}you{/i} get it, then?"
     digi "Type 1 is genetic. You kinda have it just lingering inside you until it decides to rear its ugly head."
     digi "For me, it cropped up when I was 2."
@@ -280,7 +336,7 @@ label bt1d_backhome:
 label bt1d_basketball:
     play music basketball_music if_changed
     music basketball_music
-    scene basketball_court
+    scene basketball_court with dissolve
     # cut to a cutaway. a machine is on the left, a basketball hoop on the right. the background
     # is like, a chalkboard or something.
 
@@ -314,34 +370,92 @@ label bt1d_basketball:
     jump bt1d_afterbball
 
 label bt1d_afterbball:
-    cs "OK, but you're a cyborg... why do you still have diabetes at all?"
+    # set up scene again
+    show cs_room at mid_offscreen_left behind cs
+    show nugget_inside at mid_offscreen_right behind cs_room
+    show cs scared phone at mid_left
+    show digi at mid_right
+    if digi_smol == True:
+        show digi_phone:
+            xpos 0.625
+            ypos 0.45
+            rotate 10
+    else:
+        show digi_phone:
+            zoom 0.3
+            xpos 0.725
+            ypos 0.55
+            rotate 15
+
+    show cs disappointed phone
+    cs "Okay, but you're a cyborg... why do you still have diabetes at all?"
+    show digi sad
     digi "Eh, didn't feel right to cure."
     digi "If the people in real life don't have a cure, why should I?"
     cs "Wait, what do you mean by \"real life\", aren't we currently in real--{nw}"
-    digi "Donate to {a=https://tilt.fyi/UEZfMk99zW}Breakthrough T1D!"
+    show digi goober
+    digi "Donate to {a=https://tilt.fyi/UEZfMk99zW}Breakthrough T1D{/a}!" with vpunch
     cs "Uh, I have done that."
-    digi "Good. Anywho, you very likely don't have diabetes."
-    cs "Well, that's good."
+    show digi happy
+    digi "Good. {nw}"
+    show digi
+    extend "Anywho, you very likely don't have diabetes after just one night of overeating."
+    show cs worried phone
+    cs "But then why do I feel so {i}bad?"
+    show digi sad
     digi "You probably just have a tummyache, man."
-    cs "Fair. Well, why is insulin so expensive?"
+    show cs disappointed phone
+    cs "Fair..."
+    cs "Also, maybe you'd know, why is insulin so expensive?"
     digi "Now {i}that{/i} is because of... well... I don't know!"
     digi "All I know is it only costs a few dollars to produce, but they mark it up a {i}ton."
+    show cs scared phone
     cs "That's outrageous! Imagine if I {i}did{/i} have diabetes! I'd be bankrupt!"
     digi "That's a lot of people's reality."
-    cs "We need to get to the bottom of this!"
+    show cs angry phone
+    cs "We've gotta get to the bottom of this!"
     n "Digi looks at their holoband."
     digi "Well, I don't have anything to do today. I'll come over there and we can sort it out."
-    cs "Great. See you soon."
+    show cs phone
+    cs "Great! See you soon!"
 
     # The phone call ends, and CS' half of the split screen slides away.
+    play sound sfx_end_call
+    show cs phone at offscreenleft
+    show cs_room at offscreenleft
+    show nugget_inside at center
 
-    digi "Well, I guess I have plans today now. Come on, Lad."
-    n "Lad gives a happy jingle." # sfx here of kricketot's cry
+    if digi_smol == True:
+        show digi flipped at center
+        show digi_phone:
+            xpos 0.425
+            ypos 0.45
+            rotate 10
+    else:
+        show digi at center
+        show digi_phone:
+            zoom 0.3
+            xpos 0.475
+            ypos 0.55
+            rotate 15
+    with move
+    pause 0.5
+    hide digi_phone with dissolve
+    pause 0.5
+    show digi
 
-    # cut to Nugget landing in front of CS' house
+    digi "Well, I guess I have plans today after all. C'mon, Lad!"
+    $ persistent.seen.add("lad")
+    n "Lad lets out an excited jingle." # TODO: sfx here of kricketot's cry
+
+    show digi flipped at offscreenright with move
+    scene black with Dissolve(1.0)
+    play sound sfx_nugget
+
+    # TODO: cut to Nugget landing in front of CS' house
     n "CS meets Digi in front of his house."
     cs "You got here quick!"
-    digi "Yeah man, it's a spaceship."
+    digi "Yeah, man, it's a spaceship."
     cs "Fair. Why do you have that anyway?"
 
     if "iris" in persistent.seen:
@@ -353,23 +467,29 @@ label bt1d_afterbball:
         cs "I don't think so...?"
         digi "Don't worry about it."
 
-    cs "OK then. Where do we start?"
+    cs "Okay, then..."
+    cs "So, uh, where do we even start?"
     digi "I'm thinking we go to the pharmacy. They have to know why insulin is this expensive."
     cs "That does make sense."
     digi "Hop in the Nugget!"
     cs "Do I need like, a space suit?"
-    digi "No, dingus, we're not leaving atmosphere."
-    cs "OK..."
+    digi "No, dingus, we're not leaving the atmosphere."
+    cs "Alright..."
     n "CS hesitantly steps onto the ship."
 
     jump bt1d_cvs
 
 label bt1d_cvs:
-    # interior nugget
+    scene nugget_inside
+    show digi at right
+    show cs at left
+    with dissolve
+
     cs "So, where are we going?"
     digi "I'm thinking CVS."
-    cs "CVS--"
-    cs "That's right down the road!" with hpunch
+    cs "CVS-- "
+    show cs scared
+    extend "Hey, that's right down the road!" with hpunch
     digi "Yeah?"
     cs "Why do we need a whole spaceship for this?!"
     digi "We don't? I needed it to get to your house, I was on Microtech."
@@ -377,13 +497,13 @@ label bt1d_cvs:
     digi "It's in Stanton."
     cs "Wh-- why didn't we just use a car?!"
     digi "I can't drive."
-    cs "But you can pilot a spaceship?!"
-    digi "It's a lot easier, in my opinion. And I don't need a license for a spaceship."
-    cs "{size=-10}I feel like you should..."
+    cs "But you can pilot a {i}spaceship?!"
+    digi "It's a lot easier, in my opinion. Also I don't need a license for a spaceship."
+    cs "{size=-12}I really feel like you {i}should..."
     digi "Anywho, to CVS!"
 
     # This scene should be beefed up a bit, I think.
-    n "The Nugget lands in the CVS parking lot, and the two clammer out into the daytime."
+    n "The Nugget lands in the CVS parking lot, and the two clamber out into the daytime."
     cs "To the pharmacy department!"
 
     n "CS and Digi arrive at the pharmacy, and confront the pharmacy worker."
@@ -502,31 +622,31 @@ label bt1d_insulin:
 
     # smash cut, Digi kicks in the door to the CEO's office
     digi "CEO of Diabetes, I have come to--{w=0.5}{nw}"
-    ceo "Oh my God, will you stop kicking down my door?!"
-    ceo "Why do you keep doing this?! Just open it, it's not even locked!"
+    diabetes_ceo "Oh my God, will you stop kicking down my door?!"
+    diabetes_ceo "Why do you keep doing this?! Just open it, it's not even locked!"
     digi "It's dramatic, I--{w=0.5}{nw}"
-    ceo "I don't care! I'm going to start invoicing you for cleaning the door!"
+    diabetes_ceo "I don't care! I'm going to start invoicing you for cleaning the door!"
     digi "I-- I'm here to yell at you!"
     n "CS walks in the office behind Digi."
     cs "Me too!"
-    ceo "Who the heck are-- are you cs188?!"
+    diabetes_ceo "Who the heck are-- are you cs188?!"
     cs "Yeah."
-    ceo "Why are you wearing a cat maid outfit?!"
+    diabetes_ceo "Why are you wearing a cat maid outfit?!"
     cs "I'm not going into that right now."
-    ceo "OK, why are you here then?"
+    diabetes_ceo "OK, why are you here then?"
     cs "I researched the price of insulin, and it's egregious!"
-    ceo "Heh heh heh, yeah. I did a good job with that, didn't I?"
+    diabetes_ceo "Heh heh heh, yeah. I did a good job with that, didn't I?"
     cs "No! You're extorting diabetics for cash!"
-    ceo "Yeah. That's kinda what I do. And I'm damn good at it, too."
+    diabetes_ceo "Yeah. That's kinda what I do. And I'm damn good at it, too."
     digi "Alright, I'm not doing this song and dance again."
     digi "No bribes, no contracts."
     digi "Let's brawl."
-    ceo "Heh! You think you can take me?"
-    ceo "Alright, bet."
-    ceo "You win, and I'll even call off the price hike."
-    ceo "But if you lose..."
+    diabetes_ceo "Heh! You think you can take me?"
+    diabetes_ceo "Alright, bet."
+    diabetes_ceo "You win, and I'll even call off the price hike."
+    diabetes_ceo "But if you lose..."
     n "A button rises like a piston on his desk."
-    ceo "I release {i}Type 4 Diabetes{/i} on to the masses!"
+    diabetes_ceo "I release {i}Type 4 Diabetes{/i} on to the masses!"
     digi "You're on."
     cs "Y--Yeah! You're on!"
 
@@ -535,35 +655,35 @@ label bt1d_insulin:
     # rpg battle 1 - ceo
 
     n "The CEO is panting on the floor."
-    ceo "Heh... heh... you've gotten good, you little rat."
-    ceo "But I'm not bested yet!"
+    diabetes_ceo "Heh... heh... you've gotten good, you little rat."
+    diabetes_ceo "But I'm not bested yet!"
     n "The CEO pushes a different button on his desk, and intercoms somebody."
-    ceo "Secretary?"
-    secretary "Yes, Mr. CEO?"
-    ceo "I need you up here."
+    diabetes_ceo "Secretary?"
+    diabetes_secretary "Yes, Mr. CEO?"
+    diabetes_ceo "I need you up here."
     digi "You have a secretary?"
-    ceo "Do now."
+    diabetes_ceo "Do now."
     n "The door opens, and the Secretary of Diabetes walks through the door."
     n "The secretary glances at the situation around her."
-    secretary "Kick their asses, sir?"
-    ceo "Kick their asses."
+    diabetes_secretary "Kick their asses, sir?"
+    diabetes_ceo "Kick their asses."
 
     # rpg battle 2 - secretary
 
     # TODO: Beef up this dialouge?
-    ceo "Ready for Round 2?"
+    diabetes_ceo "Ready for Round 2?"
 
     # rpg battle 3 - ceo + secretary
 
-    ceo "Fine. You did well."
-    secretary "These ones are good, sir."
-    ceo "I'll call off the price hike."
-    secretary "You're calling it off?"
-    ceo "That was the deal."
-    ceo "But I never said how long that will last..."
-    ceo "Heh."
-    ceo "Heh heh."
-    ceo "Heh heh heh heh heh!"
+    diabetes_ceo "Fine. You did well."
+    diabetes_secretary "These ones are good, sir."
+    diabetes_ceo "I'll call off the price hike."
+    diabetes_secretary "You're calling it off?"
+    diabetes_ceo "That was the deal."
+    diabetes_ceo "But I never said how long that will last..."
+    diabetes_ceo "Heh."
+    diabetes_ceo "Heh heh."
+    diabetes_ceo "Heh heh heh heh heh!"
     digi "Let's get out of here, CS."
     cs "Yeah, this guy is nuts."
 

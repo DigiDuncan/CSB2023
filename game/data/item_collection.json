@@ -333,6 +333,14 @@
         "rarity": "Rare",
         "ce": true
     },
+    "digi_phone": {
+        "img": "digi_phone",
+        "name": "Digi's Cellphone",
+        "owner": "Digi",
+        "desc": "Hey, Digi, put some cool text here later.",
+        "rarity": "Uncommon",
+        "dx": true
+    },
     "dog": {
         "img": "dog",
         "name": "A Dog?!",

@@ -915,6 +915,16 @@
             }
         }
     },
+    "lad": {
+        "full_name": "Lad",
+        "pronouns": "(he/him)",
+        "sprites": {
+            "Default": "images/duck.png"
+        },
+        "quote": "Fill this in later!",
+        "bio": "Fill this in later! Also, does Lad have RPG stats? Will he be accompanying CS on this adventure?",
+        "dx": true
+    },
     "lancer": {
         "full_name": "Lancer",
         "pronouns": "(he/him)",
