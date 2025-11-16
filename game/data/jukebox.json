@@ -1816,6 +1816,14 @@
             "tags": ["CSBDX: BT1D", "New In DX"],
             "album_art": "csbdx.png",
             "trivia": "Placeholder text. Hey, Pakoo, put something cool here and fix the album art!"
+        },
+        "drive" : {
+            "file": "drive.ogg",
+            "title": "Drive",
+            "artist": "Beacon",
+            "tags": ["CSBDX: BT1D", "New In DX"],
+            "album_art": "beacon.png",
+            "trivia": "This song is one of the ones that play in the VRChat map that inspired the Nugget, {i}Stellar Sail{/i} by tp.jp."
         }
     }
 }

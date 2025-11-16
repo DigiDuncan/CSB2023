@@ -1426,6 +1426,9 @@ image witch flipped = "flip:characters/witch.png"
 image baumer = "characters/ballmer_cutout.png"
 image baumer flipped = "flip:characters/ballmer_cutout.png"
 
+image lad = "characters/lad/default.png"
+image lad bio = "characters/lad/bio.png"
+
 # Background Images
 ## CSBI
 image cs_room = "bg/cs_bedroom1.png"
@@ -2306,6 +2309,7 @@ image projector = "projector.png"
 image projector_airplay = "bg/projector_airplay.png"
 image projector_error = "bg/projector_error.png"
 image projector_no_signal = "bg/projector_no_signal.png"
+image pump = "pump.png"
 image renault = "renault.png"
 image reversi_box = "images/minigames/reversi_box.png"
 image rosen_car = "rosen_car.png"
