@@ -919,8 +919,8 @@
         "full_name": "Lad",
         "pronouns": "(he/they)",
         "sprites": {
-            "It's The Boi!": "images/lad/bio.png",
-            "Default": "images/lad/default.png"
+            "It's The Boi!": "images/characters/lad/bio.png",
+            "Default": "images/characters/lad/default.png"
         },
         "quote": "Fill this in later!",
         "bio": "Fill this in later! Also, does Lad have RPG stats? Will he be accompanying CS on this adventure?",
