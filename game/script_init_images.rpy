@@ -1335,6 +1335,9 @@ image border_guard dusk = "dusk:characters/border_guard.png"
 
 image benrey = "characters/benrey.png"
 
+image lad = "characters/lad/default.png"
+image lad flipped = "flip:characters/lad/default.png"
+
 # Fired Route
 image guest = "characters/guest.png"
 image guest flipped = "flip:characters/guest.png"
@@ -1425,9 +1428,6 @@ image alicia flipped = "flip:characters/alicia.png"
 image witch flipped = "flip:characters/witch.png"
 image baumer = "characters/ballmer_cutout.png"
 image baumer flipped = "flip:characters/ballmer_cutout.png"
-
-image lad = "characters/lad/default.png"
-image lad bio = "characters/lad/bio.png"
 
 # Background Images
 ## CSBI
@@ -2114,6 +2114,11 @@ image broom_closet = "bg/broom_closet.png"
 # DX Digi Characters
 image weird_al = "characters/weird_al.png"
 image cpt_underpants = "characters/cpt_underpants.png"
+image david = "characters/david.png"
+image george = "characters/george.png"
+image harold = "characters/harold.png"
+image mr_krupp = "characters/mr_krupp.png"
+image mr_krupp grin = "characters/mr_krupp_grin.png"
 
 # DX B1TD Backgrounds
 image basketball_court = "bg/basketball_court.png"
@@ -2121,11 +2126,9 @@ image aldi_inside = "bg/aldi_inside.png"
 image aldi_outside = "bg/aldi_outside.png"
 image cvs_inside = "bg/cvs_inside.png"
 image cvs_outside = "bg/cvs_outside.png"
-image david = "characters/david.png"
-image george = "characters/george.png"
-image harold = "characters/harold.png"
-image mr_krupp = "characters/mr_krupp.png"
-image mr_krupp grin = "characters/mr_krupp_grin.png"
+
+# DX BT1D Generated Images
+image ewwie = SnowBlossom("cold_breath.png", count = 100, fast = True, xspeed = (0,0), yspeed = (0, -100), border = 256)
 
 # DX Holiday Special Misc.
 image smoke = SnowBlossom("smoke.png", count = 400, fast = False, xspeed = (0,0), yspeed = (0, -100), border = 32)
@@ -2164,6 +2167,7 @@ image anno_car dark = "dark:anno_car.png"
 image arc_laptop = "arc_laptop.png"
 image bag = "bodybag.png"
 image bag flipped = "flip:bodybag.png"
+image basketball = "basketball.png"
 image bear = "bear.png"
 image billy_car = "billy_car.png"
 image billy_car dark = "dark:billy_car.png"

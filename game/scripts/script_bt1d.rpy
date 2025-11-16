@@ -25,6 +25,9 @@ label bt1d_wakeup:
     cs "I'm starving! I've gotta eat something..."
     show cs disappointed at mid_right with move
     # TODO: digi needs to get a pic of the fridge open
+    show ewwie behind cs:
+        matrixcolor TintMatrix("#00FF00")
+    with dissolve
     play sound sfx_foghorn
     n "A terrible stench assaults his nostrils."
     show cs concentrate
@@ -104,7 +107,7 @@ label bt1d_wakeup:
     else:
         cs "I don't want to go Walmart anymore, but, at this point, I don't want to go to Target, either."
     show cs
-    cs "You know what, I'm going to ALDI. They always have great deals."
+    cs "You know what? I'm going to ALDI. They always have great deals!"
     n "CS speeds off to the nearest ALDI."
     play sound sfx_driving volume 0.5
     scene black with dissolve
@@ -147,6 +150,7 @@ label bt1d_aldi:
     play sound sfx_waterphone
     pause 2.5
     show expression horse_sprite at offscreenleft with { "master": MoveTransition(1.0) }
+    n "The horseperson walks away."
 
     cs "Anyway..."
 
@@ -172,24 +176,42 @@ label bt1d_backhome:
     if fun_value(FUN_VALUE_COMMON):
         cs "I'm very hungry!"
         cs "Give me the snacks!"
+
+    show car_crash behind cs:
+        zoom 0.15
+        xzoom 0.7
+        yzoom 0.8
+        perspective True
+        matrixanchor (0, 0)
+        matrixtransform RotateMatrix(0, 0, 0) * RotateMatrix(0, -20, 0) * RotateMatrix(0, 0, 0) * OffsetMatrix(700, 150, 0)
+
     n "CS spends the next few hours sitting on his couch and eating his spoils, all the while watching car crash videos on his TV."
-    # TODO: matrix math some crash video onto the screen
+
     show cs concentrate
     n "Eventually, he passes out right where he's sitting!"
     scene black with dissolve
     # TODO: SFX snoring
 
     # he passes out, show the passage of time
+
     play music apple_kid if_changed
     music apple_kid
     show cs_room
     show cs disappointed
+    show baby_fruit behind cs:
+        zoom 0.15
+        xzoom 0.7
+        yzoom 0.8
+        perspective True
+        matrixanchor (0, 0)
+        matrixtransform RotateMatrix(0, 0, 0) * RotateMatrix(0, -20, 0) * RotateMatrix(0, 0, 0) * OffsetMatrix(700, 150, 0)
     with dissolve
     n "CS awakes surrounded by wrappers and plates, and some random video playing on the TV."
     # TODO: matrix math some baby fruit video onto the screen
     cs "What the heck is this?"
     n "The TV displays some kind of baby sensory video."
     cs "Something must have autoplayed..."
+    hide baby_fruit
     cs "What time is it?"
 
     show cs_phone flipped with { "master": MoveTransition(0.25)}:
@@ -446,42 +468,60 @@ label bt1d_afterbball:
 
     digi "Well, I guess I have plans today after all. C'mon, Lad!"
     $ persistent.seen.add("lad")
-    n "Lad lets out an excited jingle." # TODO: sfx here of kricketot's cry
+    show lad flipped at left with moveinleft
+    n "Lad lets out an excited jingle."
+    play sound sfx_lad
 
     show digi flipped at offscreenright with move
     scene black with Dissolve(1.0)
     play sound sfx_nugget
 
-    # TODO: cut to Nugget landing in front of CS' house
+    pause 1.0
+
+    scene cs_house
+    show cs flipped at right
+    show digi_nugget_parked at manual_pos(0.3, 0.8, 0.5)
+    show digi flipped at left
+    with dissolve
+    $ collect("digi_nugget")
+
     n "CS meets Digi in front of his house."
     cs "You got here quick!"
     digi "Yeah, man, it's a spaceship."
-    cs "Fair. Why do you have that anyway?"
+    cs "Fair. Why do you have that, anyway?"
 
     if "iris" in persistent.seen:
         digi "Long story. You remember Iris?"
+        show cs disappointed flipped
         cs "Vaguely...?"
         digi "Her."
     else:
         digi "Long story. Do you know a purple woman?"
+        show cs disappointed flipped
         cs "I don't think so...?"
         digi "Don't worry about it."
 
     cs "Okay, then..."
     cs "So, uh, where do we even start?"
+    show digi thinking flipped
     digi "I'm thinking we go to the pharmacy. They have to know why insulin is this expensive."
     cs "That does make sense."
+    show digi happy flipped
     digi "Hop in the Nugget!"
-    cs "Do I need like, a space suit?"
+    show cs worried flipped
+    cs "Don't I need, like, a space suit?"
+    show digi disappointed flipped
     digi "No, dingus, we're not leaving the atmosphere."
+    show cs disappointed flipped
     cs "Alright..."
-    n "CS hesitantly steps onto the ship."
+    n "CS hesitantly boards the ship."
 
     jump bt1d_cvs
 
 label bt1d_cvs:
     scene nugget_inside
     show digi at right
+    show lad at manual_pos(0.7, 0.6, 0.5) behind digi
     show cs at left
     with dissolve
 
@@ -503,9 +543,12 @@ label bt1d_cvs:
     digi "Anywho, to CVS!"
 
     # This scene should be beefed up a bit, I think.
+    scene cvs_outside
+
     n "The Nugget lands in the CVS parking lot, and the two clamber out into the daytime."
     cs "To the pharmacy department!"
 
+    scene cvs_inside
     n "CS and Digi arrive at the pharmacy, and confront the pharmacy worker."
     cvs "Welcome to CVS, can I help you today?"
     cs "Yeah, you can tell me why insulin is so expensive!"
