@@ -244,9 +244,12 @@ define audio.funvalueland = "funvalueland.ogg"
 define audio.unobtrusive_fun = "unobtrusive_fun.ogg"
 define audio.interference = "<from 0 to 275>interference.ogg"
 
-# Other?
+# CSBDX BT1D Music
 define audio.basketball_music = "basketball_music.ogg"
 define audio.drive = "drive.ogg"
+define audio.able_sisters = "<loop 6.249 to 31.196>able_sisters.ogg"
+
+# Misc Music
 define audio.space_classroom = "space_classroom.ogg"
 define audio.billymusicu = "billymusicu.ogg"
 define audio.ocean_man = "credits.ogg"
@@ -397,7 +400,7 @@ define audio.sfx_oven_close = "sfx/sfx_oven_close.ogg"
 define audio.sfx_oven_open = "sfx/sfx_oven_open.ogg"
 define audio.sfx_page = "<from 0.321>sfx/sfx_page.ogg"
 define audio.sfx_payday = "sfx/sfx_payday.ogg"
-define audio.sfx_phone_vibrate_notif = "sfx/phone_vibrate_notif.ogg"
+define audio.sfx_phone_vibrate_notif = "sfx/sfx_phone_vibrate_notif.ogg"
 define audio.sfx_pickup_call = "sfx/sfx_pickup_call.ogg"
 define audio.sfx_ping = "sfx/sfx_ping.ogg"
 define audio.sfx_ping_spam = "sfx/sfx_ping_spam.ogg"

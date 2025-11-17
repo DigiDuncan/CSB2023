@@ -158,7 +158,7 @@ define weird_al = Character("Weird Al", callback = char_callback)
 define phone = Character("Phone", callback = renpy.partial(char_callback, beep="snd_txtspam"))
 define cvs = Character("CVS Employee", callback = char_callback)
 define leedle = Character("Leedlelee Employee", callback = char_callback)
-define diabetes_ceo = Character("CEO of Diabetes", callback = char_callback)
+define diabetes_ceo = Character("CEO of Diabetes", callback = renpy.partial(char_callback, beep="diabetes_ceo"))
 define diabetes_secretary = Character("Secretary of Diabetes", callback = char_callback)
 
 # DX CultCon Character Definitions

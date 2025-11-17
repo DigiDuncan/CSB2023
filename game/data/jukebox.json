@@ -1824,6 +1824,14 @@
             "tags": ["CSBDX: BT1D", "New In DX"],
             "album_art": "beacon.png",
             "trivia": "This song is one of the ones that play in the VRChat map that inspired the Nugget, {i}Stellar Sail{/i} by tp.jp."
+        },
+        "able_sisters" : {
+            "file": "able_sisters.ogg",
+            "title": "Able Sisters",
+            "artist": "Kazumi Totaka & Asuka Ohta",
+            "tags": ["CSBDX: BT1D", "New In DX"],
+            "album_art": "wildworld.png",
+            "trivia": "\"I dunno, it just felt right.\" - Tate"
         }
     }
 }

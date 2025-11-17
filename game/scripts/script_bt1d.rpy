@@ -16,8 +16,7 @@ label bt1d_wakeup:
     show cs disappointed at center
     with dissolve
     n "Exhausted from the previous days' events, he groggily makes his way towards the kitchen."
-    show cs disappointed flipped with determination
-    hide cs with moveoutleft
+    show cs disappointed flipped at offscreenleft with MoveTransition(1.0)
 
     scene cs_kitchen
     show cs_kitchen_fg
@@ -30,8 +29,8 @@ label bt1d_wakeup:
     show ewwie behind cs with { "master": dissolve }:
         matrixcolor TintMatrix("#00FF00")
     n "A terrible stench assaults his nostrils."
-    show cs concentrate
-    cs "Augh!" with hpunch
+    show cs concentrate with { "master": vpunch }
+    cs "Augh!"
     if fun_value(FUN_VALUE_COMMON):
         cs "Good Lord, what is happening in there?!"
     show cs disappointed
@@ -58,7 +57,7 @@ label bt1d_wakeup:
     scene cs_door_outside
     show cs flipped at center
     with dissolve
-    play sound sfx_phone_vibrate_notif # TODO: why won't this sound play in-game?
+    play sound sfx_phone_vibrate_notif
     n "As CS makes his way out the door, his phone buzzes."
     show cs disappointed flipped
 
@@ -117,8 +116,10 @@ label bt1d_wakeup:
     jump bt1d_aldi
 
 label bt1d_aldi:
-    n "Once he arrives at the ALDI, he grabs a quarter from his center console, and heads to the cart return."
+    n "Once he arrives at ALDI, he grabs a quarter from his center console, and heads to the cart return."
     # TODO: add items: quarter?, cart
+    music able_sisters
+    play music able_sisters
     show aldi_outside
     show cs at mid_left
     with dissolve
