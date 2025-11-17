@@ -367,11 +367,11 @@ label csbi_room:
     show cs
     cs "Better call HoH SiS!"
     cs "They're really good at giving me the JoJ!"
-    show cs phone
+    show cs phone with dissolve
     $ collect("cs_phone")
     n "CS dials 1-800-HoH-SiiS."
     play sound sfx_dial_hohsis
-    pause 16
+    pause 10
 
     # prevent dial tone overflow
     stop sound
@@ -583,7 +583,7 @@ label csbi_michael_house:
     show cs phone at left with { "master": dissolve }
     n "CS pulls out his phone and calls Michael."
     play sound sfx_dial_rosen
-    pause 12.5
+    pause 17
 
     # prevent dial tone overflow
     stop sound
@@ -986,7 +986,7 @@ label csbi_home_savers:
     $ collect("cs_phone")
     n "CS dials the phone number he found on their website."
     play sound sfx_dial_hohsis
-    pause 16
+    pause 10
     show cs phone at left with move
     show hoh_hq at mid_offscreen_right behind ed
     show ed phone at right

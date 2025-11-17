@@ -2130,6 +2130,38 @@ image cvs_outside = "bg/cvs_outside.png"
 # DX BT1D Generated Images
 image ewwie = SnowBlossom("cold_breath.png", count = 100, fast = True, xspeed = (0,0), yspeed = (0, -100), border = 256)
 
+# TODO: make these prettier later
+image txt_no_d:
+    xsize 500
+    ysize 100
+    xanchor 0.5
+    yanchor 0.5
+    contains:
+        Frame("gui/frame.png")
+    contains:
+        Text("{size=+16}NO DIABETES", xalign=0.5, yalign=0.5)
+
+image txt_t1d:
+    xsize 500
+    ysize 100
+    xanchor 0.5
+    yanchor 0.5
+    contains:
+        Frame("gui/frame.png")
+    contains:
+        Text("{size=+16}TYPE 1 DIABETES", xalign=0.5, yalign=0.5)
+
+image txt_t2d:
+    xsize 500
+    ysize 100
+    xanchor 0.5
+    yanchor 0.5
+    contains:
+        Frame("gui/frame.png")
+    contains:
+        Text("{size=+16}TYPE 2 DIABETES", xalign=0.5, yalign=0.5)
+
+
 # DX Holiday Special Misc.
 image smoke = SnowBlossom("smoke.png", count = 400, fast = False, xspeed = (0,0), yspeed = (0, -100), border = 32)
 image bigsmoke = SnowBlossom("bigsmoke.png", count = 200, fast = True, xspeed = (0,0), yspeed = (0, -50), border = 256)
