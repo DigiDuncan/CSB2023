@@ -146,19 +146,21 @@ define bomahanobeep = Character("\"Omaha\"", callback = renpy.partial(char_callb
 define copguyexe = Character("Copguy", callback = renpy.partial(char_callback, name = "copguy", beep = "copexe"))
 define tate_cyan = Character("Tate?", callback = renpy.partial(char_callback, beep="tate_cyan"))
 
-# DX Digi Character Definitions
+# DX Book Character Definitions
 define david = Character("David", callback = char_callback)
 define george = Character("George", callback = char_callback)
 define harold = Character("Harold", callback = char_callback)
 define mr_krupp = Character("Mr. Krupp", callback = char_callback)
 define weird_al = Character("Weird Al", callback = char_callback)
+define digimom = Character("DigiMom", callback = char_callback)
+define rex = Character("Rex Mohs", callback = char_callback)
 
 # DX BT1D Character Definitions
 # TODO: need beeps
 define phone = Character("Phone", callback = renpy.partial(char_callback, beep="snd_txtspam"))
 define cvs = Character("CVS Employee", callback = char_callback)
 define leedle = Character("Leedlelee Employee", callback = char_callback)
-define diabetes_ceo = Character("CEO of Diabetes", callback = char_callback)
+define diabetes_ceo = Character("CEO of Diabetes", callback = renpy.partial(char_callback, beep="diabetes_ceo"))
 define diabetes_secretary = Character("Secretary of Diabetes", callback = char_callback)
 
 # DX CultCon Character Definitions
@@ -245,3 +247,6 @@ define mika = Character("Mika", callback = renpy.partial(char_callback, name = "
 define nova = Character("Nova", callback = renpy.partial(char_callback, name = "nova"))
 define pakoo = Character("Pakoo", callback = renpy.partial(char_callback, name = "pakoo", beep = "pak"))
 define tate = Character("Tate", callback = renpy.partial(char_callback, name = "tate", beep = "tate"))
+define bbl = Character("Bubble", callback = char_callback)
+
+

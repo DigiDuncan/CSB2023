@@ -278,3 +278,49 @@ label rpg_tate_ex:
         on_lose "train_tate_ex_lose"
         music "space"
         intro_text "Tate EX challenges you!"
+
+
+label rpg_diabetes_1:
+    rpg:
+        bg "images/bg/bronsoncrash.png"
+        fighters:
+            cs_strong
+            digi
+
+            ceo
+
+        scale 1.0
+        on_win "bt1d_after_fight_1"
+        on_lose "rpg_diabetes_1"
+        music "error"
+        intro_text "The CEO is late for a meeting."
+
+label rpg_diabetes_2:
+    rpg:
+        bg "images/bg/bronsoncrash.png"
+        fighters:
+            cs_strong
+            digi
+            secretary
+
+        scale 2.0
+        on_win "bt1d_after_fight_2"
+        on_lose "rpg_diabetes_2"
+        music "error"
+        intro_text "The secretary will see you now."
+
+label rpg_diabetes_3:
+    rpg:
+        bg "images/bg/bronsoncrash.png"
+        fighters:
+            cs_strong
+            digi
+            ceo
+            secretary
+
+        scale 2.0
+        on_win "bt1d_ending"
+        on_lose "rpg_diabetes_3"
+        music "error"
+        intro_text "The C-Suite is ready to end this meeting!"
+

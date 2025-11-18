@@ -44,6 +44,14 @@ label test:
                     jump play_newrpggame
                 "RPG Using Screen":
                     jump play_screenrpnggame
+                "Matrix Test":
+                    stop music
+                    scene cs_room
+                    show washington_road:
+                        zoom 0.5
+                        perspective True
+                        matrixanchor (0, 0)
+                        matrixtransform RotateMatrix(0, 0, 0) * RotateMatrix(0, -20, 0) * RotateMatrix(0, 0, 0) * OffsetMatrix(32, 40, 0)
         "New cool thing OwO"  (type = "dx"):
             menu:
                 "Layered Image Scene Testing":

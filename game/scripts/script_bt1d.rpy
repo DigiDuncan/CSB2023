@@ -5,30 +5,34 @@
 # TODO: fix RPG stats for CEO/Secretary
 
 label bt1d_wakeup:
+    scene black with dissolve
     stop music fadeout 3.0
     music end
     play music lets_hear_my_baby volume 0.15 if_changed
     music lets_hear_my_baby
+    n "CS wakes up in his bedroom after a long slumber."
 
     scene cs_room_2
     show cs disappointed at center
     with dissolve
-    n "CS wakes up in his bedroom after a long slumber."
     n "Exhausted from the previous days' events, he groggily makes his way towards the kitchen."
-    show cs disappointed flipped with determination
-    hide cs with moveoutleft
+    show cs disappointed flipped at offscreenleft with MoveTransition(1.0)
 
     scene cs_kitchen
     show cs_kitchen_fg
     show cs disappointed behind cs_kitchen_fg
+    show oreo_os at right
+    $ collect("oreo_os")
     with dissolve
     cs "I'm starving! I've gotta eat something..."
     show cs disappointed at mid_right with move
     # TODO: digi needs to get a pic of the fridge open
     play sound sfx_foghorn
+    show ewwie behind cs with { "master": dissolve }:
+        matrixcolor TintMatrix("#00FF00")
     n "A terrible stench assaults his nostrils."
-    show cs concentrate
-    cs "Augh!" with hpunch
+    show cs concentrate with { "master": vpunch }
+    cs "Augh!"
     if fun_value(FUN_VALUE_COMMON):
         cs "Good Lord, what is happening in there?!"
     show cs disappointed
@@ -52,12 +56,12 @@ label bt1d_wakeup:
     cs "Ugh, now I gotta go to the store before I can even have breakfast..."
     hide cs with moveoutright
 
-
     scene cs_door_outside
     show cs flipped at center
     with dissolve
     n "As CS makes his way out the door, his phone buzzes."
-    # TODO: SFX phone vibrate
+    play sound sfx_phone_vibrate_notif
+    pause 0.5
     show cs disappointed flipped
 
     show cs_phone with MoveTransition(0.25):
@@ -104,7 +108,7 @@ label bt1d_wakeup:
     else:
         cs "I don't want to go Walmart anymore, but, at this point, I don't want to go to Target, either."
     show cs
-    cs "You know what, I'm going to ALDI. They always have great deals."
+    cs "You know what? I'm going to ALDI. They always have great deals!"
     n "CS speeds off to the nearest ALDI."
     play sound sfx_driving volume 0.5
     scene black with dissolve
@@ -115,19 +119,39 @@ label bt1d_wakeup:
     jump bt1d_aldi
 
 label bt1d_aldi:
-    n "Once he arrives at the ALDI, he grabs a quarter from his center console, and heads to the cart return."
-    # TODO: add items: quarter?, cart
+    n "Once he arrives at ALDI, he grabs a quarter from his center console, then heads to the cart return."
+    # TODO: add items: quarter?, replace with aldi cart
+    play sound sfx_shopping_cart
+    music able_sisters
+    play music able_sisters
+    pause 0.5
     show aldi_outside
-    show cs at mid_left
+    show cs at manual_pos(0.5, 1.0, 1.0)
+    show shopping_cart at manual_pos(0.6, 1.1, 0.5)
     with dissolve
+
     cs "What a smart system! Those Europeans sure know what they're doing."
-    hide cs with moveoutright
+
+    show cs at manual_pos(1.4, 1.0, 1.0)
+    show shopping_cart at manual_pos(1.7, 1.1, 0.5)
+    with move
+
     scene aldi_inside
     with dissolve
-    show cs at mid_left with moveinleft
+
+    show cs coat at manual_pos(-0.5, 1.0, 1.0)
+    show shopping_cart at manual_pos(-0.3, 1.1, 0.5)
+    with determination
+
+    show cs at manual_pos(0.5, 1.0, 1.0)
+    show shopping_cart at manual_pos(0.6, 1.1, 0.5)
+    with move
+
     n "CS walks into the ALDI and is enamored by the selection and prices."
     show horse at offscreenright behind cs
-    cs "Oh my gosh, there's so much I can get! I'm so hungry, I could eat a horse!"
+    cs "Oh my gosh, there's so much to pick from, and it's all so cheap!"
+    show cs happy
+    cs "I'm so hungry, I could eat a horse!"
 
     # this bit is so silly - tate
     if fun_value(FUN_VALUE_LEGENDARY):
@@ -147,12 +171,16 @@ label bt1d_aldi:
     play sound sfx_waterphone
     pause 2.5
     show expression horse_sprite at offscreenleft with { "master": MoveTransition(1.0) }
-
+    n "The horseperson walks away."
+    pause 1.0
     cs "Anyway..."
 
     # TODO: need a scene change here!
     # CS buys a lot of food I don't know figure it out
-    hide cs with moveoutright
+    show cs at manual_pos(1.4, 1.0, 1.0)
+    show shopping_cart at manual_pos(1.7, 1.1, 0.5)
+    with move
+
     n "CS goes to check out with a cart full of food."
     cs "I can't wait to get all this home..."
     n "CS puts all this food up on the belt, and cashier checks him out with great speed!"
@@ -166,34 +194,72 @@ label bt1d_aldi:
 label bt1d_backhome:
     # Cut to CS at home with his groceries
     scene cs_room
-    show cs at center
+    show cs at offscreenright
+    show cs_room_fg
     with dissolve
+
+    play sound sfx_house_door_open
+    pause 3.0
+    play sound sfx_house_door_close
+    pause 2.0
+
+    show cs flipped at center with moveinright
+    pause 0.5
+
     cs "Finally, now I can feast!"
+    cs "Let's get comfy!"
+    show cs flipped at left with move
+    show cs
+
     if fun_value(FUN_VALUE_COMMON):
         cs "I'm very hungry!"
         cs "Give me the snacks!"
-    n "CS spends the next few hours sitting on his couch and eating his spoils, all the while watching car crash videos on his TV."
-    # TODO: matrix math some crash video onto the screen
-    show cs concentrate
-    n "Eventually, he passes out right where he's sitting!"
-    scene black with dissolve
-    # TODO: SFX snoring
 
-    # he passes out, show the passage of time
+    show car_crash behind cs at t_tv_screen_skew
+
+    n "CS spends the next few hours planted firmly onto his couch enjoying his spoils."
+    n "He puts on some car crash videos as he mindlessly snacks away."
+
+    # TODO: he passes out, show the passage of time
+
+    play sound2 sfx_csnore fadein 1.0
+    show cs concentrate at left with dissolve
+    n "Eventually, he passes out right where he's sitting..."
+    scene black with Dissolve(2.0)
+
+    scene cs_room # TODO: need a version of his room covered in trash
+    show cs disappointed at left
+    show cs_room_fg
+
     play music apple_kid if_changed
     music apple_kid
-    show cs_room
-    show cs disappointed
+    # audio ducking
+    $ renpy.music.set_volume(0.25)
+    stop sound2 fadeout 1.0
+
+    show baby_fruit behind cs at t_tv_screen_skew
     with dissolve
-    n "CS awakes surrounded by wrappers and plates, and some random video playing on the TV."
-    # TODO: matrix math some baby fruit video onto the screen
+
+    n "CS awakens surrounded by wrappers and plates."
+    n "His body feels heavy and his head is full of... fruit?"
     cs "What the heck is this?"
-    n "The TV displays some kind of baby sensory video."
+    n "Some kind of baby sensory video is on the TV."
     cs "Something must have autoplayed..."
+    cs "Athena, TV off."
+
+    # un-duck the audio
+    $ renpy.music.set_volume(1.0)
+
+    play sound sfx_fabeep
+    hide baby_fruit
+    pause 2.0
+    show cs concentrate
+    cs "Ugh..."
+    show cs disappointed
     cs "What time is it?"
 
-    show cs_phone flipped with { "master": MoveTransition(0.25)}:
-        xpos 0.55
+    show cs_phone flipped with MoveTransition(0.25):
+        xpos 0.25
         ypos 0.65
         alpha 0.0
         parallel:
@@ -202,23 +268,40 @@ label bt1d_backhome:
             linear 0.25 ypos 0.45
 
     n "CS checks his phone."
+    pause 0.25
     show cs scared
     cs "9AM?! I slept all night?" with vpunch
 
     show cs disappointed
     cs "Ugh, I feel awful..."
     cs "How much did I eat yesterday?"
+
+    show cs disappointed at center
+    show cs_phone flipped at manual_pos(0.55, 0.45)
+    with { "master": move }
+
     n "CS stands up and looks around, taking inventory of the damage."
     # TODO: assets: piles of food
+    # TODO: make him actually look around
     cs "Oreos... Cheez-Its... Animal crackers... oh, jeez..."
     n "CS thinks for a moment, then is taken aback with horror!"
-    show cs worried with hpunch
-    cs "Oh no! Wait, what if I have diabetes?!"
-    n "CS rushes to this computer."
-    # TODO: change scene, put him at a computer. he doesn't have the craptop anymore at this point so we need a shot of his new PC
-    n "CS begins researching diabetes."
+    show cs scared
+    cs "Oh no! "  with hpunch
+    extend "Wait, what if I have diabetes?!"
+
+    n "CS pulls up the browser on his phone."
+    # TODO: change scene, put him at a computer. he doesn't have the craptop anymore at this point so we need a shot of his new PC.
+    # TODO: or should we just have him do it on his phone since he's already holding it?
+    n "Frantically typing, he begins researching diabetes."
     cs "How much would insulin cost? It's not like I have a ton of cash..."
 
+    # :read:
+    show cs angry
+    show cs_phone flipped:
+        parallel:
+            linear 2.0 xpos 0.525
+        parallel:
+            linear 2.0 ypos 0.425
     camera:
         parallel:
             linear 2.0 zoom 1.1
@@ -228,30 +311,46 @@ label bt1d_backhome:
             linear 2.0 ypos -0.05
     pause 2.0
 
+    # reset
     show cs scared
+    show cs_phone flipped:
+        parallel:
+            linear 0.01 xpos 0.55
+        parallel:
+            linear 0.01 ypos 0.45
     camera:
         reset
+
     cs "{cshake}$300?!" with hpunch
     cs "This is insane! I need to call Digi. They have diabetes, maybe they can make this make sense to me."
 
-    # TODO: cs pulls out phone; SFX: DialingDuncan lol
+    # TODO: SFX: DialingDuncan lol, just using hohsis as a placeholder, will need to change timings later anyway
+    play sound sfx_dial_hohsis
+    pause 5.0
+
+    show cs_phone at manual_pos(0.44, 0.4325, 0.5) with move
+
+    pause 5.0
 
     scene black with dissolve
-
+    # prevent dial tone overflow
+    stop sound
+    play sound2 sfx_ambience_nugget loop
     show nugget_inside
     show digi thinking at center
     show cs worried at offscreenleft
     with dissolve
-    # TODO: ambient spaceship sfx
 
-    n "Digi is tinkering with their arm when their phone rings."
-    show digi
+    digi "Put this here... and then this can be adjusted to that--"
     play sound sfx_ringtone_digi loop
     $ persistent.heard.add("sfx_ringtone_digi")
+    show digi shock with shake2
+    n "Digi is tinkering with their arm when their phone rings."
+    show digi sad
     digi "What the heck? No one ever calls me..."
 
     # :D
-    #- tate
+    # - tate
     $ collect("digi_phone")
 
     if fun_value(FUN_VALUE_RARE):
@@ -280,9 +379,10 @@ label bt1d_backhome:
                 linear 0.25 alpha 1.0
             parallel:
                 linear 0.25 ypos 0.55
-    pause 1.0
+    pause 1.5
     digi "CS? What could this be about?"
 
+    stop sound
     play sound sfx_pickup_call
 
     # splitscreen
@@ -329,51 +429,222 @@ label bt1d_backhome:
     digi "For me, it cropped up when I was 2."
     cs "Wait, okay, then what's the difference between Type 1 and Type 2?"
     stop music fadeout 3.0
+    stop sound2 fadeout 3.0
     music end
     digi "Well..."
     jump bt1d_basketball
 
 label bt1d_basketball:
+    stop sound2
     play music basketball_music if_changed
     music basketball_music
     scene basketball_court with dissolve
     # cut to a cutaway. a machine is on the left, a basketball hoop on the right. the background
     # is like, a chalkboard or something.
 
-    digi "Imagine your body has a basketball machine in it. You need basketballs to live."
     show basketball_machine at right with moveinright
-    # the words NO DIABETES appear at the top of the screen.
+
+    digi "Imagine your body has a basketball machine in it. You need basketballs to live."
+
     # round basketballs fire out of the machine, and into the hoop.
+
+    show txt_no_d:
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.5
+        ypos -0.05
+
+        linear 0.25 ypos 0.075
+        linear 0.25 ypos 0.065
+
+    show txt_insulin at manual_pos(0.85, 0.5, 0.5)
+
+    show arrow_white flipped:
+        xanchor 0.5 yanchor 0.5
+        rotate 90
+        zoom 0.3
+        xpos 0.85
+
+        block:
+            ypos 0.55
+            linear 0.5 ypos 0.55
+            ypos 0.565
+            linear 0.5 ypos 0.565
+            repeat
+
+    show basketball at manual_pos(0.975, 0.75, 0.5):
+        zoom 0.25
 
     digi "In a normal body, your body happily makes nice, round basketballs. They go through the hoop just fine!"
 
-    # the words TYPE 1 appear at the top of the screen.
+    show basketball:
+        block:
+            parallel:
+                linear 1.0 xpos 0.225
+            parallel:
+                linear 1.0 ypos 0.2
+            parallel:
+                linear 1.0 rotate 90
+
+        block:
+            linear 0 ypos 0.2
+            parallel:
+                linear 1.0 ypos 1.1
+            parallel:
+                linear 1.0 rotate 180
+
+    play sound sfx_basketball
+
     # no more basketballs are made
 
-    digi "In my body, with Type 1 Diabetes, I don't make any basketballs. So I have to \"import\" some."
+    pause 3.0
+
+    show txt_no_d:
+        linear 0.25 ypos -0.05
+    show txt_t1d:
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.5
+        ypos -0.05
+
+        linear 0.25 ypos 0.075
+        linear 0.25 ypos 0.065
+
+    show red_x at manual_pos(0.85, 0.7, 0.5)
+    digi "In my body, with Type 1 Diabetes, I don't make any basketballs."
 
     # a cardboard box drops into the scene. a basketball comes out the box, and flies into the hoop.
+    # TODO: use different box sprite later
+    show linus_box at manual_pos(0.5, 0.6, 0.5) with { "master": moveintop }
+    pause 0.5
+    play sound sfx_punch
+    with vpunch
+    digi "So I have to \"import\" some."
 
+    show basketball
+
+    hide txt_insulin
+    hide red_x
+    show txt_pump at manual_pos(0.85, 0.5, 0.5)
+    show pump at manual_pos(0.85, 0.7, 0.5):
+        zoom 0.5
     digi "That's what my pump is for."
 
-    # the words TYPE 2 appear at the top of the screen.
+    show txt_t1d:
+        linear 0.25 ypos -0.05
+
     # cubular basketballs come out of the machine, try to fly into the hoop, and bounce right back out!
 
+    show txt_t2d:
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.5
+        ypos -0.05
+
+        linear 0.25 ypos 0.075
+        linear 0.25 ypos 0.065
+    with determination
+
+    hide txt_pump
+    hide pump
+    hide linus_box
+    show txt_insulint at manual_pos(0.85, 0.5, 0.5)
+    show basketballnt as first at manual_pos(0.975, 0.75, 0.5):
+        zoom 0.25
+    with dissolve
+
+    pause 1.0
     digi "With Type 2, your body makes cubular basketballs."
-    digi "They can't go through the hoop... so we need to hammer them back into spheres!"
 
-    # A hammer is added to the scene. The balls hit the hammer, become round, then go in the hoop.
+    play sound sfx_basketball
+    show basketballnt as first behind txt_t2d:
+        parallel:
+            linear 1.0 xpos 0.225
+        parallel:
+            linear 1.0 ypos 0.2
+        parallel:
+            linear 1.0 rotate 90
 
+        linear 0 ypos 0.2
+
+        parallel:
+            linear 1.0 xpos 0.7
+        parallel:
+            linear 1.0 ypos -0.1
+        parallel:
+            linear 1.0 rotate 180
+    pause 1.0
+    play sound2 sfx_spring noloop
+    with vpunch
+
+    digi "They can't go through the hoop... "
+    # TODO: replace this with a hammer later
+    show spoon at manual_pos(0.3, 0.5, 0.5)
+    show basketballnt as second at truecenter behind spoon:
+        rotate 0
+    with { "master": dissolve }
+
+    extend "so we need to hammer them back into spheres!"
+
+    show spoon:
+        linear 0.1 rotate 70
+        linear 0.25 rotate 0
+    play sound sfx_tf2_wrench_hit
+    with vpunch
+    pause 0.5
+
+    show spoon:
+        linear 0.1 rotate 70
+        linear 0.25 rotate 0
+    play sound sfx_tf2_wrench_hit
+    hide basketballnt as second
+    show basketball2 at truecenter behind spoon
+    with vpunch
+    pause 0.5
+
+    show spoon:
+        linear 0.1 rotate 70
+        linear 0.25 rotate 0
+    play sound sfx_tf2_wrench_hit
+    hide basketball2
+    show basketball as third at truecenter behind spoon
+    with vpunch
+    pause 0.5
+
+    hide spoon with dissolve
     digi "That's what medication does!"
+
+    show basketball as third:
+        block:
+            parallel:
+                linear 0.5 xpos 0.225
+            parallel:
+                linear 0.5 ypos 0.2
+            parallel:
+                linear 0.5 rotate 180
+            parallel:
+                linear 0.5 zoom 0.25
+
+        block:
+            linear 0 ypos 0.2
+            parallel:
+                linear 1.0 ypos 1.1
+            parallel:
+                linear 1.0 rotate 360
+
+    play sound sfx_basketball
+
+    pause 3.0
 
     # cut back to the splitscreen voice call
     jump bt1d_afterbball
 
 label bt1d_afterbball:
     # set up scene again
+    play sound2 sfx_ambience_nugget loop
     show cs_room at mid_offscreen_left behind cs
     show nugget_inside at mid_offscreen_right behind cs_room
-    show cs scared phone at mid_left
+    show cs disappointed phone at mid_left
     show digi at mid_right
     if digi_smol == True:
         show digi_phone:
@@ -386,15 +657,18 @@ label bt1d_afterbball:
             xpos 0.725
             ypos 0.55
             rotate 15
+    with dissolve
 
-    show cs disappointed phone
     cs "Okay, but you're a cyborg... why do you still have diabetes at all?"
     show digi sad
     digi "Eh, didn't feel right to cure."
     digi "If the people in real life don't have a cure, why should I?"
+    show cs worried phone
     cs "Wait, what do you mean by \"real life\", aren't we currently in real--{nw}"
     show digi goober
+    show cs scared phone
     digi "Donate to {a=https://tilt.fyi/UEZfMk99zW}Breakthrough T1D{/a}!" with vpunch
+    show cs disappointed phone
     cs "Uh, I have done that."
     show digi happy
     digi "Good. {nw}"
@@ -407,19 +681,23 @@ label bt1d_afterbball:
     show cs disappointed phone
     cs "Fair..."
     cs "Also, maybe you'd know, why is insulin so expensive?"
-    digi "Now {i}that{/i} is because of... well... I don't know!"
+    show digi thinking
+    digi "Now {i}that{/i} is because of... well... "
+    show digi sad
+    extend "I don't know!"
     digi "All I know is it only costs a few dollars to produce, but they mark it up a {i}ton."
     show cs scared phone
     cs "That's outrageous! Imagine if I {i}did{/i} have diabetes! I'd be bankrupt!"
-    digi "That's a lot of people's reality."
+    digi "That's actually the reality for a lot of people."
     show cs angry phone
     cs "We've gotta get to the bottom of this!"
+    show digi thinking
     n "Digi looks at their holoband."
-    digi "Well, I don't have anything to do today. I'll come over there and we can sort it out."
+    show digi
+    digi "Well, I don't have anything to do today. I'll be right over."
     show cs phone
     cs "Great! See you soon!"
 
-    # The phone call ends, and CS' half of the split screen slides away.
     play sound sfx_end_call
     show cs phone at offscreenleft
     show cs_room at offscreenleft
@@ -445,67 +723,111 @@ label bt1d_afterbball:
     show digi
 
     digi "Well, I guess I have plans today after all. C'mon, Lad!"
-    $ persistent.seen.add("lad")
-    n "Lad lets out an excited jingle." # TODO: sfx here of kricketot's cry
 
-    show digi flipped at offscreenright with move
+    $ persistent.seen.add("lad")
+    show lad flipped:
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.35
+        ypos 1.2
+
+        linear 0.25 ypos 0.7
+        linear 0.25 ypos 0.75
+
+    play sound sfx_lad
+    n "Lad lets out an excited jingle."
+
+    show digi flipped at manual_pos(1.3, 0.75, 0.5)
+    show lad flipped at manual_pos(1.1, 0.75, 0.5)
+    with move
+
+    stop sound2 fadeout 1.0
     scene black with Dissolve(1.0)
+    pause 1.0
     play sound sfx_nugget
 
-    # TODO: cut to Nugget landing in front of CS' house
-    n "CS meets Digi in front of his house."
-    cs "You got here quick!"
+    pause 2.0
+
+    scene cs_house
+    show digi_nugget_parked at manual_pos(0.3, 0.8, 0.5)
+    show digi flipped at left
+    show cs disappointed flipped at right
+    with dissolve
+    $ collect("digi_nugget")
+
+    n "CS meets Digi out front."
+    show cs worried flipped
+    cs "Wow, you got here quick!"
     digi "Yeah, man, it's a spaceship."
-    cs "Fair. Why do you have that anyway?"
+    cs "Why do you even have that?"
 
     if "iris" in persistent.seen:
         digi "Long story. You remember Iris?"
+        show cs disappointed flipped
         cs "Vaguely...?"
         digi "Her."
     else:
         digi "Long story. Do you know a purple woman?"
+        show cs disappointed flipped
         cs "I don't think so...?"
         digi "Don't worry about it."
 
     cs "Okay, then..."
     cs "So, uh, where do we even start?"
-    digi "I'm thinking we go to the pharmacy. They have to know why insulin is this expensive."
+    show digi thinking flipped
+    digi "I'm thinking we go to the nearest pharmacy."
+    digi "Since you need a prescription for insulin, they'd have to know why insulin is so expensive."
     cs "That does make sense."
+    show digi happy flipped
     digi "Hop in the Nugget!"
-    cs "Do I need like, a space suit?"
+    show cs worried flipped
+    cs "Don't I need, like, a spacesuit?"
+    show digi disappointed flipped
     digi "No, dingus, we're not leaving the atmosphere."
+    show cs disappointed flipped
     cs "Alright..."
-    n "CS hesitantly steps onto the ship."
-
+    n "CS hesitantly boards the ship."
     jump bt1d_cvs
 
 label bt1d_cvs:
+    play sound2 sfx_ambience_nugget loop
     scene nugget_inside
     show digi at right
-    show cs at left
+    show lad at manual_pos(0.7, 0.6, 0.5) behind digi
+    show cs disappointed at left
     with dissolve
 
-    cs "So, where are we going?"
+    cs "So, which pharmacy are we going to, exactly?"
     digi "I'm thinking CVS."
     cs "CVS-- "
     show cs scared
     extend "Hey, that's right down the road!" with hpunch
     digi "Yeah?"
     cs "Why do we need a whole spaceship for this?!"
-    digi "We don't? I needed it to get to your house, I was on Microtech."
+    digi "We... don't? I needed it to get to your house. I was on Microtech."
     cs "Where?"
     digi "It's in Stanton."
-    cs "Wh-- why didn't we just use a car?!"
+    cs "Wh-- why didn't we just take my car?!"
     digi "I can't drive."
     cs "But you can pilot a {i}spaceship?!"
     digi "It's a lot easier, in my opinion. Also I don't need a license for a spaceship."
     cs "{size=-12}I really feel like you {i}should..."
     digi "Anywho, to CVS!"
+    scene black with dissolve
+    play sound sfx_nugget_takeoff
+    stop sound2 fadeout 5.0
+    pause 7.0
 
     # This scene should be beefed up a bit, I think.
+    scene cvs_outside
+
+    show digi_nugget_parked flipped at manual_pos(1.1, 0.8, 0.5)
+    with dissolve
+
     n "The Nugget lands in the CVS parking lot, and the two clamber out into the daytime."
     cs "To the pharmacy department!"
 
+    scene cvs_inside
     n "CS and Digi arrive at the pharmacy, and confront the pharmacy worker."
     cvs "Welcome to CVS, can I help you today?"
     cs "Yeah, you can tell me why insulin is so expensive!"
@@ -581,7 +903,7 @@ label bt1d_insulin:
     leedle "And why would I tell you?"
     digi "Because we can help."
     leedle "Yeah? How do I know you aren't recording this with your cyborg gobbledygook, and you're going to blackmail me!"
-    cs "{size=-20}{cshake}Guilty concious..."
+    cs "{size=-20}{cshake}Guilty conscience..."
     digi "Listen. I'll make you a deal."
     digi "If you tell us who's up to this, we'll (insert bribe here.)" # FIX
     leedle "Fine."
@@ -648,12 +970,12 @@ label bt1d_insulin:
     n "A button rises like a piston on his desk."
     diabetes_ceo "I release {i}Type 4 Diabetes{/i} on to the masses!"
     digi "You're on."
-    cs "Y--Yeah! You're on!"
+    cs "Y-{w=0.1}Yeah! You're on!"
 
     # black knife starts playing idk
+    jump rpg_diabetes_1
 
-    # rpg battle 1 - ceo
-
+label bt1d_after_fight_1:
     n "The CEO is panting on the floor."
     diabetes_ceo "Heh... heh... you've gotten good, you little rat."
     diabetes_ceo "But I'm not bested yet!"
@@ -669,12 +991,16 @@ label bt1d_insulin:
     diabetes_ceo "Kick their asses."
 
     # rpg battle 2 - secretary
+    jump rpg_diabetes_2
 
+label bt1d_after_fight_2:
     # TODO: Beef up this dialouge?
     diabetes_ceo "Ready for Round 2?"
 
     # rpg battle 3 - ceo + secretary
+    jump rpg_diabetes_3
 
+label bt1d_ending:
     diabetes_ceo "Fine. You did well."
     diabetes_secretary "These ones are good, sir."
     diabetes_ceo "I'll call off the price hike."

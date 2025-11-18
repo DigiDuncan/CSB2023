@@ -560,7 +560,7 @@
         "full_name": "CEO of Diabetes",
         "pronouns": "(he/him)",
         "sprites": {
-            "Default": "images/duck.png"
+            "Default": "images/characters/ceo.png"
         },
         "quote": "Fill this in later!",
         "bio": "Fill this in later!",
@@ -568,7 +568,7 @@
         "rpg": {
             "CEO": {
                 "name": "Base Stats",
-                "need_label": "bt1d_insulin"
+                "need_label": "bt1d_ending"
             }
         }
     },
@@ -576,7 +576,7 @@
         "full_name": "Secretary of Diabetes",
         "pronouns": "(she/her)",
         "sprites": {
-            "Default": "images/characters/amtrak_stewardess.png"
+            "Default": "images/characters/secretary.png"
         },
         "quote": "Fill this in later!",
         "bio": "Fill this in later!",
@@ -584,7 +584,7 @@
         "rpg": {
             "SECRETARY": {
                 "name": "Base Stats",
-                "need_label": "bt1d_insulin"
+                "need_label": "bt1d_ending"
             }
         }
     },
@@ -919,7 +919,8 @@
         "full_name": "Lad",
         "pronouns": "(he/they)",
         "sprites": {
-            "Default": "images/duck.png"
+            "It's The Boi!": "images/characters/lad/bio.png",
+            "Default": "images/characters/lad/default.png"
         },
         "quote": "Fill this in later!",
         "bio": "Fill this in later! Also, does Lad have RPG stats? Will he be accompanying CS on this adventure?",
@@ -932,7 +933,7 @@
             "Default": "images/characters/lancer.png"
         },
         "quote": "I'm the bad guy!",
-        "bio": "After Chapter 3, Lancer made his way out the Dark World and into Las Vegas. Since he gave up on looking for the Fun Gang after about five minutes, he went around the strip trying to dig as many holes as possible."
+        "bio": "After Chapter 3, Lancer found a way out of the Dark World and into Las Vegas. Since he gave up on looking for the Fun Gang after about five minutes, he went around the strip trying to dig as many holes as possible."
     },
     "leedle": {
         "full_name": "Leedlelee Employee",

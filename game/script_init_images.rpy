@@ -1335,6 +1335,9 @@ image border_guard dusk = "dusk:characters/border_guard.png"
 
 image benrey = "characters/benrey.png"
 
+image lad = "characters/lad/default.png"
+image lad flipped = "flip:characters/lad/default.png"
+
 # Fired Route
 image guest = "characters/guest.png"
 image guest flipped = "flip:characters/guest.png"
@@ -1425,9 +1428,6 @@ image alicia flipped = "flip:characters/alicia.png"
 image witch flipped = "flip:characters/witch.png"
 image baumer = "characters/ballmer_cutout.png"
 image baumer flipped = "flip:characters/ballmer_cutout.png"
-
-image lad = "characters/lad/default.png"
-image lad bio = "characters/lad/bio.png"
 
 # Background Images
 ## CSBI
@@ -1974,6 +1974,27 @@ image ag_bar = "bg/kuwait/ag_bar.png"
 image mechanic_shop = "bg/kuwait/mechanic.png"
 image gunsmith = "bg/kuwait/gunsmith.png"
 
+# Elizabeth Birthday Party Character
+image rex = "characters/rex.png"
+
+# Elizabeth Birthday Party BGs
+image nugget_inside = "bg/nugget_inside.png"
+image apartment_outside = "bg/apartment_outside.png"
+image apartment_1 = "bg/apartment_1.png"
+image apartment_2 = "bg/apartment_2.png"
+image apartment_3 = "bg/apartment_3.png"
+
+# Elizabeth Birthday Party Gifts
+image green_now = "gifts/green_now.png"
+image pumpkin = "gifts/pumpkin.png"
+image wiiu = "gifts/wiiu.png"
+image dkc = "gifts/dkc.png"
+image floppy = "gifts/floppy.png"
+image fish_finder = "gifts/fish_finder.png"
+image 1911 = "gifts/1911.png"
+image anne_shirt = "gifts/anne_shirt.png"
+image blockbuster = "gifts/blockbuster.png"
+
 # Misc.
 image game_menu = "gui/game_menu.png"
 image michael_calendar = "bg/michael_calendar.png"
@@ -2114,6 +2135,11 @@ image broom_closet = "bg/broom_closet.png"
 # DX Digi Characters
 image weird_al = "characters/weird_al.png"
 image cpt_underpants = "characters/cpt_underpants.png"
+image david = "characters/david.png"
+image george = "characters/george.png"
+image harold = "characters/harold.png"
+image mr_krupp = "characters/mr_krupp.png"
+image mr_krupp grin = "characters/mr_krupp_grin.png"
 
 # DX B1TD Backgrounds
 image basketball_court = "bg/basketball_court.png"
@@ -2121,11 +2147,75 @@ image aldi_inside = "bg/aldi_inside.png"
 image aldi_outside = "bg/aldi_outside.png"
 image cvs_inside = "bg/cvs_inside.png"
 image cvs_outside = "bg/cvs_outside.png"
-image david = "characters/david.png"
-image george = "characters/george.png"
-image harold = "characters/harold.png"
-image mr_krupp = "characters/mr_krupp.png"
-image mr_krupp grin = "characters/mr_krupp_grin.png"
+image cs_room_fg = "bg/cs_bedroom1_fg.png"
+
+image nugget_main = "bg/nugget/main.png"
+image nugget_main_reverse = "bg/nugget/main_reverse.png"
+image nugget_cockpit_front = "bg/nugget/cockpit_front.png"
+image nugget_cockpit_back = "bg/nugget/cockpit_back.png"
+image nugget_bedroom = "bg/nugget/bedroom.png"
+image nugget_pool = "bg/nugget/pool.png"
+
+# DX BT1D Generated Images
+image ewwie = SnowBlossom("cold_breath.png", count = 100, fast = True, xspeed = (0,0), yspeed = (0, -100), border = 256)
+
+# TODO: make these prettier later
+image txt_no_d:
+    xsize 500
+    ysize 100
+    xanchor 0.5
+    yanchor 0.5
+    contains:
+        Frame("gui/frame.png")
+    contains:
+        Text("{size=+16}NO DIABETES", xalign=0.5, yalign=0.5)
+
+image txt_t1d:
+    xsize 500
+    ysize 100
+    xanchor 0.5
+    yanchor 0.5
+    contains:
+        Frame("gui/frame.png")
+    contains:
+        Text("{size=+16}TYPE 1 DIABETES", xalign=0.5, yalign=0.5)
+
+image txt_t2d:
+    xsize 500
+    ysize 100
+    xanchor 0.5
+    yanchor 0.5
+    contains:
+        Frame("gui/frame.png")
+    contains:
+        Text("{size=+16}TYPE 2 DIABETES", xalign=0.5, yalign=0.5)
+
+image txt_insulin:
+    xsize 500
+    ysize 100
+    xanchor 0.5
+    yanchor 0.5
+    contains:
+        Text("{size=+12}Insulin", xalign=0.5, yalign=0.5)
+
+image txt_insulint:
+    xsize 500
+    ysize 100
+    xanchor 0.5
+    yanchor 0.5
+    contains:
+        Text("{size=+12}Insulin't", xalign=0.5, yalign=0.5)
+
+image txt_pump:
+    xsize 500
+    ysize 100
+    xanchor 0.5
+    yanchor 0.5
+    contains:
+        Text("{size=+12}Insulin Pump", xalign=0.5, yalign=0.5)
+
+image arrow_white = "sil_white:/gui/left_on.png"
+image arrow_white flipped = "flip:sil_white:/gui/left_on.png"
 
 # DX Holiday Special Misc.
 image smoke = SnowBlossom("smoke.png", count = 400, fast = False, xspeed = (0,0), yspeed = (0, -100), border = 32)
@@ -2158,12 +2248,15 @@ image amber_block dark = "dark:amber_block.png"
 image amtrak_dining_food = "food.png"
 image amtrak_dining_pancake = "pancake.png"
 image basketball = "basketball.png"
+image basketballnt = "basketballnt.png"
+image basketball2 = "basketball2.png"
 image basketball_machine = "basketball_machine.png"
 image anno_car = "anno_car.png"
 image anno_car dark = "dark:anno_car.png"
 image arc_laptop = "arc_laptop.png"
 image bag = "bodybag.png"
 image bag flipped = "flip:bodybag.png"
+image basketball = "basketball.png"
 image bear = "bear.png"
 image billy_car = "billy_car.png"
 image billy_car dark = "dark:billy_car.png"
@@ -2217,6 +2310,7 @@ image detective_hat dark = "dark:detective_hat.png"
 image detective_hat dark flipped = "dark:flip:detective_hat.png"
 image digi_nugget_full = "nugget_full.png"
 image digi_nugget_parked = "nugget_cutout.png"
+image digi_nugget_parked flipped = "flip:nugget_cutout.png"
 image digi_nugget_parked dark = "dark:nugget_cutout.png"
 image digi_phone = "digi_phone.png"
 image digi_phone flipped = "flip:digi_phone.png"
@@ -2288,6 +2382,7 @@ image obama_chopper dark  = "dark:obama_chopper.png"
 image objection = "objection.png"
 image oldgame = "oldgame.png"
 image onscreen_sharpener = "pencilsharpener.png"
+image oreo_os = "oreo_os.png"
 image pakoo_car = "pakoo_car.png"
 image pakoo_car dark = "dark:pakoo_car.png"
 image paper = "paper.png"
@@ -2310,6 +2405,7 @@ image projector_airplay = "bg/projector_airplay.png"
 image projector_error = "bg/projector_error.png"
 image projector_no_signal = "bg/projector_no_signal.png"
 image pump = "pump.png"
+image red_x = "red_x.png"
 image renault = "renault.png"
 image reversi_box = "images/minigames/reversi_box.png"
 image rosen_car = "rosen_car.png"
@@ -2469,6 +2565,7 @@ define decoratingscene = "movies/decoratingscene.webm"
 define intro_credits_1 = "movies/intro_credits_1.webm"
 define intro_credits_2 = "movies/intro_credits_2.webm"
 define ce_ending = "movies/ce_ending.webm"
+define dumb_thing_for_route = "movies/dumb_thing_for_route.webm"
 
 # Fun Values
 image utajsign = "images/bg/utajsign.png"

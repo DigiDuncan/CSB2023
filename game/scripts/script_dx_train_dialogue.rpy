@@ -90,7 +90,7 @@ label train_dialogue:
     show cs phone with dissolve
     pause 0.5
     play sound sfx_dial_tate
-    pause 10.0
+    pause 9
 
     scene black with dissolve
     pause 3.0

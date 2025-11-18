@@ -892,8 +892,8 @@ class Fighters:
     WESLEY = Fighter("{image=gui/dx_text.png} Wesley", True, 200, 20, 40, [Attacks.PISTOL, Attacks.ALL_OVER_AGAIN], Image("images/characters/hohsis/wesley.png"), ai = AIType.AGGRO, display_name = "Wesley")
     ED = Fighter("{image=gui/dx_text.png} Ed", True, 300, 30, 25, [Attacks.HEAVY_PUNCH, Attacks.SOTH], Image("images/characters/hohsis/ed.png"), ai = AIType.SMART, display_name = "Ed")
     RICHARD = Fighter("{image=gui/dx_text.png} Richard", True, 250, 20, 30, [Attacks.ONE_HUNDRED, Attacks.ICE_CREAM], Image("images/characters/hohsis/rich.png"), ai = AIType.DEFENSIVE, display_name = "Richard")
-    CEO = Fighter("{image=gui/dx_text.png} CEO of Diabetes", True, 1000, 50, 75, [Attacks.LOBBYING, Attacks.NANOMACHINES], Image("images/duck.png"), ai = AIType.SMART, display_name = "CEO")
-    SECRETARY = Fighter("{image=gui/dx_text.png} Secretary of Diabetes", True, 1000, 50, 75, [Attacks.LOBBYING, Attacks.NANOMACHINES], Image("images/characters/amtrak_stewardess.png"), ai = AIType.SMART, display_name = "Secretary")
+    CEO = Fighter("{image=gui/dx_text.png} CEO of Diabetes", True, 1000, 50, 75, [Attacks.LOBBYING, Attacks.NANOMACHINES], Image("images/characters/ceo.png"), ai = AIType.SMART, display_name = "CEO")
+    SECRETARY = Fighter("{image=gui/dx_text.png} Secretary of Diabetes", True, 1000, 50, 75, [Attacks.LOBBYING, Attacks.NANOMACHINES], Image("images/characters/secretary.png"), ai = AIType.SMART, display_name = "Secretary")
 
     @classproperty
     def names(cls) -> list[str]:
