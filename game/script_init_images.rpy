@@ -2149,6 +2149,13 @@ image cvs_inside = "bg/cvs_inside.png"
 image cvs_outside = "bg/cvs_outside.png"
 image cs_room_fg = "bg/cs_bedroom1_fg.png"
 
+image nugget_main = "bg/nugget/main.png"
+image nugget_main_reverse = "bg/nugget/main_reverse.png"
+image nugget_cockpit_front = "bg/nugget/cockpit_front.png"
+image nugget_cockpit_back = "bg/nugget/cockpit_back.png"
+image nugget_bedroom = "bg/nugget/bedroom.png"
+image nugget_pool = "bg/nugget/pool.png"
+
 # DX BT1D Generated Images
 image ewwie = SnowBlossom("cold_breath.png", count = 100, fast = True, xspeed = (0,0), yspeed = (0, -100), border = 256)
 
