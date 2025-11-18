@@ -368,9 +368,12 @@ label bt1d_basketball:
     # cut to a cutaway. a machine is on the left, a basketball hoop on the right. the background
     # is like, a chalkboard or something.
 
+    show basketball_machine at right with moveinright
+
     digi "Imagine your body has a basketball machine in it. You need basketballs to live."
 
-    show basketball_machine at right with moveinright
+    # round basketballs fire out of the machine, and into the hoop.
+
     show txt_no_d:
         xanchor 0.5
         yanchor 0.5
@@ -379,8 +382,6 @@ label bt1d_basketball:
 
         linear 0.25 ypos 0.075
         linear 0.25 ypos 0.065
-
-    # round basketballs fire out of the machine, and into the hoop.
 
     show txt_insulin at manual_pos(0.85, 0.5, 0.5)
 
@@ -399,8 +400,6 @@ label bt1d_basketball:
 
     show basketball at manual_pos(0.975, 0.75, 0.5):
         zoom 0.25
-
-    with dissolve
 
     digi "In a normal body, your body happily makes nice, round basketballs. They go through the hoop just fine!"
 
@@ -878,9 +877,10 @@ label bt1d_insulin:
     cs "Y--Yeah! You're on!"
 
     # black knife starts playing idk
-
+    jump rpg_diabetes_1
     # rpg battle 1 - ceo
 
+label bt1d_after_fight_1:
     n "The CEO is panting on the floor."
     diabetes_ceo "Heh... heh... you've gotten good, you little rat."
     diabetes_ceo "But I'm not bested yet!"
@@ -896,12 +896,16 @@ label bt1d_insulin:
     diabetes_ceo "Kick their asses."
 
     # rpg battle 2 - secretary
+    jump rpg_diabetes_2
 
+label bt1d_after_fight_2:
     # TODO: Beef up this dialouge?
     diabetes_ceo "Ready for Round 2?"
 
     # rpg battle 3 - ceo + secretary
+    jump rpg_diabetes_3
 
+label bt1d_ending:
     diabetes_ceo "Fine. You did well."
     diabetes_secretary "These ones are good, sir."
     diabetes_ceo "I'll call off the price hike."

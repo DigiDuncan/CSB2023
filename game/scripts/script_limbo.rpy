@@ -147,6 +147,8 @@ label woohoo_counter:
     cs "Now, it's [persistent.woohoo]!"
     return
 
+########## For CE Point & Click ##########
+
 screen hatch_button():
     modal True
 
@@ -198,6 +200,8 @@ screen hatch_button():
 
     add Flashlight()
 
+########## End CE Point & Click ##########
+
 screen lightgungame():
     modal True
     imagebutton:
@@ -220,12 +224,12 @@ screen reloadbutton():
         yalign 0.5
         xalign 0.5
     vbox xalign 0.5 yalign 0.5:
-        spacing 25    
+        spacing 25
         textbutton "Reload!":
             xalign 0.5
             text_textalign 0.5
             text_size 150
-            action Hide("reloadbutton")    
+            action Hide("reloadbutton")
 
 screen limbo_csbutton():
     add "#000000"
