@@ -116,7 +116,7 @@ label bt1d_wakeup:
     jump bt1d_aldi
 
 label bt1d_aldi:
-    n "Once he arrives at ALDI, he grabs a quarter from his center console, and heads to the cart return."
+    n "Once he arrives at ALDI, he grabs a quarter from his center console, then heads to the cart return."
     # TODO: add items: quarter?, cart
     music able_sisters
     play music able_sisters
@@ -153,7 +153,7 @@ label bt1d_aldi:
     pause 2.5
     show expression horse_sprite at offscreenleft with { "master": MoveTransition(1.0) }
     n "The horseperson walks away."
-
+    pause 1.0
     cs "Anyway..."
 
     # TODO: need a scene change here!
@@ -179,44 +179,33 @@ label bt1d_backhome:
         cs "I'm very hungry!"
         cs "Give me the snacks!"
 
-    show car_crash behind cs:
-        zoom 0.15
-        xzoom 0.7
-        yzoom 0.8
-        perspective True
-        matrixanchor (0, 0)
-        matrixtransform RotateMatrix(0, 0, 0) * RotateMatrix(0, -20, 0) * RotateMatrix(0, 0, 0) * OffsetMatrix(700, 150, 0)
+    show car_crash behind cs at t_tv_screen_skew
 
     n "CS spends the next few hours sitting on his couch and eating his spoils, all the while watching car crash videos on his TV."
 
     show cs concentrate
+    play sound2 sfx_csnore fadein 1.0
     n "Eventually, he passes out right where he's sitting!"
     scene black with dissolve
-    # TODO: SFX snoring
 
     # he passes out, show the passage of time
-
     play music apple_kid if_changed
     music apple_kid
+    stop sound2 fadeout 1.0
     show cs_room
     show cs disappointed
-    show baby_fruit behind cs:
-        zoom 0.15
-        xzoom 0.7
-        yzoom 0.8
-        perspective True
-        matrixanchor (0, 0)
-        matrixtransform RotateMatrix(0, 0, 0) * RotateMatrix(0, -20, 0) * RotateMatrix(0, 0, 0) * OffsetMatrix(700, 150, 0)
+    show baby_fruit behind cs at t_tv_screen_skew
     with dissolve
-    n "CS awakes surrounded by wrappers and plates, and some random video playing on the TV."
-    # TODO: matrix math some baby fruit video onto the screen
+    n "CS awakes surrounded by wrappers and plates."
+    n "His body feels heavy and his head is full of... fruit?"
     cs "What the heck is this?"
-    n "The TV displays some kind of baby sensory video."
+    n "Some kind of baby sensory video is on the TV."
     cs "Something must have autoplayed..."
     cs "Athena, TV off."
     play sound sfx_fabeep
     hide baby_fruit
-    pause 1.0
+    pause 2.0
+    cs "Ugh..."
     cs "What time is it?"
 
     show cs_phone flipped with MoveTransition(0.25):
@@ -238,10 +227,12 @@ label bt1d_backhome:
     cs "How much did I eat yesterday?"
     n "CS stands up and looks around, taking inventory of the damage."
     # TODO: assets: piles of food
+    # TODO: make him actually look around
     cs "Oreos... Cheez-Its... Animal crackers... oh, jeez..."
     n "CS thinks for a moment, then is taken aback with horror!"
-    show cs worried with hpunch
-    cs "Oh no! Wait, what if I have diabetes?!"
+    show cs scared
+    cs "Oh no! "  with hpunch
+    extend "Wait, what if I have diabetes?!"
     n "CS rushes to this computer."
     # TODO: change scene, put him at a computer. he doesn't have the craptop anymore at this point so we need a shot of his new PC
     n "CS begins researching diabetes."
@@ -672,7 +663,7 @@ label bt1d_insulin:
     leedle "And why would I tell you?"
     digi "Because we can help."
     leedle "Yeah? How do I know you aren't recording this with your cyborg gobbledygook, and you're going to blackmail me!"
-    cs "{size=-20}{cshake}Guilty concious..."
+    cs "{size=-20}{cshake}Guilty conscience..."
     digi "Listen. I'll make you a deal."
     digi "If you tell us who's up to this, we'll (insert bribe here.)" # FIX
     leedle "Fine."

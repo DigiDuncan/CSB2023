@@ -317,6 +317,15 @@ init:
         linear 0.25 rotate -45
         linear 0.25 rotate 0
 
+    # TODO: this is still trash, pls fix
+    transform t_tv_screen_skew:
+        xzoom 0.095
+        yzoom 0.13
+
+        perspective True
+        matrixtransform RotateMatrix(-1, -32, 1) * OffsetMatrix(700, 135, 0)
+
+
     # *** HIGHLY EXPERIMENTAL, USE THESE AT YOUR OWN RISK ***
     # either shake a character or use with this line to shake whole screen for as long as you want:
     # $ renpy.show_layer_at(sustained_<*>punch(<args>), layer="master")
