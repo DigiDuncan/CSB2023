@@ -402,9 +402,6 @@ label bt1d_basketball:
 
     with dissolve
 
-    show txt_no_d:
-        linear 0.25 ypos -0.05
-
     digi "In a normal body, your body happily makes nice, round basketballs. They go through the hoop just fine!"
 
     show basketball:
@@ -429,6 +426,8 @@ label bt1d_basketball:
 
     pause 3.0
 
+    show txt_no_d:
+        linear 0.25 ypos -0.05
     show txt_t1d:
         xanchor 0.5
         yanchor 0.5
@@ -439,12 +438,24 @@ label bt1d_basketball:
         linear 0.25 ypos 0.065
 
     show red_x at manual_pos(0.85, 0.7, 0.5)
-    digi "In my body, with Type 1 Diabetes, I don't make any basketballs. So I have to \"import\" some."
+    digi "In my body, with Type 1 Diabetes, I don't make any basketballs."
 
     # a cardboard box drops into the scene. a basketball comes out the box, and flies into the hoop.
+    # TODO: use different box sprite later
+    show linus_box at manual_pos(0.5, 0.6, 0.5) with { "master": moveintop }
+    pause 0.5
+    play sound sfx_punch
+    with vpunch
+    digi "So I have to \"import\" some."
 
+    show basketball
+
+    hide txt_insulin
+    hide red_x
+    show txt_pump at manual_pos(0.85, 0.5, 0.5)
+    show pump at manual_pos(0.85, 0.7, 0.5):
+        zoom 0.5
     digi "That's what my pump is for."
-    # TODO: show digi pump, maybe make it launch a ball lol
 
     show txt_t1d:
         linear 0.25 ypos -0.05
@@ -459,16 +470,21 @@ label bt1d_basketball:
 
         linear 0.25 ypos 0.075
         linear 0.25 ypos 0.065
+    with determination
 
-    hide red_x
-    hide txt_insulin
+    hide txt_pump
+    hide pump
+    hide linus_box
     show txt_insulint at manual_pos(0.85, 0.5, 0.5)
-    show basketballnt at manual_pos(0.975, 0.75, 0.5):
+    show basketballnt as first at manual_pos(0.975, 0.75, 0.5):
         zoom 0.25
+    with dissolve
 
+    pause 1.0
     digi "With Type 2, your body makes cubular basketballs."
 
-    show basketballnt:
+    play sound sfx_basketball
+    show basketballnt as first behind txt_t2d:
         parallel:
             linear 1.0 xpos 0.225
         parallel:
@@ -484,14 +500,68 @@ label bt1d_basketball:
             linear 1.0 ypos -0.1
         parallel:
             linear 1.0 rotate 180
+    pause 1.0
+    play sound2 sfx_spring noloop
+    with vpunch
+
+    digi "They can't go through the hoop... "
+    # TODO: replace this with a hammer later
+    show spoon at manual_pos(0.3, 0.5, 0.5)
+    show basketballnt as second at truecenter behind spoon:
+        rotate 0
+    with { "master": dissolve }
+
+    extend "so we need to hammer them back into spheres!"
+
+    show spoon:
+        linear 0.1 rotate 70
+        linear 0.25 rotate 0
+    play sound sfx_tf2_wrench_hit
+    with vpunch
+    pause 0.5
+
+    show spoon:
+        linear 0.1 rotate 70
+        linear 0.25 rotate 0
+    play sound sfx_tf2_wrench_hit
+    hide basketballnt as second
+    show basketball2 at truecenter behind spoon
+    with vpunch
+    pause 0.5
+
+    show spoon:
+        linear 0.1 rotate 70
+        linear 0.25 rotate 0
+    play sound sfx_tf2_wrench_hit
+    hide basketball2
+    show basketball as third at truecenter behind spoon
+    with vpunch
+    pause 0.5
+
+    hide spoon with dissolve
+    digi "That's what medication does!"
+
+    show basketball as third:
+        block:
+            parallel:
+                linear 1.0 xpos 0.225
+            parallel:
+                linear 1.0 ypos 0.2
+            parallel:
+                linear 1.0 rotate 180
+            parallel:
+                linear 1.0 zoom 0.25
+
+        block:
+            linear 0 ypos 0.2
+            parallel:
+                linear 1.0 ypos 1.1
+            parallel:
+                linear 1.0 rotate 360
 
     play sound sfx_basketball
 
-    digi "They can't go through the hoop... so we need to hammer them back into spheres!"
-
-    # A hammer is added to the scene. The balls hit the hammer, become round, then go in the hoop.
-
-    digi "That's what medication does!"
+    pause 3.0
 
     # cut back to the splitscreen voice call
     jump bt1d_afterbball

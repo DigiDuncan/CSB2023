@@ -2177,6 +2177,14 @@ image txt_insulint:
     contains:
         Text("{size=+12}Insulin't", xalign=0.5, yalign=0.5)
 
+image txt_pump:
+    xsize 500
+    ysize 100
+    xanchor 0.5
+    yanchor 0.5
+    contains:
+        Text("{size=+12}Insulin Pump", xalign=0.5, yalign=0.5)
+
 image arrow_white = "sil_white:/gui/left_on.png"
 image arrow_white flipped = "flip:sil_white:/gui/left_on.png"
 
