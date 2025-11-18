@@ -560,7 +560,7 @@
         "full_name": "CEO of Diabetes",
         "pronouns": "(he/him)",
         "sprites": {
-            "Default": "images/duck.png"
+            "Default": "images/characters/ceo.png"
         },
         "quote": "Fill this in later!",
         "bio": "Fill this in later!",
@@ -576,7 +576,7 @@
         "full_name": "Secretary of Diabetes",
         "pronouns": "(she/her)",
         "sprites": {
-            "Default": "images/characters/amtrak_stewardess.png"
+            "Default": "images/characters/secretary.png"
         },
         "quote": "Fill this in later!",
         "bio": "Fill this in later!",
