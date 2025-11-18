@@ -188,20 +188,24 @@ label bt1d_backhome:
     n "Eventually, he passes out right where he's sitting!"
     scene black with dissolve
 
-    # he passes out, show the passage of time
+    # TODO: he passes out, show the passage of time
     play music apple_kid if_changed
     music apple_kid
+    # audio ducking
+    $ renpy.music.set_volume(0.25)
     stop sound2 fadeout 1.0
     show cs_room
     show cs disappointed
     show baby_fruit behind cs at t_tv_screen_skew
     with dissolve
-    n "CS awakes surrounded by wrappers and plates."
+    n "CS awakens surrounded by wrappers and plates."
     n "His body feels heavy and his head is full of... fruit?"
     cs "What the heck is this?"
     n "Some kind of baby sensory video is on the TV."
     cs "Something must have autoplayed..."
     cs "Athena, TV off."
+    # un-duck the audio
+    $ renpy.music.set_volume(1.0)
     play sound sfx_fabeep
     hide baby_fruit
     pause 2.0
@@ -233,9 +237,10 @@ label bt1d_backhome:
     show cs scared
     cs "Oh no! "  with hpunch
     extend "Wait, what if I have diabetes?!"
-    n "CS rushes to this computer."
-    # TODO: change scene, put him at a computer. he doesn't have the craptop anymore at this point so we need a shot of his new PC
-    n "CS begins researching diabetes."
+    n "CS rushes to his computer."
+    # TODO: change scene, put him at a computer. he doesn't have the craptop anymore at this point so we need a shot of his new PC.
+    # TODO: or should we just have him do it on his phone since he's already holding it?
+    n "Frantically typing, he begins researching diabetes."
     cs "How much would insulin cost? It's not like I have a ton of cash..."
 
     camera:
@@ -364,6 +369,7 @@ label bt1d_basketball:
     # is like, a chalkboard or something.
 
     digi "Imagine your body has a basketball machine in it. You need basketballs to live."
+
     show basketball_machine at right with moveinright
     show txt_no_d:
         xanchor 0.5
@@ -376,11 +382,52 @@ label bt1d_basketball:
 
     # round basketballs fire out of the machine, and into the hoop.
 
-    digi "In a normal body, your body happily makes nice, round basketballs. They go through the hoop just fine!"
+    show txt_insulin at manual_pos(0.85, 0.5, 0.5)
+
+    show arrow_white flipped:
+        xanchor 0.5 yanchor 0.5
+        rotate 90
+        zoom 0.3
+        xpos 0.85
+
+        block:
+            ypos 0.55
+            linear 0.5 ypos 0.55
+            ypos 0.565
+            linear 0.5 ypos 0.565
+            repeat
+
+    show basketball at manual_pos(0.975, 0.75, 0.5):
+        zoom 0.25
+
+    with dissolve
+
     show txt_no_d:
         linear 0.25 ypos -0.05
 
+    digi "In a normal body, your body happily makes nice, round basketballs. They go through the hoop just fine!"
+
+    show basketball:
+        block:
+            parallel:
+                linear 1.0 xpos 0.225
+            parallel:
+                linear 1.0 ypos 0.2
+            parallel:
+                linear 1.0 rotate 90
+
+        block:
+            linear 0 ypos 0.2
+            parallel:
+                linear 1.0 ypos 1.1
+            parallel:
+                linear 1.0 rotate 180
+
+    play sound sfx_basketball
+
     # no more basketballs are made
+
+    pause 3.0
 
     show txt_t1d:
         xanchor 0.5
@@ -391,11 +438,13 @@ label bt1d_basketball:
         linear 0.25 ypos 0.075
         linear 0.25 ypos 0.065
 
+    show red_x at manual_pos(0.85, 0.7, 0.5)
     digi "In my body, with Type 1 Diabetes, I don't make any basketballs. So I have to \"import\" some."
 
     # a cardboard box drops into the scene. a basketball comes out the box, and flies into the hoop.
 
     digi "That's what my pump is for."
+    # TODO: show digi pump, maybe make it launch a ball lol
 
     show txt_t1d:
         linear 0.25 ypos -0.05
@@ -411,7 +460,33 @@ label bt1d_basketball:
         linear 0.25 ypos 0.075
         linear 0.25 ypos 0.065
 
+    hide red_x
+    hide txt_insulin
+    show txt_insulint at manual_pos(0.85, 0.5, 0.5)
+    show basketballnt at manual_pos(0.975, 0.75, 0.5):
+        zoom 0.25
+
     digi "With Type 2, your body makes cubular basketballs."
+
+    show basketballnt:
+        parallel:
+            linear 1.0 xpos 0.225
+        parallel:
+            linear 1.0 ypos 0.2
+        parallel:
+            linear 1.0 rotate 90
+
+        linear 0 ypos 0.2
+
+        parallel:
+            linear 1.0 xpos 0.7
+        parallel:
+            linear 1.0 ypos -0.1
+        parallel:
+            linear 1.0 rotate 180
+
+    play sound sfx_basketball
+
     digi "They can't go through the hoop... so we need to hammer them back into spheres!"
 
     # A hammer is added to the scene. The balls hit the hammer, become round, then go in the hoop.

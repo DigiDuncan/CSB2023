@@ -2161,6 +2161,24 @@ image txt_t2d:
     contains:
         Text("{size=+16}TYPE 2 DIABETES", xalign=0.5, yalign=0.5)
 
+image txt_insulin:
+    xsize 500
+    ysize 100
+    xanchor 0.5
+    yanchor 0.5
+    contains:
+        Text("{size=+12}Insulin", xalign=0.5, yalign=0.5)
+
+image txt_insulint:
+    xsize 500
+    ysize 100
+    xanchor 0.5
+    yanchor 0.5
+    contains:
+        Text("{size=+12}Insulin't", xalign=0.5, yalign=0.5)
+
+image arrow_white = "sil_white:/gui/left_on.png"
+image arrow_white flipped = "flip:sil_white:/gui/left_on.png"
 
 # DX Holiday Special Misc.
 image smoke = SnowBlossom("smoke.png", count = 400, fast = False, xspeed = (0,0), yspeed = (0, -100), border = 32)
@@ -2193,6 +2211,7 @@ image amber_block dark = "dark:amber_block.png"
 image amtrak_dining_food = "food.png"
 image amtrak_dining_pancake = "pancake.png"
 image basketball = "basketball.png"
+image basketballnt = "basketballnt.png"
 image basketball_machine = "basketball_machine.png"
 image anno_car = "anno_car.png"
 image anno_car dark = "dark:anno_car.png"
@@ -2346,6 +2365,7 @@ image projector_airplay = "bg/projector_airplay.png"
 image projector_error = "bg/projector_error.png"
 image projector_no_signal = "bg/projector_no_signal.png"
 image pump = "pump.png"
+image red_x = "red_x.png"
 image renault = "renault.png"
 image reversi_box = "images/minigames/reversi_box.png"
 image rosen_car = "rosen_car.png"
