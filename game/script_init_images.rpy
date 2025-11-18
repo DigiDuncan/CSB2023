@@ -2126,6 +2126,7 @@ image aldi_inside = "bg/aldi_inside.png"
 image aldi_outside = "bg/aldi_outside.png"
 image cvs_inside = "bg/cvs_inside.png"
 image cvs_outside = "bg/cvs_outside.png"
+image cs_room_fg = "bg/cs_bedroom1_fg.png"
 
 # DX BT1D Generated Images
 image ewwie = SnowBlossom("cold_breath.png", count = 100, fast = True, xspeed = (0,0), yspeed = (0, -100), border = 256)
