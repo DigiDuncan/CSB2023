@@ -1974,6 +1974,27 @@ image ag_bar = "bg/kuwait/ag_bar.png"
 image mechanic_shop = "bg/kuwait/mechanic.png"
 image gunsmith = "bg/kuwait/gunsmith.png"
 
+# Elizabeth Birthday Party Character
+image rex = "characters/rex.png"
+
+# Elizabeth Birthday Party BGs
+image nugget_inside = "bg/nugget_inside.png"
+image apartment_outside = "bg/apartment_outside.png"
+image apartment_1 = "bg/apartment_1.png"
+image apartment_2 = "bg/apartment_2.png"
+image apartment_3 = "bg/apartment_3.png"
+
+# Elizabeth Birthday Party Gifts
+image green_now = "gifts/green_now.png"
+image pumpkin = "gifts/pumpkin.png"
+image wiiu = "gifts/wiiu.png"
+image dkc = "gifts/dkc.png"
+image floppy = "gifts/floppy.png"
+image fish_finder = "gifts/fish_finder.png"
+image 1911 = "gifts/1911.png"
+image anne_shirt = "gifts/anne_shirt.png"
+image blockbuster = "gifts/blockbuster.png"
+
 # Misc.
 image game_menu = "gui/game_menu.png"
 image michael_calendar = "bg/michael_calendar.png"
@@ -2535,6 +2556,7 @@ define decoratingscene = "movies/decoratingscene.webm"
 define intro_credits_1 = "movies/intro_credits_1.webm"
 define intro_credits_2 = "movies/intro_credits_2.webm"
 define ce_ending = "movies/ce_ending.webm"
+define dumb_thing_for_route = "movies/dumb_thing_for_route.webm"
 
 # Fun Values
 image utajsign = "images/bg/utajsign.png"
