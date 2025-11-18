@@ -221,6 +221,7 @@ define audio.ce_passport = "cepassport.ogg"
 define audio.snowman = "snowman.ogg"
 define audio.title_theme_reprise = "title_theme_reprise.ogg"
 define audio.girl_next_door = "girl_next_door.ogg"
+define audio.hotel_disbelief = "minigames/carrot/hotel_disbelief.ogg"
 
 # CSBDX After-True Music
 define audio.lets_hear_spring = "letshearspring.ogg"
