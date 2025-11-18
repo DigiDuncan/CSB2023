@@ -37,5 +37,15 @@
         "y_pos": 440,
         "jump_to": "CSB3_EBEEP12024FDEADNYWFFEAGM",
         "need_label": "ce_epilogue"
+    },
+    "pe": {
+        "title": "Why is my pee clear?",
+        "desc": "For ages 18 months to 3 years.",
+        "spine_width": 27,
+        "spine_height": 150,
+        "x_pos": 772,
+        "y_pos": 536,
+        "jump_to": "book_peeing",
+        "need_label": "ce_epilogue"
     }
 }
