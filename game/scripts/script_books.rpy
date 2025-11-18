@@ -368,7 +368,7 @@ label book_underpants:
 label book_CSB3_EBEEP12024FDEADNYWFFEAGM:
     stop music fadeout 3.0
     music end
-    scene cs_kitchen 
+    scene cs_kitchen
     show digi flipped at center
     with dissolve
     play music good_eatin
@@ -779,9 +779,9 @@ label book_peeing:
     scene cs_bathroom
     play sound sfx_house_door_close
     show cs
-    n "CS comes out of the bathroom, feeling refreshed."
+    n "CS comes out of the bathroom feeling refreshed."
     show cs happy
-    cs "My pee was clear today! That means I must be really healthy!"
+    cs "My pee was clear today! That must mean I'm really healthy!"
     show mean human angry at right with moveinright
     show cs worried
     mean "Actually, that's not very healthy."

@@ -725,6 +725,14 @@
         "desc": "Won by CS while at PencilCon, but is it even real gold?",
         "rarity": "Rare"
     },
+    "oreo_os": {
+        "img": "oreo_os",
+        "name": "Oreo O's",
+        "owner": "CS",
+        "desc": "CS' favorite cereal.\n\n...Why didn't they just call them \"OreOs\"?!",
+        "rarity": "Common",
+        "dx": true
+    },
     "oxygen_canister": {
         "img": "oxygen_canister.png",
         "name": "Oxygen Canister",

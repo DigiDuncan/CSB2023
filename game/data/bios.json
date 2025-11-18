@@ -568,7 +568,7 @@
         "rpg": {
             "CEO": {
                 "name": "Base Stats",
-                "need_label": "bt1d_insulin"
+                "need_label": "bt1d_ending"
             }
         }
     },
@@ -584,7 +584,7 @@
         "rpg": {
             "SECRETARY": {
                 "name": "Base Stats",
-                "need_label": "bt1d_insulin"
+                "need_label": "bt1d_ending"
             }
         }
     },
