@@ -120,31 +120,31 @@ label bt1d_wakeup:
 
 label bt1d_aldi:
     n "Once he arrives at ALDI, he grabs a quarter from his center console, then heads to the cart return."
-    # TODO: add items: quarter?, replace with aldi cart
+    $ collect("shopping_cart_aldi")
     play sound sfx_shopping_cart
     music able_sisters
     play music able_sisters
     pause 0.5
     show aldi_outside
     show cs at manual_pos(0.5, 1.0, 1.0)
-    show shopping_cart at manual_pos(0.6, 1.1, 0.5)
+    show shopping_cart_aldi at manual_pos(0.6, 1.1, 0.5)
     with dissolve
 
     cs "What a smart system! Those Europeans sure know what they're doing."
 
     show cs at manual_pos(1.4, 1.0, 1.0)
-    show shopping_cart at manual_pos(1.7, 1.1, 0.5)
+    show shopping_cart_aldi at manual_pos(1.7, 1.1, 0.5)
     with move
 
     scene aldi_inside
     with dissolve
 
     show cs coat at manual_pos(-0.5, 1.0, 1.0)
-    show shopping_cart at manual_pos(-0.3, 1.1, 0.5)
+    show shopping_cart_aldi at manual_pos(-0.3, 1.1, 0.5)
     with determination
 
     show cs at manual_pos(0.5, 1.0, 1.0)
-    show shopping_cart at manual_pos(0.6, 1.1, 0.5)
+    show shopping_cart_aldi at manual_pos(0.6, 1.1, 0.5)
     with move
 
     n "CS walks into the ALDI and is enamored by the selection and prices."
@@ -178,7 +178,7 @@ label bt1d_aldi:
     # TODO: need a scene change here!
     # CS buys a lot of food I don't know figure it out
     show cs at manual_pos(1.4, 1.0, 1.0)
-    show shopping_cart at manual_pos(1.7, 1.1, 0.5)
+    show shopping_cart_aldi at manual_pos(1.7, 1.1, 0.5)
     with move
 
     n "CS goes to check out with a cart full of food."
@@ -189,10 +189,13 @@ label bt1d_aldi:
     cashier "That's what we do here at ALDI."
     cashier "Tell your friends; we don't have a marketing budget."
 
+    scene black with dissolve
     jump bt1d_backhome
 
 label bt1d_backhome:
-    # Cut to CS at home with his groceries
+
+    centered "A short drive later..."
+
     scene cs_room
     show cs at offscreenright
     show cs_room_fg
@@ -211,6 +214,8 @@ label bt1d_backhome:
     show cs flipped at left with move
     show cs
 
+    pause 0.5
+
     if fun_value(FUN_VALUE_COMMON):
         cs "I'm very hungry!"
         cs "Give me the snacks!"
@@ -225,11 +230,16 @@ label bt1d_backhome:
     play sound2 sfx_csnore fadein 1.0
     show cs concentrate at left with dissolve
     n "Eventually, he passes out right where he's sitting..."
-    scene black with Dissolve(2.0)
+    stop sound2 fadeout 3.0
+    stop music fadeout 3.0
+    scene black with Dissolve(3.0)
+
 
     scene cs_room # TODO: need a version of his room covered in trash
     show cs disappointed at left
     show cs_room_fg
+    show baby_fruit behind cs at t_tv_screen_skew
+    with dissolve
 
     play music apple_kid if_changed
     music apple_kid
@@ -237,13 +247,12 @@ label bt1d_backhome:
     $ renpy.music.set_volume(0.25)
     stop sound2 fadeout 1.0
 
-    show baby_fruit behind cs at t_tv_screen_skew
-    with dissolve
-
     n "CS awakens surrounded by wrappers and plates."
     n "His body feels heavy and his head is full of... fruit?"
-    cs "What the heck is this?"
+    show cs worried
+    cs "What the heck {i}is{/i} this?"
     n "Some kind of baby sensory video is on the TV."
+    show cs disappointed
     cs "Something must have autoplayed..."
     cs "Athena, TV off."
 
@@ -280,10 +289,16 @@ label bt1d_backhome:
     show cs_phone flipped at manual_pos(0.55, 0.45)
     with { "master": move }
 
-    n "CS stands up and looks around, taking inventory of the damage."
+    n "CS stands up to assess the damage."
     # TODO: assets: piles of food
     # TODO: make him actually look around
-    cs "Oreos... Cheez-Its... Animal crackers... oh, jeez..."
+    cs "Oreos... Cheez-Its... {nw}"
+    show cs disappointed flipped
+    show cs_phone at manual_pos(0.35, 0.45)
+    extend "Animal crackers... {nw}"
+    show cs worried at center
+    show cs_phone flipped at manual_pos(0.55, 0.45)
+    extend "oh, {i}jeez..."
     n "CS thinks for a moment, then is taken aback with horror!"
     show cs scared
     cs "Oh no! "  with hpunch
@@ -322,21 +337,33 @@ label bt1d_backhome:
         reset
 
     cs "{cshake}$300?!" with hpunch
-    cs "This is insane! I need to call Digi. They have diabetes, maybe they can make this make sense to me."
+    cs "This is insane! I should call Digi. They have diabetes, so maybe they can make sense of this!"
 
-    # TODO: SFX: DialingDuncan lol, just using hohsis as a placeholder, will need to change timings later anyway
-    play sound sfx_dial_hohsis
-    pause 5.0
+    play sound sfx_dial_digi
+    pause 4.0
 
     show cs_phone at manual_pos(0.44, 0.4325, 0.5) with move
 
-    pause 5.0
+    pause 2.0
 
     scene black with dissolve
     # prevent dial tone overflow
     stop sound
     play sound2 sfx_ambience_nugget loop
-    show nugget_inside
+
+    # :D
+    # - tate
+    if fun_value(FUN_VALUE_RARE):
+        $ digi_smol = True
+    else:
+        $ digi_smol = False
+
+    if digi_smol == True:
+        show nugget_inside
+    else:
+        show nugget_main:
+            zoom 0.5
+
     show digi thinking at center
     show cs worried at offscreenleft
     with dissolve
@@ -349,15 +376,7 @@ label bt1d_backhome:
     show digi sad
     digi "What the heck? No one ever calls me..."
 
-    # :D
-    # - tate
     $ collect("digi_phone")
-
-    if fun_value(FUN_VALUE_RARE):
-        $ digi_smol = True
-    else:
-        $ digi_smol = False
-
     if digi_smol == True:
         show digi flipped
         show digi_phone with MoveTransition(0.25):
@@ -391,7 +410,13 @@ label bt1d_backhome:
     with determination
 
     show cs_room at mid_offscreen_left behind cs
-    show nugget_inside at mid_offscreen_right behind cs
+
+    if digi_smol == True:
+        show nugget_inside at mid_offscreen_right behind cs
+    else:
+        show nugget_main at mid_offscreen_right behind cs:
+            zoom 0.5
+
     show cs scared phone at mid_left
     show digi at mid_right
     if digi_smol == True:
@@ -642,8 +667,15 @@ label bt1d_basketball:
 label bt1d_afterbball:
     # set up scene again
     play sound2 sfx_ambience_nugget loop
+
+    if digi_smol == True:
+        show nugget_inside at mid_offscreen_right behind cs
+    else:
+        show nugget_main at mid_offscreen_right behind cs:
+            zoom 0.5
+
     show cs_room at mid_offscreen_left behind cs
-    show nugget_inside at mid_offscreen_right behind cs_room
+
     show cs disappointed phone at mid_left
     show digi at mid_right
     if digi_smol == True:
@@ -742,6 +774,7 @@ label bt1d_afterbball:
     with move
 
     stop sound2 fadeout 1.0
+    # TODO: change music here
     scene black with Dissolve(1.0)
     pause 1.0
     play sound sfx_nugget
@@ -791,9 +824,10 @@ label bt1d_afterbball:
 
 label bt1d_cvs:
     play sound2 sfx_ambience_nugget loop
-    scene nugget_inside
+    scene nugget_cockpit_back:
+        zoom 0.5
     show digi at right
-    show lad at manual_pos(0.7, 0.6, 0.5) behind digi
+    show lad at manual_pos(0.7, 0.75, 0.5) behind digi
     show cs disappointed at left
     with dissolve
 

@@ -945,6 +945,14 @@
         "rarity": "Common",
         "ce": true
     },
+    "shopping_cart_aldi": {
+        "img": "shopping_cart_aldi",
+        "name": "Another Shopping Cart",
+        "owner": "ALDI",
+        "desc": "Not sure why all the carts in this region use this plastic material... it's almost like that's all they could find or something!",
+        "rarity": "Common",
+        "dx": true
+    },
     "shovel": {
         "img": "shovel",
         "name": "CS' Shovel",

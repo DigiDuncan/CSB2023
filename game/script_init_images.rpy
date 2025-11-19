@@ -2190,6 +2190,7 @@ image txt_t2d:
     contains:
         Text("{size=+16}TYPE 2 DIABETES", xalign=0.5, yalign=0.5)
 
+# TODO: can we turn these into a function instead?
 image txt_insulin:
     xsize 500
     ysize 100
