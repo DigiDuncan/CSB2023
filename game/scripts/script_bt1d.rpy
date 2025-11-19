@@ -1016,6 +1016,8 @@ label bt1d_insulin:
     play sound sfx_nugget
     stop sound2 fadeout 1.0
     scene black with dissolve
+    pause 1.5
+    scene leedlelee_outside with dissolve
     n "The Nugget lands in the parking lot of the Leedlelee offices."
     digi "Nowhere to go but up!"
     cs "Let's do this!"

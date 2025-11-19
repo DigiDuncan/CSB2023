@@ -2151,6 +2151,7 @@ image cs_room_fg = "bg/cs_bedroom1_fg.png"
 image aldi_checkout = "bg/aldi_checkout.png"
 image aldi_checkout_fg1 = "bg/aldi_checkout_fg1.png"
 image aldi_checkout_fg2 = "bg/aldi_checkout_fg2.png"
+image leedlelee_outside = "bg/leedlelee_outside.png"
 
 image nugget_main = "bg/nugget/main.png"
 image nugget_main_reverse = "bg/nugget/main_reverse.png"
