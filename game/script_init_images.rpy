@@ -2148,6 +2148,9 @@ image aldi_outside = "bg/aldi_outside.png"
 image cvs_inside = "bg/cvs_inside.png"
 image cvs_outside = "bg/cvs_outside.png"
 image cs_room_fg = "bg/cs_bedroom1_fg.png"
+image aldi_checkout = "bg/aldi_checkout.png"
+image aldi_checkout_fg1 = "bg/aldi_checkout_fg1.png"
+image aldi_checkout_fg2 = "bg/aldi_checkout_fg2.png"
 
 image nugget_main = "bg/nugget/main.png"
 image nugget_main_reverse = "bg/nugget/main_reverse.png"
@@ -2244,6 +2247,8 @@ image hendry clap2 = "characters/hendry_clap2.png"
 image snow_pile = "snow_pile.png"
 
 # Static Images
+image shopping_cart_aldi = "shopping_cart_aldi.png"
+image shopping_cart_aldi flipped = "flip:shopping_cart_aldi.png"
 image amber_block = "amber_block.png"
 image amber_block dark = "dark:amber_block.png"
 image amtrak_dining_food = "food.png"

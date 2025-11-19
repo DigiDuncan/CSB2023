@@ -161,7 +161,7 @@ label bt1d_aldi:
         python:
             horse_sprite = "horse"
 
-    show expression horse_sprite at mid_right with { "master": MoveTransition(1.0) }
+    show expression horse_sprite behind shopping_cart_aldi at mid_right with { "master": MoveTransition(1.0) }
     n "A horse...? walks by CS."
     show cs worried
     horse "You could what?"
@@ -170,7 +170,7 @@ label bt1d_aldi:
     horse "Mm-hmm."
     play sound sfx_waterphone
     pause 2.5
-    show expression horse_sprite at offscreenleft with { "master": MoveTransition(1.0) }
+    show expression horse_sprite behind cs at offscreenleft with { "master": MoveTransition(1.0) }
     n "The horseperson walks away."
     pause 1.0
     cs "Anyway..."
@@ -181,15 +181,111 @@ label bt1d_aldi:
     show shopping_cart_aldi at manual_pos(1.7, 1.1, 0.5)
     with move
 
+    scene aldi_checkout
+    show cashier at manual_pos(0.8, 0.55, 0.5) behind aldi_checkout_fg2
+    show aldi_checkout_fg1
+    show aldi_checkout_fg2
+    show cs at manual_pos(-0.5, 1.0, 1.0)
+    show shopping_cart_aldi at manual_pos(-0.6, 1.1, 0.5)
+    with dissolve
+    show bread at manual_pos(0.4, 1.5, 0.5)
+    show carrot_cake at manual_pos(0.4, 1.5, 0.5)
+    show cheetos at manual_pos(0.4, 1.5, 0.5)
+    show donut_1 at manual_pos(0.4, 1.5, 0.5)
+    show genergy at manual_pos(0.4, 1.5, 0.5)
+    show pie at manual_pos(0.4, 1.5, 0.5)
+    show pringles at manual_pos(0.4, 1.5, 0.5)
+    show spray_cheese at manual_pos(0.4, 1.5, 0.5)
+    show amtrak_dining_food at manual_pos(0.4, 1.5, 0.5)
+    show peach_syrup at manual_pos(0.4, 1.5, 0.5)
     n "CS goes to check out with a cart full of food."
+    show cs at manual_pos(0.3, 1.0, 1.0)
+    show shopping_cart_aldi at manual_pos(0.4, 1.1, 0.5)
+    with move 
     cs "I can't wait to get all this home..."
+    show cs at manual_pos(0.5, 1.0, 1.0)
+    with move
+    show cs at manual_pos(0.6, 1.1, 1.0):
+        linear 0.5 rotate 35
+    pause 0.5
+    show cs at manual_pos(0.6, 1.1, 1.0):
+        linear 0.5 rotate 0
+    show bread behind cs at manual_pos(0.4, 0.5, 0.5)
+    show carrot_cake behind cs at manual_pos(0.41, 0.5, 0.5):
+        zoom 0.25
+    show cheetos behind cs at manual_pos(0.42, 0.5, 0.5):
+        zoom 0.3
+    show donut_1 behind cs at manual_pos(0.43, 0.5, 0.5):
+        zoom 0.5
+    show genergy behind cs at manual_pos(0.39, 0.5, 0.5):
+        zoom 0.5
+    show pie behind cs at manual_pos(0.44, 0.5, 0.5):
+        zoom 0.4
+    show pringles behind cs at manual_pos(0.45, 0.5, 0.5):
+        zoom 0.5
+    show spray_cheese behind cs at manual_pos(0.38, 0.5, 0.5):
+        zoom 0.5
+    show amtrak_dining_food behind cs at manual_pos(0.42, 0.5, 0.5):
+        zoom 0.5
+    show peach_syrup behind cs at manual_pos(0.47, 0.55, 0.5):
+        zoom 0.25
+    with move
+    pause 0.1
+    show bread behind aldi_checkout_fg2 at manual_pos(1.4, 0.5, 0.5)
+    with move
+    play sound sfx_target_beep
+    pause 0.1
+    show carrot_cake behind aldi_checkout_fg2 at manual_pos(1.41, 0.5, 0.5):
+        zoom 0.25
+    with move
+    play sound sfx_target_beep
+    pause 0.1
+    show cheetos behind aldi_checkout_fg2 at manual_pos(1.42, 0.5, 0.5):
+        zoom 0.3
+    with move
+    play sound sfx_target_beep
+    pause 0.1
+    show donut_1 behind aldi_checkout_fg2 at manual_pos(1.43, 0.5, 0.5):
+        zoom 0.5
+    with move
+    play sound sfx_target_beep
+    pause 0.1
+    show genergy behind aldi_checkout_fg2 at manual_pos(1.39, 0.5, 0.5):
+        zoom 0.5
+    with move
+    play sound sfx_target_beep
+    pause 0.1
+    show pie behind aldi_checkout_fg2 at manual_pos(1.44, 0.5, 0.5):
+        zoom 0.4
+    with move
+    play sound sfx_target_beep
+    pause 0.1
+    show pringles behind aldi_checkout_fg2 at manual_pos(1.45, 0.5, 0.5):
+        zoom 0.5
+    with move
+    play sound sfx_target_beep
+    pause 0.1
+    show spray_cheese behind aldi_checkout_fg2 at manual_pos(1.38, 0.5, 0.5):
+        zoom 0.5
+    with move
+    play sound sfx_target_beep
+    pause 0.1
+    show amtrak_dining_food behind aldi_checkout_fg2 at manual_pos(1.42, 0.5, 0.5):
+        zoom 0.5
+    with move
+    play sound sfx_target_beep
+    pause 0.1
+    show peach_syrup behind aldi_checkout_fg2 at manual_pos(1.47, 0.55, 0.5):
+        zoom 0.25
+    with move
+    play sound sfx_target_beep
+    pause 0.1
     n "CS puts all this food up on the belt, and cashier checks him out with great speed!"
     cashier "That will be $88.88."
     n "Wow, that's pretty cheap for this much food!"
     cashier "That's what we do here at ALDI."
     cashier "Tell your friends; we don't have a marketing budget."
-
-    scene black with dissolve
+    scene black with Dissolve(3.0)
     jump bt1d_backhome
 
 label bt1d_backhome:
