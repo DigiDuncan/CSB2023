@@ -755,7 +755,8 @@ label bt1d_basketball:
     play sound sfx_basketball
 
     pause 3.0
-
+    stop music fadeout 3.0
+    music end
     # cut back to the splitscreen voice call
     jump bt1d_afterbball
 
