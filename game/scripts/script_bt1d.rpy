@@ -699,40 +699,39 @@ label bt1d_basketball:
     with vpunch
 
     digi "They can't go through the hoop... "
-    # TODO: replace this with a hammer later
-    show spoon at manual_pos(0.3, 0.5, 0.5)
-    show basketballnt as second at truecenter behind spoon:
+    show hammer at manual_pos(0.3, 0.5, 0.5)
+    show basketballnt as second at truecenter behind hammer:
         rotate 0
     with { "master": dissolve }
 
     extend "so we need to hammer them back into spheres!"
 
-    show spoon:
+    show hammer:
         linear 0.1 rotate 70
         linear 0.25 rotate 0
     play sound sfx_tf2_wrench_hit
     with vpunch
     pause 0.5
 
-    show spoon:
+    show hammer:
         linear 0.1 rotate 70
         linear 0.25 rotate 0
     play sound sfx_tf2_wrench_hit
     hide basketballnt as second
-    show basketball2 at truecenter behind spoon
+    show basketball2 at truecenter behind hammer
     with vpunch
     pause 0.5
 
-    show spoon:
+    show hammer:
         linear 0.1 rotate 70
         linear 0.25 rotate 0
     play sound sfx_tf2_wrench_hit
     hide basketball2
-    show basketball as third at truecenter behind spoon
+    show basketball as third at truecenter behind hammer
     with vpunch
     pause 0.5
 
-    hide spoon with dissolve
+    hide hammer with dissolve
     digi "That's what medication does!"
 
     show basketball as third:
