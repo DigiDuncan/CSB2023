@@ -956,7 +956,7 @@ label bt1d_cvs:
     n "The Nugget lands in the CVS parking lot, and the two clamber out into the daytime."
     cs "To the pharmacy department!"
 
-    scene cvs_inside
+    scene cvs_inside with dissolve
     # TODO: NPCs, pharmacists
     n "CS and Digi arrive at the pharmacy, and confront the pharmacy worker."
     cvs "Welcome to CVS, can I help you today?"
