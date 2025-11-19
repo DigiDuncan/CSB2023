@@ -3,6 +3,9 @@
 # TODO: sprites/beeps for everyone
 # TODO: fix horse's beep
 # TODO: fix RPG stats for CEO/Secretary
+# TODO: fix all RPG stages, they're currently using the values from Copguy EX
+# TODO: make Lad an RPG ally?
+# TODO: where did you want Drive to play, Digi? I can't find that comment?
 
 label bt1d_wakeup:
     scene black with dissolve
@@ -201,7 +204,7 @@ label bt1d_aldi:
     n "CS goes to check out with a cart full of food."
     show cs at manual_pos(0.3, 1.0, 1.0)
     show shopping_cart_aldi at manual_pos(0.4, 1.1, 0.5)
-    with move 
+    with move
     cs "I can't wait to get all this home..."
     show cs at manual_pos(0.5, 1.0, 1.0)
     with move
@@ -959,7 +962,7 @@ label bt1d_cvs:
     with moveinright
     cs "To the pharmacy department!"
 
-    scene cvs_inside 
+    scene cvs_inside
     with dissolve
     show cs at mid_left
     show digi flipped at left
@@ -1022,9 +1025,7 @@ label bt1d_insulin:
     digi "Nowhere to go but up!"
     cs "Let's do this!"
 
-    # TODO: shot of HQ exterior like we did for HoH SiS
-
-    # interior office
+    # TODO: interior office
     receptionist "Welcome to Leedlelee, do you have an appointment?"
     cs "No, we--"
     digi "Let me handle this."
@@ -1048,7 +1049,7 @@ label bt1d_insulin:
     digi "To be honest?"
     digi "No."
 
-    # TODO: elevator ding
+    play sound sfx_elevator_ding
 
     # TODO: interior penthouse office
     leedle "Who are you two? I don't have all day."
@@ -1082,8 +1083,10 @@ label bt1d_insulin:
     n "The elevator ride is quiet, but the energy is tense."
     n "Even CS recognizes now isn't the time to speak."
 
-    # getting into the nugget
-    # interior nugget
+    # TODO: getting into the nugget
+    scene nugget_main_reverse
+    show cs disappointed at left
+    show digi angry at right
     cs "So, can we talk about that?"
     digi "Yeah. I'm just annoyed."
     digi "I keep fighting this guy. Every year, he seems to crop back up."
@@ -1100,8 +1103,9 @@ label bt1d_insulin:
     cs "What now?"
     digi "If I know the CEO, I know where to find him."
 
-    # smash cut, Digi kicks in the door to the CEO's office
+    # TODO: smash cut, Digi kicks in the door to the CEO's office
     play music insulrun if_changed
+    music insulrun
     digi "CEO of Diabetes, I have come to--{w=0.5}{nw}"
     diabetes_ceo "Oh my God, will you stop kicking down my door?!"
     diabetes_ceo "Why do you keep doing this?! Just open it, it's not even locked!"
@@ -1131,7 +1135,7 @@ label bt1d_insulin:
     digi "You're on."
     cs "Y-{w=0.1}Yeah! You're on!"
 
-    # black knife starts playing idk
+    # TODO: black knife starts playing idk
     jump rpg_diabetes_1
 
 label bt1d_after_fight_1:
