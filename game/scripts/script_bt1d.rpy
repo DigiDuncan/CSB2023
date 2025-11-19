@@ -947,9 +947,8 @@ label bt1d_cvs:
     stop sound2 fadeout 5.0
     pause 7.0
 
-    # This scene should be beefed up a bit, I think.
+    # TODO: don't park like a douche
     scene cvs_outside
-
     show digi_nugget_parked flipped at manual_pos(1.1, 0.8, 0.5)
     with dissolve
 
@@ -957,6 +956,7 @@ label bt1d_cvs:
     cs "To the pharmacy department!"
 
     scene cvs_inside
+    # TODO: NPCs, pharmacists
     n "CS and Digi arrive at the pharmacy, and confront the pharmacy worker."
     cvs "Welcome to CVS, can I help you today?"
     cs "Yeah, you can tell me why insulin is so expensive!"
@@ -981,19 +981,38 @@ label bt1d_cvs:
     jump bt1d_insulin
 
 label bt1d_insulin:
-    # interior nugget
+    play sound2 sfx_ambience_nugget loop
+    scene nugget_cockpit_front:
+        zoom 0.5
+
+    show cs disappointed at left
+    show digi sad at right
+    show lad at manual_pos(0.675, 0.6, 0.5):
+        zoom 0.75
+    with dissolve
+
     cs "So, now what?"
     digi "We gotta go find Leedlelee, I suppose."
+    show digi flipped
     n "Digi starts plugging coordinates into the console of the ship."
+    # TODO: sfx button presses beep boop boop bop boop beep
+    show digi thinking flipped
     digi "I think I know where to go... the question is, will we be able to talk to the CEO."
     cs "I don't know if they're just going to let two idiots with an agenda up to the penthouse."
     digi "I've done weirder."
+    show cs surprised
     cs "You know, come to think of it, so have I."
+    show digi
     digi "Then we'll try our luck!"
+    show cs
+    play sound sfx_nugget
+    stop sound2 fadeout 1.0
+    scene black with dissolve
+    n "The Nugget lands in the parking lot of the Leedlelee offices."
+    digi "Nowhere to go but up!"
+    cs "Let's do this!"
 
-    n "The Nugget lands in to the parking lot of the Leedlelee offices."
-    digi "No where to go but up!"
-    cs "Let's do this."
+    # TODO: shot of HQ exterior like we did for HoH SiS
 
     # interior office
     receptionist "Welcome to Leedlelee, do you have an appointment?"
@@ -1012,16 +1031,16 @@ label bt1d_insulin:
     digi "Let's hurry!"
     n "The two scurry into the elevator."
 
-    # in the elevator
+    # TODO: in the elevator
     cs "Do you think we'll get any information out of him?"
     digi "Only one way to find out. We need to convince him we're on his side."
     cs "Are we?"
     digi "To be honest?"
     digi "No."
 
-    # elevator ding
+    # TODO: elevator ding
 
-    # interior penthouse office
+    # TODO: interior penthouse office
     leedle "Who are you two? I don't have all day."
     cs "We're here to ask you a quick question."
     digi "We're looking for the source of these high insulin prices."
