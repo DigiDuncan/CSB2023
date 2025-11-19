@@ -954,9 +954,16 @@ label bt1d_cvs:
     with dissolve
 
     n "The Nugget lands in the CVS parking lot, and the two clamber out into the daytime."
+    show cs flipped at mid_right
+    show digi at right
+    with moveinright
     cs "To the pharmacy department!"
 
-    scene cvs_inside with dissolve
+    scene cvs_inside 
+    with dissolve
+    show cs at mid_left
+    show digi flipped at left
+    with moveinleft
     # TODO: NPCs, pharmacists
     n "CS and Digi arrive at the pharmacy, and confront the pharmacy worker."
     cvs "Welcome to CVS, can I help you today?"
@@ -1092,6 +1099,7 @@ label bt1d_insulin:
     digi "If I know the CEO, I know where to find him."
 
     # smash cut, Digi kicks in the door to the CEO's office
+    play music insulrun if_changed
     digi "CEO of Diabetes, I have come to--{w=0.5}{nw}"
     diabetes_ceo "Oh my God, will you stop kicking down my door?!"
     diabetes_ceo "Why do you keep doing this?! Just open it, it's not even locked!"

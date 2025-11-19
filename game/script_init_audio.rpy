@@ -249,6 +249,7 @@ define audio.interference = "<from 0 to 275>interference.ogg"
 define audio.basketball_music = "basketball_music.ogg"
 define audio.drive = "drive.ogg"
 define audio.able_sisters = "<loop 6.249 to 31.196>able_sisters.ogg"
+define audio.insulrun = "insulrun.ogg"
 
 # Misc Music
 define audio.space_classroom = "space_classroom.ogg"
