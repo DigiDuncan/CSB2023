@@ -174,7 +174,6 @@ label beach_start:
     jump beach_overworld_map
 
 ######## THE MAP ########
-
 label beach_overworld_map:
     ##### advance the clock first
     # TODO: these are currently using washington road bg/values, swap them later
@@ -217,10 +216,22 @@ label beach_overworld_map:
 
         # TODO: make sure any inline variables work with awawa mode
 
-        # TODO: idk how to make this music showing thingy work with the conditional music help
-        # music beach_current_map_bgm
-        $ renpy.music.play(beach_current_map_bgm)
-        "It is now [beach_current_time]."
+        # this is stupid and awful and bad. it fetches the internal ID of the current track.
+        # if anyone has a better way to do this dynamically, please, be my guest. - tate
+        python:
+            for song, data in vars(store.audio).items():
+                if data is beach_current_map_bgm:
+                    beach_current_map_bgm_string = song
+                    break
+                else:
+                    beach_current_map_bgm_string = "not found"
+
+            # have to access this directly, i know it's bad aaaa
+            execute_music(song)
+
+            renpy.music.play(beach_current_map_bgm)
+
+        "It is now [beach_current_time]. The current BGM's ID is [beach_current_map_bgm_string]."
 
         # TODO: actual locations are subject to change. need to consult w/ Pakoo on the best way to organize these
         menu:
@@ -237,7 +248,6 @@ label beach_overworld_map:
         jump beach_end
 
 ######## LOCATION: BEACH ########
-
 label beach_beach:
     label .morning:
         "Pretend an event happened at the beach in the morning."
@@ -261,7 +271,6 @@ label beach_beach:
         jump beach_overworld_map
 
 ######## LOCATION: BOARDWALK ########
-
 label beach_boardwalk:
     label .morning:
         "Pretend an event happened at the boardwalk in the morning."
@@ -285,7 +294,6 @@ label beach_boardwalk:
         jump beach_overworld_map
 
 ######## LOCATION: DOWNTOWN ########
-
 label beach_downtown:
     label .morning:
         "Pretend an event happened downtown in the morning."
@@ -309,7 +317,6 @@ label beach_downtown:
         jump beach_overworld_map
 
 ######## LOCATION: UPTOWN ########
-
 label beach_uptown:
     label .morning:
         "Pretend an event happened uptown in the morning."
@@ -332,12 +339,9 @@ label beach_uptown:
         "Returning to the map."
         jump beach_overworld_map
 
-
 ######## ENDING ########
 label beach_end:
     scene black with dissolve
     "The day is over, so you get on a plane to New York or something, idk, none of this is written yet."
     "Returning to main menu."
     return
-
-
