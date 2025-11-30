@@ -76,6 +76,7 @@ default persistent.seen_all_endings = set()
 default persistent.max_pencil_score = 0
 default persistent.max_pencil_score_ex = 0
 default persistent.train_routes_seen = 0
+default persistent.beach_routes_seen = 0
 default persistent.timeline_trace_seen = 0
 
 # Chapter unlocks

@@ -343,5 +343,38 @@ label beach_uptown:
 label beach_end:
     scene black with dissolve
     "The day is over, so you get on a plane to New York or something, idk, none of this is written yet."
+
+    ### achievement checks
+    # TODO: achievement names/descriptions/thumbnails are not final
+    python:
+        # unlock achievement for completing this once
+        achievement_manager.unlock("californication")
+
+        # unlock for seeing all possible choices
+        if "beach_bum" not in persistent.unlocked_achievements:
+            # TODO: fix this to reflect changes in location list
+            locations_list = [ "beach", "boardwalk", "downtown", "uptown"]
+            times_list = ["morning", "day", "afternoon", "evening", "night"]
+            beach_labels_list = []
+
+            # construct the list of labels because fuck you if you think i'm doing this by hand
+            for l in locations_list:
+                for t in times_list:
+                    next_value = "beach_" + l + "." + t
+                    beach_labels_list.append(next_value)
+
+            # compare this list to the labels we've seen
+            count_seen = 0
+            for bl in beach_labels_list:
+                if renpy.seen_label(bl):
+                    count_seen = count_seen + 1
+
+            persistent.beach_routes_seen = count_seen
+
+            if persistent.beach_routes_seen == len(beach_labels_list):
+                achievement_manager.unlock("beach_bum")
+
+    "Maybe you unlocked an achievement or two here."
     "Returning to main menu."
+
     return

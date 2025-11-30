@@ -599,6 +599,22 @@
         "type": "story",
         "dx": true
     },
+    "californication":{
+        "name": "Californication",
+        "locked": "???",
+        "unlocked": "Chill out in Cali for the day.",
+        "img": "pointclick",
+        "type": "story",
+        "dx": true
+    },
+    "beach_bum":{
+        "name": "Beach Bum",
+        "locked": "Damn tourists...",
+        "unlocked": "Visit every attraction in San Francisco!",
+        "img": "pointclick",
+        "type": "extra",
+        "dx": true
+    },
     "broke":{
         "name": "You Broke It!",
         "locked": "Woah, dude, you broke it.",

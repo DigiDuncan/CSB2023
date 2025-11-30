@@ -3571,7 +3571,7 @@ label train_lupin_win:
     play music roundabout
     music roundabout
     # hide it instantly so it doesn't fuck up the next part
-    hide music
+    hide screen music
     mean "{cshake}{size=+24}YOU RAT {i}BASTARD!{w=1.0}{nw}" with hpunch
     mean "I {i}THOUGHT{/i} I RECOGNIZED YOU!{w=1.0}{nw}"
 
