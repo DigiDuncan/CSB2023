@@ -222,6 +222,11 @@ default playing_reversi_again = False
 # Checks: DX BT1D
 default digi_smol = False
 
+# Checks: DX Beach
+default beach_current_time = "start" # we should never see this value in-game
+default beach_current_shader = ""
+default beach_current_map_bgm = ""
+
 # Checks: Testing
 default hitpoints = 20
 default reloading = 6

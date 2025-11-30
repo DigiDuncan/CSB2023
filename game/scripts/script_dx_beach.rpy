@@ -1,3 +1,4 @@
+######## INTRO ########
 label beach_start:
     play music happy_roaming volume 0.5 if_changed
     scene washington_road day
@@ -53,7 +54,7 @@ label beach_start:
     arceus "No, I am not."
     arceus "My feet hurt, I'm exhausted, and I'm honestly pissed that you just kept going west."
     arceus "There was literally {w=0.25}nothing {w=0.25}{i}there."
-    arceus "Do you, like, lack object permanance, or something?"
+    arceus "Do you, like, lack object permanance or something?"
     arceus "Did you {i}seriously{/i} think that something new would happen if you kept doing the same thing over and over again?"
     if fun_value(FUN_VALUE_COMMON):
         show cs surprised
@@ -170,6 +171,173 @@ label beach_start:
     stop sound fadeout 2.0
     stop music fadeout 2.0
     music end
+    jump beach_overworld_map
+
+######## THE MAP ########
+
+label beach_overworld_map:
+    ##### advance the clock first
+    # TODO: these are currently using washington road bg/values, swap them later
+    # TODO: implement actual planned soundtracks
+    python:
+        if beach_current_time == "start":
+            beach_current_time = "morning"
+            beach_current_shader = "dusk"
+            beach_current_map_bgm = audio.outdoors
+
+        elif beach_current_time == "morning":
+            beach_current_time = "day"
+            beach_current_shader = "day"
+            beach_current_map_bgm = audio.bedroom_day
+
+        elif beach_current_time == "day":
+            beach_current_time = "afternoon"
+            beach_current_shader = "day"
+            beach_current_map_bgm = audio.ochre_woods_day
+
+        elif beach_current_time == "afternoon":
+            beach_current_time = "evening"
+            beach_current_shader = "dusk"
+            beach_current_map_bgm = audio.onbs
+
+        elif beach_current_time == "evening":
+            beach_current_time = "night"
+            beach_current_shader = ""
+            beach_current_map_bgm = audio.krabby_klub
+
+        elif beach_current_time == "night":
+            beach_current_time = "end"
+            beach_current_shader = ""
+
+    ##### begin the next part of the story
+    if beach_current_time != "end":
+
+        # TODO: get an actually nice world map, just using a menu to make sure it works
+        scene expression "washington_road %s" % beach_current_shader
+
+        # TODO: make sure any inline variables work with awawa mode
+
+        # TODO: idk how to make this music showing thingy work with the conditional music help
+        # music beach_current_map_bgm
+        $ renpy.music.play(beach_current_map_bgm)
+        "It is now [beach_current_time]."
+
+        # TODO: actual locations are subject to change. need to consult w/ Pakoo on the best way to organize these
+        menu:
+            "Select a location."
+            "Beach":
+                $ renpy.jump("beach_beach."+beach_current_time)
+            "Boardwalk":
+                $ renpy.jump("beach_boardwalk."+beach_current_time)
+            "Downtown":
+                $ renpy.jump("beach_downtown."+beach_current_time)
+            "Uptown":
+                $ renpy.jump("beach_uptown."+beach_current_time)
+    else:
+        jump beach_end
+
+######## LOCATION: BEACH ########
+
+label beach_beach:
+    label .morning:
+        "Pretend an event happened at the beach in the morning."
+        "Returning to the map."
+        jump beach_overworld_map
+    label .day:
+        "Pretend an event happened at the beach during the day."
+        "Returning to the map."
+        jump beach_overworld_map
+    label .afternoon:
+        "Pretend an event happened at the beach in the afternoon."
+        "Returning to the map."
+        jump beach_overworld_map
+    label .evening:
+        "Pretend an event happened at the beach in the evening."
+        "Returning to the map."
+        jump beach_overworld_map
+    label .night:
+        "Pretend an event happened at the beach at night."
+        "Returning to the map."
+        jump beach_overworld_map
+
+######## LOCATION: BOARDWALK ########
+
+label beach_boardwalk:
+    label .morning:
+        "Pretend an event happened at the boardwalk in the morning."
+        "Returning to the map."
+        jump beach_overworld_map
+    label .day:
+        "Pretend an event happened at the boardwalk during the day."
+        "Returning to the map."
+        jump beach_overworld_map
+    label .afternoon:
+        "Pretend an event happened at the boardwalk in the afternoon."
+        "Returning to the map."
+        jump beach_overworld_map
+    label .evening:
+        "Pretend an event happened at the boardwalk in the evening."
+        "Returning to the map."
+        jump beach_overworld_map
+    label .night:
+        "Pretend an event happened at the boardwalk at night."
+        "Returning to the map."
+        jump beach_overworld_map
+
+######## LOCATION: DOWNTOWN ########
+
+label beach_downtown:
+    label .morning:
+        "Pretend an event happened downtown in the morning."
+        "Returning to the map."
+        jump beach_overworld_map
+    label .day:
+        "Pretend an event happened downtown during the day."
+        "Returning to the map."
+        jump beach_overworld_map
+    label .afternoon:
+        "Pretend an event happened downtown in the afternoon."
+        "Returning to the map."
+        jump beach_overworld_map
+    label .evening:
+        "Pretend an event happened downtown in the evening."
+        "Returning to the map."
+        jump beach_overworld_map
+    label .night:
+        "Pretend an event happened downtown at night."
+        "Returning to the map."
+        jump beach_overworld_map
+
+######## LOCATION: UPTOWN ########
+
+label beach_uptown:
+    label .morning:
+        "Pretend an event happened uptown in the morning."
+        "Returning to the map."
+        jump beach_overworld_map
+    label .day:
+        "Pretend an event happened uptown during the day."
+        "Returning to the map."
+        jump beach_overworld_map
+    label .afternoon:
+        "Pretend an event happened uptown in the afternoon."
+        "Returning to the map."
+        jump beach_overworld_map
+    label .evening:
+        "Pretend an event happened uptown in the evening."
+        "Returning to the map."
+        jump beach_overworld_map
+    label .night:
+        "Pretend an event happened uptown at night."
+        "Returning to the map."
+        jump beach_overworld_map
 
 
-    "Placeholder line. Returning to main menu."
+######## ENDING ########
+label beach_end:
+    scene black with dissolve
+    "The day is over, so you get on a plane to New York or something, idk, none of this is written yet."
+    "Returning to main menu."
+    return
+
+
