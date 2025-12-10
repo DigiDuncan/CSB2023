@@ -1,7 +1,5 @@
 from __future__ import annotations
-from re import sub
 
-import renpy
 from renpy.display.core import Displayable
 from renpy import random
 
@@ -16,6 +14,20 @@ from typing import Callable, Any
 from collections.abc import Sequence
 from enum import StrEnum
 
+
+# |---- UTIL ----|
+
+# https://stackoverflow.com/questions/5189699/how-to-make-a-class-property
+class classproperty(object):
+    def __init__(self, f):
+        self.f = f
+
+    def __get__(self, obj, owner):
+        return self.f(owner)
+
+def override_random(new_random):
+    global random
+    random = new_random
 
 # TODO:
 # - Effect messages, they can be done in the effect functions, but this excludes when they decay due to duration
@@ -81,8 +93,8 @@ class Attack:
             self,
             name: str,
             description: str,
-            typ: AttackType,
             func: Callable[..., Any], # I'm being lazy because typing these is kind of impossible rn
+            typ: AttackType = AttackType.ATTACK,
             targets: TargetType = TargetType.ENEMY,
             target_count: int = 1,
             cooldown: int = 0,
@@ -121,8 +133,8 @@ class ComboAttack:
             self,
             name: str,
             description: str,
-            typ: AttackType,
             attacks: Sequence[Attack],
+            typ: AttackType = AttackType.ATTACK,
             targets: TargetType | None = None,
             cooldown: int | None = None,
             accuracy: int | None = None,
@@ -564,6 +576,7 @@ class Encounter:
                 new = int(old + amount)
                 fighter.hit_points = new
                 self.display_indicator(fighter, IndicatorType.HP, new - old)
+                self.send_message(f"Set {fighter.character.display_name}'s hit points to {fighter.hit_points}!", MessageType.DEBUG)
             case CharacterStat.DEFENSE:
                 old = fighter.defense
                 new = int(old + amount)
@@ -572,6 +585,7 @@ class Encounter:
                     fighter.base_def = fighter.base_def + change
                 fighter.defense = new
                 self.display_indicator(fighter, IndicatorType.DEF, change)
+                self.send_message(f"Set {fighter.character.display_name}'s defense to {fighter.defense}!", MessageType.DEBUG)
             case CharacterStat.ATTACK:
                 old = fighter.attack
                 new = max(5, int(old + amount))
@@ -580,6 +594,7 @@ class Encounter:
                     fighter.base_atk = max(5, int(fighter.base_atk + change))
                 fighter.attack = new
                 self.display_indicator(fighter, IndicatorType.ATK, change)
+                self.send_message(f"Set {fighter.character.display_name}'s attack to {fighter.attack}!", MessageType.DEBUG)
             case CharacterStat.ACCURACY:
                 old = fighter.accuracy
                 new = max(0, min(100, int(old + amount)))
@@ -588,6 +603,7 @@ class Encounter:
                     fighter.base_acc = max(0, min(100, fighter.base_acc + change))
                 fighter.accuracy = new
                 self.display_indicator(fighter, IndicatorType.ACC, change)
+                self.send_message(f"Set {fighter.character.display_name}'s accuracy to {fighter.accuracy}!", MessageType.DEBUG)
 
     def scale_fighter(self, fighter: Fighter, stat: CharacterStat, mult: float, permanent: bool = True):
         match stat:
@@ -596,6 +612,7 @@ class Encounter:
                 new = int(old * mult)
                 fighter.hit_points = new
                 self.display_indicator(fighter, IndicatorType.HP, new - old)
+                self.send_message(f"Scaled {fighter.character.display_name}'s hit points by {mult}x!", MessageType.DEBUG)
             case CharacterStat.DEFENSE:
                 old = fighter.defense
                 new = int(old * mult)
@@ -604,6 +621,7 @@ class Encounter:
                     fighter.base_def = fighter.base_def + change
                 fighter.defense = new
                 self.display_indicator(fighter, IndicatorType.DEF, change)
+                self.send_message(f"Scaled {fighter.character.display_name}'s defense by {mult}x!", MessageType.DEBUG)
             case CharacterStat.ATTACK:
                 old = fighter.attack
                 new = max(5, int(old * mult))
@@ -612,6 +630,7 @@ class Encounter:
                     fighter.base_atk = max(5, int(fighter.base_atk + change))
                 fighter.attack = new
                 self.display_indicator(fighter, IndicatorType.ATK, change)
+                self.send_message(f"Scaled {fighter.character.display_name}'s attack by {mult}x!", MessageType.DEBUG)
             case CharacterStat.ACCURACY:
                 old = fighter.accuracy
                 new = max(0, min(100, int(old * mult)))
@@ -620,6 +639,7 @@ class Encounter:
                     fighter.base_acc = max(0, min(100, fighter.base_acc + change))
                 fighter.accuracy = new
                 self.display_indicator(fighter, IndicatorType.ACC, change)
+                self.send_message(f"Scaled {fighter.character.display_name}'s accuracy by {mult}x!", MessageType.DEBUG)
 
     def choose_fighters(self, fighter: Fighter, attack: Attack) -> tuple[Fighter, ...]:
         if fighter.ai is None:
@@ -828,6 +848,12 @@ def damage_fighters_range(encounter: Encounter, fighter: Fighter, targets: tuple
         encounter.damage_fighter(target, fighter.attack * mult)
 
 
+def damage_sacrifice(encounter: Encounter, fighter: Fighter, targets: tuple[Fighter, ...], harm_mult: float = 1.0, bleed_mult: float = 1.0, duration: int = 1):
+    encounter.damage_fighter(fighter, fighter.attack * harm_mult)
+    for target in targets:
+        encounter.apply_effect(Effect.BLEED, target, duration, update_override={"damage": fighter.attack * harm_mult})
+
+
 def confuse_targets(encounter: Encounter, fighter: Fighter, targets: tuple[Fighter, ...]):
     """
     Apply the Confusion effect to target fighters
@@ -836,6 +862,62 @@ def confuse_targets(encounter: Encounter, fighter: Fighter, targets: tuple[Fight
         if target.dead:
             continue
         encounter.apply_effect(Effects.CONFUSION, target)
+
+
+def change_stat(encounter: Encounter, fighter: Fighter, targets: tuple[Fighter, ...], stat: CharacterStat, mult: float = 1.0):
+    """
+    Scale target fighters' stats by the multiplier
+
+    Args:
+        stat (CharacterStat): The CharacterStat to scale
+        mult (float, optional): How much to scale the specified stat by. Defaults to 1.0.
+    """
+    for target in targets:
+        encounter.scale_fighter(target, stat, mult, permanent=True)
+
+
+def draw_in(encounter: Encounter, fighter: Fighter, targets: tuple[Fighter, ...], mult: float = 1.0):
+    attack_type = renpy.random.randint(1, 4)
+    match attack_type:
+        case 1: # ap up, allies
+            encounter.send_message("[Draw In] DEF Up", MessageType.DEBUG)
+            allies = True
+            stat = CharacterStat.DEFENSE
+        case 2: # ap down, enemies
+            encounter.send_message("[Draw In] DEF Down", MessageType.DEBUG)
+            allies = False
+            stat = CharacterStat.DEFENSE
+            mult = 1.0 / mult
+        case 3: # atk up, allies
+            encounter.send_message("[Draw In] ATK Up", MessageType.DEBUG)
+            allies = True
+            stat = CharacterStat.ATTACK
+        case 4: # atk down, enemies
+            encounter.send_message("[Draw In] ATK Down", MessageType.DEBUG)
+            allies = False
+            stat = CharacterStat.ATTACK
+            mult = 1.0 / mult
+        case _: # impossible case
+            encounter.send_message("[Draw In] Impossible Result", MessageType.DEBUG)
+            return
+
+    for target in targets:
+        if (allies and fighter.enemy == target.enemy) or (not allies and fighter.enemy != target.enemy):
+            encounter.scale_fighter(target, stat, mult, permanent=True)
+
+
+def ai_mimic(encounter: Encounter, fighter: Fighter, targets: tuple[Fighter, ...]):
+    if targets[0].name == "Copguy EX":
+        aa = [a for a in Attacks.ex_attacks if a.type == AttackType.AOE or a.type == AttackType.ATTACK]
+        attack = random.choice(aa)
+    else:
+        attack = targets[0].character.attacks[0]
+    if attack.name == "AI Mimic":
+        attack = Attacks.PUNCH
+    encounter.send_message(f"[AI Mimic] running {attack.name}...", MessageType.DEBUG)
+    attack.func(encounter, fighter, targets, **attack.options)
+
+
 
 class AITypes:
     NEUTRAL = AI("Neutral")
@@ -849,8 +931,116 @@ class Effects:
     BLEED = Effect("Bleed", "Bleed them dry!", None, False, 0, update_func=update_damage_over_time)
 
 class Attacks:
-    PUNCH = Attack("Punch", "A simple punch.", AttackType.ATTACK, damage_fighters)
-    RAW_CHOP = Attack("Raw Chop", "Hiya!", AttackType.ATTACK, damage_fighters) # , ex = False
+    PUNCH = Attack("Punch", "A simple punch.", damage_fighters)
+    RAW_CHOP = Attack("Raw Chop", "Hiya!", damage_fighters) # , ex = False
+    CS_AP_DOWN = Attack("CS DEF Down", "Bring DEF of an enemy down.", change_stat, AttackType.DEBUFF, stat = CharacterStat.DEFENSE, mult = 0.75) # , ex = False
+    CHOP = ComboAttack("Chop", "Hit an enemy and bring their DEF down.", [RAW_CHOP, CS_AP_DOWN])
+    RAW_KICK = Attack("Raw Kick", "It's fuckin raw!", AttackType.ATTACK, damage_fighters, mult = 2) # , ex = False
+    YTP_MAGIC = Attack("YTP Magic", "Channel the power of YTP!", AttackType.ATTACK, damage_fighters, cooldown = 10, mult = 20, accuracy = 100, used = True)
+    YTP_MAGIC_NOCOOL = Attack("YTP Magic", "Let no one stand in your way.", AttackType.ATTACK, damage_fighters, mult = 20, accuracy = 100) # , ex = False
+    YTP_HEAL = Attack("Attack.HEAL", "No matter the cost.", AttackType.HEAL, heal_fighters, target_count = 0, target_type = TargetType.ALLY, cooldown = 1, mult = 3, accuracy = 100)
+    FUN_VALUE = Attack("Fun Value", "A Dev's favorite attack.", damage_fighters, mult = 10, accuracy = 100,)
+    KICK = ComboAttack("Kick", "A stronger attack, and lowers DEF.", [RAW_KICK, CS_AP_DOWN])
+    BULLET_SPRAY = Attack("Bullet Spray", "Shred all enemies with your LMG!", damage_fighters, target_count = 0, cooldown = 3, mult = 1.5, accuracy = 70)
+    RAW_SLASH = Attack("Raw Slash", "It's fuckin raw!", damage_fighters) # , ex = False
+    BLEED = Attack("Bleed", "Bleed them dry!", damage_over_time, AttackType.EFFECT, mult = 0.25) # , ex = False
+    SLASH = ComboAttack("Slash", "A cutting attack that bleeds out your enemies.", [RAW_SLASH, BLEED], accuracy = 85)
+    LIGHT_CAST = Attack("Light Cast", "A strong blast of light that varies in damage.", damage_fighters_range, cooldown = 3, min_mult = 1, max_mult = 3, accuracy = 80)
+    INSIGHT = Attack("Insight", "Lowers enemy's attack by a little.", change_stat, AttackType.DEBUFF, stat = CharacterStat.ATTACK, mult = 0.75, accuracy = 90)
+    SHOTGUN = Attack("Shotgun", "Blast your enemies twice with a powerful shotgun blast!", damage_fighters, target_count = 2, cooldown = 3, mult = 2, accuracy = 70)
+    ENCOURAGE = Attack("Encourage", "Heal one member with morale!", heal_fighters, target_count = 1, target_type = TargetType.ALLY, accuracy = 95)
+    HIGH_NOON = Attack("High Noon", "Quickly blast 3 targets, or 3 shots on 1!", damage_fighters, target_count = 3, cooldown = 3, mult = 0.75, accuracy = 60)
+    SCRATCH = Attack("Scratch", "A basic scratch attack.", damage_fighters, accuracy = 75)
+    ARMOUR = Attack("Armour", "Boost one's defense!", change_stat, AttackType.BUFF, stat = CharacterStat.DEFENSE, target_count = 1, target_type = TargetType.ALLY, cooldown = 3, mult = 2.5, accuracy = 90)
+    DAMAGE_SCREM = Attack("Damage Screm", "Yell as loud as possible to deafen your enemies!", damage_fighters, target_count = 0, mult = 0.5, accuracy = 75)
+    SNACK_TIME = Attack("Snack Time", "Heal your team with the power of snacks!", heal_fighters, target_count = 0, target_type = TargetType.ALLY, cooldown = 3, accuracy = 95)
+    ELDRITCH_BLAST = Attack("Eldritch Blast", "An unholy blast that does quite a bit of damage to an enemy.", damage_fighters, mult = 1.5)
+    RAINBOW = Attack("Rainbow", "", confuse_targets, AttackType.EFFECT, cooldown = 3) # , ex = False
+    VOMIT = Attack("Vomit", "", damage_over_time, AttackType.EFFECT, cooldown = 3, duration = 3) # , ex = False
+    RAINBOW_NOCOOL = Attack("Rainbow", "", confuse_targets, AttackType.EFFECT) # , ex = False
+    VOMIT_NOCOOL = Attack("Vomit", "", damage_over_time, AttackType.EFFECT, mult = 1, duration = 3) # , ex = False
+    RAINBOW_VOMIT = ComboAttack("Rainbow Vomit", "Confuse and damage your enemies with colorful nonsense!", [RAINBOW, VOMIT], AttackType.EFFECT, accuracy = 75)
+    ROBOPUNCH = Attack("RoboPunch", "A strong punch.", damage_fighters, mult = 1.75)
+    HOLOSHIELD = Attack("HoloShield", "Boosts your team's defense by a bit.", change_stat, AttackType.BUFF, stat = CharacterStat.DEFENSE, target_count = 0, target_type = TargetType.ALLY, cooldown = 3, mult = 1.75, accuracy = 90)
+    MUSIC_BOOST = Attack("Music Boost", "Boost one's defense by a bit.", change_stat, AttackType.BUFF, stat = CharacterStat.DEFENSE, target_count = 1, target_type = TargetType.SELF, mult = 1.5)
+    RAVE_DEF = Attack("Rave DEF", "Lowers the enemies defense.", change_stat, AttackType.DEBUFF, target_count = 0, stat = CharacterStat.DEFENSE, cooldown = 3, mult = 0.5) # , ex = False
+    RAVE_OFF = Attack("Rave OFF", "Rupture eardrums.", damage_fighters, target_count = 0, cooldown = 3, mult = 0.5) # , ex = False
+    RAVE = ComboAttack("Rave", "Blast your enemies' eardrums! (Damages enemies while lowering their defense.)", [RAVE_DEF, RAVE_OFF], accuracy = 75)
+    SAMPLE_SPAM = Attack("Sample Spam", "", damage_fighters_range, min_mult = 1, max_mult = 3) # , ex = False
+    SOUND_BLAST = Attack("Sound Blast", "", damage_fighters, target_count = 0) # , ex = False
+    SAMPLE_BLAST = ComboAttack("Sample Blast", "Blast your enemies with music! Varies in damage.", [SAMPLE_SPAM, SOUND_BLAST])
+    GNOMED = Attack("Gnomed", "Confuse everyone by gnoming them!", confuse_targets, AttackType.EFFECT, target_count = 0, cooldown = 3, accuracy = 70)
+    NUDGE = Attack("Nudge", "Does either very little or massive damage.", damage_fighters_range, min_mult = 0.1, max_mult = 10, accuracy = 85)
+    DRAW_IN = Attack("Draw in", "Either lowers the enemies stats, or increases your friend's stats!", draw_in, AttackType.BUFF, TargetType.ALL, target_count=0, mult = 2, accuracy = 85)
+    CONFIDENCE = Attack("Confidence", "Raise your team's attack!", change_stat, AttackType.BUFF, stat = CharacterStat.ATTACK, target_count = 0, target_type = TargetType.ALLY, mult = 1.25, accuracy = 90)
+    PEP_TALK = Attack("Pep Talk", "Raise your team's defense!", change_stat, stat = CharacterStat.DEFENSE, target_count = 0, target_type = TargetType.ALLY, mult = 1.25, accuracy = 90)
+    RADS_ATTACK = Attack("RADS Attack", "Inflict radiation on your enemies to kill them over time!", damage_over_time, AttackType.EFFECT, mult = 0.5, accuracy = 60)
+    AI_MIMIC = Attack("AI Mimic", "Copies an enemy's attack.", ai_mimic, target_count = 1, target_type = "enemies", cooldown = 2)
+    SHELL = Attack("Shell", "Fire a tank shell!", damage_fighters_range, min_mult = 1, max_mult = 2, accuracy = 60)
+    HEAL_EX = Attack("Heal EX", "Lots of healing.", heal_fighters, AttackType.HEAL, target_count = 0, target_type = TargetType.ALLY, mult = 10, accuracy = 100)
+    AUGMENT = Attack("Awesome Augment", "Fire a laser! Fire a laser!", damage_fighters, target_count = 0, mult = 15, cooldown = 5, accuracy = 100) # , ex = False
+    TATE_RECALL = Attack("Tate's Recall", "Remember something dreadful.", damage_fighters, target_type = TargetType.SELF, mult = 0.75, cooldown = 9, accuracy = 90) # , ex = False
+    TATE_REVERB = Attack("Tate's Reverb", "Make them all remember.", damage_over_time, AttackType.EFFECT, target_count = 0, mult = 0.75, cooldown = 9, duration = 5, accuracy = 90) # , ex = False
+    REVERB_RECALL = Attack("Reverb Recall", "Channel your pain over 5 turns. Also damages the user.", damage_sacrifice, AttackType.EFFECT, harm_mult = 0.75, bleed_mult = 0.75, duration = 5, cooldown = 9, accuracy = 90) # , ex = False
+    TATE_ECHOES = Attack("Tate's Echoes", "The past haunts you.", change_stat, AttackType.DEBUFF, stat = CharacterStat.ATTACK, target_type = TargetType.SELF, mult = 0.5, cooldown = 11, accuracy = 100) # , ex = False
+    TATE_BLAST = Attack("Tate's Blaster", "Make it haunt them, too.", damage_fighters, target_count = 0, mult = 4, cooldown = 11, accuracy = 100) # , ex = False
+    # TODO: we really need the ability to select different things for each part of the combo
+    ECHO_BLAST = ComboAttack("Echo Blast", "Make them feel the pain of the past, at the cost of your ATK.", [TATE_BLAST, TATE_ECHOES], cooldown = 11, accuracy = 100) # , ex = False
+    GENERGY = Attack("Genergy", "Sip some refreshing Genergy.", heal_fighters, AttackType.HEAL, target_count = 1, target_type = TargetType.ALLY, mult = 2.36, accuracy = 100) # , ex = False
+
+    """ TODO
+    # UCN
+    STOMP = Attack("Stomp", "Send an earthquake to the enemies!", damage_fighters, target_count = 0, target_type = "enemies", ex = False, mult = 0.75)
+    POKE = Attack("Poke", "A mega poke.", damage_fighters, target_count = 1, target_type = "enemies", ex = False, mult = 2.5, accuracy = 90)
+    SWORD = Attack("Sword", "The edge of a sharp thing.", damage_fighters, target_count = 1, target_type = "enemies", ex = False)
+    SWORD_AP = Attack("Sword (DEF Down)", "The edge of a sharp thing, more.", change_stat, stat = "ap", target_count = 1, target_type = "enemies", mult = 0.75, ex = False)
+    SWORD_SLASH = ComboAttack("Sword Slash", "Hit an enemy, and take a chip out of their armor.", [SWORD, SWORD_AP], ex = False)
+    FLAMETHROWER = Attack("Flamethrower", "Spray all your enemies with burning fuel!", damage_over_time, target_count = 0, target_type = "enemies", ex = False, mult = 0.5, turns = 3, cooldown = 3, accuracy = 70)
+    CHOCOLATE_CAKE = Attack("Chocolate Cake", "Heal a party member with loads to eat!", heal_fighters, target_type = "allies", accuracy = 95, ex = False)
+    CONFUSING_STORY = Attack("Confusing Story", "Tell a puzzling poem.", confuse_targets, ex = False)
+    HYPE_UP = Attack("Hype Up", "Get a team member pumped to fight!", change_stat, target_type = "allies", ex = False, mult = 1.5, stat = "atk", accuracy = 90)
+    PITCHMAN = Attack("Pitchman", "Smooth-talk an enemy's defenses down!", change_stat, target_type = "enemies", ex = False, mult = 0.75, stat = "ap", accuracy = 90)
+    HUG = Attack("Hug", "Hug an enemy (ouch).", damage_fighters, target_count = 1, target_type = "enemies", ex = False, mult = 1.5, accuracy = 90)
+    SPIKE_BOMB = Attack("Spike Bomb", "Release spikes to all enemies!", damage_fighters, target_count = 0, target_type = "enemies", ex = False, mult = 1.5, cooldown = 3, accuracy = 75)
+    SHOT = Attack("Shot", "I'd like to see you outrun bullet.", damage_fighters, target_count = 1, target_type = "enemies", ex = False, mult = 1.5)
+    SHOT_AP = Attack("Shot (DEF Down)", "Kevlar destroyed.", change_stat, stat = "ap", target_count = 1, target_type = "enemies", mult = 0.75, ex = False)
+    PISTOL = ComboAttack("Pistol", "A sharp shot to the chest.", [SHOT, SHOT_AP], ex = False)
+    ALL_OVER_AGAIN = Attack("All Over Again", "Ditto.", ai_mimic)
+    HEAVY_PUNCH = Attack("Heavy Punch", "A quick blow.", damage_fighters, target_count = 1, target_type = "enemies", ex = False, mult = 1.75, accuracy = 75)
+    SOTH = Attack("Shit On The House", "I'm going to... take a shit on the house.", damage_fighters, target_count = 0, target_type = "enemies", ex = False, mult = 2, cooldown = 3, accuracy = 65)
+    ONE_HUNDRED = Attack("100% Unsatisfied", "Yelp reviews coming in...", change_stat, stat = "atk", target_count = 0, target_type = "enemies", mult = 0.8, accuracy = 95, ex = False)
+    ICE_CREAM = Attack("Ice Cream", "Bing chilling!", heal_fighters, target_count = 0, target_type = "allies", accuracy = 90, ex = False, mult = 1.5, cooldown = 3)
+    RAINBOW_VOMIT_NOCOOL = ComboAttack("Rainbow Vomit", "Why are you like this?", [RAINBOW_NOCOOL, VOMIT_NOCOOL], accuracy = 75, ex = False)
+    KARATE_CHOP = ComboAttack("Karate Chop", "Hit an enemy and bring their DEF down.", [RAW_CHOP, SWORD_AP])
+    DRONE_STRIKE = Attack("Drone Strike", "O Bomb a.", damage_fighters, target_count = 0, target_type = "enemies", cooldown = 3, mult = 2.5, accuracy = 85)
+    COIN_BARRAGE = Attack("Coin Barrage", "Pelt your foes with change!", random_damage_fighters, min_mult = 0.75, max_mult = 2, ex = False, mult = 1, accuracy = 60)
+    CART_SMASH = Attack("Cart Smash", "Ram into someone with a shopping cart.", damage_fighters, target_count = 1, target_type = "enemies", ex = False, mult = 5, accuracy = 95, cooldown = 3)
+    BITE = Attack("Bite", "Chomp!", random_damage_fighters, min_mult = 5, max_mult = 10, ex = False, mult = 5, accuracy = 5)
+    SHARKNADO = ComboAttack("Sharknado", "A confusing vortex of sharks.", [BITE, BLEED], cooldown = 5, accuracy = 80)
+    LOBBYING = ComboAttack("Lobbying", "Lobby like it's your hobby!", [ENCOURAGE, CS_AP_DOWN])
+    NANOMACHINES = Attack("Nanomachines", "Nanomachines, son.", damage_fighters, target_count = 8, target_type = "enemies", ex = False, mult = 1.5, accuracy = 95, cooldown = 7)
+    """
+
+    @classproperty
+    def names(cls) -> list[str]:
+        return [a for a in dir(cls) if a.isupper()]
+
+    @classproperty
+    def attacks(cls) -> list[Attack]:
+        return [cls.__dict__[a] for a in cls.names]
+
+    _EX_BLACKLIST = { a.name for a in # Name is hashable, while the attacks usually aren't
+        (RAW_CHOP, CS_AP_DOWN, RAW_KICK, YTP_MAGIC_NOCOOL, RAW_SLASH, BLEED, RAINBOW, VOMIT,
+        RAINBOW_NOCOOL, VOMIT_NOCOOL, RAVE_DEF, RAVE_OFF, SAMPLE_SPAM, SOUND_BLAST, AUGMENT,
+        TATE_RECALL, TATE_REVERB, REVERB_RECALL, TATE_ECHOES, TATE_BLAST, ECHO_BLAST, GENERGY)
+    }
+    @classproperty
+    def ex_attacks(cls) -> list[Attack]:
+        return [a for a in cls.attacks if a.name not in cls._EX_BLACKLIST]
+
+    @classmethod
+    def get(cls, k: str, default = None) -> Attack | None:
+        return cls.__dict__.get(k, default)
 
 # |---- HOW TO RPG ----|
 # 1) Create an encounter by creatings the fighters (Fighter(Character, is_enemy, level, ai, [optionally] stat overrides)) and filling in details.
