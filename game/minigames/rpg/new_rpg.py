@@ -82,16 +82,16 @@ class Action:
         ):
         self.name: str = name
         self.description: str = description
-        self.type: ActionType = typ
+        self.type: ActionType = typ # typ of attack for AI
 
-        self.func: Callable = func
-        self.targets: TargetType = targets
-        self.target_count: int = target_count
-        self.cooldown: int = cooldown
-        self.accuracy: int = accuracy
-        self.start_used: bool = start_used
+        self.func: Callable[..., Any] = func # the function which applies the effects of the action
+        self.targets: TargetType = targets # what group of fighters to attack
+        self.target_count: int = target_count # how many enemies to target
+        self.cooldown: int = cooldown # how many turns to wait on the cool down
+        self.accuracy: int = accuracy # percent change of hitting witht the attack
+        self.start_used: bool = start_used # whether to start counting down from the beginning of the fight
 
-        self.options: dict[str, Any] = kwds
+        self.options: dict[str, Any] = kwds # additionally arguments for Action.func
 
     def __str__(self) -> str:
         return f"<Attack {self.name}>"
@@ -123,12 +123,15 @@ class ComboAction:
         self.description: str = description
         self.type: ActionType = typ
 
-        self.actions = actions
+        self.actions = actions # What actions to run through
+
+        # Same as normal Attack
         self.targets: TargetType = self.actions[0].targets if targets is None else targets
         self.cooldown: int = self.actions[0].cooldown if cooldown is None else cooldown
         self.accuracy: int = self.actions[0].accuracy if accuracy is None else accuracy
         self.start_used: bool = self.actions[0].start_used if start_used is None else start_used
 
+        # Empty options dict
         self.options: dict[str, Any] = {}
 
     def func(self, encounter: Encounter, fighter: Fighter, targets: tuple[Fighter, ...], **kwds):
@@ -155,30 +158,30 @@ class Effect:
             name: str,
             description: str,
             icon: Displayable,
-            positive: bool, # whether the effect is considered helpful for 'cleanse' effects
-            duration: int = 0, # How many turns does the effect last? If 0 then forever.
-            apply_func: Callable[..., Any] | None = None, # What happens when the effect is applied
-            update_func: Callable[..., Any] | None = None, # What happens every turn the effect is applied
-            decay_func: Callable[..., bool] | None = None, # Should the effect end other than the duration ending
+            positive: bool,
+            duration: int = 0,
+            apply_func: Callable[..., Any] | None = None,
+            update_func: Callable[..., Any] | None = None,
+            decay_func: Callable[..., bool] | None = None,
             apply_options: dict[str, Any] = {},
             update_options: dict[str, Any] = {},
             decay_options: dict[str, Any] = {}
             ):
-        self.name = name
-        self.description = description
-        self.icon = icon
-        self.positive = positive
-        self.duration = duration
+        self.name: str = name
+        self.description: str = description
+        self.icon: Displayable = icon # Icon to show
+        self.positive: bool = positive # whether the effect is considered helpful for 'cleanse' effects
+        self.duration: int = duration # How many turns does the effect last? If 0 then forever.
 
-        self.apply = apply_func
-        self.update = update_func
-        self.decay = decay_func
+        self.apply = apply_func # What happens when the effect is applied
+        self.update = update_func # What happens every turn the effect is applied
+        self.decay = decay_func # Should the effect end other than the duration ending
 
-        self.apply_options = apply_options
-        self.update_options = update_options
-        self.decay_options = decay_options
+        self.apply_options = apply_options # Additional arguments when applying the effect
+        self.update_options = update_options # Additonal arguments when updating the effect
+        self.decay_options = decay_options # Additional arguments when decaying the effect
 
-class AI: # TODO:
+class AI:
     """
     The logic that decides what a fighter will
     do each turn. Uses the information provided
@@ -195,15 +198,15 @@ class AI: # TODO:
             preferred_targets: Sequence[str] = (),
             preference_weight: float = 2.0
         ) -> None:
-        self.name = name
-        self.heal_chance = heal_chance  # Skew towards healing attacks
-        self.heal_threshold = heal_threshold  # When should I heal
-        self.aggression = aggression  # Big bad hit things
-        self.crowd_control = crowd_control  # Favors AOE over Single
-        self.tacticity = tacticity  # Debuffs and Buffs, aka the Pokemon strat
-        self.focus = focus  # Target 'strong' or 'weak'
-        self.preferred_targets = preferred_targets  # I wanna smack this boy in particular >:C
-        self.preference_weight = preference_weight  # Multiplier how many more times likely to smack this boy
+        self.name: str = name
+        self.heal_chance: float = heal_chance  # Skew towards healing attacks
+        self.heal_threshold: float = heal_threshold  # When should I heal
+        self.aggression: float = aggression  # Big bad hit things
+        self.crowd_control: float = crowd_control  # Favors AOE over Single
+        self.tacticity: float = tacticity  # Debuffs and Buffs, aka the Pokemon strat
+        self.focus: AIFocus = focus  # Target 'strong' or 'weak'
+        self.preferred_targets: Sequence[str] = preferred_targets  # I wanna smack this boy in particular >:C
+        self.preference_weight: float = preference_weight  # Multiplier how many more times likely to smack this boy
 
     def choose_action(self, encounter: Encounter, subject: Fighter) -> FighterAction | None:
         party = encounter.enemies if subject.enemy else encounter.allies
@@ -275,17 +278,17 @@ class Character: # TODO: Workshop -- I'd like fighter to be used by encounter, b
     and is used by the encounter to setup the fighters
     """
 
-    def __init__(self, name: str, base_hp: int, base_def: int, base_atk: int, base_acc: int, attacks: Sequence[Action], sprite: Displayable, display_name: str | None = None):
+    def __init__(self, name: str, base_hp: int, base_def: int, base_atk: int, base_acc: int, attacks: Sequence[Action | ComboAction], sprite: Displayable, display_name: str | None = None):
         self.name: str = name
         self.display_name: str = display_name or name
 
-        self.base_hp: int = base_hp
-        self.base_def: int = base_def
-        self.base_atk: int = base_atk
-        self.base_acc: int = base_acc
+        self.base_hp: int = base_hp # how much hp will the fighter start with, and what is their max hp
+        self.base_def: int = base_def # how much defence will the fighter start with
+        self.base_atk: int = base_atk # how much attack will the fighter start with
+        self.base_acc: int = base_acc # how accurate will the fighter start with
 
-        self.attacks: Sequence[Action] = attacks
-        self.sprite: Displayable = sprite
+        self.attacks: Sequence[Action | ComboAction] = attacks # What attacks can the character use
+        self.sprite: Displayable = sprite # What image should represent the character
 
 # -- Encounter Unique Objects --
 
@@ -307,10 +310,9 @@ class Fighter:
             def_override: int | None = None,
             atk_override: int | None = None,
             acc_override: int | None = None
-        ): # TODO: consider -- would it be worth to add a sprite override and a display_name override? (and a max_<trait> override)
+        ): # TODO: consider -- would it be worth to add a sprite override and a display_name override? (and a max_hp override)
 
         self.character: Character = character # The stat basis for the character
-        self.idx: int | None = None # The id given by the encounter for choosing actions and accessing display
         self.opponent: bool = opponent # What team is the fighter on
         self.level: float = level # What level is the fighter? Was originally the scale passed in the encounter
         self.ai: AI | None = ai # What AI does the fighter use. If none the encouter defers to the player
@@ -351,7 +353,7 @@ class FighterAction:
     def __init__(self, action: Action):
         self.action: Action = action
 
-        self.used = action.start_used
+        self.used: bool = action.start_used
         self.turns_until_available: int = 0 if not action.start_used else action.cooldown
 
     def use(self, encounter: Encounter, fighter: Fighter, targets: tuple[Fighter, ...]) -> None:
