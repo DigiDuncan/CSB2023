@@ -9,6 +9,8 @@ from renpy import random
 rpy python annotations
 python early:
 """
+from dataclasses import dataclass
+from queue import Queue
 from typing import Callable, Any
 from collections.abc import Sequence
 from enum import StrEnum
@@ -29,13 +31,13 @@ DAMAGE_INDICATOR_TIME = 1.0
 
 # -- STR EUMS --
 
-class ChacterStat(StrEnum):
+class CharacterStat(StrEnum):
     HIT_POINTS = "hp"
     ATTACK = "attack"
-    DEFENCE = "defence"
+    DEFENSE = "defense"
     ACCURACY = "accuracy"
 
-class ActionType(StrEnum):
+class AttackType(StrEnum):
     ATTACK = "attack"
     HEAL = "heal"
     BUFF = "buff"
@@ -63,16 +65,16 @@ class AIFocus(StrEnum):
 
 # -- Constant Data Objects --
 
-class Action:
+class Attack:
     """
-    An Action (previously Attack) defines what
+    An Attack defines what
     a fighter can do on their turn.
     """
     def __init__(
             self,
             name: str,
             description: str,
-            typ: ActionType,
+            typ: AttackType,
             func: Callable[..., Any], # I'm being lazy because typing these is kind of impossible rn
             targets: TargetType = TargetType.ENEMY,
             target_count: int = 1,
@@ -83,16 +85,16 @@ class Action:
         ):
         self.name: str = name
         self.description: str = description
-        self.type: ActionType = typ # typ of attack for AI
+        self.type: AttackType = typ # typ of attack for AI
 
-        self.func: Callable[..., Any] = func # the function which applies the effects of the action
+        self.func: Callable[..., Any] = func # the function which applies the effects of the attack
         self.targets: TargetType = targets # what group of fighters to attack
         self.target_count: int = target_count # how many enemies to target
         self.cooldown: int = cooldown # how many turns to wait on the cool down
         self.accuracy: int = accuracy # percent change of hitting witht the attack
         self.start_used: bool = start_used # whether to start counting down from the beginning of the fight
 
-        self.options: dict[str, Any] = kwds # additionally arguments for Action.func
+        self.options: dict[str, Any] = kwds # additionally arguments for Attack.func
 
     def __str__(self) -> str:
         return f"<Attack {self.name}>"
@@ -100,20 +102,20 @@ class Action:
     def __repr__(self) -> str:
         return self.__str__()
 
-class ComboAction:
+class ComboAttack:
     """
-    A ComboAction (previously ComboAttack) has multiple actions
+    A ComboAttack has multiple attacks
     that work together.
 
-    TODO: add ability to choose different targets for different actions
+    TODO: add ability to choose different targets for different attacks
     """
 
     def __init__(
             self,
             name: str,
             description: str,
-            typ: ActionType,
-            actions: Sequence[Action],
+            typ: AttackType,
+            attacks: Sequence[Attack],
             targets: TargetType | None = None,
             cooldown: int | None = None,
             accuracy: int | None = None,
@@ -122,22 +124,22 @@ class ComboAction:
             ):
         self.name: str = name
         self.description: str = description
-        self.type: ActionType = typ
+        self.type: AttackType = typ
 
-        self.actions = actions # What actions to run through
+        self.attacks = attacks # What attacks to run through
 
         # Same as normal Attack
-        self.targets: TargetType = self.actions[0].targets if targets is None else targets
-        self.cooldown: int = self.actions[0].cooldown if cooldown is None else cooldown
-        self.accuracy: int = self.actions[0].accuracy if accuracy is None else accuracy
-        self.start_used: bool = self.actions[0].start_used if start_used is None else start_used
+        self.targets: TargetType = self.attacks[0].targets if targets is None else targets
+        self.cooldown: int = self.attacks[0].cooldown if cooldown is None else cooldown
+        self.accuracy: int = self.attacks[0].accuracy if accuracy is None else accuracy
+        self.start_used: bool = self.attacks[0].start_used if start_used is None else start_used
 
         # Empty options dict
         self.options: dict[str, Any] = {}
 
     def func(self, encounter: Encounter, fighter: Fighter, targets: tuple[Fighter, ...], **kwds):
-        for action in self.actions:
-            action.func(encounter, fighter, targets, **action.options)
+        for attack in self.attacks:
+            attack.func(encounter, fighter, targets, **attack.options)
 
     def __str__(self) -> str:
         return f"<ComboAttack {self.name} ({self.attacks})>"
@@ -148,7 +150,7 @@ class ComboAction:
 class Effect:
     """
     An Effect happens over multiple turns and
-    is controlled by the encounter. Actions
+    is controlled by the encounter. Attacks
     and Fighters can spawn effects, and
     encounters can have passive background
     effects.
@@ -158,8 +160,8 @@ class Effect:
             self,
             name: str,
             description: str,
-            icon: Displayable,
             positive: bool,
+            icon: Displayable | None = None,
             duration: int = 0,
             apply_func: Callable[..., Any] | None = None,
             update_func: Callable[..., Any] | None = None,
@@ -186,7 +188,7 @@ class AI:
     """
     The logic that decides what a fighter will
     do each turn. Uses the information provided
-    by the encounter to decide on an Action.
+    by the encounter to decide on an Attack.
     """
     def __init__(self,
             name: str,
@@ -209,16 +211,16 @@ class AI:
         self.preferred_targets: Sequence[str] = preferred_targets  # I wanna smack this boy in particular >:C
         self.preference_weight: float = preference_weight  # Multiplier how many more times likely to smack this boy
 
-    def choose_action(self, encounter: Encounter, subject: Fighter) -> FighterAction | None:
+    def choose_attack(self, encounter: Encounter, subject: Fighter) -> FighterAttack | None:
         party = encounter.enemies if subject.enemy else encounter.allies
         enemies = encounter.allies if subject.enemy else encounter.enemies
 
         # Sort enemies by weak-first
-        enemies = sorted(enemies, key = lambda x: (x.hit_points * (1.0 - (x.defence / 100.0))))
+        enemies = sorted(enemies, key = lambda x: (x.hit_points * (1.0 - (x.defense / 100.0))))
 
         print(f"{subject.name}: Choosing an attack...")
 
-        available_attacks = tuple(a for a in subject.actions if a.available)
+        available_attacks = tuple(a for a in subject.attacks if a.available)
 
         if len(available_attacks) == 0: # No attacks to chose?
             return
@@ -249,11 +251,11 @@ class AI:
         # Weight attack likelyhood.
         for atk in available_attacks:
             score = 1.0
-            if atk.type == ActionType.ATTACK or atk.type == ActionType.AOE:
+            if atk.type == AttackType.ATTACK or atk.type == AttackType.AOE:
                 score *= (self.aggression * atk.options.get("mult", 1.0))
-            elif atk.type == ActionType.BUFF or atk.type == ActionType.DEBUFF or atk.type == ActionType.EFFECT:
+            elif atk.type == AttackType.BUFF or atk.type == AttackType.DEBUFF or atk.type == AttackType.EFFECT:
                 score *= self.tacticity
-            if atk.type == ActionType.AOE:
+            if atk.type == AttackType.AOE:
                 score *= self.crowd_control
             if heal_party:
                 score *= atk.options.get("mult", 1)  # weight towards better heals
@@ -279,17 +281,18 @@ class Character: # TODO: Workshop -- I'd like fighter to be used by encounter, b
     and is used by the encounter to setup the fighters
     """
 
-    def __init__(self, name: str, base_hp: int, base_def: int, base_atk: int, base_acc: int, attacks: Sequence[Action | ComboAction], sprite: Displayable, display_name: str | None = None):
+    def __init__(self, name: str, base_hp: int, base_def: int, base_atk: int, attacks: Sequence[Attack | ComboAttack], base_acc: int = 100, sprite: Displayable | None = None, display_name: str | None = None):
         self.name: str = name
         self.display_name: str = display_name or name
 
         self.base_hp: int = base_hp # how much hp will the fighter start with, and what is their max hp
-        self.base_def: int = base_def # how much defence will the fighter start with
+        self.base_def: int = base_def # how much defense will the fighter start with
         self.base_atk: int = base_atk # how much attack will the fighter start with
         self.base_acc: int = base_acc # how accurate will the fighter start with
 
-        self.attacks: Sequence[Action | ComboAction] = attacks # What attacks can the character use
-        self.sprite: Displayable = sprite # What image should represent the character
+        self.attacks: Sequence[Attack | ComboAttack] = attacks # What attacks can the character use
+        self.sprite: Displayable | None = sprite # What image should represent the character
+
 
 # -- Encounter Unique Objects --
 
@@ -304,7 +307,7 @@ class Fighter:
     def __init__(
             self,
             character: Character,
-            opponent: bool,
+            enemy: bool,
             level: float = 1.0,
             ai: AI | None = None,
             hp_override: int | None = None,
@@ -314,7 +317,7 @@ class Fighter:
         ): # TODO: consider -- would it be worth to add a sprite override and a display_name override? (and a max_hp override)
 
         self.character: Character = character # The stat basis for the character
-        self.opponent: bool = opponent # What team is the fighter on
+        self.enemy: bool = enemy # What team is the fighter on
         self.level: float = level # What level is the fighter? Was originally the scale passed in the encounter
         self.ai: AI | None = ai # What AI does the fighter use. If none the encouter defers to the player
 
@@ -322,21 +325,21 @@ class Fighter:
         self.hit_points: int = int(level * (character.base_hp if hp_override is None else hp_override))
 
         self.base_def: int = int(level * (character.base_def if def_override is None else def_override)) # percect of incoming damage reduced
-        self.defence: int = self.base_def
+        self.defense: int = self.base_def
         self.base_atk: int = int(level * (character.base_atk if atk_override is None else atk_override)) # Base amount of damage fighter does
         self.attack: int = self.base_atk
         self.base_acc: int = int(level * (character.base_acc if acc_override is None else acc_override)) # Percent change for fighter to hit (usually 100%)
         self.accuracy: int = self.base_acc
 
-        # The actions this fighter can do, and when they can use them next
-        self.actions: tuple[FighterAction, ...] = tuple(FighterAction(action) for action in self.character.attacks)
-        self.next_action: FighterAction | None = None
+        # The attacks this fighter can do, and when they can use them next
+        self.attacks: tuple[FighterAttack, ...] = tuple(FighterAttack(attack) for attack in self.character.attacks)
+        self.next_attack: FighterAttack | None = None
         self.next_targets: tuple[Fighter, ...] = ()
 
         self.effects: list[FighterEffect] = []
 
     def reset_effects(self):
-        self.defence = self.base_def
+        self.defense = self.base_def
         self.attack = self.base_atk
         self.accuracy = self.base_acc
 
@@ -345,33 +348,33 @@ class Fighter:
         return self.hit_points <= 0
 
 
-class FighterAction:
+class FighterAttack:
     """
-    The tracker for when an action can used
+    The tracker for when an attack can used
     by the figher that owns it
     """
 
-    def __init__(self, action: Action):
-        self.action: Action = action
+    def __init__(self, attack: Attack):
+        self.attack: Attack = attack
 
-        self.used: bool = action.start_used
-        self.turns_until_available: int = 0 if not action.start_used else action.cooldown
+        self.used: bool = attack.start_used
+        self.turns_until_available: int = 0 if not attack.start_used else attack.cooldown
 
     def use(self, encounter: Encounter, fighter: Fighter, targets: tuple[Fighter, ...]) -> None:
-        self.turns_until_available = self.action.cooldown
-        self.action.func(encounter, fighter, targets, **self.action.options)
+        self.turns_until_available = self.attack.cooldown
+        self.attack.func(encounter, fighter, targets, **self.attack.options)
 
     @property
     def name(self) -> str:
-        return self.action.name
+        return self.attack.name
 
     @property
-    def type(self) -> ActionType:
-        return self.action.type
+    def type(self) -> AttackType:
+        return self.attack.type
 
     @property
     def options(self) -> dict[str, Any]:
-        return self.action.options
+        return self.attack.options
 
     @property
     def available(self) -> bool:
@@ -420,6 +423,11 @@ class FighterEffect:
             return False
         return self.effect.decay(encounter, self.fighter, **self.decay_options)
 
+@dataclass
+class Indicator:
+    source: Fighter
+    typ: IndicatorType
+    value: int | None = None
 
 class Encounter:
     """
@@ -438,19 +446,24 @@ class Encounter:
         self.intro_text = intro_text # intro display text
         self.turn: int = initial_turn # current turn
 
+        self.upcoming_attacks: list[tuple[FighterAttack, tuple[Fighter, ...]]] = []
+        self.indicator_queue: Queue[Indicator] = Queue()
         self.global_effects: list[Effect] = [] # TODO: better handle global effects because this just slowly fills up
 
     @property
     def allies(self) -> tuple[Fighter, ...]:
-        return tuple(fighter for fighter in self.fighters if not fighter.opponent)
+        return tuple(fighter for fighter in self.fighters if not fighter.enemy)
 
     @property
     def enemies(self) -> tuple[Fighter, ...]:
-        return tuple(fighter for fighter in self.fighters if fighter.opponent)
+        return tuple(fighter for fighter in self.fighters if fighter.enemy)
 
     @property
     def turn_order(self) -> tuple[Fighter, ...]:
         return self.allies + self.enemies
+
+    def get_team(self, enemy: bool = False) -> tuple[Fighter, ...]:
+        return tuple(fighter for fighter in self.fighters if fighter.enemy == enemy)
 
     @property
     def won(self) -> bool | None:
@@ -464,20 +477,26 @@ class Encounter:
         else:
             return None
 
-    def display_indicator(self, target: Displayable, type: IndicatorType, amount: int = 0): # TODO: hook up real indicators
+    def display_indicator(self, target: Fighter, typ: IndicatorType, amount: int | None = None):
+        self.indicator_queue.put(Indicator(target, typ, amount))
         if amount:
             print("Displaying {amount}x{type} on {target}")
         else:
             print("Displaying {type} on {target}")
 
+    def get_next_indicator(self) -> Indicator | None:
+        if self.indicator_queue.empty:
+            return
+        return self.indicator_queue.get()
+
     def damage_fighter(self, fighter: Fighter, damage: float, roll_crit: bool = False, ignore_armour: bool = False):
         # We generally only let the player's fighters roll crit.
-        if roll_crit and random.random <= CRIT_CHANCE:
+        if roll_crit and random.random() <= CRIT_CHANCE:
             damage = damage * 1.5
 
         if not ignore_armour:
-            fraction = fighter.defence / 100.0
-            damage = damage * (1.0/16.0)**(fraction*fraction) # this makes it so 0 defence is 100%, 50 is 50%, but 100 isn't 0%
+            fraction = fighter.defense / 100.0
+            damage = damage * (1.0/16.0)**(fraction*fraction) # this makes it so 0 defense is 100%, 50 is 50%, but 100 isn't 0%
 
         fighter.hit_points -= int(damage)
 
@@ -496,7 +515,7 @@ class Encounter:
                 self.apply_effect(effect, fighter, duration_override)
             return
 
-        fighter.effects.append(FighterEffect(effect, fighter, self.turn, duration_override))
+        fighter.effects.append(FighterEffect(effect, fighter, self.turn, duration_override, apply_override, update_override, decay_override))
 
         if not silent:
             effect.fighter.reset_effects()
@@ -518,23 +537,25 @@ class Encounter:
             if (negative and not effect.positive) or (positive and effect.positive):
                 fighter.effects.remove(effect)
         fighter.reset_effects()
+        for fighter_effect in effect.fighter.effects:
+            fighter_effect.apply(self)
 
-    def modify_fighter(self, fighter: Fighter, stat: ChacterStat, amount: float, permanent: bool = True):
+    def modify_fighter(self, fighter: Fighter, stat: CharacterStat, amount: float, permanent: bool = True):
         match stat:
-            case ChacterStat.HIT_POINTS:
+            case CharacterStat.HIT_POINTS:
                 old = fighter.hit_points
                 new = int(old + amount)
                 fighter.hit_points = new
                 self.display_indicator(fighter, IndicatorType.HP, new - old)
-            case ChacterStat.DEFENCE:
-                old = fighter.defence
+            case CharacterStat.DEFENSE:
+                old = fighter.defense
                 new = int(old + amount)
                 change = new - old
                 if permanent:
                     fighter.base_def = fighter.base_def + change
-                fighter.defence = new
-                self.display_indicator(fighter, IndicatorType.DEF,change)
-            case ChacterStat.ATTACK:
+                fighter.defense = new
+                self.display_indicator(fighter, IndicatorType.DEF, change)
+            case CharacterStat.ATTACK:
                 old = fighter.attack
                 new = max(5, int(old + amount))
                 change = new - old
@@ -542,7 +563,7 @@ class Encounter:
                     fighter.base_atk = max(5, int(fighter.base_atk + change))
                 fighter.attack = new
                 self.display_indicator(fighter, IndicatorType.ATK, change)
-            case ChacterStat.ACCURACY:
+            case CharacterStat.ACCURACY:
                 old = fighter.accuracy
                 new = max(0, min(100, int(old + amount)))
                 change = new - old
@@ -551,22 +572,22 @@ class Encounter:
                 fighter.accuracy = new
                 self.display_indicator(fighter, IndicatorType.ACC, change)
 
-    def scale_fighter(self, fighter: Fighter, stat: ChacterStat, mult: float, permanent: bool = True):
+    def scale_fighter(self, fighter: Fighter, stat: CharacterStat, mult: float, permanent: bool = True):
         match stat:
-            case ChacterStat.HIT_POINTS:
+            case CharacterStat.HIT_POINTS:
                 old = fighter.hit_points
                 new = int(old * mult)
                 fighter.hit_points = new
                 self.display_indicator(fighter, IndicatorType.HP, new - old)
-            case ChacterStat.DEFENCE:
-                old = fighter.defence
+            case CharacterStat.DEFENSE:
+                old = fighter.defense
                 new = int(old * mult)
                 change = new - old
                 if permanent:
                     fighter.base_def = fighter.base_def + change
-                fighter.defence = new
+                fighter.defense = new
                 self.display_indicator(fighter, IndicatorType.DEF, change)
-            case ChacterStat.ATTACK:
+            case CharacterStat.ATTACK:
                 old = fighter.attack
                 new = max(5, int(old * mult))
                 change = new - old
@@ -574,7 +595,7 @@ class Encounter:
                     fighter.base_atk = max(5, int(fighter.base_atk + change))
                 fighter.attack = new
                 self.display_indicator(fighter, IndicatorType.ATK, change)
-            case ChacterStat.ACCURACY:
+            case CharacterStat.ACCURACY:
                 old = fighter.accuracy
                 new = max(0, min(100, int(old * mult)))
                 change = new - old
@@ -583,25 +604,25 @@ class Encounter:
                 fighter.accuracy = new
                 self.display_indicator(fighter, IndicatorType.ACC, change)
 
-    def choose_fighters(self, fighter: Fighter, action: Action) -> tuple[Fighter, ...]:
+    def choose_fighters(self, fighter: Fighter, attack: Attack) -> tuple[Fighter, ...]:
         if fighter.ai is None:
             return ()
 
-        # Return self when action type is SELF, this may never happen depending on the AI
-        if action.targets == TargetType.SELF:
+        # Return self when attack type is SELF, this may never happen depending on the AI
+        if attack.targets == TargetType.SELF:
             return (fighter, )
 
 
-        match action.targets:
+        match attack.targets:
             case TargetType.ALLY:
-                possible_targets = self.enemies if fighter.opponent else self.allies
+                possible_targets = self.get_team(fighter.enemy)
             case TargetType.All:
                 possible_targets = self.fighters
             case _:
-                possible_targets = self.allies if fighter.opponent else self.enemies
+                possible_targets = self.get_team(not fighter.enemy)
 
         # Shortcut and return all the possible targets when the count is 0
-        if action.target_count == 0:
+        if attack.target_count == 0:
             return possible_targets
 
         weights = []
@@ -614,32 +635,39 @@ class Encounter:
                 score /= target.attack
             weights.append(score)
 
-        return tuple(random.choices(possible_targets, weights)[0] for _ in range(action.target_count))
+        return tuple(random.choices(possible_targets, weights)[0] for _ in range(attack.target_count))
 
     # These are seperate so that we can see the consequences of the player applying the defend effect etc
-    def run_actions(self):
-        # run once every actor has chosen their next action
-        # Do the action of every fighter and tick their attacks
+    def run_attacks(self):
+        # run once every actor has chosen their next attack
+        # Do the attack of every fighter and tick their attacks
+        self.upcoming_attacks.clear()
         for fighter in self.turn_order:
-            action = fighter.next_action
+            attack = fighter.next_attack
             targets = fighter.next_targets
-            if action is None:
+            if attack is None:
                 if fighter.ai is None:
-                    # player has not picked an action for this fighter so they just defend.
-                    continue # TODO: give fighter defend action once it is created
+                    # player has not picked an attack for this fighter so they just defend.
+                    continue # TODO: give fighter defend attack once it is created
                 else:
                     if fighter.dead: # Dead AI fighters don't get to act
                         continue
-                    # fighter has not picked action and has an AI
-                    action = fighter.ai.choose_action(self, fighter)
-                    if action is None:
-                        continue # Still no action
-                    targets = self.choose_fighters(fighter, action)
+                    # fighter has not picked attack and has an AI
+                    attack = fighter.ai.choose_attack(self, fighter)
+                    if attack is None:
+                        self.upcoming_attacks.append((None, ()))
+                        continue # Still no attack
+                    targets = self.choose_fighters(fighter, attack)
+            self.upcoming_attacks.append((attack, targets))
 
-            hit = random.random <= (action.action.accuracy / 100.0 * fighter.accuracy / 100.0) and not fighter.dead
+        # ! NOTE ! Because all attacks happen after the AI have chosen they behave differently in previous engine
+        for fighter, (attack, targets) in zip(self.turn_order, self.upcoming_attacks):
+            if attack is None:
+                continue
+            hit = random.random <= (attack.attack.accuracy / 100.0 * fighter.accuracy / 100.0) and not fighter.dead
 
             if hit:
-                action.use(self, fighter, targets)
+                attack.use(self, fighter, targets) # Actually use the fighter's attack so call `damage_fighters`
             else:
                 renpy.notify(f"{fighter.character.display_name} missed!")
 
@@ -661,17 +689,17 @@ class Encounter:
 
     def cleanup_turn(self):
         for fighter in tuple(self.fighters):
-            fighter.next_action = None
+            fighter.next_attack = None
             fighter.next_targets = ()
             # cool downs
-            for action in fighter.actions:
-                if action.available:
+            for attack in fighter.attacks:
+                if attack.available:
                     continue
-                action.turns_until_available -= 1
-                if action.turns_until_available == 0:
-                    print(f"{fighter.name}: {action.name} now available!")
+                attack.turns_until_available -= 1
+                if attack.turns_until_available == 0:
+                    print(f"{fighter.name}: {attack.name} now available!")
                 else:
-                    print(f"{fighter.name}: {action.name} available in {action.turns_until_available} turns!")
+                    print(f"{fighter.name}: {attack.name} available in {attack.turns_until_available} turns!")
 
             if fighter.dead:
                 self.fighters.remove(fighter)
@@ -687,16 +715,16 @@ class Encounter:
 # |---- RPG Content ----|
 
 # -- Effect Functions --
-def apply_status_effect(encounter: Encounter, fighter: Fighter, stat: ChacterStat, amount: float, scale: bool = False):
+def apply_status_effect(encounter: Encounter, fighter: Fighter, stat: CharacterStat, amount: float, scale: bool = False):
     """
     Temporarily change the stats of a fighter.
 
     Options:
-        stat (ChacterStat): The chacter stat to change out of Defence, Attack, Accuracy
+        stat (CharacterStat): The chacter stat to change out of Defence, Attack, Accuracy
         amount (float): The amount to change the stat by (negative or positive)
         scale (bool, optional): Whether the amount is a scale factor or a flat amount. Defaults to False.
     """
-    if stat == ChacterStat.HIT_POINTS:
+    if stat == CharacterStat.HIT_POINTS:
         print("Cannot change HIT POINTS as a status effect")
         return
 
@@ -706,13 +734,13 @@ def apply_status_effect(encounter: Encounter, fighter: Fighter, stat: ChacterSta
         encounter.modify_fighter(fighter, stat, amount, permanent=False)
 
 
-def update_damage_over_time(encounter: Encounter, fighter: Fighter, damage: float = 10, ignore_armour: bool = True):
+def update_damage_over_time(encounter: Encounter, fighter: Fighter, damage: float = 10, ignore_armour: bool = False):
     """
     Deal a set amount of damage every turn for a few turns
 
     Options:
         damage (float): Amount of damage to do each turn
-        ignore_armour (bool, optional): whether the DOT should ignore the armour of the fighter. Defaults to True.
+        ignore_armour (bool, optional): whether the DOT should ignore the armour of the fighter. Defaults to False.
     """
     encounter.damage_fighter(fighter, damage, roll_crit=False, ignore_armour=ignore_armour)
 
@@ -727,7 +755,7 @@ def decay_chance(encounter: Encounter, fighter: Fighter, chance: float = 0.5) ->
     return random.random() <= chance
 
 
-# -- Action Functions --
+# -- Attack Functions --
 def damage_fighters(encounter: Encounter, fighter: Fighter, targets: tuple[Fighter, ...], mult: float = 1.0, count: int = 1):
     """
     Damage the target fighters
@@ -797,9 +825,9 @@ class AITypes:
     COPGUY_EX = AI("EX", aggression = 3, tacticity = 2, preferred_targets = ["CS"], heal_chance = 0.70)
 
 class Effects:
-    CONFUSION = Effect("Confusion", "Confuse and befuddle!", None, False, 0, apply_func=apply_status_effect, apply_options={"stat": ChacterStat.ACCURACY, "amount": 0.5, "scale": True}, decay_func=decay_chance)
-    BLEED = Effect("Bleed", "Bleed them dry!", None, False, update_func=update_damage_over_time)
+    CONFUSION = Effect("Confusion", "Confuse and befuddle!", None, False, 0, apply_func=apply_status_effect, apply_options={"stat": CharacterStat.ACCURACY, "amount": 0.5, "scale": True}, decay_func=decay_chance)
+    BLEED = Effect("Bleed", "Bleed them dry!", None, False, 0, update_func=update_damage_over_time)
 
-class Actions:
-    PUNCH = Action("Punch", "A simple punch.", damage_fighters)
-    RAW_CHOP = Action("Raw Chop", "Hiya!", damage_fighters) # , ex = False
+class Attacks:
+    PUNCH = Attack("Punch", "A simple punch.", AttackType.ATTACK, damage_fighters)
+    RAW_CHOP = Attack("Raw Chop", "Hiya!", AttackType.ATTACK, damage_fighters) # , ex = False
