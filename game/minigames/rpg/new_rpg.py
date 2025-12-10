@@ -1,4 +1,5 @@
 from __future__ import annotations
+from re import sub
 
 import renpy
 from renpy.display.core import Displayable
@@ -51,6 +52,12 @@ class IndicatorType(StrEnum):
     ATK = "atk"
     ACC = "acc"
     CONFUSION = "confusion"
+
+class MessageType(StrEnum):
+    DEBUG = "debug"
+    ATTACK = "attack"
+    CHARACTER = "character"
+    EFFECT = "effect"
 
 class TargetType(StrEnum):
     ENEMY = "enemy"
@@ -218,12 +225,12 @@ class AI:
         # Sort enemies by weak-first
         enemies = sorted(enemies, key = lambda x: (x.hit_points * (1.0 - (x.defense / 100.0))))
 
-        print(f"{subject.name}: Choosing an attack...")
+        encounter.send_message(f"{subject.character.display_name}: Choosing an attack...", MessageType.DEBUG)
 
         available_attacks = tuple(a for a in subject.attacks if a.available)
 
         if len(available_attacks) == 0: # No attacks to chose?
-            return
+            return None
         if len(available_attacks) == 1: # Only one attack to chose.
             return available_attacks[0]
 
@@ -262,7 +269,7 @@ class AI:
             scores.append(score)
 
         # Choose an attack.
-        print(available_attacks, scores)
+        encounter.send_message(f"{available_attacks}, {scores}", MessageType.DEBUG)
         return random.choices(available_attacks, weights = scores)[0]
 
         # print(f"[AI: {self.name}] {subject.name} uses {atk.name} on {sentence_join([t.name for t in subwho])}!")  # type: ignore
@@ -429,6 +436,11 @@ class Indicator:
     typ: IndicatorType
     value: int | None = None
 
+@dataclass
+class Message:
+    message: str
+    typ: MessageType
+
 class Encounter:
     """
     The master control class of an encounter.
@@ -448,6 +460,7 @@ class Encounter:
 
         self.upcoming_attacks: list[tuple[FighterAttack, tuple[Fighter, ...]]] = []
         self.indicator_queue: Queue[Indicator] = Queue()
+        self.message_queue: Queue[Message] = Queue()
         self.global_effects: list[Effect] = [] # TODO: better handle global effects because this just slowly fills up
 
     @property
@@ -479,15 +492,19 @@ class Encounter:
 
     def display_indicator(self, target: Fighter, typ: IndicatorType, amount: int | None = None):
         self.indicator_queue.put(Indicator(target, typ, amount))
-        if amount:
-            print("Displaying {amount}x{type} on {target}")
-        else:
-            print("Displaying {type} on {target}")
 
     def get_next_indicator(self) -> Indicator | None:
         if self.indicator_queue.empty:
             return
         return self.indicator_queue.get()
+
+    def send_message(self, text: str, typ: MessageType):
+        self.message_queue.put(Message(text, typ))
+
+    def get_next_message(self) -> Message | None:
+        if self.message_queue.empty:
+            return
+        return self.message_queue.get()
 
     def damage_fighter(self, fighter: Fighter, damage: float, roll_crit: bool = False, ignore_armour: bool = False):
         # We generally only let the player's fighters roll crit.
@@ -524,7 +541,7 @@ class Encounter:
 
     def remove_effect(self, effect: FighterEffect, silent: bool = False):
         if effect.fighter not in self.fighters:
-            print("How did we get here??? (A non-existant fighter has lost an effect)")
+            self.send_message("How did we get here??? (A non-existant/dead fighter has lost an effect)", MessageType.DEBUG)
         effect.fighter.effects.remove(effect)
 
         if not silent:
@@ -658,6 +675,9 @@ class Encounter:
                         self.upcoming_attacks.append((None, ()))
                         continue # Still no attack
                     targets = self.choose_fighters(fighter, attack)
+
+                    self.send_message(f"[AI: {fighter.ai.name}] {fighter.character.name} uses {attack.name} on {", ".join(target.name for target in targets)}!", MessageType.DEBUG)
+
             self.upcoming_attacks.append((attack, targets))
 
         # ! NOTE ! Because all attacks happen after the AI have chosen they behave differently in previous engine
@@ -669,7 +689,7 @@ class Encounter:
             if hit:
                 attack.use(self, fighter, targets) # Actually use the fighter's attack so call `damage_fighters`
             else:
-                renpy.notify(f"{fighter.character.display_name} missed!")
+                self.send_message(f"{fighter.character.display_name} missed!", MessageType.ATTACK)
 
     def run_effects(self):
         # Update the effects applied to every fighter.
@@ -697,9 +717,9 @@ class Encounter:
                     continue
                 attack.turns_until_available -= 1
                 if attack.turns_until_available == 0:
-                    print(f"{fighter.name}: {attack.name} now available!")
+                    self.send_message(f"{fighter.character.display_name}: {attack.name} now available!", MessageType.ATTACK)
                 else:
-                    print(f"{fighter.name}: {attack.name} available in {attack.turns_until_available} turns!")
+                    self.send_message(f"{fighter.character.display_name}: {attack.name} available in {attack.turns_until_available} turns!", MessageType.ATTACK)
 
             if fighter.dead:
                 self.fighters.remove(fighter)
@@ -725,7 +745,7 @@ def apply_status_effect(encounter: Encounter, fighter: Fighter, stat: CharacterS
         scale (bool, optional): Whether the amount is a scale factor or a flat amount. Defaults to False.
     """
     if stat == CharacterStat.HIT_POINTS:
-        print("Cannot change HIT POINTS as a status effect")
+        encounter.send_message("Cannot change HIT POINTS as a status effect", MessageType.DEBUG)
         return
 
     if scale:
@@ -836,9 +856,9 @@ class Attacks:
 # 1) Create an encounter by creatings the fighters (Fighter(Character, is_enemy, level, ai, [optionally] stat overrides)) and filling in details.
 # 2) For every player character (encounter.allies) get their next action (set fighter.next_action) and targets (set fighter.next_targets)
 # 3) Then call encounter.run_attacks()
-# 4) Handle the queue of damage indicators
-# 5) If need be refresh people's displayables
-# 6) then call encounter.run_effects()
-# 7) Handle visuals again
+# 4) If need be refresh people's displayables
+# 5) then call encounter.run_effects()
+# 6) Handle visuals again
+# 7) Handle the queue of damage indicators and messages
 # 8) run encounter.cleanup_turn()
 # 9) repeat step 2 onwards until encounter.won is not None
