@@ -25,10 +25,11 @@ from enum import StrEnum
 # -- CONSTANTS --
 
 CRIT_CHANCE = 5.0 / 100.0
+DAMAGE_INDICATOR_TIME = 1.0
 
 # -- STR EUMS --
 
-class ChacterStats(StrEnum):
+class ChacterStat(StrEnum):
     HIT_POINTS = "hp"
     ATTACK = "attack"
     DEFENCE = "defence"
@@ -163,9 +164,9 @@ class Effect:
             apply_func: Callable[..., Any] | None = None,
             update_func: Callable[..., Any] | None = None,
             decay_func: Callable[..., bool] | None = None,
-            apply_options: dict[str, Any] = {},
-            update_options: dict[str, Any] = {},
-            decay_options: dict[str, Any] = {}
+            apply_options: dict[str, Any] | None = None,
+            update_options: dict[str, Any] | None = None,
+            decay_options: dict[str, Any] | None = None
             ):
         self.name: str = name
         self.description: str = description
@@ -177,9 +178,9 @@ class Effect:
         self.update = update_func # What happens every turn the effect is applied
         self.decay = decay_func # Should the effect end other than the duration ending
 
-        self.apply_options = apply_options # Additional arguments when applying the effect
-        self.update_options = update_options # Additonal arguments when updating the effect
-        self.decay_options = decay_options # Additional arguments when decaying the effect
+        self.apply_options = apply_options or {} # Additional arguments when applying the effect
+        self.update_options = update_options or {} # Additonal arguments when updating the effect
+        self.decay_options = decay_options or {} # Additional arguments when decaying the effect
 
 class AI:
     """
@@ -382,28 +383,42 @@ class FighterEffect:
     The tracker for when an effect has been used
     each fighter has their own list of FighterEffects
     """
-    def __init__(self, effect: Effect, fighter: Fighter, start_turn: int, duration_override: int | None = None):
+    def __init__(
+            self,
+            effect: Effect,
+            fighter: Fighter,
+            start_turn: int,
+            duration_override: int | None = None,
+            apply_override: dict[str, Any] | None = None,
+            update_override: dict[str, Any] | None = None,
+            decay_override: dict[str, Any] | None = None
+        ):
         self.effect: Effect = effect
         self.fighter: Fighter = fighter
         self.start_turn: int = start_turn
         self.duration = effect.duration if duration_override is None else duration_override
 
+        # Have to use | operator as it creates a new dict rather than updating in-place
+        self.apply_options = self.effect.apply_options if apply_override is None else self.effect.apply_options | apply_override
+        self.update_options = self.effect.update_options if update_override is None else self.effect.update_options | update_override
+        self.decay_options = self.effect.decay_options if decay_override is None else self.effect.decay_options | decay_override
+
     def apply(self, encounter: Encounter) -> None:
         if self.effect.apply is None:
             return
-        self.effect.apply(encounter, self.fighter, **self.effect.apply_options)
+        self.effect.apply(encounter, self.fighter, **self.apply_options)
 
     def update(self, encounter: Encounter) -> None:
         if self.effect.update is None:
             return
-        self.effect.update(encounter, self.fighter, **self.effect.update_options)
+        self.effect.update(encounter, self.fighter, **self.update_options)
 
     def decay(self, encounter: Encounter) -> bool:
         if self.duration != 0 and self.start_turn + self.duration <= encounter.turn:
             return True
         if self.effect.decay is None:
             return False
-        return self.effect.decay(encounter, self.fighter, **self.effect.decay_options)
+        return self.effect.decay(encounter, self.fighter, **self.decay_options)
 
 
 class Encounter:
@@ -455,9 +470,8 @@ class Encounter:
         else:
             print("Displaying {type} on {target}")
 
-    def damage_fighter(self, fighter: Fighter, damage: float, roll_crit: bool | None = None, ignore_armour: bool = False):
-        # We only let the player's fighter roll crit by default. If roll_crit is None then we decide based on that.
-        roll_crit = not fighter.opponent if roll_crit is None else roll_crit
+    def damage_fighter(self, fighter: Fighter, damage: float, roll_crit: bool = False, ignore_armour: bool = False):
+        # We generally only let the player's fighters roll crit.
         if roll_crit and random.random <= CRIT_CHANCE:
             damage = damage * 1.5
 
@@ -475,9 +489,9 @@ class Encounter:
             fighter.hit_points = min(fighter.hit_points, fighter.max_hp)
         self.display_indicator(fighter, IndicatorType.HP, int(amount))
 
-    def apply_effect(self, effect: Effect, fighter: Fighter | None = None, duration_override: int | None = None, silent: bool = False):
+    def apply_effect(self, effect: Effect, fighter: Fighter | None = None, duration_override: int | None = None, apply_override: dict[str, Any] | None = None, update_override: dict[str, Any] | None = None, decay_override: dict[str, Any] | None = None, silent: bool = False):
         if fighter is None: # apply to all fighters
-            self.global_effects = effect
+            self.global_effects.append(effect)
             for fighter in self.fighters:
                 self.apply_effect(effect, fighter, duration_override)
             return
@@ -505,14 +519,14 @@ class Encounter:
                 fighter.effects.remove(effect)
         fighter.reset_effects()
 
-    def modify_fighter(self, fighter: Fighter, stat: ChacterStats, amount: float, permanent: bool = True):
+    def modify_fighter(self, fighter: Fighter, stat: ChacterStat, amount: float, permanent: bool = True):
         match stat:
-            case ChacterStats.HIT_POINTS:
+            case ChacterStat.HIT_POINTS:
                 old = fighter.hit_points
                 new = int(old + amount)
                 fighter.hit_points = new
                 self.display_indicator(fighter, IndicatorType.HP, new - old)
-            case ChacterStats.DEFENCE:
+            case ChacterStat.DEFENCE:
                 old = fighter.defence
                 new = int(old + amount)
                 change = new - old
@@ -520,7 +534,7 @@ class Encounter:
                     fighter.base_def = fighter.base_def + change
                 fighter.defence = new
                 self.display_indicator(fighter, IndicatorType.DEF,change)
-            case ChacterStats.ATTACK:
+            case ChacterStat.ATTACK:
                 old = fighter.attack
                 new = max(5, int(old + amount))
                 change = new - old
@@ -528,7 +542,7 @@ class Encounter:
                     fighter.base_atk = max(5, int(fighter.base_atk + change))
                 fighter.attack = new
                 self.display_indicator(fighter, IndicatorType.ATK, change)
-            case ChacterStats.ACCURACY:
+            case ChacterStat.ACCURACY:
                 old = fighter.accuracy
                 new = max(0, min(100, int(old + amount)))
                 change = new - old
@@ -537,14 +551,14 @@ class Encounter:
                 fighter.accuracy = new
                 self.display_indicator(fighter, IndicatorType.ACC, change)
 
-    def scale_fighter(self, fighter: Fighter, stat: ChacterStats, mult: float, permanent: bool = True):
+    def scale_fighter(self, fighter: Fighter, stat: ChacterStat, mult: float, permanent: bool = True):
         match stat:
-            case ChacterStats.HIT_POINTS:
+            case ChacterStat.HIT_POINTS:
                 old = fighter.hit_points
                 new = int(old * mult)
                 fighter.hit_points = new
                 self.display_indicator(fighter, IndicatorType.HP, new - old)
-            case ChacterStats.DEFENCE:
+            case ChacterStat.DEFENCE:
                 old = fighter.defence
                 new = int(old * mult)
                 change = new - old
@@ -552,7 +566,7 @@ class Encounter:
                     fighter.base_def = fighter.base_def + change
                 fighter.defence = new
                 self.display_indicator(fighter, IndicatorType.DEF, change)
-            case ChacterStats.ATTACK:
+            case ChacterStat.ATTACK:
                 old = fighter.attack
                 new = max(5, int(old * mult))
                 change = new - old
@@ -560,7 +574,7 @@ class Encounter:
                     fighter.base_atk = max(5, int(fighter.base_atk + change))
                 fighter.attack = new
                 self.display_indicator(fighter, IndicatorType.ATK, change)
-            case ChacterStats.ACCURACY:
+            case ChacterStat.ACCURACY:
                 old = fighter.accuracy
                 new = max(0, min(100, int(old * mult)))
                 change = new - old
@@ -672,6 +686,47 @@ class Encounter:
 
 # |---- RPG Content ----|
 
+# -- Effect Functions --
+def apply_status_effect(encounter: Encounter, fighter: Fighter, stat: ChacterStat, amount: float, scale: bool = False):
+    """
+    Temporarily change the stats of a fighter.
+
+    Options:
+        stat (ChacterStat): The chacter stat to change out of Defence, Attack, Accuracy
+        amount (float): The amount to change the stat by (negative or positive)
+        scale (bool, optional): Whether the amount is a scale factor or a flat amount. Defaults to False.
+    """
+    if stat == ChacterStat.HIT_POINTS:
+        print("Cannot change HIT POINTS as a status effect")
+        return
+
+    if scale:
+        encounter.scale_fighter(fighter, stat, amount, permanent=False)
+    else:
+        encounter.modify_fighter(fighter, stat, amount, permanent=False)
+
+
+def update_damage_over_time(encounter: Encounter, fighter: Fighter, damage: float = 10, ignore_armour: bool = True):
+    """
+    Deal a set amount of damage every turn for a few turns
+
+    Options:
+        damage (float): Amount of damage to do each turn
+        ignore_armour (bool, optional): whether the DOT should ignore the armour of the fighter. Defaults to True.
+    """
+    encounter.damage_fighter(fighter, damage, roll_crit=False, ignore_armour=ignore_armour)
+
+
+def decay_chance(encounter: Encounter, fighter: Fighter, chance: float = 0.5) -> bool:
+    """
+    A random chance for the effect to end
+
+    Options:
+        chance (float, optional): Percent chance for effect to end. Defaults to 0.5.
+    """
+    return random.random() <= chance
+
+
 # -- Action Functions --
 def damage_fighters(encounter: Encounter, fighter: Fighter, targets: tuple[Fighter, ...], mult: float = 1.0, count: int = 1):
     """
@@ -682,8 +737,6 @@ def damage_fighters(encounter: Encounter, fighter: Fighter, targets: tuple[Fight
         count (int, optional): number of times to apply damage. Defaults to 1.
     """
     for target in targets:
-        if target.dead:
-            continue
         for _ in range(count):
             encounter.damage_fighter(target, mult * fighter.attack)
 
@@ -702,12 +755,50 @@ def heal_fighters(encounter: Encounter, fighter: Fighter, targets: tuple[Fighter
         encounter.heal_fighter(target, mult * fighter.attack, overheal)
 
 
+def damage_over_time(encounter: Encounter, fighter: Fighter, targets: tuple[Fighter, ...], mult: float = 1.0,  duration: int = 1):
+    """
+    Apply damage over time to fighters
+
+    Args:
+        mult (float, optional): The multiplier on top of attacker's ATK. Defaults to 1.0.
+        duration (int, optional): The number of turns to apply damage. Defaults to 1.
+    """
+    for target in targets:
+        encounter.apply_effect(Effects.BLEED, target, duration, update_override={"damage": fighter.attack * mult})
+
+
+def damage_fighters_range(encounter: Encounter, fighter: Fighter, targets: tuple[Fighter, ...], mult_min: float = 0.0, mult_max: float = 1.0):
+    """
+    Damage fighters by a randomly scaled amount
+
+    Args:
+        mult_min (float, optional): minimum damage multiplier. Defaults to 0.0.
+        mult_max (float, optional): maximum damage multiplier. Defaults to 1.0.
+    """
+    for target in targets:
+        mult = random.uniform(mult_min, mult_max)
+        encounter.damage_fighter(target, fighter.attack * mult)
+
+
+def confuse_targets(encounter: Encounter, fighter: Fighter, targets: tuple[Fighter, ...]):
+    """
+    Apply the Confusion effect to target fighters
+    """
+    for target in targets:
+        if target.dead:
+            continue
+        encounter.apply_effect(Effects.CONFUSION, target)
+
 class AITypes:
     NEUTRAL = AI("Neutral")
     AGGRO = AI("Aggro", aggression = 3, tacticity = 0.5, crowd_control = 0.1, heal_threshold = 0.25, heal_chance = 0.25)
     DEFENSIVE = AI("Defensive", heal_threshold = 0.75, tacticity = 3, heal_chance = 0.60)
     SMART = AI("Smart", tacticity = 2, crowd_control = 2, heal_chance = 0.60)
     COPGUY_EX = AI("EX", aggression = 3, tacticity = 2, preferred_targets = ["CS"], heal_chance = 0.70)
+
+class Effects:
+    CONFUSION = Effect("Confusion", "Confuse and befuddle!", None, False, 0, apply_func=apply_status_effect, apply_options={"stat": ChacterStat.ACCURACY, "amount": 0.5, "scale": True}, decay_func=decay_chance)
+    BLEED = Effect("Bleed", "Bleed them dry!", None, False, update_func=update_damage_over_time)
 
 class Actions:
     PUNCH = Action("Punch", "A simple punch.", damage_fighters)
