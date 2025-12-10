@@ -831,3 +831,14 @@ class Effects:
 class Attacks:
     PUNCH = Attack("Punch", "A simple punch.", AttackType.ATTACK, damage_fighters)
     RAW_CHOP = Attack("Raw Chop", "Hiya!", AttackType.ATTACK, damage_fighters) # , ex = False
+
+# |---- HOW TO RPG ----|
+# 1) Create an encounter by creatings the fighters (Fighter(Character, is_enemy, level, ai, [optionally] stat overrides)) and filling in details.
+# 2) For every player character (encounter.allies) get their next action (set fighter.next_action) and targets (set fighter.next_targets)
+# 3) Then call encounter.run_attacks()
+# 4) Handle the queue of damage indicators
+# 5) If need be refresh people's displayables
+# 6) then call encounter.run_effects()
+# 7) Handle visuals again
+# 8) run encounter.cleanup_turn()
+# 9) repeat step 2 onwards until encounter.won is not None
