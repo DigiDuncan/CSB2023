@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from renpy.display.core import Displayable
+from renpy.display.im import Image
 from renpy import random
 
 # This is the equivalent of a python early block in a .rpy file.
@@ -41,6 +42,9 @@ def override_random(new_random):
 
 CRIT_CHANCE = 5.0 / 100.0
 DAMAGE_INDICATOR_TIME = 1.0
+
+UNKNOWN_FIELD = Image("game/gui/rpg/unknown_field_sprite.png")
+UNKNOWN_PORTRAIT = Image("game/gui/rpg/portraits/unknown.png")
 
 # -- STR EUMS --
 
@@ -300,18 +304,33 @@ class Character: # TODO: Workshop -- I'd like fighter to be used by encounter, b
     and is used by the encounter to setup the fighters
     """
 
-    def __init__(self, name: str, base_hp: int, base_def: int, base_atk: int, attacks: Sequence[Attack | ComboAttack], base_acc: int = 100, sprite: Displayable | None = None, display_name: str | None = None):
+    def __init__(self, name: str, hp: int, defense: int, attack: int, attacks: Sequence[Attack | ComboAttack], accuracy: int = 100, ai: AI | None = None, display_name: str | None = None, portrait: Displayable | None = None, sprite: Displayable | None = None):
         self.name: str = name
         self.display_name: str = display_name or name
 
-        self.base_hp: int = base_hp # how much hp will the fighter start with, and what is their max hp
-        self.base_def: int = base_def # how much defense will the fighter start with
-        self.base_atk: int = base_atk # how much attack will the fighter start with
-        self.base_acc: int = base_acc # how accurate will the fighter start with
+        self.base_hp: int = hp # how much hp will the fighter start with, and what is their max hp
+        self.base_def: int = defense # how much defense will the fighter start with
+        self.base_atk: int = attack # how much attack will the fighter start with
+        self.base_acc: int = accuracy # how accurate will the fighter start with
 
-        self.attacks: Sequence[Attack | ComboAttack] = attacks # What attacks can the character use
-        self.sprite: Displayable | None = sprite # What image should represent the character
+        self.attacks: tuple[Attack | ComboAttack, ...] = tuple(attacks) # What attacks can the character use
+        self.base_ai: AI | None = ai # Default AI for character
+        self.portrait: Displayable = portrait or UNKNOWN_PORTRAIT # What image should represent the character on the player's side
+        self.sprite: Displayable = sprite or UNKNOWN_FIELD # What image should represent the character on the field side
 
+    def clone(self, name: str, hp: int | None = None, defense: int | None = None, attack: int | None = None, attacks: Sequence[Attack | ComboAttack] | None = None, accuracy: int | None = None, ai: AI | None = None, display_name: str | None = None, portrait: Displayable | None = None, sprite: Displayable | None = None) -> Character:
+        return Character(
+            name,
+            hp if hp is not None else self.base_hp,
+            defense if defense is not None else self.base_def,
+            attack if attack is not None else self.base_atk,
+            attacks if attacks is not None else self.attacks,
+            accuracy if accuracy is not None else self.base_acc,
+            ai if ai is not None else self.base_ai,
+            display_name if display_name is not None else self.display_name,
+            portrait if portrait is not None else self.portrait,
+            sprite if sprite is not None else self.sprite
+        )
 
 # -- Encounter Unique Objects --
 
@@ -338,7 +357,7 @@ class Fighter:
         self.character: Character = character # The stat basis for the character
         self.enemy: bool = enemy # What team is the fighter on
         self.level: float = level # What level is the fighter? Was originally the scale passed in the encounter
-        self.ai: AI | None = ai # What AI does the fighter use. If none the encouter defers to the player
+        self.ai: AI | None = ai or character.base_ai # What AI does the fighter use. If none the encouter defers to the player
 
         self.max_hp: int = int(character.base_hp * level) # Maximum hitpoints of a character
         self.hit_points: int = int(level * (character.base_hp if hp_override is None else hp_override))
@@ -475,6 +494,8 @@ class Encounter:
         self.message_queue: Queue[Message] = Queue()
         self.global_effects: list[Effect] = [] # TODO: better handle global effects because this just slowly fills up
 
+        self._shared_defend_attack: FighterAttack = FighterAttack(Attacks.DEFEND)
+
     @property
     def allies(self) -> tuple[Fighter, ...]:
         return tuple(fighter for fighter in self.fighters if not fighter.enemy)
@@ -517,6 +538,10 @@ class Encounter:
         if self.message_queue.empty:
             return
         return self.message_queue.get()
+
+    def defend_fighter(self, fighter: Fighter):
+        fighter.next_attack = self._shared_defend_attack
+        fighter.next_targets = (fighter,)
 
     def damage_fighter(self, fighter: Fighter, damage: float, roll_crit: bool = False, ignore_armour: bool = False):
         # We generally only let the player's fighters roll crit.
@@ -664,7 +689,7 @@ class Encounter:
 
         weights = []
         for target in possible_targets:
-            score = fighter.ai.preference_weight if target.character.name in fighter.ai.preferred_targets else 1.0
+            score = fighter.ai.preference_weight if target.character.display_name in fighter.ai.preferred_targets else 1.0
             # These may be wild numbers, but since they are all being changed by attack they will all be wild
             if fighter.ai.focus == AIFocus.STRONG:
                 score *= target.attack
@@ -851,7 +876,17 @@ def damage_fighters_range(encounter: Encounter, fighter: Fighter, targets: tuple
 def damage_sacrifice(encounter: Encounter, fighter: Fighter, targets: tuple[Fighter, ...], harm_mult: float = 1.0, bleed_mult: float = 1.0, duration: int = 1):
     encounter.damage_fighter(fighter, fighter.attack * harm_mult)
     for target in targets:
-        encounter.apply_effect(Effect.BLEED, target, duration, update_override={"damage": fighter.attack * harm_mult})
+        encounter.apply_effect(Effect.BLEED, target, duration, update_override={"damage": fighter.attack * bleed_mult})
+
+
+def defend_targets(encounter: Encounter, fighter: Fighter, targets: tuple[Fighter, ...]):
+    """
+    Increase the targets defence for a single turn
+    """
+    for target in targets:
+        if target.dead:
+            continue
+        encounter.apply_effect(Effects.DEFEND, target)
 
 
 def confuse_targets(encounter: Encounter, fighter: Fighter, targets: tuple[Fighter, ...]):
@@ -919,7 +954,7 @@ def ai_mimic(encounter: Encounter, fighter: Fighter, targets: tuple[Fighter, ...
 
 
 
-class AITypes:
+class AIType:
     NEUTRAL = AI("Neutral")
     AGGRO = AI("Aggro", aggression = 3, tacticity = 0.5, crowd_control = 0.1, heal_threshold = 0.25, heal_chance = 0.25)
     DEFENSIVE = AI("Defensive", heal_threshold = 0.75, tacticity = 3, heal_chance = 0.60)
@@ -929,8 +964,10 @@ class AITypes:
 class Effects:
     CONFUSION = Effect("Confusion", "Confuse and befuddle!", None, False, 0, apply_func=apply_status_effect, apply_options={"stat": CharacterStat.ACCURACY, "amount": 0.5, "scale": True}, decay_func=decay_chance)
     BLEED = Effect("Bleed", "Bleed them dry!", None, False, 0, update_func=update_damage_over_time)
+    DEFEND = Effect("Defend", "Not today!", None, True, 1, apply_func=apply_status_effect, apply_options={"stat": CharacterStat.DEFENSE, "amount": 1.5, "scale": True})
 
 class Attacks:
+    DEFEND = Attack("Defend", "Dragon doesn't know how to write these", defend_targets, AttackType.EFFECT, targets=TargetType.SELF)
     PUNCH = Attack("Punch", "A simple punch.", damage_fighters)
     RAW_CHOP = Attack("Raw Chop", "Hiya!", damage_fighters) # , ex = False
     CS_AP_DOWN = Attack("CS DEF Down", "Bring DEF of an enemy down.", change_stat, AttackType.DEBUFF, stat = CharacterStat.DEFENSE, mult = 0.75) # , ex = False
@@ -1046,6 +1083,98 @@ class Attacks:
 
     @classmethod
     def get(cls, k: str, default = None) -> Attack | None:
+        return cls.__dict__.get(k, default)
+
+class Characters:
+    NONE = None
+
+    # Allies
+    CS = Character("CS", 188, 10, 25, [Attacks.PUNCH, Attacks.BULLET_SPRAY], portrait=Image("gui/rpg/portraits/cs.png"))
+    CS_NG = CS.clone("CS (National Guard)", attack=30, attacks=[Attacks.CHOP, Attacks.BULLET_SPRAY]) # Character("CS (National Guard)", 188, 10, 30, , portrait=Image("gui/rpg/portraits/cs.png"), display_name = "CS")
+    CS_STRONG = Character("CS (Strong)", 188, 10, 35, [Attacks.KICK, Attacks.BULLET_SPRAY], portrait=Image("gui/rpg/portraits/cs.png"), display_name = "CS")
+    CS_FINAL = Character("CS (Final)", 288, 10, 40, [Attacks.KICK, Attacks.BULLET_SPRAY, Attacks.YTP_MAGIC], portrait=Image("gui/rpg/portraits/cs.png"), display_name = "CS")
+    CS_FINAL2 = Character("CS (Error)", 1880, 10, 250, [Attacks.KICK, Attacks.YTP_HEAL, Attacks.YTP_MAGIC_NOCOOL], portrait=Image("gui/rpg/portraits/cs.png"), display_name = "CS")
+    CS_WEAK = Character("CS (Weak)", 188, 5, 25, [Attacks.PUNCH], protrait=Image("gui/rpg/portraits/cs.png"), display_name = "CS")
+    CS_ARCHIVAL = Character("CS (Archival)", 1027, 50, 27, [Attacks.KICK, Attacks.YTP_HEAL], protrait=Image("gui/rpg/portraits/cs.png"), display_name = "CS")
+    CS_VS_TATE_PUNCH = Character("CS (VS Tate - Punch)", 288, 10, 40, [Attacks.PUNCH, Attacks.GENERGY, Attacks.YTP_MAGIC], protrait=Image("gui/rpg/portraits/cs.png"), display_name = "CS")
+    CS_VS_TATE_KICK = Character("CS (VS Tate - Kick)", 288, 10, 40, [Attacks.KICK, Attacks.GENERGY, Attacks.YTP_MAGIC], protrait=Image("gui/rpg/portraits/cs.png"), display_name = "CS")
+    CS_VS_TATE_CHOP = Character("CS (VS Tate - Chop)", 288, 10, 40, [Attacks.CHOP, Attacks.GENERGY, Attacks.YTP_MAGIC], protrait=Image("gui/rpg/portraits/cs.png"), display_name = "CS")
+    ARCEUS = Character("Arceus", 160, 15, 35, [Attacks.SLASH, Attacks.LIGHT_CAST], protrait=Image("gui/rpg/portraits/arceus.png"))
+    PAKOO = Character("Pakoo", 145, 20, 30, [Attacks.INSIGHT, Attacks.SHOTGUN], protrait=Image("gui/rpg/portraits/pokoo.png"))
+    MIKA = Character("Mika", 165, 20, 30, [Attacks.ENCOURAGE, Attacks.HIGH_NOON], protrait=Image("gui/rpg/portraits/mika.png"))
+    KITTY = Character("Kitty", 155, 15, 20, [Attacks.SCRATCH, Attacks.ARMOUR], protrait=Image("gui/rpg/portraits/kitty.png"))
+    TATE = Character("Tate", 170, 5, 30, [Attacks.DAMAGE_SCREM, Attacks.SNACK_TIME], protrait=Image("gui/rpg/portraits/tate.png"))
+    ARIA = Character("Aria", 220, 20, 45, [Attacks.ELDRITCH_BLAST, Attacks.RAINBOW_VOMIT], protrait=Image("gui/rpg/portraits/aria.png"))
+    DIGI = Character("Digi", 150, 20, 30, [Attacks.ROBOPUNCH, Attacks.HOLOSHIELD], protrait=Image("gui/rpg/portraits/digi.png"))
+    NOVA = Character("Nova", 170, 5, 30, [Attacks.MUSIC_BOOST, Attacks.RAVE], protrait=Image("gui/rpg/portraits/nova.png"))
+    BLANK = Character("Blank", 180, 5, 35, [Attacks.SAMPLE_BLAST, Attacks.GNOMED], protrait=Image("gui/rpg/portraits/blank.png"))
+    MIDGE = Character("Midge", 165, 10, 25, [Attacks.NUDGE, Attacks.DRAW_IN], protrait=Image("gui/rpg/portraits/midge.png"))
+    DB05 = Character("DB05", 9001, 9001, 50, [Attacks.CONFIDENCE, Attacks.PEP_TALK], protrait=Image("gui/rpg/portraits/db05.png"))
+    ANNO = Character("Anno", 200, 20, 40, [Attacks.RADS_ATTACK, Attacks.AI_MIMIC], protrait=Image("gui/rpg/portraits/anno.png"))
+
+    # Allies (UCN)
+    BUBBLE = Character("{image=gui/dx_text.png} Bubble", 250, 10, 35, [Attacks.STOMP, Attacks.POKE], display_name = "Bubble")
+    GES = Character("{image=gui/dx_text.png} Ges", 170, 20, 35, [Attacks.SWORD_SLASH, Attacks.FLAMETHROWER], display_name = "Ges")
+    MICHAEL = Character("Michael", 155, 15, 35, [Attacks.CHOCOLATE_CAKE, Attacks.CONFUSING_STORY])
+    BILLY = Character("Billy", 220, 10, 25, [Attacks.HYPE_UP, Attacks.PITCHMAN, Attacks.AUGMENT])
+    PHIL = Character("Phil", 160, 20, 40, [Attacks.HYPE_UP, Attacks.PITCHMAN])
+    MEAN = Character("Mean", 150, 20, 35, [Attacks.HUG, Attacks.SPIKE_BOMB])
+    POMNI = Character("Pomni", 200, 15, 30, [Attacks.RAINBOW_VOMIT_NOCOOL, Attacks.RAINBOW_VOMIT_NOCOOL])
+    OBAMA = Character("{image=gui/dx_text.png} Obama", 190, 25, 35, [Attacks.KARATE_CHOP, Attacks.DRONE_STRIKE])
+    CASHIER = Character("{image=gui/dx_text.png} Cashier", 188, 14, 33, [Attacks.COIN_BARRAGE, Attacks.CART_SMASH])
+    SHARK = Character("{image=gui/dx_text.png} Shark", 190, 10, 40, [Attacks.BITE, Attacks.SHARKNADO])
+
+    # Enemies
+    FANBOYA = Character("Fanboy (NVIDIA)", 50, 0, 16, [Attacks.PUNCH], sprite=Image("images/characters/nvidiafanboy.png"), ai = AIType.NEUTRAL, display_name = "Fanboy")
+    FANBOYB = Character("Fanboy (AMD)", 50, 0, 16, [Attacks.PUNCH], sprite=Image("images/characters/amdfanboy.png"), ai = AIType.NEUTRAL, display_name = "Fanboy")
+    COP = Character("Cop", 150, 15, 30, [Attacks.PUNCH, Attacks.BULLET_SPRAY], sprite=Image("images/characters/cop.png"), ai = AIType.NEUTRAL)
+    COPGUYGODMODE = Character("Copguy (God)", 9001, 9001, 35, [Attacks.PUNCH, Attacks.BULLET_SPRAY], sprite=Image("images/characters/copguy/copguy.png"), ai = AIType.NEUTRAL, display_name = "Copguy")
+    COPGUY = Character("Copguy", 300, 20, 35, [Attacks.PUNCH, Attacks.BULLET_SPRAY], sprite=Image("images/characters/copguy/copguy.png"), ai = AIType.NEUTRAL)
+    GUARD = Character("Guard", 225, 25, 35, [Attacks.PUNCH, Attacks.BULLET_SPRAY], sprite=Image("images/characters/guard_soldier.png"), ai = AIType.DEFENSIVE)
+    SML_TANK = Character("Sherman", 400, 60, 100, [Attacks.SHELL], sprite=Image("images/characters/sherman.png"), ai = AIType.AGGRO)
+    MARINE = Character("Marine", 300, 30, 45, [Attacks.PUNCH, Attacks.BULLET_SPRAY], sprite=Image("images/characters/marine.png"), ai = AIType.SMART)
+    BIG_TANK = Character("Abrams",700, 70, 150, [Attacks.SHELL], sprite=Image("images/characters/abrams.png"), ai = AIType.AGGRO)
+    COPGUY_EX = Character("Copguy EX", 2222, 30, 50, Attacks.ex_attacks, sprite=Image("images/characters/copguy/copguy.png"), ai = AIType.COPGUY_EX)
+    PAKOOE = Character("Pakoo (Error)", 9999, 70, 150, [Attacks.FUN_VALUE], sprite=Image("images/characters/pakoo/pakoo_disappointed.png"), ai = AIType.AGGRO, display_name = "Pakoo")
+    COPGUY_EXE = Character("{image=gui/dx_text.png} Copguy.EXE", 666, 66, 66, [Attacks.ELDRITCH_BLAST, Attacks.RAINBOW_VOMIT, Attacks.SLASH, Attacks.CONFUSING_STORY], sprite=Image("images/characters/copguy/copguyexe.png"), ai = AIType.AGGRO, display_name = "Copguy.EXE")
+    K174 = Character("K17-4", 174, 17, 20, [Attacks.PUNCH], sprite=Image("images/characters/k174.png"), ai = AIType.NEUTRAL)
+    K199 = Character("K19-9", 199, 19, 30, [Attacks.KICK], sprite=Image("images/characters/k199.png"), ai = AIType.AGGRO)
+    K207 = Character("K20-7", 207, 20, 10, [Attacks.PUNCH], sprite=Image("images/characters/k207.png"), ai = AIType.DEFENSIVE)
+    TATE_EX = Character("{image=gui/dx_text.png} Tate EX", 9999, 11, 111, [Attacks.DAMAGE_SCREM, Attacks.REVERB_RECALL, Attacks.ECHO_BLAST], sprite=Image("secret/pt/tate_ex.png"), ai = AIType.AGGRO, display_name = "Tate EX")
+
+    # Enemies (UCN)
+    WESLEY = Character("{image=gui/dx_text.png} Wesley", 200, 20, 40, [Attacks.PISTOL, Attacks.ALL_OVER_AGAIN], sprite=Image("images/characters/hohsis/wesley.png"), ai = AIType.AGGRO, display_name = "Wesley")
+    ED = Character("{image=gui/dx_text.png} Ed", 300, 30, 25, [Attacks.HEAVY_PUNCH, Attacks.SOTH], sprite=Image("images/characters/hohsis/ed.png"), ai = AIType.SMART, display_name = "Ed")
+    RICHARD = Character("{image=gui/dx_text.png} Richard", 250, 20, 30, [Attacks.ONE_HUNDRED, Attacks.ICE_CREAM], sprite=Image("images/characters/hohsis/rich.png"), ai = AIType.DEFENSIVE, display_name = "Richard")
+    CEO = Character("{image=gui/dx_text.png} CEO of Diabetes", 1000, 50, 75, [Attacks.LOBBYING, Attacks.NANOMACHINES], sprite=Image("images/characters/ceo.png"), ai = AIType.SMART, display_name = "CEO")
+    SECRETARY = Character("{image=gui/dx_text.png} Secretary of Diabetes", 1000, 50, 75, [Attacks.LOBBYING, Attacks.NANOMACHINES], sprite=Image("images/characters/secretary.png"), ai = AIType.SMART, display_name = "Secretary")
+
+    @classproperty
+    def names(cls) -> list[str]:
+        return [f for f in dir(cls) if f.isupper()]
+
+    @classproperty
+    def enemy_names(cls) -> list[str]:
+        return [f for f in dir(cls) if f.isupper() and f != "NONE" and cls.__dict__[f].enemy]
+
+    @classproperty
+    def ally_names(cls) -> list[str]:
+        return [f for f in dir(cls) if f.isupper() and f != "NONE" and not cls.__dict__[f].enemy]
+
+    @classproperty
+    def fighters(cls) -> list[Character]:
+        return [cls.__dict__[f] for f in cls.names]
+
+    @classproperty
+    def enemies(cls) -> list[Character]:
+        return [cls.get(f) for f in cls.enemy_names]
+
+    @classproperty
+    def allies(cls) -> list[Character]:
+        return [cls.get(f) for f in cls.ally_names]
+
+    @classmethod
+    def get(cls, k: str, default = None) -> Character | None:
         return cls.__dict__.get(k, default)
 
 # |---- HOW TO RPG ----|
