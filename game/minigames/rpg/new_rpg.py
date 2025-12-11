@@ -935,9 +935,9 @@ class Attacks:
     RAW_CHOP = Attack("Raw Chop", "Hiya!", damage_fighters) # , ex = False
     CS_AP_DOWN = Attack("CS DEF Down", "Bring DEF of an enemy down.", change_stat, AttackType.DEBUFF, stat = CharacterStat.DEFENSE, mult = 0.75) # , ex = False
     CHOP = ComboAttack("Chop", "Hit an enemy and bring their DEF down.", [RAW_CHOP, CS_AP_DOWN])
-    RAW_KICK = Attack("Raw Kick", "It's fuckin raw!", AttackType.ATTACK, damage_fighters, mult = 2) # , ex = False
-    YTP_MAGIC = Attack("YTP Magic", "Channel the power of YTP!", AttackType.ATTACK, damage_fighters, cooldown = 10, mult = 20, accuracy = 100, used = True)
-    YTP_MAGIC_NOCOOL = Attack("YTP Magic", "Let no one stand in your way.", AttackType.ATTACK, damage_fighters, mult = 20, accuracy = 100) # , ex = False
+    RAW_KICK = Attack("Raw Kick", "It's fuckin raw!", damage_fighters, mult = 2) # , ex = False
+    YTP_MAGIC = Attack("YTP Magic", "Channel the power of YTP!", damage_fighters, cooldown = 10, mult = 20, accuracy = 100, used = True)
+    YTP_MAGIC_NOCOOL = Attack("YTP Magic", "Let no one stand in your way.", damage_fighters, mult = 20, accuracy = 100) # , ex = False
     YTP_HEAL = Attack("Attack.HEAL", "No matter the cost.", AttackType.HEAL, heal_fighters, target_count = 0, target_type = TargetType.ALLY, cooldown = 1, mult = 3, accuracy = 100)
     FUN_VALUE = Attack("Fun Value", "A Dev's favorite attack.", damage_fighters, mult = 10, accuracy = 100,)
     KICK = ComboAttack("Kick", "A stronger attack, and lowers DEF.", [RAW_KICK, CS_AP_DOWN])
@@ -945,7 +945,7 @@ class Attacks:
     RAW_SLASH = Attack("Raw Slash", "It's fuckin raw!", damage_fighters) # , ex = False
     BLEED = Attack("Bleed", "Bleed them dry!", damage_over_time, AttackType.EFFECT, mult = 0.25) # , ex = False
     SLASH = ComboAttack("Slash", "A cutting attack that bleeds out your enemies.", [RAW_SLASH, BLEED], accuracy = 85)
-    LIGHT_CAST = Attack("Light Cast", "A strong blast of light that varies in damage.", damage_fighters_range, cooldown = 3, min_mult = 1, max_mult = 3, accuracy = 80)
+    LIGHT_CAST = Attack("Light Cast", "A strong blast of light that varies in damage.", damage_fighters_range, cooldown = 3, min_mult = 1, max_mult = 3)
     INSIGHT = Attack("Insight", "Lowers enemy's attack by a little.", change_stat, AttackType.DEBUFF, stat = CharacterStat.ATTACK, mult = 0.75, accuracy = 90)
     SHOTGUN = Attack("Shotgun", "Blast your enemies twice with a powerful shotgun blast!", damage_fighters, target_count = 2, cooldown = 3, mult = 2, accuracy = 70)
     ENCOURAGE = Attack("Encourage", "Heal one member with morale!", heal_fighters, target_count = 1, target_type = TargetType.ALLY, accuracy = 95)
@@ -988,38 +988,36 @@ class Attacks:
     ECHO_BLAST = ComboAttack("Echo Blast", "Make them feel the pain of the past, at the cost of your ATK.", [TATE_BLAST, TATE_ECHOES], cooldown = 11, accuracy = 100) # , ex = False
     GENERGY = Attack("Genergy", "Sip some refreshing Genergy.", heal_fighters, AttackType.HEAL, target_count = 1, target_type = TargetType.ALLY, mult = 2.36, accuracy = 100) # , ex = False
 
-    """ TODO
     # UCN
-    STOMP = Attack("Stomp", "Send an earthquake to the enemies!", damage_fighters, target_count = 0, target_type = "enemies", ex = False, mult = 0.75)
-    POKE = Attack("Poke", "A mega poke.", damage_fighters, target_count = 1, target_type = "enemies", ex = False, mult = 2.5, accuracy = 90)
-    SWORD = Attack("Sword", "The edge of a sharp thing.", damage_fighters, target_count = 1, target_type = "enemies", ex = False)
-    SWORD_AP = Attack("Sword (DEF Down)", "The edge of a sharp thing, more.", change_stat, stat = "ap", target_count = 1, target_type = "enemies", mult = 0.75, ex = False)
-    SWORD_SLASH = ComboAttack("Sword Slash", "Hit an enemy, and take a chip out of their armor.", [SWORD, SWORD_AP], ex = False)
-    FLAMETHROWER = Attack("Flamethrower", "Spray all your enemies with burning fuel!", damage_over_time, target_count = 0, target_type = "enemies", ex = False, mult = 0.5, turns = 3, cooldown = 3, accuracy = 70)
-    CHOCOLATE_CAKE = Attack("Chocolate Cake", "Heal a party member with loads to eat!", heal_fighters, target_type = "allies", accuracy = 95, ex = False)
-    CONFUSING_STORY = Attack("Confusing Story", "Tell a puzzling poem.", confuse_targets, ex = False)
-    HYPE_UP = Attack("Hype Up", "Get a team member pumped to fight!", change_stat, target_type = "allies", ex = False, mult = 1.5, stat = "atk", accuracy = 90)
-    PITCHMAN = Attack("Pitchman", "Smooth-talk an enemy's defenses down!", change_stat, target_type = "enemies", ex = False, mult = 0.75, stat = "ap", accuracy = 90)
-    HUG = Attack("Hug", "Hug an enemy (ouch).", damage_fighters, target_count = 1, target_type = "enemies", ex = False, mult = 1.5, accuracy = 90)
-    SPIKE_BOMB = Attack("Spike Bomb", "Release spikes to all enemies!", damage_fighters, target_count = 0, target_type = "enemies", ex = False, mult = 1.5, cooldown = 3, accuracy = 75)
-    SHOT = Attack("Shot", "I'd like to see you outrun bullet.", damage_fighters, target_count = 1, target_type = "enemies", ex = False, mult = 1.5)
-    SHOT_AP = Attack("Shot (DEF Down)", "Kevlar destroyed.", change_stat, stat = "ap", target_count = 1, target_type = "enemies", mult = 0.75, ex = False)
-    PISTOL = ComboAttack("Pistol", "A sharp shot to the chest.", [SHOT, SHOT_AP], ex = False)
-    ALL_OVER_AGAIN = Attack("All Over Again", "Ditto.", ai_mimic)
-    HEAVY_PUNCH = Attack("Heavy Punch", "A quick blow.", damage_fighters, target_count = 1, target_type = "enemies", ex = False, mult = 1.75, accuracy = 75)
-    SOTH = Attack("Shit On The House", "I'm going to... take a shit on the house.", damage_fighters, target_count = 0, target_type = "enemies", ex = False, mult = 2, cooldown = 3, accuracy = 65)
-    ONE_HUNDRED = Attack("100% Unsatisfied", "Yelp reviews coming in...", change_stat, stat = "atk", target_count = 0, target_type = "enemies", mult = 0.8, accuracy = 95, ex = False)
-    ICE_CREAM = Attack("Ice Cream", "Bing chilling!", heal_fighters, target_count = 0, target_type = "allies", accuracy = 90, ex = False, mult = 1.5, cooldown = 3)
-    RAINBOW_VOMIT_NOCOOL = ComboAttack("Rainbow Vomit", "Why are you like this?", [RAINBOW_NOCOOL, VOMIT_NOCOOL], accuracy = 75, ex = False)
-    KARATE_CHOP = ComboAttack("Karate Chop", "Hit an enemy and bring their DEF down.", [RAW_CHOP, SWORD_AP])
-    DRONE_STRIKE = Attack("Drone Strike", "O Bomb a.", damage_fighters, target_count = 0, target_type = "enemies", cooldown = 3, mult = 2.5, accuracy = 85)
-    COIN_BARRAGE = Attack("Coin Barrage", "Pelt your foes with change!", random_damage_fighters, min_mult = 0.75, max_mult = 2, ex = False, mult = 1, accuracy = 60)
-    CART_SMASH = Attack("Cart Smash", "Ram into someone with a shopping cart.", damage_fighters, target_count = 1, target_type = "enemies", ex = False, mult = 5, accuracy = 95, cooldown = 3)
-    BITE = Attack("Bite", "Chomp!", random_damage_fighters, min_mult = 5, max_mult = 10, ex = False, mult = 5, accuracy = 5)
-    SHARKNADO = ComboAttack("Sharknado", "A confusing vortex of sharks.", [BITE, BLEED], cooldown = 5, accuracy = 80)
-    LOBBYING = ComboAttack("Lobbying", "Lobby like it's your hobby!", [ENCOURAGE, CS_AP_DOWN])
-    NANOMACHINES = Attack("Nanomachines", "Nanomachines, son.", damage_fighters, target_count = 8, target_type = "enemies", ex = False, mult = 1.5, accuracy = 95, cooldown = 7)
-    """
+    STOMP = Attack("Stomp", "Send an earthquake to the enemies!", damage_fighters, target_count = 0, mult = 0.75) # , ex = False
+    POKE = Attack("Poke", "A mega poke.", damage_fighters, mult = 2.5, accuracy = 90) # , ex = False
+    SWORD = Attack("Sword", "The edge of a sharp thing.", damage_fighters) # , ex = False
+    SWORD_AP = Attack("Sword (DEF Down)", "The edge of a sharp thing, more.", change_stat, AttackType.DEBUFF, stat = CharacterStat.DEFENSE, mult = 0.75) # , ex = False
+    SWORD_SLASH = ComboAttack("Sword Slash", "Hit an enemy, and take a chip out of their armor.", [SWORD, SWORD_AP]) # , ex = False
+    FLAMETHROWER = Attack("Flamethrower", "Spray all your enemies with burning fuel!", damage_over_time, AttackType.EFFECT, target_count = 0, mult = 0.5, duration = 3, cooldown = 3, accuracy = 70) # , ex = False,
+    CHOCOLATE_CAKE = Attack("Chocolate Cake", "Heal a party member with loads to eat!", heal_fighters, target_type = "allies", accuracy = 95) # , ex = False
+    CONFUSING_STORY = Attack("Confusing Story", "Tell a puzzling poem.", confuse_targets, AttackType.EFFECT) # , ex = False
+    HYPE_UP = Attack("Hype Up", "Get a team member pumped to fight!", change_stat, AttackType.BUFF, stat = CharacterStat.ATTACK, target_type = TargetType.ALLY, mult = 1.5, accuracy = 90) # , ex = False
+    PITCHMAN = Attack("Pitchman", "Smooth-talk an enemy's defenses down!", change_stat, AttackType.DEBUFF, mult = 0.75, stat = CharacterStat.DEFENSE, accuracy = 90) # , ex = False
+    HUG = Attack("Hug", "Hug an enemy (ouch).", damage_fighters, mult = 1.5, accuracy = 90) # , ex = False
+    SPIKE_BOMB = Attack("Spike Bomb", "Release spikes to all enemies!", damage_fighters, target_count = 0, mult = 1.5, cooldown = 3, accuracy = 75) # , ex = False
+    SHOT = Attack("Shot", "I'd like to see you outrun bullet.", damage_fighters, mult = 1.5) # , ex = False
+    SHOT_AP = Attack("Shot (DEF Down)", "Kevlar destroyed.", change_stat, AttackType.DEBUFF, stat = CharacterStat.DEFENSE, mult = 0.75) # , ex = False
+    PISTOL = ComboAttack("Pistol", "A sharp shot to the chest.", [SHOT, SHOT_AP]) # , ex = False
+    ALL_OVER_AGAIN = Attack("All Over Again", "Ditto.", ai_mimic) # , ex = False
+    HEAVY_PUNCH = Attack("Heavy Punch", "A quick blow.", damage_fighters, mult = 1.75, accuracy = 75) # , ex = False
+    SOTH = Attack("Shit On The House", "I'm going to... take a shit on the house.", damage_fighters, target_count = 0, mult = 2, cooldown = 3, accuracy = 65) # , ex = False
+    ONE_HUNDRED = Attack("100% Unsatisfied", "Yelp reviews coming in...", change_stat, AttackType.DEBUFF, stat = CharacterStat.ATTACK, target_count = 0, mult = 0.8, accuracy = 95) # , ex = False
+    ICE_CREAM = Attack("Ice Cream", "Bing chilling!", heal_fighters, AttackType.HEAL, target_count = 0, target_type = TargetType.ALLY, accuracy = 90, mult = 1.5, cooldown = 3) # , ex = False
+    RAINBOW_VOMIT_NOCOOL = ComboAttack("Rainbow Vomit", "Why are you like this?", [RAINBOW_NOCOOL, VOMIT_NOCOOL], accuracy = 75) # , ex = False
+    KARATE_CHOP = ComboAttack("Karate Chop", "Hit an enemy and bring their DEF down.", [RAW_CHOP, SWORD_AP]) # , ex = False
+    DRONE_STRIKE = Attack("Drone Strike", "O Bomb a.", damage_fighters, target_count = 0, cooldown = 3, mult = 2.5, accuracy = 85) # , ex = False
+    COIN_BARRAGE = Attack("Coin Barrage", "Pelt your foes with change!", damage_fighters_range, min_mult = 0.75, max_mult = 2, accuracy = 60) # , ex = False
+    CART_SMASH = Attack("Cart Smash", "Ram into someone with a shopping cart.", damage_fighters, mult = 5, accuracy = 95, cooldown = 3) # , ex = False
+    BITE = Attack("Bite", "Chomp!", damage_fighters_range, min_mult = 5, max_mult = 10, mult = 5, accuracy = 5) # , ex = False
+    SHARKNADO = ComboAttack("Sharknado", "A confusing vortex of sharks.", [BITE, BLEED], cooldown = 5, accuracy = 80) # , ex = False
+    LOBBYING = ComboAttack("Lobbying", "Lobby like it's your hobby!", [ENCOURAGE, CS_AP_DOWN]) # , ex = False
+    NANOMACHINES = Attack("Nanomachines", "Nanomachines, son.", damage_fighters, target_count = 8, mult = 1.5, accuracy = 95, cooldown = 7) # , ex = False
 
     @classproperty
     def names(cls) -> list[str]:
@@ -1029,10 +1027,18 @@ class Attacks:
     def attacks(cls) -> list[Attack]:
         return [cls.__dict__[a] for a in cls.names]
 
-    _EX_BLACKLIST = { a.name for a in # Name is hashable, while the attacks usually aren't
+    _UCN_ATTACKS = (
+        STOMP, POKE, SWORD, SWORD_AP, SWORD_SLASH, FLAMETHROWER, CHOCOLATE_CAKE, CONFUSING_STORY, HYPE_UP,
+        PITCHMAN, HUG, SPIKE_BOMB, SHOT, SHOT_AP, PISTOL, ALL_OVER_AGAIN, HEAVY_PUNCH, SOTH, ONE_HUNDRED,
+        ICE_CREAM, RAINBOW_VOMIT_NOCOOL, KARATE_CHOP, DRONE_STRIKE, COIN_BARRAGE, CART_SMASH, BITE, SHARKNADO,
+        LOBBYING, NANOMACHINES
+    )
+
+    _EX_BLACKLIST = { a.name for a in # Name is hashable, while the attacks aren't
         (RAW_CHOP, CS_AP_DOWN, RAW_KICK, YTP_MAGIC_NOCOOL, RAW_SLASH, BLEED, RAINBOW, VOMIT,
         RAINBOW_NOCOOL, VOMIT_NOCOOL, RAVE_DEF, RAVE_OFF, SAMPLE_SPAM, SOUND_BLAST, AUGMENT,
-        TATE_RECALL, TATE_REVERB, REVERB_RECALL, TATE_ECHOES, TATE_BLAST, ECHO_BLAST, GENERGY)
+        TATE_RECALL, TATE_REVERB, REVERB_RECALL, TATE_ECHOES, TATE_BLAST, ECHO_BLAST, GENERGY,
+        *_UCN_ATTACKS)
     }
     @classproperty
     def ex_attacks(cls) -> list[Attack]:
