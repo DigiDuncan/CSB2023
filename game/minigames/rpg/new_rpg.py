@@ -1,8 +1,9 @@
 from __future__ import annotations
+from ctypes import BigEndianStructure
 
 from renpy.display.core import Displayable
 from renpy.display.im import Image
-from renpy import random
+from renpy import random, register_statement, jump
 
 # This is the equivalent of a python early block in a .rpy file.
 """renpy
@@ -961,6 +962,10 @@ class AIType:
     SMART = AI("Smart", tacticity = 2, crowd_control = 2, heal_chance = 0.60)
     COPGUY_EX = AI("EX", aggression = 3, tacticity = 2, preferred_targets = ["CS"], heal_chance = 0.70)
 
+    @classmethod
+    def get(cls, ai: str, default: AI | None = None) -> AI | None:
+        cls.__dict__.get(ai, default)
+
 class Effects:
     CONFUSION = Effect("Confusion", "Confuse and befuddle!", None, False, 0, apply_func=apply_status_effect, apply_options={"stat": CharacterStat.ACCURACY, "amount": 0.5, "scale": True}, decay_func=decay_chance)
     BLEED = Effect("Bleed", "Bleed them dry!", None, False, 0, update_func=update_damage_over_time)
@@ -975,7 +980,7 @@ class Attacks:
     RAW_KICK = Attack("Raw Kick", "It's fuckin raw!", damage_fighters, mult = 2) # , ex = False
     YTP_MAGIC = Attack("YTP Magic", "Channel the power of YTP!", damage_fighters, cooldown = 10, mult = 20, accuracy = 100, used = True)
     YTP_MAGIC_NOCOOL = Attack("YTP Magic", "Let no one stand in your way.", damage_fighters, mult = 20, accuracy = 100) # , ex = False
-    YTP_HEAL = Attack("Attack.HEAL", "No matter the cost.", AttackType.HEAL, heal_fighters, target_count = 0, target_type = TargetType.ALLY, cooldown = 1, mult = 3, accuracy = 100)
+    YTP_HEAL = Attack("Attack.HEAL", "No matter the cost.", heal_fighters, AttackType.HEAL, target_count = 0, target_type = TargetType.ALLY, cooldown = 1, mult = 3, accuracy = 100)
     FUN_VALUE = Attack("Fun Value", "A Dev's favorite attack.", damage_fighters, mult = 10, accuracy = 100,)
     KICK = ComboAttack("Kick", "A stronger attack, and lowers DEF.", [RAW_KICK, CS_AP_DOWN])
     BULLET_SPRAY = Attack("Bullet Spray", "Shred all enemies with your LMG!", damage_fighters, target_count = 0, cooldown = 3, mult = 1.5, accuracy = 70)
@@ -990,7 +995,7 @@ class Attacks:
     SCRATCH = Attack("Scratch", "A basic scratch attack.", damage_fighters, accuracy = 75)
     ARMOUR = Attack("Armour", "Boost one's defense!", change_stat, AttackType.BUFF, stat = CharacterStat.DEFENSE, target_count = 1, target_type = TargetType.ALLY, cooldown = 3, mult = 2.5, accuracy = 90)
     DAMAGE_SCREM = Attack("Damage Screm", "Yell as loud as possible to deafen your enemies!", damage_fighters, target_count = 0, mult = 0.5, accuracy = 75)
-    SNACK_TIME = Attack("Snack Time", "Heal your team with the power of snacks!", heal_fighters, target_count = 0, target_type = TargetType.ALLY, cooldown = 3, accuracy = 95)
+    SNACK_TIME = Attack("Snack Time", "Heal your team with the power of snacks!", heal_fighters, AttackType.HEAL, target_count = 0, target_type = TargetType.ALLY, cooldown = 3, accuracy = 95)
     ELDRITCH_BLAST = Attack("Eldritch Blast", "An unholy blast that does quite a bit of damage to an enemy.", damage_fighters, mult = 1.5)
     RAINBOW = Attack("Rainbow", "", confuse_targets, AttackType.EFFECT, cooldown = 3) # , ex = False
     VOMIT = Attack("Vomit", "", damage_over_time, AttackType.EFFECT, cooldown = 3, duration = 3) # , ex = False
@@ -1062,24 +1067,25 @@ class Attacks:
 
     @classproperty
     def attacks(cls) -> list[Attack]:
-        return [cls.__dict__[a] for a in cls.names]
+        names = cls.names
+        return [cls.__dict__[a] for a in names]
 
-    _UCN_ATTACKS = (
+    ucn_attacks = (
         STOMP, POKE, SWORD, SWORD_AP, SWORD_SLASH, FLAMETHROWER, CHOCOLATE_CAKE, CONFUSING_STORY, HYPE_UP,
         PITCHMAN, HUG, SPIKE_BOMB, SHOT, SHOT_AP, PISTOL, ALL_OVER_AGAIN, HEAVY_PUNCH, SOTH, ONE_HUNDRED,
         ICE_CREAM, RAINBOW_VOMIT_NOCOOL, KARATE_CHOP, DRONE_STRIKE, COIN_BARRAGE, CART_SMASH, BITE, SHARKNADO,
         LOBBYING, NANOMACHINES
     )
 
-    _EX_BLACKLIST = { a.name for a in # Name is hashable, while the attacks aren't
+    ex_blacklist = { a.name for a in # Name is hashable, while the attacks aren't
         (RAW_CHOP, CS_AP_DOWN, RAW_KICK, YTP_MAGIC_NOCOOL, RAW_SLASH, BLEED, RAINBOW, VOMIT,
         RAINBOW_NOCOOL, VOMIT_NOCOOL, RAVE_DEF, RAVE_OFF, SAMPLE_SPAM, SOUND_BLAST, AUGMENT,
         TATE_RECALL, TATE_REVERB, REVERB_RECALL, TATE_ECHOES, TATE_BLAST, ECHO_BLAST, GENERGY,
-        *_UCN_ATTACKS)
+        *ucn_attacks)
     }
     @classproperty
     def ex_attacks(cls) -> list[Attack]:
-        return [a for a in cls.attacks if a.name not in cls._EX_BLACKLIST]
+        return [a for a in cls.attacks if a.name not in cls.ex_blacklist]
 
     @classmethod
     def get(cls, k: str, default = None) -> Attack | None:
@@ -1149,17 +1155,33 @@ class Characters:
     CEO = Character("{image=gui/dx_text.png} CEO of Diabetes", 1000, 50, 75, [Attacks.LOBBYING, Attacks.NANOMACHINES], sprite=Image("images/characters/ceo.png"), ai = AIType.SMART, display_name = "CEO")
     SECRETARY = Character("{image=gui/dx_text.png} Secretary of Diabetes", 1000, 50, 75, [Attacks.LOBBYING, Attacks.NANOMACHINES], sprite=Image("images/characters/secretary.png"), ai = AIType.SMART, display_name = "Secretary")
 
-    @classproperty
-    def names(cls) -> list[str]:
-        return [f for f in dir(cls) if f.isupper()]
+    allies = (
+        CS, CS_NG, CS_STRONG, CS_FINAL, CS_FINAL2, CS_WEAK, CS_ARCHIVAL, CS_VS_TATE_PUNCH, CS_VS_TATE_KICK, CS_VS_TATE_CHOP,
+        ARCEUS, PAKOO , MIKA, KITTY , TATE, ARIA, DIGI, NOVA, BLANK , MIDGE , DB05, ANNO, BUBBLE , GES, MICHAEL, BILLY, PHIL,
+        MEAN, POMNI, OBAMA, CASHIER, SHARK,
+    )
+    ally_names = tuple(
+        ally.name for ally in allies
+    )
+    ally_name_set = set(ally_names)
 
-    @classproperty
-    def enemy_names(cls) -> list[str]:
-        return [f for f in dir(cls) if f.isupper() and f != "NONE" and cls.__dict__[f].enemy]
+    enemies = (
+        FANBOYA, FANBOYB, COP, COPGUYGODMODE, COPGUY, GUARD, SML_TANK, MARINE, BIG_TANK, COPGUY_EX, PAKOOE, COPGUY_EXE,
+        K174, K199, K207, TATE_EX, WESLEY, ED, RICHARD, CEO, SECRETARY
+    )
+    enemy_names = tuple(
+        enemy.name for enemy in enemies
+    )
+    enemy_name_set = set(enemy_names)
 
-    @classproperty
-    def ally_names(cls) -> list[str]:
-        return [f for f in dir(cls) if f.isupper() and f != "NONE" and not cls.__dict__[f].enemy]
+    characters = (
+        *allies, *enemies
+    )
+    names = (
+        *ally_names, *enemy_names
+    )
+    name_set = set(names)
+
 
     @classproperty
     def fighters(cls) -> list[Character]:
@@ -1176,6 +1198,169 @@ class Characters:
     @classmethod
     def get(cls, k: str, default = None) -> Character | None:
         return cls.__dict__.get(k, default)
+
+
+type ParsedFighter = tuple[str, str | None, int | None, int | None, int | None, int | None]
+# Parse a fighter by getting their name, and optional overrides for their ai, hp, def, atk, and acc
+def parse_fighter(lexer) -> ParsedFighter:
+    variable = lexer.match(r"\$") # Variable Fighter $<x>
+    name = lexer.word()
+
+    if variable:
+        name = globals().get(name) # TODO: remove use of globals and test that lexer.word() works if $ is at the start.
+
+    name = name.upper()
+    ai = hp = defense = attack = accuracy = None
+    while not lexer.eol():
+        if lexer.keyword("ai"):
+            ai = lexer.word().upper()
+        elif lexer.keyword("hp"):
+            hp = lexer.int()
+        elif lexer.keyword("def"):
+            defense = lexer.int()
+        elif lexer.keyword("atk"):
+            attack = lexer.int()
+        elif lexer.keyword("acc"):
+            accuracy = lexer.int()
+
+    lexer.expect_eol(f"Parsing {name} Failed")
+    return (name, ai, hp, defense, attack, accuracy)
+
+type ParsedRpg = tuple[float, int, str, str, str | None, str | None, str | None, bool, list[ParsedFighter] | None, list[ParsedFighter], list[ParsedFighter]]
+# Parse an rpg block and get the level/scale, background, music, on_win, on_lose, intro_text, if it is a ucn fight, fighters, ally fighters, and enemy fighters
+def parse_rpg(lexer) -> ParsedRpg:
+    block = lexer.subblock_lexer()
+    level = 1.0
+    initial = 0
+    background = "images/bg/casino1.png"
+    music = "card_castle"
+    on_win = on_lose = intro = is_ucn = fighters = None
+    allies = []
+    enemies = []
+    while block.advance():
+        if fighters is not None:
+            block.expect_noblock("old style rpg was used so don't use allies or enemies block")
+        if block.keyword("level") or block.keyword("scale"):
+            level = block.float()
+        if block.keyword("turn") or block.ketword("initial"):
+            initial = block.int()
+        elif block.keyword("bg"):
+            background = block.string()
+        elif block.keyword("music"):
+            music = block.string()
+        elif block.keyword("on_win"):
+            on_win = block.string()
+        elif block.keyword("on_lose"):
+            on_lose = block.string()
+        elif block.keyword("intro") or block.keyword("intro_text"):
+            intro = block.string()
+        elif block.keyword("ucn"):
+            is_ucn = True
+        elif block.keyword("fighters"):
+            # Support old style RPG
+            fighters = []
+            block.expect("fighters")
+            subblock = block.subblock_lexer()
+            while subblock.advance():
+                fighters.append(parse_fighter(subblock))
+        elif block.keyword("allies"):
+            block.expect_block("allies")
+            subblock = block.subblock_lexer()
+            while subblock.advance():
+                allies.append(parse_fighter(subblock))
+        elif block.keyword("enemies"):
+            block.expect_block("enemies")
+            subblock = block.subblock_lexer()
+            while subblock.advance():
+                enemies.append(parse_fighter(subblock))
+
+    return level, initial, background, music, on_win, on_lose, intro, is_ucn, fighters, allies, enemies
+
+def execute_rpg(parsed_object: ParsedRpg):
+    level, initial, background, music, on_win, on_lose, intro_text, is_ucn, fighters, allies, enemies = parsed_object
+    if is_ucn:
+        background = ucn_bg
+        music = ucn_music
+        level = ucn_scale # TODO rename to level
+
+
+    if fighters is not None:
+        fighters = [
+            Fighter(Characters.get(name), name in Characters.enemy_name_set, AIType.get(ai), hp, defense, attack, accuracy)
+            for (name, ai, hp, defense, attack, accuracy) in fighters
+        ]
+    else:
+        fighters = [
+            *(
+                Fighter(Characters.get(name), False, level, AIType.get(ai), hp, defense, attack, accuracy)
+                for (name, ai, hp, defense, attack, accuracy) in allies
+            ),
+            *(
+                Fighter(Characters.get(name), True, level, AIType.get(ai), hp, defense, attack, accuracy)
+                for (name, ai, hp, defense, attack, accuracy) in enemies
+            )
+        ]
+
+    rpggame.reset() # TODO: is this needed for the screen version of the rpg?
+    rpggame.encounter = Encounter(fighters, background, music, on_win, on_lose, intro_text, initial)
+    jump("play_rpggame")
+
+def lint_rpg(parsed_object):
+    level, initial, _, _, on_win, on_lose, _, _, fighters, allies, enemies = parsed_object
+    # TODO: We should probably do this at some point.
+    if level <= 0:
+        print("raise issue!!!")
+    elif initial <= 0:
+        print("raise issue!!!")
+    elif on_win is None:
+        print("raise issue!!!")
+    elif on_lose is None:
+        print("raise issue!")
+    elif fighters is not None and allies or enemies:
+        print("raise issues!")
+    elif fighters:
+        print("check fighters etc!")
+    elif allies:
+        print("check allies etc!")
+    elif enemies:
+        print("check enemies etc!")
+
+register_statement(
+    name = "newrpg",
+    parse = parse_rpg,
+    lint = lint_rpg,
+    execute = execute_rpg,
+    block = True)
+
+"""
+rpg:
+    bg "images/bg/X.png"
+    music "audio/Y.ogg"
+    on_win "label"
+    on_lose "label2"
+    intro "text when battle starts"
+    level 1
+    turn 0
+    allies:
+        cs hp 180 acc 25 ...
+        ...
+    enemies:
+        cop
+        ...
+
+ Also supports old style
+
+ rpg:
+    bg "images/bg/X.png"
+    music "audio/Y.ogg"
+    fighters:
+        cs
+        cop
+        etc...
+    on_win "label"
+    on_lose "label2"
+    intro_text "text when battle starts"
+"""
 
 # |---- HOW TO RPG ----|
 # 1) Create an encounter by creatings the fighters (Fighter(Character, is_enemy, level, ai, [optionally] stat overrides)) and filling in details.
