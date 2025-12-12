@@ -1305,7 +1305,7 @@ def execute_rpg(parsed_object: ParsedRpg):
     rpggame.encounter = Encounter(fighters, background, music, on_win, on_lose, intro_text, initial)
     jump("play_rpggame")
 
-def lint_rpg(parsed_object):
+def lint_rpg(parsed_object: ParsedRpg):
     level, initial, _, _, on_win, on_lose, _, _, fighters, allies, enemies = parsed_object
     # TODO: We should probably do this at some point.
     if level <= 0:
