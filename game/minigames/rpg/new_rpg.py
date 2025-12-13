@@ -1,5 +1,4 @@
 from __future__ import annotations
-from ctypes import BigEndianStructure
 
 from renpy.display.core import Displayable
 from renpy.display.im import Image
@@ -1242,12 +1241,18 @@ def parse_rpg(lexer) -> ParsedRpg:
             block.expect_noblock("old style rpg was used so don't use allies or enemies block")
         if block.keyword("level") or block.keyword("scale"):
             level = block.float()
+            if level == "\"ucn\"":
+                is_ucn = True
         if block.keyword("turn") or block.ketword("initial"):
             initial = block.int()
         elif block.keyword("bg"):
             background = block.string()
+            if level == "ucn":
+                is_ucn = True
         elif block.keyword("music"):
             music = block.string()
+            if level == "ucn":
+                is_ucn = True
         elif block.keyword("on_win"):
             on_win = block.string()
         elif block.keyword("on_lose"):
