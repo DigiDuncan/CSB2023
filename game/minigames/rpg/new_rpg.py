@@ -13,7 +13,7 @@ from dataclasses import dataclass
 from queue import Queue
 from typing import Callable, Any
 from collections.abc import Sequence
-from enum import StrEnum
+from enum import StrEnum, IntFlag, auto
 
 
 # |---- UTIL ----|
@@ -54,6 +54,14 @@ class CharacterStat(StrEnum):
     DEFENSE = "defense"
     ACCURACY = "accuracy"
 
+class CharacterFlag(IntFlag):
+    NOTHING = 0
+    ALLY = auto()
+    ENEMY = auto()
+    UCN = auto()
+    UCN_ALLY = UCN | ALLY
+    UCN_ENEMY = UCN | ENEMY
+
 class AttackType(StrEnum):
     ATTACK = "attack"
     HEAL = "heal"
@@ -61,6 +69,7 @@ class AttackType(StrEnum):
     DEBUFF = "debuff"
     AOE = "aoe"
     EFFECT = "effect" # previously confuse + DOT
+
 
 class IndicatorType(StrEnum):
     HP = "hp"
@@ -304,9 +313,10 @@ class Character: # TODO: Workshop -- I'd like fighter to be used by encounter, b
     and is used by the encounter to setup the fighters
     """
 
-    def __init__(self, name: str, hp: int, defense: int, attack: int, attacks: Sequence[Attack | ComboAttack], accuracy: int = 100, ai: AI | None = None, display_name: str | None = None, portrait: Displayable | None = None, sprite: Displayable | None = None):
+    def __init__(self, name: str, hp: int, defense: int, attack: int, attacks: Sequence[Attack | ComboAttack], accuracy: int = 100, ai: AI | None = None, display_name: str | None = None, portrait: Displayable | None = None, sprite: Displayable | None = None, traits: CharacterFlag = CharacterFlag.NOTHING):
         self.name: str = name
         self.display_name: str = display_name or name
+        self.traits: CharacterFlag = traits
 
         self.base_hp: int = hp # how much hp will the fighter start with, and what is their max hp
         self.base_def: int = defense # how much defense will the fighter start with
@@ -331,6 +341,15 @@ class Character: # TODO: Workshop -- I'd like fighter to be used by encounter, b
             portrait if portrait is not None else self.portrait,
             sprite if sprite is not None else self.sprite
         )
+
+    def __set_name__(self, owner: type, name: str):
+        owner.characters[name] = self # Automatically add the Character to the dict for Characters.get
+        if self.traits & CharacterFlag.ALLY:
+            owner.allies[name] = self
+        if self.traits & CharacterFlag.ENEMY:
+            owner.enemies[name] = self
+        if self.traits & CharacterFlag.UCN:
+            owner.ucn[name] = self
 
 # -- Encounter Unique Objects --
 
