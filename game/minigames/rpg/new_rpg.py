@@ -11,7 +11,8 @@ python early:
 """
 from dataclasses import dataclass
 from queue import Queue
-from typing import Callable, Any
+from typing import Callable, Any, Self, Protocol
+from functools import wraps
 from collections.abc import Sequence
 from enum import StrEnum, IntFlag, auto
 
@@ -62,13 +63,25 @@ class CharacterFlag(IntFlag):
     UCN_ALLY = UCN | ALLY
     UCN_ENEMY = UCN | ENEMY
 
-class AttackType(StrEnum):
-    ATTACK = "attack"
-    HEAL = "heal"
-    BUFF = "buff"
-    DEBUFF = "debuff"
-    AOE = "aoe"
-    EFFECT = "effect" # previously confuse + DOT
+class AttackType(IntFlag):
+    NOTHING = 0
+    DAMAGE = auto()
+    HEAL = auto()
+    BUFF = auto()
+    DEBUFF = auto()
+    AOE = auto()
+    EFFECT = auto()
+    COMBO = auto()
+    SACRIFICE = auto() # TODO: add to AI
+
+
+# class AttackType(StrEnum):
+#     ATTACK = "attack"
+#     HEAL = "heal"
+#     BUFF = "buff"
+#     DEBUFF = "debuff"
+#     AOE = "aoe"
+#    EFFECT = "effect" # previously confuse + DOT
 
 
 class IndicatorType(StrEnum):
@@ -97,36 +110,78 @@ class AIFocus(StrEnum):
 
 # -- Constant Data Objects --
 
+# This decorator enables attack function creators to set the attack type,
+# and Attack creators to set the options neatly.
+class AttackFunc:
+    
+    def __init__(self, typ: AttackType, func: Callable[..., Any], options: dict[str, Any]):
+        self.type: AttackType = typ
+        self.func: Callable[..., Any] = func
+        self.options: dict[str, Any] = options
+
+    @classmethod
+    def predefine(cls, typ: AttackType = AttackType.NOTHING) -> Callable[..., Self]:
+        @wraps
+        def wrapper(func: Callable[..., Any]):
+            def collect_options(**kwds) -> Self:
+                return cls(typ, func, kwds)
+            return collect_options
+        return wrapper
+
+    def __call__(self, encounter: Encounter, fighter: Fighter, targets: tuple[Fighter, ...]) -> Any:
+        return self.func(encounter, fighter, targets, **self.options)
+
+attack_def = AttackFunc.predefine
+
+# The decorator also precalculates if an attack is a debuff/buff so no overrides have to be used
+class StatAttackFunc(AttackFunc):
+    def __init__(self, typ: AttackType, func: Callable[..., Any], options: dict[str, Any]):
+        typ = typ | (AttackType.BUFF if options.get("mult", 1.0) < 1.0 else AttackType.DEBUFF)
+        super().__init__(typ, func, options)
+
+stat_attack_def = StatAttackFunc.predefine
+
+
 class Attack:
     """
-    An Attack defines what
-    a fighter can do on their turn.
+    An Attack defines on of the possible actions a character can do on their turn.
+    It does not include any of the data that is encounter dependant. The type of 
+    the attack is determined automatically so there shouldn't be a reason to override
+    it.
+
     """
+
     def __init__(
             self,
             name: str,
             description: str,
-            func: Callable[..., Any], # I'm being lazy because typing these is kind of impossible rn
-            typ: AttackType = AttackType.ATTACK,
+            func: AttackFunc,
             targets: TargetType = TargetType.ENEMY,
             target_count: int = 1,
             cooldown: int = 0,
             accuracy: int = 80,
             start_used: bool = False,
-            **kwds: Any
+            *,
+            typ: AttackType | None = None,
         ):
+        
+        if typ is None:
+            typ = func.type
+            if targets != TargetType.SELF and target_count > 1:
+                # Automatically add AOE because the attack function
+                # generally works for any number of attackers
+                typ = typ | AttackType.AOE 
+
         self.name: str = name
         self.description: str = description
-        self.type: AttackType = typ # typ of attack for AI
+        self.type: AttackType = typ # type of attack for AI
 
-        self.func: Callable[..., Any] = func # the function which applies the effects of the attack
+        self.func: AttackFunc = func # the function which applies the effects of the attack
         self.targets: TargetType = targets # what group of fighters to attack
         self.target_count: int = target_count # how many enemies to target
         self.cooldown: int = cooldown # how many turns to wait on the cool down
         self.accuracy: int = accuracy # percent change of hitting witht the attack
         self.start_used: bool = start_used # whether to start counting down from the beginning of the fight
-
-        self.options: dict[str, Any] = kwds # additionally arguments for Attack.func
 
     def __str__(self) -> str:
         return f"<Attack {self.name}>"
@@ -147,15 +202,20 @@ class ComboAttack:
             name: str,
             description: str,
             attacks: Sequence[Attack],
-            typ: AttackType = AttackType.ATTACK,
             targets: TargetType | None = None,
             cooldown: int | None = None,
             accuracy: int | None = None,
             start_used: bool | None = None,
             shared_targets: bool = False, # TODO: use to allow for mixed targetting
+            *,
+            typ: AttackType | None = None,
             ):
         self.name: str = name
         self.description: str = description
+        if typ is None:
+            typ = AttackType.COMBO
+            # TODO: Merge types of attacks.
+        
         self.type: AttackType = typ
 
         self.attacks = attacks # What attacks to run through
@@ -270,27 +330,28 @@ class AI:
         # If we should heal, make sure we only have healing attacks available.
         if heal_party:
             all_attacks = available_attacks
-            available_attacks = [a for a in available_attacks if a.type == "heal"]
+            available_attacks = [a for a in available_attacks if a.type & AttackType.HEAL]
             if len(available_attacks) == 0:
                 available_attacks = all_attacks
             if self.name == "COPGUY_EX":
-                pass # TODO: add special exception for copguy_ex
+                # TODO: add special exception for copguy_ex
                 # available_attacks = [Attacks.HEAL_EX]
+                return None
         else:
-            available_attacks = [a for a in available_attacks if a.type != "heal"]
+            available_attacks = [a for a in available_attacks if not a.type & AttackType.HEAL]
 
         scores = []
         # Weight attack likelyhood.
         for atk in available_attacks:
             score = 1.0
-            if atk.type == AttackType.ATTACK or atk.type == AttackType.AOE:
-                score *= (self.aggression * atk.options.get("mult", 1.0))
-            elif atk.type == AttackType.BUFF or atk.type == AttackType.DEBUFF or atk.type == AttackType.EFFECT:
+            if atk.type & AttackType.ATTACK or atk.type & AttackType.AOE:
+                score *= (self.aggression * atk.func.options.get("mult", 1.0))
+            elif atk.type & AttackType.BUFF or atk.type & AttackType.DEBUFF or atk.type & AttackType.EFFECT:
                 score *= self.tacticity
-            if atk.type == AttackType.AOE:
+            if atk.type & AttackType.AOE:
                 score *= self.crowd_control
             if heal_party:
-                score *= atk.options.get("mult", 1)  # weight towards better heals
+                score *= atk.func.options.get("mult", 1)  # weight towards better heals
             scores.append(score)
 
         # Choose an attack.
@@ -419,7 +480,7 @@ class FighterAttack:
 
     def use(self, encounter: Encounter, fighter: Fighter, targets: tuple[Fighter, ...]) -> None:
         self.turns_until_available = self.attack.cooldown
-        self.attack.func(encounter, fighter, targets, **self.attack.options)
+        self.attack.func(encounter, fighter, targets)
 
     @property
     def name(self) -> str:
@@ -840,6 +901,8 @@ def decay_chance(encounter: Encounter, fighter: Fighter, chance: float = 0.5) ->
 
 
 # -- Attack Functions --
+
+@attack_def(AttackType.DAMAGE)
 def damage_fighters(encounter: Encounter, fighter: Fighter, targets: tuple[Fighter, ...], mult: float = 1.0, count: int = 1):
     """
     Damage the target fighters
@@ -852,7 +915,7 @@ def damage_fighters(encounter: Encounter, fighter: Fighter, targets: tuple[Fight
         for _ in range(count):
             encounter.damage_fighter(target, mult * fighter.attack)
 
-
+@attack_def(AttackType.HEAL)
 def heal_fighters(encounter: Encounter, fighter: Fighter, targets: tuple[Fighter, ...], mult: float = 1.0, overheal: bool = False):
     """
     Heal the target fighters based on healer's ATK
@@ -866,7 +929,7 @@ def heal_fighters(encounter: Encounter, fighter: Fighter, targets: tuple[Fighter
             continue
         encounter.heal_fighter(target, mult * fighter.attack, overheal)
 
-
+@attack_def(AttackType.DAMAGE | AttackType.EFFECT)
 def damage_over_time(encounter: Encounter, fighter: Fighter, targets: tuple[Fighter, ...], mult: float = 1.0,  duration: int = 1):
     """
     Apply damage over time to fighters
@@ -878,7 +941,7 @@ def damage_over_time(encounter: Encounter, fighter: Fighter, targets: tuple[Figh
     for target in targets:
         encounter.apply_effect(Effects.BLEED, target, duration, update_override={"damage": fighter.attack * mult})
 
-
+@attack_def(AttackType.DAMAGE)
 def damage_fighters_range(encounter: Encounter, fighter: Fighter, targets: tuple[Fighter, ...], mult_min: float = 0.0, mult_max: float = 1.0):
     """
     Damage fighters by a randomly scaled amount
@@ -891,13 +954,14 @@ def damage_fighters_range(encounter: Encounter, fighter: Fighter, targets: tuple
         mult = random.uniform(mult_min, mult_max)
         encounter.damage_fighter(target, fighter.attack * mult)
 
-
+@attack_def(AttackType.DAMAGE | AttackType.EFFECT | AttackType.SACRIFICE)
 def damage_sacrifice(encounter: Encounter, fighter: Fighter, targets: tuple[Fighter, ...], harm_mult: float = 1.0, bleed_mult: float = 1.0, duration: int = 1):
     encounter.damage_fighter(fighter, fighter.attack * harm_mult)
     for target in targets:
         encounter.apply_effect(Effect.BLEED, target, duration, update_override={"damage": fighter.attack * bleed_mult})
 
 
+@attack_def(AttackType.BUFF)
 def defend_targets(encounter: Encounter, fighter: Fighter, targets: tuple[Fighter, ...]):
     """
     Increase the targets defence for a single turn
@@ -907,7 +971,7 @@ def defend_targets(encounter: Encounter, fighter: Fighter, targets: tuple[Fighte
             continue
         encounter.apply_effect(Effects.DEFEND, target)
 
-
+@attack_def(AttackType.DEBUFF | AttackType.EFFECT)
 def confuse_targets(encounter: Encounter, fighter: Fighter, targets: tuple[Fighter, ...]):
     """
     Apply the Confusion effect to target fighters
@@ -917,7 +981,7 @@ def confuse_targets(encounter: Encounter, fighter: Fighter, targets: tuple[Fight
             continue
         encounter.apply_effect(Effects.CONFUSION, target)
 
-
+@stat_attack_def() # This decides the type based on if mult is >1.0 or not
 def change_stat(encounter: Encounter, fighter: Fighter, targets: tuple[Fighter, ...], stat: CharacterStat, mult: float = 1.0):
     """
     Scale target fighters' stats by the multiplier
@@ -929,7 +993,7 @@ def change_stat(encounter: Encounter, fighter: Fighter, targets: tuple[Fighter, 
     for target in targets:
         encounter.scale_fighter(target, stat, mult, permanent=True)
 
-
+@attack_def(AttackType.BUFF | AttackType.DEBUFF)
 def draw_in(encounter: Encounter, fighter: Fighter, targets: tuple[Fighter, ...], mult: float = 1.0):
     attack_type = renpy.random.randint(1, 4)
     match attack_type:
@@ -959,8 +1023,9 @@ def draw_in(encounter: Encounter, fighter: Fighter, targets: tuple[Fighter, ...]
         if (allies and fighter.enemy == target.enemy) or (not allies and fighter.enemy != target.enemy):
             encounter.scale_fighter(target, stat, mult, permanent=True)
 
-
+@attack_def(AttackType.DAMAGE | AttackType.HEAL | AttackType.BUFF | AttackType.DEBUFF | AttackType.EFFECT) # What could it beee??
 def ai_mimic(encounter: Encounter, fighter: Fighter, targets: tuple[Fighter, ...]):
+    # TODO: copguy doesn't work
     if targets[0].name == "Copguy EX":
         aa = [a for a in Attacks.ex_attacks if a.type == AttackType.AOE or a.type == AttackType.ATTACK]
         attack = random.choice(aa)
@@ -970,8 +1035,6 @@ def ai_mimic(encounter: Encounter, fighter: Fighter, targets: tuple[Fighter, ...
         attack = Attacks.PUNCH
     encounter.send_message(f"[AI Mimic] running {attack.name}...", MessageType.DEBUG)
     attack.func(encounter, fighter, targets, **attack.options)
-
-
 
 class AIType:
     NEUTRAL = AI("Neutral")
