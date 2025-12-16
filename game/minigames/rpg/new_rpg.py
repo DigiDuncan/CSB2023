@@ -11,7 +11,7 @@ python early:
 """
 from dataclasses import dataclass
 from queue import Queue
-from typing import Callable, Any, Self, Protocol
+from typing import Callable, Any, Self
 from functools import wraps
 from collections.abc import Sequence
 from enum import StrEnum, IntFlag, auto
@@ -113,7 +113,7 @@ class AIFocus(StrEnum):
 # This decorator enables attack function creators to set the attack type,
 # and Attack creators to set the options neatly.
 class AttackFunc:
-    
+
     def __init__(self, typ: AttackType, func: Callable[..., Any], options: dict[str, Any]):
         self.type: AttackType = typ
         self.func: Callable[..., Any] = func
@@ -121,6 +121,20 @@ class AttackFunc:
 
     @classmethod
     def predefine(cls, typ: AttackType = AttackType.NOTHING) -> Callable[..., Self]:
+        """
+        predefine allows Attack creators to iteratively create an Attack.
+
+        The first call to predefine passes in the type of the attack and returns the decorator wrapper
+        the decorator wrapper then collects the function and returns the collect options function
+        the collect options function is used by the Attack definers to set the options for the attack
+        this returns the final AttackFunc used by the RPG.
+
+        Args:
+            typ (AttackType, optional): The type of the attack used for AI decision making. Defaults to AttackType.NOTHING.
+
+        Returns:
+            Callable[..., Self]: A wrapper for collecting the function.
+        """
         def wrapper(func: Callable[..., Any]):
             @wraps(func)
             def collect_options(**kwds) -> Self:
@@ -145,7 +159,7 @@ stat_attack_def = StatAttackFunc.predefine
 class Attack:
     """
     An Attack defines on of the possible actions a character can do on their turn.
-    It does not include any of the data that is encounter dependant. The type of 
+    It does not include any of the data that is encounter dependant. The type of
     the attack is determined automatically so there shouldn't be a reason to override
     it.
 
@@ -164,13 +178,13 @@ class Attack:
             *,
             typ: AttackType | None = None,
         ):
-        
+
         if typ is None:
             typ = func.type
             if targets != TargetType.SELF and target_count > 1:
                 # Automatically add AOE because the attack function
                 # generally works for any number of attackers
-                typ = typ | AttackType.AOE 
+                typ = typ | AttackType.AOE
 
         self.name: str = name
         self.description: str = description
@@ -215,7 +229,7 @@ class ComboAttack:
         if typ is None:
             typ = AttackType.COMBO
             # TODO: Merge types of attacks.
-        
+
         self.type: AttackType = typ
 
         self.attacks = attacks # What attacks to run through
@@ -238,6 +252,13 @@ class ComboAttack:
 
     def __repr__(self) -> str:
         return self.__str__()
+
+class EffectFunc:
+
+    def __init__(self, message: str, func: Callable[..., Any], options: dict[str, Any]):
+        self.message: str = message
+        self.func: Callable[..., Any] = func
+        self.options: dict[str, Any] = options
 
 class Effect:
     """
@@ -1443,6 +1464,7 @@ rpg:
         cs
         cop
         etc...
+    scale 1
     on_win "label"
     on_lose "label2"
     intro_text "text when battle starts"
