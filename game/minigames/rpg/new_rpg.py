@@ -1025,16 +1025,15 @@ def draw_in(encounter: Encounter, fighter: Fighter, targets: tuple[Fighter, ...]
 
 @attack_def(AttackType.DAMAGE | AttackType.HEAL | AttackType.BUFF | AttackType.DEBUFF | AttackType.EFFECT) # What could it beee??
 def ai_mimic(encounter: Encounter, fighter: Fighter, targets: tuple[Fighter, ...]):
-    # TODO: copguy doesn't work
     if targets[0].name == "Copguy EX":
-        aa = [a for a in Attacks.ex_attacks if a.type == AttackType.AOE or a.type == AttackType.ATTACK]
+        aa = [a for a in Attacks.ex_attacks if a.type & AttackType.AOE or a.type & AttackType.ATTACK]
         attack = random.choice(aa)
     else:
         attack = targets[0].character.attacks[0]
     if attack.name == "AI Mimic":
         attack = Attacks.PUNCH
     encounter.send_message(f"[AI Mimic] running {attack.name}...", MessageType.DEBUG)
-    attack.func(encounter, fighter, targets, **attack.options)
+    attack.func(encounter, fighter, targets)
 
 class AIType:
     NEUTRAL = AI("Neutral")
