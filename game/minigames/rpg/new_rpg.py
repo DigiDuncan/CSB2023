@@ -121,8 +121,8 @@ class AttackFunc:
 
     @classmethod
     def predefine(cls, typ: AttackType = AttackType.NOTHING) -> Callable[..., Self]:
-        @wraps
         def wrapper(func: Callable[..., Any]):
+            @wraps
             def collect_options(**kwds) -> Self:
                 return cls(typ, func, kwds)
             return collect_options
