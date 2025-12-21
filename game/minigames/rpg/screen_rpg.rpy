@@ -45,7 +45,6 @@ screen screen_rpg():
         # The stat boxes for Allies
         grid len(CombatAllies) 1:
             xfill True
-
             for i in range(len(CombatAllies)):
                 if not CombatAllies[i].dead:
                     button:

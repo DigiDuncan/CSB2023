@@ -40,8 +40,6 @@ label test:
                     jump play_reversigame
         "New Menu Option Because Arc is Lazy":
             menu:
-                "RPG Using Python":
-                    jump play_newrpggame
                 "RPG Using Screen":
                     jump play_screenrpnggame
                 "Matrix Test":
