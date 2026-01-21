@@ -7,7 +7,7 @@ TODO list
 """
 
 init python:
-    CombatAllies = [Fighters.get("CS"), Fighters.get("ARCEUS"), Fighters.get("PHIL"), Fighters.get("MICHAEL")]
+    CombatAllies = [Characters.get("CS"), Characters.get("ARCEUS"), Characters.get("PHIL"), Characters.get("MICHAEL")]
     CurrentTurn = 0
     pass
 
@@ -88,7 +88,7 @@ screen screen_rpg():
                                     size 32
                                     yalign 0.5
 
-                        # The Fighter's name and healthbar        
+                        # The Fighter's name and healthbar
                         vbox:
                             align(1.0, 0.0)
                             hbox:
@@ -120,7 +120,7 @@ screen screen_rpg():
                                 align(1.0, 1.0)
                                 idle "gui/rpg/defend_button.png"
                                 action Notify("Defend pressed on fighter"+str(i+1)+"!")
-        
+
 
     # Dev Backdoor
     key "K_END" action Return(True)

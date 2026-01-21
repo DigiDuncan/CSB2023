@@ -64,24 +64,24 @@ label rpg_ucn:
     centered "Loading...{w=1.0}{nw}"  # This isn't required.
     $ scales = [1.0, 1.25, 1.5, 1.75, 2.0, 2.5, 3.0]
 
-    $ allies = list(zip(Fighters.allies, Fighters.ally_names))
-    $ enemies = list(zip(Fighters.enemies, Fighters.enemy_names))
+    $ allies = (("NONE", None), *((character.name, character.assigned_name) for character in Characters.allies))
+    $ enemies = (("NONE", None), *((character.name, character.assigned_name) for character in Characters.enemies))
 
     $ narrator("Choose a party member! (1/4)", interact = False)
-    $ party_1 = renpy.display_menu([("NONE", "NONE")] + [(a.name, n) for a, n in allies], screen="ucn_choice")
+    $ party_1 = renpy.display_menu(allies, screen="ucn_choice")
     $ narrator("Choose a party member! (2/4)", interact = False)
-    $ party_2 = renpy.display_menu([("NONE", "NONE")] + [(a.name, n) for a, n in allies], screen="ucn_choice")
+    $ party_2 = renpy.display_menu(allies, screen="ucn_choice")
     $ narrator("Choose a party member! (3/4)", interact = False)
-    $ party_3 = renpy.display_menu([("NONE", "NONE")] + [(a.name, n) for a, n in allies], screen="ucn_choice")
+    $ party_3 = renpy.display_menu(allies, screen="ucn_choice")
     $ narrator("Choose a party member! (4/4)", interact = False)
-    $ party_4 = renpy.display_menu([("NONE", "NONE")] + [(a.name, n) for a, n in allies], screen="ucn_choice")
+    $ party_4 = renpy.display_menu(allies, screen="ucn_choice")
 
     $ narrator("Choose an enemy! (1/3)", interact = False)
-    $ enemy_1 = renpy.display_menu([("NONE", "NONE")] + [(e.name, n) for e, n in enemies], screen="ucn_choice")
+    $ enemy_1 = renpy.display_menu(enemies, screen="ucn_choice")
     $ narrator("Choose an enemy! (2/3)", interact = False)
-    $ enemy_2 = renpy.display_menu([("NONE", "NONE")] + [(e.name, n) for e, n in enemies], screen="ucn_choice")
+    $ enemy_2 = renpy.display_menu(enemies, screen="ucn_choice")
     $ narrator("Choose an enemy! (3/3)", interact = False)
-    $ enemy_3 = renpy.display_menu([("NONE", "NONE")] + [(e.name, n) for e, n in enemies], screen="ucn_choice")
+    $ enemy_3 = renpy.display_menu(enemies, screen="ucn_choice")
 
     $ narrator("Choose a party scale!", interact = False)
     $ ucn_scale = renpy.display_menu([(str(a), a) for a in scales], screen="ucn_choice")

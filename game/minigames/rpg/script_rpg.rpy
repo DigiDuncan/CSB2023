@@ -286,7 +286,6 @@ label rpg_diabetes_1:
         fighters:
             cs_strong
             digi
-
             ceo
 
         scale 1.0

@@ -1,16 +1,15 @@
+"""
+CSB2023 RPG engine
+"""
 from __future__ import annotations
 
 from renpy.display.core import Displayable
 from renpy.display.im import Image
-from renpy import random, register_statement, jump
+from renpy import random
 
-# This is the equivalent of a python early block in a .rpy file.
 """renpy
 rpy python annotations
 python early:
-"""
-"""
-CSB2023 RPG engine
 """
 
 from dataclasses import dataclass
@@ -411,7 +410,7 @@ class AI:
         return self.__str__()
 
 
-class Character: # TODO: Workshop -- I'd like fighter to be used by encounter, but character doesn't make sense if there are multiple of the same person
+class RPGCharacter: # TODO: Workshop -- I'd like fighter to be used by encounter, but character doesn't make sense if there are multiple of the same person
     """
     A Character (previously Fighter) is the decription
     of a fighter. This includes their name, attacks, etc
@@ -421,6 +420,7 @@ class Character: # TODO: Workshop -- I'd like fighter to be used by encounter, b
     def __init__(self, name: str, hp: int, defense: int, attack: int, attacks: Sequence[Attack | ComboAttack], accuracy: int = 100, ai: AI | None = None, display_name: str | None = None, portrait: Displayable | None = None, sprite: Displayable | None = None, traits: CharacterFlag = CharacterFlag.NOTHING):
         self.name: str = name
         self.display_name: str = display_name or name
+        self.assigned_name: str | None = None
         self.traits: CharacterFlag = traits
 
         self.base_hp: int = hp # how much hp will the fighter start with, and what is their max hp
@@ -433,8 +433,8 @@ class Character: # TODO: Workshop -- I'd like fighter to be used by encounter, b
         self.portrait: Displayable = portrait or UNKNOWN_PORTRAIT # What image should represent the character on the player's side
         self.sprite: Displayable = sprite or UNKNOWN_FIELD # What image should represent the character on the field side
 
-    def clone(self, name: str, hp: int | None = None, defense: int | None = None, attack: int | None = None, attacks: Sequence[Attack | ComboAttack] | None = None, accuracy: int | None = None, ai: AI | None = None, display_name: str | None = None, portrait: Displayable | None = None, sprite: Displayable | None = None) -> Character:
-        return Character(
+    def clone(self, name: str, hp: int | None = None, defense: int | None = None, attack: int | None = None, attacks: Sequence[Attack | ComboAttack] | None = None, accuracy: int | None = None, ai: AI | None = None, display_name: str | None = None, portrait: Displayable | None = None, sprite: Displayable | None = None) -> RPGCharacter:
+        return RPGCharacter(
             name,
             hp if hp is not None else self.base_hp,
             defense if defense is not None else self.base_def,
@@ -446,6 +446,9 @@ class Character: # TODO: Workshop -- I'd like fighter to be used by encounter, b
             portrait if portrait is not None else self.portrait,
             sprite if sprite is not None else self.sprite
         )
+
+    def __set_name__(self, owner: type, name: str):
+        self.assigned_name = name
 
 
 # -- Encounter Unique Objects --
@@ -460,7 +463,7 @@ class Fighter:
 
     def __init__(
             self,
-            character: Character,
+            character: RPGCharacter,
             enemy: bool,
             level: float = 1.0,
             ai: AI | None = None,
@@ -470,7 +473,7 @@ class Fighter:
             acc_override: int | None = None
         ): # TODO: consider -- would it be worth to add a sprite override and a display_name override? (and a max_hp override)
 
-        self.character: Character = character # The stat basis for the character
+        self.character: RPGCharacter = character # The stat basis for the character
         self.enemy: bool = enemy # What team is the fighter on
         self.level: float = level # What level is the fighter? Was originally the scale passed in the encounter
         self.ai: AI | None = ai or character.base_ai # What AI does the fighter use. If none the encouter defers to the player

@@ -1,8 +1,7 @@
 from __future__ import annotations
-
-from renpy.display.core import Displayable
-from renpy.display.im import Image
-from renpy import random, register_statement, jump
+from operator import is_
+from tkinter import NO
+from venv import create
 
 # This is the equivalent of a python early block in a .rpy file.
 """renpy
@@ -14,34 +13,40 @@ python early:
 CSB2023 RPG parsing
 """
 
-from .rpg_engine import Encounter, Fighter
-from .rpg_content import Characters, AIType
+# from .rpg01_engine_ren import Encounter, Fighter
+# from .rpg02_content_ren import Characters, AIType
 
-type ParsedFighter = tuple[str, str | None, int | None, int | None, int | None, int | None]
+ucn_bg = ""
+ucn_music = ""
+ucn_scale = ""
+
+
+type ParsedFighter = tuple[str, bool, str | None, int | None, int | None, int | None, int | None]
 # Parse a fighter by getting their name, and optional overrides for their ai, hp, def, atk, and acc
 def parse_fighter(lexer) -> ParsedFighter:
     variable = lexer.match(r"\$") # Variable Fighter $<x>
     name = lexer.word()
 
-    if variable:
-        name = globals().get(name) # TODO: remove use of globals and test that lexer.word() works if $ is at the start.
+    # Their name might be a variable. That has to be resolved at execute time.
+    # As the rpg block is parsed at run time.
 
-    name = name.upper()
+    if not variable:
+        name = name.upper()
     ai = hp = defense = attack = accuracy = None
     while not lexer.eol():
         if lexer.keyword("ai"):
             ai = lexer.word().upper()
         elif lexer.keyword("hp"):
-            hp = lexer.int()
+            hp = int(lexer.integer())
         elif lexer.keyword("def"):
-            defense = lexer.int()
+            defense = int(lexer.integer())
         elif lexer.keyword("atk"):
-            attack = lexer.int()
+            attack = int(lexer.integer())
         elif lexer.keyword("acc"):
-            accuracy = lexer.int()
+            accuracy = int(lexer.integer())
 
-    lexer.expect_eol(f"Parsing {name} Failed")
-    return (name, ai, hp, defense, attack, accuracy)
+    lexer.expect_eol()
+    return (name, variable, ai, hp, defense, attack, accuracy)
 
 type ParsedRpg = tuple[float, int, str, str, str | None, str | None, str | None, bool, list[ParsedFighter] | None, list[ParsedFighter], list[ParsedFighter]]
 # Parse an rpg block and get the level/scale, background, music, on_win, on_lose, intro_text, if it is a ucn fight, fighters, ally fighters, and enemy fighters
@@ -59,17 +64,20 @@ def parse_rpg(lexer) -> ParsedRpg:
             block.expect_noblock("old style rpg was used so don't use allies or enemies block")
         if block.keyword("level") or block.keyword("scale"):
             level = block.float()
-            if level == "\"ucn\"":
+            if level is None:
                 is_ucn = True
-        if block.keyword("turn") or block.ketword("initial"):
-            initial = block.int()
+                level = None
+            else:
+                level = float(level)
+        if block.keyword("turn") or block.keyword("initial"):
+            initial = int(block.integer())
         elif block.keyword("bg"):
             background = block.string()
-            if level == "ucn":
+            if background == "ucn":
                 is_ucn = True
         elif block.keyword("music"):
             music = block.string()
-            if level == "ucn":
+            if music == "ucn":
                 is_ucn = True
         elif block.keyword("on_win"):
             on_win = block.string()
@@ -82,7 +90,7 @@ def parse_rpg(lexer) -> ParsedRpg:
         elif block.keyword("fighters"):
             # Support old style RPG
             fighters = []
-            block.expect("fighters")
+            block.expect_block("expecting fighters block")
             subblock = block.subblock_lexer()
             while subblock.advance():
                 fighters.append(parse_fighter(subblock))
@@ -96,37 +104,50 @@ def parse_rpg(lexer) -> ParsedRpg:
             subblock = block.subblock_lexer()
             while subblock.advance():
                 enemies.append(parse_fighter(subblock))
-
     return level, initial, background, music, on_win, on_lose, intro, is_ucn, fighters, allies, enemies
+
+def create_fighter(name, variable, ai, hp, defense, attack, accuracy, level: float = 1.0, is_enemy: bool | None = None):
+    name = name if not variable else globals().get(name).upper()
+    character = Characters.get(name)
+    if name is None or character is None:
+        return None
+    enemy = name in Characters.enemy_name_set if is_enemy is not None else is_enemy
+    level = 1.0 if enemy else level
+    ai = AIType.get(ai)
+
+    return Fighter(character, enemy, level, ai, hp, defense, attack, accuracy)
 
 def execute_rpg(parsed_object: ParsedRpg):
     level, initial, background, music, on_win, on_lose, intro_text, is_ucn, fighters, allies, enemies = parsed_object
+
     if is_ucn:
         background = ucn_bg
         music = ucn_music
         level = ucn_scale # TODO rename to level
 
-
     if fighters is not None:
         fighters = [
-            Fighter(Characters.get(name), name in Characters.enemy_name_set, AIType.get(ai), hp, defense, attack, accuracy)
-            for (name, ai, hp, defense, attack, accuracy) in fighters
+            create_fighter(name, variable, ai, hp, defense, attack, accuracy, level, None)
+            for (name, variable, ai, hp, defense, attack, accuracy) in fighters
         ]
     else:
         fighters = [
             *(
-                Fighter(Characters.get(name), False, level, AIType.get(ai), hp, defense, attack, accuracy)
-                for (name, ai, hp, defense, attack, accuracy) in allies
+                create_fighter(name, variable, ai, hp, defense, attack, accuracy, level, False)
+                for (name, variable, ai, hp, defense, attack, accuracy) in allies
             ),
             *(
-                Fighter(Characters.get(name), True, level, AIType.get(ai), hp, defense, attack, accuracy)
-                for (name, ai, hp, defense, attack, accuracy) in enemies
+                create_fighter(name, variable, ai, hp, defense, attack, accuracy, level, True)
+                for (name, variable, ai, hp, defense, attack, accuracy) in enemies
             )
         ]
 
+    # Clear out any None fighters. Generally only happens when the user selects none in UCN
+    fighters = [fighter for fighter in fighters if fighter is not None]
+
     rpggame.reset() # TODO: is this needed for the screen version of the rpg?
     rpggame.encounter = Encounter(fighters, background, music, on_win, on_lose, intro_text, initial)
-    jump("play_rpggame")
+    renpy.jump("play_rpggame")
 
 def lint_rpg(parsed_object: ParsedRpg):
     level, initial, _, _, on_win, on_lose, _, _, fighters, allies, enemies = parsed_object
@@ -148,12 +169,13 @@ def lint_rpg(parsed_object: ParsedRpg):
     elif enemies:
         print("check enemies etc!")
 
-register_statement(
-    name = "newrpg",
+renpy.register_statement(
+    name = "rpg",
     parse = parse_rpg,
     lint = lint_rpg,
     execute = execute_rpg,
-    block = True)
+    block = True
+)
 
 """
 rpg:

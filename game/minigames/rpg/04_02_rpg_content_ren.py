@@ -1,40 +1,16 @@
+"""
+RPG content for CSB2023 RPG Engine (not actual fights/scenes only AI, Effects, Attacks, Characters)
+"""
 from __future__ import annotations
+import random
 
-from renpy.display.core import Displayable
-from renpy.display.im import Image
-from renpy import random, register_statement, jump
-
-# This is the equivalent of a python early block in a .rpy file.
 """renpy
 rpy python annotations
 python early:
 """
 
-"""
-RPG content for CSB2023 RPG Engine (not actual fights/scenes only AI, Effects, Attacks, Characters)
-"""
+# from .rpg01_engine_ren import classproperty, AttackType, TargetType, CharacterStat, Character, Attack, ComboAttack, attack_def, stat_attack_def, Effect, apply_def, update_def, resolved_def, AI, Fighter, FighterAttack, Encounter
 
-from .rpg_engine import (
-    classproperty,
-    AttackType,
-    TargetType,
-    CharacterStat,
-    Character,
-    Attack,
-    ComboAttack,
-    attack_def,
-    stat_attack_def, 
-    Effect,
-    apply_def,
-    update_def,
-    resolved_def,
-    AI,
-    Fighter,
-    FighterAttack,
-    Encounter
-)
-
-# replacements for renpy specific objects
 
 # |---- RPG Content ----|
 
@@ -376,65 +352,65 @@ class Characters:
     NONE = None
 
     # Allies
-    CS = Character("CS", 188, 10, 25, [Attacks.PUNCH, Attacks.BULLET_SPRAY], portrait=Image("gui/rpg/portraits/cs.png"))
-    CS_NG = CS.clone("CS (National Guard)", attack=30, attacks=[Attacks.CHOP, Attacks.BULLET_SPRAY]) # Character("CS (National Guard)", 188, 10, 30, , portrait=Image("gui/rpg/portraits/cs.png"), display_name = "CS")
-    CS_STRONG = Character("CS (Strong)", 188, 10, 35, [Attacks.KICK, Attacks.BULLET_SPRAY], portrait=Image("gui/rpg/portraits/cs.png"), display_name = "CS")
-    CS_FINAL = Character("CS (Final)", 288, 10, 40, [Attacks.KICK, Attacks.BULLET_SPRAY, Attacks.YTP_MAGIC], portrait=Image("gui/rpg/portraits/cs.png"), display_name = "CS")
-    CS_FINAL2 = Character("CS (Error)", 1880, 10, 250, [Attacks.KICK, Attacks.YTP_HEAL, Attacks.YTP_MAGIC_NOCOOL], portrait=Image("gui/rpg/portraits/cs.png"), display_name = "CS")
-    CS_WEAK = Character("CS (Weak)", 188, 5, 25, [Attacks.PUNCH], portrait=Image("gui/rpg/portraits/cs.png"), display_name = "CS")
-    CS_ARCHIVAL = Character("CS (Archival)", 1027, 50, 27, [Attacks.KICK, Attacks.YTP_HEAL], portrait=Image("gui/rpg/portraits/cs.png"), display_name = "CS")
-    CS_VS_TATE_PUNCH = Character("CS (VS Tate - Punch)", 288, 10, 40, [Attacks.PUNCH, Attacks.GENERGY, Attacks.YTP_MAGIC], portrait=Image("gui/rpg/portraits/cs.png"), display_name = "CS")
-    CS_VS_TATE_KICK = Character("CS (VS Tate - Kick)", 288, 10, 40, [Attacks.KICK, Attacks.GENERGY, Attacks.YTP_MAGIC], portrait=Image("gui/rpg/portraits/cs.png"), display_name = "CS")
-    CS_VS_TATE_CHOP = Character("CS (VS Tate - Chop)", 288, 10, 40, [Attacks.CHOP, Attacks.GENERGY, Attacks.YTP_MAGIC], portrait=Image("gui/rpg/portraits/cs.png"), display_name = "CS")
-    ARCEUS = Character("Arceus", 160, 15, 35, [Attacks.SLASH, Attacks.LIGHT_CAST], portrait=Image("gui/rpg/portraits/arceus.png"))
-    PAKOO = Character("Pakoo", 145, 20, 30, [Attacks.INSIGHT, Attacks.SHOTGUN], portrait=Image("gui/rpg/portraits/pokoo.png"))
-    MIKA = Character("Mika", 165, 20, 30, [Attacks.ENCOURAGE, Attacks.HIGH_NOON], portrait=Image("gui/rpg/portraits/mika.png"))
-    KITTY = Character("Kitty", 155, 15, 20, [Attacks.SCRATCH, Attacks.ARMOUR], portrait=Image("gui/rpg/portraits/kitty.png"))
-    TATE = Character("Tate", 170, 5, 30, [Attacks.DAMAGE_SCREM, Attacks.SNACK_TIME], portrait=Image("gui/rpg/portraits/tate.png"))
-    ARIA = Character("Aria", 220, 20, 45, [Attacks.ELDRITCH_BLAST, Attacks.RAINBOW_VOMIT], portrait=Image("gui/rpg/portraits/aria.png"))
-    DIGI = Character("Digi", 150, 20, 30, [Attacks.ROBOPUNCH, Attacks.HOLOSHIELD], portrait=Image("gui/rpg/portraits/digi.png"))
-    NOVA = Character("Nova", 170, 5, 30, [Attacks.MUSIC_BOOST, Attacks.RAVE], portrait=Image("gui/rpg/portraits/nova.png"))
-    BLANK = Character("Blank", 180, 5, 35, [Attacks.SAMPLE_BLAST, Attacks.GNOMED], portrait=Image("gui/rpg/portraits/blank.png"))
-    MIDGE = Character("Midge", 165, 10, 25, [Attacks.NUDGE, Attacks.DRAW_IN], portrait=Image("gui/rpg/portraits/midge.png"))
-    DB05 = Character("DB05", 9001, 9001, 50, [Attacks.CONFIDENCE, Attacks.PEP_TALK], portrait=Image("gui/rpg/portraits/db05.png"))
-    ANNO = Character("Anno", 200, 20, 40, [Attacks.RADS_ATTACK, Attacks.AI_MIMIC], portrait=Image("gui/rpg/portraits/anno.png"))
+    CS = RPGCharacter("CS", 188, 10, 25, [Attacks.PUNCH, Attacks.BULLET_SPRAY], portrait=Image("gui/rpg/portraits/cs.png"))
+    CS_NG = CS.clone("CS (National Guard)", attack=30, attacks=[Attacks.CHOP, Attacks.BULLET_SPRAY]) # RPGCharacter("CS (National Guard)", 188, 10, 30, , portrait=Image("gui/rpg/portraits/cs.png"), display_name = "CS")
+    CS_STRONG = RPGCharacter("CS (Strong)", 188, 10, 35, [Attacks.KICK, Attacks.BULLET_SPRAY], portrait=Image("gui/rpg/portraits/cs.png"), display_name = "CS")
+    CS_FINAL = RPGCharacter("CS (Final)", 288, 10, 40, [Attacks.KICK, Attacks.BULLET_SPRAY, Attacks.YTP_MAGIC], portrait=Image("gui/rpg/portraits/cs.png"), display_name = "CS")
+    CS_FINAL2 = RPGCharacter("CS (Error)", 1880, 10, 250, [Attacks.KICK, Attacks.YTP_HEAL, Attacks.YTP_MAGIC_NOCOOL], portrait=Image("gui/rpg/portraits/cs.png"), display_name = "CS")
+    CS_WEAK = RPGCharacter("CS (Weak)", 188, 5, 25, [Attacks.PUNCH], portrait=Image("gui/rpg/portraits/cs.png"), display_name = "CS")
+    CS_ARCHIVAL = RPGCharacter("CS (Archival)", 1027, 50, 27, [Attacks.KICK, Attacks.YTP_HEAL], portrait=Image("gui/rpg/portraits/cs.png"), display_name = "CS")
+    CS_VS_TATE_PUNCH = RPGCharacter("CS (VS Tate - Punch)", 288, 10, 40, [Attacks.PUNCH, Attacks.GENERGY, Attacks.YTP_MAGIC], portrait=Image("gui/rpg/portraits/cs.png"), display_name = "CS")
+    CS_VS_TATE_KICK = RPGCharacter("CS (VS Tate - Kick)", 288, 10, 40, [Attacks.KICK, Attacks.GENERGY, Attacks.YTP_MAGIC], portrait=Image("gui/rpg/portraits/cs.png"), display_name = "CS")
+    CS_VS_TATE_CHOP = RPGCharacter("CS (VS Tate - Chop)", 288, 10, 40, [Attacks.CHOP, Attacks.GENERGY, Attacks.YTP_MAGIC], portrait=Image("gui/rpg/portraits/cs.png"), display_name = "CS")
+    ARCEUS = RPGCharacter("Arceus", 160, 15, 35, [Attacks.SLASH, Attacks.LIGHT_CAST], portrait=Image("gui/rpg/portraits/arceus.png"))
+    PAKOO = RPGCharacter("Pakoo", 145, 20, 30, [Attacks.INSIGHT, Attacks.SHOTGUN], portrait=Image("gui/rpg/portraits/pokoo.png"))
+    MIKA = RPGCharacter("Mika", 165, 20, 30, [Attacks.ENCOURAGE, Attacks.HIGH_NOON], portrait=Image("gui/rpg/portraits/mika.png"))
+    KITTY = RPGCharacter("Kitty", 155, 15, 20, [Attacks.SCRATCH, Attacks.ARMOUR], portrait=Image("gui/rpg/portraits/kitty.png"))
+    TATE = RPGCharacter("Tate", 170, 5, 30, [Attacks.DAMAGE_SCREM, Attacks.SNACK_TIME], portrait=Image("gui/rpg/portraits/tate.png"))
+    ARIA = RPGCharacter("Aria", 220, 20, 45, [Attacks.ELDRITCH_BLAST, Attacks.RAINBOW_VOMIT], portrait=Image("gui/rpg/portraits/aria.png"))
+    DIGI = RPGCharacter("Digi", 150, 20, 30, [Attacks.ROBOPUNCH, Attacks.HOLOSHIELD], portrait=Image("gui/rpg/portraits/digi.png"))
+    NOVA = RPGCharacter("Nova", 170, 5, 30, [Attacks.MUSIC_BOOST, Attacks.RAVE], portrait=Image("gui/rpg/portraits/nova.png"))
+    BLANK = RPGCharacter("Blank", 180, 5, 35, [Attacks.SAMPLE_BLAST, Attacks.GNOMED], portrait=Image("gui/rpg/portraits/blank.png"))
+    MIDGE = RPGCharacter("Midge", 165, 10, 25, [Attacks.NUDGE, Attacks.DRAW_IN], portrait=Image("gui/rpg/portraits/midge.png"))
+    DB05 = RPGCharacter("DB05", 9001, 9001, 50, [Attacks.CONFIDENCE, Attacks.PEP_TALK], portrait=Image("gui/rpg/portraits/db05.png"))
+    ANNO = RPGCharacter("Anno", 200, 20, 40, [Attacks.RADS_ATTACK, Attacks.AI_MIMIC], portrait=Image("gui/rpg/portraits/anno.png"))
 
     # Allies (UCN)
-    BUBBLE = Character("{image=gui/dx_text.png} Bubble", 250, 10, 35, [Attacks.STOMP, Attacks.POKE], display_name = "Bubble")
-    GES = Character("{image=gui/dx_text.png} Ges", 170, 20, 35, [Attacks.SWORD_SLASH, Attacks.FLAMETHROWER], display_name = "Ges")
-    MICHAEL = Character("Michael", 155, 15, 35, [Attacks.CHOCOLATE_CAKE, Attacks.CONFUSING_STORY])
-    BILLY = Character("Billy", 220, 10, 25, [Attacks.HYPE_UP, Attacks.PITCHMAN, Attacks.AUGMENT])
-    PHIL = Character("Phil", 160, 20, 40, [Attacks.HYPE_UP, Attacks.PITCHMAN])
-    MEAN = Character("Mean", 150, 20, 35, [Attacks.HUG, Attacks.SPIKE_BOMB])
-    POMNI = Character("Pomni", 200, 15, 30, [Attacks.RAINBOW_VOMIT_NOCOOL, Attacks.RAINBOW_VOMIT_NOCOOL])
-    OBAMA = Character("{image=gui/dx_text.png} Obama", 190, 25, 35, [Attacks.KARATE_CHOP, Attacks.DRONE_STRIKE])
-    CASHIER = Character("{image=gui/dx_text.png} Cashier", 188, 14, 33, [Attacks.COIN_BARRAGE, Attacks.CART_SMASH])
-    SHARK = Character("{image=gui/dx_text.png} Shark", 190, 10, 40, [Attacks.BITE, Attacks.SHARKNADO])
+    BUBBLE = RPGCharacter("{image=gui/dx_text.png} Bubble", 250, 10, 35, [Attacks.STOMP, Attacks.POKE], display_name = "Bubble")
+    GES = RPGCharacter("{image=gui/dx_text.png} Ges", 170, 20, 35, [Attacks.SWORD_SLASH, Attacks.FLAMETHROWER], display_name = "Ges")
+    MICHAEL = RPGCharacter("Michael", 155, 15, 35, [Attacks.CHOCOLATE_CAKE, Attacks.CONFUSING_STORY])
+    BILLY = RPGCharacter("Billy", 220, 10, 25, [Attacks.HYPE_UP, Attacks.PITCHMAN, Attacks.AUGMENT])
+    PHIL = RPGCharacter("Phil", 160, 20, 40, [Attacks.HYPE_UP, Attacks.PITCHMAN])
+    MEAN = RPGCharacter("Mean", 150, 20, 35, [Attacks.HUG, Attacks.SPIKE_BOMB])
+    POMNI = RPGCharacter("Pomni", 200, 15, 30, [Attacks.RAINBOW_VOMIT_NOCOOL, Attacks.RAINBOW_VOMIT_NOCOOL])
+    OBAMA = RPGCharacter("{image=gui/dx_text.png} Obama", 190, 25, 35, [Attacks.KARATE_CHOP, Attacks.DRONE_STRIKE])
+    CASHIER = RPGCharacter("{image=gui/dx_text.png} Cashier", 188, 14, 33, [Attacks.COIN_BARRAGE, Attacks.CART_SMASH])
+    SHARK = RPGCharacter("{image=gui/dx_text.png} Shark", 190, 10, 40, [Attacks.BITE, Attacks.SHARKNADO])
 
     # Enemies
-    FANBOYA = Character("Fanboy (NVIDIA)", 50, 0, 16, [Attacks.PUNCH], sprite=Image("images/characters/nvidiafanboy.png"), ai = AIType.NEUTRAL, display_name = "Fanboy")
-    FANBOYB = Character("Fanboy (AMD)", 50, 0, 16, [Attacks.PUNCH], sprite=Image("images/characters/amdfanboy.png"), ai = AIType.NEUTRAL, display_name = "Fanboy")
-    COP = Character("Cop", 150, 15, 30, [Attacks.PUNCH, Attacks.BULLET_SPRAY], sprite=Image("images/characters/cop.png"), ai = AIType.NEUTRAL)
-    COPGUYGODMODE = Character("Copguy (God)", 9001, 9001, 35, [Attacks.PUNCH, Attacks.BULLET_SPRAY], sprite=Image("images/characters/copguy/copguy.png"), ai = AIType.NEUTRAL, display_name = "Copguy")
-    COPGUY = Character("Copguy", 300, 20, 35, [Attacks.PUNCH, Attacks.BULLET_SPRAY], sprite=Image("images/characters/copguy/copguy.png"), ai = AIType.NEUTRAL)
-    GUARD = Character("Guard", 225, 25, 35, [Attacks.PUNCH, Attacks.BULLET_SPRAY], sprite=Image("images/characters/guard_soldier.png"), ai = AIType.DEFENSIVE)
-    SML_TANK = Character("Sherman", 400, 60, 100, [Attacks.SHELL], sprite=Image("images/characters/sherman.png"), ai = AIType.AGGRO)
-    MARINE = Character("Marine", 300, 30, 45, [Attacks.PUNCH, Attacks.BULLET_SPRAY], sprite=Image("images/characters/marine.png"), ai = AIType.SMART)
-    BIG_TANK = Character("Abrams",700, 70, 150, [Attacks.SHELL], sprite=Image("images/characters/abrams.png"), ai = AIType.AGGRO)
-    COPGUY_EX = Character("Copguy EX", 2222, 30, 50, Attacks.ex_attacks, sprite=Image("images/characters/copguy/copguy.png"), ai = AIType.COPGUY_EX)
-    PAKOOE = Character("Pakoo (Error)", 9999, 70, 150, [Attacks.FUN_VALUE], sprite=Image("images/characters/pakoo/pakoo_disappointed.png"), ai = AIType.AGGRO, display_name = "Pakoo")
-    COPGUY_EXE = Character("{image=gui/dx_text.png} Copguy.EXE", 666, 66, 66, [Attacks.ELDRITCH_BLAST, Attacks.RAINBOW_VOMIT, Attacks.SLASH, Attacks.CONFUSING_STORY], sprite=Image("images/characters/copguy/copguyexe.png"), ai = AIType.AGGRO, display_name = "Copguy.EXE")
-    K174 = Character("K17-4", 174, 17, 20, [Attacks.PUNCH], sprite=Image("images/characters/k174.png"), ai = AIType.NEUTRAL)
-    K199 = Character("K19-9", 199, 19, 30, [Attacks.KICK], sprite=Image("images/characters/k199.png"), ai = AIType.AGGRO)
-    K207 = Character("K20-7", 207, 20, 10, [Attacks.PUNCH], sprite=Image("images/characters/k207.png"), ai = AIType.DEFENSIVE)
-    TATE_EX = Character("{image=gui/dx_text.png} Tate EX", 9999, 11, 111, [Attacks.DAMAGE_SCREM, Attacks.REVERB_RECALL, Attacks.ECHO_BLAST], sprite=Image("secret/pt/tate_ex.png"), ai = AIType.AGGRO, display_name = "Tate EX")
+    FANBOYA = RPGCharacter("Fanboy (NVIDIA)", 50, 0, 16, [Attacks.PUNCH], sprite=Image("images/characters/nvidiafanboy.png"), ai = AIType.NEUTRAL, display_name = "Fanboy")
+    FANBOYB = RPGCharacter("Fanboy (AMD)", 50, 0, 16, [Attacks.PUNCH], sprite=Image("images/characters/amdfanboy.png"), ai = AIType.NEUTRAL, display_name = "Fanboy")
+    COP = RPGCharacter("Cop", 150, 15, 30, [Attacks.PUNCH, Attacks.BULLET_SPRAY], sprite=Image("images/characters/cop.png"), ai = AIType.NEUTRAL)
+    COPGUYGODMODE = RPGCharacter("Copguy (God)", 9001, 9001, 35, [Attacks.PUNCH, Attacks.BULLET_SPRAY], sprite=Image("images/characters/copguy/copguy.png"), ai = AIType.NEUTRAL, display_name = "Copguy")
+    COPGUY = RPGCharacter("Copguy", 300, 20, 35, [Attacks.PUNCH, Attacks.BULLET_SPRAY], sprite=Image("images/characters/copguy/copguy.png"), ai = AIType.NEUTRAL)
+    GUARD = RPGCharacter("Guard", 225, 25, 35, [Attacks.PUNCH, Attacks.BULLET_SPRAY], sprite=Image("images/characters/guard_soldier.png"), ai = AIType.DEFENSIVE)
+    SML_TANK = RPGCharacter("Sherman", 400, 60, 100, [Attacks.SHELL], sprite=Image("images/characters/sherman.png"), ai = AIType.AGGRO)
+    MARINE = RPGCharacter("Marine", 300, 30, 45, [Attacks.PUNCH, Attacks.BULLET_SPRAY], sprite=Image("images/characters/marine.png"), ai = AIType.SMART)
+    BIG_TANK = RPGCharacter("Abrams",700, 70, 150, [Attacks.SHELL], sprite=Image("images/characters/abrams.png"), ai = AIType.AGGRO)
+    COPGUY_EX = RPGCharacter("Copguy EX", 2222, 30, 50, Attacks.ex_attacks, sprite=Image("images/characters/copguy/copguy.png"), ai = AIType.COPGUY_EX)
+    PAKOOE = RPGCharacter("Pakoo (Error)", 9999, 70, 150, [Attacks.FUN_VALUE], sprite=Image("images/characters/pakoo/pakoo_disappointed.png"), ai = AIType.AGGRO, display_name = "Pakoo")
+    COPGUY_EXE = RPGCharacter("{image=gui/dx_text.png} Copguy.EXE", 666, 66, 66, [Attacks.ELDRITCH_BLAST, Attacks.RAINBOW_VOMIT, Attacks.SLASH, Attacks.CONFUSING_STORY], sprite=Image("images/characters/copguy/copguyexe.png"), ai = AIType.AGGRO, display_name = "Copguy.EXE")
+    K174 = RPGCharacter("K17-4", 174, 17, 20, [Attacks.PUNCH], sprite=Image("images/characters/k174.png"), ai = AIType.NEUTRAL)
+    K199 = RPGCharacter("K19-9", 199, 19, 30, [Attacks.KICK], sprite=Image("images/characters/k199.png"), ai = AIType.AGGRO)
+    K207 = RPGCharacter("K20-7", 207, 20, 10, [Attacks.PUNCH], sprite=Image("images/characters/k207.png"), ai = AIType.DEFENSIVE)
+    TATE_EX = RPGCharacter("{image=gui/dx_text.png} Tate EX", 9999, 11, 111, [Attacks.DAMAGE_SCREM, Attacks.REVERB_RECALL, Attacks.ECHO_BLAST], sprite=Image("secret/pt/tate_ex.png"), ai = AIType.AGGRO, display_name = "Tate EX")
 
     # Enemies (UCN)
-    WESLEY = Character("{image=gui/dx_text.png} Wesley", 200, 20, 40, [Attacks.PISTOL, Attacks.ALL_OVER_AGAIN], sprite=Image("images/characters/hohsis/wesley.png"), ai = AIType.AGGRO, display_name = "Wesley")
-    ED = Character("{image=gui/dx_text.png} Ed", 300, 30, 25, [Attacks.HEAVY_PUNCH, Attacks.SOTH], sprite=Image("images/characters/hohsis/ed.png"), ai = AIType.SMART, display_name = "Ed")
-    RICHARD = Character("{image=gui/dx_text.png} Richard", 250, 20, 30, [Attacks.ONE_HUNDRED, Attacks.ICE_CREAM], sprite=Image("images/characters/hohsis/rich.png"), ai = AIType.DEFENSIVE, display_name = "Richard")
-    CEO = Character("{image=gui/dx_text.png} CEO of Diabetes", 1000, 50, 75, [Attacks.LOBBYING, Attacks.NANOMACHINES], sprite=Image("images/characters/ceo.png"), ai = AIType.SMART, display_name = "CEO")
-    SECRETARY = Character("{image=gui/dx_text.png} Secretary of Diabetes", 1000, 50, 75, [Attacks.LOBBYING, Attacks.NANOMACHINES], sprite=Image("images/characters/secretary.png"), ai = AIType.SMART, display_name = "Secretary")
+    WESLEY = RPGCharacter("{image=gui/dx_text.png} Wesley", 200, 20, 40, [Attacks.PISTOL, Attacks.ALL_OVER_AGAIN], sprite=Image("images/characters/hohsis/wesley.png"), ai = AIType.AGGRO, display_name = "Wesley")
+    ED = RPGCharacter("{image=gui/dx_text.png} Ed", 300, 30, 25, [Attacks.HEAVY_PUNCH, Attacks.SOTH], sprite=Image("images/characters/hohsis/ed.png"), ai = AIType.SMART, display_name = "Ed")
+    RICHARD = RPGCharacter("{image=gui/dx_text.png} Richard", 250, 20, 30, [Attacks.ONE_HUNDRED, Attacks.ICE_CREAM], sprite=Image("images/characters/hohsis/rich.png"), ai = AIType.DEFENSIVE, display_name = "Richard")
+    CEO = RPGCharacter("{image=gui/dx_text.png} CEO of Diabetes", 1000, 50, 75, [Attacks.LOBBYING, Attacks.NANOMACHINES], sprite=Image("images/characters/ceo.png"), ai = AIType.SMART, display_name = "CEO")
+    SECRETARY = RPGCharacter("{image=gui/dx_text.png} Secretary of Diabetes", 1000, 50, 75, [Attacks.LOBBYING, Attacks.NANOMACHINES], sprite=Image("images/characters/secretary.png"), ai = AIType.SMART, display_name = "Secretary")
 
     allies = (
         CS, CS_NG, CS_STRONG, CS_FINAL, CS_FINAL2, CS_WEAK, CS_ARCHIVAL, CS_VS_TATE_PUNCH, CS_VS_TATE_KICK, CS_VS_TATE_CHOP,
@@ -464,5 +440,5 @@ class Characters:
     name_set = set(names)
 
     @classmethod
-    def get(cls, k: str, default: Character | None = None) -> Character | None:
+    def get(cls, k: str, default: RPGCharacter | None = None) -> RPGCharacter | None:
         return cls.__dict__.get(k, default)
