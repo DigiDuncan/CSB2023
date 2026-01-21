@@ -111,6 +111,8 @@ def create_fighter(name, variable, ai, hp, defense, attack, accuracy, level: flo
         name = character.name
     else:
         character = Characters.get(name)
+        if character is None:
+            return None
 
     enemy = name in Characters.enemy_name_set if is_enemy is not None else is_enemy
     level = 1.0 if enemy else level
