@@ -2,7 +2,6 @@
 RPG content for CSB2023 RPG Engine (not actual fights/scenes only AI, Effects, Attacks, Characters)
 """
 from __future__ import annotations
-from tkinter import N
 
 """renpy
 rpy python annotations
