@@ -1,12 +1,9 @@
 from __future__ import annotations
-from operator import is_
-from tkinter import NO
-from venv import create
 
 # This is the equivalent of a python early block in a .rpy file.
 """renpy
 rpy python annotations
-python early:
+python early in RPG:
 """
 
 """
@@ -107,10 +104,14 @@ def parse_rpg(lexer) -> ParsedRpg:
     return level, initial, background, music, on_win, on_lose, intro, is_ucn, fighters, allies, enemies
 
 def create_fighter(name, variable, ai, hp, defense, attack, accuracy, level: float = 1.0, is_enemy: bool | None = None):
-    name = name if not variable else globals().get(name).upper()
-    character = Characters.get(name)
-    if name is None or character is None:
-        return None
+    if variable:
+        if name not in variable_characters:
+            return None
+        character = variable_characters[name]
+        name = character.name
+    else:
+        character = Characters.get(name)
+
     enemy = name in Characters.enemy_name_set if is_enemy is not None else is_enemy
     level = 1.0 if enemy else level
     ai = AIType.get(ai)

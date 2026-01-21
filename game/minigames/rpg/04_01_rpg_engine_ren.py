@@ -3,13 +3,9 @@ CSB2023 RPG engine
 """
 from __future__ import annotations
 
-from renpy.display.core import Displayable
-from renpy.display.im import Image
-from renpy import random
-
 """renpy
 rpy python annotations
-python early:
+python early in RPG:
 """
 
 from dataclasses import dataclass
@@ -34,6 +30,11 @@ class classproperty[V]:
 # - Linking with the screen / displayables
 # - Reimplimenting all the content in the game
 # - all the todos below
+
+type Displayable = renpy.display.core.Displayable
+Image = renpy.display.im.Image
+random = renpy.random
+
 
 # |---- RPG ENGINE ----|
 
@@ -410,7 +411,7 @@ class AI:
         return self.__str__()
 
 
-class RPGCharacter: # TODO: Workshop -- I'd like fighter to be used by encounter, but character doesn't make sense if there are multiple of the same person
+class Character: # TODO: Workshop -- I'd like fighter to be used by encounter, but character doesn't make sense if there are multiple of the same person
     """
     A Character (previously Fighter) is the decription
     of a fighter. This includes their name, attacks, etc
@@ -433,8 +434,8 @@ class RPGCharacter: # TODO: Workshop -- I'd like fighter to be used by encounter
         self.portrait: Displayable = portrait or UNKNOWN_PORTRAIT # What image should represent the character on the player's side
         self.sprite: Displayable = sprite or UNKNOWN_FIELD # What image should represent the character on the field side
 
-    def clone(self, name: str, hp: int | None = None, defense: int | None = None, attack: int | None = None, attacks: Sequence[Attack | ComboAttack] | None = None, accuracy: int | None = None, ai: AI | None = None, display_name: str | None = None, portrait: Displayable | None = None, sprite: Displayable | None = None) -> RPGCharacter:
-        return RPGCharacter(
+    def clone(self, name: str, hp: int | None = None, defense: int | None = None, attack: int | None = None, attacks: Sequence[Attack | ComboAttack] | None = None, accuracy: int | None = None, ai: AI | None = None, display_name: str | None = None, portrait: Displayable | None = None, sprite: Displayable | None = None) -> Character:
+        return Character(
             name,
             hp if hp is not None else self.base_hp,
             defense if defense is not None else self.base_def,
@@ -463,7 +464,7 @@ class Fighter:
 
     def __init__(
             self,
-            character: RPGCharacter,
+            character: Character,
             enemy: bool,
             level: float = 1.0,
             ai: AI | None = None,
@@ -473,7 +474,7 @@ class Fighter:
             acc_override: int | None = None
         ): # TODO: consider -- would it be worth to add a sprite override and a display_name override? (and a max_hp override)
 
-        self.character: RPGCharacter = character # The stat basis for the character
+        self.character: Character = character # The stat basis for the character
         self.enemy: bool = enemy # What team is the fighter on
         self.level: float = level # What level is the fighter? Was originally the scale passed in the encounter
         self.ai: AI | None = ai or character.base_ai # What AI does the fighter use. If none the encouter defers to the player

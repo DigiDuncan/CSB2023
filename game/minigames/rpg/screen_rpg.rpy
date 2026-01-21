@@ -6,7 +6,7 @@ TODO list
 - Depending on the action selected add the action to a list (To pass back to the back end)
 """
 
-init python:
+init python in RPG:
     CombatAllies = [Characters.get("CS"), Characters.get("ARCEUS"), Characters.get("PHIL"), Characters.get("MICHAEL")]
     CurrentTurn = 0
     pass
