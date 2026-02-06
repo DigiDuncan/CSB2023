@@ -465,7 +465,7 @@ class Fighter:
     def __init__(
             self,
             character: Character,
-            enemy: bool = False,
+            enemy: bool,
             level: float = 1.0,
             ai: AI | None = None,
             hp_override: int | None = None,
