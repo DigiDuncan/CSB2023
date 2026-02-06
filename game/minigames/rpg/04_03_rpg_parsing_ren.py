@@ -48,6 +48,7 @@ def parse_fighter(lexer) -> ParsedFighter:
 type ParsedRpg = tuple[float, int, str, str, str | None, str | None, str | None, bool, list[ParsedFighter] | None, list[ParsedFighter], list[ParsedFighter]]
 # Parse an rpg block and get the level/scale, background, music, on_win, on_lose, intro_text, if it is a ucn fight, fighters, ally fighters, and enemy fighters
 def parse_rpg(lexer) -> ParsedRpg:
+    print("Started parsing")
     block = lexer.subblock_lexer()
     level = 1.0
     initial = 0
@@ -101,6 +102,7 @@ def parse_rpg(lexer) -> ParsedRpg:
             subblock = block.subblock_lexer()
             while subblock.advance():
                 enemies.append(parse_fighter(subblock))
+    print(level, initial, background, music, on_win, on_lose, intro, is_ucn, fighters, allies, enemies)
     return level, initial, background, music, on_win, on_lose, intro, is_ucn, fighters, allies, enemies
 
 def create_fighter(name, variable, ai, hp, defense, attack, accuracy, level: float = 1.0, is_enemy: bool | None = None):
@@ -147,6 +149,7 @@ def execute_rpg(parsed_object: ParsedRpg):
 
     # Clear out any None fighters. Generally only happens when the user selects none in UCN
     fighters = [fighter for fighter in fighters if fighter is not None]
+
     global encounter
     encounter = Encounter(fighters, background, music, on_win, on_lose, intro_text, initial)
     renpy.jump("play_rpggame")

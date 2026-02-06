@@ -24,15 +24,15 @@ screen screen_rpg():
             background "gui/rpg/main_box.png"
             vbox:
                 yalign 0.5
-                for i in range(len(encounter.allies[encounter.turn].attacks)):
+                for i in range(len(RPG.encounter.allies[RPG.encounter.turn].attacks)):
                     # If the attack is not available, make this insensitive
                     button:
                         action NullAction()
                         has vbox
-                        text "{size=42}"+encounter.allies[encounter.turn].attacks[i].name+" {/size}{size=21}("+encounter.allies[encounter.turn].attacks[i].attack.description+"){/size}":
+                        text "{size=42}"+RPG.encounter.allies[RPG.encounter.turn].attacks[i].name+" {/size}{size=21}("+RPG.encounter.allies[RPG.encounter.turn].attacks[i].attack.description+"){/size}":
                             color "#FFFFFF"
                             hover_color "#00B7EC"
-                        text "{size=21}"+encounter.allies[encounter.turn].attacks[i].attack.description+"{/size}":
+                        text "{size=21}"+RPG.encounter.allies[RPG.encounter.turn].attacks[i].attack.description+"{/size}":
                             first_indent 32
                             color "#848484"
                             hover_color "#006582"
@@ -40,15 +40,15 @@ screen screen_rpg():
         # The stat boxes for Allies
         grid len(encounter.allies) 1:
             xfill True
-            for i in range(len(encounter.allies)):
-                if not encounter.allies[i].dead:
+            for i in range(len(RPG.encounter.allies)):
+                if not RPG.encounter.allies[i].dead:
                     button:
                         padding(7,7)
                         xalign 0.5
                         yalign 1.0
                         xsize 475
                         # If it's the fighter's turn
-                        if encounter.turn == i:
+                        if RPG.encounter.turn == i:
                             ysize 201
                             background "gui/rpg/tall_box.png"
                         # Otherwise
@@ -66,8 +66,8 @@ screen screen_rpg():
                             ysize 88
                             spacing 2
                             # Icon
-                            if encounter.allies[i].character.portrait:
-                                add encounter.allies[i].character.portrait
+                            if RPG.encounter.allies[i].character.portrait:
+                                add RPG.encounter.allies[i].character.portrait
                             else:
                                 add "gui/rpg/portraits/unknown.png"
                             # Stats
@@ -75,11 +75,11 @@ screen screen_rpg():
                                 yalign 0.5
                                 xspacing 2
                                 add "gui/rpg/attack.png" yalign 0.5
-                                text str(encounter.allies[i].attack):
+                                text str(RPG.encounter.allies[i].attack):
                                     size 32
                                     yalign 0.5
                                 add "gui/rpg/defense.png" yalign 0.5
-                                text str(encounter.allies[i].defense):
+                                text str(RPG.encounter.allies[i].defense):
                                     size 32
                                     yalign 0.5
 
@@ -90,7 +90,7 @@ screen screen_rpg():
                                 xalign 1.0
                                 # if encounter.allies[i].confused:
                                     # add "gui/rpg/confusion_status.png"
-                                text encounter.allies[i].character.display_name:
+                                text RPG.encounter.allies[i].character.display_name:
                                     xalign 1.0
                             frame:
                                 background None
@@ -98,12 +98,12 @@ screen screen_rpg():
                                 xysize(228, 32)
                                 xalign 1.0
                                 yalign 1.0
-                                add "gui/rpg/hp_bar.png" corner1(int(228-(228*(encounter.allies[i].hit_points/encounter.allies[i].max_hp))),0) corner2(228,32) xalign 1.0
-                                text str(encounter.allies[i].hit_points)+"/"+str(encounter.allies[i].max_hp)+" HP":
+                                add "gui/rpg/hp_bar.png" corner1(int(228-(228*(RPG.encounter.allies[i].hit_points/RPG.encounter.allies[i].max_hp))),0) corner2(228,32) xalign 1.0
+                                text str(RPG.encounter.allies[i].hit_points)+"/"+str(RPG.encounter.allies[i].max_hp)+" HP":
                                     xalign 1.0
                                     yalign 0.5
 
-                        if encounter.turn == i:
+                        if RPG.encounter.turn == i:
                             # The attack button
                             imagebutton:
                                 align(0.0, 1.0)
