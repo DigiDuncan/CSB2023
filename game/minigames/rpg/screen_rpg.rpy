@@ -6,11 +6,6 @@ TODO list
 - Depending on the action selected add the action to a list (To pass back to the back end)
 """
 
-init python in RPG:
-    CombatAllies = [Characters.get("CS"), Characters.get("ARCEUS"), Characters.get("PHIL"), Characters.get("MICHAEL")]
-    CurrentTurn = 0
-    pass
-
 screen screen_rpg():
     # This is the main view of the RPG battle.
     frame:
@@ -29,31 +24,31 @@ screen screen_rpg():
             background "gui/rpg/main_box.png"
             vbox:
                 yalign 0.5
-                for i in range(len(CombatAllies[CurrentTurn].attacks)):
+                for i in range(len(encounter.allies[encounter.turn].attacks)):
                     # If the attack is not available, make this insensitive
                     button:
                         action NullAction()
                         has vbox
-                        text "{size=42}"+CombatAllies[CurrentTurn].attacks[i].name+" {/size}{size=21}("+CombatAllies[CurrentTurn].attacks[i].properties+"){/size}":
+                        text "{size=42}"+encounter.allies[encounter.turn].attacks[i].name+" {/size}{size=21}("+encounter.allies[encounter.turn].attacks[i].attack.description+"){/size}":
                             color "#FFFFFF"
                             hover_color "#00B7EC"
-                        text "{size=21}"+CombatAllies[CurrentTurn].attacks[i].description+"{/size}":
+                        text "{size=21}"+encounter.allies[encounter.turn].attacks[i].attack.description+"{/size}":
                             first_indent 32
                             color "#848484"
                             hover_color "#006582"
 
         # The stat boxes for Allies
-        grid len(CombatAllies) 1:
+        grid len(encounter.allies) 1:
             xfill True
-            for i in range(len(CombatAllies)):
-                if not CombatAllies[i].dead:
+            for i in range(len(encounter.allies)):
+                if not encounter.allies[i].dead:
                     button:
                         padding(7,7)
                         xalign 0.5
                         yalign 1.0
                         xsize 475
                         # If it's the fighter's turn
-                        if CurrentTurn == i:
+                        if encounter.turn == i:
                             ysize 201
                             background "gui/rpg/tall_box.png"
                         # Otherwise
@@ -71,8 +66,8 @@ screen screen_rpg():
                             ysize 88
                             spacing 2
                             # Icon
-                            if CombatAllies[i].sprite:
-                                add CombatAllies[i].sprite
+                            if encounter.allies[i].character.portrait:
+                                add encounter.allies[i].character.portrait
                             else:
                                 add "gui/rpg/portraits/unknown.png"
                             # Stats
@@ -80,11 +75,11 @@ screen screen_rpg():
                                 yalign 0.5
                                 xspacing 2
                                 add "gui/rpg/attack.png" yalign 0.5
-                                text str(CombatAllies[i].attack_points):
+                                text str(encounter.allies[i].attack):
                                     size 32
                                     yalign 0.5
                                 add "gui/rpg/defense.png" yalign 0.5
-                                text str(CombatAllies[i].armor_points):
+                                text str(encounter.allies[i].defense):
                                     size 32
                                     yalign 0.5
 
@@ -93,9 +88,9 @@ screen screen_rpg():
                             align(1.0, 0.0)
                             hbox:
                                 xalign 1.0
-                                if CombatAllies[i].confused:
-                                    add "gui/rpg/confusion_status.png"
-                                text CombatAllies[i].display_name:
+                                # if encounter.allies[i].confused:
+                                    # add "gui/rpg/confusion_status.png"
+                                text encounter.allies[i].character.display_name:
                                     xalign 1.0
                             frame:
                                 background None
@@ -103,12 +98,12 @@ screen screen_rpg():
                                 xysize(228, 32)
                                 xalign 1.0
                                 yalign 1.0
-                                add "gui/rpg/hp_bar.png" corner1(int(228-(228*(CombatAllies[i].health_points/CombatAllies[i].max_health))),0) corner2(228,32) xalign 1.0
-                                text str(CombatAllies[i].health_points)+"/"+str(CombatAllies[i].max_health)+" HP":
+                                add "gui/rpg/hp_bar.png" corner1(int(228-(228*(encounter.allies[i].hit_points/encounter.allies[i].max_hp))),0) corner2(228,32) xalign 1.0
+                                text str(encounter.allies[i].hit_points)+"/"+str(encounter.allies[i].max_hp)+" HP":
                                     xalign 1.0
                                     yalign 0.5
 
-                        if CurrentTurn == i:
+                        if encounter.turn == i:
                             # The attack button
                             imagebutton:
                                 align(0.0, 1.0)
@@ -126,7 +121,7 @@ screen screen_rpg():
     key "K_END" action Return(True)
     pass
 
-label play_screenrpnggame:
+label play_rpggame:
     window hide
     $ quick_menu = False
     hide arceus

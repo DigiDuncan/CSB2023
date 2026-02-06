@@ -50,9 +50,6 @@ screen subgame():
             # unlock by label, will probably add more conditions later
             if "need_label" in books_map[book] and not renpy.seen_label(books_map[book]["need_label"]):
                 this_unlocked = False
-                print(f"Not showing {book} :(")
-            else:
-                print(f"Showing {book} :)")
 
             # append to shelf if unlocked
             if this_unlocked == True:

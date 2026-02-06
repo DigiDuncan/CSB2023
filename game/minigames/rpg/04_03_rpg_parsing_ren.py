@@ -147,9 +147,8 @@ def execute_rpg(parsed_object: ParsedRpg):
 
     # Clear out any None fighters. Generally only happens when the user selects none in UCN
     fighters = [fighter for fighter in fighters if fighter is not None]
-
-    rpggame.reset() # TODO: is this needed for the screen version of the rpg?
-    rpggame.encounter = Encounter(fighters, background, music, on_win, on_lose, intro_text, initial)
+    global encounter
+    encounter = Encounter(fighters, background, music, on_win, on_lose, intro_text, initial)
     renpy.jump("play_rpggame")
 
 def lint_rpg(parsed_object: ParsedRpg):

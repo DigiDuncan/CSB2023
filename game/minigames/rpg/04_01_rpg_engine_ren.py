@@ -43,8 +43,8 @@ random = renpy.random
 CRIT_CHANCE = 5.0 / 100.0
 DAMAGE_INDICATOR_TIME = 1.0
 
-UNKNOWN_FIELD = Image("game/gui/rpg/unknown_field_sprite.png")
-UNKNOWN_PORTRAIT = Image("game/gui/rpg/portraits/unknown.png")
+UNKNOWN_FIELD = Image("gui/rpg/unknown_field_sprite.png")
+UNKNOWN_PORTRAIT = Image("gui/rpg/portraits/unknown.png")
 
 # -- STR EUMS --
 
@@ -465,7 +465,7 @@ class Fighter:
     def __init__(
             self,
             character: Character,
-            enemy: bool,
+            enemy: bool = False,
             level: float = 1.0,
             ai: AI | None = None,
             hp_override: int | None = None,
