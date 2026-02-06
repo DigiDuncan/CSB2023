@@ -38,7 +38,7 @@ screen screen_rpg():
                             hover_color "#006582"
 
         # The stat boxes for Allies
-        grid len(encounter.allies) 1:
+        grid len(RPG.encounter.allies) 1:
             xfill True
             for i in range(len(RPG.encounter.allies)):
                 if not RPG.encounter.allies[i].dead:
