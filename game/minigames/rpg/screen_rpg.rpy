@@ -17,6 +17,11 @@ screen screen_rpg():
         spacing 3
         box_reverse True
 
+        # Show the enemies
+        for i in range(len(RPG.encounter.enemies)):
+            add RPG.encounter.enemies[i].sprite xalign (i+1/len(RPG.encounter.enemies)+2)
+
+
         # The Fight box
         frame:
             padding(80, 5)
