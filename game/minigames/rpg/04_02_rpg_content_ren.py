@@ -413,27 +413,25 @@ class Characters:
         ARCEUS, PAKOO , MIKA, KITTY , TATE, ARIA, DIGI, NOVA, BLANK , MIDGE , DB05, ANNO, BUBBLE , GES, MICHAEL, BILLY, PHIL,
         MEAN, POMNI, OBAMA, CASHIER, SHARK,
     )
-    ally_names = tuple(
-        ally.name for ally in allies
-    )
-    ally_name_set = set(ally_names)
+
+    @classproperty
+    def allies_names_set(self):
+        # We use the assigned name because that is what the blocks withing the rpy scripts use.
+        return set(ally.assigned_name for ally in self.allies)
 
     enemies = (
         FANBOYA, FANBOYB, COP, COPGUYGODMODE, COPGUY, GUARD, SML_TANK, MARINE, BIG_TANK, COPGUY_EX, PAKOOE, COPGUY_EXE,
         K174, K199, K207, TATE_EX, WESLEY, ED, RICHARD, CEO, SECRETARY
     )
-    enemy_names = tuple(
-        enemy.name for enemy in enemies
-    )
-    enemy_name_set = set(enemy_names)
+
+    @classproperty
+    def enemy_name_set(self):
+        # We use the assigned name because that is what the blocks withing the rpy scripts use.
+        return set(enemy.assigned_name for enemy in self.enemies)
 
     characters = (
         *allies, *enemies
     )
-    names = (
-        *ally_names, *enemy_names
-    )
-    name_set = set(names)
 
     @classmethod
     def get(cls, k: str, default: Character | None = None) -> Character | None:
@@ -443,6 +441,6 @@ variable_characters: dict[str, Character] = {}
 
 def set_var_character(char: str, assigned_name: str):
     character = Characters.get(assigned_name)
-    if char is None or character is None:
+    if char is None or char == "NONE" or character is None:
         return
-    variable_characters[char.upper()] = character
+    variable_characters[char] = character
