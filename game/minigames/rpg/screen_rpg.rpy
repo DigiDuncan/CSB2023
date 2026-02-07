@@ -7,7 +7,19 @@ TODO list
 """
 
 screen screen_rpg():
-    # This is the main view of the RPG battle.
+
+    frame:
+        yalign 0.5
+        xalign 0.5
+        padding(0,0)
+        background RPG.encounter.background
+        # Show the enemies
+        grid len(RPG.encounter.enemies) 1:
+            for i in range(len(RPG.encounter.enemies)):
+                add RPG.encounter.enemies[i].sprite
+
+
+    # This is the context menu of the RPG
     frame:
         yalign 1.0
         xalign 0.5
@@ -16,10 +28,6 @@ screen screen_rpg():
         has vbox
         spacing 3
         box_reverse True
-
-        # Show the enemies
-        for i in range(len(RPG.encounter.enemies)):
-            add RPG.encounter.enemies[i].sprite xalign (i+1/len(RPG.encounter.enemies)+2)
 
 
         # The Fight box
@@ -129,9 +137,9 @@ screen screen_rpg():
 label play_rpggame:
     window hide
     $ quick_menu = False
-    hide arceus
-    hide cs
+    play music RPG.encounter.music
     call screen screen_rpg
+    stop music
     $ quick_menu = True
     window show
 
