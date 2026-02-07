@@ -520,6 +520,12 @@ class Fighter:
     @property
     def display_name(self) -> str:
         return self.character.display_name
+    
+    def set_next_attack(self, next_attack):
+        self.next_attack = next_attack
+    
+    def set_next_targets(self, next_targets):
+        self.next_targets = next_targets
 
 
 class FighterAttack:
