@@ -7,18 +7,11 @@ TODO list
 """
 
 screen screen_rpg():
-
-    frame:
-        yalign 0.5
+    grid len(RPG.encounter.enemies) 1:
         xalign 0.5
-        padding(0,0)
-        background RPG.encounter.background
-        # Show the enemies
-        grid len(RPG.encounter.enemies) 1:
-            for i in range(len(RPG.encounter.enemies)):
-                add RPG.encounter.enemies[i].sprite
-
-
+        yalign 0.5
+        for i in range(len(RPG.encounter.enemies)):
+            add RPG.encounter.enemies[i].sprite
     # This is the context menu of the RPG
     frame:
         yalign 1.0
@@ -28,8 +21,6 @@ screen screen_rpg():
         has vbox
         spacing 3
         box_reverse True
-
-
         # The Fight box
         frame:
             padding(80, 5)
@@ -49,7 +40,6 @@ screen screen_rpg():
                             first_indent 32
                             color "#848484"
                             hover_color "#006582"
-
         # The stat boxes for Allies
         grid len(RPG.encounter.allies) 1:
             xfill True
@@ -72,7 +62,6 @@ screen screen_rpg():
                         has grid 2 2
                         xfill True
                         yfill True
-
                         # The Fighter's Icon and Stats
                         hbox:
                             align(0.0, 0.0)
@@ -95,7 +84,6 @@ screen screen_rpg():
                                 text str(RPG.encounter.allies[i].defense):
                                     size 32
                                     yalign 0.5
-
                         # The Fighter's name and healthbar
                         vbox:
                             align(1.0, 0.0)
@@ -115,14 +103,12 @@ screen screen_rpg():
                                 text str(RPG.encounter.allies[i].hit_points)+"/"+str(RPG.encounter.allies[i].max_hp)+" HP":
                                     xalign 1.0
                                     yalign 0.5
-
                         if RPG.encounter.turn == i:
                             # The attack button
                             imagebutton:
                                 align(0.0, 1.0)
                                 idle "gui/rpg/attack_button.png"
                                 action Notify("Attack pressed on fighter"+str(i+1)+"!")
-
                             # The defend button
                             imagebutton:
                                 align(1.0, 1.0)
@@ -137,6 +123,7 @@ screen screen_rpg():
 label play_rpggame:
     window hide
     $ quick_menu = False
+    show image RPG.encounter.background
     play music RPG.encounter.music
     call screen screen_rpg
     stop music
