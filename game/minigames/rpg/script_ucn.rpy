@@ -64,8 +64,8 @@ label rpg_ucn:
     centered "Loading...{w=1.0}{nw}"  # This isn't required.
     $ scales = [1.0, 1.25, 1.5, 1.75, 2.0, 2.5, 3.0]
 
-    $ allies = (("NONE", None), *((character.name, character.assigned_name) for character in RPG.Characters.allies))
-    $ enemies = (("NONE", None), *((character.name, character.assigned_name) for character in RPG.Characters.enemies))
+    $ allies = (("NONE", "NONE"), *((character.name, character.assigned_name) for character in RPG.Characters.allies))
+    $ enemies = (("NONE", "NONE"), *((character.name, character.assigned_name) for character in RPG.Characters.enemies))
 
     $ narrator("Choose a party member! (1/4)", interact = False)
     $ RPG.set_var_character("party_1", renpy.display_menu(allies, screen="ucn_choice"))
@@ -84,26 +84,25 @@ label rpg_ucn:
     $ RPG.set_var_character("enemy_3", renpy.display_menu(enemies, screen="ucn_choice"))
 
     $ narrator("Choose a party scale!", interact = False)
-    $ ucn_scale = renpy.display_menu([(str(a), a) for a in scales], screen="ucn_choice")
+    $ RPG.ucn_scale = renpy.display_menu([(str(a), a) for a in scales], screen="ucn_choice")
 
-    $ ucn_bg = renpy.display_menu([(i.lower(), i) for i in bg_list], screen="ucn_bg_choice")
-    $ ucn_music = renpy.display_menu([(v["title"], k) for k, v in music_map.items()], screen="ucn_bgm_choice")
+    $ RPG.ucn_bg = renpy.display_menu([(i.lower(), i) for i in bg_list], screen="ucn_bg_choice")
+    $ RPG.ucn_music = renpy.display_menu([(v["title"], k) for k, v in music_map.items()], screen="ucn_bgm_choice")
 
     rpg:
-        bg "ucn"
-        music "ucn"
-        fighters:
+        on_win "after_ucn"
+        on_lose "after_ucn"
+        intro "Begin!"
+        ucn
+        allies:
             $party_1
             $party_2
             $party_3
             $party_4
+        enemies:
             $enemy_1
             $enemy_2
             $enemy_3
-        scale "ucn"
-        on_win "after_ucn"
-        on_lose "after_ucn"
-        intro_text "Begin!"
 
 label after_ucn:
     $ cont = renpy.display_menu([("New Game", True), ("Return", False)], screen = "ucn_choice")
