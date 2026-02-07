@@ -502,6 +502,14 @@ class Fighter:
         self.accuracy = self.base_acc
 
     @property
+    def portrait(self) -> Displayable:
+        return self.character.portrait
+
+    @property
+    def sprite(self) -> Displayable:
+        return self.character.sprite
+
+    @property
     def dead(self) -> bool:
         return self.hit_points <= 0
 
