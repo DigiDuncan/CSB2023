@@ -1,4 +1,7 @@
 from __future__ import annotations
+from operator import le
+from tkinter import N
+from turtle import back
 
 # This is the equivalent of a python early block in a .rpy file.
 """renpy
@@ -13,14 +16,12 @@ CSB2023 RPG parsing
 # from .rpg01_engine_ren import Encounter, Fighter
 # from .rpg02_content_ren import Characters, AIType
 
-ucn_bg = ""
-ucn_music = ""
-ucn_scale = ""
-
 
 type ParsedFighter = tuple[str, bool, str | None, int | None, int | None, int | None, int | None]
 # Parse a fighter by getting their name, and optional overrides for their ai, hp, def, atk, and acc
 def parse_fighter(lexer) -> ParsedFighter:
+    # ! Variable here is scuffed it returns "$" if it matches and `None` if it doesn't.
+    # It is technically truthy, but I don't like it ~Dragon
     variable = lexer.match(r"\$") # Variable Fighter $<x>
     name = lexer.word()
 
@@ -48,7 +49,7 @@ def parse_fighter(lexer) -> ParsedFighter:
 type ParsedRpg = tuple[float, int, str, str, str | None, str | None, str | None, bool, list[ParsedFighter] | None, list[ParsedFighter], list[ParsedFighter]]
 # Parse an rpg block and get the level/scale, background, music, on_win, on_lose, intro_text, if it is a ucn fight, fighters, ally fighters, and enemy fighters
 def parse_rpg(lexer) -> ParsedRpg:
-    print("Started parsing")
+    # print("Started parsing")
     block = lexer.subblock_lexer()
     level = 1.0
     initial = 0
@@ -73,10 +74,12 @@ def parse_rpg(lexer) -> ParsedRpg:
             background = block.string()
             if background == "ucn":
                 is_ucn = True
+                background = None
         elif block.keyword("music"):
             music = block.string()
             if music == "ucn":
                 is_ucn = True
+                music = None
         elif block.keyword("on_win"):
             on_win = block.string()
         elif block.keyword("on_lose"):
@@ -102,7 +105,7 @@ def parse_rpg(lexer) -> ParsedRpg:
             subblock = block.subblock_lexer()
             while subblock.advance():
                 enemies.append(parse_fighter(subblock))
-    print(level, initial, background, music, on_win, on_lose, intro, is_ucn, fighters, allies, enemies)
+    # print(level, initial, background, music, on_win, on_lose, intro, is_ucn, fighters, allies, enemies)
     return level, initial, background, music, on_win, on_lose, intro, is_ucn, fighters, allies, enemies
 
 def create_fighter(name, variable, ai, hp, defense, attack, accuracy, level: float = 1.0, is_enemy: bool | None = None):
@@ -110,13 +113,14 @@ def create_fighter(name, variable, ai, hp, defense, attack, accuracy, level: flo
         if name not in variable_characters:
             return None
         character = variable_characters[name]
-        name = character.name
+        name = character.assigned_name
     else:
         character = Characters.get(name)
         if character is None:
             return None
 
-    enemy = name in Characters.enemy_name_set if is_enemy is not None else is_enemy
+    # If `is_enemy` is None then we are using the legacy system and have to check the enemy name set
+    enemy = name in Characters.enemy_name_set if is_enemy is None else is_enemy
     level = 1.0 if enemy else level
     ai = AIType.get(ai)
 
