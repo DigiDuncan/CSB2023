@@ -499,7 +499,7 @@ class Fighter:
     def reset_effects(self):
         self.defense = self.base_def
         self.attack = self.base_atk
-        self.accuracy = self.base_acc
+        self.accuracy = self.base_accF
 
     @property
     def portrait(self) -> Displayable:

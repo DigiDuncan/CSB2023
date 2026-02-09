@@ -21,30 +21,54 @@ screen screen_rpg():
         has vbox
         spacing 3
         box_reverse True
-        # The Fight box
+        # The Attack Selection Box:
         frame:
             padding(80, 5)
             xysize(1916, 262)
             background "gui/rpg/main_box.png"
-            vbox:
-                yalign 0.5
-                if RPG.encounter.turn < len(RPG.encounter.allies):
-                    for i in range(len(RPG.encounter.allies[RPG.encounter.turn].attacks)):
-                        # If the attack is not available, make this insensitive
-                        button:
+            grid 2 1:
+                xfill True
+                yfill True
+                vbox:
+                    yalign 0.5
+                    if RPG.encounter.turn < len(RPG.encounter.allies):
+                        for i in range(len(RPG.encounter.allies[RPG.encounter.turn].attacks)):
+                            # If the attack is not available, make this insensitive
+                            $ attack_actions = []
+                            $ attack_actions.append(Function(RPG.encounter.allies[RPG.encounter.turn].set_next_attack, RPG.encounter.allies[RPG.encounter.turn].attacks[i]))
                             if RPG.encounter.turn+1 != len(RPG.encounter.allies):
-                                action Function(RPG.encounter.allies[RPG.encounter.turn].set_next_attack, RPG.encounter.allies[RPG.encounter.turn].attacks[i]), IncrementVariable("RPG.encounter.turn")
-                            else:
-                                action Function(RPG.encounter.allies[RPG.encounter.turn].set_next_attack, RPG.encounter.allies[RPG.encounter.turn].attacks[i])
-                            has vbox
-                            text "{size=42}"+RPG.encounter.allies[RPG.encounter.turn].attacks[i].name+" {/size}{size=21}("+RPG.encounter.allies[RPG.encounter.turn].attacks[i].attack.description+"){/size}":
-                                color "#FFFFFF"
-                                hover_color "#00B7EC"
-                            text "{size=21}"+RPG.encounter.allies[RPG.encounter.turn].attacks[i].attack.description+"{/size}":
-                                first_indent 32
-                                color "#848484"
-                                hover_color "#006582"
+                                $ attack_actions.append(IncrementVariable("RPG.encounter.turn"))
+                            button:
+                                action attack_actions
+                                if not RPG.encounter.allies[RPG.encounter.turn].attacks[i].available:
+                                    sensitive False
+                                has vbox
+                                text "{size=42}"+RPG.encounter.allies[RPG.encounter.turn].attacks[i].name+" {/size}{size=21}("+RPG.encounter.allies[RPG.encounter.turn].attacks[i].attack.description+"){/size}":
+                                    if RPG.encounter.allies[RPG.encounter.turn].attacks[i] is RPG.encounter.allies[RPG.encounter.turn].next_attack:
+                                        color "#FFCC00"
+                                    else:
+                                        color "#FFFFFF"
+                                    hover_color "#00B7EC"
+                                text "{size=21}"+RPG.encounter.allies[RPG.encounter.turn].attacks[i].attack.description+"{/size}":
+                                    first_indent 32
+                                    if RPG.encounter.allies[RPG.encounter.turn].attacks[i] is RPG.encounter.allies[RPG.encounter.turn].next_attack:
+                                        color "#844200"
+                                    else:
+                                        color "#848484"
+                                    hover_color "#006582"
+                vbox:
+                    if RPG.encounter.allies[RPG.encounter.turn].next_attack is not None:
+                        if len(RPG.encounter.possible_targets(RPG.encounter.allies[RPG.encounter.turn], RPG.encounter.allies[RPG.encounter.turn].next_attack.attack)) != 0:
+                            for a in RPG.encounter.possible_targets(RPG.encounter.allies[RPG.encounter.turn], RPG.encounter.allies[RPG.encounter.turn].next_attack.attack):
+                                button:
+                                    text "{size=42}"+a.display_name:
+                                        color "#FFFFFF"
+                                        hover_color "#00B7EC"
+                                    action Function(RPG.encounter.allies[RPG.encounter.turn].set_next_targets, [a])
+
+
             # If everything is set and good to go, show the confirm button)
+            # TODO: Further checks to make sure everything is good and valid.
             if all(f.next_attack is not None for f in RPG.encounter.allies):
                 imagebutton:
                     xalign 1.0
@@ -69,7 +93,7 @@ screen screen_rpg():
                         else:
                             background "gui/rpg/small_box.png"
                             ysize 105
-                            action SetVariable("CurrentTurn", i)
+                            action SetVariable("RPG.encounter.turn", i)
                         has grid 2 2
                         xfill True
                         yfill True
