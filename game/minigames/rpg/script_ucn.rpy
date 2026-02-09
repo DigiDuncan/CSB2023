@@ -12,31 +12,22 @@ screen ucn_choice(items):
                     anchor(-0.25, -0.25)
                     action i.action
 
-screen ucn_bg():
-    text "Choose a scene!" xanchor 0.5
-    viewport:
-        xysize(1920, 980)
-        yanchor 0.0
-        side_yfill True
-        scrollbars "vertical"
-        mousewheel True
-        grid 5 100:
-            xfill True
-            yfill True
-            for bg in bg_list:
-                imagebutton idle bg action SetVariable("ucn_bg", bg), Hide("ucn_bg") xysize (240, 120)
-
 screen ucn_bg_choice(items):
     viewport:
-        xysize(1920, 540)
+        xysize(1920, 720)
         yanchor -0.25
         style_prefix "choice"
         side_yfill True
         scrollbars "vertical"
         mousewheel True
-        vbox:
+        grid 14 int(len(items) / 14) + 1:
             for i in items:
-                textbutton i.caption.removeprefix("images/bg/").removesuffix(".png").removeprefix("/"):
+                $ sc = im.Scale(i.caption, 128, 72)
+                imagebutton:
+                    idle sc
+                    hover sc
+                    insensitive sc
+                    xysize (128, 72)
                     anchor(-0.25, -0.25)
                     action i.action
 
