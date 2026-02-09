@@ -52,7 +52,8 @@ screen ucn_bgm_choice(items):
 label rpg_ucn:
     $ renpy.hide_screen("menu")
     scene game_menu
-    centered "Loading...{w=1.0}{nw}"  # This isn't required.
+    if not preferences.developer_mode:
+        centered "Loading...{w=1.0}{nw}"  # This isn't required.
     $ scales = [1.0, 1.25, 1.5, 1.75, 2.0, 2.5, 3.0]
 
     $ allies = (("NONE", "NONE"), *((character.name, character.assigned_name) for character in RPG.Characters.allies))
