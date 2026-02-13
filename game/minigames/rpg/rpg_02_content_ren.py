@@ -2,6 +2,7 @@
 RPG content for CSB2023 RPG Engine (not actual fights/scenes only AI, Effects, Attacks, Characters)
 """
 from __future__ import annotations
+import renpy
 
 """renpy
 rpy python annotations
@@ -359,7 +360,7 @@ class Characters:
     CS_VS_TATE_KICK = Character("CS (VS Tate - Kick)", 288, 10, 40, [Attacks.KICK, Attacks.GENERGY, Attacks.YTP_MAGIC], portrait=Image("gui/rpg/portraits/cs.png"), display_name = "CS")
     CS_VS_TATE_CHOP = Character("CS (VS Tate - Chop)", 288, 10, 40, [Attacks.CHOP, Attacks.GENERGY, Attacks.YTP_MAGIC], portrait=Image("gui/rpg/portraits/cs.png"), display_name = "CS")
     ARCEUS = Character("Arceus", 160, 15, 35, [Attacks.SLASH, Attacks.LIGHT_CAST], portrait=Image("gui/rpg/portraits/arceus.png"))
-    PAKOO = Character("Pakoo", 145, 20, 30, [Attacks.INSIGHT, Attacks.SHOTGUN], portrait=Image("gui/rpg/portraits/pokoo.png"))
+    PAKOO = Character("Pakoo", 145, 20, 30, [Attacks.INSIGHT, Attacks.SHOTGUN], portrait=Image("gui/rpg/portraits/pakoo.png"))
     MIKA = Character("Mika", 165, 20, 30, [Attacks.ENCOURAGE, Attacks.HIGH_NOON], portrait=Image("gui/rpg/portraits/mika.png"))
     KITTY = Character("Kitty", 155, 15, 20, [Attacks.SCRATCH, Attacks.ARMOUR], portrait=Image("gui/rpg/portraits/kitty.png"))
     TATE = Character("Tate", 170, 5, 30, [Attacks.DAMAGE_SCREM, Attacks.SNACK_TIME], portrait=Image("gui/rpg/portraits/tate.png"))

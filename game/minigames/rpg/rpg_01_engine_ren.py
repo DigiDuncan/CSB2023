@@ -2,6 +2,7 @@
 CSB2023 RPG engine
 """
 from __future__ import annotations
+import renpy
 
 """renpy
 rpy python annotations
@@ -189,6 +190,40 @@ class Attack:
 
     def __repr__(self) -> str:
         return self.__str__()
+    
+    def _get_property_string(self) -> str:
+        # Hardcodes
+        if self.name == "AI Mimic":
+            return "Mirror"
+        if self.name == "Draw In":
+            return "Random Effect"
+
+        x = self.func.options.get("mult", 1)
+        if self.func.options.get("min_mult", None) and self.func.options.get("max_mult"):
+            x = f"{self.func.options.get('min_mult')}~{self.func.options.get('max_mult')}"
+
+        # Get attack type
+        t = "..."
+
+        e = ""
+        if self.target_count == 0:
+            if self.target_type == "allies":
+                e = "party "
+            elif self.target_type == "enemies":
+                e = "enemy party "
+            else:
+                e = "all "
+
+        return f"{x}x {e}{t}" if t != "confuse" else t
+
+    @property
+    def properties(self) -> str:
+        return_string = self._get_property_string()
+
+        if self.cooldown:
+            return_string += f", {self.cooldown} turn cooldown"
+
+        return return_string
 
 class ComboAttack:
     """
@@ -499,7 +534,7 @@ class Fighter:
     def reset_effects(self):
         self.defense = self.base_def
         self.attack = self.base_atk
-        self.accuracy = self.base_accF
+        self.accuracy = self.base_acc
 
     @property
     def portrait(self) -> Displayable:
