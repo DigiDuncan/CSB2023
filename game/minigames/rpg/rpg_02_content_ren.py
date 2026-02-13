@@ -2,7 +2,14 @@
 RPG content for CSB2023 RPG Engine (not actual fights/scenes only AI, Effects, Attacks, Characters)
 """
 from __future__ import annotations
+import random
 import renpy
+
+from renpy.display.image import Image
+
+from rpg_01_engine_ren import Encounter, Fighter, Character, CharacterStat, apply_def, update_def, \
+    resolved_def, attack_def, AttackType, stat_attack_def, AI, \
+    Attack, ComboAttack, TargetType, FighterAttack, classproperty
 
 """renpy
 rpy python annotations
@@ -150,25 +157,25 @@ def draw_in(encounter: Encounter, fighter: Fighter, targets: tuple[Fighter, ...]
     attack_type = random.randint(1, 4)
     match attack_type:
         case 1: # ap up, allies
-            encounter.send_message("[Draw In] DEF Up", MessageType.DEBUG)
+            encounter.send_message("[Draw In] DEF Up", None)
             allies = True
             stat = CharacterStat.DEFENSE
         case 2: # ap down, enemies
-            encounter.send_message("[Draw In] DEF Down", MessageType.DEBUG)
+            encounter.send_message("[Draw In] DEF Down", None)
             allies = False
             stat = CharacterStat.DEFENSE
             mult = 1.0 / mult
         case 3: # atk up, allies
-            encounter.send_message("[Draw In] ATK Up", MessageType.DEBUG)
+            encounter.send_message("[Draw In] ATK Up", None)
             allies = True
             stat = CharacterStat.ATTACK
         case 4: # atk down, enemies
-            encounter.send_message("[Draw In] ATK Down", MessageType.DEBUG)
+            encounter.send_message("[Draw In] ATK Down", None)
             allies = False
             stat = CharacterStat.ATTACK
             mult = 1.0 / mult
         case _: # impossible case
-            encounter.send_message("[Draw In] Impossible Result", MessageType.DEBUG)
+            encounter.send_message("[Draw In] Impossible Result", None)
             return
 
     for target in targets:
@@ -184,7 +191,7 @@ def ai_mimic(encounter: Encounter, fighter: Fighter, targets: tuple[Fighter, ...
         attack = targets[0].character.attacks[0]
     if attack.name == "AI Mimic":
         attack = Attacks.PUNCH
-    encounter.send_message(f"[AI Mimic] running {attack.name}...", MessageType.DEBUG)
+    encounter.send_message(f"[AI Mimic] running {attack.name}...", None)
     attack.func(encounter, fighter, targets)
 
 class AIType:

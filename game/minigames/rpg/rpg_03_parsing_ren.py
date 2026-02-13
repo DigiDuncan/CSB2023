@@ -1,7 +1,8 @@
 from __future__ import annotations
-from operator import le
-from tkinter import N
-from turtle import back
+import renpy
+
+from rpg_01_engine_ren import Fighter, Encounter
+from rpg_02_content_ren import variable_characters, AIType, Characters
 
 # This is the equivalent of a python early block in a .rpy file.
 """renpy
