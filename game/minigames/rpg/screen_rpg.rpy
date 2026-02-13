@@ -6,6 +6,11 @@ TODO list
 - Depending on the action selected add the action to a list (To pass back to the back end)
 """
 
+python early:
+    def bypass_append(renpy_list, element):
+        renpy_list.append(element)
+
+
 screen screen_rpg():
     grid len(RPG.encounter.enemies) 1:
         xalign 0.5
@@ -29,6 +34,7 @@ screen screen_rpg():
             grid 2 1:
                 xfill True
                 yfill True
+                # The attacks.
                 vbox:
                     yalign 0.5
                     if RPG.encounter.turn < len(RPG.encounter.allies):
@@ -36,7 +42,7 @@ screen screen_rpg():
                             # If the attack is not available, make this insensitive
                             $ attack_actions = []
                             $ attack_actions.append(Function(RPG.encounter.allies[RPG.encounter.turn].set_next_attack, RPG.encounter.allies[RPG.encounter.turn].attacks[i]))
-                            if RPG.encounter.turn+1 != len(RPG.encounter.allies):
+                            if (RPG.encounter.turn+1 != len(RPG.encounter.allies)) and (RPG.encounter.allies[RPG.encounter.turn].attacks[i].attack.target_count == 0):
                                 $ attack_actions.append(IncrementVariable("RPG.encounter.turn"))
                             button:
                                 action attack_actions
@@ -56,16 +62,32 @@ screen screen_rpg():
                                     else:
                                         color "#848484"
                                     hover_color "#006582"
+
+                # The target select box
                 vbox:
-                    if RPG.encounter.allies[RPG.encounter.turn].next_attack is not None:
-                        if len(RPG.encounter.possible_targets(RPG.encounter.allies[RPG.encounter.turn], RPG.encounter.allies[RPG.encounter.turn].next_attack.attack)) != 0:
-                            for a in RPG.encounter.possible_targets(RPG.encounter.allies[RPG.encounter.turn], RPG.encounter.allies[RPG.encounter.turn].next_attack.attack):
+                    $ curr_att = RPG.encounter.allies[RPG.encounter.turn].next_attack
+                    if curr_att is not None:
+                        $ victims = RPG.encounter.possible_targets(RPG.encounter.allies[RPG.encounter.turn], RPG.encounter.allies[RPG.encounter.turn].next_attack.attack)
+                        $ working_list = []
+                        for i in range(curr_att.attack.target_count):
+                            text "{size=42}Select target [i]"
+                            for victim in victims:
+                                $ target_actions = [Function(bypass_append, working_list, victim)]
+                                if i+1 == curr_att.attack.target_count:
+                                    $ target_actions.append(Function(RPG.encounter.allies[RPG.encounter.turn].set_next_targets, working_list))
+                                    if (RPG.encounter.turn+1 != len(RPG.encounter.allies)):
+                                        $ target_actions.append(IncrementVariable("RPG.encounter.turn"))
                                 button:
-                                    text "{size=42}"+a.display_name:
+                                    action target_actions
+                                    text "{size=42}"+victim.display_name:
                                         color "#FFFFFF"
                                         hover_color "#00B7EC"
-                                    action Function(RPG.encounter.allies[RPG.encounter.turn].set_next_targets, [a])
-
+                            if not i == 0:
+                                button:
+                                    text "{size=42}Back":
+                                        color "#FFFFFF"
+                                        hover_color "#00B7EC"
+                                    action RemoveFromSet("working_list", working_list[i-1]), IncrementVariable("i", -1)
 
             # If everything is set and good to go, show the confirm button)
             # TODO: Further checks to make sure everything is good and valid.
