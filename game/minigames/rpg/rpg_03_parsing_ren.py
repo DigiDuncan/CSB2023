@@ -4,6 +4,10 @@ import renpy
 from rpg_01_engine_ren import Fighter, Encounter
 from rpg_02_content_ren import variable_characters, AIType, Characters
 
+ucn_bg: str
+ucn_music: str
+ucn_scale: float
+
 # This is the equivalent of a python early block in a .rpy file.
 """renpy
 rpy python annotations
@@ -13,9 +17,6 @@ python early in RPG:
 """
 CSB2023 RPG parsing
 """
-
-# from .rpg01_engine_ren import Encounter, Fighter
-# from .rpg02_content_ren import Characters, AIType
 
 
 type ParsedFighter = tuple[str, bool, str | None, int | None, int | None, int | None, int | None]
