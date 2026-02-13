@@ -128,6 +128,12 @@ class AttackFunc:
 
     def __call__(self, encounter: Encounter, fighter: Fighter, targets: tuple[Fighter, ...]) -> Any:
         return self.func(encounter, fighter, targets, **self.options)
+    
+    def __str__(self) -> str:
+        f"<AttackFunc {self.type.name} {self.func.__name__}({', '.join(f'{k}: {v}' for k, v in self.options.items())})>"
+
+    def __repr__(self) -> str:
+        self.__str__()
 
 attack_def = AttackFunc.predefine
 
@@ -186,7 +192,7 @@ class Attack:
         return self.func.options
 
     def __str__(self) -> str:
-        return f"<Attack {self.name}>"
+        return f"<Attack {self.name} {self.func}>"
 
     def __repr__(self) -> str:
         return self.__str__()
@@ -358,6 +364,12 @@ class Effect:
             self.resolved = resolved
             self.resolved_message = resolved.message
 
+    def __str__(self) -> str:
+        f"<Effect {self.name}>"
+
+    def __repr__(self) -> str:
+        self.__str__()
+
 
 class AI:
     """
@@ -486,6 +498,12 @@ class Character: # TODO: Workshop -- I'd like fighter to be used by encounter, b
     def __set_name__(self, owner: type, name: str):
         self.assigned_name = name
 
+    def __str__(self):
+        return f"<Character {self.assigned_name} \"{self.name}\""
+
+    def __repr__(self):
+        self.__str__()
+
 
 # -- Encounter Unique Objects --
 
@@ -562,6 +580,12 @@ class Fighter:
     def set_next_targets(self, next_targets):
         self.next_targets = next_targets
 
+    def __str__(self):
+        return f"<Fighter {self.character} HP {self.hit_points}|DEF {self.defense}|ATK {self.attack}>"
+    
+    def __repr__(self):
+        return self.__str__()
+
 
 class FighterAttack:
     """
@@ -594,6 +618,12 @@ class FighterAttack:
     @property
     def available(self) -> bool:
         return self.turns_until_available == 0
+    
+    def __str__(self):
+        return f"<FighterAttack {self.attack}>"
+    
+    def __repr__(self):
+        return self.__str__()
 
 
 class FighterEffect:
@@ -670,6 +700,12 @@ class FighterEffect:
         if self.effect.resolved is not None:
             return self.effect.resolved(encounter, self.source, self.target, self.resolved_overrides)
         return False
+    
+    def __str__(self):
+        return f"<FighterEffect {self.effect}>"
+    
+    def __repr__(self):
+        return self.__str__()
 
 
 @dataclass
