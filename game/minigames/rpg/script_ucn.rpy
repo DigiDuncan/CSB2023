@@ -78,7 +78,7 @@ label rpg_ucn:
     $ narrator("Choose a party scale!", interact = False)
     $ RPG.ucn_scale = renpy.display_menu([(str(a), a) for a in scales], screen="ucn_choice")
 
-    $ RPG.ucn_bg = renpy.display_menu([(i.lower(), i) for i in bg_list], screen="ucn_bg_choice")
+    $ RPG.ucn_bg = renpy.display_menu([(i.lower(), i) for i in ucn_bg_list], screen="ucn_bg_choice")
     $ RPG.ucn_music = renpy.display_menu([(v["title"], k) for k, v in music_map.items()], screen="ucn_bgm_choice")
 
     rpg:

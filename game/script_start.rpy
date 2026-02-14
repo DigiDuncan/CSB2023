@@ -233,11 +233,38 @@ default reloading = 6
 
 # Helpful lists
 init python:
+
+    # Load ALL backgrounds
     bg_list = []
     for bg in file_list("images/bg"):
         if bg.endswith(".png"):
             bg_list.append("images/bg" + bg)
 
+    # Blacklist certain backgrounds from UCN
+    ucn_bg_list = []
+    ucn_blacklisted = True
+
+    for folder in UCN_BLACKLIST_MAP:
+        for comparison in bg_list:
+
+            # Blacklist whole folders
+            if "ALL" in UCN_BLACKLIST_MAP[folder]["files"] and "/"+folder+"/" in comparison:
+                ucn_blacklisted = True
+            # Blacklist individual files
+            elif "ALL" not in UCN_BLACKLIST_MAP[folder]["files"] and comparison not in UCN_BLACKLIST_MAP[folder]["files"]:
+                ucn_blacklisted = True
+            else:
+                ucn_blacklisted = False
+
+            if ucn_blacklisted == False:
+            # Prevent duplication
+                if comparison not in ucn_bg_list:
+                    print("Added file " + comparison + ".")
+                    ucn_bg_list.append(comparison)
+            else:
+                print("Skipping blacklisted file " + comparison + ".")
+
+    # Load ALL BGMs
     bgm_list = []
     for bgm in file_list("audio"):
         if bgm.endswith(".ogg") and "sfx" not in bgm and "unused" not in bgm:

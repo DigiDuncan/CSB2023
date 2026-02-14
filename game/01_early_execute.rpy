@@ -46,6 +46,12 @@ init -1 python:
 
     TIMELINE_MAP = j
 
+    with renpy.open_file("data/ucn_bg_blacklist.json") as f:
+        j = json.load(f)
+        print(f"Loaded UCN image blacklist.")
+
+    UCN_BLACKLIST_MAP = j
+
 init python:
     renpy.add_layer("popup", above = "overlay")
     renpy.add_layer("music", above = "master")
