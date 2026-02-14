@@ -241,28 +241,29 @@ init python:
             bg_list.append("images/bg" + bg)
 
     # Blacklist certain backgrounds from UCN
-    ucn_bg_list = []
-    ucn_blacklisted = True
+    ucn_bg_list = bg_list.copy()
+    ucn_remove = []
 
-    for folder in UCN_BLACKLIST_MAP:
-        for comparison in bg_list:
+    print(ucn_bg_list)
 
-            # Blacklist whole folders
-            if "ALL" in UCN_BLACKLIST_MAP[folder]["files"] and "/"+folder+"/" in comparison:
-                ucn_blacklisted = True
+    for bg in ucn_bg_list:
+        # Blacklist whole folders
+        for folder in UCN_BLACKLIST_MAP:
+            if "ALL" in UCN_BLACKLIST_MAP[folder]["files"] and ("/" + folder + "/") in bg:
+                ucn_remove.append(bg)
             # Blacklist individual files
-            elif "ALL" not in UCN_BLACKLIST_MAP[folder]["files"] and comparison not in UCN_BLACKLIST_MAP[folder]["files"]:
-                ucn_blacklisted = True
             else:
-                ucn_blacklisted = False
+                for file in UCN_BLACKLIST_MAP[folder]["files"]:
+                    check_path = "images/bg/" + folder + "/" + file + ".png" if folder != "MAIN" else "images/bg/" + file + ".png"
+                    print("Testing " + bg + " against " + check_path)
+                    if bg == check_path:
+                        print("Added " + bg + " to remove list")
+                        ucn_remove.append(bg)
 
-            if ucn_blacklisted == False:
-            # Prevent duplication
-                if comparison not in ucn_bg_list:
-                    print("Added file " + comparison + ".")
-                    ucn_bg_list.append(comparison)
-            else:
-                print("Skipping blacklisted file " + comparison + ".")
+    for bg_to_remove in ucn_remove:
+        if bg_to_remove in ucn_bg_list:
+            print("Removing " + bg_to_remove)
+            ucn_bg_list.remove(bg_to_remove)
 
     # Load ALL BGMs
     bgm_list = []
