@@ -25,7 +25,7 @@
     "michael.png": {
         "type": "image",
         "title": "Beta Michael",
-        "caption": "This is an early version of Michael we used early on. He was mainly just a head, so we scrapped it.",
+        "caption": "This is a version of Michael we used early on. He was mainly just a head, so we scrapped it.",
         "need_character": "michael"
     },
     "wipmenu.png": {
@@ -60,13 +60,13 @@
     "digisquare.png": {
         "type": "image",
         "title": "Digi Square Room",
-        "caption": "When Digi was working on his Digi EX boss battle, he drew this for reference. Welcome to the square room.",
+        "caption": "When Digi was working on his Digi EX boss battle, they drew this for reference. Welcome to the square room.",
         "need_label": "dx_digi_corruption"
     },
     "fumobee2.png": {
         "type": "image",
         "title": "Fumo Bee 2",
-        "caption": "This was supposed to be used... somewhere? Fumo Bee 1 is used for a Fun Value in South route at the Lego pizzeria, though. Fun fact: did you know Pakoo hates bees?",
+        "caption": "This was supposed to be used... somewhere? Fumo Bee 1 is used for a Fun Value in South route at the Lego pizzeria, though. Fun fact: did you know that Pakoo hates bees?",
         "need_label": "south_utah"
     },
     "TV_SMPTE.png": {
