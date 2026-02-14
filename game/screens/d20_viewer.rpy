@@ -3,7 +3,7 @@ screen d20_viewer_screen():
     tag menu
 
     add "gui/game_menu.png"
-    
+
     text "{size=+48}D20 Viewer":
         xalign 0.5
         yalign 0.1
@@ -21,14 +21,14 @@ screen d20_viewer_screen():
     # decrease roll
     if d20 > 0:
         imagebutton:
-            idle "gui/left_off.png" 
+            idle "gui/left_off.png"
             hover "gui/left_on.png"
             action IncrementVariable("d20", amount=-1), Show("d20_viewer_screen", None)
             xalign 0.3
             yalign 0.55
 
     # increase roll
-    if d20 < 21:
+    if d20 < 20:
         imagebutton:
             idle "gui/right_off.png"
             hover "gui/right_on.png"

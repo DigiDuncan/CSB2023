@@ -2517,7 +2517,7 @@ label ce_party_before:
         digi "It's cold out. Can we go inside?"
         show cs christmas dark flipped
         cs "Yeah, let's go."
-    elif d20 == 5 or d20 == 6:
+    elif d20 == 5:
         play sound sfx_train_chugging loop fadein 3.0 volume 0.4
         with hpunch
         show cs scared christmas flipped with vpunch
@@ -2575,6 +2575,22 @@ label ce_party_before:
         show mean human happy festive dark flipped
         tate "Yeah!" (multiple = 2)
         mean "Yeah!" (multiple = 2)
+    elif d20 == 6:
+        show cs christmas flipped at mid_left with move
+        n "A rather lanky figure approaches CS' house."
+        cs "Damn, is that who I think it is?"
+        hide cs with moveoutleft
+        scene cs_house_snow_night
+        show ges dark flipped at mid_left
+        with dissolve
+        show cs christmas dark flipped at right with moveinright
+        cs "He-ey Ges, how's it going?"
+        ges "Going pretty alright, how about you, eh?"
+        cs "Oh, you know, preparing for the Christmas party and all that."
+        ges "Oh, man, you need any help from me since I'm early, eh?"
+        show cs happy christmas dark flipped
+        cs "Oh, I'd love the help! I just need to get some last minute things ready."
+        ges "Fuckin a rights, bud. Let's get inside, eh?"
     elif d20 == 7:
         play sound sfx_car_approach_stop volume 5.0 fadein 1.0
         show cs christmas flipped at mid_left with move
@@ -2929,21 +2945,6 @@ label ce_party_before:
         avgn "Hell yeah!" with vpunch
         cs "Alright, then..."
         $ achievement_manager.unlock("critical")
-    elif d20 == 21:
-        show cs christmas flipped at mid_left with move
-        n "A rather lanky figure approaches CS' house."
-        cs "Damn, is that who I think it is?"
-        hide cs with moveoutleft
-        scene cs_house_snow_night
-        show ges flipped at mid_left
-        with dissolve
-        show cs christmas dark flipped at right with moveinright
-        cs "He-ey Ges, how's it going?"
-        ges "Going pretty alright, how about you eh?"
-        cs "Oh you know, preparing for the christmas party and all that."
-        ges "Oh man, you need any help from me since I'm early, eh?"
-        cs "Oh I'd love the help, I just need to get some last minute things ready."
-        ges "Fuckin a rights bud, let's get inside eh?"
     else:
         n "CS waits patiently."
         pause 2.0
