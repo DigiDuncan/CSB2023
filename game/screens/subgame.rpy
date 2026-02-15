@@ -94,6 +94,8 @@ screen subgame():
             yanchor 0.5
             xpos info_x_pos
             ypos 600
+            xysize(392,600)
+            fit("contain")
         imagebutton:
             idle "gui/play_button.png"
             xanchor 0.5

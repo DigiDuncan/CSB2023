@@ -9,7 +9,7 @@
         "jump_to": "ce_start",
         "need_label": "true_streaming"
     },
-    "sp": {
+    "space": {
         "title": "CSBounciness: Space Program",
         "desc": "spaaaaaaaaaace",
         "spine_width": 46,
@@ -18,7 +18,7 @@
         "y_pos": 390,
         "jump_to": "secret_dx"
     },
-    "pt": {
+    "pt_aftermath": {
         "title": "Celestial Sightseeing",
         "desc": "The Aspiring Planeswalker's Guide To\nChronomancy, Synchrony, & Cosmic Safety",
         "spine_width": 82,
@@ -28,7 +28,7 @@
         "jump_to": "book_celestial_sightseeing",
         "need_label": "train_defeated_perfect_tate"
     },
-    "ep": {
+    "elizabeth_bday": {
         "title": "Elizabeth's Birthday \nExtravaganza 2024!",
         "desc": "\n \nThe silly spin-off where Digi makes it \njust in time for Elizabeth's birthday!",
         "spine_width": 19,
@@ -38,7 +38,7 @@
         "jump_to": "CSB3_EBEEP12024FDEADNYWFFEAGM",
         "need_label": "ce_epilogue"
     },
-    "pe": {
+    "pee": {
         "title": "Why is my pee clear?",
         "desc": "For ages 18 months to 3 years.",
         "spine_width": 27,
@@ -47,5 +47,26 @@
         "y_pos": 536,
         "jump_to": "book_peeing",
         "need_label": "ce_epilogue"
+    },
+    "minigame_carrot": {
+        "title": "Carrot Chop",
+        "desc": "Chop to the beat!",
+        "spine_width": 19,
+        "spine_height": 250,
+        "x_pos": 800,
+        "y_pos": 800,
+        "jump_to": "play_carrotgame",
+        "need_label": "ce_win_carrot"
+    },
+    "minigame_reversi": {
+        "title": "Reversi",
+        "desc": "It's WINDOWS",
+        "spine_width": 46,
+        "spine_height": 300,
+        "x_pos": 864,
+        "y_pos": 750,
+        "jump_to": "play_ce_reversi",
+        "need_label": "ce_win_reversi"
     }
+
 }
