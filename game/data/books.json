@@ -48,12 +48,22 @@
         "jump_to": "book_peeing",
         "need_label": "ce_epilogue"
     },
+    "minigame_car_chase": {
+        "title": "Car Chase",
+        "desc": "Escape From HoH SiS!",
+        "spine_width": 19,
+        "spine_height": 150,
+        "x_pos": 827,
+        "y_pos": 900,
+        "jump_to": "play_car_game",
+        "need_label": "true_after_ufo"
+    },
     "minigame_carrot": {
         "title": "Carrot Chop",
         "desc": "Chop to the beat!",
         "spine_width": 19,
         "spine_height": 250,
-        "x_pos": 800,
+        "x_pos": 810,
         "y_pos": 800,
         "jump_to": "play_carrotgame",
         "need_label": "ce_win_carrot"

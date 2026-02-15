@@ -72,7 +72,7 @@ screen category_nav():
             if preferences.developer_mode:
                 textbutton "Test Scene\n{size=-12}[[DEV] A sandbox for testing various features." action Jump("test")
 
-                textbutton "Tate's Test Room\n{size=-12}[[DEV] Another test screen. Awawa." action Jump("awawa_tate_test")
+                textbutton "{image=gui/dx_text.png} Tate's Test Room\n{size=-12}[[DEV] Another test screen. Awawa." action Jump("awawa_tate_test")
 
                 textbutton "Unlock All\n{size=-12}[[DEV] Adds all unlockables to persistent." action Function(unlock_all)
 
