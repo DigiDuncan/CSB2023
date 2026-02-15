@@ -157,7 +157,7 @@ screen screen_rpg():
                                 xalign 1.0
                                 yalign 1.0
                                 add "gui/rpg/hp_bar.png" corner1(int(228-(228*(RPG.encounter.allies[i].hit_points/RPG.encounter.allies[i].max_hp))),0) corner2(228,32) xalign 1.0
-                                text str(RPG.encounter.allies[i].hit_points)+"/"+str(RPG.encounter.allies[i].max_hp)+" HP":
+                                text str(RPG.encounter.allies[i].hit_points)+"/"+str(RPG.encounter.allies[i].max_hp):
                                     xalign 1.0
                                     yalign 0.5
                                 add "gui/rpg/hp.png" yalign 0.5 xalign -0.15
