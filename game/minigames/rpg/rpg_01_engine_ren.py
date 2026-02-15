@@ -130,10 +130,10 @@ class AttackFunc:
         return self.func(encounter, fighter, targets, **self.options)
     
     def __str__(self) -> str:
-        f"<AttackFunc {self.type.name} {self.func.__name__}({', '.join(f'{k}: {v}' for k, v in self.options.items())})>"
+        return f"<AttackFunc {self.type.name} {self.func.__name__}({', '.join(f'{k}: {v}' for k, v in self.options.items())})>"
 
     def __repr__(self) -> str:
-        self.__str__()
+        return self.__str__()
 
 attack_def = AttackFunc.predefine
 
@@ -365,10 +365,10 @@ class Effect:
             self.resolved_message = resolved.message
 
     def __str__(self) -> str:
-        f"<Effect {self.name}>"
+        return f"<Effect {self.name}>"
 
     def __repr__(self) -> str:
-        self.__str__()
+        return self.__str__()
 
 
 class AI:
@@ -502,7 +502,7 @@ class Character: # TODO: Workshop -- I'd like fighter to be used by encounter, b
         return f"<Character {self.assigned_name} \"{self.name}\""
 
     def __repr__(self):
-        self.__str__()
+        return self.__str__()
 
 
 # -- Encounter Unique Objects --
