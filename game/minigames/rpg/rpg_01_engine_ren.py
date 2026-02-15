@@ -391,7 +391,7 @@ class AI:
         self.name: str = name
         self.heal_chance: float = heal_chance  # Skew towards healing attacks
         self.heal_threshold: float = heal_threshold  # When should I heal
-        self.aggression: float = aggression  # Big bad hit things
+        self.aggression: float = aggression  # Big bad hit things (how often you'll use DMG type attacks)
         self.crowd_control: float = crowd_control  # Favors AOE over Single
         self.tacticity: float = tacticity  # Debuffs and Buffs, aka the Pokemon strat
         self.focus: AIFocus = focus  # Target 'strong' or 'weak'

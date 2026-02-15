@@ -56,8 +56,8 @@ label rpg_ucn:
         centered "Loading...{w=1.0}{nw}"  # This isn't required.
     $ scales = [1.0, 1.25, 1.5, 1.75, 2.0, 2.5, 3.0]
 
-    $ allies = (("NONE", "NONE"), *((character.name, character.assigned_name) for character in RPG.Characters.allies))
-    $ enemies = (("NONE", "NONE"), *((character.name, character.assigned_name) for character in RPG.Characters.enemies))
+    $ allies = (("NONE", "NONE"), *((character.name, character.assigned_name) for character in RPG.Characters.characters))
+    $ enemies = (("NONE", "NONE"), *((character.name, character.assigned_name) for character in RPG.Characters.characters))
 
     $ narrator("Choose a party member! (1/4)", interact = False)
     $ RPG.set_var_character("party_1", renpy.display_menu(allies, screen="ucn_choice"))
