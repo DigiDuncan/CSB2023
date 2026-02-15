@@ -2180,7 +2180,7 @@ label train_search_tate:
     show tate srs flipped at mid_offscreen_right
     with { "master" : MoveTransition(0.5) }
 
-    lupin_offscreen "Are you absolutely {i}sure{/i} that we're not meant to be?{image=heart_small.png}"
+    lupin_offscreen "Are you absolutely {i}sure{/i} that we're not meant to be?{heart}"
     show lupin hat flipped at right with moveinleft
     pause 0.1
     play sound sfx_punch
@@ -2247,7 +2247,7 @@ label train_search_tate:
     lupin_offscreen "You see, I {i}also{/i} happen to know that you're bad at counting."
     lupin_offscreen "Fortunately for you, you'll only need to count to 1."
     show lupin run hat flipped
-    lupin_offscreen "Catch me if you can.{image=heart_small.png}"
+    lupin_offscreen "Catch me if you can.{heart}"
     show tate shock flipped
     play sound sfx_whoosh
     show lupin run hat flipped at offscreenright with MoveTransition(0.25)

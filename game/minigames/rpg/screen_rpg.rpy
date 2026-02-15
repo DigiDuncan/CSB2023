@@ -160,6 +160,7 @@ screen screen_rpg():
                                 text str(RPG.encounter.allies[i].hit_points)+"/"+str(RPG.encounter.allies[i].max_hp)+" HP":
                                     xalign 1.0
                                     yalign 0.5
+                                add "gui/rpg/hp.png" yalign 0.5 xalign -0.15
                         if RPG.encounter.turn == i:
                             # The attack button
                             imagebutton:

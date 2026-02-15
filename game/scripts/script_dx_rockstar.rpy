@@ -40,7 +40,7 @@ label rockstar_start:
     # Turn back on the vinyl
     pause 5.0
     n "CS starts humming some words to himself."
-    cs "{cps=15}{image=note_small1.png} [line_7]{w=1.5}\n[line_8]... {image=note_small2.png}"
+    cs "{cps=15}{note1} [line_7]{w=1.5}\n[line_8]... {note2}"
     n "CS realizes what he's doing."
     cs "I need to get Anno and Arc."
 

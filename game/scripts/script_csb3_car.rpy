@@ -328,12 +328,12 @@ label car_dialogue:
     play music2 moving_right_along if_changed
     $ renpy.pause(5.0, hard = True)
     # 0:05.0
-    cs "{cps=30}{image=note_small1.png} Moving right along, in search of good times and good news {image=note_small2.png}{w=0.8}{nw}"
+    cs "{cps=30}{note1} Moving right along, in search of good times and good news {note2}{w=0.8}{nw}"
     $ renpy.pause(1.0, hard = True)
     # 0:08.9
-    cs "{cps=30}{image=note_small1.png} With good friends you can't lose {image=note_small2.png}{w=0.8}{nw}"
+    cs "{cps=30}{note1} With good friends you can't lose {note2}{w=0.8}{nw}"
     # 0:11.4
-    arceus "{cps=30}{image=note_small1.png} This could become a habit! {image=note_small2.png}{w=0.8}{nw}"
+    arceus "{cps=30}{note1} This could become a habit! {note2}{w=0.8}{nw}"
 
     stop music2
     $ renpy.music.set_pause(False, "music")

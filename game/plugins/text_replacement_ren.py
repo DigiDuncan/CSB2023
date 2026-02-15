@@ -44,7 +44,7 @@ def awawa_mode(input_text, frequency = 100):
                         for letter in item:
                             next_word = next_word + "A"
                     # use default swap (i should write this nicer somehow later)
-                    else: 
+                    else:
                         for letter in item:
                             if letter_count % 2 == 0:
                                 if letter.isupper() or item.isnumeric():
@@ -110,15 +110,15 @@ def beep_spacing(s):
     """
     # these items wait for 0.25:
     # commas, periods, question marks, exclamation marks, semicolons
-    s = re.sub(r'(([,|.|?|!|;])(({\/[a-z]*})*) )', r'\1{w=0.25}', s, flags=re.IGNORECASE) 
+    s = re.sub(r'(([,|.|?|!|;])(({\/[a-z]*})*) )', r'\1{w=0.25}', s, flags=re.IGNORECASE)
 
     # these items wait for 0.5:
     # ellipses, em-dashes, colons
-    s = re.sub(r'((\.\.\.|--|:)(({\/[a-z]*})*) )', r'\1{w=0.5}', s, flags=re.IGNORECASE) 
+    s = re.sub(r'((\.\.\.|--|:)(({\/[a-z]*})*) )', r'\1{w=0.5}', s, flags=re.IGNORECASE)
 
     # honorific titles are specifically EXCLUDED from auto-wait.
     s = re.sub(r'((Mr\.|Mrs\.|Ms\.|Mx\.|Dr\.) )({w=0.25})', r'\1', s, flags=re.IGNORECASE)
-    
+
     return s
 
 def substitutions(s):
@@ -129,6 +129,17 @@ def substitutions(s):
     s = s.replace(r"{cshake}", r"{bt=a3-p10-s4}")
     s = s.replace(r"{ytpmagic}", r"{sc=1.88}{color=#CB50FF}")
     s = s.replace(r"{perfect_tate}", r"{sc}{size=+24}{font=azsz}{color=#000000}") # i'd prefer this to be handled in the screen but {sc} breaks it?? - tate
+
+    # for inline images
+    s = s.replace(r"{note1}", r"{image=gui/inline_text/note_small1.png}")
+    s = s.replace(r"{note2}", r"{image=gui/inline_text/note_small2.png}")
+    s = s.replace(r"{heart}", r"{image=gui/inline_text/heart_small.png}")
+    s = s.replace(r"{dx}", r"{image=gui/inline_text/dx_text.png}")
+    s = s.replace(r"{ch1}", r"{image=gui/inline_text/ch1.png}")
+    s = s.replace(r"{ch2}", r"{image=gui/inline_text/ch2.png}")
+    s = s.replace(r"{ch3}", r"{image=gui/inline_text/ch3.png}")
+    s = s.replace(r"{ch4}", r"{image=gui/inline_text/ch4.png}")
+    s = s.replace(r"{ch5}", r"{image=gui/inline_text/ch5.png}")
 
     # awawa mode handling
     if preferences.awawa_mode:

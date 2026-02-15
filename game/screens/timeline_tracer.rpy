@@ -22,7 +22,7 @@ screen timeline_tracer():
     default info = Tooltip("")
     default info_x = 0
     default info_y = 0
-    
+
     # add background color
     add Color('#323e42', alpha=0.75)
 
@@ -106,7 +106,7 @@ screen timeline_tracer():
         ysize 800
         xpos 25
         ypos 125
-    
+
         # scrollable
         viewport:
             mousewheel True
@@ -137,7 +137,7 @@ screen timeline_tracer():
                         except:
                             this_x = 20
                             this_y = 20
-                
+
                         # make sure it's unlocked before we continue
                         # default
                         this_unlocked = True
@@ -194,14 +194,14 @@ screen timeline_tracer():
                                 this_bg = None
                             else: # if it's this color, you haven't given it a type, and you need to fix that.
                                 this_bg = "#000000"
-                        
+
                             # get DX/CE status
                             try:
                                 if TIMELINE_MAP[event]["content_type"] == "dx":
-                                    dxiconimg = "gui/dx_text.png"
+                                    dxiconimg = "gui/inline_text/dx_text.png"
                                     this_new = True
                                 elif TIMELINE_MAP[event]["content_type"] == "ce":
-                                    dxiconimg = "gui/ce_text.png"
+                                    dxiconimg = "gui/inline_text/ce_text.png"
                                     this_new = True
                             except:
                                 this_new = False
@@ -211,7 +211,7 @@ screen timeline_tracer():
                                 this_name = TIMELINE_MAP[event]["name"]
                             except:
                                 this_name = ""
-                    
+
                             # get jump label, if it exists
                             try:
                                 this_jump = TIMELINE_MAP[event]["jump_to"]
@@ -223,7 +223,7 @@ screen timeline_tracer():
                             this_name = "???"
                             this_new = False
                             this_jump = None
-                            
+
                     # let's get arrow status
                     if TIMELINE_MAP[event]["type"] == "arrow":
                         python:
@@ -281,7 +281,7 @@ screen timeline_tracer():
                                 idle_background this_bg
                                 insensitive_background col_locked
                                 hover_background "#FFFFFF"
-                                
+
                             # show name on button, although maybe some should use images later?
                             text this_name:
                                 hover_color this_bg

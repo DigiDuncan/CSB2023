@@ -196,7 +196,7 @@ label fired_write_song:
     music everlong
 
     dxcom everlong
-    n "{cps=15}{image=note_small1.png} We broke the chains, now we're free to fly,{w=1.5}\nEscaped concrete, and now we see blue skies{w=1.5}\nBecome brand new, we'll leave the past behind,{w=1.5}\nPrisoners no more, 'cause a new life we'll find {image=note_small2.png}"
+    n "{cps=15}{note1} We broke the chains, now we're free to fly,{w=1.5}\nEscaped concrete, and now we see blue skies{w=1.5}\nBecome brand new, we'll leave the past behind,{w=1.5}\nPrisoners no more, 'cause a new life we'll find {note2}"
     cs "Yeah, that's really good!"
     show arceus
     stop music fadeout 3.0
@@ -354,7 +354,7 @@ label fired_song_2:
         n "An upbeat rock instrumental plays from Anno's computer."
     show arceus happy
     arceus "Heck yeah, awesome. Okay, here I go..."
-    arceus "{cps=15}{image=note_small1.png} We're going down to Vegas,{w=1.5} we're gonna strike it rich!{w=1.5}\nWe're going down to Vegas..."
+    arceus "{cps=15}{note1} We're going down to Vegas,{w=1.5} we're gonna strike it rich!{w=1.5}\nWe're going down to Vegas..."
     show arceus worried
     arceus "Uh..."
     $ line_1 = renpy.input("Finish the line!", "", length = 64)
@@ -362,7 +362,7 @@ label fired_song_2:
     $ achievement_manager.unlock("first_song")
     show arceus happy
     arceus "Yeah!"
-    arceus "{cps=15}{image=note_small1.png} We're going down to Vegas,{w=1.5} [line_1] {image=note_small2.png}"
+    arceus "{cps=15}{note1] We're going down to Vegas,{w=1.5} [line_1] {note2}"
     cs "Woohoo! That sounds awesome!"
     stop music fadeout 3.0
     music end
@@ -450,21 +450,21 @@ label fired_ep_time:
         anno "Alright, awesome, here's what I've got..."
     play music energetic_rock volume 0.5 if_changed
     music energetic_rock
-    anno "{cps=15}{image=note_small1.png} I made my way over to Japan... {image=note_small2.png}"
+    anno "{cps=15}{note1} I made my way over to Japan... {note2}"
     $ line_2 = renpy.input("What should the next line be?", "", length = 64)
     anno "Okay! How about..."
-    anno "{cps=15}{image=note_small1.png} I found myself in the U.K... {image=note_small2.png}"
+    anno "{cps=15}{note1} I found myself in the U.K... {note2}"
     $ line_3 = renpy.input("What should the next line be?", "", length = 64)
     anno "Nice, nice, how about..."
-    anno "{cps=15}{image=note_small1.png} I'm gonna go party in Sweden... {image=note_small2.png}"
+    anno "{cps=15}{note1} I'm gonna go party in Sweden... {note2}"
     $ line_4 = renpy.input("What should the next line be?", "", length = 64)
-    anno "{cps=15}{image=note_small1.png} I'm globetrottin'! {image=note_small2.png}"
+    anno "{cps=15}{note1} I'm globetrottin'! {note2}"
     cs "Hey, I like that! Sing it all the way through!"
     anno "Gotcha!"
-    anno "{cps=15}{image=note_small1.png} I made my way over to Japan... {w=1.5}\n[line_2]{image=note_small2.png}"
-    anno "{cps=15}{image=note_small1.png} I found myself in the U.K... {w=1.5}\n[line_3]{image=note_small2.png}"
-    anno "{cps=15}{image=note_small1.png} I'm gonna go party in Sweden... {w=1.5}\n[line_4]{image=note_small2.png}"
-    anno "{cps=15}{image=note_small1.png} I'm globetrottin'! {image=note_small2.png}"
+    anno "{cps=15}{note1} I made my way over to Japan... {w=1.5}\n[line_2]{note2}"
+    anno "{cps=15}{note1} I found myself in the U.K... {w=1.5}\n[line_3]{note2}"
+    anno "{cps=15}{note1} I'm gonna go party in Sweden... {w=1.5}\n[line_4]{note2}"
+    anno "{cps=15}{note1} I'm globetrottin'! {note2}"
     show arceus happy
     n "Arceus claps."
     cs "Well, I guess you want me to name this one, too?"
@@ -585,9 +585,9 @@ label fired_mcd:
     play music2 france volume 0.5 if_changed
     music france
     if fun_value(FUN_VALUE_MUSIC):
-        cs "{cps=15}{image=note_small1.png} I'M GONNA TAKE OVER THE GUILLOTINE WORLD.{w=1.0} I'M GONNA KILL GOD.{w=1.0} I CAN CONTORT REALITY TO MY WHIMS-- {image=note_small2.png}"
+        cs "{cps=15}{note1} I'M GONNA TAKE OVER THE GUILLOTINE WORLD.{w=1.0} I'M GONNA KILL GOD.{w=1.0} I CAN CONTORT REALITY TO MY WHIMS-- {note2}"
     else:
-        cs "{cps=15}{image=note_small1.png} I'M GONNA TAKE OVER THE WORLD.{w=1.0} I'M GONNA KILL GOD.{w=1.0} I CAN CONTORT REALITY TO MY WHIMS-- {image=note_small2.png}"
+        cs "{cps=15}{note1} I'M GONNA TAKE OVER THE WORLD.{w=1.0} I'M GONNA KILL GOD.{w=1.0} I CAN CONTORT REALITY TO MY WHIMS-- {note2}"
     stop music2
     music end
     $ renpy.music.set_pause(False, "music")
@@ -609,20 +609,20 @@ label fired_mcd:
     $ renpy.music.set_pause(True, "music")
     play music2 dragon_castle volume 0.5 if_changed
     music dragon_castle
-    cs "{cps=15}{image=note_small1.png} Through all adversity, we'll bind together and overcome... {image=note_small2.png}"
+    cs "{cps=15}{note1} Through all adversity, we'll bind together and overcome... {note2}"
     arceus "Ooh, I got something..."
     $ line_5 = renpy.input("What should the next line be?", "", length = 64)
-    arceus "{cps=15}{image=note_small1.png} [line_5] {image=note_small2.png}"
+    arceus "{cps=15}{note1} [line_5] {note2}"
     cs "Nice! How about..."
-    cs "{cps=15}{image=note_small1.png} With my friends beside there's no foe we can not fight... {image=note_small2.png}"
+    cs "{cps=15}{note1} With my friends beside there's no foe we can not fight... {note2}"
     anno "Let me take this one."
     $ line_6 = renpy.input("What should the next line be?", "", length = 64)
-    anno "{cps=15}{image=note_small1.png} [line_6] {image=note_small2.png}"
+    anno "{cps=15}{note1} [line_6] {note2}"
     cs "Heck yeah! And then I think we should have a solo like..."
-    cs "{cps=15}{image=note1.png}{image=note4.png}{image=note3.png}{image=note1.png}{image=note5.png}{image=note1.png}{image=note2.png}{image=note1.png}{image=note2.png}{image=note2.png}{image=note4.png}{image=note4.png}{image=note3.png}{image=note3.png}{image=note5.png}{image=note5.png}{image=note1.png}{image=note1.png}{nw}"
+    cs "{cps=15}{ch1}{ch4}{ch3}{ch1}{ch5}{ch1}{ch2}{ch1}{ch2}{ch2}{ch4}{ch4}{ch3}{ch3}{ch5}{ch5}{ch1}{ch1}{nw}"
     arceus "Woah, how are you doing that with your mouth?"
     cs "What, like..."
-    cs "{cps=10}{image=note1.png}{image=note2.png}{image=note3.png}{image=note4.png}{image=note5.png}"
+    cs "{cps=10}{ch1}{ch2}{ch3}{ch4}{ch5}"
     cs "Honestly, I have no idea."
     stop music2 fadeout 3.0
     music end
@@ -667,7 +667,7 @@ label fired_hotel_lobby_2:
         n "As they walk through the gold room to their ball, they hum their newest song to themselves."
     else:
         n "As they walk through the hotel lobby to their room, they hum their newest song to themselves."
-    cs "{cps=15}{image=note_small1.png} {i}[line_5]{/i} {image=note_small2.png}"
+    cs "{cps=15}{note1} {i}[line_5]{/i} {note2}"
     n "Someone in the lobby overhears them singing the song and runs up to them."
     show guest at right with moveinright
     guest "Holy shit, are you from [band_name]?!"
@@ -694,7 +694,7 @@ label fired_hotel_lobby_2:
     n "Anno starts up the backing track, and Arceus grabs some random objects to use as a drum kit."
     play music happy_rock volume 0.5 if_changed
     music happy_rock
-    cs "{cps=15}{image=note_small1.png} We're going down to Vegas, we're gonna strike it rich!{w=1.5}\nWe're going down to Vegas, [line_1] {image=note_small2.png}"
+    cs "{cps=15}{note1} We're going down to Vegas, we're gonna strike it rich!{w=1.5}\nWe're going down to Vegas, [line_1] {note2}"
     n "The crowd cheers wildly."
     anno "We're [band_name]! Check out {i}[ep_name]{/i} on streaming services soon!"
     stop music fadeout 3.0
@@ -734,7 +734,7 @@ label fired_song_5:
     $ line_9 = renpy.input("Write a line! (3/4)", "", length = 64)
     $ line_10 = renpy.input("Write a line! (4/4)", "", length = 64)
     cs "I think I have something! Here it is..."
-    cs "{cps=15}{image=note_small1.png} [line_7]{w=1.5}\n[line_8]{w=1.5}\n[line_9]{w=1.5}\n[line_10] {image=note_small2.png}"
+    cs "{cps=15}{note1} [line_7]{w=1.5}\n[line_8]{w=1.5}\n[line_9]{w=1.5}\n[line_10] {note2}"
     arceus "Yo?!"
     anno "That's perfect! Give it a name!"
     # Yeah, give it name, Digi <3
@@ -903,7 +903,7 @@ label fired_limo_time:
     show cs
     anno "So what's the plan? How do we get venues? Do we even have a way to promote?"
     howie "Leave all the fiddly buisness to me. You guys just get on stage and sing like, {i}[song_name_3],{/i} or whatever."
-    howie "How's that song go?\n{image=note_small1.png} {i}I made my way over to Japan, [line_3]?{/i} {image=note_small2.png}"
+    howie "How's that song go?\n{note1} {i}I made my way over to Japan, [line_3]?{/i} {note2}"
     show arceus angry flipped
     arceus "No, that's not--{w=0.5}{nw}"
     howie "Anywho, do we have a deal?"
@@ -1079,10 +1079,10 @@ label fired_first_tour_day:
     n "The crowd roars louder."
     play music dragon_castle volume 0.5 if_changed
     music dragon_castle
-    cs "{cps=15}{image=note_small1.png} Through all adversity, we'll bind together and overcome! {image=note_small2.png}"
-    cs "{cps=15}{image=note_small1.png} [line_5] {image=note_small2.png}"
-    cs "{cps=15}{image=note_small1.png} With my friends beside there's no foe we can not fight! {image=note_small2.png}"
-    cs "{cps=15}{image=note_small1.png} [line_6] {image=note_small2.png}"
+    cs "{cps=15}{note1} Through all adversity, we'll bind together and overcome! {note2}"
+    cs "{cps=15}{note1} [line_5] {note2}"
+    cs "{cps=15}{note1} With my friends beside there's no foe we can not fight! {note2}"
+    cs "{cps=15}{note1} [line_6] {note2}"
     n "Anno plays an epic guitar solo."
     stop music fadeout 3.0
     play sound sfx_cheer
@@ -1193,7 +1193,7 @@ label fired_second_tour_day:
         ges "Aren't you touring with [band_name] right now, eh?"
         cs "Yeah, I am!"
         ges "Dude, I've been listening to {i}[song_name_3]{/i} all day, eh?"
-        ges "{cps=15}{image=note_small1.png} I found myself in the U.K...{w=1.5}\n[line_3] {image=note_small2.png}, eh?"
+        ges "{cps=15}{note1} I found myself in the U.K...{w=1.5}\n[line_3] {note2}, eh?"
         ges "That shit slaps, eh?"
         cs "Well, thanks! I was wondering if you had some nice shoes for my concert tonight."
         ges "Oh, man, I've got just the thing, eh?"
@@ -1220,7 +1220,7 @@ label fired_second_tour_day:
         ges "Aren't you touring with [band_name] right now?"
         cs "Yeah, I am!"
         ges "Dude, I've been listening to {i}[song_name_3]{/i} all day!"
-        ges "{cps=15}{image=note_small1.png} I found myself in the U.K...{w=1.5}\n[line_3] {image=note_small2.png}"
+        ges "{cps=15}{note1} I found myself in the U.K...{w=1.5}\n[line_3] {note2}"
         ges "That shit slaps!"
         cs "Well, thanks! I was wondering if you had some nice shoes for my concert tonight."
         ges "Oh, man, I've got just the thing."
@@ -1308,10 +1308,10 @@ label fired_second_tour_day:
         play sound sfx_explosion
     play music energetic_rock volume 0.5 if_changed
     music energetic_rock
-    cs "{cps=15}{image=note_small1.png} I made my way over to Japan...{w=1.5}\n[line_2] {image=note_small2.png}"
-    cs "{cps=15}{image=note_small1.png} I found myself in the U.K...{w=1.5}\n[line_3] {image=note_small2.png}"
-    cs "{cps=15}{image=note_small1.png} I'm gonna go party in Sweden...{w=1.5}\n[line_4] {image=note_small2.png}"
-    cs "{cps=15}{image=note_small1.png} I'm globetrottin'! {image=note_small2.png}"
+    cs "{cps=15}{note1} I made my way over to Japan...{w=1.5}\n[line_2] {note2}"
+    cs "{cps=15}{note1} I found myself in the U.K...{w=1.5}\n[line_3] {note2}"
+    cs "{cps=15}{note1} I'm gonna go party in Sweden...{w=1.5}\n[line_4] {note2}"
+    cs "{cps=15}{note1} I'm globetrottin'! {note2}"
     stop music fadeout 3.0
     play sound sfx_cheer
     n "The crowd is applauding wildly."
@@ -1383,7 +1383,7 @@ label fired_third_tour_day:
     play sound sfx_cheer2
     play music everlong volume 0.5 if_changed
     music everlong
-    cs "{cps=15}{image=note_small1.png} We broke the chains, now we're free to fly,{w=1.5}\nEscaped concrete, and now we see blue skies{w=1.5}\nBecome brand new, we'll leave the past behind,{w=1.5}\nPrisoners no more, 'cause a new life we'll find {image=note_small2.png}"
+    cs "{cps=15}{note1} We broke the chains, now we're free to fly,{w=1.5}\nEscaped concrete, and now we see blue skies{w=1.5}\nBecome brand new, we'll leave the past behind,{w=1.5}\nPrisoners no more, 'cause a new life we'll find {note2}"
     n "The crowd is loving this!"
     stop music fadeout 3.0
     cs "Who wants to hear {i}[song_name_2]?!{/i}"
@@ -1392,7 +1392,7 @@ label fired_third_tour_day:
     play sound sfx_cheer2
     play music happy_rock volume 0.5 if_changed
     music happy_rock
-    cs "{cps=15}{image=note_small1.png} We're going down to Vegas,{w=1.5} we're gonna strike it rich!{w=1.5}\nWe're going down to Vegas,{w=1.5} [line_1]! {image=note_small2.png}"
+    cs "{cps=15}{note1} We're going down to Vegas,{w=1.5} we're gonna strike it rich!{w=1.5}\nWe're going down to Vegas,{w=1.5} [line_1]! {note2}"
     n "The fans are adoring this."
     stop music fadeout 3.0
 
@@ -1402,10 +1402,10 @@ label fired_third_tour_day:
     n "The crowd laughs."
     play music energetic_rock volume 0.5 if_changed
     music energetic_rock
-    cs "{cps=15}{image=note_small1.png} I made my way over to Japan...{w=1.5}\n[line_2] {image=note_small2.png}"
-    cs "{cps=15}{image=note_small1.png} I found myself in the U.K...{w=1.5}\n[line_3] {image=note_small2.png}"
-    cs "{cps=15}{image=note_small1.png} I'm gonna go party in Sweden...{w=1.5}\n[line_4] {image=note_small2.png}"
-    cs "{cps=15}{image=note_small1.png} I'm globetrottin'!{image=note_small2.png}"
+    cs "{cps=15}{note1} I made my way over to Japan...{w=1.5}\n[line_2] {note2}"
+    cs "{cps=15}{note1} I found myself in the U.K...{w=1.5}\n[line_3] {note2}"
+    cs "{cps=15}{note1} I'm gonna go party in Sweden...{w=1.5}\n[line_4] {note2}"
+    cs "{cps=15}{note1} I'm globetrottin'!{note2}"
     n "The audience loves this a lot."
     stop music fadeout 3.0
     cs "Alright, here's a fan favorite: {i}[song_name_4]!{/i}"
@@ -1413,10 +1413,10 @@ label fired_third_tour_day:
     play sound sfx_cheer2
     play music dragon_castle volume 0.5 if_changed
     music dragon_castle
-    cs "{cps=15}{image=note_small1.png} Through all adversity, we'll bind together and overcome! {image=note_small2.png}"
-    cs "{cps=15}{image=note_small1.png} [line_5] {image=note_small2.png}"
-    cs "{cps=15}{image=note_small1.png} With my friends beside there's no foe we can not fight! {image=note_small2.png}"
-    cs "{cps=15}{image=note_small1.png} [line_6] {image=note_small2.png}"
+    cs "{cps=15}{note1} Through all adversity, we'll bind together and overcome! {note2}"
+    cs "{cps=15}{note1} [line_5] {note2}"
+    cs "{cps=15}{note1} With my friends beside there's no foe we can not fight! {note2}"
+    cs "{cps=15}{note1} [line_6] {note2}"
     n "Anno shreds an epic solo."
     n "The fans are exploding!"
     stop music fadeout 3.0
@@ -1426,7 +1426,7 @@ label fired_third_tour_day:
     n "The crowd is ready to burst."
     play music sweet_victory volume 0.5 if_changed
     music sweet_victory
-    cs "{cps=15}{image=note_small1.png} [line_7]{w=1.5}\n[line_8]{w=1.5}\n[line_9]{w=1.5}\n[line_10] {image=note_small2.png}"
+    cs "{cps=15}{note1} [line_7]{w=1.5}\n[line_8]{w=1.5}\n[line_9]{w=1.5}\n[line_10] {note2}"
     n "The audience can't get enough!"
     stop music fadeout 3.0
     crowd "Encore! {w=0.5}Encore! {w=0.5}Encore! {w=0.5}"
@@ -1455,9 +1455,9 @@ label fired_third_tour_day:
 
     cs "Okay!"
     play sound sfx_start_rocking
-    cs "{cps=15}{image=note_small1.png} [line_11] {image=note_small2.png}"
+    cs "{cps=15}{note1} [line_11] {note2}"
     $ line_12 = renpy.input("What's the next line?", length = 64)
-    cs "{cps=15}{image=note_small1.png} [line_12] {image=note_small2.png}"
+    cs "{cps=15}{note1} [line_12] {note2}"
 
     cs "Thank you! We're [band_name], and thank you for listening to {i}[ep_name]!{/i}"
     play sound sfx_cheer2
@@ -1561,7 +1561,7 @@ label fired_final_tour_bus:
     show cs guitar
     play sound sfx_start_rocking
 
-    cs "{cps=15}{image=note_small1.png} [line_7]{w=1.5}\n[line_8]{w=1.5}\n[line_9]{w=1.5}\n[line_10] {image=note_small2.png}"
+    cs "{cps=15}{note1} [line_7]{w=1.5}\n[line_8]{w=1.5}\n[line_9]{w=1.5}\n[line_10] {note2}"
     $ achievement_manager.unlock("rockstar")
     scene black with Dissolve(3.0)
     $ ending_manager.mark("rockstar")

@@ -120,11 +120,11 @@ screen people_nav():
                 python:
                     # DX/CE character handler
                     if name_map[k].get('dx', False):
-                        name_label = "{image=unread.png}{image=gui/dx_text.png} " + name_map[k]['full_name'] if k not in persistent.read else "{image=gui/dx_text.png} " + name_map[k]['full_name']
+                        name_label = "{image=/gui/inline_text/unread.png}{image=gui/inline_text/dx_text.png} " + name_map[k]['full_name'] if k not in persistent.read else "{image=gui/inline_text/dx_text.png} " + name_map[k]['full_name']
                     elif name_map[k].get('ce', False):
-                        name_label = "{image=unread.png}{image=gui/ce_text.png} " + name_map[k]['full_name'] if k not in persistent.read else "{image=gui/ce_text.png} " + name_map[k]['full_name']
+                        name_label = "{image=/gui/inline_text/unread.png}{image=gui/inline_text/ce_text.png} " + name_map[k]['full_name'] if k not in persistent.read else "{image=gui/inline_text/ce_text.png} " + name_map[k]['full_name']
                     else:
-                        name_label = "{image=unread.png}" + name_map[k]['full_name'] if k not in persistent.read else name_map[k]['full_name']
+                        name_label = "{image=/gui/inline_text/unread.png}" + name_map[k]['full_name'] if k not in persistent.read else name_map[k]['full_name']
                 if k == "iris":
                     textbutton name_label action Function(mark_read, k), SetScreenVariable("current_person", k), ShowMenu("fake_error", "people.rpy", 126, "`bios/iris.txt` could not be rendered as a Text object.", "Hi, I'm Iris, a cosmic being with interest in the happenings of this reality, as well as some of the people involved in this story.\nDoes that sound too formal? I don't know. Hey, Digi, writing this shit's hard. You can fill in the rest from here.", _transition = determination)
                 else:
@@ -267,13 +267,13 @@ screen person(l):
 
                                     if current_page_type == "dx_bio":
                                         if renpy.seen_label( name_map[l]['dx_bio_label'] ) == True:
-                                            fetched = "{image=gui/dx_text.png} " + name_map[l]["dx_bio"]
+                                            fetched = "{image=gui/inline_text/dx_text.png} " + name_map[l]["dx_bio"]
                                         else:
                                             fetched = "???"
 
                                     if current_page_type == "ce_bio":
                                         if renpy.seen_label( name_map[l]['ce_bio_label'] ) == True:
-                                            fetched = "{image=gui/ce_text.png} " + name_map[l]["ce_bio"]
+                                            fetched = "{image=gui/inline_text/ce_text.png} " + name_map[l]["ce_bio"]
                                         else:
                                             fetched = "???"
 
@@ -350,19 +350,19 @@ screen person(l):
                                                                 frame:
                                                                     background None
                                                                     xsize 200
-                                                                    text "{image=gui/hp.png} "+str(hp):
+                                                                    text "{image=gui/inline_text/hp.png} "+str(hp):
                                                                         xalign 0.5
                                                                         text_align 0.5
                                                                 frame:
                                                                     background None
                                                                     xsize 200
-                                                                    text "{image=gui/atk.png} "+str(attack):
+                                                                    text "{image=gui/inline_text/atk.png} "+str(attack):
                                                                         xalign 0.5
                                                                         text_align 0.5
                                                                 frame:
                                                                     background None
                                                                     xsize 200
-                                                                    text "{image=gui/def.png} "+str(defense):
+                                                                    text "{image=gui/inline_text/def.png} "+str(defense):
                                                                         xalign 0.5
                                                                         text_align 0.5
 

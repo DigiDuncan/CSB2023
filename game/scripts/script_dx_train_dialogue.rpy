@@ -303,13 +303,42 @@ label train_dialogue:
     else:
         cs "At least I probably bought it {i}before{/i} we ended up broke again..."
         cs "I don't think I'd buy something that expensive on a whim otherwise."
-        cs "It's just so weird that I can't remember..."
-        arceus "Eh, last few days have been a blur for me, too."
+        cs "It's just {i}so{/i} weird that I can't remember..."
+        arceus "Eh, last few days have been a blur for me too."
         arceus "I really do think that you're just severely sleep-deprived."
         cs "I guess..."
 
     pause 2.0
     show cs with dissolve
+
+    pause 3.0
+    ###########################################################
+
+    cs "{note1} My neck, {w=0.25}my back, {w=0.25}my... weiner, and my... {nw}"
+    show cs disappointed
+    extend "hm."
+    cs "{note2} My neck, {w=0.25}my back, {w=0.25}my balls, and my... no--"
+    show arceus angry
+    cs "{note1} My neck, {w=0.25}my back, {w=0.25}my... taint--?{nw}"
+    arceus "That's not even {i}remotely{/i} how the song goes."
+    cs "I know, but I'm trying to think of, like, a genderbent version."
+    arceus "I... don't think anyone on the planet would want to listen to that."
+    show cs worried
+    cs "Why not?"
+    arceus "Who on earth wants to hear a song about a guy's gooch and ballsack?"
+    show cs happy
+    show arceus worried
+    cs "That's it!" with vpunch
+    cs "{note2} My neck, {w=0.25}my back, {w=0.25}my gooch, {i}and{/i} my ballsack! {note1}"
+    show cs
+    show arceus angry
+    cs "Thanks, Arc!"
+    arceus "..."
+
+    pause 2.0
+    show arceus
+    show cs
+    with dissolve
 
     pause 3.0
     ###########################################################

@@ -40,39 +40,40 @@ screen category_nav():
             xoffset 350
 
             # Here you list the categories
+            # I wanted to use {dx} tag here but it crashes - Tate
 
             textbutton "Achievements\n{size=-12}Look at all you've accomplished!" action ShowMenu("achievements_welcome")
 
             textbutton "Bios\n{size=-12}Learn more about the characters you've met!" action ShowMenu("people")
 
-            textbutton "{image=gui/dx_text.png} Item Collection\n{size=-12}Inspect items you've found while playing!" action ShowMenu("item_collection")
+            textbutton "{image=gui/inline_text/dx_text.png} Item Collection\n{size=-12}Inspect items you've found while playing!" action ShowMenu("item_collection")
 
             textbutton "Jukebox\n{size=-12}Jam out to songs you've heard along the way!" action ShowMenu("jukebox"), PauseAudio("music", True)
 
-            textbutton "{image=gui/dx_text.png} Asset Gallery\n{size=-12}A gallery of beta assets, unused sprites, programmer art, concept art, and more!" action ShowMenu("unused_gallery"), PauseAudio("music", True), Play("music2", "audio/what_the_night_will_bring.ogg")
+            textbutton "{image=gui/inline_text/dx_text.png} Asset Gallery\n{size=-12}A gallery of beta assets, unused sprites, programmer art, concept art, and more!" action ShowMenu("unused_gallery"), PauseAudio("music", True), Play("music2", "audio/what_the_night_will_bring.ogg")
 
-            textbutton "{image=gui/dx_text.png} Timeline Tracer\n{size=-12}Revisit endings and track where you've been!" action ShowMenu("timeline_tracer")
+            textbutton "{image=gui/inline_text/dx_text.png} Timeline Tracer\n{size=-12}Revisit endings and track where you've been!" action ShowMenu("timeline_tracer")
 
             if preferences.developer_mode or persistent.saved_christmas:
-                textbutton "{image=gui/ce_text.png} D20 Viewer\n{size=-12}See who could have showed up first to the party!" action ShowMenu("d20_viewer_screen")
+                textbutton "{image=gui/inline_text/ce_text.png} D20 Viewer\n{size=-12}See who could have showed up first to the party!" action ShowMenu("d20_viewer_screen")
 
             if preferences.developer_mode or achievement_manager.get("beat_copguy").unlocked:
                 textbutton "Ultimate Custom Night\n{size=-12}Put together your own RPG battles!" action Start("rpg_ucn")
 
-            textbutton "{image=gui/dx_text.png} Woohoo Counter\n{size=-12}How many can you find?" action Jump("woohoo_counter")
+            textbutton "{image=gui/inline_text/dx_text.png} Woohoo Counter\n{size=-12}How many can you find?" action Jump("woohoo_counter")
 
-            textbutton "{image=gui/dx_text.png} Controller Test\n{size=-12}Check your controller's compatibility." action Jump("play_controllertest")
+            textbutton "{image=gui/inline_text/dx_text.png} Controller Test\n{size=-12}Check your controller's compatibility." action Jump("play_controllertest")
 
             if preferences.developer_mode or persistent.creative_mode:
 
                 textbutton "Debug Menu\n{size=-12}[[DEV] Jump to specific sections of the game." action ShowMenu("debug_menu")
 
-                textbutton "{image=gui/dx_text.png} Asset Debugger\n{size=-12}[[DEV] Make sure all assets load correctly." action Jump("asset_debugger")
+                textbutton "{image=gui/inline_text/dx_text.png} Asset Debugger\n{size=-12}[[DEV] Make sure all assets load correctly." action Jump("asset_debugger")
 
             if preferences.developer_mode:
                 textbutton "Test Scene\n{size=-12}[[DEV] A sandbox for testing various features." action Jump("test")
 
-                textbutton "{image=gui/dx_text.png} Tate's Test Room\n{size=-12}[[DEV] Another test screen. Awawa." action Jump("awawa_tate_test")
+                textbutton "{image=gui/inline_text/dx_text.png} Tate's Test Room\n{size=-12}[[DEV] Another test screen. Awawa." action Jump("awawa_tate_test")
 
                 textbutton "Unlock All\n{size=-12}[[DEV] Adds all unlockables to persistent." action Function(unlock_all)
 

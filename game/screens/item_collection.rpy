@@ -22,7 +22,7 @@ screen item_collection():
 
     if current_item == None:
         use item_welcome
-    
+
     else:
         use items(current_item)
 
@@ -59,7 +59,7 @@ screen item_nav():
                         background None
                         margin 5, 5
                         xysize 153, 153
-                        
+
                         # create the actual button here
                         button:
                             idle_background "#003D51"
@@ -71,9 +71,9 @@ screen item_nav():
                             xysize 140,140
 
                             image item_img
-                            
+
                             action [ SensitiveIf( k in persistent.collected ), SetScreenVariable("current_item", k) ]
-                            
+
     textbutton "Return to Extras" action ShowMenu("category_welcome") yoffset 950 xoffset 25
     textbutton "Main Menu" action Return() yoffset 1000 xoffset 25
 
@@ -120,9 +120,9 @@ screen items(l):
             python:
                 try:
                     if ITEM_MAP[l].get('dx', False):
-                        fetched_desc = "{image=gui/dx_text.png} " + ITEM_MAP[l]["desc"]
+                        fetched_desc = "{image=gui/inline_text/dx_text.png} " + ITEM_MAP[l]["desc"]
                     elif ITEM_MAP[l].get('ce', False):
-                        fetched_desc = "{image=gui/ce_text.png} " + ITEM_MAP[l]["desc"]
+                        fetched_desc = "{image=gui/inline_text/ce_text.png} " + ITEM_MAP[l]["desc"]
                     else:
                         fetched_desc = ITEM_MAP[l]["desc"]
                 except:
@@ -140,7 +140,7 @@ screen items(l):
                 first_spacing 10
                 text "{size=+24}" + ITEM_MAP[l]['name']:
                     xalign 0.5
-                    
+
                 text "{size=-12}(" + ITEM_MAP[l]['rarity'] + ")":
                     xalign 0.5
                     color("#BBBBBB")

@@ -16,7 +16,7 @@ label secret_dx:
     show digi sad
     digi "You, uh... {w=0.5}weren't supposed to see this."
     show digi disappointed
-    digi "Jeez, in {image=gui/dx_text.png}, too."
+    digi "Jeez, in {dx}, too."
     digi "I {i}thought{/i} we would have ironed out all the bugs by now, but we're DPN, so..."
     pause 2.0
     show digi happy
