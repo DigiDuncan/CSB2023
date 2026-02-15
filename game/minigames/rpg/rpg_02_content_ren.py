@@ -200,6 +200,7 @@ class AIType:
     DEFENSIVE = AI("Defensive", heal_threshold = 0.75, tacticity = 3, heal_chance = 0.60)
     SMART = AI("Smart", tacticity = 2, crowd_control = 2, heal_chance = 0.60)
     COPGUY_EX = AI("EX", aggression = 3, tacticity = 2, preferred_targets = ["CS"], heal_chance = 0.70)
+    SKITTISH = AI("Skittish", aggression = 1, tacticity = 0.75, crowd_control = 0.5, heal_threshold = 0.85, heal_chance = 0.5)
 
     @classmethod
     def get(cls, ai: str, default: AI | None = None) -> AI | None:
@@ -367,10 +368,10 @@ class Characters:
     CS_VS_TATE_KICK = Character("{image=gui/inline_text/dx_text.png} CS (VS Tate - Kick)", 288, 10, 40, [Attacks.KICK, Attacks.GENERGY, Attacks.YTP_MAGIC], portrait=Image("gui/rpg/portraits/cs.png"), display_name = "CS")
     CS_VS_TATE_CHOP = Character("{image=gui/inline_text/dx_text.png} CS (VS Tate - Chop)", 288, 10, 40, [Attacks.CHOP, Attacks.GENERGY, Attacks.YTP_MAGIC], portrait=Image("gui/rpg/portraits/cs.png"), display_name = "CS")
     ARCEUS = Character("Arceus", 160, 15, 35, [Attacks.SLASH, Attacks.LIGHT_CAST], portrait=Image("gui/rpg/portraits/arceus.png"), sprite=Image("images/characters/arc/angry.png"))
-    PAKOO = Character("Pakoo", 145, 20, 30, [Attacks.INSIGHT, Attacks.SHOTGUN], portrait=Image("gui/rpg/portraits/pakoo.png"), sprite=Image("images/characters/pakoo/pakoo_disappointed.png")
+    PAKOO = Character("Pakoo", 145, 20, 30, [Attacks.INSIGHT, Attacks.SHOTGUN], portrait=Image("gui/rpg/portraits/pakoo.png"), sprite=Image("images/characters/pakoo/pakoo_disappointed.png"))
     MIKA = Character("Mika", 165, 20, 30, [Attacks.ENCOURAGE, Attacks.HIGH_NOON], portrait=Image("gui/rpg/portraits/mika.png"), sprite=Image("images/characters/mika.png"))
     KITTY = Character("Kitty", 155, 15, 20, [Attacks.SCRATCH, Attacks.ARMOUR], portrait=Image("gui/rpg/portraits/kitty.png"), sprite=Image("images/characters/kitty.png"))
-    TATE = Character("Tate", 170, 5, 30, [Attacks.DAMAGE_SCREM, Attacks.SNACK_TIME], portrait=Image("gui/rpg/portraits/tate.png"), sprite=Image("images/characters/tate/tateserious.png"))
+    TATE = Character("Tate", 170, 5, 30, [Attacks.DAMAGE_SCREM, Attacks.SNACK_TIME], portrait=Image("gui/rpg/portraits/tate.png"), sprite=Image("images/characters/tate/tateserious.png"), ai = AIType.SKITTISH)
     ARIA = Character("Aria", 220, 20, 45, [Attacks.ELDRITCH_BLAST, Attacks.RAINBOW_VOMIT], portrait=Image("gui/rpg/portraits/aria.png"), sprite=Image("images/characters/aria.png"))
     DIGI = Character("Digi", 150, 20, 30, [Attacks.ROBOPUNCH, Attacks.HOLOSHIELD], portrait=Image("gui/rpg/portraits/digi.png"), sprite=Image("images/characters/angry.png"))
     NOVA = Character("Nova", 170, 5, 30, [Attacks.MUSIC_BOOST, Attacks.RAVE], portrait=Image("gui/rpg/portraits/nova.png"), sprite=Image("images/characters/nova.png"))
