@@ -314,25 +314,31 @@ label train_dialogue:
     pause 3.0
     ###########################################################
 
-    cs "{note1} My neck, {w=0.25}my back, {w=0.25}my... weiner, and my... {nw}"
+    cs "{note1} My neck, {w=0.25}my back, {w=0.25}my... {nw}"
+    show cs surprised
+    extend "cock, and my... {nw}"
     show cs disappointed
     extend "hm."
-    cs "{note2} My neck, {w=0.25}my back, {w=0.25}my balls, and my... no--"
+    show cs surprised
+    cs "{note2} My neck, {w=0.25}my back, {w=0.25}my balls, and my... {nw}"
+    show cs disappointed
+    extend "no--"
     show arceus angry
     cs "{note1} My neck, {w=0.25}my back, {w=0.25}my... taint--?{nw}"
     arceus "That's not even {i}remotely{/i} how the song goes."
+    show cs worried
     cs "I know, but I'm trying to think of, like, a genderbent version."
     arceus "I... don't think anyone on the planet would want to listen to that."
-    show cs worried
+    show cs disappointed
     cs "Why not?"
-    arceus "Who on earth wants to hear a song about a guy's gooch and ballsack?"
+    arceus "Who on earth wants to hear a song about a guy's weiner and ballsack?"
     show cs happy
     show arceus worried
     cs "That's it!" with vpunch
-    cs "{note2} My neck, {w=0.25}my back, {w=0.25}my gooch, {i}and{/i} my ballsack! {note1}"
+    cs "{note2} My neck, {w=0.25}my back, {w=0.25}my weiner, and {w=0.1}my {w=0.1}sack! {note1}"
     show cs
     show arceus angry
-    cs "Thanks, Arc!"
+    cs "Thanks, Arc! You're a genius!"
     arceus "..."
 
     pause 2.0
