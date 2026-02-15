@@ -38,6 +38,15 @@
         "jump_to": "CSB3_EBEEP12024FDEADNYWFFEAGM",
         "need_label": "ce_epilogue"
     },
+    "underpants": {
+        "title": "Underpants?",
+        "desc": "placeholder",
+        "spine_width": 46,
+        "spine_height": 300,
+        "x_pos": 600,
+        "y_pos": 390,
+        "jump_to": "book_underpants"
+    },
     "pee": {
         "title": "Why is my pee clear?",
         "desc": "For ages 18 months to 3 years.",
