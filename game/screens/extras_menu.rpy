@@ -68,7 +68,7 @@ screen category_nav():
 
                 textbutton "Debug Menu\n{size=-12}[[DEV] Jump to specific sections of the game." action ShowMenu("debug_menu")
 
-                textbutton "{image=gui/inline_text/dx_text.png} Asset Debugger\n{size=-12}[[DEV] Make sure all assets load correctly." action Jump("asset_debugger")
+                #textbutton "{image=gui/inline_text/dx_text.png} Asset Debugger\n{size=-12}[[DEV] Make sure all assets load correctly." action Jump("asset_debugger")
 
             if preferences.developer_mode:
                 textbutton "Test Scene\n{size=-12}[[DEV] A sandbox for testing various features." action Jump("test")
