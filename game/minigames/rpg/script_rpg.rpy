@@ -7,8 +7,9 @@ label rpg_test:
     rpg:
         bg "images/bg/casino1.png"
         music "card_castle"
-        fighters:
+        allies:
             cs
+        enemies:
             $enemy_1
             $enemy_2
             $enemy_3
@@ -21,8 +22,9 @@ label rpg_fanboy_fight_amd:
     rpg:
         bg "images/bg/linus_office_outside.png"
         music "nordic_report_1"
-        fighters:
+        allies:
             cs_weak
+        enemies:
             fanboyb
             fanboyb
             fanboyb
@@ -34,8 +36,9 @@ label rpg_fanboy_fight_amd:
 label rpg_fanboy_fight_nvidia:
     rpg:
         bg "images/bg/linus_office_outside.png"
-        fighters:
+        allies:
             cs_weak
+        enemies:
             fanboya
             fanboya
             fanboya
@@ -49,10 +52,11 @@ label rpg_cop_fight_1:
     rpg:
         bg "images/bg/dealership.png"
         music "compulsion_to_obey"
-        fighters:
+        allies:
             cs
             arceus
             pakoo
+        enemies:
             cop
             cop
             copguygodmode
@@ -65,10 +69,11 @@ label rpg_cop_fight_2:
     rpg:
         bg "images/bg/dealership.png"
         music "for_the_people"
-        fighters:
+        allies:
             mika
             kitty
             tate
+        enemies:
             copguy
         scale 1.0
         on_win "friend_after_cop_fight"
@@ -79,8 +84,9 @@ label rpg_cop_fight_3:
     rpg:
         bg "images/bg/cs_somewhere.png"
         music "desert_dawn"
-        fighters:
+        allies:
             aria
+        enemies:
             cop
             cop
         scale 1.0
@@ -92,9 +98,10 @@ label rpg_cop_fight_4:
     rpg:
         bg "images/bg/dinerinside.png"
         music "dinerfight"
-        fighters:
+        allies:
             digi
             nova
+        enemies:
             cop
             cop
         scale 1.0
@@ -119,11 +126,12 @@ label rpg_ng_fight:
     rpg:
         bg "images/bg/battle_block_without_theater.png"
         music "thousand_march"
-        fighters:
+        allies:
             $party_1
             $party_2
             $party_3
             $party_4
+        enemies:
             guard
             sml_tank
             guard
@@ -149,11 +157,12 @@ label rpg_final_fight_1:
     rpg:
         bg "images/bg/war_torn_2.png"
         music "trans_atlantic"
-        fighters:
+        allies:
             $party_1
             $party_2
             $party_3
             $party_4
+        enemies:
             marine
             marine
             marine
@@ -179,11 +188,12 @@ label rpg_final_fight_2:
     rpg:
         bg "images/bg/war_torn_3.png"
         music "trans_atlantic"
-        fighters:
+        allies:
             $party_1
             $party_2
             $party_3
             $party_4
+        enemies:
             marine
             big_tank
         scale 2.0
@@ -205,11 +215,12 @@ label rpg_final_fight_3:
     rpg:
         bg "images/bg/war_torn_4.png"
         music "prophetpart2"
-        fighters:
+        allies:
             cs_final
             $party_2
             $party_3
             $party_4
+        enemies:
             copguy_ex
         scale 2.0
         on_win "friend2_weapon_of_choice"
@@ -220,8 +231,9 @@ label rpg_error:
     rpg:
         bg "images/bg/falling_apart.png"
         music "prophetpart2"
-        fighters:
+        allies:
             cs_final2
+        enemies:
             pakooe
         scale 2.0
         on_win "secret_dx"
@@ -231,8 +243,9 @@ label rpg_error:
 label rpg_archival:
     rpg:
         bg "images/bg/csmart.png"
-        fighters:
+        allies:
             cs_archival
+        enemies:
             k174
             k199
             k207
@@ -245,10 +258,11 @@ label rpg_archival:
 label rpg_bronsonbattle:
     rpg:
         bg "images/bg/bronsoncrash.png"
-        fighters:
+        allies:
             cs_weak
             arceus
             billy
+        enemies:
             copguy_exe
         scale 1.0
         on_win "michigan_bronson_win"
@@ -269,10 +283,10 @@ label rpg_tate_ex:
     rpg:
         bg "images/bg/train/amtrak_observation_2.png"
 
-        fighters:
+        allies:
             $cs_chosen_form
+        enemies:
             tate_ex
-
         scale 2.0
         on_win "train_tate_ex_win"
         on_lose "train_tate_ex_lose"
@@ -283,11 +297,11 @@ label rpg_tate_ex:
 label rpg_diabetes_1:
     rpg:
         bg "images/bg/bronsoncrash.png"
-        fighters:
+        allies:
             cs_strong
             digi
+        enemies:
             ceo
-
         scale 1.0
         on_win "bt1d_after_fight_1"
         on_lose "rpg_diabetes_1"
@@ -297,11 +311,11 @@ label rpg_diabetes_1:
 label rpg_diabetes_2:
     rpg:
         bg "images/bg/bronsoncrash.png"
-        fighters:
+        allies:
             cs_strong
             digi
+        enemies:
             secretary
-
         scale 2.0
         on_win "bt1d_after_fight_2"
         on_lose "rpg_diabetes_2"
@@ -311,12 +325,12 @@ label rpg_diabetes_2:
 label rpg_diabetes_3:
     rpg:
         bg "images/bg/bronsoncrash.png"
-        fighters:
+        allies:
             cs_strong
             digi
+        enemies:
             ceo
             secretary
-
         scale 2.0
         on_win "bt1d_ending"
         on_lose "rpg_diabetes_3"
