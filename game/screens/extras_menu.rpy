@@ -51,8 +51,6 @@ screen category_nav():
 
             textbutton "{image=gui/dx_text.png} Asset Gallery\n{size=-12}A gallery of beta assets, unused sprites, programmer art, concept art, and more!" action ShowMenu("unused_gallery"), PauseAudio("music", True), Play("music2", "audio/what_the_night_will_bring.ogg")
 
-            textbutton "Minigames\n{size=-12}Got a favorite minigame? Do it all over again!" action ShowMenu("ce_minigame_screen")
-
             textbutton "{image=gui/dx_text.png} Timeline Tracer\n{size=-12}Revisit endings and track where you've been!" action ShowMenu("timeline_tracer")
 
             if preferences.developer_mode or persistent.saved_christmas:
@@ -73,6 +71,8 @@ screen category_nav():
 
             if preferences.developer_mode:
                 textbutton "Test Scene\n{size=-12}[[DEV] A sandbox for testing various features." action Jump("test")
+
+                textbutton "Tate's Test Room\n{size=-12}[[DEV] Another test screen. Awawa." action Jump("awawa_tate_test")
 
                 textbutton "Unlock All\n{size=-12}[[DEV] Adds all unlockables to persistent." action Function(unlock_all)
 
