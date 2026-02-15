@@ -252,7 +252,7 @@ label awawa_tate_test:
 
                         image h_original_1 = "images/characters/cs/christmas/disappointed.png"
                         image h_engine_1 = "selectable:images/characters/cs/christmas/disappointed.png"
-                        image h_image_1 = "/gui/ce_point_click/cs_hover.png"
+                        image h_image_1 = "/images/unused/ce_point_click/cs_hover.png"
 
                         show h_original_1 at center
                         n "Here is the original image."
@@ -305,9 +305,9 @@ label awawa_tate_test:
                         pause 1.0
 
                         ### TEST 2: RUG? ###
-                        image h_original_2 = "/gui/ce_point_click/rug/rug_idle.png"
-                        image h_engine_2 = "selectable:/gui/ce_point_click/rug/rug_idle.png"
-                        image h_image_2 = "/gui/ce_point_click/rug/rug_hover.png"
+                        image h_original_2 = "/minigames/christmaspointclick/rug.png"
+                        image h_engine_2 = "selectable:/minigames/christmaspointclick/rug.png"
+                        image h_image_2 = "/images/unused/ce_point_click/rug_hover.png"
 
                         show h_original_2 at truecenter:
                             zoom 0.5
@@ -359,7 +359,7 @@ label awawa_tate_test:
 
                         image h_original_3 = "images/characters/mean/meanhumanannoyedfestive.png"
                         image h_engine_3 = "selectable:images/characters/mean/meanhumanannoyedfestive.png"
-                        image h_image_3 = "/gui/ce_point_click/mean_hover.png"
+                        image h_image_3 = "/images/unused/ce_point_click/mean_hover.png"
 
                         show h_original_3 at center:
                             zoom 0.8
@@ -409,9 +409,9 @@ label awawa_tate_test:
 
                         ### TEST 4: POSTER ###
 
-                        image h_original_4 = "gui/ce_point_click/poster/poster_idle.png"
-                        image h_engine_4 = "selectable:gui/ce_point_click/poster/poster_idle.png"
-                        image h_image_4 = "gui/ce_point_click/poster/poster_hover.png"
+                        image h_original_4 = "/minigames/christmaspointclick/poster.png"
+                        image h_engine_4 = "selectable:/minigames/christmaspointclick/poster.png"
+                        image h_image_4 = "/images/unused/ce_point_click/poster_hover.png"
 
                         show h_original_4 at truecenter
                         show h_engine_4 at manual_pos(0.25, 0.5, 0.5)

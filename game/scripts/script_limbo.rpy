@@ -147,60 +147,7 @@ label woohoo_counter:
     cs "Now, it's [persistent.woohoo]!"
     return
 
-########## For CE Point & Click ##########
-
-screen hatch_button():
-    modal True
-
-    ##### poster button
-    imagebutton:
-        auto "gui/ce_point_click/poster/poster_%s.png"
-        hover_sound "audio/sfx/sfx_select.ogg"
-        at manual_pos(720, 323, 0)
-        action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("hatch_button"), Jump("ce_point_click.poster")
-
-    ##### rug button
-    imagebutton:
-        auto "gui/ce_point_click/rug/rug_%s.png"
-        hover_sound "audio/sfx/sfx_select.ogg"
-        at manual_pos(961, 56, 0)
-        action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("hatch_button"), Jump("ce_point_click.rug")
-
-    ##### cs button
-    imagebutton:
-        idle "images/characters/cs/christmas/disappointed.png"
-        hover "gui/ce_point_click/cs_hover.png"
-        hover_sound "audio/sfx/sfx_select.ogg"
-        at mid_left
-        action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("hatch_button"), Jump("ce_point_click.cs")
-
-    ##### flashlight button
-    imagebutton:
-        auto "gui/ce_point_click/flashlight/flashlight_%s.png"
-        hover_sound "audio/sfx/sfx_select.ogg"
-        at manual_pos(0.3, 0.7, 0.5)
-
-        action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("hatch_button"), Jump("ce_point_click.flashlight")
-
-    ##### mean button
-    imagebutton:
-        idle "images/characters/mean/meanhumanannoyedfestive.png"
-        hover "gui/ce_point_click/mean_hover.png"
-        hover_sound "audio/sfx/sfx_select.ogg"
-        at mid_right
-        action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("hatch_button"), Jump("ce_point_click.mean")
-
-    ##### hatch button (correct one)
-    imagebutton:
-        auto "gui/ce_point_click/hatch/hatch_%s.png"
-        hover_sound "audio/sfx/sfx_select.ogg"
-        xpos 0.3
-        ypos -0.2
-        action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("hatch_button"), Jump("ce_after_hatch")
-
-    add Flashlight()
-
-########## End CE Point & Click ##########
+# TODO: move these screens to their respective minigames folder
 
 screen lightgungame():
     modal True
@@ -230,6 +177,8 @@ screen reloadbutton():
             text_textalign 0.5
             text_size 150
             action Hide("reloadbutton")
+
+########## CS BUTTON ##########
 
 screen limbo_csbutton():
     add "#000000"

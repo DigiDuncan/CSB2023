@@ -21,7 +21,7 @@ python early:
             self.y_pos = y_pos
 
             self.spine = f"gui/books/{book_id}/side.png"
-            self.hover_spine = f"gui/books/{book_id}/hover.png"
+            self.hover_spine = f"selectable:gui/books/{book_id}/side.png"
             self.front = f"gui/books/{book_id}/cover.png"
 
 style subgame_return is button:
