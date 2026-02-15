@@ -57,6 +57,19 @@ init -10 python:
     config.displayable_prefix["sepia"] = shade_sepia
     config.displayable_prefix["sepia:flip"] = shade_sepia_flip
 
+    ########## YELLOW SELECTABLE FILTER
+    # Full disclosure: this one single line was partially-written by AI.
+    sil_select_matrix = ColorizeMatrix("#808000","#FFFFFF")
+
+    def shade_select(s):
+        return Transform(s, xzoom = 1, matrixcolor = sil_select_matrix)
+
+    def shade_select_flip(s):
+        return Transform(s, xzoom = 1, matrixcolor = sil_select_matrix)
+
+    config.displayable_prefix["selectable"] = shade_select
+    config.displayable_prefix["selectable:flip"] = shade_select_flip
+
     ########## SPRITE FLIPPER
     def xflip(s):
         return Transform(s, xzoom = -1)

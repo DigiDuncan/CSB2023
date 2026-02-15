@@ -66,6 +66,7 @@ image tate_comp dark = LayeredImageProxy("tate_comp", Transform(matrixcolor = da
 image tate_comp sil_white  = LayeredImageProxy("tate_comp", Transform(matrixcolor = sil_white_matrix))
 image tate_comp sil_black = LayeredImageProxy("tate_comp", Transform(matrixcolor = sil_black_matrix))
 image tate_comp sepia = LayeredImageProxy("tate_comp", Transform(matrixcolor = SepiaMatrix()))
+image tate_comp selectable = LayeredImageProxy("tate_comp", Transform(matrixcolor = sil_select_matrix))
 
 image tate_comp flipped = LayeredImageProxy("tate_comp", Transform(xzoom = -1))
 
@@ -74,6 +75,7 @@ image tate_comp dark flipped = LayeredImageProxy("tate_comp", Transform(matrixco
 image tate_comp sil_white flipped = LayeredImageProxy("tate_comp", Transform(matrixcolor = sil_white_matrix, xzoom = -1))
 image tate_comp sil_black flipped = LayeredImageProxy("tate_comp", Transform(matrixcolor = sil_black_matrix, xzoom = -1))
 image tate_comp sepia flipped = LayeredImageProxy("tate_comp", Transform(matrixcolor = SepiaMatrix(), xzoom = -1))
+image tate_comp selectable flipped = LayeredImageProxy("tate_comp", Transform(matrixcolor = sil_select_matrix))
 
 # this section is just for fun mostly. a randomizer!
 init python:
@@ -83,7 +85,7 @@ init python:
         faces = renpy.random.choice(["happy", "sad", "cry", "sheepish", "shock", "serious", "smug", "stare", "furious"])
         tearful = renpy.random.choice(["-tears", "tears"])
         gloomy = renpy.random.choice(["-gloom", "gloom"])
-        shaders = renpy.random.choice(["", "dusk", "dark", "sil_white", "sil_black", "sepia"])
+        shaders = renpy.random.choice(["", "dusk", "dark", "sil_white", "sil_black", "sepia", "selectable"])
         flipper = renpy.random.choice([" -flipped", " flipped"])
 
         compiled_sprite = "tate_comp " + outfits + " " + blushing + " " + faces + " " + tearful + " " + gloomy + " " + shaders + flipper
@@ -184,7 +186,9 @@ label awawa_tate_test:
                         "Black"
                         show tate_comp sepia
                         "Sepia"
-                        show tate_comp -sepia flipped
+                        show tate_comp selectable
+                        "Selectable!\n(Well, not really, but this is what it would look like.)"
+                        show tate_comp -selectable flipped
                         "Also, let's flip!"
                         show tate_comp -flipped
                         "Flip them back!"
@@ -220,6 +224,240 @@ label awawa_tate_test:
                             except:
                                 renpy.show("tate", what="tate sheepish")
                                 renpy.say(tate, substitutions("Something went wrong, sorry."))
+                        jump .awawa_menu
+
+                    ########## SELECTABLE FILTER ##########
+                    "Selection Filter":
+                        hide tate with dissolve
+                        n "This is an experimental implementation of an in-engine selectable image filter."
+                        n "If this works, we would no longer need to manually create these images!"
+
+                        image txt_awawa_engine:
+                            xsize 500
+                            ysize 100
+                            xanchor 0.5
+                            yanchor 0.5
+                            contains:
+                                Text("{size=+12}In-Engine", xalign=0.5, yalign=0.5)
+
+                        image txt_awawa_image:
+                            xsize 500
+                            ysize 100
+                            xanchor 0.5
+                            yanchor 0.5
+                            contains:
+                                Text("{size=+12}Image", xalign=0.5, yalign=0.5)
+
+                        ### TEST 1: CS ###
+
+                        image h_original_1 = "images/characters/cs/christmas/disappointed.png"
+                        image h_engine_1 = "selectable:images/characters/cs/christmas/disappointed.png"
+                        image h_image_1 = "/gui/ce_point_click/cs_hover.png"
+
+                        show h_original_1 at center
+                        n "Here is the original image."
+
+                        show h_engine_1 at left
+                        show h_image_1 at right
+                        n "And here are the selectable versions. Can you tell which is which?"
+
+                        show txt_awawa_engine at manual_pos(0.15, 0.1, 0.5)
+                        show txt_awawa_image at manual_pos(0.825, 0.1, 0.5)
+
+                        show arrow_white flipped as left:
+                            xanchor 0.5 yanchor 0.5
+                            rotate 90
+                            zoom 0.3
+                            xpos 0.15
+
+                            block:
+                                ypos 0.14
+                                linear 0.5 ypos 0.14
+                                ypos 0.155
+                                linear 0.5 ypos 0.155
+                                repeat
+
+                        show arrow_white flipped as right:
+                            xanchor 0.5 yanchor 0.5
+                            rotate 90
+                            zoom 0.3
+                            xpos 0.825
+
+                            block:
+                                ypos 0.14
+                                linear 0.5 ypos 0.14
+                                ypos 0.155
+                                linear 0.5 ypos 0.155
+                                repeat
+
+                        n "Okay, I'll just tell you."
+                        n "These ones look identical."
+                        n "Let's try another."
+
+                        hide h_original_1
+                        hide h_engine_1
+                        hide h_image_1
+                        hide arrow_white as left
+                        hide arrow_white as right
+                        hide txt_awawa_engine
+                        hide txt_awawa_image
+                        with dissolve
+                        pause 1.0
+
+                        ### TEST 2: RUG? ###
+                        image h_original_2 = "/gui/ce_point_click/rug/rug_idle.png"
+                        image h_engine_2 = "selectable:/gui/ce_point_click/rug/rug_idle.png"
+                        image h_image_2 = "/gui/ce_point_click/rug/rug_hover.png"
+
+                        show h_original_2 at truecenter:
+                            zoom 0.5
+                        show h_engine_2 at manual_pos(0.25, 0.5, 0.5):
+                            zoom 0.5
+                        show h_image_2 at manual_pos(0.75, 0.5, 0.5):
+                            zoom 0.5
+
+                        show txt_awawa_engine at manual_pos(0.25, 0.3, 0.5)
+                        show txt_awawa_image at manual_pos(0.75, 0.3, 0.5)
+
+                        show arrow_white flipped as left:
+                            xanchor 0.5 yanchor 0.5
+                            rotate 90
+                            zoom 0.3
+                            xpos 0.25
+
+                            block:
+                                ypos 0.35
+                                linear 0.5 ypos 0.35
+                                ypos 0.365
+                                linear 0.5 ypos 0.365
+                                repeat
+
+                        show arrow_white flipped as right:
+                            xanchor 0.5 yanchor 0.5
+                            rotate 90
+                            zoom 0.3
+                            xpos 0.75
+
+                            block:
+                                ypos 0.35
+                                linear 0.5 ypos 0.35
+                                ypos 0.365
+                                linear 0.5 ypos 0.365
+                                repeat
+
+                        n "These also look okay."
+
+                        hide h_original_2
+                        hide h_engine_2
+                        hide h_image_2
+                        hide arrow_white as left
+                        hide arrow_white as right
+                        hide txt_awawa_engine
+                        hide txt_awawa_image
+
+                        ### TEST 3: MEAN ###
+
+                        image h_original_3 = "images/characters/mean/meanhumanannoyedfestive.png"
+                        image h_engine_3 = "selectable:images/characters/mean/meanhumanannoyedfestive.png"
+                        image h_image_3 = "/gui/ce_point_click/mean_hover.png"
+
+                        show h_original_3 at center:
+                            zoom 0.8
+                        show h_engine_3 at left:
+                            zoom 0.8
+                        show h_image_3 at right:
+                            zoom 0.8
+
+                        show txt_awawa_engine at manual_pos(0.15, 0.1, 0.5)
+                        show txt_awawa_image at manual_pos(0.825, 0.1, 0.5)
+
+                        show arrow_white flipped as left:
+                            xanchor 0.5 yanchor 0.5
+                            rotate 90
+                            zoom 0.3
+                            xpos 0.15
+
+                            block:
+                                ypos 0.14
+                                linear 0.5 ypos 0.14
+                                ypos 0.155
+                                linear 0.5 ypos 0.155
+                                repeat
+
+                        show arrow_white flipped as right:
+                            xanchor 0.5 yanchor 0.5
+                            rotate 90
+                            zoom 0.3
+                            xpos 0.825
+
+                            block:
+                                ypos 0.14
+                                linear 0.5 ypos 0.14
+                                ypos 0.155
+                                linear 0.5 ypos 0.155
+                                repeat
+
+                        n "We're 3 for 3!"
+
+                        hide h_original_3
+                        hide h_engine_3
+                        hide h_image_3
+                        hide arrow_white as left
+                        hide arrow_white as right
+                        hide txt_awawa_engine
+                        hide txt_awawa_image
+
+                        ### TEST 4: POSTER ###
+
+                        image h_original_4 = "gui/ce_point_click/poster/poster_idle.png"
+                        image h_engine_4 = "selectable:gui/ce_point_click/poster/poster_idle.png"
+                        image h_image_4 = "gui/ce_point_click/poster/poster_hover.png"
+
+                        show h_original_4 at truecenter
+                        show h_engine_4 at manual_pos(0.25, 0.5, 0.5)
+                        show h_image_4 at manual_pos(0.75, 0.5, 0.5)
+
+                        show txt_awawa_engine at manual_pos(0.25, 0.3, 0.5)
+                        show txt_awawa_image at manual_pos(0.75, 0.3, 0.5)
+
+                        show arrow_white flipped as left:
+                            xanchor 0.5 yanchor 0.5
+                            rotate 90
+                            zoom 0.3
+                            xpos 0.25
+
+                            block:
+                                ypos 0.35
+                                linear 0.5 ypos 0.35
+                                ypos 0.365
+                                linear 0.5 ypos 0.365
+                                repeat
+
+                        show arrow_white flipped as right:
+                            xanchor 0.5 yanchor 0.5
+                            rotate 90
+                            zoom 0.3
+                            xpos 0.75
+
+                            block:
+                                ypos 0.35
+                                linear 0.5 ypos 0.35
+                                ypos 0.365
+                                linear 0.5 ypos 0.365
+                                repeat
+
+                        n "Another!"
+
+                        hide h_original_4
+                        hide h_engine_4
+                        hide h_image_4
+                        hide arrow_white as left
+                        hide arrow_white as right
+                        hide txt_awawa_engine
+                        hide txt_awawa_image
+
+                        with dissolve
+                        n "Let's go back."
                         jump .awawa_menu
 
                     ########## GO BACK ##########
