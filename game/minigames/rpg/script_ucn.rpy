@@ -41,7 +41,7 @@ screen ucn_bgm_choice(items):
         mousewheel True
         vbox:
             for i in items:
-                textbutton i.caption.removeprefix("audio/").removesuffix(".ogg").removeprefix("/"):
+                textbutton "{font=music_text}"+i.caption.removeprefix("audio/").removesuffix(".ogg").removeprefix("/")+"{/font}":
                     anchor(-0.25, -0.25)
                     action i.action
 

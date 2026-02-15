@@ -10,20 +10,27 @@ python early:
     def bypass_append(renpy_list, element):
         renpy_list.append(element)
 
+init:
+    transform _rpg_intro:
+        on show:
+            xanchor 0.5 xpos 0.5
+            yanchor 0.5 ypos 0.05
+            alpha 0.00
+            ease_cubic 0.5 alpha 1.00
+            time 2.5
+            ease_expo 1 alpha 0.00
+
 screen screen_rpg():
-
-    $ renpy.music.play(MUSIC_MAP[RPG.encounter.music]["file"])
-    $ persistent.heard.add(str(RPG.encounter.music))
-
-    frame:
-        text RPG.encounter.intro_text
-        xalign 0.5
-
     grid len(RPG.encounter.enemies) 1:
         xalign 0.5
         yalign 0.5
         for i in range(len(RPG.encounter.enemies)):
             add RPG.encounter.enemies[i].sprite
+
+    # Show intro text above the enemies
+    frame at _rpg_intro:
+        text RPG.encounter.intro_text
+
     # This is the context menu of the RPG
     frame:
         yalign 1.0
@@ -189,9 +196,9 @@ label play_rpggame:
     window hide
     $ quick_menu = False
     show image RPG.encounter.background
-    play music RPG.encounter.music
+    $ renpy.music.play(MUSIC_MAP[RPG.encounter.music]["file"])
+    $ persistent.heard.add(str(RPG.encounter.music))
     call screen screen_rpg
-    stop music
     $ quick_menu = True
     window show
 
