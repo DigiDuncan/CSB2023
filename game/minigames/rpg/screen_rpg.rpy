@@ -10,8 +10,11 @@ python early:
     def bypass_append(renpy_list, element):
         renpy_list.append(element)
 
-
 screen screen_rpg():
+
+    $ renpy.music.play(MUSIC_MAP[RPG.encounter.music]["file"])
+    $ persistent.heard.add(str(RPG.encounter.music))
+
     grid len(RPG.encounter.enemies) 1:
         xalign 0.5
         yalign 0.5
