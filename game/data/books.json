@@ -77,6 +77,16 @@
         "y_pos": 750,
         "jump_to": "play_ce_reversi",
         "need_label": "ce_win_reversi"
+    },
+    "minigame_toytrains": {
+        "title": "Off To The Races!",
+        "desc": "Can you win?",
+        "spine_width": 19,
+        "spine_height": 250,
+        "x_pos": 792,
+        "y_pos": 800,
+        "jump_to": "play_toytrains_game",
+        "need_label": "play_toytrains_game"
     }
 
 }
