@@ -213,12 +213,13 @@ label book_underpants:
     with move
 
     hide toxic_mikas
-    show expression DynamicDisplayable(Pixellated.pixellated, widget='mika', delay=0.5, steps=8) at t_evil_mika behind pakoo
+
+    show giant_mika at t_evil_mika behind pakoo
     play sound sfx_glitch_in
     with dissolve
 
     play sound sfx_bossappears
-    hide expression DynamicDisplayable(Pixellated.pixellated, widget='mika', delay=0.5, steps=8)
+    hide giant_mika
     show mika at t_evil_mika behind pakoo
 
     show david at offscreenright
@@ -338,11 +339,11 @@ label book_underpants:
     hide cpt_underpants
     hide slime16
 
-    show expression DynamicDisplayable(Pixellated.pixellated, widget='mr_krupp', delay=0.5, steps=8) at manual_pos(0.4, 1.0, 1.0)
+    show krupp_transform at manual_pos(0.4, 1.0, 1.0)
     show mr_krupp at manual_pos(0.4, 1.0, 1.0) behind weird_al
     with dissolve
     pause 1.0
-    hide expression DynamicDisplayable(Pixellated.pixellated, widget='mr_krupp', delay=0.5, steps=8)
+    hide krupp_transform
     show mr_krupp at center behind weird_al with move
 
     pause 1.0
@@ -362,6 +363,7 @@ label book_underpants:
     with dissolve
     pause 1.0
     george "This has got to be the {i}dumbest{/i} story we've ever been in!"
+    show pakoo disappointed
     harold "Don't blame {i}me,{/i} Pakoo wrote it!"
     return
 

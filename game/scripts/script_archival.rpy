@@ -160,7 +160,7 @@ label archival:
     k174 "Okayokayokay! I got this!"
     k174 "Take {i}this!"
 
-    show expression DynamicDisplayable(Pixellated.pixellated, widget='worker_1', delay=0.5, steps=16) at manual_pos(0.7, 1.0, 1.0)
+    show worker1_appear at manual_pos(0.7, 1.0, 1.0)
 
     show k207 at right
     show k174 at mid_right_right
@@ -171,7 +171,7 @@ label archival:
     show cs worried
     n "One of the HoH SiS workers materializes before CS."
 
-    hide expression DynamicDisplayable(Pixellated.pixellated, widget='worker_1', delay=0.5, steps=16)
+    hide worker1_appear
     show worker_1 at manual_pos(0.7, 1.0, 1.0)
 
     worker_1 "I don't know!"

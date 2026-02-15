@@ -1006,6 +1006,9 @@ image carguya = "characters/carguya.png"
 image hart1 = "characters/pakoo/hart1.png"
 image hart2 = "characters/pakoo/hart2.png"
 
+## Archival Generated Images
+image worker1_appear = DynamicDisplayable(Pixellated.pixellated, widget='worker_1', delay=0.5, steps=16)
+
 # HoH SiS
 image rich = "characters/hohsis/rich.png"
 image rich dark = "dark:characters/hohsis/rich.png"
@@ -2140,6 +2143,10 @@ image george = "characters/george.png"
 image harold = "characters/harold.png"
 image mr_krupp = "characters/mr_krupp.png"
 image mr_krupp grin = "characters/mr_krupp_grin.png"
+
+# DX Digi Generated Images
+image giant_mika = DynamicDisplayable(Pixellated.pixellated, widget='mika', delay=0.5, steps=8)
+image krupp_transform = DynamicDisplayable(Pixellated.pixellated, widget='mr_krupp', delay=0.5, steps=8)
 
 # DX B1TD Backgrounds
 image basketball_court = "bg/basketball_court.png"
