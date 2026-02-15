@@ -15,6 +15,10 @@ screen screen_rpg():
     $ renpy.music.play(MUSIC_MAP[RPG.encounter.music]["file"])
     $ persistent.heard.add(str(RPG.encounter.music))
 
+    frame:
+        text RPG.encounter.intro_text
+        xalign 0.5
+
     grid len(RPG.encounter.enemies) 1:
         xalign 0.5
         yalign 0.5
