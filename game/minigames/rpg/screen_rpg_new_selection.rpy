@@ -11,11 +11,7 @@ init python:
 
     rpg_slots_filled = False
 
-    portrait_list = []
-    portrait_exclude = [ "gui/rpg/portraits/blank_hover.png", "gui/rpg/portraits/unknown.png", "gui/rpg/portraits/none.png"]
-    for p in file_list("gui/rpg/portraits"):
-        if p.endswith(".png"):
-            portrait_list.append("gui/rpg/portraits" + p)
+    portrait_exclude = ["gui/rpg/portraits/blank_hover.png", "gui/rpg/portraits/unknown.png"]
 
 transform _rpg_ready_button_yes:
     zoom 0.4
@@ -57,9 +53,10 @@ screen rpg_char_sel_new():
                     xalign 0.5
                     $ counter = 0
                     vbox:
-                        grid 11 5:
+                        grid 18 5:
                             spacing 10
-                            for portrait in portrait_list:
+                            for character in RPG.Characters.characters:
+                                $ portrait = character.portrait.filename
                                 if portrait in portrait_exclude:
                                     continue
                                 $ counter += 1
