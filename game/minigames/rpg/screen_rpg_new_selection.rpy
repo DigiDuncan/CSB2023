@@ -2,16 +2,33 @@ label awawa_rpg_select_test:
     call screen rpg_char_sel_new
 
 init python:
-    # probably not keeping this function
+    # ready up (will be combined with the function below later)
     def toggle_ready(r):
         if r == True:
             return False
         else:
             return True
 
+    # fill a slot
+    def rpg_fill_slot(slots_list, current_slot, character, ready_var):
+
+        # fill the slot
+        slots_list[current_slot] = character
+
+        # advance the slot
+        if current_slot < 8:
+            current_slot += 1
+        else:
+            # make ready
+            for slot in slot_list:
+                if slot != '' and len(slots) == 8:
+                    toggle_ready(ready_var)
+
+    rpg_selected_slot = 0
+    rpg_slots = []
     rpg_slots_filled = False
 
-    portrait_exclude = ["gui/rpg/portraits/blank_hover.png", "gui/rpg/portraits/unknown.png"]
+    portrait_exclude = ["gui/rpg/portraits/blank_hover.png", "gui/rpg/portraits/unknown.png", "gui/rpg/portraits/none.png"]
 
 transform _rpg_ready_button_yes:
     zoom 0.4
@@ -71,7 +88,10 @@ screen rpg_char_sel_new():
                                     xysize(88,88)
                                     idle portrait
                                     hover hover_portrait
-                                    action [ Play("sound", "audio/sfx/sfx_valid.ogg"), Notify(portrait) ]
+                                    action [ Play("sound", "audio/sfx/sfx_valid.ogg"), Notify(character.name), rpg_fill_slot(rpg_slots, rpg_selected_slot, character, rpg_slots_filled) ]
+
+                    frame:
+                        text character.name # will move this later
 
                     frame:
                         xsize 1.0 ysize 1.0
