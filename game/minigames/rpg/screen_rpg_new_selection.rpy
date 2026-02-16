@@ -12,7 +12,7 @@ init python:
     rpg_slots_filled = False
 
     portrait_list = []
-    portrait_exclude = [ "gui/rpg/portraits/blank_hover.png", "gui/rpg/portraits/unknown.png"]
+    portrait_exclude = [ "gui/rpg/portraits/blank_hover.png", "gui/rpg/portraits/unknown.png", "gui/rpg/portraits/none.png"]
     for p in file_list("gui/rpg/portraits"):
         if p.endswith(".png"):
             portrait_list.append("gui/rpg/portraits" + p)
@@ -105,7 +105,6 @@ screen rpg_char_sel_new():
                                     imagebutton:
                                         idle "gui/rpg/portraits/unknown.png"
                                         hover "selectable:gui/rpg/portraits/unknown.png"
-
 
     ### buttons
     textbutton "Return to Extras" action ShowMenu("category_welcome") yoffset 950 xoffset 25
