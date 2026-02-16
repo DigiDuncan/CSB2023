@@ -53,7 +53,7 @@ screen rpg_char_sel_new():
                     xalign 0.5
                     $ counter = 0
                     vbox:
-                        grid 18 5:
+                        grid 17 5:
                             spacing 10
                             for character in RPG.Characters.characters:
                                 $ portrait = character.portrait.filename
@@ -71,7 +71,8 @@ screen rpg_char_sel_new():
                                     xysize(88,88)
                                     idle portrait
                                     hover hover_portrait
-                                    action [ Play("sound", "audio/sfx/sfx_valid.ogg") ]
+                                    action [ Play("sound", "audio/sfx/sfx_valid.ogg"), Notify(portrait) ]
+
                     frame:
                         xsize 1.0 ysize 1.0
                         xanchor 0.5 yanchor 0.5

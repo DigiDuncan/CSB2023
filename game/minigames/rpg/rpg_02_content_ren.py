@@ -375,7 +375,7 @@ class Characters:
     ARIA = Character("Aria", 220, 20, 45, [Attacks.ELDRITCH_BLAST, Attacks.RAINBOW_VOMIT], portrait=Image("gui/rpg/portraits/aria.png"), sprite=Image("images/characters/aria.png"), ai = AIType.SMART)
     DIGI = Character("Digi", 150, 20, 30, [Attacks.ROBOPUNCH, Attacks.HOLOSHIELD], portrait=Image("gui/rpg/portraits/digi.png"), sprite=Image("images/characters/angry.png"),ai = AIType.AGGRO)
     NOVA = Character("Nova", 170, 5, 30, [Attacks.MUSIC_BOOST, Attacks.RAVE], portrait=Image("gui/rpg/portraits/nova.png"), sprite=Image("images/characters/nova.png"), ai = AIType.AGGRO)
-    BLANK = Character("Blank", 180, 5, 35, [Attacks.SAMPLE_BLAST, Attacks.GNOMED], portrait=Image("gui/rpg/portraits/blank_hover.png"), sprite=Image("images/characters/blank.png"), ai = AIType.DEFENSIVE)
+    BLANK = Character("Blank", 180, 5, 35, [Attacks.SAMPLE_BLAST, Attacks.GNOMED], portrait=Image("gui/rpg/portraits/blank.png"), sprite=Image("images/characters/blank.png"), ai = AIType.DEFENSIVE)
     MIDGE = Character("Midge", 165, 10, 25, [Attacks.NUDGE, Attacks.DRAW_IN], portrait=Image("gui/rpg/portraits/midge.png"), sprite=Image("images/characters/midge.png"), ai = AIType.DEFENSIVE)
     DB05 = Character("DB05", 9001, 9001, 50, [Attacks.CONFIDENCE, Attacks.PEP_TALK], portrait=Image("gui/rpg/portraits/db05.png"), sprite=Image("images/characters/db.png"), ai = AIType.SKITTISH)
     ANNO = Character("Anno", 200, 20, 40, [Attacks.RADS_ATTACK, Attacks.AI_MIMIC], portrait=Image("gui/rpg/portraits/anno.png"), sprite=Image("images/characters/anno/anno.png"), ai = AIType.SMART)
@@ -413,7 +413,7 @@ class Characters:
     # Enemies (UCN)
     WESLEY = Character("{image=gui/inline_text/dx_text.png} Wesley", 200, 20, 40, [Attacks.PISTOL, Attacks.ALL_OVER_AGAIN], sprite=Image("images/characters/hohsis/wesley.png"), ai = AIType.AGGRO, display_name = "Wesley", portrait=Image("gui/rpg/portraits/wesley.png"))
     ED = Character("{image=gui/inline_text/dx_text.png} Ed", 300, 30, 25, [Attacks.HEAVY_PUNCH, Attacks.SOTH], sprite=Image("images/characters/hohsis/ed.png"), ai = AIType.SMART, display_name = "Ed", portrait=Image("gui/rpg/portraits/ed.png"))
-    RICHARD = Character("{image=gui/inline_text/dx_text.png} Richard", 250, 20, 30, [Attacks.ONE_HUNDRED, Attacks.ICE_CREAM], sprite=Image("images/characters/hohsis/rich.png"), ai = AIType.DEFENSIVE, display_name = "Richard", portrait=Image("gui/rpg/portraits/richard.png"))
+    RICHARD = Character("{image=gui/inline_text/dx_text.png} Richard", 250, 20, 30, [Attacks.ONE_HUNDRED, Attacks.ICE_CREAM], sprite=Image("images/characters/hohsis/rich.png"), ai = AIType.DEFENSIVE, display_name = "Richard", portrait=Image("gui/rpg/portraits/rich.png"))
     CEO = Character("{image=gui/inline_text/dx_text.png} CEO of Diabetes", 1000, 50, 75, [Attacks.LOBBYING, Attacks.NANOMACHINES], sprite=Image("images/characters/ceo.png"), ai = AIType.SMART, display_name = "CEO", portrait=Image("gui/rpg/portraits/diabetes_ceo.png"))
     SECRETARY = Character("{image=gui/inline_text/dx_text.png} Secretary of Diabetes", 1000, 50, 75, [Attacks.LOBBYING, Attacks.NANOMACHINES], sprite=Image("images/characters/secretary.png"), ai = AIType.SMART, display_name = "Secretary", portrait=Image("gui/rpg/portraits/diabetes_secretary.png"))
 
