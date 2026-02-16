@@ -3877,7 +3877,7 @@ label train_tate_ex_encounter:
     pause 2.5
     tate "Do you think I could take {i}you,{/i} CS?"
     show cs worried flipped
-    cs "Huh?!"
+    cs "Huh?!" with vpunch
     show tate srs at mid_mid_left with MoveTransition(1.0)
     # i REALLY need this next line to hit hard...
     pause 1.0
@@ -3925,7 +3925,6 @@ label train_tate_ex_fight:
     scene white with Dissolve(0.25)
     play sound sfx_spellcast
     pause 3.0
-    # TODO: Tate EX sprite health bar/text indicators are still missing
     jump rpg_tate_ex
 
 label train_tate_ex_refuse:
@@ -3948,7 +3947,7 @@ label train_tate_ex_refuse:
     cs "Yeah..."
     cs "You're... probably right."
     cs "Have a good night, then, Tate."
-    tate "You, too."
+    tate "You too."
     show cs disappointed
     show cs disappointed at mid_right_right
     show tate srs flipped at left
