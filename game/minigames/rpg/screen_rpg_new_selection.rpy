@@ -44,6 +44,10 @@ transform _rpg_ready_button_no:
 
 screen rpg_char_sel_new():
 
+    # this is stupid but it doesn't work any other way
+    $ rpg_pending_sprite = renpy.get_registered_image("rpg_pending_portrait")
+    $ rpg_pending_sprite_hover = renpy.get_registered_image("selectable:"+"rpg_pending_portrait") # TODO: this does not work. help?
+
     default hovered_character = Tooltip("")
     default hovered_character_sprite = Tooltip("") # this is stupid and hacky as hell lol
 
@@ -51,7 +55,7 @@ screen rpg_char_sel_new():
 
     ### add background color, kill music
     add Color('#323e42', alpha=0.75)
-    $renpy.music.stop()
+    $ renpy.music.stop()
 
     text "{size=+12}Select Your Characters!":
         xalign 0.5
@@ -96,7 +100,7 @@ screen rpg_char_sel_new():
                                     hover hover_portrait
                                     hover_sound "audio/sfx/sfx_select.ogg"
                                     hovered [ hovered_character.Action(character.name), hovered_character_sprite.Action(character.sprite) ]
-                                    action [ Play("sound", "audio/sfx/sfx_valid.ogg") ]
+                                    action [ Play("sound", "audio/sfx/sfx_valid.ogg"), Function(rpg_fill_slot, rpg_slots, rpg_selected_slot, character, rpg_ready) ]
 
                             ### handle empty slots here
                             python:
@@ -132,7 +136,7 @@ screen rpg_char_sel_new():
 
                         $ party_size = 4
 
-                        # allies
+                        ### Allies
                         frame:
                             background None
                             xsize 0.5 xoffset 10
@@ -144,9 +148,15 @@ screen rpg_char_sel_new():
                                 spacing 10
                                 for a in range(party_size):
                                     imagebutton:
-                                        idle "gui/rpg/portraits/blank.png"
-                                        hover "selectable:gui/rpg/portraits/blank.png"
+                                        if rpg_slots[a]:
+                                            idle rpg_pending_sprite
+                                            hover rpg_pending_sprite_hover
+                                        else:
+                                            idle rpg_slots[a].portrait
+                                            #hover "selectable:"+rpg_pending_sprite
+
                                         hover_sound "audio/sfx/sfx_select.ogg"
+                                        action [ SetVariable("rpg_selected_slot", a), SetScreenVariable("rpg_selected_slot", a), Notify(rpg_selected_slot) ]
 
                             # Selected character text
                             $ output_text = ""
@@ -156,7 +166,7 @@ screen rpg_char_sel_new():
                             text output_text:
                                 ypos 0.4
 
-                        # enemies
+                        ### Enemies
                         frame:
                             background None
                             xsize 0.5 xoffset -10
@@ -171,9 +181,15 @@ screen rpg_char_sel_new():
                                 spacing 10
                                 for e in range(party_size):
                                     imagebutton:
-                                        idle "gui/rpg/portraits/blank.png"
-                                        hover "selectable:gui/rpg/portraits/blank.png"
+                                        if rpg_slots[e]:
+                                            idle rpg_pending_sprite
+                                            hover rpg_pending_sprite_hover
+                                        else:
+                                            idle rpg_slots[e].portrait
+                                            #hover "selectable:"+rpg_pending_sprite
+
                                         hover_sound "audio/sfx/sfx_select.ogg"
+                                        action [ SetVariable("rpg_selected_slot", e+4), SetScreenVariable("rpg_selected_slot", e+4), Notify(rpg_selected_slot) ]
 
                             # Selected character text
                             $ output_text = ""

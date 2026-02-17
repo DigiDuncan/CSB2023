@@ -2603,6 +2603,9 @@ image realistic_explosion_anim = spritesheet_animation("images/realistic_explosi
 ## CS running loop for Perfect Tate
 image cs_run = spritesheet_animation("minigames/perfecttate/cs_spritesheet.png", 8, 3, fps = 60, looping = True)
 
+## For UCN (couldn't define it anywhere else but here)
+image rpg_pending_portrait = spritesheet_animation("gui/rpg/portraits/pending.png", 3, 1, fps = 2, looping = True)
+
 ## For cop car lights
 image blue_light:
     "blue_light.png"
