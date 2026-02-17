@@ -1,5 +1,5 @@
 label awawa_rpg_select_test:
-    call screen rpg_char_sel_new
+    call screen rpg_char_sel_new with dissolve
 
 init python:
     # ready up (will be combined with the function below later)
@@ -46,6 +46,9 @@ transform _rpg_ready_button_no:
 
 screen rpg_char_sel_new():
 
+    default hovered_character = Tooltip("")
+    default hovered_character_sprite = ""
+
     ### add background color, kill music
     add Color('#323e42', alpha=0.75)
     $renpy.music.stop()
@@ -57,6 +60,7 @@ screen rpg_char_sel_new():
 
     ### bounding box for everything
     frame:
+        background None
         xsize 0.9 ysize 0.75
         xalign 0.5 yalign 0.5
 
@@ -70,8 +74,11 @@ screen rpg_char_sel_new():
                     xalign 0.5
                     $ counter = 0
                     vbox:
-                        grid 17 5:
+                        xalign 0.5
+                        vpgrid:
+                            cols 17
                             spacing 10
+                            xalign 0.5
                             for character in RPG.Characters.characters:
                                 $ portrait = character.portrait.filename
                                 if portrait in portrait_exclude:
@@ -88,11 +95,12 @@ screen rpg_char_sel_new():
                                     xysize(88,88)
                                     idle portrait
                                     hover hover_portrait
-                                    action [ Play("sound", "audio/sfx/sfx_valid.ogg"), Notify(character.name), rpg_fill_slot(rpg_slots, rpg_selected_slot, character, rpg_slots_filled) ]
+                                    hover_sound "audio/sfx/sfx_select.ogg"
+                                    hovered [ hovered_character.Action(character.name), SetVariable(hovered_character_sprite, character.sprite), SetScreenVariable(hovered_character_sprite, character.sprite) ]
+                                    action [ Play("sound", "audio/sfx/sfx_valid.ogg") ]
 
-                    frame:
-                        text character.name # will move this later
-
+                    ### Show selected characters
+                    ### Slots 0-3 are allies, 4-7 are enemies
                     frame:
                         xsize 1.0 ysize 1.0
                         xanchor 0.5 yanchor 0.5
@@ -123,6 +131,27 @@ screen rpg_char_sel_new():
                                     imagebutton:
                                         idle "gui/rpg/portraits/unknown.png"
                                         hover "selectable:gui/rpg/portraits/unknown.png"
+
+                        ### display currently hovered character
+                        frame:
+                            xanchor 0.5 yanchor 1.0
+                            xpos 0.5 ypos 1.0
+                            xsize 0.5
+                            background None
+
+                            if hovered_character.value == "" or rpg_slots_filled == True:
+                                background None
+                            else:
+                                add Image(character.sprite): # this does not work yet
+                                    xysize(400,500)
+                                    fit("contain")
+                                    xanchor 0.5 yanchor 1.0
+                                    xpos 0.5 ypos 1.0
+                                frame:
+                                    xanchor 0.5 yanchor 1.0
+                                    xpos 0.5 ypos 1.0
+                                    text hovered_character.value:
+                                        text_align 0.5
 
     ### buttons
     textbutton "Return to Extras" action ShowMenu("category_welcome") yoffset 950 xoffset 25
