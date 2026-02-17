@@ -1,10 +1,9 @@
-screen acent_attorneynt(current_evidence):
-    default current_evidence = current_evidence
+screen acent_attorneynt(chosen_evidence):
     #modal True
     #zorder 1
 
     python:
-        global current_evidence
+        global selected_evidence
         show_window = False
         renpy.choice_for_skipping()
 
@@ -22,55 +21,60 @@ screen acent_attorneynt(current_evidence):
             ["", "", ""]
         ]
 
+    default hovered_item = Tooltip("")
+    default selected_item = Tooltip(items_list[chosen_evidence])
+
     ##### base elements
     add Color('#000000', alpha=0.5)
     add Image("/gui/acent_attorneynt/bg.png"):
         xanchor 0.5
         yanchor 0.5
         xpos 0.5
-        ypos 0.4
+        ypos 0.5
 
     text "Evidence":
         color "#F7F6F2"
         size 64
         xpos 98
-        ypos 55
+        ypos 137
 
     # item name
-    text items_list[current_evidence][0]:
+    text selected_item.value[0]:
         color "#000000"
         size 72
         xpos 570
-        ypos 165
+        ypos 248
 
     # item description
-    text items_list[current_evidence][2]:
+    text selected_item.value[2]:
         color "#000000"
         size 54
         xpos 570
-        ypos 310
+        ypos 393
 
     # select button
-    frame:
+    button:
         xanchor 0.5
         yanchor 0.5
-        xpos 0.5
-        ypos 0.8
+        xpos 1650
+        ypos 908
 
-        button:
-            text "Present Evidence":
-                text_align 0.5
+        text "Present":
+            size 64
+            text_align 0.5
+            color("#0099cc")
+            hover_color("#ff8a00")
 
-            hovered [ Play("sound", "audio/sfx/sfx_select.ogg")]
-            action [ Play("sound", "audio/sfx/sfx_valid.ogg"), Return() ]
+        hovered [ Play("sound", "audio/sfx/sfx_select.ogg")]
+        action [ Play("sound", "audio/sfx/sfx_valid.ogg"), Return() ]
 
     # frame + item image
     frame:
         background None
         xpos 133
-        ypos 150
+        ypos 233
         xysize (375, 375)
-        image items_list[current_evidence][1]:
+        image selected_item.value[1]:
             xanchor 0.5
             yanchor 0.5
             xpos 0.5
@@ -81,7 +85,7 @@ screen acent_attorneynt(current_evidence):
     hbox:
         ysize 206
         xalign 0.5
-        ypos 570
+        ypos 653
 
         # shit out buttons
         for i in range(len(items_list)):
@@ -111,8 +115,8 @@ screen acent_attorneynt(current_evidence):
                             xalign 0.5
                             yalign 1.0
 
-                            hovered [ Play("sound", "audio/sfx/sfx_select.ogg"), Notify(i) ]
-                            action [ Play("sound", "audio/sfx/sfx_valid.ogg"), SetScreenVariable("current_evidence", i), SetVariable("current_evidence", i), Notify(current_evidence) ]
+                            hovered [ Play("sound", "audio/sfx/sfx_select.ogg"), hovered_item.Action(items_list[i]) ]
+                            action [ Play("sound", "audio/sfx/sfx_valid.ogg"), selected_item.Action(items_list[i]), SetVariable("chosen_evidence", i)  ]
 
                         image items_list[i][1]:
                             xalign 0.5

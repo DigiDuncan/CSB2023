@@ -28,8 +28,6 @@ init python:
     rpg_slots = []
     rpg_ready = False
 
-    portrait_exclude = ["gui/rpg/portraits/blank_hover.png", "gui/rpg/portraits/unknown.png", "gui/rpg/portraits/none.png"]
-
 transform _rpg_ready_button_yes:
     zoom 0.4
     yoffset 1000
@@ -47,7 +45,7 @@ transform _rpg_ready_button_no:
 screen rpg_char_sel_new():
 
     default hovered_character = Tooltip("")
-    default hovered_character_sprite = ""
+    default hovered_character_sprite = Tooltip("") # this is stupid and hacky as hell lol
 
     $ rpg_slots = ["CS","Arceus","Tate", "Digi", "Wesley", "Ed", "Richard", "Copguy"]  # test values only
 
@@ -85,8 +83,6 @@ screen rpg_char_sel_new():
                             xalign 0.5
                             for character in RPG.Characters.characters:
                                 $ portrait = character.portrait.filename
-                                if portrait in portrait_exclude:
-                                    continue
 
                                 # this bit is stupid lmao
                                 if portrait == "gui/rpg/portraits/blank.png":
@@ -99,7 +95,7 @@ screen rpg_char_sel_new():
                                     idle portrait
                                     hover hover_portrait
                                     hover_sound "audio/sfx/sfx_select.ogg"
-                                    hovered [ hovered_character.Action(character.name), SetVariable(hovered_character_sprite, character.sprite), SetScreenVariable(hovered_character_sprite, character.sprite) ]
+                                    hovered [ hovered_character.Action(character.name), hovered_character_sprite.Action(character.sprite) ]
                                     action [ Play("sound", "audio/sfx/sfx_valid.ogg") ]
 
                             ### handle empty slots here
@@ -114,7 +110,7 @@ screen rpg_char_sel_new():
                                 idle "gui/rpg/portraits/unknown.png"
                                 hover "selectable:gui/rpg/portraits/unknown.png"
                                 hover_sound "audio/sfx/sfx_select.ogg"
-                                hovered [ hovered_character.Action("(Random)"), SetVariable(hovered_character_sprite, "gui/rpg/portraits/unknown.png"), SetScreenVariable(hovered_character_sprite, "gui/rpg/portraits/unknown.png") ]
+                                hovered [ hovered_character.Action("(Random)"), hovered_character_sprite.Action("gui/rpg/portraits/unknown.png") ]
                                 action [ Play("sound", "audio/sfx/sfx_valid.ogg") ]
 
                             imagebutton:
@@ -122,7 +118,7 @@ screen rpg_char_sel_new():
                                 idle "gui/rpg/portraits/none.png"
                                 hover "selectable:gui/rpg/portraits/none.png"
                                 hover_sound "audio/sfx/sfx_select.ogg"
-                                hovered [ hovered_character.Action("(None)"), SetVariable(hovered_character_sprite, "gui/rpg/portraits/none.png"), SetScreenVariable(hovered_character_sprite, "gui/rpg/portraits/none.png") ]
+                                hovered [ hovered_character.Action("(None)"), hovered_character_sprite.Action("gui/rpg/portraits/none.png") ]
                                 action [ Play("sound", "audio/sfx/sfx_valid.ogg") ]
 
 
@@ -199,8 +195,8 @@ screen rpg_char_sel_new():
                             if hovered_character.value == "" or rpg_ready == True:
                                 background None
                             else:
-                                add Image(character.sprite): # this does not work yet
-                                    xysize(400,500)
+                                add Image(hovered_character_sprite.value):
+                                    xysize(500,400)
                                     fit("contain")
                                     xanchor 0.5 yanchor 1.0
                                     xpos 0.5 ypos 1.0

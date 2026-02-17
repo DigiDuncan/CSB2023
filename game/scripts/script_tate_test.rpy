@@ -590,9 +590,9 @@ label awawa_tate_test:
                     ########## ACEN'T ATTORNEYN'T SCREEN ##########
                     "Ace Attorney Parody":
                         tate "Alrighty, then..."
-                        call screen acent_attorneynt(current_evidence)
+                        call screen acent_attorneynt(chosen_evidence)
                         hide screen acent_attorneynt
-                        tate "Did it work? On my end, you selected item [current_evidence]."
+                        tate "Did it work? On my end, you selected item [chosen_evidence]."
                         jump .awawa_menu
 
                     ########## GO BACK ##########

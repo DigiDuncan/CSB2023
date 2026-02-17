@@ -18,7 +18,7 @@ init python:
     current_subgame_label = None
 
     # For Ace Attorney parody
-    current_evidence = 0
+    chosen_evidence = 0
 
 # If music is so good, why is there no Music 2?
 init python:
