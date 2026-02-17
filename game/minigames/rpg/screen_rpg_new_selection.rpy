@@ -26,7 +26,7 @@ init python:
 
     rpg_selected_slot = 0
     rpg_slots = []
-    rpg_slots_filled = False
+    rpg_ready = False
 
     portrait_exclude = ["gui/rpg/portraits/blank_hover.png", "gui/rpg/portraits/unknown.png", "gui/rpg/portraits/none.png"]
 
@@ -49,6 +49,8 @@ screen rpg_char_sel_new():
     default hovered_character = Tooltip("")
     default hovered_character_sprite = ""
 
+    $ rpg_slots = ["CS","Arceus","Tate", "Digi", "Wesley", "Ed", "Richard", "Copguy"]  # test values only
+
     ### add background color, kill music
     add Color('#323e42', alpha=0.75)
     $renpy.music.stop()
@@ -68,8 +70,10 @@ screen rpg_char_sel_new():
             xalign 0.5
             vbox:
                 xalign 0.5
+
                 ### selectable characters go here
                 frame:
+                    background None
                     ysize 0.5
                     xalign 0.5
                     $ counter = 0
@@ -83,7 +87,6 @@ screen rpg_char_sel_new():
                                 $ portrait = character.portrait.filename
                                 if portrait in portrait_exclude:
                                     continue
-                                $ counter += 1
 
                                 # this bit is stupid lmao
                                 if portrait == "gui/rpg/portraits/blank.png":
@@ -99,38 +102,92 @@ screen rpg_char_sel_new():
                                     hovered [ hovered_character.Action(character.name), SetVariable(hovered_character_sprite, character.sprite), SetScreenVariable(hovered_character_sprite, character.sprite) ]
                                     action [ Play("sound", "audio/sfx/sfx_valid.ogg") ]
 
+                            ### handle empty slots here
+                            python:
+                                unused_slots = ((17*4)-2)-len(RPG.Characters.characters)
+                            for f in range(unused_slots):
+                                add Null(88,88)
+
+                            ### handle random/skipped characters
+                            imagebutton:
+                                xysize(88,88)
+                                idle "gui/rpg/portraits/unknown.png"
+                                hover "selectable:gui/rpg/portraits/unknown.png"
+                                hover_sound "audio/sfx/sfx_select.ogg"
+                                hovered [ hovered_character.Action("(Random)"), SetVariable(hovered_character_sprite, "gui/rpg/portraits/unknown.png"), SetScreenVariable(hovered_character_sprite, "gui/rpg/portraits/unknown.png") ]
+                                action [ Play("sound", "audio/sfx/sfx_valid.ogg") ]
+
+                            imagebutton:
+                                xysize(88,88)
+                                idle "gui/rpg/portraits/none.png"
+                                hover "selectable:gui/rpg/portraits/none.png"
+                                hover_sound "audio/sfx/sfx_select.ogg"
+                                hovered [ hovered_character.Action("(None)"), SetVariable(hovered_character_sprite, "gui/rpg/portraits/none.png"), SetScreenVariable(hovered_character_sprite, "gui/rpg/portraits/none.png") ]
+                                action [ Play("sound", "audio/sfx/sfx_valid.ogg") ]
+
+
                     ### Show selected characters
                     ### Slots 0-3 are allies, 4-7 are enemies
                     frame:
+                        background None
                         xsize 1.0 ysize 1.0
                         xanchor 0.5 yanchor 0.5
-                        xpos 0.5 ypos 1.5
+                        xpos 0.5 ypos 1.6
 
                         $ party_size = 4
 
                         # allies
                         frame:
-                            xsize 0.5
+                            background None
+                            xsize 0.5 xoffset 10
                             text "Allies"
+
+                            # Selected character portraits
                             grid 4 1:
                                 ypos 0.15
+                                spacing 10
                                 for a in range(party_size):
                                     imagebutton:
-                                        idle "gui/rpg/portraits/unknown.png"
-                                        hover "selectable:gui/rpg/portraits/unknown.png"
+                                        idle "gui/rpg/portraits/blank.png"
+                                        hover "selectable:gui/rpg/portraits/blank.png"
+                                        hover_sound "audio/sfx/sfx_select.ogg"
+
+                            # Selected character text
+                            $ output_text = ""
+                            for a in range(0, 4):
+                                $ output_text += rpg_slots[a]+"\n"
+
+                            text output_text:
+                                ypos 0.4
+
                         # enemies
                         frame:
-                            xsize 0.5
+                            background None
+                            xsize 0.5 xoffset -10
                             xalign 1.0
                             text "Enemies":
                                 xalign 1.0
+
+                            # Selected character portraits
                             grid 4 1:
                                 xalign 1.0
                                 ypos 0.15
-                                for a in range(party_size):
+                                spacing 10
+                                for e in range(party_size):
                                     imagebutton:
-                                        idle "gui/rpg/portraits/unknown.png"
-                                        hover "selectable:gui/rpg/portraits/unknown.png"
+                                        idle "gui/rpg/portraits/blank.png"
+                                        hover "selectable:gui/rpg/portraits/blank.png"
+                                        hover_sound "audio/sfx/sfx_select.ogg"
+
+                            # Selected character text
+                            $ output_text = ""
+                            for e in range(4, 8):
+                                $ output_text += rpg_slots[e]+"\n"
+
+                            text output_text:
+                                ypos 0.4
+                                xalign 1.0
+                                text_align 1.0
 
                         ### display currently hovered character
                         frame:
@@ -139,7 +196,7 @@ screen rpg_char_sel_new():
                             xsize 0.5
                             background None
 
-                            if hovered_character.value == "" or rpg_slots_filled == True:
+                            if hovered_character.value == "" or rpg_ready == True:
                                 background None
                             else:
                                 add Image(character.sprite): # this does not work yet
@@ -161,11 +218,11 @@ screen rpg_char_sel_new():
     textbutton "Click to toggle ready state.":
         yoffset 50 xoffset 25
         action [
-            SetScreenVariable("rpg_slots_filled", toggle_ready(rpg_slots_filled)),
-            SetVariable("rpg_slots_filled", toggle_ready(rpg_slots_filled))
+            SetScreenVariable("rpg_ready", toggle_ready(rpg_ready)),
+            SetVariable("rpg_ready", toggle_ready(rpg_ready))
         ]
 
-    if rpg_slots_filled == True:
+    if rpg_ready == True:
         $ ready_transform = _rpg_ready_button_yes
     else:
         $ ready_transform = _rpg_ready_button_no
@@ -175,6 +232,6 @@ screen rpg_char_sel_new():
         idle "gui/rpg/ready.png"
         hover "selectable:gui/rpg/ready.png"
         hover_sound "audio/sfx/sfx_select.ogg"
-        action [ SensitiveIf(rpg_slots_filled == True), Play("sound", "audio/sfx/sfx_valid.ogg") ]
+        action [ SensitiveIf(rpg_ready == True), Play("sound", "audio/sfx/sfx_valid.ogg") ]
         at ready_transform
 
