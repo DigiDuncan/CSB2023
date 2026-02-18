@@ -220,7 +220,7 @@ label play_rpggame:
         show screen screen_rpg onlayer rpg_context
         while RPG.encounter.has_signals():
             $ curr_signal = RPG.encounter.get_next_signal()
-            if hasattr(curr_signal, "message"):
+            if hasattr(curr_signal, "message") and type(curr_signal) != RPG.DebugSignal:
                 show screen say_rpg(curr_signal.message) onlayer rpg_say
                 pause
                 hide screen say_rpg
