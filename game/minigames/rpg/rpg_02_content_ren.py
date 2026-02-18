@@ -445,6 +445,10 @@ class Characters:
     @classmethod
     def get(cls, k: str, default: Character | None = None) -> Character | None:
         return cls.__dict__.get(k, default)
+    
+    @classmethod
+    def random(cls) -> Character:
+        return random.choice(cls.characters)
 
 variable_characters: dict[str, Character] = {}
 
