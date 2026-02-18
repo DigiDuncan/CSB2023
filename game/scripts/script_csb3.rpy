@@ -1573,8 +1573,6 @@ label csbiii_bad_convince:
     $ ending_manager.mark("attorney")
     bad_end "Did you really\nthink that would work?" "csbiii_copcar_menu"
 
-# TODO: ace attorney select evidence menu
-
 label csbiii_good_convince:
     scene copcar
     show copguy at t_copguy_frontseat
@@ -1608,51 +1606,167 @@ label csbiii_good_convince:
     arceus "I can show you."
     copguy "And {i}how{/i} exactly do you plan to do that? Where is your evidence?"
 
-    show craptop at manual_pos(0.7, 1.5, 0.5) with determination
-    show craptop at manual_pos(0.7, 0.55, 0.5) with move
+    call screen acent_attorneynt(chosen_evidence)
 
-    n "Arceus pulls up a laptop that he managed to grab from the front seat."
-    copguy "{i}What?{/i} How did you get that?"
-    arceus "Watch this."
-    play sound "<from 9.0>sfx/sfx_car_approach_stop.ogg" volume 10.0 fadein 1.0
-    n "Reluctantly, Copguy stops the car."
-    pause 2.0
-    stop sound
-    scene backseat
-    show craptop evidence
-    with dissolve
-    n "Arceus plays back the events from {i}CS Bounciness I.{/i}"
+    if chosen_evidence == 0: # donut
+        show cs happy
+        cs "Hey, you know, you look like you could use a Snickers."
+        show cs
+        copguy "Ooh, actually, I {i}could{/i} go for a Snickers."
+        show donut_2 at manual_pos(0.3, 1.5, 0.5) with determination
+        show donut_2 at manual_pos(0.3, 0.55, 0.5) with move
+        cs "Okay, I don't actually {i}have{/i} a Snickers, but I {i}do{/i} have one donut left!"
+        show cs disappointed
+        copguy "Haha, very funny."
+        copguy "Sure, okay, let's offer the officer a donut."
+        copguy "You may be some internet funnyman, but your bad jokes won't save you now."
+        show cs worried
+        show arceus worried
+        copguy "In fact, I'm tacking on {i}another{/i} charge! Now I want a Snickers!"
+        $ ending_manager.mark("attorney")
+        stop music
+        bad_end "Did you really\nthink that would work?" "csbiii_copcar_menu"
+    elif chosen_evidence == 1: # spoon
+        show cs happy
+        cs "Hey, look!"
+        show spoon at manual_pos(0.3, 1.5, 0.5):
+            zoom 0.5
+        with determination
+        show spoon at manual_pos(0.3, 0.55, 0.5):
+            zoom 0.5
+        with move
+        cs "I still have my spoon!"
+        show arceus angry
+        arceus "CS, you {nw}"
+        show cs worried
+        extend "dumbass!" with vpunch
+        arceus "You weren't supposed to keep that!"
+        show arceus worried
+        copguy "Now that's {i}my{/i} kind of evidence."
+        copguy "So {i}that's{/i} how you escaped?"
+        cs "Uh-- {nw}"
+        copguy "That's {i}wonderful{/i} news! I'll let the mess staff know to get cheaper spoons next quarter!"
+        copguy "We'll save {i}thousands!"
+        show cs scared
+        copguy "But, until then, I'll let your CO know that you two will be eating with your hands!"
+        $ ending_manager.mark("attorney")
+        stop music
+        bad_end "Did you really\nthink that would work?" "csbiii_copcar_menu"
+    elif chosen_evidence == 2: # genergy
+        cs "Hey, man. Your voice is sounding a little hoarse."
+        cs "Your throat dry?"
+        copguy "Oh, yeah, I guess it is."
+        show cs happy
+        show genergy at manual_pos(0.3, 1.5, 0.5) with determination
+        show genergy at manual_pos(0.3, 0.55, 0.5) with move
+        cs "You can have my spare Genergy if you'd like."
+        copguy "Hey, thanks, I could use the caffei--"
+        show cs scared
+        show arceus worried
+        copguy "Ew, wait a sec! " with vpunch
+        extend "This isn't even cold!"
+        show cs disappointed
+        cs "Yeah, so?"
+        copguy "What is {i}wrong{/i} with you?!" with vpunch
+        copguy "Do you drink milk warm, too?"
+        show cs angry
+        cs "Drinking Genergy warm isn't a crime!"
+        copguy "Yeah, but it {i}should{/i} be!"
+        $ ending_manager.mark("attorney")
+        stop music
+        bad_end "Did you really\nthink that would work?" "csbiii_copcar_menu"
+    # 3 is at the bottom since it's the correct one
+    elif chosen_evidence == 4: # phone
+        show cs_phone flipped at manual_pos(0.3, 1.5, 0.5) with determination
+        show cs_phone flipped at manual_pos(0.3, 0.55, 0.5) with move
+        cs "I'm sure there's something on my phone that'll convince you!"
+        cs "Just let me turn it on!"
+        window hide
+        pause 2.0
+        show arceus worried
+        pause 1.0
+        show cs disappointed
+        pause 1.0
+        cs "Oh, uh..."
+        cs "Hey, Copguy..."
+        cs "Can I borrow your charger?"
+        copguy "Absolutely not."
+        $ ending_manager.mark("attorney")
+        stop music
+        bad_end "Did you really\nthink that would work?" "csbiii_copcar_menu"
+    elif chosen_evidence == 5: # ytx drive
+        show ytx_drive at manual_pos(0.3, 1.5, 0.5):
+            zoom 0.5
+        with determination
+        show ytx_drive at manual_pos(0.3, 0.55, 0.5):
+            zoom 0.5
+        with move
+        cs "Hey, look, see? I got this from Linus!"
+        cs "He wouldn't give something like this to a criminal, right?"
+        cs "I'm totally innocent!"
+        copguy "{i}Innocent,{/i} you say?"
+        show cs disappointed
+        copguy "Linus isn't exactly a standup guy himself, y'know."
+        show arceus worried
+        copguy "There's no way he didn't see your obviously fake visa."
+        copguy "Also, my nephew got one of those turd-shaped flash drives at Best Buy like a year ago."
+        copguy "You ain't special."
+        $ ending_manager.mark("attorney")
+        stop music
+        bad_end "Did you really\nthink that would work?" "csbiii_copcar_menu"
+    elif chosen_evidence == 3: # craptop (the correct one)
 
-    scene copcar
-    show copguy at center
-    show copcar_mask
-    show arceus at right
-    show craptop at manual_pos(0.7, 0.55, 0.5)
-    show cs disappointed at left
-    with dissolve
-    cs "How--"
-    show arceus happy
-    arceus "I have my ways."
-    show arceus
-    copguy "I don't understand..."
-    copguy "HoH SiS really {i}did{/i} scam you hard, didn't they?"
-    copguy "I'm not sure how valid it was for you to push that man off of the building..."
-    copguy "But I can't argue right now about whether that footage is fake."
-    stop music fadeout 3.0
-    music end
-    pause 2.0
+        show craptop at manual_pos(0.7, 1.5, 0.5) with determination
+        show craptop at manual_pos(0.7, 0.55, 0.5) with move
 
-    show copguy with MoveTransition(1.0):
-        xanchor 0.5 xpos 0.325
-    pause 1.0
-    play sound sfx_car_door_open
-    play sound2 sfx_car_door_ajar loop
-    hide copguy with moveoutleft
-    n "Copguy gets out of the car."
-    n "He then proceeds to open the doors to let CS and Arceus out, freeing them of their shackles."
-    pause 0.5
-    play sound sfx_car_door_open
+        n "Arceus pulls up a laptop that he managed to grab from the front seat."
+        copguy "{i}What?{/i} How did you get that?"
+        arceus "Watch this."
+        play sound "<from 9.0>sfx/sfx_car_approach_stop.ogg" volume 10.0 fadein 1.0
+        n "Reluctantly, Copguy stops the car."
+        pause 2.0
+        stop sound
+        scene backseat
+        show craptop evidence
+        with dissolve
+        n "Arceus plays back the events from {i}CS Bounciness I.{/i}"
 
+        scene copcar
+        show copguy at center
+        show copcar_mask
+        show arceus at right
+        show craptop at manual_pos(0.7, 0.55, 0.5)
+        show cs disappointed at left
+        with dissolve
+        cs "How--"
+        show arceus happy
+        arceus "I have my ways."
+        show arceus
+        copguy "I don't understand..."
+        copguy "HoH SiS really {i}did{/i} scam you hard, didn't they?"
+        copguy "I'm not sure how valid it was for you to push that man off of the building..."
+        copguy "But I can't argue right now about whether that footage is fake."
+        stop music fadeout 3.0
+        music end
+        pause 2.0
+
+        show copguy with MoveTransition(1.0):
+            xanchor 0.5 xpos 0.325
+        pause 1.0
+        play sound sfx_car_door_open
+        play sound2 sfx_car_door_ajar loop
+        hide copguy with moveoutleft
+        n "Copguy gets out of the car."
+        n "He then proceeds to open the doors to let CS and Arceus out, freeing them of their shackles."
+        pause 0.5
+        play sound sfx_car_door_open
+
+        jump csbiii_freed
+    else:
+        # this should never happen!
+        jump secret_dx
+
+label csbiii_freed:
     scene washington_road
     show cop_car dark at mid_offscreen_left
     with dissolve

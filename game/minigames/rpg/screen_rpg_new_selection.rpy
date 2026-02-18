@@ -15,9 +15,12 @@ init python:
         # fill the slot
         slots_list[current_slot] = character
 
+
         # advance the slot
-        if current_slot < 8:
+        if current_slot < 8 and not current_slot+1:
             current_slot += 1
+        elif current_slot+1:
+            pass
         else:
             # make ready
             for slot in slot_list:
@@ -53,7 +56,7 @@ screen rpg_char_sel_new():
 
     # this is stupid but it doesn't work any other way
     $ rpg_pending_sprite = renpy.get_registered_image("rpg_pending_portrait")
-    $ rpg_pending_sprite_hover = renpy.get_registered_image("selectable:"+"rpg_pending_portrait") # TODO: this does not work. help?
+    $ rpg_pending_sprite_hover = "selectable:gui/rpg/portraits/pending.png"
 
     default hovered_character = Tooltip("")
     default hovered_character_sprite = Tooltip("") # this is stupid and hacky as hell lol
@@ -68,9 +71,9 @@ screen rpg_char_sel_new():
 
     $ renpy.music.stop()
 
-    text "{size=+12}Select Your Characters!":
+    text "{size=+24}Select Your Characters!":
         xalign 0.5
-        yalign 0.05
+        yalign 0.04
         text_align 0.5
 
     ### bounding box for everything
@@ -151,7 +154,7 @@ screen rpg_char_sel_new():
                         frame:
                             background None
                             xsize 0.5 xoffset 10
-                            text "Allies"
+                            text "{size=+8}Allies"
 
                             # Selected character portraits
                             grid 4 1:
@@ -171,7 +174,7 @@ screen rpg_char_sel_new():
 
                             # Selected character text
                             $ output_text = ""
-                            for a in range(0, 4):
+                            for a in range(party_size):
                                 $ output_text += rpg_slots[a]+"\n"
 
                             text output_text:
@@ -182,7 +185,7 @@ screen rpg_char_sel_new():
                             background None
                             xsize 0.5 xoffset -10
                             xalign 1.0
-                            text "Enemies":
+                            text "{size=+8}Enemies":
                                 xalign 1.0
 
                             # Selected character portraits
@@ -204,8 +207,8 @@ screen rpg_char_sel_new():
 
                             # Selected character text
                             $ output_text = ""
-                            for e in range(4, 8):
-                                $ output_text += rpg_slots[e]+"\n"
+                            for e in range(party_size):
+                                $ output_text += rpg_slots[(e+4)]+"\n"
 
                             text output_text:
                                 ypos 0.4

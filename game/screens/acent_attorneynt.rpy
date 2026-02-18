@@ -9,11 +9,11 @@ screen acent_attorneynt(chosen_evidence):
 
         ##### the items
         items_list = [
-            ["Craptop", "images/characters/craptop/craptop.png", "Take a shit on the internet."],
-            ["Leftover Donut", "images/donut_2.png", "Glazed and confused."],
-            ["Genergy", "images/genergy.png", "Plum-flavored."],
+            ["Leftover Donut", "images/donut_2.png", "It's a little stale, but there's no mold yet,\nso it's probably fine!"],
+            ["Plastic Spoon", "images/spoon.png", "This has no right being as sturdy as it is!"],
+            ["Genergy", "images/genergy.png", "Original plum flavor."],
+            ["Craptop", "images/characters/craptop/craptop.png", "Hey, under the seat--!"],
             ["Phone", "images/cs_phone.png", "The battery died like two days ago."],
-            ["Dog", "images/dog.png", "Fluffy?!"],
             ["YTX Flash Drive", "images/ytx_drive.png", "Oops, forgot the card itself back at LMG..."],
             ["", "", ""],
             ["", "", ""],
@@ -51,6 +51,7 @@ screen acent_attorneynt(chosen_evidence):
         size 54
         xpos 570
         ypos 393
+        line_spacing 25
 
     # select button
     button:
