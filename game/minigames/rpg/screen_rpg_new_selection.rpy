@@ -127,7 +127,7 @@ screen rpg_char_sel_new():
                                 idle "gui/rpg/portraits/unknown.png"
                                 hover "selectable:gui/rpg/portraits/unknown.png"
                                 hover_sound "audio/sfx/sfx_select.ogg"
-                                hovered [ hovered_character.Action("(Random)") ]
+                                hovered [ hovered_character.Action(["(Random)", renpy.random.choice(RPG.Characters) ]) ]
                                 action [ Play("sound", "audio/sfx/sfx_valid.ogg") ]
 
                             imagebutton:
@@ -135,7 +135,7 @@ screen rpg_char_sel_new():
                                 idle "gui/rpg/portraits/none.png"
                                 hover "selectable:gui/rpg/portraits/none.png"
                                 hover_sound "audio/sfx/sfx_select.ogg"
-                                hovered [ hovered_character.Action("(None)") ]
+                                hovered [ hovered_character.Action(["(None)", None]) ]
                                 action [ Play("sound", "audio/sfx/sfx_valid.ogg") ]
 
 
@@ -234,8 +234,8 @@ screen rpg_char_sel_new():
                             else:
 
                                 # handle random/none first
-                                if hovered_character.value == "(Random)" or hovered_character.value == "(None)":
-                                    $ rpg_currently_hovered = hovered_character.value
+                                if hovered_character.value[0] == "(Random)" or hovered_character.value[0] == "(None)":
+                                    $ rpg_currently_hovered = hovered_character.value[0]
                                 else:
                                     $ rpg_currently_hovered = hovered_character.value.name
 
