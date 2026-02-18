@@ -76,7 +76,6 @@
         "ce_bio": "He's always there to help CS with decorating, too, apparently.",
         "rpg": {
             "ANNO": {
-                "name": "Base Stats",
                 "need_label": "friend2_cs_rage"
             }
         }
@@ -104,7 +103,6 @@
         "ce_bio": "Despite being Jewish, he's still excited to celebrate Christmas with all of his friends. As a bonus, Hanukkah and Christmas just happen to overlap this year!",
         "rpg": {
             "ARCEUS": {
-                "name": "Base Stats",
                 "need_label": "friend_so_join"
             }
         }
@@ -122,7 +120,6 @@
         "ce_bio": "Despite her mind-bogglingly busy schedule, she always makes some time for her friends from DPN. Luckily, she could make it to this party, too. Her ability to teleport is coming in clutch!",
         "rpg": {
             "ARIA": {
-                "name": "Base Stats",
                 "need_label": "friend2_cs_meetup"
             }
         }
@@ -162,7 +159,6 @@
         "ce_bio": "Billy loves a good holiday get-together! He's been itching to make a big batch of Big City Sliders for some time now. What better place to do that than at his good friend CS' Christmas party?",
         "rpg": {
             "BILLY": {
-                "name": "Base Stats",
                 "need_label": "michigan_bronson_win"
             }
         }
@@ -180,7 +176,6 @@
         "ce_bio": "They're a little annoyed about having to share the party's sound system with Nova.",
         "rpg": {
             "BLANK": {
-                "name": "Base Stats",
                 "need_label": "friend2_between_1"
             }
         }
@@ -216,7 +211,6 @@
         "bio": "Also known as Jade, this massive slime has been seen roaming around Las Vegas. Only a few claim to have spotted her, which is funny, since she is about a mile tall.",
         "rpg": {
             "BUBBLE": {
-                "name": "Base Stats",
                 "need_label": "friend2_car_slam"
             }
         }
@@ -243,7 +237,6 @@
         "bio": "He's your average run-of-the-mill working-class citizen. Whenever you need to pay for something, he's got your back. At a completely different store in a completely new location? He's there for you.",
         "rpg": {
             "CASHIER": {
-                "name": "Base Stats",
                 "need_label": "friend2_car_slam"
             }
         }
@@ -267,7 +260,6 @@
         "bio": "Not to be confused with Copguy, this is just your regular ol' Copdude. While not as strong as Copguy, Copdudes will still act as a powerful arm to the police force. They can also sense a Krispy Kreme donut from a mile away.",
         "rpg": {
             "COP": {
-                "name": "Base Stats",
                 "need_label": "friend_so_join"
             }
         }
@@ -285,11 +277,9 @@
         "ce_bio": "Copguy knows that crime is statistically higher on Christmas Eve, so he really just wanted to keep working through the holiday. However, he has no choice but to (sometimes maliciously) comply with his boss' demands.",
         "rpg": {
             "COPGUY": {
-                "name": "Base Stats",
                 "need_label": "friend_after_cop_fight"
             },
             "COPGUYGODMODE": {
-                "name": "Reinforcements",
                 "need_label": "friend_so_join"
             }
         }
@@ -304,7 +294,6 @@
         "bio": "Millions of dollars in government surveillance has allowed Copguy to observe and practice nearly all of CS' and his friends' abilities. The only thing he {i}can't{/i} mimic is the power of friendship!",
         "rpg": {
             "COPGUY_EX": {
-                "name": "Base Stats",
                 "need_label": "friend2_weapon_of_choice"
             }
         }
@@ -319,7 +308,6 @@
         "bio": "What {i}happened?",
         "rpg": {
             "COPGUY_EXE": {
-                "name": "Base Stats",
                 "need_label": "michigan_bronson_win"
             }
         },
@@ -461,11 +449,9 @@
         "flip": true,
         "rpg": {
             "CS": {
-                "name": "Base Stats",
                 "need_label": "friend_so_join"
             },
             "CS_WEAK": {
-                "name": "Weak",
                 "need_label": "friend_after_fanboy"
             },
             "CS_NG": {
@@ -551,7 +537,6 @@
         "ce_bio": "Unfortunately, he was a bit too busy to buy a proper gift for CS' party, so he had to improvise.",
         "rpg": {
             "DB05": {
-                "name": "Base Stats",
                 "need_label": "friend2_weapon_of_choice"
             }
         }
@@ -567,7 +552,6 @@
         "dx": true,
         "rpg": {
             "CEO": {
-                "name": "Base Stats",
                 "need_label": "bt1d_ending"
             }
         }
@@ -583,7 +567,6 @@
         "dx": true,
         "rpg": {
             "SECRETARY": {
-                "name": "Base Stats",
                 "need_label": "bt1d_ending"
             }
         }
@@ -608,7 +591,6 @@
         "ce_bio": "Digi showed up to this party in a spaceship. What were they doing in {i}space?{/i} What {i}does{/i} Digi do on a daily basis? The answer is \"too much stuff, really.\" They brought their new projector for a holiday movie night, but they've never actually successfully set it up before.",
         "rpg": {
             "DIGI": {
-                "name": "Final",
                 "need_label": "friend2_cs_meetup_2"
             }
         }
@@ -637,7 +619,6 @@
         "zoom": 0.85,
         "rpg": {
             "ED": {
-                "name": "Base Stats",
                 "need_label": "friend2_car_slam"
             }
         }
@@ -667,7 +648,6 @@
         "ce_bio": "As seen on TV. This lanky figure is here to have a good time and talk about history. Quite fun, eh? He came all the way from Canada, alongside Nova. He {i}definitely{/i} knows cs188, too. Totally. So, that's a plus!",
         "rpg": {
             "GES": {
-                "name": "Base Stats",
                 "need_label": "friend2_car_slam"
             }
         }
@@ -884,15 +864,12 @@
         "zoom": 0.733,
         "rpg": {
             "K174": {
-                "name": "K17-4 (Base Stats)",
                 "need_label": "archival_finale"
             },
             "K199": {
-                "name": "K19-9 (Base Stats)",
                 "need_label": "archival_finale"
             },
             "K207": {
-                "name": "K20-7 (Base Stats)",
                 "need_label": "archival_finale"
             }
         }
@@ -910,7 +887,6 @@
         "ce_bio": "Arceus' partner of many years. While she's happy to meet Arc's friends, she didn't expect there to be quite so many of them. She just wants to find a quiet corner to chill out in.",
         "rpg": {
             "KITTY": {
-                "name": "Base Stats",
                 "need_label": "friend_after_cop_fight"
             }
         }
@@ -1030,7 +1006,6 @@
         "zoom": 1.333,
         "rpg": {
             "MEAN": {
-                "name": "Base Stats",
                 "need_label": "friend2_car_slam"
             }
         }
@@ -1086,7 +1061,6 @@
         "ce_bio": "This esteemed poet just {i}loves{/i} hot food, especially a well-mashed potato!",
         "rpg": {
             "MICHAEL": {
-                "name": "Base Stats",
                 "need_label": "friend2_car_slam"
             }
         }
@@ -1102,7 +1076,6 @@
         "zoom": 0.9,
         "rpg": {
             "MIDGE": {
-                "name": "Base Stats",
                 "need_label": "friend2_between_1"
             }
         }
@@ -1117,7 +1090,6 @@
         "bio": "Pakoo's fianc\u00e9e who loves to give CS five dollars and talk in a very highlighted tone. A pilot, gambler, and stand-up kinda guy.",
         "rpg": {
             "MIKA": {
-                "name": "Base Stats",
                 "need_label": "friend_after_cop_fight"
             }
         }
@@ -1182,7 +1154,6 @@
         "zoom": 0.85,
         "rpg": {
             "NOVA": {
-                "name": "Base Stats",
                 "need_label": "friend2_cs_meetup_2"
             }
         }
@@ -1191,9 +1162,9 @@
         "full_name": "Barack Obama",
         "pronouns": "(he/him)",
         "sprites": {
-            "Default": "images/characters/obama.png",
-            "Festive: Neutral": "images/characters/obama_festive.png",
-            "Festive: Angry": "images/characters/obama_festive_angry.png"
+            "Default": "images/characters/obama/obama.png",
+            "Festive: Neutral": "images/characters/obama/obama_festive.png",
+            "Festive: Angry": "images/characters/obama/obama_festive_angry.png"
         },
         "quote": "Hello, my fellow Americans!",
         "bio": "As the 44th President of the United States, he's a pretty chill dude, even while under the stress of governing such a massive country. He apparently loves to play video games with his fellow candidates. For some reason, people can't figure out what his last name is.",
@@ -1201,7 +1172,6 @@
         "ce_bio": "A jolly politician enjoying his... {i}fourth{/i} term? Not sure anyone's even still counting at this point. While the president was surprised to have been invited to CS' party, he is more than happy to have an excuse to step out of the White House for a few hours. He also makes a {i}mean{/i} carrot cake.",
         "rpg": {
             "OBAMA": {
-                "name": "Base Stats",
                 "need_label": "friend2_car_slam"
             }
         }
@@ -1223,11 +1193,9 @@
         "dx_bio": "Really likes Christmas.",
         "rpg": {
             "PAKOO": {
-                "name": "Base Stats",
                 "need_label": "friend_so_join"
             },
             "PAKOOE": {
-                "name": "Error",
                 "need_label": "after_error_fight"
             }
         }
@@ -1263,7 +1231,6 @@
         "bio": "Phil loves tape. When he was young, he always asked for different kinds of tape to play with. He would gather random objects around his house to stick together. He always wanted to make a super tape that could adhere to any type of surface. With his newest invention, he has obtained the power to seal and bond almost anything.",
         "rpg": {
             "PHIL": {
-                "name": "Base Stats",
                 "need_label": "friend2_car_slam"
             }
         }
@@ -1284,7 +1251,6 @@
         "ce_bio": "After escaping from IKEA's flagship location in Sweden, Pomni has found herself trapped in a Target in the US. She's secretly grateful to have seen a familiar face, even if CS can't remember her...",
         "rpg": {
             "POMNI": {
-                "name": "Base Stats",
                 "need_label": "friend2_car_slam"
             }
         }
@@ -1303,7 +1269,6 @@
         "zoom": 0.85,
         "rpg": {
             "RICHARD": {
-                "name": "Base Stats",
                 "need_label": "friend2_car_slam"
             }
         }
@@ -1461,7 +1426,6 @@
         "ce_bio": "Tate {i}hates{/i} Christmas. They'd much rather be curled up taking a nap right now. Fortunately, they love their friends more than they hate the holidays, so Mean was able to convince them to attend the party. They {i}really{/i} wish that Mean would've left the fake beard on the train, though.",
         "rpg": {
             "TATE": {
-                "name": "Base Stats",
                 "need_label": "friend_after_cop_fight"
             }
         }
@@ -1479,7 +1443,6 @@
         "xoffset": 100,
         "rpg": {
             "TATE_EX": {
-                "name": "Base Stats",
                 "need_label": "train_tate_ex_win"
             }
         }
@@ -1554,7 +1517,6 @@
         "ce_bio": "After the incident at HoH SiS, Wesley needed back surgery. He's recovering well, but the winter cold doesn't play too nicely with the new hardware in his spine. It's understandable that he'd be a bit ornery. If it wasn't for Ed's insistence, Wesley would have probably just stayed home.",
         "rpg": {
             "WESLEY": {
-                "name": "Base Stats",
                 "need_label": "friend2_car_slam"
             }
         }

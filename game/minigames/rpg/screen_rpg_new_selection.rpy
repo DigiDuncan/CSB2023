@@ -61,7 +61,7 @@ screen rpg_char_sel_new():
     $ rpg_slots = ["CS","Arceus","Tate", "Digi", "Wesley", "Ed", "Richard", "Copguy"]  # test values only
 
     ### add background color, kill music
-    # TODO: bgm and maybe make this video fade in/out when toggled?
+    # TODO: bgm
     add Color('#323e42', alpha=0.75)
     showif rpg_ready == True:
         add Movie(size=(1920,1080), play="movies/Fire.webm", side_mask=True) at _rpg_ready_flames

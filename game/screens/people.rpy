@@ -324,20 +324,22 @@ screen person(l):
                                                     # but only if you've seen the label!
                                                     if renpy.seen_label( name_map[l]['rpg'][stat_set]['need_label'] ) == True:
 
-                                                        text name_map[l]['rpg'][stat_set]['name']:
-                                                            xalign 0.5
-                                                            text_align 0.5
-
                                                         # actually fetch data
                                                         python:
                                                             _rpg_var = stat_set
-                                                            _fighter = getattr(Fighters, _rpg_var)
-                                                            hp = _fighter.health_points
-                                                            attack = _fighter.attack_points
-                                                            defense = _fighter.armor_points
-                                                            attack_data = []
+                                                            _fighter = getattr(RPG.Characters, _rpg_var)
+                                                            stat_set_name = _fighter.name
+                                                            hp = _fighter.base_hp
+                                                            attack = _fighter.base_atk
+                                                            defense = _fighter.base_def
+                                                            # TODO: add accuracy + AI type?
+                                                            attack_data = [ ]
                                                             for a in _fighter.attacks:
-                                                                attack_data.append((a.name, a.properties, a.description))
+                                                                attack_data.append((a.name, a.description))
+
+                                                        text stat_set_name:
+                                                            xalign 0.5
+                                                            text_align 0.5
 
                                                         frame:
                                                             xsize 1.0
@@ -367,12 +369,14 @@ screen person(l):
                                                                         text_align 0.5
 
                                                         # begin attacks description here
+                                                        # TODO: put the attack properties back whenever digi fixes it
                                                         for a in attack_data:
                                                             python:
                                                                 a_name = a[0]
-                                                                a_props = a[1]
-                                                                a_desc = a[2]
-                                                            text "[a_name] {size=-12}{color=BBBBBB}([a_props])"
+                                                                #a_props = a[1]
+                                                                a_desc = a[1]
+                                                            #text "[a_name] {size=-12}{color=BBBBBB}([a_props])"
+                                                            text "[a_name] {size=-12}{color=BBBBBB}"
                                                             text "    {i}{color=BBBBBB}[a_desc]{/i}"
                                                         null height 32
                                                     else:
@@ -383,6 +387,7 @@ screen person(l):
                                                             xalign 0.5
                                                             text_align 0.5
                                                         null height 32
+
                                 else:
                                     text "\"" + name_map[l]["quote"] + "\"\n\n" + (fetched)
 
