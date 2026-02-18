@@ -21,6 +21,12 @@ init:
             ease_expo 1 alpha 0.00
 
 screen screen_rpg():
+
+    python:
+        while RPG.encounter.has_signals():
+            curr_signal = RPG.encounter.get_next_signal()
+            print(curr_signal)
+
     grid len(RPG.encounter.enemies) 1:
         xalign 0.5
         yalign 0.5
