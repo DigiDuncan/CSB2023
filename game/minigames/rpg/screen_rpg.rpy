@@ -21,21 +21,38 @@ init:
             ease_expo 1 alpha 0.00
 
 screen screen_rpg():
+    modal True
+    # Signal Handling before anything else.
+    if RPG.encounter.has_signals():
+        $ curr_signal = RPG.encounter.get_next_signal()
+        python:
+            while(curr_signal):
+                match type(curr_signal):
+                    case RPG.Signal:
+                        print("Base Signal")
+                    case RPG.MessageSignal:
+                        print("Message Signal")
+                    case RPG.CharacterSignal:
+                        print("Character Signal")
+                    case RPG.DebugSignal:
+                        print("Debug Signal")
+                    case RPG.AttackSignal:
+                        print("Attack Signal")
+                    case RPG.EffectSignal:
+                        print("Effect Signal")
+                    case RPG.IndicatorSignal:
+                        print("Indicator Signal")
+                    case RPG.EffectIndicatorSignal:
+                        print("Effect Indicator Singal")
 
-    python:
-        while RPG.encounter.has_signals():
-            curr_signal = RPG.encounter.get_next_signal()
-            print(curr_signal)
+                curr_signal = RPG.encounter.get_next_signal()
 
+    # Drawing the enemies in the background. TODO: Healthbars.
     grid len(RPG.encounter.enemies) 1:
         xalign 0.5
         yalign 0.5
         for i in range(len(RPG.encounter.enemies)):
             add RPG.encounter.enemies[i].sprite
-
-    # Show intro text above the enemies
-    frame at _rpg_intro:
-        text RPG.encounter.intro_text
 
     # This is the context menu of the RPG
     frame:
