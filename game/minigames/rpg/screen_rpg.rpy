@@ -11,6 +11,8 @@ python early:
         renpy_list.append(element)
     def print_action(print_str):
         print(print_str)
+    def dev_win(current_encounter):
+        current_encounter.dev_win()
 
 init python:
     renpy.add_layer("rpg_context", above="master")
@@ -204,8 +206,7 @@ screen screen_rpg():
 
 
     # Dev Backdoor
-    key "K_END" action Return(True)
-    pass
+    key "K_END" action Jump("pass_rpg")
 
 label play_rpggame:
     window hide
@@ -226,16 +227,15 @@ label play_rpggame:
                 hide screen say_rpg
         hide screen say_rpg
         hide screen screen_rpg
-
+label pass_rpg:
     hide screen screen_rpg
     $ quick_menu = True
     window show
-
     if RPG.encounter.won:
-        pass
+        $ renpy.jump(RPG.encounter.on_win)
         # Thing for win condition
     else:
-        pass
+        $ renpy.jump(RPG.encounter.on_lose)
         # Thing for lose condition
 
 label screenrpg_done:
