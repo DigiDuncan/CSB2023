@@ -9,6 +9,12 @@ TODO list
 python early:
     def bypass_append(renpy_list, element):
         renpy_list.append(element)
+    def print_action(print_str):
+        print(print_str)
+
+init python:
+    renpy.add_layer("rpg_context", above="master")
+    renpy.add_layer("rpg_say", above="rpg_context")
 
 init:
     transform _rpg_intro:
@@ -20,33 +26,19 @@ init:
             time 2.5
             ease_expo 1 alpha 0.00
 
-screen screen_rpg():
+screen say_rpg(rpg_what):
     modal True
-    # Signal Handling before anything else.
-    if RPG.encounter.has_signals():
-        $ curr_signal = RPG.encounter.get_next_signal()
-        python:
-            while(curr_signal):
-                match type(curr_signal):
-                    case RPG.Signal:
-                        print("Base Signal")
-                    case RPG.MessageSignal:
-                        print("Message Signal")
-                    case RPG.CharacterSignal:
-                        print("Character Signal")
-                    case RPG.DebugSignal:
-                        print("Debug Signal")
-                    case RPG.AttackSignal:
-                        print("Attack Signal")
-                    case RPG.EffectSignal:
-                        print("Effect Signal")
-                    case RPG.IndicatorSignal:
-                        print("Indicator Signal")
-                    case RPG.EffectIndicatorSignal:
-                        print("Effect Indicator Singal")
+    frame:
+        xalign 0.0
+        yalign 0.0
+        xsize 1.0
+        ysize 0.10
+        background "gui/rpg/main_box.png"
+        button:
+            text rpg_what
 
-                curr_signal = RPG.encounter.get_next_signal()
 
+screen screen_rpg():
     # Drawing the enemies in the background. TODO: Healthbars.
     grid len(RPG.encounter.enemies) 1:
         xalign 0.5
@@ -133,7 +125,7 @@ screen screen_rpg():
                     xalign 1.0
                     yalign 1.0
                     idle "gui/rpg/confirm_button.png"
-                    action Function(RPG.encounter.run_attacks)
+                    action Return()
         # The stat boxes for Allies
         grid len(RPG.encounter.allies) 1:
             xfill True
@@ -221,11 +213,25 @@ label play_rpggame:
     show image RPG.encounter.background
     $ renpy.music.play(MUSIC_MAP[RPG.encounter.music]["file"])
     $ persistent.heard.add(str(RPG.encounter.music))
-    call screen screen_rpg
+    # This is where the game actually takes place.
+    while RPG.encounter.won is None:
+        call screen screen_rpg
+        $ RPG.encounter.run_attacks()
+        show screen screen_rpg onlayer rpg_context
+        while RPG.encounter.has_signals():
+            $ curr_signal = RPG.encounter.get_next_signal()
+            if hasattr(curr_signal, "message"):
+                show screen say_rpg(curr_signal.message) onlayer rpg_say
+                pause
+                hide screen say_rpg
+        hide screen say_rpg
+        hide screen screen_rpg
+
+    hide screen screen_rpg
     $ quick_menu = True
     window show
 
-    if _return == True:
+    if RPG.encounter.won:
         pass
         # Thing for win condition
     else:
