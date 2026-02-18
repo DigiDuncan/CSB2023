@@ -111,7 +111,7 @@ screen rpg_char_sel_new():
                                     idle portrait
                                     hover hover_portrait
                                     hover_sound "audio/sfx/sfx_select.ogg"
-                                    hovered [ hovered_character.Action(getattr(RPG.Characters, character.assigned_name)) ]
+                                    hovered [ hovered_character.Action([character.name, character]) ]
                                     action [ Play("sound", "audio/sfx/sfx_valid.ogg") ]
                                     # Function(rpg_fill_slot, rpg_slots, rpg_selected_slot, getattr(RPG.Characters, character.assigned_name), rpg_ready)
 
@@ -234,23 +234,17 @@ screen rpg_char_sel_new():
                             else:
                                 # handle random/none first
 
-                                python:
-                                    try:
-                                        rpg_currently_hovered = hovered_character.value[0]
-                                    except:
-                                        rpg_currently_hovered = hovered_character.value.name
-
-                                if rpg_currently_hovered == hovered_character.value.name:
-                                    add Image(hovered_character.value.sprite):
+                                if hovered_character.value and hovered_character.value[1]:
+                                    add Image(hovered_character.value[1].sprite):
                                         xysize(500,400)
                                         fit("contain")
                                         xanchor 0.5 yanchor 1.0
                                         xpos 0.5 ypos 1.0
-                                frame:
-                                    xanchor 0.5 yanchor 1.0
-                                    xpos 0.5 ypos 1.0
-                                    text rpg_currently_hovered:
-                                        text_align 0.5
+                                    frame:
+                                        xanchor 0.5 yanchor 1.0
+                                        xpos 0.5 ypos 1.0
+                                        text hovered_character.value[0]:
+                                            text_align 0.5
 
     ### buttons
     textbutton "Return to Extras" action ShowMenu("category_welcome") yoffset 950 xoffset 25
