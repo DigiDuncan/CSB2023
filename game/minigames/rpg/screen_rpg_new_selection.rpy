@@ -127,8 +127,8 @@ screen rpg_char_sel_new():
                                 idle "gui/rpg/portraits/unknown.png"
                                 hover "selectable:gui/rpg/portraits/unknown.png"
                                 hover_sound "audio/sfx/sfx_select.ogg"
-                                hovered [ hovered_character.Action(["(Random)", renpy.random.choice(RPG.Characters) ]) ]
-                                action [ Play("sound", "audio/sfx/sfx_valid.ogg") ]
+                                hovered [ hovered_character.Action(["(Random)", RPG.Characters.random() ]) ]
+                                action [ Play("sound", "audio/sfx/sfx_valid.ogg"), Notify(hovered_character.value) ]
 
                             imagebutton:
                                 xysize(88,88)
@@ -232,13 +232,15 @@ screen rpg_char_sel_new():
                             if hovered_character.value == "" or rpg_ready == True:
                                 background None
                             else:
-
                                 # handle random/none first
-                                if hovered_character.value[0] == "(Random)" or hovered_character.value[0] == "(None)":
-                                    $ rpg_currently_hovered = hovered_character.value[0]
-                                else:
-                                    $ rpg_currently_hovered = hovered_character.value.name
 
+                                python:
+                                    try:
+                                        rpg_currently_hovered = hovered_character.value[0]
+                                    except:
+                                        rpg_currently_hovered = hovered_character.value.name
+
+                                if rpg_currently_hovered == hovered_character.value.name:
                                     add Image(hovered_character.value.sprite):
                                         xysize(500,400)
                                         fit("contain")
