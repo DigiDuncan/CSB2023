@@ -42,6 +42,13 @@ transform _rpg_ready_button_no:
     yoffset 1000
     xoffset 1650
 
+transform _rpg_ready_flames:
+    on show:
+        alpha 0.0
+        linear 0.5 alpha 1.0
+    on hide:
+        linear 0.5 alpha 0.0
+
 screen rpg_char_sel_new():
 
     # this is stupid but it doesn't work any other way
@@ -54,7 +61,11 @@ screen rpg_char_sel_new():
     $ rpg_slots = ["CS","Arceus","Tate", "Digi", "Wesley", "Ed", "Richard", "Copguy"]  # test values only
 
     ### add background color, kill music
+    # TODO: bgm and maybe make this video fade in/out when toggled?
     add Color('#323e42', alpha=0.75)
+    showif rpg_ready == True:
+        add Movie(size=(1920,1080), play="movies/Fire.webm", side_mask=True) at _rpg_ready_flames
+
     $ renpy.music.stop()
 
     text "{size=+12}Select Your Characters!":
