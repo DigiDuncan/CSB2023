@@ -496,15 +496,15 @@ label ucn_new(rpg_final_parties, rpg_scale, rpg_img, rpg_bgm):
 
     python:
 
-        a1 = rpg_final_parties[0].assigned_name if rpg_final_parties[0] else None
-        a2 = rpg_final_parties[1].assigned_name if rpg_final_parties[1] else None
-        a3 = rpg_final_parties[2].assigned_name if rpg_final_parties[2] else None
-        a4 = rpg_final_parties[3].assigned_name if rpg_final_parties[3] else None
+        RPG.set_var_character("a1", rpg_final_parties[0].assigned_name if rpg_final_parties[0] else None)
+        RPG.set_var_character("a2", rpg_final_parties[1].assigned_name if rpg_final_parties[1] else None)
+        RPG.set_var_character("a3", rpg_final_parties[2].assigned_name if rpg_final_parties[2] else None)
+        RPG.set_var_character("a4", rpg_final_parties[3].assigned_name if rpg_final_parties[3] else None)
 
-        e1 = rpg_final_parties[4].assigned_name if rpg_final_parties[4] else None
-        e2 = rpg_final_parties[5].assigned_name if rpg_final_parties[5] else None
-        e3 = rpg_final_parties[6].assigned_name if rpg_final_parties[6] else None
-        e4 = rpg_final_parties[7].assigned_name if rpg_final_parties[7] else None
+        RPG.set_var_character("e1", rpg_final_parties[4].assigned_name if rpg_final_parties[4] else None)
+        RPG.set_var_character("e2", rpg_final_parties[5].assigned_name if rpg_final_parties[5] else None)
+        RPG.set_var_character("e3", rpg_final_parties[6].assigned_name if rpg_final_parties[6] else None)
+        RPG.set_var_character("e4", rpg_final_parties[7].assigned_name if rpg_final_parties[7] else None)
 
         scale = rpg_scale
         img = rpg_img
@@ -512,15 +512,13 @@ label ucn_new(rpg_final_parties, rpg_scale, rpg_img, rpg_bgm):
 
         ui.close()
 
-    $ test_name = str(a1)
-    tate "Test dialogue time. Your first character was [test_name]."
-    tate "Your party scale was [scale], and you're going to fight in front of [img] while listening to [bgm]."
-    tate "If you're reading this, the data is definitely being carried over."
-    tate "I'm going to try to start the fight now. Here goes nothing..."
+
+    $ RPG.ucn_bg = img
+    $ RPG.ucn_music = bgm
+    $ RPG.ucn_scale = scale
 
     rpg:
-        bg $img
-        music $bgm
+        ucn
         allies:
             $a1
             $a2
@@ -531,7 +529,6 @@ label ucn_new(rpg_final_parties, rpg_scale, rpg_img, rpg_bgm):
             $e2
             $e3
             $e4
-        scale $scale
         on_win "secret_dx"
         on_lose "secret_dx"
         intro_text "Begin!"

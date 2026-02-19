@@ -129,16 +129,6 @@ default line_11 = ""
 default line_12 = ""
 
 # Checks: RPG
-default enemy_1 = "cop"
-default enemy_2 = "cop"
-default enemy_3 = "cop"
-default party_1 = "cs"
-default party_2 = "tate"
-default party_3 = "digi"
-default party_4 = "arceus"
-default ucn_bg = "images/bg/fnaf_office.png"
-default ucn_music = "rude_buster.ogg"
-default ucn_scale = 1.0
 default cont = False
 
 # Checks: Asset counts

@@ -18,6 +18,10 @@ python early in RPG:
 CSB2023 RPG parsing
 """
 
+ucn_bg = "images/bg/fnaf_office.png"
+ucn_music = "rude_buster.ogg"
+ucn_scale = 1.0
+
 
 type ParsedFighter = tuple[str, bool, str | None, int | None, int | None, int | None, int | None]
 # Parse a fighter by getting their name, and optional overrides for their ai, hp, def, atk, and acc
@@ -132,6 +136,7 @@ def execute_rpg(parsed_object: ParsedRpg):
     level, initial, background, music, on_win, on_lose, intro_text, is_ucn, fighters, allies, enemies = parsed_object
 
     if is_ucn:
+        global ucn_bg, ucn_music, ucn_scale
         background = ucn_bg
         music = ucn_music
         level = ucn_scale # TODO rename to level
