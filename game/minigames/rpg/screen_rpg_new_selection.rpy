@@ -34,20 +34,12 @@ init python:
         slots_list[current_slot] = char_tooltip_data
 
     # automatically select the next unselected slot
-    def rpg_slot_autoselect(slots_list, current_slot, party_size):
-
-        found_pending = False
-
+    def rpg_slot_autoselect(slots_list, current_slot, party_size) -> int:
         # don't go outside the range
-        for slot in range(0, (party_size*2)-1):
+        for slot in range(0, (party_size * 2)):
             if slots_list[slot][0] == "(Pending)":
-                found_pending = True
-                break
-            else:
-                found_pending = False
-
-        if found_pending == True:
-            current_slot = slot
+                return slot
+        return current_slot
 
 ###################################################### TRANSFORMS FOR THIS SCREEN ONLY
 
@@ -160,7 +152,7 @@ screen rpg_char_sel_new():
                                         action [
                                             Play("sound", "audio/sfx/sfx_valid.ogg"),
                                             Function(rpg_fill_slot, rpg_slots, rpg_selected_slot, rpg_hovered_character.value),
-                                            Function(rpg_slot_autoselect, rpg_slots, rpg_selected_slot, rpg_party_size),
+                                            SetScreenVariable("rpg_selected_slot", rpg_slot_autoselect(rpg_slots, rpg_selected_slot, rpg_party_size)),
                                             SetScreenVariable("rpg_ready", rpg_toggle_ready(rpg_ready, rpg_slots)),
                                             SetVariable("rpg_ready", rpg_toggle_ready(rpg_ready, rpg_slots))
                                         ]
