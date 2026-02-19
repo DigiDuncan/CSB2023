@@ -3,34 +3,44 @@ label awawa_rpg_select_test:
 
 init python:
     # ready up
-    def rpg_toggle_ready(r):
-        if r == True:
-            return False
+    def rpg_toggle_ready(ready, slots_list, manual = False):
+        if manual == True:
+            if ready == True:
+                return False
+            else:
+                return True
         else:
-            return True
+            for slot in range(0, len(slots_list)):
+                if slots_list[slot] != "(Pending)":
+                    return True
+                else:
+                    return False
 
     # fill a given slot
     def rpg_fill_slot(slots_list, current_slot, char_tooltip_data):
         slots_list[current_slot] = char_tooltip_data
-        rpg_slot_selection(slots_list, current_slot)
 
-    # slot selection management
-    def rpg_slot_selection(slots_list, current_slot):
-
+    # automatically select the next unselected slot - does not work yet
+    def rpg_slot_autoselect(slots_list, current_slot, party_size):
+        found_pending = False
         # don't go outside the range
-        if current_slot < 8:
-            # if the next slot is pending, auto-select it
-            if slots_list[current_slot+1] == "(Pending)":
-                current_slot = current_slot+1
+        for slot in range(0, (party_size*2)-1):
+            if slots_list[slot][0] == "(Pending)":
+                found_pending = True
+                break
+            else:
+                found_pending = False
 
+        if found_pending == True:
+            current_slot = slot+1
 
-    rpg_slots = [ ]
-    rpg_selected_slot = 0
-    rpg_ready = False
+    #rpg_slots = [ ]
+    #rpg_selected_slot = 0
+    #rpg_ready = False
 
-    global rpg_slots
-    global rpg_selected_slot
-    global rpg_ready
+    #global rpg_slots
+    #global rpg_selected_slot
+    #global rpg_ready
 
 transform _rpg_ready_button_yes:
     zoom 0.4
@@ -61,9 +71,15 @@ screen rpg_char_sel_new():
 
     # variables
     default hovered_character = Tooltip("")
-    default rpg_slots = [ ["(Pending)"], ["(Pending)"], ["(Pending)"], ["(Pending)"], ["(Pending)"], ["(Pending)"], ["(Pending)"], ["(Pending)"] ]
+    default rpg_slots = [
+        ["(Pending)"], ["(Pending)"],
+        ["(Pending)"], ["(Pending)"],
+        ["(Pending)"], ["(Pending)"],
+        ["(Pending)"], ["(Pending)"]
+    ]
     default rpg_selected_slot = 0
     default rpg_ready = False
+    default party_size = 4
 
     ### add background color, kill music
     # TODO: bgm
@@ -80,7 +96,7 @@ screen rpg_char_sel_new():
         yalign 0.04
         text_align 0.5
 
-    ### bounding box for everything
+    ###################### bounding box for everything
     frame:
         background None
         xsize 0.9 ysize 0.75
@@ -91,7 +107,7 @@ screen rpg_char_sel_new():
             vbox:
                 xalign 0.5
 
-                ### selectable characters go here
+                ###################### selectable characters go here
                 frame:
                     background None
                     ysize 0.5
@@ -118,22 +134,30 @@ screen rpg_char_sel_new():
                                     hover hover_portrait
                                     hover_sound "audio/sfx/sfx_select.ogg"
                                     hovered [ hovered_character.Action([character.name, character]) ]
-                                    action [ Play("sound", "audio/sfx/sfx_valid.ogg"), Function(rpg_fill_slot, rpg_slots, rpg_selected_slot, hovered_character.value) ]
+                                    action [
+                                        Play("sound", "audio/sfx/sfx_valid.ogg"),
+                                        Function(rpg_fill_slot, rpg_slots, rpg_selected_slot, hovered_character.value),
+                                        Function(rpg_slot_autoselect, rpg_slots, rpg_selected_slot, party_size)
+                                    ]
 
-                            ### handle empty portrait slots here
+                            ###################### handle empty portrait slots here
                             python:
                                 unused_slots = ((17*4)-2)-len(RPG.Characters.characters)
                             for f in range(unused_slots):
                                 add Null(88,88)
 
-                            ### handle random/skipped characters
+                            ###################### handle random/skipped characters
                             imagebutton:
                                 xysize(88,88)
                                 idle "gui/rpg/portraits/unknown.png"
                                 hover "selectable:gui/rpg/portraits/unknown.png"
                                 hover_sound "audio/sfx/sfx_select.ogg"
                                 hovered [ hovered_character.Action(["(Random)", RPG.Characters.random() ]) ]
-                                action [ Play("sound", "audio/sfx/sfx_valid.ogg"), Function(rpg_fill_slot, rpg_slots, rpg_selected_slot, hovered_character.value) ]
+                                action [
+                                    Play("sound", "audio/sfx/sfx_valid.ogg"),
+                                    Function(rpg_fill_slot, rpg_slots, rpg_selected_slot, hovered_character.value),
+                                    Function(rpg_slot_autoselect, rpg_slots, rpg_selected_slot, party_size)
+                                ]
 
                             imagebutton:
                                 xysize(88,88)
@@ -141,7 +165,13 @@ screen rpg_char_sel_new():
                                 hover "selectable:gui/rpg/portraits/none.png"
                                 hover_sound "audio/sfx/sfx_select.ogg"
                                 hovered [ hovered_character.Action(["(None)", None]) ]
-                                action [ Play("sound", "audio/sfx/sfx_valid.ogg"), Function(rpg_fill_slot, rpg_slots, rpg_selected_slot, hovered_character.value) ]
+                                action [
+                                    Play("sound", "audio/sfx/sfx_valid.ogg"),
+                                    Function(rpg_fill_slot, rpg_slots, rpg_selected_slot, hovered_character.value),
+                                    Function(rpg_slot_autoselect, rpg_slots, rpg_selected_slot, party_size),
+                                    SetScreenVariable("rpg_ready", rpg_toggle_ready(rpg_ready, rpg_slots)),
+                                    SetVariable("rpg_ready", rpg_toggle_ready(rpg_ready, rpg_slots))
+                                ]
 
 ###################################################### LOWER HALF ######################################################
 
@@ -153,9 +183,7 @@ screen rpg_char_sel_new():
                         xanchor 0.5 yanchor 0.5
                         xpos 0.5 ypos 1.6
 
-                        $ party_size = 4
-
-                        ### Allies
+                        ###################### Allies
                         frame:
                             background None
                             xsize 0.5 xoffset 10
@@ -181,7 +209,11 @@ screen rpg_char_sel_new():
                                             hover "selectable:"+rpg_slots[a][1].portrait.filename
 
                                         hover_sound "audio/sfx/sfx_select.ogg"
-                                        action [ SetVariable("rpg_selected_slot", a), SetScreenVariable("rpg_selected_slot", a), Notify(rpg_selected_slot) ]
+                                        action [
+                                            SetVariable("rpg_selected_slot", a),
+                                            SetScreenVariable("rpg_selected_slot", a),
+                                            Notify(rpg_selected_slot)
+                                        ]
 
                             # Selected character text
                             $ output_text = ""
@@ -194,7 +226,7 @@ screen rpg_char_sel_new():
                             text output_text:
                                 ypos 0.45
 
-                        ### Enemies
+                        ###################### Enemies
                         frame:
                             background None
                             xsize 0.5 xoffset -10
@@ -223,7 +255,11 @@ screen rpg_char_sel_new():
                                             hover "selectable:"+rpg_slots[e+4][1].portrait.filename
 
                                         hover_sound "audio/sfx/sfx_select.ogg"
-                                        action [ SetVariable("rpg_selected_slot", e+4), SetScreenVariable("rpg_selected_slot", e+4), Notify(rpg_selected_slot) ]
+                                        action [
+                                            SetVariable("rpg_selected_slot", e+4),
+                                            SetScreenVariable("rpg_selected_slot", e+4),
+                                            Notify(rpg_selected_slot)
+                                        ]
 
                             # Selected character text
                             $ output_text = ""
@@ -238,7 +274,7 @@ screen rpg_char_sel_new():
                                 xalign 1.0
                                 text_align 1.0
 
-                        ### display currently hovered character
+                        ###################### display currently hovered character
                         frame:
                             xanchor 0.5 yanchor 1.0
                             xpos 0.5 ypos 1.0
@@ -249,7 +285,6 @@ screen rpg_char_sel_new():
                                 background None
                             else:
                                 # handle random/none first
-
                                 if hovered_character.value:
                                     if hovered_character.value[0] != "(Random)" and hovered_character.value[0] != "(None)":
                                         add Image(hovered_character.value[1].sprite):
@@ -273,8 +308,8 @@ screen rpg_char_sel_new():
     textbutton "[[DEBUG] Toggle ready state.":
         yoffset 50 xoffset 25
         action [
-            SetScreenVariable("rpg_ready", rpg_toggle_ready(rpg_ready)),
-            SetVariable("rpg_ready", rpg_toggle_ready(rpg_ready))
+            SetScreenVariable("rpg_ready", rpg_toggle_ready(rpg_ready, rpg_slots, manual = True)),
+            SetVariable("rpg_ready", rpg_toggle_ready(rpg_ready, rpg_slots, manual = True))
         ]
 
     if rpg_ready == True:
@@ -287,6 +322,9 @@ screen rpg_char_sel_new():
         idle "gui/rpg/ready.png"
         hover "selectable:gui/rpg/ready.png"
         hover_sound "audio/sfx/sfx_select.ogg"
-        action [ SensitiveIf(rpg_ready == True), Play("sound", "audio/sfx/sfx_valid.ogg") ]
+        action [
+            SensitiveIf(rpg_ready == True),
+            Play("sound", "audio/sfx/sfx_valid.ogg")
+        ]
         at ready_transform
 
