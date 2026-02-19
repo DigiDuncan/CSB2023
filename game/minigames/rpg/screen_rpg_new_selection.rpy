@@ -53,11 +53,11 @@ screen rpg_char_sel_new():
 
     # this is stupid but it doesn't work any other way
     $ rpg_pending_sprite = renpy.get_registered_image("rpg_pending_portrait")
-    $ rpg_pending_sprite_hover = "selectable:gui/rpg/portraits/pending.png"
+    $ rpg_pending_sprite_hover = renpy.get_registered_image("rpg_pending_portrait_hover")
 
     # variables
     default hovered_character = Tooltip("")
-    default rpg_slots = [ None, None, None, None, None, None, None, None ]
+    default rpg_slots = [ ["(Pending)"], ["(Pending)"], ["(Pending)"], ["(Pending)"], ["(Pending)"], ["(Pending)"], ["(Pending)"], ["(Pending)"] ]
     default rpg_selected_slot = 0
     default rpg_ready = False
 
@@ -157,17 +157,22 @@ screen rpg_char_sel_new():
 
                             # Selected character portraits
                             grid 4 1:
-                                ypos 0.15
+                                ypos 0.175
                                 spacing 10
                                 for a in range(party_size):
                                     imagebutton:
-                                        if rpg_slots[a] is None:
+                                        if rpg_slots[a][0] == "(Pending)":
                                             idle rpg_pending_sprite
                                             hover rpg_pending_sprite_hover
+                                        elif rpg_slots[a][0] == "(None)":
+                                            idle "gui/rpg/portraits/none.png"
+                                            hover "selectable:gui/rpg/portraits/none.png"
+                                        elif rpg_slots[a][0] == "(Random)":
+                                            idle "gui/rpg/portraits/unknown.png"
+                                            hover "selectable:gui/rpg/portraits/unknown.png"
                                         else:
-                                            idle rpg_pending_sprite
-                                            #idle rpg_slots[a].portrait
-                                            #hover "selectable:"+rpg_slots[a].portrait
+                                            idle rpg_slots[a][1].portrait.filename
+                                            hover "selectable:"+rpg_slots[a][1].portrait.filename
 
                                         hover_sound "audio/sfx/sfx_select.ogg"
                                         action [ SetVariable("rpg_selected_slot", a), SetScreenVariable("rpg_selected_slot", a), Notify(rpg_selected_slot) ]
@@ -175,13 +180,13 @@ screen rpg_char_sel_new():
                             # Selected character text
                             $ output_text = ""
                             for a in range(party_size):
-                                if rpg_slots[a] is None:
-                                    $ output_text += "(None)\n"
+                                if rpg_slots[a][0] is "(Pending)":
+                                    $ output_text += "(Pending)\n"
                                 else:
-                                    $ output_text += rpg_slots[a]+"\n"
+                                    $ output_text += rpg_slots[a][0]+"\n"
 
                             text output_text:
-                                ypos 0.4
+                                ypos 0.45
 
                         ### Enemies
                         frame:
@@ -194,17 +199,22 @@ screen rpg_char_sel_new():
                             # Selected character portraits
                             grid 4 1:
                                 xalign 1.0
-                                ypos 0.15
+                                ypos 0.175
                                 spacing 10
                                 for e in range(party_size):
                                     imagebutton:
-                                        if rpg_slots[e+4] is None:
+                                        if rpg_slots[e+4][0] == "(Pending)":
                                             idle rpg_pending_sprite
                                             hover rpg_pending_sprite_hover
+                                        elif rpg_slots[e+4][0] == "(None)":
+                                            idle "gui/rpg/portraits/none.png"
+                                            hover "selectable:gui/rpg/portraits/none.png"
+                                        elif rpg_slots[e+4][0] == "(Random)":
+                                            idle "gui/rpg/portraits/unknown.png"
+                                            hover "selectable:gui/rpg/portraits/unknown.png"
                                         else:
-                                            idle rpg_pending_sprite
-                                            #idle rpg_slots[e].portrait
-                                            #hover "selectable:"+rpg_slots[e+4].portrait
+                                            idle rpg_slots[e+4][1].portrait.filename
+                                            hover "selectable:"+rpg_slots[e+4][1].portrait.filename
 
                                         hover_sound "audio/sfx/sfx_select.ogg"
                                         action [ SetVariable("rpg_selected_slot", e+4), SetScreenVariable("rpg_selected_slot", e+4), Notify(rpg_selected_slot) ]
@@ -212,13 +222,13 @@ screen rpg_char_sel_new():
                             # Selected character text
                             $ output_text = ""
                             for e in range(party_size):
-                                if rpg_slots[e+4] is None:
-                                    $ output_text += "(None)\n"
+                                if rpg_slots[e+4][0] is "(Pending)":
+                                    $ output_text += "(Pending)\n"
                                 else:
-                                    $ output_text += rpg_slots[e+4]+"\n"
+                                    $ output_text += rpg_slots[e+4][0]+"\n"
 
                             text output_text:
-                                ypos 0.4
+                                ypos 0.45
                                 xalign 1.0
                                 text_align 1.0
 
@@ -234,12 +244,13 @@ screen rpg_char_sel_new():
                             else:
                                 # handle random/none first
 
-                                if hovered_character.value and hovered_character.value[1]:
-                                    add Image(hovered_character.value[1].sprite):
-                                        xysize(500,400)
-                                        fit("contain")
-                                        xanchor 0.5 yanchor 1.0
-                                        xpos 0.5 ypos 1.0
+                                if hovered_character.value:
+                                    if hovered_character.value[0] != "(Random)" and hovered_character.value[0] != "(None)":
+                                        add Image(hovered_character.value[1].sprite):
+                                            xysize(500,400)
+                                            fit("contain")
+                                            xanchor 0.5 yanchor 1.0
+                                            xpos 0.5 ypos 1.0
                                     frame:
                                         xanchor 0.5 yanchor 1.0
                                         xpos 0.5 ypos 1.0
