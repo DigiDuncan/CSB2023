@@ -4,17 +4,26 @@ label awawa_rpg_select_test:
 init python:
     # ready up
     def rpg_toggle_ready(ready, slots_list, manual = False):
+        ready_yet = False
+
+        # for debug only
         if manual == True:
             if ready == True:
-                return False
+                ready_yet = False
             else:
-                return True
+                ready_yet = True
+
+        # normal functionality:
+        # check all the slots. if ANY are pending, we're not ready yet
+        # TODO: this only works if there's a random or none in the list? help?
         else:
-            for slot in range(0, len(slots_list)):
-                if slots_list[slot] != "(Pending)":
-                    return True
+            for slot in slots_list:
+                if any(slot == ["(Pending)"] for slot in slots_list):
+                    ready_yet = False
+                    break
                 else:
-                    return False
+                    ready_yet = True
+        return ready_yet
 
     # fill a given slot
     def rpg_fill_slot(slots_list, current_slot, char_tooltip_data):
@@ -137,7 +146,9 @@ screen rpg_char_sel_new():
                                     action [
                                         Play("sound", "audio/sfx/sfx_valid.ogg"),
                                         Function(rpg_fill_slot, rpg_slots, rpg_selected_slot, hovered_character.value),
-                                        Function(rpg_slot_autoselect, rpg_slots, rpg_selected_slot, party_size)
+                                        Function(rpg_slot_autoselect, rpg_slots, rpg_selected_slot, party_size),
+                                        SetScreenVariable("rpg_ready", rpg_toggle_ready(rpg_ready, rpg_slots)),
+                                        SetVariable("rpg_ready", rpg_toggle_ready(rpg_ready, rpg_slots))
                                     ]
 
                             ###################### handle empty portrait slots here
@@ -156,7 +167,9 @@ screen rpg_char_sel_new():
                                 action [
                                     Play("sound", "audio/sfx/sfx_valid.ogg"),
                                     Function(rpg_fill_slot, rpg_slots, rpg_selected_slot, hovered_character.value),
-                                    Function(rpg_slot_autoselect, rpg_slots, rpg_selected_slot, party_size)
+                                    Function(rpg_slot_autoselect, rpg_slots, rpg_selected_slot, party_size),
+                                    SetScreenVariable("rpg_ready", rpg_toggle_ready(rpg_ready, rpg_slots)),
+                                    SetVariable("rpg_ready", rpg_toggle_ready(rpg_ready, rpg_slots))
                                 ]
 
                             imagebutton:
@@ -211,8 +224,7 @@ screen rpg_char_sel_new():
                                         hover_sound "audio/sfx/sfx_select.ogg"
                                         action [
                                             SetVariable("rpg_selected_slot", a),
-                                            SetScreenVariable("rpg_selected_slot", a),
-                                            Notify(rpg_selected_slot)
+                                            SetScreenVariable("rpg_selected_slot", a)
                                         ]
 
                             # Selected character text
@@ -257,8 +269,7 @@ screen rpg_char_sel_new():
                                         hover_sound "audio/sfx/sfx_select.ogg"
                                         action [
                                             SetVariable("rpg_selected_slot", e+4),
-                                            SetScreenVariable("rpg_selected_slot", e+4),
-                                            Notify(rpg_selected_slot)
+                                            SetScreenVariable("rpg_selected_slot", e+4)
                                         ]
 
                             # Selected character text
@@ -281,7 +292,7 @@ screen rpg_char_sel_new():
                             xsize 0.5
                             background None
 
-                            if hovered_character.value == "" or rpg_ready == True:
+                            if hovered_character.value == "":
                                 background None
                             else:
                                 # handle random/none first
@@ -305,12 +316,12 @@ screen rpg_char_sel_new():
     textbutton "Main Menu" action Return() yoffset 1000 xoffset 25
 
     # debug button only
-    textbutton "[[DEBUG] Toggle ready state.":
-        yoffset 50 xoffset 25
-        action [
-            SetScreenVariable("rpg_ready", rpg_toggle_ready(rpg_ready, rpg_slots, manual = True)),
-            SetVariable("rpg_ready", rpg_toggle_ready(rpg_ready, rpg_slots, manual = True))
-        ]
+    # textbutton "[[DEBUG] Toggle ready state.":
+        # yoffset 50 xoffset 25
+        # action [
+            # SetScreenVariable("rpg_ready", rpg_toggle_ready(rpg_ready, rpg_slots, manual = True)),
+            # SetVariable("rpg_ready", rpg_toggle_ready(rpg_ready, rpg_slots, manual = True))
+        # ]
 
     if rpg_ready == True:
         $ ready_transform = _rpg_ready_button_yes
