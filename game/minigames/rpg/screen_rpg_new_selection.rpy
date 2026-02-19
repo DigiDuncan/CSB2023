@@ -327,7 +327,19 @@ screen rpg_char_sel_new():
                             else:
                                 # handle random/none first
                                 if hovered_character.value:
-                                    if hovered_character.value[0] != "(Random)" and hovered_character.value[0] != "(None)":
+                                    if hovered_character.value[0] == "(Random)":
+                                        add Image("gui/rpg/random.png"):
+                                            xysize(400,400)
+                                            fit("contain")
+                                            xanchor 0.5 yanchor 1.0
+                                            xpos 0.5 ypos 0.8
+                                    elif hovered_character.value[0] == "(None)":
+                                        add Image("gui/rpg/none.png"):
+                                            xysize(400,400)
+                                            fit("contain")
+                                            xanchor 0.5 yanchor 1.0
+                                            xpos 0.5 ypos 0.8
+                                    else:
                                         add Image(hovered_character.value[1].sprite):
                                             xysize(500,400)
                                             fit("contain")
