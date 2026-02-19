@@ -35,17 +35,19 @@ init python:
 
     # automatically select the next unselected slot - does not work yet
     def rpg_slot_autoselect(slots_list, current_slot, party_size):
-        found_pending = False
-        # don't go outside the range
-        for slot in range(0, (party_size*2)-1):
-            if slots_list[slot][0] == "(Pending)":
-                found_pending = True
-                break
-            else:
-                found_pending = False
+        working = False
 
-        if found_pending == True:
-            current_slot = slot+1
+        # found_pending = False
+        # # don't go outside the range
+        # for slot in range(0, (party_size*2)-1):
+            # if slots_list[slot][0] == "(Pending)":
+                # found_pending = True
+                # break
+            # else:
+                # found_pending = False
+
+        # if found_pending == True:
+            # current_slot = slot+1
 
 ###################################################### TRANSFORMS FOR THIS SCREEN ONLY
 
@@ -464,8 +466,17 @@ screen rpg_char_sel_new():
                 output = "Nothing here yet either. Click anywhere to start the battle!\n\n"
                 output += "The following data should be carried over:\n\n"
                 output += "Fighters:\n"
+
                 for a in range(rpg_party_size*2):
-                    output += "     "+rpg_final_parties[a].name+"\n"
+
+                    if rpg_slots[a][0] == "(None)":
+                        op = "(None)"
+                    elif rpg_slots[a][0] == "(Random)":
+                        op = "(Random)"
+                    else:
+                        op = rpg_final_parties[a].name
+
+                    output += "     "+op+"\n"
                 output += "\nParty scale: "+str(rpg_scale)+"\n"
                 output += "Background: "+rpg_img+"\nBGM: "+rpg_bgm
 
@@ -484,15 +495,16 @@ screen rpg_char_sel_new():
 label ucn_new(rpg_final_parties, rpg_scale, rpg_img, rpg_bgm):
 
     python:
-        a1 = rpg_final_parties[0].assigned_name
-        a2 = rpg_final_parties[1].assigned_name
-        a3 = rpg_final_parties[2].assigned_name
-        a4 = rpg_final_parties[3].assigned_name
 
-        e1 = rpg_final_parties[4].assigned_name
-        e2 = rpg_final_parties[5].assigned_name
-        e3 = rpg_final_parties[6].assigned_name
-        e4 = rpg_final_parties[7].assigned_name
+        a1 = rpg_final_parties[0].assigned_name if rpg_final_parties[0] else None
+        a2 = rpg_final_parties[1].assigned_name if rpg_final_parties[1] else None
+        a3 = rpg_final_parties[2].assigned_name if rpg_final_parties[2] else None
+        a4 = rpg_final_parties[3].assigned_name if rpg_final_parties[3] else None
+
+        e1 = rpg_final_parties[4].assigned_name if rpg_final_parties[4] else None
+        e2 = rpg_final_parties[5].assigned_name if rpg_final_parties[5] else None
+        e3 = rpg_final_parties[6].assigned_name if rpg_final_parties[6] else None
+        e4 = rpg_final_parties[7].assigned_name if rpg_final_parties[7] else None
 
         scale = rpg_scale
         img = rpg_img
@@ -500,8 +512,9 @@ label ucn_new(rpg_final_parties, rpg_scale, rpg_img, rpg_bgm):
 
         ui.close()
 
-    $ test_name = rpg_final_parties[0].name
+    $ test_name = str(a1)
     tate "Test dialogue time. Your first character was [test_name]."
+    tate "Your party scale was [scale], and you're going to fight in front of [img] while listening to [bgm]."
     tate "If you're reading this, the data is definitely being carried over."
     tate "I'm going to try to start the fight now. Here goes nothing..."
 
@@ -510,8 +523,14 @@ label ucn_new(rpg_final_parties, rpg_scale, rpg_img, rpg_bgm):
         music $bgm
         allies:
             $a1
+            $a2
+            $a3
+            $a4
         enemies:
             $e1
+            $e2
+            $e3
+            $e4
         scale $scale
         on_win "secret_dx"
         on_lose "secret_dx"
