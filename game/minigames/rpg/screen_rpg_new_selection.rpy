@@ -2,31 +2,35 @@ label awawa_rpg_select_test:
     call screen rpg_char_sel_new with dissolve
 
 init python:
-    # ready up (will be combined with the function below later)
-    def toggle_ready(r):
+    # ready up
+    def rpg_toggle_ready(r):
         if r == True:
             return False
         else:
             return True
 
-    # fill a slot
-    def rpg_fill_slot(slots_list, current_slot, character, ready_var):
+    # fill a given slot
+    def rpg_fill_slot(slots_list, current_slot, char_tooltip_data):
+        slots_list[current_slot] = char_tooltip_data
+        rpg_slot_selection(slots_list, current_slot)
 
-        # fill the slot
-        slots_list[current_slot] = character
+    # slot selection management
+    def rpg_slot_selection(slots_list, current_slot):
 
-        # advance the slot if the next one empty
-        if current_slot < 8 and current_slot is None:
-            current_slot += 1
-        else:
-            # make ready
-            for slot in slot_list:
-                if slot != '' and len(slots) == 8:
-                    toggle_ready(ready_var)
+        # don't go outside the range
+        if current_slot < 8:
+            # if the next slot is pending, auto-select it
+            if slots_list[current_slot+1] == "(Pending)":
+                current_slot = current_slot+1
+
 
     rpg_slots = [ ]
     rpg_selected_slot = 0
     rpg_ready = False
+
+    global rpg_slots
+    global rpg_selected_slot
+    global rpg_ready
 
 transform _rpg_ready_button_yes:
     zoom 0.4
@@ -68,6 +72,8 @@ screen rpg_char_sel_new():
         add Movie(size=(1920,1080), play="movies/Fire.webm", side_mask=True) at _rpg_ready_flames
 
     $ renpy.music.stop()
+
+###################################################### TOP HALF ######################################################
 
     text "{size=+24}Select Your Characters!":
         xalign 0.5
@@ -112,10 +118,9 @@ screen rpg_char_sel_new():
                                     hover hover_portrait
                                     hover_sound "audio/sfx/sfx_select.ogg"
                                     hovered [ hovered_character.Action([character.name, character]) ]
-                                    action [ Play("sound", "audio/sfx/sfx_valid.ogg") ]
-                                    # Function(rpg_fill_slot, rpg_slots, rpg_selected_slot, getattr(RPG.Characters, character.assigned_name), rpg_ready)
+                                    action [ Play("sound", "audio/sfx/sfx_valid.ogg"), Function(rpg_fill_slot, rpg_slots, rpg_selected_slot, hovered_character.value) ]
 
-                            ### handle empty slots here
+                            ### handle empty portrait slots here
                             python:
                                 unused_slots = ((17*4)-2)-len(RPG.Characters.characters)
                             for f in range(unused_slots):
@@ -128,7 +133,7 @@ screen rpg_char_sel_new():
                                 hover "selectable:gui/rpg/portraits/unknown.png"
                                 hover_sound "audio/sfx/sfx_select.ogg"
                                 hovered [ hovered_character.Action(["(Random)", RPG.Characters.random() ]) ]
-                                action [ Play("sound", "audio/sfx/sfx_valid.ogg"), Notify(hovered_character.value) ]
+                                action [ Play("sound", "audio/sfx/sfx_valid.ogg"), Function(rpg_fill_slot, rpg_slots, rpg_selected_slot, hovered_character.value) ]
 
                             imagebutton:
                                 xysize(88,88)
@@ -136,8 +141,9 @@ screen rpg_char_sel_new():
                                 hover "selectable:gui/rpg/portraits/none.png"
                                 hover_sound "audio/sfx/sfx_select.ogg"
                                 hovered [ hovered_character.Action(["(None)", None]) ]
-                                action [ Play("sound", "audio/sfx/sfx_valid.ogg") ]
+                                action [ Play("sound", "audio/sfx/sfx_valid.ogg"), Function(rpg_fill_slot, rpg_slots, rpg_selected_slot, hovered_character.value) ]
 
+###################################################### LOWER HALF ######################################################
 
                     ### Show selected characters
                     ### Slots 0-3 are allies, 4-7 are enemies
@@ -180,8 +186,8 @@ screen rpg_char_sel_new():
                             # Selected character text
                             $ output_text = ""
                             for a in range(party_size):
-                                if rpg_slots[a][0] is "(Pending)":
-                                    $ output_text += "(Pending)\n"
+                                if rpg_slots[a][0] == "(Pending)":
+                                    $ output_text += "\n"
                                 else:
                                     $ output_text += rpg_slots[a][0]+"\n"
 
@@ -222,8 +228,8 @@ screen rpg_char_sel_new():
                             # Selected character text
                             $ output_text = ""
                             for e in range(party_size):
-                                if rpg_slots[e+4][0] is "(Pending)":
-                                    $ output_text += "(Pending)\n"
+                                if rpg_slots[e+4][0] == "(Pending)":
+                                    $ output_text += "\n"
                                 else:
                                     $ output_text += rpg_slots[e+4][0]+"\n"
 
@@ -257,16 +263,18 @@ screen rpg_char_sel_new():
                                         text hovered_character.value[0]:
                                             text_align 0.5
 
+###################################################### BOTTOM ######################################################
+
     ### buttons
     textbutton "Return to Extras" action ShowMenu("category_welcome") yoffset 950 xoffset 25
     textbutton "Main Menu" action Return() yoffset 1000 xoffset 25
 
     # debug button only
-    textbutton "Click to toggle ready state.":
+    textbutton "[[DEBUG] Toggle ready state.":
         yoffset 50 xoffset 25
         action [
-            SetScreenVariable("rpg_ready", toggle_ready(rpg_ready)),
-            SetVariable("rpg_ready", toggle_ready(rpg_ready))
+            SetScreenVariable("rpg_ready", rpg_toggle_ready(rpg_ready)),
+            SetVariable("rpg_ready", rpg_toggle_ready(rpg_ready))
         ]
 
     if rpg_ready == True:
