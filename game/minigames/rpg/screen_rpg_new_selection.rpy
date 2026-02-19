@@ -211,20 +211,62 @@ screen rpg_char_sel_new():
                                         if rpg_slots[a][0] == "(Pending)":
                                             idle rpg_pending_sprite
                                             hover rpg_pending_sprite_hover
+                                            selected_idle Composite(
+                                                (88,88),
+                                                (0,0), rpg_pending_sprite,
+                                                (0,0), "gui/rpg/portraits/border_sel_a.png"
+                                            )
+                                            selected_hover Composite(
+                                                (88,88),
+                                                (0,0), rpg_pending_sprite_hover,
+                                                (0,0), "selectable:gui/rpg/portraits/border_sel_a.png"
+                                            )
                                         elif rpg_slots[a][0] == "(None)":
                                             idle "gui/rpg/portraits/none.png"
                                             hover "selectable:gui/rpg/portraits/none.png"
+                                            selected_idle Composite(
+                                                (88,88),
+                                                (0,0), "gui/rpg/portraits/none.png",
+                                                (0,0), "gui/rpg/portraits/border_sel_a.png"
+                                            )
+                                            selected_hover Composite(
+                                                (88,88),
+                                                (0,0), "selectable:gui/rpg/portraits/none.png",
+                                                (0,0), "selectable:gui/rpg/portraits/border_sel_a.png"
+                                            )
                                         elif rpg_slots[a][0] == "(Random)":
                                             idle "gui/rpg/portraits/unknown.png"
                                             hover "selectable:gui/rpg/portraits/unknown.png"
+                                            selected_idle Composite(
+                                                (88,88),
+                                                (0,0), "gui/rpg/portraits/unknown.png",
+                                                (0,0), "gui/rpg/portraits/border_sel_a.png"
+                                            )
+                                            selected_hover Composite(
+                                                (88,88),
+                                                (0,0), "selectable:gui/rpg/portraits/unknown.png",
+                                                (0,0), "selectable:gui/rpg/portraits/border_sel_a.png"
+                                            )
                                         else:
                                             idle rpg_slots[a][1].portrait.filename
                                             hover "selectable:"+rpg_slots[a][1].portrait.filename
+                                            selected_idle Composite(
+                                                (88,88),
+                                                (0,0), rpg_slots[a][1].portrait.filename,
+                                                (0,0), "gui/rpg/portraits/border_sel_a.png"
+                                            )
+                                            selected_hover Composite(
+                                                (88,88),
+                                                (0,0), "selectable:"+rpg_slots[a][1].portrait.filename,
+                                                (0,0), "selectable:gui/rpg/portraits/border_sel_a.png"
+                                            )
 
                                         hover_sound "audio/sfx/sfx_select.ogg"
+
                                         action [
                                             SetVariable("rpg_selected_slot", a),
-                                            SetScreenVariable("rpg_selected_slot", a)
+                                            SetScreenVariable("rpg_selected_slot", a),
+                                            SelectedIf(rpg_selected_slot == a)
                                         ]
 
                             # Selected character text
@@ -256,20 +298,61 @@ screen rpg_char_sel_new():
                                         if rpg_slots[e+4][0] == "(Pending)":
                                             idle rpg_pending_sprite
                                             hover rpg_pending_sprite_hover
+                                            selected_idle Composite(
+                                                (88,88),
+                                                (0,0), rpg_pending_sprite,
+                                                (0,0), "gui/rpg/portraits/border_sel_e.png"
+                                            )
+                                            selected_hover Composite(
+                                                (88,88),
+                                                (0,0), rpg_pending_sprite_hover,
+                                                (0,0), "selectable:gui/rpg/portraits/border_sel_e.png"
+                                            )
                                         elif rpg_slots[e+4][0] == "(None)":
                                             idle "gui/rpg/portraits/none.png"
                                             hover "selectable:gui/rpg/portraits/none.png"
+                                            selected_idle Composite(
+                                                (88,88),
+                                                (0,0), "gui/rpg/portraits/none.png",
+                                                (0,0), "gui/rpg/portraits/border_sel_e.png"
+                                            )
+                                            selected_hover Composite(
+                                                (88,88),
+                                                (0,0), "selectable:gui/rpg/portraits/none.png",
+                                                (0,0), "selectable:gui/rpg/portraits/border_sel_e.png"
+                                            )
                                         elif rpg_slots[e+4][0] == "(Random)":
                                             idle "gui/rpg/portraits/unknown.png"
                                             hover "selectable:gui/rpg/portraits/unknown.png"
+                                            selected_idle Composite(
+                                                (88,88),
+                                                (0,0), "gui/rpg/portraits/unknown.png",
+                                                (0,0), "gui/rpg/portraits/border_sel_e.png"
+                                            )
+                                            selected_hover Composite(
+                                                (88,88),
+                                                (0,0), "selectable:gui/rpg/portraits/unknown.png",
+                                                (0,0), "selectable:gui/rpg/portraits/border_sel_e.png"
+                                            )
                                         else:
                                             idle rpg_slots[e+4][1].portrait.filename
                                             hover "selectable:"+rpg_slots[e+4][1].portrait.filename
+                                            selected_idle Composite(
+                                                (88,88),
+                                                (0,0), rpg_slots[e+4][1].portrait.filename,
+                                                (0,0), "gui/rpg/portraits/border_sel_e.png"
+                                            )
+                                            selected_hover Composite(
+                                                (88,88),
+                                                (0,0), "selectable:"+rpg_slots[e+4][1].portrait.filename,
+                                                (0,0), "selectable:gui/rpg/portraits/border_sel_e.png"
+                                            )
 
                                         hover_sound "audio/sfx/sfx_select.ogg"
                                         action [
                                             SetVariable("rpg_selected_slot", e+4),
-                                            SetScreenVariable("rpg_selected_slot", e+4)
+                                            SetScreenVariable("rpg_selected_slot", e+4),
+                                            SelectedIf(rpg_selected_slot == e+4)
                                         ]
 
                             # Selected character text
