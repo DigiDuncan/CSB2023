@@ -33,21 +33,21 @@ init python:
     def rpg_fill_slot(slots_list, current_slot, char_tooltip_data):
         slots_list[current_slot] = char_tooltip_data
 
-    # automatically select the next unselected slot - does not work yet
+    # automatically select the next unselected slot
     def rpg_slot_autoselect(slots_list, current_slot, party_size):
-        working = False
 
-        # found_pending = False
-        # # don't go outside the range
-        # for slot in range(0, (party_size*2)-1):
-            # if slots_list[slot][0] == "(Pending)":
-                # found_pending = True
-                # break
-            # else:
-                # found_pending = False
+        found_pending = False
 
-        # if found_pending == True:
-            # current_slot = slot+1
+        # don't go outside the range
+        for slot in range(0, (party_size*2)-1):
+            if slots_list[slot][0] == "(Pending)":
+                found_pending = True
+                break
+            else:
+                found_pending = False
+
+        if found_pending == True:
+            current_slot = slot
 
 ###################################################### TRANSFORMS FOR THIS SCREEN ONLY
 
@@ -506,16 +506,11 @@ label ucn_new(rpg_final_parties, rpg_scale, rpg_img, rpg_bgm):
         RPG.set_var_character("e3", rpg_final_parties[6].assigned_name if rpg_final_parties[6] else None)
         RPG.set_var_character("e4", rpg_final_parties[7].assigned_name if rpg_final_parties[7] else None)
 
-        scale = rpg_scale
-        img = rpg_img
-        bgm = rpg_bgm
+        RPG.ucn_bg = img
+        RPG.ucn_music = bgm
+        RPG.ucn_scale = scale
 
         ui.close()
-
-
-    $ RPG.ucn_bg = img
-    $ RPG.ucn_music = bgm
-    $ RPG.ucn_scale = scale
 
     rpg:
         ucn
