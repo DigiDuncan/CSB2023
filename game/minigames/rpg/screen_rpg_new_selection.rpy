@@ -41,6 +41,14 @@ init python:
                 return slot
         return current_slot
 
+    # predict background image selection (hopefully less laggy???)
+    def rpg_start_predict_bgs(ucn_bg_list):
+        for img in ucn_bg_list:
+            renpy.start_predict(img)
+
+    def rpg_predict_img(img):
+        renpy.predict(ucn_bg_list[img])
+
 ###################################################### TRANSFORMS FOR THIS SCREEN ONLY
 
 transform _rpg_ready_button_yes:
@@ -77,6 +85,8 @@ screen rpg_char_sel_new():
         rpg_pending_sprite = renpy.get_registered_image("rpg_pending_portrait")
         rpg_pending_sprite_hover = renpy.get_registered_image("rpg_pending_portrait_hover")
 
+    on "show" action Function(rpg_start_predict_bgs, ucn_bg_list)
+
     ###################### important variables for everywhere
     default rpg_selection_stage = "party"
     default rpg_hovered_character = Tooltip("")
@@ -92,6 +102,7 @@ screen rpg_char_sel_new():
     default rpg_final_parties = []
     default rpg_max_level = 10
     default rpg_scale = 1.0
+    default loaded_imgs = 0
     default rpg_img = "images/bg/casino1.png"
     default rpg_bgm = "card_castle"
 
@@ -421,23 +432,51 @@ screen rpg_char_sel_new():
                         SetScreenVariable("rpg_scale", ((level - 1) / 4 + 1) )
                     ]
 
-                ###################### back / forward
-                textbutton "previous screen":
-                    xoffset 0 yoffset 700
-                    action [
-                        SetVariable("rpg_selection_stage", "party"),
-                        SetScreenVariable("rpg_selection_stage", "party")
-                    ]
+        ###################### back / forward
+        textbutton "Previous Screen":
+            yoffset 1000 xoffset 25
+            action [
+                Play("sound", "audio/sfx/sfx_valid.ogg"),
+                SetVariable("rpg_selection_stage", "party"),
+                SetScreenVariable("rpg_selection_stage", "party")
+            ]
 
-                textbutton "next screen":
-                    xoffset 800 yoffset 700
-                    action [
-                        SetVariable("rpg_selection_stage", "img"),
-                        SetScreenVariable("rpg_selection_stage", "img")
-                    ]
+        textbutton "Next Screen":
+            yoffset 1000 xoffset 1674
+            action [
+                Play("sound", "audio/sfx/sfx_valid.ogg"),
+                SetVariable("rpg_selection_stage", "load_imgs"),
+                SetScreenVariable("rpg_selection_stage", "load_imgs")
+            ]
 
 ###################################################### STAGE 3: BACKGROUND IMAGE
 
+    # full disclosure: portions of this section are AI-assisted because this is terrible.
+
+    ###################### load images first
+    elif rpg_selection_stage == "load_imgs":
+
+        if loaded_imgs < len(ucn_bg_list):
+            timer 0.01:
+                repeat True
+                action Function(rpg_predict_img, loaded_imgs)
+            $ loaded_imgs += 1
+            $ load_percent = str( int((loaded_imgs * 100) / len(ucn_bg_list)) )
+
+            text "Loading Images:\n"+load_percent+"%":
+                xalign 0.5 yalign 0.5
+                text_align 0.5
+        else:
+            text "Preparing Images...":
+                xalign 0.5 yalign 0.5
+                text_align 0.5
+            timer 0.01:
+                action [
+                    SetVariable("rpg_selection_stage", "img"),
+                    SetScreenVariable("rpg_selection_stage", "img")
+                ]
+
+    ###################### actual selection
     elif rpg_selection_stage == "img":
 
         text "{size=+24}Select Background Image":
@@ -451,40 +490,43 @@ screen rpg_char_sel_new():
             xsize 0.9 ysize 0.75
             xalign 0.5 yalign 0.5
 
-            # stealing digi's code for now
-            # viewport:
-                # xysize(1920, 720)
-                # yanchor -0.25
-                # style_prefix "choice"
-                # side_yfill True
-                # scrollbars "vertical"
-                # mousewheel True
-                # grid 12 int(len(ucn_bg_list) / 12) + 1:
-                    # for i in ucn_bg_list:
-                        # $ sc = im.Scale(i, 128, 72)
-                        # imagebutton:
-                            # idle sc
-                            # hover sc
-                            # xysize (128, 72)
-                            # anchor(-0.25, -0.25)
-                            # action [
-                                # SetVariable("rpg_img", i),
-                                # SetScreenVariable("rpg_img", i)
-                            # ]
-            ###################### back / forward
-            textbutton "previous screen":
-                xoffset 0 yoffset 0
-                action [
-                    SetVariable("rpg_selection_stage", "scale"),
-                    SetScreenVariable("rpg_selection_stage", "scale")
-                ]
+            # partially stealing digi's code for now
+            viewport:
+                xalign 0.5
+                side_yfill True
+                scrollbars "vertical"
+                mousewheel True
+                vpgrid:
+                    cols 13
+                    xalign 0.5
+                    for i in ucn_bg_list:
+                        $ sc = im.Scale(i, 128, 72)
+                        imagebutton:
+                            xanchor 0.5 yanchor 0.5
+                            idle sc
+                            hover sc # TODO: selectable shader
+                            xysize (128, 72)
+                            action [
+                                SetVariable("rpg_img", i),
+                                SetScreenVariable("rpg_img", i)
+                            ]
 
-            textbutton "next screen":
-                xoffset 800 yoffset 0
-                action [
-                    SetVariable("rpg_selection_stage", "bgm"),
-                    SetScreenVariable("rpg_selection_stage", "bgm")
-                ]
+        ###################### back / forward
+        textbutton "Previous Screen":
+            yoffset 1000 xoffset 25
+            action [
+                Play("sound", "audio/sfx/sfx_valid.ogg"),
+                SetVariable("rpg_selection_stage", "scale"),
+                SetScreenVariable("rpg_selection_stage", "scale")
+            ]
+
+        textbutton "Next Screen":
+            yoffset 1000 xoffset 1674
+            action [
+                Play("sound", "audio/sfx/sfx_valid.ogg"),
+                SetVariable("rpg_selection_stage", "bgm"),
+                SetScreenVariable("rpg_selection_stage", "bgm")
+            ]
 
 ###################################################### STAGE 4: BGM
 
@@ -511,7 +553,7 @@ screen rpg_char_sel_new():
                 mousewheel True
                 vbox:
                     for i in MUSIC_MAP:
-                        textbutton "{font=music_text}"+i+"{/font}":
+                        textbutton "{font=music_text}"+MUSIC_MAP[i]["title"]+"{/font}":
                             anchor(-0.25, -0.25)
                             action [
                                 SetVariable("rpg_bgm", i),
@@ -519,20 +561,23 @@ screen rpg_char_sel_new():
                             ]
 
 
-            ###################### back / forward
-            textbutton "previous screen":
-                xoffset 0 yoffset 700
-                action [
-                    SetVariable("rpg_selection_stage", "img"),
-                    SetScreenVariable("rpg_selection_stage", "img")
-                ]
 
-            textbutton "next screen":
-                xoffset 800 yoffset 700
-                action [
-                    SetVariable("rpg_selection_stage", "fight"),
-                    SetScreenVariable("rpg_selection_stage", "fight")
-                ]
+        ###################### back / forward
+        textbutton "Previous Screen":
+            yoffset 1000 xoffset 25
+            action [
+                Play("sound", "audio/sfx/sfx_valid.ogg"),
+                SetVariable("rpg_selection_stage", "img"),
+                SetScreenVariable("rpg_selection_stage", "img")
+            ]
+
+        textbutton "Next Screen":
+            yoffset 1000 xoffset 1674
+            action [
+                Play("sound", "audio/sfx/sfx_valid.ogg"),
+                SetVariable("rpg_selection_stage", "fight"),
+                SetScreenVariable("rpg_selection_stage", "fight")
+            ]
 
 ###################################################### STAGE 5: JUMP!
 
@@ -564,18 +609,23 @@ screen rpg_char_sel_new():
             text output
 
             ###################### back / forward
-            textbutton "previous screen":
-                xoffset 1000 yoffset 600
-                action [
-                    SetVariable("rpg_selection_stage", "img"),
-                    SetScreenVariable("rpg_selection_stage", "img")
-                ]
 
-            textbutton "BEGIN":
-                xoffset 1000 yoffset 700
-                action [
-                    Call("ucn_new", rpg_final_parties, rpg_scale, rpg_img, rpg_bgm)
-                ]
+
+        ###################### back / forward
+        textbutton "Previous Screen":
+            yoffset 1000 xoffset 25
+            action [
+                Play("sound", "audio/sfx/sfx_valid.ogg"),
+                SetVariable("rpg_selection_stage", "img"),
+                SetScreenVariable("rpg_selection_stage", "img")
+            ]
+
+        textbutton "BEGIN!":
+            yoffset 1000 xoffset 1674
+            action [
+                Play("sound", "audio/sfx/sfx_valid.ogg"),
+                Call("ucn_new", rpg_final_parties, rpg_scale, rpg_img, rpg_bgm)
+            ]
 
     else: # this should NEVER happen!
         $ renpy.jump("secret_dx")

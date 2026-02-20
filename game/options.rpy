@@ -26,6 +26,12 @@ define gui.show_name = False
 define config.version = "1.0a1"
 
 
+## Image prediction cache size
+## Default is 32-64 MB, but Tate cranked that sucker WAY up because this game is nuts
+
+define config.image_cache_size = 2048
+
+
 ## Text that is placed on the game's about screen. Place the text between the
 ## triple-quotes, and leave a blank line between paragraphs.
 
