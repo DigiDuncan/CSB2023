@@ -1,3 +1,10 @@
+# TODO: make sure you can't enter a battle with no fighters on either/both sides
+# TODO: fix random not randomizing for each slot
+# TODO: fix none not resetting between fights
+# TODO: finish other selection screens
+# TODO: figure out why autoselect needs two clicks to update
+# TODO: figure out why attempting to return to main menu crashes
+
 # this label will not be needed later
 label awawa_rpg_select_test:
     call screen rpg_char_sel_new with dissolve
@@ -567,8 +574,6 @@ screen rpg_char_sel_new():
                                 SetScreenVariable("rpg_bgm", i)
                             ]
 
-
-
         ###################### back / forward
         textbutton "Previous Screen":
             yoffset 1000 xoffset 25
@@ -614,9 +619,6 @@ screen rpg_char_sel_new():
                 output += "Background: "+rpg_img+"\nBGM: "+rpg_bgm
 
             text output
-
-            ###################### back / forward
-
 
         ###################### back / forward
         textbutton "Previous Screen":
