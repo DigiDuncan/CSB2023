@@ -380,7 +380,7 @@ screen rpg_char_sel_new():
         ######################### BOTTOM
 
         ### buttons
-        textbutton "Return to Extras" action ShowMenu("category_welcome") yoffset 950 xoffset 25
+        textbutton "Return to Extras" action Play("music", "audio/bubble_tea.ogg"), ShowMenu("category_welcome") yoffset 950 xoffset 25
         textbutton "Main Menu" action Return() yoffset 1000 xoffset 25
 
         # debug button only
