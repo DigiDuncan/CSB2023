@@ -428,8 +428,6 @@ screen rpg_char_sel_new():
 
     elif rpg_selection_stage == "scale":
 
-        #default local_scale = rpg_scale
-
         text "{size=+24}Select Party Scale":
             xalign 0.5
             yalign 0.04
@@ -661,17 +659,30 @@ screen rpg_char_sel_new():
                 Play("sound", "audio/sfx/sfx_valid.ogg"),
                 Hide("rpg_char_sel_new", dissolve),
                 Hide("category_welcome", dissolve),
-                Call("ucn_new", rpg_final_parties, rpg_scale, rpg_img, rpg_bgm)
+
+                # move all these to the global versions
+                SetVariable("ucn2_parties", rpg_final_parties),
+                SetVariable("ucn2_scale", rpg_scale),
+                SetVariable("ucn2_img", rpg_img),
+                SetVariable("ucn2_bgm", rpg_bgm),
+
+                #Call("ucn_new", rpg_final_parties, rpg_scale, rpg_img, rpg_bgm)
+                #Function(renpy.call_in_new_context, "ucn_new", rpg_final_parties, rpg_scale, rpg_img, rpg_bgm)
+                Start("ucn_new")
             ]
+
 
     else: # this should NEVER happen!
         $ renpy.jump("secret_dx")
 
-label ucn_new(rpg_final_parties, rpg_scale, rpg_img, rpg_bgm):
+label ucn_new():
 
     python:
 
-        # attempt to force-clear these between fights
+        # attempt to close ALL menus
+        renpy.scene(layer="screens")
+
+        # attempt to force-clear fighters between fights
         a1 = None
         a2 = None
         a3 = None
@@ -682,19 +693,19 @@ label ucn_new(rpg_final_parties, rpg_scale, rpg_img, rpg_bgm):
         e3 = None
         e4 = None
 
-        RPG.set_var_character("a1", rpg_final_parties[0].assigned_name if rpg_final_parties[0] else None)
-        RPG.set_var_character("a2", rpg_final_parties[1].assigned_name if rpg_final_parties[1] else None)
-        RPG.set_var_character("a3", rpg_final_parties[2].assigned_name if rpg_final_parties[2] else None)
-        RPG.set_var_character("a4", rpg_final_parties[3].assigned_name if rpg_final_parties[3] else None)
+        RPG.set_var_character("a1", ucn2_parties[0].assigned_name if ucn2_parties[0] else None)
+        RPG.set_var_character("a2", ucn2_parties[1].assigned_name if ucn2_parties[1] else None)
+        RPG.set_var_character("a3", ucn2_parties[2].assigned_name if ucn2_parties[2] else None)
+        RPG.set_var_character("a4", ucn2_parties[3].assigned_name if ucn2_parties[3] else None)
 
-        RPG.set_var_character("e1", rpg_final_parties[4].assigned_name if rpg_final_parties[4] else None)
-        RPG.set_var_character("e2", rpg_final_parties[5].assigned_name if rpg_final_parties[5] else None)
-        RPG.set_var_character("e3", rpg_final_parties[6].assigned_name if rpg_final_parties[6] else None)
-        RPG.set_var_character("e4", rpg_final_parties[7].assigned_name if rpg_final_parties[7] else None)
+        RPG.set_var_character("e1", ucn2_parties[4].assigned_name if ucn2_parties[4] else None)
+        RPG.set_var_character("e2", ucn2_parties[5].assigned_name if ucn2_parties[5] else None)
+        RPG.set_var_character("e3", ucn2_parties[6].assigned_name if ucn2_parties[6] else None)
+        RPG.set_var_character("e4", ucn2_parties[7].assigned_name if ucn2_parties[7] else None)
 
-        RPG.ucn_bg = rpg_img
-        RPG.ucn_music = rpg_bgm
-        RPG.ucn_scale = rpg_scale
+        RPG.ucn_bg = ucn2_img
+        RPG.ucn_music = ucn2_bgm
+        RPG.ucn_scale = ucn2_scale
 
         #ui.close()
         renpy.music.stop("music2")

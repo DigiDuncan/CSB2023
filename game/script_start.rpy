@@ -20,6 +20,12 @@ init python:
     # For Ace Attorney parody
     chosen_evidence = 0
 
+    # For UCN2
+    ucn2_parties = []
+    ucn2_scale = 1.0
+    ucn2_img = "images/bg/casino1.png"
+    ucn2_bgm = "card_castle"
+
 # If music is so good, why is there no Music 2?
 init python:
     renpy.music.register_channel("sound2", "sfx")
