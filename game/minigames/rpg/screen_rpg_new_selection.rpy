@@ -191,7 +191,7 @@ screen rpg_char_sel_new():
                                     hovered [ rpg_hovered_character.Action(["(Random)", RPG.Characters.random() ]) ]
                                     action [
                                         Play("sound", "audio/sfx/sfx_valid.ogg"),
-                                        Function(rpg_fill_slot, rpg_slots, rpg_selected_slot, rpg_hovered_character.value),
+                                        Function(rpg_fill_slot, rpg_slots, rpg_selected_slot, ["(Random)", RPG.Characters.random() ]),
                                         SetScreenVariable("rpg_selected_slot", rpg_slot_autoselect(rpg_slots, rpg_selected_slot, rpg_party_size)),
                                         SetScreenVariable("rpg_ready", rpg_toggle_ready(rpg_ready, rpg_slots)),
                                         SetVariable("rpg_ready", rpg_toggle_ready(rpg_ready, rpg_slots))
@@ -395,7 +395,10 @@ screen rpg_char_sel_new():
                 ready_transform = _rpg_ready_button_yes
 
                 for member in rpg_slots:
-                    rpg_final_parties.append(member[1])
+                    if member[0] != None:
+                        rpg_final_parties.append(member[1])
+                    else:
+                        rpg_final_parties.append(None)
             else:
                 ready_transform = _rpg_ready_button_no
 
@@ -511,7 +514,7 @@ screen rpg_char_sel_new():
                     xalign 0.5
                     for i in ucn_bg_list:
                         button:
-                            xanchor 0.5 yanchor 0.5
+                            xanchor 0.0 yanchor 0.0
                             xysize (128, 72)
 
                             add Image(i):
@@ -642,6 +645,17 @@ screen rpg_char_sel_new():
 label ucn_new(rpg_final_parties, rpg_scale, rpg_img, rpg_bgm):
 
     python:
+
+        # attempt to force-clear these between fights
+        a1 = None
+        a2 = None
+        a3 = None
+        a4 = None
+
+        e1 = None
+        e2 = None
+        e3 = None
+        e4 = None
 
         RPG.set_var_character("a1", rpg_final_parties[0].assigned_name if rpg_final_parties[0] else None)
         RPG.set_var_character("a2", rpg_final_parties[1].assigned_name if rpg_final_parties[1] else None)
