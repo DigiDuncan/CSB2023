@@ -394,12 +394,6 @@ screen rpg_char_sel_new():
         python:
             if rpg_ready == True:
                 ready_transform = _rpg_ready_button_yes
-
-                for member in rpg_slots:
-                    if member[0] != None:
-                        rpg_final_parties.append(member[1])
-                    else:
-                        rpg_final_parties.append(None)
             else:
                 ready_transform = _rpg_ready_button_no
 
@@ -598,6 +592,13 @@ screen rpg_char_sel_new():
 ###################################################### STAGE 5: JUMP!
 
     elif rpg_selection_stage == "fight":
+
+        python:
+            for member in rpg_slots:
+                if member[0] != None:
+                    rpg_final_parties.append(member[1])
+                else:
+                    rpg_final_parties.append(None)
 
         frame:
             background None
