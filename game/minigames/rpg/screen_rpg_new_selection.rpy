@@ -110,6 +110,7 @@ screen rpg_char_sel_new():
     default rpg_final_parties = []
     default rpg_max_level = 10
     default rpg_scale = 1.0
+    default rpg_level = 2
     default loaded_imgs = 0
     default rpg_img = "images/bg/casino1.png"
     default rpg_bgm = "card_castle"
@@ -427,6 +428,8 @@ screen rpg_char_sel_new():
 
     elif rpg_selection_stage == "scale":
 
+        #default local_scale = rpg_scale
+
         text "{size=+24}Select Party Scale":
             xalign 0.5
             yalign 0.04
@@ -438,16 +441,22 @@ screen rpg_char_sel_new():
             xsize 0.9 ysize 0.75
             xalign 0.5 yalign 0.5
 
-            for level in range(1, rpg_max_level+1):
-                $ button_text = str(level)
+            text "The higher the scale, the harder the fight!\nDefault is Level 2.":
+                xalign 0.5 yalign 0.2
+                text_align 0.5
 
-                textbutton button_text:
-                    yoffset 32*level
-                    action [
-                        Play("sound", "audio/sfx/sfx_valid.ogg"),
-                        SetVariable("rpg_scale", ((level - 1) / 4 + 1) ),
-                        SetScreenVariable("rpg_scale", ((level - 1) / 4 + 1) )
-                    ]
+            bar:
+                xsize 0.8
+                xalign 0.5 yalign 0.5
+                left_gutter 200
+                right_gutter 0
+                value ScreenVariableValue("rpg_level", rpg_max_level-1, offset = 1)
+
+            $ rpg_scale = ((rpg_level - 1) / 4 + 0.75)
+
+            text "Current Level:\n[rpg_level] (×[rpg_scale])":
+                xalign 0.5 yalign 0.7
+                text_align 0.5
 
         ###################### back / forward
         textbutton "Previous Screen":
@@ -480,11 +489,11 @@ screen rpg_char_sel_new():
             $ loaded_imgs += 1
             $ load_percent = str( int((loaded_imgs * 100) / len(ucn_bg_list)) )
 
-            text "Loading Images\n"+load_percent+"%":
+            text "Fetching Backgrounds...\n"+load_percent+"%":
                 xalign 0.5 yalign 0.5
                 text_align 0.5
         else:
-            text "Preparing Images...":
+            text "Preparing Selection...":
                 xalign 0.5 yalign 0.5
                 text_align 0.5
             timer 0.001:
@@ -650,6 +659,8 @@ screen rpg_char_sel_new():
             yoffset 1000 xoffset 1674
             action [
                 Play("sound", "audio/sfx/sfx_valid.ogg"),
+                Hide("rpg_char_sel_new", dissolve),
+                Hide("category_welcome", dissolve),
                 Call("ucn_new", rpg_final_parties, rpg_scale, rpg_img, rpg_bgm)
             ]
 
@@ -685,7 +696,8 @@ label ucn_new(rpg_final_parties, rpg_scale, rpg_img, rpg_bgm):
         RPG.ucn_music = rpg_bgm
         RPG.ucn_scale = rpg_scale
 
-        # ui.close()
+        #ui.close()
+        renpy.music.stop("music2")
 
     rpg:
         ucn
