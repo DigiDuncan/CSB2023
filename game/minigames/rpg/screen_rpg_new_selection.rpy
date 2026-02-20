@@ -4,10 +4,6 @@
 # TODO: figure out why autoselect needs two clicks to update
 # TODO: figure out why attempting to return to main menu crashes
 
-# this label will not be needed later
-label awawa_rpg_select_test:
-    call screen rpg_char_sel_new with dissolve
-
 ###################################################### FUNCTIONS FOR THIS SCREEN ONLY
 
 init python:
@@ -94,7 +90,8 @@ screen rpg_char_sel_new():
     # run these immediately in the background of all screens
     on "show" action [
         Function(rpg_start_predict_bgs, ucn_bg_list),
-        Play("music", "audio/riders_menu.ogg"),
+        Hide("category_nav"),
+        Play("music2", "audio/riders_menu.ogg"),
         Function(persistent.heard.add, "riders_menu")
     ]
 
@@ -118,6 +115,7 @@ screen rpg_char_sel_new():
     default rpg_bgm = "card_castle"
 
     ### add background color / prep video
+    add Color("#000")
     add Color('#323e42', alpha=0.75)
     showif rpg_ready == True:
         add Movie(size=(1920,1080), play="movies/Fire.webm", side_mask=True) at _rpg_ready_flames
@@ -380,8 +378,22 @@ screen rpg_char_sel_new():
         ######################### BOTTOM
 
         ### buttons
-        textbutton "Return to Extras" action Play("music", "audio/bubble_tea.ogg"), ShowMenu("category_welcome") yoffset 950 xoffset 25
-        textbutton "Main Menu" action Return() yoffset 1000 xoffset 25
+        textbutton "Return to Extras":
+            yoffset 950 xoffset 25
+            action [
+                PauseAudio("music", False),
+                Stop("music2"),
+                Hide("rpg_char_sel_new", dissolve)
+            ]
+        textbutton "Main Menu":
+            sensitive True
+            yoffset 1000 xoffset 25
+            action [
+                PauseAudio("music", False),
+                Stop("music2"),
+                Hide("rpg_char_sel_new", dissolve),
+                Return()
+            ]
 
         # debug button only
         # textbutton "[[DEBUG] Toggle ready state.":
