@@ -498,9 +498,9 @@ label ucn_new(rpg_final_parties, rpg_scale, rpg_img, rpg_bgm):
         RPG.set_var_character("e3", rpg_final_parties[6].assigned_name if rpg_final_parties[6] else None)
         RPG.set_var_character("e4", rpg_final_parties[7].assigned_name if rpg_final_parties[7] else None)
 
-        RPG.ucn_bg = img
-        RPG.ucn_music = bgm
-        RPG.ucn_scale = scale
+        RPG.ucn_bg = rpg_img
+        RPG.ucn_music = rpg_bgm
+        RPG.ucn_scale = rpg_scale
 
         ui.close()
 
