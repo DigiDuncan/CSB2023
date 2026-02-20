@@ -185,7 +185,7 @@ screen rpg_char_sel_new():
                                     action [
                                         Play("sound", "audio/sfx/sfx_valid.ogg"),
                                         Function(rpg_fill_slot, rpg_slots, rpg_selected_slot, rpg_hovered_character.value),
-                                        Function(rpg_slot_autoselect, rpg_slots, rpg_selected_slot, rpg_party_size),
+                                        SetScreenVariable("rpg_selected_slot", rpg_slot_autoselect(rpg_slots, rpg_selected_slot, rpg_party_size)),
                                         SetScreenVariable("rpg_ready", rpg_toggle_ready(rpg_ready, rpg_slots)),
                                         SetVariable("rpg_ready", rpg_toggle_ready(rpg_ready, rpg_slots))
                                     ]
@@ -199,7 +199,7 @@ screen rpg_char_sel_new():
                                     action [
                                         Play("sound", "audio/sfx/sfx_valid.ogg"),
                                         Function(rpg_fill_slot, rpg_slots, rpg_selected_slot, rpg_hovered_character.value),
-                                        Function(rpg_slot_autoselect, rpg_slots, rpg_selected_slot, rpg_party_size),
+                                        SetScreenVariable("rpg_selected_slot", rpg_slot_autoselect(rpg_slots, rpg_selected_slot, rpg_party_size)),
                                         SetScreenVariable("rpg_ready", rpg_toggle_ready(rpg_ready, rpg_slots)),
                                         SetVariable("rpg_ready", rpg_toggle_ready(rpg_ready, rpg_slots))
                                     ]
@@ -562,6 +562,7 @@ screen rpg_char_sel_new():
                         textbutton "{font=music_text}"+MUSIC_MAP[i]["title"]+"{/font}":
                             anchor(-0.25, -0.25)
                             action [
+                                Play("sound", "audio/sfx/sfx_valid.ogg"),
                                 SetVariable("rpg_bgm", i),
                                 SetScreenVariable("rpg_bgm", i)
                             ]
