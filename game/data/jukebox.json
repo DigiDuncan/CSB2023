@@ -49,6 +49,14 @@
             "album_art": "csbi.png",
             "trivia": "CS was obsessed with this song he heard at the store he used to work at. He set up a bounty for whoever found it!"
         },
+        "riders_menu" : {
+            "file": "riders_menu.ogg",
+            "title": "Main Menu Theme",
+            "artist": "Kenichi Tokoi, Runblebee, & Cashell",
+            "tags": ["Menus & Misc.", "New In DX"],
+            "album_art": "riders.png",
+            "trivia": "Not often that a menu theme gets people hyped."
+        },
         "space_classroom" : {
             "file": "space_classroom.ogg",
             "title": "Space Classroom",
@@ -1285,7 +1293,7 @@
             "file": "minigames/carrot/hotel_disbelief.ogg",
             "title": "Can You Really Call This A Hotel",
             "artist": "Toby Fox",
-            "tags": ["CSBDX: Holiday Special", "Minigames", "New In DX"],
+            "tags": ["CSBDX: Holiday Special", "Minigames", "New In DX", "CSBDX: Misc."],
             "album_art": "undertale.png",
             "trivia": "This song's full title is {i}Can You Really Call This A Hotel, I Didn't Receive A Mint On My Pillow Or Anything.{/i}"
         },

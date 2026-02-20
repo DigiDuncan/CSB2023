@@ -1,5 +1,4 @@
 # TODO: make sure you can't enter a battle with no fighters on either/both sides
-# TODO: fix random not randomizing for each slot
 # TODO: fix none not resetting between fights
 # TODO: finish other selection screens
 # TODO: figure out why autoselect needs two clicks to update
@@ -92,7 +91,12 @@ screen rpg_char_sel_new():
         rpg_pending_sprite = renpy.get_registered_image("rpg_pending_portrait")
         rpg_pending_sprite_hover = renpy.get_registered_image("rpg_pending_portrait_hover")
 
-    on "show" action Function(rpg_start_predict_bgs, ucn_bg_list)
+    # run these immediately in the background of all screens
+    on "show" action [
+        Function(rpg_start_predict_bgs, ucn_bg_list),
+        Play("music", "audio/riders_menu.ogg"),
+        Function(persistent.heard.add, "riders_menu")
+    ]
 
     ###################### important variables for everywhere
     default rpg_selection_stage = "party"
@@ -113,13 +117,10 @@ screen rpg_char_sel_new():
     default rpg_img = "images/bg/casino1.png"
     default rpg_bgm = "card_castle"
 
-    ### add background color, kill music
-    # TODO: bgm
+    ### add background color / prep video
     add Color('#323e42', alpha=0.75)
     showif rpg_ready == True:
         add Movie(size=(1920,1080), play="movies/Fire.webm", side_mask=True) at _rpg_ready_flames
-
-    $ renpy.music.stop()
 
 ###################################################### STAGE 1: CHARACTER SELECTION
 
