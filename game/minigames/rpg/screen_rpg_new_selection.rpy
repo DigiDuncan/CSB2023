@@ -457,20 +457,20 @@ screen rpg_char_sel_new():
     elif rpg_selection_stage == "load_imgs":
 
         if loaded_imgs < len(ucn_bg_list):
-            timer 0.01:
+            timer 0.001:
                 repeat True
                 action Function(rpg_predict_img, loaded_imgs)
             $ loaded_imgs += 1
             $ load_percent = str( int((loaded_imgs * 100) / len(ucn_bg_list)) )
 
-            text "Loading Images:\n"+load_percent+"%":
+            text "Loading Images\n"+load_percent+"%":
                 xalign 0.5 yalign 0.5
                 text_align 0.5
         else:
             text "Preparing Images...":
                 xalign 0.5 yalign 0.5
                 text_align 0.5
-            timer 0.01:
+            timer 0.001:
                 action [
                     SetVariable("rpg_selection_stage", "img"),
                     SetScreenVariable("rpg_selection_stage", "img")
@@ -496,17 +496,23 @@ screen rpg_char_sel_new():
                 side_yfill True
                 scrollbars "vertical"
                 mousewheel True
+
+                # TODO: hover/selected effects + tooltips?
+
                 vpgrid:
                     cols 13
                     xalign 0.5
                     for i in ucn_bg_list:
-                        $ sc = im.Scale(i, 128, 72)
-                        imagebutton:
+                        button:
                             xanchor 0.5 yanchor 0.5
-                            idle sc
-                            hover sc # TODO: selectable shader
                             xysize (128, 72)
+
+                            add Image(i):
+                                xysize (128, 72)
+                                fit ("contain")
+
                             action [
+                                Play("sound", "audio/sfx/sfx_valid.ogg"),
                                 SetVariable("rpg_img", i),
                                 SetScreenVariable("rpg_img", i)
                             ]
