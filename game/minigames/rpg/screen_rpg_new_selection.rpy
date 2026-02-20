@@ -445,7 +445,7 @@ screen rpg_char_sel_new():
             bar:
                 xsize 0.8
                 xalign 0.5 yalign 0.5
-                left_gutter 200
+                left_gutter 150
                 right_gutter 0
                 value ScreenVariableValue("rpg_level", rpg_max_level-1, offset = 1)
 
