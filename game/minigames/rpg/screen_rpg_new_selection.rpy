@@ -2,7 +2,6 @@
 # TODO: fix none not resetting between fights
 # TODO: finish other selection screens
 # TODO: figure out why autoselect needs two clicks to update
-# TODO: figure out why attempting to return to main menu crashes
 
 ###################################################### FUNCTIONS FOR THIS SCREEN ONLY
 
@@ -660,14 +659,14 @@ screen rpg_char_sel_new():
                 Hide("rpg_char_sel_new", dissolve),
                 Hide("category_welcome", dissolve),
 
-                # move all these to the global versions
+                # move all these to the global versions so we can call the screen in a new context and skip the UI nonsense
+                # also attempt to force-clear parties again (it didn't work)
+                SetVariable("ucn2_parties", []),
                 SetVariable("ucn2_parties", rpg_final_parties),
                 SetVariable("ucn2_scale", rpg_scale),
                 SetVariable("ucn2_img", rpg_img),
                 SetVariable("ucn2_bgm", rpg_bgm),
 
-                #Call("ucn_new", rpg_final_parties, rpg_scale, rpg_img, rpg_bgm)
-                #Function(renpy.call_in_new_context, "ucn_new", rpg_final_parties, rpg_scale, rpg_img, rpg_bgm)
                 Start("ucn_new")
             ]
 
