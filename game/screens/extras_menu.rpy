@@ -60,7 +60,7 @@ screen category_nav():
             if preferences.developer_mode or achievement_manager.get("beat_copguy").unlocked:
                 textbutton "[[OLD] Ultimate Custom Night\n{size=-12}Put together your own RPG battles!" action Start("rpg_ucn")
 
-                textbutton "{image=gui/inline_text/dx_text.png} [[DEV] Ultimate Custom Night 2\n{size=-12}Put together your own RPG battles, BUT BETTER!" action PauseAudio("music", True), ShowMenu("rpg_char_sel_new")
+                textbutton "{image=gui/inline_text/dx_text.png} [[DEV] Ultimate Custom Night 2\n{size=-12}Put together your own RPG battles, BUT BETTER!" action PauseAudio("music", True), ShowMenu("_ucn2_selection")
 
             textbutton "{image=gui/inline_text/dx_text.png} Woohoo Counter\n{size=-12}How many can you find?" action Jump("woohoo_counter")
 

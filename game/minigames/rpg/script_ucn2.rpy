@@ -75,7 +75,7 @@ transform _rpg_ready_flames:
 
 ###################################################### ACTUAL SCREEN STARTS HERE
 
-screen rpg_char_sel_new():
+screen _ucn2_selection():
     modal True
 
     python:
@@ -667,14 +667,14 @@ screen rpg_char_sel_new():
                 SetVariable("ucn2_img", rpg_img),
                 SetVariable("ucn2_bgm", rpg_bgm),
 
-                Start("ucn_new")
+                Start("_ucn2_battle")
             ]
 
 
     else: # this should NEVER happen!
         $ renpy.jump("secret_dx")
 
-label ucn_new():
+label _ucn2_battle():
     python:
 
         # attempt to close ALL menus
@@ -724,6 +724,14 @@ label ucn_new():
             $e2
             $e3
             $e4
-        on_win "secret_dx"
-        on_lose "secret_dx"
+        on_win "_ucn2_after"
+        on_lose "_ucn2_after"
         intro_text "Begin!"
+
+label _ucn2_after:
+    menu:
+        "Play again?"
+        "Yes":
+            call screen ucn2_selection()
+        "No":
+            return
