@@ -383,7 +383,7 @@ screen _ucn2_selection():
             action [
                 PauseAudio("music", False),
                 Stop("music2"),
-                Hide("rpg_char_sel_new", dissolve)
+                Hide("_ucn2_selection", dissolve)
             ]
         textbutton "Main Menu":
             sensitive True
@@ -391,7 +391,7 @@ screen _ucn2_selection():
             action [
                 PauseAudio("music", False),
                 Stop("music2"),
-                Hide("rpg_char_sel_new", dissolve),
+                Hide("_ucn2_selection", dissolve),
                 Return()
             ]
 
