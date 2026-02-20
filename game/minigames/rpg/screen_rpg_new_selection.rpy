@@ -675,13 +675,16 @@ screen rpg_char_sel_new():
         $ renpy.jump("secret_dx")
 
 label ucn_new():
-
     python:
 
         # attempt to close ALL menus
         renpy.scene(layer="screens")
 
         # attempt to force-clear fighters between fights
+        # let's try a whole new-ass variable, even
+        ucn2_local_parties = [ None ]
+        ucn2_local_parties = ucn2_parties
+
         a1 = None
         a2 = None
         a3 = None
@@ -692,15 +695,15 @@ label ucn_new():
         e3 = None
         e4 = None
 
-        RPG.set_var_character("a1", ucn2_parties[0].assigned_name if ucn2_parties[0] else None)
-        RPG.set_var_character("a2", ucn2_parties[1].assigned_name if ucn2_parties[1] else None)
-        RPG.set_var_character("a3", ucn2_parties[2].assigned_name if ucn2_parties[2] else None)
-        RPG.set_var_character("a4", ucn2_parties[3].assigned_name if ucn2_parties[3] else None)
+        RPG.set_var_character("a1", ucn2_local_parties[0].assigned_name if ucn2_local_parties[0] else None)
+        RPG.set_var_character("a2", ucn2_local_parties[1].assigned_name if ucn2_local_parties[1] else None)
+        RPG.set_var_character("a3", ucn2_local_parties[2].assigned_name if ucn2_local_parties[2] else None)
+        RPG.set_var_character("a4", ucn2_local_parties[3].assigned_name if ucn2_local_parties[3] else None)
 
-        RPG.set_var_character("e1", ucn2_parties[4].assigned_name if ucn2_parties[4] else None)
-        RPG.set_var_character("e2", ucn2_parties[5].assigned_name if ucn2_parties[5] else None)
-        RPG.set_var_character("e3", ucn2_parties[6].assigned_name if ucn2_parties[6] else None)
-        RPG.set_var_character("e4", ucn2_parties[7].assigned_name if ucn2_parties[7] else None)
+        RPG.set_var_character("e1", ucn2_local_parties[4].assigned_name if ucn2_local_parties[4] else None)
+        RPG.set_var_character("e2", ucn2_local_parties[5].assigned_name if ucn2_local_parties[5] else None)
+        RPG.set_var_character("e3", ucn2_local_parties[6].assigned_name if ucn2_local_parties[6] else None)
+        RPG.set_var_character("e4", ucn2_local_parties[7].assigned_name if ucn2_local_parties[7] else None)
 
         RPG.ucn_bg = ucn2_img
         RPG.ucn_music = ucn2_bgm
