@@ -58,7 +58,9 @@ screen category_nav():
                 textbutton "{image=gui/inline_text/ce_text.png} D20 Viewer\n{size=-12}See who could have showed up first to the party!" action ShowMenu("d20_viewer_screen")
 
             if preferences.developer_mode or achievement_manager.get("beat_copguy").unlocked:
-                textbutton "Ultimate Custom Night\n{size=-12}Put together your own RPG battles!" action Start("rpg_ucn")
+                textbutton "[[OLD] Ultimate Custom Night\n{size=-12}Put together your own RPG battles!" action Start("rpg_ucn")
+
+                textbutton "{image=gui/inline_text/dx_text.png} [[DEV] Ultimate Custom Night 2\n{size=-12}Put together your own RPG battles, BUT BETTER!" action Start("awawa_rpg_select_test")
 
             textbutton "{image=gui/inline_text/dx_text.png} Woohoo Counter\n{size=-12}How many can you find?" action Jump("woohoo_counter")
 
