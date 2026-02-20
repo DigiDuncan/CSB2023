@@ -90,21 +90,22 @@ screen rpg_char_sel_new():
     default rpg_ready = False
     default rpg_party_size = 4
     default rpg_final_parties = []
+    default rpg_max_level = 10
     default rpg_scale = 1.0
     default rpg_img = "images/bg/casino1.png"
     default rpg_bgm = "card_castle"
 
+    ### add background color, kill music
+    # TODO: bgm
+    add Color('#323e42', alpha=0.75)
+    showif rpg_ready == True:
+        add Movie(size=(1920,1080), play="movies/Fire.webm", side_mask=True) at _rpg_ready_flames
+
+    $ renpy.music.stop()
+
 ###################################################### STAGE 1: CHARACTER SELECTION
 
     if rpg_selection_stage == "party":
-
-        ### add background color, kill music
-        # TODO: bgm
-        add Color('#323e42', alpha=0.75)
-        showif rpg_ready == True:
-            add Movie(size=(1920,1080), play="movies/Fire.webm", side_mask=True) at _rpg_ready_flames
-
-        $ renpy.music.stop()
 
         text "{size=+24}Select Your Characters!":
             xalign 0.5
@@ -398,9 +399,6 @@ screen rpg_char_sel_new():
 
     elif rpg_selection_stage == "scale":
 
-        add Color('#323e42', alpha=0.75)
-        add Movie(size=(1920,1080), play="movies/Fire.webm", side_mask=True) at _rpg_ready_flames
-
         text "{size=+24}Select Party Scale":
             xalign 0.5
             yalign 0.04
@@ -412,15 +410,35 @@ screen rpg_char_sel_new():
             xsize 0.9 ysize 0.75
             xalign 0.5 yalign 0.5
 
-            text "Pretend something is here.\nClick anywhere to get to the next screen."
-            key "dismiss" action [ SetVariable("rpg_selection_stage", "img"), SetScreenVariable("rpg_selection_stage", "img") ]
+            for level in range(1, rpg_max_level+1):
+                $ button_text = str(level)
+
+                textbutton button_text:
+                    yoffset 32*level
+                    action [
+                        Play("sound", "audio/sfx/sfx_valid.ogg"),
+                        SetVariable("rpg_scale", ((level - 1) / 4 + 1) ),
+                        SetScreenVariable("rpg_scale", ((level - 1) / 4 + 1) )
+                    ]
+
+                ###################### back / forward
+                textbutton "previous screen":
+                    xoffset 0 yoffset 700
+                    action [
+                        SetVariable("rpg_selection_stage", "party"),
+                        SetScreenVariable("rpg_selection_stage", "party")
+                    ]
+
+                textbutton "next screen":
+                    xoffset 800 yoffset 700
+                    action [
+                        SetVariable("rpg_selection_stage", "img"),
+                        SetScreenVariable("rpg_selection_stage", "img")
+                    ]
 
 ###################################################### STAGE 3: BACKGROUND IMAGE
 
     elif rpg_selection_stage == "img":
-
-        add Color('#323e42', alpha=0.75)
-        add Movie(size=(1920,1080), play="movies/Fire.webm", side_mask=True) at _rpg_ready_flames
 
         text "{size=+24}Select Background Image":
             xalign 0.5
@@ -433,15 +451,44 @@ screen rpg_char_sel_new():
             xsize 0.9 ysize 0.75
             xalign 0.5 yalign 0.5
 
-            text "Nothing here yet either.\nClick anywhere to get to the final screen."
-            key "dismiss" action [ SetVariable("rpg_selection_stage", "bgm"), SetScreenVariable("rpg_selection_stage", "bgm") ]
+            # stealing digi's code for now
+            # viewport:
+                # xysize(1920, 720)
+                # yanchor -0.25
+                # style_prefix "choice"
+                # side_yfill True
+                # scrollbars "vertical"
+                # mousewheel True
+                # grid 12 int(len(ucn_bg_list) / 12) + 1:
+                    # for i in ucn_bg_list:
+                        # $ sc = im.Scale(i, 128, 72)
+                        # imagebutton:
+                            # idle sc
+                            # hover sc
+                            # xysize (128, 72)
+                            # anchor(-0.25, -0.25)
+                            # action [
+                                # SetVariable("rpg_img", i),
+                                # SetScreenVariable("rpg_img", i)
+                            # ]
+            ###################### back / forward
+            textbutton "previous screen":
+                xoffset 0 yoffset 0
+                action [
+                    SetVariable("rpg_selection_stage", "scale"),
+                    SetScreenVariable("rpg_selection_stage", "scale")
+                ]
+
+            textbutton "next screen":
+                xoffset 800 yoffset 0
+                action [
+                    SetVariable("rpg_selection_stage", "bgm"),
+                    SetScreenVariable("rpg_selection_stage", "bgm")
+                ]
 
 ###################################################### STAGE 4: BGM
 
     elif rpg_selection_stage == "bgm":
-
-        add Color('#323e42', alpha=0.75)
-        add Movie(size=(1920,1080), play="movies/Fire.webm", side_mask=True) at _rpg_ready_flames
 
         text "{size=+24}Select BGM":
             xalign 0.5
@@ -454,9 +501,50 @@ screen rpg_char_sel_new():
             xsize 0.9 ysize 0.75
             xalign 0.5 yalign 0.5
 
+            # stealing digi's code here too
+            viewport:
+                xysize(1920, 540)
+                yanchor -0.25
+                style_prefix "choice"
+                side_yfill True
+                scrollbars "vertical"
+                mousewheel True
+                vbox:
+                    for i in MUSIC_MAP:
+                        textbutton "{font=music_text}"+i+"{/font}":
+                            anchor(-0.25, -0.25)
+                            action [
+                                SetVariable("rpg_bgm", i),
+                                SetScreenVariable("rpg_bgm", i)
+                            ]
+
+
+            ###################### back / forward
+            textbutton "previous screen":
+                xoffset 0 yoffset 700
+                action [
+                    SetVariable("rpg_selection_stage", "img"),
+                    SetScreenVariable("rpg_selection_stage", "img")
+                ]
+
+            textbutton "next screen":
+                xoffset 800 yoffset 700
+                action [
+                    SetVariable("rpg_selection_stage", "fight"),
+                    SetScreenVariable("rpg_selection_stage", "fight")
+                ]
+
+###################################################### STAGE 5: JUMP!
+
+    elif rpg_selection_stage == "fight":
+
+        frame:
+            background None
+            xsize 0.9 ysize 0.75
+            xalign 0.5 yalign 0.5
+
             python:
-                output = "Nothing here yet either. Click anywhere to start the battle!\n\n"
-                output += "The following data should be carried over:\n\n"
+                output = "The following data should be carried over:\n\n"
                 output += "Fighters:\n"
 
                 for a in range(rpg_party_size*2):
@@ -469,17 +557,25 @@ screen rpg_char_sel_new():
                         op = rpg_final_parties[a].name
 
                     output += "     "+op+"\n"
+
                 output += "\nParty scale: "+str(rpg_scale)+"\n"
                 output += "Background: "+rpg_img+"\nBGM: "+rpg_bgm
 
             text output
 
-            key "dismiss" action [ SetVariable("rpg_selection_stage", "fight"), SetScreenVariable("rpg_selection_stage", "fight") ]
+            ###################### back / forward
+            textbutton "previous screen":
+                xoffset 1000 yoffset 600
+                action [
+                    SetVariable("rpg_selection_stage", "img"),
+                    SetScreenVariable("rpg_selection_stage", "img")
+                ]
 
-###################################################### STAGE 5: JUMP!
-
-    elif rpg_selection_stage == "fight":
-        $ renpy.call("ucn_new", rpg_final_parties, rpg_scale, rpg_img, rpg_bgm)
+            textbutton "BEGIN":
+                xoffset 1000 yoffset 700
+                action [
+                    Call("ucn_new", rpg_final_parties, rpg_scale, rpg_img, rpg_bgm)
+                ]
 
     else: # this should NEVER happen!
         $ renpy.jump("secret_dx")
@@ -502,7 +598,7 @@ label ucn_new(rpg_final_parties, rpg_scale, rpg_img, rpg_bgm):
         RPG.ucn_music = rpg_bgm
         RPG.ucn_scale = rpg_scale
 
-        ui.close()
+        # ui.close()
 
     rpg:
         ucn
