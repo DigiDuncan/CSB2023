@@ -90,18 +90,20 @@ screen screen_rpg():
                                 has vbox
                                 text "{size=42}"+RPG.encounter.allies[RPG.encounter.turn].attacks[i].name+" {/size}{size=21}("+RPG.encounter.allies[RPG.encounter.turn].attacks[i].attack.description+"){/size}":
                                     if RPG.encounter.allies[RPG.encounter.turn].attacks[i] is RPG.encounter.allies[RPG.encounter.turn].next_attack:
-                                        color "#FFCC00"
+                                        color "#FF8A00"
+                                        hover_color "#F5DD00"
                                     else:
                                         color "#FFFFFF"
-                                    hover_color "#00B7EC"
+                                        hover_color "#0099CC"
                                     insensitive_color "#888888"
                                 text "{size=21}"+RPG.encounter.allies[RPG.encounter.turn].attacks[i].attack.description+"{/size}":
                                     first_indent 32
                                     if RPG.encounter.allies[RPG.encounter.turn].attacks[i] is RPG.encounter.allies[RPG.encounter.turn].next_attack:
                                         color "#844200"
+                                        hover_color "#7B6F00"
                                     else:
                                         color "#848484"
-                                    hover_color "#006582"
+                                        hover_color "#006582"
 
                 # The target select box
                 vbox:
@@ -121,12 +123,12 @@ screen screen_rpg():
                                     action target_actions
                                     text "{size=42}"+victim.display_name:
                                         color "#FFFFFF"
-                                        hover_color "#00B7EC"
+                                        hover_color "#0099CC"
                             if not i == 0:
                                 button:
                                     text "{size=42}Back":
                                         color "#FFFFFF"
-                                        hover_color "#00B7EC"
+                                        hover_color "#0099CC"
                                     action RemoveFromSet("working_list", working_list[i-1]), IncrementVariable("i", -1)
 
             # If everything is set and good to go, show the confirm button)

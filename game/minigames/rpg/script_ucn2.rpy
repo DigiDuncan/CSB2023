@@ -366,7 +366,8 @@ screen _ucn2_selection():
                                         else:
                                             python:
                                                 try:
-                                                    hovered_char_sprite = rpg_hovered_character.value[1].anim_sprite
+                                                    if len(rpg_hovered_character.value[1].anim_sprite) > 0:
+                                                        hovered_char_sprite = rpg_hovered_character.value[1].anim_sprite
                                                 except:
                                                     hovered_char_sprite = rpg_hovered_character.value[1].sprite
 
