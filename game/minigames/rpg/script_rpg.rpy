@@ -273,12 +273,14 @@ label rpg_bronsonbattle:
 label rpg_tate_ex:
 
     python:
+        cs_chosen_form = "tate"  # this should NEVER happen!
+
         if ch2_cs_attack_used == "karate-chopped":
-            cs_chosen_form = "CS_VS_TATE_CHOP"
+            RPG.set_var_character("cs_chosen_form", "CS_VS_TATE_CHOP")
         elif ch2_cs_attack_used == "Sparta-kicked":
-            cs_chosen_form = "CS_VS_TATE_KICK"
+            RPG.set_var_character("cs_chosen_form", "CS_VS_TATE_KICK")
         else:
-            cs_chosen_form = "CS_VS_TATE_PUNCH"
+            RPG.set_var_character("cs_chosen_form", "CS_VS_TATE_PUNCH")
 
     rpg:
         bg "images/bg/train/amtrak_observation_2.png"

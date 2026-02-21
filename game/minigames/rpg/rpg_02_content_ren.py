@@ -402,13 +402,13 @@ class Characters:
     SML_TANK = Character("Sherman", 400, 60, 100, [Attacks.SHELL], sprite=Image("images/characters/sherman.png"), ai = AIType.AGGRO, portrait=Image("gui/rpg/portraits/sherman.png"))
     MARINE = Character("Marine", 300, 30, 45, [Attacks.PUNCH, Attacks.BULLET_SPRAY], sprite=Image("images/characters/marine.png"), ai = AIType.SMART, portrait=Image("gui/rpg/portraits/marine.png"))
     BIG_TANK = Character("Abrams",700, 70, 150, [Attacks.SHELL], sprite=Image("images/characters/abrams.png"), ai = AIType.AGGRO, portrait=Image("gui/rpg/portraits/abrams.png"))
-    COPGUY_EX = Character("Copguy EX", 2222, 30, 50, Attacks.ex_attacks, sprite=Image("images/characters/copguy/copguy.png"), ai = AIType.COPGUY_EX, portrait=Image("gui/rpg/portraits/copguy_ex.png"))
+    COPGUY_EX = Character("Copguy EX", 2222, 30, 50, Attacks.ex_attacks, sprite=Image("images/characters/copguy/copguy.png"), ai = AIType.COPGUY_EX, portrait=Image("gui/rpg/portraits/copguy_ex.png"), anim_sprite="copguy_ex")
     PAKOOE = Character("Pakoo (Error)", 9999, 70, 150, [Attacks.FUN_VALUE], sprite=Image("images/characters/pakoo/pakoo_disappointed.png"), ai = AIType.AGGRO, display_name = "Pakoo", portrait=Image("gui/rpg/portraits/pakoo.png"))
     COPGUY_EXE = Character("{image=gui/inline_text/dx_text.png} Copguy.EXE", 666, 66, 66, [Attacks.ELDRITCH_BLAST, Attacks.RAINBOW_VOMIT, Attacks.SLASH, Attacks.CONFUSING_STORY], sprite=Image("images/characters/copguy/copguyexe.png"), ai = AIType.AGGRO, display_name = "Copguy.EXE", portrait=Image("gui/rpg/portraits/copguy_exe.png"))
     K174 = Character("K17-4", 174, 17, 20, [Attacks.PUNCH], sprite=Image("images/characters/pakoo/k174.png"), ai = AIType.NEUTRAL, portrait=Image("gui/rpg/portraits/k174.png"))
     K199 = Character("K19-9", 199, 19, 30, [Attacks.KICK], sprite=Image("images/characters/pakoo/k199.png"), ai = AIType.AGGRO, portrait=Image("gui/rpg/portraits/k199.png"))
     K207 = Character("K20-7", 207, 20, 10, [Attacks.PUNCH], sprite=Image("images/characters/pakoo/k207.png"), ai = AIType.DEFENSIVE, portrait=Image("gui/rpg/portraits/k207.png"))
-    TATE_EX = Character("{image=gui/inline_text/dx_text.png} Tate EX", 9999, 11, 111, [Attacks.DAMAGE_SCREM, Attacks.REVERB_RECALL, Attacks.ECHO_BLAST], sprite=Image("secret/pt/tate_ex.png"), ai = AIType.AGGRO, display_name = "Tate EX", portrait=Image("gui/rpg/portraits/tate_ex.png"))
+    TATE_EX = Character("{image=gui/inline_text/dx_text.png} Tate EX", 9999, 11, 111, [Attacks.DAMAGE_SCREM, Attacks.REVERB_RECALL, Attacks.ECHO_BLAST], sprite=Image("secret/pt/tate_ex.png"), ai = AIType.AGGRO, display_name = "Tate EX", portrait=Image("gui/rpg/portraits/tate_ex.png"), anim_sprite="tate_ex")
 
     # Enemies (UCN)
     WESLEY = Character("{image=gui/inline_text/dx_text.png} Wesley", 200, 20, 40, [Attacks.PISTOL, Attacks.ALL_OVER_AGAIN], sprite=Image("images/characters/hohsis/wesley.png"), ai = AIType.AGGRO, display_name = "Wesley", portrait=Image("gui/rpg/portraits/wesley.png"))
@@ -445,7 +445,7 @@ class Characters:
     @classmethod
     def get(cls, k: str, default: Character | None = None) -> Character | None:
         return cls.__dict__.get(k, default)
-    
+
     @classmethod
     def random(cls) -> Character:
         return random.choice(cls.characters)

@@ -128,7 +128,7 @@ class AttackFunc:
 
     def __call__(self, encounter: Encounter, fighter: Fighter, targets: tuple[Fighter, ...]) -> Any:
         return self.func(encounter, fighter, targets, **self.options)
-    
+
     def __str__(self) -> str:
         return f"<AttackFunc {self.type.name} {self.func.__name__}({', '.join(f'{k}: {v}' for k, v in self.options.items())})>"
 
@@ -196,7 +196,7 @@ class Attack:
 
     def __repr__(self) -> str:
         return self.__str__()
-    
+
     def _get_property_string(self) -> str:
         # Hardcodes
         if self.name == "AI Mimic":
@@ -465,7 +465,7 @@ class Character: # TODO: Workshop -- I'd like fighter to be used by encounter, b
     and is used by the encounter to setup the fighters
     """
 
-    def __init__(self, name: str, hp: int, defense: int, attack: int, attacks: Sequence[Attack | ComboAttack], accuracy: int = 100, ai: AI | None = None, display_name: str | None = None, portrait: Displayable | None = None, sprite: Displayable | None = None, traits: CharacterFlag = CharacterFlag.NOTHING):
+    def __init__(self, name: str, hp: int, defense: int, attack: int, attacks: Sequence[Attack | ComboAttack], accuracy: int = 100, ai: AI | None = None, display_name: str | None = None, portrait: Displayable | None = None, sprite: Displayable | None = None, anim_sprite: Displayable | None = None, traits: CharacterFlag = CharacterFlag.NOTHING):
         self.name: str = name
         self.display_name: str = display_name or name
         self.assigned_name: str | None = None
@@ -479,9 +479,18 @@ class Character: # TODO: Workshop -- I'd like fighter to be used by encounter, b
         self.attacks: tuple[Attack | ComboAttack, ...] = tuple(attacks) # What attacks can the character use
         self.base_ai: AI | None = ai # Default AI for character
         self.portrait: Displayable = portrait or UNKNOWN_PORTRAIT # What image should represent the character on the player's side
-        self.sprite: Displayable = sprite or UNKNOWN_FIELD # What image should represent the character on the field side
 
-    def clone(self, name: str, hp: int | None = None, defense: int | None = None, attack: int | None = None, attacks: Sequence[Attack | ComboAttack] | None = None, accuracy: int | None = None, ai: AI | None = None, display_name: str | None = None, portrait: Displayable | None = None, sprite: Displayable | None = None) -> Character:
+        # What image should represent the character on the field side.
+        # If an animated sprite exists, that must take priority on the field. Use the normal sprite as a fallback.
+        # TODO: This... doesn't actually work yet.
+        try:
+            self.anim_sprite: Displayable = renpy.get_registered_image(anim_sprite) or sprite or UNKNOWN_FIELD
+            self.sprite: Displayable = renpy.get_registered_image(anim_sprite) or sprite or UNKNOWN_FIELD
+        except:
+            self.anim_sprite: Displayable = sprite or UNKNOWN_FIELD
+            self.sprite: Displayable = sprite or UNKNOWN_FIELD
+
+    def clone(self, name: str, hp: int | None = None, defense: int | None = None, attack: int | None = None, attacks: Sequence[Attack | ComboAttack] | None = None, accuracy: int | None = None, ai: AI | None = None, display_name: str | None = None, portrait: Displayable | None = None, sprite: Displayable | None = None, anim_sprite: Displayable | None = None) -> Character:
         return Character(
             name,
             hp if hp is not None else self.base_hp,
@@ -492,7 +501,8 @@ class Character: # TODO: Workshop -- I'd like fighter to be used by encounter, b
             ai if ai is not None else self.base_ai,
             display_name if display_name is not None else self.display_name,
             portrait if portrait is not None else self.portrait,
-            sprite if sprite is not None else self.sprite
+            sprite if sprite is not None else self.sprite,
+            anim_sprite if anim_sprite is not None else self.anim_sprite
         )
 
     def __set_name__(self, owner: type, name: str):
@@ -563,6 +573,10 @@ class Fighter:
         return self.character.sprite
 
     @property
+    def anim_sprite(self) -> Displayable:
+        return self.character.anim_sprite
+
+    @property
     def dead(self) -> bool:
         return self.hit_points <= 0
 
@@ -573,16 +587,16 @@ class Fighter:
     @property
     def display_name(self) -> str:
         return self.character.display_name
-    
+
     def set_next_attack(self, next_attack):
         self.next_attack = next_attack
-    
+
     def set_next_targets(self, next_targets):
         self.next_targets = next_targets
 
     def __str__(self):
         return f"<Fighter {self.character} HP {self.hit_points}|DEF {self.defense}|ATK {self.attack}>"
-    
+
     def __repr__(self):
         return self.__str__()
 
@@ -618,10 +632,10 @@ class FighterAttack:
     @property
     def available(self) -> bool:
         return self.turns_until_available == 0
-    
+
     def __str__(self):
         return f"<FighterAttack {self.attack}>"
-    
+
     def __repr__(self):
         return self.__str__()
 
@@ -700,10 +714,10 @@ class FighterEffect:
         if self.effect.resolved is not None:
             return self.effect.resolved(encounter, self.source, self.target, self.resolved_overrides)
         return False
-    
+
     def __str__(self):
         return f"<FighterEffect {self.effect}>"
-    
+
     def __repr__(self):
         return self.__str__()
 

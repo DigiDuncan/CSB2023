@@ -2627,7 +2627,6 @@ layeredimage copguy_ex:
     at transform:
         xysize(1100, 1070)
         fit("contain")
-        xanchor 0.5 yanchor 1.0
     # back
     always:
         "characters/copguy/copguy_ex2.png"
@@ -2648,7 +2647,6 @@ layeredimage tate_ex:
     at transform:
         xysize (800, 900)
         fit("contain")
-        xanchor 0.5 yanchor 1.0
     # C M Y in that order
     always:
         "secret/pt/tate_ex.png"
