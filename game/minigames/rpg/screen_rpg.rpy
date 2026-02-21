@@ -84,7 +84,8 @@ screen screen_rpg():
                             if (RPG.encounter.turn+1 != len(RPG.encounter.allies)) and (RPG.encounter.allies[RPG.encounter.turn].attacks[i].attack.target_count == 0):
                                 $ attack_actions.append(IncrementVariable("RPG.encounter.turn"))
                             button:
-                                action attack_actions
+                                hover_sound "audio/sfx/sfx_select.ogg"
+                                action [ Play("sound", "audio/sfx/sfx_valid.ogg"), attack_actions ]
                                 if not RPG.encounter.allies[RPG.encounter.turn].attacks[i].available:
                                     sensitive False
                                 has vbox
@@ -120,16 +121,18 @@ screen screen_rpg():
                                     if (RPG.encounter.turn+1 != len(RPG.encounter.allies)):
                                         $ target_actions.append(IncrementVariable("RPG.encounter.turn"))
                                 button:
-                                    action target_actions
+                                    hover_sound "audio/sfx/sfx_select.ogg"
+                                    action [ Play("sound", "audio/sfx/sfx_valid.ogg"), target_actions ]
                                     text "{size=42}"+victim.display_name:
                                         color "#FFFFFF"
                                         hover_color "#0099CC"
                             if not i == 0:
                                 button:
+                                    hover_sound "audio/sfx/sfx_select.ogg"
                                     text "{size=42}Back":
                                         color "#FFFFFF"
                                         hover_color "#0099CC"
-                                    action RemoveFromSet("working_list", working_list[i-1]), IncrementVariable("i", -1)
+                                    action [ Play("sound", "audio/sfx/sfx_valid.ogg"), RemoveFromSet("working_list", working_list[i-1]), IncrementVariable("i", -1) ]
 
             # If everything is set and good to go, show the confirm button)
             # TODO: Further checks to make sure everything is good and valid.
@@ -138,7 +141,9 @@ screen screen_rpg():
                     xalign 1.0
                     yalign 1.0
                     idle "gui/rpg/confirm_button.png"
-                    action Return()
+                    hover "selectable:gui/rpg/confirm_button.png"
+                    hover_sound "audio/sfx/sfx_select.ogg"
+                    action [ Play("sound", "audio/sfx/sfx_valid.ogg"), Return() ]
         # The stat boxes for Allies
         grid len(RPG.encounter.allies) 1:
             xfill True
@@ -209,13 +214,15 @@ screen screen_rpg():
                                 align(0.0, 1.0)
                                 idle "gui/rpg/attack_button.png"
                                 hover "selectable:gui/rpg/attack_button.png"
-                                action Notify("Attack pressed on fighter"+str(i+1)+"!")
+                                hover_sound "audio/sfx/sfx_select.ogg"
+                                action [ Play("sound", "audio/sfx/sfx_valid.ogg"), Notify("Attack pressed on fighter"+str(i+1)+"!") ]
                             # The defend button
                             imagebutton:
                                 align(1.0, 1.0)
                                 idle "gui/rpg/defend_button.png"
                                 hover "selectable:gui/rpg/defend_button.png"
-                                action Notify("Defend pressed on fighter"+str(i+1)+"!")
+                                hover_sound "audio/sfx/sfx_select.ogg"
+                                action [ Play("sound", "audio/sfx/sfx_valid.ogg"), Notify("Defend pressed on fighter"+str(i+1)+"!") ]
 
 
     # Dev Backdoor
