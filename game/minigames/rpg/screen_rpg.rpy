@@ -44,7 +44,7 @@ screen screen_rpg():
     # Drawing the enemies in the background. TODO: Healthbars.
     grid len(RPG.encounter.enemies) 1:
         xalign 0.5
-        yalign 0.5
+        yalign 1.0
         for i in range(len(RPG.encounter.enemies)):
             add RPG.encounter.enemies[i].sprite
 

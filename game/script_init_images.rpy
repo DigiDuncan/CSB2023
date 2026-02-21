@@ -2623,115 +2623,74 @@ image red_light:
     repeat
 
 ## For Copguy EX
-image copguy_ex_front:
-    "characters/copguy/copguy_ex1.png"
-    alignaround (0.5, 0.5)
-    align (0.5, 0.5)
-    pos (0.5, 0.5)
-    pass
-    xpos 0.51
-    ease 2.0 xpos 0.49
-    ease 2.0 xpos 0.51
-    repeat
-
-image copguy_ex_back:
-    "characters/copguy/copguy_ex2.png"
-    alignaround (0.5, 0.5)
-    align (0.5, 0.5)
-    pos (0.5, 0.5)
-    pass
-    xpos 0.49
-    ease 2.0 xpos 0.51
-    ease 2.0 xpos 0.49
-    repeat
-
 layeredimage copguy_ex:
+    at transform:
+        xysize(1100, 1070)
+        fit("contain")
+        xanchor 0.5 yanchor 1.0
+    # back
     always:
-        "copguy_ex_back"
-
-    group ignore_me:
-        attribute wow default:
-            "copguy_ex_front"
+        "characters/copguy/copguy_ex2.png"
+        at transform:
+            ease 2.0 xoffset 10
+            ease 2.0 xoffset -10
+            repeat
+    # front
+    always:
+        "characters/copguy/copguy_ex1.png"
+        at transform:
+            ease 2.0 xoffset -10
+            ease 2.0 xoffset 10
+            repeat
 
 ## For Tate EX
-image tate_ex_front:
-    "secret/pt/tate_ex.png"
-    alignaround (0.5, 0.5)
-    align (0.5, 0.5)
-    pos (0.5, 0.5)
-    pass
-    # this is on purpose
-    ease 0.5 xpos 0.5
-    ease 0.5 ypos 0.5
-    repeat
+layeredimage tate_ex:
+    at transform:
+        xysize (800, 900)
+        fit("contain")
+        xanchor 0.5 yanchor 1.0
+    # C M Y in that order
+    always:
+        "secret/pt/tate_ex.png"
+        at transform:
+            matrixcolor TintMatrix("#00FFFF") * BrightnessMatrix(1.0)
+            blur 5
+            pass
+            linear 0.5 xoffset -10
+            linear 0.5 yoffset -10
+            linear 0.5 xoffset 10
+            linear 0.5 yoffset 10
+            repeat
 
-image tate_ex_ca_c:
-    "secret/pt/tate_ex.png"
-    matrixcolor TintMatrix("#00FFFF") * BrightnessMatrix(1.0)
-    alignaround (0.5, 0.5)
-    align (0.5, 0.5)
-    pos (0.5, 0.5)
-    blur 5
-    pass
-    xpos 0.505
-    ypos 0.505
-    linear 0.5 ypos 0.495
-    linear 0.5 xpos 0.495
-    linear 0.5 ypos 0.505
-    linear 0.5 xpos 0.505
-    repeat
+    always:
+        "secret/pt/tate_ex.png"
+        at transform:
+            matrixcolor TintMatrix("#FF00FF") * BrightnessMatrix(1.0)
+            blur 5
+            pass
+            linear 1.0 xoffset -10
+            linear 1.0 yoffset -10
+            linear 1.0 xoffset 10
+            linear 1.0 yoffset 10
+            repeat
 
-image tate_ex_ca_m:
-    "secret/pt/tate_ex.png"
-    matrixcolor TintMatrix("#FF00FF") * BrightnessMatrix(1.0)
-    alignaround (0.5, 0.5)
-    align (0.5, 0.5)
-    pos (0.5, 0.5)
-    blur 5
-    pass
-    xpos 0.505
-    ypos 0.505
-    linear 1.0 ypos 0.495
-    linear 1.0 xpos 0.495
-    linear 1.0 ypos 0.505
-    linear 1.0 xpos 0.505
-    repeat
+    always:
+        "secret/pt/tate_ex.png"
+        at transform:
+            matrixcolor TintMatrix("#FFFF00") * BrightnessMatrix(1.0)
+            blur 5
+            pass
+            linear 0.25 xoffset -10
+            linear 0.25 yoffset -10
+            linear 0.25 xoffset 10
+            linear 0.25 yoffset 10
+            repeat
 
-image tate_ex_ca_y:
-    "secret/pt/tate_ex.png"
-    matrixcolor TintMatrix("#FFFF00") * BrightnessMatrix(1.0)
-    alignaround (0.5, 0.5)
-    align (0.5, 0.5)
-    pos (0.5, 0.5)
-    blur 5
-    pass
-    xpos 0.505
-    ypos 0.505
-    linear 0.25 ypos 0.495
-    linear 0.25 xpos 0.495
-    linear 0.25 ypos 0.505
-    linear 0.25 xpos 0.505
-    repeat
-
-layeredimage tate_ex_preparation:
-    group cmy:
-        attribute c default:
-            "tate_ex_ca_c"
-        attribute m default:
-            "tate_ex_ca_m"
-        attribute y default:
-            "tate_ex_ca_y"
-
-    group ignore_me:
-        attribute wow default:
-            "tate_ex_front"
-
-image tate_ex:
-    contains:
-        "tate_ex_preparation"
-    xysize (744, 800)
-    xcenter 0.25
-    ycenter 0.6
+    # front
+    always:
+        "secret/pt/tate_ex.png"
+        at transform:
+            xpos 10 ypos 10
 
 ## Misc Animated Sprites
 image ai_ducks = SnowBlossom("duck.png", 50, fast = True)
