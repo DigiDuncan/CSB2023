@@ -46,7 +46,15 @@ screen screen_rpg():
         xalign 0.5
         yalign 1.0
         for i in range(len(RPG.encounter.enemies)):
-            add RPG.encounter.enemies[i].sprite
+
+            # Attempt to add animated sprite if one exists, else fallback to the normal sprite
+            python:
+                try:
+                    enemy_sprite = RPG.encounter.enemies[i].anim_sprite
+                except:
+                    enemy_sprite = RPG.encounter.enemies[i].sprite
+
+            add enemy_sprite
 
     # This is the context menu of the RPG
     frame:
@@ -86,6 +94,7 @@ screen screen_rpg():
                                     else:
                                         color "#FFFFFF"
                                     hover_color "#00B7EC"
+                                    insensitive_color "#888888"
                                 text "{size=21}"+RPG.encounter.allies[RPG.encounter.turn].attacks[i].attack.description+"{/size}":
                                     first_indent 32
                                     if RPG.encounter.allies[RPG.encounter.turn].attacks[i] is RPG.encounter.allies[RPG.encounter.turn].next_attack:
@@ -197,11 +206,13 @@ screen screen_rpg():
                             imagebutton:
                                 align(0.0, 1.0)
                                 idle "gui/rpg/attack_button.png"
+                                hover "selectable:gui/rpg/attack_button.png"
                                 action Notify("Attack pressed on fighter"+str(i+1)+"!")
                             # The defend button
                             imagebutton:
                                 align(1.0, 1.0)
                                 idle "gui/rpg/defend_button.png"
+                                hover "selectable:gui/rpg/defend_button.png"
                                 action Notify("Defend pressed on fighter"+str(i+1)+"!")
 
 

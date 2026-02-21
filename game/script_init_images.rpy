@@ -2645,8 +2645,9 @@ layeredimage copguy_ex:
 ## For Tate EX
 layeredimage tate_ex:
     at transform:
-        xysize (800, 900)
+        xysize (1000, 1000)
         fit("contain")
+
     # C M Y in that order
     always:
         "secret/pt/tate_ex.png"

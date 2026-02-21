@@ -352,19 +352,25 @@ screen _ucn2_selection():
                                     # handle random/none first
                                     if rpg_hovered_character.value:
                                         if rpg_hovered_character.value[0] == "(Random)":
-                                            add Image("gui/rpg/random.png"):
+                                            add "gui/rpg/random.png":
                                                 xysize(400,400)
                                                 fit("contain")
                                                 xanchor 0.5 yanchor 1.0
                                                 xpos 0.5 ypos 0.8
                                         elif rpg_hovered_character.value[0] == "(None)":
-                                            add Image("gui/rpg/none.png"):
+                                            add "gui/rpg/none.png":
                                                 xysize(400,400)
                                                 fit("contain")
                                                 xanchor 0.5 yanchor 1.0
                                                 xpos 0.5 ypos 0.8
                                         else:
-                                            add Image(rpg_hovered_character.value[1].sprite):
+                                            python:
+                                                try:
+                                                    hovered_char_sprite = rpg_hovered_character.value[1].anim_sprite
+                                                except:
+                                                    hovered_char_sprite = rpg_hovered_character.value[1].sprite
+
+                                            add hovered_char_sprite:
                                                 xysize(500,400)
                                                 fit("contain")
                                                 xanchor 0.5 yanchor 1.0
@@ -445,7 +451,7 @@ screen _ucn2_selection():
             bar:
                 xsize 0.8
                 xalign 0.5 yalign 0.5
-                left_gutter 150
+                left_gutter 164
                 right_gutter 0
                 value ScreenVariableValue("rpg_level", rpg_max_level-1, offset = 1)
 
@@ -530,7 +536,7 @@ screen _ucn2_selection():
                             xanchor 0.0 yanchor 0.0
                             xysize (128, 72)
 
-                            add Image(i):
+                            add i:
                                 xysize (128, 72)
                                 fit ("contain")
 

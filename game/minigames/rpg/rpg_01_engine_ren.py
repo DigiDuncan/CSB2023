@@ -465,7 +465,7 @@ class Character: # TODO: Workshop -- I'd like fighter to be used by encounter, b
     and is used by the encounter to setup the fighters
     """
 
-    def __init__(self, name: str, hp: int, defense: int, attack: int, attacks: Sequence[Attack | ComboAttack], accuracy: int = 100, ai: AI | None = None, display_name: str | None = None, portrait: Displayable | None = None, sprite: Displayable | None = None, anim_sprite: Displayable | None = None, traits: CharacterFlag = CharacterFlag.NOTHING):
+    def __init__(self, name: str, hp: int, defense: int, attack: int, attacks: Sequence[Attack | ComboAttack], accuracy: int = 100, ai: AI | None = None, display_name: str | None = None, portrait: Displayable | None = None, sprite: Displayable | None = None, anim_sprite: str | None = None, traits: CharacterFlag = CharacterFlag.NOTHING):
         self.name: str = name
         self.display_name: str = display_name or name
         self.assigned_name: str | None = None
@@ -479,18 +479,11 @@ class Character: # TODO: Workshop -- I'd like fighter to be used by encounter, b
         self.attacks: tuple[Attack | ComboAttack, ...] = tuple(attacks) # What attacks can the character use
         self.base_ai: AI | None = ai # Default AI for character
         self.portrait: Displayable = portrait or UNKNOWN_PORTRAIT # What image should represent the character on the player's side
+        self.sprite: Displayable = sprite or UNKNOWN_FIELD # What image should represent the character on the field side.
+        self.anim_sprite: str = anim_sprite # Animated sprite is a string here, we'll point it at the displayable later
 
-        # What image should represent the character on the field side.
-        # If an animated sprite exists, that must take priority on the field. Use the normal sprite as a fallback.
-        # TODO: This... doesn't actually work yet.
-        try:
-            self.anim_sprite: Displayable = renpy.get_registered_image(anim_sprite) or sprite or UNKNOWN_FIELD
-            self.sprite: Displayable = renpy.get_registered_image(anim_sprite) or sprite or UNKNOWN_FIELD
-        except:
-            self.anim_sprite: Displayable = sprite or UNKNOWN_FIELD
-            self.sprite: Displayable = sprite or UNKNOWN_FIELD
 
-    def clone(self, name: str, hp: int | None = None, defense: int | None = None, attack: int | None = None, attacks: Sequence[Attack | ComboAttack] | None = None, accuracy: int | None = None, ai: AI | None = None, display_name: str | None = None, portrait: Displayable | None = None, sprite: Displayable | None = None, anim_sprite: Displayable | None = None) -> Character:
+    def clone(self, name: str, hp: int | None = None, defense: int | None = None, attack: int | None = None, attacks: Sequence[Attack | ComboAttack] | None = None, accuracy: int | None = None, ai: AI | None = None, display_name: str | None = None, portrait: Displayable | None = None, sprite: Displayable | None = None, anim_sprite: str | None = None) -> Character:
         return Character(
             name,
             hp if hp is not None else self.base_hp,
@@ -573,8 +566,12 @@ class Fighter:
         return self.character.sprite
 
     @property
-    def anim_sprite(self) -> Displayable:
-        return self.character.anim_sprite
+    def anim_sprite(self) -> str:
+        if self.character.anim_sprite:
+            return self.character.anim_sprite
+        else:
+            # Fallback to static sprite if things break
+            return self.character.sprite.filename
 
     @property
     def dead(self) -> bool:
