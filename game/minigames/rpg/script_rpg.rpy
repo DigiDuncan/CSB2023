@@ -2,6 +2,7 @@
 # You no longer need to manually register battle music in the jukebox before jumping to the battle's label.
 # Just define it here with the ID as defined in jukebox.json
 # As long as this is done, and the track exists in the JSON, battle music will be registered in jukebox automatically.
+# TODO: make sure this functionality actually still works
 
 label rpg_test:
     rpg:

@@ -185,7 +185,7 @@ init python:
             # This is to get seconds per character on screen for later
             # Allowing this effect to scale with the player's desired text speed
             cps = 0.0
-            if preferences.text_cps is not 0: # Avoid division by 0.0
+            if preferences.text_cps != 0: # Avoid division by 0.0
                 cps = (1.0 / preferences.text_cps)
             self.time_offset = char_num * cps  # How long to wait before doing things
 
@@ -758,12 +758,12 @@ init python:
         for arg in args:
             tag, _, value = arg.partition('=')
             if tag == "BT":
-                if value is not "":
+                if value != "":
                     bt_tag = value
                 else:
                     bt_tag = 10
             elif tag == "SC":
-                if value is not "":
+                if value != "":
                     bt_tag = value
                 else:
                     bt_tag = 5

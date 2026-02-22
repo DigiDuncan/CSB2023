@@ -739,6 +739,6 @@ label _ucn2_after:
     menu:
         "Play again?"
         "Yes":
-            call screen ucn2_selection()
+            call screen _ucn2_selection()
         "No":
             return

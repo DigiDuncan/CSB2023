@@ -687,7 +687,7 @@ label asset_debugger:
         show drillbreak at center
         show cs guard dark at left
         $ spritetotal += 9
-        show copguy_ex_front at mid_left_left
+        show copguy_ex at mid_left_left
         show monika at mid_left
         show mean ayo at mid_mid_left
         show lancer at mid_mid_right
@@ -708,7 +708,7 @@ label asset_debugger:
         show sansbrick at center
         show cs fakegod at left
         $ spritetotal += 9
-        show copguy_ex_back at mid_left_left
+        show copguy_ex at mid_left_left
         show weird_al at mid_left
         show mean ayo flipped at mid_mid_left
         show lancer flipped at mid_mid_right
@@ -1164,7 +1164,7 @@ label asset_debugger:
         play music full_rulle_med_klas
         $ bgtotal += 1
         scene cpuaisle
-        show tate_ex_front at center
+        show tate_ex at center
         show mean human angry at mid_left
         show lupin stand hat at mid_mid_left
         show cs disappointed phone flipped at left
@@ -1181,7 +1181,7 @@ label asset_debugger:
         play music funiculi_holiday
         $ bgtotal += 1
         scene gpuaisle
-        show tate_ex_preparation at center
+        show tate_ex at center
         show mean human angry flipped at mid_left
         show lupin stand hat flipped at mid_mid_left
         show cs worried phone at left
@@ -3856,7 +3856,7 @@ label asset_debugger:
         jump exit_debug
     if fun_value (379):
         $ bgtotal += 1
-        scene sepia_zoom
+        scene letterbox3
         pause 0.1
     else:
         jump exit_debug

@@ -1,4 +1,16 @@
 {
+      "afterstory":
+    {
+        "files":
+        [
+            "conferencetv",
+            "cs_bedroom_cars",
+            "pencilroomblur",
+            "renault_inside",
+            "stand",
+            "wis_forest"
+        ]
+    },
     "ai":
     {
         "files":
@@ -15,14 +27,171 @@
             "archival_13",
             "archival_14",
             "archival_19",
+            "car_inside_old",
+            "craptop_old",
             "white_vignette"
         ]
     },
-    "books":
+    "books_misc":
     {
         "files":
         [
-            "PLACEHOLDER_NOTHING_YET"
+            "script"
+        ]
+    },
+    "bt1d":
+    {
+        "files":
+        [
+            "aldi_checkout_fg",
+            "aldi_checkout_fg1",
+            "aldi_checkout_fg2",
+            "basketball_court",
+            "cs_bedroom1_fg"
+        ]
+    },
+    "ce":
+    {
+        "files":
+        [
+            "billycar1",
+            "billycar2",
+            "billycar3",
+            "breakerbox",
+            "car_inside_snow",
+            "cs_bathroom_open",
+            "cs_bathroom_open_fg",
+            "cs_bedroom1_ce_car",
+            "cs_dining_1",
+            "cs_dining_2",
+            "cs_dining_3",
+            "cs_door",
+            "cs_kitchen_fg",
+            "cs_kitchen_fg_off",
+            "snowed_in",
+            "tgt_checkerror",
+            "tgt_checkout",
+            "tgt_checkout_circle",
+            "tgt_checkout_finish",
+            "tgt_checkout_id",
+            "tgt_checkout_pay",
+            "tgt_checkout_scan_twice",
+            "tgt_checkout_scanning",
+            "tgt_checkout_tm",
+            "tgt_endcap",
+            "tgt_shelf"
+        ]
+    },
+    "csb1":
+    {
+        "files":
+        [
+            "car_inside",
+            "craptop_bg",
+            "walmart_checkout",
+            "walmart_checkout_fg"
+        ]
+    },
+    "csb2":
+    {
+        "files":
+        [
+            "americanflag",
+            "inside_tim_hortons_fg"
+        ]
+    },
+    "csb3_ch1":
+    {
+        "files":
+        [
+            "backseat",
+            "car_inside_fg",
+            "cashzone_fore",
+            "comments",
+            "copcar",
+            "copcar_mask",
+            "csvideo",
+            "flintcar_fg",
+            "gpuaisle",
+            "gpuaisle2",
+            "ltt_fg"
+        ]
+    },
+    "csb3_ch2_east":
+    {
+        "files":
+        [
+            "billboard",
+            "cafe_sitting_2",
+            "convention_center_crowd",
+            "msu_traffic",
+            "peppino_inside_bg",
+            "peppino_inside_fg",
+            "traffic",
+            "traffic_jam_bad_img",
+            "trafficjam"
+        ]
+    },
+    "csb3_ch2_south":
+    {
+        "files":
+        [
+            "cscar1",
+            "cscar1arc",
+            "cscar2",
+            "fazhall",
+            "fazlobby",
+            "fazplace",
+            "insafe",
+            "legoplace",
+            "legoplaceopen",
+            "legostage",
+            "luigi1",
+            "luigi2",
+            "pokertable",
+            "slots",
+            "TV_Billy",
+            "utah",
+            "utahnight",
+            "utahsign",
+            "utajsign"
+        ]
+    },
+    "csb3_country":
+    {
+        "files":
+        [
+            "bus_map",
+            "bus_seat",
+            "eating_food",
+            "eating_food_2",
+            "hospital_reception",
+            "hospital_room",
+            "joel_computer",
+
+            "talking_head",
+            "toilet_zone"
+        ]
+    },
+    "csb3_fired":
+    {
+        "files":
+        [
+            "hotel_guitar_hero",
+            "in_limo",
+            "ltx"
+        ]
+    },
+    "csb3_friend":
+    {
+        "files":
+        [
+            "aria_car_fg",
+            "car_insidearc_fg",
+            "jeep_inside_fg",
+            "joj_charger_fg",
+            "joj_chargerarc_fg",
+            "police_car_fg"
         ]
     },
     "finale":
@@ -30,6 +199,16 @@
         "files":
         [
             "ALL"
+        ]
+    },
+    "kuwait":
+    {
+        "files":
+        [
+            "kuwait_explosion",
+            "kuwait_hospital_bathroom_clear",
+            "kuwait_hospital_bathroom_foggy",
+            "kuwait_hospital_inside"
         ]
     },
     "nugget":
@@ -92,122 +271,7 @@
     {
         "files":
         [
-            "aldi_checkout_fg",
-            "aldi_checkout_fg1",
-            "aldi_checkout_fg2",
-            "americanflag",
-            "aria_car_fg",
-            "backseat",
-            "basketball_court",
-            "billboard",
-            "billycar1",
-            "billycar2",
-            "billycar3",
-            "breakerbox",
-            "bus_map",
-            "bus_seat",
-            "cafe_sitting_2",
-            "car_inside",
-            "car_inside_fg",
-            "car_inside_old",
-            "car_inside_snow",
-            "car_insidearc_fg",
-            "cashzone_fore",
-            "comments",
-            "con_screen",
-            "conferencetv",
-            "convention_center_crowd",
-            "copcar",
-            "copcar_mask",
-            "craptop_bg",
-            "craptop_old",
-            "crowd",
-            "cs_bathroom_open",
-            "cs_bathroom_open_fg",
-            "cs_bedroom_cars",
-            "cs_bedroom1_ce_car",
-            "cs_bedroom1_fg",
-            "cs_desk",
-            "cs_dining_1",
-            "cs_dining_2",
-            "cs_dining_3",
-            "cs_door",
-            "cs_kitchen_fg",
-            "cs_kitchen_fg_off",
-            "cs_living_panorama",
-            "cs_living_panorama2",
-            "cscar1",
-            "cscar1arc",
-            "cscar2",
-            "csvideo",
-            "eating_food",
-            "eating_food_2",
-            "fazhall",
-            "fazlobby",
-            "fazplace",
-            "flintcar_fg",
-            "gpuaisle",
-            "gpuaisle2",
-            "hospital_reception",
-            "hospital_room",
-            "hotel_guitar_hero",
-            "in_limo",
-            "insafe",
-            "inside_tim_hortons_fg",
-            "jeep_inside_fg",
-            "joel_computer",
-            "joj_charger_fg",
-            "joj_chargerarc_fg",
-            "kuwait_explosion",
-            "kuwait_hospital_bathroom_clear",
-            "kuwait_hospital_bathroom_foggy",
-            "kuwait_hospital_inside",
-            "legoplace",
-            "legoplaceopen",
-            "legostage",
-            "linus_setup",
-            "ltt_fg",
-            "ltx",
-            "luigi1",
-            "luigi2",
-            "msu_traffic",
-            "pencilroomblur",
-            "peppino_inside_bg",
-            "peppino_inside_fg",
-            "pokertable",
-            "police_car_fg",
-            "projector_airplay",
-            "projector_error",
-            "projector_no_signal",
-            "renault_inside",
-            "script",
-            "slots",
-            "snowed_in",
-            "stand",
-            "talking_head",
-            "tgt_checkerror",
-            "tgt_checkout",
-            "tgt_checkout_circle",
-            "tgt_checkout_finish",
-            "tgt_checkout_id",
-            "tgt_checkout_pay",
-            "tgt_checkout_scan_twice",
-            "tgt_checkout_scanning",
-            "tgt_checkout_tm",
-            "tgt_endcap",
-            "tgt_shelf",
-            "toilet_zone",
-            "traffic",
-            "traffic_jam_bad_img",
-            "trafficjam",
-            "TV_Billy",
-            "utah",
-            "utahnight",
-            "utahsign",
-            "utajsign",
-            "walmart_checkout",
-            "walmart_checkout_fg",
-            "wis_forest"
+            "PLACEHOLDER"
         ]
     }
 }

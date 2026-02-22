@@ -73,7 +73,7 @@ screen category_nav():
                 #textbutton "{image=gui/inline_text/dx_text.png} Asset Debugger\n{size=-12}[[DEV] Make sure all assets load correctly." action Jump("asset_debugger")
 
             if preferences.developer_mode:
-                textbutton "Test Scene\n{size=-12}[[DEV] A sandbox for testing various features." action Jump("test")
+                textbutton "Test Scene\n{size=-12}[[DEV] A sandbox for testing various features." action Start("test")
 
                 textbutton "{image=gui/inline_text/dx_text.png} Tate's Test Room\n{size=-12}[[DEV] Another test screen. Awawa." action Start("awawa_tate_test")
 

@@ -362,7 +362,7 @@ label fired_song_2:
     $ achievement_manager.unlock("first_song")
     show arceus happy
     arceus "Yeah!"
-    arceus "{cps=15}{note1] We're going down to Vegas,{w=1.5} [line_1] {note2}"
+    arceus "{cps=15}{note1} We're going down to Vegas,{w=1.5} [line_1] {note2}"
     cs "Woohoo! That sounds awesome!"
     stop music fadeout 3.0
     music end

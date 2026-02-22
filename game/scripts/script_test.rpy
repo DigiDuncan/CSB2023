@@ -41,7 +41,26 @@ label test:
         "New Menu Option Because Arc is Lazy":
             menu:
                 "RPG Using Screen":
-                    jump play_screenrpnggame
+                    #jump play_screenrpnggame # this label doesn't exist so here have a new fight
+
+                        rpg:
+                            bg "images/bg/casino1.png"
+                            music "card_castle"
+                            allies:
+                                cs
+                                arceus
+                                digi
+                                pakoo
+                            enemies:
+                                tate_ex
+                                mean
+                                tate
+                                copguy_ex
+                            scale 1.0
+                            on_win "secret_dx"
+                            on_lose "secret_dx"
+                            intro_text "Let the test battle commence!"
+
                 "Matrix Test":
                     stop music
                     scene cs_room
@@ -67,7 +86,7 @@ label test:
                             stop music
                             show flying_train_final at right with easeinright
                             pause 1.0
-                            show flying_train_final at left with ease          
+                            show flying_train_final at left with ease
                             pakoo "This is the flying train layered image."
                             hide flying_train_final with easeoutleft
                             pause
