@@ -255,7 +255,7 @@ init python:
 
     for bg_to_remove in ucn_remove:
         if bg_to_remove in ucn_bg_list:
-            print("Removing " + bg_to_remove + " from UCN list")
+            #print("Removing " + bg_to_remove + " from UCN list")
             ucn_bg_list.remove(bg_to_remove)
 
     # Load ALL BGMs

@@ -514,11 +514,11 @@ screen _ucn2_selection():
             yalign 0.04
             text_align 0.5
 
-        ###################### bounding box for everything
+        ###################### bounding box for images
         frame:
             background None
-            xsize 0.9 ysize 0.75
-            xalign 0.5 yalign 0.5
+            xsize 806 ysize 0.75
+            xalign 0.9 yalign 0.5
 
             # partially stealing digi's code for now
             viewport:
@@ -530,8 +530,8 @@ screen _ucn2_selection():
                 # TODO: hover/selected effects + tooltips?
 
                 vpgrid:
-                    cols 13
-                    xalign 0.5
+                    cols 6
+                    xanchor 1.0
                     for i in ucn_bg_list:
                         button:
                             xanchor 0.0 yanchor 0.0
@@ -546,6 +546,25 @@ screen _ucn2_selection():
                                 SetVariable("rpg_img", i),
                                 SetScreenVariable("rpg_img", i)
                             ]
+
+        ###################### bounding box for background preview
+        frame:
+            background None
+            xsize 806 ysize 0.75
+            xalign 0.1 yalign 0.5
+            frame:
+                background None
+                xalign 0.5 yalign 0.5
+
+                vbox:
+                    add Image(rpg_img):
+                        xalign 0.5 yalign 0.5
+                        xysize(576, 324)
+                        fit("contain")
+
+                    text rpg_img:
+                        xalign 0.5 yalign 0.5
+                        text_align 0.5
 
         ###################### back / forward
         textbutton "Previous Screen":
