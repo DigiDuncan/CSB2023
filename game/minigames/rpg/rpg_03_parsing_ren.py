@@ -18,7 +18,7 @@ python early in RPG:
 CSB2023 RPG parsing
 """
 
-ucn_bg = "images/bg/fnaf_office.png"
+ucn_bg = "images/bg/books_misc/fnaf_office.png"
 ucn_music = "rude_buster.ogg"
 ucn_scale = 1.0
 
@@ -59,7 +59,7 @@ def parse_rpg(lexer) -> ParsedRpg:
     block = lexer.subblock_lexer()
     level = 1.0
     initial = 0
-    background = "images/bg/casino1.png"
+    background = "images/bg/csb3_ch2_south/casino1.png"
     music = "card_castle"
     on_win = on_lose = intro = is_ucn = fighters = None
     allies = []

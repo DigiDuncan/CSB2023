@@ -6,7 +6,7 @@
 
 label rpg_test:
     rpg:
-        bg "images/bg/casino1.png"
+        bg "images/bg/csb3_ch2_south/casino1.png"
         music "card_castle"
         allies:
             cs
@@ -21,7 +21,7 @@ label rpg_test:
 
 label rpg_fanboy_fight_amd:
     rpg:
-        bg "images/bg/linus_office_outside.png"
+        bg "images/bg/csb2/linus_office_outside.png"
         music "nordic_report_1"
         allies:
             cs_weak
@@ -36,7 +36,7 @@ label rpg_fanboy_fight_amd:
 
 label rpg_fanboy_fight_nvidia:
     rpg:
-        bg "images/bg/linus_office_outside.png"
+        bg "images/bg/csb2/linus_office_outside.png"
         allies:
             cs_weak
         enemies:
@@ -51,7 +51,7 @@ label rpg_fanboy_fight_nvidia:
 
 label rpg_cop_fight_1:
     rpg:
-        bg "images/bg/dealership.png"
+        bg "images/bg/csb3_friend/dealership.png"
         music "compulsion_to_obey"
         allies:
             cs
@@ -68,7 +68,7 @@ label rpg_cop_fight_1:
 
 label rpg_cop_fight_2:
     rpg:
-        bg "images/bg/dealership.png"
+        bg "images/bg/csb3_friend/dealership.png"
         music "for_the_people"
         allies:
             mika
@@ -83,7 +83,7 @@ label rpg_cop_fight_2:
 
 label rpg_cop_fight_3:
     rpg:
-        bg "images/bg/cs_somewhere.png"
+        bg "images/bg/csb3_friend/cs_somewhere.png"
         music "desert_dawn"
         allies:
             aria
@@ -97,7 +97,7 @@ label rpg_cop_fight_3:
 
 label rpg_cop_fight_4:
     rpg:
-        bg "images/bg/dinerinside.png"
+        bg "images/bg/csb3_friend/dinerinside.png"
         music "dinerfight"
         allies:
             digi
@@ -125,7 +125,7 @@ label rpg_ng_fight:
     $ narrator("Choose a party member! (4/4)", interact = False)
     $ party_4 = renpy.display_menu([(a.title() if a != "CS_NG" else "CS", a) for a in ng_fighters if a not in chosen_ng_fighters], screen="ucn_choice")
     rpg:
-        bg "images/bg/battle_block_without_theater.png"
+        bg "images/bg/csb3_friend/battle_block_without_theater.png"
         music "thousand_march"
         allies:
             $party_1
@@ -156,7 +156,7 @@ label rpg_final_fight_1:
     $ narrator("Choose a party member! (4/4)", interact = False)
     $ party_4 = renpy.display_menu([(a.title() if a != "CS_STRONG" else "CS", a) for a in final_fighters_1 if a not in chosen_final_fighters_1], screen="ucn_choice")
     rpg:
-        bg "images/bg/war_torn_2.png"
+        bg "images/bg/csb3_friend/war_torn_2.png"
         music "trans_atlantic"
         allies:
             $party_1
@@ -187,7 +187,7 @@ label rpg_final_fight_2:
     $ narrator("Choose a party member! (4/4)", interact = False)
     $ party_4 = renpy.display_menu([(a.title() if a != "CS_STRONG" else "CS", a) for a in final_fighters_2 if a not in chosen_final_fighters_2], screen="ucn_choice")
     rpg:
-        bg "images/bg/war_torn_3.png"
+        bg "images/bg/csb3_friend/war_torn_3.png"
         music "trans_atlantic"
         allies:
             $party_1
@@ -214,7 +214,7 @@ label rpg_final_fight_3:
     $ narrator("Choose a party member! (3/3)", interact = False)
     $ party_4 = renpy.display_menu([(a.title() if a != "CS_FINAL" else "CS", a) for a in final_fighters_3 if a not in chosen_final_fighters_3], screen="ucn_choice")
     rpg:
-        bg "images/bg/war_torn_4.png"
+        bg "images/bg/csb3_friend/war_torn_4.png"
         music "prophetpart2"
         allies:
             cs_final
@@ -230,7 +230,7 @@ label rpg_final_fight_3:
 
 label rpg_error:
     rpg:
-        bg "images/bg/falling_apart.png"
+        bg "images/bg/archival/falling_apart.png"
         music "prophetpart2"
         allies:
             cs_final2
@@ -243,7 +243,7 @@ label rpg_error:
 
 label rpg_archival:
     rpg:
-        bg "images/bg/csmart.png"
+        bg "images/bg/archival/csmart.png"
         allies:
             cs_archival
         enemies:
@@ -258,7 +258,7 @@ label rpg_archival:
 
 label rpg_bronsonbattle:
     rpg:
-        bg "images/bg/bronsoncrash.png"
+        bg "images/bg/csb3_ch2_east/bronsoncrash.png"
         allies:
             cs_weak
             arceus
@@ -299,7 +299,7 @@ label rpg_tate_ex:
 
 label rpg_diabetes_1:
     rpg:
-        bg "images/bg/bronsoncrash.png"
+        bg "images/bg/csb3_ch2_east/bronsoncrash.png"
         allies:
             cs_strong
             digi
@@ -313,7 +313,7 @@ label rpg_diabetes_1:
 
 label rpg_diabetes_2:
     rpg:
-        bg "images/bg/bronsoncrash.png"
+        bg "images/bg/csb3_ch2_east/bronsoncrash.png"
         allies:
             cs_strong
             digi
@@ -327,7 +327,7 @@ label rpg_diabetes_2:
 
 label rpg_diabetes_3:
     rpg:
-        bg "images/bg/bronsoncrash.png"
+        bg "images/bg/csb3_ch2_east/bronsoncrash.png"
         allies:
             cs_strong
             digi

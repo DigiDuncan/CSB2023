@@ -111,7 +111,7 @@ screen _ucn2_selection():
     default rpg_scale = 1.0
     default rpg_level = 2
     default loaded_imgs = 0
-    default rpg_img = "images/bg/casino1.png"
+    default rpg_img = "images/bg/csb3_ch2_south/casino1.png"
     default rpg_bgm = "card_castle"
 
     ### add background color / prep video
