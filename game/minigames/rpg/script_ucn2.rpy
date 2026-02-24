@@ -113,6 +113,7 @@ screen _ucn2_selection():
     default loaded_imgs = 0
     default rpg_img = "images/bg/csb3_ch2_south/casino1.png"
     default rpg_bgm = "card_castle"
+    default rpg_bgm_art = "images/jukebox/"+MUSIC_MAP[rpg_bgm]["album_art"]
 
     ### add background color / prep video
     add Color("#000")
@@ -541,6 +542,7 @@ screen _ucn2_selection():
                                 xysize (128, 72)
                                 fit ("contain")
 
+                            hover_sound "audio/sfx/sfx_select.ogg"
                             action [
                                 Play("sound", "audio/sfx/sfx_valid.ogg"),
                                 SetVariable("rpg_img", i),
@@ -592,29 +594,45 @@ screen _ucn2_selection():
             yalign 0.04
             text_align 0.5
 
-        ###################### bounding box for everything
+        ###################### bounding box for music list
         frame:
             background None
-            xsize 0.9 ysize 0.75
-            xalign 0.5 yalign 0.5
+            xsize 806 ysize 0.75
+            xalign 0.9 yalign 0.5
 
             # stealing digi's code here too
             viewport:
-                xysize(1920, 540)
-                yanchor -0.25
-                style_prefix "choice"
-                side_yfill True
+                xalign 0.5
+                #side_yfill True
                 scrollbars "vertical"
                 mousewheel True
+
                 vbox:
                     for i in MUSIC_MAP:
                         textbutton "{font=music_text}"+MUSIC_MAP[i]["title"]+"{/font}":
-                            anchor(-0.25, -0.25)
+                            text_align 1.0
+                            hover_sound "audio/sfx/sfx_select.ogg"
                             action [
                                 Play("sound", "audio/sfx/sfx_valid.ogg"),
+                                SetVariable("rpg_bgm_art", Image("/images/jukebox/"+MUSIC_MAP[i]["album_art"])),
+                                SetScreenVariable("rpg_bgm_art", Image("/images/jukebox/"+MUSIC_MAP[i]["album_art"])),
                                 SetVariable("rpg_bgm", i),
                                 SetScreenVariable("rpg_bgm", i)
                             ]
+
+        ###################### bounding box for album art
+        frame:
+            background None
+            xsize 806 ysize 0.75
+            xalign 0.1 yalign 0.5
+            frame:
+                background None
+                xalign 0.5 yalign 0.5
+
+                vbox:
+                    add Image(rpg_bgm_art):
+                        xalign 0.5 yalign 0.5
+                        fit("contain")
 
         ###################### back / forward
         textbutton "Previous Screen":

@@ -250,12 +250,12 @@ init python:
                 for file in UCN_BLACKLIST_MAP[folder]["files"]:
                     check_path = "images/bg/" + folder + "/" + file + ".png" if folder != "MAIN" else "images/bg/" + file + ".png"
                     if bg == check_path:
-                        print("Added " + bg + " to remove list")
+                        # print("Added " + bg + " to remove list")
                         ucn_remove.append(bg)
 
     for bg_to_remove in ucn_remove:
         if bg_to_remove in ucn_bg_list:
-            #print("Removing " + bg_to_remove + " from UCN list")
+            # print("Removing " + bg_to_remove + " from UCN list")
             ucn_bg_list.remove(bg_to_remove)
 
     # Load ALL BGMs
