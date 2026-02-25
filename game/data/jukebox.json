@@ -55,7 +55,7 @@
             "artist": "Kenichi Tokoi, Runblebee, & Cashell",
             "tags": ["Menus & Misc.", "New In DX"],
             "album_art": "riders.png",
-            "trivia": "Not often that a menu theme gets people hyped."
+            "trivia": "Not often that a {i}menu theme{/i} gets people hyped."
         },
         "space_classroom" : {
             "file": "space_classroom.ogg",
@@ -215,7 +215,7 @@
             "artist": "Toby Fox",
             "tags": ["CSBIII: AI"],
             "album_art": "deltarune.png",
-            "trivia": "This song plays at the carnival in AI Route, despite not seeing the carnival in {i}Deltarune{/i} at the time of writing this..."
+            "trivia": "This song plays at the carnival in {i}AI Route,{/i} despite not seeing the carnival in {i}Deltarune{/i} at the time of writing this..."
         },
         "cliffs" : {
             "file": "cliffs.ogg",
@@ -223,7 +223,7 @@
             "artist": "Toby Fox",
             "tags": ["CSBIII: AI"],
             "album_art": "deltarune.png",
-            "trivia": "\"Why use all the Toby Fox songs for AI Route? This the alternate universe where Toby Fox and Sebastian Wolf switch places?\nIt's because I was being lazy.\" -- Digi"
+            "trivia": "\"Why use all the Toby Fox songs for {i}AI Route?{/i} This the alternate universe where Toby Fox and Sebastian Wolf switch places?\nIt's because I was being lazy.\" -- Digi"
         },
         "friendship" : {
             "file": "friendship.ogg",
@@ -341,7 +341,7 @@
             "file": "happy_roaming.ogg",
             "title": "Happy Roaming",
             "artist": "Lorin Nelson",
-            "tags": ["CSBIII", "CSBIII: South"],
+            "tags": ["CSBIII", "CSBIII: South", "CSBDX: Beach Episode"],
             "album_art": "legoisland.png",
             "trivia": "\"Everyone likes this song, including me... obviously.\" -- Mika"
         },
@@ -503,7 +503,7 @@
             "artist": "Gooseworx",
             "tags": ["CSBIII: Country"],
             "album_art": "digitalcircus.png",
-            "trivia": "When {i}CSBIII{/i} was released, many tracks did not yet have album art. This is one of the more notable entries. The pilot episode for {i}The Amazing Digital Circus{/i} was only days old when Country Route was being written."
+            "trivia": "When {i}CSBIII{/i} was released, many tracks did not yet have album art. This is one of the more notable entries. The pilot episode for {i}The Amazing Digital Circus{/i} was only days old when {i}Country Route{/i} was being written."
         },
         "mm_select" : {
             "file": "mm_select.ogg",
@@ -535,7 +535,7 @@
             "artist": "Home Depot",
             "tags": ["CSBIII: East"],
             "album_art": "homedepot.png",
-            "trivia": "Famously played when cleaning {a=https://youtu.be/KCqeX9m9gko?si=42thjKxDXN36SRwt&t=986}an evil mastermind's lair.{/a}"
+            "trivia": "Famously played when cleaning {a=https://youtu.be/KCqeX9m9gko?si=42thjKxDXN36SRwt&t=986}an evil mastermind's lair{/a}."
         },
         "candle_world" : {
             "file": "candle_world.ogg",
@@ -615,7 +615,7 @@
             "artist": "Keiichi Suzuki",
             "tags": ["CSBIII: East"],
             "album_art": "earthbound.png",
-            "trivia": "The best song in {i}Earthbound.{/i} The {a=https://www.youtube.com/watch?v=_Cazb8GDxJ4}{i}Smash version{/a} is great, too!"
+            "trivia": "The best song in {i}Earthbound.{/i} The {a=https://www.youtube.com/watch?v=_Cazb8GDxJ4}{i}Smash{/i} version{/a} is great, too!"
         },
         "pokey" : {
             "file": "pokey.ogg",
@@ -999,7 +999,7 @@
             "artist": "Black Rebel Motorcycle Club",
             "tags": ["CSBIII: Friend"],
             "album_art": "weapon_of_choice.png",
-            "trivia": "When he was in college, the real CS made a music video for this song. The ending movie in Friend Route is a direct tribute to that video.\n{a=https://www.youtube.com/watch?v=q4bTonemz2M}Here's a side-by-side comparison!{/a}"
+            "trivia": "When he was in college, the real CS made a music video for this song. The ending movie in {i}Friend Route{/i} is a direct tribute to that video.\n{a=https://www.youtube.com/watch?v=q4bTonemz2M}Here's a side-by-side comparison!{/a}"
         },
         "the_legend" : {
             "file": "the_legend.ogg",
@@ -1287,7 +1287,7 @@
             "artist": "ClascyJitto",
             "tags": ["CSBDX: Holiday Special", "New In DX"],
             "album_art": "pizzatower.png",
-            "trivia": "CS throws a party! Let's hope he doesn't do anything with the {a=https://www.youtube.com/watch?v=rklpVaVwnP0}bathroom door.{/a}"
+            "trivia": "CS throws a party! Let's hope he doesn't do anything with the {a=https://www.youtube.com/watch?v=rklpVaVwnP0}bathroom door{/a}."
         },
         "hotel_disbelief": {
             "file": "minigames/carrot/hotel_disbelief.ogg",
@@ -1535,7 +1535,7 @@
             "artist": "Jun Ishikawa",
             "tags": ["CSBDX: Plane", "New In DX"],
             "album_art": "kirby64.png",
-            "trivia": "\"For Plane Route, I wanted to use the same OSTs that Tate used for Train Route.\" -- Pakoo"
+            "trivia": "\"For {i}Plane Route,{/i} I wanted to use the same OSTs that Tate used for {i}Train Route.\"{/i} -- Pakoo"
         },
             "title_screen" : {
             "file": "title_screen.ogg",
@@ -1551,7 +1551,7 @@
             "artist": "Miki Obata",
             "tags": ["CSBDX: Plane", "New In DX"],
             "album_art": "heyyoupikachu.png",
-            "trivia": "\"Since Train Route had multiple cars and rooms for CS and Arceus to stay in, the most logical solution to make this work on a plane was for them to ride in an Airbus.\" -- Pakoo"
+            "trivia": "\"Since {i}Train Route{/i} had multiple cars and rooms for CS and Arceus to stay in, the most logical solution to make this work on a plane was for them to ride in an Airbus.\" -- Pakoo"
         },
         "abra_shop" : {
             "file": "abra_shop.ogg",
@@ -1575,7 +1575,7 @@
             "artist": "Tsukasa Tawada",
             "tags": ["CSBDX: Plane", "New In DX"],
             "album_art": "pokemonxd.png",
-            "trivia": "\"Arceus goes to the dining car to meet Mean in Train Route, so I created K-19 to serve as the \"Mean\" for Plane Route.\" -- Pakoo"
+            "trivia": "\"Arceus goes to the dining car to meet Mean in {i}Train Route,{/i} so I created K-19 to serve as the \"Mean\" for {i}Plane Route.\"{/i} -- Pakoo"
         },
         "cipher_lab" : {
             "file": "cipher_lab.ogg",
@@ -1583,7 +1583,7 @@
             "artist": "Tsukasa Tawada",
             "tags": ["CSBDX: Plane", "New In DX"],
             "album_art": "pokemonxd.png",
-            "trivia": "\"Since Train Route had a few scenes from the point-of-view of Lupin III, I decided to swap the perspective to the main crew doing detective work.\" -- Pakoo"
+            "trivia": "\"Since {i}Train Route{/i} had a few scenes from the point-of-view of Lupin III, I decided to swap the perspective to the main crew doing detective work.\" -- Pakoo"
         },
         "run_for_your_life" : {
             "file": "run_for_your_life.mp3",
@@ -1607,7 +1607,7 @@
             "artist": "Miki Obata",
             "tags": ["CSBDX: Train", "New In DX"],
             "album_art": "pkmnchannel.png",
-            "trivia": "Getting this track to loop cleanly in Train Route was a painful experience."
+            "trivia": "Getting this track to loop cleanly in {i}Train Route{/i} was a painful experience."
         },
         "hide_and_seek" : {
             "file": "hide_and_seek.ogg",
@@ -1647,7 +1647,7 @@
             "artist": "Pascal Michael Stiefel",
             "tags": ["CSBDX: Train", "New In DX"],
             "album_art": "ahatintime.png",
-            "trivia": "Originally, the scene where Tate realizes CS got Mean fired didn't have BGM. Very late into the development of Train Route, Tate realized that it was just way way {i}way{/i} too tense without any music."
+            "trivia": "Originally, the scene where Tate realizes CS got Mean fired didn't have any BGM. Very late into the development of {i}Train Route,{/i} Tate realized that it was just way way {i}way{/i} too tense without any music."
         },
         "krabby_klub" : {
             "file": "krabby_klub.ogg",
@@ -1711,7 +1711,7 @@
             "artist": "Yes",
             "tags": ["CSBDX: Train", "New In DX"],
             "album_art": "roundabout.png",
-            "trivia": "It's the song from {a=https://www.youtube.com/watch?v=sqTEoZ78ihs}{i}Family Guy{/i}{/a}!"
+            "trivia": "It's the song from {a=https://www.youtube.com/watch?v=sqTEoZ78ihs}Family Guy{/i}{/a}{i}!{/i}"
         },
         "lo_fi_sunset" : {
             "file": "lo_fi_sunset.ogg",
@@ -1831,7 +1831,7 @@
             "artist": "Beacon",
             "tags": ["CSBDX: BT1D", "New In DX"],
             "album_art": "beacon.png",
-            "trivia": "This is one of the songs that plays in the VRChat map that inspired the Nugget, {i}Stellar Sail{/i} by tp.jp."
+            "trivia": "This is one of the songs that plays in the VRChat map {i}Stellar Sail{/i} by tp.jp., which inspired The Nugget."
         },
         "able_sisters" : {
             "file": "able_sisters.ogg",
@@ -1839,7 +1839,7 @@
             "artist": "Kazumi Totaka & Asuka Ohta",
             "tags": ["CSBDX: BT1D", "New In DX"],
             "album_art": "wildworld.png",
-            "trivia": "\"I dunno, it just felt right.\" - Tate"
+            "trivia": "\"I dunno, it just felt right.\" -- Tate"
         },
         "insulrun" : {
             "file": "insulrun.ogg",
