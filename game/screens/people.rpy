@@ -126,13 +126,29 @@ screen people_nav():
                     else:
                         name_label = "{image=/gui/inline_text/unread.png}" + name_map[k]['full_name'] if k not in persistent.read else name_map[k]['full_name']
                 if k == "iris":
-                    textbutton name_label action Function(mark_read, k), SetScreenVariable("current_person", k), ShowMenu("fake_error", "people.rpy", 126, "`bios/iris.txt` could not be rendered as a Text object.", "Hi, I'm Iris, a cosmic being with interest in the happenings of this reality, as well as some of the people involved in this story.\nDoes that sound too formal? I don't know. Hey, Digi, writing this shit's hard. You can fill in the rest from here.", _transition = determination)
+                    textbutton name_label:
+                        action [
+                            Function(mark_read, k),
+                            SetScreenVariable("current_person", k),
+                            ShowMenu("fake_error", "people.rpy", 126, "`bios/iris.txt` could not be rendered as a Text object.", "Hi, I'm Iris, a cosmic being with interest in the happenings of this reality, as well as some of the people involved in this story.\nDoes that sound too formal? I don't know. Hey, Digi, writing this shit's hard. You can fill in the rest from here.", _transition = determination)
+                        ]
                 else:
-                    textbutton name_label action Function(mark_read, k), SetScreenVariable("current_person", k), SetVariable("current_bios_sprite", 0), SetVariable("current_bios_page", 0), SetVariable("current_bios_total_pages", 0)
+                    textbutton name_label:
+                        action [
+                            Function(mark_read, k),
+                            SetScreenVariable("current_person", k),
+                            SelectedIf( SetScreenVariable("current_person", k) ),
+                            SetVariable("current_bios_sprite", 0),
+                            SetVariable("current_bios_page", 0),
+                            SetVariable("current_bios_total_pages", 0)
+                        ]
 
-
-    textbutton "Return to Extras" action ShowMenu("category_welcome") yoffset 950 xoffset 25
-    textbutton "Main Menu" action Return() yoffset 1000 xoffset 25
+    textbutton "Return to Extras":
+        yoffset 950 xoffset 25
+        action ShowMenu("category_welcome")
+    textbutton "Main Menu":
+        yoffset 1000 xoffset 25
+        action Return()
 
 ##-----------------------------------------------
 ##-------------CODEX WELCOME---------------------

@@ -12,7 +12,7 @@ init python:
 init:
     transform jukeboxbuttons:
         zoom 0.125
-    
+
 screen jukebox():
 
     default current_song_name = None
@@ -48,7 +48,7 @@ screen jukebox_nav():
 
                 if current_jukebox_tag_index-1>=0:
                     action SetVariable("current_jukebox_tag_index", current_jukebox_tag_index-1)
-            
+
             imagebutton:
                 xalign 1.0 yalign 0.5
                 xysize 64, 64
@@ -93,14 +93,38 @@ screen jukebox_nav():
                     if k in persistent.heard:
                         # display all
                         if current_jukebox_tag_index == 0:
-                            textbutton "{font=music_text}" + MUSIC_MAP[k]["title"]+"\n{size=-12}"+MUSIC_MAP[k]["artist"] action SetScreenVariable("current_song_name", k), SetVariable("jukebox_playing", True), Play("jukebox", MUSIC_MAP[k]["file"])
+                            textbutton "{font=music_text}" + MUSIC_MAP[k]["title"]+"\n{size=-12}"+MUSIC_MAP[k]["artist"]:
+                                action [
+                                    SetScreenVariable("current_song_name", k),
+                                    SetVariable("jukebox_playing", True),
+                                    SelectedIf( SetVariable("current_song_name", k) ),
+                                    Play("jukebox", MUSIC_MAP[k]["file"])
+                                ]
                         # only display per tag
                         else:
                             if TAGS_MAP[current_jukebox_tag_index] in MUSIC_MAP[k]["tags"]:
-                                textbutton "{font=music_text}" + MUSIC_MAP[k]["title"]+"\n{size=-12}"+MUSIC_MAP[k]["artist"] action SetScreenVariable("current_song_name", k), SetVariable("jukebox_playing", True), Play("jukebox", MUSIC_MAP[k]["file"], relative_volume=0.5)
+                                textbutton "{font=music_text}" + MUSIC_MAP[k]["title"]+"\n{size=-12}"+MUSIC_MAP[k]["artist"]:
+                                    action [
+                                        SetScreenVariable("current_song_name", k),
+                                        SetVariable("jukebox_playing", True),
+                                        SelectedIf( SetVariable("current_song_name", k) ),
+                                        Play("jukebox", MUSIC_MAP[k]["file"], relative_volume=0.5)
+                                    ]
 
-    textbutton "Return to Extras" action ShowMenu("category_welcome"), Stop("jukebox"), PauseAudio("music", False) yoffset 950 xoffset 25
-    textbutton "Return" action Return(), Stop("jukebox"), PauseAudio("music", False) yoffset 1000 xoffset 25
+    textbutton "Return to Extras":
+        yoffset 950 xoffset 25
+        action [
+            ShowMenu("category_welcome"),
+            Stop("jukebox"),
+            PauseAudio("music", False)
+        ]
+    textbutton "Return":
+        yoffset 1000 xoffset 25
+        action [
+            Return(),
+            Stop("jukebox"),
+            PauseAudio("music", False)
+        ]
 
 ##-----------------------------------------------
 ##-------------CODEX WELCOME---------------------
@@ -130,7 +154,7 @@ screen music_screen(selected_track):
     $ artist = this_track["artist"]
     $ album_art = this_track["album_art"]
     $ tags = this_track["tags"]
-    
+
     python:
         try:
             trivia = this_track["trivia"]
@@ -187,13 +211,19 @@ screen music_screen(selected_track):
                 at jukeboxbuttons
                 idle "gui/pause.png"
                 hover "gui/pause.png" #TODO: Actually make an image for this - Arc
-                action PauseAudio("jukebox", True), SetVariable("jukebox_playing", False)
+                action [
+                    PauseAudio("jukebox", True),
+                    SetVariable("jukebox_playing", False)
+                ]
         else:
             imagebutton xalign 0.5:
                 at jukeboxbuttons
                 idle "gui/play.png"
                 hover "gui/play.png" #TODO: Actually make an image for this - Arc
-                action PauseAudio("jukebox", False), SetVariable("jukebox_playing", True)
+                action [
+                    PauseAudio("jukebox", False),
+                    SetVariable("jukebox_playing", True)
+                ]
 
         text trivia:
             text_align 0.5

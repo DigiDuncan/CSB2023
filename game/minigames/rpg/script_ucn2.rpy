@@ -6,20 +6,20 @@
 ###################################################### FUNCTIONS FOR THIS SCREEN ONLY
 
 init python:
-    # ready up
+    # Ready up
     def rpg_toggle_ready(ready, slots_list, manual = False):
         ready_yet = False
 
-        # for debug only
+        # For debug only
         if manual == True:
             if ready == True:
                 ready_yet = False
             else:
                 ready_yet = True
 
-        # normal functionality:
-        # check all the slots. if ANY are pending, we're not ready yet
-        # TODO: this only works if you click one extra time? help?
+        # Normal functionality:
+        # Check all the slots. if ANY are pending, we're not ready yet
+        # TODO: This only works if you click one extra time? Help?
         else:
             for member in slots_list:
                 if member[0] == "(Pending)":
@@ -30,25 +30,17 @@ init python:
 
         return ready_yet
 
-    # fill a given slot
+    # Fill a given slot
     def rpg_fill_slot(slots_list, current_slot, char_tooltip_data):
         slots_list[current_slot] = char_tooltip_data
 
-    # automatically select the next unselected slot
+    # Automatically select the next unselected slot
     def rpg_slot_autoselect(slots_list, current_slot, party_size) -> int:
-        # don't go outside the range
+        # Don't go outside the range
         for slot in range(0, (party_size * 2)):
             if slots_list[slot][0] == "(Pending)":
                 return slot
         return current_slot
-
-    # predict background image selection (hopefully less laggy???)
-    def rpg_start_predict_bgs(ucn_bg_list):
-        for img in ucn_bg_list:
-            renpy.start_predict(img)
-
-    def rpg_predict_img(img):
-        renpy.predict(ucn_bg_list[img])
 
 ###################################################### TRANSFORMS FOR THIS SCREEN ONLY
 
@@ -82,19 +74,19 @@ screen _ucn2_selection():
         show_window = False
         #renpy.choice_for_skipping()
 
-        # this is stupid but it doesn't work any other way
+        # This is stupid but it doesn't work any other way
         rpg_pending_sprite = renpy.get_registered_image("rpg_pending_portrait")
         rpg_pending_sprite_hover = renpy.get_registered_image("rpg_pending_portrait_hover")
 
-    # run these immediately in the background of all screens
+    # Run these immediately in the background of all screens
     on "show" action [
-        Function(rpg_start_predict_bgs, ucn_bg_list),
+        Function(start_predict_list, ucn_bg_list),
         Hide("category_nav"),
         Play("music2", "audio/riders_menu.ogg"),
         Function(persistent.heard.add, "riders_menu")
     ]
 
-    ###################### important variables for everywhere
+    ###################### Important variables for everywhere
     default rpg_selection_stage = "party"
     default rpg_hovered_character = Tooltip("")
     default rpg_slots = [
@@ -115,7 +107,7 @@ screen _ucn2_selection():
     default rpg_bgm = "card_castle"
     default rpg_bgm_art = "images/jukebox/"+MUSIC_MAP[rpg_bgm]["album_art"]
 
-    ### add background color / prep video
+    ### Add background color / prep video
     add Color("#000")
     add Color('#323e42', alpha=0.75)
     showif rpg_ready == True:
@@ -130,7 +122,7 @@ screen _ucn2_selection():
             yalign 0.04
             text_align 0.5
 
-        ###################### bounding box for everything
+        ###################### Bounding box for everything
         frame:
             background None
             xsize 0.9 ysize 0.75
@@ -141,7 +133,7 @@ screen _ucn2_selection():
                 vbox:
                     xalign 0.5
 
-                    ###################### selectable characters go here
+                    ###################### Selectable characters go here
                     frame:
                         background None
                         ysize 0.5
@@ -156,7 +148,7 @@ screen _ucn2_selection():
                                 for character in RPG.Characters.characters:
                                     $ portrait = character.portrait.filename
 
-                                    # this bit is stupid lmao
+                                    # This bit is stupid lmao
                                     if portrait == "gui/rpg/portraits/blank.png":
                                         $ hover_portrait = "selectable:gui/rpg/portraits/blank_hover.png"
                                     else:
@@ -176,13 +168,13 @@ screen _ucn2_selection():
                                             SetVariable("rpg_ready", rpg_toggle_ready(rpg_ready, rpg_slots))
                                         ]
 
-                                ###################### handle empty portrait slots here
+                                ###################### Handle empty portrait slots here
                                 python:
                                     unused_slots = ((17*4)-2)-len(RPG.Characters.characters)
                                 for f in range(unused_slots):
                                     add Null(88,88)
 
-                                ###################### handle random/skipped characters
+                                ###################### Handle random/skipped characters
                                 imagebutton:
                                     xysize(88,88)
                                     idle "gui/rpg/portraits/unknown.png"
@@ -340,7 +332,7 @@ screen _ucn2_selection():
                                     xalign 1.0
                                     text_align 1.0
 
-                            ###################### display currently hovered character
+                            ###################### Display currently hovered character
                             frame:
                                 xanchor 0.5 yanchor 1.0
                                 xpos 0.5 ypos 1.0
@@ -350,7 +342,7 @@ screen _ucn2_selection():
                                 if rpg_hovered_character.value == "":
                                     background None
                                 else:
-                                    # handle random/none first
+                                    # Handle random/none first
                                     if rpg_hovered_character.value:
                                         if rpg_hovered_character.value[0] == "(Random)":
                                             add "gui/rpg/random.png":
@@ -403,7 +395,7 @@ screen _ucn2_selection():
                 Return()
             ]
 
-        # debug button only
+        # Debug button only
         # textbutton "[[DEBUG] Toggle ready state.":
             # yoffset 50 xoffset 25
             # action [
@@ -440,7 +432,7 @@ screen _ucn2_selection():
             yalign 0.04
             text_align 0.5
 
-        ###################### bounding box for everything
+        ###################### Bounding box for everything
         frame:
             background None
             xsize 0.9 ysize 0.75
@@ -463,7 +455,7 @@ screen _ucn2_selection():
                 xalign 0.5 yalign 0.7
                 text_align 0.5
 
-        ###################### back / forward
+        ###################### Back / forward
         textbutton "Previous Screen":
             yoffset 1000 xoffset 25
             action [
@@ -482,15 +474,15 @@ screen _ucn2_selection():
 
 ###################################################### STAGE 3: BACKGROUND IMAGE
 
-    # full disclosure: portions of this section are AI-assisted because this is terrible.
+    # Full disclosure: Portions of this section are AI-assisted because this was terrible.
 
-    ###################### load images first
+    ###################### Load images first
     elif rpg_selection_stage == "load_imgs":
 
         if loaded_imgs < len(ucn_bg_list):
             timer 0.001:
                 repeat True
-                action Function(rpg_predict_img, loaded_imgs)
+                action Function(predict_img, ucn_bg_list[loaded_imgs])
             $ loaded_imgs += 1
             $ load_percent = str( int((loaded_imgs * 100) / len(ucn_bg_list)) )
 
@@ -507,7 +499,7 @@ screen _ucn2_selection():
                     SetScreenVariable("rpg_selection_stage", "img")
                 ]
 
-    ###################### actual selection
+    ###################### Actual selection
     elif rpg_selection_stage == "img":
 
         text "{size=+24}Select Background Image":
@@ -515,20 +507,20 @@ screen _ucn2_selection():
             yalign 0.04
             text_align 0.5
 
-        ###################### bounding box for images
+        ###################### Bounding box for images
         frame:
             background None
             xsize 806 ysize 0.75
             xalign 0.9 yalign 0.5
 
-            # partially stealing digi's code for now
+            # Partially stealing Digi's code for now
             viewport:
                 xalign 0.5
                 side_yfill True
                 scrollbars "vertical"
                 mousewheel True
 
-                # TODO: hover/selected effects + tooltips?
+                # TODO: Hover/selected effects + tooltips?
 
                 vpgrid:
                     cols 6
@@ -549,7 +541,7 @@ screen _ucn2_selection():
                                 SetScreenVariable("rpg_img", i)
                             ]
 
-        ###################### bounding box for background preview
+        ###################### Bounding box for background preview
         frame:
             background None
             xsize 806 ysize 0.75
@@ -568,7 +560,7 @@ screen _ucn2_selection():
                         xalign 0.5 yalign 0.5
                         text_align 0.5
 
-        ###################### back / forward
+        ###################### Back / forward
         textbutton "Previous Screen":
             yoffset 1000 xoffset 25
             action [
@@ -594,13 +586,13 @@ screen _ucn2_selection():
             yalign 0.04
             text_align 0.5
 
-        ###################### bounding box for music list
+        ###################### Bounding box for music list
         frame:
             background None
             xsize 806 ysize 0.75
             xalign 0.9 yalign 0.5
 
-            # stealing digi's code here too
+            # Stealing Digi's code here too
             viewport:
                 xalign 0.5
                 #side_yfill True
@@ -621,7 +613,7 @@ screen _ucn2_selection():
                                 SetScreenVariable("rpg_bgm", i)
                             ]
 
-        ###################### bounding box for album art
+        ###################### Bounding box for album art
         frame:
             background None
             xsize 806 ysize 0.75
@@ -635,7 +627,7 @@ screen _ucn2_selection():
                         xalign 0.5 yalign 0.5
                         fit("contain")
 
-        ###################### back / forward
+        ###################### Back / forward
         textbutton "Previous Screen":
             yoffset 1000 xoffset 25
             action [
@@ -688,7 +680,7 @@ screen _ucn2_selection():
 
             text output
 
-        ###################### back / forward
+        ###################### Back / forward
         textbutton "Previous Screen":
             yoffset 1000 xoffset 25
             action [
@@ -704,8 +696,8 @@ screen _ucn2_selection():
                 Hide("rpg_char_sel_new", dissolve),
                 Hide("category_welcome", dissolve),
 
-                # move all these to the global versions so we can call the screen in a new context and skip the UI nonsense
-                # also attempt to force-clear parties again (it didn't work)
+                # Move all these to the global versions so we can call the screen in a new context and skip the UI stack nonsense
+                # Also attempt to force-clear parties again (it didn't work)
                 SetVariable("ucn2_parties", []),
                 SetVariable("ucn2_parties", rpg_final_parties),
                 SetVariable("ucn2_scale", rpg_scale),
@@ -716,17 +708,17 @@ screen _ucn2_selection():
             ]
 
 
-    else: # this should NEVER happen!
+    else: # This should NEVER happen!
         $ renpy.jump("secret_dx")
 
 label _ucn2_battle():
     python:
 
-        # attempt to close ALL menus
+        # Attempt to close ALL menus
         renpy.scene(layer="screens")
 
-        # attempt to force-clear fighters between fights
-        # let's try a whole new-ass variable, even
+        # Attempt to force-clear fighters between fights
+        # Let's try a whole new-ass variable, even
         ucn2_local_parties = [ None ]
         ucn2_local_parties = ucn2_parties
 
