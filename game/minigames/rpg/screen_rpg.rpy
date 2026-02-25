@@ -1,6 +1,5 @@
 """
 TODO list
-- Add the possibility of a fighter being confused (or afflicted by other statuses).
 - Properly implement status icons; account for longer character names + multiple effects
 - Rescale the attack text based on the number of attacks
 - Add functionality to the attack text
@@ -219,10 +218,10 @@ screen screen_rpg():
                             hbox:
                                 xalign 1.0
 
-                                # TODO: This does not work; also need it for enemy side AND for all other effects
-                                if "Confusion" in RPG.encounter.allies[i].effects:
-                                    add "gui/rpg/status/confusion.png":
-                                        xalign 0.5
+                                # Add effects
+                                for effect in RPG.encounter.allies[i].effects:
+                                    add effect.effect.icon:
+                                        yalign 0.5
 
                                 text RPG.encounter.allies[i].character.display_name:
                                     xalign 1.0
@@ -306,8 +305,12 @@ screen screen_rpg():
                             align(1.0, 0.0)
                             hbox:
                                 xalign 1.0
-                                # if encounter.enemies[i].confused:
-                                    # add "gui/rpg/confusion_status.png"
+
+                                # Add effects
+                                for effect in RPG.encounter.enemies[i].effects:
+                                    add effect.effect.icon:
+                                        yalign 0.5
+
                                 text RPG.encounter.enemies[i].character.display_name:
                                     xalign 1.0
                             frame:
