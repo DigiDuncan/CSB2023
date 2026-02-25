@@ -93,18 +93,21 @@ screen screen_rpg():
                                     if RPG.encounter.allies[RPG.encounter.turn].attacks[i] is RPG.encounter.allies[RPG.encounter.turn].next_attack:
                                         color "#FF8A00"
                                         hover_color "#F5DD00"
+                                        insensitive_color "#888888"
                                     else:
                                         color "#FFFFFF"
                                         hover_color "#0099CC"
-                                    insensitive_color "#888888"
+                                        insensitive_color "#888888"
                                 text "{size=21}"+RPG.encounter.allies[RPG.encounter.turn].attacks[i].attack.description+"{/size}":
                                     first_indent 32
                                     if RPG.encounter.allies[RPG.encounter.turn].attacks[i] is RPG.encounter.allies[RPG.encounter.turn].next_attack:
                                         color "#844200"
                                         hover_color "#7B6F00"
+                                        insensitive_color "#888888"
                                     else:
                                         color "#848484"
                                         hover_color "#006582"
+                                        insensitive_color "#888888"
 
                 # The target select box
                 vbox:
@@ -223,7 +226,11 @@ screen screen_rpg():
                                 hover "selectable:gui/rpg/defend_button.png"
                                 hover_sound "audio/sfx/sfx_select.ogg"
                                 action [ Play("sound", "audio/sfx/sfx_valid.ogg"), Notify("Defend pressed on fighter"+str(i+1)+"!") ]
-
+                # Don't just collapse space if ally has been knocked out
+                else:
+                    add Null(475+14,88):
+                        xalign 0.5
+                        yalign 1.0
 
     # Dev Backdoor
     key "K_END" action Jump("pass_rpg")
