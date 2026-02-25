@@ -231,7 +231,7 @@
             "artist": "Toby Fox",
             "tags": ["CSBIII: AI"],
             "album_art": "deltarune.png",
-            "trivia": "One of the most wholesome songs in the whole of {i}Deltarune{/i} and {i}CSBIII{/i}."
+            "trivia": "One of the most wholesome songs in the whole of {i}Deltarune{/i} and {i}CSBIII.{/i}"
         },
         "good_eatin" : {
             "file": "good_eatin.ogg",
@@ -239,7 +239,7 @@
             "artist": "ClascyJitto",
             "tags": ["CSBIII"],
             "album_art": "pizzatower.png",
-            "trivia": "\"Pakoo really liked Pizza Game (I forgot the name) when developing some sections of {i}CSBIII{/i}, but now he hasn't thought of that game in about a year.\" -- Mika"
+            "trivia": "\"Pakoo really liked Pizza Game (I forgot the name) when developing some sections of {i}CSBIII,{/i} but now he hasn't thought of that game in about a year.\" -- Mika"
         },
         "supernova": {
             "file": "supernova.ogg",

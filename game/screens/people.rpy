@@ -456,11 +456,18 @@ screen person(l):
 
                                     # delimiter to handle outfit/expression names
                                     # ex. "Default: Happy" will be split
-                                    this_sprite_split = this_sprite.split(": ")
 
-                                    if len(this_sprite_split) > 1:
-                                        this_sprite = "{size=-12}" + this_sprite_split[0] + "{/size}\n" + this_sprite_split[1]
+                                    # handle static sprites first
+                                    if this_sprite.startswith("_anim_") == False:
+                                        this_sprite_split = this_sprite.split(": ")
+
+                                        if len(this_sprite_split) > 1:
+                                            this_sprite = "{size=-12}" + this_sprite_split[0] + "{/size}\n" + this_sprite_split[1]
+                                        else:
+                                            this_sprite = this_sprite_split
+                                    # handle animated sprites
                                     else:
+                                        this_sprite_split = this_sprite.split("_anim_")
                                         this_sprite = this_sprite_split
 
                                 # sprite selector
