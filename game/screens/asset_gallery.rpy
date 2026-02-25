@@ -3,7 +3,7 @@ screen unused_gallery():
     $ persistent.heard.add("what_the_night_will_bring")
 
     tag menu
-    add "images/bg/michael_calendar.png"
+    add "images/bg/books_misc/michael_calendar.png"
     add Color("#00000070")
 
     python:
