@@ -853,11 +853,11 @@
         "full_name": "Pakoo's Memories",
         "pronouns": "(he/they (all))",
         "sprites": {
-            "Group": "images/characters/memory.png",
-            "K17-4": "images/characters/k174.png",
-            "K19-9": "images/characters/k199.png",
-            "Default: K20-7": "images/characters/k207.png",
-            "Hazmat: K20-7": "images/characters/k207h.png"
+            "Group": "images/characters/pakoo/memory.png",
+            "K17-4": "images/characters/pakoo/k174.png",
+            "K19-9": "images/characters/pakoo/k199.png",
+            "Default: K20-7": "images/characters/pakoo/k207.png",
+            "Hazmat: K20-7": "images/characters/pakoo/k207h.png"
         },
         "quote": "U3VubnkgRCEgQWxyaWdodCEgVGhlIEYyNSBL\nZXk/IEknbSB0aGUgc3Ryb25nZXN0IQ",
         "bio": "These memories of Pakoo's life each only possess knowledge of what happened during a specific month. The K17s love talking about catgirls and citrus drinks, while the K20s won't shut up about {i}Half-Life{/i} or {i}Touhou.{/i} It never goes well when they meet up to solve a problem.",
