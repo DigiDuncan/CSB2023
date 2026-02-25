@@ -5,10 +5,10 @@ init python:
 class Flashlight(renpy.Displayable):
     def __init__(self):
         super(Flashlight, self).__init__()
-        
+
         # This image should be twice the width and twice the height
         # of the screen.
-        self.child = Image("flashlight.png")
+        self.child = Image("gui/flashlight.png")
 
         # (-1, -1) is the way the event system represents
         # "outside the game window".
@@ -16,7 +16,7 @@ class Flashlight(renpy.Displayable):
 
     def render(self, width, height, st, at):
         render = renpy.Render(config.screen_width, config.screen_height)
-        
+
         if self.pos == (-1, -1):
             # If we don't know where the cursor is, render pure black.
             render.canvas().rect("#000", (0, 0, config.screen_width, config.screen_height))
