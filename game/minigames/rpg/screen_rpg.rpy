@@ -226,9 +226,9 @@ screen screen_rpg():
                                 hover "selectable:gui/rpg/defend_button.png"
                                 hover_sound "audio/sfx/sfx_select.ogg"
                                 action [ Play("sound", "audio/sfx/sfx_valid.ogg"), Notify("Defend pressed on fighter"+str(i+1)+"!") ]
-                # Don't just collapse space if ally has been knocked out
+                # Don't just collapse the space if ally has been knocked out
                 else:
-                    add Null(475+14,88):
+                    add Null(489,88):
                         xalign 0.5
                         yalign 1.0
 

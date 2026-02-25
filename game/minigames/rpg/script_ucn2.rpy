@@ -614,6 +614,7 @@ screen _ucn2_selection():
                             hover_sound "audio/sfx/sfx_select.ogg"
                             action [
                                 Play("sound", "audio/sfx/sfx_valid.ogg"),
+                                SelectedIf( SetVariable("rpg_bgm", i) ),
                                 SetVariable("rpg_bgm_art", Image("/images/jukebox/"+MUSIC_MAP[i]["album_art"])),
                                 SetScreenVariable("rpg_bgm_art", Image("/images/jukebox/"+MUSIC_MAP[i]["album_art"])),
                                 SetVariable("rpg_bgm", i),

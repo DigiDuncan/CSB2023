@@ -745,7 +745,7 @@
             "Mean": "images/characters/mean/meanhohsis.png"
         },
         "quote": "I don't know, don't ask me!",
-        "bio": "The workers of HoH SiS aren't too happy with the new changes to the workplace. The CEO has recently wanted to make attacks on a man named \"cs188\". They didn't sign up for this! They just wanna improve foundations, for God's sake!",
+        "bio": "The workers of HoH SiS aren't too happy with the new changes to the workplace. The CEO has recently ordered attacks on a man named \"cs188\". They didn't sign up for this! They just wanna repair foundations, for God's sake!",
         "zoom": 0.667
     },
     "horse": {
@@ -756,8 +756,8 @@
             ":3": "images/characters/horse/colonthree.png",
             "Real": "images/characters/horse/real.png"
         },
-        "quote": "Fill this in later!",
-        "bio": "Fill this in later!",
+        "quote": "That's craaaaazy.",
+        "bio": "Really likes Hatsune Miku. Might possibly be her #1 fan.",
         "dx": true
     },
     "howie": {
@@ -1484,7 +1484,7 @@
             "Default": "images/characters/tom.png"
         },
         "quote": "I am currently inside of a {i}CSB{/i} bio screen...",
-        "bio": "Where {i}hasn't{/i} this man been? He has explored odd places no one else bothers to visit and has examined the things that no one else wants to question. He's probably right behind you, {i}right now{/i}, explaining the history of your house."
+        "bio": "Where {i}hasn't{/i} this man been? He has explored odd places no one else bothers to visit and has examined the things that no one else wants to question. He's probably right behind you, {i}right now,{/i} explaining the history of your house."
     },
     "trailtrash": {
         "full_name": "Trailer Trash",
