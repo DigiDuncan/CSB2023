@@ -2765,7 +2765,7 @@ label train_confront_lupin:
     window hide
 
     # stupid height gag
-    $ renpy.music.set_volume(0)
+    $ renpy.music.set_pause(True, channel="music")
     show oof_45 at t_fake_rpg_text(0.05, 0.3)
     show oof_54 at t_fake_rpg_text(0.2, 0.125)
     show oof_52 at t_fake_rpg_text(0.81, 0.2)
@@ -2782,7 +2782,7 @@ label train_confront_lupin:
     show mean human annoyed
     mean "... What?"
     mean "You all {i}just{/i} said you can't reach..."
-    $ renpy.music.set_volume(100)
+    $ renpy.music.set_pause(False, channel="music")
     mean "Never mind."
     show mean human
     show cs disappointed

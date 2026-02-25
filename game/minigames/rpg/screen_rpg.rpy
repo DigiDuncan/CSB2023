@@ -1,9 +1,16 @@
 """
 TODO list
-- Add the possibility of a fighter being confused.
+- Add the possibility of a fighter being confused (or afflicted by other statuses).
+- Implement status icons
 - Rescale the attack text based on the number of attacks
 - Add functionality to the attack text
 - Depending on the action selected add the action to a list (To pass back to the back end)
+- Make the little heart icon actually move down with the HP counter bar
+- Remove enemies from target select if they are dead
+- Make target select use icons?
+- Make sprites be positioned dynamically based on number of enemies - bigger crowds should mean a tighter squeeze!
+- Don't let anyone go completely offscreen!
+- Fix the smaller sprites such as the K-types that are getting Mike Wazowski'd
 """
 
 python early:
@@ -30,6 +37,7 @@ init:
 
 screen say_rpg(rpg_what):
     modal True
+
     frame:
         xalign 0.0
         yalign 0.0
@@ -39,22 +47,23 @@ screen say_rpg(rpg_what):
         button:
             text rpg_what
 
-
 screen screen_rpg():
-    # Drawing the enemies in the background. TODO: Healthbars.
+    # Drawing the enemies in the background.
     grid len(RPG.encounter.enemies) 1:
         xalign 0.5
         yalign 1.0
         for i in range(len(RPG.encounter.enemies)):
+            if not RPG.encounter.enemies[i].dead:
+                # Attempt to add animated sprite if one exists, else fallback to the normal sprite
+                python:
+                    try:
+                        enemy_sprite = RPG.encounter.enemies[i].anim_sprite
+                    except:
+                        enemy_sprite = RPG.encounter.enemies[i].sprite
 
-            # Attempt to add animated sprite if one exists, else fallback to the normal sprite
-            python:
-                try:
-                    enemy_sprite = RPG.encounter.enemies[i].anim_sprite
-                except:
-                    enemy_sprite = RPG.encounter.enemies[i].sprite
-
-            add enemy_sprite
+                add enemy_sprite
+            else:
+                add Null(200,200)
 
     # This is the context menu of the RPG
     frame:
@@ -85,7 +94,10 @@ screen screen_rpg():
                                 $ attack_actions.append(IncrementVariable("RPG.encounter.turn"))
                             button:
                                 hover_sound "audio/sfx/sfx_select.ogg"
-                                action [ Play("sound", "audio/sfx/sfx_valid.ogg"), attack_actions ]
+                                action [
+                                    Play("sound", "audio/sfx/sfx_valid.ogg"),
+                                    attack_actions
+                                ]
                                 if not RPG.encounter.allies[RPG.encounter.turn].attacks[i].available:
                                     sensitive False
                                 has vbox
@@ -118,14 +130,17 @@ screen screen_rpg():
                         for i in range(curr_att.attack.target_count):
                             text "{size=42}Select target [i]"
                             for victim in victims:
-                                $ target_actions = [Function(bypass_append, working_list, victim)]
+                                $ target_actions = [ Function(bypass_append, working_list, victim) ]
                                 if i+1 == curr_att.attack.target_count:
                                     $ target_actions.append(Function(RPG.encounter.allies[RPG.encounter.turn].set_next_targets, working_list))
                                     if (RPG.encounter.turn+1 != len(RPG.encounter.allies)):
                                         $ target_actions.append(IncrementVariable("RPG.encounter.turn"))
                                 button:
                                     hover_sound "audio/sfx/sfx_select.ogg"
-                                    action [ Play("sound", "audio/sfx/sfx_valid.ogg"), target_actions ]
+                                    action [
+                                        Play("sound", "audio/sfx/sfx_valid.ogg"),
+                                        target_actions
+                                    ]
                                     text "{size=42}"+victim.display_name:
                                         color "#FFFFFF"
                                         hover_color "#0099CC"
@@ -135,7 +150,11 @@ screen screen_rpg():
                                     text "{size=42}Back":
                                         color "#FFFFFF"
                                         hover_color "#0099CC"
-                                    action [ Play("sound", "audio/sfx/sfx_valid.ogg"), RemoveFromSet("working_list", working_list[i-1]), IncrementVariable("i", -1) ]
+                                    action [
+                                        Play("sound", "audio/sfx/sfx_valid.ogg"),
+                                        RemoveFromSet("working_list", working_list[i-1]),
+                                        IncrementVariable("i", -1)
+                                    ]
 
             # If everything is set and good to go, show the confirm button)
             # TODO: Further checks to make sure everything is good and valid.
@@ -146,7 +165,10 @@ screen screen_rpg():
                     idle "gui/rpg/confirm_button.png"
                     hover "selectable:gui/rpg/confirm_button.png"
                     hover_sound "audio/sfx/sfx_select.ogg"
-                    action [ Play("sound", "audio/sfx/sfx_valid.ogg"), Return() ]
+                    action [
+                        Play("sound", "audio/sfx/sfx_valid.ogg"),
+                        Return()
+                    ]
         # The stat boxes for Allies
         grid len(RPG.encounter.allies) 1:
             xfill True
@@ -218,19 +240,88 @@ screen screen_rpg():
                                 idle "gui/rpg/attack_button.png"
                                 hover "selectable:gui/rpg/attack_button.png"
                                 hover_sound "audio/sfx/sfx_select.ogg"
-                                action [ Play("sound", "audio/sfx/sfx_valid.ogg"), Notify("Attack pressed on fighter"+str(i+1)+"!") ]
+                                action [
+                                    Play("sound", "audio/sfx/sfx_valid.ogg"),
+                                    Notify("Attack pressed on fighter"+str(i+1)+"!")
+                                ]
                             # The defend button
                             imagebutton:
                                 align(1.0, 1.0)
                                 idle "gui/rpg/defend_button.png"
                                 hover "selectable:gui/rpg/defend_button.png"
                                 hover_sound "audio/sfx/sfx_select.ogg"
-                                action [ Play("sound", "audio/sfx/sfx_valid.ogg"), Notify("Defend pressed on fighter"+str(i+1)+"!") ]
+                                action [
+                                    Play("sound", "audio/sfx/sfx_valid.ogg"),
+                                    Notify("Defend pressed on fighter"+str(i+1)+"!")
+                                ]
                 # Don't just collapse the space if ally has been knocked out
                 else:
                     add Null(489,88):
-                        xalign 0.5
-                        yalign 1.0
+                        xalign 0.5 yalign 1.0
+
+
+        # Enemy stat boxes
+        grid len(RPG.encounter.enemies) 1:
+            xfill True
+            for i in range(len(RPG.encounter.enemies)):
+                if not RPG.encounter.enemies[i].dead:
+                    frame:
+                        padding(7,7)
+                        xalign 0.5 yalign 0.5
+                        yoffset -500
+                        xsize 475 ysize 105
+                        background "gui/rpg/small_box.png"
+
+                        has grid 2 2
+                        xfill True
+                        yfill True
+                        # The Fighter's Icon and Stats
+                        hbox:
+                            align(0.0, 0.0)
+                            ysize 88
+                            spacing 2
+                            # Icon
+                            if RPG.encounter.enemies[i].character.portrait:
+                                add RPG.encounter.enemies[i].character.portrait
+                            else:
+                                add "gui/rpg/portraits/unknown.png"
+                            # Stats
+                            grid 2 2:
+                                yalign 0.5
+                                xspacing 2
+                                add "gui/rpg/attack.png" yalign 0.5
+                                text str(RPG.encounter.enemies[i].attack):
+                                    size 32
+                                    yalign 0.5
+                                add "gui/rpg/defense.png" yalign 0.5
+                                text str(RPG.encounter.enemies[i].defense):
+                                    size 32
+                                    yalign 0.5
+                        # The Fighter's name and healthbar
+                        vbox:
+                            align(1.0, 0.0)
+                            hbox:
+                                xalign 1.0
+                                # if encounter.enemies[i].confused:
+                                    # add "gui/rpg/confusion_status.png"
+                                text RPG.encounter.enemies[i].character.display_name:
+                                    xalign 1.0
+                            frame:
+                                background None
+                                padding(0,0)
+                                xysize(228, 32)
+                                xalign 1.0
+                                yalign 1.0
+                                add "gui/rpg/hp_bar.png" corner1(int(228-(228*(RPG.encounter.enemies[i].hit_points/RPG.encounter.allies[i].max_hp))),0) corner2(228,32) xalign 1.0
+                                text str(RPG.encounter.enemies[i].hit_points)+"/"+str(RPG.encounter.enemies[i].max_hp):
+                                    xalign 1.0
+                                    yalign 0.5
+                                add "gui/rpg/hp.png" yalign 0.5 xalign -0.15
+
+                # Don't just collapse the space if enemy has been knocked out
+                else:
+                    add Null(489,88):
+                        xalign 0.5 yalign 1.0
 
     # Dev Backdoor
     key "K_END" action Jump("pass_rpg")
@@ -254,6 +345,7 @@ label play_rpggame:
                 hide screen say_rpg
         hide screen say_rpg
         hide screen screen_rpg
+
 label pass_rpg:
     hide screen screen_rpg
     $ quick_menu = True

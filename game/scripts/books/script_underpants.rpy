@@ -73,6 +73,7 @@ label book_underpants:
     play sound sfx_punch
     with hpunch
     show cpt_underpants at left with moveinleft
+    $ persistent.seen.add("cpt_underpants")
     n "Soon, Captain Underpants punches through the wall!"
     show cpt_underpants at mid_offscreen_left with MoveTransition(0.25)
     pause 0.25
