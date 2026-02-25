@@ -208,21 +208,70 @@ class AIType:
 
 
 class Effects:
+    # Intent: Take damage over x turns.
+    BLEED = Effect(
+        name="Bleed",
+        description="Bleed them dry!",
+        positive=False,
+        icon="/gui/rpg/status/bleed.png",
+        duration=0,
+        apply="{target} started bleeding!",
+        update=update_damage_over_time("{target} is taking bleed damage!"),
+        resolved="{target}'s bleeding has stopped!"
+    )
+    # Intent: Make fighter very inaccurate
+    BLIND = Effect(
+        name="Blindness",
+        description="Blinded by the lights!",
+        positive=False,
+        icon="/gui/rpg/status/blindness.png",
+        duration=0,
+        apply=apply_status_effect(stat=CharacterStat.ACCURACY, amount=0.25, scale=True),
+        update="{target} can't see!",
+        resolved="{target} can see again!"
+    )
+    # Intent: We should update this... make fighter both less accurate AND likely to hit the wrong target, inclduing themself!
     CONFUSION = Effect(
-        "Confusion", "Confuse and befuddle!", False, None, 0,
+        name="Confusion",
+        description="Confuse and befuddle!",
+        positive=False,
+        icon="/gui/rpg/status/confusion.png",
+        duration=0,
         apply=apply_status_effect(stat=CharacterStat.ACCURACY, amount=0.5, scale=True),
         update="{target} is confused!",
         resolved=resolved_chance("{target} is no longer confused!", chance=0.5)
     )
-    BLEED = Effect(
-        "Bleed", "Bleed them dry!", False, None, 0,
-        apply="{target} has begun to bleed",
-        update=update_damage_over_time("{target} is taking bleed damage!"),
-        resolved="{target}'s bleeding has stopped!"
-    )
+    # Intent: Make fighter less vulnerable to damage, but unable to attack this turn.
     DEFEND = Effect(
-        "Defend", "Not today!", True, None, 1,
-        apply=apply_status_effect(stat=CharacterStat.DEFENSE, amount=1.5, scale=True)
+        name="Defending",
+        description="Not today!",
+        positive=True,
+        icon="/gui/rpg/status/defending.png",
+        duration=1,
+        apply=apply_status_effect(stat=CharacterStat.DEFENSE, amount=1.5, scale=True),
+        update="{target} is defending!"
+    )
+    # Intent: Make fighter extra vulnerable while asleep and skip their next turn.
+    SLEEP = Effect(
+        name="Sleep",
+        description="Wake up!",
+        positive=False,
+        icon="/gui/rpg/status/sleep.png",
+        duration=1,
+        apply=apply_status_effect(stat=CharacterStat.DEFENSE, amount=0.5, scale=True),
+        update="{target} fell asleep!",
+        resolved="{target} woke up!"
+    )
+    # Intent: Make fighter unable to do anything at all for x turns.
+    STUN = Effect(
+        name="Stun",
+        description="Get it together!",
+        positive=False,
+        icon="/gui/rpg/status/stun.png",
+        duration=0,
+        apply=apply_status_effect(stat=CharacterStat.DEFENSE, amount=1.0, scale=True),
+        update="{target} can't move!",
+        resolved="{target} has recovered!"
     )
 
 

@@ -1,7 +1,7 @@
 """
 TODO list
 - Add the possibility of a fighter being confused (or afflicted by other statuses).
-- Implement status icons
+- Properly implement status icons; account for longer character names + multiple effects
 - Rescale the attack text based on the number of attacks
 - Add functionality to the attack text
 - Depending on the action selected add the action to a list (To pass back to the back end)
@@ -218,8 +218,12 @@ screen screen_rpg():
                             align(1.0, 0.0)
                             hbox:
                                 xalign 1.0
-                                # if encounter.allies[i].confused:
-                                    # add "gui/rpg/confusion_status.png"
+
+                                # TODO: This does not work; also need it for enemy side AND for all other effects
+                                if "Confusion" in RPG.encounter.allies[i].effects:
+                                    add "gui/rpg/status/confusion.png":
+                                        xalign 0.5
+
                                 text RPG.encounter.allies[i].character.display_name:
                                     xalign 1.0
                             frame:
