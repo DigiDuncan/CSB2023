@@ -316,7 +316,7 @@ screen screen_rpg():
                                 xysize(228, 32)
                                 xalign 1.0
                                 yalign 1.0
-                                add "gui/rpg/hp_bar.png" corner1(int(228-(228*(RPG.encounter.enemies[i].hit_points/RPG.encounter.allies[i].max_hp))),0) corner2(228,32) xalign 1.0
+                                add "gui/rpg/hp_bar.png" corner1(int(228-(228*(RPG.encounter.enemies[i].hit_points/RPG.encounter.enemies[i].max_hp))),0) corner2(228,32) xalign 1.0
                                 text str(RPG.encounter.enemies[i].hit_points)+"/"+str(RPG.encounter.enemies[i].max_hp):
                                     xalign 1.0
                                     yalign 0.5
