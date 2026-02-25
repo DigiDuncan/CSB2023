@@ -66,7 +66,7 @@ image tate_comp dark = LayeredImageProxy("tate_comp", Transform(matrixcolor = da
 image tate_comp sil_white  = LayeredImageProxy("tate_comp", Transform(matrixcolor = sil_white_matrix))
 image tate_comp sil_black = LayeredImageProxy("tate_comp", Transform(matrixcolor = sil_black_matrix))
 image tate_comp sepia = LayeredImageProxy("tate_comp", Transform(matrixcolor = SepiaMatrix()))
-image tate_comp selectable = LayeredImageProxy("tate_comp", Transform(matrixcolor = sil_select_matrix))
+image tate_comp selectable = LayeredImageProxy("tate_comp", Transform(matrixcolor = shade_select_matrix))
 
 image tate_comp flipped = LayeredImageProxy("tate_comp", Transform(xzoom = -1))
 
@@ -75,7 +75,7 @@ image tate_comp dark flipped = LayeredImageProxy("tate_comp", Transform(matrixco
 image tate_comp sil_white flipped = LayeredImageProxy("tate_comp", Transform(matrixcolor = sil_white_matrix, xzoom = -1))
 image tate_comp sil_black flipped = LayeredImageProxy("tate_comp", Transform(matrixcolor = sil_black_matrix, xzoom = -1))
 image tate_comp sepia flipped = LayeredImageProxy("tate_comp", Transform(matrixcolor = SepiaMatrix(), xzoom = -1))
-image tate_comp selectable flipped = LayeredImageProxy("tate_comp", Transform(matrixcolor = sil_select_matrix))
+image tate_comp selectable flipped = LayeredImageProxy("tate_comp", Transform(matrixcolor = shade_select_matrix))
 
 # this section is just for fun mostly. a randomizer!
 init python:

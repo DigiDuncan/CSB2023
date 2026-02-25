@@ -533,7 +533,7 @@ screen _ucn2_selection():
                                 fit ("contain")
 
                             idle i
-                            hover Transform(i, matrixcolor = sil_select_matrix)
+                            hover Transform(i, matrixcolor = shade_select_matrix)
 
                             hover_sound "audio/sfx/sfx_select.ogg"
                             action [
@@ -626,6 +626,7 @@ screen _ucn2_selection():
                 vbox:
                     add Image(rpg_bgm_art):
                         xalign 0.5 yalign 0.5
+                        xysize(512,512)
                         fit("contain")
 
         ###################### Back / forward

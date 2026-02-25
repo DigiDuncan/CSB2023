@@ -242,7 +242,9 @@
         "files":
         [
             "amtrak_baggage",
+            "amtrak_cab",
             "amtrak_coach",
+            "amtrak_coach_1",
             "amtrak_coach_2",
             "amtrak_dining_car",
             "amtrak_dining_day",
@@ -250,6 +252,7 @@
             "amtrak_observation_1",
             "amtrak_sleeper_interior",
             "amtrak_sleeper_open",
+            "amtrak_sleeper_open_bg",
             "amtrak_sleeper_open_fg",
             "amtrak_top",
             "hutchinson_stn_lights",
