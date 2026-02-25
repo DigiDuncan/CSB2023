@@ -520,19 +520,20 @@ screen _ucn2_selection():
                 scrollbars "vertical"
                 mousewheel True
 
-                # TODO: Hover/selected effects + tooltips?
+                # TODO: "Selected" effect
 
                 vpgrid:
                     cols 6
                     xanchor 1.0
                     for i in ucn_bg_list:
-                        button:
+                        imagebutton:
                             xanchor 0.0 yanchor 0.0
-                            xysize (128, 72)
-
-                            add i:
+                            at transform:
                                 xysize (128, 72)
                                 fit ("contain")
+
+                            idle i
+                            hover Transform(i, matrixcolor = sil_select_matrix)
 
                             hover_sound "audio/sfx/sfx_select.ogg"
                             action [

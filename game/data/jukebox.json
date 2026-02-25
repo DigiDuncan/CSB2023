@@ -430,7 +430,7 @@
             "title": "Automatic Love",
             "artist": "Siix0",
             "tags": ["CSBIII: Country"],
-            "album_art": "csbi.png",
+            "album_art": "automatic_love.png",
             "trivia": "Royalty free song :thingking:\nRoyalty free song, Japan :woagh!:"
         },
       "bakamitai" : {
@@ -766,7 +766,7 @@
             "title": "Dragon Castle",
             "artist": "Makai Symphony",
             "tags": ["CSBIII: Fired"],
-            "album_art": "csbi.png",
+            "album_art": "dragon_symphony.png",
             "trivia": "Type of music Dragon would listen to... I think."
         },
         "gold_room" : {
@@ -774,7 +774,7 @@
             "title": "You're At A Ball In The Gold Room",
             "artist": "Nemo's Dreamscapes",
             "tags": ["CSBIII: Fired"],
-            "album_art": "csbi.png",
+            "album_art": "gold_room.png",
             "trivia": "Hotel lobby music hasn't been a thing in decades."
         },
         "sweet_victory" : {
@@ -1174,7 +1174,7 @@
             "title": "Let's Hear My Baby: Spring Remix",
             "artist": "Pakoo",
             "tags": ["CSBDX: After Story", "New In DX"],
-            "album_art": "csbii.png",
+            "album_art": "tracker.png",
             "trivia": "Pakoo's edited MOD of {i}Let's Hear My Baby.{/i}"
         },
         "echoing_spring" : {
@@ -1182,7 +1182,7 @@
             "title": "Echoing: Spring Remix",
             "artist": "Pakoo",
             "tags": ["CSBDX: After Story", "New In DX"],
-            "album_art": "csbii.png",
+            "album_art": "tracker.png",
             "trivia": "Pakoo's edited MOD of {i}Echoing.{/i}"
         },
         "alien_atmosphere" : {
@@ -1230,7 +1230,7 @@
             "title": "Snooping Around As Usual",
             "artist": "Pakoo",
             "tags": ["CSBDX: After Story", "New In DX"],
-            "album_art": "csbii.png",
+            "album_art": "tracker.png",
             "trivia": "Man, these guys are some kind of sneak... kings."
         },
         "interference2" : {
@@ -1270,7 +1270,7 @@
             "title": "Let's Hear My Baby: Christmas Remix",
             "artist": "Pakoo",
             "tags": ["CSBDX: Holiday Special", "New In DX"],
-            "album_art": "csbii.png",
+            "album_art": "tracker.png",
             "trivia": "Pakoo's edited MOD of {i}Let's Hear My Baby.{/i}"
         },
         "snowy" : {
@@ -1470,7 +1470,7 @@
             "title": "SPOT.FASSIMRD",
             "artist": "Fun Value Land",
             "tags": ["CSBDX: Finale", "New In DX"],
-            "album_art": "csbii.png",
+            "album_art": "csbdx.png",
             "trivia": "Pakoo's screwed-up midi of {i}PASSPORT.MID.{/i}"
         },
         "unobtrusive_fun" : {
@@ -1478,7 +1478,7 @@
             "title": "Unobtrusive Fun",
             "artist": "Fun Value Land",
             "tags": ["CSBDX: Finale", "New In DX"],
-            "album_art": "csbii.png",
+            "album_art": "csbdx.png",
             "trivia": "Pakoo's screwed-up remix of {i}Bedroom ~ Day.{/i}"
         },
         "tmwstw" : {

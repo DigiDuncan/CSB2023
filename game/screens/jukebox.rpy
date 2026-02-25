@@ -9,10 +9,6 @@ init python:
         if n not in MUSIC_MAP:
             print(f"WARNING: Track '{n}' not in MUSIC_MAP!")
 
-init:
-    transform jukeboxbuttons:
-        zoom 0.125
-
 screen jukebox():
 
     default current_song_name = None
@@ -108,7 +104,7 @@ screen jukebox_nav():
                                         SetScreenVariable("current_song_name", k),
                                         SetVariable("jukebox_playing", True),
                                         SelectedIf( SetVariable("current_song_name", k) ),
-                                        Play("jukebox", MUSIC_MAP[k]["file"], relative_volume=0.5)
+                                        Play("jukebox", MUSIC_MAP[k]["file"])
                                     ]
 
     textbutton "Return to Extras":
@@ -208,7 +204,8 @@ screen music_screen(selected_track):
 
         if jukebox_playing:
             imagebutton xalign 0.5:
-                at jukeboxbuttons
+                at transform:
+                    zoom 0.125
                 idle "gui/pause.png"
                 hover "gui/pause.png" #TODO: Actually make an image for this - Arc
                 action [
@@ -217,7 +214,8 @@ screen music_screen(selected_track):
                 ]
         else:
             imagebutton xalign 0.5:
-                at jukeboxbuttons
+                at transform:
+                    zoom 0.125
                 idle "gui/play.png"
                 hover "gui/play.png" #TODO: Actually make an image for this - Arc
                 action [
@@ -225,7 +223,7 @@ screen music_screen(selected_track):
                     SetVariable("jukebox_playing", True)
                 ]
 
-        text trivia:
+        text "{size=-12}[trivia]{/size}":
             text_align 0.5
             xalign 0.5
             yalign 0.5
