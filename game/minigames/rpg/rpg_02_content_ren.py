@@ -140,6 +140,13 @@ def confuse_targets(encounter: Encounter, fighter: Fighter, targets: tuple[Fight
             continue
         encounter.apply_effect(Effects.CONFUSION, fighter, target)
 
+@attack_def(AttackType.EFFECT)
+def blind_fighters(encounter: Encounter, fighter: Fighter, targets: tuple[Fighter, ...], duration: int = 1):
+    for target in targets:
+        if target.dead:
+            continue
+        encounter.apply_effect(Effects.BLIND, fighter, target, duration)
+
 @stat_attack_def() # This decides the type based on if mult is >1.0 or not
 def change_stat(encounter: Encounter, fighter: Fighter, targets: tuple[Fighter, ...], stat: CharacterStat, mult: float = 1.0):
     """
@@ -301,6 +308,8 @@ class Attacks:
     TATE_REVERB = Attack("Tate's Reverb", "Make them all remember.", damage_over_time(mult = 0.75, duration = 5), target_count = 0, cooldown = 9, accuracy = 90) # , ex = False
     TATE_ECHOES = Attack("Tate's Echoes", "The past haunts you.", change_stat(stat = CharacterStat.ATTACK, mult = 0.5), targets = TargetType.SELF, cooldown = 11, accuracy = 100) # , ex = False
     TATE_BLAST = Attack("Tate's Blaster", "Make it haunt them, too.", damage_fighters(mult = 4), target_count = 0, cooldown = 11, accuracy = 100) # , ex = False
+    LIGHT_CAST_DMG = Attack("Light Cast DMG", "A strong blast of light that varies in damage.", damage_fighters_range(min_mult = 1, max_mult = 3), cooldown = 3)
+    LIGHT_CAST_EFF = Attack("Light Cast EFF", "A strong blast of light that varies in damage.", blind_fighters, cooldown = 3)
 
     ### Usable attacks
     PUNCH = Attack("Punch", "A simple punch.", damage_fighters())
@@ -312,7 +321,7 @@ class Attacks:
     KICK = ComboAttack("Kick", "A stronger attack, and lowers DEF.", [RAW_KICK, CS_AP_DOWN])
     BULLET_SPRAY = Attack("Bullet Spray", "Shred all enemies with your LMG!", damage_fighters(mult = 1.5), target_count = 0, cooldown = 3, accuracy = 70)
     SLASH = ComboAttack("Slash", "A cutting attack that bleeds out your enemies.", [RAW_SLASH, BLEED], accuracy = 85)
-    LIGHT_CAST = Attack("Light Cast", "A strong blast of light that varies in damage.", damage_fighters_range(min_mult = 1, max_mult = 3), cooldown = 3)
+    LIGHT_CAST = ComboAttack("Light Cast", "A strong blast of light that varies in damage.", [LIGHT_CAST_DMG, LIGHT_CAST_EFF])
     INSIGHT = Attack("Insight", "Lowers enemy's attack by a little.", change_stat(stat = CharacterStat.ATTACK, mult = 0.75), accuracy = 90)
     SHOTGUN = Attack("Shotgun", "Blast your enemies twice with a powerful shotgun blast!", damage_fighters(mult = 2), target_count = 2, cooldown = 3, accuracy = 70)
     ENCOURAGE = Attack("Encourage", "Heal one member with morale!", heal_fighters(), targets = TargetType.ALLY, accuracy = 95)
