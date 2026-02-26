@@ -234,11 +234,10 @@ screen screen_rpg():
                                 if not RPG.encounter.allies[i].infinite:
                                     add "gui/rpg/hp_bar.png" corner1(int(228-(228*(RPG.encounter.allies[i].hit_points/RPG.encounter.allies[i].max_hp))),0) corner2(228,32) xalign 1.0
                                     text str(RPG.encounter.allies[i].hit_points)+"/"+str(RPG.encounter.allies[i].max_hp):
-                                        xalign 1.0
-                                        yalign 0.5
+                                        xalign 1.0 yalign 0.5
                                 else:
                                     add "gui/rpg/hp_bar_inf.png" corner1(0,0) corner2(228,32) xalign 1.0
-                                    # TODO: TATE -- INF SYMBOL
+                                    add "gui/rpg/infinite.png" xalign 1.0 yalign 0.5
                                 add "gui/rpg/hp.png" yalign 0.5 xalign -0.15
                         if RPG.encounter.turn == i:
                             # The attack button
@@ -326,11 +325,10 @@ screen screen_rpg():
                                 if not RPG.encounter.enemies[i].infinite:
                                     add "gui/rpg/hp_bar.png" corner1(int(228-(228*(RPG.encounter.enemies[i].hit_points/RPG.encounter.enemies[i].max_hp))),0) corner2(228,32) xalign 1.0
                                     text str(RPG.encounter.enemies[i].hit_points)+"/"+str(RPG.encounter.enemies[i].max_hp):
-                                        xalign 1.0
-                                        yalign 0.5
+                                        xalign 1.0 yalign 0.5
                                 else:
                                     add "gui/rpg/hp_bar_inf.png" corner1(0,0) corner2(228,32) xalign 1.0
-                                    # TODO: TATE -- INF SYMBOL
+                                    add "gui/rpg/infinite.png" xalign 1.0 yalign 0.5
                                 add "gui/rpg/hp.png" yalign 0.5 xalign -0.15
 
                 # Don't just collapse the space if enemy has been knocked out
