@@ -286,6 +286,9 @@ class Attack:
         if self.cooldown:
             return_string += f", {self.cooldown} turn cooldown"
 
+        if self.accuracy != 100:
+            return_string = return_string + f"({self.accuracy}% accuracy)"
+
         return return_string[0].upper() + return_string[1:]
 
 class ComboAttack:
@@ -342,6 +345,9 @@ class ComboAttack:
 
         if self.cooldown:
             return_string += f", {self.cooldown} turn cooldown"
+
+        if self.accuracy != 100:
+            return_string = return_string + f"({self.accuracy}% accuracy)"
 
         return return_string[0].upper() + return_string[1:]
 
