@@ -42,6 +42,7 @@ random = renpy.random
 # -- CONSTANTS --
 
 CRIT_CHANCE = 5.0 / 100.0
+MISS_CHANCE = 1.0 / 100.0
 DAMAGE_INDICATOR_TIME = 1.0
 
 UNKNOWN_FIELD = Image("gui/rpg/unknown_field_sprite.png")
@@ -163,7 +164,7 @@ class Attack:
             targets: TargetType = TargetType.ENEMY,
             target_count: int = 1,
             cooldown: int = 0,
-            accuracy: int = 80,
+            accuracy: int = 100,
             start_used: bool = False,
             *,
             typ: AttackType | None = None,
@@ -301,7 +302,7 @@ class AttackComponent(Attack):
             targets: TargetType = TargetType.ENEMY,
             target_count: int = 1,
             cooldown: int = 0,
-            accuracy: int = 80,
+            accuracy: int = 100,
             start_used: bool = False,
             *,
             typ: AttackType | None = None,
@@ -962,11 +963,10 @@ class Encounter:
         for effect in fighter.effects:
             effect.apply(self)
 
-    def damage_fighter(self, fighter: Fighter, damage: float, roll_crit: bool = False, ignore_armour: bool = False):
-        # We generally only let the player's fighters roll crit.
+    def damage_fighter(self, fighter: Fighter, damage: float, roll_crit: bool = True, ignore_armour: bool = False):
         if roll_crit and random.random() <= CRIT_CHANCE:
             damage = damage * 1.5
-            self.send_message(f"Critical hit!", fighter)
+            self.send_message("Critical hit!", fighter)
 
         if not ignore_armour:
             fraction = fighter.defense / 100.0
@@ -1163,7 +1163,7 @@ class Encounter:
             if attack is None:
                 continue
             self.signal_attack(f"{fighter.display_name} used {attack.name}!", attack, fighter, targets)
-            hit = random.random() <= (attack.attack.accuracy / 100.0 * fighter.accuracy / 100.0) and not fighter.dead
+            hit = random.random() <= ((attack.attack.accuracy / 100.0) * (fighter.accuracy / 100.0) * (1 - MISS_CHANCE)) and not fighter.dead
 
             if hit:
                 attack.use(self, fighter, targets) # Actually use the fighter's attack so call `damage_fighters`
