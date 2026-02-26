@@ -240,7 +240,8 @@ class Attack:
         if self.type & AttackType.HEAL:
             t_list.append("heal")
         if self.type & AttackType.STEAL:
-            t_list.append(f"{int(self.options["steal_amount"] * 100)}% steal")
+            steal_amount = self.options["steal_amount"] if "steal_amount" in self.options else 0.5
+            t_list.append(f"{int(steal_amount * 100)}% steal")
         if self.type & AttackType.EFFECT:
             duration = f" for {self.options["duration"]} turns" if "duration" in self.options else ""
             match self.func.func.__name__:
