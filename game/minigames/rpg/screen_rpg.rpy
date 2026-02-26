@@ -187,79 +187,83 @@ screen screen_rpg():
                             background "gui/rpg/small_box.png"
                             ysize 105
                             action SetVariable("RPG.encounter.turn", i)
-                        has grid 2 2
-                        xfill True
-                        yfill True
-                        # The Fighter's Icon and Stats
-                        hbox:
-                            align(0.0, 0.0)
-                            ysize 88
-                            spacing 2
-                            # Icon
-                            if RPG.encounter.allies[i].character.portrait:
-                                add RPG.encounter.allies[i].character.portrait
-                            else:
-                                add "gui/rpg/portraits/unknown.png"
-                            # Stats
-                            grid 2 2:
-                                yalign 0.5
-                                xspacing 2
-                                add "gui/rpg/attack.png" yalign 0.5
-                                text str(RPG.encounter.allies[i].attack):
-                                    size 32
-                                    yalign 0.5
-                                add "gui/rpg/defense.png" yalign 0.5
-                                text str(RPG.encounter.allies[i].defense):
-                                    size 32
-                                    yalign 0.5
-                        # The Fighter's name and healthbar
-                        vbox:
-                            align(1.0, 0.0)
-                            hbox:
-                                xalign 1.0
 
-                                # Add effects
-                                for effect in RPG.encounter.allies[i].effects:
-                                    add effect.effect.icon:
-                                        yalign 0.5
-
-                                text RPG.encounter.allies[i].character.display_name:
-                                    xalign 1.0
+                        # Status effects
+                        if len(RPG.encounter.allies[i].effects) > 0:
                             frame:
-                                background None
-                                padding(0,0)
-                                xysize(228, 32)
-                                xalign 1.0
-                                yalign 1.0
-                                if not RPG.encounter.allies[i].infinite:
-                                    add "gui/rpg/hp_bar.png" corner1(int(228-(228*(RPG.encounter.allies[i].hit_points/RPG.encounter.allies[i].max_hp))),0) corner2(228,32) xalign 1.0
-                                    text str(RPG.encounter.allies[i].hit_points)+"/"+str(RPG.encounter.allies[i].max_hp):
-                                        xalign 1.0 yalign 0.5
+                                xanchor 1.0
+                                xpos 1.0 ypos -60
+                                hbox:
+                                    for effect in RPG.encounter.allies[i].effects:
+                                        add effect.effect.icon:
+                                            yalign 1.0
+                        grid 2 2:
+                            xfill True
+                            yfill True
+                            # The Fighter's Icon and Stats
+                            hbox:
+                                align(0.0, 0.0)
+                                ysize 88
+                                spacing 2
+                                # Icon
+                                if RPG.encounter.allies[i].character.portrait:
+                                    add RPG.encounter.allies[i].character.portrait
                                 else:
-                                    add "gui/rpg/hp_bar_inf.png" corner1(0,0) corner2(228,32) xalign 1.0
-                                    add "gui/rpg/infinite.png" xalign 1.0 yalign 0.5
-                                add "gui/rpg/hp.png" yalign 0.5 xalign -0.15
-                        if RPG.encounter.turn == i:
-                            # The attack button
-                            imagebutton:
-                                align(0.0, 1.0)
-                                idle "gui/rpg/attack_button.png"
-                                hover "selectable:gui/rpg/attack_button.png"
-                                hover_sound "audio/sfx/sfx_select.ogg"
-                                action [
-                                    Play("sound", "audio/sfx/sfx_valid.ogg"),
-                                    Notify("Attack pressed on fighter"+str(i+1)+"!")
-                                ]
-                            # The defend button
-                            imagebutton:
-                                align(1.0, 1.0)
-                                idle "gui/rpg/defend_button.png"
-                                hover "selectable:gui/rpg/defend_button.png"
-                                hover_sound "audio/sfx/sfx_select.ogg"
-                                action [
-                                    Play("sound", "audio/sfx/sfx_valid.ogg"),
-                                    Notify("Defend pressed on fighter"+str(i+1)+"!")
-                                ]
+                                    add "gui/rpg/portraits/unknown.png"
+                                # Stats
+                                grid 2 2:
+                                    yalign 0.5
+                                    xspacing 2
+                                    add "gui/rpg/attack.png" yalign 0.5
+                                    text str(RPG.encounter.allies[i].attack):
+                                        size 32
+                                        yalign 0.5
+                                    add "gui/rpg/defense.png" yalign 0.5
+                                    text str(RPG.encounter.allies[i].defense):
+                                        size 32
+                                        yalign 0.5
+                            # The Fighter's name and healthbar
+                            vbox:
+                                align(1.0, 0.0)
+                                hbox:
+                                    xalign 1.0
+                                    text RPG.encounter.allies[i].character.display_name:
+                                        xalign 1.0
+                                frame:
+                                    background None
+                                    padding(0,0)
+                                    xysize(228, 32)
+                                    xalign 1.0
+                                    yalign 1.0
+                                    if not RPG.encounter.allies[i].infinite:
+                                        add "gui/rpg/hp_bar.png" corner1(int(228-(228*(RPG.encounter.allies[i].hit_points/RPG.encounter.allies[i].max_hp))),0) corner2(228,32) xalign 1.0
+                                        text str(RPG.encounter.allies[i].hit_points)+"/"+str(RPG.encounter.allies[i].max_hp):
+                                            xalign 1.0 yalign 0.5
+                                    else:
+                                        add "gui/rpg/hp_bar_inf.png" corner1(0,0) corner2(228,32) xalign 1.0
+                                        add "gui/rpg/infinite.png" xalign 1.0 yalign 0.5
+                                    add "gui/rpg/hp.png" yalign 0.5 xalign -0.15
+                            if RPG.encounter.turn == i:
+                                # The attack button
+                                imagebutton:
+                                    align(0.0, 1.0)
+                                    idle "gui/rpg/attack_button.png"
+                                    hover "selectable:gui/rpg/attack_button.png"
+                                    hover_sound "audio/sfx/sfx_select.ogg"
+                                    action [
+                                        Play("sound", "audio/sfx/sfx_valid.ogg"),
+                                        Notify("Attack pressed on fighter"+str(i+1)+"!")
+                                    ]
+                                # The defend button
+                                imagebutton:
+                                    align(1.0, 1.0)
+                                    idle "gui/rpg/defend_button.png"
+                                    hover "selectable:gui/rpg/defend_button.png"
+                                    hover_sound "audio/sfx/sfx_select.ogg"
+                                    action [
+                                        Play("sound", "audio/sfx/sfx_valid.ogg"),
+                                        Notify("Defend pressed on fighter"+str(i+1)+"!")
+                                    ]
                 # Don't just collapse the space if ally has been knocked out
                 else:
                     add Null(489,88):
@@ -278,58 +282,61 @@ screen screen_rpg():
                         xsize 475 ysize 105
                         background "gui/rpg/small_box.png"
 
-                        has grid 2 2
-                        xfill True
-                        yfill True
-                        # The Fighter's Icon and Stats
-                        hbox:
-                            align(0.0, 0.0)
-                            ysize 88
-                            spacing 2
-                            # Icon
-                            if RPG.encounter.enemies[i].character.portrait:
-                                add RPG.encounter.enemies[i].character.portrait
-                            else:
-                                add "gui/rpg/portraits/unknown.png"
-                            # Stats
-                            grid 2 2:
-                                yalign 0.5
-                                xspacing 2
-                                add "gui/rpg/attack.png" yalign 0.5
-                                text str(RPG.encounter.enemies[i].attack):
-                                    size 32
-                                    yalign 0.5
-                                add "gui/rpg/defense.png" yalign 0.5
-                                text str(RPG.encounter.enemies[i].defense):
-                                    size 32
-                                    yalign 0.5
-                        # The Fighter's name and healthbar
-                        vbox:
-                            align(1.0, 0.0)
-                            hbox:
-                                xalign 1.0
-
-                                # Add effects
-                                for effect in RPG.encounter.enemies[i].effects:
-                                    add effect.effect.icon:
-                                        yalign 0.5
-
-                                text RPG.encounter.enemies[i].character.display_name:
-                                    xalign 1.0
+                        # Status effects
+                        if len(RPG.encounter.enemies[i].effects) > 0:
                             frame:
-                                background None
-                                padding(0,0)
-                                xysize(228, 32)
-                                xalign 1.0
-                                yalign 1.0
-                                if not RPG.encounter.enemies[i].infinite:
-                                    add "gui/rpg/hp_bar.png" corner1(int(228-(228*(RPG.encounter.enemies[i].hit_points/RPG.encounter.enemies[i].max_hp))),0) corner2(228,32) xalign 1.0
-                                    text str(RPG.encounter.enemies[i].hit_points)+"/"+str(RPG.encounter.enemies[i].max_hp):
-                                        xalign 1.0 yalign 0.5
+                                xanchor 1.0
+                                xpos 1.0 ypos 103
+                                hbox:
+                                    for effect in RPG.encounter.enemies[i].effects:
+                                        add effect.effect.icon:
+                                            yalign 1.0
+                        grid 2 2:
+                            xfill True
+                            yfill True
+                            # The Fighter's Icon and Stats
+                            hbox:
+                                align(0.0, 0.0)
+                                ysize 88
+                                spacing 2
+                                # Icon
+                                if RPG.encounter.enemies[i].character.portrait:
+                                    add RPG.encounter.enemies[i].character.portrait
                                 else:
-                                    add "gui/rpg/hp_bar_inf.png" corner1(0,0) corner2(228,32) xalign 1.0
-                                    add "gui/rpg/infinite.png" xalign 1.0 yalign 0.5
-                                add "gui/rpg/hp.png" yalign 0.5 xalign -0.15
+                                    add "gui/rpg/portraits/unknown.png"
+                                # Stats
+                                grid 2 2:
+                                    yalign 0.5
+                                    xspacing 2
+                                    add "gui/rpg/attack.png" yalign 0.5
+                                    text str(RPG.encounter.enemies[i].attack):
+                                        size 32
+                                        yalign 0.5
+                                    add "gui/rpg/defense.png" yalign 0.5
+                                    text str(RPG.encounter.enemies[i].defense):
+                                        size 32
+                                        yalign 0.5
+                            # The Fighter's name and healthbar
+                            vbox:
+                                align(1.0, 0.0)
+                                hbox:
+                                    xalign 1.0
+                                    text RPG.encounter.enemies[i].character.display_name:
+                                        xalign 1.0
+                                frame:
+                                    background None
+                                    padding(0,0)
+                                    xysize(228, 32)
+                                    xalign 1.0
+                                    yalign 1.0
+                                    if not RPG.encounter.enemies[i].infinite:
+                                        add "gui/rpg/hp_bar.png" corner1(int(228-(228*(RPG.encounter.enemies[i].hit_points/RPG.encounter.enemies[i].max_hp))),0) corner2(228,32) xalign 1.0
+                                        text str(RPG.encounter.enemies[i].hit_points)+"/"+str(RPG.encounter.enemies[i].max_hp):
+                                            xalign 1.0 yalign 0.5
+                                    else:
+                                        add "gui/rpg/hp_bar_inf.png" corner1(0,0) corner2(228,32) xalign 1.0
+                                        add "gui/rpg/infinite.png" xalign 1.0 yalign 0.5
+                                    add "gui/rpg/hp.png" yalign 0.5 xalign -0.15
 
                 # Don't just collapse the space if enemy has been knocked out
                 else:
