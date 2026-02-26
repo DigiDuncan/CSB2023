@@ -232,7 +232,7 @@ class Effects:
     # Intent: Take damage over x turns.
     BLEED = Effect(
         name="Bleed",
-        description="Bleed them dry!",
+        description="This fighter will take damage over time.",
         positive=False,
         icon="/gui/rpg/status/bleed.png",
         duration=0,
@@ -243,67 +243,69 @@ class Effects:
     # Intent: Make fighter very inaccurate
     BLIND = Effect(
         name="Blindness",
-        description="Blinded by the lights!",
+        description="This fighter can't see. Accuracy will be drastically reduced.",
         positive=False,
         icon="/gui/rpg/status/blindness.png",
         duration=0,
-        apply=apply_status_effect(stat=CharacterStat.ACCURACY, amount=0.25, scale=True),
-        update="{target} can't see!",
+        apply="{target} can't see!",
+        update=apply_status_effect(stat=CharacterStat.ACCURACY, amount=0.25, scale=True),
         resolved="{target} can see again!"
     )
     # Intent: We should update this... make fighter both less accurate AND likely to hit the wrong target, including themself!
     CONFUSION = Effect(
         name="Confusion",
-        description="Confuse and befuddle!",
+        description="This fighter is confused and may attack the wrong target.",
         positive=False,
         icon="/gui/rpg/status/confusion.png",
         duration=0,
-        apply=apply_status_effect(stat=CharacterStat.ACCURACY, amount=0.5, scale=True),
-        update="{target} is confused!",
+        apply="{target} is confused!",
+        update=apply_status_effect(stat=CharacterStat.ACCURACY, amount=0.5, scale=True),
         resolved=resolved_chance("{target} is no longer confused!", chance=0.5)
     )
     # Intent: Make fighter less vulnerable to damage, but unable to attack this turn.
     DEFEND = Effect(
         name="Defending",
-        description="Not today!",
+        description="This fighter is defending. They will take less damage, but cannot attack this turn.",
         positive=True,
         icon="/gui/rpg/status/defending.png",
         duration=1,
-        apply=apply_status_effect(stat=CharacterStat.DEFENSE, amount=1.5, scale=True),
-        update="{target} is defending!"
+        apply="{target} is defending!"
+        update=apply_status_effect(stat=CharacterStat.DEFENSE, amount=1.5, scale=True),
+
     )
     # Intent: Make fighter extra vulnerable while asleep and skip their next turn.
     SLEEP = Effect(
         name="Sleep",
-        description="Wake up!",
+        description="This fighter is asleep. They are vulnerable to attack, and can't move until next turn.",
         positive=False,
         icon="/gui/rpg/status/sleep.png",
         duration=1,
-        apply=apply_status_effect(stat=CharacterStat.DEFENSE, amount=0.5, scale=True),
-        update="{target} fell asleep!",
+        apply="{target} fell asleep!",
+        update=apply_status_effect(stat=CharacterStat.DEFENSE, amount=0.5, scale=True),
         resolved="{target} woke up!"
     )
     # Intent: Make fighter unable to do anything at all for x turns.
     STUN = Effect(
         name="Stun",
-        description="Get it together!",
+        description="This fighter is stunned. They cannot take any action right now.",
         positive=False,
         icon="/gui/rpg/status/stun.png",
         duration=0,
-        apply=apply_status_effect(stat=CharacterStat.DEFENSE, amount=1.0, scale=True),
-        update="{target} can't move!",
+        apply="{target} can't move!",
+        update=apply_status_effect(stat=CharacterStat.DEFENSE, amount=1.0, scale=True),
         resolved="{target} has recovered!"
     )
 
 
 class Attacks:
 
-
     ### Effects / Defense
-
     DEFEND = Attack("Defend", "Dragon doesn't know how to write these", defend_targets(), targets=TargetType.SELF, accuracy=100)
-    BLEED = Attack("Bleed", "Bleed them dry!", damage_over_time(mult = 0.25)) # , ex = False
-    BLIND = Attack("Blindness", "Blinded by the lights!", apply_status_effect(stat=CharacterStat.ACCURACY, amount=0.25, scale=True) ) # , ex = False
+
+    BLEED = Attack("Make Bleed", "", damage_over_time(mult = 0.25)) # , ex = False
+    BLIND = Attack("Make Blind", "", blind_fighters() ) # , ex = False
+    SLEEP = Attack("Put To Sleep", "", sleep_fighters() ) # , ex = False
+    STUN = Attack("Stun", "", stun_fighters() ) # , ex = False
 
     ### Combo components
     RAW_CHOP = Attack("Raw Chop", "Hiya!", damage_fighters()) # , ex = False
@@ -323,19 +325,15 @@ class Attacks:
     TATE_ECHOES = Attack("Tate's Echoes", "The past haunts you.", change_stat(stat = CharacterStat.ATTACK, mult = 0.5), targets = TargetType.SELF, cooldown = 11, accuracy = 100) # , ex = False
     TATE_BLAST = Attack("Tate's Blaster", "Make it haunt them, too.", damage_fighters(mult = 4), target_count = 0, cooldown = 11, accuracy = 100) # , ex = False
     LIGHT_CAST_DMG = Attack("Light Cast DMG", "A strong blast of light that varies in damage.", damage_fighters_range(min_mult = 1, max_mult = 3), cooldown = 3)
-    LIGHT_CAST_EFF = Attack("Light Cast EFF", "A strong blast of light that varies in damage.", blind_fighters, cooldown = 3)
+    LIGHT_CAST_EFF = Attack("Light Cast EFF", "A strong blast of light that varies in damage.", blind_fighters(), cooldown = 3)
 
-    ### Usable attacks
+    ### Usable attacks (Single)
     PUNCH = Attack("Punch", "A simple punch.", damage_fighters())
-    CHOP = ComboAttack("Chop", "Hit an enemy and bring their DEF down.", [RAW_CHOP, CS_AP_DOWN])
     YTP_MAGIC = Attack("YTP Magic", "Channel the power of YTP!", damage_fighters(mult = 20), cooldown = 10, accuracy = 100, start_used = True)
     YTP_MAGIC_NOCOOL = Attack("YTP Magic", "Let no one stand in your way.", damage_fighters(mult = 20), accuracy = 100) # , ex = False
     YTP_HEAL = Attack("Attack.HEAL", "No matter the cost.", heal_fighters(mult = 3), target_count = 0, targets = TargetType.ALLY, cooldown = 1, accuracy = 100)
     FUN_VALUE = Attack("Fun Value", "A Dev's favorite attack.", damage_fighters(mult = 10), accuracy = 100,)
-    KICK = ComboAttack("Kick", "A stronger attack, and lowers DEF.", [RAW_KICK, CS_AP_DOWN])
     BULLET_SPRAY = Attack("Bullet Spray", "Shred all enemies with your LMG!", damage_fighters(mult = 1.5), target_count = 0, cooldown = 3, accuracy = 70)
-    SLASH = ComboAttack("Slash", "A cutting attack that bleeds out your enemies.", [RAW_SLASH, BLEED], accuracy = 85)
-    LIGHT_CAST = ComboAttack("Light Cast", "A strong blast of light that varies in damage.", [LIGHT_CAST_DMG, LIGHT_CAST_EFF])
     INSIGHT = Attack("Insight", "Lowers enemy's attack by a little.", change_stat(stat = CharacterStat.ATTACK, mult = 0.75), accuracy = 90)
     SHOTGUN = Attack("Shotgun", "Blast your enemies twice with a powerful shotgun blast!", damage_fighters(mult = 2), target_count = 2, cooldown = 3, accuracy = 70)
     ENCOURAGE = Attack("Encourage", "Heal one member with morale!", heal_fighters(), targets = TargetType.ALLY, accuracy = 95)
@@ -345,14 +343,9 @@ class Attacks:
     DAMAGE_SCREM = Attack("Damage Screm", "Yell as loud as possible to deafen your enemies!", damage_fighters(mult = 0.5), target_count = 0, accuracy = 75)
     SNACK_TIME = Attack("Snack Time", "Heal your team with the power of snacks!", heal_fighters(), target_count = 0, targets = TargetType.ALLY, cooldown = 3, accuracy = 95)
     ELDRITCH_BLAST = Attack("Eldritch Blast", "An unholy blast that does quite a bit of damage to an enemy.", damage_fighters(mult = 1.5))
-    RAINBOW_VOMIT = ComboAttack("Rainbow Vomit", "Confuse and damage your enemies with colorful nonsense!", [RAINBOW, VOMIT], accuracy = 75)
     ROBOPUNCH = Attack("RoboPunch", "A strong punch.", damage_fighters(mult = 1.75))
     HOLOSHIELD = Attack("HoloShield", "Boosts your team's defense by a bit.", change_stat(stat = CharacterStat.DEFENSE, mult = 1.75), target_count = 0, targets = TargetType.ALLY, cooldown = 3, accuracy = 90)
     MUSIC_BOOST = Attack("Music Boost", "Boost one's defense by a bit.", change_stat(stat = CharacterStat.DEFENSE, mult = 1.5), target_count = 1, targets = TargetType.SELF)
-    RAVE = ComboAttack("Rave", "Blast your enemies' eardrums! (Damages enemies while lowering their defense.)", [RAVE_DEF, RAVE_OFF], accuracy = 75)
-    SAMPLE_BLAST = ComboAttack("Sample Blast", "Blast your enemies with music! Varies in damage.", [SAMPLE_SPAM, SOUND_BLAST])
-    GNOMED = Attack("Gnomed", "Confuse everyone by gnoming them!", confuse_targets(), target_count = 0, cooldown = 3, accuracy = 70)
-    NUDGE = Attack("Nudge", "Does either very little or massive damage.", damage_fighters_range(min_mult = 0.1, max_mult = 10), accuracy = 85)
     DRAW_IN = Attack("Draw in", "Either lowers the enemies stats, or increases your friend's stats!", draw_in(mult = 2), TargetType.ALL, target_count=0, accuracy = 85)
     CONFIDENCE = Attack("Confidence", "Raise your team's attack!", change_stat(stat = CharacterStat.ATTACK, mult = 1.25), target_count = 0, targets = TargetType.ALLY, accuracy = 90)
     PEP_TALK = Attack("Pep Talk", "Raise your team's defense!", change_stat(stat = CharacterStat.DEFENSE, mult = 1.25), target_count = 0, targets = TargetType.ALLY, accuracy = 90)
@@ -362,16 +355,11 @@ class Attacks:
     HEAL_EX = Attack("Heal EX", "Lots of healing.", heal_fighters(mult = 10), target_count = 0, targets = TargetType.ALLY, accuracy = 100)
     AUGMENT = Attack("Awesome Augment", "Fire a laser! Fire a laser!", damage_fighters(mult = 15), target_count = 0, cooldown = 5, accuracy = 100) # , ex = False
     REVERB_RECALL = Attack("Reverb Recall", "Channel your pain over 5 turns. Also damages the user.", damage_sacrifice(harm_mult = 0.75, bleed_mult = 0.75, duration = 5), cooldown = 9, accuracy = 90) # , ex = False
-    # TODO: we really need the ability to select different things for each part of the combo
-    ECHO_BLAST = ComboAttack("Echo Blast", "Make them feel the pain of the past, at the cost of your ATK.", [TATE_BLAST, TATE_ECHOES], cooldown = 11, accuracy = 100) # , ex = False
     GENERGY = Attack("Genergy", "Sip some refreshing Genergy.", heal_fighters(mult = 2.36), targets = TargetType.ALLY, accuracy = 100) # , ex = False
-
-    # UCN
     STOMP = Attack("Stomp", "Send an earthquake to the enemies!", damage_fighters(mult = 0.75), target_count = 0) # , ex = False
     POKE = Attack("Poke", "A mega poke.", damage_fighters(mult = 2.5), accuracy = 90) # , ex = False
     SWORD = Attack("Sword", "The edge of a sharp thing.", damage_fighters()) # , ex = False
     SWORD_AP = Attack("Sword (DEF Down)", "The edge of a sharp thing, more.", change_stat(stat = CharacterStat.DEFENSE, mult = 0.75)) # , ex = False
-    SWORD_SLASH = ComboAttack("Sword Slash", "Hit an enemy, and take a chip out of their armor.", [SWORD, SWORD_AP]) # , ex = False
     FLAMETHROWER = Attack("Flamethrower", "Spray all your enemies with burning fuel!", damage_over_time(mult = 0.5, duration = 3), target_count = 0, cooldown = 3, accuracy = 70) # , ex = False,
     CHOCOLATE_CAKE = Attack("Chocolate Cake", "Heal a party member with loads to eat!", heal_fighters(), targets = TargetType.ALLY, accuracy = 95) # , ex = False
     CONFUSING_STORY = Attack("Confusing Story", "Tell a puzzling poem.", confuse_targets()) # , ex = False
@@ -381,21 +369,36 @@ class Attacks:
     SPIKE_BOMB = Attack("Spike Bomb", "Release spikes to all enemies!", damage_fighters(mult = 1.5), target_count = 0, cooldown = 3, accuracy = 75) # , ex = False
     SHOT = Attack("Shot", "I'd like to see you outrun bullet.", damage_fighters(mult = 1.5)) # , ex = False
     SHOT_AP = Attack("Shot (DEF Down)", "Kevlar destroyed.", change_stat(stat = CharacterStat.DEFENSE, mult = 0.75)) # , ex = False
-    PISTOL = ComboAttack("Pistol", "A sharp shot to the chest.", [SHOT, SHOT_AP]) # , ex = False
     ALL_OVER_AGAIN = Attack("All Over Again", "Ditto.", ai_mimic()) # , ex = False
     HEAVY_PUNCH = Attack("Heavy Punch", "A quick blow.", damage_fighters(mult = 1.75), accuracy = 75) # , ex = False
     SOTH = Attack("Shit On The House", "I'm going to... take a shit on the house.", damage_fighters(mult = 2), target_count = 0, cooldown = 3, accuracy = 65) # , ex = False
     ONE_HUNDRED = Attack("100% Unsatisfied", "Yelp reviews coming in...", change_stat(stat = CharacterStat.ATTACK, mult = 0.8), target_count = 0, accuracy = 95) # , ex = False
     ICE_CREAM = Attack("Ice Cream", "Bing chilling!", heal_fighters(mult = 1.5), target_count = 0, targets = TargetType.ALLY, accuracy = 90, cooldown = 3) # , ex = False
-    RAINBOW_VOMIT_NOCOOL = ComboAttack("Rainbow Vomit", "Why are you like this?", [RAINBOW_NOCOOL, VOMIT_NOCOOL], accuracy = 75) # , ex = False
-    KARATE_CHOP = ComboAttack("Karate Chop", "Hit an enemy and bring their DEF down.", [RAW_CHOP, SWORD_AP]) # , ex = False
     DRONE_STRIKE = Attack("Drone Strike", "O Bomb a.", damage_fighters(mult = 2.5), target_count = 0, cooldown = 3, accuracy = 85) # , ex = False
     COIN_BARRAGE = Attack("Coin Barrage", "Pelt your foes with change!", damage_fighters_range(min_mult = 0.75, max_mult = 2), accuracy = 60) # , ex = False
     CART_SMASH = Attack("Cart Smash", "Ram into someone with a shopping cart.", damage_fighters(mult = 5), accuracy = 95, cooldown = 3) # , ex = False
     BITE = Attack("Bite", "Chomp!", damage_fighters_range(min_mult = 5, max_mult = 10), accuracy = 5) # , ex = False
+    NANOMACHINES = Attack("Nanomachines", "Nanomachines, son.", damage_fighters(mult = 1.5), target_count = 8, accuracy = 95, cooldown = 7) # , ex = False
+
+    ### Usable attacks (Combo)
+    CHOP = ComboAttack("Chop", "Hit an enemy and bring their DEF down.", [RAW_CHOP, CS_AP_DOWN])
+    KICK = ComboAttack("Kick", "A stronger attack, and lowers DEF.", [RAW_KICK, CS_AP_DOWN])
+    SLASH = ComboAttack("Slash", "A cutting attack that bleeds out your enemies.", [RAW_SLASH, BLEED], accuracy = 85)
+    LIGHT_CAST = ComboAttack("Light Cast", "A strong blast of light that varies in damage.", [LIGHT_CAST_DMG, LIGHT_CAST_EFF])
+    RAINBOW_VOMIT = ComboAttack("Rainbow Vomit", "Confuse and damage your enemies with colorful nonsense!", [RAINBOW, VOMIT], accuracy = 75)
+    RAVE = ComboAttack("Rave", "Blast your enemies' eardrums! (Damages enemies while lowering their defense.)", [RAVE_DEF, RAVE_OFF], accuracy = 75)
+    SAMPLE_BLAST = ComboAttack("Sample Blast", "Blast your enemies with music! Varies in damage.", [SAMPLE_SPAM, SOUND_BLAST])
+    GNOMED = Attack("Gnomed", "Confuse everyone by gnoming them!", confuse_targets(), target_count = 0, cooldown = 3, accuracy = 70)
+    NUDGE = Attack("Nudge", "Does either very little or massive damage.", damage_fighters_range(min_mult = 0.1, max_mult = 10), accuracy = 85)
+    # TODO: we really need the ability to select different things for each part of the combo
+    ECHO_BLAST = ComboAttack("Echo Blast", "Make them feel the pain of the past, at the cost of your ATK.", [TATE_BLAST, TATE_ECHOES], cooldown = 11, accuracy = 100) # , ex = False
+    SWORD_SLASH = ComboAttack("Sword Slash", "Hit an enemy, and take a chip out of their armor.", [SWORD, SWORD_AP]) # , ex = False
+    PISTOL = ComboAttack("Pistol", "A sharp shot to the chest.", [SHOT, SHOT_AP]) # , ex = False
+    RAINBOW_VOMIT_NOCOOL = ComboAttack("Rainbow Vomit", "Why are you like this?", [RAINBOW_NOCOOL, VOMIT_NOCOOL], accuracy = 75) # , ex = False
+    KARATE_CHOP = ComboAttack("Karate Chop", "Hit an enemy and bring their DEF down.", [RAW_CHOP, SWORD_AP]) # , ex = False
     SHARKNADO = ComboAttack("Sharknado", "A confusing vortex of sharks.", [BITE, BLEED], cooldown = 5, accuracy = 80) # , ex = False
     LOBBYING = ComboAttack("Lobbying", "Lobby like it's your hobby!", [ENCOURAGE, CS_AP_DOWN]) # , ex = False
-    NANOMACHINES = Attack("Nanomachines", "Nanomachines, son.", damage_fighters(mult = 1.5), target_count = 8, accuracy = 95, cooldown = 7) # , ex = False
+
 
     @classproperty
     def names(cls) -> list[str]:
