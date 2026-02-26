@@ -147,6 +147,20 @@ def blind_fighters(encounter: Encounter, fighter: Fighter, targets: tuple[Fighte
             continue
         encounter.apply_effect(Effects.BLIND, fighter, target, duration)
 
+@attack_def(AttackType.EFFECT)
+def sleep_fighters(encounter: Encounter, fighter: Fighter, targets: tuple[Fighter, ...], duration: int = 1):
+    for target in targets:
+        if target.dead:
+            continue
+        encounter.apply_effect(Effects.SLEEP, fighter, target, duration)
+
+@attack_def(AttackType.EFFECT)
+def stun_fighters(encounter: Encounter, fighter: Fighter, targets: tuple[Fighter, ...], duration: int = 1):
+    for target in targets:
+        if target.dead:
+            continue
+        encounter.apply_effect(Effects.STUN, fighter, target, duration)
+
 @stat_attack_def() # This decides the type based on if mult is >1.0 or not
 def change_stat(encounter: Encounter, fighter: Fighter, targets: tuple[Fighter, ...], stat: CharacterStat, mult: float = 1.0):
     """
