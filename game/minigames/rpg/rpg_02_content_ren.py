@@ -9,7 +9,7 @@ from renpy.display.image import Image
 
 from rpg_01_engine_ren import Encounter, Fighter, Character, CharacterStat, apply_def, update_def, \
     resolved_def, attack_def, AttackType, stat_attack_def, AI, \
-    Attack, ComboAttack, TargetType, FighterAttack, classproperty
+    Attack, ComboAttack, TargetType, FighterAttack, classproperty, Effect, AttackComponent
 
 """renpy
 rpy python annotations
@@ -366,81 +366,81 @@ class Attacks:
     BITE = ComboAttack("Bite", "Chomp!",
         [
             BLEED,
-            Attack("", "", damage_fighters_range(min_mult = 1, max_mult = 3))
+            AttackComponent(damage_fighters_range(min_mult = 1, max_mult = 3))
         ],
         accuracy = 95)
     CHOP = ComboAttack("Chop", "Hit an enemy and bring their DEF down.",
         [
             BASIC_HIT,
-            Attack("","",change_stat(stat = CharacterStat.DEFENSE, mult = 0.75))
+            AttackComponent(change_stat(stat = CharacterStat.DEFENSE, mult = 0.75))
         ])
     ECHO_BLAST = ComboAttack("Echo Blast", "Make them feel the pain of the past, at the cost of your ATK.",
         [
-            Attack("","",damage_fighters(mult = 4), targets = TargetType.ENEMY),
-            Attack("","",change_stat(stat = CharacterStat.ATTACK, mult = 0.5), targets = TargetType.SELF)
+            AttackComponent(damage_fighters(mult = 4), targets = TargetType.ENEMY),
+            AttackComponent(change_stat(stat = CharacterStat.ATTACK, mult = 0.5), targets = TargetType.SELF)
         ],
         target_count = 0, cooldown = 11, accuracy = 100)
     KARATE_CHOP = ComboAttack("Karate Chop", "Hit an enemy and bring their DEF down.",
         [
             BASIC_HIT,
-            Attack("","",change_stat(stat = CharacterStat.DEFENSE, mult = 0.75))
+            AttackComponent(change_stat(stat = CharacterStat.DEFENSE, mult = 0.75))
         ])
     KICK = ComboAttack("Kick", "A stronger attack, and lowers DEF.",
         [
-            Attack("","",damage_fighters(mult = 2)),
-            Attack("","",change_stat(stat = CharacterStat.DEFENSE, mult = 0.75))
+            AttackComponent(damage_fighters(mult = 2)),
+            AttackComponent(change_stat(stat = CharacterStat.DEFENSE, mult = 0.75))
         ])
     LIGHT_CAST = ComboAttack("Light Cast", "A strong blast of light that varies in damage.",
         [
             BLIND,
-            Attack("","", damage_fighters_range(min_mult = 1, max_mult = 3))
+            AttackComponent(damage_fighters_range(min_mult = 1, max_mult = 3))
         ],
         cooldown = 3)
     LOBBYING = ComboAttack("Lobbying", "Lobby like it's your hobby!",
         [
             ENCOURAGE,
-            Attack("","",change_stat(stat = CharacterStat.DEFENSE, mult = 0.75))
+            AttackComponent(change_stat(stat = CharacterStat.DEFENSE, mult = 0.75))
         ])
     PISTOL = ComboAttack("Pistol", "A sharp shot to the chest.",
         [
-            Attack("", "", change_stat(stat = CharacterStat.DEFENSE, mult = 0.75)),
-            Attack("", "", damage_fighters(mult = 1.5))
+            AttackComponent(change_stat(stat = CharacterStat.DEFENSE, mult = 0.75)),
+            AttackComponent(damage_fighters(mult = 1.5))
         ])
     RAINBOW_VOMIT = ComboAttack("Rainbow Vomit", "Confuse and damage your enemies with colorful nonsense!",
         [
             CONFUSE,
-            Attack("", "", damage_over_time(duration = 3))
+            AttackComponent(damage_over_time(duration = 3))
         ],
         cooldown = 3, accuracy = 75)
     RAINBOW_VOMIT_NOCOOL = ComboAttack("Rainbow Vomit", "Why are you like this?",
         [
             CONFUSE,
-            Attack("", "", damage_over_time(duration = 3))
+            AttackComponent(damage_over_time(duration = 3))
         ],
         accuracy = 75)
     RAVE = ComboAttack("Rave", "Blast your enemies' eardrums! (Damages enemies while lowering their defense.)",
     [
-        Attack("", "", change_stat(stat = CharacterStat.DEFENSE, mult = 0.5)),
-        Attack("", "", damage_fighters(mult = 0.5))
+        AttackComponent(change_stat(stat = CharacterStat.DEFENSE, mult = 0.5)),
+        AttackComponent(damage_fighters(mult = 0.5))
     ],
     target_count = 0, cooldown = 3, accuracy = 75)
     REVERB_RECALL = ComboAttack("Reverb Recall", "Channel your pain over 5 turns. Also damages the user.",
     [
-        Attack("","",damage_recoil(harm_mult = 0.75, bleed_mult = 0.75, duration = 5)),
-        #Attack("","",damage_over_time(mult = 0.25), TargetType.SELF),
-        Attack("","",damage_over_time(bleed_mult = 0.75, duration = 5), TargetType.ENEMY, target_count = 0),
+        AttackComponent(damage_recoil(harm_mult = 0.75, bleed_mult = 0.75, duration = 5)),
+        #AttackComponent(damage_over_time(mult = 0.25), TargetType.SELF),
+        AttackComponent(damage_over_time(bleed_mult = 0.75, duration = 5), TargetType.ENEMY, target_count = 0),
     ],
     cooldown = 9, accuracy = 90)
     SAMPLE_BLAST = ComboAttack("Sample Blast", "Blast your enemies with music! Varies in damage.",
         [
             BASIC_HIT,
-            Attack("", "", damage_fighters_range(min_mult = 1, max_mult = 3)),
+            AttackComponent(damage_fighters_range(min_mult = 1, max_mult = 3)),
         ],
         target_count = 0)
     SHARKNADO = ComboAttack("Sharknado", "A confusing vortex of sharks.",
         [
             BLEED,
-            Attack("", "", damage_fighters_range(min_mult = 5, max_mult = 10))
+            AttackComponent(damage_fighters_range(min_mult = 5, max_mult = 10))
         ],
         target_count = 0, cooldown = 5, accuracy = 80)
     SLASH = ComboAttack("Slash", "A cutting attack that bleeds out your enemies.",
@@ -452,7 +452,7 @@ class Attacks:
     SWORD_SLASH = ComboAttack("Sword Slash", "Hit an enemy and take a chip out of their armor.",
         [
             BASIC_HIT,
-            Attack("","",change_stat(stat = CharacterStat.DEFENSE, mult = 0.75))
+            AttackComponent(change_stat(stat = CharacterStat.DEFENSE, mult = 0.75))
         ])
 
     @classproperty

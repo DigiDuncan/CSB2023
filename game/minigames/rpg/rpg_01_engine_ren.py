@@ -291,6 +291,26 @@ class Attack:
 
         return return_string[0].upper() + return_string[1:]
 
+class AttackComponent(Attack):
+    """
+    A form of Attack that is not to be used outside of constructing a ComboAttack.
+    """
+    def __init__(
+            self,
+            func: AttackFunc,
+            targets: TargetType = TargetType.ENEMY,
+            target_count: int = 1,
+            cooldown: int = 0,
+            accuracy: int = 80,
+            start_used: bool = False,
+            *,
+            typ: AttackType | None = None,
+        ):
+        args = ', '.join([f"{k}={v}" for k, v in func.options.items()])
+        name = f"_{func.func.__name__}({args})"
+        description = "{color=#f00}If you're seeing this, there's a problem!{/color}"
+        super().__init__(name, description, func, targets, target_count, cooldown, accuracy, start_used, typ = typ)
+
 class ComboAttack:
     """
     A ComboAttack has multiple attacks
