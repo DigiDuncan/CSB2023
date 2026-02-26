@@ -1369,6 +1369,21 @@
         "quote": "Have some fun with Miku!",
         "bio": "In his younger years, Scott enjoyed putting on productions in China. Over the course of his career, he climbed the ladder and became the CEO of Domino's Japan. Ever since, he's tripled the profits of Domino's and has attracted pizza lovers and Miku fans alike."
     },
+    "shark": {
+        "full_name": "Shark",
+        "pronouns": "(any/all)",
+        "sprites": {
+            "Default": "images/characters/blahaj_shark.png"
+        },
+        "quote": "Chomp!",
+        "bio": "He just wants a little taste...\nTate should fill this in better later.",
+        "dx": true,
+        "rpg": {
+            "SHARK": {
+                "need_label": "beach_beach.day"
+            }
+        }
+    },
     "sheriff": {
         "full_name": "Sheriff",
         "pronouns": "(he/him)",

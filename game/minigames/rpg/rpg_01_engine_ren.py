@@ -72,7 +72,7 @@ class AttackType(IntFlag):
     AOE = auto()
     EFFECT = auto()
     COMBO = auto()
-    SACRIFICE = auto() # TODO: add to AI
+    RECOIL = auto() # TODO: add to AI
 
 class IndicatorType(StrEnum):
     HP = "hp"
@@ -259,8 +259,8 @@ class Attack:
 
         if self.type & AttackType.COMBO:
             ... # this should never happen...
-        if self.type & AttackType.SACRIFICE:
-            t_list.append("sacrifice")
+        if self.type & AttackType.RECOIL:
+            t_list.append("recoil")
 
         t = "+".join(t_list) if t_list else "nothing"
 
@@ -287,7 +287,7 @@ class Attack:
             return_string += f", {self.cooldown} turn cooldown"
 
         if self.accuracy != 100:
-            return_string = return_string + f"({self.accuracy}% accuracy)"
+            return_string = return_string + f" ({self.accuracy}% accuracy)"
 
         return return_string[0].upper() + return_string[1:]
 
@@ -347,7 +347,7 @@ class ComboAttack:
             return_string += f", {self.cooldown} turn cooldown"
 
         if self.accuracy != 100:
-            return_string = return_string + f"({self.accuracy}% accuracy)"
+            return_string = return_string + f" ({self.accuracy}% accuracy)"
 
         return return_string[0].upper() + return_string[1:]
 
