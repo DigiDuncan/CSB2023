@@ -269,7 +269,7 @@ class Effects:
         positive=True,
         icon="/gui/rpg/status/defending.png",
         duration=1,
-        apply="{target} is defending!"
+        apply="{target} is defending!",
         update=apply_status_effect(stat=CharacterStat.DEFENSE, amount=1.5, scale=True),
 
     )
@@ -326,6 +326,7 @@ class Attacks:
     TATE_BLAST = Attack("Tate's Blaster", "Make it haunt them, too.", damage_fighters(mult = 4), target_count = 0, cooldown = 11, accuracy = 100) # , ex = False
     LIGHT_CAST_DMG = Attack("Light Cast DMG", "A strong blast of light that varies in damage.", damage_fighters_range(min_mult = 1, max_mult = 3), cooldown = 3)
     LIGHT_CAST_EFF = Attack("Light Cast EFF", "A strong blast of light that varies in damage.", blind_fighters(), cooldown = 3)
+    SWORD_AP = Attack("Sword (DEF Down)", "The edge of a sharp thing, more.", change_stat(stat = CharacterStat.DEFENSE, mult = 0.75)) # , ex = False
 
     ### Usable attacks (Single)
     PUNCH = Attack("Punch", "A simple punch.", damage_fighters())
@@ -359,7 +360,6 @@ class Attacks:
     STOMP = Attack("Stomp", "Send an earthquake to the enemies!", damage_fighters(mult = 0.75), target_count = 0) # , ex = False
     POKE = Attack("Poke", "A mega poke.", damage_fighters(mult = 2.5), accuracy = 90) # , ex = False
     SWORD = Attack("Sword", "The edge of a sharp thing.", damage_fighters()) # , ex = False
-    SWORD_AP = Attack("Sword (DEF Down)", "The edge of a sharp thing, more.", change_stat(stat = CharacterStat.DEFENSE, mult = 0.75)) # , ex = False
     FLAMETHROWER = Attack("Flamethrower", "Spray all your enemies with burning fuel!", damage_over_time(mult = 0.5, duration = 3), target_count = 0, cooldown = 3, accuracy = 70) # , ex = False,
     CHOCOLATE_CAKE = Attack("Chocolate Cake", "Heal a party member with loads to eat!", heal_fighters(), targets = TargetType.ALLY, accuracy = 95) # , ex = False
     CONFUSING_STORY = Attack("Confusing Story", "Tell a puzzling poem.", confuse_targets()) # , ex = False
@@ -416,15 +416,11 @@ class Attacks:
         LOBBYING, NANOMACHINES
     )
 
-    ex_blacklist = { a.name for a in # Name is hashable, while the attacks aren't
-        (RAW_CHOP, CS_AP_DOWN, RAW_KICK, YTP_MAGIC_NOCOOL, RAW_SLASH, BLEED, RAINBOW, VOMIT,
-        RAINBOW_NOCOOL, VOMIT_NOCOOL, RAVE_DEF, RAVE_OFF, SAMPLE_SPAM, SOUND_BLAST, AUGMENT,
-        TATE_RECALL, TATE_REVERB, REVERB_RECALL, TATE_ECHOES, TATE_BLAST, ECHO_BLAST, GENERGY,
-        *ucn_attacks)
-    }
-    @classproperty
-    def ex_attacks(cls) -> list[Attack]:
-        return [a for a in cls.attacks if a.name not in cls.ex_blacklist]
+    ex_attacks = (
+        AI_MIMIC, ARMOUR, BULLET_SPRAY, CHOP, CONFIDENCE, DAMAGE_SCREM, DRAW_IN, ELDRITCH_BLAST, ENCOURAGE, GNOMED,
+        HEAL_EX, HIGH_NOON, HOLOSHIELD, INSIGHT, KICK, LIGHT_CAST, MUSIC_BOOST, NUDGE, PEP_TALK, PUNCH, RADS_ATTACK,
+        RAVE, ROBOPUNCH, SAMPLE_BLAST, SCRATCH, SHELL, SHOTGUN, SLASH, SNACK_TIME
+    )
 
     @classmethod
     def get(cls, k: str, default: Attack | None = None) -> Attack | None:

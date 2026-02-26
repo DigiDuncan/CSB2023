@@ -351,7 +351,7 @@ screen person(l):
                                                             # TODO: add accuracy + AI type?
                                                             attack_data = [ ]
                                                             for a in _fighter.attacks:
-                                                                attack_data.append((a.name, a.description))
+                                                                attack_data.append((a.name, a.properties, a.description))
 
                                                         text stat_set_name:
                                                             xalign 0.5
@@ -389,10 +389,9 @@ screen person(l):
                                                         for a in attack_data:
                                                             python:
                                                                 a_name = a[0]
-                                                                #a_props = a[1]
-                                                                a_desc = a[1]
-                                                            #text "[a_name] {size=-12}{color=BBBBBB}([a_props])"
-                                                            text "[a_name] {size=-12}{color=BBBBBB}"
+                                                                a_props = a[1]
+                                                                a_desc = a[2]
+                                                            text "[a_name]\n    {size=-12}{color=BBBBBB}([a_props])"
                                                             text "    {i}{color=BBBBBB}[a_desc]{/i}"
                                                         null height 32
                                                     else:
