@@ -9,6 +9,7 @@ rpy python annotations
 python early in RPG:
 """
 
+import math
 from dataclasses import dataclass
 from queue import Queue
 from typing import Protocol, Callable, Concatenate, Any, Self
@@ -564,7 +565,7 @@ class Character: # TODO: Workshop -- I'd like fighter to be used by encounter, b
         self.assigned_name: str | None = None
         self.traits: CharacterFlag = traits
 
-        self.base_hp: int = hp # how much hp will the fighter start with, and what is their max hp
+        self.base_hp: int | float = hp # how much hp will the fighter start with, and what is their max hp
         self.base_def: int = defense # how much defense will the fighter start with
         self.base_atk: int = attack # how much attack will the fighter start with
         self.base_acc: int = accuracy # how accurate will the fighter start with
@@ -590,6 +591,10 @@ class Character: # TODO: Workshop -- I'd like fighter to be used by encounter, b
             sprite if sprite is not None else self.sprite,
             anim_sprite if anim_sprite is not None else self.anim_sprite
         )
+    
+    @property
+    def infinite(self) -> bool:
+        return self.base_hp == math.inf
 
     def __set_name__(self, owner: type, name: str):
         self.assigned_name = name
@@ -628,8 +633,8 @@ class Fighter:
         self.level: float = level # What level is the fighter? Was originally the scale passed in the encounter
         self.ai: AI | None = ai or character.base_ai # What AI does the fighter use. If none the encouter defers to the player
 
-        self.max_hp: int = int(character.base_hp * level) # Maximum hitpoints of a character
-        self.hit_points: int = int(level * (character.base_hp if hp_override is None else hp_override))
+        self.max_hp: int | float = int(character.base_hp * level) if not self.character.infinite else math.inf # Maximum hitpoints of a character
+        self.hit_points: int | float = int(level * (character.base_hp if hp_override is None else hp_override)) if not self.character.infinite else math.inf
 
         self.base_def: int = int(level * (character.base_def if def_override is None else def_override)) # percect of incoming damage reduced
         self.defense: int = self.base_def
@@ -665,6 +670,10 @@ class Fighter:
         else:
             # Fallback to static sprite if things break
             return self.character.sprite.filename
+
+    @property
+    def infinite(self) -> bool:
+        return self.character.infinite
 
     @property
     def dead(self) -> bool:
@@ -1024,7 +1033,7 @@ class Encounter:
         match stat:
             case CharacterStat.HIT_POINTS:
                 old = fighter.hit_points
-                new = int(old + amount)
+                new = int(old + amount) if not fighter.character.infinite else math.inf
                 fighter.hit_points = new
                 self.display_indicator(fighter, IndicatorType.HP, new - old)
                 self.send_debug(f"Set {fighter.character.display_name}'s hit points to {fighter.hit_points}!", "Encounter.modify_fighter", stat=stat, old = old, new = new, prem = permanent)
@@ -1060,7 +1069,7 @@ class Encounter:
         match stat:
             case CharacterStat.HIT_POINTS:
                 old = fighter.hit_points
-                new = int(old * mult)
+                new = int(old * mult) if not fighter.character.infinite else math.inf
                 fighter.hit_points = new
                 self.display_indicator(fighter, IndicatorType.HP, new - old)
                 self.send_debug(f"Scaled {fighter.character.display_name}'s hit points by {mult}x!", "Encounter.scale_fighter", stat=stat, old = old, new = new, prem = permanent)

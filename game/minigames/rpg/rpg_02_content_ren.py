@@ -16,6 +16,8 @@ rpy python annotations
 python early in RPG:
 """
 
+import math
+
 # |---- RPG Content ----|
 
 # -- Effect Functions --
@@ -504,7 +506,7 @@ class Characters:
     NOVA = Character("Nova", 170, 5, 30, [Attacks.MUSIC_BOOST, Attacks.RAVE], portrait=Image("gui/rpg/portraits/nova.png"), sprite=Image("images/characters/nova.png"), ai = AIType.AGGRO)
     BLANK = Character("Blank", 180, 5, 35, [Attacks.SAMPLE_BLAST, Attacks.GNOMED], portrait=Image("gui/rpg/portraits/blank.png"), sprite=Image("images/characters/blank.png"), ai = AIType.DEFENSIVE)
     MIDGE = Character("Midge", 165, 10, 25, [Attacks.NUDGE, Attacks.DRAW_IN], portrait=Image("gui/rpg/portraits/midge.png"), sprite=Image("images/characters/midge.png"), ai = AIType.DEFENSIVE)
-    DB05 = Character("DB05", 9001, 9001, 50, [Attacks.CONFIDENCE, Attacks.PEP_TALK], portrait=Image("gui/rpg/portraits/db05.png"), sprite=Image("images/characters/db.png"), ai = AIType.SKITTISH)
+    DB05 = Character("DB05", math.inf, 100, 50, [Attacks.CONFIDENCE, Attacks.PEP_TALK], portrait=Image("gui/rpg/portraits/db05.png"), sprite=Image("images/characters/db.png"), ai = AIType.SKITTISH)
     ANNO = Character("Anno", 200, 20, 40, [Attacks.RADS_ATTACK, Attacks.AI_MIMIC], portrait=Image("gui/rpg/portraits/anno.png"), sprite=Image("images/characters/anno/anno.png"), ai = AIType.SMART)
 
     # Allies (UCN)
@@ -523,14 +525,14 @@ class Characters:
     FANBOYA = Character("Fanboy (NVIDIA)", 50, 0, 16, [Attacks.PUNCH], sprite=Image("images/characters/nvidiafanboy.png"), ai = AIType.NEUTRAL, display_name = "Fanboy", portrait=Image("gui/rpg/portraits/fanboy_nvidia.png"))
     FANBOYB = Character("Fanboy (AMD)", 50, 0, 16, [Attacks.PUNCH], sprite=Image("images/characters/amdfanboy.png"), ai = AIType.NEUTRAL, display_name = "Fanboy", portrait=Image("gui/rpg/portraits/fanboy_amd.png"))
     COP = Character("Cop", 150, 15, 30, [Attacks.PUNCH, Attacks.BULLET_SPRAY], sprite=Image("images/characters/cop.png"), ai = AIType.NEUTRAL, portrait=Image("gui/rpg/portraits/cop.png"))
-    COPGUYGODMODE = Character("Copguy (God)", 9001, 9001, 35, [Attacks.PUNCH, Attacks.BULLET_SPRAY], sprite=Image("images/characters/copguy/copguy.png"), ai = AIType.NEUTRAL, display_name = "Copguy", portrait=Image("gui/rpg/portraits/copguy.png"))
+    COPGUYGODMODE = Character("Copguy (God)", math.inf, 100, 35, [Attacks.PUNCH, Attacks.BULLET_SPRAY], sprite=Image("images/characters/copguy/copguy.png"), ai = AIType.NEUTRAL, display_name = "Copguy", portrait=Image("gui/rpg/portraits/copguy.png"))
     COPGUY = Character("Copguy", 300, 20, 35, [Attacks.PUNCH, Attacks.BULLET_SPRAY], sprite=Image("images/characters/copguy/copguy.png"), ai = AIType.NEUTRAL, portrait=Image("gui/rpg/portraits/copguy.png"))
     GUARD = Character("Guard", 225, 25, 35, [Attacks.PUNCH, Attacks.BULLET_SPRAY], sprite=Image("images/characters/guard_soldier.png"), ai = AIType.DEFENSIVE, portrait=Image("gui/rpg/portraits/guard.png"))
     SML_TANK = Character("Sherman", 400, 60, 100, [Attacks.SHELL], sprite=Image("images/characters/sherman.png"), ai = AIType.AGGRO, portrait=Image("gui/rpg/portraits/sherman.png"))
     MARINE = Character("Marine", 300, 30, 45, [Attacks.PUNCH, Attacks.BULLET_SPRAY], sprite=Image("images/characters/marine.png"), ai = AIType.SMART, portrait=Image("gui/rpg/portraits/marine.png"))
     BIG_TANK = Character("Abrams",700, 70, 150, [Attacks.SHELL], sprite=Image("images/characters/abrams.png"), ai = AIType.AGGRO, portrait=Image("gui/rpg/portraits/abrams.png"))
     COPGUY_EX = Character("Copguy EX", 2222, 30, 50, Attacks.ex_attacks, sprite=Image("images/characters/copguy/copguy.png"), ai = AIType.COPGUY_EX, portrait=Image("gui/rpg/portraits/copguy_ex.png"), anim_sprite="copguy_ex")
-    PAKOOE = Character("Pakoo (Error)", 9999, 70, 150, [Attacks.FUN_VALUE], sprite=Image("images/characters/pakoo/pakoo_disappointed.png"), ai = AIType.AGGRO, display_name = "Pakoo", portrait=Image("gui/rpg/portraits/pakoo.png"))
+    PAKOOE = Character("Pakoo (Error)", math.inf, 70, 150, [Attacks.FUN_VALUE], sprite=Image("images/characters/pakoo/pakoo_disappointed.png"), ai = AIType.AGGRO, display_name = "Pakoo", portrait=Image("gui/rpg/portraits/pakoo.png"))
     COPGUY_EXE = Character("{image=gui/inline_text/dx_text.png} Copguy.EXE", 666, 66, 66, [Attacks.ELDRITCH_BLAST, Attacks.RAINBOW_VOMIT, Attacks.SLASH, Attacks.CONFUSING_STORY], sprite=Image("images/characters/copguy/copguyexe.png"), ai = AIType.AGGRO, display_name = "Copguy.EXE", portrait=Image("gui/rpg/portraits/copguy_exe.png"))
     K174 = Character("K17-4", 174, 17, 20, [Attacks.PUNCH], sprite=Image("images/characters/pakoo/k174.png"), ai = AIType.NEUTRAL, portrait=Image("gui/rpg/portraits/k174.png"))
     K199 = Character("K19-9", 199, 19, 30, [Attacks.KICK], sprite=Image("images/characters/pakoo/k199.png"), ai = AIType.AGGRO, portrait=Image("gui/rpg/portraits/k199.png"))
