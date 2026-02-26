@@ -10,11 +10,13 @@ screen multiple_say(who, what, multiple):
 
         if who is not None:
 
+            $ new_who = substitutions(who)
+
             window:
                 yoffset -75 * block
                 xoffset 125 * block
                 id "namebox"
                 style "namebox"
-                text who id "who"
+                text new_who id "who"
 
         text what id "what"
