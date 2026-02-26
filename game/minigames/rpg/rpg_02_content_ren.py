@@ -302,15 +302,15 @@ class Attacks:
     ### ATTACKS ARE NOW SORTED BY CATEGORY, THEN BY NAME.
 
     ### Effects / Defense / Commonly-used things
-    DEFEND = Attack("Defend", "Dragon doesn't know how to write these", defend_targets(), targets=TargetType.SELF, accuracy=100)
+    DEFEND = Attack("Defend", "Take less damage less turn, but you can't attack.", defend_targets(), targets=TargetType.SELF, accuracy=100)
 
-    BASIC_HIT = Attack("", "", damage_fighters())
+    BASIC_HIT = AttackComponent(damage_fighters())
 
-    BLEED = Attack("Make Bleed", "", damage_over_time(mult = 0.25))
-    BLIND = Attack("Make Blind", "", blind_fighters() )
-    CONFUSE = Attack("Confuse", "", confuse_targets() )
-    SLEEP = Attack("Put To Sleep", "", sleep_fighters() )
-    STUN = Attack("Stun", "", stun_fighters() )
+    BLEED = AttackComponent(damage_over_time(mult = 0.25))
+    BLIND = AttackComponent(blind_fighters() )
+    CONFUSE = AttackComponent(confuse_targets() )
+    SLEEP = AttackComponent(sleep_fighters() )
+    STUN = AttackComponent(stun_fighters() )
 
     ### Revised Attacks (Single)
     AI_MIMIC = Attack("AI Mimic", "Copies an enemy's attack.", ai_mimic(), cooldown = 2)
@@ -426,9 +426,8 @@ class Attacks:
     target_count = 0, cooldown = 3, accuracy = 75)
     REVERB_RECALL = ComboAttack("Reverb Recall", "Channel your pain over 5 turns. Also damages the user.",
     [
-        AttackComponent(damage_recoil(harm_mult = 0.75, bleed_mult = 0.75, duration = 5)),
-        #AttackComponent(damage_over_time(mult = 0.25), TargetType.SELF),
-        AttackComponent(damage_over_time(bleed_mult = 0.75, duration = 5), TargetType.ENEMY, target_count = 0),
+        AttackComponent(damage_over_time(mult = 0.75, duration = 5), TargetType.ENEMY, target_count = 0),
+        AttackComponent(damage_recoil(harm_mult = 0.75, bleed_mult = 0.75, duration = 5), TargetType.SELF)
     ],
     cooldown = 9, accuracy = 90)
     SAMPLE_BLAST = ComboAttack("Sample Blast", "Blast your enemies with music! Varies in damage.",

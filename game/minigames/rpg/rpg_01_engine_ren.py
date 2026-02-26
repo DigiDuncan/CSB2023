@@ -966,6 +966,7 @@ class Encounter:
         # We generally only let the player's fighters roll crit.
         if roll_crit and random.random() <= CRIT_CHANCE:
             damage = damage * 1.5
+            self.send_message(f"Critical hit!", fighter)
 
         if not ignore_armour:
             fraction = fighter.defense / 100.0

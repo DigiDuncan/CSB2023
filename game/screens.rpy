@@ -159,7 +159,8 @@ screen say(who, what):
             window:
                 id "namebox"
                 style "namebox"
-                text who id "who"
+                $ new_who = substitutions(who)
+                text new_who id "who"
 
         text what id "what"
 
