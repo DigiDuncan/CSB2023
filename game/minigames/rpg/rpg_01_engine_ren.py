@@ -916,10 +916,7 @@ class Encounter:
 
     @property
     def won(self) -> bool | None:
-        if len(self.allies) == 0:
-            return False
-        # This special exception occurs since DB is the only fighter to not be "on the field."
-        elif len(self.allies) == 1 and self.allies[0].name == "DB05":
+        if len([a for a in self.allies if not a.infinite]) == 0:
             return False
         elif len(self.enemies) == 0:
             return True
