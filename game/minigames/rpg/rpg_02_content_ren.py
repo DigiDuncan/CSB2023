@@ -130,7 +130,7 @@ def defend_targets(encounter: Encounter, fighter: Fighter, targets: tuple[Fighte
             continue
         encounter.apply_effect(Effects.DEFEND, fighter, target)
 
-@attack_def(AttackType.DEBUFF | AttackType.EFFECT)
+@attack_def(AttackType.EFFECT)
 def confuse_targets(encounter: Encounter, fighter: Fighter, targets: tuple[Fighter, ...]):
     """
     Apply the Confusion effect to target fighters
@@ -347,7 +347,7 @@ class Attacks:
     ROBOPUNCH = Attack("RoboPunch", "A strong punch.", damage_fighters(mult = 1.75))
     HOLOSHIELD = Attack("HoloShield", "Boosts your team's defense by a bit.", change_stat(stat = CharacterStat.DEFENSE, mult = 1.75), target_count = 0, targets = TargetType.ALLY, cooldown = 3, accuracy = 90)
     MUSIC_BOOST = Attack("Music Boost", "Boost one's defense by a bit.", change_stat(stat = CharacterStat.DEFENSE, mult = 1.5), target_count = 1, targets = TargetType.SELF)
-    DRAW_IN = Attack("Draw in", "Either lowers the enemies stats, or increases your friend's stats!", draw_in(mult = 2), TargetType.ALL, target_count=0, accuracy = 85)
+    DRAW_IN = Attack("Draw In", "Either lowers the enemies stats, or increases your friend's stats!", draw_in(mult = 2), TargetType.ALL, target_count=0, accuracy = 85)
     CONFIDENCE = Attack("Confidence", "Raise your team's attack!", change_stat(stat = CharacterStat.ATTACK, mult = 1.25), target_count = 0, targets = TargetType.ALLY, accuracy = 90)
     PEP_TALK = Attack("Pep Talk", "Raise your team's defense!", change_stat(stat = CharacterStat.DEFENSE, mult = 1.25), target_count = 0, targets = TargetType.ALLY, accuracy = 90)
     RADS_ATTACK = Attack("RADS Attack", "Inflict radiation on your enemies to kill them over time!", damage_over_time(mult = 0.5), accuracy = 60)

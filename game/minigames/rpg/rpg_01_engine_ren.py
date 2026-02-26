@@ -140,7 +140,7 @@ attack_def = AttackFunc.predefine
 # The decorator also precalculates if an attack is a debuff/buff so no overrides have to be used
 class StatAttackFunc(AttackFunc):
     def __init__(self, typ: AttackType, func: Callable[..., Any], options: dict[str, Any]):
-        typ = typ | (AttackType.BUFF if options.get("mult", 1.0) < 1.0 else AttackType.DEBUFF)
+        typ = typ | (AttackType.BUFF if options.get("mult", 1.0) > 1.0 else AttackType.DEBUFF)
         super().__init__(typ, func, options)
 
 stat_attack_def = StatAttackFunc.predefine
@@ -199,7 +199,7 @@ class Attack:
 
     def _get_property_string(self) -> str:
         # Hardcodes
-        if self.name == "AI Mimic":
+        if self.name == "AI Mimic" or self.name == "All Over Again":
             return "Mirror"
         if self.name == "Draw In":
             return "Random Effect"
@@ -286,7 +286,7 @@ class Attack:
         if self.cooldown:
             return_string += f", {self.cooldown} turn cooldown"
 
-        return return_string
+        return return_string[0].upper() + return_string[1:]
 
 class ComboAttack:
     """
@@ -343,7 +343,7 @@ class ComboAttack:
         if self.cooldown:
             return_string += f", {self.cooldown} turn cooldown"
 
-        return return_string
+        return return_string[0].upper() + return_string[1:]
 
     def __str__(self) -> str:
         return f"<ComboAttack {self.name} ({self.attacks})>"
