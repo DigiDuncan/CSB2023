@@ -284,13 +284,23 @@ screen screen_rpg():
 
                         # Status effects
                         if len(RPG.encounter.enemies[i].effects) > 0:
+                            # Count up all the effects
+                            python:
+                                checked_effects = {}
+                                for effect in RPG.encounter.enemies[i].effects:
+                                    if effect.effect not in checked_effects:
+                                        checked_effects[effect.effect] = 1
+                                    else:
+                                        checked_effects[effect.effect] += 1
                             frame:
                                 xanchor 1.0
                                 xpos 1.0 ypos 103
                                 hbox:
-                                    for effect in RPG.encounter.enemies[i].effects:
-                                        add effect.effect.icon:
+                                    for effect in checked_effects:
+                                        add effect.icon:
                                             yalign 1.0
+                                        if checked_effects[effect] > 1:
+                                            text str(checked_effects[effect])
                         grid 2 2:
                             xfill True
                             yfill True
