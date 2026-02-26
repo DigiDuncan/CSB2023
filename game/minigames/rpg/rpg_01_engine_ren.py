@@ -75,6 +75,7 @@ class AttackType(IntFlag):
     EFFECT = auto()
     COMBO = auto()
     RECOIL = auto() # TODO: add to AI
+    STEAL = auto() # TODO: add to AI
 
 class IndicatorType(StrEnum):
     HP = "hp"
@@ -238,6 +239,8 @@ class Attack:
             t_list.append("DMG")
         if self.type & AttackType.HEAL:
             t_list.append("heal")
+        if self.type & AttackType.STEAL:
+            t_list.append(f"{int(self.options["steal_amount"] * 100)}% steal")
         if self.type & AttackType.EFFECT:
             duration = f" for {self.options["duration"]} turns" if "duration" in self.options else ""
             match self.func.func.__name__:

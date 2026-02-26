@@ -76,6 +76,21 @@ def damage_fighters(encounter: Encounter, fighter: Fighter, targets: tuple[Fight
         for _ in range(count):
             encounter.damage_fighter(target, mult * fighter.attack)
 
+@attack_def(AttackType.DAMAGE | AttackType.STEAL)
+def steal_hp(encounter: Encounter, fighter: Fighter, targets: tuple[Fighter, ...], mult: float = 1.0, count: int = 1, steal_amount: float = 0.5):
+    """
+    Damage the target fighters, and steal the HP
+
+    Options:
+        mult (float, optional): The multiplier on top of attacker's ATK. Defaults to 1.0.
+        count (int, optional): number of times to apply damage. Defaults to 1.
+        steal_amount (float, optional): the percentage to steal
+    """
+    for target in targets:
+        for _ in range(count):
+            encounter.damage_fighter(target, mult * fighter.attack)
+    encounter.heal_fighter(fighter, int(mult * fighter.attack * steal_amount * count * len(targets)), True)
+
 @attack_def(AttackType.HEAL)
 def heal_fighters(encounter: Encounter, fighter: Fighter, targets: tuple[Fighter, ...], mult: float = 1.0, overheal: bool = False):
     """
