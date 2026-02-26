@@ -190,13 +190,30 @@ screen screen_rpg():
 
                         # Status effects
                         if len(RPG.encounter.allies[i].effects) > 0:
+                            # Count up all the effects
+                            python:
+                                checked_effects = {}
+                                for effect in RPG.encounter.allies[i].effects:
+                                    if effect.effect not in checked_effects:
+                                        checked_effects[effect.effect] = 1
+                                    else:
+                                        checked_effects[effect.effect] += 1
                             frame:
                                 xanchor 1.0
                                 xpos 1.0 ypos -60
                                 hbox:
-                                    for effect in RPG.encounter.allies[i].effects:
-                                        add effect.effect.icon:
-                                            yalign 1.0
+                                    for effect in checked_effects:
+                                        frame:
+                                            xysize(36,36)
+                                            background effect.icon
+                                            if checked_effects[effect] > 1:
+                                                text str(checked_effects[effect]):
+                                                    size 16
+                                                    xanchor 1.0 yanchor 0.0
+                                                    xoffset 32 yoffset -11
+                                                    text_align 1.0
+                                                    color Color("#FFFFFF")
+                                                    outlines [(2.5, "#000000", absolute(0), absolute(0))]
                         grid 2 2:
                             xfill True
                             yfill True
@@ -297,10 +314,17 @@ screen screen_rpg():
                                 xpos 1.0 ypos 103
                                 hbox:
                                     for effect in checked_effects:
-                                        add effect.icon:
-                                            yalign 1.0
-                                        if checked_effects[effect] > 1:
-                                            text str(checked_effects[effect])
+                                        frame:
+                                            xysize(36,36)
+                                            background effect.icon
+                                            if checked_effects[effect] > 1:
+                                                text str(checked_effects[effect]):
+                                                    size 16
+                                                    xanchor 1.0 yanchor 0.0
+                                                    xoffset 32 yoffset -11
+                                                    text_align 1.0
+                                                    color Color("#FFFFFF")
+                                                    outlines [(2.5, "#000000", absolute(0), absolute(0))]
                         grid 2 2:
                             xfill True
                             yfill True
