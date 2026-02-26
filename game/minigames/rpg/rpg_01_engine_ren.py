@@ -204,23 +204,80 @@ class Attack:
         if self.name == "Draw In":
             return "Random Effect"
 
+        show_x = True
+        duration = ""
+
         x = self.func.options.get("mult", 1)
         if self.func.options.get("min_mult", None) and self.func.options.get("max_mult"):
             x = f"{self.func.options.get('min_mult')}~{self.func.options.get('max_mult')}"
 
         # Get attack type
-        t = "..."
+        t_list = []
+        if self.type == AttackType.NOTHING:
+            ...
+        if self.type & AttackType.AOE:
+            t_list.append("AOE")
+        if self.type & AttackType.BUFF or self.type & AttackType.DEBUFF:
+            if "stat" not in self.options:
+                t_list.append("buff" if self.type & AttackType.BUFF else "debuff")
+            else:
+                tt = "-" if self.type & AttackType.DEBUFF else ""
+                match self.options["stat"]:
+                    case CharacterStat.HIT_POINTS:
+                        tt += "HP"
+                    case CharacterStat.ATTACK:
+                        tt += "ATK"
+                    case CharacterStat.DEFENSE:
+                        tt += "DEF"
+                    case CharacterStat.ACCURACY:
+                        tt += "ACC"
+                t_list.append(tt)
+        if self.type & AttackType.DAMAGE:
+            t_list.append("DMG")
+        if self.type & AttackType.HEAL:
+            t_list.append("heal")
+        if self.type & AttackType.EFFECT:
+            duration = f" for {self.options["duration"]} turns" if "duration" in self.options else ""
+            match self.func.func.__name__:
+                case "damage_over_time":
+                    t_list.append("DOT")
+                case "confuse_targets":
+                    t_list.append("confuse")
+                    show_x = False
+                case "blind_fighters":
+                    t_list.append("blind")
+                    show_x = False
+                case "sleep_fighters":
+                    t_list.append("sleep")
+                    show_x = False
+                case "stun_fighters":
+                    t_list.append("stun")
+                    show_x = False
+                case _:
+                    t_list.append("effect")
+                    show_x = False
+
+        if self.type & AttackType.COMBO:
+            ... # this should never happen...
+        if self.type & AttackType.SACRIFICE:
+            t_list.append("sacrifice")
+
+        t = "+".join(t_list) if t_list else "nothing"
 
         e = ""
         if self.target_count == 0:
-            if self.target_type == "allies":
+            if self.targets == TargetType.ALLY:
                 e = "party "
-            elif self.target_type == "enemies":
+            elif self.targets == TargetType.ENEMY:
                 e = "enemy party "
-            else:
+            elif self.targets == TargetType.SELF:
+                e = "self "
+            elif self.targets == TargetType.ALL:
                 e = "all "
+            else:
+                e = "??? "
 
-        return f"{x}x {e}{t}" if t != "confuse" else t
+        return f"{x}x {e}{t}{duration}" if show_x else f"{e}{t}{duration}"
 
     @property
     def properties(self) -> str:
@@ -278,6 +335,15 @@ class ComboAttack:
     def options(self) -> dict[str, Any]:
         # Options is a bit unclear for combo it could also be a mix of all the options of the sub-attacks?
         return {}
+
+    @property
+    def properties(self) -> str:
+        return_string = ", ".join([a._get_property_string() for a in self.attacks])
+
+        if self.cooldown:
+            return_string += f", {self.cooldown} turn cooldown"
+
+        return return_string
 
     def __str__(self) -> str:
         return f"<ComboAttack {self.name} ({self.attacks})>"

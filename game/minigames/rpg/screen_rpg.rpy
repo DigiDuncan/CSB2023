@@ -100,7 +100,7 @@ screen screen_rpg():
                                 if not RPG.encounter.allies[RPG.encounter.turn].attacks[i].available:
                                     sensitive False
                                 has vbox
-                                text "{size=42}"+RPG.encounter.allies[RPG.encounter.turn].attacks[i].name+" {/size}{size=21}("+RPG.encounter.allies[RPG.encounter.turn].attacks[i].attack.description+"){/size}":
+                                text "{size=42}"+RPG.encounter.allies[RPG.encounter.turn].attacks[i].name+" {/size}{size=21}("+RPG.encounter.allies[RPG.encounter.turn].attacks[i].attack.properties+"){/size}":
                                     if RPG.encounter.allies[RPG.encounter.turn].attacks[i] is RPG.encounter.allies[RPG.encounter.turn].next_attack:
                                         color "#FF8A00"
                                         hover_color "#F5DD00"
