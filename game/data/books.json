@@ -96,6 +96,16 @@
         "y_pos": 800,
         "jump_to": "play_toytrains_game",
         "need_label": "play_toytrains_game"
+    },
+    "minigame_editing": {
+        "title": "Adobe Premiere",
+        "desc": "Hopefully it doesn't fucking crash again.",
+        "spine_width": 35,
+        "spine_height": 250,
+        "x_pos": 758,
+        "y_pos": 800,
+        "jump_to": "play_edit_game",
+        "need_label": "play_edit_game"
     }
 
 }
