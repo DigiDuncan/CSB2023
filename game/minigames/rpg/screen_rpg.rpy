@@ -47,10 +47,13 @@ screen say_rpg(rpg_what):
             text rpg_what
 
 screen screen_rpg():
+
+    # For effect tooltips
+    default effect_info = Tooltip("")
+
     # Drawing the enemies in the background.
     grid len(RPG.encounter.enemies) 1:
-        xalign 0.5
-        yalign 1.0
+        xalign 0.5 yalign 1.0
         for i in range(len(RPG.encounter.enemies)):
             if not RPG.encounter.enemies[i].dead:
                 # Attempt to add animated sprite if one exists, else fallback to the normal sprite
@@ -66,8 +69,7 @@ screen screen_rpg():
 
     # This is the context menu of the RPG
     frame:
-        yalign 1.0
-        xalign 0.5
+        yalign 1.0 xalign 0.5
         padding(0,0)
         background None
         has vbox
@@ -175,8 +177,7 @@ screen screen_rpg():
                 if not RPG.encounter.allies[i].dead:
                     button:
                         padding(7,7)
-                        xalign 0.5
-                        yalign 1.0
+                        xalign 0.5 yalign 1.0
                         xsize 475
                         # If it's the fighter's turn
                         if RPG.encounter.turn == i:
@@ -204,8 +205,17 @@ screen screen_rpg():
                                 hbox:
                                     for effect in checked_effects:
                                         frame:
+                                            background None
                                             xysize(36,36)
-                                            background effect.icon
+
+                                            $ effect_hover_icon = effect.icon[:-4] + "_hover" + effect.icon[-4:]
+
+                                            imagebutton:
+                                                xalign 0.5 yalign 0.5
+                                                idle effect.icon
+                                                hover effect_hover_icon
+                                                action [ Notify( effect.name+"\n"+effect.description) ]
+
                                             if checked_effects[effect] > 1:
                                                 text str(checked_effects[effect]):
                                                     size 16
@@ -252,8 +262,7 @@ screen screen_rpg():
                                     background None
                                     padding(0,0)
                                     xysize(228, 32)
-                                    xalign 1.0
-                                    yalign 1.0
+                                    xalign 1.0 yalign 1.0
                                     if not RPG.encounter.allies[i].infinite:
                                         add "gui/rpg/hp_bar.png" corner1(int(228-(228*(RPG.encounter.allies[i].hit_points/RPG.encounter.allies[i].max_hp))),0) corner2(228,32) xalign 1.0
                                         text str(RPG.encounter.allies[i].hit_points)+"/"+str(RPG.encounter.allies[i].max_hp):
@@ -299,7 +308,6 @@ screen screen_rpg():
                     frame:
                         padding(7,7)
                         xalign 0.5 yalign 1.0
-                        #yoffset -500
                         xsize 475 ysize 105
                         background "gui/rpg/small_box.png"
 
@@ -319,8 +327,17 @@ screen screen_rpg():
                                 hbox:
                                     for effect in checked_effects:
                                         frame:
+                                            background None
                                             xysize(36,36)
-                                            background effect.icon
+
+                                            $ effect_hover_icon = effect.icon[:-4] + "_hover" + effect.icon[-4:]
+
+                                            imagebutton:
+                                                xalign 0.5 yalign 0.5
+                                                idle effect.icon
+                                                hover effect_hover_icon
+                                                action [ Notify( effect.name+"\n"+effect.description) ]
+
                                             if checked_effects[effect] > 1:
                                                 text str(checked_effects[effect]):
                                                     size 16
@@ -329,9 +346,9 @@ screen screen_rpg():
                                                     text_align 1.0
                                                     color Color("#FFFFFF")
                                                     outlines [(2.5, "#000000", absolute(0), absolute(0))]
+
                         grid 2 2:
-                            xfill True
-                            yfill True
+                            xfill True yfill True
                             # The Fighter's Icon and Stats
                             hbox:
                                 align(0.0, 0.0)
@@ -365,8 +382,7 @@ screen screen_rpg():
                                     background None
                                     padding(0,0)
                                     xysize(228, 32)
-                                    xalign 1.0
-                                    yalign 1.0
+                                    xalign 1.0 yalign 1.0
                                     if not RPG.encounter.enemies[i].infinite:
                                         add "gui/rpg/hp_bar.png" corner1(int(228-(228*(RPG.encounter.enemies[i].hit_points/RPG.encounter.enemies[i].max_hp))),0) corner2(228,32) xalign 1.0
                                         text str(RPG.encounter.enemies[i].hit_points)+"/"+str(RPG.encounter.enemies[i].max_hp):
@@ -381,7 +397,6 @@ screen screen_rpg():
                 else:
                     add Null(489,88):
                         xalign 0.5 yalign 1.0
-
     # Dev Backdoor
     key "K_END" action Jump("pass_rpg")
 
