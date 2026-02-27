@@ -462,10 +462,11 @@ screen screen_rpg():
 
     # For effect data
     $ effect_info = GetTooltip()
+    $ get_mouse()
     if effect_info:
         frame:
-            xanchor 0.5 yanchor 0.5
-            xpos 0.5 ypos 0.5 # TODO: need to figure out proper positioning
+            xanchor 0.5 yanchor 0
+            xpos mouse_xy[0] ypos mouse_xy[1] # TODO: need to figure out proper positioning
             xmaximum 250
 
             vbox:
