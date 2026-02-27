@@ -22,6 +22,7 @@ init python:
     chosen_evidence = 0
 
     # For UCN2
+    ucn2_hovered_data = []
     ucn2_parties = []
     ucn2_scale = 1.0
     ucn2_img = "images/bg/casino1.png"

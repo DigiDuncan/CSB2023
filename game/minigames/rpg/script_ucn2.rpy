@@ -32,8 +32,8 @@ init python:
         return ready_yet
 
     # Fill a given slot
-    def rpg_fill_slot(slots_list, current_slot, char_tooltip_data):
-        slots_list[current_slot] = char_tooltip_data
+    def rpg_fill_slot(slots_list, current_slot, char_stored_data):
+        slots_list[current_slot] = char_stored_data
 
     # Automatically select the next unselected slot
     def rpg_slot_autoselect(slots_list, current_slot, party_size) -> int:
@@ -89,7 +89,6 @@ screen _ucn2_selection():
 
     ###################### Important variables for everywhere
     default rpg_selection_stage = "party"
-    default rpg_hovered_character = Tooltip("")
     default rpg_slots = [
         ["(Pending)"], ["(Pending)"],
         ["(Pending)"], ["(Pending)"],
@@ -160,10 +159,13 @@ screen _ucn2_selection():
                                         idle portrait
                                         hover hover_portrait
                                         hover_sound "audio/sfx/sfx_select.ogg"
-                                        hovered [ rpg_hovered_character.Action([character.name, character]) ]
+                                        hovered [
+                                            SetVariable("ucn2_hovered_data", [character.name, character]),
+                                            SetScreenVariable("ucn2_hovered_data", [character.name, character])
+                                        ]
                                         action [
                                             Play("sound", "audio/sfx/sfx_valid.ogg"),
-                                            Function(rpg_fill_slot, rpg_slots, rpg_selected_slot, rpg_hovered_character.value),
+                                            Function(rpg_fill_slot, rpg_slots, rpg_selected_slot, ucn2_hovered_data),
                                             SetScreenVariable("rpg_selected_slot", rpg_slot_autoselect(rpg_slots, rpg_selected_slot, rpg_party_size)),
                                             SetScreenVariable("rpg_ready", rpg_toggle_ready(rpg_ready, rpg_slots)),
                                             SetVariable("rpg_ready", rpg_toggle_ready(rpg_ready, rpg_slots))
@@ -181,7 +183,10 @@ screen _ucn2_selection():
                                     idle "gui/rpg/portraits/unknown.png"
                                     hover "selectable:gui/rpg/portraits/unknown.png"
                                     hover_sound "audio/sfx/sfx_select.ogg"
-                                    hovered [ rpg_hovered_character.Action(["(Random)", RPG.Characters.random() ]) ]
+                                    hovered [
+                                        SetVariable("ucn2_hovered_data", ["(Random)", RPG.Characters.random()]),
+                                        SetScreenVariable("ucn2_hovered_data", ["(Random)", RPG.Characters.random()])
+                                    ]
                                     action [
                                         Play("sound", "audio/sfx/sfx_valid.ogg"),
                                         Function(rpg_fill_slot, rpg_slots, rpg_selected_slot, ["(Random)", RPG.Characters.random() ]),
@@ -195,10 +200,13 @@ screen _ucn2_selection():
                                     idle "gui/rpg/portraits/none.png"
                                     hover "selectable:gui/rpg/portraits/none.png"
                                     hover_sound "audio/sfx/sfx_select.ogg"
-                                    hovered [ rpg_hovered_character.Action(["(None)", None]) ]
+                                    hovered [
+                                        SetVariable("ucn2_hovered_data", ["(None)", None]),
+                                        SetScreenVariable("ucn2_hovered_data", ["(None)", None])
+                                    ]
                                     action [
                                         Play("sound", "audio/sfx/sfx_valid.ogg"),
-                                        Function(rpg_fill_slot, rpg_slots, rpg_selected_slot, rpg_hovered_character.value),
+                                        Function(rpg_fill_slot, rpg_slots, rpg_selected_slot, ucn2_hovered_data),
                                         SetScreenVariable("rpg_selected_slot", rpg_slot_autoselect(rpg_slots, rpg_selected_slot, rpg_party_size)),
                                         SetScreenVariable("rpg_ready", rpg_toggle_ready(rpg_ready, rpg_slots)),
                                         SetVariable("rpg_ready", rpg_toggle_ready(rpg_ready, rpg_slots))
@@ -340,18 +348,18 @@ screen _ucn2_selection():
                                 xsize 0.5
                                 background None
 
-                                if rpg_hovered_character.value == "":
+                                if ucn2_hovered_data == "":
                                     background None
                                 else:
                                     # Handle random/none first
-                                    if rpg_hovered_character.value:
-                                        if rpg_hovered_character.value[0] == "(Random)":
+                                    if ucn2_hovered_data:
+                                        if ucn2_hovered_data[0] == "(Random)":
                                             add "gui/rpg/random.png":
                                                 xysize(400,400)
                                                 fit("contain")
                                                 xanchor 0.5 yanchor 1.0
                                                 xpos 0.5 ypos 0.8
-                                        elif rpg_hovered_character.value[0] == "(None)":
+                                        elif ucn2_hovered_data[0] == "(None)":
                                             add "gui/rpg/none.png":
                                                 xysize(400,400)
                                                 fit("contain")
@@ -360,10 +368,10 @@ screen _ucn2_selection():
                                         else:
                                             python:
                                                 try:
-                                                    if len(rpg_hovered_character.value[1].anim_sprite) > 0:
-                                                        hovered_char_sprite = rpg_hovered_character.value[1].anim_sprite
+                                                    if len(ucn2_hovered_data[1].anim_sprite) > 0:
+                                                        hovered_char_sprite = ucn2_hovered_data[1].anim_sprite
                                                 except:
-                                                    hovered_char_sprite = rpg_hovered_character.value[1].sprite
+                                                    hovered_char_sprite = ucn2_hovered_data[1].sprite
 
                                             add hovered_char_sprite:
                                                 xysize(500,400)
@@ -373,7 +381,7 @@ screen _ucn2_selection():
                                         frame:
                                             xanchor 0.5 yanchor 1.0
                                             xpos 0.5 ypos 1.0
-                                            text rpg_hovered_character.value[0]:
+                                            text ucn2_hovered_data[0]:
                                                 text_align 0.5
 
         ######################### BOTTOM
