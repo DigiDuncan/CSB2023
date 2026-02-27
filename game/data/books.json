@@ -1,4 +1,13 @@
 {
+    "controller_setup": {
+        "title": "Controller Setup",
+        "desc": "Make sure your controller is working!",
+        "spine_width": 35,
+        "spine_height": 250,
+        "x_pos": 200,
+        "y_pos": 800,
+        "jump_to": "play_controllertest"
+    },
     "ce": {
         "title": "CSBounciness: Christmas Edition",
         "desc": "jingle jingle ho ho ho",

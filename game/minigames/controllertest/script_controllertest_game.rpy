@@ -101,6 +101,12 @@ screen controllertest():
     add controllertest
 
     # TODO: we need a way to return to the previous menu that is compatible with all types of controls. i got nothing - tate
+    textbutton "Return to Extras":
+        xoffset 25 yoffset 950
+        action ShowMenu("category_welcome")
+    textbutton "Main Menu":
+        xoffset 25 yoffset 1000
+        action Return()
 
 label play_controllertest:
     window hide
