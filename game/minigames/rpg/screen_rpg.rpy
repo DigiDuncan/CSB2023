@@ -1,6 +1,5 @@
 """
 TODO list
-- Properly implement status icons; account for longer character names + multiple effects
 - Rescale the attack text based on the number of attacks
 - Add functionality to the attack text
 - Depending on the action selected add the action to a list (To pass back to the back end)
@@ -102,7 +101,7 @@ screen screen_rpg():
                                 if not RPG.encounter.allies[RPG.encounter.turn].attacks[i].available:
                                     sensitive False
                                 has vbox
-                                text "{size=42}"+RPG.encounter.allies[RPG.encounter.turn].attacks[i].name+" {/size}{size=21}("+RPG.encounter.allies[RPG.encounter.turn].attacks[i].attack.properties+"){/size}":
+                                text "{size=40}"+RPG.encounter.allies[RPG.encounter.turn].attacks[i].name+" {/size}{size=21}("+RPG.encounter.allies[RPG.encounter.turn].attacks[i].attack.properties+"){/size}":
                                     if RPG.encounter.allies[RPG.encounter.turn].attacks[i] is RPG.encounter.allies[RPG.encounter.turn].next_attack:
                                         color "#FF8A00"
                                         hover_color "#F5DD00"
@@ -214,7 +213,16 @@ screen screen_rpg():
                                                 xalign 0.5 yalign 0.5
                                                 idle effect.icon
                                                 hover effect_hover_icon
-                                                action [ Notify( effect.name+"\n"+effect.description) ]
+                                                hovered [
+                                                    effect_info.action
+                                                    ([
+                                                        effect.name,
+                                                        effect.description,
+                                                        "multiplier info here"
+                                                    ])
+                                                ]
+                                                hover_sound "audio/sfx/sfx_select.ogg"
+                                                action [ NullAction() ]
 
                                             if checked_effects[effect] > 1:
                                                 text str(checked_effects[effect]):
@@ -336,7 +344,16 @@ screen screen_rpg():
                                                 xalign 0.5 yalign 0.5
                                                 idle effect.icon
                                                 hover effect_hover_icon
-                                                action [ Notify( effect.name+"\n"+effect.description) ]
+                                                hovered [
+                                                    effect_info.action
+                                                    ([
+                                                        effect.name,
+                                                        effect.description,
+                                                        "multiplier info here"
+                                                    ])
+                                                ]
+                                                hover_sound "audio/sfx/sfx_select.ogg"
+                                                action [ NullAction() ]
 
                                             if checked_effects[effect] > 1:
                                                 text str(checked_effects[effect]):
@@ -397,6 +414,32 @@ screen screen_rpg():
                 else:
                     add Null(489,88):
                         xalign 0.5 yalign 1.0
+
+    # For effect data
+    frame:
+        if len(effect_info.value) < 1:
+            background None
+        else:
+            xanchor 0.5 yanchor 0.5
+            xpos 0.5 ypos 0.5 # TODO: need to figure out proper positioning
+            xmaximum 250
+
+            vbox:
+                text effect_info.value[0]: # effect name
+                    xalign 0.5
+                    text_align 0.5
+                    size 40
+
+                text effect_info.value[1]: # effect description
+                    xalign 0.5
+                    text_align 0.5
+                    size 32
+
+                text effect_info.value[2]: # effect multiplier info
+                    xalign 0.5
+                    text_align 0.5
+                    size 21
+
     # Dev Backdoor
     key "K_END" action Jump("pass_rpg")
 
@@ -414,6 +457,7 @@ label play_rpggame:
         while RPG.encounter.has_signals():
             $ curr_signal = RPG.encounter.get_next_signal()
             if hasattr(curr_signal, "message") and type(curr_signal) != RPG.DebugSignal:
+                window auto False
                 show screen say_rpg(curr_signal.message) onlayer rpg_say
                 pause
                 hide screen say_rpg

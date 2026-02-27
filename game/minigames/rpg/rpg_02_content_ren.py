@@ -260,7 +260,7 @@ class Effects:
     # Intent: Make fighter very inaccurate
     BLIND = Effect(
         name="Blindness",
-        description="This fighter can't see. Accuracy will be drastically reduced.",
+        description="This fighter's accuracy is drastically reduced.",
         positive=False,
         icon="/gui/rpg/status/blindness.png",
         duration=0,
@@ -271,7 +271,7 @@ class Effects:
     # Intent: We should update this... make fighter both less accurate AND likely to hit the wrong target, including themself!
     CONFUSION = Effect(
         name="Confusion",
-        description="This fighter is confused and may attack the wrong target.",
+        description="This fighter may attack the wrong target.",
         positive=False,
         icon="/gui/rpg/status/confusion.png",
         duration=0,
@@ -282,7 +282,7 @@ class Effects:
     # Intent: Make fighter less vulnerable to damage, but unable to attack this turn.
     DEFEND = Effect(
         name="Defending",
-        description="This fighter is defending. They will take less damage, but cannot attack this turn.",
+        description="This fighter will take less damage, but can't attack this turn.",
         positive=True,
         icon="/gui/rpg/status/defending.png",
         duration=1,
@@ -293,7 +293,7 @@ class Effects:
     # Intent: Make fighter extra vulnerable while asleep and skip their next turn.
     SLEEP = Effect(
         name="Sleep",
-        description="This fighter is asleep. They are vulnerable to attack, and can't move until next turn.",
+        description="This fighter is vulnerable to attack and can't move until next turn.",
         positive=False,
         icon="/gui/rpg/status/sleep.png",
         duration=1,
@@ -304,7 +304,7 @@ class Effects:
     # Intent: Make fighter unable to do anything at all for x turns.
     STUN = Effect(
         name="Stun",
-        description="This fighter is stunned. They cannot take any action right now.",
+        description="This fighter can't move at all right now.",
         positive=False,
         icon="/gui/rpg/status/stun.png",
         duration=0,
@@ -324,10 +324,10 @@ class Attacks:
     BASIC_HIT = AttackComponent(damage_fighters())
 
     BLEED = AttackComponent(damage_over_time(mult = 0.25))
-    BLIND = AttackComponent(blind_fighters() )
-    CONFUSE = AttackComponent(confuse_targets() )
-    SLEEP = AttackComponent(sleep_fighters() )
-    STUN = AttackComponent(stun_fighters() )
+    BLIND = AttackComponent(blind_fighters())
+    CONFUSE = AttackComponent(confuse_targets())
+    SLEEP = AttackComponent(sleep_fighters())
+    STUN = AttackComponent(stun_fighters())
 
     ### Revised Attacks (Single)
     AI_MIMIC = Attack("AI Mimic", "Copies an enemy's attack.", ai_mimic(), cooldown = 2)
@@ -354,7 +354,6 @@ class Attacks:
     HEAVY_PUNCH = Attack("Heavy Punch", "A quick blow.", damage_fighters(mult = 1.75), accuracy = 75)
     HIGH_NOON = Attack("High Noon", "Quickly blast 3 targets, or 3 shots on 1!", damage_fighters(mult = 0.75), target_count = 3, cooldown = 3, accuracy = 60)
     HOLOSHIELD = Attack("HoloShield", "Boosts your team's defense by a bit.", change_stat(stat = CharacterStat.DEFENSE, mult = 1.75), target_count = 0, targets = TargetType.ALLY, cooldown = 3, accuracy = 90)
-    HUG = Attack("Hug", "Hug an enemy (ouch).", damage_fighters(mult = 1.5), accuracy = 90)
     HYPE_UP = Attack("Hype Up", "Get a team member pumped to fight!", change_stat(stat = CharacterStat.ATTACK, mult=1.5), targets = TargetType.ALLY, accuracy = 90)
     ICE_CREAM = Attack("Ice Cream", "Bing chilling!", heal_fighters(mult = 1.5), target_count = 0, targets = TargetType.ALLY, accuracy = 90, cooldown = 3)
     INSIGHT = Attack("Insight", "Lowers enemy's attack by a little.", change_stat(stat = CharacterStat.ATTACK, mult = 0.75), accuracy = 90)
@@ -374,7 +373,6 @@ class Attacks:
     SHOTGUN = Attack("Shotgun", "Blast your enemies twice with a powerful shotgun blast!", damage_fighters(mult = 2), target_count = 2, cooldown = 3, accuracy = 70)
     SNACK_TIME = Attack("Snack Time", "Heal your team with the power of snacks!", heal_fighters(), target_count = 0, targets = TargetType.ALLY, cooldown = 3, accuracy = 95)
     SOTH = Attack("Shit On The House", "I'm going to... take a shit on the house.", damage_fighters(mult = 2), target_count = 0, cooldown = 3, accuracy = 65)
-    SPIKE_BOMB = Attack("Spike Bomb", "Release spikes to all enemies!", damage_fighters(mult = 1.5), target_count = 0, cooldown = 3, accuracy = 75)
     STOMP = Attack("Stomp", "Send an earthquake to the enemies!", damage_fighters(mult = 0.75), target_count = 0)
     YTP_HEAL = Attack("Attack.HEAL", "No matter the cost.", heal_fighters(mult = 3), target_count = 0, targets = TargetType.ALLY, cooldown = 1, accuracy = 100)
     YTP_MAGIC = Attack("YTP Magic", "Channel the power of YTP!", damage_fighters(mult = 20), cooldown = 10, accuracy = 100, start_used = True)
@@ -398,6 +396,12 @@ class Attacks:
             AttackComponent(change_stat(stat = CharacterStat.ATTACK, mult = 0.5), targets = TargetType.SELF)
         ],
         target_count = 0, cooldown = 11, accuracy = 100)
+    HUG = ComboAttack("Hug", "Hug an enemy (ouch).",
+        [
+            STUN,
+            AttackComponent(damage_fighters(mult = 1.5))
+        ],
+        accuracy = 90)
     KARATE_CHOP = ComboAttack("Karate Chop", "Hit an enemy and bring their DEF down.",
         [
             BASIC_HIT,
@@ -466,6 +470,12 @@ class Attacks:
             BASIC_HIT
         ],
         accuracy = 85)
+    SPIKE_BOMB = ComboAttack("Spike Bomb", "Release spikes to all enemies!",
+        [
+            AttackComponent(damage_fighters(mult = 3), target_count = 0, cooldown = 3),
+            AttackComponent(stun_fighters(TargetType.SELF))
+        ],
+        cooldown = 3, accuracy = 75)
     SWORD_SLASH = ComboAttack("Sword Slash", "Hit an enemy and take a chip out of their armor.",
         [
             BASIC_HIT,
