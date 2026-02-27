@@ -6,8 +6,6 @@ screen unused_gallery():
     add "images/bg/books_misc/michael_calendar.png"
     add Color("#00000070")
 
-    default current_gallery_img = 0
-
     python:
         file = renpy.file("data/gallery.json")
         asset_dict_preload = json.load(file)
