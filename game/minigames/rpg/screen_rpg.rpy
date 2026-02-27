@@ -4,8 +4,6 @@ TODO list
 - Add functionality to the attack text
 - Depending on the action selected add the action to a list (To pass back to the back end)
 - Make the little heart icon actually move down with the HP counter bar
-- Remove enemies from target select if they are dead
-- Make target select use icons?
 - Make sprites be positioned dynamically based on number of enemies - bigger crowds should mean a tighter squeeze!
 - Don't let anyone go completely offscreen!
 - Fix the smaller sprites such as the K-types that are getting Mike Wazowski'd
@@ -74,7 +72,8 @@ screen screen_rpg():
         has vbox
         spacing 3
         box_reverse True
-        # The Attack Selection Box:
+
+        # The Action Selection Box:
         frame:
             padding(80, 5)
             xysize(1916, 262)
@@ -82,79 +81,128 @@ screen screen_rpg():
             grid 2 1:
                 xfill True
                 yfill True
+
                 # The attacks.
-                vbox:
-                    yalign 0.5
-                    if RPG.encounter.turn < len(RPG.encounter.allies):
-                        for i in range(len(RPG.encounter.allies[RPG.encounter.turn].attacks)):
-                            # If the attack is not available, make this insensitive
-                            $ attack_actions = []
-                            $ attack_actions.append(Function(RPG.encounter.allies[RPG.encounter.turn].set_next_attack, RPG.encounter.allies[RPG.encounter.turn].attacks[i]))
-                            if (RPG.encounter.turn+1 != len(RPG.encounter.allies)) and (RPG.encounter.allies[RPG.encounter.turn].attacks[i].attack.target_count == 0):
-                                $ attack_actions.append(IncrementVariable("RPG.encounter.turn"))
-                            button:
-                                hover_sound "audio/sfx/sfx_select.ogg"
-                                action [
-                                    Play("sound", "audio/sfx/sfx_valid.ogg"),
-                                    attack_actions
-                                ]
-                                if not RPG.encounter.allies[RPG.encounter.turn].attacks[i].available:
-                                    sensitive False
-                                has vbox
-                                text "{size=40}"+RPG.encounter.allies[RPG.encounter.turn].attacks[i].name+" {/size}{size=21}("+RPG.encounter.allies[RPG.encounter.turn].attacks[i].attack.properties+"){/size}":
-                                    if RPG.encounter.allies[RPG.encounter.turn].attacks[i] is RPG.encounter.allies[RPG.encounter.turn].next_attack:
-                                        color "#FF8A00"
-                                        hover_color "#F5DD00"
-                                        insensitive_color "#888888"
-                                    else:
-                                        color "#FFFFFF"
-                                        hover_color "#0099CC"
-                                        insensitive_color "#888888"
-                                text "{size=21}"+RPG.encounter.allies[RPG.encounter.turn].attacks[i].attack.description+"{/size}":
-                                    first_indent 32
-                                    if RPG.encounter.allies[RPG.encounter.turn].attacks[i] is RPG.encounter.allies[RPG.encounter.turn].next_attack:
-                                        color "#844200"
-                                        hover_color "#7B6F00"
-                                        insensitive_color "#888888"
-                                    else:
-                                        color "#848484"
-                                        hover_color "#006582"
-                                        insensitive_color "#888888"
+                frame:
+                    background None
+                    xsize 1.0 ysize 1.0
+
+                    # I would have loved to use a vpgrid here but noOOOooooO if I do, the buttons don't do right
+                    viewport:
+                        xsize 1.0 ysize 1.0
+                        if len(RPG.encounter.allies[RPG.encounter.turn].attacks) > 4:
+                            scrollbars "vertical"
+                            mousewheel True
+
+                        grid 2 len(RPG.encounter.allies[RPG.encounter.turn].attacks) / 2 + 1:
+                            xsize 0.5 ysize 0.5
+
+                            if RPG.encounter.turn < len(RPG.encounter.allies):
+                                for i in range(len(RPG.encounter.allies[RPG.encounter.turn].attacks)):
+                                    # If the attack is not available, make this insensitive
+                                    $ attack_actions = []
+                                    $ attack_actions.append(Function(RPG.encounter.allies[RPG.encounter.turn].set_next_attack, RPG.encounter.allies[RPG.encounter.turn].attacks[i]))
+                                    if (RPG.encounter.turn+1 != len(RPG.encounter.allies)) and (RPG.encounter.allies[RPG.encounter.turn].attacks[i].attack.target_count == 0):
+                                        $ attack_actions.append(IncrementVariable("RPG.encounter.turn"))
+                                    button:
+                                        xfill True
+                                        yminimum 1.0 ymaximum 120
+                                        hover_sound "audio/sfx/sfx_select.ogg"
+                                        action [
+                                            Play("sound", "audio/sfx/sfx_valid.ogg"),
+                                            attack_actions
+                                        ]
+                                        if not RPG.encounter.allies[RPG.encounter.turn].attacks[i].available:
+                                            sensitive False
+                                        has vbox
+                                        text "{size=40}"+RPG.encounter.allies[RPG.encounter.turn].attacks[i].name+" {/size}{size=21}("+RPG.encounter.allies[RPG.encounter.turn].attacks[i].attack.properties+"){/size}":
+                                            if RPG.encounter.allies[RPG.encounter.turn].attacks[i] is RPG.encounter.allies[RPG.encounter.turn].next_attack:
+                                                color "#FF8A00"
+                                                hover_color "#F5DD00"
+                                                insensitive_color "#888888"
+                                            else:
+                                                color "#FFFFFF"
+                                                hover_color "#0099CC"
+                                                insensitive_color "#888888"
+                                        text "{size=21}"+RPG.encounter.allies[RPG.encounter.turn].attacks[i].attack.description+"{/size}":
+                                            first_indent 32
+                                            if RPG.encounter.allies[RPG.encounter.turn].attacks[i] is RPG.encounter.allies[RPG.encounter.turn].next_attack:
+                                                color "#844200"
+                                                hover_color "#7B6F00"
+                                                insensitive_color "#888888"
+                                            else:
+                                                color "#848484"
+                                                hover_color "#006582"
+                                                insensitive_color "#888888"
 
                 # The target select box
-                vbox:
-                    $ curr_att = RPG.encounter.allies[RPG.encounter.turn].next_attack
-                    if curr_att is not None:
-                        $ victims = RPG.encounter.possible_targets(RPG.encounter.allies[RPG.encounter.turn], RPG.encounter.allies[RPG.encounter.turn].next_attack.attack)
-                        $ working_list = []
-                        for i in range(curr_att.attack.target_count):
-                            text "{size=42}Select target [i]"
-                            for victim in victims:
-                                $ target_actions = [ Function(bypass_append, working_list, victim) ]
-                                if i+1 == curr_att.attack.target_count:
-                                    $ target_actions.append(Function(RPG.encounter.allies[RPG.encounter.turn].set_next_targets, working_list))
-                                    if (RPG.encounter.turn+1 != len(RPG.encounter.allies)):
-                                        $ target_actions.append(IncrementVariable("RPG.encounter.turn"))
-                                button:
-                                    hover_sound "audio/sfx/sfx_select.ogg"
-                                    action [
-                                        Play("sound", "audio/sfx/sfx_valid.ogg"),
-                                        target_actions
-                                    ]
-                                    text "{size=42}"+victim.display_name:
-                                        color "#FFFFFF"
-                                        hover_color "#0099CC"
-                            if not i == 0:
-                                button:
-                                    hover_sound "audio/sfx/sfx_select.ogg"
-                                    text "{size=42}Back":
-                                        color "#FFFFFF"
-                                        hover_color "#0099CC"
-                                    action [
-                                        Play("sound", "audio/sfx/sfx_valid.ogg"),
-                                        RemoveFromSet("working_list", working_list[i-1]),
-                                        IncrementVariable("i", -1)
-                                    ]
+                frame:
+                    background None
+                    xsize 1.0 ysize 1.0
+                    vbox:
+                        $ curr_att = RPG.encounter.allies[RPG.encounter.turn].next_attack
+                        if curr_att is not None:
+                            $ victims = RPG.encounter.possible_targets(RPG.encounter.allies[RPG.encounter.turn], RPG.encounter.allies[RPG.encounter.turn].next_attack.attack)
+                            $ working_list = []
+                            for i in range(curr_att.attack.target_count):
+                                text "{size=42}Select target [i]"
+
+                                hbox:
+                                    for victim in victims:
+                                        $ target_actions = [ Function(bypass_append, working_list, victim) ]
+                                        if i+1 == curr_att.attack.target_count:
+                                            $ target_actions.append(Function(RPG.encounter.allies[RPG.encounter.turn].set_next_targets, working_list))
+                                            if (RPG.encounter.turn+1 != len(RPG.encounter.allies)):
+                                                $ target_actions.append(IncrementVariable("RPG.encounter.turn"))
+
+                                            # Only put these if the target is not dead
+                                            if not victim.dead:
+                                                button:
+                                                    hover_sound "audio/sfx/sfx_select.ogg"
+
+                                                    action [
+                                                        Play("sound", "audio/sfx/sfx_valid.ogg"),
+                                                        target_actions
+                                                    ]
+
+                                                    frame:
+                                                        background None
+                                                        vbox:
+
+                                                            # Portrait shenanigans
+                                                            frame:
+                                                                xysize(88,88)
+                                                                xalign 0.5
+
+                                                                background victim.portrait
+
+                                                                hover_background Transform(victim.portrait, matrixcolor=shade_select_matrix)
+
+                                                                # TODO: this does not work yet, i need a SelectedIf() but i dont know what variable i'm looking for
+                                                                selected_background Composite(
+                                                                    (88,88),
+                                                                    (0,0), victim.portrait,
+                                                                    (0,0), "gui/rpg/portraits/border_sel_e.png"
+                                                                )
+
+                                                            text "{size=42}"+victim.display_name:
+                                                                color "#FFFFFF"
+                                                                hover_color "#0099CC"
+                                                                xalign 0.5
+                                                                text_align 0.5
+
+                                    # This handles moves that target the whole enemy party
+                                    if not i == 0:
+                                        button:
+                                            hover_sound "audio/sfx/sfx_select.ogg"
+                                            text "{size=42}Back":
+                                                color "#FFFFFF"
+                                                hover_color "#0099CC"
+                                            action [
+                                                Play("sound", "audio/sfx/sfx_valid.ogg"),
+                                                RemoveFromSet("working_list", working_list[i-1]),
+                                                IncrementVariable("i", -1)
+                                            ]
 
             # If everything is set and good to go, show the confirm button)
             # TODO: Further checks to make sure everything is good and valid.
@@ -169,6 +217,7 @@ screen screen_rpg():
                         Play("sound", "audio/sfx/sfx_valid.ogg"),
                         Return()
                     ]
+
         # The stat boxes for Allies
         grid len(RPG.encounter.allies) 1:
             xfill True
