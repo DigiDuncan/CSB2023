@@ -36,11 +36,11 @@
     "mean_original.png": {
         "type": "imgset",
         "title": "Mean (Original)",
-        "caption": "Mean's original sprite, as seen in {i}CSBounciness III,{/i} before Tate redrew it. It's an edited screenshot from an episode of {i}Octonauts.{/i} This representation of Mean is affectionately known as \"Yellow Fucker\".",
+        "caption": "Mean's original sprites, as seen in {i}CSBounciness III,{/i} before Tate redrew them. It's an edited screenshot from an episode of {i}Octonauts.{/i} This representation of Mean is affectionately known as \"Yellow Fucker\".",
         "need_character": "mean",
         "imgs": [
-               "mean_original.png",
-               "worker_mean.png"
+            "mean_original.png",
+            "worker_mean.png"
         ]
     },
     "addyfucku.png": {
@@ -104,17 +104,14 @@
         "need_ending": "train_winner"
     },
     "mean_human_sketch.png": {
-        "type": "image",
+        "type": "imgset",
         "title": "mean_human_sketch.png",
-        "caption": "An unfinished sketch of what would have been Mean's human sprite base. Tate's art style is a bit too \"pretty\" to do Mean's character justice.",
-        "need_character": "mean_human"
-    },
-    "mean_human_hat_sketch.png": {
-        "type": "image",
-        "title": "mean_human_hat_sketch.png",
-        "caption": "The same sketch, just with Mean's hat.",
+        "caption": "Unfinished sketches of what would have been Mean's human sprite base. Tate's art style is a bit too \"pretty\" to do Mean's character justice.",
         "need_character": "mean_human",
-        "need_label": "train_lupin_win"
+        "imgs": [
+            "mean_human_sketch.png",
+            "mean_human_hat_sketch.png"
+        ]
     },
     "zenigata_car_placeholder.png": {
         "type": "image",
@@ -153,34 +150,17 @@
         "need_character": "perfect_tate"
     },
     "cs_news1.png": {
-        "type": "image",
-        "title": "CS News 1",
-        "caption": "A newspaper clip used to replicate the {i}Weapon Of Choice{/i} video in Friend Route.",
-        "need_label": "friend2_weapon_of_choice"
-    },
-    "cs_news2.png": {
-        "type": "image",
-        "title": "CS News 2",
-        "caption": "A newspaper clip used to replicate the {i}Weapon Of Choice{/i} video in Friend Route.",
-        "need_label": "friend2_weapon_of_choice"
-    },
-    "cs_news3.png": {
-        "type": "image",
-        "title": "CS News 3",
-        "caption": "A newspaper clip used to replicate the {i}Weapon Of Choice{/i} video in Friend Route.",
-        "need_label": "friend2_weapon_of_choice"
-    },
-    "cs_news4.png": {
-        "type": "image",
-        "title": "CS News 4",
-        "caption": "A newspaper clip used to replicate the {i}Weapon Of Choice{/i} video in Friend Route.",
-        "need_label": "friend2_weapon_of_choice"
-    },
-    "cs_news5.png": {
-        "type": "image",
-        "title": "CS News 5",
-        "caption": "A newspaper clip used to replicate the {i}Weapon Of Choice{/i} video in Friend Route.",
-        "need_label": "friend2_weapon_of_choice"
+        "type": "imgset",
+        "title": "CS News",
+        "caption": "Newspaper clips used to replicate the {i}Weapon Of Choice{/i} video in Friend Route.",
+        "need_label": "friend2_weapon_of_choice",
+        "imgs": [
+            "cs_news1.png",
+            "cs_news2.png",
+            "cs_news3.png",
+            "cs_news4.png",
+            "cs_news5.png"
+        ]
     },
     "Sign_Filtered000.png": {
         "type": "image",
@@ -243,32 +223,17 @@
         "caption": "Item Collection was an idea that Pakoo had a long time ago, but didn't have enough time to implement in {i}CSBIII.{/i} Luckily, Tate also loved the idea, so they made it a reality for {i}DX.{/i} This was the initial MS Paint doodle showcasing Tate's concept for the screen's layout."
     },
     "arceus_festive_neutral.png": {
-        "type": "image",
+        "type": "imgset",
         "title": "Arceus (Festive) 1",
-        "caption": "An early version of Arceus' sprite for {i}Christmas Edition.{/i} The edit was done by Tate at about 3 AM. It was not well-received.",
+        "caption": "An early version of Arceus' sprites for {i}Christmas Edition.{/i} These edit were done by Tate at about 3 AM. They were not well-received.",
         "need_character": "arceus",
-        "need_label": "ce_introductions"
-    },
-    "arceus_festive_angry.png": {
-        "type": "image",
-        "title": "Arceus (Festive) 2",
-        "caption": "An early version of Arceus' sprite for {i}Christmas Edition.{/i} The edit was done by Tate at about 3 AM. It was not well-received.",
-        "need_character": "arceus",
-        "need_label": "ce_introductions"
-    },
-    "arceus_festive_happy.png": {
-        "type": "image",
-        "title": "Arceus (Festive) 3",
-        "caption": "An early version of Arceus' sprite for {i}Christmas Edition.{/i} The edit was done by Tate at about 3 AM. It was not well-received.",
-        "need_character": "arceus",
-        "need_label": "ce_introductions"
-    },
-    "arceus_festive_worried.png": {
-        "type": "image",
-        "title": "Arceus (Festive) 4",
-        "caption": "An early version of Arceus' sprite for {i}Christmas Edition.{/i} The edit was done by Tate at about 3 AM. It was not well-received.",
-        "need_character": "arceus",
-        "need_label": "ce_introductions"
+        "need_label": "ce_introductions",
+        "imgs": [
+            "arceus_festive_neutral.png",
+            "arceus_festive_angry.png",
+            "arceus_festive_happy.png",
+            "arceus_festive_worried.png"
+        ]
     },
     "kitty_festive.png": {
         "type": "image",
@@ -297,28 +262,16 @@
         "need_label": "ce_start"
     },
     "tgt_1.jpg": {
-        "type": "image",
-        "title": "Unused Target Employee Pose 1",
-        "caption": "An unused pose for the checkout scene.",
-        "need_label": "ce_checkout"
-    },
-    "tgt_2.jpg": {
-        "type": "image",
-        "title": "Unused Target Employee Pose 2",
-        "caption": "An unused pose for the checkout scene.",
-        "need_label": "ce_checkout"
-    },
-    "tgt_3.jpg": {
-        "type": "image",
-        "title": "Unused Target Employee Pose 3",
-        "caption": "An unused pose for the checkout scene.",
-        "need_label": "ce_checkout"
-    },
-    "tgt_4.jpg": {
-        "type": "image",
-        "title": "Unused Target Employee Pose 4",
-        "caption": "An unused pose for the checkout scene.",
-        "need_label": "ce_checkout"
+        "type": "imgset",
+        "title": "Unused Target Employee Poses",
+        "caption": "Unused poses for the checkout scene.",
+        "need_label": "ce_checkout",
+        "imgs": [
+            "tgt_1.jpg",
+            "tgt_2.jpg",
+            "tgt_3.jpg",
+            "tgt_4.jpg"
+        ]
     },
     "hand.png": {
         "type": "image",
@@ -327,22 +280,15 @@
         "need_label": "ce_cooking"
     },
     "cs_living_elf.png": {
-        "type": "image",
-        "title": "CS Living Room (Elf)",
-        "caption": "A beta image used during the projector scene.",
-        "need_label": "ce_banter"
-    },
-    "cs_living_error.png": {
-        "type": "image",
-        "title": "CS Living Room (Error)",
-        "caption": "A beta image used during the projector scene.",
-        "need_label": "ce_banter"
-    },
-    "cs_living_signal.png": {
-        "type": "image",
-        "title": "CS Living Room (Signal)",
-        "caption": "A beta image used during the projector scene.",
-        "need_label": "ce_banter"
+        "type": "imgset",
+        "title": "CS Living Room (Beta)",
+        "caption": "Beta images used during the projector scene. Now, we just use {i}one{/i} image and then some crazy math to project something onto the wall.",
+        "need_label": "ce_banter",
+        "imgs": [
+            "cs_living_elf.png",
+            "cs_living_error.png",
+            "cs_living_signal.png"
+        ]
     },
     "blank.png": {
         "type": "image",
@@ -377,16 +323,14 @@
         "need_label": "ce_introductions"
     },
     "k22_angry.png": {
-        "type": "image",
-        "title": "Beta K-22 Angry",
+        "type": "imgset",
+        "title": "Beta K-22 Angry Sprites",
         "caption": "Pakoo: When I was drawing K-22, I tried to make them as pissed as possible. I made them look {i}too{/i} pissed.",
-        "need_label": "ce_introductions"
-    },
-    "k22_phone_angry.png": {
-        "type": "image",
-        "title": "Beta K-22 Angry Phone",
-        "caption": "A version of the phone sprite with the old angry face.",
-        "need_label": "ce_introductions"
+        "need_label": "ce_introductions",
+        "imgs": [
+            "k22_angry.png",
+            "k22_phone_angry.png"
+        ]
     },
     "tgt_worker.png": {
         "type": "image",
