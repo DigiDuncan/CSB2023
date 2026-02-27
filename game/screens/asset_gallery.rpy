@@ -34,19 +34,23 @@ screen unused_gallery():
         ## fix counter if it goes over the length of list or under 1
         pretty_count = unused_page+1
 
+        # Filename
+        filename = list(asset_dict.keys())[unused_page]
+        entry = list(asset_dict.values())[unused_page]
+
     text list( str(pretty_count)+" of "+str(len(asset_dict)) ):
         size 48
         xalign 0.5
         yalign 0.07
 
     # File Name
-    text list(asset_dict.values())[unused_page]["title"]:
+    text entry["title"]:
         size 72
         xalign 0.5
         yalign 0.125
 
     # Caption
-    text list(asset_dict.values())[unused_page]["caption"]:
+    text entry["caption"]:
         textalign 0.5
         xcenter 0.7
         ycenter 0.6
@@ -54,14 +58,14 @@ screen unused_gallery():
         ysize 800
 
     # Main Image (if image)
-    if list(asset_dict.values())[unused_page]["type"] == "image":
-        image ProportionalScale("gallery/images/" + list(asset_dict.keys())[unused_page], 500, 800):
+    if entry["type"] == "image":
+        image ProportionalScale("gallery/images/" + filename, 500, 800):
             xcenter 0.3
             ycenter 0.6
 
     # Unused Route Handling
-    if list(asset_dict.values())[unused_page]["type"] == "route":
-        image ProportionalScale("gallery/images/" + list(asset_dict.keys())[unused_page], 500, 800):
+    if entry["type"] == "route":
+        image ProportionalScale("gallery/images/" + filename, 500, 800):
             xcenter 0.3
             ycenter 0.6
         frame:
@@ -70,23 +74,23 @@ screen unused_gallery():
             xpos 0.3
             ypos 0.415
             textbutton "{color=#fff}Click To Play!{/color}":
-                action Replay(str(list(asset_dict.values())[unused_page]["jump_to"]), locked = False), Stop("music2"), PauseAudio("music", False), Stop("jukebox"), SetVariable("unused_page", 0)
+                action Replay(str(entry["jump_to"]), locked = False), Stop("music2"), PauseAudio("music", False), Stop("jukebox"), SetVariable("unused_page", 0)
 
     # Main Image (if audio)
-    if list(asset_dict.values())[unused_page]["type"] == "audio":
-        image ProportionalScale("gallery/album_art/" + list(asset_dict.values())[unused_page]["album_art"], 500, 800):
+    if entry["type"] == "audio":
+        image ProportionalScale("gallery/album_art/" + entry["album_art"], 500, 800):
             xcenter 0.3
             ycenter 0.6
 
     # Main Image (if image set)
-    if list(asset_dict.values())[unused_page]["type"] == "imgset":
+    if entry["type"] == "imgset":
 
         python:
             img_list = []
-            for i in list(asset_dict.keys())[unused_page]["imgs"]:
-                img_list.append( "gallery/images/" + list(asset_dict.keys())[unused_page]["imgs"][i] )
+            for img in entry["imgs"]:
+                img_list.append( "gallery/images/" + img)
 
-        image ProportionalScale("gallery/images/" + list(asset_dict.keys())[unused_page], 500, 800):
+        image ProportionalScale("gallery/images/" + filename, 500, 800):
             xcenter 0.3
             ycenter 0.6
 
