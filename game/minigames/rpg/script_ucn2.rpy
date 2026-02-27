@@ -379,13 +379,25 @@ screen _ucn2_selection():
         ######################### BOTTOM
 
         ### buttons
+        $ screen_check = renpy.get_screen("category_welcome")
+
         textbutton "Return to Extras":
             xoffset 25 yoffset 950
-            action [
-                PauseAudio("music", False),
-                Stop("music2"),
-                Hide("_ucn2_selection", dissolve)
-            ]
+
+            if screen_check:
+                action [
+                    PauseAudio("music", False),
+                    Stop("music2"),
+                    Hide("_ucn2_selection", dissolve)
+                ]
+            else:
+                action [
+                    PauseAudio("music", False),
+                    Stop("music2"),
+                    Hide("_ucn2_selection", dissolve),
+                    ShowMenu("category_welcome")
+                ]
+
         textbutton "Main Menu":
             sensitive True
             xoffset 25 yoffset 1000
@@ -783,5 +795,7 @@ label _ucn2_after:
         "Play again":
             stop music
             call screen _ucn2_selection
+            # TODO: find a way to jump back to main menu in the background AND show the screen
+            # hey arc pls help you're better at context than we are
         "Return to main menu":
-            return
+            jump start
