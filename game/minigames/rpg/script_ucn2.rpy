@@ -89,6 +89,7 @@ screen _ucn2_selection():
 
     ###################### Important variables for everywhere
     default rpg_selection_stage = "party"
+    default ucn2_hovered_data = []
     default rpg_slots = [
         ["(Pending)"], ["(Pending)"],
         ["(Pending)"], ["(Pending)"],
@@ -163,6 +164,10 @@ screen _ucn2_selection():
                                             SetVariable("ucn2_hovered_data", [character.name, character]),
                                             SetScreenVariable("ucn2_hovered_data", [character.name, character])
                                         ]
+                                        unhovered  [
+                                            SetVariable("ucn2_hovered_data", []),
+                                            SetScreenVariable("ucn2_hovered_data", [])
+                                        ]
                                         action [
                                             Play("sound", "audio/sfx/sfx_valid.ogg"),
                                             Function(rpg_fill_slot, rpg_slots, rpg_selected_slot, ucn2_hovered_data),
@@ -187,6 +192,10 @@ screen _ucn2_selection():
                                         SetVariable("ucn2_hovered_data", ["(Random)", RPG.Characters.random()]),
                                         SetScreenVariable("ucn2_hovered_data", ["(Random)", RPG.Characters.random()])
                                     ]
+                                    unhovered  [
+                                        SetVariable("ucn2_hovered_data", []),
+                                        SetScreenVariable("ucn2_hovered_data", [])
+                                    ]
                                     action [
                                         Play("sound", "audio/sfx/sfx_valid.ogg"),
                                         Function(rpg_fill_slot, rpg_slots, rpg_selected_slot, ["(Random)", RPG.Characters.random() ]),
@@ -203,6 +212,10 @@ screen _ucn2_selection():
                                     hovered [
                                         SetVariable("ucn2_hovered_data", ["(None)", None]),
                                         SetScreenVariable("ucn2_hovered_data", ["(None)", None])
+                                    ]
+                                    unhovered  [
+                                        SetVariable("ucn2_hovered_data", []),
+                                        SetScreenVariable("ucn2_hovered_data", [])
                                     ]
                                     action [
                                         Play("sound", "audio/sfx/sfx_valid.ogg"),

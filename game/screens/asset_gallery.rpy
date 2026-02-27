@@ -266,7 +266,19 @@ screen unused_gallery():
     # Return Buttons
     textbutton "Return to Extras":
         xoffset 25 yoffset 950
-        action ShowMenu("category_welcome")
+        action [
+            Stop("music2"),
+            PauseAudio("music", False),
+            Stop("jukebox"),
+            SetVariable("unused_page", 0),
+            ShowMenu("category_welcome")
+        ]
     textbutton "Main Menu":
         xoffset 25 yoffset 1000
-        action Return()
+        action [
+            Stop("music2"),
+            PauseAudio("music", False),
+            Stop("jukebox"),
+            SetVariable("unused_page", 0),
+            MainMenu()
+        ]
