@@ -210,10 +210,12 @@ screen screen_rpg():
                                                 text str(checked_effects[effect]):
                                                     size 16
                                                     xanchor 1.0 yanchor 0.0
-                                                    xoffset 32 yoffset -11
+                                                    xoffset 33 yoffset -11
                                                     text_align 1.0
                                                     color Color("#FFFFFF")
                                                     outlines [(2.5, "#000000", absolute(0), absolute(0))]
+
+
                         grid 2 2:
                             xfill True
                             yfill True
@@ -321,7 +323,7 @@ screen screen_rpg():
                                                 text str(checked_effects[effect]):
                                                     size 16
                                                     xanchor 1.0 yanchor 0.0
-                                                    xoffset 32 yoffset -11
+                                                    xoffset 33 yoffset -11
                                                     text_align 1.0
                                                     color Color("#FFFFFF")
                                                     outlines [(2.5, "#000000", absolute(0), absolute(0))]

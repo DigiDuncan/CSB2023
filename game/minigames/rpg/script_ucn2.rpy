@@ -2,6 +2,7 @@
 # TODO: fix none not resetting between fights
 # TODO: finish other selection screens
 # TODO: figure out why autoselect needs two clicks to update
+# TODO: WHY ARE WE IN THE VOID? if we try to return to extras after playing again
 
 ###################################################### FUNCTIONS FOR THIS SCREEN ONLY
 
@@ -379,7 +380,7 @@ screen _ucn2_selection():
 
         ### buttons
         textbutton "Return to Extras":
-            yoffset 950 xoffset 25
+            xoffset 25 yoffset 950
             action [
                 PauseAudio("music", False),
                 Stop("music2"),
@@ -387,7 +388,7 @@ screen _ucn2_selection():
             ]
         textbutton "Main Menu":
             sensitive True
-            yoffset 1000 xoffset 25
+            xoffset 25 yoffset 1000
             action [
                 PauseAudio("music", False),
                 Stop("music2"),
@@ -395,7 +396,7 @@ screen _ucn2_selection():
                 Return()
             ]
 
-        # Debug button only
+        # Debug buttons only
         # textbutton "[[DEBUG] Toggle ready state.":
             # yoffset 50 xoffset 25
             # action [
@@ -408,6 +409,16 @@ screen _ucn2_selection():
                 ready_transform = _rpg_ready_button_yes
             else:
                 ready_transform = _rpg_ready_button_no
+
+        # Debug only
+        if rpg_ready == True:
+            textbutton "[[DEV] Skip aesthetic screens":
+                xoffset 1395 yoffset 950
+                action [
+                    Play("sound", "audio/sfx/sfx_valid.ogg"),
+                    SetVariable("rpg_selection_stage", "fight"),
+                    SetScreenVariable("rpg_selection_stage", "fight")
+                ]
 
         imagebutton:
             insensitive "sepia:gui/rpg/ready.png"
@@ -457,7 +468,7 @@ screen _ucn2_selection():
 
         ###################### Back / forward
         textbutton "Previous Screen":
-            yoffset 1000 xoffset 25
+            xoffset 25 yoffset 1000
             action [
                 Play("sound", "audio/sfx/sfx_valid.ogg"),
                 SetVariable("rpg_selection_stage", "party"),
@@ -465,7 +476,7 @@ screen _ucn2_selection():
             ]
 
         textbutton "Next Screen":
-            yoffset 1000 xoffset 1674
+            xoffset 1674 yoffset 1000
             action [
                 Play("sound", "audio/sfx/sfx_valid.ogg"),
                 SetVariable("rpg_selection_stage", "load_imgs"),
@@ -563,7 +574,7 @@ screen _ucn2_selection():
 
         ###################### Back / forward
         textbutton "Previous Screen":
-            yoffset 1000 xoffset 25
+            xoffset 25 yoffset 1000
             action [
                 Play("sound", "audio/sfx/sfx_valid.ogg"),
                 SetVariable("rpg_selection_stage", "scale"),
@@ -571,7 +582,7 @@ screen _ucn2_selection():
             ]
 
         textbutton "Next Screen":
-            yoffset 1000 xoffset 1674
+            xoffset 1674 yoffset 1000
             action [
                 Play("sound", "audio/sfx/sfx_valid.ogg"),
                 SetVariable("rpg_selection_stage", "bgm"),
@@ -631,7 +642,7 @@ screen _ucn2_selection():
 
         ###################### Back / forward
         textbutton "Previous Screen":
-            yoffset 1000 xoffset 25
+            xoffset 25 yoffset 1000
             action [
                 Play("sound", "audio/sfx/sfx_valid.ogg"),
                 SetVariable("rpg_selection_stage", "img"),
@@ -639,7 +650,7 @@ screen _ucn2_selection():
             ]
 
         textbutton "Next Screen":
-            yoffset 1000 xoffset 1674
+            xoffset 1674 yoffset 1000
             action [
                 Play("sound", "audio/sfx/sfx_valid.ogg"),
                 SetVariable("rpg_selection_stage", "fight"),
@@ -684,7 +695,7 @@ screen _ucn2_selection():
 
         ###################### Back / forward
         textbutton "Previous Screen":
-            yoffset 1000 xoffset 25
+            xoffset 25 yoffset 1000
             action [
                 Play("sound", "audio/sfx/sfx_valid.ogg"),
                 SetVariable("rpg_selection_stage", "img"),
@@ -692,7 +703,7 @@ screen _ucn2_selection():
             ]
 
         textbutton "BEGIN!":
-            yoffset 1000 xoffset 1674
+            xoffset 1674 yoffset 1000
             action [
                 Play("sound", "audio/sfx/sfx_valid.ogg"),
                 Hide("rpg_char_sel_new", dissolve),
@@ -708,7 +719,6 @@ screen _ucn2_selection():
 
                 Start("_ucn2_battle")
             ]
-
 
     else: # This should NEVER happen!
         $ renpy.jump("secret_dx")
@@ -768,9 +778,10 @@ label _ucn2_battle():
         intro_text "Begin!"
 
 label _ucn2_after:
+    window hide
     menu:
-        "Play again?"
-        "Yes":
-            call screen _ucn2_selection()
-        "No":
+        "Play again":
+            stop music
+            call screen _ucn2_selection
+        "Return to main menu":
             return
