@@ -49,20 +49,34 @@ screen screen_rpg():
     default effect_info = Tooltip("")
 
     # Drawing the enemies in the background.
-    grid len(RPG.encounter.enemies) 1:
-        xalign 0.5 yalign 1.0
-        for i in range(len(RPG.encounter.enemies)):
-            if not RPG.encounter.enemies[i].dead:
-                # Attempt to add animated sprite if one exists, else fallback to the normal sprite
-                python:
-                    try:
-                        enemy_sprite = RPG.encounter.enemies[i].anim_sprite
-                    except:
-                        enemy_sprite = RPG.encounter.enemies[i].sprite
+    frame:
+        background None
+        xsize 1.1 ysize 0.7
+        xanchor 0.5 yanchor 1.0
+        xpos 0.5 ypos 0.8
 
-                add enemy_sprite
-            else:
-                add Null(200,200)
+        $ dynamic_spacing = 100 - (len(RPG.encounter.enemies) * 100)
+
+        hbox:
+            xfill True
+            xalign 0.5 yalign 1.0
+            spacing dynamic_spacing
+
+            for i in range(len(RPG.encounter.enemies)):
+                if not RPG.encounter.enemies[i].dead:
+                    # Attempt to add animated sprite if one exists, else fallback to the normal sprite
+                    python:
+                        try:
+                            enemy_sprite = RPG.encounter.enemies[i].anim_sprite
+                        except:
+                            enemy_sprite = RPG.encounter.enemies[i].sprite
+
+                    add enemy_sprite:
+                        xalign 0.5
+                        ysize 1.0
+                        fit "contain"
+                else:
+                    add Null(200,200)
 
     # This is the context menu of the RPG
     frame:
