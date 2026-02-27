@@ -105,7 +105,7 @@
     },
     "mean_human_sketch.png": {
         "type": "imgset",
-        "title": "mean_human_sketch.png",
+        "title": "Mean Human Sketches",
         "caption": "Unfinished sketches of what would have been Mean's human sprite base. Tate's art style is a bit too \"pretty\" to do Mean's character justice.",
         "need_character": "mean_human",
         "imgs": [
@@ -224,7 +224,7 @@
     },
     "arceus_festive_neutral.png": {
         "type": "imgset",
-        "title": "Arceus (Festive) 1",
+        "title": "Arceus (Festive)",
         "caption": "An early version of Arceus' sprites for {i}Christmas Edition.{/i} These edit were done by Tate at about 3 AM. They were not well-received.",
         "need_character": "arceus",
         "need_label": "ce_introductions",
