@@ -1,6 +1,7 @@
 init python:
     # For unused assets gallery
     unused_page = 0
+    current_gallery_img = 0
 
     # For jukebox tagging
     current_jukebox_tag_index = 0
