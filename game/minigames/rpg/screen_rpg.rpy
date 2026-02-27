@@ -44,10 +44,6 @@ screen say_rpg(rpg_what):
             text rpg_what
 
 screen screen_rpg():
-
-    # For effect tooltips
-    default effect_info = Tooltip("")
-
     # Drawing the enemies in the background.
     frame:
         background None
@@ -276,16 +272,9 @@ screen screen_rpg():
                                                 xalign 0.5 yalign 0.5
                                                 idle effect.icon
                                                 hover effect_hover_icon
-                                                hovered [
-                                                    effect_info.action
-                                                    ([
-                                                        effect.name,
-                                                        effect.description,
-                                                        "multiplier info here"
-                                                    ])
-                                                ]
                                                 hover_sound "audio/sfx/sfx_select.ogg"
-                                                action [ NullAction() ]
+                                                action NullAction()
+                                                tooltip [effect.name, effect.description, "multiplier info here"]
 
                                             if checked_effects[effect] > 1:
                                                 text str(checked_effects[effect]):
@@ -407,16 +396,9 @@ screen screen_rpg():
                                                 xalign 0.5 yalign 0.5
                                                 idle effect.icon
                                                 hover effect_hover_icon
-                                                hovered [
-                                                    effect_info.action
-                                                    ([
-                                                        effect.name,
-                                                        effect.description,
-                                                        "multiplier info here"
-                                                    ])
-                                                ]
                                                 hover_sound "audio/sfx/sfx_select.ogg"
-                                                action [ NullAction() ]
+                                                action NullAction()
+                                                tooltip [effect.name, effect.description, "multiplier info here"]
 
                                             if checked_effects[effect] > 1:
                                                 text str(checked_effects[effect]):
@@ -479,26 +461,25 @@ screen screen_rpg():
                         xalign 0.5 yalign 1.0
 
     # For effect data
-    frame:
-        if len(effect_info.value) < 1:
-            background None
-        else:
+    $ effect_info = GetTooltip()
+    if effect_info:
+        frame:
             xanchor 0.5 yanchor 0.5
             xpos 0.5 ypos 0.5 # TODO: need to figure out proper positioning
             xmaximum 250
 
             vbox:
-                text effect_info.value[0]: # effect name
+                text effect_info[0]: # effect name
                     xalign 0.5
                     text_align 0.5
                     size 40
 
-                text effect_info.value[1]: # effect description
+                text effect_info[1]: # effect description
                     xalign 0.5
                     text_align 0.5
                     size 32
 
-                text effect_info.value[2]: # effect multiplier info
+                text effect_info[2]: # effect multiplier info
                     xalign 0.5
                     text_align 0.5
                     size 21

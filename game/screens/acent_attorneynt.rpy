@@ -3,7 +3,6 @@ screen acent_attorneynt(chosen_evidence):
     #zorder 1
 
     python:
-        global selected_evidence
         show_window = False
         renpy.choice_for_skipping()
 
@@ -21,8 +20,7 @@ screen acent_attorneynt(chosen_evidence):
             ["", "", ""]
         ]
 
-    default hovered_item = Tooltip("")
-    default selected_item = Tooltip(items_list[chosen_evidence])
+    default selected_item = items_list[chosen_evidence]
 
     ##### base elements
     add Color('#000000', alpha=0.5)
@@ -39,14 +37,14 @@ screen acent_attorneynt(chosen_evidence):
         ypos 137
 
     # item name
-    text selected_item.value[0]:
+    text selected_item[0]:
         color "#000000"
         size 72
         xpos 570
         ypos 248
 
     # item description
-    text selected_item.value[2]:
+    text selected_item[2]:
         color "#000000"
         size 54
         xpos 570
@@ -75,7 +73,7 @@ screen acent_attorneynt(chosen_evidence):
         xpos 133
         ypos 233
         xysize (375, 375)
-        image selected_item.value[1]:
+        image selected_item[1]:
             xanchor 0.5
             yanchor 0.5
             xpos 0.5
@@ -116,8 +114,12 @@ screen acent_attorneynt(chosen_evidence):
                             xalign 0.5
                             yalign 1.0
 
-                            hovered [ Play("sound", "audio/sfx/sfx_select.ogg"), hovered_item.Action(items_list[i]) ]
-                            action [ Play("sound", "audio/sfx/sfx_valid.ogg"), selected_item.Action(items_list[i]), SetVariable("chosen_evidence", i)  ]
+                            hovered [Play("sound", "audio/sfx/sfx_select.ogg")]
+                            action [Play("sound", "audio/sfx/sfx_valid.ogg"),
+                                    SetVariable("chosen_evidence", i),
+                                    SetVariable("selected_item", items_list[i]),
+                                    SetScreenVariable("selected_item", items_list[i])
+                            ]
 
                         image items_list[i][1]:
                             xalign 0.5

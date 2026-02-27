@@ -822,12 +822,6 @@ style slot_button_text:
 ## https://www.renpy.org/doc/html/screen_special.html#preferences
 
 screen preferences():
-
-    # default, show nothing
-    default info = Tooltip("")
-    default info_x = mouse_xy[0]
-    default info_y = mouse_xy[1]
-
     tag menu
 
     use game_menu(_("Preferences"), scroll="viewport"):
@@ -883,7 +877,8 @@ screen preferences():
                         hbox:
                             style_prefix "check"
                             textbutton _("Awawa Mode") action ToggleField(preferences, "awawa_mode"):
-                                hovered [Function(get_mouse), info.Action("Replace the dialogue with nonsense!"), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
+                                hovered [Function(get_mouse), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
+                                tooltip "Replace the dialogue with nonsense!"
                         hbox:
                             bar:
                                 style "slider"
@@ -942,9 +937,11 @@ screen preferences():
                         yoffset 10
                     null width 10
                     textbutton ("{size=-5}🎵") action ToggleField(preferences, "music_joke_enable"):
-                        hovered [Function(get_mouse), info.Action("Enable BGM-based puns, which may be confusing if you haven't played the game yet."), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
+                        hovered [Function(get_mouse), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
+                        tooltip "Enable BGM-based puns, which may be confusing if you haven't played the game yet."
                     textbutton ("{size=-5}🤔") action ToggleField(preferences, "confusing_joke_enable"):
-                        hovered [Function(get_mouse), info.Action("Enable random events which may be confusing if you haven't played the game yet."), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
+                        hovered [Function(get_mouse), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
+                        tooltip "Enable random events which may be confusing if you haven't played the game yet."
                 label _("Bounciness Chance")
                 hbox:
                     bar:
@@ -965,15 +962,17 @@ screen preferences():
                     label "[max_fun_label]" yoffset -10 xminimum 200
 
     # TODO: make this prettier later
-    frame:
-        xanchor 0.5
-        if info.value == "":
-            background None
-        xpos info_x + 75
-        ypos info_y - 25
-        text info.value:
-            text_align 0.5
-            size 20
+    $ info = GetTooltip()
+    $ info_x = mouse_xy[0]
+    $ info_y = mouse_xy[1]
+    if info:
+        frame:
+            xanchor 0.5
+            xpos info_x + 75
+            ypos info_y - 25
+            text info:
+                text_align 0.5
+                size 20
 
 style pref_label is gui_label
 style pref_label_text is gui_label_text
