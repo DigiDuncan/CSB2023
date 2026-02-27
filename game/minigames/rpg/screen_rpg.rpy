@@ -259,7 +259,8 @@ screen screen_rpg():
                                         text str(RPG.encounter.allies[i].hit_points)+"/"+str(RPG.encounter.allies[i].max_hp):
                                             xalign 1.0 yalign 0.5
                                     else:
-                                        add "gui/rpg/hp_bar_inf.png" corner1(0,0) corner2(228,32) xalign 1.0
+                                        $ inf_bar = renpy.get_registered_image("hp_bar_inf")
+                                        add inf_bar corner1(0,0) corner2(228,32) xalign 1.0
                                         add "gui/rpg/infinite.png" xalign 1.0 yalign 0.5
                                     add "gui/rpg/hp.png" yalign 0.5 xalign -0.15
                             if RPG.encounter.turn == i:
@@ -370,7 +371,8 @@ screen screen_rpg():
                                         text str(RPG.encounter.enemies[i].hit_points)+"/"+str(RPG.encounter.enemies[i].max_hp):
                                             xalign 1.0 yalign 0.5
                                     else:
-                                        add hp_bar_inf corner1(0,0) corner2(228,32) xalign 1.0
+                                        $ inf_bar = renpy.get_registered_image("hp_bar_inf")
+                                        add inf_bar corner1(0,0) corner2(228,32) xalign 1.0
                                         add "gui/rpg/infinite.png" xalign 1.0 yalign 0.5
                                     add "gui/rpg/hp.png" yalign 0.5 xalign -0.15
 
