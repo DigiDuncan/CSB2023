@@ -34,16 +34,14 @@
         "caption": "This was the beta menu for the game, because I (Pakoo) didn't want a blank background. I still kinda miss it."
     },
     "mean_original.png": {
-        "type": "image",
+        "type": "imgset",
         "title": "Mean (Original)",
         "caption": "Mean's original sprite, as seen in {i}CSBounciness III,{/i} before Tate redrew it. It's an edited screenshot from an episode of {i}Octonauts.{/i} This representation of Mean is affectionately known as \"Yellow Fucker\".",
-        "need_character": "mean"
-    },
-    "worker_mean.png": {
-        "type": "image",
-        "title": "Worker Mean (Original)",
-        "caption": "Mean's original HoH SiS sprite, as seen in {i}CSBounciness III,{/i} before Tate redrew it.",
-        "need_label": "csbi_end"
+        "need_character": "mean",
+        "imgs": [
+               "mean_original.png",
+               "worker_mean.png"
+        ]
     },
     "addyfucku.png": {
         "type": "image",

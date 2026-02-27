@@ -29,7 +29,6 @@ screen unused_gallery():
             if requirements_met:
                 asset_dict[item] = asset_dict_preload[item]
 
-
     # Counter
     python:
         ## fix counter if it goes over the length of list or under 1
@@ -79,6 +78,18 @@ screen unused_gallery():
             xcenter 0.3
             ycenter 0.6
 
+    # Main Image (if image set)
+    if list(asset_dict.values())[unused_page]["type"] == "imgset":
+
+        python:
+            img_list = []
+            for i in list(asset_dict.keys())[unused_page]["imgs"]:
+                img_list.append( "gallery/images/" + list(asset_dict.keys())[unused_page]["imgs"][i] )
+
+        image ProportionalScale("gallery/images/" + list(asset_dict.keys())[unused_page], 500, 800):
+            xcenter 0.3
+            ycenter 0.6
+
     # Return Button
     textbutton "{color=#fff}Return{/color}":
         action ShowMenu("category_welcome"), Stop("music2"), PauseAudio("music", False), Stop("jukebox"), SetVariable("unused_page", 0)
@@ -97,6 +108,8 @@ screen unused_gallery():
                 action PauseAudio("music2", False), Stop("jukebox"), SetVariable("unused_page", unused_page+1)
             elif list(asset_dict.values())[unused_page+1]["type"] == "route2":
                 action PauseAudio("music2", False), Stop("jukebox"), SetVariable("unused_page", unused_page+1)
+            elif list(asset_dict.values())[unused_page+1]["type"] == "imgset":
+                action PauseAudio("music2", False), Stop("jukebox"), SetVariable("unused_page", unused_page+1)
             yalign 0.1
             xalign 0.9
 
@@ -110,6 +123,8 @@ screen unused_gallery():
             elif list(asset_dict.values())[unused_page-1]["type"] == "route":
                 action PauseAudio("music2", False), Stop("jukebox"), SetVariable("unused_page", unused_page-1)
             elif list(asset_dict.values())[unused_page-1]["type"] == "route2":
+                action PauseAudio("music2", False), Stop("jukebox"), SetVariable("unused_page", unused_page-1)
+            elif list(asset_dict.values())[unused_page-1]["type"] == "imgset":
                 action PauseAudio("music2", False), Stop("jukebox"), SetVariable("unused_page", unused_page-1)
             yalign 0.1
             xalign 0.1
