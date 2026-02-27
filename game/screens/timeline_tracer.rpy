@@ -18,6 +18,10 @@ init python:
 screen timeline_tracer():
     tag menu
 
+    default info = GetTooltip()
+    default info_x = 0
+    default info_y = 0
+
     # add background color
     add Color('#323e42', alpha=0.75)
 
@@ -292,25 +296,31 @@ screen timeline_tracer():
                                     ypos -25
 
                             # handle jumps here later if there are any
-                            action [ SensitiveIf(this_unlocked == True and this_jump is not None), Play("sound", "audio/sfx/sfx_valid.ogg"), Replay(this_jump) ]
+                            action [
+                                SensitiveIf(this_unlocked == True and this_jump is not None),
+                                Play("sound", "audio/sfx/sfx_valid.ogg"),
+                                Replay(this_jump)
+                            ]
                             #action [ SensitiveIf(this_unlocked == True and this_jump is not None), Play("sound", "audio/sfx/sfx_valid.ogg"), Notify(this_jump) ]
 
-                            hovered [SetScreenVariable("info_x", this_x), SetScreenVariable("info_y", this_y-50)]
+                            hovered [
+                                SetVariable("info_x", this_x),
+                                SetScreenVariable("info_x", this_x),
+                                SetVariable("info_y", this_y-50),
+                                SetScreenVariable("info_y", this_y-50)
+                            ]
                             tooltip "Replay!"
 
                             hover_sound "audio/sfx/sfx_select.ogg"
 
                 # TODO: make this prettier later
-                $ info = GetTooltip()
-                $ info_x = 0
-                $ info_y = 0
                 frame:
                     xanchor 0.5
-                    if info.value == "":
+                    if info == "" or info == None:
                         background None
                     xpos info_x+75
                     ypos info_y-25
-                    text info:
+                    text str(info):
                         text_align 0.5
 
     text "Total Events Seen: [total_seen_events] of [total_events]\nTotal Endings Seen: [total_seen_endings] of [total_endings]":
