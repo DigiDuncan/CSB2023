@@ -289,16 +289,17 @@ screen screen_rpg():
                     add Null(489,88):
                         xalign 0.5 yalign 1.0
 
-
-        # Enemy stat boxes
+    # Enemy stat boxes (deliberately outside the context menu)
+    frame:
+        background None
         grid len(RPG.encounter.enemies) 1:
             xfill True
             for i in range(len(RPG.encounter.enemies)):
                 if not RPG.encounter.enemies[i].dead:
                     frame:
                         padding(7,7)
-                        xalign 0.5 yalign 0.5
-                        yoffset -500
+                        xalign 0.5 yalign 1.0
+                        #yoffset -500
                         xsize 475 ysize 105
                         background "gui/rpg/small_box.png"
 
