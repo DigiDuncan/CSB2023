@@ -38,8 +38,11 @@ screen say_rpg(rpg_what):
         xalign 0 yalign 1.0
         xysize(1920, 262)
         background "gui/rpg/main_box.png"
-        button:
-            text rpg_what
+        text rpg_what
+        textbutton "Next":
+            text_size 64
+            xalign 0.9 yalign 0.9 # TODO: can someone make a next button to match the rest pls
+            action Return()
 
 screen screen_rpg():
     # Drawing the enemies in the background.
