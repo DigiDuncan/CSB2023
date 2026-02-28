@@ -2,10 +2,10 @@
     "controller_setup": {
         "title": "Controller Setup",
         "desc": "Make sure your controller is working!",
-        "spine_width": 35,
-        "spine_height": 250,
-        "x_pos": 250,
-        "y_pos": 850,
+        "spine_width": 279,
+        "spine_height": 130,
+        "x_pos": 40,
+        "y_pos": 920,
         "kind": "label",
         "destination": "play_controllertest"
     },

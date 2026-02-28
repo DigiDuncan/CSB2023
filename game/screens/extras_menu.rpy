@@ -61,8 +61,6 @@ screen category_nav():
 
             textbutton "{image=gui/inline_text/dx_text.png} Woohoo Counter\n{size=-12}How many can you find?" action Jump("woohoo_counter")
 
-            textbutton "{image=gui/inline_text/dx_text.png} Controller Test\n{size=-12}Check your controller's compatibility." action Jump("play_controllertest")
-
             if preferences.developer_mode or persistent.creative_mode:
 
                 textbutton "Debug Menu\n{size=-12}[[DEV] Jump to specific sections of the game." action ShowMenu("debug_menu")
