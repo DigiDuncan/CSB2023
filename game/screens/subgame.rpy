@@ -28,7 +28,6 @@ style subgame_return is button:
     # this is the closest thing to a blank line i can do here, but the tag needs to exist or it'll crash - tate
     background None
 
-# TODO: make this prettier later
 style subgame_return_text is text:
     color "#000000"
     outlines [(5, "#FFFFFF", absolute(0), absolute(0))]
@@ -47,8 +46,12 @@ screen subgame():
             # default is unlocked
             this_unlocked = True
 
-            # unlock by label, will probably add more conditions later
+            # unlock by label
             if "need_label" in books_map[book] and not renpy.seen_label(books_map[book]["need_label"]):
+                this_unlocked = False
+
+            # unlock by persistent value
+            if "need_persistent" in books_map[book] and not getattr(persistent, "saved_christmas"):
                 this_unlocked = False
 
             # append to shelf if unlocked
@@ -71,38 +74,53 @@ screen subgame():
             ypos book.y_pos
 
     if current_subgame_name:
-        # Name of the game
-        $ info_x_pos = 1425
-        text current_subgame_name:
-            color Color("#FFFFFF")
-            outlines [(5, "#000000", absolute(0), absolute(0))]
-            size 72
-            xanchor 0.5
-            xpos info_x_pos
-            ypos 40
-        # Description of the game
-        text current_subgame_desc:
-            color Color("#FFFFFF")
-            outlines [(5, "#000000", absolute(0), absolute(0))]
-            # TODO: make this center-align properly on longer text
-            xanchor 0.5
-            xpos info_x_pos
-            ypos 120
-        # Display the book image
-        image current_subgame_art:
-            xanchor 0.5
-            yanchor 0.5
-            xpos info_x_pos
-            ypos 600
-            xysize(392,600)
-            fit("contain")
-        imagebutton:
-            idle "gui/play_button.png"
-            xanchor 0.5
-            xpos info_x_pos
-            ypos 925
-            hover_sound "audio/sfx/sfx_select.ogg"
-            action [ Play("sound", "audio/sfx/sfx_valid.ogg"), Start(current_subgame_label) ]
+        frame:
+            background None
+            xsize 0.5 ysize 1.0
+            xalign 1.0 yalign 1.0
+
+            vbox:
+                # Name of the game
+                frame:
+                    background None
+                    xalign 0.5 yalign 0
+                    xsize 1.0 ysize 300
+                    vbox:
+                        xalign 0.5  yalign 0.5
+                        text current_subgame_name:
+                            color Color("#FFFFFF")
+                            outlines [(5, "#000000", absolute(0), absolute(0))]
+                            size 72
+                            xalign 0.5
+                            text_align 0.5
+
+                        # Description of the game
+                        text current_subgame_desc:
+                            color Color("#FFFFFF")
+                            outlines [(5, "#000000", absolute(0), absolute(0))]
+                            text_align 0.5
+                            xalign 0.5
+
+                # Display the book image
+                frame:
+                    background None
+                    xalign 0.5 yalign 0
+                    xsize 1.0 ysize 600
+                    image current_subgame_art:
+                        xalign 0.5 yalign 0.5
+                        xysize(392,600)
+                        fit("contain")
+
+            # Play button
+            imagebutton:
+                idle "gui/play_button.png"
+                xalign 0.5 yalign 1.0
+                hover_sound "audio/sfx/sfx_select.ogg"
+                action [
+                    Play("sound", "audio/sfx/sfx_valid.ogg"),
+                    Start(current_subgame_label)
+                ]
+
 
     textbutton "Main Menu":
         style "subgame_return"

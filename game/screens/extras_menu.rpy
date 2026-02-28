@@ -54,9 +54,6 @@ screen category_nav():
 
             textbutton "{image=gui/inline_text/dx_text.png} Timeline Tracer\n{size=-12}Revisit endings and track where you've been!" action ShowMenu("timeline_tracer")
 
-            if preferences.developer_mode or persistent.saved_christmas:
-                textbutton "{image=gui/inline_text/ce_text.png} D20 Viewer\n{size=-12}See who could have showed up first to the party!" action ShowMenu("d20_viewer_screen")
-
             if preferences.developer_mode or achievement_manager.get("beat_copguy").unlocked:
                 textbutton "[[OLD] Ultimate Custom Night\n{size=-12}Put together your own RPG battles!" action Start("rpg_ucn")
 

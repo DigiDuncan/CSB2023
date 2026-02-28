@@ -10,7 +10,7 @@
     },
     "ce": {
         "title": "CSBounciness: Christmas Edition",
-        "desc": "jingle jingle ho ho ho",
+        "desc": "{image=gui/inline_text/ce_text.png} Save Christmas with CS and friends!",
         "spine_width": 46,
         "spine_height": 300,
         "x_pos": 864,
@@ -18,9 +18,19 @@
         "jump_to": "ce_start",
         "need_label": "true_streaming"
     },
+    "d20_viewer":{
+        "title": "CE Dice Viewer",
+        "desc": "{image=gui/inline_text/ce_text.png} See who could have showed up first to the party!",
+        "spine_width": 55,
+        "spine_height": 55,
+        "x_pos": 655,
+        "y_pos": 635,
+        "jump_to": "d20_viewer_screen",
+        "need_persistent": "saved_christmas"
+    },
     "space": {
         "title": "CSBounciness: Space Program",
-        "desc": "spaaaaaaaaaace",
+        "desc": "{image=gui/inline_text/dx_text.png} spaaaaaaaaaace",
         "spine_width": 46,
         "spine_height": 300,
         "x_pos": 818,
@@ -29,17 +39,17 @@
     },
     "pt_aftermath": {
         "title": "Celestial Sightseeing",
-        "desc": "The Aspiring Planeswalker's Guide To\nChronomancy, Synchrony, & Cosmic Safety",
+        "desc": "{image=gui/inline_text/dx_text.png} The Aspiring Planeswalker's Guide To\nChronomancy, Synchrony, & Cosmic Safety",
         "spine_width": 82,
         "spine_height": 300,
         "x_pos": 0,
         "y_pos": 390,
         "jump_to": "book_celestial_sightseeing",
-        "need_label": "train_defeated_perfect_tate"
+        "need_persistent": "defeated_perfect_tate"
     },
     "elizabeth_bday": {
         "title": "Elizabeth's Birthday \nExtravaganza 2024!",
-        "desc": "\n \nThe silly spin-off where Digi makes it \njust in time for Elizabeth's birthday!",
+        "desc": "{image=gui/inline_text/dx_text.png} The silly spin-off where Digi makes it \njust in time for Elizabeth's birthday!",
         "spine_width": 19,
         "spine_height": 250,
         "x_pos": 800,
@@ -49,7 +59,7 @@
     },
     "underpants": {
         "title": "Underpants?",
-        "desc": "placeholder",
+        "desc": "{image=gui/inline_text/dx_text.png} placeholder",
         "spine_width": 46,
         "spine_height": 300,
         "x_pos": 600,
@@ -58,7 +68,7 @@
     },
     "pee": {
         "title": "Why Is My Pee Clear?",
-        "desc": "For ages 18 months to 3 years.",
+        "desc": "{image=gui/inline_text/dx_text.png} For ages 18 months to 3 years.",
         "spine_width": 27,
         "spine_height": 150,
         "x_pos": 772,
@@ -78,7 +88,7 @@
     },
     "minigame_carrot": {
         "title": "Carrot Chop",
-        "desc": "Chop to the beat!",
+        "desc": "{image=gui/inline_text/ce_text.png} Chop to the beat!",
         "spine_width": 19,
         "spine_height": 250,
         "x_pos": 810,
@@ -88,7 +98,7 @@
     },
     "minigame_reversi": {
         "title": "Reversi",
-        "desc": "It's WINDOWS",
+        "desc": "{image=gui/inline_text/ce_text.png} It's WINDOWS",
         "spine_width": 46,
         "spine_height": 300,
         "x_pos": 864,
@@ -98,7 +108,7 @@
     },
     "minigame_toytrains": {
         "title": "Off To The Races!",
-        "desc": "Can you win?",
+        "desc": "{image=gui/inline_text/dx_text.png} Race some trains!\n...Wait, who the fuck is Longas?",
         "spine_width": 19,
         "spine_height": 250,
         "x_pos": 792,
