@@ -1,4 +1,144 @@
 {
+    "csbi": {
+        "title": "CSBI",
+        "desc": "Start from the beginning!",
+        "spine_width": 392,
+        "spine_height": 600,
+        "x_pos": 0,
+        "y_pos": 36,
+        "kind": "label",
+        "destination": "csbi_start"
+    },
+    "csbii": {
+        "title": "CSBII",
+        "desc": "CS vs HoH SiS!",
+        "spine_width": 392,
+        "spine_height": 600,
+        "x_pos": 46,
+        "y_pos": 36,
+        "kind": "label",
+        "destination": "csbii_start"
+    },
+    "csbiii_1": {
+        "title": "CSBIII Act 1",
+        "desc": "Start your new life on the run!",
+        "spine_width": 392,
+        "spine_height": 600,
+        "x_pos": 92,
+        "y_pos": 36,
+        "kind": "label",
+        "destination": "csbiii_start"
+    },
+    "csbiii_2": {
+        "title": "CSBIII Act 2",
+        "desc": "Choose your own adventure!",
+        "spine_width": 392,
+        "spine_height": 600,
+        "x_pos": 138,
+        "y_pos": 36,
+        "kind": "label",
+        "destination": "csbiii_choose_direction"
+    },
+    "afterstory": {
+        "title": "CSBDX: Afterstory",
+        "desc": "{image=gui/inline_text/dx_text.png} What happens next?",
+        "spine_width": 392,
+        "spine_height": 600,
+        "x_pos": 184,
+        "y_pos": 36,
+        "kind": "label",
+        "destination": "dx_after_true"
+    },
+    "finale": {
+        "title": "CSBDX: Finale",
+        "desc": "{image=gui/inline_text/dx_text.png} The one true end.",
+        "spine_width": 392,
+        "spine_height": 600,
+        "x_pos": 230,
+        "y_pos": 36,
+        "kind": "label",
+        "destination": "finale_fun_value_land"
+    },
+    "beach": {
+        "title": "CSBDX: Beach Episode",
+        "desc": "{image=gui/inline_text/dx_text.png} Chill out in Cali for a day.",
+        "spine_width": 392,
+        "spine_height": 600,
+        "x_pos": 276,
+        "y_pos": 36,
+        "kind": "label",
+        "destination": "beach_start"
+    },
+    "train_winner": {
+        "title": "CSBDX: Train Route",
+        "desc": "{image=gui/inline_text/dx_text.png} (Winner Version) Taking the scenic route home.",
+        "spine_width": 392,
+        "spine_height": 600,
+        "x_pos": 322,
+        "y_pos": 36,
+        "kind": "label",
+        "destination": "train_start_good"
+    },
+    "train_thief": {
+        "title": "CSBDX: Train Route",
+        "desc": "{image=gui/inline_text/dx_text.png} (Thief Version) Taking the scenic route home.",
+        "spine_width": 392,
+        "spine_height": 600,
+        "x_pos": 368,
+        "y_pos": 36,
+        "kind": "label",
+        "destination": "train_start_bad"
+    },
+    "bt1d": {
+        "title": "BT1D",
+        "desc": "{image=gui/inline_text/dx_text.png} Fight the CEO Of Diabetes!",
+        "spine_width": 392,
+        "spine_height": 600,
+        "x_pos": 414,
+        "y_pos": 36,
+        "kind": "label",
+        "destination": "bt1d_start"
+    },
+    "kuwait": {
+        "title": "Kuwait",
+        "desc": "{image=gui/inline_text/dx_text.png} A vacation gone awry...",
+        "spine_width": 392,
+        "spine_height": 600,
+        "x_pos": 460,
+        "y_pos": 36,
+        "kind": "label",
+        "destination": "kuwait_travel"
+    },
+    "plane": {
+        "title": "Plane",
+        "desc": "{image=gui/inline_text/dx_text.png} A thrilling flight home!",
+        "spine_width": 392,
+        "spine_height": 600,
+        "x_pos": 506,
+        "y_pos": 36,
+        "kind": "label",
+        "destination": "plane_intro_start"
+    },
+    "speedrun": {
+        "title": "Speedrun",
+        "desc": "{image=gui/inline_text/dx_text.png} NYOOM",
+        "spine_width": 392,
+        "spine_height": 600,
+        "x_pos": 552,
+        "y_pos": 36,
+        "kind": "label",
+        "destination": "vibration"
+    },
+    "bronson": {
+        "title": "Bronson",
+        "desc": "{image=gui/inline_text/dx_text.png} Oh, great, another creepypasta.",
+        "spine_width": 392,
+        "spine_height": 600,
+        "x_pos": 598,
+        "y_pos": 36,
+        "kind": "label",
+        "destination": "michigan_bronson"
+    },
     "controller_setup": {
         "title": "Controller Setup",
         "desc": "Make sure your controller is working!",

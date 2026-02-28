@@ -7,7 +7,7 @@
 # TODO: make Lad an RPG ally?
 # TODO: where did you want Drive to play, Digi? I can't find that comment?
 
-label bt1d_wakeup:
+label bt1d_start:
     scene black with dissolve
     stop music fadeout 3.0
     music end

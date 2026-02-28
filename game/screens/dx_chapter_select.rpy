@@ -101,7 +101,7 @@ screen dx_select():
                     at transform:
                         zoom 0.333
                         xalign 0.5
-                    action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("dx_select"), Jump("bt1d_wakeup")
+                    action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("dx_select"), Jump("bt1d_start")
                     tooltip "BT1D"
 
                 ### PLANE ###

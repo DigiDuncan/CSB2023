@@ -317,7 +317,7 @@ screen quick_menu():
 
             textbutton _("Back") action Rollback()
             textbutton _("History") action ShowMenu('history')
-            textbutton _("Extras") action ShowMenu('category_welcome')
+            textbutton _("Game Select") action ShowMenu('subgame')
             textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
             textbutton _("Auto") action Preference("auto-forward", "toggle")
             textbutton _("Save") action ShowMenu('save')
@@ -363,7 +363,7 @@ screen navigation():
 
         if main_menu:
 
-            textbutton _("Start") action Start("chapter_select")
+            textbutton _("Start (Old)") action Start("chapter_select")
             textbutton _("Subgame Selection") action ShowMenu("subgame")
 
         else:

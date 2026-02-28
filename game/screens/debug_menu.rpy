@@ -94,11 +94,11 @@ screen debug_menu():
                 Start(chosen_label)
             ]
 
-    textbutton "Return to Extras":
+    textbutton "Return to CSettings":
         yoffset 950 xoffset 25
         action [
             SetVariable("chosen_label", None),
-            ShowMenu("category_welcome")
+            ShowMenu("preferences")
         ]
     textbutton "Main Menu":
         yoffset 1000 xoffset 25
