@@ -45,5 +45,10 @@ screen d20_viewer_screen():
         xalign 0.5
         yalign 0.9
 
-    textbutton "Return to Extras" action ShowMenu("category_welcome") yoffset 950 xoffset 25
-    textbutton "Main Menu" action Return() yoffset 1000 xoffset 25
+    textbutton "Return to Menu":
+        xoffset 25 yoffset 950
+        action ShowMenu("subgame")
+
+    textbutton "Main Menu":
+        xoffset 25 yoffset 1000
+        action Return()

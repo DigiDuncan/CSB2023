@@ -6,7 +6,8 @@
         "spine_height": 250,
         "x_pos": 250,
         "y_pos": 850,
-        "jump_to": "play_controllertest"
+        "kind": "label",
+        "destination": "play_controllertest"
     },
     "ce": {
         "title": "CSBounciness: Christmas Edition",
@@ -15,7 +16,8 @@
         "spine_height": 300,
         "x_pos": 864,
         "y_pos": 390,
-        "jump_to": "ce_start",
+        "kind": "label",
+        "destination": "ce_start",
         "need_label": "true_streaming"
     },
     "d20_viewer":{
@@ -25,7 +27,8 @@
         "spine_height": 55,
         "x_pos": 655,
         "y_pos": 635,
-        "jump_to": "d20_viewer_screen",
+        "kind": "menu",
+        "destination": "d20_viewer_screen",
         "need_persistent": "saved_christmas"
     },
     "space": {
@@ -35,7 +38,8 @@
         "spine_height": 300,
         "x_pos": 818,
         "y_pos": 390,
-        "jump_to": "secret_dx"
+        "kind": "label",
+        "destination": "secret_dx"
     },
     "pt_aftermath": {
         "title": "Celestial Sightseeing",
@@ -44,7 +48,8 @@
         "spine_height": 300,
         "x_pos": 0,
         "y_pos": 390,
-        "jump_to": "book_celestial_sightseeing",
+        "kind": "label",
+        "destination": "book_celestial_sightseeing",
         "need_persistent": "defeated_perfect_tate"
     },
     "elizabeth_bday": {
@@ -54,7 +59,8 @@
         "spine_height": 250,
         "x_pos": 800,
         "y_pos": 440,
-        "jump_to": "CSB3_EBEEP12024FDEADNYWFFEAGM",
+        "kind": "label",
+        "destination": "CSB3_EBEEP12024FDEADNYWFFEAGM",
         "need_label": "ce_epilogue"
     },
     "underpants": {
@@ -64,7 +70,8 @@
         "spine_height": 300,
         "x_pos": 600,
         "y_pos": 390,
-        "jump_to": "book_underpants"
+        "kind": "label",
+        "destination": "book_underpants"
     },
     "pee": {
         "title": "Why Is My Pee Clear?",
@@ -73,7 +80,8 @@
         "spine_height": 150,
         "x_pos": 772,
         "y_pos": 536,
-        "jump_to": "book_peeing",
+        "kind": "label",
+        "destination": "book_peeing",
         "need_label": "ce_epilogue"
     },
     "minigame_car_chase": {
@@ -83,7 +91,8 @@
         "spine_height": 150,
         "x_pos": 827,
         "y_pos": 900,
-        "jump_to": "play_car_game",
+        "kind": "label",
+        "destination": "play_car_game",
         "need_label": "true_after_ufo"
     },
     "minigame_carrot": {
@@ -93,7 +102,8 @@
         "spine_height": 250,
         "x_pos": 810,
         "y_pos": 800,
-        "jump_to": "play_carrotgame",
+        "kind": "label",
+        "destination": "play_carrotgame",
         "need_label": "ce_win_carrot"
     },
     "minigame_reversi": {
@@ -103,7 +113,8 @@
         "spine_height": 300,
         "x_pos": 864,
         "y_pos": 750,
-        "jump_to": "play_ce_reversi",
+        "kind": "label",
+        "destination": "play_ce_reversi",
         "need_label": "ce_win_reversi"
     },
     "minigame_toytrains": {
@@ -113,7 +124,8 @@
         "spine_height": 250,
         "x_pos": 792,
         "y_pos": 800,
-        "jump_to": "play_toytrains_game",
+        "kind": "label",
+        "destination": "play_toytrains_game",
         "need_label": "play_toytrains_game"
     },
     "minigame_editing": {
@@ -123,7 +135,8 @@
         "spine_height": 250,
         "x_pos": 758,
         "y_pos": 800,
-        "jump_to": "play_edit_game",
+        "kind": "label",
+        "destination": "play_edit_game",
         "need_label": "play_edit_game"
     }
 

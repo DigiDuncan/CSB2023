@@ -10,15 +10,24 @@ python early:
 
     # default spine size is 300x46
     class Book:
-        def __init__(self, book_id: str, title: str, description: str, jump_label: str, spine_width: int, spine_height: int, x_pos: int, y_pos: int):
+        def __init__(
+            self,
+            book_id: str,
+            title: str, description: str,
+            spine_width: int, spine_height: int,
+            x_pos: int, y_pos: int,
+            kind: str, destination: str
+        ):
             self.book_id = book_id
             self.title = title
             self.description = description
-            self.jump_label = jump_label
-            self.spine_width = spine_width
-            self.spine_height = spine_height
             self.x_pos = x_pos
             self.y_pos = y_pos
+            self.spine_width = spine_width
+            self.spine_height = spine_height
+
+            self.kind = kind
+            self.destination = destination
 
             self.spine = f"gui/books/{book_id}/side.png"
             self.hover_spine = f"selectable:gui/books/{book_id}/side.png"
@@ -56,20 +65,31 @@ screen subgame():
 
             # append to shelf if unlocked
             if this_unlocked == True:
-                bookshelf.append(Book(book,
-                books_map[book]["title"],
-                books_map[book]["desc"],
-                books_map[book]["jump_to"],
-                books_map[book]["spine_width"],
-                books_map[book]["spine_height"],
-                books_map[book]["x_pos"],
-                books_map[book]["y_pos"]))
+                bookshelf.append(
+                    Book(
+                        book,
+                        books_map[book]["title"],
+                        books_map[book]["desc"],
+                        books_map[book]["spine_width"],
+                        books_map[book]["spine_height"],
+                        books_map[book]["x_pos"],
+                        books_map[book]["y_pos"],
+                        books_map[book]["kind"],
+                        books_map[book]["destination"]
+                    )
+                )
 
     for book in bookshelf:
         imagebutton:
             hover book.hover_spine
             idle book.spine
-            action SetVariable("current_subgame_name", book.title), SetVariable("current_subgame_desc", book.description), SetVariable("current_subgame_art", book.front), SetVariable("current_subgame_label", book.jump_label)
+            action [
+                SetVariable("current_subgame_name", book.title),
+                SetVariable("current_subgame_desc", book.description),
+                SetVariable("current_subgame_art", book.front),
+                SetVariable("current_subgame_kind", book.kind),
+                SetVariable("current_subgame_destination", book.destination)
+            ]
             xpos book.x_pos
             ypos book.y_pos
 
@@ -116,10 +136,20 @@ screen subgame():
                 idle "gui/play_button.png"
                 xalign 0.5 yalign 1.0
                 hover_sound "audio/sfx/sfx_select.ogg"
-                action [
-                    Play("sound", "audio/sfx/sfx_valid.ogg"),
-                    Start(current_subgame_label)
-                ]
+
+                if current_subgame_kind == "label":
+                    action [
+                        Play("sound", "audio/sfx/sfx_valid.ogg"),
+                        Start(current_subgame_destination)
+                    ]
+                elif current_subgame_kind == "menu":
+                    action [
+                        Play("sound", "audio/sfx/sfx_valid.ogg"),
+                        ShowMenu(current_subgame_destination)
+                    ]
+                else:
+                    # this should NEVER happen
+                    action [ Notify("Something's broken! Yell at Tate!") ]
 
 
     textbutton "Main Menu":

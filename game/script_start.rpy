@@ -16,7 +16,8 @@ init python:
     current_subgame_name = None
     current_subgame_desc = None
     current_subgame_art = None
-    current_subgame_label = None
+    current_subgame_kind = None
+    current_subgame_destination = None
 
     # For Ace Attorney parody
     chosen_evidence = 0
