@@ -9,7 +9,7 @@ screen kuwait_map():
         viewport:
             xysize(1080, 1080)
             style_prefix "choice"
-            $ tt = GetTooltip or "Select area to travel:"
+            $ tt = GetTooltip() or "Select area to travel:"
             text tt xpos(450)
             imagebutton auto "menu/csbiiidx_%s.png" hover_sound "audio/sfx/sfx_select.ogg":
                 at transform:

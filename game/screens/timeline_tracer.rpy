@@ -18,7 +18,6 @@ init python:
 screen timeline_tracer():
     tag menu
 
-    default info = GetTooltip()
     default info_x = 0
     default info_y = 0
 
@@ -314,14 +313,15 @@ screen timeline_tracer():
                             hover_sound "audio/sfx/sfx_select.ogg"
 
                 # TODO: make this prettier later
-                frame:
-                    xanchor 0.5
-                    if info == "" or info == None:
-                        background None
-                    xpos info_x+75
-                    ypos info_y-25
-                    text str(info):
-                        text_align 0.5
+                $ tooltip = GetTooltip()
+
+                if tooltip:
+                    frame:
+                        xanchor 0.5
+                        xpos info_x+75
+                        ypos info_y-25
+                        text tooltip:
+                            text_align 0.5
 
     text "Total Events Seen: [total_seen_events] of [total_events]\nTotal Endings Seen: [total_seen_endings] of [total_endings]":
         xanchor 1.0
