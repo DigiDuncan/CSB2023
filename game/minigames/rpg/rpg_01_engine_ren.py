@@ -920,9 +920,9 @@ class Encounter:
 
     @property
     def won(self) -> bool | None:
-        if len([a for a in self.allies if not a.infinite]) == 0:
+        if len([a for a in self.allies if not a.infinite and not a.dead]) == 0:
             return False
-        elif len(self.enemies) == 0:
+        elif len([e for e in self.enemies if not e.dead]) == 0:
             return True
         else:
             return None
