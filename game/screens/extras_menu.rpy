@@ -54,27 +54,18 @@ screen category_nav():
 
             textbutton "{image=gui/inline_text/dx_text.png} Timeline Tracer\n{size=-12}Revisit endings and track where you've been!" action ShowMenu("timeline_tracer")
 
-            if preferences.developer_mode or achievement_manager.get("beat_copguy").unlocked:
-                textbutton "[[OLD] Ultimate Custom Night\n{size=-12}Put together your own RPG battles!" action Start("rpg_ucn")
-
-                textbutton "{image=gui/inline_text/dx_text.png} [[DEV] Ultimate Custom Night 2\n{size=-12}Put together your own RPG battles, BUT BETTER!" action PauseAudio("music", True), ShowMenu("_ucn2_selection")
-
             textbutton "{image=gui/inline_text/dx_text.png} Woohoo Counter\n{size=-12}How many can you find?" action Jump("woohoo_counter")
 
+            if preferences.developer_mode or achievement_manager.get("beat_copguy").unlocked:
+                textbutton "{image=gui/inline_text/dx_text.png} [[DEV] Ultimate Custom Night 2\n{size=-12}Put together your own RPG battles, BUT BETTER!" action PauseAudio("music", True), ShowMenu("_ucn2_selection")
+
+            text "{color=#888888}{size=-12}------------------------------------------------"
+
+            if preferences.developer_mode or achievement_manager.get("beat_copguy").unlocked:
+                textbutton "[[OLD] Ultimate Custom Night\n{size=-12}Put together your own RPG battles! Tate will get rid of this when the new one is done!" action Start("rpg_ucn")
+
             if preferences.developer_mode or persistent.creative_mode:
-
-                textbutton "Debug Menu\n{size=-12}[[DEV] Jump to specific sections of the game." action ShowMenu("debug_menu")
-
-                #textbutton "{image=gui/inline_text/dx_text.png} Asset Debugger\n{size=-12}[[DEV] Make sure all assets load correctly." action Jump("asset_debugger")
-
-            if preferences.developer_mode:
-                textbutton "Test Scene\n{size=-12}[[DEV] A sandbox for testing various features." action Start("test")
-
-                textbutton "{image=gui/inline_text/dx_text.png} Tate's Test Room\n{size=-12}[[DEV] Another test screen. Awawa." action Start("awawa_tate_test")
-
-                textbutton "Unlock All\n{size=-12}[[DEV] Adds all unlockables to persistent." action Function(unlock_all)
-
-            textbutton "Clear Persistent Data\n{size=-12}Clear your saved data. This cannot be undone." action Jump("clear_screen")
+                text "If you're looking for the dev options, they're in CSettings now. Scroll down!"
 
     textbutton "Main Menu" action Return() yoffset 1000 xoffset 25
 
@@ -94,7 +85,7 @@ screen category_welcome():
             xalign 0.5 yalign 0.5
             xoffset 400
             #xoffset 400
-            text _p("""Here, you'll find bonus content, galleries, achievements, and more!
+            text _p("""Here, you'll find bonus content, galleries, achievements, and more!... For now. We are moving these to Subgames!
 
             Make sure to keep checking back here as you play to see what you've unlocked!""")
 

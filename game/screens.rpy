@@ -961,6 +961,29 @@ screen preferences():
                     null width 20
                     label "[max_fun_label]" yoffset -10 xminimum 200
 
+
+            ######## EVERYTHING THAT WAS IN EXTRAS BUT IS NOT MOVED TO SUBGAME IS NOW HERE
+            textbutton  "Clear Persistent Data\n{size=-12}Clear your saved data. This cannot be undone.":
+                action Jump("clear_screen")
+
+            # MOVED ALL THE DEV MODE STUFF HERE
+            if preferences.developer_mode or persistent.creative_mode:
+                text "\nDeveloper Options"
+
+            if preferences.developer_mode or persistent.creative_mode:
+                textbutton "Debug Menu\n{size=-12}[[DEV] Jump to specific sections of the game." action ShowMenu("debug_menu")
+
+                #textbutton "{image=gui/inline_text/dx_text.png} Asset Debugger\n{size=-12}[[DEV] Make sure all assets load correctly." action Jump("asset_debugger")
+
+            if preferences.developer_mode:
+                textbutton "Test Scene\n{size=-12}[[DEV] A sandbox for testing various features." action Start("test")
+
+                textbutton "{image=gui/inline_text/dx_text.png} Tate's Test Room\n{size=-12}[[DEV] Another test screen. Awawa." action Start("awawa_tate_test")
+
+                textbutton "Unlock All\n{size=-12}[[DEV] Adds all unlockables to persistent." action Function(unlock_all)
+
+
+
     # TODO: make this prettier later
     $ info = GetTooltip()
     $ info_x = mouse_xy[0]
