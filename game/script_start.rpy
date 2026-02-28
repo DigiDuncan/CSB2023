@@ -286,7 +286,7 @@ python early:
         _window_hide()
         seen_all = True
         # TODO: handle the unlock of creative mode better, probably. at least it no longer crashes.
-        if not EndingManager.all_seen():
+        if not ending_manager.all_seen():
             seen_all = False
         if seen_all:
             achievement_manager.unlock("fin")
