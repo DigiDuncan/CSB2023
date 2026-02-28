@@ -83,7 +83,9 @@ screen subgame():
         imagebutton:
             hover book.hover_spine
             idle book.spine
+            hover_sound "audio/sfx/sfx_select.ogg"
             action [
+                Play("sound", "audio/sfx/sfx_valid.ogg"),
                 SetVariable("current_subgame_name", book.title),
                 SetVariable("current_subgame_desc", book.description),
                 SetVariable("current_subgame_art", book.front),
@@ -134,6 +136,7 @@ screen subgame():
             # Play button
             imagebutton:
                 idle "gui/play_button.png"
+                hover "selectable:gui/play_button.png"
                 xalign 0.5 yalign 1.0
                 hover_sound "audio/sfx/sfx_select.ogg"
 
