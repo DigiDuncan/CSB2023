@@ -45,7 +45,7 @@ screen d20_viewer_screen():
         xalign 0.5
         yalign 0.9
 
-    textbutton "Return to Menu":
+    textbutton "Back":
         xoffset 25 yoffset 950
         action ShowMenu("subgame")
 

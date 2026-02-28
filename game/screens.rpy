@@ -971,18 +971,16 @@ screen preferences():
                 text "\nDeveloper Options"
 
             if preferences.developer_mode or persistent.creative_mode:
-                textbutton "Debug Menu\n{size=-12}[[DEV] Jump to specific sections of the game." action ShowMenu("debug_menu")
+                textbutton "Debug Menu\n{size=-12}Jump to specific sections of the game." action ShowMenu("debug_menu")
 
-                #textbutton "{image=gui/inline_text/dx_text.png} Asset Debugger\n{size=-12}[[DEV] Make sure all assets load correctly." action Jump("asset_debugger")
+                #textbutton "{image=gui/inline_text/dx_text.png} Asset Debugger\n{size=-12}Make sure all assets load correctly." action Jump("asset_debugger")
 
             if preferences.developer_mode:
-                textbutton "Test Scene\n{size=-12}[[DEV] A sandbox for testing various features." action Start("test")
+                textbutton "Test Scene\n{size=-12}A sandbox for testing various features." action Start("test")
 
-                textbutton "{image=gui/inline_text/dx_text.png} Tate's Test Room\n{size=-12}[[DEV] Another test screen. Awawa." action Start("awawa_tate_test")
+                textbutton "{image=gui/inline_text/dx_text.png} Tate's Test Room\n{size=-12}Another test screen. Awawa." action Start("awawa_tate_test")
 
-                textbutton "Unlock All\n{size=-12}[[DEV] Adds all unlockables to persistent." action Function(unlock_all)
-
-
+                textbutton "Unlock All\n{size=-12}Adds all unlockables to persistent." action Function(unlock_all)
 
     # TODO: make this prettier later
     $ info = GetTooltip()

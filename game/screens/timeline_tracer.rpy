@@ -328,5 +328,9 @@ screen timeline_tracer():
         xoffset 1895
         yoffset 950
 
-    textbutton "Return to Extras" action ShowMenu("category_welcome") yoffset 950 xoffset 25
-    textbutton "Main Menu" action Return() yoffset 1000 xoffset 25
+    textbutton "Back":
+        xoffset 25 yoffset 950
+        action ShowMenu("category_welcome")
+    textbutton "Main Menu":
+        xoffset 25 yoffset 1000
+        action Return()

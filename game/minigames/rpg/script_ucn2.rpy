@@ -402,19 +402,21 @@ screen _ucn2_selection():
         ### buttons
         $ screen_check = renpy.get_screen("category_welcome")
 
-        textbutton "Return to Extras":
+        textbutton "Back":
             xoffset 25 yoffset 950
 
             if screen_check:
                 action [
                     PauseAudio("music", False),
                     Stop("music2"),
+                    SelectedIf(False),
                     Hide("_ucn2_selection", dissolve)
                 ]
             else:
                 action [
                     PauseAudio("music", False),
                     Stop("music2"),
+                    SelectedIf(False),
                     Hide("_ucn2_selection", dissolve),
                     ShowMenu("category_welcome")
                 ]
@@ -425,6 +427,7 @@ screen _ucn2_selection():
             action [
                 PauseAudio("music", False),
                 Stop("music2"),
+                SelectedIf(False),
                 Hide("_ucn2_selection", dissolve),
                 Return()
             ]

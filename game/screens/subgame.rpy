@@ -48,6 +48,8 @@ screen subgame():
     tag menu
     image "gui/subgame_menu.png"
 
+    default bookshelf = []
+
     python:
         bookshelf = []
         for book in books_map:
@@ -153,7 +155,6 @@ screen subgame():
                 else:
                     # this should NEVER happen
                     action [ Notify("Something's broken! Yell at Tate!") ]
-
 
     textbutton "Main Menu":
         style "subgame_return"

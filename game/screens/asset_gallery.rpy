@@ -264,7 +264,7 @@ screen unused_gallery():
                             textalign 0.5
 
     # Return Buttons
-    textbutton "Return to Extras":
+    textbutton "Back":
         xoffset 25 yoffset 950
         action [
             Stop("music2"),

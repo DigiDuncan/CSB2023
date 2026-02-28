@@ -48,8 +48,6 @@ screen category_nav():
 
             textbutton "{image=gui/inline_text/dx_text.png} Item Collection\n{size=-12}Inspect items you've found while playing!" action ShowMenu("item_collection")
 
-            textbutton "Jukebox\n{size=-12}Jam out to songs you've heard along the way!" action ShowMenu("jukebox"), PauseAudio("music", True)
-
             textbutton "{image=gui/inline_text/dx_text.png} Asset Gallery\n{size=-12}A gallery of beta assets, unused sprites, programmer art, concept art, and more!" action ShowMenu("unused_gallery"), PauseAudio("music", True), Play("music2", "audio/what_the_night_will_bring.ogg")
 
             textbutton "{image=gui/inline_text/dx_text.png} Timeline Tracer\n{size=-12}Revisit endings and track where you've been!" action ShowMenu("timeline_tracer")

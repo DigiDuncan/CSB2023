@@ -94,7 +94,7 @@ screen debug_menu():
                 Start(chosen_label)
             ]
 
-    textbutton "Return to CSettings":
+    textbutton "Back to CSettings":
         yoffset 950 xoffset 25
         action [
             SetVariable("chosen_label", None),

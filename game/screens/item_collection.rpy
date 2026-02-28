@@ -120,7 +120,7 @@ screen item_nav():
     else: # This should NEVER happen!
         $ renpy.jump("secret_dx")
 
-    textbutton "Return to Extras":
+    textbutton "Back":
         yoffset 950 xoffset 25
         action ShowMenu("category_welcome")
     textbutton "Main Menu":

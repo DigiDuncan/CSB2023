@@ -143,7 +143,7 @@ screen people_nav():
                             SetVariable("current_bios_total_pages", 0)
                         ]
 
-    textbutton "Return to Extras":
+    textbutton "Back":
         yoffset 950 xoffset 25
         action ShowMenu("category_welcome")
     textbutton "Main Menu":

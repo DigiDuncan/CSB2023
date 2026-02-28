@@ -139,6 +139,16 @@
         "kind": "label",
         "destination": "michigan_bronson"
     },
+    "jukebox": {
+        "title": "Jukebox",
+        "desc": "Jam out to songs you've heard along the way!",
+        "spine_width": 71,
+        "spine_height": 150,
+        "x_pos": 833,
+        "y_pos": 187,
+        "kind": "menu",
+        "destination": "jukebox"
+    },
     "controller_setup": {
         "title": "Controller Setup",
         "desc": "Make sure your controller is working!",
