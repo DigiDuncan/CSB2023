@@ -1,4 +1,4 @@
-screen warning(warning_text, triggers, leave_label, decline_text = "Go back!", proceed_text = "Proceed"):
+screen warning(warning_text, triggers, leave_label, decline_text = "Go Back!", proceed_text = "Proceed"):
     modal True
     zorder 1
     python:
