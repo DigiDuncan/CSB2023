@@ -13,7 +13,7 @@ EXTRA_ENDING = [ "error" ]
 # TODO: add more as they're completed.
 DX_ROUTE_ENDINGS = [ "train_broke", "train_winner", "train_thief", "christmas" ]
 DX_BAD_ENDINGS = [ "pencil_shart_the_sequel" ]
-DX_MISC_ENDINGS = [ "savers", "speedrun", "nah", "underpants" ]
+DX_MISC_ENDINGS = [ "savers", "speedrun", "nah" ]
 
 # ALL endings, to be used mostly for timeline tracer but might be useful later
 ALL_ENDINGS = ROUTE_ENDINGS + BAD_ENDINGS + MISC_ENDINGS + EXTRA_ENDING + DX_ROUTE_ENDINGS + DX_BAD_ENDINGS + DX_MISC_ENDINGS
