@@ -3972,7 +3972,7 @@ label train_tate_ex_win:
     window hide
     $ persistent.seen.add("tate_ex")
 
-    call screen warning("The following section contains flashing lights and colors.", "Persons with photosensitive conditions may wish to skip this section.", "back_out_perfect_tate")
+    call screen warning("The following section contains flashing lights and colors.", "Persons with photosensitive conditions may wish to skip this section.", "back_out_perfect_tate", "Skip This Section")
 
     scene white with dissolve
     show tate_falling at manual_pos(0.5, -0.5, 0.5)

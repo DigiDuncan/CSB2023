@@ -1,4 +1,4 @@
-screen warning(warning_text, triggers, leave_label):
+screen warning(warning_text, triggers, leave_label, decline_text = "Go back!", proceed_text = "Proceed"):
     modal True
     zorder 1
     python:
@@ -16,12 +16,12 @@ screen warning(warning_text, triggers, leave_label):
             xalign 0.5
             yalign 0.5
         null height 80
-        textbutton "Go back!":
+        textbutton decline_text:
             xalign 0.5
             text_textalign 0.5
             text_size 36
             action Hide("warning"), Jump(leave_label)
-        textbutton "Proceed":
+        textbutton proceed_text:
             xalign 0.5
             text_textalign 0.5
             text_size 36
