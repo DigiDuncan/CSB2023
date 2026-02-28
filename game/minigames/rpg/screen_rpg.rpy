@@ -33,15 +33,26 @@ init:
 
 screen say_rpg(rpg_what):
     modal True
+    python:
+        show_window = False
+        renpy.choice_for_skipping()
+    key "dismiss" action []
 
     frame:
         xalign 0 yalign 1.0
-        xysize(1920, 262)
+        padding(80, 5)
+        xysize(1916, 262)
         background "gui/rpg/main_box.png"
-        text rpg_what
-        textbutton "Next":
-            text_size 64
-            xalign 0.9 yalign 0.9 # TODO: can someone make a next button to match the rest pls
+        frame:
+            background None
+            xsize 1.0 ysize 1.0
+            xanchor 0.5 yanchor 0.5
+            xpos 0.5 ypos 0.5
+            text rpg_what
+        imagebutton:
+            xalign 1.0 yalign 1.0
+            idle "gui/rpg/next_button.png"
+            hover "selectable:gui/rpg/next_button.png"
             action Return()
 
 screen screen_rpg():
@@ -505,7 +516,7 @@ label play_rpggame:
             if hasattr(curr_signal, "message") and type(curr_signal) != RPG.DebugSignal:
                 window auto False
                 show screen say_rpg(curr_signal.message) onlayer rpg_say
-                $ renpy.pause(delay=None, modal=False)
+                $ renpy.pause(delay=None, modal=True, hard=True)
                 $ renpy.hide_screen("say_rpg", layer="rpg_say", immediately=True)
         $ renpy.hide_screen("say_rpg", layer="rpg_say", immediately=True)
         $ renpy.hide_screen("screen_rpg", layer="rpg_context", immediately=True)
