@@ -35,10 +35,8 @@ screen say_rpg(rpg_what):
     modal True
 
     frame:
-        xalign 0.0
-        yalign 0.0
-        xsize 1.0
-        ysize 0.10
+        xalign 0 yalign 1.0
+        xysize(1920, 262)
         background "gui/rpg/main_box.png"
         button:
             text rpg_what
@@ -201,7 +199,7 @@ screen screen_rpg():
                                                                 xalign 0.5
                                                                 text_align 0.5
 
-                                    # This handles moves that target the whole enemy party
+                                    # This handles moves that target more than one fighter
                                     if not i == 0:
                                         button:
                                             hover_sound "audio/sfx/sfx_select.ogg"
@@ -210,7 +208,7 @@ screen screen_rpg():
                                                 hover_color "#0099CC"
                                             action [
                                                 Play("sound", "audio/sfx/sfx_valid.ogg"),
-                                                RemoveFromSet("working_list", working_list[i-1]),
+                                                RemoveFromSet("working_list", working_list[i-1]), # THIS LINE CRASHES
                                                 IncrementVariable("i", -1)
                                             ]
 
@@ -504,13 +502,17 @@ label play_rpggame:
             if hasattr(curr_signal, "message") and type(curr_signal) != RPG.DebugSignal:
                 window auto False
                 show screen say_rpg(curr_signal.message) onlayer rpg_say
-                pause
-                hide screen say_rpg
-        hide screen say_rpg
-        hide screen screen_rpg
+                $ renpy.pause(delay=None, modal=False)
+                $ renpy.hide_screen("say_rpg", layer="rpg_say", immediately=True)
+        $ renpy.hide_screen("say_rpg", layer="rpg_say", immediately=True)
+        $ renpy.hide_screen("screen_rpg", layer="rpg_context", immediately=True)
+
+    jump pass_rpg
 
 label pass_rpg:
-    hide screen screen_rpg
+    $ renpy.hide_screen("say_rpg", layer="rpg_say", immediately=True)
+    $ renpy.hide_screen("screen_rpg", layer="rpg_context", immediately=True)
+
     $ quick_menu = True
     window show
     if RPG.encounter.won:
