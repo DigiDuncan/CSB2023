@@ -1216,7 +1216,7 @@ class Encounter:
                 self.send_message(f"{fighter.display_name} is dead!", fighter)
                 self.fighters.remove(fighter)
                 fighter.effects.clear()
-        self.turn += 1
+        # self.turn += 1
 
     def __str__(self) -> str:
         return f"<Encounter {self.allies} vs {self.enemies}>"
