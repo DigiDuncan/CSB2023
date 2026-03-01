@@ -8,9 +8,6 @@ init python:
 
     # For bios page
     current_bios_sorting_mode = 0
-    current_bios_sprite = 0
-    current_bios_page = 0
-    current_bios_total_pages = 0
 
     # For the subgame page
     current_subgame_name = None
@@ -21,13 +18,6 @@ init python:
 
     # For Ace Attorney parody
     chosen_evidence = 0
-
-    # For UCN2
-    ucn2_hovered_data = []
-    ucn2_parties = []
-    ucn2_scale = 1.0
-    ucn2_img = "images/bg/casino1.png"
-    ucn2_bgm = "card_castle"
 
 # If music is so good, why is there no Music 2?
 init python:

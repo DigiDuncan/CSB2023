@@ -161,19 +161,17 @@ screen _ucn2_selection():
                                         hover hover_portrait
                                         hover_sound "audio/sfx/sfx_select.ogg"
                                         hovered [
-                                            SetVariable("ucn2_hovered_data", [character.name, character]),
                                             SetScreenVariable("ucn2_hovered_data", [character.name, character])
                                         ]
                                         unhovered  [
-                                            SetVariable("ucn2_hovered_data", []),
+                                            #SetVariable("ucn2_hovered_data", []),
                                             SetScreenVariable("ucn2_hovered_data", [])
                                         ]
                                         action [
                                             Play("sound", "audio/sfx/sfx_valid.ogg"),
                                             Function(rpg_fill_slot, rpg_slots, rpg_selected_slot, ucn2_hovered_data),
                                             SetScreenVariable("rpg_selected_slot", rpg_slot_autoselect(rpg_slots, rpg_selected_slot, rpg_party_size)),
-                                            SetScreenVariable("rpg_ready", rpg_toggle_ready(rpg_ready, rpg_slots)),
-                                            SetVariable("rpg_ready", rpg_toggle_ready(rpg_ready, rpg_slots))
+                                            SetScreenVariable("rpg_ready", rpg_toggle_ready(rpg_ready, rpg_slots))
                                         ]
 
                                 ###################### Handle empty portrait slots here
@@ -189,19 +187,16 @@ screen _ucn2_selection():
                                     hover "selectable:gui/rpg/portraits/unknown.png"
                                     hover_sound "audio/sfx/sfx_select.ogg"
                                     hovered [
-                                        SetVariable("ucn2_hovered_data", ["(Random)", RPG.Characters.random()]),
                                         SetScreenVariable("ucn2_hovered_data", ["(Random)", RPG.Characters.random()])
                                     ]
                                     unhovered  [
-                                        SetVariable("ucn2_hovered_data", []),
                                         SetScreenVariable("ucn2_hovered_data", [])
                                     ]
                                     action [
                                         Play("sound", "audio/sfx/sfx_valid.ogg"),
                                         Function(rpg_fill_slot, rpg_slots, rpg_selected_slot, ["(Random)", RPG.Characters.random() ]),
                                         SetScreenVariable("rpg_selected_slot", rpg_slot_autoselect(rpg_slots, rpg_selected_slot, rpg_party_size)),
-                                        SetScreenVariable("rpg_ready", rpg_toggle_ready(rpg_ready, rpg_slots)),
-                                        SetVariable("rpg_ready", rpg_toggle_ready(rpg_ready, rpg_slots))
+                                        SetScreenVariable("rpg_ready", rpg_toggle_ready(rpg_ready, rpg_slots))
                                     ]
 
                                 imagebutton:
@@ -209,20 +204,13 @@ screen _ucn2_selection():
                                     idle "gui/rpg/portraits/none.png"
                                     hover "selectable:gui/rpg/portraits/none.png"
                                     hover_sound "audio/sfx/sfx_select.ogg"
-                                    hovered [
-                                        SetVariable("ucn2_hovered_data", ["(None)", None]),
-                                        SetScreenVariable("ucn2_hovered_data", ["(None)", None])
-                                    ]
-                                    unhovered  [
-                                        SetVariable("ucn2_hovered_data", []),
-                                        SetScreenVariable("ucn2_hovered_data", [])
-                                    ]
+                                    hovered SetScreenVariable("ucn2_hovered_data", ["(None)", None])
+                                    unhovered SetScreenVariable("ucn2_hovered_data", [])
                                     action [
                                         Play("sound", "audio/sfx/sfx_valid.ogg"),
                                         Function(rpg_fill_slot, rpg_slots, rpg_selected_slot, ucn2_hovered_data),
                                         SetScreenVariable("rpg_selected_slot", rpg_slot_autoselect(rpg_slots, rpg_selected_slot, rpg_party_size)),
-                                        SetScreenVariable("rpg_ready", rpg_toggle_ready(rpg_ready, rpg_slots)),
-                                        SetVariable("rpg_ready", rpg_toggle_ready(rpg_ready, rpg_slots))
+                                        SetScreenVariable("rpg_ready", rpg_toggle_ready(rpg_ready, rpg_slots))
                                     ]
 
                         ######################### SHOW SELECTED PARTIES
@@ -276,9 +264,8 @@ screen _ucn2_selection():
                                             )
                                             hover_sound "audio/sfx/sfx_select.ogg"
                                             action [
-                                                SetVariable("rpg_selected_slot", a),
                                                 SetScreenVariable("rpg_selected_slot", a),
-                                                SelectedIf(rpg_selected_slot == a)
+                                                SelectedIf( SetScreenVariable("rpg_selected_slot", a) )
                                             ]
 
                                 # Selected character text
@@ -336,9 +323,8 @@ screen _ucn2_selection():
                                             )
                                             hover_sound "audio/sfx/sfx_select.ogg"
                                             action [
-                                                SetVariable("rpg_selected_slot", e+4),
                                                 SetScreenVariable("rpg_selected_slot", e+4),
-                                                SelectedIf(rpg_selected_slot == e+4)
+                                                SelectedIf( SetScreenVariable("rpg_selected_slot", e+4) )
                                             ]
 
                                 # Selected character text
@@ -436,8 +422,7 @@ screen _ucn2_selection():
         # textbutton "[[DEBUG] Toggle ready state.":
             # yoffset 50 xoffset 25
             # action [
-                # SetScreenVariable("rpg_ready", rpg_toggle_ready(rpg_ready, rpg_slots, manual = True)),
-                # SetVariable("rpg_ready", rpg_toggle_ready(rpg_ready, rpg_slots, manual = True))
+                # SetScreenVariable("rpg_ready", rpg_toggle_ready(rpg_ready, rpg_slots, manual = True))
             # ]
 
         python:
@@ -452,7 +437,6 @@ screen _ucn2_selection():
                 xoffset 1395 yoffset 950
                 action [
                     Play("sound", "audio/sfx/sfx_valid.ogg"),
-                    SetVariable("rpg_selection_stage", "fight"),
                     SetScreenVariable("rpg_selection_stage", "fight")
                 ]
 
@@ -465,7 +449,6 @@ screen _ucn2_selection():
                 SensitiveIf(rpg_ready == True),
                 Play("sound", "audio/sfx/sfx_valid.ogg"),
                 # CLEARING THE SCREEN FOR THE NEXT THING
-                SetVariable("rpg_selection_stage", "scale"),
                 SetScreenVariable("rpg_selection_stage", "scale")
             ]
             at ready_transform
@@ -507,7 +490,6 @@ screen _ucn2_selection():
             xoffset 25 yoffset 1000
             action [
                 Play("sound", "audio/sfx/sfx_valid.ogg"),
-                SetVariable("rpg_selection_stage", "party"),
                 SetScreenVariable("rpg_selection_stage", "party")
             ]
 
@@ -515,7 +497,6 @@ screen _ucn2_selection():
             xoffset 1674 yoffset 1000
             action [
                 Play("sound", "audio/sfx/sfx_valid.ogg"),
-                SetVariable("rpg_selection_stage", "load_imgs"),
                 SetScreenVariable("rpg_selection_stage", "load_imgs")
             ]
 
@@ -541,10 +522,7 @@ screen _ucn2_selection():
                 xalign 0.5 yalign 0.5
                 text_align 0.5
             timer 0.001:
-                action [
-                    SetVariable("rpg_selection_stage", "img"),
-                    SetScreenVariable("rpg_selection_stage", "img")
-                ]
+                action SetScreenVariable("rpg_selection_stage", "img")
 
     ###################### Actual selection
     elif rpg_selection_stage == "img":
@@ -585,7 +563,6 @@ screen _ucn2_selection():
                             hover_sound "audio/sfx/sfx_select.ogg"
                             action [
                                 Play("sound", "audio/sfx/sfx_valid.ogg"),
-                                SetVariable("rpg_img", i),
                                 SetScreenVariable("rpg_img", i)
                             ]
 
@@ -613,7 +590,6 @@ screen _ucn2_selection():
             xoffset 25 yoffset 1000
             action [
                 Play("sound", "audio/sfx/sfx_valid.ogg"),
-                SetVariable("rpg_selection_stage", "scale"),
                 SetScreenVariable("rpg_selection_stage", "scale")
             ]
 
@@ -621,7 +597,6 @@ screen _ucn2_selection():
             xoffset 1674 yoffset 1000
             action [
                 Play("sound", "audio/sfx/sfx_valid.ogg"),
-                SetVariable("rpg_selection_stage", "bgm"),
                 SetScreenVariable("rpg_selection_stage", "bgm")
             ]
 
@@ -654,10 +629,8 @@ screen _ucn2_selection():
                             hover_sound "audio/sfx/sfx_select.ogg"
                             action [
                                 Play("sound", "audio/sfx/sfx_valid.ogg"),
-                                SelectedIf( SetVariable("rpg_bgm", i) ),
-                                SetVariable("rpg_bgm_art", Image("/images/jukebox/"+MUSIC_MAP[i]["album_art"])),
+                                SelectedIf( SetScreenVariable("rpg_bgm", i) ),
                                 SetScreenVariable("rpg_bgm_art", Image("/images/jukebox/"+MUSIC_MAP[i]["album_art"])),
-                                SetVariable("rpg_bgm", i),
                                 SetScreenVariable("rpg_bgm", i)
                             ]
 
@@ -681,7 +654,6 @@ screen _ucn2_selection():
             xoffset 25 yoffset 1000
             action [
                 Play("sound", "audio/sfx/sfx_valid.ogg"),
-                SetVariable("rpg_selection_stage", "img"),
                 SetScreenVariable("rpg_selection_stage", "img")
             ]
 
@@ -689,7 +661,6 @@ screen _ucn2_selection():
             xoffset 1674 yoffset 1000
             action [
                 Play("sound", "audio/sfx/sfx_valid.ogg"),
-                SetVariable("rpg_selection_stage", "fight"),
                 SetScreenVariable("rpg_selection_stage", "fight")
             ]
 
