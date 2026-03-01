@@ -7,46 +7,28 @@
 ###################################################### FUNCTIONS FOR THIS SCREEN ONLY
 
 init python:
-    # Ready up
-    def rpg_toggle_ready(slots_list, manual = False):
-        ready_yet = False
-
-        # For debug only
-        if manual == True:
-            return not ready_yet
-
-        # Normal functionality:
-        # Check all the slots. if ANY are pending, we're not ready yet
-        # TODO: This only works if you click one extra time? Help?
-        else:
-            for member in slots_list:
-                if member[0] == "(Pending)":
-                    ready_yet = False
-                    break
-                else:
-                    ready_yet = True
-
-        return ready_yet
-
     # Fill a given slot
     def rpg_fill_slot(slots_list, current_slot, char_stored_data):
         slots_list[current_slot] = char_stored_data
 
     # Automatically select the next unselected slot (AI-assisted)
     def rpg_slot_autoselect(slots_list, current_slot):
+
+        # Do NOT try party_size*2 again, it is why the screen took two clicks to update
         total_slots = len(slots_list)
 
-        for i in range(1, total_slots + 1):
-            checked_slot = (current_slot + i) % total_slots
+        # Load-bearing crash prevention (well, hopefully)
+        if total_slots <= 1:
+            return 0
 
-            # Check for any empty slots
+        # Search for any empty slots
+        for i in range(1, total_slots):
+            checked_slot = (current_slot + i) % total_slots
             if slots_list[checked_slot][0] == "(Pending)":
                 return checked_slot
-            # If there aren't any, just return the next slot
-            else:
-                return (current_slot + i) % total_slots
 
-        return current_slot
+        # Failsafe - just give me the next slot
+        return (current_slot + 1) % total_slots
 
 ###################################################### TRANSFORMS FOR THIS SCREEN ONLY
 
@@ -123,12 +105,23 @@ screen _ucn2_selection():
 
     if rpg_selection_stage == "party":
 
+       ### Handle this logic here I guess since it doesn't like it in a function
+        python:
+            if rpg_ready == False: # quit looping if we don't need to
+                for member in rpg_slots:
+                    if "(Pending)" in member[0]:
+                        rpg_ready = False
+                        break
+                    else:
+                        rpg_ready = True
+
+        ###################### Bounding box for everything
+
         text "{size=+24}Select Your Characters!":
             xalign 0.5
             yalign 0.04
             text_align 0.5
 
-        ###################### Bounding box for everything
         frame:
             background None
             xsize 0.9 ysize 0.75
@@ -169,14 +162,13 @@ screen _ucn2_selection():
                                             SetScreenVariable("ucn2_hovered_data", [character.name, character])
                                         ]
                                         unhovered  [
-                                            #SetVariable("ucn2_hovered_data", []),
                                             SetScreenVariable("ucn2_hovered_data", [])
                                         ]
                                         action [
                                             Play("sound", "audio/sfx/sfx_valid.ogg"),
                                             Function(rpg_fill_slot, rpg_slots, rpg_selected_slot, ucn2_hovered_data),
                                             SetScreenVariable("rpg_selected_slot", rpg_slot_autoselect(rpg_slots, rpg_selected_slot)),
-                                            SetScreenVariable("rpg_ready", rpg_toggle_ready(rpg_slots))
+                                            With(determination)
                                         ]
 
                                 ###################### Handle empty portrait slots here
@@ -201,7 +193,7 @@ screen _ucn2_selection():
                                         Play("sound", "audio/sfx/sfx_valid.ogg"),
                                         Function(rpg_fill_slot, rpg_slots, rpg_selected_slot, ["(Random)", RPG.Characters.random() ]),
                                         SetScreenVariable("rpg_selected_slot", rpg_slot_autoselect(rpg_slots, rpg_selected_slot)),
-                                        SetScreenVariable("rpg_ready", rpg_toggle_ready(rpg_slots))
+                                        With(determination)
                                     ]
 
                                 imagebutton:
@@ -215,7 +207,7 @@ screen _ucn2_selection():
                                         Play("sound", "audio/sfx/sfx_valid.ogg"),
                                         Function(rpg_fill_slot, rpg_slots, rpg_selected_slot, ucn2_hovered_data),
                                         SetScreenVariable("rpg_selected_slot", rpg_slot_autoselect(rpg_slots, rpg_selected_slot)),
-                                        SetScreenVariable("rpg_ready", rpg_toggle_ready(rpg_slots))
+                                        With(determination)
                                     ]
 
                         ######################### SHOW SELECTED PARTIES
@@ -390,7 +382,7 @@ screen _ucn2_selection():
 
         ######################### BOTTOM
 
-        ### buttons
+        ### Buttons
         $ screen_check = renpy.get_screen("category_welcome")
 
         textbutton "Back":
@@ -423,12 +415,12 @@ screen _ucn2_selection():
                 Return()
             ]
 
-        # Debug buttons only
-        # textbutton "[[DEBUG] Toggle ready state.":
-            # yoffset 50 xoffset 25
-            # action [
-                # SetScreenVariable("rpg_ready", rpg_toggle_ready(rpg_slots, manual = True))
-            # ]
+        ################################################### DEBUG BUTTONS
+        textbutton "[[DEBUG] Toggle ready state.":
+            yoffset 50 xoffset 25
+            action [
+                SetScreenVariable("rpg_ready", (not rpg_ready) )
+            ]
 
         python:
             if rpg_ready == True:
@@ -444,6 +436,7 @@ screen _ucn2_selection():
                     Play("sound", "audio/sfx/sfx_valid.ogg"),
                     SetScreenVariable("rpg_selection_stage", "fight")
                 ]
+        ################################################### END DEBUG BUTTONS
 
         imagebutton:
             insensitive "sepia:gui/rpg/ready.png"
