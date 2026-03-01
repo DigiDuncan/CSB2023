@@ -64,7 +64,7 @@ screen jukebox():
                     xalign 0.5 yalign 0.5
                     text_align 0.5
 
-                ####### MUSIC LIST
+                ####### TRACK LIST
                 viewport:
                     xpos -6 ypos 58
                     xsize 600 ysize 850
@@ -77,28 +77,28 @@ screen jukebox():
                         spacing 10
                         xoffset 350
 
-                        ####### BEGIN SORTING
+                        ### BEGIN SORTING
                         python:
                             sorted_list = []
 
                             for track in MUSIC_MAP:
-                                    if track in persistent.heard:
+                                if track in persistent.heard:
 
-                                        ### Display everything in the default order, which is mostly chronological
-                                        if current_jukebox_tag_index == 0:
+                                    ### Display everything in the default order, which is mostly chronological
+                                    if current_jukebox_tag_index == 0:
+                                        sorted_list.append(MUSIC_MAP[track])
+                                    ### Sort by title
+                                    elif current_jukebox_tag_index == 1:
+                                        sorted_list.append(MUSIC_MAP[track])
+                                        sorted_list.sort(key = lambda song: song["title"].lower())
+                                    ### Sort by artist, then title
+                                    elif current_jukebox_tag_index == 2:
+                                        sorted_list.append(MUSIC_MAP[track])
+                                        sorted_list.sort(key = lambda song:( song["artist"].lower(), song["title"].lower() ))
+                                    ### Sort by tag
+                                    else:
+                                        if full_mode_list[current_jukebox_tag_index] in MUSIC_MAP[track]["tags"]:
                                             sorted_list.append(MUSIC_MAP[track])
-                                        ### Sort by title
-                                        elif current_jukebox_tag_index == 1:
-                                            sorted_list.append(MUSIC_MAP[track])
-                                            sorted_list.sort(key = lambda song: song["title"].lower())
-                                        ### Sort by artist, then title
-                                        elif current_jukebox_tag_index == 2:
-                                            sorted_list.append(MUSIC_MAP[track])
-                                            sorted_list.sort(key = lambda song:( song["artist"].lower(), song["title"].lower() ))
-                                        ### Sort by tag
-                                        else:
-                                            if full_mode_list[current_jukebox_tag_index] in MUSIC_MAP[track]["tags"]:
-                                                sorted_list.append(MUSIC_MAP[track])
 
                         ### Finally display them
                         for track in sorted_list:
@@ -111,7 +111,7 @@ screen jukebox():
                                     Play("jukebox", track["file"])
                                 ]
 
-###################################################### CURRENT MUSIC INFO
+###################################################### SELECTION INFO
 
             frame:
                 background None
@@ -122,7 +122,7 @@ screen jukebox():
                 if not current_track:
                     vbox:
                         xsize 0.8
-                        xalign 0.5 yalign 0.5
+                        xalign 0.5 yalign 0.6
                         text "Here, you can listen to all the sweet tunes you've discovered throughout CS' adventures!"
                         text "\n([unlocked_music_count]/[music_count] unlocked)"
                 else:
@@ -130,7 +130,6 @@ screen jukebox():
                         background None
                         xsize 1.0 ysize 125
                         xalign 0.5 ypos 50
-
 
                         text "{font=music_text}{size=69}" + current_track["title"] + "\n{font=music_text}{size=45}" + current_track["artist"]:
                             text_align 0.5

@@ -154,7 +154,7 @@ screen people():
                 if not current_person:
                     vbox:
                         xsize 0.8
-                        xalign 0.5 yalign 0.5
+                        xalign 0.5 yalign 0.6
                         text "View bios about all the wacky characters you've seen!"
                         text "([unlocked_bio_count]/[bio_count] unlocked)"
                 else:

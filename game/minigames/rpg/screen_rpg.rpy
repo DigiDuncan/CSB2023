@@ -56,6 +56,11 @@ screen say_rpg(rpg_what):
             action Return()
 
 screen screen_rpg():
+
+    # Debug
+    text "Turn " + str(RPG.encounter.turn):
+        xoffset 25 yoffset 25
+
     # Drawing the enemies in the background.
     frame:
         background None
