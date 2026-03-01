@@ -1,6 +1,5 @@
 {
     "tags" : [
-        "All",
         "Menus & Misc.",
         "Fun Values",
         "Minigames",
@@ -1783,7 +1782,7 @@
             "artist": "cs188",
             "tags": ["CSBIII: Michigan", "CSBDX: Ringtones", "New In DX"],
             "album_art": "ringtone_cs.png",
-            "trivia": "Originally created for CS' Mixer livestream soundboard, but was also featured in {a=https://www.youtube.com/watch?v=mh6aM8uhrEI}{i}[[YTP] National Giraffeic Teaches You Slnimals.{/i}{/a}"
+            "trivia": "Originally created for CS' Mixer livestream soundboard, but was also featured in {a=https://www.youtube.com/watch?v=mh6aM8uhrEI}{i}[YTP] National Giraffeic Teaches You Slnimals.{/i}{/a}"
         },
         "sfx_ringtone_digi" : {
             "file": "sfx/sfx_ringtone_digi.ogg",

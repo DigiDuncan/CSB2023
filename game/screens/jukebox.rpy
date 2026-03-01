@@ -12,6 +12,10 @@ screen jukebox():
         music_count = len(MUSIC_MAP.keys())
         unlocked_music_count = len(persistent.heard)
 
+        manual_sort_modes = [ "All", "By Title", "By Artist" ]
+        full_mode_list = manual_sort_modes + TAGS_MAP
+        tags_count = len(full_mode_list)
+
     default current_track = None
 
     add Color('#323e42', alpha=0.75)
@@ -29,40 +33,32 @@ screen jukebox():
                 xsize 600 ysize 64
                 xpos 25 ypos 25
 
-                imagebutton:
-                    xalign 0.0 yalign 0.5
-                    xysize 64, 64
+                ### LEFT BUTTON
+                if current_jukebox_tag_index-1>=0:
+                    imagebutton:
+                        xalign 0.0 yalign 0.5
+                        xysize 64, 64
 
-                    idle "/gui/left_off_small.png"
-                    hover "/gui/left_on_small.png"
+                        idle "/gui/left_off_small.png"
+                        hover "/gui/left_on_small.png"
 
-                    if current_jukebox_tag_index-1>=0:
                         action SetVariable("current_jukebox_tag_index", current_jukebox_tag_index-1)
 
-                imagebutton:
-                    xalign 1.0 yalign 0.5
-                    xysize 64, 64
+                ### RIGHT BUTTON
+                if current_jukebox_tag_index+1<tags_count:
+                    imagebutton:
+                        xalign 1.0 yalign 0.5
+                        xysize 64, 64
 
-                    idle "/gui/right_off_small.png"
-                    hover "/gui/right_on_small.png"
+                        idle "/gui/right_off_small.png"
+                        hover "/gui/right_on_small.png"
 
-                    if current_jukebox_tag_index+1<len(TAGS_MAP):
                         action SetVariable("current_jukebox_tag_index", current_jukebox_tag_index+1)
 
-                # since we can't exactly do anything about the index problem let's just hide unseen tags. want to use obfuscator() later but it's not ready yet.
+                # Since we can't exactly do anything about the index problem let's just hide unseen tags for now.
+                # I want to use obfuscator() later but it's not ready yet.
 
-                $ found_match = False
-                $ tags_label_text = TAGS_MAP[current_jukebox_tag_index]
-
-                for song in persistent.heard:
-                    if TAGS_MAP[current_jukebox_tag_index] in MUSIC_MAP[song]["tags"]:
-                        $ found_match = True
-                        break
-
-                if found_match or TAGS_MAP[current_jukebox_tag_index] == "All":
-                    $ tags_label_text = TAGS_MAP[current_jukebox_tag_index]
-                else:
-                    $ tags_label_text = "(Locked)"
+                $ tags_label_text = full_mode_list[current_jukebox_tag_index]
 
                 text tags_label_text:
                     xalign 0.5 yalign 0.5
@@ -80,31 +76,42 @@ screen jukebox():
                     vbox:
                         spacing 10
                         xoffset 350
-                        for k in MUSIC_MAP:
-                            if k in persistent.heard:
-                                # display all
-                                if current_jukebox_tag_index == 0:
-                                    textbutton "{font=music_text}" + MUSIC_MAP[k]["title"]+"\n{size=-12}"+MUSIC_MAP[k]["artist"]:
-                                        action [
-                                            SetScreenVariable("current_track", k),
-                                            SetVariable("jukebox_playing", True),
-                                            SelectedIf( SetVariable("current_track", k) ),
-                                            Function(renpy.music.set_volume, 0.0, channel="music"),
-                                            Play("jukebox", MUSIC_MAP[k]["file"])
-                                        ]
-                                # only display per tag
-                                else:
-                                    if TAGS_MAP[current_jukebox_tag_index] in MUSIC_MAP[k]["tags"]:
-                                        textbutton "{font=music_text}" + MUSIC_MAP[k]["title"]+"\n{size=-12}"+MUSIC_MAP[k]["artist"]:
-                                            action [
-                                                SetScreenVariable("current_track", k),
-                                                SetVariable("jukebox_playing", True),
-                                                SelectedIf( SetVariable("current_track", k) ),
-                                                Function(renpy.music.set_volume, 0.0, channel="music"),
-                                                Play("jukebox", MUSIC_MAP[k]["file"])
-                                            ]
 
-###################################################### MUSIC INFO
+                        ####### BEGIN SORTING
+                        python:
+                            sorted_list = []
+
+                            for track in MUSIC_MAP:
+                                    if track in persistent.heard:
+
+                                        ### Display everything in the default order, which is mostly chronological
+                                        if current_jukebox_tag_index == 0:
+                                            sorted_list.append(MUSIC_MAP[track])
+                                        ### Sort by title
+                                        elif current_jukebox_tag_index == 1:
+                                            sorted_list.append(MUSIC_MAP[track])
+                                            sorted_list.sort(key = lambda song: song["title"].lower())
+                                        ### Sort by artist, then title
+                                        elif current_jukebox_tag_index == 2:
+                                            sorted_list.append(MUSIC_MAP[track])
+                                            sorted_list.sort(key = lambda song:( song["artist"].lower(), song["title"].lower() ))
+                                        ### Sort by tag
+                                        else:
+                                            if full_mode_list[current_jukebox_tag_index] in MUSIC_MAP[track]["tags"]:
+                                                sorted_list.append(MUSIC_MAP[track])
+
+                        ### Finally display them
+                        for track in sorted_list:
+                            textbutton "{font=music_text}" + track["title"] + "\n{size=-12}" + track["artist"]:
+                                action [
+                                    SetScreenVariable("current_track", track),
+                                    SetVariable("jukebox_playing", True),
+                                    SelectedIf( SetVariable("current_track", track) ),
+                                    Function(renpy.music.set_volume, 0.0, channel="music"),
+                                    Play("jukebox", track["file"])
+                                ]
+
+###################################################### CURRENT MUSIC INFO
 
             frame:
                 background None
@@ -124,7 +131,8 @@ screen jukebox():
                         xsize 1.0 ysize 125
                         xalign 0.5 ypos 50
 
-                        text "{font=music_text}{size=69}" + MUSIC_MAP[current_track]["title"] + "\n{font=music_text}{size=45}" + MUSIC_MAP[current_track]["artist"]:
+
+                        text "{font=music_text}{size=69}" + current_track["title"] + "\n{font=music_text}{size=45}" + current_track["artist"]:
                             text_align 0.5
                             xalign 0.5
 
@@ -151,12 +159,12 @@ screen jukebox():
                                 at transform:
                                     rotate 0 # TODO: make it stop at current position when paused?
 
-                        if MUSIC_MAP[current_track]["album_art"] is None:
+                        if current_track["album_art"] is None:
                             image "images/jukebox/csbi.png":
                                 xysize(512, 512)
                                 xalign 0.5 yalign 0
                         else:
-                            image f"images/jukebox/"+MUSIC_MAP[current_track]["album_art"]:
+                            image f"images/jukebox/"+current_track["album_art"]:
                                 xysize(512, 512)
                                 xalign 0.5 yalign 0
 
@@ -202,7 +210,7 @@ screen jukebox():
                             yoffset 25
                             python:
                                 try:
-                                    jukebox_trivia = MUSIC_MAP[current_track]["trivia"]
+                                    jukebox_trivia = current_track["trivia"]
                                 except:
                                     jukebox_trivia = ""
 
