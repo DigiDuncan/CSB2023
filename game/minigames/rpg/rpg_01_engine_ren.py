@@ -595,7 +595,7 @@ class Character: # TODO: Workshop -- I'd like fighter to be used by encounter, b
             sprite if sprite is not None else self.sprite,
             anim_sprite if anim_sprite is not None else self.anim_sprite
         )
-    
+
     @property
     def infinite(self) -> bool:
         return self.base_hp == math.inf
@@ -1210,10 +1210,10 @@ class Encounter:
                 if attack.turns_until_available == 0:
                     self.send_message(f"{fighter.character.display_name}: {attack.name} now available!", fighter)
                 else:
-                    self.send_message(f"{fighter.character.display_name}: {attack.name} available in {attack.turns_until_available} turns!", fighter)
+                    self.send_debug(f"{fighter.character.display_name}: {attack.name} available in {attack.turns_until_available} turns!", fighter)
 
             if fighter.dead:
-                self.send_message(f"{fighter.display_name} is dead!", fighter)
+                self.send_message(f"{fighter.display_name} was knocked out!", fighter)
                 self.fighters.remove(fighter)
                 fighter.effects.clear()
         # self.turn += 1

@@ -57,10 +57,6 @@ screen say_rpg(rpg_what):
 
 screen screen_rpg():
 
-    # Debug
-    text "Turn " + str(RPG.encounter.turn):
-        xoffset 25 yoffset 25
-
     # Drawing the enemies in the background.
     frame:
         background None
@@ -227,7 +223,7 @@ screen screen_rpg():
                                                 hover_color "#0099CC"
                                             action [
                                                 Play("sound", "audio/sfx/sfx_valid.ogg"),
-                                                RemoveFromSet("working_list", working_list[i-1]), # THIS LINE CRASHES
+                                                RemoveFromSet("working_list", working_list[i-1]), # TODO: THIS LINE CRASHES
                                                 IncrementVariable("i", -1)
                                             ]
 
@@ -502,6 +498,9 @@ screen screen_rpg():
                     text_align 0.5
                     size 21
 
+    # Debug
+    # text "Turn: " + str(RPG.encounter.turn) xoffset 25 yoffset 25
+
     # Dev Backdoor
     key "K_END" action Jump("pass_rpg")
 
@@ -515,9 +514,10 @@ label play_rpggame:
     while RPG.encounter.won is None:
         call screen screen_rpg
         $ RPG.encounter.run_attacks()
-        # Visuals and stuff need to go here.
         $ RPG.encounter.run_effects()
         $ RPG.encounter.cleanup_turn()
+
+        # Visuals and stuff need to go here.
         show screen screen_rpg onlayer rpg_context
         while RPG.encounter.has_signals():
             $ curr_signal = RPG.encounter.get_next_signal()
@@ -528,6 +528,9 @@ label play_rpggame:
                 $ renpy.hide_screen("say_rpg", layer="rpg_say", immediately=True)
         $ renpy.hide_screen("say_rpg", layer="rpg_say", immediately=True)
         $ renpy.hide_screen("screen_rpg", layer="rpg_context", immediately=True)
+
+        # Reset variables at the end
+        $ RPG.encounter.turn = 0
 
     jump pass_rpg
 
