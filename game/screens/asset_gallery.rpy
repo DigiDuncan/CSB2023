@@ -7,27 +7,25 @@ screen unused_gallery():
     add Color("#00000070")
 
     python:
-        file = renpy.file("data/gallery.json")
-        asset_dict_preload = json.load(file)
 
         # begin anti-spoiler technology
         # some things will be unlocked by default but most will require a character, label, ending, or some combination of these.
         asset_dict = {}
 
-        for item in asset_dict_preload:
+        for item in GALLERY_MAP:
             requirements_met = True
             # character
-            if "need_character" in asset_dict_preload[item] and asset_dict_preload[item]["need_character"] not in persistent.seen:
+            if "need_character" in GALLERY_MAP[item] and GALLERY_MAP[item]["need_character"] not in persistent.seen:
                 requirements_met = False
             # ending
-            if "need_ending" in asset_dict_preload[item] and asset_dict_preload[item]["need_ending"] not in persistent.seen_all_endings:
+            if "need_ending" in GALLERY_MAP[item] and GALLERY_MAP[item]["need_ending"] not in persistent.seen_all_endings:
                 requirements_met = False
             # label
-            if "need_label" in asset_dict_preload[item] and renpy.seen_label(asset_dict_preload[item]["need_label"]) == False:
+            if "need_label" in GALLERY_MAP[item] and renpy.seen_label(GALLERY_MAP[item]["need_label"]) == False:
                 requirements_met = False
 
             if requirements_met:
-                asset_dict[item] = asset_dict_preload[item]
+                asset_dict[item] = GALLERY_MAP[item]
 
         ## fix counter if it goes over the length of list or under 1
         pretty_count = unused_page+1

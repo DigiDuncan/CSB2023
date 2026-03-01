@@ -11,16 +11,20 @@ init -1 python:
 
     import json
 
-    # Achievement step counts + only load certain JSON files once
+    # Achievement step counts
     pun_count = 999
     fun_count = 999
     original_ending_count = 27
 
+    ##### ONLY OPEN JSON FILES ONCE #####
+
+    # Bios
     with renpy.open_file("data/bios.json") as f:
         j = json.load(f)
         bio_count = len(j)
         print(f"Loaded {bio_count} bios.")
 
+    # Items
     with renpy.open_file("data/item_collection.json") as f:
         j = json.load(f)
         item_count = len(j)
@@ -28,6 +32,15 @@ init -1 python:
 
     ITEM_MAP = j
 
+    # Gallery
+    with renpy.open_file("data/gallery.json") as f:
+        j = json.load(f)
+        gallery_count = len(j)
+        print(f"Loaded {gallery_count} gallery items.")
+
+    GALLERY_MAP = j
+
+    # Jukebox
     with renpy.open_file("data/jukebox.json") as f:
         j = json.load(f)
         song_count = len(j["tracks"])
@@ -36,6 +49,7 @@ init -1 python:
     MUSIC_MAP = j["tracks"]
     TAGS_MAP = j["tags"]
 
+    # Timeline
     with renpy.open_file("data/timeline.json") as f:
         j = json.load(f)
         timeline_trace_count = 0
@@ -46,11 +60,19 @@ init -1 python:
 
     TIMELINE_MAP = j
 
+    # UCN Blacklist
     with renpy.open_file("data/ucn_bg_blacklist.json") as f:
         j = json.load(f)
         print(f"Loaded UCN image blacklist.")
 
     UCN_BLACKLIST_MAP = j
+
+    # Bookshelf
+    with renpy.open_file("data/books.json") as f:
+        j = json.load(f)
+        print(f"Loaded books.")
+
+    BOOKS_MAP = j
 
 init python:
     renpy.add_layer("popup", above = "overlay")

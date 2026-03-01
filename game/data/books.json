@@ -17,7 +17,8 @@
         "x_pos": 46,
         "y_pos": 36,
         "kind": "label",
-        "destination": "csbii_start"
+        "destination": "csbii_start",
+        "need_label": "csbii_start"
     },
     "csbiii_1": {
         "title": "CSBIII Act 1",
@@ -27,7 +28,8 @@
         "x_pos": 92,
         "y_pos": 36,
         "kind": "label",
-        "destination": "csbiii_start"
+        "destination": "csbiii_start",
+        "need_label": "csbiii_start"
     },
     "csbiii_2": {
         "title": "CSBIII Act 2",
@@ -37,7 +39,8 @@
         "x_pos": 138,
         "y_pos": 36,
         "kind": "label",
-        "destination": "csbiii_choose_direction"
+        "destination": "csbiii_choose_direction",
+        "need_label": "csbiii_choose_direction"
     },
     "afterstory": {
         "title": "CSBDX: Afterstory",
@@ -47,7 +50,8 @@
         "x_pos": 184,
         "y_pos": 36,
         "kind": "label",
-        "destination": "dx_after_true"
+        "destination": "dx_after_true",
+        "need_label": "dx_after_true"
     },
     "finale": {
         "title": "CSBDX: Finale",
@@ -57,7 +61,8 @@
         "x_pos": 230,
         "y_pos": 36,
         "kind": "label",
-        "destination": "finale_fun_value_land"
+        "destination": "finale_fun_value_land",
+        "need_label": "finale_fun_value_land"
     },
     "beach": {
         "title": "CSBDX: Beach Episode",
@@ -67,7 +72,8 @@
         "x_pos": 276,
         "y_pos": 36,
         "kind": "label",
-        "destination": "beach_start"
+        "destination": "beach_start",
+        "need_label": "beach_start"
     },
     "train_winner": {
         "title": "CSBDX: Train Route",
@@ -77,7 +83,8 @@
         "x_pos": 322,
         "y_pos": 36,
         "kind": "label",
-        "destination": "train_start_good"
+        "destination": "train_start_good",
+        "need_label": "train_start_good"
     },
     "train_thief": {
         "title": "CSBDX: Train Route",
@@ -87,7 +94,8 @@
         "x_pos": 368,
         "y_pos": 36,
         "kind": "label",
-        "destination": "train_start_bad"
+        "destination": "train_start_bad",
+        "need_label": "train_start_bad"
     },
     "bt1d": {
         "title": "BT1D",
@@ -97,7 +105,8 @@
         "x_pos": 414,
         "y_pos": 36,
         "kind": "label",
-        "destination": "bt1d_start"
+        "destination": "bt1d_start",
+        "need_label": "bt1d_start"
     },
     "kuwait": {
         "title": "Kuwait",
@@ -107,7 +116,8 @@
         "x_pos": 460,
         "y_pos": 36,
         "kind": "label",
-        "destination": "kuwait_travel"
+        "destination": "kuwait_travel",
+        "need_label": "kuwait_travel"
     },
     "plane": {
         "title": "Plane",
@@ -117,7 +127,8 @@
         "x_pos": 506,
         "y_pos": 36,
         "kind": "label",
-        "destination": "plane_intro_start"
+        "destination": "plane_intro_start",
+        "need_label": "plane_intro_start"
     },
     "speedrun": {
         "title": "Speedrun",
@@ -127,6 +138,7 @@
         "x_pos": 552,
         "y_pos": 36,
         "kind": "label",
+        "need_label": "vibration",
         "destination": "vibration"
     },
     "bronson": {
@@ -137,7 +149,8 @@
         "x_pos": 598,
         "y_pos": 36,
         "kind": "label",
-        "destination": "michigan_bronson"
+        "destination": "michigan_bronson",
+        "need_label": "michigan_bronson"
     },
     "jukebox": {
         "title": "Jukebox",

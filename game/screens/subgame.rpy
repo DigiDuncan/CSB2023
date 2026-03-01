@@ -2,12 +2,6 @@ python early:
     import re
     import json
 
-    with renpy.open_file("data/books.json") as json_file:
-        books_file = json.load(json_file)
-
-    global books_map
-    books_map = books_file
-
     # default spine size is 300x46
     class Book:
         def __init__(
@@ -52,17 +46,17 @@ screen subgame():
 
     python:
         bookshelf = []
-        for book in books_map:
+        for book in BOOKS_MAP:
             # only show the book if's unlocked
             # default is unlocked
             this_unlocked = True
 
             # unlock by label
-            if "need_label" in books_map[book] and not renpy.seen_label(books_map[book]["need_label"]):
+            if "need_label" in BOOKS_MAP[book] and not renpy.seen_label(BOOKS_MAP[book]["need_label"]):
                 this_unlocked = False
 
             # unlock by persistent value
-            if "need_persistent" in books_map[book] and not getattr(persistent, "saved_christmas"):
+            if "need_persistent" in BOOKS_MAP[book] and not getattr(persistent, "saved_christmas"):
                 this_unlocked = False
 
             # append to shelf if unlocked
@@ -70,14 +64,14 @@ screen subgame():
                 bookshelf.append(
                     Book(
                         book,
-                        books_map[book]["title"],
-                        books_map[book]["desc"],
-                        books_map[book]["spine_width"],
-                        books_map[book]["spine_height"],
-                        books_map[book]["x_pos"],
-                        books_map[book]["y_pos"],
-                        books_map[book]["kind"],
-                        books_map[book]["destination"]
+                        BOOKS_MAP[book]["title"],
+                        BOOKS_MAP[book]["desc"],
+                        BOOKS_MAP[book]["spine_width"],
+                        BOOKS_MAP[book]["spine_height"],
+                        BOOKS_MAP[book]["x_pos"],
+                        BOOKS_MAP[book]["y_pos"],
+                        BOOKS_MAP[book]["kind"],
+                        BOOKS_MAP[book]["destination"]
                     )
                 )
 
