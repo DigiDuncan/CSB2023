@@ -42,7 +42,7 @@ screen category_nav():
             # Here you list the categories
             # I wanted to use {dx} tag here but it crashes - Tate
 
-            textbutton "Achievements\n{size=-12}Look at all you've accomplished!" action ShowMenu("achievements_welcome")
+            textbutton "Achievements\n{size=-12}Look at all you've accomplished!" action ShowMenu("achievements")
 
             textbutton "Bios\n{size=-12}Learn more about the characters you've met!" action ShowMenu("people")
 
