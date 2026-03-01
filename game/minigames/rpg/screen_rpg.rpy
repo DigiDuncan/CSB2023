@@ -171,6 +171,7 @@ screen screen_rpg():
                                 text "{size=42}Select target [i]"
 
                                 hbox:
+                                    $ curr_victim = None # TODO: this needs to reset between characters somehow
                                     for victim in victims:
                                         $ target_actions = [ Function(bypass_append, working_list, victim) ]
                                         if i+1 == curr_att.attack.target_count:
@@ -180,18 +181,20 @@ screen screen_rpg():
 
                                             # Only put these if the target is not dead
                                             if not victim.dead:
+
                                                 button:
                                                     hover_sound "audio/sfx/sfx_select.ogg"
 
                                                     action [
                                                         Play("sound", "audio/sfx/sfx_valid.ogg"),
+                                                        SetVariable("curr_victim", victim ),
+                                                        SelectedIf((SetVariable("curr_victim", victim))),
                                                         target_actions
                                                     ]
 
                                                     frame:
                                                         background None
                                                         vbox:
-
                                                             # Portrait shenanigans
                                                             frame:
                                                                 xysize(88,88)
@@ -201,16 +204,23 @@ screen screen_rpg():
 
                                                                 hover_background Transform(victim.portrait, matrixcolor=shade_select_matrix)
 
-                                                                # TODO: this does not work yet, i need a SelectedIf() but i dont know what variable i'm looking for
                                                                 selected_background Composite(
                                                                     (88,88),
                                                                     (0,0), victim.portrait,
                                                                     (0,0), "gui/rpg/portraits/border_sel_e.png"
                                                                 )
 
+                                                                selected_hover_background Composite(
+                                                                    (88,88),
+                                                                    (0,0), Transform(victim.portrait, matrixcolor=shade_select_matrix),
+                                                                    (0,0), "selectable:gui/rpg/portraits/border_sel_e.png"
+                                                                )
+
                                                             text "{size=42}"+victim.display_name:
                                                                 color "#FFFFFF"
                                                                 hover_color "#0099CC"
+                                                                selected_color "#FF8A00"
+                                                                selected_hover_color "#F5DD00"
                                                                 xalign 0.5
                                                                 text_align 0.5
 
@@ -302,6 +312,7 @@ screen screen_rpg():
                         grid 2 2:
                             xfill True
                             yfill True
+
                             # The Fighter's Icon and Stats
                             hbox:
                                 align(0.0, 0.0)
@@ -324,6 +335,7 @@ screen screen_rpg():
                                     text str(RPG.encounter.allies[i].defense):
                                         size 32
                                         yalign 0.5
+
                             # The Fighter's name and healthbar
                             vbox:
                                 align(1.0, 0.0)
@@ -346,6 +358,7 @@ screen screen_rpg():
                                         add "gui/rpg/infinite.png" xalign 1.0 yalign 0.5
                                     add "gui/rpg/hp.png" yalign 0.5 xalign -0.15
                             if RPG.encounter.turn == i:
+
                                 # The attack button
                                 imagebutton:
                                     align(0.0, 1.0)
@@ -356,6 +369,7 @@ screen screen_rpg():
                                         Play("sound", "audio/sfx/sfx_valid.ogg"),
                                         Notify("Attack pressed on fighter"+str(i+1)+"!")
                                     ]
+
                                 # The defend button
                                 imagebutton:
                                     align(1.0, 1.0)
@@ -424,6 +438,7 @@ screen screen_rpg():
 
                         grid 2 2:
                             xfill True yfill True
+
                             # The Fighter's Icon and Stats
                             hbox:
                                 align(0.0, 0.0)
@@ -446,6 +461,7 @@ screen screen_rpg():
                                     text str(RPG.encounter.enemies[i].defense):
                                         size 32
                                         yalign 0.5
+
                             # The Fighter's name and healthbar
                             vbox:
                                 align(1.0, 0.0)
