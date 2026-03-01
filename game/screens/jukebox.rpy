@@ -197,8 +197,9 @@ screen jukebox():
                         ####### TRIVIA
                         frame:
                             background None
-                            xsize 1.0 ysize 111
+                            xsize 0.9 ysize 115
                             xalign 0.5 yalign 1.0
+                            yoffset 25
                             python:
                                 try:
                                     jukebox_trivia = MUSIC_MAP[current_track]["trivia"]
@@ -206,8 +207,8 @@ screen jukebox():
                                     jukebox_trivia = ""
 
                             text "{size=-12}[jukebox_trivia]{/size}":
-                                text_align 0.5
                                 xalign 0.5 yalign 0.5
+                                text_align 0.5
 
 ###################################################### BOTTOM BUTTONS
 

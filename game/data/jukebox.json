@@ -1575,7 +1575,7 @@
             "artist": "Tsukasa Tawada",
             "tags": ["CSBDX: Plane", "New In DX"],
             "album_art": "pokemonxd.png",
-            "trivia": "\"Arceus goes to the dining car to meet Mean in {i}Train Route,{/i} so I created K-19 to serve as the \"Mean\" for {i}Plane Route.\"{/i} -- Pakoo"
+            "trivia": "\"Arceus goes to the dining car to meet Mean in {i}Train Route,{/i} so I created K-19 to serve as the 'Mean' for {i}Plane Route.\"{/i} -- Pakoo"
         },
         "cipher_lab" : {
             "file": "cipher_lab.ogg",
@@ -1711,7 +1711,7 @@
             "artist": "Yes",
             "tags": ["CSBDX: Train", "New In DX"],
             "album_art": "roundabout.png",
-            "trivia": "It's the song from {a=https://www.youtube.com/watch?v=sqTEoZ78ihs}Family Guy{/i}{/a}{i}!{/i}"
+            "trivia": "It's the song from {a=https://www.youtube.com/watch?v=sqTEoZ78ihs}{i}Family Guy{/i}{/a}{i}!{/i}"
         },
         "lo_fi_sunset" : {
             "file": "lo_fi_sunset.ogg",
@@ -1735,7 +1735,7 @@
             "artist": "W∆W",
             "tags": ["CSBDX: Train", "New In DX", "Fun Values"],
             "album_art": "moon.png",
-            "trivia": "Tate was never originally intended to be a character that could be battled. {a=https://www.youtube.com/watch?v=O6i-aE4Hw18}{i}Moon EP{/i}{/a} changed that."
+            "trivia": "Tate was never originally intended to be a character that could be battled.\n{a=https://www.youtube.com/watch?v=O6i-aE4Hw18}{i}Moon EP{/i}{/a} changed that."
         },
         "space" : {
             "file": "secret/pt/space.ogg",

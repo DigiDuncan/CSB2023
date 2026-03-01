@@ -623,7 +623,6 @@ screen _ucn2_selection():
             # Stealing Digi's code here too
             viewport:
                 xalign 0.5
-                #side_yfill True
                 scrollbars "vertical"
                 mousewheel True
 
