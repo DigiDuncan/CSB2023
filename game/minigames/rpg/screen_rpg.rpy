@@ -515,6 +515,9 @@ label play_rpggame:
     while RPG.encounter.won is None:
         call screen screen_rpg
         $ RPG.encounter.run_attacks()
+        # Visuals and stuff need to go here.
+        $ RPG.encounter.run_effects()
+        $ RPG.encounter.cleanup_turn()
         show screen screen_rpg onlayer rpg_context
         while RPG.encounter.has_signals():
             $ curr_signal = RPG.encounter.get_next_signal()
