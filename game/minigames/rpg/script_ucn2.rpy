@@ -1,22 +1,19 @@
 # TODO: make sure you can't enter a battle with no fighters on either/both sides
 # TODO: fix none not resetting between fights
 # TODO: finish other selection screens
-# TODO: figure out why autoselect needs two clicks to update
 # TODO: WHY ARE WE IN THE VOID? if we try to return to extras after playing again
+# TODO: fix selection crashing if you click fast
 
 ###################################################### FUNCTIONS FOR THIS SCREEN ONLY
 
 init python:
     # Ready up
-    def rpg_toggle_ready(ready, slots_list, manual = False):
+    def rpg_toggle_ready(slots_list, manual = False):
         ready_yet = False
 
         # For debug only
         if manual == True:
-            if ready == True:
-                ready_yet = False
-            else:
-                ready_yet = True
+            return not ready_yet
 
         # Normal functionality:
         # Check all the slots. if ANY are pending, we're not ready yet
@@ -35,12 +32,20 @@ init python:
     def rpg_fill_slot(slots_list, current_slot, char_stored_data):
         slots_list[current_slot] = char_stored_data
 
-    # Automatically select the next unselected slot
-    def rpg_slot_autoselect(slots_list, current_slot, party_size) -> int:
-        # Don't go outside the range
-        for slot in range(0, (party_size * 2)):
-            if slots_list[slot][0] == "(Pending)":
-                return slot
+    # Automatically select the next unselected slot (AI-assisted)
+    def rpg_slot_autoselect(slots_list, current_slot):
+        total_slots = len(slots_list)
+
+        for i in range(1, total_slots + 1):
+            checked_slot = (current_slot + i) % total_slots
+
+            # Check for any empty slots
+            if slots_list[checked_slot][0] == "(Pending)":
+                return checked_slot
+            # If there aren't any, just return the next slot
+            else:
+                return (current_slot + i) % total_slots
+
         return current_slot
 
 ###################################################### TRANSFORMS FOR THIS SCREEN ONLY
@@ -170,8 +175,8 @@ screen _ucn2_selection():
                                         action [
                                             Play("sound", "audio/sfx/sfx_valid.ogg"),
                                             Function(rpg_fill_slot, rpg_slots, rpg_selected_slot, ucn2_hovered_data),
-                                            SetScreenVariable("rpg_selected_slot", rpg_slot_autoselect(rpg_slots, rpg_selected_slot, rpg_party_size)),
-                                            SetScreenVariable("rpg_ready", rpg_toggle_ready(rpg_ready, rpg_slots))
+                                            SetScreenVariable("rpg_selected_slot", rpg_slot_autoselect(rpg_slots, rpg_selected_slot)),
+                                            SetScreenVariable("rpg_ready", rpg_toggle_ready(rpg_slots))
                                         ]
 
                                 ###################### Handle empty portrait slots here
@@ -195,8 +200,8 @@ screen _ucn2_selection():
                                     action [
                                         Play("sound", "audio/sfx/sfx_valid.ogg"),
                                         Function(rpg_fill_slot, rpg_slots, rpg_selected_slot, ["(Random)", RPG.Characters.random() ]),
-                                        SetScreenVariable("rpg_selected_slot", rpg_slot_autoselect(rpg_slots, rpg_selected_slot, rpg_party_size)),
-                                        SetScreenVariable("rpg_ready", rpg_toggle_ready(rpg_ready, rpg_slots))
+                                        SetScreenVariable("rpg_selected_slot", rpg_slot_autoselect(rpg_slots, rpg_selected_slot)),
+                                        SetScreenVariable("rpg_ready", rpg_toggle_ready(rpg_slots))
                                     ]
 
                                 imagebutton:
@@ -209,8 +214,8 @@ screen _ucn2_selection():
                                     action [
                                         Play("sound", "audio/sfx/sfx_valid.ogg"),
                                         Function(rpg_fill_slot, rpg_slots, rpg_selected_slot, ucn2_hovered_data),
-                                        SetScreenVariable("rpg_selected_slot", rpg_slot_autoselect(rpg_slots, rpg_selected_slot, rpg_party_size)),
-                                        SetScreenVariable("rpg_ready", rpg_toggle_ready(rpg_ready, rpg_slots))
+                                        SetScreenVariable("rpg_selected_slot", rpg_slot_autoselect(rpg_slots, rpg_selected_slot)),
+                                        SetScreenVariable("rpg_ready", rpg_toggle_ready(rpg_slots))
                                     ]
 
                         ######################### SHOW SELECTED PARTIES
@@ -422,7 +427,7 @@ screen _ucn2_selection():
         # textbutton "[[DEBUG] Toggle ready state.":
             # yoffset 50 xoffset 25
             # action [
-                # SetScreenVariable("rpg_ready", rpg_toggle_ready(rpg_ready, rpg_slots, manual = True))
+                # SetScreenVariable("rpg_ready", rpg_toggle_ready(rpg_slots, manual = True))
             # ]
 
         python:

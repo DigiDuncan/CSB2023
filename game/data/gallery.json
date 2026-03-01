@@ -225,7 +225,7 @@
     "arceus_festive_neutral.png": {
         "type": "imgset",
         "title": "Arceus (Festive)",
-        "caption": "An early version of Arceus' sprites for {i}Christmas Edition.{/i} These edit were done by Tate at about 3 AM. They were not well-received.",
+        "caption": "An early version of Arceus' sprites for {i}Christmas Edition.{/i} These edits were done by Tate at about 3 AM. They were not well-received.",
         "need_character": "arceus",
         "need_label": "ce_introductions",
         "imgs": [
