@@ -33,7 +33,7 @@ screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scro
                 $ persistent.heard.add(b)
                 break
 
-    #only get tracks for a given route, or if none specified/invalid tag, get everything
+    # only get tracks for a given route, or if none specified/invalid tag, get everything
     python:
         global jukebox_presort
         jukebox_presort = {}
@@ -141,6 +141,7 @@ screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scro
                                                     xalign 0.0
                                                     size 48
                                                     font "impact.ttf"
+                                                    text_align 0
 
                                             # get contributors
                                             vbox:
@@ -152,8 +153,8 @@ screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scro
                                                         $ contributor = obfuscator(contributor)
 
                                                     text "{font=music_text}"+contributor: # handler for CJK text in contributor names
-                                                        xalign 1.0
-                                                        yalign 0.5
+                                                        xalign 1.0 yalign 0.5
+                                                        text_align 1.0
 
                                     # music requires special handling
                                     # use the pre-sorted list from earlier, hide unseen tracks
@@ -184,13 +185,14 @@ screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scro
                                                     text "{font=credits_music}"+title:
                                                         xalign 0.0
                                                         size 48
+                                                        text_align 0
 
                                                 vbox:
                                                     xalign 1.0
                                                     xsize 600
                                                     text "{font=music_text}"+artist_displayed:
-                                                        xalign 1.0
-                                                        yalign 0.5
+                                                        xalign 1.0 yalign 0.5
+                                                        text_align 1.0
                                 # for game logo
                                 elif category == "_logo":
                                     vbox:
@@ -231,8 +233,7 @@ screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scro
                                                 $ char_text = c
 
                                             text char_text:
-                                                xalign 0.5
-                                                yalign 0.5
+                                                xalign 0.5 yalign 0.5
 
                                 # for special thanks
                                 elif category == "Special Thanks":
@@ -250,16 +251,14 @@ screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scro
                                                 size 48
                                                 font "impact.ttf"
                                             text thanks_for_text+"\n":
-                                                xalign 0.5
-                                                yalign 0.5
+                                                xalign 0.5 yalign 0.5
 
                 # DPN logo
                 frame:
                     background None
                     ysize 500
                 image "gui/credits/dpn_logo.png":
-                    xalign 0.5
-                    yalign 1.0
+                    xalign 0.5 yalign 1.0
                 text "DPN Games":
                     yoffset -128
                     size 96

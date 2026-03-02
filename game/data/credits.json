@@ -399,8 +399,7 @@
             "In order of appearance (roughly)" : [
                 "cs188",
                 "DigiDuncan",
-                "xohorses",
-                "Arceus3251"
+                "xohorses"
             ]
         },
 
@@ -447,7 +446,7 @@
         },
 
         "_more_art":{
-            "Addt'l Art": ["cs188", "blanknam3d", "Tate \"alleZSoyez\"", "UndeadKitty", "Pakoo", "4Bakers"]
+            "Addt'l Art": ["cs188", "Tate \"alleZSoyez\"", "Pakoo", "4Bakers"]
         },
 
         "_visual": {
@@ -456,7 +455,6 @@
             "Asset Remastering": ["4Bakers", "DigiDuncan"],
             "Sprite Management": ["Tate \"alleZSoyez\"", "4Bakers", "DigiDuncan", "Pakoo"],
             "3D Rendering": ["4Bakers"],
-            "Video Editing": ["alleZSoyez"],
             "UI Design": ["DigiDuncan", "Arceus3251", "Pakoo", "Tate \"alleZSoyez\""],
             "Cinematography": ["Tate \"alleZSoyez\"", "Pakoo", "DigiDuncan"]
         },
@@ -464,7 +462,7 @@
         "_audio": {
             "Soundtrack Management": ["Pakoo"],
             "Beep Management": ["Pakoo"],
-            "Addt'l Audio Assistance": ["DigiDuncan", "4Bakers", "Tate \"alleZSoyez\"", "blanknam3d"]
+            "Addt'l Audio Assistance": ["DigiDuncan", "4Bakers", "Tate \"alleZSoyez\""]
         },
 
         "_voice": {
@@ -475,7 +473,6 @@
 
         "_misc": {
             "Fun Value Consultant": ["Aria \"Estroteric\""],
-            "Locomotive Consultant": ["meancarnavor"],
             "In Loving Memory /j": ["ItsNovaHere"],
             "Executive Producer": ["SurgeTheRaichu"]
         },
