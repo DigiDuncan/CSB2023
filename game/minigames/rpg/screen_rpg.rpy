@@ -527,7 +527,8 @@ label play_rpggame:
         $ RPG.encounter.run_attacks()
         $ RPG.encounter.run_effects()
         $ RPG.encounter.cleanup_turn()
-
+        if RPG.encounter.won is not None:
+            jump pass_rpg
         # Visuals and stuff need to go here.
         show screen screen_rpg onlayer rpg_context
         while RPG.encounter.has_signals():
