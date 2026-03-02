@@ -256,7 +256,7 @@ label csbi_walmart:
     cashier "That'll be $11.88."
     cs "Here you go!"
     play sound sfx_moneyfalls
-    show spent_11_88 at t_fake_rpg_text(0.1, 0.1, 0.5)
+    show spent_11_88 at t_rpg_text(0.1, 0.1, 0.5)
     pause 2.0
     cashier "Have a nice day."
     show cs happy
@@ -437,7 +437,7 @@ label csbi_room:
     pause 1.0
     cs "Here you go!"
     play sound sfx_moneyfalls
-    show spent_bits at t_fake_rpg_text(0.075, 0.1, 0.5)
+    show spent_bits at t_rpg_text(0.075, 0.1, 0.5)
     pause 0.5
     hide cs_wallet with dissolve
     cs "I'll get out of your guys' hair while you work."

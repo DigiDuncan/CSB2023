@@ -1,5 +1,4 @@
-# TODO: make this book only appear if you've defeated Perfect Tate.
-# TODO: finish art for said book.
+# TODO: finish art for book.
 # TODO: make sprites for tate_cyan
 
 label book_celestial_sightseeing:

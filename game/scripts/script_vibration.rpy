@@ -13,27 +13,27 @@ label vibration:
     show cs at offscreenleft
     show cs at left with MoveTransition(0.25)
     play sound sfx_retail_beep
-    show speedrun_pringles_cost at t_fake_rpg_text(0.1, 0.1, 0.5)
+    show speedrun_pringles_cost at t_rpg_text(0.1, 0.1, 0.5)
     show pringles at manual_pos(50, 300) with Dissolve(0.1)
     show pringles at manual_pos(200, 800) with MoveTransition(0.1)
     hide pringles with Dissolve(0.1)
     show cs at right with MoveTransition(0.25)
     play sound sfx_retail_beep
-    show speedrun_genergy_cost at t_fake_rpg_text(0.775, 0.1, 0.1)
+    show speedrun_genergy_cost at t_rpg_text(0.775, 0.1, 0.1)
     show genergy at manual_pos(1800, 300) with Dissolve(0.1)
     show genergy at manual_pos(1650, 800) with MoveTransition(0.1)
     hide genergy with Dissolve(0.1)
     hide speedrun_genergy_cost
     play sound sfx_retail_beep
-    show speedrun_genergy_cost at t_fake_rpg_text(0.775, 0.1, 0.25)
+    show speedrun_genergy_cost at t_rpg_text(0.775, 0.1, 0.25)
     show genergy at manual_pos(1800, 300) with Dissolve(0.1)
     show genergy at manual_pos(1650, 800) with MoveTransition(0.1)
     hide genergy with Dissolve(0.1)
     play sound "sfx/snd_bluh.ogg"
-    show speedrun_tax_cost at t_fake_rpg_text(0.75, 0.1, 0.5)
+    show speedrun_tax_cost at t_rpg_text(0.75, 0.1, 0.5)
     pause 0.5
     play sound sfx_moneyfalls
-    show spent_11_88 at t_fake_rpg_text(0.775, 0.1, 0.5)
+    show spent_11_88 at t_rpg_text(0.775, 0.1, 0.5)
     cs "Alright, this looks pretty good. Let's go home!"
     show cs at offscreenright with MoveTransition(0.25)
     scene black with dissolve
@@ -57,7 +57,7 @@ label vibration:
     ed "Pay up and we'll get to work."
     cs "Okay!"
     play sound sfx_moneyfalls
-    show spent_bits at t_fake_rpg_text(0.4, 0.1, 0.25)
+    show spent_bits at t_rpg_text(0.4, 0.1, 0.25)
     show cs happy
     cs "Sweet! I'll go out for now!"
     show cs at offscreenright with MoveTransition(0.25)

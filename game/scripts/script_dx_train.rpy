@@ -2558,7 +2558,7 @@ label train_confront_lupin:
     show mean furious at offscreenleft with MoveTransition(0.25)
     pause 0.25
     play sound sfx_cat_crash
-    show fake_rpg_miss at t_fake_rpg_text(0.48, 0.2)
+    show fake_rpg_miss at t_rpg_text(0.48, 0.2)
     play sound2 "/audio/sfx/snd_bluh.ogg" volume 0.5 noloop
     show cs scared flipped
     show tate shock flipped
@@ -2766,9 +2766,9 @@ label train_confront_lupin:
 
     # stupid height gag
     $ renpy.music.set_pause(True, channel="music")
-    show oof_45 at t_fake_rpg_text(0.05, 0.3)
-    show oof_54 at t_fake_rpg_text(0.2, 0.125)
-    show oof_52 at t_fake_rpg_text(0.81, 0.2)
+    show oof_45 at t_rpg_text(0.05, 0.3)
+    show oof_54 at t_rpg_text(0.2, 0.125)
+    show oof_52 at t_rpg_text(0.81, 0.2)
 
     play sound "audio/sfx/snd_damage.ogg" volume 0.5
     show arceus angry flipped
@@ -4375,7 +4375,7 @@ label train_return_home_transition:
         show arceus flipped
         cs "Here you go!"
         play sound sfx_moneyfalls
-        show spent_19_95 at t_fake_rpg_text(0.1, 0.1, 0.5)
+        show spent_19_95 at t_rpg_text(0.1, 0.1, 0.5)
         billy "Thank you! Every Uber ride comes with my 100%% satisfaction guarantee, or your money back!"
 
     billy "Well, then! Where are we going?"

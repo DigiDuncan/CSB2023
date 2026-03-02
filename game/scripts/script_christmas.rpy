@@ -2222,7 +2222,7 @@ label ce_checkout:
     if fun_value(FUN_VALUE_RARE):
         cs "I'll think I'll use my credit card!"
     play sound sfx_moneyfalls
-    show spent_target at t_fake_rpg_text(0.5, 0.1, 0.5)
+    show spent_target at t_rpg_text(0.5, 0.1, 0.5)
     n "CS pays with his card before heading out to the parking lot."
     hide cs_wallet with dissolve
     show cs coat at mid_mid_right with move

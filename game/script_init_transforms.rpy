@@ -178,8 +178,8 @@ init:
         rotate 0
         linear 1 rotate 960
 
-    # TODO: make sure this transform exactly matches the rpg engine transform. i don't think i quite nailed it -tate
-    transform t_fake_rpg_text(x,y,speed = 0.25):
+    # TODO: tweak this as you wish, but be aware that it'll affect every script using it!
+    transform t_rpg_text(x,y,speed = 0.25):
         on show:
             xpos x
             ypos y
