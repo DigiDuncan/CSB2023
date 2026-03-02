@@ -362,7 +362,13 @@ screen people():
                                                                     text_align 0.5
                                                                 null height 32
                                         else:
-                                            text "\"" + name_map[current_person]["quote"] + "\"\n\n" + (fetched)
+                                            # For Digi
+                                            if current_person != "lad":
+                                                text "\"" + name_map[current_person]["quote"] + "\"\n\n" + (fetched)
+                                            else:
+                                                textbutton "\"*jingling sounds*\"":
+                                                    action Play("sound","/audio/sfx/sfx_lad.ogg")
+                                                text  "\n\n" + (fetched)
 
 ###################################################### SPRITES
 

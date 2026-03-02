@@ -542,7 +542,7 @@
             "Default": "images/characters/david.png"
         },
         "quote": "???",
-        "bio": "Digi, fill this in, will ya?!",
+        "bio": "Pakoo, fill this in, will ya?!",
         "dx": true
     },
     "db": {
@@ -567,8 +567,8 @@
         "sprites": {
             "Default": "images/characters/ceo.png"
         },
-        "quote": "Fuck you Baltimor, if you're dumb enough to try to buy insulin this weekend, you're dumb enough to come to my office!",
-        "bio": "The CEO of Diabetes is a ruthless buisnessman. When he isn't busy price-hiking insulin and expanding his medical empire, his engineers are developing new types of diabetes. Every year, Digi and their friends come together to stave him off by raising money for charity.",
+        "quote": "Fuck you Baltimore! If you're dumb enough to try to buy insulin this weekend, you're dumb enough to come to my office!",
+        "bio": "The CEO of Diabetes is a ruthless businessman. When he isn't busy price-hiking insulin and expanding his medical empire, his engineers are hard at work developing new types of diabetes. Every year, Digi and their friends come together to stave him off by raising money for charity.",
         "dx": true,
         "rpg": {
             "CEO": {
@@ -583,7 +583,7 @@
             "Default": "images/characters/secretary.png"
         },
         "quote": "Fill this in later!",
-        "bio": "The Secretary is the newest member of the CEO of Diabetes' team, and is passionate about her role as his right-hand-woman. She'll do anything it takes to further the company's goals!",
+        "bio": "The Secretary is the newest member of the CEO of Diabetes' team, and is passionate about her role as his right-hand woman. She'll do anything it takes to further the company's goals!",
         "dx": true,
         "rpg": {
             "SECRETARY": {
@@ -938,7 +938,7 @@
             "It's The Boi!": "images/characters/lad/bio.png",
             "Default": "images/characters/lad/default.png"
         },
-        "quote": "(Tate, can we just make this a play button and then we you click it it plays Kricketot's cry?)",
+        "quote": "*jingling sounds*",
         "bio": "Lad is Digi's Kricketot companion, and is always by their side. Usually perched on Digi's shoulder, he may not look like much, but he's the key to many of Digi's adventures. Lad doesn't want to evolve, so he's going to stay a nugget until the end of time.",
         "dx": true
     },
