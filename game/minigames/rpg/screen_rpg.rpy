@@ -49,11 +49,6 @@ screen say_rpg(rpg_what):
             xanchor 0.5 yanchor 0.5
             xpos 0.5 ypos 0.5
             text rpg_what
-        imagebutton:
-            xalign 1.0 yalign 1.0
-            idle "gui/rpg/next_button.png"
-            hover "selectable:gui/rpg/next_button.png"
-            action Return()
 
 screen screen_rpg():
 
@@ -540,7 +535,7 @@ label play_rpggame:
             if hasattr(curr_signal, "message") and type(curr_signal) != RPG.DebugSignal:
                 window auto False
                 show screen say_rpg(curr_signal.message) onlayer rpg_say
-                $ renpy.pause(delay=None, modal=True, hard=True)
+                $ renpy.pause(delay=None, modal=True)
                 $ renpy.hide_screen("say_rpg", layer="rpg_say", immediately=True)
         $ renpy.hide_screen("say_rpg", layer="rpg_say", immediately=True)
         $ renpy.hide_screen("screen_rpg", layer="rpg_context", immediately=True)
