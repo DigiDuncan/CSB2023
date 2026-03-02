@@ -221,8 +221,8 @@
         "sprites": {
             "Default": "images/characters/cpt_underpants.png"
         },
-        "quote": "???",
-        "bio": "Digi, fill this in, will ya?!",
+        "quote": "Tra-la-la!",
+        "bio": "Captain Underpants is here to save the day! Cooked up by George and Harold in their comics, Captain Underpants springs to action when the evil principal Mr. Krupp is splashed with water! Or, um, whatever was in that jar.",
         "dx": true
     },
     "carguy": {
@@ -567,8 +567,8 @@
         "sprites": {
             "Default": "images/characters/ceo.png"
         },
-        "quote": "Fill this in later!",
-        "bio": "Fill this in later!",
+        "quote": "Fuck you Baltimor, if you're dumb enough to try to buy insulin this weekend, you're dumb enough to come to my office!",
+        "bio": "The CEO of Diabetes is a ruthless buisnessman. When he isn't busy price-hiking insulin and expanding his medical empire, his engineers are developing new types of diabetes. Every year, Digi and their friends come together to stave him off by raising money for charity.",
         "dx": true,
         "rpg": {
             "CEO": {
@@ -583,7 +583,7 @@
             "Default": "images/characters/secretary.png"
         },
         "quote": "Fill this in later!",
-        "bio": "Fill this in later!",
+        "bio": "The Secretary is the newest member of the CEO of Diabetes' team, and is passionate about her role as his right-hand-woman. She'll do anything it takes to further the company's goals!",
         "dx": true,
         "rpg": {
             "SECRETARY": {
@@ -938,8 +938,8 @@
             "It's The Boi!": "images/characters/lad/bio.png",
             "Default": "images/characters/lad/default.png"
         },
-        "quote": "Fill this in later!",
-        "bio": "Fill this in later! Also, does Lad have RPG stats? Will he be accompanying CS on this adventure?",
+        "quote": "(Tate, can we just make this a play button and then we you click it it plays Kricketot's cry?)",
+        "bio": "Lad is Digi's Kricketot companion, and is always by their side. Usually perched on Digi's shoulder, he may not look like much, but he's the key to many of Digi's adventures. Lad doesn't want to evolve, so he's going to stay a nugget until the end of time.",
         "dx": true
     },
     "lancer": {
@@ -1188,8 +1188,8 @@
             "Neutral": "images/characters/mr_krupp.png",
             "?!": "images/characters/mr_krupp_grin.png"
         },
-        "quote": "???",
-        "bio": "Digi, fill this in, will ya?!",
+        "quote": "I hate kids!",
+        "bio": "Mr. Krupp is the evil principal of George and Harold, but when he's splashed with liquid, he turns into the incredible Captain Underpants!",
         "dx": true
     },
     "nova": {
@@ -1576,8 +1576,8 @@
         "sprites": {
             "Default": "images/characters/weird_al.png"
         },
-        "quote": "???",
-        "bio": "Digi, fill this in, will ya?!",
+        "quote": "They've got allen wrenches, gerbil feeders, toilet seats, electric heaters, trash compactors, juice extractor, shower rods, and water meters, walkie-talkies, copper wires safety goggles, radial tires, BB pellets, rubber mallets, fans and dehumidifiers, picture hangers, paper cutters, waffle irons, window shutters, paint removers, window louvres, masking tape and plastic gutters, kitchen faucets, folding tables, weather stripping, jumper cables, hooks and tackle, grout and spackle, power foggers, spoons and ladles, pesticides for fumigation, high-performance lubrication, metal roofing, water proofing, multi-purpose insulation, air compressors, brass connectors, wrecking chisels, smoke detectors, tire guages, hamster cages, thermostats, and bug deflectors, trailer hitch demagnetizers, automatic circumcisers, tennis rackets, angle brackets, Duracells and Energizers, soffit panels, circuit brakers, vacuum cleaners, coffee makers, calculators, generators, matching salt and pepper shakers!",
+        "bio": "Alfred Matthew \"Weird Al\" Yankovic (/ˈjæŋkəvɪk/ ⓘ;[1] born October 23, 1959) is an American comedy musician, writer, and actor. He is best known for writing and performing comedy songs that often parody specific songs by contemporary musicians. He also performs original songs that are style pastiches of the work of other acts, as well as polka medleys of popular songs, most of which feature his trademark accordion. Since having one of his comedy songs aired on The Dr. Demento Radio Show in 1976 at age 16, Yankovic has sold more than 12 million albums (as of 2025),[2][3][4][5] recorded more than 150 parodies and original songs,[6][7][8] and performed more than 2,000 live shows.[9][10]",
         "dx": true
     },
     "wesley": {
