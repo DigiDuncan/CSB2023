@@ -130,6 +130,7 @@ label rpg_ng_fight:
         party_4 = renpy.display_menu([(a.title() if a != "CS_NG" else "CS", a) for a in ng_fighters if a not in chosen_ng_fighters], screen="ucn_choice")
         if party_4 != "NONE": chosen_ng_fighters.append(party_4)
 
+        RPG.clear_var_characters()
         for n, f in enumerate(chosen_ng_fighters):
             RPG.set_var_character(f"party_{n+1}", f)
 
@@ -171,6 +172,7 @@ label rpg_final_fight_1:
         party_4 = renpy.display_menu([(a.title() if a != "CS_STRONG" else "CS", a) for a in final_fighters_1 if a not in chosen_final_fighters_1], screen="ucn_choice")
         if party_4 != "NONE": chosen_final_fighters_1.append(party_4)
 
+        RPG.clear_var_characters()
         for n, f in enumerate(chosen_final_fighters_1):
             RPG.set_var_character(f"party_{n+1}", f)
 
@@ -212,6 +214,7 @@ label rpg_final_fight_2:
         party_4 = renpy.display_menu([(a.title() if a != "CS_STRONG" else "CS", a) for a in final_fighters_2 if a not in chosen_final_fighters_2], screen="ucn_choice")
         if party_4 != "NONE": chosen_final_fighters_2.append(party_4)
 
+        RPG.clear_var_characters()
         for n, f in enumerate(chosen_final_fighters_2):
             RPG.set_var_character(f"party_{n+1}", f)
 
@@ -248,6 +251,7 @@ label rpg_final_fight_3:
         party_4 = renpy.display_menu([(a.title() if a != "CS_FINAL" else "CS", a) for a in final_fighters_3 if a not in chosen_final_fighters_3], screen="ucn_choice")
         if party_4 != "NONE": chosen_final_fighters_3.append(party_4)
 
+        RPG.clear_var_characters()
         for n, f in enumerate(chosen_final_fighters_3):
             RPG.set_var_character(f"party_{n+2}", f)
 
@@ -312,6 +316,7 @@ label rpg_bronsonbattle:
 label rpg_tate_ex:
 
     python:
+        RPG.clear_var_characters()
         cs_chosen_form = "tate"  # this should NEVER happen!
 
         if ch2_cs_attack_used == "karate-chopped":

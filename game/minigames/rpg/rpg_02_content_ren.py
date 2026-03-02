@@ -608,7 +608,12 @@ class Characters:
 variable_characters: dict[str, Character] = {}
 
 def set_var_character(char: str, assigned_name: str):
+    global variable_characters
     character = Characters.get(assigned_name)
     if char is None or char == "NONE" or character is None:
         return
     variable_characters[char] = character
+
+def clear_var_characters():
+    global variable_characters
+    variable_characters = {}

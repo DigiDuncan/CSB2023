@@ -54,32 +54,36 @@ label rpg_ucn:
     scene game_menu
     if not preferences.developer_mode:
         centered "Loading...{w=1.0}{nw}"  # This isn't required.
-    $ scales = [1.0, 1.25, 1.5, 1.75, 2.0, 2.5, 3.0]
 
-    $ allies = (("NONE", "NONE"), *((character.name, character.assigned_name) for character in RPG.Characters.characters))
-    $ enemies = (("NONE", "NONE"), *((character.name, character.assigned_name) for character in RPG.Characters.characters))
+    python:
+        scales = [1.0, 1.25, 1.5, 1.75, 2.0, 2.5, 3.0]
 
-    $ narrator("Choose a party member! (1/4)", interact = False)
-    $ RPG.set_var_character("party_1", renpy.display_menu(allies, screen="ucn_choice"))
-    $ narrator("Choose a party member! (2/4)", interact = False)
-    $ RPG.set_var_character("party_2", renpy.display_menu(allies, screen="ucn_choice"))
-    $ narrator("Choose a party member! (3/4)", interact = False)
-    $ RPG.set_var_character("party_3", renpy.display_menu(allies, screen="ucn_choice"))
-    $ narrator("Choose a party member! (4/4)", interact = False)
-    $ RPG.set_var_character("party_4", renpy.display_menu(allies, screen="ucn_choice"))
+        allies = (("NONE", "NONE"), *((character.name, character.assigned_name) for character in RPG.Characters.characters))
+        enemies = (("NONE", "NONE"), *((character.name, character.assigned_name) for character in RPG.Characters.characters))
 
-    $ narrator("Choose an enemy! (1/3)", interact = False)
-    $ RPG.set_var_character("enemy_1", renpy.display_menu(enemies, screen="ucn_choice"))
-    $ narrator("Choose an enemy! (2/3)", interact = False)
-    $ RPG.set_var_character("enemy_2", renpy.display_menu(enemies, screen="ucn_choice"))
-    $ narrator("Choose an enemy! (3/3)", interact = False)
-    $ RPG.set_var_character("enemy_3", renpy.display_menu(enemies, screen="ucn_choice"))
+        RPG.clear_var_characters()
 
-    $ narrator("Choose a party scale!", interact = False)
-    $ RPG.ucn_scale = renpy.display_menu([(str(a), a) for a in scales], screen="ucn_choice")
+        narrator("Choose a party member! (1/4)", interact = False)
+        RPG.set_var_character("party_1", renpy.display_menu(allies, screen="ucn_choice"))
+        narrator("Choose a party member! (2/4)", interact = False)
+        RPG.set_var_character("party_2", renpy.display_menu(allies, screen="ucn_choice"))
+        narrator("Choose a party member! (3/4)", interact = False)
+        RPG.set_var_character("party_3", renpy.display_menu(allies, screen="ucn_choice"))
+        narrator("Choose a party member! (4/4)", interact = False)
+        RPG.set_var_character("party_4", renpy.display_menu(allies, screen="ucn_choice"))
 
-    $ RPG.ucn_bg = renpy.display_menu([(i.lower(), i) for i in ucn_bg_list], screen="ucn_bg_choice")
-    $ RPG.ucn_music = renpy.display_menu([(v["title"], k) for k, v in music_map.items()], screen="ucn_bgm_choice")
+        narrator("Choose an enemy! (1/3)", interact = False)
+        RPG.set_var_character("enemy_1", renpy.display_menu(enemies, screen="ucn_choice"))
+        narrator("Choose an enemy! (2/3)", interact = False)
+        RPG.set_var_character("enemy_2", renpy.display_menu(enemies, screen="ucn_choice"))
+        narrator("Choose an enemy! (3/3)", interact = False)
+        RPG.set_var_character("enemy_3", renpy.display_menu(enemies, screen="ucn_choice"))
+
+        narrator("Choose a party scale!", interact = False)
+        RPG.ucn_scale = renpy.display_menu([(str(a), a) for a in scales], screen="ucn_choice")
+
+        RPG.ucn_bg = renpy.display_menu([(i.lower(), i) for i in ucn_bg_list], screen="ucn_bg_choice")
+        RPG.ucn_music = renpy.display_menu([(v["title"], k) for k, v in music_map.items()], screen="ucn_bgm_choice")
 
     rpg:
         on_win "after_ucn"
