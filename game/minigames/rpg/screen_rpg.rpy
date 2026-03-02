@@ -108,7 +108,8 @@ screen screen_rpg():
                     # I would have loved to use a vpgrid here but noOOOooooO if I do, the buttons don't do right
                     viewport:
                         xsize 1.0 ysize 1.0
-                        if len(RPG.encounter.allies[RPG.encounter.turn].attacks) > 4:
+
+                        if RPG.encounter.allies[RPG.encounter.turn].attacks and len(RPG.encounter.allies[RPG.encounter.turn].attacks) > 4:
                             scrollbars "vertical"
                             mousewheel True
 

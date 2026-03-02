@@ -358,7 +358,7 @@ class Attacks:
     ICE_CREAM = Attack("Ice Cream", "Bing chilling!", heal_fighters(mult = 1.5), target_count = 0, targets = TargetType.ALLY, accuracy = 90, cooldown = 3)
     INSIGHT = Attack("Insight", "Lowers enemy's attack by a little.", change_stat(stat = CharacterStat.ATTACK, mult = 0.75), accuracy = 90)
     LIFE_STEAL = Attack("Life Steal", "*slorp*", steal_hp())
-    MUSIC_BOOST = Attack("Music Boost", "Boost one's defense by a bit.", change_stat(stat = CharacterStat.DEFENSE, mult = 1.5), target_count = 1, targets = TargetType.SELF)
+    MUSIC_BOOST = Attack("Music Boost", "Boost one's defense by a bit.", change_stat(stat = CharacterStat.DEFENSE, mult = 1.5), target_count = 1, targets = TargetType.ALLY)
     NANOMACHINES = Attack("Nanomachines", "Nanomachines, son.", damage_fighters(mult = 1.5), target_count = 8, accuracy = 95, cooldown = 7)
     NUDGE = Attack("Nudge", "Does either very little or massive damage.", damage_fighters_range(min_mult = 0.1, max_mult = 10), accuracy = 85)
     ONE_HUNDRED = Attack("100% Unsatisfied", "Yelp reviews coming in...", change_stat(stat = CharacterStat.ATTACK, mult = 0.8), target_count = 0, accuracy = 95)
