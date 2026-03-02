@@ -748,6 +748,8 @@ label _ucn2_battle():
         e3 = None
         e4 = None
 
+        RPG.clear_var_characters()
+
         RPG.set_var_character("a1", ucn2_local_parties[0].assigned_name if ucn2_local_parties[0] else None)
         RPG.set_var_character("a2", ucn2_local_parties[1].assigned_name if ucn2_local_parties[1] else None)
         RPG.set_var_character("a3", ucn2_local_parties[2].assigned_name if ucn2_local_parties[2] else None)
