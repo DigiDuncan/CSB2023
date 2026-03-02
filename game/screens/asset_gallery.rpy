@@ -269,6 +269,8 @@ screen unused_gallery():
             PauseAudio("music", False),
             Stop("jukebox"),
             SetVariable("unused_page", 0),
+            SelectedIf(False),
+            Hide("unused_gallery"),
             ShowMenu("category_welcome")
         ]
     textbutton "Main Menu":
@@ -278,5 +280,7 @@ screen unused_gallery():
             PauseAudio("music", False),
             Stop("jukebox"),
             SetVariable("unused_page", 0),
-            MainMenu()
+            SelectedIf(False),
+            Hide("unused_gallery"),
+            Return()
         ]
