@@ -229,7 +229,7 @@ def ai_mimic(encounter: Encounter, fighter: Fighter, targets: tuple[Fighter, ...
         attack = targets[0].character.attacks[0]
     if attack.name == "AI Mimic":
         attack = Attacks.PUNCH
-    encounter.send_message(f"[AI Mimic] running {attack.name}...", None)
+    encounter.send_message(f"[[AI MIMIC] running {attack.name}...", None)
     attack.func(encounter, fighter, targets)
 
 class AIType:
