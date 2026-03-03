@@ -342,6 +342,7 @@ class Attacks:
     CONFIDENCE = Attack("Confidence", "Raise your team's attack!", change_stat(stat = CharacterStat.ATTACK, mult = 1.25), target_count = 0, targets = TargetType.ALLY, accuracy = 90)
     CONFUSING_STORY = Attack("Confusing Story", "Tell a puzzling poem.", confuse_targets())
     DAMAGE_SCREM = Attack("Damage Screm", "Yell as loud as possible to deafen your enemies!", damage_fighters(mult = 0.5), target_count = 0, accuracy = 75)
+    DO_NOTHING = Attack("Do Nothing", "Don't do anything.", damage_fighters(mult = 0), target_count = 0, cooldown = 1)
     DRAW_IN = Attack("Draw In", "Either lowers the enemies stats, or increases your friend's stats!", draw_in(mult = 2), TargetType.ALL, target_count=0, accuracy = 85)
     DRONE_STRIKE = Attack("Drone Strike", "O Bomb a.", damage_fighters(mult = 2.5), target_count = 0, cooldown = 3, accuracy = 85)
     ELDRITCH_BLAST = Attack("Eldritch Blast", "An unholy blast that does quite a bit of damage to an enemy.", damage_fighters(mult = 1.5))
@@ -572,6 +573,7 @@ class Characters:
     RICHARD = Character("{image=gui/inline_text/dx_text.png} Richard", 250, 20, 30, [Attacks.ONE_HUNDRED, Attacks.ICE_CREAM], sprite=Image("images/characters/hohsis/rich.png"), ai = AIType.DEFENSIVE, display_name = "Richard", portrait=Image("gui/rpg/portraits/rich.png"))
     CEO = Character("{image=gui/inline_text/dx_text.png} CEO of Diabetes", 1000, 50, 75, [Attacks.LOBBYING, Attacks.NANOMACHINES], sprite=Image("images/characters/ceo.png"), ai = AIType.SMART, display_name = "CEO", portrait=Image("gui/rpg/portraits/diabetes_ceo.png"))
     SECRETARY = Character("{image=gui/inline_text/dx_text.png} Secretary of Diabetes", 1000, 50, 75, [Attacks.LOBBYING, Attacks.NANOMACHINES], sprite=Image("images/characters/secretary.png"), ai = AIType.SMART, display_name = "Secretary", portrait=Image("gui/rpg/portraits/diabetes_secretary.png"))
+    SANDBAG = Character("{image=gui/inline_text/ucn_text.png} Sandbag", math.inf, 100, 0, [Attacks.DO_NOTHING], sprite=Image("images/characters/sandbag.png"), ai = AIType.DEFENSIVE, display_name = "Sandbag", portrait=Image("gui/rpg/portraits/sandbag.png"))
 
     allies = (
         CS, CS_NG, CS_STRONG, CS_FINAL, CS_FINAL2, CS_WEAK, CS_ARCHIVAL, CS_VS_TATE_PUNCH, CS_VS_TATE_KICK, CS_VS_TATE_CHOP,
@@ -586,7 +588,7 @@ class Characters:
 
     enemies = (
         FANBOYA, FANBOYB, COP, COPGUYGODMODE, COPGUY, GUARD, SML_TANK, MARINE, BIG_TANK, COPGUY_EX, PAKOOE, COPGUY_EXE,
-        K174, K199, K207, TATE_EX, WESLEY, ED, RICHARD, CEO, SECRETARY
+        K174, K199, K207, TATE_EX, WESLEY, ED, RICHARD, CEO, SECRETARY, SANDBAG
     )
 
     @classproperty
