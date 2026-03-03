@@ -145,31 +145,36 @@ screen _ucn2_selection():
                                 spacing 10
                                 xalign 0.5
                                 for character in RPG.Characters.characters:
-                                    $ portrait = character.portrait.filename
+                                    # Sandbag doesn't go here
+                                    if character.display_name != "Sandbag":
+                                        $ portrait = character.portrait.filename
 
-                                    # This bit is stupid lmao
-                                    if portrait == "gui/rpg/portraits/blank.png":
-                                        $ hover_portrait = "selectable:gui/rpg/portraits/blank_hover.png"
+                                        # This bit is stupid lmao
+                                        if portrait == "gui/rpg/portraits/blank.png":
+                                            $ hover_portrait = "selectable:gui/rpg/portraits/blank_hover.png"
+                                        else:
+                                            $ hover_portrait = "selectable:"+portrait
+
+                                        imagebutton:
+                                            xysize(88,88)
+                                            idle portrait
+                                            hover hover_portrait
+                                            hover_sound "audio/sfx/sfx_select.ogg"
+                                            hovered [
+                                                SetScreenVariable("ucn2_hovered_data", [character.name, character])
+                                            ]
+                                            unhovered  [
+                                                SetScreenVariable("ucn2_hovered_data", [])
+                                            ]
+                                            action [
+                                                Play("sound", "audio/sfx/sfx_valid.ogg"),
+                                                Function(rpg_fill_slot, rpg_slots, rpg_selected_slot, ucn2_hovered_data),
+                                                SetScreenVariable("rpg_selected_slot", rpg_slot_autoselect(rpg_slots, rpg_selected_slot)),
+                                                With(determination)
+                                            ]
+                                    # Put Sandbag's data here for later
                                     else:
-                                        $ hover_portrait = "selectable:"+portrait
-
-                                    imagebutton:
-                                        xysize(88,88)
-                                        idle portrait
-                                        hover hover_portrait
-                                        hover_sound "audio/sfx/sfx_select.ogg"
-                                        hovered [
-                                            SetScreenVariable("ucn2_hovered_data", [character.name, character])
-                                        ]
-                                        unhovered  [
-                                            SetScreenVariable("ucn2_hovered_data", [])
-                                        ]
-                                        action [
-                                            Play("sound", "audio/sfx/sfx_valid.ogg"),
-                                            Function(rpg_fill_slot, rpg_slots, rpg_selected_slot, ucn2_hovered_data),
-                                            SetScreenVariable("rpg_selected_slot", rpg_slot_autoselect(rpg_slots, rpg_selected_slot)),
-                                            With(determination)
-                                        ]
+                                        $ ucn_char_data = character
 
                                 ###################### Handle empty portrait slots here
                                 python:
@@ -177,7 +182,27 @@ screen _ucn2_selection():
                                 for f in range(unused_slots):
                                     add Null(88,88)
 
-                                ###################### Handle random/skipped characters
+                                ###################### Handler for special buttons
+                                ### Sandbag
+                                imagebutton:
+                                    xysize(88,88)
+                                    idle "gui/rpg/portraits/sandbag.png"
+                                    hover "selectable:gui/rpg/portraits/sandbag.png"
+                                    hover_sound "audio/sfx/sfx_select.ogg"
+                                    hovered [
+                                        SetScreenVariable("ucn2_hovered_data", ["{image=gui/inline_text/ucn_text.png} Sandbag", ucn_char_data])
+                                    ]
+                                    unhovered  [
+                                        SetScreenVariable("ucn2_hovered_data", [])
+                                    ]
+                                    action [
+                                        Play("sound", "audio/sfx/sfx_valid.ogg"),
+                                        Function(rpg_fill_slot, rpg_slots, rpg_selected_slot, ucn2_hovered_data),
+                                        SetScreenVariable("rpg_selected_slot", rpg_slot_autoselect(rpg_slots, rpg_selected_slot)),
+                                        With(determination)
+                                    ]
+
+                                ### Random
                                 imagebutton:
                                     xysize(88,88)
                                     idle "gui/rpg/portraits/unknown.png"
@@ -196,6 +221,7 @@ screen _ucn2_selection():
                                         With(determination)
                                     ]
 
+                                ### For leaving slots deliberately empty
                                 imagebutton:
                                     xysize(88,88)
                                     idle "gui/rpg/portraits/none.png"
