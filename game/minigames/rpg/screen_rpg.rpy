@@ -526,9 +526,11 @@ label play_rpggame:
     $ RPG_New_Fight = True
     while RPG.encounter.won is None:
         if RPG_New_Fight:
+            show screen screen_rpg onlayer rpg_context
             show screen say_rpg(RPG.encounter.intro_text) onlayer rpg_say
             $ renpy.pause(delay=None, modal=True)
-            $ renpy.hide_screen("say_rpg", layer="rpg_say", immediately=True)
+            hide screen screen_rpg
+            hide screen say_rpg
             $ RPG_New_Fight = False
         call screen screen_rpg
         $ RPG.encounter.run_attacks()
