@@ -523,7 +523,13 @@ label play_rpggame:
     $ renpy.music.play(MUSIC_MAP[RPG.encounter.music]["file"])
     $ persistent.heard.add(str(RPG.encounter.music))
     # This is where the game actually takes place.
+    $ RPG_New_Fight = True
     while RPG.encounter.won is None:
+        if RPG_New_Fight:
+            show screen say_rpg(RPG.encounter.intro_text) onlayer rpg_say
+            $ renpy.pause(delay=None, modal=True)
+            $ renpy.hide_screen("say_rpg", layer="rpg_say", immediately=True)
+            $ RPG_New_Fight = False
         call screen screen_rpg
         $ RPG.encounter.run_attacks()
         $ RPG.encounter.run_effects()
