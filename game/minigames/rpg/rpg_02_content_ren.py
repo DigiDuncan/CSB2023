@@ -342,7 +342,7 @@ class Attacks:
     CONFIDENCE = Attack("Confidence", "Raise your team's attack!", change_stat(stat = CharacterStat.ATTACK, mult = 1.25), target_count = 0, targets = TargetType.ALLY, accuracy = 90)
     CONFUSING_STORY = Attack("Confusing Story", "Tell a puzzling poem.", confuse_targets())
     DAMAGE_SCREM = Attack("Damage Screm", "Yell as loud as possible to deafen your enemies!", damage_fighters(mult = 0.5), target_count = 0, accuracy = 75)
-    DO_NOTHING = Attack("Do Nothing", "Don't do anything.", damage_fighters(mult = 0), target_count = 0, cooldown = 1)
+    DO_NOTHING = Attack("Do Nothing", "Don't do anything.", damage_fighters(mult = 0), target_count = 0)
     DRAW_IN = Attack("Draw In", "Either lowers the enemies stats, or increases your friend's stats!", draw_in(mult = 2), TargetType.ALL, target_count=0, accuracy = 85)
     DRONE_STRIKE = Attack("Drone Strike", "O Bomb a.", damage_fighters(mult = 2.5), target_count = 0, cooldown = 3, accuracy = 85)
     ELDRITCH_BLAST = Attack("Eldritch Blast", "An unholy blast that does quite a bit of damage to an enemy.", damage_fighters(mult = 1.5))
@@ -545,9 +545,9 @@ class Characters:
     PHIL = Character("Phil", 160, 20, 40, [Attacks.HYPE_UP, Attacks.PITCHMAN, Attacks.FLEX_TAPE], portrait=Image("gui/rpg/portraits/phil.png"), sprite=Image("images/characters/phil.png"), ai = AIType.AGGRO)
     MEAN = Character("Mean", 150, 20, 35, [Attacks.HUG, Attacks.SPIKE_BOMB], portrait=Image("gui/rpg/portraits/mean.png"), sprite=Image("images/characters/mean/meanangry.png"), ai = AIType.AGGRO)
     POMNI = Character("Pomni", 200, 15, 30, [Attacks.RAINBOW_VOMIT_NOCOOL, Attacks.RAINBOW_VOMIT_NOCOOL], portrait=Image("gui/rpg/portraits/pomni.png"), sprite=Image("images/characters/pomni/pomni_concern.png"), ai = AIType.SKITTISH)
-    OBAMA = Character("{image=gui/inline_text/dx_text.png} Obama", 190, 25, 35, [Attacks.KARATE_CHOP, Attacks.DRONE_STRIKE], portrait=Image("gui/rpg/portraits/obama.png"), sprite=Image("images/characters/obama/obama.png"), ai = AIType.SMART)
-    CASHIER = Character("{image=gui/inline_text/dx_text.png} Cashier", 188, 14, 33, [Attacks.COIN_BARRAGE, Attacks.CART_SMASH], portrait=Image("gui/rpg/portraits/cashier.png"), sprite=Image("images/characters/cashier.png"), ai = AIType.NEUTRAL)
-    SHARK = Character("{image=gui/inline_text/dx_text.png} Shark", 190, 10, 40, [Attacks.BITE, Attacks.SHARKNADO], portrait=Image("gui/rpg/portraits/shark.png"), sprite=Image("images/characters/blahaj_shark.png"), ai = AIType.AGGRO)
+    OBAMA = Character("{image=gui/inline_text/dx_text.png} Obama", 190, 25, 35, [Attacks.KARATE_CHOP, Attacks.DRONE_STRIKE], portrait=Image("gui/rpg/portraits/obama.png"), sprite=Image("images/characters/obama/obama.png"), ai = AIType.SMART, display_name = "Obama")
+    CASHIER = Character("{image=gui/inline_text/dx_text.png} Cashier", 188, 14, 33, [Attacks.COIN_BARRAGE, Attacks.CART_SMASH], portrait=Image("gui/rpg/portraits/cashier.png"), sprite=Image("images/characters/cashier.png"), ai = AIType.NEUTRAL, display_name = "Cashier")
+    SHARK = Character("{image=gui/inline_text/dx_text.png} Shark", 190, 10, 40, [Attacks.BITE, Attacks.SHARKNADO], portrait=Image("gui/rpg/portraits/shark.png"), sprite=Image("images/characters/blahaj_shark.png"), ai = AIType.AGGRO, display_name = "Shark")
 
     # Enemies
     FANBOYA = Character("Fanboy (NVIDIA)", 50, 0, 16, [Attacks.PUNCH], sprite=Image("images/characters/nvidiafanboy.png"), ai = AIType.NEUTRAL, display_name = "Fanboy", portrait=Image("gui/rpg/portraits/fanboy_nvidia.png"))
