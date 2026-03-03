@@ -1211,7 +1211,10 @@ class Encounter:
                     continue
                 attack.turns_until_available -= 1
                 if attack.turns_until_available == 0:
-                    self.send_message(f"{fighter.character.display_name}: {attack.name} now available!", fighter)
+                    if fighter in self.allies:
+                        self.send_message(f"{fighter.character.display_name}: {attack.name} now available!", fighter)
+                    else:
+                        self.send_debug(f"{fighter.character.display_name}: {attack.name} now available!", fighter)
                 else:
                     self.send_debug(f"{fighter.character.display_name}: {attack.name} available in {attack.turns_until_available} turns!", fighter)
 
