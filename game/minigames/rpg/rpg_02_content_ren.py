@@ -336,6 +336,7 @@ class Attacks:
     AUGMENT = Attack("Awesome Augment", "Fire a laser! Fire a laser!", damage_fighters(mult = 15), target_count = 0, cooldown = 5, accuracy = 100)
     BEDTIME_STORY = Attack("Bedtime Story", "Tell a relaxing tale.", sleep_fighters())
     BULLET_SPRAY = Attack("Bullet Spray", "Shred all enemies with your LMG!", damage_fighters(mult = 1.5), target_count = 0, cooldown = 3, accuracy = 70)
+    BUG_BITE = Attack("Bug Bite", "Yeowch! Nibble your opponent's health away.", steal_hp())
     CART_SMASH = Attack("Cart Smash", "Ram into someone with a shopping cart.", damage_fighters(mult = 5), accuracy = 95, cooldown = 3)
     CHOCOLATE_CAKE = Attack("Chocolate Cake", "Heal a party member with loads to eat!", heal_fighters(), targets = TargetType.ALLY, accuracy = 95)
     COIN_BARRAGE = Attack("Coin Barrage", "Pelt your foes with change!", damage_fighters_range(min_mult = 0.75, max_mult = 2), accuracy = 60)
@@ -352,6 +353,7 @@ class Attacks:
     FUN_VALUE = Attack("Fun Value", "A Dev's favorite attack.", damage_fighters(mult = 10), accuracy = 100)
     GENERGY = Attack("Genergy", "Sip some refreshing Genergy.", heal_fighters(mult = 2.36), targets = TargetType.ALLY, accuracy = 100)
     GNOMED = Attack("Gnomed", "Confuse everyone by gnoming them!", confuse_targets(), target_count = 0, cooldown = 3, accuracy = 70)
+    GROWL = Attack("Growl", "Growl cutely to lower the enemy team's ATK.", change_stat(stat = CharacterStat.ATTACK, mult = 0.75), targets = 0, accuracy = 90)
     HEAL_EX = Attack("Heal EX", "Lots of healing.", heal_fighters(mult = 10), target_count = 0, targets = TargetType.ALLY, accuracy = 100)
     HEAVY_PUNCH = Attack("Heavy Punch", "A quick blow.", damage_fighters(mult = 1.75), accuracy = 75)
     HIGH_NOON = Attack("High Noon", "Quickly blast 3 targets, or 3 shots on 1!", damage_fighters(mult = 0.75), target_count = 3, cooldown = 3, accuracy = 60)
@@ -376,6 +378,7 @@ class Attacks:
     SNACK_TIME = Attack("Snack Time", "Heal your team with the power of snacks!", heal_fighters(), target_count = 0, targets = TargetType.ALLY, cooldown = 3, accuracy = 95)
     SOTH = Attack("Shit On The House", "I'm going to... take a shit on the house.", damage_fighters(mult = 2), target_count = 0, cooldown = 3, accuracy = 65)
     STOMP = Attack("Stomp", "Send an earthquake to the enemies!", damage_fighters(mult = 0.75), target_count = 0)
+    STRUGGLE_BUG = Attack("Struggle Bug", "Just... do your best, okay?", damage_fighters(), target_count = 1, accuracy = 95)
     YTP_HEAL = Attack("Attack.HEAL", "No matter the cost.", heal_fighters(mult = 3), target_count = 0, targets = TargetType.ALLY, cooldown = 1, accuracy = 100)
     YTP_MAGIC = Attack("YTP Magic", "Channel the power of YTP!", damage_fighters(mult = 20), cooldown = 10, accuracy = 100, start_used = True)
     YTP_MAGIC_NOCOOL = Attack("YTP Magic", "Let no one stand in your way.", damage_fighters(mult = 20), accuracy = 100)
@@ -424,6 +427,11 @@ class Attacks:
         [
             ENCOURAGE,
             AttackComponent(change_stat(stat = CharacterStat.DEFENSE, mult = 0.75))
+        ])
+    METRONOME = ComboAttack("Metronome", "Wait, huh?!", # TODO: this doesn't work yet; this should be able to access ANY move in the game
+        [
+            CONFUSE,
+            BASIC_HIT
         ])
     PISTOL = ComboAttack("Pistol", "A sharp shot to the chest.",
         [
@@ -536,6 +544,7 @@ class Characters:
     MIDGE = Character("Midge", 165, 10, 25, [Attacks.NUDGE, Attacks.DRAW_IN], portrait=Image("gui/rpg/portraits/midge.png"), sprite=Image("images/characters/midge.png"), ai = AIType.DEFENSIVE)
     DB05 = Character("DB05", math.inf, 100, 50, [Attacks.CONFIDENCE, Attacks.PEP_TALK], portrait=Image("gui/rpg/portraits/db05.png"), sprite=Image("images/characters/db.png"), ai = AIType.SKITTISH)
     ANNO = Character("Anno", 200, 20, 40, [Attacks.RADS_ATTACK, Attacks.AI_MIMIC], portrait=Image("gui/rpg/portraits/anno.png"), sprite=Image("images/characters/anno/anno.png"), ai = AIType.SMART)
+    LAD = Character("{image=gui/inline_text/dx_text.png} Lad", 100, 10, 12, [Attacks.STRUGGLE_BUG, Attacks.GROWL, Attacks.BUG_BITE, Attacks.METRONOME], portrait=Image("gui/rpg/portraits/lad.png"), sprite=Image("images/characters/lad/default.png"), ai = AIType.SKITTISH, display_name="Lad")
 
     # Allies (UCN)
     BUBBLE = Character("{image=gui/inline_text/dx_text.png} Bubble", 250, 10, 35, [Attacks.STOMP, Attacks.POKE], display_name = "Bubble", portrait=Image("gui/rpg/portraits/bubble.png"), sprite=Image("images/characters/bubble.png"), ai = AIType.AGGRO)

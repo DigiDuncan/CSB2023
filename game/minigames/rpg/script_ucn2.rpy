@@ -172,9 +172,6 @@ screen _ucn2_selection():
                                                 SetScreenVariable("rpg_selected_slot", rpg_slot_autoselect(rpg_slots, rpg_selected_slot)),
                                                 With(determination)
                                             ]
-                                    # Put Sandbag's data here for later
-                                    else:
-                                        $ ucn_char_data = character
 
                                 ###################### Handle empty portrait slots here
                                 python:
@@ -190,7 +187,7 @@ screen _ucn2_selection():
                                     hover "selectable:gui/rpg/portraits/sandbag.png"
                                     hover_sound "audio/sfx/sfx_select.ogg"
                                     hovered [
-                                        SetScreenVariable("ucn2_hovered_data", ["{image=gui/inline_text/ucn_text.png} Sandbag", ucn_char_data])
+                                        SetScreenVariable("ucn2_hovered_data", ["{image=gui/inline_text/ucn_text.png} Sandbag", RPG.Characters.SANDBAG])
                                     ]
                                     unhovered  [
                                         SetScreenVariable("ucn2_hovered_data", [])

@@ -940,7 +940,12 @@
         },
         "quote": "*jingling sounds*",
         "bio": "Lad is Digi's Kricketot companion, and is always by their side. Usually perched on Digi's shoulder, he may not look like much, but he's the key to many of Digi's adventures. Lad doesn't want to evolve, so he's going to stay a nugget until the end of time.",
-        "dx": true
+        "dx": true,
+        "rpg": {
+            "LAD": {
+                "need_label": "bt1d_insulin"
+            }
+        }
     },
     "lancer": {
         "full_name": "Lancer",
@@ -1332,6 +1337,21 @@
         "quote": "...",
         "bio": "Our KENJI {size=-24}(not sponsored){/size} Yabu Brown Round Cat is a gorgeously soft and squidgy Kawaii plush friend. Velvety soft and squishy, our collectable plush toys are made from high-quality super-soft materials that make them perfect for snuggling. Super-soft and squidgy, our lovable huggable KENJI {size=-24}(not sponsored){/size} Yabu is the softest and cutest Japanese-inspired Kawaii plushie around. Meow!"
     },
+    "sandbag": {
+        "full_name": "Sandbag",
+        "pronouns": "(it/its)",
+        "sprites": {
+            "Default": "images/characters/sandbag.png"
+        },
+        "quote": "...",
+        "bio": "Since the next {i}Smash{/i} game probably won't be out for a while, Sandbag has joined {i}CSBDX{/i} for some friendly sparring! Don't worry about hurting it; this adorable masochist loves every minute of it.",
+        "dx": true,
+        "rpg": {
+            "SANDBAG": {
+                "need_label": "true_ending"
+            }
+        }
+    },
     "santa": {
         "full_name": "Santa Claus",
         "pronouns": "(he/him)",
@@ -1487,7 +1507,7 @@
         "quote": "a",
         "bio": "Better known as Tate, alleZSoyez is a close friend of CS. Impatient, excitable, and always hungry, Tate will try their best to help their friends whenever they can... as long as they get a tasty cheeseburger and a cozy nap on the floor at the end. While Tate isn't good at fighting or driving, when all else fails, they can always let out a good {i}screm!{/i}",
         "dx_bio_label": "train_boarding",
-        "dx_bio": "While known to stay eerily calm during world-ending crises, when it comes to more mundane stressors, Tate becomes a bit of a {sc=1}quick-tempered anxiety-riddled control\nfreak.{/sc}",
+        "dx_bio": "While known to stay eerily calm during world-ending crises, when it comes to more mundane stressors, Tate becomes a bit of a {sc=1}quick-tempered\nanxiety-riddled control freak.{/sc}",
         "ce_bio_label": "ce_introductions",
         "ce_bio": "Tate {i}hates{/i} Christmas. They'd much rather be curled up taking a nap right now. Fortunately, they love their friends more than they hate the holidays, so Mean was able to convince them to attend the party. They {i}really{/i} wish that Mean would've left the fake beard on the train, though.",
         "rpg": {

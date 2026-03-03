@@ -150,6 +150,7 @@ screen people():
                 background None
                 xsize 1320 ysize 1.0
                 xalign 1.0 yalign 1.0
+                yoffset 18
 
                 if not current_person:
                     vbox:
@@ -328,9 +329,18 @@ screen people():
                                                                         frame:
                                                                             background None
                                                                             xsize 200
-                                                                            text "{image=gui/inline_text/hp.png} "+str(hp):
+
+                                                                            # Handle infinite health here
+                                                                            python:
+                                                                                if str(hp) == "inf":
+                                                                                    hp_text = "{image=gui/inline_text/infinite_text.png}"
+                                                                                else:
+                                                                                    hp_text = str(hp)
+
+                                                                            text "{image=gui/inline_text/hp.png} "+hp_text:
                                                                                 xalign 0.5
                                                                                 text_align 0.5
+
                                                                         frame:
                                                                             background None
                                                                             xsize 200
@@ -376,6 +386,7 @@ screen people():
                                 frame:
                                     background None
                                     xsize 1.0 ysize 1.0
+                                    yoffset 12
 
                                     python:
                                         x = -1 if name_map[current_person].get("flip", False) else 1

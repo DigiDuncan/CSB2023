@@ -346,6 +346,7 @@ label rpg_diabetes_1:
         allies:
             cs_strong
             digi
+            lad
         enemies:
             ceo
         scale 1.0
@@ -360,6 +361,7 @@ label rpg_diabetes_2:
         allies:
             cs_strong
             digi
+            lad
         enemies:
             secretary
         scale 2.0
@@ -374,6 +376,7 @@ label rpg_diabetes_3:
         allies:
             cs_strong
             digi
+            lad
         enemies:
             ceo
             secretary
