@@ -951,6 +951,8 @@ class Encounter:
         self.send_signal(EffectSignal(message, effect, effect.source, effect.target))
 
     def send_signal(self, message: Signal):
+        if(hasattr(message, "message") and type(message) != DebugSignal):
+            self.display_message(message.message)
         self.signal_queue.put(message)
 
     def get_next_signal(self) -> Signal | None:
@@ -985,6 +987,7 @@ class Encounter:
         fighter.hit_points -= int(damage)
 
         self.display_indicator(fighter, IndicatorType.HP, int(-damage))
+        # Maybe here run the display indicator.
 
     def heal_fighter(self, fighter: Fighter, amount: float, overheal: bool = False):
         fighter.hit_points += int(amount)
@@ -1223,3 +1226,10 @@ class Encounter:
 
     def __repr__(self) -> str:
         return self.__str__()
+
+    def display_message(self, message):
+        renpy.show_screen("screen_rpg", _layer="rpg_context")
+        renpy.show_screen("say_rpg", message, _layer="rpg_say")
+        renpy.pause(delay=None, modal=True)
+        renpy.hide_screen("screen_rpg", immediately=True)
+        renpy.hide_screen("say_rpg", immediately=True)

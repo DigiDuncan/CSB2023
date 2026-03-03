@@ -537,17 +537,6 @@ label play_rpggame:
         if RPG.encounter.won is not None:
             jump pass_rpg
         # Visuals and stuff need to go here.
-        show screen screen_rpg onlayer rpg_context
-        while RPG.encounter.has_signals():
-            $ curr_signal = RPG.encounter.get_next_signal()
-            if hasattr(curr_signal, "message") and type(curr_signal) != RPG.DebugSignal:
-                window auto False
-                show screen say_rpg(curr_signal.message) onlayer rpg_say
-                $ renpy.pause(delay=None, modal=True)
-                $ renpy.hide_screen("say_rpg", layer="rpg_say", immediately=True)
-        $ renpy.hide_screen("say_rpg", layer="rpg_say", immediately=True)
-        $ renpy.hide_screen("screen_rpg", layer="rpg_context", immediately=True)
-
         # Reset variables at the end
         $ RPG.encounter.turn = 0
 
