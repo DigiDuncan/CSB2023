@@ -283,7 +283,7 @@ class Attack:
             else:
                 e = "??? "
 
-        return f"{x}x {e}{t}{duration}" if show_x else f"{e}{t}{duration}"
+        return f"{x}× {e}{t}{duration}" if show_x else f"{e}{t}{duration}"
 
     @property
     def properties(self) -> str:
@@ -1076,7 +1076,7 @@ class Encounter:
                 new = int(old * mult) if not fighter.character.infinite else math.inf
                 fighter.hit_points = new
                 self.display_indicator(fighter, IndicatorType.HP, new - old)
-                self.send_debug(f"Scaled {fighter.character.display_name}'s hit points by {mult}x!", "Encounter.scale_fighter", stat=stat, old = old, new = new, prem = permanent)
+                self.send_debug(f"Scaled {fighter.character.display_name}'s hit points by {mult}×!", "Encounter.scale_fighter", stat=stat, old = old, new = new, prem = permanent)
             case CharacterStat.DEFENSE:
                 old = fighter.defense
                 new = int(old * mult)
@@ -1085,7 +1085,7 @@ class Encounter:
                     fighter.base_def = fighter.base_def + change
                 fighter.defense = new
                 self.display_indicator(fighter, IndicatorType.DEF, change)
-                self.send_debug(f"Scaled {fighter.character.display_name}'s defense by {mult}x!", "Encounter.scale_fighter", stat=stat, old = old, new = new, prem = permanent)
+                self.send_debug(f"Scaled {fighter.character.display_name}'s defense by {mult}×!", "Encounter.scale_fighter", stat=stat, old = old, new = new, prem = permanent)
             case CharacterStat.ATTACK:
                 old = fighter.attack
                 new = max(5, int(old * mult))
@@ -1094,7 +1094,7 @@ class Encounter:
                     fighter.base_atk = max(5, int(fighter.base_atk + change))
                 fighter.attack = new
                 self.display_indicator(fighter, IndicatorType.ATK, change)
-                self.send_debug(f"Scaled {fighter.character.display_name}'s attack by {mult}x!", "Encounter.scale_fighter", stat=stat, old = old, new = new, prem = permanent)
+                self.send_debug(f"Scaled {fighter.character.display_name}'s attack by {mult}×!", "Encounter.scale_fighter", stat=stat, old = old, new = new, prem = permanent)
             case CharacterStat.ACCURACY:
                 old = fighter.accuracy
                 new = max(0, min(100, int(old * mult)))
@@ -1103,7 +1103,7 @@ class Encounter:
                     fighter.base_acc = max(0, min(100, fighter.base_acc + change))
                 fighter.accuracy = new
                 self.display_indicator(fighter, IndicatorType.ACC, change)
-                self.send_debug(f"Scaled {fighter.character.display_name}'s accuracy by {mult}x!", "Encounter.scale_fighter", stat=stat, old = old, new = new, prem = permanent)
+                self.send_debug(f"Scaled {fighter.character.display_name}'s accuracy by {mult}×!", "Encounter.scale_fighter", stat=stat, old = old, new = new, prem = permanent)
 
     # -- UTIL TARGETTING METHODS --
 

@@ -293,7 +293,7 @@ screen screen_rpg():
                                                 hover effect_hover_icon
                                                 hover_sound "audio/sfx/sfx_select.ogg"
                                                 action NullAction()
-                                                tooltip [effect.name, effect.description, "multiplier info here"]
+                                                tooltip [effect.name, effect.description, str(checked_effects[effect])]
 
                                             if checked_effects[effect] > 1:
                                                 text str(checked_effects[effect]):
@@ -421,7 +421,7 @@ screen screen_rpg():
                                                 hover effect_hover_icon
                                                 hover_sound "audio/sfx/sfx_select.ogg"
                                                 action NullAction()
-                                                tooltip [effect.name, effect.description, "multiplier info here"]
+                                                tooltip [effect.name, effect.description, str(checked_effects[effect])]
 
                                             if checked_effects[effect] > 1:
                                                 text str(checked_effects[effect]):
@@ -505,10 +505,11 @@ screen screen_rpg():
                     text_align 0.5
                     size 32
 
-                text effect_info[2]: # effect multiplier info
-                    xalign 0.5
-                    text_align 0.5
-                    size 21
+                if effect_info[2] != "1":
+                    text "(×"+effect_info[2]+" multiplier)": # effect multiplier info
+                        xalign 0.5
+                        text_align 0.5
+                        size 21
 
     # Debug
     # text "Turn: " + str(RPG.encounter.turn) xoffset 25 yoffset 25
