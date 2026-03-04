@@ -431,7 +431,7 @@ class Attacks:
     METRONOME = ComboAttack("Metronome", "Wait, huh?!", # TODO: this doesn't work yet; this should be able to access ANY move in the game
         [
             CONFUSE,
-            BASIC_HIT
+            AI_MIMIC
         ])
     PISTOL = ComboAttack("Pistol", "A sharp shot to the chest.",
         [

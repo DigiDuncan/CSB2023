@@ -133,26 +133,31 @@ screen screen_rpg():
                                         ]
                                         if not RPG.encounter.allies[RPG.encounter.turn].attacks[i].available:
                                             sensitive False
-                                        has vbox
-                                        text "{size=40}"+RPG.encounter.allies[RPG.encounter.turn].attacks[i].name+" {/size}{size=21}("+RPG.encounter.allies[RPG.encounter.turn].attacks[i].attack.properties+"){/size}":
-                                            if RPG.encounter.allies[RPG.encounter.turn].attacks[i] is RPG.encounter.allies[RPG.encounter.turn].next_attack:
-                                                color "#FF8A00"
-                                                hover_color "#F5DD00"
-                                                insensitive_color "#888888"
-                                            else:
-                                                color "#FFFFFF"
-                                                hover_color "#0099CC"
-                                                insensitive_color "#888888"
-                                        text "{size=21}"+RPG.encounter.allies[RPG.encounter.turn].attacks[i].attack.description+"{/size}":
-                                            first_indent 32
-                                            if RPG.encounter.allies[RPG.encounter.turn].attacks[i] is RPG.encounter.allies[RPG.encounter.turn].next_attack:
-                                                color "#844200"
-                                                hover_color "#7B6F00"
-                                                insensitive_color "#888888"
-                                            else:
-                                                color "#848484"
-                                                hover_color "#006582"
-                                                insensitive_color "#888888"
+
+                                        frame:
+                                            background None
+                                            yalign 0.5
+
+                                            vbox:
+                                                text "{size=40}"+RPG.encounter.allies[RPG.encounter.turn].attacks[i].name+" {/size}{size=21}("+RPG.encounter.allies[RPG.encounter.turn].attacks[i].attack.properties+"){/size}":
+                                                    if RPG.encounter.allies[RPG.encounter.turn].attacks[i] is RPG.encounter.allies[RPG.encounter.turn].next_attack:
+                                                        color "#FF8A00"
+                                                        hover_color "#F5DD00"
+                                                        insensitive_color "#888888"
+                                                    else:
+                                                        color "#FFFFFF"
+                                                        hover_color "#0099CC"
+                                                        insensitive_color "#888888"
+                                                text "{size=21}"+RPG.encounter.allies[RPG.encounter.turn].attacks[i].attack.description+"{/size}":
+                                                    first_indent 32
+                                                    if RPG.encounter.allies[RPG.encounter.turn].attacks[i] is RPG.encounter.allies[RPG.encounter.turn].next_attack:
+                                                        color "#844200"
+                                                        hover_color "#7B6F00"
+                                                        insensitive_color "#888888"
+                                                    else:
+                                                        color "#848484"
+                                                        hover_color "#006582"
+                                                        insensitive_color "#888888"
 
                 # The target select box
                 frame:
