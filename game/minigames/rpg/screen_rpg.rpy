@@ -474,6 +474,11 @@ screen screen_rpg():
                                         add "gui/rpg/hp_bar.png" corner1(int(228-(228*(RPG.encounter.enemies[i].hit_points/RPG.encounter.enemies[i].max_hp))),0) corner2(228,32) xalign 1.0
                                         text str(RPG.encounter.enemies[i].hit_points)+"/"+str(RPG.encounter.enemies[i].max_hp):
                                             xalign 1.0 yalign 0.5
+                                    elif RPG.encounter.enemies[i].hit_points > RPG.encounter.enemies[i].max_hp:
+                                        $ overheal_bar = renpy.get_registered_image("hp_bar_overheal")
+                                        add overheal_bar corner1(0,0) corner2(228,32) xalign 1.0
+                                        text str(RPG.encounter.enemies[i].hit_points)+"/"+str(RPG.encounter.enemies[i].max_hp):
+                                            xalign 1.0 yalign 0.5
                                     else:
                                         $ inf_bar = renpy.get_registered_image("hp_bar_inf")
                                         add inf_bar corner1(0,0) corner2(228,32) xalign 1.0

@@ -2611,6 +2611,7 @@ image cs_run = spritesheet_animation("minigames/perfecttate/cs_spritesheet.png",
 image rpg_pending_portrait = spritesheet_animation("gui/rpg/portraits/pending_anim.png", 3, 1, fps = 2, looping = True)
 image rpg_pending_portrait_hover = spritesheet_animation("gui/rpg/portraits/pending_anim_hover.png", 3, 1, fps = 2, looping = True)
 image hp_bar_inf = spritesheet_animation("gui/rpg/hp_bar_inf_anim.png", 1, 12, fps = 12, looping = True)
+image hp_bar_overheal = spritesheet_animation("gui/rpg/hp_bar_overheal.png", 1, 24, fps = 12, looping = True)
 
 ## For cop car lights
 image blue_light:
