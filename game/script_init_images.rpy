@@ -2119,7 +2119,7 @@ image tate_fallen_2 = "secret/pt/tate_fallen_2.png"
 image tate_fallen_3 = "secret/pt/tate_fallen_3.png"
 image tate_fallen_4 = "secret/pt/tate_fallen_4.png"
 image tate_fallen_5 = "secret/pt/tate_fallen_5.png"
-image yeetable_textbox = "/secret/pt/yeetable_textbox.png"
+image yeetable_textbox = "/gui/textbox.png"
 
 # Train Route misc generated images
 image fake_rpg_miss = Text("{size=50}{color=#FFAAAA}Miss!", text_align=0.5)

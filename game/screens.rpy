@@ -266,17 +266,35 @@ screen choice(items):
         for i in items:
             $ choice_type = i.kwargs.get("type")
             if choice_type == "true" and preferences.streamer_mode:
-                textbutton "{color=#ba64ce}[i.caption]" action i.action
+                textbutton i.caption:
+                    text_color "#BA64CE"
+                    text_hover_color "#FFFFFF"
+                    action i.action
             elif choice_type == "good" and preferences.streamer_mode:
-                textbutton "{color=#00ff00}[i.caption]" action i.action
+                textbutton i.caption:
+                    text_color "#00FF00"
+                    text_hover_color "#FFFFFF"
+                    action i.action
             elif choice_type == "bad" and preferences.streamer_mode:
-                textbutton "{color=#ff0000}[i.caption]" action i.action
+                textbutton i.caption:
+                    text_color "#FF0000"
+                    text_hover_color "#FFFFFF"
+                    action i.action
             elif choice_type == "dx":
-                textbutton "{image=gui/inline_text/dx_text.png} {color=#0099cc}[i.caption]" action i.action
+                textbutton "{image=gui/inline_text/dx_text.png} [i.caption]":
+                    text_color "#0099CC"
+                    text_hover_color "#FFFFFF"
+                    action i.action
             elif choice_type == "warning":
-                textbutton "{image=gui/inline_text/warning_text.png} {color=#ffff00}[i.caption]" action i.action
+                textbutton "{image=gui/inline_text/warning_text.png} [i.caption]":
+                    text_color "#FFFF00"
+                    text_hover_color "#FFFFFF"
+                    action i.action
             else:
-                textbutton i.caption action i.action
+                textbutton i.caption:
+                    text_color "#888888"
+                    text_hover_color "#FFFFFF"
+                    action i.action
 
 
 style choice_vbox is vbox
@@ -292,6 +310,7 @@ style choice_vbox:
 
 style choice_button is default:
     properties gui.button_properties("choice_button")
+    padding (0, 15, 0, 15)
 
 style choice_button_text is default:
     properties gui.button_text_properties("choice_button")
@@ -1454,6 +1473,7 @@ style skip_triangle:
     ## We have to use a font that has the BLACK RIGHT-POINTING SMALL TRIANGLE
     ## glyph in it.
     font "DejaVuSans.ttf"
+    yoffset -3
 
 
 ## Notify screen ###############################################################
