@@ -327,6 +327,8 @@ label splashscreen:
 
 label before_main_menu:
     python:
+        renpy.free_memory()
+
         if ending_manager.all_seen() == True:
             if "fin" not in persistent.unlocked_achievements:
                 achievement_manager.unlock("fin", show_screen = False)

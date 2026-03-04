@@ -419,7 +419,8 @@ screen _ucn2_selection():
                     PauseAudio("music", False),
                     Stop("music2"),
                     SelectedIf(False),
-                    Hide("_ucn2_selection", dissolve)
+                    Hide("_ucn2_selection", dissolve),
+                    Function(renpy.free_memory)
                 ]
             else:
                 action [
@@ -818,4 +819,5 @@ label _ucn2_after:
             # TODO: find a way to jump back to main menu in the background AND show the screen
             # hey arc pls help you're better at context than we are
         "Return to main menu":
+            $ renpy.free_memory()
             jump start
