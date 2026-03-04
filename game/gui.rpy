@@ -120,7 +120,7 @@ define gui.namebox_height = 72
 
 ## The borders of the box containing the character's name, in left, top, right,
 ## bottom order.
-define gui.namebox_borders = Borders(10, 10, 10, 10)
+define gui.namebox_borders = Borders(20, 10, 20, 10)
 
 ## If True, the background of the namebox will be tiled, if False, the
 ## background of the namebox will be scaled.
