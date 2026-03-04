@@ -76,9 +76,9 @@ screen screen_rpg():
                             enemy_sprite = RPG.encounter.enemies[i].sprite
 
                     add enemy_sprite:
-                        xalign 0.5
+                        xalign 0.5 yalign 1.0
                         ysize 1.0
-                        fit "contain"
+                        fit "scale-down"
                 else:
                     add Null(200,200)
 
