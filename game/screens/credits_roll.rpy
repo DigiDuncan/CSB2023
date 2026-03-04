@@ -1,19 +1,5 @@
 init python:
-    import re
-    import json
-
-    with renpy.open_file("data/credits.json") as json_file:
-        credits_file = json.load(json_file)
-
-    with renpy.open_file("data/jukebox.json") as json_file:
-        jukebox_file = json.load(json_file)
-
-    global credits_map
-    global music_map
     global jukebox_presort
-
-    credits_map = credits_file
-    music_map = jukebox_file["tracks"]
     jukebox_presort = {}
 
 transform credit_scroll(starting = 0, duration = 60):
@@ -28,8 +14,8 @@ screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scro
             action Play("music", bgm, loop=False, if_changed=True)
 
     if bgm:
-        for b in music_map:
-            if music_map[b]["file"] == bgm and b not in persistent.heard:
+        for b in MUSIC_MAP:
+            if MUSIC_MAP[b]["file"] == bgm and b not in persistent.heard:
                 $ persistent.heard.add(b)
                 break
 
@@ -37,12 +23,12 @@ screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scro
     python:
         global jukebox_presort
         jukebox_presort = {}
-        for song in music_map:
+        for song in MUSIC_MAP:
             if route == "All":
-                jukebox_presort.update({ song : { "title": music_map[song]["title"], "artist": music_map[song]["artist"] } })
+                jukebox_presort.update({ song : { "title": MUSIC_MAP[song]["title"], "artist": MUSIC_MAP[song]["artist"] } })
             else:
-                if route in music_map[song]["tags"]:
-                    jukebox_presort.update({ song : { "title": music_map[song]["title"], "artist": music_map[song]["artist"] } })
+                if route in MUSIC_MAP[song]["tags"]:
+                    jukebox_presort.update({ song : { "title": MUSIC_MAP[song]["title"], "artist": MUSIC_MAP[song]["artist"] } })
 
             jukebox_sorted = dict(sorted(jukebox_presort.items(), key = lambda a: (a[1]["artist"].lower(), a[1]["title"].lower())))
 
@@ -60,7 +46,7 @@ screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scro
         xalign 0.5
 
         ##### BEGIN CONTENTS #####
-        frame at credit_scroll(scroll_start, duration):
+        frame at credit_scroll(scroll_start, duration) as credits_frame:
             background None
             xalign 0.5
 
@@ -74,7 +60,7 @@ screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scro
                     ysize 1580
                     xalign 0.5
 
-                for category in credits_map[route]:
+                for category in CREDITS_MAP[route]:
                     frame:
                         background None
                         xsize 1600
@@ -111,7 +97,7 @@ screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scro
                                     size 64
                                     font "impact.ttf"
 
-                            for subcategory in credits_map[route][category]:
+                            for subcategory in CREDITS_MAP[route][category]:
 
                                 # Handling for everything EXCEPT cast, special thanks, music, logo
                                 # These are nested for a reason
@@ -146,7 +132,7 @@ screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scro
                                             # get contributors
                                             vbox:
                                                 xalign 1.0
-                                                for contributor in credits_map[route][category][subcategory]:
+                                                for contributor in CREDITS_MAP[route][category][subcategory]:
 
                                                     # manually hide CS 3D and Digi if unseen
                                                     if (persistent.defeated_perfect_tate == False and category == "CS-ocola (3D Sprite)") or ("digi" not in persistent.seen and category == "DigiDuncan Character Sprite"):
@@ -199,7 +185,7 @@ screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scro
                                         xsize 1600
                                         vbox:
                                             xsize 1600
-                                            image credits_map[route][category][subcategory][0]:
+                                            image CREDITS_MAP[route][category][subcategory][0]:
                                                 xalign 0.5
                                                 yalign 0.5
 
@@ -222,7 +208,7 @@ screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scro
                                             char_text = ""
 
                                         # no matter how tempting, do NOT put this in a python block.
-                                        for c in credits_map[route][category][subcategory]:
+                                        for c in CREDITS_MAP[route][category][subcategory]:
                                             if c in hide_these:
                                                 for c_linked in hide_these[c]:
                                                     if any(character in c_linked for character in persistent.seen):
@@ -241,7 +227,7 @@ screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scro
                                         xsize 1600
 
                                         $ thanks_text = subcategory
-                                        $ thanks_for_text = credits_map[route][category][subcategory][0]
+                                        $ thanks_for_text = CREDITS_MAP[route][category][subcategory][0]
 
                                         # print the thanks + text under it
                                         vbox:
@@ -267,6 +253,8 @@ screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scro
                     yoffset -128
                     size 96
                     xalign 0.5
+
+        $ print(get_size(credits_frame))
 
     if renpy.context_nesting_level() != 0:
         dismiss action Play("music", "bubble_tea.ogg", loop = False), Jump("start")

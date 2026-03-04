@@ -74,6 +74,13 @@ init -1 python:
 
     BOOKS_MAP = j
 
+    # Credits
+    with renpy.open_file("data/credits.json") as f:
+        j = json.load(f)
+        print(f"Loaded credits.")
+
+    CREDITS_MAP = j
+
 init python:
     renpy.add_layer("popup", above = "overlay")
     renpy.add_layer("music", above = "master")
