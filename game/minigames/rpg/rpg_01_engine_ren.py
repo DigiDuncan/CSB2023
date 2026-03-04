@@ -259,6 +259,9 @@ class Attack:
                 case "stun_fighters":
                     t_list.append("stun")
                     show_x = False
+                case "damage_recoil":
+                    t_list.append("recoil")
+                    show_x = False
                 case _:
                     t_list.append("effect")
                     show_x = False
