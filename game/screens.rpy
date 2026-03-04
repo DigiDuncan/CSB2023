@@ -1474,6 +1474,7 @@ style skip_triangle:
     ## glyph in it.
     font "DejaVuSans.ttf"
     yoffset -3
+    xoffset 8
 
 
 ## Notify screen ###############################################################
