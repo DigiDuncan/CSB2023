@@ -45,7 +45,7 @@ screen unused_gallery():
             background None
             xsize 1.0 ysize 165
 
-           # Left Button
+            # Left Button
             frame:
                 background None
                 xysize(128,128)

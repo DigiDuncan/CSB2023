@@ -108,7 +108,7 @@ screen _ucn2_selection():
 
     if rpg_selection_stage == "party":
 
-       ### Handle this logic here I guess since it doesn't like it in a function
+        ### Handle this logic here I guess since it doesn't like it in a function
         python:
             if rpg_ready == False: # quit looping if we don't need to
                 for member in rpg_slots:
