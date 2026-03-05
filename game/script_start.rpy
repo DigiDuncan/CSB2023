@@ -55,6 +55,9 @@ init 10 python:
         for label in renpy.get_all_labels():
             renpy.mark_label_seen(label)
 
+    def jump_to_label_start():
+        renpy.jump(store.last_label)
+
 # Layers?
 define config.detached_layers += ["broadcast"]
 image stage_screen = Window(Layer("broadcast", clipping = False), background = "minigames/pencil/stage.png")
