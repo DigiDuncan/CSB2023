@@ -1164,9 +1164,20 @@ class Encounter:
                     self.upcoming_attacks.append((fighter, self.DEFEND_ACTION, (fighter,)))
                     continue
                 else:
+                    print(fighter.effects)
+
                     # fighter has not picked attack and has an AI
                     if fighter.dead: # Dead AI fighters don't get to act
                         continue
+                    elif Effects.SLEEP in [e.effect for e in fighter.effects]: # Neither do sleeping fighters
+                        self.send_message(f"{fighter.character.display_name} is asleep!", fighter)
+                        continue
+                    elif Effects.STUN in [e.effect for e in fighter.effects]: # Neither do stunned fighters
+                        self.send_message(f"{fighter.character.display_name} is stunned and can't move!", fighter)
+                        continue
+                    else: # This should never happen!
+                        self.send_debug(f"{fighter.character.display_name} tried to act, but something's broken.", fighter)
+
                     attack = fighter.ai.choose_attack(self, fighter)
                     if attack is None:
                         self.upcoming_attacks.append((fighter, self.DEFEND_ACTION, (fighter,)))
@@ -1218,7 +1229,7 @@ class Encounter:
                     if fighter in self.allies:
                         self.send_message(f"{fighter.character.display_name}: {attack.name} now available!", fighter)
                     else:
-                        self.send_debug(f"{fighter.character.display_name}: {attack.name} now available!", fighter)
+                        self.send_debug(f"{fighter.character.display_name} can use {attack.name} again!", fighter)
                 else:
                     self.send_debug(f"{fighter.character.display_name}: {attack.name} available in {attack.turns_until_available} turns!", fighter)
 

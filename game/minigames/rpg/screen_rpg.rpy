@@ -109,6 +109,7 @@ screen screen_rpg():
                     viewport:
                         xsize 1.0 ysize 1.0
 
+                        # Mostly for Copguy EX
                         if RPG.encounter.allies[RPG.encounter.turn].attacks and len(RPG.encounter.allies[RPG.encounter.turn].attacks) > 4:
                             scrollbars "vertical"
                             mousewheel True
