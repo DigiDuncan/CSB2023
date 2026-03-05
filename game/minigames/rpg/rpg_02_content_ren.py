@@ -89,6 +89,7 @@ def steal_hp(encounter: Encounter, fighter: Fighter, targets: tuple[Fighter, ...
     for target in targets:
         for _ in range(count):
             encounter.damage_fighter(target, mult * fighter.attack)
+    encounter.send_message(fighter.display_name + " recovered health!")
     encounter.heal_fighter(fighter, int(mult * fighter.attack * steal_amount * count * len(targets)), True)
 
 @attack_def(AttackType.HEAL)
@@ -103,6 +104,7 @@ def heal_fighters(encounter: Encounter, fighter: Fighter, targets: tuple[Fighter
     for target in targets:
         if target.dead:
             continue
+        encounter.send_message(target.display_name + " recovered health!")
         encounter.heal_fighter(target, mult * fighter.attack, overheal)
 
 @attack_def(AttackType.DAMAGE | AttackType.EFFECT)
@@ -136,7 +138,6 @@ def damage_recoil(encounter: Encounter, fighter: Fighter, targets: tuple[Fighter
     for target in targets:
         encounter.apply_effect(Effects.BLEED, fighter, target, duration, update_mult=bleed_mult)
 
-
 @attack_def(AttackType.BUFF)
 def defend_targets(encounter: Encounter, fighter: Fighter, targets: tuple[Fighter, ...]):
     """
@@ -145,6 +146,7 @@ def defend_targets(encounter: Encounter, fighter: Fighter, targets: tuple[Fighte
     for target in targets:
         if target.dead:
             continue
+        encounter.send_message(fighter.display_name + " is braced for attack!")
         encounter.apply_effect(Effects.DEFEND, fighter, target)
 
 @attack_def(AttackType.EFFECT)
@@ -244,7 +246,7 @@ class AIType:
     def get(cls, ai: str, default: AI | None = None) -> AI | None:
         cls.__dict__.get(ai, default)
 
-
+# TODO: these sound effects are not final
 class Effects:
     # Intent: Take damage over x turns.
     BLEED = Effect(
@@ -264,7 +266,7 @@ class Effects:
         description="This fighter's accuracy is drastically reduced.",
         positive=False,
         icon="/gui/rpg/status/blindness.png",
-        #sfx="/audio/sfx/sfx_hurt1.ogg",
+        sfx="/audio/sfx/sfx_power_out.ogg",
         duration=0,
         apply="{target} can't see!",
         update=apply_status_effect(stat=CharacterStat.ACCURACY, amount=0.25, scale=True),
@@ -276,7 +278,7 @@ class Effects:
         description="This fighter may attack the wrong target.",
         positive=False,
         icon="/gui/rpg/status/confusion.png",
-        #sfx="/audio/sfx/sfx_hurt1.ogg",
+        sfx="/audio/sfx/sfx_gleam.ogg",
         duration=0,
         apply="{target} is confused!",
         update=apply_status_effect(stat=CharacterStat.ACCURACY, amount=0.5, scale=True),
@@ -288,7 +290,7 @@ class Effects:
         description="This fighter will take less damage, but can't attack this turn.",
         positive=True,
         icon="/gui/rpg/status/defending.png",
-        #sfx="/audio/sfx/sfx_hurt1.ogg",
+        sfx="/audio/sfx/snd_b.ogg",
         duration=1,
         apply="{target} is defending!",
         update=apply_status_effect(stat=CharacterStat.DEFENSE, amount=1.5, scale=True),
@@ -299,7 +301,7 @@ class Effects:
         description="This fighter is vulnerable to attack and can't move until next turn.",
         positive=False,
         icon="/gui/rpg/status/sleep.png",
-        #sfx="/audio/sfx/sfx_hurt1.ogg",
+        sfx="/audio/sfx/sfx_csnore.ogg",
         duration=1,
         apply="{target} fell asleep!",
         update=apply_status_effect(stat=CharacterStat.DEFENSE, amount=0.5, scale=True),
@@ -311,7 +313,7 @@ class Effects:
         description="This fighter can't move at all right now.",
         positive=False,
         icon="/gui/rpg/status/stun.png",
-        #sfx="/audio/sfx/sfx_hurt1.ogg",
+        sfx="/audio/sfx/sfx_bluescreen.ogg",
         duration=0,
         apply="{target} can't move!",
         update=apply_status_effect(stat=CharacterStat.DEFENSE, amount=1.0, scale=True),
