@@ -1565,7 +1565,6 @@ label fired_final_tour_bus:
     $ achievement_manager.unlock("rockstar")
     scene black with Dissolve(3.0)
     $ ending_manager.mark("rockstar")
-    $ renpy.movie_cutscene(creditsm)
-    $ persistent.heard.add("goodbye_summer_hello_winter")
+    call screen credits_roll() with determination
     $ renpy.end_replay()
     return

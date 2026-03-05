@@ -202,11 +202,6 @@ python early:
 
     import json
 
-    with renpy.open_file("data/jukebox.json") as json_file:
-        jukebox_file = json.load(json_file)
-
-    _music_map = jukebox_file["tracks"]
-
     _current_song = ""
     _current_artist = ""
     _current_internal_id = ""
@@ -227,8 +222,6 @@ python early:
         global _current_artist
         global _current_internal_id
 
-        global _music_map
-
         if parsed_object is None:
             _current_song = None
             _current_artist = None
@@ -236,8 +229,8 @@ python early:
             return
         else:
             _current_internal_id = str(parsed_object)
-            _current_song = _music_map.get(_current_internal_id)["title"]
-            _current_artist = _music_map.get(_current_internal_id)["artist"]
+            _current_song = MUSIC_MAP.get(_current_internal_id)["title"]
+            _current_artist = MUSIC_MAP.get(_current_internal_id)["artist"]
 
             # for debugging
             #print(f"Currently held data: {_current_song} by {_current_artist} | Internal ID: {_current_internal_id}")
@@ -248,7 +241,7 @@ python early:
             renpy.with_statement(determination)
             renpy.show_screen("music")
             renpy.with_statement(determination)
-        if all([a in persistent.heard for a in music_map.keys()]):
+        if all([a in persistent.heard for a in MUSIC_MAP.keys()]):
             achievement_manager.unlock("jukebox")
 
     renpy.register_statement(name="music",

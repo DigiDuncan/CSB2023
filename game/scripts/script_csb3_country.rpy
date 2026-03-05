@@ -1858,8 +1858,7 @@ label country_going_home:
     stop music fadeout 1.0
     music end
     $ ending_manager.mark("country")
-    $ renpy.movie_cutscene(creditsm)
-    $ persistent.heard.add("goodbye_summer_hello_winter")
+    call screen credits_roll() with determination
     $ renpy.end_replay()
     return
 

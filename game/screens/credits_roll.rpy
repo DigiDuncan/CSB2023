@@ -2,7 +2,7 @@ init python:
     global jukebox_presort
     jukebox_presort = {}
 
-screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scroll_start = 0, duration = 343, replace_music = True):
+screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scroll_start = 600, duration = 343, replace_music = True):
     modal True
     zorder 1
 
@@ -18,7 +18,7 @@ screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scro
                 $ persistent.heard.add(b)
                 break
 
-    # only get tracks for a given route, or if none specified/invalid tag, get everything
+    # Only get tracks for a given route, or if none specified/invalid tag, get everything
     python:
         global jukebox_presort
         jukebox_presort = {}
@@ -246,7 +246,7 @@ screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scro
 
     # Actually move the frame
     $ credits_frame_size = get_size(credits_frame)
-    $ print(credits_frame_size)
+
     add credits_frame:
         at transform:
             yanchor scroll_start 
