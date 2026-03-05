@@ -561,15 +561,15 @@ label awawa_tate_test:
                                 call screen credits_roll()
                             "CE Only":
                                 play music "<from 28.700>title_theme_reprise.ogg" noloop
-                                call screen credits_roll(route="CSBDX: Holiday Special", scroll_start = 12525, duration=84, replace_music=False) with dissolve
+                                call screen credits_roll(route="CSBDX: Holiday Special", scroll_start = 1204, duration=84, replace_music=False) with dissolve
                             "Speedrun Only":
                                 call screen credits_roll(bgm="goodbye_speedrun.ogg", duration=9.5) with dissolve
                                 stop music
                             "Train Route Only (Incomplete)":
-                                call screen credits_roll(route="CSBDX: Train", scroll_start = 12000, duration=60) with dissolve
+                                call screen credits_roll(route="CSBDX: Train", duration=60) with dissolve
                                 stop music
                             "BT1D Only (Incomplete)":
-                                call screen credits_roll(route="CSBDX: BT1D", scroll_start = 10000, duration=60) with dissolve
+                                call screen credits_roll(route="CSBDX: BT1D", duration=60) with dissolve
                                 stop music
                             "Never mind.":
                                 jump .awawa_menu

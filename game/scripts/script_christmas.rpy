@@ -7823,7 +7823,7 @@ label ce_end_credits:
     $ ending_manager.mark("christmas")
     $ persistent.heard.add("christmas_tea")
 
-    call screen credits_roll(route="CSBDX: Holiday Special", scroll_start = 12525, duration=84, replace_music=False) with dissolve
+    call screen credits_roll(route="CSBDX: Holiday Special", scroll_start = 1204, duration=84, replace_music=False) with dissolve
 
     jump ce_epilogue
 
