@@ -252,6 +252,7 @@ class Effects:
         description="This fighter will take damage over time.",
         positive=False,
         icon="/gui/rpg/status/bleed.png",
+        sfx="/audio/sfx/sfx_hurt1.ogg",
         duration=0,
         apply="{target} started bleeding!",
         update=update_damage_over_time("{target} is taking bleed damage!"),
@@ -263,6 +264,7 @@ class Effects:
         description="This fighter's accuracy is drastically reduced.",
         positive=False,
         icon="/gui/rpg/status/blindness.png",
+        #sfx="/audio/sfx/sfx_hurt1.ogg",
         duration=0,
         apply="{target} can't see!",
         update=apply_status_effect(stat=CharacterStat.ACCURACY, amount=0.25, scale=True),
@@ -274,6 +276,7 @@ class Effects:
         description="This fighter may attack the wrong target.",
         positive=False,
         icon="/gui/rpg/status/confusion.png",
+        #sfx="/audio/sfx/sfx_hurt1.ogg",
         duration=0,
         apply="{target} is confused!",
         update=apply_status_effect(stat=CharacterStat.ACCURACY, amount=0.5, scale=True),
@@ -285,10 +288,10 @@ class Effects:
         description="This fighter will take less damage, but can't attack this turn.",
         positive=True,
         icon="/gui/rpg/status/defending.png",
+        #sfx="/audio/sfx/sfx_hurt1.ogg",
         duration=1,
         apply="{target} is defending!",
         update=apply_status_effect(stat=CharacterStat.DEFENSE, amount=1.5, scale=True),
-
     )
     # Intent: Make fighter extra vulnerable while asleep and skip their next turn.
     SLEEP = Effect(
@@ -296,6 +299,7 @@ class Effects:
         description="This fighter is vulnerable to attack and can't move until next turn.",
         positive=False,
         icon="/gui/rpg/status/sleep.png",
+        #sfx="/audio/sfx/sfx_hurt1.ogg",
         duration=1,
         apply="{target} fell asleep!",
         update=apply_status_effect(stat=CharacterStat.DEFENSE, amount=0.5, scale=True),
@@ -307,6 +311,7 @@ class Effects:
         description="This fighter can't move at all right now.",
         positive=False,
         icon="/gui/rpg/status/stun.png",
+        #sfx="/audio/sfx/sfx_hurt1.ogg",
         duration=0,
         apply="{target} can't move!",
         update=apply_status_effect(stat=CharacterStat.DEFENSE, amount=1.0, scale=True),

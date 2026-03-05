@@ -426,6 +426,7 @@ class Effect:
             description: str,
             positive: bool,
             icon: Displayable | None = None,
+            sfx: str | None = None,
             duration: int = 0,
             apply: EffectFunc[Any] | str | None = None,
             update: EffectFunc[Any] | str | None = None,
@@ -434,6 +435,7 @@ class Effect:
         self.name: str = name
         self.description: str = description
         self.icon: Displayable = icon # Icon to show
+        self.sfx: str = sfx # Sound to play when effect occurs
         self.positive: bool = positive # whether the effect is considered helpful for 'cleanse' effects
         self.duration: int = duration # How many turns does the effect last? If 0 then forever.
 
