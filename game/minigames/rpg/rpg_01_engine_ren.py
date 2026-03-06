@@ -1296,16 +1296,19 @@ class Encounter:
             print(f"Running next attack \"{attack.name}\" for {fighter.name}...")
             if attack is None:
                 continue
-            self.signal_attack(f"{fighter.display_name} used {attack.name}!", attack, fighter, targets)
-            hit = random.random() <= ((attack.attack.accuracy / 100.0) * (fighter.accuracy / 100.0) * (1 - MISS_CHANCE)) and not fighter.dead
-
-            if hit:
-                attack.use(self, fighter, targets) # Actually use the fighter's attack so call `damage_fighters`
+            # !: Bad hardcodes -- @Dragon?
+            elif Effect.STUN in [e.effect for e in fighter.effects]:
+                continue
+            elif Effect.SLEEP in [e.effect for e in fighter.effects]:
+                continue
             else:
-                self.send_message(f"{fighter.character.display_name} missed!", fighter)
+                self.signal_attack(f"{fighter.display_name} used {attack.name}!", attack, fighter, targets)
+                hit = random.random() <= ((attack.attack.accuracy / 100.0) * (fighter.accuracy / 100.0) * (1 - MISS_CHANCE)) and not fighter.dead
 
-            # print(f"[AI: {self.name}] {subject.name} uses {atk.name} on {sentence_join([t.name for t in subwho])}!")  # type: ignore
-            # renpy.notify(f"{subject.display_name} uses {what.name} on {sentence_join([t.display_name for t in subwho])}!")  # type: ignore
+                if hit:
+                    attack.use(self, fighter, targets) # Actually use the fighter's attack so call `damage_fighters`
+                else:
+                    self.send_message(f"{fighter.character.display_name} missed!", fighter)
 
     def run_effects(self):
         # Update the effects applied to every fighter.
