@@ -52,6 +52,9 @@ def parse_fighter(lexer) -> ParsedFighter:
     lexer.expect_eol()
     return (name, variable, ai, hp, defense, attack, accuracy)
 
+# TODO: WE DON'T NEED TO SUPPORT THE LEGACY RPG BLOCKS ANYMORE
+# @DragonMoffon might need to be the one to look into this
+
 type ParsedRpg = tuple[float, int, str, str, str | None, str | None, str | None, bool, list[ParsedFighter] | None, list[ParsedFighter], list[ParsedFighter]]
 # Parse an rpg block and get the level/scale, background, music, on_win, on_lose, intro_text, if it is a ucn fight, fighters, ally fighters, and enemy fighters
 def parse_rpg(lexer) -> ParsedRpg:

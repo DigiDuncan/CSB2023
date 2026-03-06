@@ -59,9 +59,6 @@ screen category_nav():
 
             text "{color=#888888}{size=-12}------------------------------------------------"
 
-            if preferences.developer_mode or achievement_manager.get("beat_copguy").unlocked:
-                textbutton "[[OLD] Ultimate Custom Night\n{size=-12}Put together your own RPG battles! Tate will get rid of this when the new one is done!" action Start("rpg_ucn")
-
             if preferences.developer_mode or persistent.creative_mode:
                 text "If you're looking for the dev options, they're in CSettings now. Scroll down!"
 
