@@ -546,7 +546,7 @@ label play_rpggame:
     hide screen say_rpg
     while RPG.encounter.won is None:
         call screen screen_rpg
-        $ print(f"=== TURN {RPG.encounter.turn} ===")
+        $ RPG.rpg_logger.debug(f"=== TURN {RPG.encounter.turn} ===")
         $ RPG.encounter.run_attacks()
         $ RPG.encounter.run_effects()
         $ RPG.encounter.cleanup_turn()

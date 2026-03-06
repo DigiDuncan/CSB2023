@@ -10,12 +10,15 @@ python early in RPG:
 """
 
 import math
+from logging import getLogger, DEBUG
 from dataclasses import dataclass
 from queue import Queue
 from typing import Protocol, Callable, Concatenate, Any, Self
 from functools import wraps
 from collections.abc import Sequence
 from enum import StrEnum, IntFlag, auto
+
+random = renpy.random
 
 # |---- UTIL ----|
 
@@ -35,10 +38,13 @@ class classproperty[V]:
 
 type Displayable = renpy.display.core.Displayable
 Image = renpy.display.im.Image
-random = renpy.random
 
 
 # |---- RPG ENGINE ----|
+
+logger = getLogger("csb")
+rpg_logger = logger.getChild("rpg")
+rpg_logger.setLevel(DEBUG)
 
 # -- CONSTANTS --
 
@@ -695,7 +701,6 @@ class Fighter:
         return self.character.display_name
 
     def set_next_attack(self, next_attack: Attack):
-        print(f"set_next_attack called on {self.display_name}: {next_attack.name}")
         self.next_attack = next_attack
 
     def set_next_targets(self, next_targets):
@@ -808,7 +813,7 @@ class FighterEffect:
         return None
 
     def apply(self, encounter: Encounter) -> None:
-        print(f"Applying {self.effect} for fighter {self.target.display_name} (start turn: {self.start_turn}, duration: {self.duration})")
+        rpg_logger.debug(f"Applying {self.effect} for fighter {self.target.display_name} (start turn: {self.start_turn}, duration: {self.duration})")
         if self.effect.apply is not None and not self.did_application:
             self.effect.apply(encounter, self.source, self.target, self.apply_overrides)
         self.did_application = True
@@ -816,17 +821,17 @@ class FighterEffect:
     def update(self, encounter: Encounter) -> None:
         if self.effect.update is None:
             return
-        print(f"Updating {self.effect} for fighter {self.target.display_name} (start turn: {self.start_turn}, duration: {self.duration})")
+        rpg_logger.debug(f"Updating {self.effect} for fighter {self.target.display_name} (start turn: {self.start_turn}, duration: {self.duration})")
         self.effect.update(encounter, self.source, self.target, self.update_overrides)
 
     def resolved(self, encounter: Encounter) -> bool:
         if self.duration != 0 and (self.start_turn + self.duration) <= (encounter.turn):
-            print(f"Effect \"{self.effect.name}\" for fighter {self.target.display_name} removed due to time!")
+            rpg_logger.debug(f"Effect \"{self.effect.name}\" for fighter {self.target.display_name} removed due to time!")
             return True
         if self.effect.resolved is not None:
             r = self.effect.resolved(encounter, self.source, self.target, self.resolved_overrides)
             if r:
-                print(f"Effect \"{self.effect.name}\" for fighter {self.target.display_name} removed due to condition!")
+                rpg_logger.debug(f"Effect \"{self.effect.name}\" for fighter {self.target.display_name} removed due to condition!")
             return r
         return False
 
@@ -1280,7 +1285,7 @@ class Encounter:
         # Do the attack of every fighter and tick their attacks
         self.upcoming_attacks.clear()
         for fighter in [f for f in self.turn_order if not f.dead]:
-            print(f"Calculating next attack for {fighter.display_name}...")
+            rpg_logger.debug(f"Calculating next attack for {fighter.display_name}...")
             attack = fighter.next_attack
             targets = fighter.next_targets
 
@@ -1312,7 +1317,7 @@ class Encounter:
 
         # Actually run the attacks now
         for fighter, attack, targets in self.upcoming_attacks:
-            print(f"Running next attack \"{attack.name}\" for {fighter.display_name}...")
+            rpg_logger.debug(f"Running next attack \"{attack.name}\" for {fighter.display_name}...")
             if attack is None:
                 continue
             # !: Bad hardcodes -- @Dragon?
@@ -1337,9 +1342,9 @@ class Encounter:
         # This does a bunch of repeated iteration, but at the number of
         # effects that will be applied it is fine.
         for fighter in self.turn_order:
-            print(f"Calculating effects for {fighter.display_name}...")
+            rpg_logger.debug(f"Calculating effects for {fighter.display_name}...")
             for effect in tuple(fighter.effects):
-                print(f"Running effect \"{effect.effect.name}\"...")
+                rpg_logger.debug(f"Running effect \"{effect.effect.name}\"...")
                 effect.update(self)
                 is_resolved = effect.resolved(self)
                 if msg := effect.get_tick_msg(is_resolved):
@@ -1349,7 +1354,7 @@ class Encounter:
 
     def cleanup_turn(self):
         for fighter in tuple(self.fighters):
-            print(f"Cleaning up {fighter.display_name}...")
+            rpg_logger.debug(f"Cleaning up {fighter.display_name}...")
             fighter.next_attack = None
             fighter.next_targets = ()
             # cool downs

@@ -1,4 +1,16 @@
 init -1 python:
+    import logging
+    from digiformatter import logger as digilogger
+
+    dfhandler = digilogger.DigiFormatterHandler()
+    logging.basicConfig(level=logging.NOTSET)
+
+    logger = logging.getLogger("csb")
+    logger.setLevel(logging.DEBUG) # Change this to logging.INFO or higher for production
+    logger.handlers = []
+    logger.propagate = False
+    logger.addHandler(dfhandler)
+
     # This is a weird place to define these, but I have to I think.
     FUN_VALUE_UNOBTRUSIVE = 5
     FUN_VALUE_COMMON = 10
@@ -22,13 +34,13 @@ init -1 python:
     with renpy.open_file("data/bios.json") as f:
         j = json.load(f)
         bio_count = len(j)
-        print(f"Loaded {bio_count} bios.")
+        logger.info(f"Loaded {bio_count} bios.")
 
     # Items
     with renpy.open_file("data/item_collection.json") as f:
         j = json.load(f)
         item_count = len(j)
-        print(f"Loaded {item_count} items.")
+        logger.info(f"Loaded {item_count} items.")
 
     ITEM_MAP = j
 
@@ -36,7 +48,7 @@ init -1 python:
     with renpy.open_file("data/gallery.json") as f:
         j = json.load(f)
         gallery_count = len(j)
-        print(f"Loaded {gallery_count} gallery items.")
+        logger.info(f"Loaded {gallery_count} gallery items.")
 
     GALLERY_MAP = j
 
@@ -44,7 +56,7 @@ init -1 python:
     with renpy.open_file("data/jukebox.json") as f:
         j = json.load(f)
         song_count = len(j["tracks"])
-        print(f"Loaded {song_count} songs.")
+        logger.info(f"Loaded {song_count} songs.")
 
     MUSIC_MAP = j["tracks"]
     TAGS_MAP = j["tags"]
@@ -56,28 +68,28 @@ init -1 python:
         for e in j:
             if j[e]["type"] != "arrow":
                 timeline_trace_count = timeline_trace_count + 1
-        print(f"Loaded {timeline_trace_count} events.")
+        logger.info(f"Loaded {timeline_trace_count} events.")
 
     TIMELINE_MAP = j
 
     # UCN Blacklist
     with renpy.open_file("data/ucn_bg_blacklist.json") as f:
         j = json.load(f)
-        print(f"Loaded UCN image blacklist.")
+        logger.info(f"Loaded UCN image blacklist.")
 
     UCN_BLACKLIST_MAP = j
 
     # Bookshelf
     with renpy.open_file("data/books.json") as f:
         j = json.load(f)
-        print(f"Loaded books.")
+        logger.info(f"Loaded books.")
 
     BOOKS_MAP = j
 
     # Credits
     with renpy.open_file("data/credits.json") as f:
         j = json.load(f)
-        print(f"Loaded credits.")
+        logger.info(f"Loaded credits.")
 
     CREDITS_MAP = j
 
