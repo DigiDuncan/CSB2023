@@ -163,7 +163,7 @@ class Attack:
             name: str,
             description: str,
             func: AttackFunc,
-            targets: TargetType = TargetType.ENEMY,
+            target_type: TargetType = TargetType.ENEMY,
             target_count: int = 1,
             cooldown: int = 0,
             accuracy: int = 100,
@@ -174,7 +174,7 @@ class Attack:
 
         if typ is None:
             typ = func.type
-            if targets != TargetType.SELF and target_count > 1:
+            if target_type != TargetType.SELF and target_count > 1:
                 # Automatically add AOE because the attack function
                 # generally works for any number of attackers
                 typ = typ | AttackType.AOE
@@ -184,7 +184,7 @@ class Attack:
         self.type: AttackType = typ # type of attack for AI
 
         self.func: AttackFunc = func # the function which applies the effects of the attack
-        self.targets: TargetType = targets # what group of fighters to attack
+        self.targets: TargetType = target_type # what group of fighters to attack
         self.target_count: int = target_count # how many enemies to target
         self.cooldown: int = cooldown # how many turns to wait on the cool down
         self.accuracy: int = accuracy # percent change of hitting witht the attack
@@ -902,7 +902,8 @@ class Encounter:
         self.on_win = on_win # scene to go to on win
         self.on_lose = on_lose # scene to go to on lose
         self.intro_text = intro_text # intro display text
-        self.turn: int = initial_turn # current turn
+        self.turn = 0  # turn counter
+        self.subturn: int = initial_turn # current subturn
 
         self.upcoming_attacks: list[tuple[Fighter, FighterAttack | None, tuple[Fighter, ...]]] = []
         self.signal_queue: Queue[Signal] = Queue()
@@ -1169,15 +1170,14 @@ class Encounter:
                     # fighter has not picked attack and has an AI
                     if fighter.dead: # Dead AI fighters don't get to act
                         continue
-                    elif Effects.SLEEP in [e.effect for e in fighter.effects]: # Neither do sleeping fighters
+                    elif Effects.SLEEP in [e.effect for e in fighter.effects]: # type: ignore -- Neither do sleeping fighters
                         self.send_message(f"{fighter.character.display_name} is asleep!", fighter)
                         continue
-                    elif Effects.STUN in [e.effect for e in fighter.effects]: # Neither do stunned fighters
+                    elif Effects.STUN in [e.effect for e in fighter.effects]: # type: ignore -- Neither do stunned fighters
                         self.send_message(f"{fighter.character.display_name} is stunned and can't move!", fighter)
                         continue
-                    else: # This should never happen!
-                        self.send_debug(f"{fighter.character.display_name} tried to act, but something's broken.", fighter)
 
+                    # ?: @Dragon, why is choose_attack a method of AI, but choose_fighters a method of Encounter?
                     attack = fighter.ai.choose_attack(self, fighter)
                     if attack is None:
                         self.upcoming_attacks.append((fighter, self.DEFEND_ACTION, (fighter,)))
@@ -1186,7 +1186,7 @@ class Encounter:
 
             self.upcoming_attacks.append((fighter, attack, targets))
 
-        # ! NOTE ! Because all attacks happen after the AI have chosen they behave differently in previous engine
+        # Actually run the attacks now
         for fighter, attack, targets in self.upcoming_attacks:
             if attack is None:
                 continue
@@ -1237,7 +1237,7 @@ class Encounter:
                 self.send_message(f"{fighter.display_name} was knocked out!", fighter)
                 self.fighters.remove(fighter)
                 fighter.effects.clear()
-        # self.turn += 1
+        self.turn += 1
 
     def __str__(self) -> str:
         return f"<Encounter {self.allies} vs {self.enemies}>"
