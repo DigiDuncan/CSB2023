@@ -495,9 +495,9 @@ class Characters:
         # We use the assigned name because that is what the blocks withing the rpy scripts use.
         return set(enemy.assigned_name for enemy in self.enemies)
 
-    characters = (
-        *allies, *enemies
-    )
+
+    characters = (*allies, *enemies)
+    random_characters = tuple(f for f in characters if f.display_name != "Sandbag")
 
     @classmethod
     def get(cls, k: str, default: Character | None = None) -> Character | None:
@@ -505,7 +505,7 @@ class Characters:
 
     @classmethod
     def random(cls) -> Character:
-        return random.choice(cls.characters)
+        return random.choice(cls.random_characters)
 
 variable_characters: dict[str, Character] = {}
 
