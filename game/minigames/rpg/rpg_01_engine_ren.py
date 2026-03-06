@@ -184,7 +184,7 @@ class Attack:
         self.type: AttackType = typ # type of attack for AI
 
         self.func: AttackFunc = func # the function which applies the effects of the attack
-        self.targets: TargetType = target_type # what group of fighters to attack
+        self.target_type: TargetType = target_type # what group of fighters to attack
         self.target_count: int = target_count # how many enemies to target
         self.cooldown: int = cooldown # how many turns to wait on the cool down
         self.accuracy: int = accuracy # percent change of hitting witht the attack
@@ -273,13 +273,13 @@ class Attack:
 
         e = ""
         if self.target_count == 0:
-            if self.targets == TargetType.ALLY:
+            if self.target_type == TargetType.ALLY:
                 e = "party "
-            elif self.targets == TargetType.ENEMY:
+            elif self.target_type == TargetType.ENEMY:
                 e = "enemy party "
-            elif self.targets == TargetType.SELF:
+            elif self.target_type == TargetType.SELF:
                 e = "self "
-            elif self.targets == TargetType.ALL:
+            elif self.target_type == TargetType.ALL:
                 e = "all "
             else:
                 e = "??? "
@@ -351,7 +351,7 @@ class ComboAttack:
         self.attacks = attacks # What attacks to run through
 
         # Same as normal Attack
-        self.targets: TargetType = self.attacks[0].targets if targets is None else targets
+        self.target_type: TargetType = self.attacks[0].target_type if targets is None else targets
         self.target_count: int = self.attacks[0].target_count if target_count is None else target_count
         self.cooldown: int = self.attacks[0].cooldown if cooldown is None else cooldown
         self.accuracy: int = self.attacks[0].accuracy if accuracy is None else accuracy
@@ -1236,7 +1236,7 @@ class Encounter:
     # -- UTIL TARGETTING METHODS --
 
     def possible_targets(self, fighter: Fighter, attack: Attack | ComboAttack) -> tuple[Fighter, ...]:
-        match attack.targets:
+        match attack.target_type:
             case TargetType.SELF:
                 return (fighter,)
             case TargetType.ALLY:
@@ -1251,7 +1251,7 @@ class Encounter:
             return ()
 
         # Return self when attack type is SELF, this may never happen depending on the AI
-        if attack.targets == TargetType.SELF:
+        if attack.target_type == TargetType.SELF:
             return (fighter,)
 
         possible_targets = self.possible_targets(fighter, attack)
@@ -1283,6 +1283,7 @@ class Encounter:
             print(f"Calculating next attack for {fighter.display_name}...")
             attack = fighter.next_attack
             targets = fighter.next_targets
+
             if attack is None:
                 if fighter.ai is None:
                     # player has not picked an attack for this fighter so they just defend.
@@ -1295,6 +1296,18 @@ class Encounter:
                         self.upcoming_attacks.append((fighter, self.DEFEND_ACTION, (fighter,)))
                         continue
                     targets = self.choose_fighters(fighter, attack.attack)
+
+            # Deal with target_count = 0
+            elif attack.attack.target_count == 0:
+                if attack.attack.target_type == TargetType.ALL:
+                    targets = self.turn_order
+                elif attack.attack.target_type == TargetType.SELF:
+                    targets = (fighter,)
+                elif attack.attack.target_type == TargetType.ALLY:
+                    targets = self.enemies if fighter.enemy else self.allies
+                elif attack.attack.target_type == TargetType.ENEMY:
+                    targets = self.allies if fighter.enemy else self.enemies
+
             self.upcoming_attacks.append((fighter, attack, targets))
 
         # Actually run the attacks now
