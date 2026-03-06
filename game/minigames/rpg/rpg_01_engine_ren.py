@@ -507,7 +507,7 @@ class AI:
         # Sort enemies by weak-first
         enemies = sorted(enemies, key = lambda x: (x.hit_points * (1.0 - (x.defense / 100.0))))
 
-        encounter.send_debug(f"{subject.character.display_name}: Choosing an attack...", "AI.choose_attack", ai = self, subject = subject)
+        encounter.send_debug(f"{subject.display_name}: Choosing an attack...", "AI.choose_attack", ai = self, subject = subject)
 
         available_attacks = tuple(a for a in subject.attacks if a.available)
 
@@ -808,18 +808,23 @@ class FighterEffect:
     def apply(self, encounter: Encounter) -> None:
         if self.effect.apply is None:
             return
+        print(f"Applying {self.effect} for fighter {self.target.display_name} (start turn: {self.start_turn}, duration: {self.duration})")
         self.effect.apply(encounter, self.source, self.target, self.apply_overrides)
 
     def update(self, encounter: Encounter) -> None:
         if self.effect.update is None:
             return
+        print(f"Updating {self.effect} for fighter {self.target.display_name} (start turn: {self.start_turn}, duration: {self.duration})")
         self.effect.update(encounter, self.source, self.target, self.update_overrides)
 
     def resolved(self, encounter: Encounter) -> bool:
-        if self.duration != 0 and self.start_turn + self.duration <= encounter.turn + 1: # Add 1 as this means that effects that last 1 turn don't get two run_effects
+        if self.duration != 0 and (self.start_turn + self.duration) <= (encounter.turn):
             return True
         if self.effect.resolved is not None:
-            return self.effect.resolved(encounter, self.source, self.target, self.resolved_overrides)
+            r = self.effect.resolved(encounter, self.source, self.target, self.resolved_overrides)
+            if r:
+                print(f"Effect \"{self.effect.name}\" for fighter {self.target.display_name} removed due to condition!")
+            return r
         return False
 
     def __str__(self):
@@ -1158,7 +1163,7 @@ class Encounter:
                 new = int(old + amount) if not fighter.character.infinite else math.inf
                 fighter.hit_points = new
                 self.display_indicator(fighter, IndicatorType.HP, new - old)
-                self.send_debug(f"Set {fighter.character.display_name}'s hit points to {fighter.hit_points}!", "Encounter.modify_fighter", stat=stat, old = old, new = new, prem = permanent)
+                self.send_debug(f"Set {fighter.display_name}'s hit points to {fighter.hit_points}!", "Encounter.modify_fighter", stat=stat, old = old, new = new, prem = permanent)
             case CharacterStat.DEFENSE:
                 old = fighter.defense
                 new = int(old + amount)
@@ -1167,7 +1172,7 @@ class Encounter:
                     fighter.base_def = fighter.base_def + change
                 fighter.defense = new
                 self.display_indicator(fighter, IndicatorType.DEF, change)
-                self.send_debug(f"Set {fighter.character.display_name}'s defense to {fighter.defense}!", "Encounter.modify_fighter", stat=stat, old = old, new = new, prem = permanent)
+                self.send_debug(f"Set {fighter.display_name}'s defense to {fighter.defense}!", "Encounter.modify_fighter", stat=stat, old = old, new = new, prem = permanent)
             case CharacterStat.ATTACK:
                 old = fighter.attack
                 new = max(5, int(old + amount))
@@ -1176,7 +1181,7 @@ class Encounter:
                     fighter.base_atk = max(5, int(fighter.base_atk + change))
                 fighter.attack = new
                 self.display_indicator(fighter, IndicatorType.ATK, change)
-                self.send_debug(f"Set {fighter.character.display_name}'s attack to {fighter.attack}!", "Encounter.modify_fighter", stat=stat, old = old, new = new, prem = permanent)
+                self.send_debug(f"Set {fighter.display_name}'s attack to {fighter.attack}!", "Encounter.modify_fighter", stat=stat, old = old, new = new, prem = permanent)
             case CharacterStat.ACCURACY:
                 old = fighter.accuracy
                 new = max(0, min(100, int(old + amount)))
@@ -1185,7 +1190,7 @@ class Encounter:
                     fighter.base_acc = max(0, min(100, fighter.base_acc + change))
                 fighter.accuracy = new
                 self.display_indicator(fighter, IndicatorType.ACC, change)
-                self.send_debug(f"Set {fighter.character.display_name}'s accuracy to {fighter.accuracy}!", "Encounter.modify_fighter", stat=stat, old = old, new = new, prem = permanent)
+                self.send_debug(f"Set {fighter.display_name}'s accuracy to {fighter.accuracy}!", "Encounter.modify_fighter", stat=stat, old = old, new = new, prem = permanent)
 
     def scale_fighter(self, fighter: Fighter, stat: CharacterStat, mult: float, permanent: bool = True):
         match stat:
@@ -1194,7 +1199,7 @@ class Encounter:
                 new = int(old * mult) if not fighter.character.infinite else math.inf
                 fighter.hit_points = new
                 self.display_indicator(fighter, IndicatorType.HP, new - old)
-                self.send_debug(f"Scaled {fighter.character.display_name}'s hit points by {mult}×!", "Encounter.scale_fighter", stat=stat, old = old, new = new, prem = permanent)
+                self.send_debug(f"Scaled {fighter.display_name}'s hit points by {mult}×!", "Encounter.scale_fighter", stat=stat, old = old, new = new, prem = permanent)
             case CharacterStat.DEFENSE:
                 old = fighter.defense
                 new = int(old * mult)
@@ -1203,7 +1208,7 @@ class Encounter:
                     fighter.base_def = fighter.base_def + change
                 fighter.defense = new
                 self.display_indicator(fighter, IndicatorType.DEF, change)
-                self.send_debug(f"Scaled {fighter.character.display_name}'s defense by {mult}×!", "Encounter.scale_fighter", stat=stat, old = old, new = new, prem = permanent)
+                self.send_debug(f"Scaled {fighter.display_name}'s defense by {mult}×!", "Encounter.scale_fighter", stat=stat, old = old, new = new, prem = permanent)
             case CharacterStat.ATTACK:
                 old = fighter.attack
                 new = max(5, int(old * mult))
@@ -1212,7 +1217,7 @@ class Encounter:
                     fighter.base_atk = max(5, int(fighter.base_atk + change))
                 fighter.attack = new
                 self.display_indicator(fighter, IndicatorType.ATK, change)
-                self.send_debug(f"Scaled {fighter.character.display_name}'s attack by {mult}×!", "Encounter.scale_fighter", stat=stat, old = old, new = new, prem = permanent)
+                self.send_debug(f"Scaled {fighter.display_name}'s attack by {mult}×!", "Encounter.scale_fighter", stat=stat, old = old, new = new, prem = permanent)
             case CharacterStat.ACCURACY:
                 old = fighter.accuracy
                 new = max(0, min(100, int(old * mult)))
@@ -1221,7 +1226,7 @@ class Encounter:
                     fighter.base_acc = max(0, min(100, fighter.base_acc + change))
                 fighter.accuracy = new
                 self.display_indicator(fighter, IndicatorType.ACC, change)
-                self.send_debug(f"Scaled {fighter.character.display_name}'s accuracy by {mult}×!", "Encounter.scale_fighter", stat=stat, old = old, new = new, prem = permanent)
+                self.send_debug(f"Scaled {fighter.display_name}'s accuracy by {mult}×!", "Encounter.scale_fighter", stat=stat, old = old, new = new, prem = permanent)
 
     # -- UTIL TARGETTING METHODS --
 
@@ -1252,7 +1257,7 @@ class Encounter:
 
         weights: list[float] = []
         for target in possible_targets:
-            score = fighter.ai.preference_weight if target.character.display_name in fighter.ai.preferred_targets else 1.0
+            score = fighter.ai.preference_weight if target.display_name in fighter.ai.preferred_targets else 1.0
             # These may be wild numbers, but since they are all being changed by attack they will all be wild
             if fighter.ai.focus == AIFocus.STRONG:
                 score *= target.attack
@@ -1270,7 +1275,7 @@ class Encounter:
         # Do the attack of every fighter and tick their attacks
         self.upcoming_attacks.clear()
         for fighter in self.turn_order:
-            print(f"Calculating next attack for {fighter.name}...")
+            print(f"Calculating next attack for {fighter.display_name}...")
             attack = fighter.next_attack
             targets = fighter.next_targets
             if attack is None:
@@ -1293,15 +1298,15 @@ class Encounter:
 
         # Actually run the attacks now
         for fighter, attack, targets in self.upcoming_attacks:
-            print(f"Running next attack \"{attack.name}\" for {fighter.name}...")
+            print(f"Running next attack \"{attack.name}\" for {fighter.display_name}...")
             if attack is None:
                 continue
             # !: Bad hardcodes -- @Dragon?
             elif Effects.STUN in [e.effect for e in fighter.effects]:
-                self.send_message(f"{fighter.character.display_name} is stunned and can't move!", fighter)
+                self.send_message(f"{fighter.display_name} is stunned and can't move!", fighter)
                 continue
             elif Effects.SLEEP in [e.effect for e in fighter.effects]:
-                self.send_message(f"{fighter.character.display_name} is asleep and can't move!", fighter)
+                self.send_message(f"{fighter.display_name} is asleep and can't move!", fighter)
                 continue
             else:
                 self.signal_attack(f"{fighter.display_name} used {attack.name}!", attack, fighter, targets)
@@ -1310,7 +1315,7 @@ class Encounter:
                 if hit:
                     attack.use(self, fighter, targets) # Actually use the fighter's attack so call `damage_fighters`
                 else:
-                    self.send_message(f"{fighter.character.display_name} missed!", fighter)
+                    self.send_message(f"{fighter.display_name} missed!", fighter)
 
     def run_effects(self):
         # Update the effects applied to every fighter.
@@ -1318,7 +1323,7 @@ class Encounter:
         # This does a bunch of repeated iteration, but at the number of
         # effects that will be applied it is fine.
         for fighter in self.turn_order:
-            print(f"Calculating effects for {fighter.name}...")
+            print(f"Calculating effects for {fighter.display_name}...")
             for effect in tuple(fighter.effects):
                 print(f"Running effect \"{effect.effect.name}\"...")
                 effect.update(self)
@@ -1327,11 +1332,10 @@ class Encounter:
                     self.signal_effect(msg, effect)
                 if is_resolved:
                     self.remove_effect(effect, silent = True)
-            self.affect_fighter(fighter)
 
     def cleanup_turn(self):
         for fighter in tuple(self.fighters):
-            print(f"Cleaning up {fighter.name}...")
+            print(f"Cleaning up {fighter.display_name}...")
             fighter.next_attack = None
             fighter.next_targets = ()
             # cool downs
@@ -1341,11 +1345,11 @@ class Encounter:
                 attack.turns_until_available -= 1
                 if attack.turns_until_available == 0:
                     if fighter in self.allies:
-                        self.send_message(f"{fighter.character.display_name}: {attack.name} now available!", fighter)
+                        self.send_message(f"{fighter.display_name}: {attack.name} now available!", fighter)
                     else:
-                        self.send_debug(f"{fighter.character.display_name} can use {attack.name} again!", fighter)
+                        self.send_debug(f"{fighter.display_name} can use {attack.name} again!", fighter)
                 else:
-                    self.send_debug(f"{fighter.character.display_name}: {attack.name} available in {attack.turns_until_available} turns!", fighter)
+                    self.send_debug(f"{fighter.display_name}: {attack.name} available in {attack.turns_until_available} turns!", fighter)
 
             if fighter.dead:
                 self.send_message(f"{fighter.display_name} was knocked out!", fighter)

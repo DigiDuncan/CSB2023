@@ -7,9 +7,8 @@ import renpy
 
 from renpy.display.image import Image
 
-from rpg_01_engine_ren import Encounter, Fighter, Character, CharacterStat, apply_def, update_def, \
-    resolved_def, attack_def, AttackType, stat_attack_def, AI, \
-    Attack, ComboAttack, TargetType, FighterAttack, classproperty, Effect, AttackComponent
+from rpg_01_engine_ren import Encounter, Fighter, Character, CharacterStat, attack_def, AttackType, stat_attack_def, AI, \
+    Attack, ComboAttack, TargetType, FighterAttack, classproperty, Effects, AttackComponent
 
 """renpy
 rpy python annotations
