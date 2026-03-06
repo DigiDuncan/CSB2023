@@ -614,6 +614,13 @@ label awawa_tate_test:
                         hide health_test
                     "Sigil Test":
 
+                        transform t_tate_sigil_text:
+                            alpha 0.6
+                            block:
+                                linear 11 rotate -360
+                                linear 0 rotate 0
+                                repeat
+
                         # TODO: somehow combine t_tate_sigil_text into here...? can this even be done??
                         image tate_sigil = Fixed(
                             At(Image("/secret/pt/sigil_inner.png", xanchor=0.5, yanchor=0.5, xalign=0.5, yalign=0.5, alpha=0.6), Transform(alpha=0.6)),

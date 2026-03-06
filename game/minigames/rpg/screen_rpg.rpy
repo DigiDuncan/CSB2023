@@ -536,7 +536,7 @@ screen screen_rpg():
 label play_rpggame:
     window hide
     $ quick_menu = False
-    show image RPG.encounter.background
+    scene image RPG.encounter.background
     $ renpy.music.play(MUSIC_MAP[RPG.encounter.music]["file"])
     $ persistent.heard.add(str(RPG.encounter.music))
     # This is where the game actually takes place.
