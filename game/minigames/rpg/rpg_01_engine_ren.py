@@ -695,7 +695,8 @@ class Fighter:
     def display_name(self) -> str:
         return self.character.display_name
 
-    def set_next_attack(self, next_attack):
+    def set_next_attack(self, next_attack: Attack):
+        print(f"set_next_attack called on {self.display_name}: {next_attack.name}")
         self.next_attack = next_attack
 
     def set_next_targets(self, next_targets):
@@ -1287,17 +1288,17 @@ class Encounter:
                     self.upcoming_attacks.append((fighter, self.DEFEND_ACTION, (fighter,)))
                     continue
 
-            # fighter has not picked attack and has an AI
-            if fighter.dead: # Dead AI fighters don't get to act
-                ...
-            else:
-                # ?: @Dragon, why is choose_attack a method of AI, but choose_fighters a method of Encounter?
-                attack = fighter.ai.choose_attack(self, fighter)
-                if attack is None:
-                    self.upcoming_attacks.append((fighter, self.DEFEND_ACTION, (fighter,)))
-                    continue
-                targets = self.choose_fighters(fighter, attack.attack)
-                self.upcoming_attacks.append((fighter, attack, targets))
+                # fighter has not picked attack and has an AI
+                if fighter.dead: # Dead AI fighters don't get to act
+                    ...
+                else:
+                    # ?: @Dragon, why is choose_attack a method of AI, but choose_fighters a method of Encounter?
+                    attack = fighter.ai.choose_attack(self, fighter)
+                    if attack is None:
+                        self.upcoming_attacks.append((fighter, self.DEFEND_ACTION, (fighter,)))
+                        continue
+                    targets = self.choose_fighters(fighter, attack.attack)
+                    self.upcoming_attacks.append((fighter, attack, targets))
 
         # Actually run the attacks now
         for fighter, attack, targets in self.upcoming_attacks:

@@ -130,7 +130,7 @@ screen screen_rpg():
                                         xfill True
                                         yminimum 1.0 ymaximum 120
                                         hover_sound "audio/sfx/sfx_select.ogg"
-                                        action [Play("sound", "audio/sfx/sfx_valid.ogg"),attack_actions]
+                                        action [Play("sound", "audio/sfx/sfx_valid.ogg"), *attack_actions]
                                         if not attack.available:
                                             sensitive False
 
