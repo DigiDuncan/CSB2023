@@ -1278,7 +1278,7 @@ class Encounter:
         # run once every actor has chosen their next attack
         # Do the attack of every fighter and tick their attacks
         self.upcoming_attacks.clear()
-        for fighter in self.turn_order:
+        for fighter in [f for f in self.turn_order if not f.dead]:
             print(f"Calculating next attack for {fighter.display_name}...")
             attack = fighter.next_attack
             targets = fighter.next_targets
@@ -1287,18 +1287,14 @@ class Encounter:
                     # player has not picked an attack for this fighter so they just defend.
                     self.upcoming_attacks.append((fighter, self.DEFEND_ACTION, (fighter,)))
                     continue
-
-                # fighter has not picked attack and has an AI
-                if fighter.dead: # Dead AI fighters don't get to act
-                    ...
-                else:
+                else:       
                     # ?: @Dragon, why is choose_attack a method of AI, but choose_fighters a method of Encounter?
                     attack = fighter.ai.choose_attack(self, fighter)
                     if attack is None:
                         self.upcoming_attacks.append((fighter, self.DEFEND_ACTION, (fighter,)))
                         continue
                     targets = self.choose_fighters(fighter, attack.attack)
-                    self.upcoming_attacks.append((fighter, attack, targets))
+            self.upcoming_attacks.append((fighter, attack, targets))
 
         # Actually run the attacks now
         for fighter, attack, targets in self.upcoming_attacks:
