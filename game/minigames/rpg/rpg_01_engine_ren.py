@@ -808,10 +808,9 @@ class FighterEffect:
         return None
 
     def apply(self, encounter: Encounter) -> None:
-        if self.effect.apply is None or self.did_application:
-            return
         print(f"Applying {self.effect} for fighter {self.target.display_name} (start turn: {self.start_turn}, duration: {self.duration})")
-        self.effect.apply(encounter, self.source, self.target, self.apply_overrides)
+        if self.effect.apply is not None and not self.did_application:
+            self.effect.apply(encounter, self.source, self.target, self.apply_overrides)
         self.did_application = True
 
     def update(self, encounter: Encounter) -> None:
@@ -822,6 +821,7 @@ class FighterEffect:
 
     def resolved(self, encounter: Encounter) -> bool:
         if self.duration != 0 and (self.start_turn + self.duration) <= (encounter.turn):
+            print(f"Effect \"{self.effect.name}\" for fighter {self.target.display_name} removed due to time!")
             return True
         if self.effect.resolved is not None:
             r = self.effect.resolved(encounter, self.source, self.target, self.resolved_overrides)
