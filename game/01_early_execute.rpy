@@ -245,7 +245,7 @@ python early:
             _current_artist = MUSIC_MAP.get(_current_internal_id)["artist"]
 
             # for debugging
-            #print(f"Currently held data: {_current_song} by {_current_artist} | Internal ID: {_current_internal_id}")
+            #logger.info(f"Currently held data: {_current_song} by {_current_artist} | Internal ID: {_current_internal_id}")
 
         if (_current_song, _current_artist) not in _played_songs:
             _played_songs.add((_current_song, _current_artist))

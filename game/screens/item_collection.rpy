@@ -5,7 +5,7 @@
 init python:
     for n in persistent.collected:
         if n not in ITEM_MAP:
-            print(f"WARNING: Item '{n}' not in ITEM_MAP!")
+            logger.warn(f"Item '{n}' not in ITEM_MAP!")
 
     def mark_read(k):
         persistent.read.add(k)

@@ -13,7 +13,7 @@ python early:
     def bypass_append(renpy_list, element):
         renpy_list.append(element)
     def print_action(print_str):
-        print(print_str)
+        logger.info(print_str)
     def dev_win(current_encounter):
         current_encounter.dev_win()
 

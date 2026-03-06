@@ -1,7 +1,7 @@
 init python:
     for n in persistent.heard:
         if n not in MUSIC_MAP:
-            print(f"WARNING: Track '{n}' not in MUSIC_MAP!")
+            logger.warn(f"Track '{n}' not in MUSIC_MAP!")
 
 ###################################################### SETUP
 

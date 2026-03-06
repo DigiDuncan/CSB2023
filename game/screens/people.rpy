@@ -8,7 +8,7 @@ init python:
 
     for n in persistent.seen:
         if n not in name_map:
-            print(f"WARNING: Bio '{n}' not in name_map!")
+            logger.warn(f"Bio '{n}' not in name_map!")
 
 ###################################################### SETUP
 

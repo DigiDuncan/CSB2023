@@ -58,7 +58,7 @@ def parse_fighter(lexer) -> ParsedFighter:
 type ParsedRpg = tuple[float, int, str, str, str | None, str | None, str | None, bool, list[ParsedFighter] | None, list[ParsedFighter], list[ParsedFighter]]
 # Parse an rpg block and get the level/scale, background, music, on_win, on_lose, intro_text, if it is a ucn fight, fighters, ally fighters, and enemy fighters
 def parse_rpg(lexer) -> ParsedRpg:
-    # print("Started parsing")
+    # logger.info("Started parsing")
     block = lexer.subblock_lexer()
     level = 1.0
     initial = 0
@@ -114,7 +114,7 @@ def parse_rpg(lexer) -> ParsedRpg:
             subblock = block.subblock_lexer()
             while subblock.advance():
                 enemies.append(parse_fighter(subblock))
-    # print(level, initial, background, music, on_win, on_lose, intro, is_ucn, fighters, allies, enemies)
+    # logger.info(level, initial, background, music, on_win, on_lose, intro, is_ucn, fighters, allies, enemies)
     return level, initial, background, music, on_win, on_lose, intro, is_ucn, fighters, allies, enemies
 
 def create_fighter(name, variable, ai, hp, defense, attack, accuracy, level: float = 1.0, is_enemy: bool | None = None):
@@ -172,21 +172,21 @@ def lint_rpg(parsed_object: ParsedRpg):
     level, initial, _, _, on_win, on_lose, _, _, fighters, allies, enemies = parsed_object
     # TODO: We should probably do this at some point.
     if level <= 0:
-        print("raise issue!!!")
+        logger.warn("raise issue!!!")
     elif initial <= 0:
-        print("raise issue!!!")
+        logger.warn("raise issue!!!")
     elif on_win is None:
-        print("raise issue!!!")
+        logger.warn("raise issue!!!")
     elif on_lose is None:
-        print("raise issue!")
+        logger.warnt("raise issue!")
     elif fighters is not None and allies or enemies:
-        print("raise issues!")
+        logger.warn("raise issues!")
     elif fighters:
-        print("check fighters etc!")
+        logger.warn("check fighters etc!")
     elif allies:
-        print("check allies etc!")
+        logger.warn("check allies etc!")
     elif enemies:
-        print("check enemies etc!")
+        logger.warn("check enemies etc!")
 
 renpy.register_statement(
     name = "rpg",

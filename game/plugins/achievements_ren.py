@@ -116,11 +116,11 @@ class Achievement:
                 if data["steps"] in vars:
                     a.steps = vars[data["steps"]]
                 else:
-                    print(f"WARNING: {data['steps']} not defined before achievement load!")
+                    logger.warn(f"{data['steps']} not defined before achievement load!")
             if "tracker" in data:
                 a.tracker = data["tracker"]
             else:
-                print(f"WARNING: {a.name} has no tracker defined, but has {a.steps} steps!")
+                logger.warn(f"{a.name} has no tracker defined, but has {a.steps} steps!")
         return a
 
 
