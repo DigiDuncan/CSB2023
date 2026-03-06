@@ -1117,9 +1117,11 @@ class Encounter:
         # Maybe here run the display indicator.
 
     def heal_fighter(self, fighter: Fighter, amount: float, overheal: bool = False):
+        old_hp = fighter.hit_points
         fighter.hit_points += int(amount)
         if not overheal:
             fighter.hit_points = min(fighter.hit_points, fighter.max_hp)
+        fighter.hit_points = max(old_hp, fighter.hit_points)  # Even if this isn't an overhealing move, let's not let healing moves UNheal you.
         self.display_indicator(fighter, IndicatorType.HP, int(amount))
 
     def apply_effect(self, effect: Effect, source: Fighter, target: Fighter, duration_override: int | None = None, silent: bool = False, lazy: bool = False, **kwds: Any):
