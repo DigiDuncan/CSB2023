@@ -89,7 +89,7 @@ def steal_hp(encounter: Encounter, fighter: Fighter, targets: tuple[Fighter, ...
     for target in targets:
         for _ in range(count):
             encounter.damage_fighter(target, mult * fighter.attack)
-    encounter.send_message("{fighter.display_name} recovered health!")
+    encounter.send_message(f"{fighter.display_name} recovered health!")
     encounter.heal_fighter(fighter, int(mult * fighter.attack * steal_amount * count * len(targets)), True)
 
 @attack_def(AttackType.HEAL)
@@ -104,7 +104,7 @@ def heal_fighters(encounter: Encounter, fighter: Fighter, targets: tuple[Fighter
     for target in targets:
         if target.dead:
             continue
-        encounter.send_message("{target.display_name} recovered health!")
+        encounter.send_message(f"{target.display_name} recovered health!")
         encounter.heal_fighter(target, mult * fighter.attack, overheal)
 
 @attack_def(AttackType.DAMAGE | AttackType.EFFECT)
