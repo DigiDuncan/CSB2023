@@ -890,8 +890,8 @@ class Effects:
         icon="/gui/rpg/status/blindness.png",
         sfx="/audio/sfx/sfx_power_out.ogg",
         duration=1,
-        apply="{target} can't see!",
-        update=apply_status_effect(stat=CharacterStat.ACCURACY, amount=0.25, scale=True),
+        apply=apply_status_effect("{target} can't see!", stat=CharacterStat.ACCURACY, amount=0.25, scale=True),
+        update="{target} still can't see...",
         resolved="{target} can see again!"
     )
     # Intent: We should update this... make fighter both less accurate AND likely to hit the wrong target, including themself!
@@ -902,8 +902,8 @@ class Effects:
         icon="/gui/rpg/status/confusion.png",
         sfx="/audio/sfx/sfx_gleam.ogg",
         duration=0,
-        apply="{target} is confused!",
-        update=apply_status_effect(stat=CharacterStat.ACCURACY, amount=0.5, scale=True),
+        apply=apply_status_effect("{target} is confused!", stat=CharacterStat.ACCURACY, amount=0.5, scale=True),
+        update="{target} is still confused...",
         resolved=resolved_chance("{target} is no longer confused!", chance=0.5)
     )
     # Intent: Make fighter less vulnerable to damage, but unable to attack this turn.
@@ -914,8 +914,7 @@ class Effects:
         icon="/gui/rpg/status/defending.png",
         sfx="/audio/sfx/snd_b.ogg",
         duration=1,
-        apply="{target} is defending!",
-        update=apply_status_effect(stat=CharacterStat.DEFENSE, amount=1.5, scale=True),
+        apply=apply_status_effect("{target} is defending!", stat=CharacterStat.DEFENSE, amount=1.5, scale=True),
     )
     # Intent: Make fighter extra vulnerable while asleep and skip their next turn.
     SLEEP = Effect(
@@ -925,8 +924,8 @@ class Effects:
         icon="/gui/rpg/status/sleep.png",
         sfx="/audio/sfx/sfx_csnore.ogg",
         duration=0,
-        apply="{target} fell asleep!",
-        update=apply_status_effect(stat=CharacterStat.DEFENSE, amount=0.5, scale=True),
+        apply=apply_status_effect("{target} fell asleep!", stat=CharacterStat.DEFENSE, amount=0.5, scale=True),
+        update="{target} is honkshoomimimi",
         resolved=resolved_chance("{target} woke up!", chance=0.75)
     )
     # Intent: Make fighter unable to do anything at all for x turns.
@@ -937,8 +936,8 @@ class Effects:
         icon="/gui/rpg/status/stun.png",
         sfx="/audio/sfx/sfx_bluescreen.ogg",
         duration=0,  # !: Should be overwritten by the attack
-        apply="{target} can't move!",
-        update=apply_status_effect(stat=CharacterStat.DEFENSE, amount=1.0, scale=True),
+        apply=apply_status_effect("{target} can't move!", stat=CharacterStat.DEFENSE, amount=1.0, scale=True),
+        update="{target} is still stunned...",
         resolved="{target} has recovered!"
     )
 
@@ -1271,6 +1270,7 @@ class Encounter:
         # Do the attack of every fighter and tick their attacks
         self.upcoming_attacks.clear()
         for fighter in self.turn_order:
+            print(f"Calculating next attack for {fighter.name}...")
             attack = fighter.next_attack
             targets = fighter.next_targets
             if attack is None:
@@ -1282,10 +1282,6 @@ class Encounter:
             # fighter has not picked attack and has an AI
             if fighter.dead: # Dead AI fighters don't get to act
                 ...
-            elif Effects.SLEEP in [e.effect for e in fighter.effects]: # type: ignore -- Neither do sleeping fighters
-                self.send_message(f"{fighter.character.display_name} is asleep!", fighter)
-            elif Effects.STUN in [e.effect for e in fighter.effects]: # type: ignore -- Neither do stunned fighters
-                self.send_message(f"{fighter.character.display_name} is stunned and can't move!", fighter)
             else:
                 # ?: @Dragon, why is choose_attack a method of AI, but choose_fighters a method of Encounter?
                 attack = fighter.ai.choose_attack(self, fighter)
@@ -1297,6 +1293,7 @@ class Encounter:
 
         # Actually run the attacks now
         for fighter, attack, targets in self.upcoming_attacks:
+            print(f"Running next attack \"{attack.name}\" for {fighter.name}...")
             if attack is None:
                 continue
             self.signal_attack(f"{fighter.display_name} used {attack.name}!", attack, fighter, targets)
@@ -1316,7 +1313,9 @@ class Encounter:
         # This does a bunch of repeated iteration, but at the number of
         # effects that will be applied it is fine.
         for fighter in self.turn_order:
+            print(f"Calculating effects for {fighter.name}...")
             for effect in tuple(fighter.effects):
+                print(f"Running effect \"{effect.effect.name}\"...")
                 effect.update(self)
                 is_resolved = effect.resolved(self)
                 if msg := effect.get_tick_msg(is_resolved):
@@ -1327,6 +1326,7 @@ class Encounter:
 
     def cleanup_turn(self):
         for fighter in tuple(self.fighters):
+            print(f"Cleaning up {fighter.name}...")
             fighter.next_attack = None
             fighter.next_targets = ()
             # cool downs
