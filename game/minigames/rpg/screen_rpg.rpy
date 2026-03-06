@@ -66,14 +66,14 @@ screen screen_rpg():
             xalign 0.5 yalign 1.0
             spacing dynamic_spacing
 
-            for i in range(len(RPG.encounter.enemies)):
-                if not RPG.encounter.enemies[i].dead:
+            for enemy in RPG.encounter.enemies:
+                if not enemy.dead:
                     # Attempt to add animated sprite if one exists, else fallback to the normal sprite
                     python:
                         try:
-                            enemy_sprite = RPG.encounter.enemies[i].anim_sprite
+                            enemy_sprite = enemy.anim_sprite
                         except:
-                            enemy_sprite = RPG.encounter.enemies[i].sprite
+                            enemy_sprite = enemy.sprite
 
                     add enemy_sprite:
                         xalign 0.5 yalign 1.0
@@ -81,6 +81,8 @@ screen screen_rpg():
                         fit "scale-down"
                 else:
                     add Null(200,200)
+
+    $ current_ally = RPG.encounter.allies[RPG.encounter.subturn]
 
     # This is the context menu of the RPG
     frame:
@@ -110,29 +112,26 @@ screen screen_rpg():
                         xsize 1.0 ysize 1.0
 
                         # Mostly for Copguy EX
-                        if RPG.encounter.allies[RPG.encounter.subturn].attacks and len(RPG.encounter.allies[RPG.encounter.subturn].attacks) > 4:
+                        if current_ally.attacks and len(current_ally.attacks) > 4:
                             scrollbars "vertical"
                             mousewheel True
 
-                        grid 2 len(RPG.encounter.allies[RPG.encounter.subturn].attacks) / 2 + 1:
+                        grid 2 len(current_ally.attacks) / 2 + 1:
                             xsize 0.5 ysize 0.5
 
                             if RPG.encounter.subturn < len(RPG.encounter.allies):
-                                for i in range(len(RPG.encounter.allies[RPG.encounter.subturn].attacks)):
+                                for attack in current_ally.attacks:
                                     # If the attack is not available, make this insensitive
                                     $ attack_actions = []
-                                    $ attack_actions.append(Function(RPG.encounter.allies[RPG.encounter.subturn].set_next_attack, RPG.encounter.allies[RPG.encounter.subturn].attacks[i]))
-                                    if (RPG.encounter.subturn+1 != len(RPG.encounter.allies)) and (RPG.encounter.allies[RPG.encounter.subturn].attacks[i].attack.target_count == 0):
+                                    $ attack_actions.append(Function(current_ally.set_next_attack, attack))
+                                    if (RPG.encounter.subturn + 1 != len(RPG.encounter.allies)) and (attack.attack.target_count == 0):
                                         $ attack_actions.append(IncrementVariable("RPG.encounter.subturn"))
                                     button:
                                         xfill True
                                         yminimum 1.0 ymaximum 120
                                         hover_sound "audio/sfx/sfx_select.ogg"
-                                        action [
-                                            Play("sound", "audio/sfx/sfx_valid.ogg"),
-                                            attack_actions
-                                        ]
-                                        if not RPG.encounter.allies[RPG.encounter.subturn].attacks[i].available:
+                                        action [Play("sound", "audio/sfx/sfx_valid.ogg"),attack_actions]
+                                        if not attack.available:
                                             sensitive False
 
                                         frame:
@@ -140,8 +139,8 @@ screen screen_rpg():
                                             yalign 0.5
 
                                             vbox:
-                                                text "{size=40}"+RPG.encounter.allies[RPG.encounter.subturn].attacks[i].name+" {/size}{size=21}("+RPG.encounter.allies[RPG.encounter.subturn].attacks[i].attack.properties+"){/size}":
-                                                    if RPG.encounter.allies[RPG.encounter.subturn].attacks[i] is RPG.encounter.allies[RPG.encounter.subturn].next_attack:
+                                                text "{size=40}"+attack.name+" {/size}{size=21}("+attack.attack.properties+"){/size}":
+                                                    if attack is current_ally.next_attack:
                                                         color "#FF8A00"
                                                         hover_color "#F5DD00"
                                                         insensitive_color "#888888"
@@ -149,9 +148,9 @@ screen screen_rpg():
                                                         color "#FFFFFF"
                                                         hover_color "#0099CC"
                                                         insensitive_color "#888888"
-                                                text "{size=21}"+RPG.encounter.allies[RPG.encounter.subturn].attacks[i].attack.description+"{/size}":
+                                                text "{size=21}"+attack.attack.description+"{/size}":
                                                     first_indent 32
-                                                    if RPG.encounter.allies[RPG.encounter.subturn].attacks[i] is RPG.encounter.allies[RPG.encounter.subturn].next_attack:
+                                                    if attack is current_ally.next_attack:
                                                         color "#844200"
                                                         hover_color "#7B6F00"
                                                         insensitive_color "#888888"
@@ -165,19 +164,19 @@ screen screen_rpg():
                     background None
                     xsize 1.0 ysize 1.0
                     vbox:
-                        $ curr_att = RPG.encounter.allies[RPG.encounter.subturn].next_attack
-                        if curr_att is not None:
-                            $ victims = RPG.encounter.possible_targets(RPG.encounter.allies[RPG.encounter.subturn], RPG.encounter.allies[RPG.encounter.subturn].next_attack.attack)
+                        $ curr_attack = current_ally.next_attack
+                        if curr_attack is not None:
+                            $ victims = RPG.encounter.possible_targets(current_ally, current_ally.next_attack.attack)
                             $ working_list = []
-                            for i in range(curr_att.attack.target_count):
+                            for i in range(curr_attack.attack.target_count):
                                 text "{size=42}Select target [i]"
 
                                 hbox:
                                     $ curr_victim = None # TODO: this needs to reset between characters somehow
                                     for victim in victims:
                                         $ target_actions = [ Function(bypass_append, working_list, victim) ]
-                                        if i+1 == curr_att.attack.target_count:
-                                            $ target_actions.append(Function(RPG.encounter.allies[RPG.encounter.subturn].set_next_targets, working_list))
+                                        if i+1 == curr_attack.attack.target_count:
+                                            $ target_actions.append(Function(current_ally.set_next_targets, working_list))
                                             if (RPG.encounter.subturn+1 != len(RPG.encounter.allies)):
                                                 $ target_actions.append(IncrementVariable("RPG.encounter.subturn"))
 
@@ -396,8 +395,8 @@ screen screen_rpg():
         background None
         grid len(RPG.encounter.enemies) 1:
             xfill True
-            for i in range(len(RPG.encounter.enemies)):
-                if not RPG.encounter.enemies[i].dead:
+            for enemy in RPG.encounter.enemies:
+                if not enemy.dead:
                     frame:
                         padding(7,7)
                         xalign 0.5 yalign 1.0
@@ -405,11 +404,11 @@ screen screen_rpg():
                         background "gui/rpg/small_box.png"
 
                         # Status effects
-                        if len(RPG.encounter.enemies[i].effects) > 0:
+                        if len(enemy.effects) > 0:
                             # Count up all the effects
                             python:
                                 checked_effects = {}
-                                for effect in RPG.encounter.enemies[i].effects:
+                                for effect in enemy.effects:
                                     if effect.effect not in checked_effects:
                                         checked_effects[effect.effect] = 1
                                     else:
@@ -451,8 +450,8 @@ screen screen_rpg():
                                 ysize 88
                                 spacing 2
                                 # Icon
-                                if RPG.encounter.enemies[i].character.portrait:
-                                    add RPG.encounter.enemies[i].character.portrait
+                                if enemy.character.portrait:
+                                    add enemy.character.portrait
                                 else:
                                     add "gui/rpg/portraits/unknown.png"
                                 # Stats
@@ -460,11 +459,11 @@ screen screen_rpg():
                                     yalign 0.5
                                     xspacing 2
                                     add "gui/rpg/attack.png" yalign 0.5
-                                    text str(RPG.encounter.enemies[i].attack):
+                                    text str(enemy.attack):
                                         size 32
                                         yalign 0.5
                                     add "gui/rpg/defense.png" yalign 0.5
-                                    text str(RPG.encounter.enemies[i].defense):
+                                    text str(enemy.defense):
                                         size 32
                                         yalign 0.5
 
@@ -473,25 +472,25 @@ screen screen_rpg():
                                 align(1.0, 0.0)
                                 hbox:
                                     xalign 1.0
-                                    text RPG.encounter.enemies[i].character.display_name:
+                                    text enemy.character.display_name:
                                         xalign 1.0
                                 frame:
                                     background None
                                     padding(0,0)
                                     xysize(228, 32)
                                     xalign 1.0 yalign 1.0
-                                    if RPG.encounter.enemies[i].infinite:
+                                    if enemy.infinite:
                                         $ inf_bar = renpy.get_registered_image("hp_bar_inf")
                                         add inf_bar corner1(0,0) corner2(228,32) xalign 1.0
                                         add "gui/rpg/infinite.png" xalign 1.0 yalign 0.5
-                                    elif RPG.encounter.enemies[i].hit_points > RPG.encounter.enemies[i].max_hp:
+                                    elif enemy.hit_points > enemy.max_hp:
                                         $ overheal_bar = renpy.get_registered_image("hp_bar_overheal")
                                         add overheal_bar corner1(0,0) corner2(228,32) xalign 1.0
-                                        text str(RPG.encounter.enemies[i].hit_points)+"/"+str(RPG.encounter.enemies[i].max_hp):
+                                        text str(enemy.hit_points)+"/"+str(enemy.max_hp):
                                             xalign 1.0 yalign 0.5
                                     else:
-                                        add "gui/rpg/hp_bar.png" corner1(int(228-(228*(RPG.encounter.enemies[i].hit_points/RPG.encounter.enemies[i].max_hp))),0) corner2(228,32) xalign 1.0
-                                        text str(RPG.encounter.enemies[i].hit_points)+"/"+str(RPG.encounter.enemies[i].max_hp):
+                                        add "gui/rpg/hp_bar.png" corner1(int(228-(228*(enemy.hit_points/enemy.max_hp))),0) corner2(228,32) xalign 1.0
+                                        text str(enemy.hit_points)+"/"+str(enemy.max_hp):
                                             xalign 1.0 yalign 0.5
                                         
                                     add "gui/rpg/hp.png" yalign 0.5 xalign -0.15
