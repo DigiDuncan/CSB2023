@@ -827,6 +827,120 @@ class FighterEffect:
 
     def __repr__(self):
         return self.__str__()
+    
+# -- Effect Functions --
+@apply_def
+def apply_status_effect(encounter: Encounter, source: Fighter, target: Fighter, stat: CharacterStat, amount: float, scale: bool = False):
+    """
+    Temporarily change the stats of a fighter.
+
+    Options:
+        stat (CharacterStat): The chacter stat to change out of Defence, Attack, Accuracy
+        amount (float): The amount to change the stat by (negative or positive)
+        scale (bool, optional): Whether the amount is a scale factor or a flat amount. Defaults to False.
+    """
+    if stat == CharacterStat.HIT_POINTS:
+        encounter.send_debug("Cannot change HIT POINTS as a status effect", "apply_status_effect", fighter = source, target = target, stat = stat, amount = amount, scale = scale)
+        return
+
+    if scale:
+        encounter.scale_fighter(target, stat, amount, permanent=False)
+    else:
+        encounter.modify_fighter(target, stat, amount, permanent=False)
+
+@update_def
+def update_damage_over_time(encounter: Encounter, source: Fighter, target: Fighter, mult: float = 1.0, ignore_armour: bool = False, flat: bool = False):
+    """
+    Deal a set amount of damage every turn for a few turns
+
+    Options:
+        damage (float): Amount of damage to do each turn
+        ignore_armour (bool, optional): whether the DOT should ignore the armour of the fighter. Defaults to False.
+    """
+    encounter.damage_fighter(target, mult if flat else source.attack * mult, roll_crit=False, ignore_armour=ignore_armour)
+
+@resolved_def
+def resolved_chance(encounter: Encounter, source: Fighter, target: Fighter, chance: float = 0.5) -> bool:
+    """
+    A random chance for the effect to end
+
+    Options:
+        chance (float, optional): Percent chance for effect to end. Defaults to 0.5.
+    """
+    return random.random() <= chance
+
+class Effects:
+    # Intent: Take damage over x turns.
+    BLEED = Effect(
+        name="Bleed",
+        description="This fighter will take damage over time.",
+        positive=False,
+        icon="/gui/rpg/status/bleed.png",
+        sfx="/audio/sfx/sfx_hurt1.ogg",
+        duration=0, # !: Should be overwritten by the attack
+        apply="{target} started bleeding!",
+        update=update_damage_over_time("{target} is taking bleed damage!"),
+        resolved="{target}'s bleeding has stopped!"
+    )
+    # Intent: Make fighter very inaccurate
+    BLIND = Effect(
+        name="Blindness",
+        description="This fighter's accuracy is drastically reduced.",
+        positive=False,
+        icon="/gui/rpg/status/blindness.png",
+        sfx="/audio/sfx/sfx_power_out.ogg",
+        duration=1,
+        apply="{target} can't see!",
+        update=apply_status_effect(stat=CharacterStat.ACCURACY, amount=0.25, scale=True),
+        resolved="{target} can see again!"
+    )
+    # Intent: We should update this... make fighter both less accurate AND likely to hit the wrong target, including themself!
+    CONFUSION = Effect(
+        name="Confusion",
+        description="This fighter may attack the wrong target.",
+        positive=False,
+        icon="/gui/rpg/status/confusion.png",
+        sfx="/audio/sfx/sfx_gleam.ogg",
+        duration=0,
+        apply="{target} is confused!",
+        update=apply_status_effect(stat=CharacterStat.ACCURACY, amount=0.5, scale=True),
+        resolved=resolved_chance("{target} is no longer confused!", chance=0.5)
+    )
+    # Intent: Make fighter less vulnerable to damage, but unable to attack this turn.
+    DEFEND = Effect(
+        name="Defending",
+        description="This fighter will take less damage, but can't attack this turn.",
+        positive=True,
+        icon="/gui/rpg/status/defending.png",
+        sfx="/audio/sfx/snd_b.ogg",
+        duration=1,
+        apply="{target} is defending!",
+        update=apply_status_effect(stat=CharacterStat.DEFENSE, amount=1.5, scale=True),
+    )
+    # Intent: Make fighter extra vulnerable while asleep and skip their next turn.
+    SLEEP = Effect(
+        name="Sleep",
+        description="This fighter is vulnerable to attack and can't move until next turn.",
+        positive=False,
+        icon="/gui/rpg/status/sleep.png",
+        sfx="/audio/sfx/sfx_csnore.ogg",
+        duration=0,
+        apply="{target} fell asleep!",
+        update=apply_status_effect(stat=CharacterStat.DEFENSE, amount=0.5, scale=True),
+        resolved=resolved_chance("{target} woke up!", chance=0.75)
+    )
+    # Intent: Make fighter unable to do anything at all for x turns.
+    STUN = Effect(
+        name="Stun",
+        description="This fighter can't move at all right now.",
+        positive=False,
+        icon="/gui/rpg/status/stun.png",
+        sfx="/audio/sfx/sfx_bluescreen.ogg",
+        duration=0,  # !: Should be overwritten by the attack
+        apply="{target} can't move!",
+        update=apply_status_effect(stat=CharacterStat.DEFENSE, amount=1.0, scale=True),
+        resolved="{target} has recovered!"
+    )
 
 
 @dataclass
