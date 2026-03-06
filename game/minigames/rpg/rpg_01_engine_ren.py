@@ -1167,22 +1167,22 @@ class Encounter:
                 else:
                     print(fighter.effects)
 
-                    # fighter has not picked attack and has an AI
-                    if fighter.dead: # Dead AI fighters don't get to act
-                        continue
-                    elif Effects.SLEEP in [e.effect for e in fighter.effects]: # type: ignore -- Neither do sleeping fighters
-                        self.send_message(f"{fighter.character.display_name} is asleep!", fighter)
-                        continue
-                    elif Effects.STUN in [e.effect for e in fighter.effects]: # type: ignore -- Neither do stunned fighters
-                        self.send_message(f"{fighter.character.display_name} is stunned and can't move!", fighter)
-                        continue
+            # fighter has not picked attack and has an AI
+            if fighter.dead: # Dead AI fighters don't get to act
+                continue
+            elif Effects.SLEEP in [e.effect for e in fighter.effects]: # type: ignore -- Neither do sleeping fighters
+                self.send_message(f"{fighter.character.display_name} is asleep!", fighter)
+                continue
+            elif Effects.STUN in [e.effect for e in fighter.effects]: # type: ignore -- Neither do stunned fighters
+                self.send_message(f"{fighter.character.display_name} is stunned and can't move!", fighter)
+                continue
 
-                    # ?: @Dragon, why is choose_attack a method of AI, but choose_fighters a method of Encounter?
-                    attack = fighter.ai.choose_attack(self, fighter)
-                    if attack is None:
-                        self.upcoming_attacks.append((fighter, self.DEFEND_ACTION, (fighter,)))
-                        continue
-                    targets = self.choose_fighters(fighter, attack.attack)
+            # ?: @Dragon, why is choose_attack a method of AI, but choose_fighters a method of Encounter?
+            attack = fighter.ai.choose_attack(self, fighter)
+            if attack is None:
+                self.upcoming_attacks.append((fighter, self.DEFEND_ACTION, (fighter,)))
+                continue
+            targets = self.choose_fighters(fighter, attack.attack)
 
             self.upcoming_attacks.append((fighter, attack, targets))
 

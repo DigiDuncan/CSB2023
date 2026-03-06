@@ -255,7 +255,7 @@ class Effects:
         positive=False,
         icon="/gui/rpg/status/bleed.png",
         sfx="/audio/sfx/sfx_hurt1.ogg",
-        duration=0,
+        duration=0, # !: Should be overwritten by the attack
         apply="{target} started bleeding!",
         update=update_damage_over_time("{target} is taking bleed damage!"),
         resolved="{target}'s bleeding has stopped!"
@@ -302,10 +302,10 @@ class Effects:
         positive=False,
         icon="/gui/rpg/status/sleep.png",
         sfx="/audio/sfx/sfx_csnore.ogg",
-        duration=1,
+        duration=0,
         apply="{target} fell asleep!",
         update=apply_status_effect(stat=CharacterStat.DEFENSE, amount=0.5, scale=True),
-        resolved="{target} woke up!"
+        resolved=resolved_chance("{target} woke up!", chance=0.75)
     )
     # Intent: Make fighter unable to do anything at all for x turns.
     STUN = Effect(
@@ -314,7 +314,7 @@ class Effects:
         positive=False,
         icon="/gui/rpg/status/stun.png",
         sfx="/audio/sfx/sfx_bluescreen.ogg",
-        duration=0,
+        duration=0,  # !: Should be overwritten by the attack
         apply="{target} can't move!",
         update=apply_status_effect(stat=CharacterStat.DEFENSE, amount=1.0, scale=True),
         resolved="{target} has recovered!"
