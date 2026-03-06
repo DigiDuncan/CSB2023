@@ -771,6 +771,8 @@ class FighterEffect:
         self.update_overrides: dict[str, Any] | None = None
         self.resolved_overrides: dict[str, Any] | None = None
 
+        self.did_application = False
+
         # In some cases the strength of the effect is modulated on a per-attack
         # basis. For example the BLEED effect has 3-4 different mult values.
         # This lets the attack function creators to use `update_mult` to override
@@ -806,10 +808,11 @@ class FighterEffect:
         return None
 
     def apply(self, encounter: Encounter) -> None:
-        if self.effect.apply is None:
+        if self.effect.apply is None or self.did_application:
             return
         print(f"Applying {self.effect} for fighter {self.target.display_name} (start turn: {self.start_turn}, duration: {self.duration})")
         self.effect.apply(encounter, self.source, self.target, self.apply_overrides)
+        self.did_application = True
 
     def update(self, encounter: Encounter) -> None:
         if self.effect.update is None:
