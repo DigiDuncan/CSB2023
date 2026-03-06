@@ -1297,9 +1297,11 @@ class Encounter:
             if attack is None:
                 continue
             # !: Bad hardcodes -- @Dragon?
-            elif Effect.STUN in [e.effect for e in fighter.effects]:
+            elif Effects.STUN in [e.effect for e in fighter.effects]:
+                self.send_message(f"{fighter.character.display_name} is stunned and can't move!", fighter)
                 continue
-            elif Effect.SLEEP in [e.effect for e in fighter.effects]:
+            elif Effects.SLEEP in [e.effect for e in fighter.effects]:
+                self.send_message(f"{fighter.character.display_name} is asleep and can't move!", fighter)
                 continue
             else:
                 self.signal_attack(f"{fighter.display_name} used {attack.name}!", attack, fighter, targets)
