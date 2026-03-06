@@ -241,7 +241,7 @@ class Attacks:
     FLAMETHROWER = Attack("Flamethrower", "Spray all your enemies with burning fuel!", damage_over_time(mult = 0.5, duration = 3), target_count = 0, cooldown = 3, accuracy = 70)
     FLEX_TAPE = Attack("Flex Tape", "Seal and bond one opponent for a while!", stun_fighters(), target_count=1, accuracy=90)
     FUN_VALUE = Attack("Fun Value", "A Dev's favorite attack.", damage_fighters(mult = 10), accuracy = 100)
-    GENERGY = Attack("Genergy", "Sip some refreshing Genergy.", heal_fighters(mult = 2.36), target_type = TargetType.ALLY, accuracy = 100)
+    GENERGY = Attack("Genergy", "Sip some refreshing Genergy.", heal_fighters(mult = 3.26), target_type = TargetType.ALLY, accuracy = 100) # Meant to heal exactly 188 HP. Help?
     GNOMED = Attack("Gnomed", "Confuse everyone by gnoming them!", confuse_targets(), target_count = 0, cooldown = 3, accuracy = 70)
     GROWL = Attack("Growl", "Growl cutely to lower the enemy team's ATK.", change_stat(stat = CharacterStat.ATTACK, mult = 0.75), target_count = 0, accuracy = 90)
     HEAL_EX = Attack("Heal EX", "Lots of healing.", heal_fighters(mult = 10), target_count = 0, target_type = TargetType.ALLY, accuracy = 100)
@@ -285,10 +285,10 @@ class Attacks:
             BASIC_HIT,
             AttackComponent(change_stat(stat = CharacterStat.DEFENSE, mult = 0.75))
         ])
-    ECHO_BLAST = ComboAttack("Echo Blast", "Make them feel the pain of the past, at the cost of your ATK.",
+    ECHO_BLAST = ComboAttack("Echo Blast", "Make them feel the pain of the past at the cost of your ATK.",
         [
-            AttackComponent(damage_fighters(mult = 4), targets = TargetType.ENEMY),
-            AttackComponent(change_stat(stat = CharacterStat.ATTACK, mult = 0.5), targets = TargetType.SELF)
+            AttackComponent(change_stat(stat = CharacterStat.ATTACK, mult = 0.5), targets = TargetType.SELF, target_count=0),
+            AttackComponent(damage_fighters(mult = 4), targets = TargetType.ENEMY)
         ],
         target_count = 0, cooldown = 11, accuracy = 100)
     HUG = ComboAttack("Hug", "Hug an enemy (ouch).",
@@ -348,8 +348,8 @@ class Attacks:
     target_count = 0, cooldown = 3, accuracy = 75)
     REVERB_RECALL = ComboAttack("Reverb Recall", "Channel your pain over 5 turns. Also damages the user.",
     [
-        AttackComponent(damage_over_time(mult = 0.75, duration = 5), TargetType.ENEMY, target_count = 0),
-        AttackComponent(damage_recoil(harm_mult = 0.75, bleed_mult = 0.75, duration = 5), TargetType.SELF)
+        AttackComponent(damage_over_time(mult = 0.5, duration = 5), TargetType.ENEMY, target_count = 0),
+        AttackComponent(damage_recoil(harm_mult = 0.5, bleed_mult = 0.5, duration = 5), TargetType.SELF)
     ],
     cooldown = 9, accuracy = 90)
     SAMPLE_BLAST = ComboAttack("Sample Blast", "Blast your enemies with music! Varies in damage.",
