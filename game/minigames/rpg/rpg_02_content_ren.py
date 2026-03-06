@@ -154,25 +154,25 @@ def draw_in(encounter: Encounter, fighter: Fighter, targets: tuple[Fighter, ...]
     attack_type = random.randint(1, 4)
     match attack_type:
         case 1: # def up, allies
-            encounter.send_message("[Draw In] DEF Up", None)
+            encounter.send_message("Your party's DEF went up!", None)
             allies = True
             stat = CharacterStat.DEFENSE
         case 2: # def down, enemies
-            encounter.send_message("[Draw In] DEF Down", None)
+            encounter.send_message("The enemy party's DEF went down!", None)
             allies = False
             stat = CharacterStat.DEFENSE
             mult = 1.0 / mult
         case 3: # atk up, allies
-            encounter.send_message("[Draw In] ATK Up", None)
+            encounter.send_message("Your party's ATK went up!", None)
             allies = True
             stat = CharacterStat.ATTACK
         case 4: # atk down, enemies
-            encounter.send_message("[Draw In] ATK Down", None)
+            encounter.send_message("The enemy party's ATK went down!", None)
             allies = False
             stat = CharacterStat.ATTACK
             mult = 1.0 / mult
         case _: # impossible case
-            encounter.send_message("[Draw In] Impossible Result", None)
+            encounter.send_message("[[Draw In] Impossible Result", None)
             return
 
     for target in targets:
