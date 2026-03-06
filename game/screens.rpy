@@ -883,30 +883,32 @@ screen preferences():
                         null width 20
                         label "[preferences.__dict__['text_cps']:.1f]cps" yoffset -10 xminimum 200
                     hbox:
-                        label _("Auto-Forward Time")
-                        textbutton _("{size=-10}Reset") action SetField(preferences, "afm_time", 15) yoffset 5
+                        label _("Auto-Forward Time") yoffset -12
+                        textbutton _("{size=-10}Reset") action SetField(preferences, "afm_time", 15) yoffset -9
                     hbox:
                         bar value Preference("auto-forward time"):
                             xsize 450
+                            yoffset -12
                         null width 20
-                        label "[preferences.__dict__['afm_time']:.1f]s" yoffset -10 xminimum 200
+                        label "[preferences.__dict__['afm_time']:.1f]s" yoffset -22 xminimum 200
 
-                    # TODO: THIS IS NOT STAYING HERE.
                     if persistent.awawa_mode == True:
                         hbox:
                             style_prefix "check"
                             textbutton _("Awawa Mode") action ToggleField(preferences, "awawa_mode"):
+                                yoffset -22
                                 hovered [Function(get_mouse), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
                                 tooltip "Replace the dialogue with nonsense!"
                         hbox:
                             bar:
                                 style "slider"
                                 xsize 450
+                                yoffset -25
                                 value preferences.awawa_chance
                                 range 100
                                 changed(change_awawa_chance)
                             null width 20
-                            label "[awawa_chance_label]" yoffset -10 xminimum 200
+                            label "[awawa_chance_label]" yoffset -33 xminimum 200
                 vbox:
                     if config.has_music:
                         hbox:
@@ -994,12 +996,11 @@ screen preferences():
 
                 #textbutton "{image=gui/inline_text/dx_text.png} Asset Debugger\n{size=-12}Make sure all assets load correctly." action Jump("asset_debugger")
 
+            if preferences.developer_mode:
                 textbutton "Test Scene\n{size=-12}A sandbox for testing various features." action Start("test")
 
                 textbutton "{image=gui/inline_text/dx_text.png} Tate's Test Room\n{size=-12}Another test screen. Awawa." action Start("awawa_tate_test")
 
-            if preferences.developer_mode:
-                textbutton "Jump To Label Start\n{size=-12}What we do here is go back{size=-12} back{size=-12} back{size=-12} back..." action Function(jump_to_label_start)
                 textbutton "Unlock All\n{size=-12}Adds all unlockables to persistent." action Function(unlock_all)
 
     # TODO: make this prettier later
