@@ -461,7 +461,8 @@ screen _ucn2_selection():
                 xoffset 1395 yoffset 950
                 action [
                     Play("sound", "audio/sfx/sfx_valid.ogg"),
-                    SetScreenVariable("rpg_selection_stage", "fight")
+                    SetScreenVariable("rpg_selection_stage", "fight"),
+                    SetScreenVariable("rpg_bgm", random.choice(list(MUSIC_MAP.keys())))
                 ]
         ################################################### END DEBUG BUTTONS
 
