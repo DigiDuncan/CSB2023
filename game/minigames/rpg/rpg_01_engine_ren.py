@@ -208,7 +208,7 @@ class Attack:
             return "Random Effect"
 
         show_x = True
-        duration = ""
+        duration = f" for {self.options["duration"]} turns" if "duration" in self.options else ""
 
         x = self.func.options.get("mult", 1)
         if self.func.options.get("min_mult", None) and self.func.options.get("max_mult"):
@@ -243,7 +243,6 @@ class Attack:
             steal_amount = self.options["steal_amount"] if "steal_amount" in self.options else 0.5
             t_list.append(f"{int(steal_amount * 100)}% steal")
         if self.type & AttackType.EFFECT:
-            duration = f" for {self.options["duration"]} turns" if "duration" in self.options else ""
             match self.func.func.__name__:
                 case "damage_over_time":
                     t_list.append("DOT")
