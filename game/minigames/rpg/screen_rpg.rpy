@@ -276,11 +276,14 @@ screen screen_rpg():
                             # Count up all the effects
                             python:
                                 checked_effects = {}
-                                for effect in RPG.encounter.allies[i].effects:
+                                effect_sources = {}
+                                for effect in enemy.effects:
                                     if effect.effect not in checked_effects:
                                         checked_effects[effect.effect] = 1
+                                        effect_sources[effect.effect] = [effect.source.display_name]
                                     else:
                                         checked_effects[effect.effect] += 1
+                                        effect_sources[effect.effect].append(effect.source.display_name)
                             frame:
                                 xanchor 1.0
                                 xpos 1.0 ypos -60
@@ -298,7 +301,7 @@ screen screen_rpg():
                                                 hover effect_hover_icon
                                                 hover_sound "audio/sfx/sfx_select.ogg"
                                                 action NullAction()
-                                                tooltip [effect.name, effect.description, str(checked_effects[effect])]
+                                                tooltip [effect.name, effect.description, str(checked_effects[effect]), f"from {sentence_join(effect_sources[effect])}"]
 
                                             if checked_effects[effect] > 1:
                                                 text str(checked_effects[effect]):
@@ -408,11 +411,14 @@ screen screen_rpg():
                             # Count up all the effects
                             python:
                                 checked_effects = {}
+                                effect_sources = {}
                                 for effect in enemy.effects:
                                     if effect.effect not in checked_effects:
                                         checked_effects[effect.effect] = 1
+                                        effect_sources[effect.effect] = [effect.source.display_name]
                                     else:
                                         checked_effects[effect.effect] += 1
+                                        effect_sources[effect.effect].append(effect.source.display_name)
                             frame:
                                 xanchor 1.0
                                 xpos 1.0 ypos 103
@@ -430,7 +436,7 @@ screen screen_rpg():
                                                 hover effect_hover_icon
                                                 hover_sound "audio/sfx/sfx_select.ogg"
                                                 action NullAction()
-                                                tooltip [effect.name, effect.description, str(checked_effects[effect])]
+                                                tooltip [effect.name, effect.description, str(checked_effects[effect]), f"from {sentence_join(effect_sources[effect])}"]
 
                                             if checked_effects[effect] > 1:
                                                 text str(checked_effects[effect]):
@@ -525,6 +531,13 @@ screen screen_rpg():
                         xalign 0.5
                         text_align 0.5
                         size 21
+                    
+                text effect_info[3]: # effect source info
+                    color Color("#AAAAAA")
+                    italic True
+                    xalign 0.5
+                    text_align 0.5
+                    size 21
 
     # Debug
     # text "Turn: " + str(RPG.encounter.subturn) xoffset 25 yoffset 25
