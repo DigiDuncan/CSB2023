@@ -110,20 +110,20 @@ screen screen_rpg():
                         xsize 1.0 ysize 1.0
 
                         # Mostly for Copguy EX
-                        if RPG.encounter.allies[RPG.encounter.turn].attacks and len(RPG.encounter.allies[RPG.encounter.turn].attacks) > 4:
+                        if RPG.encounter.allies[RPG.encounter.subturn].attacks and len(RPG.encounter.allies[RPG.encounter.subturn].attacks) > 4:
                             scrollbars "vertical"
                             mousewheel True
 
-                        grid 2 len(RPG.encounter.allies[RPG.encounter.turn].attacks) / 2 + 1:
+                        grid 2 len(RPG.encounter.allies[RPG.encounter.subturn].attacks) / 2 + 1:
                             xsize 0.5 ysize 0.5
 
-                            if RPG.encounter.turn < len(RPG.encounter.allies):
-                                for i in range(len(RPG.encounter.allies[RPG.encounter.turn].attacks)):
+                            if RPG.encounter.subturn < len(RPG.encounter.allies):
+                                for i in range(len(RPG.encounter.allies[RPG.encounter.subturn].attacks)):
                                     # If the attack is not available, make this insensitive
                                     $ attack_actions = []
-                                    $ attack_actions.append(Function(RPG.encounter.allies[RPG.encounter.turn].set_next_attack, RPG.encounter.allies[RPG.encounter.turn].attacks[i]))
-                                    if (RPG.encounter.turn+1 != len(RPG.encounter.allies)) and (RPG.encounter.allies[RPG.encounter.turn].attacks[i].attack.target_count == 0):
-                                        $ attack_actions.append(IncrementVariable("RPG.encounter.turn"))
+                                    $ attack_actions.append(Function(RPG.encounter.allies[RPG.encounter.subturn].set_next_attack, RPG.encounter.allies[RPG.encounter.subturn].attacks[i]))
+                                    if (RPG.encounter.subturn+1 != len(RPG.encounter.allies)) and (RPG.encounter.allies[RPG.encounter.subturn].attacks[i].attack.target_count == 0):
+                                        $ attack_actions.append(IncrementVariable("RPG.encounter.subturn"))
                                     button:
                                         xfill True
                                         yminimum 1.0 ymaximum 120
@@ -132,7 +132,7 @@ screen screen_rpg():
                                             Play("sound", "audio/sfx/sfx_valid.ogg"),
                                             attack_actions
                                         ]
-                                        if not RPG.encounter.allies[RPG.encounter.turn].attacks[i].available:
+                                        if not RPG.encounter.allies[RPG.encounter.subturn].attacks[i].available:
                                             sensitive False
 
                                         frame:
@@ -140,8 +140,8 @@ screen screen_rpg():
                                             yalign 0.5
 
                                             vbox:
-                                                text "{size=40}"+RPG.encounter.allies[RPG.encounter.turn].attacks[i].name+" {/size}{size=21}("+RPG.encounter.allies[RPG.encounter.turn].attacks[i].attack.properties+"){/size}":
-                                                    if RPG.encounter.allies[RPG.encounter.turn].attacks[i] is RPG.encounter.allies[RPG.encounter.turn].next_attack:
+                                                text "{size=40}"+RPG.encounter.allies[RPG.encounter.subturn].attacks[i].name+" {/size}{size=21}("+RPG.encounter.allies[RPG.encounter.subturn].attacks[i].attack.properties+"){/size}":
+                                                    if RPG.encounter.allies[RPG.encounter.subturn].attacks[i] is RPG.encounter.allies[RPG.encounter.subturn].next_attack:
                                                         color "#FF8A00"
                                                         hover_color "#F5DD00"
                                                         insensitive_color "#888888"
@@ -149,9 +149,9 @@ screen screen_rpg():
                                                         color "#FFFFFF"
                                                         hover_color "#0099CC"
                                                         insensitive_color "#888888"
-                                                text "{size=21}"+RPG.encounter.allies[RPG.encounter.turn].attacks[i].attack.description+"{/size}":
+                                                text "{size=21}"+RPG.encounter.allies[RPG.encounter.subturn].attacks[i].attack.description+"{/size}":
                                                     first_indent 32
-                                                    if RPG.encounter.allies[RPG.encounter.turn].attacks[i] is RPG.encounter.allies[RPG.encounter.turn].next_attack:
+                                                    if RPG.encounter.allies[RPG.encounter.subturn].attacks[i] is RPG.encounter.allies[RPG.encounter.subturn].next_attack:
                                                         color "#844200"
                                                         hover_color "#7B6F00"
                                                         insensitive_color "#888888"
@@ -165,9 +165,9 @@ screen screen_rpg():
                     background None
                     xsize 1.0 ysize 1.0
                     vbox:
-                        $ curr_att = RPG.encounter.allies[RPG.encounter.turn].next_attack
+                        $ curr_att = RPG.encounter.allies[RPG.encounter.subturn].next_attack
                         if curr_att is not None:
-                            $ victims = RPG.encounter.possible_targets(RPG.encounter.allies[RPG.encounter.turn], RPG.encounter.allies[RPG.encounter.turn].next_attack.attack)
+                            $ victims = RPG.encounter.possible_targets(RPG.encounter.allies[RPG.encounter.subturn], RPG.encounter.allies[RPG.encounter.subturn].next_attack.attack)
                             $ working_list = []
                             for i in range(curr_att.attack.target_count):
                                 text "{size=42}Select target [i]"
@@ -177,9 +177,9 @@ screen screen_rpg():
                                     for victim in victims:
                                         $ target_actions = [ Function(bypass_append, working_list, victim) ]
                                         if i+1 == curr_att.attack.target_count:
-                                            $ target_actions.append(Function(RPG.encounter.allies[RPG.encounter.turn].set_next_targets, working_list))
-                                            if (RPG.encounter.turn+1 != len(RPG.encounter.allies)):
-                                                $ target_actions.append(IncrementVariable("RPG.encounter.turn"))
+                                            $ target_actions.append(Function(RPG.encounter.allies[RPG.encounter.subturn].set_next_targets, working_list))
+                                            if (RPG.encounter.subturn+1 != len(RPG.encounter.allies)):
+                                                $ target_actions.append(IncrementVariable("RPG.encounter.subturn"))
 
                                             # Only put these if the target is not dead
                                             if not victim.dead:
@@ -263,14 +263,14 @@ screen screen_rpg():
                         xalign 0.5 yalign 1.0
                         xsize 475
                         # If it's the fighter's turn
-                        if RPG.encounter.turn == i:
+                        if RPG.encounter.subturn == i:
                             ysize 201
                             background "gui/rpg/tall_box.png"
                         # Otherwise
                         else:
                             background "gui/rpg/small_box.png"
                             ysize 105
-                            action SetVariable("RPG.encounter.turn", i)
+                            action SetVariable("RPG.encounter.subturn", i)
 
                         # Status effects
                         if len(RPG.encounter.allies[i].effects) > 0:
@@ -364,7 +364,7 @@ screen screen_rpg():
                                         text str(RPG.encounter.allies[i].hit_points)+"/"+str(RPG.encounter.allies[i].max_hp):
                                             xalign 1.0 yalign 0.5
                                     add "gui/rpg/hp.png" yalign 0.5 xalign -0.15
-                            if RPG.encounter.turn == i:
+                            if RPG.encounter.subturn == i:
                                 # The attack button
                                 imagebutton:
                                     align(0.0, 1.0)
@@ -528,7 +528,7 @@ screen screen_rpg():
                         size 21
 
     # Debug
-    # text "Turn: " + str(RPG.encounter.turn) xoffset 25 yoffset 25
+    # text "Turn: " + str(RPG.encounter.subturn) xoffset 25 yoffset 25
 
     # Dev Backdoor
     key "K_END" action Jump("pass_rpg")
@@ -557,7 +557,7 @@ label play_rpggame:
             jump pass_rpg
         # Visuals and stuff need to go here.
         # Reset variables at the end
-        $ RPG.encounter.turn = 0
+        $ RPG.encounter.subturn = 0
 
     jump pass_rpg
 
