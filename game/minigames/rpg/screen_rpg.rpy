@@ -48,7 +48,13 @@ screen say_rpg(rpg_what):
             xsize 1.0 ysize 1.0
             xanchor 0.5 yanchor 0.5
             xpos 0.5 ypos 0.5
-            text rpg_what
+
+            frame:
+                background None
+                grid 1 1: # This is to keep the text lined up consistently with other screens
+                    frame: 
+                        background None
+                        text rpg_what
 
 ######### STAT BOXES
 
@@ -340,7 +346,6 @@ screen screen_rpg():
         padding(0,0)
         background None
         has vbox
-        #spacing 3
         box_reverse True
 
         # The Action Selection Box:
@@ -501,51 +506,61 @@ screen screen_rpg():
 
                     ### If you choose to defend, do that.
                     elif current_ally_mode == "DEF":
-                        python:
-                            if (RPG.encounter.subturn+1 != len(RPG.encounter.allies)):
-                                attack_actions.append(IncrementVariable("RPG.encounter.subturn"))
+                        frame:
+                            background None
+                            python:
+                                if (RPG.encounter.subturn+1 != len(RPG.encounter.allies)):
+                                    attack_actions.append(IncrementVariable("RPG.encounter.subturn"))
 
-                        grid 2 1:
-                            frame:
-                                background None
-                                xsize 1.0 ysize 1.0
-                                text current_ally.display_name+" will defend this turn!"
+                            grid 2 1:
+                                frame:
+                                    background None
+                                    xsize 1.0 ysize 1.0
+                                    text current_ally.display_name+" will defend this turn!"
 
-                            frame:
-                                background None
-                                xsize 1.0 ysize 1.0
+                                frame:
+                                    background None
+                                    xsize 1.0 ysize 1.0
 
-                                imagebutton:
-                                    xalign 1.0
-                                    yalign 1.0
-                                    idle "gui/rpg/confirm_button.png"
-                                    hover "selectable:gui/rpg/confirm_button.png"
-                                    hover_sound "audio/sfx/sfx_select.ogg"
-                                    action [
-                                        Play("sound", "audio/sfx/sfx_valid.ogg"),
-                                        Function(attack_actions.append, Function(current_ally.set_next_attack, RPG.encounter.DEFEND_ACTION)),
-                                        SetScreenVariable("current_ally_mode", None),
-                                        attack_actions
-                                    ]
+                                    imagebutton:
+                                        xalign 1.0
+                                        yalign 1.0
+                                        idle "gui/rpg/confirm_button.png"
+                                        hover "selectable:gui/rpg/confirm_button.png"
+                                        hover_sound "audio/sfx/sfx_select.ogg"
+                                        action [
+                                            Play("sound", "audio/sfx/sfx_valid.ogg"),
+                                            Function(attack_actions.append, Function(current_ally.set_next_attack, RPG.encounter.DEFEND_ACTION)),
+                                            SetScreenVariable("current_ally_mode", None),
+                                            attack_actions
+                                        ]
 
                     ### Default text
                     else:
-                        text "What will "+current_ally.display_name+" do?"
+                        frame:
+                            background None
+                            grid 1 1: # This is to keep the text lined up consistently with other screens
+                                frame: 
+                                    background None
+
+                                    if current_ally.next_attack:
+                                        text current_ally.display_name+" will use "+current_ally.next_attack.name+"!"
+                                    else:
+                                        text "What will "+current_ally.display_name+" do?"
 
 
-            # If everything is set and good to go, show the confirm button)
-            # TODO: Further checks to make sure everything is good and valid.
-            if all(f.next_attack is not None for f in RPG.encounter.allies):
-                imagebutton:
-                    xalign 1.0
-                    yalign 1.0
-                    idle "gui/rpg/confirm_button.png"
-                    hover "selectable:gui/rpg/confirm_button.png"
-                    hover_sound "audio/sfx/sfx_select.ogg"
-                    action [
-                        Play("sound", "audio/sfx/sfx_valid.ogg"),
-                        Return()
-                    ]
+    # If everything is set and good to go, show the confirm button)
+    # TODO: Further checks to make sure everything is good and valid.
+    if all(f.next_attack is not None for f in RPG.encounter.allies):
+        imagebutton:
+            xpos 1581 ypos 970 # it wanted to be stupid so it gets the manual positioning
+            idle "gui/rpg/confirm_button.png"
+            hover "selectable:gui/rpg/confirm_button.png"
+            hover_sound "audio/sfx/sfx_select.ogg"
+            action [
+                Play("sound", "audio/sfx/sfx_valid.ogg"),
+                Return()
+            ]
 
     # For effect data
     $ effect_info = GetTooltip()

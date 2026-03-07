@@ -926,8 +926,9 @@ class Effects:
         positive=True,
         icon="/gui/rpg/status/defending.png",
         sfx="/audio/sfx/snd_b.ogg",
-        duration=1,
-        apply=apply_status_effect("{target} is defending!", stat=CharacterStat.DEFENSE, amount=1.5, scale=True),
+        duration=0,
+        apply=apply_status_effect(stat=CharacterStat.DEFENSE, amount=1.5, scale=True),
+        resolved=resolved_chance(chance=1.0)
     )
     # Intent: Make fighter extra vulnerable while asleep and skip their next turn.
     SLEEP = Effect(
