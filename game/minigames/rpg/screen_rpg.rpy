@@ -1,9 +1,7 @@
 """
 TODO list
-- Rescale the attack text based on the number of attacks
 - Add functionality to the attack text
 - Depending on the action selected add the action to a list (To pass back to the back end)
-- Make the little heart icon actually move down with the HP counter bar
 - Make sprites be positioned dynamically based on number of enemies - bigger crowds should mean a tighter squeeze!
 - Don't let anyone go completely offscreen!
 - Fix the smaller sprites such as the K-types that are getting Mike Wazowski'd
@@ -503,9 +501,29 @@ screen screen_rpg():
 
                     ### If you choose to defend, do that.
                     elif current_ally_mode == "DEF":
-                        text current_ally.display_name+" will defend this turn!"
+                        grid 2 1:
+                            text current_ally.display_name+" will defend this turn!"
 
-                        # TODO: THIS DOES NOT WORK YET, PLEASE INSERT "DEFEND" ATTACK HERE
+                            # TODO: THIS DOES NOT WORK YET, PLEASE INSERT "DEFEND" ATTACK HERE
+
+                            imagebutton:
+                                xalign 1.0
+                                yalign 1.0
+                                idle "gui/rpg/confirm_button.png"
+                                hover "selectable:gui/rpg/confirm_button.png"
+                                hover_sound "audio/sfx/sfx_select.ogg"
+                                action [
+                                    Play("sound", "audio/sfx/sfx_valid.ogg"),
+                                    SetVariable("RPG.encounter.subturn", RPG.encounter.subturn+1 % len(RPG.encounter.allies)),
+                                    SetScreenVariable("current_ally_mode", None),
+                                    attack_actions
+                                ]
+
+                                #                         python:
+                                # attack_actions.append(Function(RPG.encounter.defend_fighter, current_ally))
+
+                                # if (RPG.encounter.subturn+1 != len(RPG.encounter.allies)):
+                                #     attack_actions.append(IncrementVariable("RPG.encounter.subturn"))
 
                     ### Default text
                     else:
