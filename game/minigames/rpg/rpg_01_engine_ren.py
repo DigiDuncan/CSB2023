@@ -1383,6 +1383,12 @@ class Encounter:
     def __repr__(self) -> str:
         return self.__str__()
 
+    @property
+    def print_string(self) -> str:
+        a = sentence_join([f.display_name for f in self.allies])
+        e = sentence_join([f.display_name for f in self.enemies])
+        return f"{a} vs. {e}"
+
     def display_message(self, message):
         renpy.show_screen("screen_rpg", _layer="rpg_context")
         renpy.show_screen("say_rpg", message, _layer="rpg_say")
