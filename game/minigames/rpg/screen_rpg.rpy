@@ -506,21 +506,27 @@ screen screen_rpg():
                                 attack_actions.append(IncrementVariable("RPG.encounter.subturn"))
 
                         grid 2 1:
-                            text current_ally.display_name+" will defend this turn!"
+                            frame:
+                                background None
+                                xsize 1.0 ysize 1.0
+                                text current_ally.display_name+" will defend this turn!"
 
-                            # TODO: THIS DOES NOT WORK YET, PLEASE INSERT "DEFEND" ATTACK HERE
 
-                            imagebutton:
-                                xalign 1.0
-                                yalign 1.0
-                                idle "gui/rpg/confirm_button.png"
-                                hover "selectable:gui/rpg/confirm_button.png"
-                                hover_sound "audio/sfx/sfx_select.ogg"
-                                action [
-                                    Play("sound", "audio/sfx/sfx_valid.ogg"),
-                                    SetScreenVariable("current_ally_mode", None),
-                                    attack_actions
-                                ]
+                            frame:
+                                background None
+                                xsize 1.0 ysize 1.0
+
+                                imagebutton:
+                                    xalign 1.0
+                                    yalign 1.0
+                                    idle "gui/rpg/confirm_button.png"
+                                    hover "selectable:gui/rpg/confirm_button.png"
+                                    hover_sound "audio/sfx/sfx_select.ogg"
+                                    action [
+                                        Play("sound", "audio/sfx/sfx_valid.ogg"),
+                                        SetScreenVariable("current_ally_mode", None),
+                                        attack_actions
+                                    ]
 
                     ### Default text
                     else:
