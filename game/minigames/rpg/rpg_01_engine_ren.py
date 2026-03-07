@@ -1133,6 +1133,7 @@ class Encounter:
         if roll_crit and random.random() <= CRIT_CHANCE:
             damage = damage * 1.5
             self.send_message("Critical hit!", fighter)
+            rpg_logger.debug(f"{fighter.display_name} landed a critical hit!")
 
         if not ignore_armour:
             fraction = fighter.defense / 100.0
@@ -1141,6 +1142,7 @@ class Encounter:
         fighter.hit_points -= int(damage)
 
         self.display_indicator(fighter, IndicatorType.HP, int(-damage))
+        rpg_logger.debug(f"{fighter.display_name} took {damage} damage!")
         # Maybe here run the display indicator.
 
     def heal_fighter(self, fighter: Fighter, amount: float, overheal: bool = False):
@@ -1150,6 +1152,7 @@ class Encounter:
             fighter.hit_points = min(fighter.hit_points, fighter.max_hp)
         fighter.hit_points = max(old_hp, fighter.hit_points)  # Even if this isn't an overhealing move, let's not let healing moves UNheal you.
         self.display_indicator(fighter, IndicatorType.HP, int(amount))
+        rpg_logger.debug(f"{fighter.display_name} recovered {amount} HP!")
 
     def apply_effect(self, effect: Effect, source: Fighter, target: Fighter, duration_override: int | None = None, silent: bool = False, lazy: bool = False, **kwds: Any):
         new_effect = FighterEffect(effect, source, target, self.turn, duration_override, kwds)
@@ -1358,6 +1361,7 @@ class Encounter:
                     attack.use(self, fighter, targets) # Actually use the fighter's attack so call `damage_fighters`
                 else:
                     self.send_message(f"{fighter.display_name} missed!", fighter)
+                    rpg_logger.debug(f"{fighter.display_name} missed!")
 
     def run_effects(self):
         # Update the effects applied to every fighter.
