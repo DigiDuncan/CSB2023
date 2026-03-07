@@ -166,7 +166,7 @@ def execute_rpg(parsed_object: ParsedRpg):
 
     global encounter
     encounter = Encounter(fighters, background, music, on_win, on_lose, intro_text, initial)
-    logger.info(f"Global Encounter set! {encounter.print_string}")
+    logger.info(f"Global Encounter set! ({encounter.print_string})")
     renpy.jump("play_rpggame")
 
 def lint_rpg(parsed_object: ParsedRpg):

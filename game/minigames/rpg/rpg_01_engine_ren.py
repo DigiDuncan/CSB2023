@@ -30,6 +30,28 @@ class classproperty[V]:
     def __get__(self, _, owner: type):
         return self.f(owner)
 
+# I think I stole this from SizeBot, don't tell anyone
+# This gets redefined here because we're in the RPG namespace now and blargh
+def sentence_join(items, *, joiner=None, oxford=False) -> str:
+    """Join a list of strings like a sentence."""
+    # Do this in case we received something like a generator, that needs to be wrapped in a list
+    items = list(items)
+
+    if len(items) == 1:
+        return items[0]
+
+    if not items:
+        return ""
+
+    if joiner is None:
+        joiner = "and"
+
+    ox = ""
+    if oxford:
+        ox = ","
+
+    return f"{', '.join(items[:-1])}{ox} {joiner} {items[-1]}"
+
 # TODO:
 # - Effect messages, they can be done in the effect functions, but this excludes when they decay due to duration
 # - Linking with the screen / displayables
@@ -1378,7 +1400,7 @@ class Encounter:
         self.turn += 1
 
     def __str__(self) -> str:
-        return f"<Encounter {self.allies} vs {self.enemies}>"
+        return f"<Encounter {self.allies} [vs] {self.enemies}>"
 
     def __repr__(self) -> str:
         return self.__str__()
