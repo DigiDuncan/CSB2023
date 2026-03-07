@@ -501,6 +501,10 @@ screen screen_rpg():
 
                     ### If you choose to defend, do that.
                     elif current_ally_mode == "DEF":
+                        python:
+                            if (RPG.encounter.subturn+1 != len(RPG.encounter.allies)):
+                                attack_actions.append(IncrementVariable("RPG.encounter.subturn"))
+
                         grid 2 1:
                             text current_ally.display_name+" will defend this turn!"
 
@@ -514,16 +518,9 @@ screen screen_rpg():
                                 hover_sound "audio/sfx/sfx_select.ogg"
                                 action [
                                     Play("sound", "audio/sfx/sfx_valid.ogg"),
-                                    SetVariable("RPG.encounter.subturn", RPG.encounter.subturn+1 % len(RPG.encounter.allies)),
                                     SetScreenVariable("current_ally_mode", None),
                                     attack_actions
                                 ]
-
-                                #                         python:
-                                # attack_actions.append(Function(RPG.encounter.defend_fighter, current_ally))
-
-                                # if (RPG.encounter.subturn+1 != len(RPG.encounter.allies)):
-                                #     attack_actions.append(IncrementVariable("RPG.encounter.subturn"))
 
                     ### Default text
                     else:
