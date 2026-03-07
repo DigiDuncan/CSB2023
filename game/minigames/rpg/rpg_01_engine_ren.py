@@ -535,6 +535,7 @@ class AI:
         enemies = sorted(enemies, key = lambda x: (x.hit_points * (1.0 - (x.defense / 100.0))))
 
         encounter.send_debug(f"{subject.display_name}: Choosing an attack...", "AI.choose_attack", ai = self, subject = subject)
+        rpg_logger.debug(f"{subject.display_name}: Choosing an attack...")
 
         available_attacks = tuple(a for a in subject.attacks if a.available)
 
@@ -578,6 +579,8 @@ class AI:
 
         # Choose an attack.
         encounter.send_debug(f"{available_attacks}, {scores}", "AI.choose_attack", AI = self, subject = subject)
+        # rpg_logger.debug(f"{available_attacks}, {scores}")
+
         return random.choices(available_attacks, weights = scores)[0]
 
     def __str__(self) -> str:
@@ -875,7 +878,8 @@ def apply_status_effect(encounter: Encounter, source: Fighter, target: Fighter, 
         scale (bool, optional): Whether the amount is a scale factor or a flat amount. Defaults to False.
     """
     if stat == CharacterStat.HIT_POINTS:
-        encounter.send_debug("Cannot change HIT POINTS as a status effect", "apply_status_effect", fighter = source, target = target, stat = stat, amount = amount, scale = scale)
+        encounter.send_debug("Cannot change HIT POINTS as a status effect.", "apply_status_effect", fighter = source, target = target, stat = stat, amount = amount, scale = scale)
+        rpg_logger.debug("Cannot change HIT POINTS as a status effect.")
         return
 
     if scale:
@@ -1126,6 +1130,8 @@ class Encounter:
     def affect_fighter(self, fighter: Fighter):
         fighter.reset_effects()
         self.send_debug(f"{fighter.name} reset effects!", "Encounter.affect_fighter", fighter=fighter)
+        rpg_logger.debug(f"{fighter.name} reset effects!")
+
         for effect in fighter.effects:
             effect.apply(self)
 
@@ -1167,6 +1173,7 @@ class Encounter:
     def remove_effect(self, effect: FighterEffect, silent: bool = False, lazy: bool = False):
         if effect.target not in self.fighters:
             self.send_debug("How did we get here??? (A non-existant/dead fighter has lost an effect)", "Encounter.remove_effect", effect = effect)
+            rpg_logger.debug("How did we get here??? (A non-existant/dead fighter has lost an effect)")
         effect.target.effects.remove(effect)
 
         if not silent and (msg := effect.get_tick_msg(resolved=True)):
@@ -1200,6 +1207,8 @@ class Encounter:
                 fighter.hit_points = new
                 self.display_indicator(fighter, IndicatorType.HP, new - old)
                 self.send_debug(f"Set {fighter.display_name}'s hit points to {fighter.hit_points}!", "Encounter.modify_fighter", stat=stat, old = old, new = new, prem = permanent)
+                rpg_logger.debug(f"Set {fighter.display_name}'s hit points to {fighter.hit_points}!")
+
             case CharacterStat.DEFENSE:
                 old = fighter.defense
                 new = int(old + amount)
@@ -1209,6 +1218,8 @@ class Encounter:
                 fighter.defense = new
                 self.display_indicator(fighter, IndicatorType.DEF, change)
                 self.send_debug(f"Set {fighter.display_name}'s defense to {fighter.defense}!", "Encounter.modify_fighter", stat=stat, old = old, new = new, prem = permanent)
+                rpg_logger.debug(f"Set {fighter.display_name}'s defense to {fighter.defense}!")
+
             case CharacterStat.ATTACK:
                 old = fighter.attack
                 new = max(5, int(old + amount))
@@ -1218,6 +1229,8 @@ class Encounter:
                 fighter.attack = new
                 self.display_indicator(fighter, IndicatorType.ATK, change)
                 self.send_debug(f"Set {fighter.display_name}'s attack to {fighter.attack}!", "Encounter.modify_fighter", stat=stat, old = old, new = new, prem = permanent)
+                rpg_logger.debug(f"Set {fighter.display_name}'s attack to {fighter.attack}!")
+
             case CharacterStat.ACCURACY:
                 old = fighter.accuracy
                 new = max(0, min(100, int(old + amount)))
@@ -1227,6 +1240,7 @@ class Encounter:
                 fighter.accuracy = new
                 self.display_indicator(fighter, IndicatorType.ACC, change)
                 self.send_debug(f"Set {fighter.display_name}'s accuracy to {fighter.accuracy}!", "Encounter.modify_fighter", stat=stat, old = old, new = new, prem = permanent)
+                rpg_logger.debug(f"Set {fighter.display_name}'s accuracy to {fighter.accuracy}!")
 
     def scale_fighter(self, fighter: Fighter, stat: CharacterStat, mult: float, permanent: bool = True):
         match stat:
@@ -1236,6 +1250,8 @@ class Encounter:
                 fighter.hit_points = new
                 self.display_indicator(fighter, IndicatorType.HP, new - old)
                 self.send_debug(f"Scaled {fighter.display_name}'s hit points by {mult}×!", "Encounter.scale_fighter", stat=stat, old = old, new = new, prem = permanent)
+                rpg_logger.debug(f"Scaled {fighter.display_name}'s hit points by {mult}×!")
+
             case CharacterStat.DEFENSE:
                 old = fighter.defense
                 new = int(old * mult)
@@ -1245,6 +1261,8 @@ class Encounter:
                 fighter.defense = new
                 self.display_indicator(fighter, IndicatorType.DEF, change)
                 self.send_debug(f"Scaled {fighter.display_name}'s defense by {mult}×!", "Encounter.scale_fighter", stat=stat, old = old, new = new, prem = permanent)
+                rpg_logger.debug(f"Scaled {fighter.display_name}'s defense by {mult}×!")
+
             case CharacterStat.ATTACK:
                 old = fighter.attack
                 new = max(5, int(old * mult))
@@ -1254,6 +1272,8 @@ class Encounter:
                 fighter.attack = new
                 self.display_indicator(fighter, IndicatorType.ATK, change)
                 self.send_debug(f"Scaled {fighter.display_name}'s attack by {mult}×!", "Encounter.scale_fighter", stat=stat, old = old, new = new, prem = permanent)
+                rpg_logger.debug(f"Scaled {fighter.display_name}'s attack by {mult}×!")
+
             case CharacterStat.ACCURACY:
                 old = fighter.accuracy
                 new = max(0, min(100, int(old * mult)))
@@ -1263,6 +1283,7 @@ class Encounter:
                 fighter.accuracy = new
                 self.display_indicator(fighter, IndicatorType.ACC, change)
                 self.send_debug(f"Scaled {fighter.display_name}'s accuracy by {mult}×!", "Encounter.scale_fighter", stat=stat, old = old, new = new, prem = permanent)
+                rpg_logger.debug(f"Scaled {fighter.display_name}'s accuracy by {mult}×!")
 
     # -- UTIL TARGETTING METHODS --
 
@@ -1349,9 +1370,11 @@ class Encounter:
             # !: Bad hardcodes -- @Dragon?
             elif Effects.STUN in [e.effect for e in fighter.effects]:
                 self.send_message(f"{fighter.display_name} is stunned and can't move!", fighter)
+                rpg_logger.debug(f"{fighter.display_name} can't move. (STUN)")
                 continue
             elif Effects.SLEEP in [e.effect for e in fighter.effects]:
                 self.send_message(f"{fighter.display_name} is asleep and can't move!", fighter)
+                rpg_logger.debug(f"{fighter.display_name} can't move. (SLEEP)")
                 continue
             else:
                 self.signal_attack(f"{fighter.display_name} used {attack.name}!", attack, fighter, targets)
@@ -1359,6 +1382,7 @@ class Encounter:
 
                 if hit:
                     attack.use(self, fighter, targets) # Actually use the fighter's attack so call `damage_fighters`
+                    rpg_logger.debug(f"{fighter.display_name}'s attack hit!")
                 else:
                     self.send_message(f"{fighter.display_name} missed!", fighter)
                     rpg_logger.debug(f"{fighter.display_name} missed!")
@@ -1391,14 +1415,18 @@ class Encounter:
                 attack.turns_until_available -= 1
                 if attack.turns_until_available == 0:
                     if fighter in self.allies:
-                        self.send_message(f"{fighter.display_name}: {attack.name} now available!", fighter)
+                        self.send_message(f"{fighter.display_name} can use {attack.name} again!", fighter)
+                        rpg_logger.debug(f"{fighter.display_name} can use {attack.name} again!")
                     else:
                         self.send_debug(f"{fighter.display_name} can use {attack.name} again!", fighter)
+                        rpg_logger.debug(f"{fighter.display_name} can use {attack.name} again!")
                 else:
                     self.send_debug(f"{fighter.display_name}: {attack.name} available in {attack.turns_until_available} turns!", fighter)
+                    rpg_logger.debug(f"{fighter.display_name}: {attack.name} available in {attack.turns_until_available} turns!")
 
             if fighter.dead:
                 self.send_message(f"{fighter.display_name} was knocked out!", fighter)
+                rpg_logger.debug(f"{fighter.display_name} was knocked out!")
                 self.fighters.remove(fighter)
                 fighter.effects.clear()
         self.turn += 1
