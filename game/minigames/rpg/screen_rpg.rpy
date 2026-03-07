@@ -523,7 +523,7 @@ screen screen_rpg():
                                     hover_sound "audio/sfx/sfx_select.ogg"
                                     action [
                                         Play("sound", "audio/sfx/sfx_valid.ogg"),
-                                        Function(attack_actions.append, Function(current_ally.set_next_attack, RPG.Attacks.DEFEND)),
+                                        Function(attack_actions.append, Function(current_ally.set_next_attack, RPG.encounter.DEFEND_ACTION)),
                                         SetScreenVariable("current_ally_mode", None),
                                         attack_actions
                                     ]
