@@ -31,6 +31,8 @@ init:
             time 2.5
             ease_expo 1 alpha 0.00
 
+######### SAY SCREEN
+
 screen say_rpg(rpg_what):
     modal True
     python:
@@ -39,7 +41,7 @@ screen say_rpg(rpg_what):
     key "dismiss" action []
 
     frame:
-        xalign 0 yalign 1.0
+        xalign 0.5 yalign 1.0
         padding(80, 5)
         xysize(1916, 262)
         background "gui/rpg/main_box.png"
@@ -49,6 +51,225 @@ screen say_rpg(rpg_what):
             xanchor 0.5 yanchor 0.5
             xpos 0.5 ypos 0.5
             text rpg_what
+
+
+######### STAT BOXES
+
+screen rpg_stat_box(fighter):
+    frame:
+        xalign 0.5 yalign 1.0
+
+        ###### Change contents based on what "mode" this box is in.
+        if not fighter.dead:
+
+            ### Enemy only
+            if fighter in RPG.encounter.enemies:
+                background "gui/rpg/small_box.png"
+                xysize(475,105)
+
+            ### For allies
+            if fighter in RPG.encounter.allies:
+                ### If this ally is selected
+                # TODO: we have GOT to figure out why these checks crash unless we do it like this
+                if RPG.encounter.allies[RPG.encounter.subturn] and RPG.encounter.allies[RPG.encounter.subturn] == fighter:
+
+                    if fighter in RPG.encounter.allies:
+                        background "gui/rpg/tall_box.png"
+                        xysize(475,201)
+
+                        # The attack button
+                        frame:
+                            background None
+                            xsize 1.0 ysize 87
+                            xalign 0.5 yalign 1.0
+
+                            imagebutton:
+                                align(0.0, 1.0)
+                                idle "gui/rpg/attack_button.png"
+                                hover "selectable:gui/rpg/attack_button.png"
+                                hover_sound "audio/sfx/sfx_select.ogg"
+                                action [
+                                    Play("sound", "audio/sfx/sfx_valid.ogg"),
+                                    Notify("Attack pressed on fighter "+str(fighter.display_name)+"!")
+                                ]
+
+                            # The defend button
+                            imagebutton:
+                                align(1.0, 1.0)
+                                idle "gui/rpg/defend_button.png"
+                                hover "selectable:gui/rpg/defend_button.png"
+                                hover_sound "audio/sfx/sfx_select.ogg"
+                                action [
+                                    Play("sound", "audio/sfx/sfx_valid.ogg"),
+                                    Notify("Defend pressed on fighter "+str(fighter.display_name)+"!")
+                                ]
+
+                ### For unselected allies
+                else:
+                    background "gui/rpg/small_box.png"
+                    # TODO: these two lines don't work, this button IS functional just not changing visually when hovered yet
+                    idle_background "gui/rpg/small_box.png"
+                    hover_background "selectable:gui/rpg/small_box.png"
+                    xysize(475,105)
+                    yalign 1.0
+
+                    button:
+                        xysize(475,105)
+                        action SetVariable("RPG.encounter.subturn", RPG.encounter.allies.index(fighter))
+                            
+            ###### Begin common items
+            frame:
+                background None
+                xysize(465,105)
+                xalign 0.5 yalign 0
+
+                hbox:
+                    xsize 195
+                    xfill True yfill True
+                    xalign 0 yalign 0
+                    
+                    ### Fighter portrait
+                    frame:
+                        background None 
+                        
+                        python:
+                            if fighter.portrait:
+                                this_portrait = fighter.portrait
+                            else:
+                                this_portrait = "gui/rpg/portraits/unknown.png"
+
+                        add this_portrait:
+                            xoffset -8 yoffset -9
+
+                    ### ATK/DEF
+                    frame:
+                        background None
+                        xalign 0
+                        xmaximum 110 ysize 1.0
+                        xoffset -20 yoffset -4
+
+                        vbox:
+                            xalign 0 yalign 0
+
+                            frame:
+                                background None
+                                xmaximum 110 ysize 32
+                                hbox:
+                                    xmaximum 110
+                                    spacing 5
+                                    add "gui/rpg/attack.png":
+                                        xalign 0 yalign 0.5
+                                    text str(fighter.attack):
+                                        size 32
+                                        xalign 0 yalign 0.5
+                                        text_align 0  
+                            frame:
+                                background None
+                                xmaximum 110 ysize 32
+                                hbox:
+                                    xmaximum 110
+                                    spacing 5
+                                    add "gui/rpg/defense.png":
+                                        xalign 0 yalign 0.5
+                                    text str(fighter.defense):
+                                        size 32
+                                        xalign 0 yalign 0.5
+                                        text_align 0  
+
+                vbox:
+                    xalign 1.0 yalign 0
+                    yoffset -7
+
+                    ### Fighter name
+                    text fighter.display_name:
+                        xalign 1.0 yalign 0
+                        text_align 1.0
+
+                    ### HP bar handling
+                    hbox:
+                        spacing 5
+                        add "gui/rpg/hp.png" yalign 0.5
+
+                        frame:
+                            background Solid("#132F83")
+                            padding(0,0)
+                            xysize(228, 32)
+                            xalign 1.0 yalign 1.0
+                            if fighter.infinite:
+                                $ inf_bar = renpy.get_registered_image("hp_bar_inf")
+                                add inf_bar corner1(0,0) corner2(228,32) xalign 1.0
+                                add "gui/rpg/infinite.png" xalign 1.0 yalign 0.5
+                            elif fighter.hit_points > fighter.max_hp:
+                                $ overheal_bar = renpy.get_registered_image("hp_bar_overheal")
+                                add overheal_bar corner1(0,0) corner2(228,32) xalign 1.0
+                                text str(fighter.hit_points)+"/"+str(fighter.max_hp):
+                                    xalign 1.0 yalign 0.5
+                            else:
+                                add "gui/rpg/hp_bar.png" corner1(int(228-(228*(fighter.hit_points/fighter.max_hp))),0) corner2(228,32) xalign 1.0
+                                text str(fighter.hit_points)+"/"+str(fighter.max_hp):
+                                    xalign 1.0 yalign 0.5
+
+                ### Status effects
+                if len(fighter.effects) > 0:
+                    
+                    python:
+                        # Count up all the effects
+                        checked_effects = {}
+                        effect_sources = {}
+                        for effect in fighter.effects:
+                            if effect.effect not in checked_effects:
+                                checked_effects[effect.effect] = 1
+                                effect_sources[effect.effect] = [effect.source.display_name]
+                            else:
+                                checked_effects[effect.effect] += 1
+                                effect_sources[effect.effect].append(effect.source.display_name)
+                    
+                        # Get the position of the box
+                        if fighter in RPG.encounter.enemies:
+                            effect_pos = 98
+                            effect_yanchor = 0.0
+                        else:
+                            effect_yanchor = 1.0
+                            effect_pos = -17
+
+                    frame:
+                        xanchor 1.0 yanchor effect_yanchor
+                        xpos 1.0 ypos effect_pos
+                        xoffset 11
+
+                        hbox:
+                            for effect in checked_effects:
+                                frame:
+                                    background None
+                                    xysize(36,36)
+
+                                    $ effect_hover_icon = effect.icon[:-4] + "_hover" + effect.icon[-4:]
+
+                                    imagebutton:
+                                        xalign 0.5 yalign 0.5
+                                        idle effect.icon
+                                        hover effect_hover_icon
+                                        hover_sound "audio/sfx/sfx_select.ogg"
+                                        action NullAction()
+                                        tooltip [effect.name, effect.description, str(checked_effects[effect]), f"from {sentence_join(effect_sources[effect])}"]
+
+                                    if checked_effects[effect] > 1:
+                                        text str(checked_effects[effect]):
+                                            size 16
+                                            xanchor 1.0 yanchor 0.0
+                                            xoffset 33 yoffset -11
+                                            text_align 1.0
+                                            color Color("#FFFFFF")
+                                            outlines [(2.5, "#000000", absolute(0), absolute(0))]
+
+        ### For dead fighters
+        else:
+            background None
+            frame:
+                background None
+                xysize(465,105)
+
+######### ACTUAL SCREEN HERE
 
 screen screen_rpg():
 
@@ -80,17 +301,43 @@ screen screen_rpg():
                         ysize 1.0
                         fit "scale-down"
                 else:
-                    add Null(200,200)
+                    add Null(500,500)
+
+    # Add enemy stat boxes
+    frame:
+        background None
+        xsize 1920 ysize 105
+        xalign 0.5 yalign 0
+
+        grid len(RPG.encounter.enemies) 1:
+            xalign 0.5
+            xfill True
+            for e in range(len(RPG.encounter.enemies)):
+                use rpg_stat_box(RPG.encounter.enemies[e])
+
+    # Add player stat boxes
+    frame:
+        background None
+        xsize 1920 ymaximum 201
+        yanchor 1.0
+        xalign 0.5 ypos 819
+
+        grid len(RPG.encounter.allies) 1:
+            xalign 0.5 yalign 1.0
+            xfill True
+            for a in range(len(RPG.encounter.allies)):
+                use rpg_stat_box(RPG.encounter.allies[a])
 
     $ current_ally = RPG.encounter.allies[RPG.encounter.subturn]
 
     # This is the context menu of the RPG
     frame:
-        yalign 1.0 xalign 0.5
+        xsize 1916
+        xalign 0.5 yalign 1.0 
         padding(0,0)
         background None
         has vbox
-        spacing 3
+        #spacing 3
         box_reverse True
 
         # The Action Selection Box:
@@ -98,9 +345,9 @@ screen screen_rpg():
             padding(80, 5)
             xysize(1916, 262)
             background "gui/rpg/main_box.png"
+            xalign 0.5
             grid 2 1:
-                xfill True
-                yfill True
+                xfill True yfill True
 
                 # The attacks.
                 frame:
@@ -252,260 +499,6 @@ screen screen_rpg():
                         Return()
                     ]
 
-        # The stat boxes for Allies
-        grid len(RPG.encounter.allies) 1:
-            xfill True
-            for i in range(len(RPG.encounter.allies)):
-                if not RPG.encounter.allies[i].dead:
-                    button:
-                        padding(7,7)
-                        xalign 0.5 yalign 1.0
-                        xsize 475
-                        # If it's the fighter's turn
-                        if RPG.encounter.subturn == i:
-                            ysize 201
-                            background "gui/rpg/tall_box.png"
-                        # Otherwise
-                        else:
-                            background "gui/rpg/small_box.png"
-                            ysize 105
-                            action SetVariable("RPG.encounter.subturn", i)
-
-                        # Status effects
-                        if len(RPG.encounter.allies[i].effects) > 0:
-                            # Count up all the effects
-                            python:
-                                checked_effects = {}
-                                effect_sources = {}
-                                for effect in enemy.effects:
-                                    if effect.effect not in checked_effects:
-                                        checked_effects[effect.effect] = 1
-                                        effect_sources[effect.effect] = [effect.source.display_name]
-                                    else:
-                                        checked_effects[effect.effect] += 1
-                                        effect_sources[effect.effect].append(effect.source.display_name)
-                            frame:
-                                xanchor 1.0
-                                xpos 1.0 ypos -60
-                                hbox:
-                                    for effect in checked_effects:
-                                        frame:
-                                            background None
-                                            xysize(36,36)
-
-                                            $ effect_hover_icon = effect.icon[:-4] + "_hover" + effect.icon[-4:]
-
-                                            imagebutton:
-                                                xalign 0.5 yalign 0.5
-                                                idle effect.icon
-                                                hover effect_hover_icon
-                                                hover_sound "audio/sfx/sfx_select.ogg"
-                                                action NullAction()
-                                                tooltip [effect.name, effect.description, str(checked_effects[effect]), f"from {sentence_join(effect_sources[effect])}"]
-
-                                            if checked_effects[effect] > 1:
-                                                text str(checked_effects[effect]):
-                                                    size 16
-                                                    xanchor 1.0 yanchor 0.0
-                                                    xoffset 33 yoffset -11
-                                                    text_align 1.0
-                                                    color Color("#FFFFFF")
-                                                    outlines [(2.5, "#000000", absolute(0), absolute(0))]
-
-
-                        grid 2 2:
-                            xfill True
-                            yfill True
-
-                            # The Fighter's Icon and Stats
-                            hbox:
-                                align(0.0, 0.0)
-                                ysize 88
-                                spacing 2
-                                # Icon
-                                if RPG.encounter.allies[i].character.portrait:
-                                    add RPG.encounter.allies[i].character.portrait
-                                else:
-                                    add "gui/rpg/portraits/unknown.png"
-                                # Stats
-                                grid 2 2:
-                                    yalign 0.5
-                                    xspacing 2
-                                    add "gui/rpg/attack.png" yalign 0.5
-                                    text str(RPG.encounter.allies[i].attack):
-                                        size 32
-                                        yalign 0.5
-                                    add "gui/rpg/defense.png" yalign 0.5
-                                    text str(RPG.encounter.allies[i].defense):
-                                        size 32
-                                        yalign 0.5
-
-                            # The Fighter's name and healthbar
-                            vbox:
-                                align(1.0, 0.0)
-                                hbox:
-                                    xalign 1.0
-                                    text RPG.encounter.allies[i].character.display_name:
-                                        xalign 1.0
-                                frame:
-                                    background None
-                                    padding(0,0)
-                                    xysize(228, 32)
-                                    xalign 1.0 yalign 1.0
-                                    if RPG.encounter.allies[i].infinite:
-                                        $ inf_bar = renpy.get_registered_image("hp_bar_inf")
-                                        add inf_bar corner1(0,0) corner2(228,32) xalign 1.0
-                                        add "gui/rpg/infinite.png" xalign 1.0 yalign 0.5
-                                    elif RPG.encounter.allies[i].hit_points > RPG.encounter.allies[i].max_hp:
-                                        $ overheal_bar = renpy.get_registered_image("hp_bar_overheal")
-                                        add overheal_bar corner1(0,0) corner2(228,32) xalign 1.0
-                                        text str(RPG.encounter.allies[i].hit_points)+"/"+str(RPG.encounter.allies[i].max_hp):
-                                            xalign 1.0 yalign 0.5
-                                    else:
-                                        add "gui/rpg/hp_bar.png" corner1(int(228-(228*(RPG.encounter.allies[i].hit_points/RPG.encounter.allies[i].max_hp))),0) corner2(228,32) xalign 1.0
-                                        text str(RPG.encounter.allies[i].hit_points)+"/"+str(RPG.encounter.allies[i].max_hp):
-                                            xalign 1.0 yalign 0.5
-                                    add "gui/rpg/hp.png" yalign 0.5 xalign -0.15
-                            if RPG.encounter.subturn == i:
-                                # The attack button
-                                imagebutton:
-                                    align(0.0, 1.0)
-                                    idle "gui/rpg/attack_button.png"
-                                    hover "selectable:gui/rpg/attack_button.png"
-                                    hover_sound "audio/sfx/sfx_select.ogg"
-                                    action [
-                                        Play("sound", "audio/sfx/sfx_valid.ogg"),
-                                        Notify("Attack pressed on fighter"+str(i+1)+"!")
-                                    ]
-
-                                # The defend button
-                                imagebutton:
-                                    align(1.0, 1.0)
-                                    idle "gui/rpg/defend_button.png"
-                                    hover "selectable:gui/rpg/defend_button.png"
-                                    hover_sound "audio/sfx/sfx_select.ogg"
-                                    action [
-                                        Play("sound", "audio/sfx/sfx_valid.ogg"),
-                                        Notify("Defend pressed on fighter"+str(i+1)+"!")
-                                    ]
-                # Don't just collapse the space if ally has been knocked out
-                else:
-                    add Null(489,88):
-                        xalign 0.5 yalign 1.0
-
-    # Enemy stat boxes (deliberately outside the context menu)
-    frame:
-        background None
-        grid len(RPG.encounter.enemies) 1:
-            xfill True
-            for enemy in RPG.encounter.enemies:
-                if not enemy.dead:
-                    frame:
-                        padding(7,7)
-                        xalign 0.5 yalign 1.0
-                        xsize 475 ysize 105
-                        background "gui/rpg/small_box.png"
-
-                        # Status effects
-                        if len(enemy.effects) > 0:
-                            # Count up all the effects
-                            python:
-                                checked_effects = {}
-                                effect_sources = {}
-                                for effect in enemy.effects:
-                                    if effect.effect not in checked_effects:
-                                        checked_effects[effect.effect] = 1
-                                        effect_sources[effect.effect] = [effect.source.display_name]
-                                    else:
-                                        checked_effects[effect.effect] += 1
-                                        effect_sources[effect.effect].append(effect.source.display_name)
-                            frame:
-                                xanchor 1.0
-                                xpos 1.0 ypos 103
-                                hbox:
-                                    for effect in checked_effects:
-                                        frame:
-                                            background None
-                                            xysize(36,36)
-
-                                            $ effect_hover_icon = effect.icon[:-4] + "_hover" + effect.icon[-4:]
-
-                                            imagebutton:
-                                                xalign 0.5 yalign 0.5
-                                                idle effect.icon
-                                                hover effect_hover_icon
-                                                hover_sound "audio/sfx/sfx_select.ogg"
-                                                action NullAction()
-                                                tooltip [effect.name, effect.description, str(checked_effects[effect]), f"from {sentence_join(effect_sources[effect])}"]
-
-                                            if checked_effects[effect] > 1:
-                                                text str(checked_effects[effect]):
-                                                    size 16
-                                                    xanchor 1.0 yanchor 0.0
-                                                    xoffset 33 yoffset -11
-                                                    text_align 1.0
-                                                    color Color("#FFFFFF")
-                                                    outlines [(2.5, "#000000", absolute(0), absolute(0))]
-
-                        grid 2 2:
-                            xfill True yfill True
-
-                            # The Fighter's Icon and Stats
-                            hbox:
-                                align(0.0, 0.0)
-                                ysize 88
-                                spacing 2
-                                # Icon
-                                if enemy.character.portrait:
-                                    add enemy.character.portrait
-                                else:
-                                    add "gui/rpg/portraits/unknown.png"
-                                # Stats
-                                grid 2 2:
-                                    yalign 0.5
-                                    xspacing 2
-                                    add "gui/rpg/attack.png" yalign 0.5
-                                    text str(enemy.attack):
-                                        size 32
-                                        yalign 0.5
-                                    add "gui/rpg/defense.png" yalign 0.5
-                                    text str(enemy.defense):
-                                        size 32
-                                        yalign 0.5
-
-                            # The Fighter's name and healthbar
-                            vbox:
-                                align(1.0, 0.0)
-                                hbox:
-                                    xalign 1.0
-                                    text enemy.character.display_name:
-                                        xalign 1.0
-                                frame:
-                                    background None
-                                    padding(0,0)
-                                    xysize(228, 32)
-                                    xalign 1.0 yalign 1.0
-                                    if enemy.infinite:
-                                        $ inf_bar = renpy.get_registered_image("hp_bar_inf")
-                                        add inf_bar corner1(0,0) corner2(228,32) xalign 1.0
-                                        add "gui/rpg/infinite.png" xalign 1.0 yalign 0.5
-                                    elif enemy.hit_points > enemy.max_hp:
-                                        $ overheal_bar = renpy.get_registered_image("hp_bar_overheal")
-                                        add overheal_bar corner1(0,0) corner2(228,32) xalign 1.0
-                                        text str(enemy.hit_points)+"/"+str(enemy.max_hp):
-                                            xalign 1.0 yalign 0.5
-                                    else:
-                                        add "gui/rpg/hp_bar.png" corner1(int(228-(228*(enemy.hit_points/enemy.max_hp))),0) corner2(228,32) xalign 1.0
-                                        text str(enemy.hit_points)+"/"+str(enemy.max_hp):
-                                            xalign 1.0 yalign 0.5
-                                        
-                                    add "gui/rpg/hp.png" yalign 0.5 xalign -0.15
-
-                # Don't just collapse the space if enemy has been knocked out
-                else:
-                    add Null(489,88):
-                        xalign 0.5 yalign 1.0
-
     # For effect data
     $ effect_info = GetTooltip()
     $ get_mouse()
@@ -545,6 +538,8 @@ screen screen_rpg():
     # Dev Backdoor
     key "K_END" action Jump("pass_rpg")
 
+######### PLAY BATTLE
+
 label play_rpggame:
     window hide
     $ quick_menu = False
@@ -570,6 +565,8 @@ label play_rpggame:
         $ RPG.encounter.subturn = 0
 
     jump pass_rpg
+
+######### END BATTLE
 
 label pass_rpg:
     $ renpy.hide_screen("say_rpg", layer="rpg_say", immediately=True)
