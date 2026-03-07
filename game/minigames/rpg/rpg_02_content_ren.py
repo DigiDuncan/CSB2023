@@ -209,7 +209,7 @@ class Attacks:
     ### ATTACKS ARE NOW SORTED BY CATEGORY, THEN BY NAME.
 
     ### Effects / Defense / Commonly-used things
-    DEFEND = Attack("Defend", "Take less damage this turn, but you can't attack.", defend_targets(), target_type=TargetType.SELF, accuracy=100)
+    DEFEND = Attack("Defend", "Take less damage this turn, but you can't attack.", defend_targets(), target_count = 0, target_type=TargetType.SELF, accuracy=100)
 
     BASIC_HIT = AttackComponent(damage_fighters())
 
