@@ -2608,7 +2608,8 @@ image realistic_explosion_anim = spritesheet_animation("images/realistic_explosi
 ## CS running loop for Perfect Tate
 image cs_run = spritesheet_animation("minigames/perfecttate/cs_spritesheet.png", 8, 3, fps = 60, looping = True)
 
-## For UCN (couldn't define these anywhere else but here)
+## For RPG (couldn't define these anywhere else but here)
+image hp_bar_police = "gui/rpg/hp_bar_police.png"
 image rpg_pending_portrait = spritesheet_animation("gui/rpg/portraits/pending_anim.png", 3, 1, fps = 2, looping = True)
 image rpg_pending_portrait_hover = spritesheet_animation("gui/rpg/portraits/pending_anim_hover.png", 3, 1, fps = 2, looping = True)
 image hp_bar_inf = spritesheet_animation("gui/rpg/hp_bar_inf_anim.png", 1, 12, fps = 12, looping = True)

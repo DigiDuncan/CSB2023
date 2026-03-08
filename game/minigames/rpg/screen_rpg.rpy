@@ -197,24 +197,29 @@ screen rpg_stat_box(fighter, current_ally_mode):
                     hbox:
                         spacing 5
                         add "gui/rpg/hp.png" yalign 0.5
-
                         frame:
                             background Solid("#132F83")
                             padding(0,0)
                             xysize(228, 32)
                             xalign 1.0 yalign 1.0
-                            if fighter.infinite:
+                            $ h_text = fighter.character.custom_health_string if fighter.character.custom_health_string else str(fighter.hit_points)+"/"+str(fighter.max_hp)
+                            if fighter.character.custom_health_bar:
+                                $ h_bar = renpy.get_registered_image(fighter.character.custom_health_bar)
+                                add h_bar corner1(0,0) corner2(228,32) xalign 1.0
+                                text h_text:
+                                    xalign 1.0 yalign 0.5
+                            elif fighter.infinite:
                                 $ inf_bar = renpy.get_registered_image("hp_bar_inf")
                                 add inf_bar corner1(0,0) corner2(228,32) xalign 1.0
                                 add "gui/rpg/infinite.png" xalign 1.0 yalign 0.5
                             elif fighter.hit_points > fighter.max_hp:
                                 $ overheal_bar = renpy.get_registered_image("hp_bar_overheal")
                                 add overheal_bar corner1(0,0) corner2(228,32) xalign 1.0
-                                text str(fighter.hit_points)+"/"+str(fighter.max_hp):
+                                text h_text:
                                     xalign 1.0 yalign 0.5
                             else:
                                 add "gui/rpg/hp_bar.png" corner1(int(228-(228*(fighter.hit_points/fighter.max_hp))),0) corner2(228,32) xalign 1.0
-                                text str(fighter.hit_points)+"/"+str(fighter.max_hp):
+                                text h_text:
                                     xalign 1.0 yalign 0.5
 
                 ### Status effects

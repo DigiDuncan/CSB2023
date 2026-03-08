@@ -597,7 +597,16 @@ class Character: # TODO: Workshop -- I'd like fighter to be used by encounter, b
     and is used by the encounter to setup the fighters
     """
 
-    def __init__(self, name: str, hp: int, defense: int, attack: int, attacks: Sequence[Attack | ComboAttack], accuracy: int = 100, ai: AI | None = None, display_name: str | None = None, portrait: Displayable | None = None, sprite: Displayable | None = None, anim_sprite: str | None = None, traits: CharacterFlag = CharacterFlag.NOTHING):
+    def __init__(self, name: str, hp: int, defense: int, attack: int, attacks: Sequence[Attack | ComboAttack],
+                 accuracy: int = 100,
+                 ai: AI | None = None,
+                 display_name: str | None = None,
+                 portrait: Displayable | None = None,
+                 sprite: Displayable | None = None,
+                 anim_sprite: str | None = None,
+                 traits: CharacterFlag = CharacterFlag.NOTHING,
+                 custom_health_bar: str | None = None,
+                 custom_health_string: str | None = None):
         self.name: str = name
         self.display_name: str = display_name or name
         self.assigned_name: str | None = None
@@ -613,6 +622,9 @@ class Character: # TODO: Workshop -- I'd like fighter to be used by encounter, b
         self.portrait: Displayable = portrait or UNKNOWN_PORTRAIT # What image should represent the character on the player's side
         self.sprite: Displayable = sprite or UNKNOWN_FIELD # What image should represent the character on the field side.
         self.anim_sprite: str = anim_sprite # Animated sprite is a string here, we'll point it at the displayable later
+
+        self.custom_health_bar = custom_health_bar
+        self.custom_health_string = custom_health_string
 
 
     def clone(self, name: str, hp: int | None = None, defense: int | None = None, attack: int | None = None, attacks: Sequence[Attack | ComboAttack] | None = None, accuracy: int | None = None, ai: AI | None = None, display_name: str | None = None, portrait: Displayable | None = None, sprite: Displayable | None = None, anim_sprite: str | None = None) -> Character:
