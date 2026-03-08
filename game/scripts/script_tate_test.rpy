@@ -612,7 +612,7 @@ label awawa_tate_test:
                         show health_test at manual_pos(8, 8, 0)
                         tate "Is that correct?"
                         hide health_test
-                    "Sigil Test":
+                    "Sigil Test 1":
 
                         transform t_tate_sigil_text:
                             alpha 0.6
@@ -635,6 +635,18 @@ label awawa_tate_test:
                         show tate srs
                         tate "It {i}is{/i} drawn {i}correctly{/i} this time, right?"
                         hide tate_sigil
+                    "Sigil Test 2":
+
+                        show vs_tate_ex_bg
+                        tate "Is that right?"
+
+                        show tate_ex at center
+                        tate "Am I doing this right??"
+
+                        hide vs_tate_ex
+                        hide tate_ex
+                        with dissolve
+
                     "Green Screen Test":
                         scene green_screen
                         pause

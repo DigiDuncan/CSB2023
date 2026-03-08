@@ -3897,7 +3897,9 @@ label train_tate_ex_encounter:
 
 label train_tate_ex_fight:
     queue music insomnia_loop
-    show cs worried flipped
+    scene amtrak_observation_2
+    show tate srs at center
+    show cs worried flipped at right
     cs "Are you sure about this? I don't want you getting hurt..."
     tate "You know that I wouldn't ask if I wasn't willing to accept the risk."
     tate "I have only one request."
@@ -3929,7 +3931,9 @@ label train_tate_ex_fight:
 
 label train_tate_ex_refuse:
     play music insomnia_intro if_changed
-    show cs disappointed flipped
+    scene amtrak_observation_2
+    show tate srs at center
+    show cs disappointed flipped at right
     cs "No way. I think that's a terrible idea."
     cs "I know how easily you injure yourself..."
     show tate shock

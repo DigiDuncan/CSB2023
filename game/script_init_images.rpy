@@ -2084,6 +2084,8 @@ image hutchinson_stn = "dark:bg/train/hutchinson_stn.png"
 image hutchinson_stn_lights = "bg/train/hutchinson_stn_lights.png"
 image lupin_escape_1 = "dark:bg/train/lupin_escape_1.png"
 image lupin_escape_2 = "dark:bg/train/lupin_escape_2.png"
+image amtrak_observation_1 = "bg/train/amtrak_observation_1.png"
+image amtrak_observation_2 = "bg/train/amtrak_observation_2.png"
 image amtrak_dining_day = "bg/train/amtrak_dining_day.png"
 
 # Train Route NPCs
@@ -2695,6 +2697,42 @@ layeredimage tate_ex:
         "secret/pt/tate_ex.png"
         at transform:
             xpos 10 ypos 10
+
+# Special background for Tate EX fight
+layeredimage bg_vs_tate_ex:
+    xysize(1920,1080)
+    xanchor 0.5 yanchor 1.0
+    yoffset 5 # Don't ask me why this is required.
+
+    always:
+        "bg/train/amtrak_observation_2.png"
+        at transform:
+            xanchor 0.5 yanchor 1.0
+            xalign 0.5 yalign 1.0
+
+    always:
+        "/secret/pt/sigil_inner.png"
+        at transform:
+            zoom 0.5
+            xanchor 0.5 yanchor 0.5
+            xpos 0.5 ypos 0.35
+            blur 5
+            block:
+                linear 1 alpha 0.6
+                linear 1 alpha 0
+                repeat
+    always:
+        Image("/secret/pt/sigil_text.png")
+        at transform:
+            zoom 0.5
+            xanchor 0.5 yanchor 0.5
+            xpos 0.5 ypos 0.35
+            blur 5
+            alpha 0.6
+            block:
+                linear 11 rotate -360
+                linear 0 rotate 0
+                repeat
 
 ## Misc Animated Sprites
 image ai_ducks = SnowBlossom("duck.png", 50, fast = True)

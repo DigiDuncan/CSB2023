@@ -80,7 +80,7 @@ def parse_rpg(lexer) -> ParsedRpg:
         if block.keyword("turn") or block.keyword("initial"):
             initial = int(block.integer())
         elif block.keyword("bg"):
-            background = block.string()
+            background = block.string() or renpy.displayable()
             if background == "ucn":
                 is_ucn = True
                 background = None

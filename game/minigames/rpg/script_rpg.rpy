@@ -327,7 +327,7 @@ label rpg_tate_ex:
             RPG.set_var_character("cs_chosen_form", "CS_VS_TATE_PUNCH")
 
     rpg:
-        bg "images/bg/train/amtrak_observation_2.png"
+        bg "bg_vs_tate_ex"
 
         allies:
             $cs_chosen_form
