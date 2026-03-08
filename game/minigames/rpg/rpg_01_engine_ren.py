@@ -1386,6 +1386,7 @@ class Encounter:
                     attack.use(self, fighter, targets) # Actually use the fighter's attack so call `damage_fighters`
                     rpg_logger.debug(f"{fighter.display_name}'s attack hit!")
                 else:
+                    attack.turns_until_available = attack.attack.cooldown  # We want cooldowns to fire even if we miss.
                     self.send_message(f"{fighter.display_name} missed!", fighter)
                     rpg_logger.debug(f"{fighter.display_name} missed!")
 
