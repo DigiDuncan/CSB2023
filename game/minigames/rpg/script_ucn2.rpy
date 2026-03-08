@@ -1,5 +1,4 @@
 # TODO: make sure you can't enter a battle with no fighters on either/both sides
-# TODO: fix none not resetting between fights
 # TODO: finish other selection screens
 # TODO: WHY ARE WE IN THE VOID? if we try to return to extras after playing again
 # TODO: fix selection crashing if you click fast

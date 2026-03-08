@@ -218,7 +218,7 @@ screen rpg_stat_box(fighter, current_ally_mode):
                                 text h_text:
                                     xalign 1.0 yalign 0.5
                             else:
-                                add "gui/rpg/hp_bar.png" corner1(int(228-(228*(fighter.hit_points/fighter.max_hp))),0) corner2(228,32) xalign 1.0
+                                add "gui/rpg/hp_bars/hp_bar.png" corner1(int(228-(228*(fighter.hit_points/fighter.max_hp))),0) corner2(228,32) xalign 1.0
                                 text h_text:
                                     xalign 1.0 yalign 0.5
 
