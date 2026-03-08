@@ -2613,7 +2613,7 @@ image rpg_pending_portrait = spritesheet_animation("gui/rpg/portraits/pending_an
 image rpg_pending_portrait_hover = spritesheet_animation("gui/rpg/portraits/pending_anim_hover.png", 3, 1, fps = 2, looping = True)
 image hp_bar_inf = spritesheet_animation("gui/rpg/hp_bars/hp_bar_inf_anim.png", 1, 12, fps = 12, looping = True)
 image hp_bar_overheal = spritesheet_animation("gui/rpg/hp_bars/hp_bar_overheal.png", 1, 24, fps = 12, looping = True)
-image hp_bar_police = "gui/rpg/hp_bars/hp_bar_police.png"
+image hp_bar_police = spritesheet_animation("gui/rpg/hp_bars/hp_bar_police.png", 1, 2, fps = 1, looping = True)
 
 ## For cop car lights
 image blue_light:
