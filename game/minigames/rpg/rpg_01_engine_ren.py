@@ -965,7 +965,7 @@ class Effects:
         sfx="/audio/sfx/sfx_csnore.ogg",
         duration=0,
         apply=apply_status_effect("{target} fell asleep!", stat=CharacterStat.DEFENSE, amount=0.5, scale=True),
-        update="{target} is honkshoomimimi",
+        update="{target} is fast asleep!",
         resolved=resolved_chance("{target} woke up!", chance=0.75)
     )
     # Intent: Make fighter unable to do anything at all for x turns.
@@ -1364,6 +1364,8 @@ class Encounter:
 
         # Actually run the attacks now
         for fighter, attack, targets in self.upcoming_attacks:
+            if fighter.dead:
+                continue
             rpg_logger.debug(f"Running next attack \"{attack.name}\" for {fighter.display_name}...")
             if attack is None:
                 continue
@@ -1393,6 +1395,8 @@ class Encounter:
         # This does a bunch of repeated iteration, but at the number of
         # effects that will be applied it is fine.
         for fighter in self.turn_order:
+            if fighter.dead:
+                continue
             rpg_logger.debug(f"Calculating effects for {fighter.display_name}...")
             for effect in tuple(fighter.effects):
                 rpg_logger.debug(f"Running effect \"{effect.effect.name}\"...")
