@@ -637,13 +637,13 @@ label awawa_tate_test:
                         hide tate_sigil
                     "Sigil Test 2":
 
-                        show vs_tate_ex_bg
+                        show tate_ex_bg
                         tate "Is that right?"
 
                         show tate_ex at center
                         tate "Am I doing this right??"
 
-                        hide vs_tate_ex
+                        hide tate_ex_bg
                         hide tate_ex
                         with dissolve
 

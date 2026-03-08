@@ -2699,7 +2699,7 @@ layeredimage tate_ex:
             xpos 10 ypos 10
 
 # Special background for Tate EX fight
-layeredimage bg_vs_tate_ex:
+layeredimage tate_ex_bg:
     xysize(1920,1080)
     xanchor 0.5 yanchor 1.0
     yoffset 5 # Don't ask me why this is required.
@@ -2722,7 +2722,7 @@ layeredimage bg_vs_tate_ex:
                 linear 1 alpha 0
                 repeat
     always:
-        Image("/secret/pt/sigil_text.png")
+        "/secret/pt/sigil_text.png"
         at transform:
             zoom 0.5
             xanchor 0.5 yanchor 0.5
