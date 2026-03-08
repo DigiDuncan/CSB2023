@@ -601,8 +601,19 @@ label awawa_tate_test:
 
             #################### PERFECT TATE TESTS ####################
             "VS Perfect Tate Tests":
+
+                # This menu is also a test.
+                if persistent.defeated_perfect_tate == False:
+                    show tate sheepish
+                    tate "Are you sure? It looks like you haven't seen that fight yet."
+                    menu:
+                        tate "Are you okay with spoilers?{fast}"
+                        "Yes":
+                            pass
+                        "No":
+                            jump .awawa_menu
                 menu:
-                    tate "Which one?{fast}"
+                    tate "Alright, which test?{fast}"
                     "CS Running Animation":
                         show cs_run at manual_pos(0.75, 0.5, 0.5)
                         tate "Is this what you wanted?"
