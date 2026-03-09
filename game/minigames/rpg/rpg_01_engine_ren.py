@@ -218,6 +218,8 @@ class Attack:
         self.accuracy: int = accuracy # percent change of hitting witht the attack
         self.start_used: bool = start_used # whether to start counting down from the beginning of the fight
 
+        self.component = False
+
     @property
     def options(self) -> dict[str, Any]:
         return self.func.options
@@ -346,6 +348,7 @@ class AttackComponent(Attack):
         args = ', '.join([f"{k}={v}" for k, v in func.options.items()])
         name = f"_{func.func.__name__}({args})"
         description = "{color=#f00}If you're seeing this, there's a problem!{/color}"
+        self.component = True
         super().__init__(name, description, func, targets, target_count, cooldown, accuracy, start_used, typ = typ)
 
 class ComboAttack:
@@ -386,6 +389,8 @@ class ComboAttack:
         self.cooldown: int = self.attacks[0].cooldown if cooldown is None else cooldown
         self.accuracy: int = self.attacks[0].accuracy if accuracy is None else accuracy
         self.start_used: bool = self.attacks[0].start_used if start_used is None else start_used
+
+        self.component = False
 
     def func(self, encounter: Encounter, fighter: Fighter, targets: tuple[Fighter, ...]):
         for attack in self.attacks:

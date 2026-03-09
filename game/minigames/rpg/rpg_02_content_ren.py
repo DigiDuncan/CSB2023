@@ -197,7 +197,8 @@ def ai_mimic(encounter: Encounter, fighter: Fighter, targets: tuple[Fighter, ...
 
 @attack_def(AttackType.DAMAGE | AttackType.HEAL | AttackType.BUFF | AttackType.DEBUFF | AttackType.EFFECT) # What could it beee??
 def random_attack(encounter: Encounter, fighter: Fighter, targets: tuple[Fighter, ...], attacks: list[Attack] | None = None):
-    attack = random.choice(Attacks.attacks if attacks is None else attacks)
+    aa = [a for a in Attacks.attacks if not a.component] if attacks is None else attacks
+    attack = random.choice(aa)
     encounter.send_message(f"[[Random] running {attack.name}...", fighter)
     attack.func(encounter, fighter, targets)
 
