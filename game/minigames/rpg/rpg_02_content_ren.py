@@ -185,7 +185,11 @@ def ai_mimic(encounter: Encounter, fighter: Fighter, targets: tuple[Fighter, ...
         aa = [a for a in Attacks.ex_attacks if a.type & AttackType.AOE or a.type & AttackType.DAMAGE]
         attack = random.choice(aa)
     else:
-        attack = targets[0].character.attacks[0]
+        a = []
+        for f in targets:
+            a.extend(f.attacks)
+        aa = [atk for atk in a if atk.type & AttackType.AOE or atk.type & AttackType.DAMAGE]
+        attack = random.choice(aa)
     if attack.name == "AI Mimic":
         attack = Attacks.PUNCH
     encounter.send_message(f"[[AI MIMIC] running {attack.name}...", None)
