@@ -2561,6 +2561,7 @@ image elf_1 = Movie(play="movies/elf1.webm", size=(1,1))
 image amtrak_northeast = Movie(play="movies/northeast.webm")
 image amtrak_desert_day = Movie(play="movies/desert_day.webm")
 image amtrak_desert_night = Movie(play="movies/desert_night.webm")
+image amtrak_reality_break = Movie(play="movies/amtrak_reality_break.webm")
 image portalbg = Movie(play="movies/portal.webm")
 image csbdxdogheck = Movie(play="movies/csbdxdogheck.webm")
 image baby_fruit = Movie(play="movies/baby_fruit.webm")
@@ -2614,6 +2615,12 @@ image rpg_pending_portrait_hover = spritesheet_animation("gui/rpg/portraits/pend
 image hp_bar_inf = spritesheet_animation("gui/rpg/hp_bars/hp_bar_inf_anim.png", 1, 12, fps = 12, looping = True)
 image hp_bar_overheal = spritesheet_animation("gui/rpg/hp_bars/hp_bar_overheal.png", 1, 24, fps = 12, looping = True)
 image hp_bar_police = spritesheet_animation("gui/rpg/hp_bars/hp_bar_police.png", 1, 2, fps = 1, looping = True)
+image hp_bar_secret_t:
+    "gui/rpg/hp_bars/hp_bar_secret_t.png"
+    
+    xpan -180
+    linear 5.0 xpan 180
+    repeat
 
 ## For cop car lights
 image blue_light:
@@ -2699,7 +2706,7 @@ layeredimage tate_ex:
         at transform:
             xpos 10 ypos 10
 
-# Special background for Tate EX fight
+# Special background for Tate EX fight (will be removed soon, but not yet, i'm still testing things)
 layeredimage tate_ex_bg:
     xysize(1920,1080)
     xanchor 0.5 yanchor 1.0

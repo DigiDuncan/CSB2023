@@ -3918,6 +3918,9 @@ label train_tate_ex_fight:
     tate "Let's do this."
     show cs worried flipped
     show tate smug at center with MoveTransition(1.0)
+    show amtrak_reality_break behind cs:
+        alpha 0
+        linear 2 alpha 1.0
     show tate smug sil_white:
         linear 1 blur 10
     with Dissolve(1.0)

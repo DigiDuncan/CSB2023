@@ -276,7 +276,7 @@ label rpg_tate_ex:
             RPG.set_var_character("cs_chosen_form", "CS_VS_TATE_PUNCH")
 
     rpg:
-        bg "tate_ex_bg"
+        bg "amtrak_reality_break"
 
         allies:
             $cs_chosen_form
