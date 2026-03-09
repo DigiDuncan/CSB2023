@@ -118,7 +118,7 @@ label rpg_ng_fight:
 
         RPG.clear_var_characters()
         for n, f in enumerate(rpg_final_party):
-            RPG.set_var_character(f"party_{n+1}", f)
+            RPG.set_var_character(f"party_{n+1}", f[1].assigned_name)
 
     rpg:
         bg "images/bg/csb3_friend/battle_block_without_theater.png"
@@ -145,8 +145,8 @@ label rpg_final_fight_1:
         renpy.call_screen("_rpg_selection", final_fighters_1)
 
         RPG.clear_var_characters()
-        for n, f in enumerate(chosen_final_fighters_1):
-            RPG.set_var_character(f"party_{n+1}", f)
+        for n, f in enumerate(rpg_final_party):
+            RPG.set_var_character(f"party_{n+1}", f[1].assigned_name)
 
     rpg:
         bg "images/bg/csb3_friend/war_torn_2.png"
@@ -175,7 +175,7 @@ label rpg_final_fight_2:
 
         RPG.clear_var_characters()
         for n, f in enumerate(rpg_final_party):
-            RPG.set_var_character(f"party_{n+1}", f)
+            RPG.set_var_character(f"party_{n+1}", f[1].assigned_name)
 
     rpg:
         bg "images/bg/csb3_friend/war_torn_3.png"
@@ -201,8 +201,8 @@ label rpg_final_fight_3:
         renpy.call_screen("_rpg_selection", final_fighters_3, locked_slots=["CS_FINAL"])
 
         RPG.clear_var_characters()
-        for n, f in enumerate(chosen_final_fighters_3):
-            RPG.set_var_character(f"party_{n+2}", f)
+        for n, f in enumerate(rpg_final_party):
+            RPG.set_var_character(f"party_{n+1}", f[1].assigned_name)
 
     rpg:
         bg "images/bg/csb3_friend/war_torn_4.png"
