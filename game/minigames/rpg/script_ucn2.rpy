@@ -742,7 +742,6 @@ screen _ucn2_selection():
 
                 # Move all these to the global versions so we can call the screen in a new context and skip the UI stack nonsense
                 # Also attempt to force-clear parties again (it didn't work)
-                SetVariable("ucn2_parties", []),
                 SetVariable("ucn2_parties", rpg_final_parties),
                 SetVariable("ucn2_scale", rpg_scale),
                 SetVariable("ucn2_img", rpg_img),

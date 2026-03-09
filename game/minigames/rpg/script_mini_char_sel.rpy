@@ -346,8 +346,7 @@ screen _rpg_selection(char_list = ["CS"], locked_slots = []):
         action [
             SensitiveIf(rpg_ready == True),
             Play("sound", "audio/sfx/sfx_valid.ogg"),
-            SetVariable("rpg_party", rpg_final_party),
-            SetVariable("rpg_party", []),
+            SetVariable("rpg_final_party", rpg_slots),
             Return(rpg_final_party)
         ]
         at ready_transform
