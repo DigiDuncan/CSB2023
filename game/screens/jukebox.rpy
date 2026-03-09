@@ -17,6 +17,7 @@ screen jukebox():
         tags_count = len(full_mode_list)
 
     default current_track = None
+    default jukebox_playing = False
     default current_jukebox_tag_index = 0
 
     add Color('#323e42', alpha=0.75)
@@ -106,8 +107,8 @@ screen jukebox():
                             textbutton "{font=music_text}" + track["title"] + "\n{size=-12}" + track["artist"]:
                                 action [
                                     SetScreenVariable("current_track", track),
-                                    SetVariable("jukebox_playing", True),
-                                    SelectedIf( SetVariable("current_track", track) ),
+                                    SetScreenVariable("jukebox_playing", True),
+                                    SelectedIf( SetScreenVariable("current_track", track) ),
                                     Function(renpy.music.set_volume, 0.0, channel="music"),
                                     Play("jukebox", track["file"])
                                 ]
@@ -188,7 +189,7 @@ screen jukebox():
                                     hover "gui/pause.png" # TODO: Actually make an image for this - Arc
                                     action [
                                         PauseAudio("jukebox", True),
-                                        SetVariable("jukebox_playing", False)
+                                        SetScreenVariable("jukebox_playing", False)
                                     ]
                             else:
                                 imagebutton:
@@ -199,7 +200,7 @@ screen jukebox():
                                     hover "gui/play.png" # TODO: Actually make an image for this - Arc
                                     action [
                                         PauseAudio("jukebox", False),
-                                        SetVariable("jukebox_playing", True)
+                                        SetScreenVariable("jukebox_playing", True)
                                     ]
 
                         ####### TRIVIA
@@ -225,7 +226,6 @@ screen jukebox():
         action [
             Stop("jukebox"),
             Function(renpy.music.set_volume, 1.0, 0.5, channel="music"),
-            SetVariable("current_track", None),
             SelectedIf(False),
             ShowMenu("subgame")
         ]
@@ -234,7 +234,6 @@ screen jukebox():
         action [
             Stop("jukebox"),
             Function(renpy.music.set_volume, 1.0, 0.5, channel="music"),
-            SetVariable("current_track", None),
             SelectedIf(False),
             Return()
         ]

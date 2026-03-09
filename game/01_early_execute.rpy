@@ -133,8 +133,6 @@ default persistent.csb3b_unlocked = False
 
 # Game unlocks: CE
 default persistent.carrot_fails = 0
-default persistent.carrot_game_unlocked = False
-default persistent.reversi_game_unlocked = False
 default persistent.saved_christmas = False
 default persistent.point_and_clicked = set()
 
@@ -155,9 +153,6 @@ define config.mouse_hide_time = None
 # Define layering
 define config.top_layers = ["music"]
 define config.bottom_layers = ["flashlight"]
-
-# Current State of the Jukebox (I hate that this is a variable)
-default jukebox_playing = False
 
 # Reversi Difficulty
 default reversi_difficulty = ReversiAI.GOBLIN

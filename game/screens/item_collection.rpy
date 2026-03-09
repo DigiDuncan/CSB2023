@@ -59,12 +59,9 @@ screen item_nav():
                     xalign 0.5 yalign 0.5
                     text_align 0.5
 
-            # I have no idea why this needs ALL THREE of these but it won't move on otherwise
+            # I have no idea why this needs a timer but it won't move on otherwise
             timer 0.001:
-                action [
-                    Function( SetVariable("loaded_state", "ready") ),
-                    Function( SetScreenVariable("loaded_state", "ready") )
-                ]
+                action Function( SetScreenVariable("loaded_state", "ready") )
             $ loaded_state = "ready"
 
     ###################### Actually show items
@@ -151,16 +148,11 @@ screen item_welcome():
 screen items(l):
 
     # Main Container omitting the menu
-    viewport:
-        xsize 800
-        ysize 900
+    frame:
+        background None
+        xsize 800 ysize 900
         xalign 0.6
-        xoffset 340
-        yoffset 200
-        side_yfill False
-        mousewheel False
-        draggable False
-        pagekeys False
+        xoffset 340 yoffset 150
         vbox:
             yfill False
             spacing 100
@@ -183,7 +175,7 @@ screen items(l):
                 frame:
                     background None
                     xsize 1.0 ysize 300
-                    xalign 0.5 yalign 0.5
+                    xalign 0.5 yalign 0
                     image Transform(ITEM_MAP[l]['img'], size=(640, 240), fit="contain"):
                         xalign 0.5 yalign 0.5
 

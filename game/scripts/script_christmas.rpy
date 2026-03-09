@@ -3826,7 +3826,6 @@ label ce_carrot:
     minigame "play_carrotgame" "ce_win_carrot" "ce_carrot"
 
 label ce_win_carrot:
-    $ persistent.carrot_game_unlocked = True
     scene cs_kitchen
     show cs_kitchen_fg
     show billy festive at mid_mid_left behind cs_kitchen_fg
@@ -6616,7 +6615,6 @@ label ce_reversi:
 
 label ce_win_reversi:
     $ mouse_visible = False
-    $ persistent.reversi_game_unlocked = True
     stop music
     music end
     show screen flashlight_demo

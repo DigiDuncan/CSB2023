@@ -303,9 +303,7 @@ screen timeline_tracer():
                             #action [ SensitiveIf(this_unlocked == True and this_jump is not None), Play("sound", "audio/sfx/sfx_valid.ogg"), Notify(this_jump) ]
 
                             hovered [
-                                SetVariable("info_x", this_x),
                                 SetScreenVariable("info_x", this_x),
-                                SetVariable("info_y", this_y-50),
                                 SetScreenVariable("info_y", this_y-50)
                             ]
                             tooltip "Replay!"

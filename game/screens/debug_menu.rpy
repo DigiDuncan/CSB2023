@@ -1,3 +1,4 @@
+# Note to Tate: Do NOT change this screen to use screen variables or it'll make the menu buttons light up weirdly??
 screen debug_menu():
     tag menu
     default chosen_label = None

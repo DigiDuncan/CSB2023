@@ -1,4 +1,5 @@
 # This is for viewing the various outcomes in Christmas Edition.
+# Note to Tate: Do NOT change this screen to use screen variables, it will not work.
 screen d20_viewer_screen():
     tag menu
 

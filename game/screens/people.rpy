@@ -128,7 +128,6 @@ screen people():
                                 textbutton name_label:
                                     action [
                                         Function(mark_read, k),
-                                        SetVariable("current_person", k),
                                         SetScreenVariable("current_person", k),
                                         ShowMenu("fake_error", "people.rpy", 126, "`bios/iris.txt` could not be rendered as a Text object.", "Hi, I'm Iris, a cosmic being with interest in the happenings of this reality, as well as some of the people involved in this story.\nDoes that sound too formal? I don't know. Hey, Digi, writing this shit's hard. You can fill in the rest from here.", _transition = determination)
                                     ]
@@ -136,7 +135,6 @@ screen people():
                                 textbutton name_label:
                                     action [
                                         Function(mark_read, k),
-                                        SetVariable("current_person", k),
                                         SetScreenVariable("current_person", k),
                                         SelectedIf( SetScreenVariable("current_person", k) ),
                                         SetScreenVariable("current_bios_sprite", 0),
