@@ -19,6 +19,7 @@ screen people():
     default current_bios_sprite = 0
     default current_bios_total_pages = 0
     default current_bios_page = 0
+    default current_bios_sorting_mode = 0
 
     add Color('#323e42', alpha=0.75)
 
@@ -83,7 +84,7 @@ screen people():
                         hover "/gui/left_on_small.png"
 
                         if current_bios_sorting_mode-1>=0:
-                            action SetVariable("current_bios_sorting_mode", current_bios_sorting_mode-1)
+                            action SetScreenVariable("current_bios_sorting_mode", current_bios_sorting_mode-1)
 
                 text sort_text:
                     xalign 0.5 yalign 0.5
@@ -99,7 +100,7 @@ screen people():
                         hover "/gui/right_on_small.png"
 
                         if current_bios_sorting_mode+1<4:
-                            action SetVariable("current_bios_sorting_mode", current_bios_sorting_mode+1)
+                            action SetScreenVariable("current_bios_sorting_mode", current_bios_sorting_mode+1)
 
                 ####### CHARACTER LIST
                 viewport:

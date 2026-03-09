@@ -6,6 +6,9 @@ screen unused_gallery():
     add "images/bg/books_misc/michael_calendar.png"
     add Color("#00000070")
 
+    default unused_page = 0
+    default current_gallery_img = 0
+
     python:
 
         # begin anti-spoiler technology
@@ -56,35 +59,35 @@ screen unused_gallery():
                             action [
                                 PauseAudio("music2"),
                                 Play("jukebox", "gallery/audio/" + list(asset_dict.keys())[unused_page-1], loop = False),
-                                SetVariable("unused_page", unused_page-1),
-                                SetVariable("current_gallery_img", 0)
+                                SetScreenVariable("unused_page", unused_page-1),
+                                SetScreenVariable("current_gallery_img", 0)
                             ]
                         elif list(asset_dict.values())[unused_page-1]["type"] == "image":
                             action [
                                 PauseAudio("music2", False),
                                 Stop("jukebox"),
-                                SetVariable("unused_page", unused_page-1),
-                                SetVariable("current_gallery_img", 0)
+                                SetScreenVariable("unused_page", unused_page-1),
+                                SetScreenVariable("current_gallery_img", 0)
                             ]
                         elif list(asset_dict.values())[unused_page-1]["type"] == "route":
                             action [
                                 PauseAudio("music2", False),
                                 Stop("jukebox"),
-                                SetVariable("unused_page", unused_page-1),
-                                SetVariable("current_gallery_img", 0)
+                                SetScreenVariable("unused_page", unused_page-1),
+                                SetScreenVariable("current_gallery_img", 0)
                             ]
                         elif list(asset_dict.values())[unused_page-1]["type"] == "route2":
                             action [
                                 PauseAudio("music2", False),
                                 Stop("jukebox"),
-                                SetVariable("unused_page", unused_page-1),
-                                SetVariable("current_gallery_img", 0)
+                                SetScreenVariable("unused_page", unused_page-1),
+                                SetScreenVariable("current_gallery_img", 0)
                             ]
                         elif list(asset_dict.values())[unused_page-1]["type"] == "imgset":
                             action [
                                 PauseAudio("music2", False),
                                 Stop("jukebox"),
-                                SetVariable("unused_page", unused_page-1)
+                                SetScreenVariable("unused_page", unused_page-1)
                             ]
             # Text
             frame:
@@ -113,36 +116,36 @@ screen unused_gallery():
                             action [
                                 PauseAudio("music2"),
                                 Play("jukebox", "gallery/audio/" + list(asset_dict.keys())[unused_page+1], loop = False),
-                                SetVariable("unused_page", unused_page+1),
-                                SetVariable("current_gallery_img", 0)
+                                SetScreenVariable("unused_page", unused_page+1),
+                                SetScreenVariable("current_gallery_img", 0)
                             ]
                         elif list(asset_dict.values())[unused_page+1]["type"] == "image":
                             action [
                                 PauseAudio("music2", False),
                                 Stop("jukebox"),
-                                SetVariable("unused_page", unused_page+1),
-                                SetVariable("current_gallery_img", 0)
+                                SetScreenVariable("unused_page", unused_page+1),
+                                SetScreenVariable("current_gallery_img", 0)
                             ]
                         elif list(asset_dict.values())[unused_page+1]["type"] == "route":
                             action [
                                 PauseAudio("music2", False),
                                 Stop("jukebox"),
-                                SetVariable("unused_page", unused_page+1),
-                                SetVariable("current_gallery_img", 0)
+                                SetScreenVariable("unused_page", unused_page+1),
+                                SetScreenVariable("current_gallery_img", 0)
                             ]
                         elif list(asset_dict.values())[unused_page+1]["type"] == "route2":
                             action [
                                 PauseAudio("music2", False),
                                 Stop("jukebox"),
-                                SetVariable("unused_page", unused_page+1),
-                                SetVariable("current_gallery_img", 0)
+                                SetScreenVariable("unused_page", unused_page+1),
+                                SetScreenVariable("current_gallery_img", 0)
                             ]
                         elif list(asset_dict.values())[unused_page+1]["type"] == "imgset":
                             action [
                                 PauseAudio("music2", False),
                                 Stop("jukebox"),
-                                SetVariable("unused_page", unused_page+1),
-                                SetVariable("current_gallery_img", 0)
+                                SetScreenVariable("unused_page", unused_page+1),
+                                SetScreenVariable("current_gallery_img", 0)
                             ]
 
 
@@ -187,7 +190,7 @@ screen unused_gallery():
                                     Stop("music2"),
                                     PauseAudio("music", False),
                                     Stop("jukebox"),
-                                    SetVariable("unused_page", 0)
+                                    SetScreenVariable("unused_page", 0)
                                 ]
 
                     # Main Image (if audio)
@@ -227,7 +230,7 @@ screen unused_gallery():
                                         xysize 64, 64
                                         idle "/gui/left_off_small.png"
                                         hover "/gui/left_on_small.png"
-                                        action IncrementVariable("current_gallery_img", -1)
+                                        action IncrementScreenVariable("current_gallery_img", -1)
 
                             frame:
                                 background None
@@ -248,7 +251,7 @@ screen unused_gallery():
                                         xysize 64, 64
                                         idle "/gui/right_off_small.png"
                                         hover "/gui/right_on_small.png"
-                                        action IncrementVariable("current_gallery_img", 1)
+                                        action IncrementScreenVariable("current_gallery_img", 1)
                 # Caption
                 frame:
                     background None
@@ -268,7 +271,7 @@ screen unused_gallery():
             Stop("music2"),
             PauseAudio("music", False),
             Stop("jukebox"),
-            SetVariable("unused_page", 0),
+            #SetScreenVariable("unused_page", 0),
             SelectedIf(False),
             Hide("unused_gallery"),
             ShowMenu("category_welcome")
@@ -279,7 +282,7 @@ screen unused_gallery():
             Stop("music2"),
             PauseAudio("music", False),
             Stop("jukebox"),
-            SetVariable("unused_page", 0),
+            #SetScreenVariable("unused_page", 0),
             SelectedIf(False),
             Hide("unused_gallery"),
             Return()

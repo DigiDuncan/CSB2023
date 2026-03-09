@@ -17,6 +17,7 @@ screen jukebox():
         tags_count = len(full_mode_list)
 
     default current_track = None
+    default current_jukebox_tag_index = 0
 
     add Color('#323e42', alpha=0.75)
 
@@ -42,7 +43,7 @@ screen jukebox():
                         idle "/gui/left_off_small.png"
                         hover "/gui/left_on_small.png"
 
-                        action SetVariable("current_jukebox_tag_index", current_jukebox_tag_index-1)
+                        action SetScreenVariable("current_jukebox_tag_index", current_jukebox_tag_index-1)
 
                 ### RIGHT BUTTON
                 if current_jukebox_tag_index+1<tags_count:
@@ -53,7 +54,7 @@ screen jukebox():
                         idle "/gui/right_off_small.png"
                         hover "/gui/right_on_small.png"
 
-                        action SetVariable("current_jukebox_tag_index", current_jukebox_tag_index+1)
+                        action SetScreenVariable("current_jukebox_tag_index", current_jukebox_tag_index+1)
 
                 # Since we can't exactly do anything about the index problem let's just hide unseen tags for now.
                 # I want to use obfuscator() later but it's not ready yet.

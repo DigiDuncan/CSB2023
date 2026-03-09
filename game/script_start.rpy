@@ -1,29 +1,11 @@
 init python:
-    # For unused assets gallery
-    unused_page = 0
-    current_gallery_img = 0
-
-    # For jukebox tagging
-    current_jukebox_tag_index = 0
-
-    # For bios page
-    current_bios_sorting_mode = 0
-
-    # For the subgame page
-    current_subgame_name = None
-    current_subgame_desc = None
-    current_subgame_art = None
-    current_subgame_kind = None
-    current_subgame_destination = None
-
     # For Ace Attorney parody
     chosen_evidence = 0
 
     # For RPG
     rpg_final_party = []
 
-# If music is so good, why is there no Music 2?
-init python:
+    # If music is so good, why is there no Music 2?
     renpy.music.register_channel("sound2", "sfx")
     renpy.music.register_channel("music5", "music")
     renpy.music.register_channel("music4", "music")

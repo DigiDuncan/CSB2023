@@ -43,6 +43,11 @@ screen subgame():
     image "gui/subgame_menu.png"
 
     default bookshelf = []
+    default current_subgame_name = None
+    default current_subgame_desc = None
+    default current_subgame_art = None
+    default current_subgame_kind = None
+    default current_subgame_destination = None
 
     python:
         bookshelf = []
@@ -82,11 +87,11 @@ screen subgame():
             hover_sound "audio/sfx/sfx_select.ogg"
             action [
                 Play("sound", "audio/sfx/sfx_valid.ogg"),
-                SetVariable("current_subgame_name", book.title),
-                SetVariable("current_subgame_desc", book.description),
-                SetVariable("current_subgame_art", book.front),
-                SetVariable("current_subgame_kind", book.kind),
-                SetVariable("current_subgame_destination", book.destination)
+                SetScreenVariable("current_subgame_name", book.title),
+                SetScreenVariable("current_subgame_desc", book.description),
+                SetScreenVariable("current_subgame_art", book.front),
+                SetScreenVariable("current_subgame_kind", book.kind),
+                SetScreenVariable("current_subgame_destination", book.destination)
             ]
             xpos book.x_pos
             ypos book.y_pos
