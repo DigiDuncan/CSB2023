@@ -206,7 +206,7 @@ def random_attack(encounter: Encounter, fighter: Fighter, targets: tuple[Fighter
     aa = [a for a in Attacks.attacks if not a.component] if attacks is None else attacks
     attack = random.choice(aa)
     encounter.send_message(f"[[Random] running {attack.name}...", fighter)
-    rpg_logger.debug(f"Metronome picked {attack.name} and landed on {targets}!")
+    rpg_logger.debug(f"Metronome picked {attack.name} and aimed at {targets}!")
 
     attack.func(encounter, fighter, targets)
 
