@@ -46,10 +46,7 @@ screen _rpg_selection(char_list = ["CS"]):
 
     ###################### Important variables for everywhere
     default rpg_hovered_data = []
-    default rpg_slots = [
-        ["(Pending)"], ["(Pending)"],
-        ["(Pending)"], ["(Pending)"]
-    ]
+    default rpg_slots = [ ["(Pending)"], ["(Pending)"], ["(Pending)"], ["(Pending)"] ]
     default rpg_selected_slot = 0
     default rpg_ready = False
     default rpg_party_size = 4
@@ -136,6 +133,7 @@ screen _rpg_selection(char_list = ["CS"]):
                                         Play("sound", "audio/sfx/sfx_valid.ogg"),
                                         Function(rpg_fill_slot, rpg_slots, rpg_selected_slot, rpg_hovered_data),
                                         SetScreenVariable("rpg_selected_slot", rpg_slot_autoselect(rpg_slots, rpg_selected_slot)),
+                                        SetScreenVariable("rpg_hovered_data", []),
                                         With(determination)
                                     ]
 
@@ -191,6 +189,8 @@ screen _rpg_selection(char_list = ["CS"]):
                                             slot_button_idle = rpg_slots[a][1].portrait.filename
                                             slot_button_hover = "selectable:"+rpg_slots[a][1].portrait.filename
 
+                                        print(rpg_hovered_data)
+
                                     imagebutton:
                                         idle slot_button_idle
                                         hover slot_button_hover
@@ -205,6 +205,9 @@ screen _rpg_selection(char_list = ["CS"]):
                                             (0,0), "selectable:gui/rpg/portraits/border_sel_a.png"
                                         )
                                         hover_sound "audio/sfx/sfx_select.ogg"
+                                        if rpg_slots[a][0] != "(Pending)":
+                                            hovered SetScreenVariable("rpg_hovered_data", [ rpg_slots[a][0], rpg_slots[a][1] ])
+                                        unhovered SetScreenVariable("rpg_hovered_data", [])
                                         action [
                                             SetScreenVariable("rpg_selected_slot", a),
                                             SelectedIf( SetScreenVariable("rpg_selected_slot", a) )
@@ -318,19 +321,18 @@ screen _rpg_selection(char_list = ["CS"]):
     ######################### BOTTOM
 
     ### DEBUG BUTTONS
-    textbutton "[[DEBUG] Toggle ready state.":
-        yoffset 50 xoffset 25
-        action [
-            SetScreenVariable("rpg_ready", (not rpg_ready) )
-        ]
+    # textbutton "[[DEBUG] Toggle ready state.":
+    #     yoffset 50 xoffset 25
+    #     action [
+    #         SetScreenVariable("rpg_ready", (not rpg_ready) )
+    #     ]
+    ### END DEBUG BUTTONS
 
     python:
         if rpg_ready == True:
             ready_transform = _rpg_ready_button_yes
         else:
             ready_transform = _rpg_ready_button_no
-
-    ### END DEBUG BUTTONS
 
     imagebutton:
         insensitive "sepia:gui/rpg/ready.png"

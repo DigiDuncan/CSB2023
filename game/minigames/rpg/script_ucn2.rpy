@@ -448,12 +448,6 @@ screen _ucn2_selection():
                 SetScreenVariable("rpg_ready", (not rpg_ready) )
             ]
 
-        python:
-            if rpg_ready == True:
-                ready_transform = _rpg_ready_button_yes
-            else:
-                ready_transform = _rpg_ready_button_no
-
         # Debug only
         if rpg_ready == True:
             textbutton "[[DEV] Skip aesthetic screens":
@@ -464,6 +458,12 @@ screen _ucn2_selection():
                     SetScreenVariable("rpg_bgm", random.choice(list(MUSIC_MAP.keys())))
                 ]
         ################################################### END DEBUG BUTTONS
+
+        python:
+            if rpg_ready == True:
+                ready_transform = _rpg_ready_button_yes
+            else:
+                ready_transform = _rpg_ready_button_no
 
         imagebutton:
             insensitive "sepia:gui/rpg/ready.png"
