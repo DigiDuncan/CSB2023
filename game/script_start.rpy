@@ -19,6 +19,9 @@ init python:
     # For Ace Attorney parody
     chosen_evidence = 0
 
+    # For RPG
+    rpg_final_party = []
+
 # If music is so good, why is there no Music 2?
 init python:
     renpy.music.register_channel("sound2", "sfx")

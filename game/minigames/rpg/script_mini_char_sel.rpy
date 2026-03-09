@@ -59,7 +59,6 @@ screen _rpg_selection(char_list = ["CS"], locked_slots = []):
                 rpg_slots[slot] = [ getattr(RPG.Characters, locked_slots[slot]).name, getattr(RPG.Characters, locked_slots[slot]) ]
 
     ### Add background color / prep video
-    add Color("#000")
     add Color('#323e42', alpha=0.75)
     showif rpg_ready == True:
         add Movie(size=(1920,1080), play="movies/Fire.webm", side_mask=True) at _rpg_ready_flames
@@ -194,8 +193,6 @@ screen _rpg_selection(char_list = ["CS"], locked_slots = []):
                                         else:
                                             slot_button_idle = rpg_slots[a][1].portrait.filename
                                             slot_button_hover = "selectable:"+rpg_slots[a][1].portrait.filename
-
-                                        print(rpg_hovered_data)
 
                                     imagebutton:
                                         idle slot_button_idle
@@ -349,8 +346,8 @@ screen _rpg_selection(char_list = ["CS"], locked_slots = []):
         action [
             SensitiveIf(rpg_ready == True),
             Play("sound", "audio/sfx/sfx_valid.ogg"),
-            SetVariable("rpg_party", []),
             SetVariable("rpg_party", rpg_final_party),
-            Notify("Awawa!") # replace this with the battle jump
+            SetVariable("rpg_party", []),
+            Return(rpg_final_party)
         ]
         at ready_transform
