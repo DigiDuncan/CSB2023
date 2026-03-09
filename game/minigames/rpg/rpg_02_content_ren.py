@@ -10,6 +10,12 @@ from renpy.display.image import Image
 from rpg_01_engine_ren import Encounter, Fighter, Character, CharacterStat, attack_def, AttackType, stat_attack_def, AI, \
     Attack, ComboAttack, TargetType, FighterAttack, classproperty, Effects, AttackComponent
 
+from logging import getLogger, DEBUG
+
+logger = getLogger("csb")
+rpg_logger = logger.getChild("rpg")
+rpg_logger.setLevel(DEBUG)
+
 """renpy
 rpy python annotations
 python early in RPG:
@@ -200,6 +206,8 @@ def random_attack(encounter: Encounter, fighter: Fighter, targets: tuple[Fighter
     aa = [a for a in Attacks.attacks if not a.component] if attacks is None else attacks
     attack = random.choice(aa)
     encounter.send_message(f"[[Random] running {attack.name}...", fighter)
+    rpg_logger.debug(f"Metronome picked {attack.name} and landed on {targets}!")
+
     attack.func(encounter, fighter, targets)
 
 class AIType:
