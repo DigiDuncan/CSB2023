@@ -453,6 +453,13 @@ screen screen_rpg():
                                                             # Only put these if the target is not dead
                                                             if not victim.dead:
 
+                                                                # Handler for multi-targets
+                                                                python:
+                                                                    if curr_attack.attack.target_count not in [0,1]:
+                                                                        next_mode = None
+                                                                    else:
+                                                                        next_mode = "ATK"
+
                                                                 button:
                                                                     hover_sound "audio/sfx/sfx_select.ogg"
 
@@ -460,7 +467,7 @@ screen screen_rpg():
                                                                         Play("sound", "audio/sfx/sfx_valid.ogg"),
                                                                         SetVariable("curr_victim", victim ),
                                                                         SelectedIf((SetVariable("curr_victim", victim))),
-                                                                        SetScreenVariable("current_ally_mode", None),
+                                                                        SetScreenVariable("current_ally_mode", next_mode),
                                                                         target_actions
                                                                     ]
 
