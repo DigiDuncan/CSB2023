@@ -233,7 +233,9 @@ class Attack:
         if self.name == "AI Mimic" or self.name == "All Over Again":
             return "Mirror"
         if self.name == "Draw In":
-            return "Random Effect"
+            return "Random Buff/Debuff"
+        if self.name == "Metronome":
+            return "Random Attack"
 
         show_x = True
         duration = f" for {self.options["duration"]} turns" if "duration" in self.options else ""

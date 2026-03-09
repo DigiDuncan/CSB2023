@@ -154,25 +154,25 @@ def draw_in(encounter: Encounter, fighter: Fighter, targets: tuple[Fighter, ...]
     attack_type = random.randint(1, 4)
     match attack_type:
         case 1: # def up, allies
-            encounter.send_message("Your party's DEF went up!", None)
+            encounter.send_message("Your party's DEF went up!", fighter)
             allies = True
             stat = CharacterStat.DEFENSE
         case 2: # def down, enemies
-            encounter.send_message("The enemy party's DEF went down!", None)
+            encounter.send_message("The enemy party's DEF went down!", fighter)
             allies = False
             stat = CharacterStat.DEFENSE
             mult = 1.0 / mult
         case 3: # atk up, allies
-            encounter.send_message("Your party's ATK went up!", None)
+            encounter.send_message("Your party's ATK went up!", fighter)
             allies = True
             stat = CharacterStat.ATTACK
         case 4: # atk down, enemies
-            encounter.send_message("The enemy party's ATK went down!", None)
+            encounter.send_message("The enemy party's ATK went down!", fighter)
             allies = False
             stat = CharacterStat.ATTACK
             mult = 1.0 / mult
         case _: # impossible case
-            encounter.send_message("[[Draw In] Impossible Result", None)
+            encounter.send_message("[[Draw In] Impossible Result", fighter)
             return
 
     for target in targets:
@@ -192,7 +192,13 @@ def ai_mimic(encounter: Encounter, fighter: Fighter, targets: tuple[Fighter, ...
         attack = random.choice(aa)
     if attack.name == "AI Mimic":
         attack = Attacks.PUNCH
-    encounter.send_message(f"[[AI MIMIC] running {attack.name}...", None)
+    encounter.send_message(f"[[AI MIMIC] running {attack.name}...", fighter)
+    attack.func(encounter, fighter, targets)
+
+@attack_def(AttackType.DAMAGE | AttackType.HEAL | AttackType.BUFF | AttackType.DEBUFF | AttackType.EFFECT) # What could it beee??
+def random_attack(encounter: Encounter, fighter: Fighter, targets: tuple[Fighter, ...], attacks: list[Attack] | None = None):
+    attack = random.choice(Attacks.attacks if attacks is None else attacks)
+    encounter.send_message(f"[[Random] running {attack.name}...", fighter)
     attack.func(encounter, fighter, targets)
 
 class AIType:
@@ -325,7 +331,7 @@ class Attacks:
     METRONOME = ComboAttack("Metronome", "Wait, huh?!", # TODO: this doesn't work yet; this should be able to access ANY move in the game
         [
             CONFUSE,
-            AI_MIMIC
+            AttackComponent(random_attack())
         ])
     PISTOL = ComboAttack("Pistol", "A sharp shot to the chest.",
         [
