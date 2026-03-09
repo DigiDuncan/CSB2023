@@ -28,7 +28,7 @@ init python:
 
 ###################################################### ACTUAL SCREEN STARTS HERE
 
-screen _rpg_selection(char_list = [None]):
+screen _rpg_selection(char_list = ["CS"]):
     modal True
 
     python:
@@ -41,10 +41,7 @@ screen _rpg_selection(char_list = [None]):
 
     # Run these immediately in the background of all screens
     on "show" action [
-        Function(start_predict_list, ucn_bg_list),
-        Hide("category_nav"),
-        Play("music2", "audio/riders_menu.ogg"),
-        Function(persistent.heard.add, "riders_menu")
+        Function(start_predict_list, ucn_bg_list)
     ]
 
     ###################### Important variables for everywhere
@@ -101,67 +98,49 @@ screen _rpg_selection(char_list = [None]):
                     $ counter = 0
                     vbox:
                         xalign 0.5
+
+                        if len(char_list)+1 <= 17:
+                            $ grid_cols = len(char_list)+1
+                        else:
+                            $ grid_cols = 17
+
                         vpgrid:
-                            cols 17
+                            cols grid_cols
                             spacing 10
                             xalign 0.5
-                            for character in RPG.Characters.characters:
-                                # Sandbag doesn't go here
-                                if character.display_name != "Sandbag":
-                                    $ portrait = character.portrait.filename
+                            for char in char_list:
+                                $ character = getattr(RPG.Characters, char) or RPG.Characters.CS
+                                $ portrait = character.portrait.filename
 
-                                    # This bit is stupid lmao
-                                    if portrait == "gui/rpg/portraits/blank.png":
-                                        $ hover_portrait = "selectable:gui/rpg/portraits/blank_hover.png"
-                                    else:
-                                        $ hover_portrait = "selectable:"+portrait
+                                # This bit is stupid lmao
+                                if portrait == "gui/rpg/portraits/blank.png":
+                                    $ hover_portrait = "selectable:gui/rpg/portraits/blank_hover.png"
+                                else:
+                                    $ hover_portrait = "selectable:"+portrait
 
-                                    imagebutton:
-                                        xysize(88,88)
-                                        idle portrait
-                                        hover hover_portrait
-                                        hover_sound "audio/sfx/sfx_select.ogg"
-                                        hovered [
-                                            SetScreenVariable("rpg_hovered_data", [character.name, character])
-                                        ]
-                                        unhovered  [
-                                            SetScreenVariable("rpg_hovered_data", [])
-                                        ]
-                                        action [
-                                            Play("sound", "audio/sfx/sfx_valid.ogg"),
-                                            Function(rpg_fill_slot, rpg_slots, rpg_selected_slot, rpg_hovered_data),
-                                            SetScreenVariable("rpg_selected_slot", rpg_slot_autoselect(rpg_slots, rpg_selected_slot)),
-                                            With(determination)
-                                        ]
-
-                            ###################### Handle empty portrait slots here
-                            python:
-                                unused_slots = ((17*4)-2)-len(RPG.Characters.characters)
-                            for f in range(unused_slots):
-                                add Null(88,88)
+                                imagebutton:
+                                    xysize(88,88)
+                                    idle portrait
+                                    hover hover_portrait
+                                    hover_sound "audio/sfx/sfx_select.ogg"
+                                    insensitive "sepia:"+portrait
+        
+                                    hovered [
+                                        SetScreenVariable("rpg_hovered_data", [character.name, character])
+                                    ]
+                                    unhovered  [
+                                        SetScreenVariable("rpg_hovered_data", [])
+                                    ]
+                                    action [
+                                        SensitiveIf( [character.name, character] not in rpg_slots),
+                                        Play("sound", "audio/sfx/sfx_valid.ogg"),
+                                        Function(rpg_fill_slot, rpg_slots, rpg_selected_slot, rpg_hovered_data),
+                                        SetScreenVariable("rpg_selected_slot", rpg_slot_autoselect(rpg_slots, rpg_selected_slot)),
+                                        With(determination)
+                                    ]
 
                             ###################### Handler for special buttons
 
-                            ### Random
-                            imagebutton:
-                                xysize(88,88)
-                                idle "gui/rpg/portraits/unknown.png"
-                                hover "selectable:gui/rpg/portraits/unknown.png"
-                                hover_sound "audio/sfx/sfx_select.ogg"
-                                hovered [
-                                    SetScreenVariable("rpg_hovered_data", ["(Random)", RPG.Characters.random()])
-                                ]
-                                unhovered  [
-                                    SetScreenVariable("rpg_hovered_data", [])
-                                ]
-                                action [
-                                    Play("sound", "audio/sfx/sfx_valid.ogg"),
-                                    Function(rpg_fill_slot, rpg_slots, rpg_selected_slot, ["(Random)", RPG.Characters.random() ]),
-                                    SetScreenVariable("rpg_selected_slot", rpg_slot_autoselect(rpg_slots, rpg_selected_slot)),
-                                    With(determination)
-                                ]
-
-                            ### For leaving slots deliberately empty
                             imagebutton:
                                 xysize(88,88)
                                 idle "gui/rpg/portraits/none.png"
@@ -189,11 +168,14 @@ screen _rpg_selection(char_list = [None]):
                         ###################### Allies
                         frame:
                             background None
-                            xsize 0.5 xoffset 10
-                            text "{size=+8}Allies"
+                            xsize 0.5 xoffset -10
+                            xalign 1.0
+                            text "{size=+8}Allies":
+                                xalign 1.0
 
                             # Selected character portraits
                             grid 4 1:
+                                xalign 1.0
                                 ypos 0.175
                                 spacing 10
                                 for a in range(rpg_party_size):
@@ -205,9 +187,6 @@ screen _rpg_selection(char_list = [None]):
                                         elif rpg_slots[a][0] == "(None)":
                                             slot_button_idle = "gui/rpg/portraits/none.png"
                                             slot_button_hover = "selectable:gui/rpg/portraits/none.png"
-                                        elif rpg_slots[a][0] == "(Random)":
-                                            slot_button_idle = "gui/rpg/portraits/unknown.png"
-                                            slot_button_hover = "selectable:gui/rpg/portraits/unknown.png"
                                         else:
                                             slot_button_idle = rpg_slots[a][1].portrait.filename
                                             slot_button_hover = "selectable:"+rpg_slots[a][1].portrait.filename
@@ -241,7 +220,8 @@ screen _rpg_selection(char_list = [None]):
 
                             text output_text:
                                 ypos 0.45
-
+                                xalign 1.0
+                                text_align 1.0
 
                         ###################### Display currently hovered character
                         frame:
@@ -253,15 +233,9 @@ screen _rpg_selection(char_list = [None]):
                             if rpg_hovered_data == "":
                                 background None
                             else:
-                                # Handle random/none first
+                                # Handle None first
                                 if rpg_hovered_data:
-                                    if rpg_hovered_data[0] == "(Random)":
-                                        add "gui/rpg/random.png":
-                                            xysize(400,400)
-                                            fit("contain")
-                                            xanchor 0.5 yanchor 1.0
-                                            xpos 0.5 ypos 0.8
-                                    elif rpg_hovered_data[0] == "(None)":
+                                    if rpg_hovered_data[0] == "(None)":
                                         add "gui/rpg/none.png":
                                             xysize(400,400)
                                             fit("contain")
@@ -286,11 +260,64 @@ screen _rpg_selection(char_list = [None]):
                                         text rpg_hovered_data[0]:
                                             text_align 0.5
 
+                                    # Display stats
+                                    if rpg_hovered_data[0] not in [ None, "(None)" ]:
+                                        frame:
+                                            background None
+                                            xoffset -370 yoffset 0
+                                            yanchor 1.0
+                                            xmaximum 500 ymaximum 200
+
+                                            vbox:
+                                                text "Stats":
+                                                    xalign 0.5
+                                                    text_align 0.5
+                                                grid 3 1:
+                                                    xfill True
+                                                    xalign 0.5
+                                                    frame:
+                                                        background None
+                                                        # Handle infinite health here
+                                                        python:
+                                                            if str(rpg_hovered_data[1].base_hp) == "inf":
+                                                                hp_text = "{image=gui/inline_text/infinite_text.png}"
+                                                            else:
+                                                                hp_text = str(rpg_hovered_data[1].base_hp)
+
+                                                        text "{image=gui/inline_text/hp.png} "+hp_text:
+                                                            xalign 0.5
+
+                                                    frame:
+                                                        background None
+                                                        xsize 200
+                                                        text "{image=gui/inline_text/atk.png} "+str(rpg_hovered_data[1].base_atk):
+                                                            xalign 0.5
+                                                    frame:
+                                                        background None
+                                                        xsize 200
+                                                        text "{image=gui/inline_text/def.png} "+str(rpg_hovered_data[1].base_def):
+                                                            xalign 0.5
+                                        frame:
+                                            background None
+                                            xoffset -370 yoffset 363
+                                            yanchor 1.0
+                                            xsize 500 ysize 363
+
+                                            vbox: 
+                                                text "Moves":
+                                                    xalign 0.5
+                                                    text_align 0.5
+
+                                                vpgrid:
+                                                    cols 1
+                                                    xfill True
+                                                    for atks in rpg_hovered_data[1].attacks:
+                                                        text "{size=40}"+atks.name+" {/size}"
+                                                        text "{size=21}("+atks.properties+"){/size}"
+
     ######################### BOTTOM
 
-
-
-    ################################################### DEBUG BUTTONS
+    ### DEBUG BUTTONS
     textbutton "[[DEBUG] Toggle ready state.":
         yoffset 50 xoffset 25
         action [
@@ -303,16 +330,7 @@ screen _rpg_selection(char_list = [None]):
         else:
             ready_transform = _rpg_ready_button_no
 
-    # Debug only
-    if rpg_ready == True:
-        textbutton "[[DEV] Skip aesthetic screens":
-            xoffset 1395 yoffset 950
-            action [
-                Play("sound", "audio/sfx/sfx_valid.ogg"),
-                SetScreenVariable("rpg_selection_stage", "fight"),
-                SetScreenVariable("rpg_bgm", random.choice(list(MUSIC_MAP.keys())))
-            ]
-    ################################################### END DEBUG BUTTONS
+    ### END DEBUG BUTTONS
 
     imagebutton:
         insensitive "sepia:gui/rpg/ready.png"
@@ -322,22 +340,8 @@ screen _rpg_selection(char_list = [None]):
         action [
             SensitiveIf(rpg_ready == True),
             Play("sound", "audio/sfx/sfx_valid.ogg"),
-            Notify("Awawa!")
-        ]
-        at ready_transform
-
-    ################################################### START FIGHT
-    textbutton "BEGIN!":
-        xoffset 1674 yoffset 1000
-        action [
-            Play("sound", "audio/sfx/sfx_valid.ogg"),
-            Hide("rpg_char_sel_new", dissolve),
-            Hide("category_welcome", dissolve),
-
-            # Move all these to the global versions so we can call the screen in a new context and skip the UI stack nonsense
-            # Also attempt to force-clear parties again (it didn't work)
             SetVariable("rpg_party", []),
             SetVariable("rpg_party", rpg_final_party),
-
-            Start("_rpg_battle")
+            Notify("Awawa!") # replace this with the battle jump
         ]
+        at ready_transform

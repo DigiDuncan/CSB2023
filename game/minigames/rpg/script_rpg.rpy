@@ -111,24 +111,26 @@ label rpg_cop_fight_4:
 
 label rpg_ng_fight:
     python:
-        ng_fighters = ["CS_NG", "ARCEUS", "PAKOO", "MIKA", "KITTY", "TATE", "ARIA", "DIGI", "NOVA", "NONE"]
+        ng_fighters = ["CS_NG", "ARCEUS", "PAKOO", "MIKA", "KITTY", "TATE", "ARIA", "DIGI", "NOVA"]
         chosen_ng_fighters = []
 
-        narrator("Choose a party member! (1/4)", interact = False)
-        party_1 = renpy.display_menu([(a.title() if a != "CS_NG" else "CS", a) for a in ng_fighters], screen="ucn_choice")
-        if party_1 != "NONE": chosen_ng_fighters.append(party_1)
+        renpy.call_screen("_rpg_selection", ng_fighters)
 
-        narrator("Choose a party member! (2/4)", interact = False)
-        party_2 = renpy.display_menu([(a.title() if a != "CS_NG" else "CS", a) for a in ng_fighters if a not in chosen_ng_fighters], screen="ucn_choice")
-        if party_2 != "NONE": chosen_ng_fighters.append(party_2)
+        # narrator("Choose a party member! (1/4)", interact = False)
+        # party_1 = renpy.display_menu([(a.title() if a != "CS_NG" else "CS", a) for a in ng_fighters], screen="ucn_choice")
+        # if party_1 != "NONE": chosen_ng_fighters.append(party_1)
 
-        narrator("Choose a party member! (3/4)", interact = False)
-        party_3 = renpy.display_menu([(a.title() if a != "CS_NG" else "CS", a) for a in ng_fighters if a not in chosen_ng_fighters], screen="ucn_choice")
-        if party_3 != "NONE": chosen_ng_fighters.append(party_3)
+        # narrator("Choose a party member! (2/4)", interact = False)
+        # party_2 = renpy.display_menu([(a.title() if a != "CS_NG" else "CS", a) for a in ng_fighters if a not in chosen_ng_fighters], screen="ucn_choice")
+        # if party_2 != "NONE": chosen_ng_fighters.append(party_2)
 
-        narrator("Choose a party member! (4/4)", interact = False)
-        party_4 = renpy.display_menu([(a.title() if a != "CS_NG" else "CS", a) for a in ng_fighters if a not in chosen_ng_fighters], screen="ucn_choice")
-        if party_4 != "NONE": chosen_ng_fighters.append(party_4)
+        # narrator("Choose a party member! (3/4)", interact = False)
+        # party_3 = renpy.display_menu([(a.title() if a != "CS_NG" else "CS", a) for a in ng_fighters if a not in chosen_ng_fighters], screen="ucn_choice")
+        # if party_3 != "NONE": chosen_ng_fighters.append(party_3)
+
+        # narrator("Choose a party member! (4/4)", interact = False)
+        # party_4 = renpy.display_menu([(a.title() if a != "CS_NG" else "CS", a) for a in ng_fighters if a not in chosen_ng_fighters], screen="ucn_choice")
+        # if party_4 != "NONE": chosen_ng_fighters.append(party_4)
 
         RPG.clear_var_characters()
         for n, f in enumerate(chosen_ng_fighters):
