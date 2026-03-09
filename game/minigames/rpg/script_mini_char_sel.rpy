@@ -28,7 +28,7 @@ init python:
 
 ###################################################### ACTUAL SCREEN STARTS HERE
 
-screen _rpg_selection(char_list = ["CS"]):
+screen _rpg_selection(char_list = ["CS"], locked_slots = []):
     modal True
 
     python:
@@ -46,11 +46,17 @@ screen _rpg_selection(char_list = ["CS"]):
 
     ###################### Important variables for everywhere
     default rpg_hovered_data = []
-    default rpg_slots = [ ["(Pending)"], ["(Pending)"], ["(Pending)"], ["(Pending)"] ]
     default rpg_selected_slot = 0
     default rpg_ready = False
     default rpg_party_size = 4
     default rpg_final_party = []
+    default rpg_slots = [ ["(Pending)"], ["(Pending)"], ["(Pending)"], ["(Pending)"] ]
+
+    # Pre-filled slots handler
+    python:
+        if len(locked_slots) > 0:
+            for slot in range(len(locked_slots)):
+                rpg_slots[slot] = [ getattr(RPG.Characters, locked_slots[slot]).name, getattr(RPG.Characters, locked_slots[slot]) ]
 
     ### Add background color / prep video
     add Color("#000")
@@ -209,6 +215,7 @@ screen _rpg_selection(char_list = ["CS"]):
                                             hovered SetScreenVariable("rpg_hovered_data", [ rpg_slots[a][0], rpg_slots[a][1] ])
                                         unhovered SetScreenVariable("rpg_hovered_data", [])
                                         action [
+                                            SensitiveIf( rpg_slots[a][0] not in locked_slots ),
                                             SetScreenVariable("rpg_selected_slot", a),
                                             SelectedIf( SetScreenVariable("rpg_selected_slot", a) )
                                         ]

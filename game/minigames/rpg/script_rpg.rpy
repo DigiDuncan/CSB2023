@@ -238,20 +238,22 @@ label rpg_final_fight_2:
 
 label rpg_final_fight_3:
     python:
-        final_fighters_3 = ["ARCEUS", "PAKOO", "MIKA", "KITTY", "TATE", "ARIA", "DIGI", "NOVA", "BLANK", "MIDGE", "ANNO", "DB05", "NONE"]
+        final_fighters_3 = ["CS_FINAL", "ARCEUS", "PAKOO", "MIKA", "KITTY", "TATE", "ARIA", "DIGI", "NOVA", "BLANK", "MIDGE", "ANNO", "DB05"]
         chosen_final_fighters_3 = []
 
-        narrator("Choose a party member! (1/3)", interact = False)
-        party_2 = renpy.display_menu([(a.title() if a != "CS_FINAL" else "CS", a) for a in final_fighters_3], screen="ucn_choice")
-        if party_2 != "NONE": chosen_final_fighters_3.append(party_2)
+        renpy.call_screen("_rpg_selection", final_fighters_3, locked_slots=["CS_FINAL"])
 
-        narrator("Choose a party member! (2/3)", interact = False)
-        party_3 = renpy.display_menu([(a.title() if a != "CS_FINAL" else "CS", a) for a in final_fighters_3 if a not in chosen_final_fighters_3], screen="ucn_choice")
-        if party_3 != "NONE": chosen_final_fighters_3.append(party_3)
+        # narrator("Choose a party member! (1/3)", interact = False)
+        # party_2 = renpy.display_menu([(a.title() if a != "CS_FINAL" else "CS", a) for a in final_fighters_3], screen="ucn_choice")
+        # if party_2 != "NONE": chosen_final_fighters_3.append(party_2)
 
-        narrator("Choose a party member! (3/3)", interact = False)
-        party_4 = renpy.display_menu([(a.title() if a != "CS_FINAL" else "CS", a) for a in final_fighters_3 if a not in chosen_final_fighters_3], screen="ucn_choice")
-        if party_4 != "NONE": chosen_final_fighters_3.append(party_4)
+        # narrator("Choose a party member! (2/3)", interact = False)
+        # party_3 = renpy.display_menu([(a.title() if a != "CS_FINAL" else "CS", a) for a in final_fighters_3 if a not in chosen_final_fighters_3], screen="ucn_choice")
+        # if party_3 != "NONE": chosen_final_fighters_3.append(party_3)
+
+        # narrator("Choose a party member! (3/3)", interact = False)
+        # party_4 = renpy.display_menu([(a.title() if a != "CS_FINAL" else "CS", a) for a in final_fighters_3 if a not in chosen_final_fighters_3], screen="ucn_choice")
+        # if party_4 != "NONE": chosen_final_fighters_3.append(party_4)
 
         RPG.clear_var_characters()
         for n, f in enumerate(chosen_final_fighters_3):
