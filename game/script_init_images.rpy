@@ -2561,7 +2561,7 @@ image elf_1 = Movie(play="movies/elf1.webm", size=(1,1))
 image amtrak_northeast = Movie(play="movies/northeast.webm")
 image amtrak_desert_day = Movie(play="movies/desert_day.webm")
 image amtrak_desert_night = Movie(play="movies/desert_night.webm")
-image amtrak_reality_break = Movie(play="movies/amtrak_reality_break.webm")
+image amtrak_reality_break = Movie(play="movies/amtrak_reality_break.webm", channel="movie", start_image="images/bg/train/amtrak_reality_break_loader.png")
 image portalbg = Movie(play="movies/portal.webm")
 image csbdxdogheck = Movie(play="movies/csbdxdogheck.webm")
 image baby_fruit = Movie(play="movies/baby_fruit.webm")
@@ -2615,12 +2615,7 @@ image rpg_pending_portrait_hover = spritesheet_animation("gui/rpg/portraits/pend
 image hp_bar_inf = spritesheet_animation("gui/rpg/hp_bars/hp_bar_inf_anim.png", 1, 12, fps = 12, looping = True)
 image hp_bar_overheal = spritesheet_animation("gui/rpg/hp_bars/hp_bar_overheal.png", 1, 24, fps = 12, looping = True)
 image hp_bar_police = spritesheet_animation("gui/rpg/hp_bars/hp_bar_police.png", 1, 2, fps = 1, looping = True)
-image hp_bar_secret_t:
-    "gui/rpg/hp_bars/hp_bar_secret_t.png"
-    
-    xpan -180
-    linear 5.0 xpan 180
-    repeat
+image hp_bar_secret_t = At("gui/rpg/hp_bars/hp_bar_secret_t.png", scroll(-180, 180, 0, 0, 2, 0))
 
 ## For cop car lights
 image blue_light:

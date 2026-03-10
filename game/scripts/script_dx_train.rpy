@@ -3896,6 +3896,9 @@ label train_tate_ex_encounter:
             jump train_tate_ex_fight
 
 label train_tate_ex_fight:
+    # We do this here in an effort to minimize the time before animated background loads
+    $ start_predict_single("amtrak_reality_break")
+    $ predict_img("amtrak_reality_break")
     queue music insomnia_loop
     scene amtrak_observation_2
     show tate srs at center
