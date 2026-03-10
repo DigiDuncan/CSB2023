@@ -4018,8 +4018,8 @@ label train_tate_ex_win:
     tate "{sc=2}I guess I should have expected as much."
     tate "{sc=2}I should have known that I can't rely on anyone."
 
-    # a little something for repeat players...
-    if persistent.defeated_perfect_tate == True:
+    # For those who have met Cyan
+    if "tate_cyan" in persistent.seen:
         tate "{sc=3}{i}Especially{/i} not {color=#00FFFF}that one."
 
     tate "{sc=3}I guess, if I want a good ending..."
