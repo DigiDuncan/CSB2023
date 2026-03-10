@@ -202,21 +202,34 @@ screen rpg_stat_box(fighter, current_ally_mode):
                             padding(0,0)
                             xysize(228, 32)
                             xalign 1.0 yalign 1.0
+
                             $ h_text = fighter.character.custom_health_string if fighter.character.custom_health_string else str(fighter.hit_points)+"/"+str(fighter.max_hp)
-                            if fighter.character.custom_health_bar:
+
+                            # Custom bar only
+                            if fighter.character.custom_health_bar and not fighter.infinite:
+                                $ h_bar = renpy.get_registered_image(fighter.character.custom_health_bar)
+                                add h_bar corner1(int(228-(228*(fighter.hit_points/fighter.max_hp))),0) corner2(228,32) xalign 1.0
+                                text h_text:
+                                    xalign 1.0 yalign 0.5
+                            # Custom bar + infinite HP
+                            elif fighter.character.custom_health_bar and fighter.infinite:
                                 $ h_bar = renpy.get_registered_image(fighter.character.custom_health_bar)
                                 add h_bar corner1(0,0) corner2(228,32) xalign 1.0
                                 text h_text:
                                     xalign 1.0 yalign 0.5
+                            # Only infinite HP
                             elif fighter.infinite:
                                 $ inf_bar = renpy.get_registered_image("hp_bar_inf")
                                 add inf_bar corner1(0,0) corner2(228,32) xalign 1.0
                                 add "gui/rpg/infinite.png" xalign 1.0 yalign 0.5
-                            elif fighter.hit_points > fighter.max_hp:
+                            # Overheal
+                            # TODO: should we have a case for custom + overheal for non-infinite?
+                            elif fighter.hit_points > fighter.max_hp and not fighter.character.custom_health_bar:
                                 $ overheal_bar = renpy.get_registered_image("hp_bar_overheal")
                                 add overheal_bar corner1(0,0) corner2(228,32) xalign 1.0
                                 text h_text:
                                     xalign 1.0 yalign 0.5
+                            # Normal bar
                             else:
                                 add "gui/rpg/hp_bars/hp_bar.png" corner1(int(228-(228*(fighter.hit_points/fighter.max_hp))),0) corner2(228,32) xalign 1.0
                                 text h_text:

@@ -337,6 +337,17 @@ init:
         linear speed yoffset 0
         repeat iterations
 
+    # Attempt at a seamless image scroller.
+    transform scroll(starting_x = 0, ending_x = 0, starting_y = 0, ending_y = 0, xspeed = 0, yspeed = 0):
+        parallel:
+            xpan starting_x 
+            linear xspeed xpan ending_x
+            
+        parallel:
+            ypan ending_x
+            linear yspeed ypan ending_y
+        repeat
+
 ### MASTER LAYER ONLY ###
 
 define shake1 = { "master" : hpunch }
