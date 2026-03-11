@@ -466,12 +466,16 @@ screen screen_rpg():
                                                             # Only put these if the target is not dead
                                                             if not victim.dead:
 
-                                                                # Handler for multi-targets
+                                                                # Handler for multi-targets. 
                                                                 python:
+
+                                                                    # If the attack has 0 or 1 targets, continue to next fighter after selection is made.
                                                                     if curr_attack.attack.target_count not in [0,1]:
-                                                                        next_mode = None
-                                                                    else:
                                                                         next_mode = "ATK"
+                                                                    else:
+                                                                        next_mode = None
+
+                                                                        # Handler for multiple targets should probably go here.                                                                    
 
                                                                 button:
                                                                     hover_sound "audio/sfx/sfx_select.ogg"
@@ -516,7 +520,7 @@ screen screen_rpg():
                                                                                 xalign 0.5
                                                                                 text_align 0.5
 
-                                                    # This handles moves that target more than one fighter
+                                                    # This handles moves that target 1+ fighters
                                                     if not i == 0:
                                                         button:
                                                             hover_sound "audio/sfx/sfx_select.ogg"
@@ -569,8 +573,19 @@ screen screen_rpg():
                                     frame: 
                                         background None
 
+                                        # If the player goes back to a previous subturn, text will vary based on what the player chose to do
                                         if current_ally.next_attack:
-                                            text current_ally.display_name+" will use "+current_ally.next_attack.name+"!"
+                                            if current_ally.next_attack.attack.target_count == 0:
+                                                text current_ally.display_name+" will use "+current_ally.next_attack.name+"!"
+                                            else:
+                                                # TODO: make this able to handle cases where one fighter is selected more than once
+                                                python:
+                                                    targets_list = []
+                                                    for t in current_ally.next_targets:
+                                                        targets_list.append(t.display_name)
+                                                    targets_list = sentence_join(targets_list, oxford=True)
+
+                                                text current_ally.display_name+" will use "+current_ally.next_attack.name+" on "+targets_list+"!"
                                         else:
                                             text "What will "+current_ally.display_name+" do?"
 

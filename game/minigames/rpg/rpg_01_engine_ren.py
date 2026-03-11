@@ -949,7 +949,7 @@ class Effects:
         sfx="/audio/sfx/sfx_power_out.ogg",
         duration=1,
         apply=apply_status_effect("{target} can't see!", stat=CharacterStat.ACCURACY, amount=0.25, scale=True),
-        update="{target} still can't see...",
+        update="{target} still can't see!",
         resolved="{target} can see again!"
     )
     # Intent: We should update this... make fighter both less accurate AND likely to hit the wrong target, including themself!
@@ -961,7 +961,7 @@ class Effects:
         sfx="/audio/sfx/sfx_gleam.ogg",
         duration=0,
         apply=apply_status_effect("{target} is confused!", stat=CharacterStat.ACCURACY, amount=0.5, scale=True),
-        update="{target} is still confused...",
+        update="{target} is still confused!",
         resolved=resolved_chance("{target} is no longer confused!", chance=0.5)
     )
     # Intent: Make fighter less vulnerable to damage, but unable to attack this turn.
@@ -996,7 +996,7 @@ class Effects:
         sfx="/audio/sfx/sfx_bluescreen.ogg",
         duration=0,  # !: Should be overwritten by the attack
         apply=apply_status_effect("{target} can't move!", stat=CharacterStat.DEFENSE, amount=1.0, scale=True),
-        update="{target} is still stunned...",
+        update="{target} is still stunned!",
         resolved="{target} has recovered!"
     )
 
@@ -1439,11 +1439,11 @@ class Encounter:
                 attack.turns_until_available -= 1
                 if attack.turns_until_available == 0:
                     if fighter in self.allies:
-                        self.send_message(f"{fighter.display_name} can use {attack.name} again!", fighter)
-                        rpg_logger.debug(f"{fighter.display_name} can use {attack.name} again!")
+                        self.send_message(f"{fighter.display_name} can use {attack.name} now!", fighter)
+                        rpg_logger.debug(f"{fighter.display_name} can use {attack.name} now!")
                     else:
-                        self.send_debug(f"{fighter.display_name} can use {attack.name} again!", fighter)
-                        rpg_logger.debug(f"{fighter.display_name} can use {attack.name} again!")
+                        self.send_debug(f"{fighter.display_name} can use {attack.name} now!", fighter)
+                        rpg_logger.debug(f"{fighter.display_name} can use {attack.name} now!")
                 else:
                     self.send_debug(f"{fighter.display_name}: {attack.name} available in {attack.turns_until_available} turns!", fighter)
                     rpg_logger.debug(f"{fighter.display_name}: {attack.name} available in {attack.turns_until_available} turns!")
