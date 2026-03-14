@@ -7227,7 +7227,7 @@ label ce_roof_moment:
     everyone "{note1} You better not cry...{w=0} {note2}"
     everyone "{note1} Better not pout, I'm telling you why...{w=0} {note2}"
     everyone "{note1} Santa Claus is coming to town!{w=0} {note2}"
-    scene car plains night:
+    scene scroller_plains_night at scroll(-6072,6072,0,0,50,0):
         zoom 2.0
     show snow1
     show snow2

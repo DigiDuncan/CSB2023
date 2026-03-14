@@ -437,7 +437,7 @@ label true_montana:
     n "CS and Arceus happily chow down on the Mickey D's they just got."
     arceus "Thank God for that."
     cs "I have never been so excited to get a Big Mac."
-    scene car plains
+    scene scroller_plains at scroll(-6072,6072,0,0,200,0)
     show billy car
     with dissolve
     n "Billy heads out on the open road again as they enter the state of South Dakota."
@@ -501,7 +501,7 @@ label true_south_dakota:
     stop music fadeout 3.0
     music end
     n "The gang gets back in the car before the overwhelming crowd of people engulfs the site after what just happened."
-    scene car plains
+    scene scroller_plains at scroll(-6072,6072,0,0,200,0)
     show billy car
     with dissolve
     if fun_value(FUN_VALUE_MUSIC):
@@ -643,7 +643,7 @@ label true_nebraska:
     jump true_iowa
 
 label true_iowa:
-    scene car plains
+    scene scroller_plains at scroll(-6072,6072,0,0,200,0)
     show billy car
     with dissolve
     n "They get back in car and continue into Iowa."
@@ -674,7 +674,7 @@ label true_iowa:
 label true_after_ufo:
     $ renpy.mark_label_seen("play_car_game")
     $ collect("joj_ufo")
-    scene car plains
+    scene scroller_plains at scroll(-6072,6072,0,0,200,0)
     show billy car
     stop music fadeout 3.0
     music end
@@ -682,7 +682,7 @@ label true_after_ufo:
     arceus "That was some good driving, Billy!"
     billy "{i}That's{/i} the power of the 6,000-pound car!"
     n "They continue driving through to the end of the Midwest."
-    scene car plains night
+    scene scroller_plains_night at scroll(-6072,6072,0,0,200,0)
     show billy car
     with dissolve
     n "As they are traveling through Illinois, they pass by Chicago."
@@ -697,7 +697,7 @@ label true_after_ufo:
 
 label true_ohio:
     if fun_value(FUN_VALUE_LEGENDARY, confusing = True):
-        scene car plains
+        scene scroller_plains at scroll(-6072,6072,0,0,200,0)
         show billy car
         with dissolve
         if fun_value(FUN_VALUE_MUSIC):
@@ -726,7 +726,7 @@ label true_ohio:
         scott "It gets the tough stains out!"
         scott "I'm sorry, that doesn't seem very vegan. I'll have to just deal with it."
         scott "Scott, I don't think that'll work. Let's just keep going."
-        scene car plains
+        scene scroller_plains at scroll(-6072,6072,0,0,200,0)
         show billy car
         show scott_border
         with dissolve
@@ -736,7 +736,7 @@ label true_ohio:
         hide scott_border with dissolve
         arceus "I'm glad it just faded away. I did {i}not{/i} want to spray cleaner in my eyes."
     else:
-        scene car plains
+        scene scroller_plains at scroll(-6072,6072,0,0,200,0)
         show billy car
         with dissolve
         if fun_value(FUN_VALUE_MUSIC):
@@ -765,7 +765,7 @@ label true_ohio:
         billy "It gets the tough stains out!"
         terry "I'm sorry, that doesn't seem very vegan. I'll have to just deal with it."
         cs "Billy, I don't think that'll work. Let's just keep going."
-        scene car plains
+        scene scroller_plains at scroll(-6072,6072,0,0,200,0)
         show billy car
         show scott_border
         with dissolve

@@ -1232,7 +1232,7 @@
             "album_art": "tracker.png",
             "trivia": "Man, these guys are some kind of sneak... kings."
         },
-        "interference2" : {
+        "interference" : {
             "file": "interference.ogg",
             "title": "Interference",
             "artist": "Sanity",

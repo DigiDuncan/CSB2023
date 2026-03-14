@@ -1019,7 +1019,7 @@ label plane_brothers:
     arceus "Great, I look like C-3P0 from Episode V..."
     k19 "Cool man, it doesn't matter. We need to stop them or I might not have a place to comeback to!"
     n "They quickly make their way up into the roof of the plane."
-    scene car plains
+    scene scroller_plains at scroll(-6072,6072,0,0,100,0)
     show airbus_roof
     show cs tape at manual_pos(0.4, 0.3):
         zoom 0.2
@@ -1053,7 +1053,7 @@ label plane_brothers:
             jump plane_fight_lose  
 
 label plane_fight_win:
-    scene car plains
+    scene scroller_plains at scroll(-6072,6072,0,0,100,0)
     show airbus_roof
     show cs tape angry at manual_pos(0.4, 0.3):
         zoom 0.2
@@ -1311,7 +1311,7 @@ label plane_fight_win:
 
 
 label plane_fight_lose:
-    scene car plains
+    scene scroller_plains at scroll(-6072,6072,0,0,100,0)
     show airbus_roof
     show cs tape angry at manual_pos(0.4, 0.3):
         zoom 0.2

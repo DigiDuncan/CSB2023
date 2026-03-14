@@ -1,5 +1,5 @@
 label michigan:
-    scene car plains
+    scene scroller_plains at scroll(-6072,6072,0,0,200,0)
     show billy car
     with dissolve
     play music track_4 volume 0.4 if_changed
@@ -35,7 +35,7 @@ label michigan:
     cs "Well. I guess if we have no other option, we may as well go through Michigan."
     arceus "Yeah, they have corn and at least two other things, so it's honestly probably better than going through Ohio."
     billy "Sounds like a plan. The drive is gonna take longer with the detour though, so we should definitely get going."
-    scene car plains
+    scene scroller_plains at scroll(-6072,6072,0,0,200,0)
     show billy car
     with dissolve
     n "They get on the highway and start heading towards Michigan."
@@ -50,7 +50,7 @@ label michigan:
             jump michigan_continue
 
 label michigan_bronson:
-    scene car plains
+    scene scroller_plains at scroll(-6072,6072,0,0,200,0)
     show billy car
     stop music fadeout 3.0
     cs "Look, man, just don't go to Bronson, okay?"
@@ -68,7 +68,7 @@ label michigan_bronson:
     cs "Billy, you took the Bronson exit."
     show billy car
     billy "..."
-    scene car plains night
+    scene scroller_plains_night at scroll(-6072,6072,0,0,200,0)
     show billy car
     with dissolve
     billy "Shit."
@@ -198,8 +198,11 @@ label michigan_bronson_win:
     cs "Yeah. I don't want to think about this ever again. That was spooky as hell."
     arceus "Yeah. Whatever else happens on this trip can't possibly be as bad as this."
     n "After a while, the storm finally clears up."
-    stop sound fadeout 3.0
-    scene car plains
+    stop sound2 fadeout 3.0
+    scene black with Dissolve(3.0)
+    pause 3.0
+
+    scene scroller_plains at scroll(-6072,6072,0,0,200,0)
     show billy car
     with dissolve
     billy "Hey, guys?"
@@ -218,7 +221,7 @@ label michigan_bronson_win:
     jump michigan_interstate_menu
 
 label michigan_continue:
-    scene car plains
+    scene scroller_plains at scroll(-6072,6072,0,0,200,0)
     show billy car
     stop music fadeout 3.0
     arceus "Nah, this place looks too rural to have much around."
@@ -229,7 +232,7 @@ label michigan_continue:
     arceus "We'll just skip it. Nothing around here anyway."
     scene black with dissolve
     n "They keep driving. CS continues muttering \"Don't go to Bronson\" until they finally stop seeing Bronson signs."
-    scene car plains
+    scene scroller_plains at scroll(-6072,6072,0,0,200,0)
     show billy car
     with dissolve
     billy "Alright. We're way past Bronson, but we're getting pretty far north."
@@ -243,7 +246,7 @@ label michigan_continue:
 
 label michigan_interstate_menu:
     # this label exists for timeline progression - tate
-    scene car plains
+    scene scroller_plains at scroll(-6072,6072,0,0,200,0)
     show billy car
     menu:
         "Which road should we take?"
@@ -839,7 +842,7 @@ label michigan_interstate_69:
 
     call screen warning("The following scene is a major tonal shift.\nIt may be disconcerting to some viewers.", "Warnings: creepy forests, haunting music, slow descents into madness.", "back_out_i69")
 
-    scene car plains
+    scene scroller_plains at scroll(-6072,6072,0,0,200,0)
     show billy car
     stop music fadeout 3.0
     $ nome = True
@@ -1399,7 +1402,7 @@ label michigan_interstate_69:
     jump true_ohio
 
 label michigan_interstate_94:
-    scene car plains
+    scene scroller_plains at scroll(-6072,6072,0,0,200,0)
     show billy car
     stop music fadeout 3.0
     $ clown = True
@@ -1413,7 +1416,7 @@ label michigan_interstate_94:
     arceus "{i}I{/i} thought it sounded like a good route..."
     scene black with dissolve
     n "The conversation comes to a halt as they continue heading down the highway."
-    scene car plains
+    scene scroller_plains at scroll(-6072,6072,0,0,200,0)
     show billy car
     with dissolve
     billy "Looks like there's a traffic jam up ahead. I'm gonna get off and take a detour."

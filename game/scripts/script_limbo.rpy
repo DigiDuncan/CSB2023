@@ -125,7 +125,7 @@ label show_dxcom:
 
 label woohoo_counter:
     play music interference2
-    $ persistent.heard.add("interference2")
+    $ persistent.heard.add("interference")
     scene conferencetv
     show cs at left
     show arceus at right

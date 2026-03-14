@@ -1882,7 +1882,7 @@ label dx_after_branch_ask2:
 
 label dx_after_convention_end:
     play music interference2 if_changed
-    music interference2
+    music interference
     scene conferencetv
     show cultcon_leader:
         xpos 762

@@ -352,7 +352,7 @@ label vibration:
     scene csmore
     show billy car with hpunch
     billy "Cool!"
-    scene car plains
+    scene scroller_plains at scroll(-6072,6072,0,0,10,0)
     show billy car
     with dissolve
     pause 2.0
@@ -368,7 +368,7 @@ label vibration:
     cs "Sure!"
     scene black with dissolve
     pause 1.0
-    scene car plains
+    scene scroller_plains at scroll(-6072,6072,0,0,10,0)
     show billy car
     with dissolve
     pause 2.0
@@ -399,7 +399,7 @@ label vibration:
     with moveoutright
     scene black with dissolve
     pause 1.0
-    scene car plains
+    scene scroller_plains at scroll(-6072,6072,0,0,10,0)
     show billy car
     with dissolve
     pause 2.0
@@ -407,7 +407,7 @@ label vibration:
     show billy car
     show scott_border
     billy "Holy shit, Scott the Woz!"
-    scene car plains
+    scene scroller_plains at scroll(-6072,6072,0,0,10,0)
     show billy car
     with dissolve
     pause 2.0
@@ -430,7 +430,7 @@ label vibration:
     show cs at offscreenleft with MoveTransition(0.25)
     scene black with dissolve
     pause 1.0
-    scene car plains
+    scene scroller_plains at scroll(-6072,6072,0,0,10,0)
     show billy car
     with dissolve
     play sound sfx_ringtone_billy

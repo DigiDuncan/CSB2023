@@ -94,7 +94,7 @@ init python:
 
 ########## ACTUAL TESTING BEGIN ##########
 
-label awawa_tate_test:
+label _awawa_tate_test:
 
     stop music
     scene black with dissolve

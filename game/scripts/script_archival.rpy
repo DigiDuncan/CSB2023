@@ -736,8 +736,8 @@ label archival_finale:
     pause 0.5
     show cs scared flipped
     n "As he glances around for any escape, glimpses of memories of familiar places rush past him."
-    scene car plains
-    show archival_19
+    show scroller_plains at scroll(-6072,6072,0,0,10,0):
+        matrixcolor SepiaMatrix()
     show archival_19
     show white_vignette at center:
         alpha 0.35

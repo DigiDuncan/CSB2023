@@ -93,7 +93,7 @@ label test:
                             $ renpy.full_restart()
                         "Driving Test":
                             stop music
-                            scene car plains
+                            scene scroller_plains at scroll(6072,-6072,0,0,200,0)
                             show screen carchasegame
                             show car_chase2
                             show cultist_fire1

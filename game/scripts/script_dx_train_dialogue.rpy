@@ -6,7 +6,9 @@ label train_dialogue:
 
     play sound2 sfx_ambiance_train_interior volume 0.3
 
-    show amtrak_northeast
+    show scroller_northeast at scroll(-10368,10368,0,0,700,0):
+        zoom 0.35
+    show amtrak_dining_day
     show cs at left
     show arceus at right
     with dissolve
@@ -100,8 +102,7 @@ label train_dialogue:
 
     if fun_value(FUN_VALUE_COMMON):
         scene
-        show car plains:
-            xzoom -1
+        # TODO: NEED BACKGROUND
         show amtrak_cab
         show mean human hat at mid_right
         show tate at left
@@ -133,8 +134,7 @@ label train_dialogue:
         tate "A..."
     else:
         scene
-        show car plains:
-            xzoom -1
+        # TODO: NEED BACKGROUND
         show amtrak_cab
         show mean human hat at mid_right
         show tate stare at left
@@ -230,7 +230,10 @@ label train_dialogue:
     scene black with dissolve
 
     scene
-    show amtrak_northeast
+    show scroller_northeast at scroll(-10368,10368,0,0,700,0):
+        zoom 0.35
+    show amtrak_dining_day
+    
     show cs phone at left
     show arceus at right
     with dissolve

@@ -1,7 +1,6 @@
 # TODO: make sure all music/bios are added by the end
 # TODO: replace all instances of hearts and music notes with jp font glyphs as soon as it looks good?
 
-# TODO: ALL INSTANCES OF CAR PLAINS / CAR PLAINS NIGHT ARE PLACEHOLDERS
 # TODO: THE FOLLOWING LABELS NEED TO BE CHECKED FOR MOVING BACKGROUNDS:
 
 # train_enter_sleeper
@@ -1883,7 +1882,7 @@ label train_meanwhile:
     centered "Meanwhile..."
     pause 0.5
     scene
-    show car plains night
+    # TODO: NEED BACKGROUND
     show amtrak_cab
     show lupin stand at center
     with dissolve
@@ -2147,7 +2146,7 @@ label train_search_tate:
     pause 1.0
 
     scene
-    show car plains night
+    # TODO: NEED BACKGROUND
     show amtrak_cab
     show lupin stand hat at left
     with dissolve
@@ -3081,7 +3080,7 @@ label train_lupin_win:
     n "Lupin is also brought into custody."
 
     scene
-    show car plains night
+    # TODO: NEED BACKGROUND
     show amtrak_cab
 
     show amtrak_conductor flipped at center
@@ -3893,13 +3892,14 @@ label train_tate_ex_encounter:
         "No way.":
             jump train_tate_ex_refuse
         "Are you sure?":
+            queue music insomnia_loop
             jump train_tate_ex_fight
 
 label train_tate_ex_fight:
     # We do this here in an effort to minimize the time before animated background loads
     $ start_predict_single("amtrak_reality_break")
     $ predict_img("amtrak_reality_break")
-    queue music insomnia_loop
+    queue music insomnia_full
     scene amtrak_observation_2
     show tate srs at center
     show cs worried flipped at right

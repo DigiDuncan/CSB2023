@@ -18,7 +18,7 @@ transform t_skip_car:
 style skip_car_frame is empty
 
 label car_dialogue:
-    scene car plains
+    scene scroller_plains at scroll(-6072,6072,0,0,200,0)
     show billy car
     with dissolve
     play music billy_mix if_changed
@@ -644,7 +644,7 @@ label car_dialogue:
     cs "Okay, I'm sorry! It was my fault!"
     billy "No more tomfoolery in the backseat, okay?"
     cs "Okay..."
-    scene car plains
+    scene scroller_plains at scroll(-6072,6072,0,0,200,0)
     $ renpy.music.set_volume(1.0)
     show billy car
     with dissolve

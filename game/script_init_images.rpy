@@ -2538,8 +2538,7 @@ image rating_try_again = "minigames/carrot/try_again.png"
 # Movies
 image car background = Movie(play="movies/car_background.webm")
 image car background night = Movie(play="movies/car_background_night.webm")
-image car plains = Movie(play="movies/car_plains.webm")
-image car plains night = Movie(play="movies/car_plains_night.webm")
+
 image tvcar = Movie(play="movies/0001.webm")
 image drive_night = Movie(play="movies/car_drive_night.webm")
 image drive_day = Movie(play="movies/car_drive_day.webm")
@@ -2558,7 +2557,6 @@ image fun_hoh_sis = Movie(play="movies/funvaluehohsis.webm")
 image train_brake = Movie(play="movies/trainscreech.webm")
 image elf_0 = Movie(play="movies/elf0.webm", size=(640,360))
 image elf_1 = Movie(play="movies/elf1.webm", size=(1,1))
-image amtrak_northeast = Movie(play="movies/northeast.webm")
 image amtrak_desert_day = Movie(play="movies/desert_day.webm")
 image amtrak_desert_night = Movie(play="movies/desert_night.webm")
 image amtrak_reality_break = Movie(play="movies/amtrak_reality_break.webm", channel="movie", start_image="images/bg/train/amtrak_reality_break_loader.png")
@@ -2567,7 +2565,20 @@ image csbdxdogheck = Movie(play="movies/csbdxdogheck.webm")
 image baby_fruit = Movie(play="movies/baby_fruit.webm")
 image car_crash = Movie(play="movies/car_crash.webm")
 
-# Movie Cutscenes
+### Scrolling backgrounds
+image scroller_plains:
+    "bg/csb3_ch2_east/scroller_plains.png"
+    ysize 1080
+    fit "contain"
+image scroller_plains_night:
+    "dark:bg/csb3_ch2_east/scroller_plains.png"
+    ysize 1080
+    fit "contain"
+
+# Train Route
+image scroller_northeast = "bg/train/scroller_northeast.png"
+
+### Movie Cutscenes
 define anno_bl = "movies/anno.webm"
 define blank_bl = "movies/blank.webm"
 define db_bl = "movies/db.webm"

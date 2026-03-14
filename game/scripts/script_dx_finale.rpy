@@ -42,10 +42,11 @@ label finale_train_takeoff:
     amtrak_conductor "Uh oh! Everyone, hold on!"
     stop sound fadeout 5.0
     "Everyone" "Woooooahh!!!"
-    scene car plains night
+    scene scroller_plains_night at scroll(-6072,6072,0,0,200,0)
     show flying_train_final at center with easeinright
     cs "We... are... flying!"
-    scene amtrak_coach_1 at t_train_scurvy
+    scene scroller_plains_night at scroll(-6072,6072,0,0,200,0)
+    show amtrak_coach_1 at t_train_scurvy
     show michael at truecenter, t_people_scurvy
     show cashier at manual_pos(0.8,0.5), t_people_scurvy
     with dissolve
