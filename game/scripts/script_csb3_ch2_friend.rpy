@@ -991,9 +991,4 @@ label friend2_car_slam:
     hide paper with easeoutleft
     $ ending_manager.mark("friend")
     pause 1.0
-    $ renpy.movie_cutscene(where)
-    $ persistent.heard.add("the_legend")
-    pause 1.0
-    call screen credits_roll() with determination
-    $ renpy.end_replay()
-    return
+    jump where_are_they_now

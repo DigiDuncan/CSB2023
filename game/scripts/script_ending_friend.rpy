@@ -59,7 +59,7 @@ label where_are_they_now:
         blur 10
         xpos 0.4 ypos 1.0
         linear 20 xpos 0.6
-    show screen where_text("Arceus moved to the UK to be with his partner, Kitty. The two live a peaceful life now. Kitty makes fursuits for living while Arceus has found work with a mysterious organization.")
+    show screen where_text("Arceus moved to the UK to be with his partner, Kitty. The two lead a peaceful life now. Kitty makes fursuits for a living while Arceus has found work with a mysterious organization.")
     show kitty:
         xanchor 0.5 yanchor 1.0
         xpos 0.35 ypos 1.0
@@ -143,7 +143,7 @@ label where_are_they_now:
         blur 10
         xpos 0.4 ypos 1.0
         linear 20 xpos 0.6
-    show screen where_text("Nova and Blanknam3d, both musicians, but with very different tastes, have ended up in semi-friendly competition to see who can attract the most fans. Nova performs under the stage name xtkakeru.")
+    show screen where_text("Nova and Blanknam3d, both musicians, but with very different tastes, have ended up in semi-friendly competition to see who can attract more fans. Nova performs under the stage name xtkakeru.")
     show blank flipped:
         xanchor 0.5 yanchor 1.0
         xpos 0.0 ypos 1.0
@@ -199,7 +199,7 @@ label where_are_they_now:
         blur 10
         xpos 0.4 ypos 1.0
         linear 20 xpos 0.6
-    show screen where_text("Midge returned home to the Phillipines, where she unexpectedly landed an illustration job with Amazon.")
+    show screen where_text("Midgalicis returned home to the Phillipines, where she unexpectedly landed an illustration job with Amazon.")
     show midge:
         xanchor 0.5 yanchor 1.0
         xpos 0.2 ypos 1.0
@@ -213,43 +213,50 @@ label where_are_they_now:
     scene black 
     with dissolve
     $ renpy.pause(3.0,hard=True)
+    camera reset # resetting it here for a reason
 
     ################ TATE ################
-
+  
     stop music
 
     show screen where_text("As for Tate...") with dissolve
-    $ renpy.pause(1.0,hard=True)
-    hide where_text with dissolve
-    $ renpy.pause(0.5,hard=True)
+    $ renpy.pause(3,hard=True)
 
-    show final_destination
-    show tate sil_black at center
+    show final_destination:
+        matrixcolor SepiaMatrix()
+    show tate sil_black at center:
+        matrixcolor SepiaMatrix()
+    hide screen where_text
     with dissolve
     $ renpy.pause(2,hard=True)
 
-    show screen where_text("They mentioned something about starting over... {color=#00000000}somewhere else.{/color}") with dissolve
-    $ renpy.pause(2,hard=True)
+    show screen where_text("They mentioned something about starting over... {color=#00000000}{outlinecolor=#00000000}somewhere else.{/color}{/outlinecolor}") with dissolve
+    $ renpy.pause(3,hard=True)
     show screen where_text("They mentioned something about starting over... somewhere else.") with dissolve
-    $ renpy.pause(2,hard=True)
+    $ renpy.pause(3,hard=True)
     hide screen where_text with Dissolve(2.0)
+    $ renpy.pause(2,hard=True)
 
     # summon sigil
     play sound sfx_spellcast
     show tate_sigil at truecenter behind tate:
+        matrixcolor SepiaMatrix()
+
         zoom 0.75
         xzoom 0
         ypos 1.0
         blur 5
 
-        parallel:
-            linear 0.25 xzoom 1.0
-        parallel:
-            linear 0.25 ypos 0.6
+        block:
+            parallel:
+                linear 0.25 xzoom 1.0
+            parallel:
+                linear 0.25 ypos 0.6
 
-    $ renpy.pause(2,hard=True)
+    $ renpy.pause(4,hard=True)
     
     show tate sil_black flipped:
+        matrixcolor SepiaMatrix()
 
         # let's make them take several steps.
         block:
@@ -302,31 +309,79 @@ label where_are_they_now:
             parallel:
                 linear 0.5 ypos 1.0
 
-        
     play sound sfx_snow_walk
-    $ renpy.pause(4.5,hard=True)
+    $ renpy.pause(5.0,hard=True)
 
+    # as tate disappears, show CMY for one frame.
+    show tate sil_black flipped as yellow: #Y
+        alpha 0
+        matrixcolor TintMatrix("#FFFF00") * BrightnessMatrix(1.0)
+        xpos 0.5 ypos 1.0
+        xanchor 0.5 yanchor 1.0
+        blur 5
+        zoom 0.6 
+
+        linear 0.1 alpha 1.0
+
+    show tate sil_black flipped as cyan behind yellow: #C
+        matrixcolor TintMatrix("#00FFFF") * BrightnessMatrix(1.0)
+        xpos 0 ypos 1.0
+        xanchor 0.5 yanchor 1.0
+        blur 5
+        zoom 0.6 
+        alpha 0
+
+        parallel:
+            linear 0.1 alpha 1.0
+        parallel:
+            linear 0.1 xpos 0.5
+
+    show tate sil_black flipped as magenta behind yellow: #M
+        matrixcolor TintMatrix("#FF00FF") * BrightnessMatrix(1.0)
+        xpos 1.0 ypos 1.0
+        xanchor 0.5 yanchor 1.0
+        blur 5
+        zoom 0.6 
+        alpha 0
+
+        parallel:
+            linear 0.1 alpha 1.0
+        parallel:
+            linear 0.1 xpos 0.5
+    
+    $ renpy.pause(0,hard=True) # yes this is necessary
+
+    # combine the colors
+    hide cyan
+    hide magenta
+    hide tate sil_black
+    with Dissolve(0.1)
+
+    # finally jump to a new timeline...
     play sound sfx_sparkles
+    show yellow:
+        matrixcolor TintMatrix("#FFFFFF") * BrightnessMatrix(1.0)
+        parallel:
+            linear 0.1 xzoom 0
+        parallel:
+            linear 0.1 ypos 0.5
+
     show tate_sigil:
         parallel:
             linear 0.1 xzoom 0
         parallel:
-            linear 0.1 ypos 0.9
-    show tate sil_black flipped:
-        parallel:
-            linear 0.1 xzoom 0
-        parallel:
-            linear 0.1 ypos 0.9
+            linear 0.1 ypos 0.5
 
-    $ renpy.pause(3,hard=True)
+
+    $ renpy.pause(4, hard=True)
 
     scene black with Dissolve(2.0)
     $ renpy.pause(2,hard=True)
 
     ################ ENDING ################
 
-    centered "To be continued..."
-    pause
+    centered "{size=+128}THE END{fast}"
 
-    camera reset
+    call screen credits_roll() with determination
+    $ renpy.end_replay()
     return
