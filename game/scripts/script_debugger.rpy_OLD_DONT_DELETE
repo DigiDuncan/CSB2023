@@ -3570,13 +3570,13 @@ label asset_debugger:
         jump exit_debug
     if fun_value(329):
         $ movietotal += 1
-        scene car plains
+        scene car background
         pause 5.0
     else:
         jump exit_debug
     if fun_value(330):
         $ movietotal += 1
-        scene car plains night
+        scene car background night
         pause 5.0
     else:
         jump exit_debug

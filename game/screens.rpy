@@ -999,7 +999,7 @@ screen preferences():
             if preferences.developer_mode:
                 textbutton "Test Scene\n{size=-12}A sandbox for testing various features." action Start("test")
 
-                textbutton "{image=gui/inline_text/dx_text.png} Tate's Test Room\n{size=-12}Another test screen. Awawa." action Start("awawa_tate_test")
+                textbutton "{image=gui/inline_text/dx_text.png} Tate's Test Room\n{size=-12}Another test screen. Awawa." action Start("_awawa_tate_test")
 
             if preferences.developer_mode:
                 textbutton "Jump To Label Start\n{size=-12}What we do here is go back{size=-12} back{size=-12} back{size=-12} back..." action Function(jump_to_label_start)
