@@ -847,6 +847,7 @@ image tate flipped = "flip:characters/tate/tatehappy.png"
 image tate dark = "dark:characters/tate/tatehappy.png"
 image tate dark flipped = "dark:flip:characters/tate/tatehappy.png"
 image tate sil_black = "sil_black:characters/tate/tatehappy.png"
+image tate sil_black flipped = "flip:sil_black:characters/tate/tatehappy.png"
 image tate srs = "characters/tate/tateserious.png"
 image tate srs dark = "dark:characters/tate/tateserious.png"
 image tate srs flipped = "flip:characters/tate/tateserious.png"
@@ -2712,41 +2713,15 @@ layeredimage tate_ex:
         at transform:
             xpos 10 ypos 10
 
-# Special background for Tate EX fight (will be removed soon, but not yet, i'm still testing things)
-layeredimage tate_ex_bg:
-    xysize(1920,1080)
-    xanchor 0.5 yanchor 1.0
-    yoffset 5 # Don't ask me why this is required.
+# Tate's Sigil
+image tate_sigil:
+    xsize 2000 ysize 2000
+    xanchor 0.5 yanchor 0.5
 
-    always:
-        "bg/train/amtrak_observation_2.png"
-        at transform:
-            xanchor 0.5 yanchor 1.0
-            xalign 0.5 yalign 1.0
-
-    always:
-        "/secret/pt/sigil_inner.png"
-        at transform:
-            zoom 0.5
-            xanchor 0.5 yanchor 0.5
-            xpos 0.5 ypos 0.35
-            blur 5
-            block:
-                linear 1 alpha 0.6
-                linear 1 alpha 0
-                repeat
-    always:
-        "/secret/pt/sigil_text.png"
-        at transform:
-            zoom 0.5
-            xanchor 0.5 yanchor 0.5
-            xpos 0.5 ypos 0.35
-            blur 5
-            alpha 0.6
-            block:
-                linear 11 rotate -360
-                linear 0 rotate 0
-                repeat
+    contains:
+        At("/secret/pt/sigil_inner.png", t_tate_sigil_inner)
+    contains:
+        At("/secret/pt/sigil_text.png", t_tate_sigil_text)
 
 ## Misc Animated Sprites
 image ai_ducks = SnowBlossom("duck.png", 50, fast = True)

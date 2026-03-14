@@ -595,6 +595,11 @@ label _awawa_tate_test:
                         tate "Did it work? On my end, you selected item [chosen_evidence]."
                         jump .awawa_menu
 
+                    ########## WHERE ARE THEY NOW REDUX ##########
+                    "Where Are They Now? V2":
+                        tate "Aight."
+                        jump where_are_they_now
+
                     ########## GO BACK ##########
                     "Never mind.":
                         jump .awawa_menu
@@ -624,37 +629,19 @@ label _awawa_tate_test:
                         tate "Is that correct?"
                         hide health_test
                     "Sigil Test 1":
-
-                        transform t_tate_sigil_text:
-                            alpha 0.6
-                            block:
-                                linear 11 rotate -360
-                                linear 0 rotate 0
-                                repeat
-
-                        # TODO: somehow combine t_tate_sigil_text into here...? can this even be done??
-                        image tate_sigil = Fixed(
-                            At(Image("/secret/pt/sigil_inner.png", xanchor=0.5, yanchor=0.5, xalign=0.5, yalign=0.5, alpha=0.6), Transform(alpha=0.6)),
-                            At(Image("/secret/pt/sigil_text.png", xanchor=0.5, yanchor=0.5, xalign=0.5, yalign=0.5), t_tate_sigil_text)
-                        )
-
-                        show tate_sigil at truecenter behind tate:
-                            xysize (2000,2000)
-                            zoom 0.75
-                            blur 5
-
+                        show tate_sigil at truecenter behind tate
                         show tate srs
                         tate "It {i}is{/i} drawn {i}correctly{/i} this time, right?"
                         hide tate_sigil
                     "Sigil Test 2":
 
-                        show tate_ex_bg
+                        show amtrak_reality_break
                         tate "Is that right?"
 
                         show tate_ex at center
                         tate "Am I doing this right??"
 
-                        hide tate_ex_bg
+                        hide amtrak_reality_break
                         hide tate_ex
                         with dissolve
 

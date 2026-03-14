@@ -318,6 +318,25 @@ init:
         perspective True
         matrixtransform RotateMatrix(-1, -32, 1) * OffsetMatrix(700, 135, 0)
 
+    # For Tate's Sigil
+    transform t_tate_sigil_text:
+        xpos 0.5 ypos 0.5
+        xanchor 0.5 yanchor 0.5
+        blur 5
+        alpha 0.6
+        block:
+            linear 11 rotate -360
+            linear 0 rotate 0
+            repeat
+
+    transform t_tate_sigil_inner:
+        xpos 0.5 ypos 0.5
+        xanchor 0.5 yanchor 0.5
+        blur 5
+        block:
+            linear 1 alpha 0.6
+            linear 1 alpha 0
+            repeat
 
     # *** HIGHLY EXPERIMENTAL, USE THESE AT YOUR OWN RISK ***
     # either shake a character or use with this line to shake whole screen for as long as you want:

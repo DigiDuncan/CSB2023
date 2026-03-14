@@ -101,6 +101,7 @@ define audio.la_by_night = "la_by_night.ogg"
 define audio.triage_at_dawn = "triage_at_dawn.ogg"
 define audio.the_whale = "the_whale.ogg"
 define audio.prophet_2001 = "prophet_2001.ogg"
+define audio.the_legend = "the_legend.ogg"
 
 # CSBIII Country Music
 define audio.wool_gloves = "wool_gloves.ogg"
