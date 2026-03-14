@@ -214,6 +214,8 @@ label where_are_they_now:
     with dissolve
     $ renpy.pause(3.0,hard=True)
     camera reset # resetting it here for a reason
+    camera:
+        matrixcolor IdentityMatrix()
 
     ################ TATE ################
   
@@ -371,7 +373,6 @@ label where_are_they_now:
             linear 0.1 xzoom 0
         parallel:
             linear 0.1 ypos 0.5
-
 
     $ renpy.pause(4, hard=True)
 
