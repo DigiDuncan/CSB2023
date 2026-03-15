@@ -29,19 +29,20 @@ label beach_start:
     pause 0.5
 
     # TODO: need bg of a bus stop in Bellingham. I wonder if greyfade can get me one...
-    scene
+    # For now we'll use this I guess
+    scene bus_stop
 
     # it's mike in the background, working at the bus stop! lmao
     if fun_value(FUN_VALUE_LEGENDARY):
-        show mike at manual_pos(0.8, 0.5, 0.5):
+        show mike at manual_pos(0.8, 0.6, 0.5):
             zoom 0.5
             block:
                 linear 0.5 xzoom -1
-                linear 0.25 ypos 0.45
-                linear 0.25 ypos 0.5
+                linear 0.25 ypos 0.55
+                linear 0.25 ypos 0.6
                 linear 0.5 xzoom 1
-                linear 0.25 ypos 0.45
-                linear 0.25 ypos 0.5
+                linear 0.25 ypos 0.55
+                linear 0.25 ypos 0.6
                 repeat
 
     show cs disappointed at left
@@ -60,7 +61,7 @@ label beach_start:
         show cs surprised
         cs "Well, I mean, technically, it {i}did-- {nw}"
         show cs scared
-        arceus "Now you shut the goddamn fuck up right now or so help me God-- {nw}" with vpunch
+        arceus "Now,{w=0} you shut the goddamn fuck up {i}right now{/i} or so help me,{w=0} God. {nw}" with vpunch
         show cs disappointed
     arceus "How long ago, exactly, did you even {i}notice{/i} this bus stop?"
     show cs worried
@@ -111,15 +112,15 @@ label beach_start:
     show arceus angry
     arceus "I'm gonna sit down. My feet are killing me..." # but are they feet or paws?
 
-    show arceus angry at manual_pos(0.8, 0.8, 1.0):
-        linear 0.75 zoom 0.75
+    show arceus angry at manual_pos(0.6, 0.6, 1.0):
+        linear 0.75 zoom 0.4
     with MoveTransition(0.75)
 
     show cs disappointed
     cs "Yeah, I think I will, too."
 
-    show cs disappointed at manual_pos(0.4, 0.8, 1.0):
-        linear 1.0 zoom 0.75
+    show cs disappointed at manual_pos(0.4, 0.6, 1.0):
+        linear 1.0 zoom 0.4
     with MoveTransition(1.0)
 
     pause 2.0
@@ -171,6 +172,8 @@ label beach_start:
     stop sound fadeout 2.0
     stop music fadeout 2.0
     music end
+    pause 2.0
+    
     jump beach_overworld_map
 
 ######## THE MAP ########

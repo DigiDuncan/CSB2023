@@ -2262,6 +2262,9 @@ image hendry clap2 = "characters/hendry_clap2.png"
 
 image snow_pile = "snow_pile.png"
 
+# DX Beach Images
+image bus_stop = "bg/beach/bus_stop.png"
+
 # Static Images
 image shopping_cart_aldi = "shopping_cart_aldi.png"
 image shopping_cart_aldi flipped = "flip:shopping_cart_aldi.png"
