@@ -240,7 +240,7 @@ label where_are_they_now:
     $ renpy.pause(2,hard=True)
 
     # summon sigil
-    play sound sfx_spellcast
+    play sound sfx_snd_spellcast
     show tate_sigil at truecenter behind tate:
         matrixcolor SepiaMatrix()
 
@@ -360,7 +360,7 @@ label where_are_they_now:
     with Dissolve(0.1)
 
     # finally jump to a new timeline...
-    play sound sfx_sparkles
+    play sound sfx_snd_sparkles
     show yellow:
         matrixcolor TintMatrix("#FFFFFF") * BrightnessMatrix(1.0)
         parallel:

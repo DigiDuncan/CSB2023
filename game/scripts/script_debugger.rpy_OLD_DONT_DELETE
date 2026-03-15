@@ -1728,7 +1728,7 @@ label asset_debugger:
 
     if fun_value(95):
         $ sfxtotal += 1
-        play sound sfx_sparkles
+        play sound sfx_snd_sparkles
         $ musictotal += 1
         play music morning_highway
         $ bgtotal += 1
@@ -1742,7 +1742,7 @@ label asset_debugger:
 
     if fun_value(96):
         $ sfxtotal += 1
-        play sound sfx_spellcast
+        play sound sfx_snd_spellcast
         $ musictotal += 1
         play music mort_farm
         $ bgtotal += 1

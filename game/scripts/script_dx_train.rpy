@@ -3931,7 +3931,7 @@ label train_tate_ex_fight:
     music end
     show cs scared flipped
     scene white with Dissolve(0.25)
-    play sound sfx_spellcast
+    play sound sfx_snd_spellcast
     pause 3.0
     jump rpg_tate_ex
 
@@ -3986,7 +3986,7 @@ label train_tate_ex_win:
 
     scene white with dissolve
     show tate_falling at manual_pos(0.5, -0.5, 0.5)
-    play sound sfx_sparkles
+    play sound sfx_snd_sparkles
     show tate_falling at manual_pos(0.5, 1.2, 0.5) with MoveTransition(1.1):
         alpha 0.0
         linear 1.0 alpha 1.0
