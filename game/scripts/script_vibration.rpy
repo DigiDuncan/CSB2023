@@ -330,7 +330,7 @@ label vibration:
     billy "Where're we heading?"
     cs "New York!"
     billy "Alright! Let's go!"
-    scene car background night
+    scene scroller_forest_night at scroll(-4118,4118,0,0,10,0)
     show billy car
     with dissolve
     pause 2.0
@@ -340,7 +340,7 @@ label vibration:
     show cultist gun at mid_right behind billy with moveinright
     cultist "Get out of the car, now!"
     billy "No, thanks!"
-    scene car background night
+    scene scroller_forest_night at scroll(-4118,4118,0,0,10,0)
     show billy car
     with dissolve
     pause 2.0

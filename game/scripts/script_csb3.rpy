@@ -1323,7 +1323,7 @@ label no_mercy_wait_arc:
     play sound sfx_doorslam
     pause 1.0
 
-    scene car background
+    scene scroller_forest at scroll(-4118,4118,0,0,200,0)
     show billy car
     with dissolve
 
@@ -1331,7 +1331,7 @@ label no_mercy_wait_arc:
     music insane_personalities
     pause 5.0
 
-    scene car background night
+    scene scroller_forest_night at scroll(-4118,4118,0,0,200,0)
     show billy car
     with dissolve
     pause 3.0

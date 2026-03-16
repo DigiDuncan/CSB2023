@@ -2543,9 +2543,6 @@ image rating_superb = "minigames/carrot/superb.png"
 image rating_try_again = "minigames/carrot/try_again.png"
 
 # Movies
-image car background = Movie(play="movies/car_background.webm")
-image car background night = Movie(play="movies/car_background_night.webm")
-
 image tvcar = Movie(play="movies/0001.webm")
 image drive_night = Movie(play="movies/car_drive_night.webm")
 image drive_day = Movie(play="movies/car_drive_day.webm")
@@ -2581,6 +2578,8 @@ image scroller_plains_night:
     "dark:bg/csb3_ch2_east/scroller_plains.png"
     ysize 1080
     fit "contain"
+image scroller_forest = "bg/csb3_ch2_east/scroller_forest.png"
+image scroller_forest_night = "dark:bg/csb3_ch2_east/scroller_forest.png"
 
 # Train Route
 image scroller_northeast = "bg/train/scroller_northeast.png"

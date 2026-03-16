@@ -142,7 +142,7 @@ label true_in_billy_car:
     jump true_montana
 
 label true_montana:
-    scene car background
+    scene scroller_forest at scroll(-4118,4118,0,0,200,0)
     show billy car
     with dissolve
     play music weird_personalities volume 0.6 if_changed
@@ -237,7 +237,7 @@ label true_montana:
     cs "Nothing, Arc. I, just, uh... slipped and fell in the store."
     arceus "Okay, whatever, I'm going back to sleep..."
     n "Billy takes off out of the parking lot."
-    scene car background night
+    scene scroller_forest_night at scroll(-4118,4118,0,0,200,0)
     show billy car
     with dissolve
     cs "Man, today was also pretty crazy."
@@ -399,8 +399,8 @@ label true_montana:
     cs "Alright, back on the road to New York!"
     stop music fadeout 3.0
     music end
-    scene car background night
-    show billy car
+    scene scroller_forest_night at scroll(-4118,4118,0,0,200,0)
+    show billy car 
     with dissolve
     n "The gang gets back in the car and books it out of the forest."
     n "After a while, Billy pulls the car into a small area at the edge of the forest to let everyone rest."
@@ -409,7 +409,7 @@ label true_montana:
         n "The night passes, then they set off, passing by Mort's farm."
     else:
         n "The night passes, then they set off once again."
-    scene car background
+    scene scroller_forest at scroll(-4118,4118,0,0,200,0)
     show billy car
     play music mort_farm volume 0.4 if_changed
     music mort_farm

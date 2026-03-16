@@ -3558,25 +3558,25 @@ label asset_debugger:
         jump exit_debug
     if fun_value(327):
         $ movietotal += 1
-        scene car background
+        scene scroller_forest
         pause 5.0
     else:
         jump exit_debug
     if fun_value(328):
         $ movietotal += 1
-        scene car background night
+        scene scroller_forest_night
         pause 5.0
     else:
         jump exit_debug
     if fun_value(329):
         $ movietotal += 1
-        scene car background
+        scene scroller_forest
         pause 5.0
     else:
         jump exit_debug
     if fun_value(330):
         $ movietotal += 1
-        scene car background night
+        scene scroller_forest_night
         pause 5.0
     else:
         jump exit_debug

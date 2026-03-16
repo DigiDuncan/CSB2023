@@ -337,8 +337,8 @@ label train_dialogue:
     arceus "Who on earth wants to hear a song about a guy's weiner and ballsack?"
     show cs happy
     show arceus worried
-    cs "That's it!" with vpunch
-    cs "{note2} My neck, {w=0.25}my back, {w=0.25}my weiner, and {w=0.1}my {w=0.1}sack! {note1}"
+    cs "That's {i}it!" with vpunch
+    cs "{note2} My neck, {w=0.25}my back, {w=0.25}my weiner, and {w=0.1}my {w=0.1}sack!{w=0} {note1}"
     show cs
     show arceus angry
     cs "Thanks, Arc! You're a genius!"
