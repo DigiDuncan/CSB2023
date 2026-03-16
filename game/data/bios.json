@@ -915,6 +915,16 @@
             }
         }
     },
+    "kappn": {
+        "full_name": "Kapp'n",
+        "pronouns": "(he/him)",
+        "sprites": {
+            "Default": "images/characters/kappn.png"
+        },
+        "quote": "A li'l wind goes a long way.",
+        "bio": "A former sailor and world traveler who's been trying to stay closer to home as his mother grows older. Caught between his restless adventurous spirit and the mounting pressure from his family to remain on land, Kapp'n agreed to take a job as a long-distance bus driver for a while.\n\nWhen he isn't working, he can usually be found at a local sushi spot, enjoying a cucumber roll and trying to pick up women. He often sends pretty postcards home to his daughter.",
+        "dx": true
+    },
     "kitty": {
         "full_name": "Undead Kitty",
         "pronouns": "(she/her)",

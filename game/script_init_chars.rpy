@@ -229,6 +229,9 @@ define hermaphrodite = Character("Hermaphrodite", callback = renpy.partial(char_
 define marty = Character ("Marty", callback = renpy.partial(char_callback, play_beeps = False))
 define zelda = Character("Zelda", callback = renpy.partial(char_callback, play_beeps = False))
 
+########## DX Beach
+define kappn = Character("Kapp'n", callback = renpy.partial(char_callback, name = "kappn")) # TODO: need beeps
+
 ########## Our Friends! Character Definitions
 define addy = Character("Addy", callback = renpy.partial(char_callback, name = "addy", beep = "pak"))
 define anne = Character("Anne", callback = renpy.partial(char_callback, name = "anne", beep = "anne"))

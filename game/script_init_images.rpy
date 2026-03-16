@@ -1435,6 +1435,10 @@ image witch flipped = "flip:characters/witch.png"
 image baumer = "characters/ballmer_cutout.png"
 image baumer flipped = "flip:characters/ballmer_cutout.png"
 
+# Beach Route
+image kappn = "characters/kappn.png"
+image kappn flipped = "flip:characters/kappn.png"
+
 # Background Images
 ## CSBI
 image cs_room = "bg/csb1/cs_bedroom1.png"

@@ -162,6 +162,7 @@ label beach_start:
     with dissolve
 
     play sound sfx_driving
+    $ collect("runaway_bus")
     show runaway_bus at manual_pos(-1.0, 1.3, 1.0):
         linear 0.1 ypos 1.25
         linear 0.1 ypos 1.3
@@ -221,36 +222,34 @@ label beach_start:
     with Dissolve(2.0)
     music apple_kid
 
-    # TODO: need a different bus driver, just using the conductor as a placeholder
-    # TODO: also i need to clean up whatever friggin accent the driver is supposed to have
-    
     n "A few hours later, the bus finally comes to a stop."
-    show amtrak_conductor at mid_right_right with moveinright
-    amtrak_conductor "Alright, you two. End o' the line."
+    show kappn at manual_pos(1.2, 0.7, 0.5) with determination
+    show kappn at manual_pos(0.9, 0.7, 0.5) with MoveTransition(1.0)
+    kappn "Arright, fellas. End o' the line."
     show arceus flipped with { "master": dissolve }
     arceus "Hmmgh?"
-    amtrak_conductor "Ye, welcome te San Francisco!"
-    amtrak_conductor "If'n yer here fer the beach, ye'd better wake yer friend up an' get outta here 'fore it gets too crowded!"
+    kappn "Ye, welcome te San Franciscer!"
+    kappn "If'n ye're here fer the beach, ye'd better wake yer friend up an' get outta 'ere 'fore it gets too crowded!"
     arceus "Beach...? San... {nw}"
     show arceus asleep flipped with { "master": dissolve }
     extend "mmm..."
     pause 1.0
     "..."
     pause 1.0
-    amtrak_conductor "... Hey, bud?"
-    pause 2.0
+    kappn "... Aye, lad?"
+    pause 3.0
     show arceus worried flipped
     arceus "{i}San Francisco?!" with vpunch
     arceus "CS! Wake up!"
     show cs concentrate
     cs "Hnnngh..."
-    cs "{size=-12}But, mom, I don't wanna go to school..."
+    cs "{size=-12}But, Mommy, I don't {i}wanna{/i} go to school..."
     show arceus angry flipped:
         linear 1.0 xpos 0.75
-    n "CS pulls Arceus closer as if he were some kind of body pillow."
+    n "CS pulls Arceus closer as if he were some sort of body pillow."
     arceus "{i}CS!" with vpunch
-    arceus "Get off me!"
-    play sound sfx_punch
+    arceus "Get offa me!"
+    play sound sfx_punch_alt
     show arceus angry:
         linear 0.1 xpos 0.725
         linear 0.1 xpos 0.75
@@ -259,12 +258,13 @@ label beach_start:
     cs "{cshake}YEOWCH!!" with hpunch
     n "Arceus elbows CS in the stomach."
     cs "What was {i}that{/i} for?!"
-    arceus "Dude, get {i}off{/i} of me!"
+    arceus "Dude, get {nw}"
+    extend "{i}off!" with vpunch
     cs "Shit, sorry!"
     show cs happy
     cs "You're just so soft and fluffy!"
-    arceus "Yeah, and my {nw}"
-    extend "{i}future wife{/i} would agree with you!" with vpunch
+    arceus "Yeah, and my {i}future {nw}"
+    extend "wife{/i} would agree with you!" with vpunch
     arceus "Now, fuckin' lemme {nw}"
     show cs scared
     extend "{i}go!" with vpunch
@@ -287,25 +287,28 @@ label beach_start:
     arceus "We're in {i}California!"
     show cs scared
     cs "What?!" with vpunch
-    amtrak_conductor "That's right! Welcome te sunny Californ{w=0.1}-I{w=0.05}-A!"
-    cs "This is terrible! We were supposed to get off at the airport in Bellingham!"
+    kappn "That's right! Welcome te sunny Californ{w=0.1}-I{w=0.05}-A!"
+    cs "{i}Shit!{/i} We were supposed to get off at the airport in Bellingham!"
     cs "Do you think you can take us to the nearest airport?"
-    amtrak_conductor "No can do, bud! Ol' girl's almost outta fuel!"
+    kappn "No can do, lad! Ol' gal's almost outta fuel!"
+    show cs disappointed
+    show arceus worried flipped
     arceus "What should we do?"
-    amtrak_conductor "Take this here map."
-    amtrak_conductor "I reckon ye can find another bus real easy, but if'n yer not in a hurry, ye should take a wander 'round the city!"
-    amtrak_conductor "When ye got on my bus, the two of ye looked more stressed out 'an two toads bein' chased down the road by a bunch o' kids!" # thanks waterfall
-    show cs happy 
-    cs "Hey, thanks!"
+    kappn "Well, if'n ye take this here map, I reckon ye can find another bus real easy-like."
+    kappn "But if'n ye're not in any kind o' hurry, ye shoul' take a gander 'round the city!"
+    kappn "When ye firs' got on me bus, the two of ye looked more stressed out 'an two sea urchins at a sushi parlor!" # foreshadowing is a literary device in whi--
+    kappn "An' I thought to meself, \"I dunno what 'ey're in town fer, but I'm sure glad to be takin' em some'ere {i}else!\""
     arceus "I guess, yeah, we {i}were{/i} pretty stressed..."
     show cs surprised
     cs "And we're not {i}really{/i} in any hurry to get home..."
     show cs
-    cs "Actually, I feel pretty great today."
+    cs "I even feel pretty great today."
     show arceus
-    arceus "Me too, actually, yeah."
+    arceus "Hey, me too, actually."
     show cs happy
-    amtrak_conductor "Well, I certainly hope so! The two of ye slept like the dead fer the {i}entire{/i} 16-hour ride!"
+    show arceus happy
+    kappn "Well, I'd be surprised if ye {i}didn't!"
+    kappn "The two of ye slept like scallops fer the las' 16 hours!"
     show cs scared
     show arceus worried flipped
     cs "16 hours?!" (multiple=2) with vpunch 
@@ -319,15 +322,19 @@ label beach_start:
     show cs disappointed at left
     show arceus worried at right
     with dissolve
-    cs "Well, now what?"
-    arceus "I guess let's look at the map and decide what to do first."
+    cs "Well, {i}now{/i} what?"
+    arceus "Let's check out the map, I guess?"
     # TODO: map item
     show cs surprised
-    arceus "I heard from Pakoo and Mika last time they went on vacation here that the airport here is {i}insane.{/i}"
-    arceus "We'll probably want to wait until the wee hours to catch a flight."
+    arceus "All I know is that when Pakoo and Mika came here on vacation last year, they told us that the airport here is {i}insane.{/i}"
+    arceus "We'll probably want to wait until, like, 2 AM to even step foot in there."
     show cs disappointed
     cs "Yikes, good idea."
-    cs "I guess, yeah, let's pick out somewhere to go."
+    cs "At least that'll give us the whole day to look around..."
+    show arceus
+    arceus "Yeah. So, where to?"
+    show cs happy
+    cs "Let's find out together!"
     show cs at mid_mid_left
     show arceus at mid_mid_right
     with MoveTransition(0.5)
