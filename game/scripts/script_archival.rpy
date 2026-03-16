@@ -1,7 +1,7 @@
 label archival:
     play music ac_title volume 0.4 if_changed
     music ac_title
-    call screen warning("The following scene is a major tonal shift.\nIt may be disconcerting to some viewers.", "Warning: potential existential dread.", "back_out_archival")
+    call screen warning("The following scene is a major tonal shift.\nIt may be disconcerting to some viewers.", "Warning: potential existential dread.", "back_out_archival", "No! I don't want that!")
 
     scene cs_room_2
     show cs flipped at mid_left

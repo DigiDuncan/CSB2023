@@ -207,6 +207,7 @@ label beach_start:
     scene black with Dissolve(2.0)
     camera:
         matrixcolor IdentityMatrix() # resets shader
+    pause 2.0
 
     ######## WAKE UP ########
 
@@ -286,7 +287,7 @@ label beach_start:
     arceus "We're in {i}California!"
     show cs scared
     cs "What?!" with vpunch
-    amtrak_conductor "That's right! Welcome te sunny Californ{w=0.05}-I{w=0.05}-A!"
+    amtrak_conductor "That's right! Welcome te sunny Californ{w=0.1}-I{w=0.05}-A!"
     cs "This is terrible! We were supposed to get off at the airport in Bellingham!"
     cs "Do you think you can take us to the nearest airport?"
     amtrak_conductor "No can do, bud! Ol' girl's almost outta fuel!"

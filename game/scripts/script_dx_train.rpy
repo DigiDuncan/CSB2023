@@ -1301,10 +1301,10 @@ label train_enter_sleeper:
         pause 2.0
         n "But the door is heavier than expected."
         play sound sfx_clonk
-        with hpunch
-        pause 1.0
+        with shake1
         arceus "{i}Shit!"
         n "Arceus grimaces at the sudden noise and peeks through the window back at CS."
+        pause 1.0
         "..."
         n "Thankfully, CS is still sound asleep."
     else:

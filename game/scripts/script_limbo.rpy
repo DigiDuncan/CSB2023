@@ -75,7 +75,7 @@ label back_out_archival:
     $ achievement_manager.unlock("archived")
     $ collect("m4")
     $ collect("cs_car_old")
-    return
+    jump true_streaming
 
 # TODO: add any collectables here during cinema pass later
 label back_out_i69:
