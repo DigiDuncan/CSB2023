@@ -214,15 +214,13 @@ label beach_start:
     ######## WAKE UP ########
 
     # TODO: need a different bus driver, just using the conductor as a placeholder
-
+    play music apple_kid
+    music apple_kid
     n "A few hours later, the bus finally comes to a stop."
     show amtrak_conductor at mid_right_right with moveinright
-
     amtrak_conductor "Alright, you two. End o' the line."
-
     show arceus flipped with dissolve
     arceus "Hmmgh?"
-
     amtrak_conductor "Ye, welcome te San Francisco!"
     amtrak_conductor "If'n yer here fer the beach, ye'd better wake yer friend up an' get outta here 'fore it gets too crowded!"
     arceus "Beach...? San... {nw}"

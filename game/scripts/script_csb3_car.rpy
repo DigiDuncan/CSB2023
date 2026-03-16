@@ -25,15 +25,14 @@ label car_dialogue:
     music billy_mix
     pause 2.0
     if fun_value(FUN_VALUE_MUSIC):
-        cs "Well Arceus, it's time for Billy's Mix!"
+        cs "Well, Arceus, it's time for Billy's Mix!"
         arceus "It sure is."
         arceus "We've done a lot on this trip, haven't we?"
+        cs "We sure have."
     else:
-        cs "Well, Arceus, it has been quite a ride."
-    arceus "It sure has."
-    arceus "We've been through quite a lot, haven't we?"
-    cs "Yeah, I'm so tired."
-    cs "I can't wait to get some {i}actual{/i} rest."
+        arceus "We've been through quite a lot, haven't we?"
+        cs "Yeah, I'm so tired."
+        cs "I can't wait to get some {i}actual{/i} rest."
 
     show screen skip_car
 
@@ -55,7 +54,7 @@ label car_dialogue:
     billy "No, I'm good. You're in {i}my{/i} car, and that means {i}I'll{/i} drive!"
     cs "Alright, man... I just don't feel like we paid you enough for this."
     billy "Everything I sell is {i}always{/i} $19.95!"
-    arceus "{size=-15}That isn't true--{nw=0.5}{nw}"
+    arceus "{size=-15}That isn't true-- {nw}"
     cs "{size=-15}Shh...{nw=0.5}{nw}"
     cs "Thanks, man."
     billy "{i}That's{/i} the power of friendship!"
@@ -66,9 +65,9 @@ label car_dialogue:
     digi "I have, like, robotic augments."
     cs "Digi, you said you were inspired by me, correct?"
     digi "Yeah..."
-    cs "I've been celebrating Pencil Sharpening Day every year since I invented it."
-    digi "I guess so...{w=1.0}{nw}"
-    cs "I {i}literally{/i} sharpened a lightbulb with a pencil sharpener."
+    cs "I've been celebrating Pencil Sharpening Day every year since I invented it!"
+    digi "I guess it makes sense that I wouldn't stand a chance then."
+    cs "Yeah, like, I {i}literally{/i} sharpened a lightbulb with a pencil sharpener."
     digi "Yeah, I don't even know how you did that."
 
     pause 3.0
@@ -85,13 +84,13 @@ label car_dialogue:
     pause 3.0
 
     cs "How long is this drive?"
-    arceus "You sound like a child asking their mom if they're at Disney World yet."
+    arceus "You sound like a kid asking if we're at Disney World yet."
     cs "I'm sorry, man. I just want to get home."
-    billy "It's quite a ways away, still!"
+    billy "We're still quite a ways away!"
     cs "Aw, man..."
     arceus "Listen, at least the cops aren't after us this time."
-    billy "What?"
-    digi "Huh?"
+    billy "What?" (multiple=2)
+    digi "Huh?" (multiple=2)
     cs "... Don't worry about it."
 
     pause 4.0
@@ -105,13 +104,13 @@ label car_dialogue:
     play sound sfx_pickup_call
     pause 1.0
     carla "Hey, Billy, it's Carla!"
-    billy "What are you doing in my car?"
+    billy "What are you doing in {i}my{/i} car?"
     carla "I'm not in your car, I'm on the phone."
     carla "You're using the Jupiter Jack, remember?"
     billy "Oh, yeah."
-    carla "Anyway, we have a meeting in twenty minutes."
+    carla "Anyway, we have a meeting in 20 minutes."
     billy "I'm in the fucking {i}Northeast!"
-    carla "What? What are you doing there?"
+    carla "What? What are you doing {i}there?"
     billy "It's {i}my{/i} car!"
     play sound sfx_end_call
     $ renpy.music.set_pause(False, "music")
@@ -122,7 +121,7 @@ label car_dialogue:
 
     arceus "CS, why do you still pay for Adobe Premiere?"
     cs "Well, I pay for the whole Creative Cloud."
-    digi "Why? Isn't that super expensive?"
+    digi "But... why? Isn't that super expensive?"
     arceus "You know, I can get you the whole suite for free."
     cs "No, no, I know. I just don't feel like I should."
     arceus "Yarr."
@@ -132,7 +131,7 @@ label car_dialogue:
     cs "Like $60 a month..."
     digi "That's fucking {i}insane!"
     billy "{i}Unbelievable!{/i} I wouldn't pay more than $19.95!"
-    billy "And, buy one, get one {i}free!{/i}"
+    billy "{i}And{/i} buy one, get one free!"
     cs "What would I do with two Adobe suites?"
     billy "What would you do with two Grater Platers?"
     cs "Fair enough."
@@ -169,25 +168,25 @@ label car_dialogue:
     arceus "Yeah, that's, like, where one little thing can {i}effect{/i} something big later down the line."
     cs "Yeah! I've been thinking, what if, like, I took the other job that Linus offered me?"
     arceus "What do you mean?"
-    cs "Oh, Linus wanted me to build him a stream machine."
-    arceus "Ah, I see. That sounds cool."
+    cs "Oh, Linus wanted me to build him a streaming machine."
+    arceus "Ah, I see. That does sound like a pretty cool job."
     cs "I was thinking about what would have happened if I'd done that."
-    cs "I might've, like, gotten into a fight and went to the hospital or something..."
-    cs "And then, traveled the world!"
+    cs "I might've, like, gotten into a fight and ended up in the hospital or something..."
+    cs "And then woken up and traveled the world!"
     arceus "That's very... descriptive."
     cs "What I love about the butterfly effect is that that might've actually happened!"
 
     pause 2.0
 
     cs "Have you heard of {i}Genshin Impact?{/i} Start your adventure on the continent of Teyvat, and--{w=0.5}{nw}"
-    arceus "{cshake}NO."
+    arceus "{cshake}NO." with vpunch
     billy "I'm a pitchman, and even {i}I{/i} won't stoop {i}that{/i} low."
     n "CS shuts up."
 
     pause 3.0
 
     arceus "Okay, so..."
-    arceus "CS, what's up with the catmaid outfit?"
+    arceus "CS, what's up with the cat-maid outfit?"
     pause 3.0
     "..."
     arceus "CS?"
@@ -204,8 +203,8 @@ label car_dialogue:
     billy "Hi, it's Billy!"
     linus "Hey, Billy. CS is with you, right?"
     cs "Oh, hey, Linus. Yep, I'm right here!"
-    cs "I'm sorry about the thing with the cops. I had an issue with this company called HoH SiS where they scammed me, so I kinda beat up their workers."
-    digi "CS, what the hell?!"
+    cs "I'm sorry about the thing with the cops. I had an issue with this company called HoH SiS where they scammed me, so I kinda... beat up their workers."
+    digi "CS, what the hell?!" with vpunch
     linus "Oh, HoH SiS? I heard that the cops were looking for them, too."
     linus "I'm sorry to hear about all that, though. I hope you are doing well now."
     cs "We're doing okay!"
@@ -230,7 +229,7 @@ label car_dialogue:
     iris ":3"
     play sound sfx_end_call
     $ renpy.music.set_pause(False, "music")
-    n "The phone hangs up from the other end."
+    n "The call drops from the other end."
 
     pause 3.0
 
@@ -243,9 +242,9 @@ label car_dialogue:
 
     pause 3.0
 
-    arceus "Hey, CS, did you ever change the Mount Rushmore thing back?"
+    arceus "Hey, CS, did you ever change Mount Rushmore back?"
     cs "Nope!"
-    cs "Why would I? It looks cool now!"
+    cs "Why would I? It looks awesome!"
     arceus "..."
 
     pause 2.0
@@ -277,11 +276,11 @@ label car_dialogue:
     pause 1.0
     billy "Hi, it's Billy!"
     tv_billy "Hi, it's Billy!"
-    tv_billy "Introducing the New Craptop that {i}isn't{/i} sentient {i}at all,{/i} from me, Billy Mays!"
+    tv_billy "Introducing the new Craptop that {i}isn't{/i} sentient {i}at all,{/i} from me, Billy Mays!"
     billy "What the {i}actual{/i} fuck?"
     tv_billy "Hello? Did I get a new signal?"
     billy "You aren't Billy! I'm Billy!"
-    tv_billy "No! {i}I'm{/i} Billy! I died long ago, and I'm now in Super Heaven, selling pointless products!"
+    tv_billy "No! {i}I'm{/i} Billy! I died long ago, and now I'm in Super Heaven, selling pointless products!"
     billy "No, fuck you! {i}I'm{/i} the real Billy!"
     cs "Yeah, dude from the radio, you sound like an imposter."
     arceus "sus{w=0.25}{nw}"
@@ -301,7 +300,7 @@ label car_dialogue:
     pause 2.0
 
     cs "Man, we should have a podcast or something."
-    arceus "{i}No,{/i} no we shouldn't."
+    arceus "{i}No,{/i} no we should not."
     cs "What do you mean? We're just chatting right now, and I think it's pretty funny!"
     arceus "You only think it's funny because we're the ones talking."
     arceus "Every group of idiot friends thinks they're funny enough to have a podcast, and 99%% of the time, they're wrong."
@@ -351,7 +350,7 @@ label car_dialogue:
     cs "I don't know, you just {i}can.{/i}"
     billy "That's an amazing deal!"
     arceus "I think that's meant for, like, restaurants."
-    cs "I guess, but, like, that'd still be funny to do, right?"
+    cs "I guess, but, like, that'd still be funny, right?"
     arceus "... No?"
     cs "Yeah, you're probably right."
 
@@ -360,6 +359,8 @@ label car_dialogue:
     cs "I wonder what would've happened if we'd gone south."
     arceus "Back at Compass Road?"
     cs "Yeah. Who knows how far we might've gotten..."
+    arceus "Maybe we could have gone another direction entirely."
+    cs "Yeah..."
 
     pause 4.0
 
@@ -396,7 +397,7 @@ label car_dialogue:
     pause 3.0
 
     n "Arceus is reading a book."
-    arceus "{i}Call me Ishmael.  Some years ago-- never mind how long precisely-- having little or no money in my purse,"
+    arceus "{i}Call me Ishmael.  Some years ago-- never mind how long\nprecisely-- having little or no money in my purse,"
     arceus "{i}and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world."
     cs "Arc? Are you... reading {i}Moby Dick?"
     arceus "Yeah."
@@ -492,7 +493,7 @@ label car_dialogue:
     cs "Now, I'm curious, too. What was Pakoo talking about, Digi?"
     digi "Look, I'll tell you later. I don't want to think about it."
     stop sound fadeout 2.0
-    n "The radio comes back on."
+    n "The static clears from the radio."
     pakoo "--and, yeah, it's, like, the best video ever."
     pakoo "Thank you, Digi. I unironically love that video."
     digi "Sure, Pakoo."
@@ -515,22 +516,22 @@ label car_dialogue:
     pause 3.0
 
     cs "Digi, did you ever {i}actually{/i} poop in your socks?"
-    digi "God, damn it. No."
+    digi "God damn it. No."
     cs "Okay, okay, I was just wondering..."
 
     pause 4.0
 
-    billy "Hi, Billy Mays here! {w=0.5}No..."
-    billy "Hi, Billy Mays... {w=0.5}No..."
-    billy "Billy Mays here! For the-- {w=0.25}{i}no..."
+    billy "Hi, Billy Mays, here! {w=0.5}No..."
+    billy "Hi, Billy Mays... {w=0.5}no..."
+    billy "Billy Mays, here! For the-- {w=0.25}{i}no..."
     cs "You okay, man?"
     billy "I just try to practice my infomerical voice a few times a day."
     billy "Recently, I've felt like I've been losing my charm."
     digi "Did somebody say {i}charm?"
     billy "Hold on, I think I've got it!"
-    billy "Hi, Billy Mays here, for {i}Charm!{/i} The fast and easy way to play {i}all{/i} of your favorite rhythm games, all in {i}one{/i} engine."
+    billy "Hi, Billy Mays, here for {i}Charm!{/i} The fast and easy way to play {i}all{/i} of your favorite rhythm games, all in {i}one{/i} engine."
     digi "Dude, that was {i}amazing!{/i} Can I record you saying that next time?"
-    billy "Sure! I can do a commercial for {i}Charm{/i} if you want. New product pitches are pretty sparse these days."
+    billy "Sure! I can do a commercial for {i}Charm{/i} if you want. Not a lot of people wanting informercials made these days."
     digi "Hell yeah!"
 
     pause 3.0
@@ -538,9 +539,9 @@ label car_dialogue:
     cs "Hey, Arc?"
     arceus "Hmm?"
     cs "Would you rather have unlimited bacon, but no games?"
-    cs "Or, games?"
+    cs "Or games?"
     cs "{i}Unlimited{/i} games."
-    cs "But, no games."
+    cs "But no games."
     arceus "What?"
     digi "That's, like, a paradox, right?"
     cs "No, no, you see, you get unlimited games, but no games."
@@ -582,6 +583,7 @@ label car_dialogue:
     pause 1.0
     digi "Hi, Mean."
     mean "Also, Tate says \"a\"."
+    play sound "sfx/text/tate.wav"
     tate "a"
     play sound sfx_end_call
     $ renpy.music.set_pause(False, "music")
@@ -625,7 +627,7 @@ label car_dialogue:
     with vpunch
     show billy car turn
     billy "What the {i}hell{/i} are you guys doing?!"
-    billy "I'm gonna {i}double{/i} the offer of this car ride if you do that again!"
+    billy "I'm gonna {i}double{/i} the offer of this car ride if you do that again!" # TODO: this line needs help
     show billy car
     cs "Digi did it!"
     digi "No, I didn't! {i}You{/i} grabbed it!"
