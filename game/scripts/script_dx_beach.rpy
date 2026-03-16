@@ -174,8 +174,9 @@ label beach_start:
     music end
     pause 2.0
 
+    ######## ON THE BUS ########
     
-    play sound sfx_csnore loop fadein 2.0
+    play sound2 sfx_csnore loop fadein 2.0
     scene bus_seat
     show cs happy flipped at manual_pos(0.6, 1.0, 1.0):
         rotate 5
@@ -195,13 +196,130 @@ label beach_start:
         matrixcolor darkmatrix
     with Dissolve(2.0)
 
-    n "... eventually passing state lines into California."
+    n "...{w=0} eventually passing state lines into California."
 
-    stop sound fadeout 2.0
+    stop sound2 fadeout 2.0
     scene black with Dissolve(2.0)
     camera:
         matrixcolor IdentityMatrix() # resets shader
 
+    play sound2 sfx_csnore loop fadein 2.0
+    scene bus_seat
+    show cs happy at manual_pos(0.7, 1.0, 1.0):
+        rotate 15
+    show arceus asleep flipped at manual_pos(0.8, 1.0, 1.0):
+        rotate -15
+    with Dissolve(2.0)
+
+    ######## WAKE UP ########
+
+    # TODO: need a different bus driver, just using the conductor as a placeholder
+
+    n "A few hours later, the bus finally comes to a stop."
+    show amtrak_conductor at mid_right_right with moveinright
+
+    amtrak_conductor "Alright, you two. End o' the line."
+
+    show arceus flipped with dissolve
+    arceus "Hmmgh?"
+
+    amtrak_conductor "Ye, welcome te San Francisco!"
+    amtrak_conductor "If'n yer here fer the beach, ye'd better wake yer friend up an' get outta here 'fore it gets too crowded!"
+    arceus "Beach...? San... {nw}"
+    show arceus asleep flipped with { "master": dissolve }
+    extend "mmm..."
+    pause 1.0
+    "..."
+    pause 1.0
+    amtrak_conductor "... Hey, bud?"
+    pause 2.0
+    show arceus worried flipped
+    arceus "{i}San Francisco?!" with vpunch
+    arceus "CS! Wake up!"
+    show cs concentrate
+    cs "Hnnngh..."
+    cs "{size=-12}But, mom, I don't wanna go to school..."
+    show arceus angry flipped:
+        linear 1.0 xpos 0.75
+    n "CS pulls Arceus closer as if he were some kind of body pillow."
+    arceus "{i}CS!" with vpunch
+    arceus "Get off me!"
+    play sound sfx_punch
+    show arceus angry:
+        linear 0.1 xpos 0.725
+        linear 0.1 xpos 0.75
+    stop sound2
+    show cs scared
+    cs "{cshake}YEOWCH!!" with hpunch
+    n "Arceus elbows CS in the stomach."
+    cs "What was {i}that{/i} for?!"
+    arceus "Dude, get {i}off{/i} of me!"
+    cs "Shit, sorry!"
+    show cs happy
+    cs "You're just so soft and fluffy!"
+    arceus "Yeah, and my {nw}"
+    extend "{i}future wife{/i} would agree with you!" with vpunch
+    arceus "Now, fuckin' lemme {nw}"
+    show cs scared
+    extend "{i}go!" with vpunch
+    show cs disappointed
+    cs "Alright, sorry."
+    show cs disappointed:
+        parallel:
+            linear 2.0 rotate 0
+        parallel:
+            linear 2.0 xpos 0.6
+    show arceus angry:
+        parallel:
+            linear 2.0 rotate 0
+        parallel:
+            linear 2.0 xpos 0.9
+    pause 2.0
+    cs "Oh, hey, Mr. Driver. Are we at the airport?"
+    show arceus worried
+    arceus "Dude, no! We fucked up!"
+    arceus "We're in {i}California!"
+    show cs scared
+    cs "What?!" with vpunch
+    amtrak_conductor "Yep, welcome to sunny Californ-I-A!"
+    cs "This is terrible! We were supposed to get off at the airport in Bellingham!"
+    cs "Do you think you can take us to the nearest airport?"
+    amtrak_conductor "No can do, bud! Ol' girl's almost outta fuel!"
+    arceus "What should we do?"
+    amtrak_conductor "Take this here map."
+    amtrak_conductor "I reckon ye can find another bus real easy, but if'n yer not in a hurry, ye should take a wander 'round the city!"
+    amtrak_conductor "When ye got on my bus, the two of ye looked more stressed out 'an two toads bein' chased down the road by a bunch o' kids!" # thanks waterfall
+    show cs happy 
+    cs "Hey, thanks!"
+    arceus "I guess, yeah, we {i}were{/i} pretty stressed..."
+    show cs surprised
+    cs "And we're not {i}really{/i} in any hurry to get home..."
+    show cs
+    cs "Actually, I feel pretty great today."
+    show arceus
+    arceus "Me too, actually, yeah."
+    show cs happy
+    amtrak_conductor "Well, I certainly hope so! The two of ye slept like the dead fer the {i}entire{/i} 16-hour ride!"
+    show cs scared
+    show arceus worried flipped
+    cs "16 hours?!" (multiple=2) with vpunch 
+    arceus "16 hours?!" (multiple=2) with vpunch 
+    scene black with dissolve
+    pause 2.0
+    n "The two deboard the bus and start walking."
+    scene
+    show cs disappointed at left
+    show arceus worried at right
+    with dissolve
+    cs "Well, now what?"
+    arceus "I guess let's look at the map and decide what to do first."
+    # TODO: map item
+    show cs surprised
+    arceus "I heard from Pakoo and Mika last time they went on vacation here that the airport here is {i}insane.{/i} We'll probably want to wait until the wee hours to catch a flight."
+    show cs disappointed
+    cs "Yikes, good idea."
+    cs "I guess, let's see here..."
+    
     jump beach_overworld_map
 
 ######## THE MAP ########
@@ -244,6 +362,7 @@ label beach_overworld_map:
 
         # TODO: get an actually nice world map, just using a menu to make sure it works
         scene expression "washington_road %s" % beach_current_shader
+        with dissolve
 
         # TODO: make sure any inline variables work with awawa mode
 
