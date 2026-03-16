@@ -2266,6 +2266,7 @@ image snow_pile = "snow_pile.png"
 
 # DX Beach Images
 image bus_stop = "bg/beach/bus_stop.png"
+image valencia_st = "bg/beach/valencia_st.png"
 
 # Static Images
 image shopping_cart_aldi = "shopping_cart_aldi.png"

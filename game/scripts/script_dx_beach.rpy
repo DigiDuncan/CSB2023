@@ -307,7 +307,7 @@ label beach_start:
     scene black with dissolve
     pause 2.0
     n "The two deboard the bus and start walking."
-    scene
+    scene valencia_st
     show cs disappointed at left
     show arceus worried at right
     with dissolve
@@ -315,10 +315,17 @@ label beach_start:
     arceus "I guess let's look at the map and decide what to do first."
     # TODO: map item
     show cs surprised
-    arceus "I heard from Pakoo and Mika last time they went on vacation here that the airport here is {i}insane.{/i} We'll probably want to wait until the wee hours to catch a flight."
+    arceus "I heard from Pakoo and Mika last time they went on vacation here that the airport here is {i}insane.{/i}"
+    arceus "We'll probably want to wait until the wee hours to catch a flight."
     show cs disappointed
     cs "Yikes, good idea."
-    cs "I guess, let's see here..."
+    cs "I guess, yeah, let's pick out somewhere to go."
+    show cs at mid_mid_left
+    show arceus at mid_mid_right
+    with MoveTransition(0.5)
+    # TODO: raise map up
+    show cs surprised
+    pause 1.0
     
     jump beach_overworld_map
 
