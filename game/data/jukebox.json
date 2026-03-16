@@ -182,7 +182,7 @@
             "artist": "Keiichi Suzuki",
             "tags": ["CSBII"],
             "album_art": "earthbound.png",
-            "trivia": "Despite taking place in Canada, Ges barely appears in this route... What's up with that?"
+            "trivia": "This track is also known as {i}Humoresque of a Little Dog.{/i}\nAlso, despite taking place in Canada, Ges barely appears in this route... What's up with that?"
         },
         "passport" : {
             "file": "passport.ogg",
@@ -1194,7 +1194,7 @@
         },
         "apple_kid" : {
             "file": "apple_kid.ogg",
-            "title": "Apple Kid",
+            "title": "Apple Kid's Theme",
             "artist": "Keiichi Suzuki",
             "tags": ["CSBDX: After Story", "CSBDX: BT1D", "CSBDX: Beach Episode", "New In DX"],
             "album_art": "earthbound.png",
@@ -1759,6 +1759,14 @@
             "tags": ["New In DX"],
             "album_art": "missingno.png",
             "trivia": "Digi EX's theme."
+      },
+      "sleeping_room": {
+            "file": "sleeping_room.ogg",
+            "title": "Inside The Sleeping Room",
+            "artist": "Kazumi Totaka & Asuka Ohta",
+            "tags": ["CSBDX: Beach Episode", "New In DX"],
+            "album_art": "wildworld.png",
+            "trivia": "Sleep tight!"
       },
         "sfx_ringtone_addy" : {
             "file": "sfx/sfx_ringtone_addy.ogg",

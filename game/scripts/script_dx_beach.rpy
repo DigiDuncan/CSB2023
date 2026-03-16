@@ -53,7 +53,7 @@ label beach_start:
     n "CS notices that Arceus has barely said anything the entire time."
     cs "Hey, Arc, are you alright?"
     arceus "No, I am not."
-    arceus "My feet hurt, I'm exhausted, and I'm honestly pissed that you just kept going west."
+    arceus "My feet hurt, I'm exhausted, and I'm honestly pissed that you just kept wanting to go west."
     arceus "There was literally {w=0.25}nothing {w=0.25}{i}there."
     arceus "Do you, like, lack object permanance or something?"
     arceus "Did you {i}seriously{/i} think that something new would happen if you kept doing the same thing over and over again?"
@@ -61,7 +61,7 @@ label beach_start:
         show cs surprised
         cs "Well, I mean, technically, it {i}did-- {nw}"
         show cs scared
-        arceus "Now,{w=0} you shut the goddamn fuck up {i}right now{/i} or so help me,{w=0} God." with vpunch
+        arceus "Now,{w=0} you shut the God damn fuck up {i}right now{/i} or so help me,{w=0} God." with vpunch
         show cs disappointed
     arceus "How long ago, exactly, did you even {i}notice{/i} this bus stop?"
     show cs worried
@@ -175,16 +175,19 @@ label beach_start:
     pause 2.0
 
     ######## ON THE BUS ########
-    
+        
+    play sound sfx_ambiance_bus_interior loop fadein 2.0
     play sound2 sfx_csnore loop fadein 2.0
+    play music sleeping_room loop fadein 2.0 if_changed
     scene bus_seat
     show cs happy flipped at manual_pos(0.6, 1.0, 1.0):
         rotate 5
     show arceus asleep flipped at manual_pos(0.9, 1.0, 1.0):
         rotate -10
     with Dissolve(2.0)
+    music sleeping_room
 
-    n "As soon as the two sit down, they fall into a deep sleep."
+    n "The moment they sit down, CS and Arceus fall into a deep sleep."
 
     camera:
         matrixcolor duskmatrix
@@ -198,11 +201,16 @@ label beach_start:
 
     n "...{w=0} eventually passing state lines into California."
 
+    stop music fadeout 2.0
+    stop sound fadeout 2.0
     stop sound2 fadeout 2.0
     scene black with Dissolve(2.0)
     camera:
         matrixcolor IdentityMatrix() # resets shader
 
+    ######## WAKE UP ########
+
+    play music apple_kid fadein 2.0 if_changed
     play sound2 sfx_csnore loop fadein 2.0
     scene bus_seat
     show cs happy at manual_pos(0.7, 1.0, 1.0):
@@ -210,16 +218,15 @@ label beach_start:
     show arceus asleep flipped at manual_pos(0.8, 1.0, 1.0):
         rotate -15
     with Dissolve(2.0)
-
-    ######## WAKE UP ########
+    music apple_kid
 
     # TODO: need a different bus driver, just using the conductor as a placeholder
-    play music apple_kid
-    music apple_kid
+    # TODO: also i need to clean up whatever friggin accent the driver is supposed to have
+    
     n "A few hours later, the bus finally comes to a stop."
     show amtrak_conductor at mid_right_right with moveinright
     amtrak_conductor "Alright, you two. End o' the line."
-    show arceus flipped with dissolve
+    show arceus flipped with { "master": dissolve }
     arceus "Hmmgh?"
     amtrak_conductor "Ye, welcome te San Francisco!"
     amtrak_conductor "If'n yer here fer the beach, ye'd better wake yer friend up an' get outta here 'fore it gets too crowded!"
@@ -261,25 +268,25 @@ label beach_start:
     show cs scared
     extend "{i}go!" with vpunch
     show cs disappointed
-    cs "Alright, sorry."
+    cs "Right, sorry."
     show cs disappointed:
         parallel:
-            linear 2.0 rotate 0
+            linear 0.5 rotate 0
         parallel:
-            linear 2.0 xpos 0.6
+            linear 0.5 xpos 0.6
     show arceus angry:
         parallel:
-            linear 2.0 rotate 0
+            linear 0.5 rotate 0
         parallel:
-            linear 2.0 xpos 0.9
+            linear 0.5 xpos 0.9
     pause 2.0
     cs "Oh, hey, Mr. Driver. Are we at the airport?"
     show arceus worried
-    arceus "Dude, no! We fucked up!"
+    arceus "Dude, {i}no!{/i} We fucked up!"
     arceus "We're in {i}California!"
     show cs scared
     cs "What?!" with vpunch
-    amtrak_conductor "Yep, welcome to sunny Californ-I-A!"
+    amtrak_conductor "That's right! Welcome te sunny Californ{w=0.05}-I{w=0.05}-A!"
     cs "This is terrible! We were supposed to get off at the airport in Bellingham!"
     cs "Do you think you can take us to the nearest airport?"
     amtrak_conductor "No can do, bud! Ol' girl's almost outta fuel!"
@@ -303,8 +310,10 @@ label beach_start:
     cs "16 hours?!" (multiple=2) with vpunch 
     arceus "16 hours?!" (multiple=2) with vpunch 
     scene black with dissolve
+    pause 1.0
+    n "CS and Arceus deboard the bus and start walking."
     pause 2.0
-    n "The two deboard the bus and start walking."
+
     scene valencia_st
     show cs disappointed at left
     show arceus worried at right

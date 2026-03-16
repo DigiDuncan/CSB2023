@@ -253,6 +253,9 @@ define audio.drive = "drive.ogg"
 define audio.able_sisters = "<loop 6.249 to 31.196>able_sisters.ogg"
 define audio.insulrun = "insulrun.ogg"
 
+# CSBDX Beach Music
+define audio.sleeping_room = "sleeping_room.ogg"
+
 # Misc Music
 define audio.space_classroom = "space_classroom.ogg"
 define audio.billymusicu = "billymusicu.ogg"
@@ -263,6 +266,7 @@ define audio.riders_menu = "riders_menu.ogg"
 
 # SFX
 define audio.sfx_addy_snap = "sfx/sfx_addy_snap.ogg"
+define audio.sfx_ambiance_bus_interior = "sfx/sfx_ambiance_bus_interior.ogg"
 define audio.sfx_ambiance_train_interior = "sfx/sfx_ambiance_train_interior.ogg"
 define audio.sfx_ambience_nugget = "sfx/sfx_ambience_nugget.ogg"
 define audio.sfx_amtrak_horn = "sfx/sfx_amtrak_horn.ogg"
