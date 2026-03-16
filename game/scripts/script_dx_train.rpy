@@ -3820,15 +3820,16 @@ label train_tate_ex_encounter:
     n "While Arceus is out like a light, try as he may, CS just can't seem to settle down."
     n "He decides to go for a walk, meandering through each quiet corridor until he eventually finds himself in the observation car."
     n "He is not alone."
-    pause 0.5
+    window hide
+    pause 1.0
+    play music insomnia_intro if_changed
+    music insomnia
     scene amtrak_observation_2
     show tate srs flipped at left
     with dissolve
     pause 1.0
-    play music insomnia_intro if_changed
-    music insomnia
     show cs disappointed flipped at offscreenright with determination
-    show cs disappointed flipped at right with MoveTransition(1.0)
+    show cs disappointed flipped at right with MoveTransition(2.0)
     pause 1.0
     cs "Tate?"
     cs "You can't sleep, either?"
@@ -3838,7 +3839,8 @@ label train_tate_ex_encounter:
     "..."
     pause 2.0
     cs "... Tate? Are you alright?"
-    tate "You know, CS, I've been thinking..."
+    tate "You know, CS..."
+    tate "I've been thinking."
     pause 2.0
     show tate srs
     pause 2.5
@@ -3856,7 +3858,7 @@ label train_tate_ex_encounter:
     tate "In another place, I had to drop everything to save you from your own bad decisions."
     tate "And, in that fragment of this world, I fought alongside you."
     show cs scared flipped
-    cs "Tate, what hell are you {i}talking{/i} about?!"
+    cs "Tate, what the hell are you {i}talking{/i} about?!"
     tate "Tell me, CS."
     tate "Do you think I could have taken on that crook alone?"
     menu:

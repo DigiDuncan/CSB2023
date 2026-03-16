@@ -746,6 +746,8 @@ image arceus dusk = "dusk:characters/arc/arceus.png"
 image arceus worried dusk = "dusk:characters/arc/worried.png"
 image arceus angry dusk = "dusk:characters/arc/angry.png"
 image arceus dusk flipped = "dusk:flip:characters/arc/arceus.png"
+image arceus asleep = "characters/arc/asleep.png"
+image arceus asleep flipped = "flip:characters/arc/asleep.png"
 
 image arceus festive = "characters/arc/neutral_festive.png"
 image arceus festive flipped = "flip:characters/arc/neutral_festive.png"

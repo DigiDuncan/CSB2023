@@ -61,7 +61,7 @@ label beach_start:
         show cs surprised
         cs "Well, I mean, technically, it {i}did-- {nw}"
         show cs scared
-        arceus "Now,{w=0} you shut the goddamn fuck up {i}right now{/i} or so help me,{w=0} God. {nw}" with vpunch
+        arceus "Now,{w=0} you shut the goddamn fuck up {i}right now{/i} or so help me,{w=0} God." with vpunch
         show cs disappointed
     arceus "How long ago, exactly, did you even {i}notice{/i} this bus stop?"
     show cs worried
@@ -112,16 +112,16 @@ label beach_start:
     show arceus angry
     arceus "I'm gonna sit down. My feet are killing me..." # but are they feet or paws?
 
-    show arceus angry at manual_pos(0.6, 0.6, 1.0):
-        linear 0.75 zoom 0.4
-    with MoveTransition(0.75)
+    show arceus angry at manual_pos(0.6, 0.625, 1.0):
+        linear 1.0 zoom 0.4
+    with MoveTransition(1.0)
 
     show cs disappointed
     cs "Yeah, I think I will, too."
 
-    show cs disappointed at manual_pos(0.4, 0.6, 1.0):
-        linear 1.0 zoom 0.4
-    with MoveTransition(1.0)
+    show cs disappointed at manual_pos(0.4, 0.625, 1.0):
+        linear 1.5 zoom 0.4
+    with MoveTransition(1.5)
 
     pause 2.0
     "..."
@@ -173,7 +173,35 @@ label beach_start:
     stop music fadeout 2.0
     music end
     pause 2.0
+
     
+    play sound sfx_csnore loop fadein 2.0
+    scene bus_seat
+    show cs happy flipped at manual_pos(0.6, 1.0, 1.0):
+        rotate 5
+    show arceus asleep flipped at manual_pos(0.9, 1.0, 1.0):
+        rotate -10
+    with Dissolve(2.0)
+
+    n "As soon as the two sit down, they fall into a deep sleep."
+
+    camera:
+        matrixcolor duskmatrix
+    with Dissolve(2.0)
+    
+    n "The bus comes and goes from Bellingham International Airport..."
+
+    camera:
+        matrixcolor darkmatrix
+    with Dissolve(2.0)
+
+    n "... eventually passing state lines into California."
+
+    stop sound fadeout 2.0
+    scene black with Dissolve(2.0)
+    camera:
+        matrixcolor IdentityMatrix() # resets shader
+
     jump beach_overworld_map
 
 ######## THE MAP ########
