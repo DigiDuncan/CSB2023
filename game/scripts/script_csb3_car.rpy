@@ -583,7 +583,7 @@ label car_dialogue:
     pause 1.0
     digi "Hi, Mean."
     mean "Also, Tate says \"a\"."
-    play sound "sfx/text/tate.wav"
+    play sound "/text/tate.wav"
     tate "a"
     play sound sfx_end_call
     $ renpy.music.set_pause(False, "music")

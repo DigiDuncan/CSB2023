@@ -19,6 +19,8 @@ layeredimage tate_comp:
             "/characters/tate/composite_test/body_default.png"
         attribute festive:
             "/characters/tate/composite_test/body_festive.png"
+        attribute beach:
+            "/characters/tate/composite_test/body_beach.png"
 
     group blushing:
         attribute default:
@@ -80,7 +82,7 @@ image tate_comp selectable flipped = LayeredImageProxy("tate_comp", Transform(ma
 # this section is just for fun mostly. a randomizer!
 init python:
     def awawa():
-        outfits = renpy.random.choice(["casual", "festive"])
+        outfits = renpy.random.choice(["casual", "festive", "beach"])
         blushing = renpy.random.choice(["-blush", "blush"])
         faces = renpy.random.choice(["happy", "sad", "cry", "sheepish", "shock", "serious", "smug", "stare", "furious"])
         tearful = renpy.random.choice(["-tears", "tears"])

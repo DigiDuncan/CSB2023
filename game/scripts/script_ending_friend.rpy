@@ -218,7 +218,7 @@ label where_are_they_now:
         matrixcolor IdentityMatrix()
 
     ################ TATE ################
-  
+    
     stop music
 
     show screen where_text("As for Tate...") with dissolve
@@ -361,7 +361,7 @@ label where_are_they_now:
 
     # finally jump to a new timeline...
     play sound sfx_snd_sparkles
-    show yellow:
+    show tate sil_black flipped as yellow:
         matrixcolor TintMatrix("#FFFFFF") * BrightnessMatrix(1.0)
         parallel:
             linear 0.1 xzoom 0

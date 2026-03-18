@@ -263,8 +263,8 @@ label beach_start:
     cs "Shit, sorry!"
     show cs happy
     cs "You're just so soft and fluffy!"
-    arceus "Yeah, and my {i}future {nw}"
-    extend "wife{/i} would agree with you!" with vpunch
+    arceus "Yeah, and my {i}future {/i}{nw}"
+    extend "{i}wife{/i} would agree with you!" with vpunch
     arceus "Now, fuckin' lemme {nw}"
     show cs scared
     extend "{i}go!" with vpunch
