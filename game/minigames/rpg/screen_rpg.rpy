@@ -295,6 +295,107 @@ screen rpg_stat_box(fighter, current_ally_mode):
                 background None
                 xysize(465,105)
 
+
+######### TARGET SELECTION
+
+screen rpg_target_select(current_ally, current_ally_mode):
+    frame:
+        background None
+        xsize 0.5 ysize 262
+        padding(80, 5)
+        xanchor 1.0 yanchor 1.0
+        xpos 1.0 ypos 1.0
+
+        vbox:
+            $ curr_attack = current_ally.next_attack
+            if curr_attack is not None:
+                $ targets = RPG.encounter.possible_targets(current_ally, current_ally.next_attack.attack)
+                $ working_list = []
+                for i in range(curr_attack.attack.target_count):
+                    text "{size=42}Select target [i]"
+
+                    hbox:
+                        $ curr_target = None # TODO: this needs to reset between characters somehow
+                        for target in targets:
+                            $ target_actions = [ Function(bypass_append, working_list, target) ]
+                            if i+1 == curr_attack.attack.target_count:
+                                $ target_actions.append(Function(current_ally.set_next_targets, working_list))
+                                if (RPG.encounter.subturn+1 != len(RPG.encounter.allies)):
+                                    $ target_actions.append(IncrementVariable("RPG.encounter.subturn"))
+
+                                # Only put these if the target is not dead
+                                if not target.dead:
+
+                                    # Handler for multi-targets. 
+                                    python:
+
+                                        # If the attack has 0 or 1 targets, continue to next fighter after selection is made.
+                                        if curr_attack.attack.target_count not in [0,1]:
+                                            next_mode = "ATK"
+                                        else:
+                                            next_mode = None
+
+                                            # Handler for multiple targets should probably go here.                                                                    
+
+                                    # Add buttons for each target
+                                    button:
+                                        hover_sound "audio/sfx/sfx_select.ogg"
+
+                                        action [
+                                            Play("sound", "audio/sfx/sfx_valid.ogg"),
+                                            SetVariable("curr_target", target ),
+                                            SelectedIf((SetVariable("curr_target", target))),
+                                            SetScreenVariable("current_ally_mode", next_mode),
+                                            target_actions
+                                        ]
+
+                                        frame:
+                                            background None
+                                            vbox:
+                                                # Portrait shenanigans
+                                                frame:
+                                                    xysize(88,88)
+                                                    xalign 0.5
+
+                                                    background target.portrait
+
+                                                    hover_background Transform(target.portrait, matrixcolor=shade_select_matrix)
+
+                                                    selected_background Composite(
+                                                        (88,88),
+                                                        (0,0), target.portrait,
+                                                        (0,0), "gui/rpg/portraits/border_sel_e.png"
+                                                    )
+
+                                                    selected_hover_background Composite(
+                                                        (88,88),
+                                                        (0,0), Transform(target.portrait, matrixcolor=shade_select_matrix),
+                                                        (0,0), "selectable:gui/rpg/portraits/border_sel_e.png"
+                                                    )
+
+                                                text "{size=42}"+target.display_name:
+                                                    color "#FFFFFF"
+                                                    hover_color "#0099CC"
+                                                    selected_color "#FF8A00"
+                                                    selected_hover_color "#F5DD00"
+                                                    xalign 0.5
+                                                    text_align 0.5
+
+                        # This handles moves that target 1+ fighters
+                        if not i == 0:
+                            button:
+                                hover_sound "audio/sfx/sfx_select.ogg"
+                                text "{size=42}Back":
+                                    color "#FFFFFF"
+                                    hover_color "#0099CC"
+                                action [
+                                    Play("sound", "audio/sfx/sfx_valid.ogg"),
+                                    SetScreenVariable("current_ally_mode", None),
+                                    RemoveFromSet("working_list", working_list[i-1]), # TODO: THIS LINE CRASHES
+                                    IncrementVariable("i", -1)
+                                ]
+
+
 ######### ACTUAL SCREEN HERE
 
 screen screen_rpg():
@@ -409,11 +510,16 @@ screen screen_rpg():
                                                     if (RPG.encounter.subturn + 1 != len(RPG.encounter.allies)) and (attack.attack.target_count == 0):
                                                         $ attack_actions.append(IncrementVariable("RPG.encounter.subturn"))
 
+                                                    # Adds selectable attack texts/descriptions
                                                     button:
                                                         xfill True
                                                         yminimum 1.0 ymaximum 120
                                                         hover_sound "audio/sfx/sfx_select.ogg"
-                                                        action [Play("sound", "audio/sfx/sfx_valid.ogg"), *attack_actions]
+                                                        action [
+                                                            Play("sound", "audio/sfx/sfx_valid.ogg"), 
+                                                            ShowTransient("rpg_target_select", None, current_ally, current_ally_mode),
+                                                            *attack_actions
+                                                        ]
                                                         if not attack.available:
                                                             sensitive False
 
@@ -441,99 +547,7 @@ screen screen_rpg():
                                                                         color "#848484"
                                                                         hover_color "#006582"
                                                                         insensitive_color "#888888"
-                            
-                                ### Target side
-                                frame:
-                                    background None
-                                    xsize 1.0 ysize 1.0
-                                    vbox:
-                                        $ curr_attack = current_ally.next_attack
-                                        if curr_attack is not None:
-                                            $ victims = RPG.encounter.possible_targets(current_ally, current_ally.next_attack.attack)
-                                            $ working_list = []
-                                            for i in range(curr_attack.attack.target_count):
-                                                text "{size=42}Select target [i]"
-
-                                                hbox:
-                                                    $ curr_victim = None # TODO: this needs to reset between characters somehow
-                                                    for victim in victims:
-                                                        $ target_actions = [ Function(bypass_append, working_list, victim) ]
-                                                        if i+1 == curr_attack.attack.target_count:
-                                                            $ target_actions.append(Function(current_ally.set_next_targets, working_list))
-                                                            if (RPG.encounter.subturn+1 != len(RPG.encounter.allies)):
-                                                                $ target_actions.append(IncrementVariable("RPG.encounter.subturn"))
-
-                                                            # Only put these if the target is not dead
-                                                            if not victim.dead:
-
-                                                                # Handler for multi-targets. 
-                                                                python:
-
-                                                                    # If the attack has 0 or 1 targets, continue to next fighter after selection is made.
-                                                                    if curr_attack.attack.target_count not in [0,1]:
-                                                                        next_mode = "ATK"
-                                                                    else:
-                                                                        next_mode = None
-
-                                                                        # Handler for multiple targets should probably go here.                                                                    
-
-                                                                button:
-                                                                    hover_sound "audio/sfx/sfx_select.ogg"
-
-                                                                    action [
-                                                                        Play("sound", "audio/sfx/sfx_valid.ogg"),
-                                                                        SetVariable("curr_victim", victim ),
-                                                                        SelectedIf((SetVariable("curr_victim", victim))),
-                                                                        SetScreenVariable("current_ally_mode", next_mode),
-                                                                        target_actions
-                                                                    ]
-
-                                                                    frame:
-                                                                        background None
-                                                                        vbox:
-                                                                            # Portrait shenanigans
-                                                                            frame:
-                                                                                xysize(88,88)
-                                                                                xalign 0.5
-
-                                                                                background victim.portrait
-
-                                                                                hover_background Transform(victim.portrait, matrixcolor=shade_select_matrix)
-
-                                                                                selected_background Composite(
-                                                                                    (88,88),
-                                                                                    (0,0), victim.portrait,
-                                                                                    (0,0), "gui/rpg/portraits/border_sel_e.png"
-                                                                                )
-
-                                                                                selected_hover_background Composite(
-                                                                                    (88,88),
-                                                                                    (0,0), Transform(victim.portrait, matrixcolor=shade_select_matrix),
-                                                                                    (0,0), "selectable:gui/rpg/portraits/border_sel_e.png"
-                                                                                )
-
-                                                                            text "{size=42}"+victim.display_name:
-                                                                                color "#FFFFFF"
-                                                                                hover_color "#0099CC"
-                                                                                selected_color "#FF8A00"
-                                                                                selected_hover_color "#F5DD00"
-                                                                                xalign 0.5
-                                                                                text_align 0.5
-
-                                                    # This handles moves that target 1+ fighters
-                                                    if not i == 0:
-                                                        button:
-                                                            hover_sound "audio/sfx/sfx_select.ogg"
-                                                            text "{size=42}Back":
-                                                                color "#FFFFFF"
-                                                                hover_color "#0099CC"
-                                                            action [
-                                                                Play("sound", "audio/sfx/sfx_valid.ogg"),
-                                                                SetScreenVariable("current_ally_mode", None),
-                                                                RemoveFromSet("working_list", working_list[i-1]), # TODO: THIS LINE CRASHES
-                                                                IncrementVariable("i", -1)
-                                                            ]
-
+                               
                         ### If you choose to defend, do that.
                         elif current_ally_mode == "DEF":
                             frame:
