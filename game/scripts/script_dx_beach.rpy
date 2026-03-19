@@ -432,18 +432,17 @@ label beach_beach:
         n "CS and Arceus arrive at Ocean Beach."
      
         scene # TODO: need background
-        show cs at left
+        show cs happy at left
         show arceus at right
         with dissolve
 
-        show cs happy
         cs "Woohoo! We made it!"
         arceus "... Why are we here again, though? You can't even swim."
         show cs
         cs "So? We can still cool off in the water."
         show arceus angry
-        
         show cs disappointed
+
         if fun_value(FUN_VALUE_COMMON):
             arceus "Fuck you mean \"oui\"? You speakin' French?"
             arceus "I can't get my fur wet."
@@ -453,20 +452,22 @@ label beach_beach:
         cs "Why not?"
         arceus "Because it'll take all day to dry and then I'll get all poofy."
         cs "Damn..."
-        cs "Well, I still want to go in the water."
+        show cs
+        cs "Well, {i}I{/i} still want to go in the water."
         cs "Be back in a sec."
         show arceus worried
         show cs flipped at offscreenleft with { "master": MoveTransition(1.0) }
         show arceus worried
         arceus "Wait, where are you going?"
         cs "I won't be long!"
+        pause 1.0
         show arceus angry
         pause 1.0
         arceus "..."
         pause 1.0
         arceus "{size=-12}I guess it might feel good on my feet..."
         show arceus angry flipped at offscreenright with { "master": MoveTransition(1.0) }
-        n "Arceus begins walking along the coast..."
+        n "Arceus begins to follow the coastline."
 
         scene # TODO: need background
         show arceus angry flipped at offscreenleft
@@ -485,41 +486,79 @@ label beach_beach:
         arceus "President Obama?!" with vpunch
         obama "Yes, it is I."
         obama "I have a question for you."
-        obama "I found this strange talking ball. It's yellow, and you're yellow-- does it belong to you?"
+        obama "I found this strange talking ball. It is yellow, and {i}you{/i} are yellow-- does it belong to you?"
         show mean furious flipped
-        mean_offscreen "For the last time, I'm not a fucking {i}ball!" with vpunch
+        mean_offscreen "For the last time, I'm not a fucking {nw}"
+        extend "{i}ball!" with vpunch
         show mean angry flipped
         mean_offscreen "Now, will you put me down already?!"
-        obama "I have to return you to your owner."
-        obama "It's the ethical thing to do."
+        obama "I must return you to your owner. It is the ethical thing to do."
+        obama "As President, I am determined to reunite all lost beach balls with their owners."
         mean_offscreen "Fine, the yellow fucker is my owner. Now, let me go!"
         obama "Fair enough. Have a great day!"
         arceus "Wait, but I'm not-- {nw}"
-        obama "If you will excuse me, I must go. I hear the hotdog stand here has a \"Presidential Special\", and I must know whether it is worthy of that title."
+        obama "If you will excuse me-- I hear the hotdog stand here has a \"Presidential Special\", and I must ascertain whether it is worthy of that title."
         obama "Farewell for now!"
         show obama beach behind arceus at offscreenleft with move
         pause 2.0
         show mean flipped unamused
-        mean_offscreen "Yo. Name's Mean."
+        mean_offscreen "Yo."
+        mean_offscreen "Name's Mean."
         arceus "Uh, hey. I'm Arceus. I usually go by Arc, though."
         mean "Nice to, uh, be owned by you, I guess?"
         arceus "Nice to, um, be your owner, too...?"
-        mean "Well, I guess the closest thing to my \"owner\" would be Tate."
-        mean "Have you seen someone in a pastel plaid shirt and pink shorts?"
+        mean "Well, okay, I guess the closest thing to my \"owner\" would be my friend, but even {i}that's{/i} a stretch."
+        mean "Have you seen someone in pink shorts?"
         arceus "'Fraid not. My friend and I actually just got here."
         show arceus angry flipped
         arceus "Where {i}is{/i} he, anyway?"
         mean "What's he look like?"
         arceus "Oh, uh, he's wearing a purple cat maid outfit."
         show mean ayo flipped
-        mean "{i}That{/i} guy?! Yeah, I saw him just before the fuckin' President decided I was a beach ball!"
-        show cs beach happy flipped at right 
+        mean "{i}That{/i} guy?! Yeah, I saw him just before the fuckin' President interrupted my swimming!"
+        show tate beach flipped at mid_mid_right
+        show cs beach happy flipped at right
+        show mean ayo at manual_pos(0.5, 0.8, 1.0)
         show arceus worried flipped
-        show mean ayo behind arceus at manual_pos(0.5, 0.8, 1.0)
         with moveinright
         cs "Hey guys!"
+        cs "You won't {i}believe{/i} who I just ran into!"
         arceus "CS, what are you-- {nw}"
-        arceus "Y'know what, no-- I don't even want to know."
+        mean "Tate! There you are!"
+        mean "Wait-- you {i}know{/i} this guy?!"
+        show tate sheepish beach flipped
+        tate "Yeah? This is CS."
+        mean "{i}That's{/i} CS?!"
+        show cs disappointed beach flipped
+        cs "Wait, what do you mean?"
+        show arceus angry flipped
+        arceus "Isn't it obvious?"
+        tate "{size=-12}Listen, it's better not to question it."
+        cs "What'd you say?"
+        show tate beach
+        tate "Eh? I didn't say anything."
+        tate "Now, are we gonna go get that hot dog, or what?"
+        show tate beach flipped
+        show mean wat behind arceus
+        show arceus worried flipped
+        arceus "Shit, I want one... we haven't eaten in, uh, a while."
+        show mean behind arceus
+        mean "Eh, fuck it, I could eat."
+        show mean happy behind arceus
+        mean "Let's go! My treat."
+
+        cs "Wow, thanks!" (multiple=3)
+        arceus "Thank you so much!" (multiple=3)
+        tate "Hell yeah, thank you!" (multiple=3)
+
+        show arceus flipped at offscreenright
+        show mean happy at manual_pos(1.3, 0.8, 1.0)
+        show tate beach at offscreenright
+        show cs beach at offscreenright
+        with move
+
+        "..."
+
 
         jump beach_overworld_map
     label .day:
