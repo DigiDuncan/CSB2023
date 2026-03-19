@@ -547,6 +547,8 @@ label beach_beach:
         show mean happy behind arceus
         mean "Let's go! My treat."
 
+        show cs happy beach flipped
+        show arceus happy flipped
         cs "Wow, thanks!" (multiple=3)
         arceus "Thank you so much!" (multiple=3)
         tate "Hell yeah, thank you!" (multiple=3)
