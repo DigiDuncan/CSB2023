@@ -941,22 +941,22 @@ label true_pennsylvania:
     music showtime
     host "EVERYONE GIVE A BIG HAND TO OUR WONDERFUL CONTESTANTS!"
     play sound sfx_cheer
-    show crowd at t_stagescreen onlayer broadcast
+    show cc_crowd_seated at t_stagescreen onlayer broadcast
     n "The crowd explodes into uproarious applause."
-    hide crowd onlayer broadcast
+    hide cc_crowd_seated onlayer broadcast
     host "ON \"GO\", THESE LOVELIES WILL BE COMPETING TO SEE WHO CAN {color=#ffff00}SHARPEN THE MOST PENCILS!"
     host "THIS TRULY IS THE BATTLE OF A CENTURY, FOLKS! DIGIDUNCAN, OUR LONG-TIME CHAMP, WILL BE GOING UP AGAINST A NEWCOMER, THE AMAZING CS188!"
     play sound sfx_cheer2
-    show crowd at t_stagescreen onlayer broadcast
+    show cc_crowd_seated at t_stagescreen onlayer broadcast
     n "The crowd is going wild."
-    hide crowd onlayer broadcast
+    hide cc_crowd_seated onlayer broadcast
     host "ALL THEY HAVE TO DO IS {color=#ffff00}SHARPEN THE PENCILS AS QUICKLY AS POSSIBLE,{/color} WITHOUT {color=#ffff00}GETTING THE ERASER STUCK!"
     host "IT'S A TRULY MAGICAL EVENT, AND YOU'RE ALL ABOUT TO WITNESS IT! ARE YOU ALL READY?"
     play sound2 sfx_cheer noloop volume 0.5
     play sound sfx_cheer2 noloop volume 0.5
-    show crowd at t_stagescreen onlayer broadcast
+    show cc_crowd_seated at t_stagescreen onlayer broadcast
     n "The crowd is going absolutely crazy."
-    hide crowd onlayer broadcast
+    hide cc_crowd_seated onlayer broadcast
     host "AND WITH THAT, LET'S BEGIN! READY?"
     stop music fadeout 3.0
     n "CS glances over at Digi. The two nod at each other."
@@ -987,11 +987,11 @@ label true_win_pencil:
     show cc_stage
     show mettaton at t_stagescreen onlayer broadcast
     host "HOLY TICONDEROGA! WE HAVE A WINNER!"
-    show crowd at t_stagescreen onlayer broadcast
+    show cc_crowd_seated at t_stagescreen onlayer broadcast
     play sound sfx_cheer2 noloop volume 0.6
     play sound2 sfx_cheer1 noloop volume 0.6
     n "As if they couldn't get any louder, the crowd is going insane!"
-    hide crowd onlayer broadcast
+    hide cc_crowd_seated onlayer broadcast
     play music showtime volume 0.4 if_changed
     music showtime
     host "THE CHAMP HAS FALLEN! LADIES AND GENTS, WHAT AN UPSET!"

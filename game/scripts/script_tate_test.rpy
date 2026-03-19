@@ -254,7 +254,7 @@ label _awawa_tate_test:
 
                         image h_original_1 = "images/characters/cs/christmas/disappointed.png"
                         image h_engine_1 = "selectable:images/characters/cs/christmas/disappointed.png"
-                        image h_image_1 = "/images/unused/ce_point_click/cs_hover.png"
+                        image h_image_1 = "/minigames/christmaspointclick/test/cs_hover.png"
 
                         show h_original_1 at center
                         n "Here is the original image."
@@ -309,7 +309,7 @@ label _awawa_tate_test:
                         ### TEST 2: RUG? ###
                         image h_original_2 = "/minigames/christmaspointclick/rug.png"
                         image h_engine_2 = "selectable:/minigames/christmaspointclick/rug.png"
-                        image h_image_2 = "/images/unused/ce_point_click/rug_hover.png"
+                        image h_image_2 = "/minigames/christmaspointclick/test/rug_hover.png"
 
                         show h_original_2 at truecenter:
                             zoom 0.5
@@ -361,7 +361,7 @@ label _awawa_tate_test:
 
                         image h_original_3 = "images/characters/mean/meanhumanannoyedfestive.png"
                         image h_engine_3 = "selectable:images/characters/mean/meanhumanannoyedfestive.png"
-                        image h_image_3 = "/images/unused/ce_point_click/mean_hover.png"
+                        image h_image_3 = "/minigames/christmaspointclick/test/mean_hover.png"
 
                         show h_original_3 at center:
                             zoom 0.8
@@ -413,7 +413,7 @@ label _awawa_tate_test:
 
                         image h_original_4 = "/minigames/christmaspointclick/poster.png"
                         image h_engine_4 = "selectable:/minigames/christmaspointclick/poster.png"
-                        image h_image_4 = "/images/unused/ce_point_click/poster_hover.png"
+                        image h_image_4 = "/minigames/christmaspointclick/test/poster_hover.png"
 
                         show h_original_4 at truecenter
                         show h_engine_4 at manual_pos(0.25, 0.5, 0.5)
