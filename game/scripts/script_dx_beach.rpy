@@ -431,13 +431,13 @@ label beach_beach:
 
         n "CS and Arceus arrive at Ocean Beach."
      
-        scene # TODO: need background
+        scene ocean_beach_path
         show cs happy at left
         show arceus at right
         with dissolve
 
         cs "Woohoo! We made it!"
-        arceus "... Why are we here again, though? You can't even swim."
+        arceus "But, why are we here again? You can't even swim."
         show cs
         cs "So? We can still cool off in the water."
         show arceus angry
@@ -469,7 +469,7 @@ label beach_beach:
         show arceus angry flipped at offscreenright with { "master": MoveTransition(1.0) }
         n "Arceus begins to follow the coastline."
 
-        scene # TODO: need background
+        scene ocean_beach_coast
         show arceus angry flipped at offscreenleft
         show obama beach at offscreenright
         show mean angry flipped at manual_pos(1.3, 0.8, 1.0)

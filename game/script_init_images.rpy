@@ -2353,6 +2353,8 @@ image snow_pile = "snow_pile.png"
 image bus_stop = "bg/beach/bus_stop.png"
 image valencia_st = "bg/beach/valencia_st.png"
 image ocean_beach_entrance = "bg/beach/ocean_beach_entrance.png"
+image ocean_beach_path = "bg/beach/ocean_beach_path.png"
+image ocean_beach_coast = "bg/beach/ocean_beach_coast.png"
 
 # Static Images
 image shopping_cart_aldi = "shopping_cart_aldi.png"
