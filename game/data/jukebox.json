@@ -1729,7 +1729,7 @@
             "trivia": "It's all over, apparently."
         },
         "insomnia" : {
-            "file": "secret/pt/insomnia.ogg",
+            "file": "insomnia.ogg",
             "title": "Insomnia",
             "artist": "W∆W",
             "tags": ["CSBDX: Train", "New In DX", "Fun Values"],
@@ -1737,7 +1737,7 @@
             "trivia": "Tate was never originally intended to be a character that could be battled.\n{a=https://www.youtube.com/watch?v=O6i-aE4Hw18}{i}Moon EP{/i}{/a} changed that."
         },
         "space" : {
-            "file": "secret/pt/space.ogg",
+            "file": "space.ogg",
             "title": "Space",
             "artist": "W∆W",
             "tags": ["CSBDX: Train", "New In DX", "Fun Values", "Minigames"],
@@ -1745,7 +1745,7 @@
             "trivia": "Tate EX's theme."
         },
       "nyan_of_a_lifetime" : {
-            "file": "secret/pt/nyan_of_a_lifetime.ogg",
+            "file": "nyan_of_a_lifetime.ogg",
             "title": "Nyan Of A Lifetime",
             "artist": "DJ NYANKO SWITCHER",
             "tags": ["CSBDX: Train", "New In DX", "Fun Values", "Minigames"],

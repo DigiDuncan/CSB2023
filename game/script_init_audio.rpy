@@ -181,13 +181,13 @@ define audio.lo_fi_sunset = "lo_fi_sunset.ogg"
 define audio.homely_yado_inn = "<from 0.499 to 40.502>homely_yado_inn.ogg"
 
 # For Tate EX / Perfect Tate
-define audio.insomnia_intro = "<from 0 to 11.299>secret/pt/insomnia.ogg"
-define audio.insomnia_loop = "<from 22.6>secret/pt/insomnia.ogg"
-define audio.insomnia_full = "secret/pt/insomnia.ogg"
-define audio.space = "secret/pt/space.ogg"
-define audio.nyan = "<from 3.6 to 228.52>/secret/pt/nyan_of_a_lifetime.ogg"
-define audio.nyan_intro = "<from 3.6 to 22.799>/secret/pt/nyan_of_a_lifetime.ogg"
-define audio.nyan_fight = "<from 22.799 to 228.52>/secret/pt/nyan_of_a_lifetime.ogg"
+define audio.insomnia_intro = "<from 0 to 11.299>insomnia.ogg"
+define audio.insomnia_loop = "<from 22.6>insomnia.ogg"
+define audio.insomnia_full = "insomnia.ogg"
+define audio.space = "space.ogg"
+define audio.nyan = "<from 3.6 to 228.52>nyan_of_a_lifetime.ogg"
+define audio.nyan_intro = "<from 3.6 to 22.799>nyan_of_a_lifetime.ogg"
+define audio.nyan_fight = "<from 22.799 to 228.52>nyan_of_a_lifetime.ogg"
 
 # CSBDX Plane Music
 define audio.mid_boss_battle = "mid_boss_battle.ogg"

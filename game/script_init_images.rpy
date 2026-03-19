@@ -971,26 +971,26 @@ image tate furious blush festive = "characters/tate/festive/furious_blush.png"
 image tate furious blush festive flipped = "flip:characters/tate/festive/furious_blush.png"
 
 ## Tate (Beach)
-image tate beach = "characters/tate beach/beach/neutral.png"
-image tate beach flipped = "flip:characters/tate beach/beach/neutral.png"
-image tate beach srs = "characters/tate beach/beach/serious.png"
-image tate srs beach flipped = "flip:characters/tate beach/beach/serious.png"
-image tate shock beach = "characters/tate beach/beach/shock.png"
-image tate shock beach flipped = "flip:characters/tate beach/beach/shock.png"
-image tate smug beach = "characters/tate beach/beach/smug.png"
-image tate smug beach flipped = "flip:characters/tate beach/beach/smug.png"
-image tate sheepish beach = "characters/tate beach/beach/sheepish.png"
-image tate sheepish beach flipped = "flip:characters/tate beach/beach/sheepish.png"
-image tate sheepish blush beach = "characters/tate beach/beach/sheepish_blush.png"
-image tate sheepish blush beach flipped = "flip:characters/tate beach/beach/sheepish_blush.png"
-image tate sad beach = "characters/tate beach/beach/sad.png"
-image tate sad beach flipped = "flip:characters/tate beach/beach/sad.png"
-image tate stare beach = "characters/tate beach/beach/stare.png"
-image tate stare beach flipped = "flip:characters/tate beach/beach/stare.png"
-image tate cry beach = "characters/tate beach/beach/cry.png"
-image tate cry beach flipped = "flip:characters/tate beach/beach/cry.png"
-image tate furious beach = "characters/tate beach/beach/furious.png"
-image tate furious beach flipped = "flip:characters/tate beach/beach/furious.png"
+image tate beach = "characters/tate/beach/neutral.png"
+image tate beach flipped = "flip:characters/tate/beach/neutral.png"
+image tate beach srs = "characters/tate/beach/serious.png"
+image tate srs beach flipped = "flip:characters/tate/beach/serious.png"
+image tate shock beach = "characters/tate/beach/shock.png"
+image tate shock beach flipped = "flip:characters/tate/beach/shock.png"
+image tate smug beach = "characters/tate/beach/smug.png"
+image tate smug beach flipped = "flip:characters/tate/beach/smug.png"
+image tate sheepish beach = "characters/tate/beach/sheepish.png"
+image tate sheepish beach flipped = "flip:characters/tate/beach/sheepish.png"
+image tate sheepish blush beach = "characters/tate/beach/sheepish_blush.png"
+image tate sheepish blush beach flipped = "flip:characters/tate/beach/sheepish_blush.png"
+image tate sad beach = "characters/tate/beach/sad.png"
+image tate sad beach flipped = "flip:characters/tate/beach/sad.png"
+image tate stare beach = "characters/tate/beach/stare.png"
+image tate stare beach flipped = "flip:characters/tate/beach/stare.png"
+image tate cry beach = "characters/tate/beach/cry.png"
+image tate cry beach flipped = "flip:characters/tate/beach/cry.png"
+image tate furious beach = "characters/tate/beach/furious.png"
+image tate furious beach flipped = "flip:characters/tate/beach/furious.png"
 
 ## Mean (Urchin Form)
 image mean = "characters/mean/mean.png"
@@ -2202,12 +2202,12 @@ image zenigata dark flipped = "dark:flip:characters/zenigata.png"
 image zenigata car dark = "dark:characters/zenigata_car.png"
 
 # Train Route Tate EX/Perfect Tate extra images
-image tate_falling = "secret/pt/tate_falling.png"
-image tate_fallen_1 = "secret/pt/tate_fallen_1.png"
-image tate_fallen_2 = "secret/pt/tate_fallen_2.png"
-image tate_fallen_3 = "secret/pt/tate_fallen_3.png"
-image tate_fallen_4 = "secret/pt/tate_fallen_4.png"
-image tate_fallen_5 = "secret/pt/tate_fallen_5.png"
+image tate_falling = "characters/tate/secret/tate_falling.png"
+image tate_fallen_1 = "characters/tate/secret/tate_fallen_1.png"
+image tate_fallen_2 = "characters/tate/secret/tate_fallen_2.png"
+image tate_fallen_3 = "characters/tate/secret/tate_fallen_3.png"
+image tate_fallen_4 = "characters/tate/secret/tate_fallen_4.png"
+image tate_fallen_5 = "characters/tate/secret/tate_fallen_5.png"
 image yeetable_textbox = "/gui/textbox.png"
 
 # Train Route misc generated images
@@ -2762,7 +2762,7 @@ layeredimage tate_ex:
 
     # C M Y in that order
     always:
-        "secret/pt/tate_ex.png"
+        "characters/tate/secret/tate_ex.png"
         at transform:
             matrixcolor TintMatrix("#00FFFF") * BrightnessMatrix(1.0)
             blur 5
@@ -2774,7 +2774,7 @@ layeredimage tate_ex:
             repeat
 
     always:
-        "secret/pt/tate_ex.png"
+        "characters/tate/secret/tate_ex.png"
         at transform:
             matrixcolor TintMatrix("#FF00FF") * BrightnessMatrix(1.0)
             blur 5
@@ -2786,7 +2786,7 @@ layeredimage tate_ex:
             repeat
 
     always:
-        "secret/pt/tate_ex.png"
+        "characters/tate/secret/tate_ex.png"
         at transform:
             matrixcolor TintMatrix("#FFFF00") * BrightnessMatrix(1.0)
             blur 5
@@ -2799,7 +2799,7 @@ layeredimage tate_ex:
 
     # front
     always:
-        "secret/pt/tate_ex.png"
+        "characters/tate/secret/tate_ex.png"
         at transform:
             xpos 10 ypos 10
 
@@ -2809,9 +2809,9 @@ image tate_sigil:
     xanchor 0.5 yanchor 0.5
 
     contains:
-        At("/secret/pt/sigil_inner.png", t_tate_sigil_inner)
+        At("/characters/tate/secret/sigil_inner.png", t_tate_sigil_inner)
     contains:
-        At("/secret/pt/sigil_text.png", t_tate_sigil_text)
+        At("/characters/tate/secret/sigil_text.png", t_tate_sigil_text)
 
 ## Misc Animated Sprites
 image ai_ducks = SnowBlossom("duck.png", 50, fast = True)
