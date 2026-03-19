@@ -1768,6 +1768,14 @@
             "album_art": "wildworld.png",
             "trivia": "Sleep tight!"
       },
+      "cobalt_coast_2": {
+            "file": "cobalt_coast_2.ogg",
+            "title": "Cobalt Coast",
+            "artist": "Jun Umebori",
+            "tags": ["CSBDX: Beach Episode", "New In DX"],
+            "album_art": "pkmnchannel.png",
+            "trivia": "Isn't it interesting that both {i}Hey You, Pikachu!{/i} and {i}Pokemon Channel{/i} both have a location called Cobalt Coast?"
+      },
         "sfx_ringtone_addy" : {
             "file": "sfx/sfx_ringtone_addy.ogg",
             "title": "Hare Hare Yukai (Konata's Polyphonic Ringtone)",

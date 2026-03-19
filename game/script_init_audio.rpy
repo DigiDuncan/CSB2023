@@ -183,7 +183,7 @@ define audio.homely_yado_inn = "<from 0.499 to 40.502>homely_yado_inn.ogg"
 # For Tate EX / Perfect Tate
 define audio.insomnia_intro = "<from 0 to 11.299>secret/pt/insomnia.ogg"
 define audio.insomnia_loop = "<from 22.6>secret/pt/insomnia.ogg"
-define audio.insomnia_full= "secret/pt/insomnia.ogg"
+define audio.insomnia_full = "secret/pt/insomnia.ogg"
 define audio.space = "secret/pt/space.ogg"
 define audio.nyan = "<from 3.6 to 228.52>/secret/pt/nyan_of_a_lifetime.ogg"
 define audio.nyan_intro = "<from 3.6 to 22.799>/secret/pt/nyan_of_a_lifetime.ogg"
@@ -255,6 +255,7 @@ define audio.insulrun = "insulrun.ogg"
 
 # CSBDX Beach Music
 define audio.sleeping_room = "sleeping_room.ogg"
+define audio.cobalt_coast_2 = "<loop 28.481 to 102.316>cobalt_coast_2.ogg"
 
 # Misc Music
 define audio.space_classroom = "space_classroom.ogg"

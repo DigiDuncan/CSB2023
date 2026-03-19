@@ -295,9 +295,9 @@ label beach_start:
     show arceus worried flipped
     arceus "What should we do?"
     kappn "Well, if'n ye take this here map, I reckon ye can find another bus real easy-like."
-    kappn "But if'n ye're not in any kind o' hurry, ye shoul' take a gander 'round the city!"
+    kappn "But, if'n ye're not in any kind o' hurry, ye shoul' take a gander 'round the city!"
     kappn "When ye firs' got on me bus, the two of ye looked more stressed out 'an two sea urchins at a sushi parlor!" # foreshadowing is a literary device in whi--
-    kappn "An' I thought to meself, \"I dunno what 'ey're in town fer, but I'm sure glad to be takin' em some'ere {i}else!\""
+    kappn "An' I thought to meself, \"I dunno what 'ey're in town fer, but I'm sure glad to be takin' 'em some'ere {i}else!\""
     arceus "I guess, yeah, we {i}were{/i} pretty stressed..."
     show cs surprised
     cs "And we're not {i}really{/i} in any hurry to get home..."
@@ -422,8 +422,105 @@ label beach_overworld_map:
 ######## LOCATION: BEACH ########
 label beach_beach:
     label .morning:
-        "Pretend an event happened at the beach in the morning."
-        "Returning to the map."
+        stop music fadeout 2.0
+        scene black with Dissolve(2.0)
+        play music cobalt_coast_2
+        scene ocean_beach_entrance
+        with dissolve
+        music cobalt_coast_2
+
+        n "CS and Arceus arrive at Ocean Beach."
+     
+        scene # TODO: need background
+        show cs at left
+        show arceus at right
+        with dissolve
+
+        show cs happy
+        cs "Woohoo! We made it!"
+        arceus "... Why are we here again, though? You can't even swim."
+        show cs
+        cs "So? We can still cool off in the water."
+        show arceus angry
+        
+        show cs disappointed
+        if fun_value(FUN_VALUE_COMMON):
+            arceus "Fuck you mean \"oui\"? You speakin' French?"
+            arceus "I can't get my fur wet."
+        else:
+            arceus "Fuck you mean \"we\"? I can't get my fur wet."
+
+        cs "Why not?"
+        arceus "Because it'll take all day to dry and then I'll get all poofy."
+        cs "Damn..."
+        cs "Well, I still want to go in the water."
+        cs "Be back in a sec."
+        show arceus worried
+        show cs flipped at offscreenleft with { "master": MoveTransition(1.0) }
+        show arceus worried
+        arceus "Wait, where are you going?"
+        cs "I won't be long!"
+        show arceus angry
+        pause 1.0
+        arceus "..."
+        pause 1.0
+        arceus "{size=-12}I guess it might feel good on my feet..."
+        show arceus angry flipped at offscreenright with { "master": MoveTransition(1.0) }
+        n "Arceus begins walking along the coast..."
+
+        scene # TODO: need background
+        show arceus angry flipped at offscreenleft
+        show obama beach at offscreenright
+        show mean angry flipped at manual_pos(1.3, 0.8, 1.0)
+        with determination
+        show arceus angry flipped at left with move
+        with dissolve
+        
+        show obama beach at right
+        show mean angry flipped at manual_pos(0.9, 0.8, 1.0)
+        with MoveTransition(1.0)
+
+        obama "Excuse me."
+        show arceus worried flipped
+        arceus "President Obama?!" with vpunch
+        obama "Yes, it is I."
+        obama "I have a question for you."
+        obama "I found this strange talking ball. It's yellow, and you're yellow-- does it belong to you?"
+        show mean furious flipped
+        mean_offscreen "For the last time, I'm not a fucking {i}ball!" with vpunch
+        show mean angry flipped
+        mean_offscreen "Now, will you put me down already?!"
+        obama "I have to return you to your owner."
+        obama "It's the ethical thing to do."
+        mean_offscreen "Fine, the yellow fucker is my owner. Now, let me go!"
+        obama "Fair enough. Have a great day!"
+        arceus "Wait, but I'm not-- {nw}"
+        obama "If you will excuse me, I must go. I hear the hotdog stand here has a \"Presidential Special\", and I must know whether it is worthy of that title."
+        obama "Farewell for now!"
+        show obama beach behind arceus at offscreenleft with move
+        pause 2.0
+        show mean flipped unamused
+        mean_offscreen "Yo. Name's Mean."
+        arceus "Uh, hey. I'm Arceus. I usually go by Arc, though."
+        mean "Nice to, uh, be owned by you, I guess?"
+        arceus "Nice to, um, be your owner, too...?"
+        mean "Well, I guess the closest thing to my \"owner\" would be Tate."
+        mean "Have you seen someone in a pastel plaid shirt and pink shorts?"
+        arceus "'Fraid not. My friend and I actually just got here."
+        show arceus angry flipped
+        arceus "Where {i}is{/i} he, anyway?"
+        mean "What's he look like?"
+        arceus "Oh, uh, he's wearing a purple cat maid outfit."
+        show mean ayo flipped
+        mean "{i}That{/i} guy?! Yeah, I saw him just before the fuckin' President decided I was a beach ball!"
+        show cs beach happy flipped at right 
+        show arceus worried flipped
+        show mean ayo behind arceus at manual_pos(0.5, 0.8, 1.0)
+        with moveinright
+        cs "Hey guys!"
+        arceus "CS, what are you-- {nw}"
+        arceus "Y'know what, no-- I don't even want to know."
+
         jump beach_overworld_map
     label .day:
         "Pretend an event happened at the beach during the day."
