@@ -445,7 +445,7 @@ class Characters:
     PAKOO = Character("Pakoo", 145, 20, 30, [Attacks.INSIGHT, Attacks.SHOTGUN], portrait=Image("gui/rpg/portraits/pakoo.png"), sprite=Image("images/characters/pakoo/pakoo_disappointed.png"), ai = AIType.SMART)
     MIKA = Character("Mika", 165, 20, 30, [Attacks.ENCOURAGE, Attacks.HIGH_NOON], portrait=Image("gui/rpg/portraits/mika.png"), sprite=Image("images/characters/mika.png"), ai = AIType.AGGRO)
     KITTY = Character("Kitty", 155, 15, 20, [Attacks.SCRATCH, Attacks.ARMOUR], portrait=Image("gui/rpg/portraits/kitty.png"), sprite=Image("images/characters/kitty.png"), ai = AIType.SKITTISH)
-    TATE = Character("Tate", 170, 5, 30, [Attacks.DAMAGE_SCREM, Attacks.SNACK_TIME], portrait=Image("gui/rpg/portraits/tate.png"), sprite=Image("images/characters/tate/tateserious.png"), ai = AIType.SKITTISH)
+    TATE = Character("Tate", 170, 5, 30, [Attacks.DAMAGE_SCREM, Attacks.SNACK_TIME], portrait=Image("gui/rpg/portraits/tate.png"), sprite=Image("images/characters/tate/casual/serious.png"), ai = AIType.SKITTISH)
     ARIA = Character("Aria", 220, 20, 45, [Attacks.ELDRITCH_BLAST, Attacks.RAINBOW_VOMIT], portrait=Image("gui/rpg/portraits/aria.png"), sprite=Image("images/characters/aria.png"), ai = AIType.SMART)
     DIGI = Character("Digi", 150, 20, 30, [Attacks.ROBOPUNCH, Attacks.HOLOSHIELD], portrait=Image("gui/rpg/portraits/digi.png"), sprite=Image("images/characters/digi/angry.png"),ai = AIType.AGGRO)
     NOVA = Character("Nova", 180, 10, 30, [Attacks.MUSIC_BOOST, Attacks.RAVE], portrait=Image("gui/rpg/portraits/nova.png"), sprite=Image("images/characters/nova.png"), ai = AIType.AGGRO)
