@@ -19,6 +19,11 @@ init python:
     renpy.add_layer("rpg_context", above="master")
     renpy.add_layer("rpg_say", above="rpg_context")
 
+    # This probably shouldn't be here!
+    # Where should it be? Who knows! But it can't be in either the
+    # rpg_target_select screen or screen_rpg since both screens need to access it.
+    working_list = []
+
 init:
     transform _rpg_intro:
         on show:
@@ -310,76 +315,73 @@ screen rpg_target_select(current_ally, current_ally_mode):
             $ curr_attack = current_ally.next_attack
             if curr_attack is not None:
                 $ targets = RPG.encounter.possible_targets(current_ally, current_ally.next_attack.attack)
-                $ working_list = []
-                for i in range(curr_attack.attack.target_count):
-                    text "{size=42}Select target [i]"
+                $ i = len(working_list)
+                text "{size=42}Select target [i]"
+                hbox:
+                    $ curr_target = None # TODO: this needs to reset between characters somehow
+                    for target in targets:
+                        $ target_actions = [ Function(bypass_append, working_list, target) ]
+                        if i+1 == curr_attack.attack.target_count:
+                            $ target_actions.append(Function(current_ally.set_next_targets, working_list))
+                            if (RPG.encounter.subturn+1 != len(RPG.encounter.allies)):
+                                $ target_actions.append(IncrementVariable("RPG.encounter.subturn"))
 
-                    hbox:
-                        $ curr_target = None # TODO: this needs to reset between characters somehow
-                        for target in targets:
-                            $ target_actions = [ Function(bypass_append, working_list, target) ]
-                            if i+1 == curr_attack.attack.target_count:
-                                $ target_actions.append(Function(current_ally.set_next_targets, working_list))
-                                if (RPG.encounter.subturn+1 != len(RPG.encounter.allies)):
-                                    $ target_actions.append(IncrementVariable("RPG.encounter.subturn"))
+                            # Only put these if the target is not dead
+                            if not target.dead:
 
-                                # Only put these if the target is not dead
-                                if not target.dead:
+                                # Handler for multi-targets. 
+                                python:
+                                    # If the attack has 0 or 1 targets, continue to next fighter after selection is made.
+                                    if curr_attack.attack.target_count not in [0,1]:
+                                        next_mode = "ATK"
+                                    else:
+                                        next_mode = None
 
-                                    # Handler for multi-targets. 
-                                    python:
+                                        # Handler for multiple targets should probably go here.                                                                    
 
-                                        # If the attack has 0 or 1 targets, continue to next fighter after selection is made.
-                                        if curr_attack.attack.target_count not in [0,1]:
-                                            next_mode = "ATK"
-                                        else:
-                                            next_mode = None
+                                # Add buttons for each target
+                                button:
+                                    hover_sound "audio/sfx/sfx_select.ogg"
 
-                                            # Handler for multiple targets should probably go here.                                                                    
+                                    action [
+                                        Play("sound", "audio/sfx/sfx_valid.ogg"),
+                                        SetVariable("curr_target", target ),
+                                        SelectedIf((SetVariable("curr_target", target))),
+                                        SetScreenVariable("current_ally_mode", next_mode),
+                                        target_actions
+                                    ]
 
-                                    # Add buttons for each target
-                                    button:
-                                        hover_sound "audio/sfx/sfx_select.ogg"
+                                    frame:
+                                        background None
+                                        vbox:
+                                            # Portrait shenanigans
+                                            frame:
+                                                xysize(88,88)
+                                                xalign 0.5
 
-                                        action [
-                                            Play("sound", "audio/sfx/sfx_valid.ogg"),
-                                            SetVariable("curr_target", target ),
-                                            SelectedIf((SetVariable("curr_target", target))),
-                                            SetScreenVariable("current_ally_mode", next_mode),
-                                            target_actions
-                                        ]
+                                                background target.portrait
 
-                                        frame:
-                                            background None
-                                            vbox:
-                                                # Portrait shenanigans
-                                                frame:
-                                                    xysize(88,88)
-                                                    xalign 0.5
+                                                hover_background Transform(target.portrait, matrixcolor=shade_select_matrix)
 
-                                                    background target.portrait
+                                                selected_background Composite(
+                                                    (88,88),
+                                                    (0,0), target.portrait,
+                                                    (0,0), "gui/rpg/portraits/border_sel_e.png"
+                                                )
 
-                                                    hover_background Transform(target.portrait, matrixcolor=shade_select_matrix)
+                                                selected_hover_background Composite(
+                                                    (88,88),
+                                                    (0,0), Transform(target.portrait, matrixcolor=shade_select_matrix),
+                                                    (0,0), "selectable:gui/rpg/portraits/border_sel_e.png"
+                                                )
 
-                                                    selected_background Composite(
-                                                        (88,88),
-                                                        (0,0), target.portrait,
-                                                        (0,0), "gui/rpg/portraits/border_sel_e.png"
-                                                    )
-
-                                                    selected_hover_background Composite(
-                                                        (88,88),
-                                                        (0,0), Transform(target.portrait, matrixcolor=shade_select_matrix),
-                                                        (0,0), "selectable:gui/rpg/portraits/border_sel_e.png"
-                                                    )
-
-                                                text "{size=42}"+target.display_name:
-                                                    color "#FFFFFF"
-                                                    hover_color "#0099CC"
-                                                    selected_color "#FF8A00"
-                                                    selected_hover_color "#F5DD00"
-                                                    xalign 0.5
-                                                    text_align 0.5
+                                            text "{size=42}"+target.display_name:
+                                                color "#FFFFFF"
+                                                hover_color "#0099CC"
+                                                selected_color "#FF8A00"
+                                                selected_hover_color "#F5DD00"
+                                                xalign 0.5
+                                                text_align 0.5
 
                         # This handles moves that target 1+ fighters
                         if not i == 0:
@@ -391,7 +393,7 @@ screen rpg_target_select(current_ally, current_ally_mode):
                                 action [
                                     Play("sound", "audio/sfx/sfx_valid.ogg"),
                                     SetScreenVariable("current_ally_mode", None),
-                                    RemoveFromSet("working_list", working_list[i-1]), # TODO: THIS LINE CRASHES
+                                    RemoveFromSet("working_list", working_list[i-1]),
                                     IncrementVariable("i", -1)
                                 ]
 
@@ -507,6 +509,7 @@ screen screen_rpg():
 
                                                     # If the attack is not available, make this insensitive
                                                     $ attack_actions.append(Function(current_ally.set_next_attack, attack))
+                                                    $ attack_actions.append(SetVariable(working_list, []))
                                                     if (RPG.encounter.subturn + 1 != len(RPG.encounter.allies)) and (attack.attack.target_count == 0):
                                                         $ attack_actions.append(IncrementVariable("RPG.encounter.subturn"))
 
