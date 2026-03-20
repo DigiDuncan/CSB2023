@@ -306,6 +306,8 @@ screen rpg_stat_box(fighter, current_ally_mode):
 ######### TARGET SELECTION
 
 screen rpg_target_select(current_ally, current_ally_mode):
+    $ current_ally_mode = current_ally_mode
+
     frame:
         background None
         xsize 0.5 ysize 262
@@ -328,18 +330,18 @@ screen rpg_target_select(current_ally, current_ally_mode):
                             if (RPG.encounter.subturn+1 != len(RPG.encounter.allies)):
                                 $ target_actions.append(IncrementVariable("RPG.encounter.subturn"))
 
-                            # Only put these if the target is not dead
-                            if not target.dead:
+                        # Only put these if the target is not dead
+                        if not target.dead:
 
-                                # Handler for multi-targets. 
-                                python:
-                                    # If the attack has 0 or 1 targets, continue to next fighter after selection is made.
-                                    if curr_attack.attack.target_count not in [0,1]:
-                                        next_mode = "ATK"
-                                    else:
-                                        next_mode = None
+                            # Handler for multi-targets. 
+                            python:
+                                # If the attack has 0 or 1 targets, continue to next fighter after selection is made.
+                                if curr_attack.attack.target_count not in [0,1]:
+                                    next_mode = "ATK"
+                                else:
+                                    next_mode = None
 
-                                        # Handler for multiple targets should probably go here.                                                                    
+                                    # Handler for multiple targets should probably go here.                                                                    
 
                         # Add buttons for each target
                         button:
@@ -347,7 +349,7 @@ screen rpg_target_select(current_ally, current_ally_mode):
 
                             action [
                                 Play("sound", "audio/sfx/sfx_valid.ogg"),
-                                SelectedIf((SetVariable("curr_target", target))),
+                                SelectedIf((SetScreenVariable("curr_target", target))),
                                 SetScreenVariable("current_ally_mode", next_mode),
                                 target_actions
                             ]
