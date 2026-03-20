@@ -469,13 +469,13 @@ label beach_beach:
         show arceus angry flipped at offscreenright with { "master": MoveTransition(1.0) }
         n "Arceus begins to follow the coastline."
 
-        scene ocean_beach_coast
+        scene ocean_beach_coast with dissolve
+
         show arceus angry flipped at offscreenleft
         show obama beach at offscreenright
         show mean angry flipped at manual_pos(1.3, 0.8, 1.0)
         with determination
         show arceus angry flipped at left with move
-        with dissolve
         
         show obama beach at right
         show mean angry flipped at manual_pos(0.9, 0.8, 1.0)
@@ -518,17 +518,18 @@ label beach_beach:
         mean "{i}That{/i} guy?! Yeah, I saw him just before the fuckin' President interrupted my swimming!"
         show tate beach flipped at mid_mid_right
         show cs beach happy flipped at right
-        show mean ayo at manual_pos(0.5, 0.8, 1.0)
+        show mean ayo at manual_pos(0.5, 0.8, 1.0) behind arceus
         show arceus worried flipped
         with moveinright
         cs "Hey guys!"
         cs "You won't {i}believe{/i} who I just ran into!"
         arceus "CS, what are you-- {nw}"
         mean "Tate! There you are!"
-        mean "Wait-- you {i}know{/i} this guy?!"
+        mean "Wait-- you {nw}"
+        extend "{i}know{/i} this guy?!" with vpunch
         show tate sheepish beach flipped
         tate "Yeah? This is CS."
-        mean "{i}That's{/i} CS?!"
+        mean "{i}That's{/i} CS?!" with vpunch
         show cs disappointed beach flipped
         cs "Wait, what do you mean?"
         show arceus angry flipped
@@ -559,7 +560,7 @@ label beach_beach:
         show cs beach at offscreenright
         with move
 
-        scene
+        scene ocean_beach_sand
 
         show cashier flipped at left
         show hotdog_stand at manual_pos(0.5, 1.2, 1.0):
@@ -574,7 +575,7 @@ label beach_beach:
         with dissolve
 
         obama "Excuse me, sir!"
-        obama "Is that by chance the Presidential Special!"
+        obama "Is that by any chance the Presidential Special?"
         worker_1_beach "I don't know!"
 
         pause 1.0
