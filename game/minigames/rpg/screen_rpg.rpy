@@ -509,7 +509,7 @@ screen screen_rpg():
 
                                                     # If the attack is not available, make this insensitive
                                                     $ attack_actions.append(Function(current_ally.set_next_attack, attack))
-                                                    $ attack_actions.append(Function(clear_list, working_list)))
+                                                    $ attack_actions.append(Function(clear_list, working_list))
                                                     if (RPG.encounter.subturn + 1 != len(RPG.encounter.allies)) and (attack.attack.target_count == 0):
                                                         $ attack_actions.append(IncrementVariable("RPG.encounter.subturn"))
 
@@ -670,13 +670,13 @@ label play_rpggame:
     $ renpy.music.play(MUSIC_MAP[RPG.encounter.music]["file"])
     $ persistent.heard.add(str(RPG.encounter.music))
     # This is where the game actually takes place.
-    show screen screen_rpg onlayer rpg_context
+    show screen screen_rpg() onlayer rpg_context
     show screen say_rpg(RPG.encounter.intro_text) onlayer rpg_say
     $ renpy.pause(delay=None, modal=True)
     hide screen screen_rpg
     hide screen say_rpg
     while RPG.encounter.won is None:
-        call screen screen_rpg
+        call screen screen_rpg()
         $ RPG.rpg_logger.debug(f"=== TURN {RPG.encounter.turn} ===")
         $ RPG.encounter.run_attacks()
         $ RPG.encounter.run_effects()
