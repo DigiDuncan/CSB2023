@@ -14,6 +14,8 @@ python early:
         logger.info(print_str)
     def dev_win(current_encounter):
         current_encounter.dev_win()
+    def clear_list(l):
+        l.clear()
 
 init python:
     renpy.add_layer("rpg_context", above="master")
@@ -509,7 +511,7 @@ screen screen_rpg():
 
                                                     # If the attack is not available, make this insensitive
                                                     $ attack_actions.append(Function(current_ally.set_next_attack, attack))
-                                                    $ attack_actions.append(SetVariable(working_list, []))
+                                                    $ attack_actions.append(Function(clear_list, working_list)))
                                                     if (RPG.encounter.subturn + 1 != len(RPG.encounter.allies)) and (attack.attack.target_count == 0):
                                                         $ attack_actions.append(IncrementVariable("RPG.encounter.subturn"))
 
