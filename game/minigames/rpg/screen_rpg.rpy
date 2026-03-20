@@ -341,51 +341,50 @@ screen rpg_target_select(current_ally, current_ally_mode):
 
                                         # Handler for multiple targets should probably go here.                                                                    
 
-                                # Add buttons for each target
-                                button:
-                                    hover_sound "audio/sfx/sfx_select.ogg"
+                        # Add buttons for each target
+                        button:
+                            hover_sound "audio/sfx/sfx_select.ogg"
 
-                                    action [
-                                        Play("sound", "audio/sfx/sfx_valid.ogg"),
-                                        SetVariable("curr_target", target ),
-                                        SelectedIf((SetVariable("curr_target", target))),
-                                        SetScreenVariable("current_ally_mode", next_mode),
-                                        target_actions
-                                    ]
+                            action [
+                                Play("sound", "audio/sfx/sfx_valid.ogg"),
+                                SelectedIf((SetVariable("curr_target", target))),
+                                SetScreenVariable("current_ally_mode", next_mode),
+                                target_actions
+                            ]
 
+                            frame:
+                                background None
+                                vbox:
+                                    # Portrait shenanigans
                                     frame:
-                                        background None
-                                        vbox:
-                                            # Portrait shenanigans
-                                            frame:
-                                                xysize(88,88)
-                                                xalign 0.5
+                                        xysize(88,88)
+                                        xalign 0.5
 
-                                                background target.portrait
+                                        background target.portrait
 
-                                                hover_background Transform(target.portrait, matrixcolor=shade_select_matrix)
+                                        hover_background Transform(target.portrait, matrixcolor=shade_select_matrix)
 
-                                                selected_background Composite(
-                                                    (88,88),
-                                                    (0,0), target.portrait,
-                                                    (0,0), "gui/rpg/portraits/border_sel_e.png"
-                                                )
+                                        selected_background Composite(
+                                            (88,88),
+                                            (0,0), target.portrait,
+                                            (0,0), "gui/rpg/portraits/border_sel_e.png"
+                                        )
 
-                                                selected_hover_background Composite(
-                                                    (88,88),
-                                                    (0,0), Transform(target.portrait, matrixcolor=shade_select_matrix),
-                                                    (0,0), "selectable:gui/rpg/portraits/border_sel_e.png"
-                                                )
+                                        selected_hover_background Composite(
+                                            (88,88),
+                                            (0,0), Transform(target.portrait, matrixcolor=shade_select_matrix),
+                                            (0,0), "selectable:gui/rpg/portraits/border_sel_e.png"
+                                        )
 
-                                            text "{size=42}"+target.display_name:
-                                                color "#FFFFFF"
-                                                hover_color "#0099CC"
-                                                selected_color "#FF8A00"
-                                                selected_hover_color "#F5DD00"
-                                                xalign 0.5
-                                                text_align 0.5
+                                    text "{size=42}"+target.display_name:
+                                        color "#FFFFFF"
+                                        hover_color "#0099CC"
+                                        selected_color "#FF8A00"
+                                        selected_hover_color "#F5DD00"
+                                        xalign 0.5
+                                        text_align 0.5
 
-                        # This handles moves that target 1+ fighters
+                        # This handles moves that target 1+ fighters, shows the Back button
                         if not i == 0:
                             button:
                                 hover_sound "audio/sfx/sfx_select.ogg"
@@ -396,7 +395,6 @@ screen rpg_target_select(current_ally, current_ally_mode):
                                     Play("sound", "audio/sfx/sfx_valid.ogg"),
                                     SetScreenVariable("current_ally_mode", None),
                                     RemoveFromSet("working_list", working_list[i-1]),
-                                    IncrementVariable("i", -1)
                                 ]
 
 
