@@ -1253,6 +1253,16 @@
             }
         }
     },
+    "peepy": {
+        "full_name": "Peepy",
+        "pronouns": "(he/him)",
+        "sprites": {
+            "Cornpy": "images/characters/cornpy.png"
+        },
+        "quote": "...",
+        "bio": "A hardened criminal who will steal your peanuts and your wallet (and use the money to buy more peanuts). He has a variety of costumes in order to blend in to any environment.",
+        "dx": true
+    },
     "pakoo": {
         "full_name": "Pakoo",
         "pronouns": "(he/they)",

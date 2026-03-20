@@ -559,7 +559,30 @@ label beach_beach:
         show cs beach at offscreenright
         with move
 
-        "..."
+        scene
+
+        show cashier flipped at left
+        show hotdog_stand at manual_pos(0.5, 1.2, 1.0):
+            zoom 2.0
+        $ persistent.seen.add("peepy")
+        show cornpy at manual_pos(0.325, 0.7, 1.0):
+            zoom 0.15
+        show corn at manual_pos(0.5, 0.8, 1.0) behind cashier:
+            zoom 0.5
+        show obama beach at manual_pos(0.8, 0.8, 1.0) behind cashier:
+            zoom 0.5
+        with dissolve
+
+        obama "Excuse me, sir!"
+        obama "Is that by chance the Presidential Special!"
+        worker_1_beach "I don't know!"
+
+        pause 1.0
+
+
+        n "CS and the gang approach the hotdog stand."
+
+        
 
 
         jump beach_overworld_map

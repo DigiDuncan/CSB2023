@@ -1401,6 +1401,7 @@ image midge = "characters/midge.png"
 
 # Unsorted NPCs
 image cashier = "characters/cashier.png"
+image cashier flipped = "flip:characters/cashier.png"
 image scott = "characters/scott.png"
 
 image obama = "characters/obama/obama.png"
@@ -1518,6 +1519,10 @@ image baumer flipped = "flip:characters/ballmer_cutout.png"
 # Beach Route
 image kappn = "characters/kappn.png"
 image kappn flipped = "flip:characters/kappn.png"
+image cornpy = "characters/cornpy.png"
+image cornpy flipped = "flip:characters/cornpy.png"
+image corn = "characters/hohsis/corn.png"
+image corn flipped = "flip:characters/hohsis/corn.png"
 
 # Background Images
 ## CSBI
@@ -2458,6 +2463,7 @@ image hammer = "hammer.png"
 image hatch = "minigames/christmaspointclick/hatch.png"
 image hold_it = "hold_it.png"
 image horse_mask = "horse_mask.png"
+image hotdog_stand = "hotdog_stand.png"
 image joj_ufo_empty = "images/joj_ufo/joj_ufo_empty.png"
 image joj_ufo_empty dark = "dark:images/joj_ufo/joj_ufo_empty.png"
 image knife = "knife.png"
