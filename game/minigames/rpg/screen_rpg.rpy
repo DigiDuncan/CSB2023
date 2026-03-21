@@ -302,37 +302,6 @@ screen rpg_stat_box(fighter, current_ally_mode):
                 background None
                 xysize(465,105)
 
-
-######### TARGET SELECTION
-
-# this screen takes fighter, and allows the user to choose targets
-screen rpg_target_select():
-    frame:
-        background None
-        xsize 0.5 ysize 262
-        padding(80, 5)
-        xanchor 1.0 yanchor 1.0
-        xpos 1.0 ypos 1.0
-
-        python:
-            # Get all reasonable targets.
-            targets = RPG.encounter.possible_targets(current_ally, current_ally.next_attack.attack)
-            # Randomly choose an amount of targets for the attack to hit.
-            for i in range(current_ally.next_attack.target_count):
-                working_list.append(renpy.random.choice(targets))
-            # Set the attacks target list to our working list.
-            current_ally.next_targets = working_list
-
-        # As it stands, this should always be true.
-        if len(working_list) == current_ally.next_attack.target_count:
-            python:
-                if RPG.encounter.subturn + 1 != len(RPG.encounter.allies):
-                    RPG.encounter.subturn += 1
-                renpy.hide_screen("rpg_target_select")
-
-        text "If all is well, you should not see this text."
-
-
 ######### ACTUAL SCREEN HERE
 
 screen screen_rpg():
@@ -445,7 +414,7 @@ screen screen_rpg():
                                                     # If the attack is not available, make this insensitive
                                                     $ attack_actions.append(Function(current_ally.set_next_attack, attack))
                                                     $ attack_actions.append(Function(clear_list, working_list))
-                                                    $ attack_actions.append(ShowTransient("rpg_target_select", None, current_ally))
+                                                    $ attack_actions.append(SetScreenVariable("current_ally_mode", "TGT"))
 
                                                     # Adds selectable attack texts/descriptions
                                                     button:
@@ -514,6 +483,23 @@ screen screen_rpg():
                                                 SetScreenVariable("current_ally_mode", None),
                                                 attack_actions
                                             ]
+
+                        elif current_ally_mode == "TGT":
+                            python:
+                                # Get all reasonable targets.
+                                targets = RPG.encounter.possible_targets(current_ally, current_ally.next_attack.attack)
+                                # Randomly choose an amount of targets for the attack to hit.
+                                for i in range(current_ally.next_attack.target_count):
+                                    working_list.append(renpy.random.choice(targets))
+                                # Set the attacks target list to our working list.
+                                current_ally.next_targets = working_list
+
+                            # As it stands, this should always be true.
+                            if len(working_list) == current_ally.next_attack.target_count:
+                                python:
+                                    if RPG.encounter.subturn + 1 != len(RPG.encounter.allies):
+                                        RPG.encounter.subturn += 1
+                                    current_ally_mode == "ATK"
 
                         ### Default text
                         else:
