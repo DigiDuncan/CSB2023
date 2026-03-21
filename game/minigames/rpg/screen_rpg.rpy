@@ -574,7 +574,7 @@ screen screen_rpg():
 
     # Debug
     python:
-        debug_text = f"Current Ally: {current_ally}\nCurrent Ally Mode:{current_ally_mode}\nNext Attack: {current_ally.next_attack}\nTarget Count: {current_ally.next_attack.target_count}\nTargets: {current_ally.next_targets}"
+        debug_text = f"Current Ally: {current_ally}\nCurrent Ally Mode:{current_ally_mode}\nNext Attack: {current_ally.next_attack}\nTarget Count: {current_ally.next_attack.target_count if current_ally.next_attack is not None else None}\nTargets: {current_ally.next_targets}"
     text debug_text:
         xoffset 25
         yoffset 25
