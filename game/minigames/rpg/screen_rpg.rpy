@@ -573,9 +573,11 @@ screen screen_rpg():
                         size 21
 
     # Debug
-    # text "Turn: " + str(RPG.encounter.turn) xoffset 25 yoffset 25
-    # text "Subturn: " + str(RPG.encounter.subturn) xoffset 25 yoffset 50
-    # text "Current Ally: " + str(current_ally) xoffset 25 yoffset 75
+    python:
+        debug_text = f"Current Ally: {current_ally}\nCurrent Ally Mode:{current_ally_mode}\nNext Attack: {current_ally.next_attack}\nTarget Count: {current_ally.next_attack.target_count}\nTargets: {current_ally.next_targets}"
+    text debug_text:
+        xoffset 25
+        yoffset 25
 
     # Dev Backdoor
     key "K_END" action Jump("pass_rpg")
