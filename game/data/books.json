@@ -2,8 +2,6 @@
     "csbi": {
         "title": "CSBI",
         "desc": "Start from the beginning!",
-        "spine_width": 392,
-        "spine_height": 600,
         "x_pos": 0,
         "y_pos": 36,
         "kind": "label",
@@ -12,8 +10,6 @@
     "csbii": {
         "title": "CSBII",
         "desc": "CS vs HoH SiS!",
-        "spine_width": 392,
-        "spine_height": 600,
         "x_pos": 46,
         "y_pos": 36,
         "kind": "label",
@@ -23,8 +19,6 @@
     "csbiii_1": {
         "title": "CSBIII Act 1",
         "desc": "Start your new life on the run!",
-        "spine_width": 392,
-        "spine_height": 600,
         "x_pos": 92,
         "y_pos": 36,
         "kind": "label",
@@ -34,8 +28,6 @@
     "csbiii_2": {
         "title": "CSBIII Act 2",
         "desc": "Choose your own adventure!",
-        "spine_width": 392,
-        "spine_height": 600,
         "x_pos": 138,
         "y_pos": 36,
         "kind": "label",
@@ -45,8 +37,6 @@
     "afterstory": {
         "title": "CSBDX: Afterstory",
         "desc": "{image=gui/inline_text/dx_text.png} What happens next?",
-        "spine_width": 392,
-        "spine_height": 600,
         "x_pos": 184,
         "y_pos": 36,
         "kind": "label",
@@ -56,8 +46,6 @@
     "finale": {
         "title": "CSBDX: Finale",
         "desc": "{image=gui/inline_text/dx_text.png} The one true end.",
-        "spine_width": 392,
-        "spine_height": 600,
         "x_pos": 230,
         "y_pos": 36,
         "kind": "label",
@@ -67,8 +55,6 @@
     "beach": {
         "title": "CSBDX: Beach Episode",
         "desc": "{image=gui/inline_text/dx_text.png} Chill out in Cali for a day.",
-        "spine_width": 392,
-        "spine_height": 600,
         "x_pos": 276,
         "y_pos": 36,
         "kind": "label",
@@ -78,8 +64,6 @@
     "train_winner": {
         "title": "CSBDX: Train Route",
         "desc": "{image=gui/inline_text/dx_text.png} (Winner Version) Taking the scenic route home.",
-        "spine_width": 392,
-        "spine_height": 600,
         "x_pos": 322,
         "y_pos": 36,
         "kind": "label",
@@ -89,8 +73,6 @@
     "train_thief": {
         "title": "CSBDX: Train Route",
         "desc": "{image=gui/inline_text/dx_text.png} (Thief Version) Taking the scenic route home.",
-        "spine_width": 392,
-        "spine_height": 600,
         "x_pos": 368,
         "y_pos": 36,
         "kind": "label",
@@ -100,8 +82,6 @@
     "bt1d": {
         "title": "BT1D",
         "desc": "{image=gui/inline_text/dx_text.png} Fight the CEO Of Diabetes!",
-        "spine_width": 392,
-        "spine_height": 600,
         "x_pos": 414,
         "y_pos": 36,
         "kind": "label",
@@ -111,8 +91,6 @@
     "kuwait": {
         "title": "Kuwait",
         "desc": "{image=gui/inline_text/dx_text.png} A vacation gone awry...",
-        "spine_width": 392,
-        "spine_height": 600,
         "x_pos": 460,
         "y_pos": 36,
         "kind": "label",
@@ -122,8 +100,6 @@
     "plane": {
         "title": "Plane",
         "desc": "{image=gui/inline_text/dx_text.png} A thrilling flight home!",
-        "spine_width": 392,
-        "spine_height": 600,
         "x_pos": 506,
         "y_pos": 36,
         "kind": "label",
@@ -133,8 +109,6 @@
     "speedrun": {
         "title": "Speedrun",
         "desc": "{image=gui/inline_text/dx_text.png} NYOOM",
-        "spine_width": 392,
-        "spine_height": 600,
         "x_pos": 552,
         "y_pos": 36,
         "kind": "label",
@@ -144,8 +118,6 @@
     "bronson": {
         "title": "Bronson",
         "desc": "{image=gui/inline_text/dx_text.png} Oh, great, another creepypasta.",
-        "spine_width": 392,
-        "spine_height": 600,
         "x_pos": 598,
         "y_pos": 36,
         "kind": "label",
@@ -155,8 +127,6 @@
     "jukebox": {
         "title": "Jukebox",
         "desc": "Jam out to songs you've heard along the way!",
-        "spine_width": 71,
-        "spine_height": 150,
         "x_pos": 833,
         "y_pos": 187,
         "kind": "menu",
@@ -165,8 +135,6 @@
     "controller_setup": {
         "title": "Controller Setup",
         "desc": "Make sure your controller is working!",
-        "spine_width": 279,
-        "spine_height": 130,
         "x_pos": 40,
         "y_pos": 920,
         "kind": "label",
@@ -175,8 +143,6 @@
     "ce": {
         "title": "CSBounciness: Christmas Edition",
         "desc": "{image=gui/inline_text/ce_text.png} Save Christmas with CS and friends!",
-        "spine_width": 46,
-        "spine_height": 300,
         "x_pos": 864,
         "y_pos": 390,
         "kind": "label",
@@ -186,8 +152,6 @@
     "d20_viewer":{
         "title": "CE Dice Viewer",
         "desc": "{image=gui/inline_text/ce_text.png} See who could have showed up first to the party!",
-        "spine_width": 55,
-        "spine_height": 55,
         "x_pos": 655,
         "y_pos": 635,
         "kind": "menu",
@@ -197,8 +161,6 @@
     "space": {
         "title": "CSBounciness: Space Program",
         "desc": "{image=gui/inline_text/dx_text.png} spaaaaaaaaaace",
-        "spine_width": 46,
-        "spine_height": 300,
         "x_pos": 818,
         "y_pos": 390,
         "kind": "label",
@@ -207,10 +169,8 @@
     "pt_aftermath": {
         "title": "Celestial Sightseeing",
         "desc": "{image=gui/inline_text/dx_text.png} The Aspiring Planeswalker's Guide To\nChronomancy, Synchrony, & Cosmic Safety",
-        "spine_width": 82,
-        "spine_height": 300,
         "x_pos": 0,
-        "y_pos": 390,
+        "y_pos": 608,
         "kind": "label",
         "destination": "book_celestial_sightseeing",
         "need_persistent": "defeated_perfect_tate"
@@ -218,8 +178,6 @@
     "elizabeth_bday": {
         "title": "Elizabeth's Birthday \nExtravaganza 2024!",
         "desc": "{image=gui/inline_text/dx_text.png} The silly spin-off where Digi makes it \njust in time for Elizabeth's birthday!",
-        "spine_width": 19,
-        "spine_height": 250,
         "x_pos": 800,
         "y_pos": 440,
         "kind": "label",
@@ -229,8 +187,6 @@
     "underpants": {
         "title": "Underpants?",
         "desc": "{image=gui/inline_text/dx_text.png} placeholder",
-        "spine_width": 46,
-        "spine_height": 300,
         "x_pos": 600,
         "y_pos": 390,
         "kind": "label",
@@ -239,8 +195,6 @@
     "pee": {
         "title": "Why Is My Pee Clear?",
         "desc": "{image=gui/inline_text/dx_text.png} For ages 18 months to 3 years.",
-        "spine_width": 27,
-        "spine_height": 150,
         "x_pos": 772,
         "y_pos": 536,
         "kind": "label",
@@ -250,8 +204,6 @@
     "minigame_car_chase": {
         "title": "Car Chase",
         "desc": "Escape From HoH SiS!",
-        "spine_width": 19,
-        "spine_height": 150,
         "x_pos": 827,
         "y_pos": 900,
         "kind": "label",
@@ -261,8 +213,6 @@
     "minigame_carrot": {
         "title": "Carrot Chop",
         "desc": "{image=gui/inline_text/ce_text.png} Chop to the beat!",
-        "spine_width": 19,
-        "spine_height": 250,
         "x_pos": 810,
         "y_pos": 800,
         "kind": "label",
@@ -272,8 +222,6 @@
     "minigame_reversi": {
         "title": "Reversi",
         "desc": "{image=gui/inline_text/ce_text.png} It's WINDOWS",
-        "spine_width": 46,
-        "spine_height": 300,
         "x_pos": 864,
         "y_pos": 750,
         "kind": "label",
@@ -283,8 +231,6 @@
     "minigame_toytrains": {
         "title": "Off To The Races!",
         "desc": "{image=gui/inline_text/dx_text.png} Race some trains!\n...Wait, who the fuck is Longas?",
-        "spine_width": 19,
-        "spine_height": 250,
         "x_pos": 792,
         "y_pos": 800,
         "kind": "label",
@@ -294,13 +240,20 @@
     "minigame_editing": {
         "title": "Adobe Premiere",
         "desc": "Hopefully it doesn't fucking crash again.",
-        "spine_width": 35,
-        "spine_height": 250,
         "x_pos": 758,
         "y_pos": 800,
         "kind": "label",
         "destination": "play_edit_game",
         "need_label": "play_edit_game"
+    },
+    "minigame_perfecttate": {     
+        "title": "VS Perfect Tate",
+        "desc": "Survive.",
+        "x_pos": 200,
+        "y_pos": 408,
+        "kind": "label",
+        "destination": "play_perfecttate_game",
+        "need_persistent": "defeated_perfect_tate"
     }
 
 }

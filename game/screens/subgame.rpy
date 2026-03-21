@@ -8,7 +8,6 @@ python early:
             self,
             book_id: str,
             title: str, description: str,
-            spine_width: int, spine_height: int,
             x_pos: int, y_pos: int,
             kind: str, destination: str
         ):
@@ -17,8 +16,6 @@ python early:
             self.description = description
             self.x_pos = x_pos
             self.y_pos = y_pos
-            self.spine_width = spine_width
-            self.spine_height = spine_height
 
             self.kind = kind
             self.destination = destination
@@ -71,8 +68,6 @@ screen subgame():
                         book,
                         BOOKS_MAP[book]["title"],
                         BOOKS_MAP[book]["desc"],
-                        BOOKS_MAP[book]["spine_width"],
-                        BOOKS_MAP[book]["spine_height"],
                         BOOKS_MAP[book]["x_pos"],
                         BOOKS_MAP[book]["y_pos"],
                         BOOKS_MAP[book]["kind"],

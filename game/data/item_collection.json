@@ -528,6 +528,14 @@
         "rarity": "Common",
         "ce": true
     },
+    "iwi_box": {
+        "img": "cardboard_box_full",
+        "name": "iwi box",
+        "owner": "Tate",
+        "desc": "Seriously, what the hell is an iwi box? And why does it have to be in all-lowercase?",
+        "rarity": "Legendary",
+        "dx": true
+    },
     "joj_ufo": {
         "img": "joj_ufo_empty",
         "name": "JoJ UFO",
