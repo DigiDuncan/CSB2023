@@ -485,23 +485,26 @@ screen screen_rpg():
                                             ]
 
                         elif current_ally_mode == "TGT":
-                            print("TGT is active!")
+                            $ print("We're in the TGT block!")
+                            $ print(f"According to screen language, the current_ally_mode is {current_ally_mode}")
                             python:
-                                # Get all reasonable targets.
-                                targets = RPG.encounter.possible_targets(current_ally, current_ally.next_attack.attack)
-                                # Randomly choose an amount of targets for the attack to hit.
-                                for i in range(current_ally.next_attack.target_count):
-                                    working_list.append(renpy.random.choice(targets))
-                                # Set the attacks target list to our working list.
-                                current_ally.next_targets = working_list
+                                print(f"According to Python, the current_ally_mode is {current_ally_mode}")
+                                    if current_ally_mode == "TGT":
+                                        $ print("We're running the TGT code!")
+                                        # Get all reasonable targets.
+                                        targets = RPG.encounter.possible_targets(current_ally, current_ally.next_attack.attack)
+                                        # Randomly choose an amount of targets for the attack to hit.
+                                        for i in range(current_ally.next_attack.target_count):
+                                            working_list.append(renpy.random.choice(targets))
+                                        # Set the attacks target list to our working list.
+                                        current_ally.next_targets = working_list
 
-                            # As it stands, this should always be true.
-                            if len(working_list) == current_ally.next_attack.target_count:
-                                python:
-                                    if RPG.encounter.subturn + 1 != len(RPG.encounter.allies):
-                                        print("Subturn bumped!")
-                                        RPG.encounter.subturn += 1
-                                    current_ally_mode == "ATK"
+                                        # As it stands, this should always be true.
+                                        if len(working_list) == current_ally.next_attack.target_count:
+                                            if RPG.encounter.subturn + 1 != len(RPG.encounter.allies):
+                                                print("Subturn bumped!")
+                                                RPG.encounter.subturn += 1
+                                            current_ally_mode = None
 
                         ### Default text
                         else:
