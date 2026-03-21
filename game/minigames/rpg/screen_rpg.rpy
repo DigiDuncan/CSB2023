@@ -485,6 +485,7 @@ screen screen_rpg():
                                             ]
 
                         elif current_ally_mode == "TGT":
+                            print("TGT is active!")
                             python:
                                 # Get all reasonable targets.
                                 targets = RPG.encounter.possible_targets(current_ally, current_ally.next_attack.attack)
@@ -498,6 +499,7 @@ screen screen_rpg():
                             if len(working_list) == current_ally.next_attack.target_count:
                                 python:
                                     if RPG.encounter.subturn + 1 != len(RPG.encounter.allies):
+                                        print("Subturn bumped!")
                                         RPG.encounter.subturn += 1
                                     current_ally_mode == "ATK"
 
@@ -574,7 +576,7 @@ screen screen_rpg():
 
     # Debug
     python:
-        debug_text = f"Current Ally: {current_ally.display_name}\nCurrent Ally Mode:{current_ally_mode}\nNext Attack: {current_ally.next_attack}\nTarget Count: {current_ally.next_attack.attack.target_count if current_ally.next_attack is not None else None}\nTargets: {current_ally.next_targets}"
+        debug_text = f"Current Ally: {current_ally.display_name}\nCurrent Ally Mode: {current_ally_mode}\nNext Attack: {current_ally.next_attack}\nTarget Count: {current_ally.next_attack.attack.target_count if current_ally.next_attack is not None else None}\nTargets: {current_ally.next_targets}"
     text debug_text:
         xoffset 25
         yoffset 25
