@@ -703,7 +703,6 @@ screen _ucn2_selection():
             xoffset 25 yoffset 1000
             action [
                 Play("sound", "audio/sfx/sfx_valid.ogg"),
-                SetVariable("rpg_selection_stage", "img"),
                 SetScreenVariable("rpg_selection_stage", "img")
             ]
 
