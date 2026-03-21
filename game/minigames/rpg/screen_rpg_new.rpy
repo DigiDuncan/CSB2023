@@ -3,24 +3,34 @@ label awawa_rpg_test:
 
 screen rpg_screen_new():
 
-    default mode = None
+    if RPG.encounter.won is None:
 
-    if mode == "ATK":
-        text "attacking"
+        $ current_ally = RPG.encounter.allies[RPG.encounter.subturn]
+        default current_ally_mode = None
 
-        textbutton "target somebody":
-            action [ SetScreenVariable("mode", "TGT")]
+        ##### ATTACK MODE
+        if current_ally_mode == "ATK":
+            vbox:
+                text "Attacking!"         
+                text "Select a target"
+                textbutton "Pretend target":
+                    action [
+                        SetScreenVariable("current_ally_mode", "None")
+                        # Increment turn here
+                    ]
 
-    elif mode == "DEF":
-        text "defending"
-    elif mode == "TGT":
-        text "targeting"
-    else:
-        text "What will you do?"
+        ##### DEFEND MODE
+        elif current_ally_mode == "DEF":
+            text "Defending!"
+            textbutton "Confirm":
+                action [
+                    SetScreenVariable("current_ally_mode", "None")
+                    # Increment turn here
+                ]
 
-        vbox:
-            textbutton "ATK":
-                action [ SetScreenVariable("mode", "ATK")]
-            textbutton "DEF":
-                action [ SetScreenVariable("mode", "DEF")]
-  
+        ##### DEFAULT MODE
+        else:
+            vbox:
+                text "What will this fighter do?"
+                textbutton "Attack" action SetScreenVariable("current_ally_mode", "ATK")
+                textbutton "Defend" action SetScreenVariable("current_ally_mode", "DEF")
