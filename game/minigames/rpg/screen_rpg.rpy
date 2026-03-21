@@ -305,9 +305,8 @@ screen rpg_stat_box(fighter, current_ally_mode):
 
 ######### TARGET SELECTION
 
-screen rpg_target_select(current_ally, current_ally_mode):
-    $ current_ally_mode = current_ally_mode
-
+# this screen takes fighter, and allows the user to choose targets
+screen rpg_target_select():
     frame:
         background None
         xsize 0.5 ysize 262
@@ -315,89 +314,23 @@ screen rpg_target_select(current_ally, current_ally_mode):
         xanchor 1.0 yanchor 1.0
         xpos 1.0 ypos 1.0
 
-        vbox:
-            $ curr_attack = current_ally.next_attack
-            if curr_attack is not None:
-                $ targets = RPG.encounter.possible_targets(current_ally, current_ally.next_attack.attack)
-                $ i = len(working_list)
-                text "{size=42}Select target [i]"
-                hbox:
-                    $ curr_target = None # TODO: this needs to reset between characters somehow
-                    for target in targets:
-                        $ target_actions = [ Function(bypass_append, working_list, target) ]
-                        if i+1 == curr_attack.attack.target_count:
-                            $ target_actions.append(Function(current_ally.set_next_targets, working_list))
-                            if (RPG.encounter.subturn+1 != len(RPG.encounter.allies)):
-                                $ target_actions.append(IncrementVariable("RPG.encounter.subturn"))
+        python:
+            # Get all reasonable targets.
+            targets = RPG.encounter.possible_targets(current_ally, current_ally.next_attack.attack)
+            # Randomly choose an amount of targets for the attack to hit.
+            for i in range(current_ally.next_attack.target_count):
+                working_list.append(renpy.random.choice(targets))
+            # Set the attacks target list to our working list.
+            current_ally.next_targets = working_list
 
-                        # Only put these if the target is not dead
-                        if not target.dead:
+        # As it stands, this should always be true.
+        if len(working_list) == current_ally.next_attack.target_count:
+            python:
+                if RPG.encounter.subturn + 1 != len(RPG.encounter.allies):
+                    RPG.encounter.subturn += 1
+                renpy.hide_screen("rpg_target_select")
 
-                            # Handler for multi-targets. 
-                            python:
-                                # If the attack has 0 or 1 targets, continue to next fighter after selection is made.
-                                if curr_attack.attack.target_count not in [0,1]:
-                                    next_mode = "ATK"
-                                else:
-                                    next_mode = None
-
-                                    # Handler for multiple targets should probably go here.                                                                    
-
-                        # Add buttons for each target
-                        button:
-                            hover_sound "audio/sfx/sfx_select.ogg"
-
-                            action [
-                                Play("sound", "audio/sfx/sfx_valid.ogg"),
-                                SelectedIf((SetScreenVariable("curr_target", target))),
-                                SetScreenVariable("current_ally_mode", next_mode),
-                                target_actions
-                            ]
-
-                            frame:
-                                background None
-                                vbox:
-                                    # Portrait shenanigans
-                                    frame:
-                                        xysize(88,88)
-                                        xalign 0.5
-
-                                        background target.portrait
-
-                                        hover_background Transform(target.portrait, matrixcolor=shade_select_matrix)
-
-                                        selected_background Composite(
-                                            (88,88),
-                                            (0,0), target.portrait,
-                                            (0,0), "gui/rpg/portraits/border_sel_e.png"
-                                        )
-
-                                        selected_hover_background Composite(
-                                            (88,88),
-                                            (0,0), Transform(target.portrait, matrixcolor=shade_select_matrix),
-                                            (0,0), "selectable:gui/rpg/portraits/border_sel_e.png"
-                                        )
-
-                                    text "{size=42}"+target.display_name:
-                                        color "#FFFFFF"
-                                        hover_color "#0099CC"
-                                        selected_color "#FF8A00"
-                                        selected_hover_color "#F5DD00"
-                                        xalign 0.5
-                                        text_align 0.5
-
-                        # This handles moves that target 1+ fighters, shows the Back button
-                        if not i == 0:
-                            button:
-                                hover_sound "audio/sfx/sfx_select.ogg"
-                                text "{size=42}Back":
-                                    color "#FFFFFF"
-                                    hover_color "#0099CC"
-                                action [
-                                    Play("sound", "audio/sfx/sfx_valid.ogg"),
-                                    SetScreenVariable("current_ally_mode", None),
-                                    RemoveFromSet("working_list", working_list[i-1]),
-                                ]
+        text "If all is well, you should not see this text."
 
 
 ######### ACTUAL SCREEN HERE
@@ -512,8 +445,7 @@ screen screen_rpg():
                                                     # If the attack is not available, make this insensitive
                                                     $ attack_actions.append(Function(current_ally.set_next_attack, attack))
                                                     $ attack_actions.append(Function(clear_list, working_list))
-                                                    if (RPG.encounter.subturn + 1 != len(RPG.encounter.allies)) and (attack.attack.target_count == 0):
-                                                        $ attack_actions.append(IncrementVariable("RPG.encounter.subturn"))
+                                                    $ attack_actions.append(ShowTransient("rpg_target_select", None, current_ally))
 
                                                     # Adds selectable attack texts/descriptions
                                                     button:
@@ -521,8 +453,7 @@ screen screen_rpg():
                                                         yminimum 1.0 ymaximum 120
                                                         hover_sound "audio/sfx/sfx_select.ogg"
                                                         action [
-                                                            Play("sound", "audio/sfx/sfx_valid.ogg"), 
-                                                            ShowTransient("rpg_target_select", None, current_ally, current_ally_mode),
+                                                            Play("sound", "audio/sfx/sfx_valid.ogg"),
                                                             *attack_actions
                                                         ]
                                                         if not attack.available:
