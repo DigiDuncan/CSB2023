@@ -590,7 +590,7 @@ screen screen_rpg():
 
 ######### PLAY BATTLE
 
-label play_rpggame:
+label old_play_rpggame:
     window hide
     $ quick_menu = False
     scene image RPG.encounter.background
