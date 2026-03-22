@@ -1,37 +1,35 @@
 screen beach_overworld_map(
-    time = "dawn", 
-    left_hand = "cs",
-    right_hand = "arc", 
-    bgm = audio.outdoors, 
+    current_time = "dawn", 
     current_location = (200,200,"Somewhere"), 
+    left_hand = "cs",
+    right_hand = "arc",
     jump_points = [ (500,500,"Somewhere Else", "secret_dx") ] 
     ):
 
     modal True
 
-    default time = time
+    default current_time = current_time
+    default current_location = current_location
     default left_hand = left_hand
     default right_hand = right_hand
-    default current_location = current_location
     default jump_points = jump_points
     default location_tooltip = ""
 
     on "show" action [
         Play("sound", "audio/sfx/sfx_isaac.ogg"),
-        Play("music", audio.outdoors, if_changed=True)
     ]
 
     # Time of day indicator
     python:
-        if time == "dawn":
+        if current_time == "dawn":
             time_indicator = Image("gui/beach_map/dawn.png")
-        elif time == "day":
+        elif current_time == "day":
             time_indicator = Image("gui/beach_map/day.png")
-        elif time == "noon":
+        elif current_time == "noon":
             time_indicator = Image("gui/beach_map/noon.png")
-        elif time == "dusk":
+        elif current_time == "dusk":
             time_indicator = Image("gui/beach_map/dusk.png")
-        elif time == "night":
+        elif current_time == "night":
             time_indicator = Image("gui/beach_map/night.png")
 
     add time_indicator:
@@ -67,7 +65,6 @@ screen beach_overworld_map(
             zoom 0.75
             xzoom -1
 
-
     # Current location marker
     button:
         at transform:
@@ -88,10 +85,12 @@ screen beach_overworld_map(
             SetScreenVariable("location_tooltip", current_location[2])
         ]
         unhovered SetScreenVariable("location_tooltip", "")
-        action Notify("You are here!")
+        action [
+            Notify("You are here!"),
+            Play("sound", "audio/sfx/sfx_valid.ogg")
+        ]
 
         vbox:
-    
             text current_location[2]:
                 xalign 0.5
                 text_align 0.5
@@ -115,10 +114,12 @@ screen beach_overworld_map(
                 SetScreenVariable("location_tooltip", jp[2])
             ]
             unhovered SetScreenVariable("location_tooltip", "")
-            action Jump(jp[3])
+            action [
+                Play("sound", "audio/sfx/sfx_valid.ogg"),
+                Jump(jp[3])
+            ]
 
             vbox:
-       
                 text jp[2]:
                     xalign 0.5
                     text_align 0.5
