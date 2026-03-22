@@ -159,22 +159,29 @@ label beach.beach_dawn:
 
     pause 1.0
 
-    show cs beach flipped at offscreenright
-    show arceus flipped at offscreenright
-    show tate beach flipped at offscreenright
-    show mean flipped at offscreenright
-
-    
+    show cs beach flipped at manual_pos(1.4, 1.0, 1.0)
+    show arceus flipped at manual_pos(1.6, 1.0, 1.0)
+    show tate beach flipped at manual_pos(1.8, 1.0, 1.0)
+    show mean flipped at manual_pos(2.0, 1.0, 1.0)
 
     n "CS and the gang approach the hotdog stand."
 
-
     show cs beach flipped at mid_left
+    show arceus angry at center
+    show tate sheepish beach flipped at mid_right
+    show mean wat flipped at right 
+    with { "master": MoveTransition(5.0) }
 
-    with move
+    cs "... {fast}Then, I finally got my sock up my ass, and then I lost it for one hour, and then I {i}finally{/i} found it in my poop."
+    pause 1.0
+    show cs surprised beach flipped
+    pause 2.0
+    show cs disappointed beach
+    cs "Yeah, so, uh, what was I talking about?"
+    arceus "Y'know, I don't think I'm hungry anymore."
+
+
         
-
-
     call screen beach_overworld_map( 
         current_time = "day",
         current_location = (500, 690, "Ocean Beach"),
