@@ -345,10 +345,10 @@ label beach_start:
     # TODO: get real map music
 
     call screen beach_overworld_map(
-        time = "dawn",
+        current_time = "dawn",
+        current_location = (1109, 531, "Valencia & 20th"),
         left_hand = "arc", 
         right_hand = "cs", 
-        current_location = (1109, 531, "Valencia & 20th"),
         jump_points = [ (500, 690, "Ocean Beach", "beach.beach_dawn")  ]
         ) 
     with dissolve
