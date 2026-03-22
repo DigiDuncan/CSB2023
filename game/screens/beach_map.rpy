@@ -1,6 +1,6 @@
 screen beach_overworld_map(
     current_time = "dawn", 
-    current_location = (200,200,"Somewhere"), 
+    current_location = (600,600,"Somewhere"), 
     left_hand = "cs",
     right_hand = "arc",
     jump_points = [ (500,500,"Somewhere Else", "secret_dx") ] 
@@ -66,7 +66,8 @@ screen beach_overworld_map(
             xzoom -1
 
     # Current location marker
-    button:
+    frame:
+        background None
         at transform:
             alpha 0
             xanchor 0.5 yanchor 1.0
@@ -80,49 +81,56 @@ screen beach_overworld_map(
                     linear 0.5 yoffset 0
                     repeat
 
-        hovered [
-            Play("sound", "audio/sfx/sfx_select.ogg"),
-            SetScreenVariable("location_tooltip", current_location[2])
-        ]
-        unhovered SetScreenVariable("location_tooltip", "")
-        action [
-            Notify("You are here!"),
-            Play("sound", "audio/sfx/sfx_valid.ogg")
-        ]
-
         vbox:
             text current_location[2]:
                 xalign 0.5
                 text_align 0.5
                 outlines [(5, "#000000", absolute(0), absolute(0))]
-            add "gui/beach_map/map_marker_current.png":
-                xalign 0.5
+                
+            imagebutton:
+                xalign 0.5 yalign 1.0
 
+                idle "gui/beach_map/map_marker_current.png"
+                hover "selectable:gui/beach_map/map_marker_current.png"
+
+                hovered [
+                    Play("sound", "audio/sfx/sfx_select.ogg"),
+                    SetScreenVariable("location_tooltip", current_location[2])
+                ]
+                unhovered SetScreenVariable("location_tooltip", "")
+                action [
+                    Notify("You are here!"),
+                    Play("sound", "audio/sfx/sfx_valid.ogg")
+                ]
 
     # Add jump points here
     for jp in jump_points:
+        frame:
+            background None
 
-        button:
             at transform:
                 alpha 0
                 xanchor 0.5 yanchor 1.0
                 xpos jp[0] ypos jp[1]
                 linear 1.0 alpha 1.0
 
-            hovered [
-                Play("sound", "audio/sfx/sfx_select.ogg"),
-                SetScreenVariable("location_tooltip", jp[2])
-            ]
-            unhovered SetScreenVariable("location_tooltip", "")
-            action [
-                Play("sound", "audio/sfx/sfx_valid.ogg"),
-                Jump(jp[3])
-            ]
-
             vbox:
                 text jp[2]:
                     xalign 0.5
                     text_align 0.5
                     outlines [(5, "#000000", absolute(0), absolute(0))]
-                add "gui/beach_map/map_marker.png":
-                    xalign 0.5
+
+                imagebutton:
+                    xalign 0.5 yalign 1.0
+
+                    idle "gui/beach_map/map_marker.png"
+                    hover "selectable:gui/beach_map/map_marker.png"
+                    hovered [
+                        Play("sound", "audio/sfx/sfx_select.ogg"),
+                        SetScreenVariable("location_tooltip", jp[2])
+                    ]
+                    unhovered SetScreenVariable("location_tooltip", "")
+                    action [
+                        Play("sound", "audio/sfx/sfx_valid.ogg"),
+                        Jump(jp[3])
+                    ]
