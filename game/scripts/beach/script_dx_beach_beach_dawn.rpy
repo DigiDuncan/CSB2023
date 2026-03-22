@@ -76,7 +76,7 @@ label beach.beach_dawn:
     mean_offscreen "Fine, the yellow fucker is my owner. Now, let me go!"
     obama "Fair enough. Have a wonderful day!"
     arceus "Wait, but I'm not-- {nw}"
-    obama "If you will excuse me-- I hear the hotdog stand here has a \"Presidential Special\", and I must ascertain whether it is worthy of that title."
+    obama "If you will excuse me, I hear the hotdog stand here has a \"Presidential Special\", and I must ascertain whether it is worthy of that title."
     obama "Farewell for now!"
     show obama beach behind arceus at offscreenleft with move
     pause 2.0
@@ -159,10 +159,10 @@ label beach.beach_dawn:
 
     pause 1.0
 
-    show cs beach flipped at offscreenleft
-    show arceus flipped at offscreenleft
-    show tate beach flipped at offscreenleft
-    show mean flipped at offscreenleft
+    show cs beach flipped at offscreenright
+    show arceus flipped at offscreenright
+    show tate beach flipped at offscreenright
+    show mean flipped at offscreenright
 
     
 
@@ -177,5 +177,11 @@ label beach.beach_dawn:
 
     call screen beach_overworld_map( 
         current_time = "day",
-        current_location = (500, 690, "Ocean Beach")
-        )
+        current_location = (500, 690, "Ocean Beach"),
+        jump_points = [
+            (800, 200, "Beach\n{size=-12}(Unimplemented){/size}", "beach.beach_day"),
+            (1400, 690, "Boardwalk\n{size=-12}(Unimplemented){/size}", "beach.boardwalk_day"),
+            (1200, 300, "Downtown\n{size=-12}(Unimplemented){/size}", "beach.downtown_day"),
+            (600, 450, "Park\n{size=-12}(Unimplemented){/size}", "beach.park_day")
+        ]
+    )

@@ -349,8 +349,13 @@ label beach_start:
         current_location = (1109, 531, "Valencia & 20th"),
         left_hand = "arc", 
         right_hand = "cs", 
-        jump_points = [ (500, 690, "Ocean Beach", "beach.beach_dawn")  ]
-        ) 
+        jump_points = [ 
+            (500, 690, "Ocean Beach", "beach.beach_dawn"),
+            (1400, 690, "Boardwalk\n{size=-12}(Unimplemented){/size}", "beach.boardwalk_dawn"),
+            (1200, 300, "Downtown\n{size=-12}(Unimplemented){/size}", "beach.downtown_dawn"),
+            (600, 450, "Park\n{size=-12}(Unimplemented){/size}", "beach.park_dawn")
+        ]
+    ) 
     with dissolve
 
 ######## ENDING ########
