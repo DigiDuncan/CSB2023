@@ -184,13 +184,14 @@
         "destination": "CSB3_EBEEP12024FDEADNYWFFEAGM",
         "need_label": "ce_epilogue"
     },
-    "underpants": {
-        "title": "Underpants?",
-        "desc": "{image=gui/inline_text/dx_text.png} placeholder",
-        "x_pos": 600,
-        "y_pos": 390,
+    "iwi_box": {
+        "title": "The iwi Box",
+        "desc": "{image=gui/inline_text/dx_text.png} Tate's house, I guess?",
+        "x_pos": 15,
+        "y_pos": 509,
         "kind": "label",
-        "destination": "book_underpants"
+        "destination": "book_iwi_box",
+        "need_label": "train_dialogue"
     },
     "pee": {
         "title": "Why Is My Pee Clear?",
@@ -200,6 +201,14 @@
         "kind": "label",
         "destination": "book_peeing",
         "need_label": "ce_epilogue"
+    },
+    "underpants": {
+        "title": "Underpants?",
+        "desc": "{image=gui/inline_text/dx_text.png} placeholder",
+        "x_pos": 600,
+        "y_pos": 390,
+        "kind": "label",
+        "destination": "book_underpants"
     },
     "minigame_car_chase": {
         "title": "Car Chase",
@@ -248,7 +257,7 @@
     },
     "minigame_perfecttate": {     
         "title": "VS Perfect Tate",
-        "desc": "Survive.",
+        "desc": "{image=gui/inline_text/dx_text.png} Survive.",
         "x_pos": 200,
         "y_pos": 408,
         "kind": "label",

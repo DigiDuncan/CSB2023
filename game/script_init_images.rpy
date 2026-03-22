@@ -2355,7 +2355,7 @@ image hendry clap2 = "characters/hendry_clap2.png"
 
 image snow_pile = "snow_pile.png"
 
-# DX Beach Images
+# DX Beach 
 image bus_stop = "bg/beach/bus_stop.png"
 image valencia_st = "bg/beach/valencia_st.png"
 image ocean_beach_entrance = "bg/beach/ocean_beach_entrance.png"

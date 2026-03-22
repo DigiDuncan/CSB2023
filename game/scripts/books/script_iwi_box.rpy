@@ -5,30 +5,47 @@ label book_iwi_box:
     show mean annoyed human at offscreenright
     show cardboard_box_full at manual_pos(0.6, 0.8, 1.0):
         zoom 0.3
+        block:
+            linear 0.1 xoffset 5
+            linear 0.1 yoffset 5
+            linear 0.1 xoffset 0
+            linear 0.1 yoffset 0
+            repeat
     show tate at manual_pos(0.57, 0.7, 1.0) behind cardboard_box_foreground:
         zoom 0.7
         crop (0, 0, 650, 0)
     show cardboard_box_foreground at manual_pos(0.6, 0.8, 1.0):
         zoom 0.3
+        block:
+            linear 0.1 xoffset 5
+            linear 0.1 yoffset 5
+            linear 0.1 xoffset 0
+            linear 0.1 yoffset 0
+            repeat
     with dissolve
     $ collect("iwi_box")
     music able_sisters
     "..."
 
-    pause 2.0
+    pause 1.0
 
-   
-    show mean annoyed human at right with { "master": MoveTransition(0.5) }
-    mean "What the fuck is that noise?"
+    show mean annoyed human at right with { "master": MoveTransition(1.0) }
+    mean "What the fuck is all that noise?"
     pause 0.5
 
     stop sound2
     play sound sfx_pop_soft
+    show mean shocked human
     show tate at manual_pos(0.57, 0.7, 1.0) behind cardboard_box_foreground with { "master": MoveTransition(0.15) }:
         zoom 0.7
         linear 0.15 crop (0, 0, 650, 850)
+    show cardboard_box_full at manual_pos(0.6, 0.8, 1.0):
+        zoom 0.3
+        xoffset 0
+    show cardboard_box_foreground at manual_pos(0.6, 0.8, 1.0):
+        zoom 0.3
+        xoffset 0
     tate "Awawa!" 
-    show mean shocked human
     pause 0.5
     
     show mean angry human
@@ -36,13 +53,29 @@ label book_iwi_box:
     tate "It's the iwi box."
     mean "And what the {nw}"
     extend "{i}hell{/i} is an iwi box?" with vpunch
-    tate "I am the iwi. This is my box."
-    mean "I thought you were the awawa!"
+    tate "I am the iwi.{w=0.5} This is my box."
+    mean "I thought you were the awawa."
     show tate srs
     tate "I am a multifaceted individual."
-    show tate at manual_pos(0.57, 0.7, 1.0) behind cardboard_box_foreground with { "master": MoveTransition(0.15) }:
+    show tate srs at manual_pos(0.57, 0.7, 1.0) behind cardboard_box_foreground with { "master": MoveTransition(0.15) }:
         zoom 0.7
         linear 0.15 crop (0, 0, 650, 0)
+    show cardboard_box_full at manual_pos(0.6, 0.8, 1.0):
+        zoom 0.3
+        block:
+            linear 0.1 xoffset 5
+            linear 0.1 yoffset 5
+            linear 0.1 xoffset 0
+            linear 0.1 yoffset 0
+            repeat
+    show cardboard_box_foreground at manual_pos(0.6, 0.8, 1.0):
+        zoom 0.3
+        block:
+            linear 0.1 xoffset 5
+            linear 0.1 yoffset 5
+            linear 0.1 xoffset 0
+            linear 0.1 yoffset 0
+            repeat
     show mean annoyed human
     play sound2 sfx_items_rustling
     pause 1.0

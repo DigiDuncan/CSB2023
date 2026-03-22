@@ -3,30 +3,7 @@
 # TODO: WHY ARE WE IN THE VOID? if we try to return to extras after playing again
 # TODO: fix selection crashing if you click fast
 
-###################################################### TRANSFORMS FOR THIS SCREEN ONLY
-
-transform _rpg_ready_button_yes:
-    zoom 0.4
-    yoffset 1000
-    xoffset 1650
-    block:
-        ease_cubic 0.25 zoom 0.41
-        ease_cubic 0.25 zoom 0.4
-        repeat
-
-transform _rpg_ready_button_no:
-    zoom 0.4
-    yoffset 1000
-    xoffset 1650
-
-transform _rpg_ready_flames:
-    on show:
-        alpha 0.0
-        linear 0.5 alpha 1.0
-    on hide:
-        linear 0.5 alpha 0.0
-
-###################################################### ACTUAL SCREEN STARTS HERE
+###################################################### BEGIN SCREEN
 
 screen _ucn2_selection():
     modal True

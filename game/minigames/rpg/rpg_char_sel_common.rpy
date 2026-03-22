@@ -23,3 +23,25 @@ init python:
 
         # Failsafe - just give me the next slot
         return (current_slot + 1) % total_slots
+
+
+transform _rpg_ready_button_yes:
+    zoom 0.4
+    yoffset 1000
+    xoffset 1650
+    block:
+        ease_cubic 0.25 zoom 0.41
+        ease_cubic 0.25 zoom 0.4
+        repeat
+
+transform _rpg_ready_button_no:
+    zoom 0.4
+    yoffset 1000
+    xoffset 1650
+
+transform _rpg_ready_flames:
+    on show:
+        alpha 0.0
+        linear 0.5 alpha 1.0
+    on hide:
+        linear 0.5 alpha 0.0

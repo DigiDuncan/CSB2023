@@ -342,88 +342,23 @@ label beach_start:
     show cs surprised
     pause 1.0
     
-    jump beach_overworld_map
-
-######## THE MAP ########
-label beach_overworld_map:
-    ##### advance the clock first
-    # TODO: these are currently using washington road bg/values, swap them later
-    # TODO: implement actual planned soundtracks
-    python:
-        if beach_current_time == "start":
-            beach_current_time = "morning"
-            beach_current_shader = "dusk"
-            beach_current_map_bgm = audio.outdoors
-
-        elif beach_current_time == "morning":
-            beach_current_time = "day"
-            beach_current_shader = "day"
-            beach_current_map_bgm = audio.bedroom_day
-
-        elif beach_current_time == "day":
-            beach_current_time = "afternoon"
-            beach_current_shader = "day"
-            beach_current_map_bgm = audio.ochre_woods_day
-
-        elif beach_current_time == "afternoon":
-            beach_current_time = "evening"
-            beach_current_shader = "dusk"
-            beach_current_map_bgm = audio.onbs
-
-        elif beach_current_time == "evening":
-            beach_current_time = "night"
-            beach_current_shader = ""
-            beach_current_map_bgm = audio.krabby_klub
-
-        elif beach_current_time == "night":
-            beach_current_time = "end"
-            beach_current_shader = ""
-
-    ##### begin the next part of the story
-    if beach_current_time != "end":
-
-        # TODO: get an actually nice world map, just using a menu to make sure it works
-        scene expression "washington_road %s" % beach_current_shader
-        with dissolve
-
-        # TODO: make sure any inline variables work with awawa mode
-
-        # this is stupid and awful and bad. it fetches the internal ID of the current track.
-        # if anyone has a better way to do this dynamically, please, be my guest. - tate
-        python:
-            for song, data in vars(store.audio).items():
-                if data is beach_current_map_bgm:
-                    beach_current_map_bgm_string = song
-                    break
-                else:
-                    beach_current_map_bgm_string = "not found"
-
-            # have to access this directly, i know it's bad aaaa
-            execute_music(song)
-
-            renpy.music.play(beach_current_map_bgm)
-
-        "It is now [beach_current_time]. The current BGM's ID is [beach_current_map_bgm_string]."
-
-        # TODO: actual locations are subject to change. need to consult w/ Pakoo on the best way to organize these
-        menu:
-            "Select a location."
-            "Beach":
-                $ renpy.jump("beach_beach."+beach_current_time)
-            "Boardwalk":
-                $ renpy.jump("beach_boardwalk."+beach_current_time)
-            "Downtown":
-                $ renpy.jump("beach_downtown."+beach_current_time)
-            "Uptown":
-                $ renpy.jump("beach_uptown."+beach_current_time)
-    else:
-        jump beach_end
+    call screen beach_overworld_map(
+        time="dawn",
+        left_hand = "cs", 
+        right_hand = "arc", 
+        bgm = audio.outdoors,
+        current_location = (1109, 531, "Valencia & 20th"),
+        jump_points = [(500, 690, "Ocean Beach", "beach_beach.dawn")  ]
+        ) 
+    with dissolve
 
 ######## LOCATION: BEACH ########
 label beach_beach:
-    label .morning:
-        stop music fadeout 2.0
-        scene black with Dissolve(2.0)
+    label .dawn:
+        stop music fadeout 1.0
+        scene black
+        with dissolve
+
         play music cobalt_coast_2
         scene ocean_beach_entrance
         with dissolve
@@ -437,7 +372,7 @@ label beach_beach:
         with dissolve
 
         cs "Woohoo! We made it!"
-        arceus "But, why are we here again? You can't even swim."
+        arceus "But why are we here again? You can't even swim."
         show cs
         cs "So? We can still cool off in the water."
         show arceus angry
@@ -460,7 +395,7 @@ label beach_beach:
         show arceus worried
         arceus "Wait, where are you going?"
         cs "I won't be long!"
-        pause 1.0
+        pause 2.0
         show arceus angry
         pause 1.0
         arceus "..."
@@ -475,8 +410,8 @@ label beach_beach:
         show obama beach at offscreenright
         show mean angry flipped at manual_pos(1.3, 0.8, 1.0)
         with determination
-        show arceus angry flipped at left with move
-        
+
+        show arceus angry flipped at left
         show obama beach at right
         show mean angry flipped at manual_pos(0.9, 0.8, 1.0)
         with MoveTransition(1.0)
@@ -495,7 +430,7 @@ label beach_beach:
         obama "I must return you to your owner. It is the ethical thing to do."
         obama "As President, I am determined to reunite all lost beach balls with their owners."
         mean_offscreen "Fine, the yellow fucker is my owner. Now, let me go!"
-        obama "Fair enough. Have a great day!"
+        obama "Fair enough. Have a wonderful day!"
         arceus "Wait, but I'm not-- {nw}"
         obama "If you will excuse me-- I hear the hotdog stand here has a \"Presidential Special\", and I must ascertain whether it is worthy of that title."
         obama "Farewell for now!"
@@ -580,98 +515,111 @@ label beach_beach:
 
         pause 1.0
 
-
-        n "CS and the gang approach the hotdog stand."
+        show cs beach flipped at offscreenleft
+        show arceus flipped at offscreenleft
+        show tate beach flipped at offscreenleft
+        show mean flipped at offscreenleft
 
         
 
+        n "CS and the gang approach the hotdog stand."
 
-        jump beach_overworld_map
+
+        show cs beach flipped at mid_left
+
+        with move
+            
+
+
+        call screen beach_overworld_map( 
+            time = "day",
+            current_location = (500, 690, "Ocean Beach")
+            )
     label .day:
         "Pretend an event happened at the beach during the day."
         "Returning to the map."
-        jump beach_overworld_map
-    label .afternoon:
+        call screen beach_overworld_map()
+    label .noon:
         "Pretend an event happened at the beach in the afternoon."
         "Returning to the map."
-        jump beach_overworld_map
-    label .evening:
+        call screen beach_overworld_map()
+    label .dusk:
         "Pretend an event happened at the beach in the evening."
         "Returning to the map."
-        jump beach_overworld_map
+        call screen beach_overworld_map()
     label .night:
         "Pretend an event happened at the beach at night."
         "Returning to the map."
-        jump beach_overworld_map
+        call screen beach_overworld_map()
 
 ######## LOCATION: BOARDWALK ########
 label beach_boardwalk:
-    label .morning:
+    label .dawn:
         "Pretend an event happened at the boardwalk in the morning."
         "Returning to the map."
-        jump beach_overworld_map
+        call screen beach_overworld_map()
     label .day:
         "Pretend an event happened at the boardwalk during the day."
         "Returning to the map."
-        jump beach_overworld_map
-    label .afternoon:
+        call screen beach_overworld_map()
+    label .noon:
         "Pretend an event happened at the boardwalk in the afternoon."
         "Returning to the map."
-        jump beach_overworld_map
-    label .evening:
+        call screen beach_overworld_map()
+    label .dusk:
         "Pretend an event happened at the boardwalk in the evening."
         "Returning to the map."
-        jump beach_overworld_map
+        call screen beach_overworld_map()
     label .night:
         "Pretend an event happened at the boardwalk at night."
         "Returning to the map."
-        jump beach_overworld_map
+        call screen beach_overworld_map()
 
 ######## LOCATION: DOWNTOWN ########
 label beach_downtown:
-    label .morning:
+    label .dawn:
         "Pretend an event happened downtown in the morning."
         "Returning to the map."
-        jump beach_overworld_map
+        call screen beach_overworld_map()
     label .day:
         "Pretend an event happened downtown during the day."
         "Returning to the map."
-        jump beach_overworld_map
-    label .afternoon:
+        call screen beach_overworld_map()
+    label .noon:
         "Pretend an event happened downtown in the afternoon."
         "Returning to the map."
-        jump beach_overworld_map
-    label .evening:
+        call screen beach_overworld_map()
+    label .dusk:
         "Pretend an event happened downtown in the evening."
         "Returning to the map."
-        jump beach_overworld_map
+        call screen beach_overworld_map()
     label .night:
         "Pretend an event happened downtown at night."
         "Returning to the map."
-        jump beach_overworld_map
+        call screen beach_overworld_map()
 
 ######## LOCATION: UPTOWN ########
 label beach_uptown:
-    label .morning:
+    label .dawn:
         "Pretend an event happened uptown in the morning."
         "Returning to the map."
-        jump beach_overworld_map
+        call screen beach_overworld_map()
     label .day:
         "Pretend an event happened uptown during the day."
         "Returning to the map."
-        jump beach_overworld_map
-    label .afternoon:
+        call screen beach_overworld_map()
+    label .noon:
         "Pretend an event happened uptown in the afternoon."
         "Returning to the map."
-        jump beach_overworld_map
-    label .evening:
+        call screen beach_overworld_map()
+    label .dusk:
         "Pretend an event happened uptown in the evening."
         "Returning to the map."
-        jump beach_overworld_map
+        call screen beach_overworld_map()
     label .night:
         "Pretend an event happened uptown at night."
         "Returning to the map."
-        jump beach_overworld_map
+        call screen beach_overworld_map()
 
 ######## ENDING ########
 label beach_end:
@@ -688,7 +636,7 @@ label beach_end:
         if "beach_bum" not in persistent.unlocked_achievements:
             # TODO: fix this to reflect changes in location list
             locations_list = [ "beach", "boardwalk", "downtown", "uptown"]
-            times_list = ["morning", "day", "afternoon", "evening", "night"]
+            times_list = ["dawn", "day", "noon", "dusk", "night"]
             beach_labels_list = []
 
             # construct the list of labels because fuck you if you think i'm doing this by hand
