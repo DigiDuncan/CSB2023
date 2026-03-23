@@ -616,7 +616,9 @@
             "Thinking": "images/characters/digi/thinking.png"
         },
         "quote": "But, here's the thing though, right?",
-        "bio": "DigiDuncan is the man with the plan. Too many plans, actually. They also love to drink an absurd amount of Powerade. Maybe that's where all those ideas come from. Digi is always working on countless projects ranging from game development to tinkering with his cybernetic augmentations. They are also really smol.",
+        "bio": "DigiDuncan is known as the little one who gets things done. Too many things, perhaps. With a schedule stretched as thin as tissue paper, Digi is always working on {i}something.{/i} From game development to charity livestreams to tinkering with their cybernetic augmentations, Digi is nearly constantly busy. In their limited free time, they might be playing a rhythm game or hanging out with their friends. Their favorite drink is blue Powerade, of which they are known to consume an absurd amount.",
+        "dx_bio": "Digi also enjoys traveling. Whether by car, train, or their own personal spaceship, Digi loves to visit new places with their bug-type companion, Lad. No matter how far away they end up, Digi comes back to Earth every year to fend off the CEO of Diabetes and his evil plot.",
+        "dx_bio_label": "bt1d_insulin",
         "ce_bio_label": "ce_introductions",
         "ce_bio": "Digi showed up to this party in a spaceship. What were they doing in {i}space?{/i} What {i}does{/i} Digi do on a daily basis? The answer is \"too much stuff, really.\" They brought their new projector for a holiday movie night, but they've never actually successfully set it up before.",
         "rpg": {
@@ -1589,7 +1591,7 @@
         "full_name": "Tate?",
         "pronouns": "(they/them)",
         "sprites": {
-            "Default": "images/characters/tate/tatehappy.png"
+            "Default": "images/characters/tate/casual/neutral.png"
         },
         "quote": "Ah--!",
         "bio": "After barely surviving their most recent multiverse jump, this iteration of Tate has decided to remain in their current timeline indefinitely. An IV drip delivering nutrition directly into their bloodstream helps to keep them alive. They absolutely {i}loathe{/i} being leashed by the IV pole. Hopefully they won't need it for too much longer.",
