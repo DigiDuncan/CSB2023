@@ -421,6 +421,8 @@ screen screen_rpg(no_stat_boxes = False):
                             if signal is not None:
                                 vbox:
                                     text str(signal)
+                                    if isinstance(signal, RPG.IndicatorSignal):
+                                        text "{size=-12}{color=#AAAAAA}Pssst, Tate! This is an indicator! It's for [signal.target.name], it's type [signal.typ.name], and value [signal.value]!"
                                     textbutton "Next" action Function(renpy.restart_interaction)
 
                         ### If you choose to attack, get access to the attacks.
