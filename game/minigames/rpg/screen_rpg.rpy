@@ -667,10 +667,10 @@ screen screen_rpg(no_stat_boxes = False):
                         # Handle numbers
                         if signal.value < 0:
                             output_color = "#FF0000"
-                            output_string = "-" + str(signal.typ.value) + " " + str(signal.typ.name)
                         else:
                             output_color = "#00FF00"
-                            output_string = "+" + str(signal.typ.value) + " " + str(signal.typ.name)
+
+                        output_string = str(signal.value) + " " + str(signal.typ.name)
 
                 if isinstance(signal, RPG.IndicatorSignal):   
                     text output_string at t_rpg_text(0.5, 0.5):
