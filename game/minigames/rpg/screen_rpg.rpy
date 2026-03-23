@@ -390,8 +390,21 @@ screen screen_rpg():
 
                         $ attack_actions = []
 
+                        # Signal processing mode
+                        if RPG.encounter.has_signals():
+                            python:
+                                while RPG.encounter.has_signals():
+                                    signal = RPG.encounter.get_next_signal()
+                                    if isinstance(signal, RPG.DebugSignal):
+                                        continue
+                                    else:
+                                        break
+                            vbox:
+                                text str(signal)
+                                textbutton "Next" action Function(renpy.restart_interaction)
+
                         ### If you choose to attack, get access to the attacks.
-                        if current_ally_mode == "ATK":
+                        elif current_ally_mode == "ATK":
                             grid 2 1:
 
                                 ### Attack side
@@ -485,21 +498,21 @@ screen screen_rpg():
                                             ]
 
                         elif current_ally_mode == "TGT":
-                            python:
-                                if current_ally_mode == "TGT":
-                                    # Get all reasonable targets.
-                                    targets = RPG.encounter.possible_targets(current_ally, current_ally.next_attack.attack)
-                                    # Randomly choose an amount of targets for the attack to hit.
-                                    for i in range(current_ally.next_attack.attack.target_count):
-                                        working_list.append(renpy.random.choice(targets))
-                                    # Set the attacks target list to our working list.
-                                    current_ally.next_targets = working_list
+                            $ targets = RPG.encounter.possible_targets(current_ally, current_ally.next_attack.attack)
+                            vbox:
+                                for target in targets:
+                                    textbutton target.display_name:
+                                        action [Function(working_list.append, target)]
 
-                                    # As it stands, this should always be true.
-                                    if len(working_list) == current_ally.next_attack.attack.target_count:
-                                        if RPG.encounter.subturn + 1 != len(RPG.encounter.allies):
-                                            RPG.encounter.subturn += 1
-                                        current_ally_mode = None
+                            python:
+                                # Set the attacks target list to our working list.
+                                current_ally.next_targets = working_list
+
+                                # As it stands, this should always be true.
+                                if len(working_list) == current_ally.next_attack.attack.target_count:
+                                    if RPG.encounter.subturn + 1 != len(RPG.encounter.allies):
+                                        RPG.encounter.subturn += 1
+                                    current_ally_mode = None
                                     renpy.restart_interaction()
 
                         ### Default text

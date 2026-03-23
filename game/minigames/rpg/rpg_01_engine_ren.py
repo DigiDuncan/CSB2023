@@ -1003,16 +1003,23 @@ class Effects:
 
 @dataclass
 class Signal:
-    pass
+    def __str__(self) -> str:
+        return f"<{self.__class__.__name__} {self.__annotations__}>".replace("{", r"{{").replace("[", r"[[")
 
 @dataclass
 class MessageSignal(Signal):
     message: str
 
+    def __str__(self) -> str:
+        return self.message
+
 @dataclass
 class CharacterSignal(Signal):
     message: str
     character: Fighter
+
+    def __str__(self) -> str:
+        return f"[[{self.character.display_name}] {self.message}"
 
 @dataclass
 class DebugSignal(Signal):
@@ -1027,6 +1034,9 @@ class AttackSignal(Signal):
     attacker: Fighter
     targets: tuple[Fighter, ...]
 
+    def __str__(self) -> str:
+        return f"[[{self.attacker.display_name} -> {', '.join([t.display_name for t in self.targets])}] {self.attack.name}: {self.message}"
+
 @dataclass
 class EffectSignal(Signal):
     message: str
@@ -1034,17 +1044,26 @@ class EffectSignal(Signal):
     source: Fighter
     target: Fighter
 
+    def __str__(self) -> str:
+        return f"[[{self.source.display_name} -> {self.target.display_name}] {self.effect.effect.name}: {self.message}"
+
 @dataclass
 class IndicatorSignal(Signal):
     target: Fighter
     typ: IndicatorType
     value: int | None = None
 
+    def __str__(self) -> str:
+        return f"[[{self.target.display_name}] ({self.value} {self.typ.name})"
+
 @dataclass
 class EffectIndicatorSignal(Signal):
     target: Fighter
     typ: Effect
     value: int | None = None
+
+    def __str__(self) -> str:
+        return f"[[{self.target.display_name}] ({self.value} {self.typ.name})"
 
 class Signals: # Can't be an enum if we want the cool type mapping in match blocks
     BASE = Signal
