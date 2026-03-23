@@ -179,7 +179,7 @@
         "title": "Elizabeth's Birthday \nExtravaganza 2024!",
         "desc": "{image=gui/inline_text/dx_text.png} The silly spin-off where Digi makes it \njust in time for Elizabeth's birthday!",
         "x_pos": 800,
-        "y_pos": 440,
+        "y_pos": 441,
         "kind": "label",
         "destination": "CSB3_EBEEP12024FDEADNYWFFEAGM",
         "need_label": "ce_epilogue"
@@ -196,8 +196,8 @@
     "pee": {
         "title": "Why Is My Pee Clear?",
         "desc": "{image=gui/inline_text/dx_text.png} For ages 18 months to 3 years.",
-        "x_pos": 772,
-        "y_pos": 536,
+        "x_pos": 774,
+        "y_pos": 540,
         "kind": "label",
         "destination": "book_peeing",
         "need_label": "ce_epilogue"
@@ -223,7 +223,7 @@
         "title": "Carrot Chop",
         "desc": "{image=gui/inline_text/ce_text.png} Chop to the beat!",
         "x_pos": 810,
-        "y_pos": 800,
+        "y_pos": 801,
         "kind": "label",
         "destination": "play_carrotgame",
         "need_label": "ce_win_carrot"
@@ -241,7 +241,7 @@
         "title": "Off To The Races!",
         "desc": "{image=gui/inline_text/dx_text.png} Race some trains!\n...Wait, who the fuck is Longas?",
         "x_pos": 792,
-        "y_pos": 800,
+        "y_pos": 801,
         "kind": "label",
         "destination": "play_toytrains_game",
         "need_label": "play_toytrains_game"

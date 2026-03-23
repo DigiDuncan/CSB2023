@@ -32,6 +32,14 @@
             "white_vignette"
         ]
     },
+
+    "beach":
+    {
+        "files": 
+        [
+            "NONE_YET_PLACEHOLDER"
+        ]
+    },
     "books_misc":
     {
         "files":
@@ -262,13 +270,6 @@
             "lupin_escape_1",
             "lupin_escape_2",
             "midwest_night"
-        ]
-    },
-    "unused":
-    {
-        "files":
-        [
-            "ALL"
         ]
     },
     "MAIN":
