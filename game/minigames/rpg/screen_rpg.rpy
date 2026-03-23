@@ -500,10 +500,58 @@ screen screen_rpg():
 
                         elif current_ally_mode == "TGT":
                             $ targets = RPG.encounter.possible_targets(current_ally, current_ally.next_attack.attack)
+
+                            # Create visual buttons for target selection
                             vbox:
-                                for target in targets:
-                                    textbutton target.display_name:
-                                        action [Function(working_list.append, target)]
+                                text "Select target:"
+                                hbox:
+                                    for target in targets:
+                                        frame:
+                                            background None
+                                            yoffset 20
+                                            xsize 200 ysize 148
+                                            button:
+                                                xalign 0.5 yalign 0
+
+                                                hover_sound "audio/sfx/sfx_select.ogg"
+                                                action [
+                                                    SelectedIf(target in working_list),
+                                                    Play("sound", "audio/sfx/sfx_valid.ogg"),
+                                                    Function(working_list.append, target)
+                                                    ]
+
+                                                # Conditional border because it was bothering me
+                                                python:
+                                                    if target in RPG.encounter.allies:
+                                                        border_img =  "gui/rpg/portraits/border_sel_a.png"
+                                                    else:
+                                                        border_img =  "gui/rpg/portraits/border_sel_e.png"
+
+                                                frame:
+                                                    xysize(88,88)
+                                                    xalign 0.5
+
+                                                    # Portrait shenanigans
+                                                    background target.portrait
+                                                    hover_background Transform(target.portrait, matrixcolor=shade_select_matrix)
+                                                    selected_background Composite(
+                                                        (88,88),
+                                                        (0,0), target.portrait,
+                                                        (0,0), border_img
+                                                    )
+                                                    selected_hover_background Composite(
+                                                        (88,88),
+                                                        (0,0), Transform(target.portrait, matrixcolor=shade_select_matrix),
+                                                        (0,0), border_img
+                                                    )
+
+                                                text "{size=-12}"+target.display_name:
+                                                    color "#FFFFFF"
+                                                    hover_color "#0099CC"
+                                                    selected_color "#FF8A00"
+                                                    selected_hover_color "#F5DD00"
+                                                    xalign 0.5 yalign 1.0
+                                                    text_align 0.5
 
                             python:
                                 # Set the attacks target list to our working list.
