@@ -10,7 +10,11 @@ init python:
         if preferences.text_beeps and play_beeps:
             if event == "show":
                 if beep is not None:
-                    renpy.sound.play(f"audio/text/{beep}.wav", channel = "beep", loop = True)
+                    if isinstance(beep, str):
+                        renpy.sound.play(f"audio/text/{beep}.wav", channel = "beep", loop = True)
+                    elif isinstance(beep, (list, tuple)):
+                        beep_choice = renpy.random.choice(beep)
+                        renpy.sound.play(f"audio/text/{beep_choice}.wav", channel = "beep", loop = True)
                 else:
                     renpy.sound.play(f"audio/text/ut.wav", channel = "beep", loop = True)
             elif event == "slow_done" or event == "end":
