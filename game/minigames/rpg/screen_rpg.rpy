@@ -326,7 +326,7 @@ screen rpg_stat_box(fighter, current_ally_mode):
 
 ######### ACTUAL SCREEN HERE
 
-screen screen_rpg():
+screen screen_rpg(no_stat_boxes = False):
     if RPG.encounter.won is None:
         $ renpy.suspend_rollback(True)
         $ current_ally = RPG.encounter.allies[RPG.encounter.subturn]
@@ -370,8 +370,9 @@ screen screen_rpg():
             grid len(RPG.encounter.enemies) 1:
                 xalign 0.5
                 xfill True
-                for e in range(len(RPG.encounter.enemies)):
-                    use rpg_stat_box(RPG.encounter.enemies[e], current_ally_mode)
+                if not no_stat_boxes:
+                    for e in range(len(RPG.encounter.enemies)):
+                        use rpg_stat_box(RPG.encounter.enemies[e], current_ally_mode)
 
         # Add player stat boxes
         frame:
@@ -383,8 +384,9 @@ screen screen_rpg():
             grid len(RPG.encounter.allies) 1:
                 xalign 0.5 yalign 1.0
                 xfill True
-                for a in range(len(RPG.encounter.allies)):
-                    use rpg_stat_box(RPG.encounter.allies[a], current_ally_mode)
+                if not no_stat_boxes:
+                    for a in range(len(RPG.encounter.allies)):
+                        use rpg_stat_box(RPG.encounter.allies[a], current_ally_mode)
 
         # This is the context menu of the RPG
         frame:
@@ -670,7 +672,7 @@ label play_rpggame:
     $ renpy.music.play(MUSIC_MAP[RPG.encounter.music]["file"])
     $ persistent.heard.add(str(RPG.encounter.music))
     # This is where the game actually takes place.
-    show screen screen_rpg() onlayer rpg_context
+    show screen screen_rpg(True) onlayer rpg_context
     show screen say_rpg(RPG.encounter.intro_text) onlayer rpg_say
     $ renpy.pause(delay=None, modal=True)
     hide screen screen_rpg
