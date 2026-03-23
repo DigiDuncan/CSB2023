@@ -74,7 +74,7 @@ define cultist = Character("Cultist", callback = renpy.partial(char_callback, na
 define cultist_2 = Character("Cultist 2", callback = char_callback)
 define cultist_3 = Character("Cultist 3", callback = char_callback)
 define gnome = Character("Gnome", callback = renpy.partial(char_callback, name = "gnome", beep = "gnome"))
-define host = Character("Host", callback = renpy.partial(char_callback, name = "mettaton", beep = "snd_mtt"), what_font = "8bitoperator_jve.ttf", what_size = 40)
+define host = Character("Host", callback = renpy.partial(char_callback, name = "mettaton", beep = ["snd_mtt1", "snd_mtt2", "snd_mtt3", "snd_mtt4", "snd_mtt5", "snd_mtt6", "snd_mtt7", "snd_mtt8", "snd_mtt9"]), what_font = "8bitoperator_jve.ttf", what_size = 40)
 define mario = Character("Mario", callback = renpy.partial(char_callback, name = "mario"))
 define peppino = Character("Peppino", callback = renpy.partial(char_callback, name = "peppino", beep = "peppino"))
 define pencil = Character("Pencil Greeter", callback =renpy.partial(char_callback, name = "pencil"))
