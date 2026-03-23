@@ -306,6 +306,7 @@ screen rpg_stat_box(fighter, current_ally_mode):
 
 screen screen_rpg():
     if RPG.encounter.won is None:
+        $ renpy.suspend_rollback(True)
 
         $ current_ally = RPG.encounter.allies[RPG.encounter.subturn]
         default current_ally_mode = None
@@ -629,6 +630,7 @@ label play_rpggame:
 ######### END BATTLE
 
 label pass_rpg:
+    $ renpy.suspend_rollback(False)
     $ renpy.hide_screen("say_rpg", layer="rpg_say", immediately=True)
     $ renpy.hide_screen("screen_rpg", layer="rpg_context", immediately=True)
 
