@@ -179,13 +179,13 @@ init:
         linear 1 rotate 960
 
     # TODO: tweak this as you wish, but be aware that it'll affect every script using it!
-    transform t_rpg_text(x,y,speed = 0.25):
+    transform t_rpg_text(x,y,speed = 0.25, direction = 1):
         on show:
             xpos x
             ypos y
             pass
             parallel:
-                linear speed ypos (y-0.05)
+                linear speed ypos (y - (0.05 * direction))
             parallel:
                 ease_expo 0.75 alpha 0.00
                 

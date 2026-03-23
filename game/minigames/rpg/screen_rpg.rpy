@@ -48,7 +48,6 @@ init python:
                 return signal
         renpy.restart_interaction()
         return None
-
 init:
     transform _rpg_intro:
         on show:
@@ -60,7 +59,6 @@ init:
             ease_expo 1 alpha 0.00
 
 ######### SAY SCREEN
-
 screen say_rpg(rpg_what):
     modal True
     python:
@@ -87,7 +85,6 @@ screen say_rpg(rpg_what):
                         text rpg_what
 
 ######### STAT BOXES
-
 screen rpg_stat_box(fighter, current_ally_mode):
     frame:
         xalign 0.5 yalign 1.0
@@ -115,7 +112,6 @@ screen rpg_stat_box(fighter, current_ally_mode):
                             background None
                             xsize 1.0 ysize 87
                             xalign 0.5 yalign 1.0
-
                             
                             imagebutton:
                                 align(0.0, 1.0)
@@ -420,18 +416,8 @@ screen screen_rpg(no_stat_boxes = False):
 
                         $ attack_actions = []
 
-                        # Signal processing mode
-                        if RPG.encounter.has_signals():
-                            $ signal = get_next_signal()
-                            if signal is not None:
-                                vbox:
-                                    text str(signal)
-                                    if isinstance(signal, RPG.IndicatorSignal):
-                                        text "{size=-12}{color=#AAAAAA}Pssst, Tate! This is an indicator! It's for [signal.target.name], it's type [signal.typ.name], and value [signal.value]!"
-                                    textbutton "Next" action Function(renpy.restart_interaction)
-
                         ### If you choose to attack, get access to the attacks.
-                        elif current_ally_mode == "ATK":
+                        if current_ally_mode == "ATK":
                             grid 2 1:
 
                                 ### Attack side
@@ -664,6 +650,38 @@ screen screen_rpg(no_stat_boxes = False):
                         xalign 0.5
                         text_align 0.5
                         size 21
+
+        # Signal processing mode
+        if RPG.encounter.has_signals():
+            $ signal = get_next_signal()
+            if signal is not None:
+                
+                $ output_string = "If you're reading this, something is broken!"
+                $ output_color = "#FFFF00"
+
+                # Handle visuals here
+                # TODO: these colors blow and also we need outlines
+                python:
+                    if isinstance(signal, RPG.IndicatorSignal):
+
+                        # Handle numbers
+                        if signal.value < 0:
+                            output_color = "#FF0000"
+                            output_string = "-" + str(signal.typ.value) + " " + str(signal.typ.name)
+                        else:
+                            output_color = "#00FF00"
+                            output_string = "+" + str(signal.typ.value) + " " + str(signal.typ.name)
+
+                if isinstance(signal, RPG.IndicatorSignal):   
+                    text output_string at t_rpg_text(0.5, 0.5):
+                        color output_color
+
+                # vbox:
+                #     text str(signal)
+                #     if isinstance(signal, RPG.IndicatorSignal):
+
+                #         text "{size=-12}{color=#AAAAAA}Pssst, Tate! This is an indicator! It's for [signal.target.name], it's type [signal.typ.name], and value [signal.value]!"
+                #     textbutton "Next" action Function(renpy.restart_interaction)
 
     # Debug
     # python:
