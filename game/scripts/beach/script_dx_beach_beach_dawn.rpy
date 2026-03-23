@@ -177,8 +177,10 @@ label beach.beach_dawn:
     show cs surprised beach flipped
     pause 2.0
     show cs disappointed beach
+    show obama beach flipped at offscreenright with { "master": MoveTransition(5.0) }
     cs "Yeah, so, uh, what was I talking about?"
     arceus "Y'know, I don't think I'm hungry anymore."
+    
 
 
         

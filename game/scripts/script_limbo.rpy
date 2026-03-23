@@ -101,17 +101,6 @@ label back_out_perfect_tate:
 
 ########## Game Menus ##########
 
-label chapter_select:
-    scene game_menu
-    stop music fadeout 3.0
-    window hide
-    pause 0.1
-    call screen chapter_menu()
-    return
-
-label dx_start:
-    call screen dx_select
-
 label kuwait_select:
     scene map_kuwait
     stop music
