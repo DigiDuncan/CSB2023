@@ -348,8 +348,8 @@ class AttackComponent(Attack):
         args = ', '.join([f"{k}={v}" for k, v in func.options.items()])
         name = f"_{func.func.__name__}({args})"
         description = "{color=#f00}If you're seeing this, there's a problem!{/color}"
-        self.component = True
         super().__init__(name, description, func, targets, target_count, cooldown, accuracy, start_used, typ = typ)
+        self.component = True
 
 class ComboAttack:
     """
