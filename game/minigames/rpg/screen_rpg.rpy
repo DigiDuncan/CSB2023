@@ -507,10 +507,8 @@ screen screen_rpg():
 
                             python:
                                 # Set the attacks target list to our working list.
-                                current_ally.next_targets = working_list
-
-                                # As it stands, this should always be true.
-                                if len(working_list) == current_ally.next_attack.attack.target_count:
+                                if len(working_list) == current_ally.next_attack.attack.target_count and current_ally_mode == "TGT":
+                                    current_ally.next_targets = working_list
                                     if RPG.encounter.subturn + 1 != len(RPG.encounter.allies):
                                         RPG.encounter.subturn += 1
                                     current_ally_mode = None
