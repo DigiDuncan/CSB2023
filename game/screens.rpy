@@ -700,14 +700,14 @@ style about_label_text:
 ## www.renpy.org/doc/html/screen_special.html#load
 
 screen save():
-
+    on "show" action Stop("beep")
     tag menu
 
     use file_slots(_("Save"))
 
 
 screen load():
-
+    on "show" action Stop("beep")
     tag menu
 
     use file_slots(_("Load"))
@@ -842,6 +842,7 @@ style slot_button_text:
 ## https://www.renpy.org/doc/html/screen_special.html#preferences
 
 screen preferences():
+    on "show" action Stop("beep")
     tag menu
 
     use game_menu(_("Preferences"), scroll="viewport"):
@@ -1103,7 +1104,7 @@ style slider_vbox:
 ## https://www.renpy.org/doc/html/history.html
 
 screen history():
-
+    on "show" action Stop("beep")
     tag menu
 
     ## Avoid predicting this screen, as it can be very large.
@@ -1191,7 +1192,7 @@ style history_label_text:
 ## help.
 
 screen help():
-
+    on "show" action Stop("beep")
     tag menu
 
     default device = "keyboard"
