@@ -911,40 +911,40 @@ screen preferences():
                             null width 20
                             label "[awawa_chance_label]" yoffset -33 xminimum 200
                 vbox:
-                    if config.has_music:
-                        hbox:
-                            label _("Music Volume")
-                            if config.has_music or config.has_sound or config.has_voice:
-                                null width 50
-                                textbutton _("Mute All Audio"):
-                                    action Preference("all mute", "toggle")
-                                    style "mute_all_button"
-                                    yoffset 5
-                        hbox:
-                            bar value Preference("music volume"):
-                                xsize 450
-                            null width 20
-                            # label "[preferences.__dict__['volumes']['music'] * 100:.2f]%" yoffset -10 xminimum 200
+                    hbox:
+                        label _("Music Volume")
+                        null width 50
+                        textbutton _("Mute All Audio"):
+                            action Preference("all mute", "toggle")
+                            style "mute_all_button"
+                            yoffset 5
+                    hbox:
+                        bar value Preference("music volume"):
+                            xsize 450
+                        null width 20
 
-                    if config.has_sound:
-                        label _("Sound Volume")
-                        hbox:
-                            bar value Preference("sound volume"):
-                                xsize 450
-                            null width 20
-                            # label "[preferences.__dict__['volumes']['sfx'] * 100:.2f]%" yoffset -10 xminimum 200
-                            if config.sample_sound:
-                                textbutton _("Test") action Play("sound", config.sample_sound)
+                    label _("Sound Volume")
+                    hbox:
+                        bar value Preference("sound volume"):
+                            xsize 450
+                        null width 20
+                        if config.sample_sound:
+                            textbutton _("Test") action Play("sound", config.sample_sound)
 
-                    if config.has_voice:
-                        label _("Beep Volume")
-                        hbox:
-                            bar value Preference("voice volume"):
-                                xsize 450
-                            null width 20
-                            # label "[preferences.__dict__['volumes']['voice'] * 100:.2f]%" yoffset -10 xminimum 200
-                            if config.sample_voice:
-                                textbutton _("Test") action Play("voice", config.sample_voice)
+                    label _("Beep Volume")
+                    hbox:
+                        bar value Preference("voice volume"):
+                            xsize 450
+                        null width 20
+                        if config.sample_voice:
+                            textbutton _("Test") action Play("voice", config.sample_voice)
+
+                    label _("Menu Music Volume")
+                    hbox:
+                        bar value Preference("mixer menumusic volume"):
+                            xsize 450
+                        null width 20
+
             null height 10
             vbox:
                 xsize 0.75

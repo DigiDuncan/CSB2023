@@ -14,6 +14,7 @@ init python:
     renpy.music.register_channel("jukebox", "music")
     renpy.music.register_channel("notification", "sfx")
     renpy.music.register_channel("dxcom", "sfx")
+    renpy.music.register_channel("menumusic", "menumusic")
 
 init 10 python:
     def unlock_all():
@@ -319,10 +320,10 @@ label before_main_menu:
 
         if not persistent.seen_splash:
             if not renpy.music.is_playing():
-                renpy.music.play("bubble_tea.ogg", loop = False)
+                renpy.music.play("bubble_tea.ogg", loop = False, channel = "menumusic")
         else:
             if not renpy.music.is_playing():
-                renpy.music.play("<from 16.53>bubble_tea.ogg", loop = False)
+                renpy.music.play("<from 16.53>bubble_tea.ogg", loop = False, channel = "menumusic")
                 persistent.seen_splash = False
     return
 

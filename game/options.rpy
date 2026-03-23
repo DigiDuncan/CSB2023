@@ -151,6 +151,8 @@ default preferences.developer_mode = True
 default preferences.awawa_mode = False
 default preferences.awawa_chance = 100
 
+default preferences.volume.menunmusic = 0.75
+
 default preferences.text_cps = 40.0
 
 
@@ -239,5 +241,6 @@ init python:
 # define build.itch_project = "renpytom/test-project"
 
 define config.default_music_volume = 0.75
+define config.default_menumusic_volume = 0.75
 define config.default_sfx_volume = 0.75
 define config.default_voice_volume = 0.75
