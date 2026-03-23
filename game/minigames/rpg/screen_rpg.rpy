@@ -21,10 +21,32 @@ init python:
     renpy.add_layer("rpg_context", above="master")
     renpy.add_layer("rpg_say", above="rpg_context")
 
-    # This probably shouldn't be here!
-    # Where should it be? Who knows! But it can't be in either the
-    # rpg_target_select screen or screen_rpg since both screens need to access it.
+    # Moving these things outside to here so that they can be accessed by the screen
+    # and by functions. This isn't an ideal solution but nothing here is.
     working_list = []
+    current_ally_mode = None
+
+    def select_target(target):
+        global current_ally_mode
+        current_ally = RPG.encounter.allies[RPG.encounter.subturn]
+
+        working_list.append(target)
+        if len(working_list) == current_ally.next_attack.attack.target_count:
+            current_ally.next_targets = working_list
+            if RPG.encounter.subturn + 1 != len(RPG.encounter.allies):
+                RPG.encounter.subturn += 1
+            current_ally_mode = None
+            renpy.restart_interaction()
+
+    def get_next_signal():
+        while RPG.encounter.has_signals():
+            signal = RPG.encounter.get_next_signal()
+            if isinstance(signal, RPG.DebugSignal):
+                continue
+            else:
+                return signal
+        renpy.restart_interaction()
+        return None
 
 init:
     transform _rpg_intro:
@@ -100,7 +122,7 @@ screen rpg_stat_box(fighter, current_ally_mode):
                                 hover_sound "audio/sfx/sfx_select.ogg"
                                 action [
                                     Play("sound", "audio/sfx/sfx_valid.ogg"),
-                                    SetScreenVariable("current_ally_mode", "ATK")
+                                    SetVariable("current_ally_mode", "ATK")
                                     # Notify("Attack pressed on fighter "+str(fighter.display_name)+"!")
                                 ]
 
@@ -112,7 +134,7 @@ screen rpg_stat_box(fighter, current_ally_mode):
                                 hover_sound "audio/sfx/sfx_select.ogg"
                                 action [
                                     Play("sound", "audio/sfx/sfx_valid.ogg"),
-                                    SetScreenVariable("current_ally_mode", "DEF")
+                                    SetVariable("current_ally_mode", "DEF")
                                     # Notify("Defend pressed on fighter "+str(fighter.display_name)+"!")
                                 ]
 
@@ -129,7 +151,7 @@ screen rpg_stat_box(fighter, current_ally_mode):
                         xysize(475,105)
                         action [
                             SetVariable("RPG.encounter.subturn", RPG.encounter.allies.index(fighter)),
-                            SetScreenVariable("current_ally_mode", None)
+                            SetVariable("current_ally_mode", None)
                         ]
                             
             ###### Begin common items
@@ -307,9 +329,7 @@ screen rpg_stat_box(fighter, current_ally_mode):
 screen screen_rpg():
     if RPG.encounter.won is None:
         $ renpy.suspend_rollback(True)
-
         $ current_ally = RPG.encounter.allies[RPG.encounter.subturn]
-        default current_ally_mode = None
 
         # Drawing the enemies in the background.
         frame:
@@ -393,16 +413,11 @@ screen screen_rpg():
 
                         # Signal processing mode
                         if RPG.encounter.has_signals():
-                            python:
-                                while RPG.encounter.has_signals():
-                                    signal = RPG.encounter.get_next_signal()
-                                    if isinstance(signal, RPG.DebugSignal):
-                                        continue
-                                    else:
-                                        break
-                            vbox:
-                                text str(signal)
-                                textbutton "Next" action Function(renpy.restart_interaction)
+                            $ signal = get_next_signal()
+                            if signal is not None:
+                                vbox:
+                                    text str(signal)
+                                    textbutton "Next" action Function(renpy.restart_interaction)
 
                         ### If you choose to attack, get access to the attacks.
                         elif current_ally_mode == "ATK":
@@ -428,7 +443,7 @@ screen screen_rpg():
                                                     # If the attack is not available, make this insensitive
                                                     $ attack_actions.append(Function(current_ally.set_next_attack, attack))
                                                     $ attack_actions.append(Function(clear_list, working_list))
-                                                    $ attack_actions.append(SetScreenVariable("current_ally_mode", "TGT"))
+                                                    $ attack_actions.append(SetVariable("current_ally_mode", "TGT"))
 
                                                     # Adds selectable attack texts/descriptions
                                                     button:
@@ -472,7 +487,7 @@ screen screen_rpg():
                             frame:
                                 background None
                                 python:
-                                    if (RPG.encounter.subturn+1 != len(RPG.encounter.allies)):
+                                    if (RPG.encounter.subturn+1 != len(RPG.encounter.allies)) and current_ally_mode == "DEF":
                                         attack_actions.append(IncrementVariable("RPG.encounter.subturn"))
 
                                 grid 2 1:
@@ -494,7 +509,7 @@ screen screen_rpg():
                                             action [
                                                 Play("sound", "audio/sfx/sfx_valid.ogg"),
                                                 Function(attack_actions.append, Function(current_ally.set_next_attack, RPG.encounter.DEFEND_ACTION)),
-                                                SetScreenVariable("current_ally_mode", None),
+                                                SetVariable("current_ally_mode", None),
                                                 attack_actions
                                             ]
 
@@ -517,7 +532,7 @@ screen screen_rpg():
                                                 action [
                                                     SelectedIf(target in working_list),
                                                     Play("sound", "audio/sfx/sfx_valid.ogg"),
-                                                    Function(working_list.append, target)
+                                                    Function(select_target, target)
                                                     ]
 
                                                 # Conditional border because it was bothering me
@@ -552,15 +567,6 @@ screen screen_rpg():
                                                     selected_hover_color "#F5DD00"
                                                     xalign 0.5 yalign 1.0
                                                     text_align 0.5
-
-                            python:
-                                # Set the attacks target list to our working list.
-                                if len(working_list) == current_ally.next_attack.attack.target_count and current_ally_mode == "TGT":
-                                    current_ally.next_targets = working_list
-                                    if RPG.encounter.subturn + 1 != len(RPG.encounter.allies):
-                                        RPG.encounter.subturn += 1
-                                    current_ally_mode = None
-                                    renpy.restart_interaction()
 
                         ### Default text
                         else:

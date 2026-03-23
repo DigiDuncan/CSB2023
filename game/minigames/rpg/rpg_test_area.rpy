@@ -2,13 +2,22 @@ screen rpg_test_grounds():
     modal True
 
     if my_silly_variable == "A":
-        $ print("A")
+        $ print("Screen A")
+        python:
+            if my_silly_variable == "A":
+                print("Python A")
         text "A"
     elif my_silly_variable == "B":
-        $ print("B")
+        $ print("Screen B")
+        python:
+            if my_silly_variable == "B":
+                print("Python B")
         text "B"
     elif my_silly_variable == "C":
-        $ print("C")
+        $ print("Screen C")
+        python:
+            if my_silly_variable == "C":
+                print("Python C")
         text "C"
 
 label awawa_rpg_test:
