@@ -30,7 +30,8 @@ init python:
         global current_ally_mode
         current_ally = RPG.encounter.allies[RPG.encounter.subturn]
 
-        working_list.append(target)
+        if target is not None:
+            working_list.append(target)
         if len(working_list) == current_ally.next_attack.attack.target_count:
             current_ally.next_targets = working_list
             if RPG.encounter.subturn + 1 != len(RPG.encounter.allies):
@@ -521,6 +522,10 @@ screen screen_rpg(no_stat_boxes = False):
 
                         elif current_ally_mode == "TGT":
                             $ targets = RPG.encounter.possible_targets(current_ally, current_ally.next_attack.attack)
+
+                            python:
+                                if current_ally.next_attack.attack.target_count == 0:
+                                    select_target(None)
 
                             # Create visual buttons for target selection
                             vbox:
