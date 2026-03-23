@@ -485,12 +485,8 @@ screen screen_rpg():
                                             ]
 
                         elif current_ally_mode == "TGT":
-                            $ print("We're in the TGT block!")
-                            $ print(f"According to screen language, the current_ally_mode is {current_ally_mode}")
                             python:
-                                print(f"According to Python, the current_ally_mode is {current_ally_mode}")
                                 if current_ally_mode == "TGT":
-                                    print("We're running the TGT code!")
                                     # Get all reasonable targets.
                                     targets = RPG.encounter.possible_targets(current_ally, current_ally.next_attack.attack)
                                     # Randomly choose an amount of targets for the attack to hit.
@@ -502,9 +498,9 @@ screen screen_rpg():
                                     # As it stands, this should always be true.
                                     if len(working_list) == current_ally.next_attack.attack.target_count:
                                         if RPG.encounter.subturn + 1 != len(RPG.encounter.allies):
-                                            print("Subturn bumped!")
                                             RPG.encounter.subturn += 1
                                         current_ally_mode = None
+                                    renpy.restart_interaction()
 
                         ### Default text
                         else:
@@ -519,12 +515,12 @@ screen screen_rpg():
                                             if current_ally.next_attack.attack.target_count == 0:
                                                 text current_ally.display_name+" will use "+current_ally.next_attack.name+"!"
                                             else:
-                                                # TODO: make this able to handle cases where one fighter is selected more than once
                                                 python:
                                                     targets_list = []
                                                     for t in current_ally.next_targets:
-                                                        targets_list.append(t.display_name)
-                                                    targets_list = sentence_join(targets_list, oxford=True)
+                                                        targets_list.append(t)
+                                                    targets_list = list(set(targets_list))
+                                                    targets_list = sentence_join([t.display_name for t in targets_list], oxford=True)
 
                                                 text current_ally.display_name+" will use "+current_ally.next_attack.name+" on "+targets_list+"!"
                                         else:
@@ -604,10 +600,11 @@ label play_rpggame:
     hide screen say_rpg
     while RPG.encounter.won is None:
         call screen screen_rpg()
-        $ RPG.rpg_logger.debug(f"=== TURN {RPG.encounter.turn} ===")
-        $ RPG.encounter.run_attacks()
-        $ RPG.encounter.run_effects()
-        $ RPG.encounter.cleanup_turn()
+        python:
+            RPG.rpg_logger.debug(f"=== TURN {RPG.encounter.turn} ===")
+            RPG.encounter.run_attacks()
+            RPG.encounter.run_effects()
+            RPG.encounter.cleanup_turn()
         if RPG.encounter.won is not None:
             jump pass_rpg
         # Visuals and stuff need to go here.
