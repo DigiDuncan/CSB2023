@@ -116,29 +116,33 @@ screen rpg_stat_box(fighter, current_ally_mode):
                             xsize 1.0 ysize 87
                             xalign 0.5 yalign 1.0
 
-                            if current_ally_mode != "TGT":
-                                imagebutton:
-                                    align(0.0, 1.0)
-                                    idle "gui/rpg/attack_button.png"
-                                    hover "selectable:gui/rpg/attack_button.png"
-                                    hover_sound "audio/sfx/sfx_select.ogg"
-                                    action [
-                                        Play("sound", "audio/sfx/sfx_valid.ogg"),
-                                        SetVariable("current_ally_mode", "ATK")
-                                        # Notify("Attack pressed on fighter "+str(fighter.display_name)+"!")
-                                    ]
+                            
+                            imagebutton:
+                                align(0.0, 1.0)
+                                idle "gui/rpg/attack_button.png"
+                                hover "selectable:gui/rpg/attack_button.png"
+                                insensitive "insensitive:gui/rpg/attack_button.png"
+                                hover_sound "audio/sfx/sfx_select.ogg"
+                                action [
+                                    SensitiveIf(current_ally_mode != "TGT"),
+                                    Play("sound", "audio/sfx/sfx_valid.ogg"),
+                                    SetVariable("current_ally_mode", "ATK")
+                                    # Notify("Attack pressed on fighter "+str(fighter.display_name)+"!")
+                                ]
 
-                                # The defend button
-                                imagebutton:
-                                    align(1.0, 1.0)
-                                    idle "gui/rpg/defend_button.png"
-                                    hover "selectable:gui/rpg/defend_button.png"
-                                    hover_sound "audio/sfx/sfx_select.ogg"
-                                    action [
-                                        Play("sound", "audio/sfx/sfx_valid.ogg"),
-                                        SetVariable("current_ally_mode", "DEF")
-                                        # Notify("Defend pressed on fighter "+str(fighter.display_name)+"!")
-                                    ]
+                            # The defend button
+                            imagebutton:
+                                align(1.0, 1.0)
+                                idle "gui/rpg/defend_button.png"
+                                hover "selectable:gui/rpg/defend_button.png"
+                                insensitive "insensitive:gui/rpg/defend_button.png"
+                                hover_sound "audio/sfx/sfx_select.ogg"
+                                action [
+                                    SensitiveIf(current_ally_mode != "TGT"),
+                                    Play("sound", "audio/sfx/sfx_valid.ogg"),
+                                    SetVariable("current_ally_mode", "DEF")
+                                    # Notify("Defend pressed on fighter "+str(fighter.display_name)+"!")
+                                ]
 
                 ### For unselected allies
                 else:
@@ -149,13 +153,13 @@ screen rpg_stat_box(fighter, current_ally_mode):
                     xysize(475,105)
                     yalign 1.0
 
-                    if current_ally_mode != "TGT":
-                        button:
-                            xysize(475,105)
-                            action [
-                                SetVariable("RPG.encounter.subturn", RPG.encounter.allies.index(fighter)),
-                                SetVariable("current_ally_mode", None)
-                            ]
+                    button:
+                        xysize(475,105)
+                        action [
+                            SensitiveIf(current_ally_mode != "TGT"),
+                            SetVariable("RPG.encounter.subturn", RPG.encounter.allies.index(fighter)),
+                            SetVariable("current_ally_mode", None)
+                        ]
 
             ###### Begin common items
             frame:

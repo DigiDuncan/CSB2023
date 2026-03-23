@@ -70,6 +70,30 @@ init -10 python:
     config.displayable_prefix["selectable"] = shade_select
     config.displayable_prefix["selectable:flip"] = shade_select_flip
 
+    ########## BLACK/WHITE FILTER
+    shade_bw_matrix = SaturationMatrix(0)
+
+    def shade_bw(s):
+        return Transform(s, xzoom = 1, matrixcolor = shade_bw_matrix)
+
+    def shade_bw_flip(s):
+        return Transform(s, xzoom = 1, matrixcolor = shade_bw_matrix)
+
+    config.displayable_prefix["bw"] = shade_bw
+    config.displayable_prefix["bw:flip"] = shade_bw_flip
+
+    ########## ALT INSENSITIVE FILTER IF THE ONE ABOVE DOES NOT WORK
+    shade_insensitive_matrix = TintMatrix("#888888")
+
+    def shade_insensitive(s):
+        return Transform(s, xzoom = 1, matrixcolor = shade_insensitive_matrix)
+
+    def shade_insensitive_flip(s):
+        return Transform(s, xzoom = 1, matrixcolor = shade_insensitive_matrix)
+
+    config.displayable_prefix["insensitive"] = shade_insensitive
+    config.displayable_prefix["insensitive:flip"] = shade_insensitive_flip
+
     ########## SPRITE FLIPPER
     def xflip(s):
         return Transform(s, xzoom = -1)

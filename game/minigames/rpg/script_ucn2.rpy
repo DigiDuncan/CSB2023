@@ -417,7 +417,7 @@ screen _ucn2_selection():
                 ready_transform = _rpg_ready_button_no
 
         imagebutton:
-            insensitive "sepia:gui/rpg/ready.png"
+            insensitive "bw:gui/rpg/ready.png"
             idle "gui/rpg/ready.png"
             hover "selectable:gui/rpg/ready.png"
             hover_sound "audio/sfx/sfx_select.ogg"
