@@ -306,7 +306,7 @@ screen rpg_stat_box(fighter, current_ally_mode):
                                         hover effect_hover_icon
                                         hover_sound "audio/sfx/sfx_select.ogg"
                                         action NullAction()
-                                        tooltip [effect.name, effect.description, str(checked_effects[effect]), f"from {sentence_join(effect_sources[effect])}"]
+                                        tooltip [effect.name, effect.description, str(checked_effects[effect]), f"From {sentence_join(effect_sources[effect], oxford=True)}"]
 
                                     if checked_effects[effect] > 1:
                                         text str(checked_effects[effect]):
@@ -610,9 +610,20 @@ screen screen_rpg():
         $ effect_info = GetTooltip()
         $ get_mouse()
         if effect_info:
+
+            # Prevent box going offscreen on the right   
+            python:
+                if mouse_xy[0] + 125 > 1920:
+                    effect_desc_xpos = 1797
+                else:
+                    effect_desc_xpos = mouse_xy[0]
+
+            # Actually draw it
             frame:
                 xanchor 0.5 yanchor 0
-                xpos mouse_xy[0] ypos mouse_xy[1] # TODO: need to figure out proper positioning
+
+                xpos effect_desc_xpos 
+                ypos mouse_xy[1]
                 xmaximum 250
 
                 vbox:
