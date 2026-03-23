@@ -363,7 +363,7 @@ init python:
         if oxford:
             ox = ","
 
-        return f"{', '.join(items[:-1])}{ox} {joiner} {items[-1]}"
+        return f"{', '.join(items[:-1])}{ox if len(items) >= 3 else ''} {joiner} {items[-1]}"
 
     # FUN VALUES
     renpy.image("_fun_value", "gui/fun_value/fun_value.png")
