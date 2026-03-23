@@ -143,9 +143,21 @@ define config.font_name_map["jp"] = "MochiyPopOne-Regular.ttf"
 # Register other fonts
 define config.font_name_map["azsz"] = "AllerDisplay_Std_Rg_0.ttf"
 
-# Force multilingual text for music popup, jukebox, credits
-define config.font_name_map["music_text"] = FontGroup().add("FiraCode-Retina.ttf", 0x2206, 0x2206).add("Yokelvision.otf", 0x0000, 0x2212).add("MochiyPopOne-Regular.ttf", 0x0000, 0xffff)
-define config.font_name_map["credits_music"] = FontGroup().add("FiraCode-Retina.ttf", 0x2206, 0x2206).add("impact.ttf", 0x0000, 0x2212).add("CP_Font_1.otf", 0x0000, 0xffff)
+# Force multilingual text for music popup, jukebox, credits 
+# They must be loaded in order of priority.
+# Silly triangle first, then JP text, then EN fallback
+# This version now has scaling, so the JP text won't be MASSIVE in comparison to the EN text
+init python:
+    config.font_name_map["music_text"] = FontGroup().add("FiraCode-Retina.ttf", 0x2206, 0x2206).add("MochiyPopOne-Regular.ttf", 0x3000, 0x9fff).add("Yokelvision.otf", 0x0000, 0xffff)
+    config.font_name_map["credits_music"] = FontGroup().add("FiraCode-Retina.ttf", 0x2206, 0x2206).add("CP_Font_1.otf", 0x3000, 0x9fff).add("impact.ttf", 0x0000, 0xffff)
+
+    config.ftfont_scale["FiraCode-Retina.ttf"] = 0.825
+    config.ftfont_scale["MochiyPopOne-Regular.ttf"] = 0.75
+    config.ftfont_scale["CP_Font_1.otf"] = 0.825
+
+    config.ftfont_vertical_extent_scale["FiraCode-Retina.ttf"] = 1.0
+    config.ftfont_vertical_extent_scale["MochiyPopOne-Regular.ttf"] = 1.0
+    config.ftfont_vertical_extent_scale["CP_Font_1.otf"] = 1.0
 
 # NO MORE MOUSE CURSOR HOUDINI
 define config.mouse_hide_time = None
