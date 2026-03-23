@@ -39,15 +39,25 @@ init python:
             current_ally_mode = None
             renpy.restart_interaction()
 
-    def get_next_signal():
+    def get_next_signal() -> RPG.Signal | None:
         while RPG.encounter.has_signals():
             signal = RPG.encounter.get_next_signal()
             if isinstance(signal, RPG.DebugSignal):
                 continue
             else:
                 return signal
-        renpy.restart_interaction()
         return None
+
+    def get_next_signals() -> list[RPG.Signal]:
+        signals = []
+        while RPG.encounter.has_signals():
+            signal = RPG.encounter.get_next_signal()
+            if isinstance(signal, RPG.DebugSignal):
+                continue
+            else:
+                return signals.append(signal)
+        return signals
+
 init:
     transform _rpg_intro:
         on show:
