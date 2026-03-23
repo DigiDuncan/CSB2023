@@ -94,11 +94,40 @@ init -1 python:
     CREDITS_MAP = j
 
 init python:
+    # Add more screen layers
     renpy.add_layer("popup", above = "overlay")
     renpy.add_layer("music", above = "master")
     renpy.add_layer("flashlight", below = "music")
     renpy.add_layer("fun_icon", above = "flashlight")
 
+    # Load and create font groups.
+    # The character sets must be loaded in order of priority.
+    # Silly triangle first, then JP text, then CN text, then EN fallback
+    # This version now has scaling, so the JP text won't be MASSIVE in comparison to the EN text
+
+    # Register CJK fonts
+    config.font_name_map["cn"] = "ZCOOLKuaiLe-Regular.ttf"
+    config.font_name_map["jp"] = "MochiyPopOne-Regular.ttf"
+
+    # Register other fonts
+    config.font_name_map["azsz"] = "AllerDisplay_Std_Rg_0.ttf"
+
+    # Force multilingual text for music popup, jukebox, credits 
+    config.font_name_map["music_text"] = FontGroup().add("FiraCode-Retina.ttf", 0x2206, 0x2206).add("MochiyPopOne-Regular.ttf", 0x3000, 0x9fff).add("Yokelvision.otf", 0x0000, 0xffff)
+    config.font_name_map["credits_music"] = FontGroup().add("FiraCode-Retina.ttf", 0x2206, 0x2206).add("CP_Font_1.otf", 0x3000, 0x9fff).add("impact.ttf", 0x0000, 0xffff)
+
+    # Scale all fonts here (overall size first, then line spacing if needed)
+    config.ftfont_scale["ZCOOLKuaiLe-Regular.ttf"] = 0.75
+    config.ftfont_scale["FiraCode-Retina.ttf"] = 0.825
+    config.ftfont_scale["MochiyPopOne-Regular.ttf"] = 0.75
+    config.ftfont_scale["CP_Font_1.otf"] = 0.825
+
+    config.ftfont_vertical_extent_scale["ZCOOLKuaiLe-Regular.ttf"] = 1.0
+    config.ftfont_vertical_extent_scale["FiraCode-Retina.ttf"] = 1.0
+    config.ftfont_vertical_extent_scale["MochiyPopOne-Regular.ttf"] = 1.0
+    config.ftfont_vertical_extent_scale["CP_Font_1.otf"] = 1.0
+
+# Default values for unlocks, etc
 define determination = Dissolve(0.0)
 default translate_this_line = ""
 default persistent.seen = set()
@@ -135,29 +164,6 @@ default persistent.csb3b_unlocked = False
 default persistent.carrot_fails = 0
 default persistent.saved_christmas = False
 default persistent.point_and_clicked = set()
-
-# Register CJK fonts
-define config.font_name_map["cn"] = "ZCOOLKuaiLe-Regular.ttf"
-define config.font_name_map["jp"] = "MochiyPopOne-Regular.ttf"
-
-# Register other fonts
-define config.font_name_map["azsz"] = "AllerDisplay_Std_Rg_0.ttf"
-
-# Force multilingual text for music popup, jukebox, credits 
-# They must be loaded in order of priority.
-# Silly triangle first, then JP text, then EN fallback
-# This version now has scaling, so the JP text won't be MASSIVE in comparison to the EN text
-init python:
-    config.font_name_map["music_text"] = FontGroup().add("FiraCode-Retina.ttf", 0x2206, 0x2206).add("MochiyPopOne-Regular.ttf", 0x3000, 0x9fff).add("Yokelvision.otf", 0x0000, 0xffff)
-    config.font_name_map["credits_music"] = FontGroup().add("FiraCode-Retina.ttf", 0x2206, 0x2206).add("CP_Font_1.otf", 0x3000, 0x9fff).add("impact.ttf", 0x0000, 0xffff)
-
-    config.ftfont_scale["FiraCode-Retina.ttf"] = 0.825
-    config.ftfont_scale["MochiyPopOne-Regular.ttf"] = 0.75
-    config.ftfont_scale["CP_Font_1.otf"] = 0.825
-
-    config.ftfont_vertical_extent_scale["FiraCode-Retina.ttf"] = 1.0
-    config.ftfont_vertical_extent_scale["MochiyPopOne-Regular.ttf"] = 1.0
-    config.ftfont_vertical_extent_scale["CP_Font_1.otf"] = 1.0
 
 # NO MORE MOUSE CURSOR HOUDINI
 define config.mouse_hide_time = None
