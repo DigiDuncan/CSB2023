@@ -4,7 +4,7 @@ from digiformatter import styles
 
 __all__ = ["debug", "info", "warn", "error", "critical", "log"]
 
-styles.create("debug", fg="blue", prefix="DBG")                               # DEBUG
+styles.create("debug", fg="cyan", prefix="DBG")                               # DEBUG
 styles.create("info", prefix="INF")                                           # INFO
 styles.create("warning", fg="yellow", prefix="WRN")                           # WARNING
 styles.create("warn", fg="yellow", prefix="WRN")                              # WARN
