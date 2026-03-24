@@ -496,10 +496,6 @@ screen screen_rpg(no_stat_boxes = False):
                         elif current_ally_mode == "DEF":
                             frame:
                                 background None
-                                python:
-                                    if (RPG.encounter.subturn+1 != len(RPG.encounter.allies)) and current_ally_mode == "DEF":
-                                        attack_actions.append(IncrementVariable("RPG.encounter.subturn"))
-
                                 grid 2 1:
                                     frame:
                                         background None
@@ -518,9 +514,9 @@ screen screen_rpg(no_stat_boxes = False):
                                             hover_sound "audio/sfx/sfx_select.ogg"
                                             action [
                                                 Play("sound", "audio/sfx/sfx_valid.ogg"),
-                                                Function(attack_actions.append, Function(current_ally.set_next_attack, RPG.encounter.DEFEND_ACTION)),
+                                                Function(current_ally.set_next_attack, RPG.encounter.DEFEND_ACTION),
                                                 SetVariable("current_ally_mode", None),
-                                                attack_actions
+                                                IncrementVariable("RPG.encounter.subturn")
                                             ]
 
                         elif current_ally_mode == "TGT":
