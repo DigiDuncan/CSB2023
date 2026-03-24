@@ -74,7 +74,9 @@ screen say_rpg(rpg_what):
     python:
         show_window = False
         renpy.choice_for_skipping()
-    key "dismiss" action []
+    key "dismiss" action [ 
+        Hide("say_rpg", immediately=True)
+    ]
 
     frame:
         xalign 0.5 yalign 1.0
@@ -668,6 +670,7 @@ screen screen_rpg(no_stat_boxes = False):
                 
                 $ output_string = "If you're reading this, something is broken!"
                 $ output_color = "#FFFF00"
+                $ output_say = "If you're reading this, something is wrong!"
 
                 # Handle visuals here
                 # TODO: these colors blow and also we need outlines
@@ -685,6 +688,10 @@ screen screen_rpg(no_stat_boxes = False):
                 if isinstance(signal, RPG.IndicatorSignal):   
                     text output_string at t_rpg_text(0.5, 0.5):
                         color output_color
+
+                    $ output_say = str(output_string) + "!\nAwawa! The other text should go here!\n{size=-12}(Also, look in the top left corner and click a few times!)"
+
+                    use say_rpg( output_say )
 
                 # vbox:
                 #     text str(signal)
