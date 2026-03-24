@@ -50,7 +50,7 @@ def sentence_join(items, *, joiner=None, oxford=False) -> str:
     if oxford:
         ox = ","
 
-    return f"{', '.join(items[:-1])}{ox} {joiner} {items[-1]}"
+    return f"{', '.join(items[:-1])}{ox if len(items) >= 3 else ''} {joiner} {items[-1]}"
 
 # TODO:
 # - Effect messages, they can be done in the effect functions, but this excludes when they decay due to duration
