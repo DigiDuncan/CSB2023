@@ -453,6 +453,11 @@ screen screen_rpg(no_stat_boxes = False):
                                                     $ attack_actions.append(Function(current_ally.set_next_attack, attack))
                                                     $ attack_actions.append(Function(clear_list, working_list))
                                                     $ attack_actions.append(SetVariable("current_ally_mode", "TGT"))
+                                                    
+                                                    # This might be needed if the attack has 0 targets
+                                                    python:
+                                                        if attack.attack.target_count == 0:
+                                                            attack_actions.append(Function(current_ally.set_next_targets, []))
 
                                                     # Adds selectable attack texts/descriptions
                                                     button:
