@@ -344,7 +344,7 @@ screen rpg_stat_box(fighter, current_ally_mode):
 screen screen_rpg(no_stat_boxes = False):
     if RPG.encounter.won is None:
         $ renpy.suspend_rollback(True)
-        $ current_ally = RPG.encounter.allies[RPG.encounter.subturn]
+        $ current_ally = RPG.encounter.allies[RPG.encounter.subturn % len(RPG.encounter.allies)]
 
         # Drawing the enemies in the background.
         frame:
