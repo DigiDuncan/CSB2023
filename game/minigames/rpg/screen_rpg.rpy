@@ -426,8 +426,6 @@ screen screen_rpg(no_stat_boxes = False):
                         background None
                         xsize 1.0 ysize 1.0
 
-                        $ attack_actions = []
-
                         ### If you choose to attack, get access to the attacks.
                         if current_ally_mode == "ATK":
                             grid 2 1:
@@ -446,55 +444,53 @@ screen screen_rpg(no_stat_boxes = False):
                                         grid 2 len(current_ally.attacks) / 2 + 1:
                                             xsize 0.5 ysize 0.5
 
-                                            if RPG.encounter.subturn < len(RPG.encounter.allies):
-                                                for attack in current_ally.attacks:
-
+                                            for attack in current_ally.attacks:
+                                                python:
+                                                    attack_actions = []
                                                     # If the attack is not available, make this insensitive
-                                                    $ attack_actions.append(Function(current_ally.set_next_attack, attack))
-                                                    $ attack_actions.append(Function(clear_list, working_list))
-                                                    $ attack_actions.append(SetVariable("current_ally_mode", "TGT"))
-                                                    
+                                                    attack_actions.append(Function(current_ally.set_next_attack, attack))
+                                                    attack_actions.append(Function(clear_list, working_list))
+                                                    attack_actions.append(SetVariable("current_ally_mode", "TGT"))
                                                     # This might be needed if the attack has 0 targets
-                                                    python:
-                                                        if attack.attack.target_count == 0:
-                                                            attack_actions.append(Function(current_ally.set_next_targets, []))
+                                                    if attack.attack.target_count == 0:
+                                                        attack_actions.append(Function(current_ally.set_next_targets, []))
 
-                                                    # Adds selectable attack texts/descriptions
-                                                    button:
-                                                        xfill True
-                                                        yminimum 1.0 ymaximum 120
-                                                        hover_sound "audio/sfx/sfx_select.ogg"
-                                                        action [
-                                                            Play("sound", "audio/sfx/sfx_valid.ogg"),
-                                                            *attack_actions
-                                                        ]
-                                                        if not attack.available:
-                                                            sensitive False
+                                                # Adds selectable attack texts/descriptions
+                                                button:
+                                                    xfill True
+                                                    yminimum 1.0 ymaximum 120
+                                                    hover_sound "audio/sfx/sfx_select.ogg"
+                                                    action [
+                                                        Play("sound", "audio/sfx/sfx_valid.ogg"),
+                                                        *attack_actions
+                                                    ]
+                                                    if not attack.available:
+                                                        sensitive False
 
-                                                        frame:
-                                                            background None
-                                                            yalign 0.5
+                                                    frame:
+                                                        background None
+                                                        yalign 0.5
 
-                                                            vbox:
-                                                                text "{size=40}"+attack.name+" {/size}{size=21}("+attack.attack.properties+"){/size}":
-                                                                    if attack is current_ally.next_attack:
-                                                                        color "#FF8A00"
-                                                                        hover_color "#F5DD00"
-                                                                        insensitive_color "#888888"
-                                                                    else:
-                                                                        color "#FFFFFF"
-                                                                        hover_color "#0099CC"
-                                                                        insensitive_color "#888888"
-                                                                text "{size=21}"+attack.attack.description+"{/size}":
-                                                                    first_indent 32
-                                                                    if attack is current_ally.next_attack:
-                                                                        color "#844200"
-                                                                        hover_color "#7B6F00"
-                                                                        insensitive_color "#888888"
-                                                                    else:
-                                                                        color "#848484"
-                                                                        hover_color "#006582"
-                                                                        insensitive_color "#888888"
+                                                        vbox:
+                                                            text "{size=40}"+attack.name+" {/size}{size=21}("+attack.attack.properties+"){/size}":
+                                                                if attack is current_ally.next_attack:
+                                                                    color "#FF8A00"
+                                                                    hover_color "#F5DD00"
+                                                                    insensitive_color "#888888"
+                                                                else:
+                                                                    color "#FFFFFF"
+                                                                    hover_color "#0099CC"
+                                                                    insensitive_color "#888888"
+                                                            text "{size=21}"+attack.attack.description+"{/size}":
+                                                                first_indent 32
+                                                                if attack is current_ally.next_attack:
+                                                                    color "#844200"
+                                                                    hover_color "#7B6F00"
+                                                                    insensitive_color "#888888"
+                                                                else:
+                                                                    color "#848484"
+                                                                    hover_color "#006582"
+                                                                    insensitive_color "#888888"
                                
                         ### If you choose to defend, do that.
                         elif current_ally_mode == "DEF":
@@ -531,8 +527,9 @@ screen screen_rpg(no_stat_boxes = False):
                             $ targets = RPG.encounter.possible_targets(current_ally, current_ally.next_attack.attack)
 
                             python:
-                                if current_ally.next_attack.attack.target_count == 0:
-                                    select_target(None)
+                                if current_ally_mode == "TGT":
+                                    if current_ally.next_attack.attack.target_count == 0:
+                                        select_target(None)
 
                             # Create visual buttons for target selection
                             vbox:
