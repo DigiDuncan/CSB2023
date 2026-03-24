@@ -111,9 +111,9 @@ screen rpg_stat_box(fighter, current_ally_mode):
 
             ### For allies
             if fighter in RPG.encounter.allies:
+                $ current_fighter = RPG.encounter.allies[RPG.encounter.subturn % len(RPG.encounter.allies)]
                 ### If this ally is selected
-                # TODO: we have GOT to figure out why these checks crash unless we do it like this
-                if RPG.encounter.allies[RPG.encounter.subturn] and RPG.encounter.allies[RPG.encounter.subturn] == fighter:
+                if current_fighter and current_fighter == fighter:
 
                     if fighter in RPG.encounter.allies:
                         background "gui/rpg/tall_box.png"
