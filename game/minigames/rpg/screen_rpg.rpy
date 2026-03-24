@@ -98,6 +98,7 @@ screen say_rpg(rpg_what):
 
 ######### STAT BOXES
 screen rpg_stat_box(fighter, current_ally_mode):
+    $ current_fighter = RPG.encounter.allies[RPG.encounter.subturn % len(RPG.encounter.allies)]
     frame:
         xalign 0.5 yalign 1.0
 
@@ -111,7 +112,6 @@ screen rpg_stat_box(fighter, current_ally_mode):
 
             ### For allies
             if fighter in RPG.encounter.allies:
-                $ current_fighter = RPG.encounter.allies[RPG.encounter.subturn % len(RPG.encounter.allies)]
                 ### If this ally is selected
                 if current_fighter and current_fighter == fighter:
 
