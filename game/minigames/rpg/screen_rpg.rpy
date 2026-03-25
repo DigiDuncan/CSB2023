@@ -686,10 +686,10 @@ screen screen_rpg(no_stat_boxes = False):
                 if isinstance(signal, RPG.IndicatorSignal):   
                     text output_string at t_rpg_text(0.5, 0.5):
                         color output_color
+                        outlines [(5, "#000000", absolute(0), absolute(0))]
 
-                    $ output_say = str(output_string) + "!\nAwawa! The other text should go here!\n{size=-12}(Also, look in the top left corner and click a few times!)"
-
-                    use say_rpg( output_say )
+                #elif isinstance(signal, RPG.MessageSignal):   
+                    use say_rpg( str(signal.value) )
 
                 # vbox:
                 #     text str(signal)
