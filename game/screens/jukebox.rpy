@@ -7,6 +7,11 @@ init python:
 
 screen jukebox():
     tag menu
+
+    on "show":
+        action [
+            ToggleMute( ["music", "sound", "menumusic"] )
+        ]
   
     python:
         music_count = len(MUSIC_MAP.keys())
@@ -232,18 +237,16 @@ screen jukebox():
                                         jukebox_trivia = ""
 
                                 text "{size=-12}[jukebox_trivia]{/size}":
-                                    xalign 0.5 yalign 0.5
+                                    xalign 0.5 yalign 0
                                     text_align 0.5
 
-###################################################### BOTTOM BUTTONS
+###################################################### BOTTOM BUTTON
 
     textbutton "Back":
         yoffset 1000 xoffset 25
         action [
             Stop("jukebox"),
-            SetMute("jukebox", True),
-            SetMute("music", False),
-            SetMute("sound", False),
+            ToggleMute( ["music", "sound", "menumusic"] ),
             SelectedIf(False),
             ShowMenu("subgame")
         ]

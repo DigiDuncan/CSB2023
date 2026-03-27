@@ -24,7 +24,7 @@ init python:
     else:
         max_fun_label = "Off"
 
-    awawa_chance_label = f"{preferences.awawa_chance}%" if preferences.awawa_mode else "Off"
+    awawa_chance_label = f"{preferences.awawa_chance}%" if preferences.awawa_mode else "100%"
 
     def change_bounciness(new_bounciness):
         global bounciness_label
