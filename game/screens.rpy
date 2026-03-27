@@ -1,5 +1,11 @@
 init python:
 
+    def britishpound():
+        if not "gb_pound" in persistent.unlocked_achievements:
+            chievos = (a for a in achievement_manager.achievements.values() if a.id == "gb_pound")
+            renpy.show_screen("popup", next(chievos))
+            achievement_manager.unlock("gb_pound", show_screen = False)
+
     bounciness_label = f"+{preferences.csbounciness}%" if preferences.csbounciness else "Default"
 
     max_fun_label = ""
@@ -72,6 +78,7 @@ init python:
                 mixer_volume[m] = preferences.get_mixer(m)
 
         force_mute = not force_mute
+     
 
     def fix_text():
         if gui.text_font == "dyslexia":
@@ -907,7 +914,8 @@ screen preferences():
                         label "Text Settings"
                         textbutton _("Dyslexia Mode"):
                             action [ 
-                                SetVariable("preferences.dyslexia_mode", True),
+                                ToggleVariable("preferences.dyslexia_mode"),
+                                SelectedIf( preferences.dyslexia_mode == True ),
                                 gui.TogglePreference("font", "dyslexia", "default"),
                                 Function(fix_text)
                             ]
@@ -974,7 +982,10 @@ screen preferences():
                             hovered [Function(get_mouse), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
                             tooltip _("Enable character speech.")
                         textbutton _("Mute ALL Audio"):
-                            action [Function(toggle_mute)]
+                            action [ 
+                                Function(toggle_mute),
+                                SelectedIf(force_mute == True)
+                            ]
 
                     # Channel volume sliders
                     vbox:
@@ -1321,12 +1332,6 @@ screen help():
             elif device == "gamepad":
                 use gamepad_help
 
-init python:
-    def britishpound():
-        if not "gb_pound" in persistent.unlocked_achievements:
-            chievos = (a for a in achievement_manager.achievements.values() if a.id == "gb_pound")
-            renpy.show_screen("popup", next(chievos))
-            achievement_manager.unlock("gb_pound", show_screen = False)
 screen keyboard_help():
 
     hbox:
