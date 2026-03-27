@@ -142,6 +142,7 @@ init python:
 
 # Default values for unlocks, etc
 define determination = Dissolve(0.0)
+define persistent.force_mute = False
 default translate_this_line = ""
 default persistent.seen = set()
 default persistent.heard = set()

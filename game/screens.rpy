@@ -58,14 +58,13 @@ init python:
         awawa_chance_label = f"{preferences.awawa_chance}%" if preferences.awawa_mode else "Off"
         renpy.restart_interaction()
 
-    force_mute = False
+   
     mixer_volume = {}
 
     def toggle_mute():
         mixers = renpy.music.get_all_mixers()
-        global force_mute
 
-        if force_mute:
+        if persistent.force_mute:
             # Set all the volume back.
             for m in mixers:
                 preferences.set_mixer(m, mixer_volume[m])
@@ -75,7 +74,7 @@ init python:
                 mixer_volume[m] = preferences.get_mixer(m)
                 preferences.set_mixer(m, 0.0)
 
-        force_mute = not force_mute
+        persistent.force_mute = not persistent.force_mute
      
 
     def fix_text():
@@ -982,14 +981,14 @@ screen preferences():
                         textbutton _("Mute ALL Audio"):
                             action [ 
                                 Function(toggle_mute),
-                                SelectedIf(force_mute == True)
+                                SelectedIf(persistent.force_mute == True)
                             ]
 
                     # Channel volume sliders
                     vbox:
                         style_prefix "slider"
 
-                        if force_mute == False:
+                        if persistent.force_mute == False:
                             label _("Music Volume")
                             hbox:
                                 bar value Preference("music volume"):
