@@ -989,38 +989,44 @@ screen preferences():
                     vbox:
                         style_prefix "slider"
 
-                        label _("Music Volume")
-                        hbox:
-                            bar value Preference("music volume"):
-                                xsize 675
-                            null width 20
-                            label str(round(_preferences.get_mixer("music")*100))+"%" xminimum 200 yoffset -12
+                        if force_mute == False:
+                            label _("Music Volume")
+                            hbox:
+                                bar value Preference("music volume"):
+                                    xsize 675
+                                null width 20
+                                label str(round(_preferences.get_mixer("music")*100))+"%" xminimum 200 yoffset -12
 
-                        label _("Sound Volume")
-                        hbox:
-                            bar value Preference("sound volume"):
-                                xsize 675
-                            null width 20
-                            label str(round(_preferences.get_mixer("sfx")*100))+"%" xminimum 200 yoffset -12
-                            if config.sample_sound:
-                                textbutton _("Test") action Play("sound", config.sample_sound)
+                            label _("Sound Volume")
+                            hbox:
+                                bar value Preference("sound volume"):
+                                    xsize 675
+                                null width 20
+                                label str(round(_preferences.get_mixer("sfx")*100))+"%" xminimum 200 yoffset -12
+                                if config.sample_sound:
+                                    textbutton _("Test") action Play("sound", config.sample_sound)
 
-                        label _("Beep Volume")
-                        hbox:
-                            bar value Preference("voice volume"):
-                                xsize 675
-                            null width 20
-                            label str(round(_preferences.get_mixer("voice")*100))+"%" xminimum 200 yoffset -12
-                            if config.sample_voice:
-                                textbutton _("Test") action Play("voice", config.sample_voice)
+                            label _("Beep Volume")
+                            hbox:
+                                bar value Preference("voice volume"):
+                                    xsize 675
+                                null width 20
+                                label str(round(_preferences.get_mixer("voice")*100))+"%" xminimum 200 yoffset -12
+                                if config.sample_voice:
+                                    textbutton _("Test") action Play("voice", config.sample_voice)
 
-                        label _("Menu Music Volume")
-                        hbox:
-                            bar value Preference("mixer menumusic volume"):
-                                xsize 675
-                            null width 20
-                            label str(round(_preferences.get_mixer("menumusic")*100))+"%" xminimum 200 yoffset -12
-
+                            label _("Menu Music Volume")
+                            hbox:
+                                bar value Preference("mixer menumusic volume"):
+                                    xsize 675
+                                null width 20
+                                label str(round(_preferences.get_mixer("menumusic")*100))+"%" xminimum 200 yoffset -12
+                        else:
+                            text _("Audio is muted."):
+                                color "#888888"
+                                xalign 0.5 yoffset 120
+                                text_align 0.5
+                                italic True
 
         ##### Gameplay options - bounciness, joke toggles, awawa mode (if unlocked), streamer mode, clear data
         elif preferences_category == "Gameplay":

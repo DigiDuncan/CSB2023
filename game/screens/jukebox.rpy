@@ -7,7 +7,7 @@ init python:
 
 screen jukebox():
     tag menu
-
+  
     python:
         music_count = len(MUSIC_MAP.keys())
         unlocked_music_count = len(persistent.heard)
@@ -174,66 +174,76 @@ screen jukebox():
                         xsize 1200 ysize 175
                         xalign 0.5 yalign 1.0
 
-                        ####### CONTROLS
-                        frame:
-                            background None
-                            xsize 1200 ysize 64
-                            xalign 0.5 yalign 0
+                        vbox:
+                            ####### CONTROLS
+                            frame:
+                                background None
+                                xsize 1200
+                                xalign 0.5 yalign 0
+                                padding (20,20,20,20)
 
-                            if jukebox_playing:
-                                imagebutton:
-                                    at transform:
-                                        xalign 0.5 yalign 0.5
-                                        zoom 0.125
-                                    idle "gui/pause.png"
-                                    hover "gui/pause.png" # TODO: Actually make an image for this - Arc
-                                    action [
-                                        PauseAudio("jukebox", True),
-                                        SetScreenVariable("jukebox_playing", False)
-                                    ]
-                            else:
-                                imagebutton:
-                                    at transform:
-                                        xalign 0.5 yalign 0.5
-                                        zoom 0.125
-                                    idle "gui/play.png"
-                                    hover "gui/play.png" # TODO: Actually make an image for this - Arc
-                                    action [
-                                        PauseAudio("jukebox", False),
-                                        SetScreenVariable("jukebox_playing", True)
-                                    ]
+                                vbox:
+                                    spacing 20
+                                    xsize 0.5
+                                    xalign 0.5
 
-                        ####### TRIVIA
-                        frame:
-                            background None
-                            xsize 0.9 ysize 115
-                            xalign 0.5 yalign 1.0
-                            yoffset 25
-                            python:
-                                try:
-                                    jukebox_trivia = current_track["trivia"]
-                                except:
-                                    jukebox_trivia = ""
+                                    # Add progress bar
+                                    python:
+                                        current_pos = AudioPositionValue(channel='jukebox', update_interval=0.1)
 
-                            text "{size=-12}[jukebox_trivia]{/size}":
-                                xalign 0.5 yalign 0.5
-                                text_align 0.5
+                                    bar:
+                                        xalign 0.5
+                                        style "slider"
+                                        value current_pos
+                                        
+                                    # Pause button
+                                    if jukebox_playing:
+                                        imagebutton:
+                                            at transform:
+                                                xalign 0.5 yalign 0.5
+                                                zoom 0.125
+                                            idle "gui/pause.png"
+                                            hover "gui/pause.png" # TODO: Actually make an image for this - Arc
+                                            action [
+                                                PauseAudio("jukebox", True),
+                                                SetScreenVariable("jukebox_playing", False)
+                                            ]
+                                    else:
+                                        imagebutton:
+                                            at transform:
+                                                xalign 0.5 yalign 0.5
+                                                zoom 0.125
+                                            idle "gui/play.png"
+                                            hover "gui/play.png" # TODO: Actually make an image for this - Arc
+                                            action [
+                                                PauseAudio("jukebox", False),
+                                                SetScreenVariable("jukebox_playing", True)
+                                            ]
+
+                            ####### TRIVIA
+                            frame:
+                                background None
+                                xsize 0.9 ysize 115
+                                xalign 0.5 yalign 0
+                                python:
+                                    try:
+                                        jukebox_trivia = current_track["trivia"]
+                                    except:
+                                        jukebox_trivia = ""
+
+                                text "{size=-12}[jukebox_trivia]{/size}":
+                                    xalign 0.5 yalign 0.5
+                                    text_align 0.5
 
 ###################################################### BOTTOM BUTTONS
 
     textbutton "Back":
-        yoffset 950 xoffset 25
-        action [
-            Stop("jukebox"),
-            Function(renpy.music.set_volume, 1.0, 0.5, channel="music"),
-            SelectedIf(False),
-            ShowMenu("subgame")
-        ]
-    textbutton "Main Menu":
         yoffset 1000 xoffset 25
         action [
             Stop("jukebox"),
-            Function(renpy.music.set_volume, 1.0, 0.5, channel="music"),
+            SetMute("jukebox", True),
+            SetMute("music", False),
+            SetMute("sound", False),
             SelectedIf(False),
-            Return()
+            ShowMenu("subgame")
         ]
