@@ -52,6 +52,33 @@ init python:
         awawa_chance_label = f"{preferences.awawa_chance}%" if preferences.awawa_mode else "Off"
         renpy.restart_interaction()
 
+    force_mute = False
+    mixer_volume = {}
+
+    def toggle_mute():
+        mixers = renpy.music.get_all_mixers()
+        global force_mute
+
+        for m in mixers:
+            preferences.set_mute(m, not force_mute)
+
+        if force_mute:
+            # Set all the volume back.
+            for m in mixers:
+                preferences.set_mixer(m, mixer_volume[m])
+        else:
+            # Remember all the volume.
+            for m in mixers:
+                mixer_volume[m] = preferences.get_mixer(m)
+
+        force_mute = not force_mute
+
+    def fix_text():
+        if gui.text_font == "dyslexia":
+            config.font_name_map["music_text"] = DYSLEXIA_GROUP
+        else:
+            config.font_name_map["music_text"] = REGULAR_GROUP
+
 ################################################################################
 ## Initialization
 ################################################################################
@@ -881,7 +908,8 @@ screen preferences():
                         textbutton _("Dyslexia Mode"):
                             action [ 
                                 SetVariable("preferences.dyslexia_mode", True),
-                                gui.TogglePreference("font", "dyslexia", "default") 
+                                gui.TogglePreference("font", "dyslexia", "default"),
+                                Function(fix_text)
                             ]
                             hovered [Function(get_mouse), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
                             tooltip _("Changes to an easier-to-read font.")
@@ -946,7 +974,7 @@ screen preferences():
                             hovered [Function(get_mouse), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
                             tooltip _("Enable character speech.")
                         textbutton _("Mute ALL Audio"):
-                            action Preference("all mute", "toggle")
+                            action [Function(toggle_mute)]
 
                     # Channel volume sliders
                     vbox:
