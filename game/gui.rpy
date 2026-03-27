@@ -56,7 +56,6 @@ define gui.interface_text_color = '#ffffff'
 
 ## Fonts and Font Sizes ########################################################
 
-# TODO: Make these variable to use the font names defined in 01_early_execute
 ## The font used for in-game text.
 define gui.text_font = gui.preference("font", "default")
 

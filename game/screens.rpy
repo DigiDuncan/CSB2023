@@ -853,17 +853,17 @@ screen preferences():
         hbox:
             spacing 20
             style_prefix "radio"
-            textbutton "Screen" action SetScreenVariable("preferences_category", "Screen")
-            textbutton "Audio" action SetScreenVariable("preferences_category", "Audio")
-            textbutton "Gameplay" action SetScreenVariable("preferences_category", "Gameplay")
+            textbutton "{size=+12}Screen" action SetScreenVariable("preferences_category", "Screen")
+            textbutton "{size=+12}Audio" action SetScreenVariable("preferences_category", "Audio")
+            textbutton "{size=+12}Gameplay" action SetScreenVariable("preferences_category", "Gameplay")
             if preferences.developer_mode or persistent.creative_mode:
-                textbutton "Developer" action SetScreenVariable("preferences_category", "Developer")
+                textbutton "{size=+12}Developer" action SetScreenVariable("preferences_category", "Developer")
             null height 100
 
         #####  Screen Options - these include screen size and text options such as skip/speed/dyslexia mode
         if preferences_category == "Screen":
-            vbox:
-                hbox:
+            hbox:
+                vbox:
                     box_wrap True
 
                     # Fullscreen / Windowed
@@ -882,7 +882,7 @@ screen preferences():
                             action [ 
                                 SetVariable("preferences.dyslexia_mode", True),
                                 gui.TogglePreference("font", "dyslexia", "default") 
-                                ]
+                            ]
                             hovered [Function(get_mouse), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
                             tooltip _("Changes to an easier-to-read font.")
 
@@ -945,8 +945,8 @@ screen preferences():
                         textbutton _("Text Beeps") action ToggleField(preferences, "text_beeps"):
                             hovered [Function(get_mouse), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
                             tooltip _("Enable character speech.")
-                        textbutton _("Mute ALL Audio") action Preference("all mute", "toggle")
-
+                        textbutton _("Mute ALL Audio"):
+                            action Preference("all mute", "toggle")
 
                     # Channel volume sliders
                     vbox:
@@ -957,12 +957,14 @@ screen preferences():
                             bar value Preference("music volume"):
                                 xsize 675
                             null width 20
+                            label str(round(_preferences.get_mixer("music")*100))+"%" xminimum 200 yoffset -12
 
                         label _("Sound Volume")
                         hbox:
                             bar value Preference("sound volume"):
                                 xsize 675
                             null width 20
+                            label str(round(_preferences.get_mixer("sfx")*100))+"%" xminimum 200 yoffset -12
                             if config.sample_sound:
                                 textbutton _("Test") action Play("sound", config.sample_sound)
 
@@ -971,6 +973,7 @@ screen preferences():
                             bar value Preference("voice volume"):
                                 xsize 675
                             null width 20
+                            label str(round(_preferences.get_mixer("voice")*100))+"%" xminimum 200 yoffset -12
                             if config.sample_voice:
                                 textbutton _("Test") action Play("voice", config.sample_voice)
 
@@ -979,6 +982,7 @@ screen preferences():
                             bar value Preference("mixer menumusic volume"):
                                 xsize 675
                             null width 20
+                            label str(round(_preferences.get_mixer("menumusic")*100))+"%" xminimum 200 yoffset -12
 
 
         ##### Gameplay options - bounciness, joke toggles, awawa mode (if unlocked), streamer mode, clear data
