@@ -852,15 +852,12 @@ screen preferences():
         ##### Tabs go here.
         hbox:
             spacing 20
-            frame:
-                textbutton "Screen" action SetScreenVariable("preferences_category", "Screen")
-            frame:
-                textbutton "Audio" action SetScreenVariable("preferences_category", "Audio")
-            frame:
-                textbutton "Gameplay" action SetScreenVariable("preferences_category", "Gameplay")
+            style_prefix "radio"
+            textbutton "Screen" action SetScreenVariable("preferences_category", "Screen")
+            textbutton "Audio" action SetScreenVariable("preferences_category", "Audio")
+            textbutton "Gameplay" action SetScreenVariable("preferences_category", "Gameplay")
             if preferences.developer_mode or persistent.creative_mode:
-                frame: 
-                    textbutton "Developer" action SetScreenVariable("preferences_category", "Developer")
+                textbutton "Developer" action SetScreenVariable("preferences_category", "Developer")
             null height 100
 
         #####  Screen Options - these include screen size and text options such as skip/speed/dyslexia mode
@@ -878,6 +875,7 @@ screen preferences():
                             textbutton _("Fullscreen") action Preference("display", "fullscreen")
 
                     # Dyslexia mode
+                    # TODO: Make this variable to use the font names defined in 01_early_execute
                     vbox:
                         style_prefix "check"
                         label "Text Settings"
@@ -912,7 +910,7 @@ screen preferences():
                             range 100
                             xsize 675
                         null width 20
-                        label  "[preferences.__dict__['text_cps']:.1f]cps" xminimum 200
+                        label  "[preferences.__dict__['text_cps']:.1f]cps" xminimum 200 yoffset -12
 
 
                     # Auto-forward
@@ -929,7 +927,7 @@ screen preferences():
                             range 100
                             xsize 675
                         null width 20
-                        label "[preferences.__dict__['afm_time']:.1f]s" xminimum 200
+                        label "[preferences.__dict__['afm_time']:.1f]s" xminimum 200 yoffset -12
 
 
         ##### Audio options - these include all the music volume sliders and ability to mute all audio
@@ -1024,7 +1022,7 @@ screen preferences():
                                         xsize 675
                                         changed(change_bounciness)
                                     null width 20
-                                    label "[bounciness_label]"
+                                    label "[bounciness_label]" xminimum 200 yoffset -12
                                 label _("Max Bounciness Rarity")
                                 hbox:
                                     bar:
@@ -1034,7 +1032,7 @@ screen preferences():
                                         xsize 675
                                         changed(change_max_fun)
                                     null width 20
-                                    label "[max_fun_label]" xminimum 200
+                                    label "[max_fun_label]" xminimum 200 yoffset -12
                         
                             if persistent.awawa_mode == True and preferences.awawa_mode:
                                 label _("Awawa Chance")
@@ -1046,7 +1044,7 @@ screen preferences():
                                         xsize 675
                                         changed(change_awawa_chance)
                                     null width 20
-                                    label "[awawa_chance_label]" xminimum 200
+                                    label "[awawa_chance_label]" xminimum 200 yoffset -12
 
                         null height 20
 

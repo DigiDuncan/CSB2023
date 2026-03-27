@@ -110,6 +110,8 @@ init python:
     config.font_name_map["jp"] = "MochiyPopOne-Regular.ttf"
 
     # Register other fonts
+    config.font_name_map["default"] = "Yokelvision.otf"
+    config.font_name_map["dyslexia"] = "comic.ttf" # Dyslexia mode
     config.font_name_map["azsz"] = "AllerDisplay_Std_Rg_0.ttf"
 
     # Force multilingual text for music popup, jukebox, credits 
@@ -121,11 +123,13 @@ init python:
     config.ftfont_scale["FiraCode-Retina.ttf"] = 0.825
     config.ftfont_scale["MochiyPopOne-Regular.ttf"] = 0.75
     config.ftfont_scale["CP_Font_1.otf"] = 0.825
+    config.ftfont_scale["comic.ttf"] = 0.75 # Dyslexia mode
 
     config.ftfont_vertical_extent_scale["ZCOOLKuaiLe-Regular.ttf"] = 1.0
     config.ftfont_vertical_extent_scale["FiraCode-Retina.ttf"] = 1.0
     config.ftfont_vertical_extent_scale["MochiyPopOne-Regular.ttf"] = 1.0
     config.ftfont_vertical_extent_scale["CP_Font_1.otf"] = 1.0
+    config.ftfont_vertical_extent_scale["comic.ttf"] = 1.0  # Dyslexia mode
 
 # Default values for unlocks, etc
 define determination = Dissolve(0.0)
