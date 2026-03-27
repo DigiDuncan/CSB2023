@@ -845,168 +845,238 @@ screen preferences():
     on "show" action Stop("beep")
     tag menu
 
-    use game_menu(_("Preferences"), scroll="viewport"):
-        vbox:
-            hbox:
-                box_wrap True
+    use game_menu(_("CSettings"), scroll="viewport"):
 
-                if renpy.variant("pc") or renpy.variant("web"):
+        default preferences_category = "Screen"
+
+        ##### Tabs go here.
+        hbox:
+            spacing 20
+            frame:
+                textbutton "Screen" action SetScreenVariable("preferences_category", "Screen")
+            frame:
+                textbutton "Audio" action SetScreenVariable("preferences_category", "Audio")
+            frame:
+                textbutton "Gameplay" action SetScreenVariable("preferences_category", "Gameplay")
+            if preferences.developer_mode or persistent.creative_mode:
+                frame: 
+                    textbutton "Developer" action SetScreenVariable("preferences_category", "Developer")
+            null height 100
+
+        #####  Screen Options - these include screen size and text options such as skip/speed/dyslexia mode
+        if preferences_category == "Screen":
+            vbox:
+                hbox:
+                    box_wrap True
+
+                    # Fullscreen / Windowed
+                    if renpy.variant("pc") or renpy.variant("web"):
+                        vbox:
+                            style_prefix "radio"
+                            label _("Display")
+                            textbutton _("Window") action Preference("display", "window")
+                            textbutton _("Fullscreen") action Preference("display", "fullscreen")
+
+                    # Dyslexia mode
                     vbox:
-                        style_prefix "radio"
-                        label _("Display")
-                        textbutton _("Window") action Preference("display", "window")
-                        textbutton _("Fullscreen") action Preference("display", "fullscreen")
+                        style_prefix "check"
+                        label "Text Settings"
+                        textbutton _("Dyslexia Mode"):
+                            action [ gui.TogglePreference("font", "fonts/comic.ttf", "fonts/Yokelvision.otf"), gui.TogglePreference("fsm", 0.75, 1) ]
+                            hovered [Function(get_mouse), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
+                            tooltip _("Changes to an easier-to-read font.")
+
+                    # Skip text
+                    vbox:
+                        style_prefix "check"
+                        label _("Skip")
+                        textbutton _("Unseen Text") action Preference("skip", "toggle")
+                        textbutton _("After Choices") action Preference("after choices", "toggle")
+                        textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
 
                 vbox:
-                    style_prefix "check"
-                    label _("Skip")
-                    textbutton _("Unseen Text") action Preference("skip", "toggle")
-                    textbutton _("After Choices") action Preference("after choices", "toggle")
-                    textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
-
-                vbox:
-                    style_prefix "check"
-                    label "Game Settings"
-                    textbutton _("Text Beeps") action ToggleField(preferences, "text_beeps")
-                    textbutton _("Streamer Mode") action ToggleField(preferences, "streamer_mode")
-                    textbutton _("Dyslexia Mode") action gui.TogglePreference("font", "fonts/comic.ttf", "fonts/Yokelvision.otf"), gui.TogglePreference("fsm", 0.75, 1)
-                    textbutton _("Developer Mode") action ToggleField(preferences, "developer_mode")
-
-            hbox:
-                style_prefix "slider"
-                box_wrap True
-                vbox:
+                    style_prefix "slider"
+                    
+                    # Text speed
                     hbox:
                         label _("Text Speed")
-                        textbutton _("{size=-10}Reset") action SetField(preferences, "text_cps", 40) yoffset 5
+                        
+                        textbutton _("Reset"):
+                            action SetField(preferences, "text_cps", 40)
+                            xalign 1.0 yalign 1.0
+                            text_size 24 text_align 1.0
                     hbox:
-                        bar value Preference("text speed"):
-                            xsize 450
+                        bar:
+                            style "slider"
+                            value Preference("text speed")
+                            range 100
+                            xsize 675
                         null width 20
-                        label "[preferences.__dict__['text_cps']:.1f]cps" yoffset -10 xminimum 200
-                    hbox:
-                        label _("Auto-Forward Time") yoffset -12
-                        textbutton _("{size=-10}Reset") action SetField(preferences, "afm_time", 15) yoffset -9
-                    hbox:
-                        bar value Preference("auto-forward time"):
-                            xsize 450
-                            yoffset -12
-                        null width 20
-                        label "[preferences.__dict__['afm_time']:.1f]s" yoffset -22 xminimum 200
+                        label  "[preferences.__dict__['text_cps']:.1f]cps" xminimum 200
 
-                    if persistent.awawa_mode == True:
+
+                    # Auto-forward
+                    hbox:
+                        label _("Auto-Forward Time")
+                        textbutton _("Reset"):
+                            action SetField(preferences, "afm_time", 15)
+                            xalign 1.0 yalign 1.0
+                            text_size 24 text_align 1.0
+                    hbox:
+                        bar:
+                            style "slider"
+                            value Preference("auto-forward time")
+                            range 100
+                            xsize 675
+                        null width 20
+                        label "[preferences.__dict__['afm_time']:.1f]s" xminimum 200
+
+
+        ##### Audio options - these include all the music volume sliders and ability to mute all audio
+        elif preferences_category == "Audio":
+            vbox:
+                hbox:
+                    box_wrap True
+                    
+                    # Mute certain things
+                    vbox:
+                        style_prefix "check"
+                        label _("Audio Options")
+                        textbutton _("Text Beeps") action ToggleField(preferences, "text_beeps"):
+                            hovered [Function(get_mouse), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
+                            tooltip _("Enable character speech.")
+                        textbutton _("Mute ALL Audio") action Preference("all mute", "toggle")
+
+
+                    # Channel volume sliders
+                    vbox:
+                        style_prefix "slider"
+
+                        label _("Music Volume")
                         hbox:
-                            style_prefix "check"
+                            bar value Preference("music volume"):
+                                xsize 675
+                            null width 20
+
+                        label _("Sound Volume")
+                        hbox:
+                            bar value Preference("sound volume"):
+                                xsize 675
+                            null width 20
+                            if config.sample_sound:
+                                textbutton _("Test") action Play("sound", config.sample_sound)
+
+                        label _("Beep Volume")
+                        hbox:
+                            bar value Preference("voice volume"):
+                                xsize 675
+                            null width 20
+                            if config.sample_voice:
+                                textbutton _("Test") action Play("voice", config.sample_voice)
+
+                        label _("Menu Music Volume")
+                        hbox:
+                            bar value Preference("mixer menumusic volume"):
+                                xsize 675
+                            null width 20
+
+
+        ##### Gameplay options - bounciness, joke toggles, awawa mode (if unlocked), streamer mode, clear data
+        elif preferences_category == "Gameplay":
+            
+            vbox:
+                hbox:
+                    box_wrap True
+
+                    vbox:
+                        style_prefix "check"
+                        label _("Gameplay Settings")
+                        textbutton _("Streamer Mode") action ToggleField(preferences, "streamer_mode"):
+                            hovered [Function(get_mouse), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
+                            tooltip _("For those who want to see the true ending quickly.")
+                        textbutton _("Toggle Bounciness") action ToggleField(preferences, "bounciness_enable"): 
+                            hovered [Function(get_mouse), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
+                            tooltip _("Silly, random events that add jokes and scenes to the story.")
+                        textbutton _("Musical Puns") action ToggleField(preferences, "music_joke_enable"):
+                            hovered [Function(get_mouse), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
+                            tooltip _("Enable BGM-based puns, which may be confusing if you haven't played the game yet. (Requires Bounciness)")
+                        textbutton _("Confusing Jokes") action ToggleField(preferences, "confusing_joke_enable"):
+                            hovered [Function(get_mouse), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
+                            tooltip _("Enable random events which may be confusing if you haven't played the game yet. (Requires Bounciness)")
+                        if persistent.awawa_mode == True:
                             textbutton _("Awawa Mode") action ToggleField(preferences, "awawa_mode"):
-                                yoffset -22
                                 hovered [Function(get_mouse), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
                                 tooltip "Replace the dialogue with nonsense!"
-                        hbox:
-                            bar:
-                                style "slider"
-                                xsize 450
-                                yoffset -25
-                                value preferences.awawa_chance
-                                range 100
-                                changed(change_awawa_chance)
-                            null width 20
-                            label "[awawa_chance_label]" yoffset -33 xminimum 200
-                vbox:
-                    hbox:
-                        label _("Music Volume")
-                        null width 50
-                        textbutton _("Mute All Audio"):
-                            action Preference("all mute", "toggle")
-                            style "mute_all_button"
-                            yoffset 5
-                    hbox:
-                        bar value Preference("music volume"):
-                            xsize 450
-                        null width 20
+                        textbutton _("Developer Mode") action ToggleField(preferences, "developer_mode")
 
-                    label _("Sound Volume")
-                    hbox:
-                        bar value Preference("sound volume"):
-                            xsize 450
-                        null width 20
-                        if config.sample_sound:
-                            textbutton _("Test") action Play("sound", config.sample_sound)
+                    # Bounciness / Awawa Mode sliders (will only appear if those options are enabled)
+                    vbox:
+                        vbox:
+                            style_prefix "slider"
 
-                    label _("Beep Volume")
-                    hbox:
-                        bar value Preference("voice volume"):
-                            xsize 450
-                        null width 20
-                        if config.sample_voice:
-                            textbutton _("Test") action Play("voice", config.sample_voice)
+                            if preferences.bounciness_enable:
+                                label _("Bounciness Chance")
+                                hbox:
+                                    bar:
+                                        style "slider"
+                                        value preferences.csbounciness
+                                        range 100
+                                        xsize 675
+                                        changed(change_bounciness)
+                                    null width 20
+                                    label "[bounciness_label]"
+                                label _("Max Bounciness Rarity")
+                                hbox:
+                                    bar:
+                                        style "slider"
+                                        value preferences.max_fun
+                                        range 100
+                                        xsize 675
+                                        changed(change_max_fun)
+                                    null width 20
+                                    label "[max_fun_label]" xminimum 200
+                        
+                            if persistent.awawa_mode == True and preferences.awawa_mode:
+                                label _("Awawa Chance")
+                                hbox:
+                                    bar:
+                                        style "slider"
+                                        value preferences.awawa_chance
+                                        range 100
+                                        xsize 675
+                                        changed(change_awawa_chance)
+                                    null width 20
+                                    label "[awawa_chance_label]" xminimum 200
 
-                    label _("Menu Music Volume")
-                    hbox:
-                        bar value Preference("mixer menumusic volume"):
-                            xsize 450
-                        null width 20
+                        null height 20
 
-            null height 10
+                        # Clear Save Data
+                        textbutton  _("Clear Persistent Data\n{size=-12}Clear your saved data. This cannot be undone."):
+                            action Jump("clear_screen")
+
+
+        ##### Developer options - everything else!
+        elif preferences_category == "Developer":
             vbox:
-                xsize 0.75
-                spacing 0
-                style_prefix "check"
                 hbox:
-                    textbutton _("Toggle Bounciness") action ToggleField(preferences, "bounciness_enable")
-                    null width 10
-                    label "Silly, random events that add jokes and scenes to the story.":
-                        text_size 20
-                        text_color "#555555"
-                        yoffset 10
-                    null width 10
-                    textbutton ("{size=-5}🎵") action ToggleField(preferences, "music_joke_enable"):
-                        hovered [Function(get_mouse), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
-                        tooltip "Enable BGM-based puns, which may be confusing if you haven't played the game yet."
-                    textbutton ("{size=-5}🤔") action ToggleField(preferences, "confusing_joke_enable"):
-                        hovered [Function(get_mouse), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
-                        tooltip "Enable random events which may be confusing if you haven't played the game yet."
-                label _("Bounciness Chance")
-                hbox:
-                    bar:
-                        style "slider"
-                        value preferences.csbounciness
-                        range 100
-                        changed(change_bounciness)
-                    null width 20
-                    label "[bounciness_label]" yoffset -10
-                label _("Max Bounciness Rarity")
-                hbox:
-                    bar:
-                        style "slider"
-                        value preferences.max_fun
-                        range 100
-                        changed(change_max_fun)
-                    null width 20
-                    label "[max_fun_label]" yoffset -10 xminimum 200
+                    box_wrap True
+                    vbox:
+                        label _("Developer Options")
+                        # MOVED ALL THE DEV MODE STUFF HERE
+                  
+                        if preferences.developer_mode or persistent.creative_mode:
+                            textbutton "Debug Menu\n{size=-12}Jump to specific sections of the game." action ShowMenu("debug_menu")
 
+                            textbutton "Test Scene\n{size=-12}A sandbox for testing various features." action Start("test")
 
-            ######## EVERYTHING THAT WAS IN EXTRAS BUT IS NOT MOVED TO SUBGAME IS NOW HERE
-            textbutton  "Clear Persistent Data\n{size=-12}Clear your saved data. This cannot be undone.":
-                action Jump("clear_screen")
+                            textbutton "{image=gui/inline_text/dx_text.png} Tate's Test Room\n{size=-12}Another test screen. Awawa." action Start("_awawa_tate_test")
 
-            # MOVED ALL THE DEV MODE STUFF HERE
-            if preferences.developer_mode or persistent.creative_mode:
-                text "\nDeveloper Options"
+                            #textbutton "{image=gui/inline_text/dx_text.png} Asset Debugger\n{size=-12}Make sure all assets load correctly." action Jump("asset_debugger")
 
-            if preferences.developer_mode or persistent.creative_mode:
-                textbutton "Debug Menu\n{size=-12}Jump to specific sections of the game." action ShowMenu("debug_menu")
+                        if preferences.developer_mode:
+                            textbutton "Jump To Label Start\n{size=-12}What we do here is go back{size=-12} back{size=-12} back{size=-12} back..." action Function(jump_to_label_start)
 
-                #textbutton "{image=gui/inline_text/dx_text.png} Asset Debugger\n{size=-12}Make sure all assets load correctly." action Jump("asset_debugger")
-
-            if preferences.developer_mode:
-                textbutton "Test Scene\n{size=-12}A sandbox for testing various features." action Start("test")
-
-                textbutton "{image=gui/inline_text/dx_text.png} Tate's Test Room\n{size=-12}Another test screen. Awawa." action Start("_awawa_tate_test")
-
-            if preferences.developer_mode:
-                textbutton "Jump To Label Start\n{size=-12}What we do here is go back{size=-12} back{size=-12} back{size=-12} back..." action Function(jump_to_label_start)
-
-                textbutton "Unlock All\n{size=-12}Adds all unlockables to persistent." action Function(unlock_all)
+                            textbutton "Unlock All\n{size=-12}Adds all unlockables to persistent." action Function(unlock_all)          
 
     # TODO: make this prettier later
     $ info = GetTooltip()

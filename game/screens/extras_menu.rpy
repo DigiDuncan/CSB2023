@@ -60,7 +60,7 @@ screen category_nav():
             text "{color=#888888}{size=-12}------------------------------------------------"
 
             if preferences.developer_mode or persistent.creative_mode:
-                text "If you're looking for the dev options, they're in CSettings now. Scroll down!"
+                text "If you're looking for the dev options, they're in CSettings now. There's a whole tab for 'em!"
 
     textbutton "Main Menu" action Return() yoffset 1000 xoffset 25
 

@@ -671,7 +671,7 @@ screen screen_rpg(no_stat_boxes = False):
                 $ output_say = "If you're reading this, something is wrong!"
 
                 # Handle visuals here
-                # TODO: these colors blow and also we need outlines
+                # TODO: these colors blow and also we need better outlines
                 python:
                     if isinstance(signal, RPG.IndicatorSignal):
 
@@ -688,8 +688,8 @@ screen screen_rpg(no_stat_boxes = False):
                         color output_color
                         outlines [(5, "#000000", absolute(0), absolute(0))]
 
-                #elif isinstance(signal, RPG.MessageSignal):   
-                    use say_rpg( str(signal.value) )
+                elif isinstance(signal, RPG.MessageSignal):   
+                    use say_rpg( signal.message )
 
                 # vbox:
                 #     text str(signal)
