@@ -115,7 +115,13 @@ init python:
     config.font_name_map["azsz"] = "AllerDisplay_Std_Rg_0.ttf"
 
     # Force multilingual text for music popup, jukebox, credits 
-    config.font_name_map["music_text"] = FontGroup().add("FiraCode-Retina.ttf", 0x2206, 0x2206).add("MochiyPopOne-Regular.ttf", 0x3000, 0x9fff).add("Yokelvision.otf", 0x0000, 0xffff)
+
+    # TODO: this doesn't work since it only runs once when the game starts. what do.
+    if preferences.dyslexia_mode:
+        config.font_name_map["music_text"] = FontGroup().add("FiraCode-Retina.ttf", 0x2206, 0x2206).add("MochiyPopOne-Regular.ttf", 0x3000, 0x9fff).add("comic.ttf", 0x0000, 0xffff)
+    else:
+        config.font_name_map["music_text"] = FontGroup().add("FiraCode-Retina.ttf", 0x2206, 0x2206).add("MochiyPopOne-Regular.ttf", 0x3000, 0x9fff).add("Yokelvision.otf", 0x0000, 0xffff)
+
     config.font_name_map["credits_music"] = FontGroup().add("FiraCode-Retina.ttf", 0x2206, 0x2206).add("CP_Font_1.otf", 0x3000, 0x9fff).add("impact.ttf", 0x0000, 0xffff)
 
     # Scale all fonts here (overall size first, then line spacing if needed)

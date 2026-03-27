@@ -875,12 +875,14 @@ screen preferences():
                             textbutton _("Fullscreen") action Preference("display", "fullscreen")
 
                     # Dyslexia mode
-                    # TODO: Make this variable to use the font names defined in 01_early_execute
                     vbox:
                         style_prefix "check"
                         label "Text Settings"
                         textbutton _("Dyslexia Mode"):
-                            action [ gui.TogglePreference("font", "fonts/comic.ttf", "fonts/Yokelvision.otf"), gui.TogglePreference("fsm", 0.75, 1) ]
+                            action [ 
+                                SetVariable("preferences.dyslexia_mode", True),
+                                gui.TogglePreference("font", "dyslexia", "default") 
+                                ]
                             hovered [Function(get_mouse), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
                             tooltip _("Changes to an easier-to-read font.")
 

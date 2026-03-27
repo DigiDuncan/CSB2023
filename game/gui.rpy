@@ -58,13 +58,13 @@ define gui.interface_text_color = '#ffffff'
 
 # TODO: Make these variable to use the font names defined in 01_early_execute
 ## The font used for in-game text.
-define gui.text_font = gui.preference("font", "fonts/Yokelvision.otf")
+define gui.text_font = gui.preference("font", "default")
 
 ## The font used for character names.
 define gui.name_text_font = "Impact.ttf"
 
 ## The font used for out-of-game text.
-define gui.interface_text_font = gui.preference("font", "fonts/Yokelvision.otf")
+define gui.interface_text_font = gui.preference("font", "default")
 
 ## The size of normal dialogue text.
 define gui.text_size = 46 * gui.preference("fsm", 1)
