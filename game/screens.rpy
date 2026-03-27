@@ -65,9 +65,6 @@ init python:
         mixers = renpy.music.get_all_mixers()
         global force_mute
 
-        for m in mixers:
-            preferences.set_mute(m, not force_mute)
-
         if force_mute:
             # Set all the volume back.
             for m in mixers:
@@ -76,6 +73,7 @@ init python:
             # Remember all the volume.
             for m in mixers:
                 mixer_volume[m] = preferences.get_mixer(m)
+                preferences.set_mixer(m, 0.0)
 
         force_mute = not force_mute
      
