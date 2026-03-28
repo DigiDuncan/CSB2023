@@ -1130,7 +1130,7 @@
         "dx": true
     },
     "yeetable_textbox": {
-        "img": "yeetable_textbox",
+        "img": "textbox",
         "name": "The Textbox?!",
         "owner": "???",
         "desc": "You should not have this...",
