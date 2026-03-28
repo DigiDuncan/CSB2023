@@ -121,8 +121,6 @@ screen jukebox():
                                     SetScreenVariable("current_track", track),
                                     SetScreenVariable("jukebox_playing", True),
                                     SelectedIf( SetScreenVariable("current_track", track) ),
-                                    Function(renpy.music.set_volume, 0.0, channel="music"),
-                                    Function(renpy.music.set_volume, 0.0, channel="sound"),
                                     Play("jukebox", track["file"])
                                 ]
 
