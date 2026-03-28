@@ -58,7 +58,6 @@ init python:
         awawa_chance_label = f"{preferences.awawa_chance}%" if preferences.awawa_mode else "Off"
         renpy.restart_interaction()
 
-   
     mixer_volume = {}
 
     def toggle_mute():
@@ -74,14 +73,20 @@ init python:
                 mixer_volume[m] = preferences.get_mixer(m)
                 preferences.set_mixer(m, 0.0)
 
-        persistent.force_mute = not persistent.force_mute
-     
+        persistent.force_mute = not persistent.force_mute     
 
     def fix_text():
         if gui.text_font == "dyslexia":
             config.font_name_map["music_text"] = DYSLEXIA_GROUP
         else:
             config.font_name_map["music_text"] = REGULAR_GROUP
+
+    def kill_menu_music():
+        try:
+            if "bubble_tea.ogg" in renpy.music.get_playing(channel="music"):
+                renpy.music.stop("music")
+        except:
+            pass
 
 ################################################################################
 ## Initialization
@@ -983,6 +988,12 @@ screen preferences():
                                 Function(toggle_mute),
                                 SelectedIf(persistent.force_mute == True)
                             ]
+                        if preferences.developer_mode:
+                            textbutton _("Disable Menu Theme"):
+                                action [
+                                    ToggleField(preferences, "disable_menu_theme"),
+                                    Function(kill_menu_music)
+                                ]
 
                     # Channel volume sliders
                     vbox:
@@ -1013,13 +1024,6 @@ screen preferences():
                                 label str(round(_preferences.get_mixer("voice")*100))+"%" xminimum 200 yoffset -12
                                 if config.sample_voice:
                                     textbutton _("Test") action Play("voice", config.sample_voice)
-
-                            label _("Menu Music Volume")
-                            hbox:
-                                bar value Preference("mixer menumusic volume"):
-                                    xsize 675
-                                null width 20
-                                label str(round(_preferences.get_mixer("menumusic")*100))+"%" xminimum 200 yoffset -12
                         else:
                             text _("Audio is muted."):
                                 color "#888888"

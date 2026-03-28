@@ -14,7 +14,6 @@ init python:
     renpy.music.register_channel("jukebox", "music")
     renpy.music.register_channel("notification", "sfx")
     renpy.music.register_channel("dxcom", "sfx")
-    renpy.music.register_channel("menumusic", "menumusic")
 
 init 10 python:
     def unlock_all():
@@ -302,9 +301,12 @@ python early:
     )
 
 label splashscreen:
-    $ renpy.movie_cutscene(splash)
-    $ persistent.seen_splash = True
-    $ persistent.heard.add("bubble_tea")
+    python:
+        if preferences.disable_menu_theme == False:
+            renpy.movie_cutscene(splash)
+            
+        persistent.seen_splash = True
+        persistent.heard.add("bubble_tea")
     return
 
 label before_main_menu:
@@ -318,13 +320,14 @@ label before_main_menu:
                     persistent.creative_mode = True
                     renpy.call_screen("special_unlock", "Noice! You've unlocked Creative Mode!\nLook out for new CSettings and more!")
 
-        if not persistent.seen_splash:
-            if not renpy.music.is_playing():
-                renpy.music.play("bubble_tea.ogg", loop = False, channel = "menumusic")
-        else:
-            if not renpy.music.is_playing():
-                renpy.music.play("<from 16.53>bubble_tea.ogg", loop = False, channel = "menumusic")
-                persistent.seen_splash = False
+        if preferences.disable_menu_theme == False:
+            if not persistent.seen_splash:
+                if not renpy.music.is_playing():
+                    renpy.music.play("bubble_tea.ogg", loop = False, channel="music")
+            else:
+                if not renpy.music.is_playing():
+                    renpy.music.play("<from 16.53>bubble_tea.ogg", loop = False, channel="music")
+                    persistent.seen_splash = False
     return
 
 label start:  # this might be required??

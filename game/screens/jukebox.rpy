@@ -10,7 +10,7 @@ screen jukebox():
 
     on "show":
         action [
-            ToggleMute( ["music", "sound", "menumusic"] )
+            ToggleMute( ["music", "sound"] )
         ]
   
     python:
@@ -246,7 +246,7 @@ screen jukebox():
         yoffset 1000 xoffset 25
         action [
             Stop("jukebox"),
-            ToggleMute( ["music", "sound", "menumusic"] ),
+            ToggleMute( ["music", "sound"] ),
             SelectedIf(False),
             ShowMenu("subgame")
         ]
