@@ -53,8 +53,8 @@ screen jukebox():
                         xalign 0.0 yalign 0.5
                         xysize 64, 64
 
-                        idle "/gui/left_off_small.png"
-                        hover "/gui/left_on_small.png"
+                        idle "/gui/arrows/left_off_small.png"
+                        hover "/gui/arrows/left_on_small.png"
 
                         action SetScreenVariable("current_jukebox_tag_index", current_jukebox_tag_index-1)
 
@@ -64,8 +64,8 @@ screen jukebox():
                         xalign 1.0 yalign 0.5
                         xysize 64, 64
 
-                        idle "/gui/right_off_small.png"
-                        hover "/gui/right_on_small.png"
+                        idle "/gui/arrows/right_off_small.png"
+                        hover "/gui/arrows/right_on_small.png"
 
                         action SetScreenVariable("current_jukebox_tag_index", current_jukebox_tag_index+1)
 
@@ -213,8 +213,8 @@ screen jukebox():
                                             at transform:
                                                 xalign 0.5 yalign 0.5
                                                 zoom 0.125
-                                            idle "gui/pause.png"
-                                            hover "gui/pause.png" # TODO: Actually make an image for this - Arc
+                                            idle "gui/jukebox/pause.png"
+                                            hover "gui/jukebox/pause.png" # TODO: Actually make an image for this - Arc
                                             action [
                                                 PauseAudio("jukebox", True),
                                                 SetScreenVariable("jukebox_playing", False)
@@ -224,8 +224,8 @@ screen jukebox():
                                             at transform:
                                                 xalign 0.5 yalign 0.5
                                                 zoom 0.125
-                                            idle "gui/play.png"
-                                            hover "gui/play.png" # TODO: Actually make an image for this - Arc
+                                            idle "gui/jukebox/play.png"
+                                            hover "gui/jukebox/play.png" # TODO: Actually make an image for this - Arc
                                             action [
                                                 PauseAudio("jukebox", False),
                                                 SetScreenVariable("jukebox_playing", True)

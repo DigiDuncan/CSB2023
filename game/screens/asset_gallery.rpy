@@ -54,7 +54,7 @@ screen unused_gallery():
                 xysize(128,128)
                 xalign 0 yalign 0.5
                 if unused_page>0:
-                    imagebutton idle "gui/left_off.png" hover "gui/left_on.png":
+                    imagebutton idle "gui/arrows/left_off.png" hover "gui/arrows/left_on.png":
                         if list(asset_dict.values())[unused_page-1]["type"] == "audio":
                             action [
                                 PauseAudio("music2"),
@@ -111,7 +111,7 @@ screen unused_gallery():
                 xysize(128,128)
                 xalign 1.0 yalign 0.5
                 if unused_page+1<len(list(asset_dict.keys())):
-                    imagebutton idle "gui/right_off.png" hover "gui/right_on.png":
+                    imagebutton idle "gui/arrows/right_off.png" hover "gui/arrows/right_on.png":
                         if list(asset_dict.values())[unused_page+1]["type"] == "audio":
                             action [
                                 PauseAudio("music2"),
@@ -228,8 +228,8 @@ screen unused_gallery():
                                     imagebutton:
                                         xalign 0.5 yalign 0.5
                                         xysize 64, 64
-                                        idle "/gui/left_off_small.png"
-                                        hover "/gui/left_on_small.png"
+                                        idle "/gui/arrows/left_off_small.png"
+                                        hover "/gui/arrows/left_on_small.png"
                                         action IncrementScreenVariable("current_gallery_img", -1)
 
                             frame:
@@ -249,8 +249,8 @@ screen unused_gallery():
                                     imagebutton:
                                         xalign 1.0 yalign 0.5
                                         xysize 64, 64
-                                        idle "/gui/right_off_small.png"
-                                        hover "/gui/right_on_small.png"
+                                        idle "/gui/arrows/right_off_small.png"
+                                        hover "/gui/arrows/right_on_small.png"
                                         action IncrementScreenVariable("current_gallery_img", 1)
                 # Caption
                 frame:

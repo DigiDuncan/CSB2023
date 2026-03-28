@@ -80,8 +80,8 @@ screen people():
                         xalign 0.0 yalign 0.5
                         xysize 64, 64
 
-                        idle "/gui/left_off_small.png"
-                        hover "/gui/left_on_small.png"
+                        idle "/gui/arrows/left_off_small.png"
+                        hover "/gui/arrows/left_on_small.png"
 
                         if current_bios_sorting_mode-1>=0:
                             action SetScreenVariable("current_bios_sorting_mode", current_bios_sorting_mode-1)
@@ -96,8 +96,8 @@ screen people():
                         xalign 1.0 yalign 0.5
                         xysize 64, 64
 
-                        idle "/gui/right_off_small.png"
-                        hover "/gui/right_on_small.png"
+                        idle "/gui/arrows/right_off_small.png"
+                        hover "/gui/arrows/right_on_small.png"
 
                         if current_bios_sorting_mode+1<4:
                             action SetScreenVariable("current_bios_sorting_mode", current_bios_sorting_mode+1)
@@ -218,8 +218,8 @@ screen people():
                                                 imagebutton:
                                                     xalign 0.0 yalign 0.5
                                                     xysize 64, 64
-                                                    idle "/gui/left_off_small.png"
-                                                    hover "/gui/left_on_small.png"
+                                                    idle "/gui/arrows/left_off_small.png"
+                                                    hover "/gui/arrows/left_on_small.png"
                                                     action IncrementScreenVariable("current_bios_page", -1)
 
                                             text "Page [current_bios_page+1] of [current_bios_total_pages]":
@@ -231,8 +231,8 @@ screen people():
                                                 imagebutton:
                                                     xalign 1.0 yalign 0.5
                                                     xysize 64, 64
-                                                    idle "/gui/right_off_small.png"
-                                                    hover "/gui/right_on_small.png"
+                                                    idle "/gui/arrows/right_off_small.png"
+                                                    hover "/gui/arrows/right_on_small.png"
                                                     action IncrementScreenVariable("current_bios_page")
 
                                     ##### Bounding box for text
@@ -451,8 +451,8 @@ screen people():
                                                         imagebutton:
                                                             xalign 0.0 yalign 0.5
                                                             xysize 64, 64
-                                                            idle "/gui/left_off_small.png"
-                                                            hover "/gui/left_on_small.png"
+                                                            idle "/gui/arrows/left_off_small.png"
+                                                            hover "/gui/arrows/left_on_small.png"
                                                             action IncrementScreenVariable("current_bios_sprite", -1)
 
                                                     # right arrow
@@ -460,8 +460,8 @@ screen people():
                                                         imagebutton:
                                                             xalign 1.0 yalign 0.5
                                                             xysize 64, 64
-                                                            idle "/gui/right_off_small.png"
-                                                            hover "/gui/right_on_small.png"
+                                                            idle "/gui/arrows/right_off_small.png"
+                                                            hover "/gui/arrows/right_on_small.png"
                                                             action IncrementScreenVariable("current_bios_sprite")
     ###################### Back / forward
     textbutton "Back":

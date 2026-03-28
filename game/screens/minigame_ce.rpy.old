@@ -10,7 +10,7 @@ screen ce_minigame_screen():
         else:
             renpy.music.play("<from 16.53>bubble_tea.ogg", channel="music", loop=False)
 
-    add "gui/game_menu.png"
+    add "gui/themes/{preferences.gui_theme}/game_menu.png"
     
     text "{size=+48}Minigames":
         xalign 0.5
