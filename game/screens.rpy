@@ -496,16 +496,17 @@ screen main_menu():
         xysize(666,720)
         yanchor -0.025
         xanchor -2.1
-        hbox:
-            text "{bt=a3-p10-s1}Are you CS? Click here!":
-                size 40
-            null:
-                width 20
-            imagebutton auto "menu/cs_button_%s.png" hover_sound "audio/sfx/sfx_popcat_0.ogg":
-                at transform:
-                    zoom 0.15
-                    xalign 0.5
-                action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("cs_button"), ShowMenu("limbo_csbutton")
+        if persistent.show_cs_button and not preferences.developer_mode:
+            hbox:
+                text "{bt=a3-p10-s1}Are you CS? Click here!":
+                    size 40
+                null:
+                    width 20
+                imagebutton auto "menu/cs_button_%s.png" hover_sound "audio/sfx/sfx_popcat_0.ogg":
+                    at transform:
+                        zoom 0.15
+                        xalign 0.5
+                    action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("cs_button"), ShowMenu("limbo_csbutton")
     ## This empty frame darkens the main menu.
     frame:
         style "main_menu_frame"

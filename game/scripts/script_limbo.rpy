@@ -479,5 +479,6 @@ label csdata:
     $ line_11 = "When I see you, I think about bananas"
     $ line_12 = "HOW I'D LIKE TO PUT THEM IN YA ANUS"
     n "Added Rockstar Lines...{nw}"
+    $ persistent.show_cs_button = False
     n "Done!"
     return

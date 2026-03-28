@@ -151,6 +151,7 @@ default persistent.read = set()
 default persistent.unlocked_achievements = set()
 default persistent.fun = set()
 default persistent.creative_mode = False
+default persistent.show_cs_button = True
 default persistent.awawa_mode = False
 default persistent.seen_splash = False
 default persistent.first_time = True
