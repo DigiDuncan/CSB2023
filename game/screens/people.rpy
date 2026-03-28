@@ -21,7 +21,7 @@ screen people():
     default current_bios_page = 0
     default current_bios_sorting_mode = 0
 
-    add Color('#323e42', alpha=0.75)
+    add gui_theme_map["screen_transparency_layer"]
 
     python:
         bio_count = len(name_map.keys())

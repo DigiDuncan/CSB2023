@@ -22,7 +22,7 @@ screen timeline_tracer():
     default info_y = 0
 
     # add background color
-    add Color('#323e42', alpha=0.75)
+    add gui_theme_map["screen_transparency_layer"]
 
     # declare default colors for now. we'll make em images with outlines later
     $ col_locked = "#BBBBBB"

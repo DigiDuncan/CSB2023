@@ -1668,10 +1668,10 @@ label csbiii_good_convince:
         show cs disappointed
         cs "Yeah, so?"
         copguy "What is {i}wrong{/i} with you?!" with vpunch
-        copguy "Do you drink milk warm, too?"
+        copguy "Do you drink {i}milk{/i} warm, too?"
         show cs angry
         cs "Drinking Genergy warm isn't a crime!"
-        copguy "Yeah, but it {i}should{/i} be!"
+        copguy "Yeah, well, it {i}should{/i} be!"
         $ ending_manager.mark("attorney")
         stop music
         bad_end "Did you really\nthink that would work?" "csbiii_copcar_menu"

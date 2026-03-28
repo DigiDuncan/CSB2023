@@ -101,7 +101,7 @@ screen controllertest():
     add controllertest
 
     # TODO: we need a way to return to the previous menu that is compatible with all types of controls. i got nothing - tate
-    textbutton "Return to Menu":
+    textbutton "Back":
         xoffset 25 yoffset 950
         action ShowMenu("subgame")
 

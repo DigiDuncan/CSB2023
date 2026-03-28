@@ -32,7 +32,7 @@ screen jukebox():
     default jukebox_playing = False
     default current_jukebox_tag_index = 0
 
-    add Color('#323e42', alpha=0.75)
+    add gui_theme_map["screen_transparency_layer"]
 
     frame:
         background None
