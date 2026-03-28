@@ -56,6 +56,51 @@ init python:
     # Run it once as the game loads. We'll call it again in CSettings.
     reload_theme(preferences.gui_theme, False)
 
+    def custom_button_properties(kind):
+        g = globals()
+
+        def get(prop):
+            if kind + "_" + prop in g:
+                return g[kind + "_" + prop]
+
+            return None
+
+        borders = get("borders")
+
+        tile = get("tile")
+        if tile is None:
+            tile = gui.button_tile
+
+        backgrounds = [ ]
+
+        if kind != "button":
+            backgrounds.append("gui/button/" + kind[:-7] + "_[prefix_]background" + gui.button_image_extension)
+
+        backgrounds.append("gui/button/[prefix_]background" + gui.button_image_extension)
+
+        if renpy.variant("small"):
+            backgrounds = [ i.replace("gui/button", "gui/phone/button") for i in backgrounds ] + backgrounds
+
+        rv = {
+            "background" : Frame(backgrounds, borders or gui.button_borders, tile=tile),
+        }
+
+        if borders is not None:
+            rv["padding"] = borders.padding
+
+        width = get("width")
+        height = get("height")
+
+        if width is not None:
+            rv["xsize"] = width
+
+        if height is not None:
+            rv["ysize"] = height
+
+        return rv
+
+    gui.button_properties = custom_button_properties
+
 ## Enable checks for invalid or unstable properties in screens or transforms
 define config.check_conflicting_properties = True
 
