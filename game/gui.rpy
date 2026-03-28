@@ -74,12 +74,12 @@ init python:
         backgrounds = [ ]
 
         if kind != "button":
-            backgrounds.append("gui/button/" + kind[:-7] + "_[prefix_]background" + gui.button_image_extension)
+            backgrounds.append(f"gui/themes/{preferences.gui_theme}/button/" + kind[:-7] + "_[prefix_]background" + gui.button_image_extension)
 
-        backgrounds.append("gui/button/[prefix_]background" + gui.button_image_extension)
+        backgrounds.append(f"gui/themes/{preferences.gui_theme}/button/[prefix_]background" + gui.button_image_extension)
 
         if renpy.variant("small"):
-            backgrounds = [ i.replace("gui/button", "gui/phone/button") for i in backgrounds ] + backgrounds
+            backgrounds = [ i.replace(f"gui/themes/{preferences.gui_theme}/button", f"gui/phone/themes/{preferences.gui_theme}/button") for i in backgrounds ] + backgrounds
 
         rv = {
             "background" : Frame(backgrounds, borders or gui.button_borders, tile=tile),
