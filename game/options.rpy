@@ -152,6 +152,7 @@ default preferences.awawa_mode = False
 default preferences.awawa_chance = 100
 default preferences.force_mute = False
 default preferences.disable_menu_theme = False
+default preferences.gui_theme = "default"
 
 default preferences.text_cps = 40.0
 
