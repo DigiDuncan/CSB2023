@@ -18,5 +18,9 @@
     "image_button_hover": "#33CC00",
     "image_button_selected_idle": "#84E066",
     "image_button_selected_hover": "#B7FFA1",
-    "image_button_insensitive": "#888888"
+    "image_button_insensitive": "#888888",
+
+    "menu_theme": "christmas_tea.ogg",
+    "menu_theme_skip_splash": "<from 14.7>christmas_tea.ogg",
+    "menu_theme_jukebox_id": "christmas_tea"
 }

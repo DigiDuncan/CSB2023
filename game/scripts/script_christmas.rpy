@@ -7819,7 +7819,6 @@ label ce_end_credits:
     #    n "Merry Christmas to all, and to all, a good night!"
     $ achievement_manager.unlock("hoh_hoh")
     $ ending_manager.mark("christmas")
-    $ persistent.heard.add("christmas_tea")
 
     call screen credits_roll(route="CSBDX: Holiday Special", scroll_start = 1204, duration=84, replace_music=False) with dissolve
 

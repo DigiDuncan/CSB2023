@@ -18,5 +18,9 @@
     "image_button_hover": "#0099CC",
     "image_button_selected_idle": "#65C0DF",
     "image_button_selected_hover": "#A1E6FF",
-    "image_button_insensitive": "#888888"
+    "image_button_insensitive": "#888888",
+
+    "menu_theme": "bubble_tea.ogg",
+    "menu_theme_skip_splash": "<from 16.53>bubble_tea.ogg",
+    "menu_theme_jukebox_id": "bubble_tea"
 }

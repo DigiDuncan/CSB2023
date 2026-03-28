@@ -83,7 +83,7 @@ init python:
 
     def kill_menu_music():
         try:
-            if "bubble_tea.ogg" in renpy.music.get_playing(channel="music"):
+            if gui_theme_map["menu_theme"] in renpy.music.get_playing(channel="music"):
                 renpy.music.stop("music")
         except:
             pass
@@ -912,16 +912,16 @@ screen preferences():
                             textbutton _("Fullscreen") action Preference("display", "fullscreen")
 
                     # Themes
-                    if persistent.saved_christmas or preferences.developer_mode:
-                        vbox:
-                            style_prefix "radio"
-                            label _("Theme")
-                            textbutton _("Default"):
-                                action [
-                                    Function (reload_theme, "default", True),
-                                    SetField(preferences, "gui_theme", "default"),
-                                    Function(renpy.reload_script)
-                                ]
+                    vbox:
+                        style_prefix "radio"
+                        label _("Theme")
+                        textbutton _("Default"):
+                            action [
+                                Function (reload_theme, "default", True),
+                                SetField(preferences, "gui_theme", "default"),
+                                Function(renpy.reload_script)
+                            ]
+                        if persistent.saved_christmas or preferences.developer_mode:
                             textbutton _("Christmas"):
                                 action [
                                     Function (reload_theme, "christmas", True),

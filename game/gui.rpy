@@ -17,7 +17,7 @@ init python:
 
         # Attempt to load in theme. 
         try:
-            with renpy.open_file(f"gui/themes/{theme_name}/gui_colors.json") as f:
+            with renpy.open_file(f"gui/themes/{theme_name}/config.json") as f:
                 j = json.load(f)
 
             # Handler for if a theme is already in use.
@@ -27,7 +27,6 @@ init python:
             else:
                 logger.info(f"Loaded theme '{theme_name}'.")
                 renpy.notify(f"Loaded theme '{theme_name}'.")
-
             # Force-change colors
             if force_changed:
                 gui.accent_color = j["accent_color"]
@@ -45,7 +44,7 @@ init python:
                 gui.choice_button_text_insensitive_color = j["choice_button_text_insensitive_color"]
 
         except:
-            with renpy.open_file("gui/themes/default/gui_colors.json") as f:
+            with renpy.open_file("gui/themes/default/config.json") as f:
                 j = json.load(f)
             preferences.gui_theme = "default" # force-reset it
             logger.warn(f"Couldn't load color data for theme '{theme_name}'. Using default theme.")

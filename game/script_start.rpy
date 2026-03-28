@@ -303,10 +303,10 @@ python early:
 label splashscreen:
     python:
         if preferences.disable_menu_theme == False:
-            renpy.movie_cutscene(splash)
+            renpy.movie_cutscene(f"gui/themes/{preferences.gui_theme}/splash.webm")
             
         persistent.seen_splash = True
-        persistent.heard.add("bubble_tea")
+        persistent.heard.add(gui_theme_map["menu_theme_jukebox_id"])
     return
 
 label before_main_menu:
@@ -323,10 +323,10 @@ label before_main_menu:
         if preferences.disable_menu_theme == False:
             if not persistent.seen_splash:
                 if not renpy.music.is_playing():
-                    renpy.music.play("bubble_tea.ogg", loop = False, channel="music")
+                    renpy.music.play(gui_theme_map["menu_theme"], loop = False, channel="music")
             else:
                 if not renpy.music.is_playing():
-                    renpy.music.play("<from 16.53>bubble_tea.ogg", loop = False, channel="music")
+                    renpy.music.play(gui_theme_map["menu_theme_skip_splash"], loop = False, channel="music")
                     persistent.seen_splash = False
     return
 
