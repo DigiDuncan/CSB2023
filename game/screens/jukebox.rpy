@@ -8,9 +8,16 @@ init python:
 screen jukebox():
     tag menu
 
-    on "show":
+    on "replace":
         action [
-            ToggleMute( ["music", "sound"] )
+            PauseAudio("music", True),
+            PauseAudio("music2", True),
+            PauseAudio("music3", True),
+            PauseAudio("music4", True),
+            PauseAudio("music5", True),
+            PauseAudio("sound", True),
+            PauseAudio("sound2", True),
+            PauseAudio("voice", True),
         ]
   
     python:
@@ -115,6 +122,7 @@ screen jukebox():
                                     SetScreenVariable("jukebox_playing", True),
                                     SelectedIf( SetScreenVariable("current_track", track) ),
                                     Function(renpy.music.set_volume, 0.0, channel="music"),
+                                    Function(renpy.music.set_volume, 0.0, channel="sound"),
                                     Play("jukebox", track["file"])
                                 ]
 
@@ -246,7 +254,14 @@ screen jukebox():
         yoffset 1000 xoffset 25
         action [
             Stop("jukebox"),
-            ToggleMute( ["music", "sound"] ),
+            PauseAudio("music", False),
+            PauseAudio("music2", False),
+            PauseAudio("music3", False),
+            PauseAudio("music4", False),
+            PauseAudio("music5", False),
+            PauseAudio("sound", False),
+            PauseAudio("sound2", False),
+            PauseAudio("voice", False),
             SelectedIf(False),
             ShowMenu("subgame")
         ]

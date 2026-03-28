@@ -63,7 +63,7 @@ init python:
     def toggle_mute():
         mixers = renpy.music.get_all_mixers()
 
-        if persistent.force_mute:
+        if preferences.force_mute:
             # Set all the volume back.
             for m in mixers:
                 preferences.set_mixer(m, mixer_volume[m])
@@ -73,7 +73,7 @@ init python:
                 mixer_volume[m] = preferences.get_mixer(m)
                 preferences.set_mixer(m, 0.0)
 
-        persistent.force_mute = not persistent.force_mute     
+        preferences.force_mute = not preferences.force_mute     
 
     def fix_text():
         if gui.text_font == "dyslexia":
@@ -986,7 +986,7 @@ screen preferences():
                         textbutton _("Mute ALL Audio"):
                             action [ 
                                 Function(toggle_mute),
-                                SelectedIf(persistent.force_mute == True)
+                                SelectedIf(preferences.force_mute == True)
                             ]
                         if preferences.developer_mode:
                             textbutton _("Disable Menu Theme"):
@@ -999,7 +999,7 @@ screen preferences():
                     vbox:
                         style_prefix "slider"
 
-                        if persistent.force_mute == False:
+                        if preferences.force_mute == False:
                             label _("Music Volume")
                             hbox:
                                 bar value Preference("music volume"):
