@@ -11,12 +11,8 @@ init offset = -2
 init python:
     gui.init(1920, 1080)
 
-    # GUI theme handling
-    gui_theme_map = {} # This one is NOT a constant, and this is on purpose.
-
     def reload_theme(theme_name, force_changed):
         global gui_theme_map
-
         global gui
 
         # Attempt to load in theme. 
@@ -34,20 +30,19 @@ init python:
 
             # Force-change colors
             if force_changed:
-
-                gui.accent_color = gui_theme_map["accent_color"]
-                gui.idle_color = gui_theme_map["idle_color"]
-                gui.idle_small_color = gui_theme_map["idle_small_color"]
-                gui.hover_color = gui_theme_map["hover_color"]
-                gui.selected_color = gui_theme_map["selected_color"]
-                gui.insensitive_color = gui_theme_map["insensitive_color"]
-                gui.muted_color = gui_theme_map["muted_color"]
-                gui.hover_muted_color = gui_theme_map["hover_muted_color"]
-                gui.text_color = gui_theme_map["text_color"]
-                gui.interface_text_color = gui_theme_map["interface_text_color"]
-                gui.choice_button_text_idle_color = gui_theme_map["choice_button_text_idle_color"]
-                gui.choice_button_text_hover_color = gui_theme_map["choice_button_text_hover_color"]
-                gui.choice_button_text_insensitive_color = gui_theme_map["choice_button_text_insensitive_color"]
+                gui.accent_color = j["accent_color"]
+                gui.idle_color = j["idle_color"]
+                gui.idle_small_color = j["idle_small_color"]
+                gui.hover_color = j["hover_color"]
+                gui.selected_color = j["selected_color"]
+                gui.insensitive_color = j["insensitive_color"]
+                gui.muted_color = j["muted_color"]
+                gui.hover_muted_color = j["hover_muted_color"]
+                gui.text_color = j["text_color"]
+                gui.interface_text_color = j["interface_text_color"]
+                gui.choice_button_text_idle_color = j["choice_button_text_idle_color"]
+                gui.choice_button_text_hover_color = j["choice_button_text_hover_color"]
+                gui.choice_button_text_insensitive_color = j["choice_button_text_insensitive_color"]
 
         except:
             with renpy.open_file("gui/themes/default/gui_colors.json") as f:
@@ -56,6 +51,7 @@ init python:
             logger.warn(f"Couldn't load color data for theme '{theme_name}'. Using default theme.")
             renpy.notify(f"Couldn't load color data for theme '{theme_name}'. Using default theme.")
 
+        # Set the global theme map to the loaded one.
         gui_theme_map = j
 
     # Run it once as the game loads. We'll call it again in CSettings.

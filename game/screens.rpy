@@ -919,12 +919,14 @@ screen preferences():
                             textbutton _("Default"):
                                 action [
                                     Function (reload_theme, "default", True),
-                                    SetField(preferences, "gui_theme", "default")    
+                                    SetField(preferences, "gui_theme", "default"),
+                                    Function(renpy.reload_script)
                                 ]
                             textbutton _("Christmas"):
                                 action [
                                     Function (reload_theme, "christmas", True),
                                     SetField(preferences, "gui_theme", "christmas"),
+                                    Function(renpy.reload_script)
                                 ]
 
                     # Dyslexia mode
