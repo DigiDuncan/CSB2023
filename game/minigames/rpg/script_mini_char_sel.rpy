@@ -31,7 +31,7 @@ screen _rpg_selection(char_list = ["CS"], locked_slots = []):
                 rpg_slots[slot] = [ getattr(RPG.Characters, locked_slots[slot]).name, getattr(RPG.Characters, locked_slots[slot]) ]
 
     ### Add background color / prep video
-    add Color('#323e42', alpha=0.75)
+    add gui_theme_map["screen_transparency_layer"]
     showif rpg_ready == True:
         add Movie(size=(1920,1080), play="movies/Fire.webm", side_mask=True) at _rpg_ready_flames
 
