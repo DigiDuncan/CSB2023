@@ -916,8 +916,16 @@ screen preferences():
                         vbox:
                             style_prefix "radio"
                             label _("Theme")
-                            textbutton _("Default") action SetField(preferences, "gui_theme", "default")
-                            textbutton _("Christmas") action SetField(preferences, "gui_theme", "christmas")
+                            textbutton _("Default"):
+                                action [
+                                    SetField(preferences, "gui_theme", "default"),
+                                    Function (reload_theme, "default", True)
+                                ]
+                            textbutton _("Christmas"):
+                                action [
+                                    SetField(preferences, "gui_theme", "christmas"),
+                                    Function (reload_theme, "christmas", True)
+                                ]
 
                     # Dyslexia mode
                     vbox:

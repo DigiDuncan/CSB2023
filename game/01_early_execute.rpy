@@ -93,6 +93,36 @@ init -1 python:
 
     CREDITS_MAP = j
 
+    # GUI theme handling
+    gui_theme_map = {} # This one is NOT a constant, and this is on purpose.
+
+    def reload_theme(theme_name, force_changed):
+        global gui_theme_map
+
+        # Attempt to load in theme. Have handler for if a theme is already in use.
+        try:
+            with renpy.open_file(f"gui/themes/{theme_name}/gui_colors.json") as f:
+                j = json.load(f)
+
+            if preferences.gui_theme == theme_name and force_changed:
+                logger.info(f"Theme '{theme_name}' already in use.")
+                renpy.notify("You're already using this theme!")
+            else:
+                logger.info(f"Loaded theme '{theme_name}'.")
+                renpy.notify(f"Loaded theme '{theme_name}'.")
+
+        except:
+            with renpy.open_file("gui/themes/default/gui_colors.json") as f:
+                j = json.load(f)
+            preferences.gui_theme = "default" # force-reset it
+            logger.warn(f"Couldn't load color data for theme '{theme_name}'. Using default theme.")
+            renpy.notify(f"Couldn't load color data for theme '{theme_name}'. Using default theme.")
+
+        gui_theme_map = j
+
+    # Run it once as the game loads. We'll call it again in CSettings.
+    reload_theme(preferences.gui_theme, False)
+
 init python:
     # Add more screen layers
     renpy.add_layer("popup", above = "overlay")
