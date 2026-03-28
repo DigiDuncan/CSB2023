@@ -17,17 +17,37 @@ init python:
     def reload_theme(theme_name, force_changed):
         global gui_theme_map
 
-        # Attempt to load in theme. Have handler for if a theme is already in use.
+        global gui
+
+        # Attempt to load in theme. 
         try:
             with renpy.open_file(f"gui/themes/{theme_name}/gui_colors.json") as f:
                 j = json.load(f)
 
+            # Handler for if a theme is already in use.
             if preferences.gui_theme == theme_name and force_changed:
                 logger.info(f"Theme '{theme_name}' already in use.")
                 renpy.notify("You're already using this theme!")
             else:
                 logger.info(f"Loaded theme '{theme_name}'.")
                 renpy.notify(f"Loaded theme '{theme_name}'.")
+
+            # Force-change colors
+            if force_changed:
+
+                gui.accent_color = gui_theme_map["accent_color"]
+                gui.idle_color = gui_theme_map["idle_color"]
+                gui.idle_small_color = gui_theme_map["idle_small_color"]
+                gui.hover_color = gui_theme_map["hover_color"]
+                gui.selected_color = gui_theme_map["selected_color"]
+                gui.insensitive_color = gui_theme_map["insensitive_color"]
+                gui.muted_color = gui_theme_map["muted_color"]
+                gui.hover_muted_color = gui_theme_map["hover_muted_color"]
+                gui.text_color = gui_theme_map["text_color"]
+                gui.interface_text_color = gui_theme_map["interface_text_color"]
+                choice_button_text_idle_color = gui_theme_map["choice_button_text_idle_color"]
+                gui.choice_button_text_hover_color = gui_theme_map["choice_button_text_hover_color"]
+                gui.choice_button_text_insensitive_color = gui_theme_map["choice_button_text_insensitive_color"]
 
         except:
             with renpy.open_file("gui/themes/default/gui_colors.json") as f:
