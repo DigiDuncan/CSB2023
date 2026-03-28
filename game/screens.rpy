@@ -919,14 +919,14 @@ screen preferences():
                             action [
                                 Function (reload_theme, "default", True),
                                 SetField(preferences, "gui_theme", "default"),
-                                Function(renpy.reload_script)
+                                Function(gui.rebuild)
                             ]
                         if persistent.saved_christmas or preferences.developer_mode:
                             textbutton _("Christmas"):
                                 action [
                                     Function (reload_theme, "christmas", True),
                                     SetField(preferences, "gui_theme", "christmas"),
-                                    Function(renpy.reload_script)
+                                    Function(gui.rebuild)
                                 ]
 
                     # Dyslexia mode
