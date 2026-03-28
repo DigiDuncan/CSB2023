@@ -87,8 +87,8 @@ define gui.title_text_size = 75 * gui.preference("fsm", 1)
 ## Main and Game Menus #########################################################
 
 ## The images used for the main and game menus.
-define gui.main_menu_background = "gui/themes/default/main_menu.png"
-define gui.game_menu_background = "gui/themes/default/game_menu.png"
+define gui.main_menu_background = "gui/themes/[preferences.gui_theme]/main_menu.png"
+define gui.game_menu_background = "gui/themes/[preferences.gui_theme]/game_menu.png"
 
 
 ## Dialogue ####################################################################
