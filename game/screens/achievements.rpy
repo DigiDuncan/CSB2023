@@ -64,7 +64,7 @@ screen achievements():
                 text "[percent_unlocked_display]% Unlocked":
                     xalign 1.0 yalign 1.0
                     text_align 1.0
-                    color("#BBBBBB")
+                    color gui_theme_map["idle_small_color"]
 
             ##### Achievement List
             frame:
