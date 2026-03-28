@@ -45,7 +45,7 @@ init python:
                 gui.hover_muted_color = gui_theme_map["hover_muted_color"]
                 gui.text_color = gui_theme_map["text_color"]
                 gui.interface_text_color = gui_theme_map["interface_text_color"]
-                choice_button_text_idle_color = gui_theme_map["choice_button_text_idle_color"]
+                gui.choice_button_text_idle_color = gui_theme_map["choice_button_text_idle_color"]
                 gui.choice_button_text_hover_color = gui_theme_map["choice_button_text_hover_color"]
                 gui.choice_button_text_insensitive_color = gui_theme_map["choice_button_text_insensitive_color"]
 
