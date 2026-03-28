@@ -56,12 +56,15 @@ init python:
     # Run it once as the game loads. We'll call it again in CSettings.
     reload_theme(preferences.gui_theme, False)
 
+init python:
     def custom_button_properties(kind):
         g = globals()
 
         def get(prop):
-            if kind + "_" + prop in g:
-                return g[kind + "_" + prop]
+            _gui = g["gui"]
+
+            if kind + "_" + prop in _gui.__dict__:
+                return _gui.__dict__[kind + "_" + prop]
 
             return None
 
@@ -98,8 +101,6 @@ init python:
             rv["ysize"] = height
 
         return rv
-
-    gui.button_properties = custom_button_properties
 
 ## Enable checks for invalid or unstable properties in screens or transforms
 define config.check_conflicting_properties = True

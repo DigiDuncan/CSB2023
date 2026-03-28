@@ -115,7 +115,7 @@ style gui_text:
 
 
 style button:
-    properties gui.button_properties("button")
+    properties custom_button_properties("button")
 
 style button_text is gui_text:
     properties gui.text_properties("button")
@@ -345,7 +345,7 @@ style choice_vbox:
     spacing gui.choice_spacing
 
 style choice_button is default:
-    properties gui.button_properties("choice_button")
+    properties custom_button_properties("choice_button")
     padding (0, 15, 0, 15)
 
 style choice_button_text is default:
@@ -392,7 +392,7 @@ style quick_button is default
 style quick_button_text is button_text
 
 style quick_button:
-    properties gui.button_properties("quick_button")
+    properties custom_button_properties("quick_button")
 
 style quick_button_text:
     properties gui.button_text_properties("quick_button")
@@ -466,7 +466,7 @@ style navigation_button_text is gui_button_text
 
 style navigation_button:
     size_group "navigation"
-    properties gui.button_properties("navigation_button")
+    properties custom_button_properties("navigation_button")
 
 style navigation_button_text:
     properties gui.button_text_properties("navigation_button")
@@ -859,13 +859,13 @@ style page_label_text:
     hover_color gui.hover_color
 
 style page_button:
-    properties gui.button_properties("page_button")
+    properties custom_button_properties("page_button")
 
 style page_button_text:
     properties gui.button_text_properties("page_button")
 
 style slot_button:
-    properties gui.button_properties("slot_button")
+    properties custom_button_properties("slot_button")
 
 style slot_button_text:
     properties gui.button_text_properties("slot_button")
@@ -1201,7 +1201,7 @@ style radio_vbox:
     spacing gui.pref_button_spacing
 
 style radio_button:
-    properties gui.button_properties("radio_button")
+    properties custom_button_properties("radio_button")
     foreground "gui/themes/[preferences.gui_theme]/button/radio_[prefix_]foreground.png"
 
 style radio_button_text:
@@ -1212,7 +1212,7 @@ style check_vbox:
     spacing gui.pref_button_spacing
 
 style check_button:
-    properties gui.button_properties("check_button")
+    properties custom_button_properties("check_button")
     foreground "gui/themes/[preferences.gui_theme]/button/check_[prefix_]foreground.png"
 
 style check_button_text:
@@ -1223,7 +1223,7 @@ style slider_slider:
     xsize 525
 
 style slider_button:
-    properties gui.button_properties("slider_button")
+    properties custom_button_properties("slider_button")
     yalign 0.5
     left_margin 15
 
@@ -1474,7 +1474,7 @@ style help_label_text is gui_label_text
 style help_text is gui_text
 
 style help_button:
-    properties gui.button_properties("help_button")
+    properties custom_button_properties("help_button")
     xmargin 12
 
 style help_button_text:
@@ -1553,7 +1553,7 @@ style confirm_prompt_text:
     layout "subtitle"
 
 style confirm_button:
-    properties gui.button_properties("confirm_button")
+    properties custom_button_properties("confirm_button")
 
 style confirm_button_text:
     properties gui.button_text_properties("confirm_button")
@@ -1769,7 +1769,7 @@ style nvl_thought:
     layout ("subtitle" if gui.nvl_text_xalign else "tex")
 
 style nvl_button:
-    properties gui.button_properties("nvl_button")
+    properties custom_button_properties("nvl_button")
     xpos gui.nvl_button_xpos
     xanchor gui.nvl_button_xalign
 
