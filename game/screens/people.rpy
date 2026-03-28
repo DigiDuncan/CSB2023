@@ -184,7 +184,7 @@ screen people():
                                     xalign 0.5 yoffset -5
                                     text_align 0.5
                                     size 32
-                                    color "#BBBBBB"
+                                    color gui_theme_map["small_idle_color"]
 
                         ####### CURRENT BIO TEXT / PAGES
                         frame:

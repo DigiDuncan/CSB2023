@@ -918,13 +918,13 @@ screen preferences():
                             label _("Theme")
                             textbutton _("Default"):
                                 action [
-                                    SetField(preferences, "gui_theme", "default"),
-                                    Function (reload_theme, "default", True)
+                                    Function (reload_theme, "default", True),
+                                    SetField(preferences, "gui_theme", "default")    
                                 ]
                             textbutton _("Christmas"):
                                 action [
+                                    Function (reload_theme, "christmas", True),
                                     SetField(preferences, "gui_theme", "christmas"),
-                                    Function (reload_theme, "christmas", True)
                                 ]
 
                     # Dyslexia mode

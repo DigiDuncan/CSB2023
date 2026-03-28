@@ -26,7 +26,7 @@ screen item_nav():
     default loaded_imgs = 0
     default loaded_state = "loading"
 
-    add Color('#323e42', alpha=0.75)
+    add gui_theme_map["screen_transparency_layer"]
     text "{size=+12}Item Collection":
         xpos 0.18 ypos 80
 
@@ -100,10 +100,11 @@ screen item_nav():
 
                             # Create the actual button here
                             button:
-                                idle_background "#003D51"
-                                hover_background "#0099CC"
-                                selected_idle_background "#65C0DF"
-                                insensitive_background "#888888"
+                                idle_background gui_theme_map["image_button_idle"]
+                                hover_background gui_theme_map["image_button_hover"]
+                                selected_idle_background gui_theme_map["image_button_selected_idle"]
+                                selected_hover_background gui_theme_map["image_button_selected_hover"]
+                                insensitive_background gui_theme_map["image_button_insensitive"]
 
                                 xalign 0.5 yalign 0.5
                                 xysize 140,140
@@ -185,6 +186,6 @@ screen items(l):
 
                 text "{size=-12}(" + ITEM_MAP[l]['rarity'] + ")":
                     xalign 0.5
-                    color("#BBBBBB")
+                    color gui_theme_map["idle_small_color"]
 
                 text "\nOwner: " + ITEM_MAP[l]['owner'] + "\n\n" + fetched_desc

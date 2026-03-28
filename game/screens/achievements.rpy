@@ -1,6 +1,6 @@
 screen achievements():
     tag menu
-    add Color('#323e42', alpha=0.75)
+    add gui_theme_map["screen_transparency_layer"]
 
 ###################################################### PREP
     python:
@@ -100,7 +100,7 @@ screen achievements():
                                                     text a.desc:
                                                         size 32
                                                         yanchor 0.1
-                                                        color("#BBBBBB")
+                                                        color gui_theme_map["idle_small_color"]
 
                         if achievement_manager.unlocked and achievement_manager.locked:
                             null height 50
@@ -125,7 +125,7 @@ screen achievements():
                                                     text a.desc:
                                                         size 32
                                                         yanchor 0.1
-                                                        color("#BBBBBB")
+                                                        color gui_theme_map["idle_small_color"]
                                                     hbox:
                                                         spacing 20
                                                         if a.steps != 1 and a.progress != 1:
@@ -138,7 +138,7 @@ screen achievements():
                                                                 ymaximum 16
                                                                 text progtext:
                                                                     size 32
-                                                                    color("#BBBBBB")
+                                                                    color gui_theme_map["idle_small_color"]
 
 ###################################################### BOTTOM BUTTONS
 

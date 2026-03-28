@@ -1,0 +1,22 @@
+{
+    "accent_color": "#CC0000",
+    "idle_color": "#888888",
+    "idle_small_color": "#AAAAAA",
+    "hover_color": "#E06666",
+    "selected_color": "#FFFFFF",
+    "insensitive_color": "#8888887F",
+    "muted_color": "#51000",
+    "hover_muted_color": "7A0000",
+    "text_color": "#FFFFFF",
+    "interface_text_color": "#FFFFFF",
+    "choice_button_text_idle_color": "#888888",
+    "choice_button_text_hover_color": "#FFFFFF",
+    "choice_button_text_insensitive_color": "#8888887F",
+
+    "screen_transparency_layer": "#423232BF",
+    "image_button_idle": "#510000",
+    "image_button_hover": "#33CC00",
+    "image_button_selected_idle": "#84E066",
+    "image_button_selected_hover": "#B7FFA1",
+    "image_button_insensitive": "#888888"
+}
