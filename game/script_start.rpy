@@ -328,6 +328,9 @@ label before_main_menu:
                 if not renpy.music.is_playing():
                     renpy.music.play(gui_theme_map["menu_theme_skip_splash"], loop = False, channel="music")
                     persistent.seen_splash = False
+
+        reload_theme(preferences.gui_theme, False)
+        gui.rebuild()
     return
 
 label start:  # this might be required??
