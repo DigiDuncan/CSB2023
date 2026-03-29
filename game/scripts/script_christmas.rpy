@@ -19,6 +19,10 @@
 # DB05
 
 label ce_start:
+    # Save the current theme for later.
+    $ persistent.pre_christmas_theme = preferences.gui_theme
+    $ reload_theme("christmas", True)
+
     scene black
     $ renpy.movie_cutscene(intro_credits_1)
     $ renpy.movie_cutscene(intro_credits_2)
@@ -7847,6 +7851,7 @@ label ce_epilogue:
     # Pan over shot of the schematic for the Billy pot
     show christmas_finisher with dissolve
     pause
+    $ reload_theme(persistent.pre_christmas_theme, True)
     if persistent.saved_christmas == False:
         $ persistent.saved_christmas = True
         call screen special_unlock("That strange die has moved to Extras?! The D20 Viewer has been unlocked!")

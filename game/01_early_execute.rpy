@@ -175,6 +175,7 @@ default persistent.csb3a_unlocked = False
 default persistent.csb3b_unlocked = False
 
 # Game unlocks: CE
+default persistent.pre_christmas_theme = "default"
 default persistent.carrot_fails = 0
 default persistent.saved_christmas = False
 default persistent.point_and_clicked = set()
