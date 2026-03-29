@@ -11,10 +11,6 @@ screen _rpg_selection(char_list = ["CS"], locked_slots = []):
         rpg_pending_sprite = renpy.get_registered_image("rpg_pending_portrait")
         rpg_pending_sprite_hover = renpy.get_registered_image("rpg_pending_portrait_hover")
 
-    # Run these immediately in the background of all screens
-    on "show" action [
-        Function(start_predict_list, ucn_bg_list)
-    ]
 
     ###################### Important variables for everywhere
     default rpg_hovered_data = []

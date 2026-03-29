@@ -33,7 +33,7 @@ screen item_nav():
     # Attempt to preload items
     on "show":
         action [
-            Function(start_predict_list, [i["img"] for i in ITEM_MAP.values()])
+            If(not preferences.craptop_mode, Function(start_predict_list, [i["img"] for i in ITEM_MAP.values()]), None)
         ]
 
     ###################### Load images first

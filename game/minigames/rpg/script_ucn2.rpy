@@ -21,7 +21,7 @@ screen _ucn2_selection():
 
     # Run these immediately in the background of all screens
     on "show" action [
-        Function(start_predict_list, ucn_bg_list),
+        If(not preferences.craptop_mode, Function(start_predict_list, ucn_bg_list), None),
         Hide("category_nav"),
         Play("music2", "audio/riders_menu.ogg"),
         Function(persistent.heard.add, "riders_menu")
