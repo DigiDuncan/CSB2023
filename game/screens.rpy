@@ -658,7 +658,7 @@ style game_menu_outer_frame:
     bottom_padding 45
     top_padding 180
 
-    background gui.game_menu_background
+    background "gui/themes/[preferences.gui_theme]/overlay/main_menu.png"
 
 style game_menu_navigation_frame:
     xsize 420
