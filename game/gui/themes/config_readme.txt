@@ -13,4 +13,4 @@ If you want to use a webm for menu backgrounds:
 - Be sure to include a png version as a fallback for craptop mode.
 - Include a first_frame.png to prevent the bug where the video goes black for one frame.
 
-For fonts, you will want to use the font map name, not the actual font filename. This can be found in 01_early_execute.rpy.
+If adding new fonts, be sure to adjust scaling in 01_early_execute.
