@@ -107,37 +107,45 @@ init python:
     # Silly triangle first, then JP text, then CN text, then EN fallback
     # This version now has scaling, so the JP text won't be MASSIVE in comparison to the EN text
 
-    # Register CJK fonts
-    config.font_name_map["cn"] = "ZCOOLKuaiLe-Regular.ttf"
-    config.font_name_map["jp"] = "MochiyPopOne-Regular.ttf"
-
     # Register other fonts
-    config.font_name_map["default"] = "Yokelvision.otf"
-    config.font_name_map["dyslexia"] = "comic.ttf" # Dyslexia mode
     config.font_name_map["azsz"] = "AllerDisplay_Std_Rg_0.ttf"
+    config.font_name_map["dyslexia"] = "comic.ttf" # Dyslexia mode
+
+    # Theme handling
+    config.font_name_map["default"] = gui_theme_map["main_font"]
+    config.font_name_map["say"] = gui_theme_map["name_font"]
+    config.font_name_map["cn"] = gui_theme_map["cn_font"]
+    config.font_name_map["jp"] = gui_theme_map["jp_font"]
 
     # Force multilingual text for music popup, jukebox, credits 
-    DYSLEXIA_GROUP = FontGroup().add("FiraCode-Retina.ttf", 0x2206, 0x2206).add("MochiyPopOne-Regular.ttf", 0x3000, 0x9fff).add("comic.ttf", 0x0000, 0xffff)
-    REGULAR_GROUP = FontGroup().add("FiraCode-Retina.ttf", 0x2206, 0x2206).add("MochiyPopOne-Regular.ttf", 0x3000, 0x9fff).add("Yokelvision.otf", 0x0000, 0xffff)
+    DYSLEXIA_GROUP = FontGroup().add("FiraCode-Retina.ttf", 0x2206, 0x2206).add("MochiyPopOne-Regular.ttf", 0x2600, 0x9fff).add("comic.ttf", 0x0000, 0xffff)
 
     if preferences.dyslexia_mode:
         config.font_name_map["music_text"] = DYSLEXIA_GROUP
     else:
-        config.font_name_map["music_text"] = REGULAR_GROUP
+        config.font_name_map["music_text"] = FontGroup().add("FiraCode-Retina.ttf", 0x2206, 0x2206).add( gui_theme_map["jp_font"] , 0x2600, 0x9fff).add( gui_theme_map["main_font"] , 0x0000, 0xffff)
 
-    config.font_name_map["credits_music"] = FontGroup().add("FiraCode-Retina.ttf", 0x2206, 0x2206).add("CP_Font_1.otf", 0x3000, 0x9fff).add("impact.ttf", 0x0000, 0xffff)
+    config.font_name_map["credits_music"] = FontGroup().add("FiraCode-Retina.ttf", 0x2206, 0x2206).add("CP_Font_1.otf", 0x2600, 0x9fff).add("impact.ttf", 0x0000, 0xffff)
 
     # Scale all fonts here (overall size first, then line spacing if needed)
-    config.ftfont_scale["ZCOOLKuaiLe-Regular.ttf"] = 0.75
     config.ftfont_scale["FiraCode-Retina.ttf"] = 0.825
+    config.ftfont_scale["ZCOOLKuaiLe-Regular.ttf"] = 0.75
     config.ftfont_scale["MochiyPopOne-Regular.ttf"] = 0.75
     config.ftfont_scale["CP_Font_1.otf"] = 0.825
+    config.ftfont_scale["YuGothL.ttc"] = 0.8    
+    config.ftfont_scale["Source Han Sans CN Light.otf"] = 0.8
+    config.ftfont_scale["Aller_Std_Lt_0.ttf"] = 0.8
+    config.ftfont_scale["AllerDisplay_Std_Rg_0.ttf"] = 0.8
     config.ftfont_scale["comic.ttf"] = 0.75 # Dyslexia mode
 
-    config.ftfont_vertical_extent_scale["ZCOOLKuaiLe-Regular.ttf"] = 1.0
     config.ftfont_vertical_extent_scale["FiraCode-Retina.ttf"] = 1.0
+    config.ftfont_vertical_extent_scale["ZCOOLKuaiLe-Regular.ttf"] = 1.0
     config.ftfont_vertical_extent_scale["MochiyPopOne-Regular.ttf"] = 1.0
     config.ftfont_vertical_extent_scale["CP_Font_1.otf"] = 1.0
+    config.ftfont_vertical_extent_scale["YuGothL.ttc"] = 1.0
+    config.ftfont_vertical_extent_scale["Source Han Sans CN Light.otf"] = 1.0
+    config.ftfont_vertical_extent_scale["Aller_Std_Lt_0.ttf"] = 1.0
+    config.ftfont_vertical_extent_scale["AllerDisplay_Std_Rg_0.ttf"] = 1.0
     config.ftfont_vertical_extent_scale["comic.ttf"] = 1.0  # Dyslexia mode
 
 # Default values for unlocks, etc

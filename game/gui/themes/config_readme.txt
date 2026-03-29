@@ -12,3 +12,5 @@ Color codes already include alpha, so you do not need to specify an alpha value 
 If you want to use a webm for menu backgrounds:
 - Be sure to include a png version as a fallback for craptop mode.
 - Include a first_frame.png to prevent the bug where the video goes black for one frame.
+
+For fonts, you will want to use the font map name, not the actual font filename. This can be found in 01_early_execute.rpy.

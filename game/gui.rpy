@@ -49,6 +49,13 @@ init python:
                 gui.choice_button_text_hover_color = j["choice_button_text_hover_color"]
                 gui.choice_button_text_insensitive_color = j["choice_button_text_insensitive_color"]
 
+                # Reset all fonts
+                config.font_name_map["default"] = j["main_font"]
+                config.font_name_map["say"] = j["name_font"]
+                config.font_name_map["cn"] = j["cn_font"]
+                config.font_name_map["jp"] = j["jp_font"]
+                config.font_name_map["music_text"] = FontGroup().add("FiraCode-Retina.ttf", 0x2206, 0x2206).add( j["jp_font"] , 0x2600, 0x9fff).add( j["main_font"] , 0x0000, 0xffff)
+
         except:
             with renpy.open_file("gui/themes/default/config.json") as f:
                 j = json.load(f)
@@ -157,7 +164,7 @@ define gui.interface_text_color = gui_theme_map["interface_text_color"]
 define gui.text_font = gui.preference("font", "default")
 
 ## The font used for character names.
-define gui.name_text_font = "Impact.ttf"
+define gui.name_text_font = gui_theme_map["name_font"]
 
 ## The font used for out-of-game text.
 define gui.interface_text_font = gui.preference("font", "default")

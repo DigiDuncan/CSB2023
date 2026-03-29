@@ -1,6 +1,11 @@
 {
     "theme_name": "Christmas Edition",
 
+    "main_font": "Yokelvision.otf",
+    "name_font": "impact.ttf",
+    "cn_font": "ZCOOLKuaiLe-Regular.ttf",
+    "jp_font": "MochiyPopOne-Regular.ttf",
+
     "accent_color": "#1BB320",
     "idle_color": "#888888",
     "idle_small_color": "#BBBBBB",
