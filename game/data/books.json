@@ -203,8 +203,8 @@
         "need_label": "ce_epilogue"
     },
     "underpants": {
-        "title": "Underpants?",
-        "desc": "{image=gui/inline_text/dx_text.png} placeholder",
+        "title": "The Adventures of Captain Underpants and the Giant Evil Mika",
+        "desc": "{image=gui/inline_text/dx_text.png} Inspired by a light-night game of Mad Libs, join Pakoo on an adventure with George and Harold to stop the giant evil Mika with the help of the man himself, Captain Underpants!",
         "x_pos": 600,
         "y_pos": 390,
         "kind": "label",
