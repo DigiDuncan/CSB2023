@@ -26,7 +26,9 @@
 
     "menu_background_filetype": "webm",
     "menu_subtitle_anchor": 0,
-    "menu_subtitle_xalign": 0.912,
-    "menu_subtitle_yalign": 0.59,
-    "menu_subtitle_zoom": 1.0
+    "menu_subtitle_xalign": 0,
+    "menu_subtitle_yalign": 0,
+    "menu_subtitle_zoom": 1.0,
+
+    "game_menu_filetype": "webm"
 }

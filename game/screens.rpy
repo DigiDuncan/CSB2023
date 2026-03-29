@@ -65,14 +65,13 @@ init python:
 
         if preferences.force_mute:
             # Set all the volume back.
-            pass
             for m in mixers:
                 preferences.set_mixer(m, mixer_volume[m])
         else:
             # Remember all the volume.
             for m in mixers:
                 mixer_volume[m] = preferences.get_mixer(m)
-                preferences.set_mixer(m, 0.0)
+                preferences.set_mixer(m, 0.0) # TODO: this crashes sometimes?
 
         preferences.force_mute = not preferences.force_mute     
 
@@ -905,17 +904,48 @@ screen preferences():
         #####  Screen Options - these include screen size and text options such as skip/speed/dyslexia mode
         if preferences_category == "Screen":
             hbox:
+                box_wrap True
+
+                # Fullscreen / Windowed
+                if renpy.variant("pc") or renpy.variant("web"):
+                    vbox:
+                        style_prefix "radio"
+                        label _("Display")
+                        textbutton _("Window") action Preference("display", "window")
+                        textbutton _("Fullscreen") action Preference("display", "fullscreen")
+
+                # Dyslexia mode
                 vbox:
-                    box_wrap True
+                    style_prefix "check"
+                    label "Accessibility"
+                    textbutton _("Craptop Mode"):
+                        action [ 
+                            ToggleVariable("preferences.craptop_mode"),
+                            SelectedIf( preferences.craptop_mode == True )
+                        ]
+                        hovered [Function(get_mouse), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
+                        tooltip _("Disables select visual effects in order to improve performance.")
 
-                    # Fullscreen / Windowed
-                    if renpy.variant("pc") or renpy.variant("web"):
-                        vbox:
-                            style_prefix "radio"
-                            label _("Display")
-                            textbutton _("Window") action Preference("display", "window")
-                            textbutton _("Fullscreen") action Preference("display", "fullscreen")
+                    textbutton _("Dyslexia Mode"):
+                        action [ 
+                            ToggleVariable("preferences.dyslexia_mode"),
+                            SelectedIf( preferences.dyslexia_mode == True ),
+                            gui.TogglePreference("font", "dyslexia", "default"),
+                            Function(fix_text)
+                        ]
+                        hovered [Function(get_mouse), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
+                        tooltip _("Changes to an easier-to-read font.")
 
+
+                # Skip text
+                vbox:
+                    style_prefix "check"
+                    label _("Skip")
+                    textbutton _("Unseen Text") action Preference("skip", "toggle")
+                    textbutton _("After Choices") action Preference("after choices", "toggle")
+                    textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
+
+                hbox:
                     # Themes
                     vbox:
                         style_prefix "radio"
@@ -942,74 +972,43 @@ screen preferences():
                                     SetField(preferences, "gui_theme", "tate"),
                                     Function(gui.rebuild)
                                 ]
-                        
 
-                    # Dyslexia mode
                     vbox:
-                        style_prefix "check"
-                        label "Accessibility Settings"
-                        textbutton _("Craptop Mode"):
-                            action [ 
-                                ToggleVariable("preferences.craptop_mode"),
-                                SelectedIf( preferences.craptop_mode == True )
-                            ]
-                            hovered [Function(get_mouse), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
-                            tooltip _("Disables select visual effects in order to improve performance.")
-
-                        textbutton _("Dyslexia Mode"):
-                            action [ 
-                                ToggleVariable("preferences.dyslexia_mode"),
-                                SelectedIf( preferences.dyslexia_mode == True ),
-                                gui.TogglePreference("font", "dyslexia", "default"),
-                                Function(fix_text)
-                            ]
-                            hovered [Function(get_mouse), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
-                            tooltip _("Changes to an easier-to-read font.")
-
-                    # Skip text
-                    vbox:
-                        style_prefix "check"
-                        label _("Skip")
-                        textbutton _("Unseen Text") action Preference("skip", "toggle")
-                        textbutton _("After Choices") action Preference("after choices", "toggle")
-                        textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
-
-                vbox:
-                    style_prefix "slider"
-                    
-                    # Text speed
-                    hbox:
-                        label _("Text Speed")
+                        style_prefix "slider"
                         
-                        textbutton _("Reset"):
-                            action SetField(preferences, "text_cps", 40)
-                            xalign 1.0 yalign 1.0
-                            text_size 24 text_align 1.0
-                    hbox:
-                        bar:
-                            style "slider"
-                            value Preference("text speed")
-                            range 100
-                            xsize 675
-                        null width 20
-                        label  "[preferences.__dict__['text_cps']:.1f]cps" xminimum 200 yoffset -12
+                        # Text speed
+                        hbox:
+                            label _("Text Speed")
+                            
+                            textbutton _("Reset"):
+                                action SetField(preferences, "text_cps", 40)
+                                xalign 1.0 yalign 1.0
+                                text_size 24 text_align 1.0
+                        hbox:
+                            bar:
+                                style "slider"
+                                value Preference("text speed")
+                                range 100
+                                xsize 675
+                            null width 20
+                            label  "[preferences.__dict__['text_cps']:.1f]cps" xminimum 200 yoffset -12
 
 
-                    # Auto-forward
-                    hbox:
-                        label _("Auto-Forward Time")
-                        textbutton _("Reset"):
-                            action SetField(preferences, "afm_time", 15)
-                            xalign 1.0 yalign 1.0
-                            text_size 24 text_align 1.0
-                    hbox:
-                        bar:
-                            style "slider"
-                            value Preference("auto-forward time")
-                            range 100
-                            xsize 675
-                        null width 20
-                        label "[preferences.__dict__['afm_time']:.1f]s" xminimum 200 yoffset -12
+                        # Auto-forward
+                        hbox:
+                            label _("Auto-Forward Time")
+                            textbutton _("Reset"):
+                                action SetField(preferences, "afm_time", 15)
+                                xalign 1.0 yalign 1.0
+                                text_size 24 text_align 1.0
+                        hbox:
+                            bar:
+                                style "slider"
+                                value Preference("auto-forward time")
+                                range 100
+                                xsize 675
+                            null width 20
+                            label "[preferences.__dict__['afm_time']:.1f]s" xminimum 200 yoffset -12
 
 
         ##### Audio options - these include all the music volume sliders and ability to mute all audio

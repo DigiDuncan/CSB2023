@@ -28,5 +28,7 @@
     "menu_subtitle_anchor": 0.5,
     "menu_subtitle_xalign": 0.8,
     "menu_subtitle_yalign": 0.225,
-    "menu_subtitle_zoom": 0.4
+    "menu_subtitle_zoom": 0.4,
+
+    "game_menu_filetype": "png"
 }

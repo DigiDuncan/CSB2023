@@ -188,9 +188,12 @@ define gui.main_menu_background = ConditionSwitch(
     "True", "gui/themes/default/main_menu.png"
 )
 
-#define gui.main_menu_background = "gui/themes/[preferences.gui_theme]/main_menu."+gui_theme_map["menu_background_filetype"]
-define gui.game_menu_background = "gui/themes/[preferences.gui_theme]/game_menu.png"
-
+# TODO: this does not work. it looks for a png no matter what.
+define gui.game_menu_background = ConditionSwitch(
+    "gui_theme_map.get('game_menu_filetype') == 'webm'", Movie(play="gui/themes/" + preferences.gui_theme + "/game_menu.webm", loop=True),
+    "gui_theme_map.get('game_menu_filetype') == 'png'", "gui/themes/" + preferences.gui_theme + "/game_menu.png",
+    "True", "gui/themes/default/game_menu.png"
+)
 
 ## Dialogue ####################################################################
 ##
