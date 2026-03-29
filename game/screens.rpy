@@ -658,7 +658,7 @@ style game_menu_outer_frame:
     bottom_padding 45
     top_padding 180
 
-    background "gui/themes/[preferences.gui_theme]/overlay/game_menu.png"
+    background gui.game_menu_background
 
 style game_menu_navigation_frame:
     xsize 420
@@ -921,7 +921,9 @@ screen preferences():
                     textbutton _("Craptop Mode"):
                         action [ 
                             ToggleVariable("preferences.craptop_mode"),
-                            SelectedIf( preferences.craptop_mode == True )
+                            SelectedIf( preferences.craptop_mode == True ),
+                            Function(gui.rebuild),
+                            Function(renpy.restart_interaction)
                         ]
                         hovered [Function(get_mouse), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
                         tooltip _("Disables select visual effects in order to improve performance.")
@@ -931,7 +933,8 @@ screen preferences():
                             ToggleVariable("preferences.dyslexia_mode"),
                             SelectedIf( preferences.dyslexia_mode == True ),
                             gui.TogglePreference("font", "dyslexia", "default"),
-                            Function(fix_text)
+                            Function(fix_text),
+                            Function(renpy.restart_interaction)
                         ]
                         hovered [Function(get_mouse), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
                         tooltip _("Changes to an easier-to-read font.")
@@ -954,23 +957,26 @@ screen preferences():
                             action [
                                 Function (reload_theme, "default", True),
                                 SetField(preferences, "gui_theme", "default"),
-                                Function(gui.rebuild)
+                                Function(gui.rebuild),
+                                Function(renpy.restart_interaction)
                             ]
                         if persistent.saved_christmas or preferences.developer_mode:
                             textbutton _("Christmas"):
                                 action [
                                     Function (reload_theme, "christmas", True),
                                     SetField(preferences, "gui_theme", "christmas"),
-                                    Function(gui.rebuild)
+                                    Function(gui.rebuild),
+                                    Function(renpy.restart_interaction)
                                 ]
                         if persistent.defeated_perfect_tate or preferences.developer_mode:
                             textbutton _("Tate EX"):
                                 hovered [Function(get_mouse), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
-                                tooltip _("WARNING: This theme may not run well on lower-end computers.")
+                                tooltip _("WARNING: This theme may not run well on lower-end computers. Turn on Craptop Mode first.")
                                 action [
                                     Function (reload_theme, "tate", True),
                                     SetField(preferences, "gui_theme", "tate"),
-                                    Function(gui.rebuild)
+                                    Function(gui.rebuild),
+                                    Function(renpy.restart_interaction)
                                 ]
 
                     vbox:

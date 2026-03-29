@@ -8,6 +8,10 @@ init offset = -2
 
 ## Calling gui.init resets the styles to sensible default values, and sets the
 ## width and height of the game.
+
+# Default has to be here for some reason
+define gui_theme_map = {}
+
 init python:
     gui.init(1920, 1080)
 
@@ -43,8 +47,6 @@ init python:
                 gui.choice_button_text_idle_color = j["choice_button_text_idle_color"]
                 gui.choice_button_text_hover_color = j["choice_button_text_hover_color"]
                 gui.choice_button_text_insensitive_color = j["choice_button_text_insensitive_color"]
-
-
 
         except:
             with renpy.open_file("gui/themes/default/config.json") as f:
@@ -181,18 +183,36 @@ define gui.title_text_size = 75 * gui.preference("fsm", 1)
 ## Main and Game Menus #########################################################
 
 ## The images used for the main and game menus.
+## While it can take a video, make sure to have a png fallback for craptop mode / the first frame of the video
+## Statements must be run in order of priority:
+## Craptop mode, webm handling, png fallback.
+## Always include a fallback image.
 
 define gui.main_menu_background = ConditionSwitch(
-    "gui_theme_map.get('menu_background_filetype') == 'webm'", Movie(play="gui/themes/" + preferences.gui_theme + "/main_menu.webm", loop=True),
+    "preferences.craptop_mode == True", "gui/themes/" + preferences.gui_theme + "/main_menu.png",
+
+    "gui_theme_map.get('menu_background_filetype') == 'webm'", Movie(
+        play="gui/themes/" + preferences.gui_theme + "/main_menu.webm", 
+        loop=True,
+        start_image="gui/themes/" + preferences.gui_theme + "/main_menu_first_frame.png"
+    ),
+
     "gui_theme_map.get('menu_background_filetype') == 'png'", "gui/themes/" + preferences.gui_theme + "/main_menu.png",
-    "True", "gui/themes/default/main_menu.png"
+
+    "True", "gui/themes/"+preferences.gui_theme+"/main_menu.png"
 )
 
-# TODO: this does not work. it looks for a png no matter what.
 define gui.game_menu_background = ConditionSwitch(
-    "gui_theme_map.get('game_menu_filetype') == 'webm'", Movie(play="gui/themes/" + preferences.gui_theme + "/game_menu.webm", loop=True),
+    "preferences.craptop_mode == True", "gui/themes/" + preferences.gui_theme + "/game_menu.png",
+
+    "gui_theme_map.get('game_menu_filetype') == 'webm'", Movie(
+        play="gui/themes/" + preferences.gui_theme + "/game_menu.webm", 
+        loop=True, 
+        start_image="gui/themes/" + preferences.gui_theme + "/game_menu_first_frame.png"
+    ),
     "gui_theme_map.get('game_menu_filetype') == 'png'", "gui/themes/" + preferences.gui_theme + "/game_menu.png",
-    "True", "gui/themes/default/game_menu.png"
+    
+    "True", "gui/themes/"+preferences.gui_theme+"/game_menu.png"
 )
 
 ## Dialogue ####################################################################

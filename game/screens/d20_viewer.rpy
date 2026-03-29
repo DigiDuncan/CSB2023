@@ -3,7 +3,7 @@
 screen d20_viewer_screen():
     tag menu
 
-    add f"gui/themes/{preferences.gui_theme}/game_menu.png"
+    add gui.game_menu_background
 
     text "{size=+48}D20 Viewer":
         xalign 0.5
