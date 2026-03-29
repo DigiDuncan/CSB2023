@@ -28,8 +28,9 @@ label train_very_final:
                    
             persistent.train_routes_seen = count_seen
 
-        if persistent.defeated_perfect_tate:
+        if persistent.defeated_perfect_tate and "tate" not in persistent.unlocked_themes:
             renpy.call_screen("special_unlock", "You've unlocked a colorful new theme! Check it out in CSettings!")
+            persistent.unlocked_themes.add("tate")
 
         # unlock the achievement if you've seen all routes
         if persistent.train_routes_seen == 3:

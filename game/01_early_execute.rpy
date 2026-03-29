@@ -160,6 +160,10 @@ default persistent.controller_id = 0
 default persistent.true_ending = False
 default persistent.defeated_perfect_tate = False
 
+# Theme handling
+default persistent.unlocked_themes = set()
+$ persistent.unlocked_themes.add("default")
+
 # Achievement progress
 default persistent.seen_original_endings = set()
 default persistent.seen_all_endings = set()

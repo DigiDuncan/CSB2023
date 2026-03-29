@@ -21,10 +21,15 @@
 label ce_start:
 
     # Save the current theme for later.
-    $ persistent.pre_christmas_theme = preferences.gui_theme
-    $ reload_theme("christmas", True)
+    python:
+        persistent.pre_christmas_theme = preferences.gui_theme
+        preferences.gui_theme = "christmas"
+        reload_theme("christmas", False)
+        gui.rebuild()
 
-    $ renpy.call_screen("special_unlock", "You've unlocked a festive new theme! Check it out in CSettings!")
+        if "christmas" not in persistent.unlocked_themes:
+            renpy.call_screen("special_unlock", "You've unlocked a festive new theme! Check it out in CSettings!")
+            persistent.unlocked_themes.add("christmas")
 
     scene black
     $ renpy.movie_cutscene(intro_credits_1)
@@ -7854,7 +7859,14 @@ label ce_epilogue:
     # Pan over shot of the schematic for the Billy pot
     show christmas_finisher with dissolve
     pause
-    $ reload_theme(persistent.pre_christmas_theme, True)
+
+    # Unlock this screen
     if persistent.saved_christmas == False:
         $ persistent.saved_christmas = True
         call screen special_unlock("That strange die has moved to Extras?! The D20 Viewer has been unlocked!")
+
+    # Put the theme back
+    $ preferences.gui_theme = persistent.pre_christmas_theme
+    $ reload_theme(persistent.pre_christmas_theme, True)
+    $ gui.rebuild()
+

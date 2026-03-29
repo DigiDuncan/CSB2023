@@ -24,7 +24,7 @@ screen special_unlock(flavor_text):
 
     frame:
         xysize (1920, 1080)
-        background f"gui/themes/{preferences.theme_name}/special_unlock.png"
+        background "gui/themes/[preferences.gui_theme]/special_unlock.png"
 
         # unlock text
         frame:
@@ -36,7 +36,7 @@ screen special_unlock(flavor_text):
             text flavor_text:
                 font "impact.ttf"
                 size 64
-                color "#FFFFFF"
+                color gui.text_color
                 xalign 0.5
                 yalign 0.5
                 justify True
@@ -50,7 +50,7 @@ screen special_unlock(flavor_text):
             text this_day:
                 font "impact.ttf"
                 size 64
-                color "#888888"
+                color gui.idle_small_color
                 xalign 0.5
 
         # time
@@ -62,5 +62,5 @@ screen special_unlock(flavor_text):
             text this_time:
                 font "impact.ttf"
                 size 64
-                color "#888888"
+                color gui.idle_small_color
                 xalign 0.5

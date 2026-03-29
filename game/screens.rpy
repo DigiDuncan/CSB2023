@@ -1022,7 +1022,7 @@ screen preferences():
                                 Function(gui.rebuild),
                                 Function(renpy.restart_interaction)
                             ]
-                        if renpy.seen_label("ce_start") or preferences.developer_mode:
+                        if "christmas" in persistent.unlocked_themes  or preferences.developer_mode:
                             textbutton _("Christmas"):
                                 action [
                                     Function (reload_theme, "christmas", True),
@@ -1030,7 +1030,7 @@ screen preferences():
                                     Function(gui.rebuild),
                                     Function(renpy.restart_interaction)
                                 ]
-                        if persistent.defeated_perfect_tate or preferences.developer_mode:
+                        if "tate" in persistent.unlocked_themes or preferences.developer_mode:
                             textbutton _("Tate EX"):
                                 
                                 if not preferences.craptop_mode:
