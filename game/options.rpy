@@ -146,6 +146,7 @@ default preferences.csbounciness = 0
 default preferences.max_fun = 100
 default preferences.streamer_mode = False
 default preferences.dyslexia_mode = False
+default preferences.craptop_mode = False
 default preferences.developer_commentary = True
 default preferences.developer_mode = True
 default preferences.awawa_mode = False

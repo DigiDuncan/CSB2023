@@ -1,5 +1,5 @@
 {
-    "accent_color": "#0099CC",
+    "accent_color": "#00FFFF",
     "idle_color": "#888888",
     "idle_small_color": "#BBBBBB",
     "hover_color": "#66C1E0",
@@ -25,8 +25,8 @@
     "menu_theme_jukebox_id": "bubble_tea",
 
     "menu_background_filetype": "png",
-    "menu_subtitle_anchor": 0.5,
-    "menu_subtitle_xalign": 0.8,
-    "menu_subtitle_yalign": 0.225,
-    "menu_subtitle_zoom": 0.4
+    "menu_subtitle_anchor": 0,
+    "menu_subtitle_xalign": 0.912,
+    "menu_subtitle_yalign": 0.59,
+    "menu_subtitle_zoom": 1.0
 }

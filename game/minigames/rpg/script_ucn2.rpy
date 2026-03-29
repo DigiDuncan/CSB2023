@@ -51,7 +51,7 @@ screen _ucn2_selection():
     ### Add background color / prep video
     add Color("#000")
     add gui_theme_map["screen_transparency_layer"]
-    showif rpg_ready == True:
+    showif rpg_ready == True and not preferences.craptop_mode:
         add Movie(size=(1920,1080), play="movies/Fire.webm", side_mask=True) at _rpg_ready_flames
 
 ###################################################### STAGE 1: CHARACTER SELECTION

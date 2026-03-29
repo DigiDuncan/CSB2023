@@ -478,7 +478,11 @@ style navigation_button_text:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#main-menu
 
-transform dx_fade:
+transform dx_fade(a_anchor = 0.5, x_align = 0.8, y_align = 0.225, z_zoom = 0.4):
+    anchor (a_anchor, a_anchor)
+    xalign x_align yalign y_align
+    zoom z_zoom
+
     on show:
         alpha 0.0
         ease_cubic 2.0 alpha 1.0
@@ -490,8 +494,8 @@ screen main_menu():
     tag menu
     add gui.main_menu_background
 
-    add "gui/themes/[preferences.gui_theme]/subtitle.png" xalign 0.8 yalign 0.225 zoom 0.4:
-        at dx_fade
+    add "gui/themes/[preferences.gui_theme]/subtitle.png":
+        at dx_fade( gui_theme_map["menu_subtitle_anchor"], gui_theme_map["menu_subtitle_xalign"], gui_theme_map["menu_subtitle_yalign"], gui_theme_map["menu_subtitle_zoom"] )
     viewport:
         xysize(666,720)
         yanchor -0.025
@@ -928,11 +932,29 @@ screen preferences():
                                     SetField(preferences, "gui_theme", "christmas"),
                                     Function(gui.rebuild)
                                 ]
+                        if persistent.defeated_perfect_tate or preferences.developer_mode:
+                            textbutton _("Tate EX"):
+                                hovered [Function(get_mouse), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
+                                tooltip _("WARNING: This theme may not run well on lower-end computers.")
+                                action [
+                                    Function (reload_theme, "tate", True),
+                                    SetField(preferences, "gui_theme", "tate"),
+                                    Function(gui.rebuild)
+                                ]
+                        
 
                     # Dyslexia mode
                     vbox:
                         style_prefix "check"
-                        label "Text Settings"
+                        label "Accessibility Settings"
+                        textbutton _("Craptop Mode"):
+                            action [ 
+                                ToggleVariable("preferences.craptop_mode"),
+                                SelectedIf( preferences.craptop_mode == True )
+                            ]
+                            hovered [Function(get_mouse), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
+                            tooltip _("Disables select visual effects in order to improve performance.")
+
                         textbutton _("Dyslexia Mode"):
                             action [ 
                                 ToggleVariable("preferences.dyslexia_mode"),

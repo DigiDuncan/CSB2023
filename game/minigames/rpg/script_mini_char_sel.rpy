@@ -32,7 +32,7 @@ screen _rpg_selection(char_list = ["CS"], locked_slots = []):
 
     ### Add background color / prep video
     add gui_theme_map["screen_transparency_layer"]
-    showif rpg_ready == True:
+    showif rpg_ready == True and not preferences.craptop_mode:
         add Movie(size=(1920,1080), play="movies/Fire.webm", side_mask=True) at _rpg_ready_flames
 
 ###################################################### CHARACTER SELECTION
