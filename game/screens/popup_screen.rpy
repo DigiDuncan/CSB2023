@@ -2,9 +2,6 @@ screen popup(a):
     zorder 100
     layer "popup"
     style_prefix "popup"
-    default popup_chieve_name = Text(a.name, size=22, xmaximum=260, font="fonts/DIN-Medium.ttf", layout="greedy")
-    default popup_chieve_desc = Text(a.desc, size=16, xmaximum=260, font="fonts/DIN-Medium.ttf", layout="greedy")
-    default popup_chieve_icon = a.icon
 
     frame:
         at popup_appear
@@ -17,7 +14,7 @@ screen popup(a):
                 background None
                 xysize(100,100)
                 yalign 0.5
-                add popup_chieve_icon:
+                add a.icon:
                     yalign 0.5
                     xalign 0.5
                     xysize(100,100)
@@ -25,9 +22,18 @@ screen popup(a):
                     yalign 0.5
                     xalign 0.5
             vbox:
-                spacing 15
-                add popup_chieve_name
-                add popup_chieve_desc
+                xmaximum 200
+                spacing 0
+
+                text a.name:
+                    size 22
+                    font "fonts/DIN-Medium.ttf"
+                    layout "greedy"
+
+                text a.desc:
+                    size 16
+                    font "fonts/DIN-Medium.ttf"
+                    layout "greedy"
 
     timer 5 action Hide('popup')
 
