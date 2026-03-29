@@ -27,6 +27,7 @@ init python:
             else:
                 logger.info(f"Loaded theme '{theme_name}'.")
                 renpy.notify(f"Loaded theme '{theme_name}'.")
+
             # Force-change colors
             if force_changed:
                 gui.accent_color = j["accent_color"]
@@ -42,6 +43,8 @@ init python:
                 gui.choice_button_text_idle_color = j["choice_button_text_idle_color"]
                 gui.choice_button_text_hover_color = j["choice_button_text_hover_color"]
                 gui.choice_button_text_insensitive_color = j["choice_button_text_insensitive_color"]
+
+
 
         except:
             with renpy.open_file("gui/themes/default/config.json") as f:
@@ -178,7 +181,14 @@ define gui.title_text_size = 75 * gui.preference("fsm", 1)
 ## Main and Game Menus #########################################################
 
 ## The images used for the main and game menus.
-define gui.main_menu_background = "gui/themes/[preferences.gui_theme]/main_menu."+gui_theme_map["menu_background_filetype"]
+
+define gui.main_menu_background = ConditionSwitch(
+    "gui_theme_map.get('menu_background_filetype') == 'webm'", Movie(play="gui/themes/" + preferences.gui_theme + "/main_menu.webm", loop=True),
+    "gui_theme_map.get('menu_background_filetype') == 'png'", "gui/themes/" + preferences.gui_theme + "/main_menu.png",
+    "True", "gui/themes/default/main_menu.png"
+)
+
+#define gui.main_menu_background = "gui/themes/[preferences.gui_theme]/main_menu."+gui_theme_map["menu_background_filetype"]
 define gui.game_menu_background = "gui/themes/[preferences.gui_theme]/game_menu.png"
 
 

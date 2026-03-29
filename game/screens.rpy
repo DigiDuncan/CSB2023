@@ -65,6 +65,7 @@ init python:
 
         if preferences.force_mute:
             # Set all the volume back.
+            pass
             for m in mixers:
                 preferences.set_mixer(m, mixer_volume[m])
         else:

@@ -1752,6 +1752,14 @@
             "album_art": "nyan.png",
             "trivia": "The Tate EX story arc was nearly complete when this track showed up in Tate's SoundCloud recommended feed one day. This is {i}only{/i} reason why Perfect Tate exists."
         },
+        "sugar_tea": {
+            "file": "sugar_tea.ogg",
+            "title": "BUBBLE TEA (GYNX & Azineo RAINBOW BASS RMX)",
+            "artist": "dark cat feat. juu & cinders",
+            "tags": ["Menus & Misc.", "CSBDX: Train Route", "New In DX"],
+            "album_art": "sugar_tea.png",
+            "trivia": "\"Y'know, I was expecting a lot more remixes of this song to exist...\" -- Tate"
+        },
       "missingno" : {
             "file": "secret/dd/missingno_full.ogg",
             "title": "MissingNo",
