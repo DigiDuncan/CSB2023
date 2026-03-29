@@ -658,7 +658,7 @@ style game_menu_outer_frame:
     bottom_padding 45
     top_padding 180
 
-    background "gui/themes/[preferences.gui_theme]/overlay/main_menu.png"
+    background "gui/themes/[preferences.gui_theme]/overlay/game_menu.png"
 
 style game_menu_navigation_frame:
     xsize 420
@@ -894,11 +894,48 @@ screen preferences():
         hbox:
             spacing 20
             style_prefix "radio"
-            textbutton "{size=+12}Screen" action SetScreenVariable("preferences_category", "Screen")
-            textbutton "{size=+12}Audio" action SetScreenVariable("preferences_category", "Audio")
-            textbutton "{size=+12}Gameplay" action SetScreenVariable("preferences_category", "Gameplay")
+
+            # Screen
+            button:
+                selected_background "gui/themes/[preferences.gui_theme]/button/radio_selected_foreground.png"
+                text _("Screen"):
+                    color gui.idle_color
+                    hover_color gui.hover_color
+                    selected_color gui.selected_color
+                    yoffset -4
+                action [ SetScreenVariable("preferences_category", "Screen"), With(dissolve) ]
+
+            # Audio
+            button:
+                selected_background "gui/themes/[preferences.gui_theme]/button/radio_selected_foreground.png"
+                text _("Audio"):
+                    color gui.idle_color
+                    hover_color gui.hover_color
+                    selected_color gui.selected_color
+                    yoffset -4
+                action [ SetScreenVariable("preferences_category", "Audio"), With(dissolve) ]
+
+            # Gameplay
+            button:
+                selected_background "gui/themes/[preferences.gui_theme]/button/radio_selected_foreground.png"
+                text _("Gameplay"):
+                    color gui.idle_color
+                    hover_color gui.hover_color
+                    selected_color gui.selected_color
+                    yoffset -4
+                action [ SetScreenVariable("preferences_category", "Gameplay"), With(dissolve) ]
+
+            # Developer
             if preferences.developer_mode or persistent.creative_mode:
-                textbutton "{size=+12}Developer" action SetScreenVariable("preferences_category", "Developer")
+                button:
+                    selected_background "gui/themes/[preferences.gui_theme]/button/radio_selected_foreground.png"
+                    text _("Developer"):
+                        color gui.idle_color
+                        hover_color gui.hover_color
+                        selected_color gui.selected_color
+                        yoffset -4
+                    action [ SetScreenVariable("preferences_category", "Developer"), With(dissolve) ]
+
             null height 100
 
         #####  Screen Options - these include screen size and text options such as skip/speed/dyslexia mode
@@ -913,14 +950,16 @@ screen preferences():
                         label _("Display")
                         textbutton _("Window") action Preference("display", "window")
                         textbutton _("Fullscreen") action Preference("display", "fullscreen")
-
-                # Dyslexia mode
+                
                 vbox:
                     style_prefix "check"
                     label "Accessibility"
+
+                    # Craptop mode (also forcibly turns off transitions)
                     textbutton _("Craptop Mode"):
                         action [ 
                             ToggleVariable("preferences.craptop_mode"),
+                            Preference("transitions", "none"),
                             SelectedIf( preferences.craptop_mode == True ),
                             Function(gui.rebuild),
                             Function(renpy.restart_interaction)
@@ -928,6 +967,7 @@ screen preferences():
                         hovered [Function(get_mouse), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
                         tooltip _("Disables select visual effects in order to improve performance.")
 
+                    # Dyslexia mode
                     textbutton _("Dyslexia Mode"):
                         action [ 
                             ToggleVariable("preferences.dyslexia_mode"),
@@ -939,14 +979,22 @@ screen preferences():
                         hovered [Function(get_mouse), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
                         tooltip _("Changes to an easier-to-read font.")
 
-
-                # Skip text
                 vbox:
                     style_prefix "check"
-                    label _("Skip")
-                    textbutton _("Unseen Text") action Preference("skip", "toggle")
-                    textbutton _("After Choices") action Preference("after choices", "toggle")
-                    textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
+                    label _("Visual Options")
+
+                    # Skip text / choices
+                    textbutton _("Skip Unseen Text") action Preference("skip", "toggle")
+                    textbutton _("Skip After Choices") action Preference("after choices", "toggle")
+
+                    # Disable transitions (auto-disabled with Craptop mode)
+                    textbutton _("Disable Transitions"):
+                        if preferences.craptop_mode:
+                            hovered [Function(get_mouse), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
+                            tooltip _("Disable Craptop Mode to change this setting.")
+                            sensitive (False)
+                        else:
+                            action InvertSelected(Preference("transitions", "toggle"))
 
                 hbox:
                     # Themes
@@ -970,8 +1018,11 @@ screen preferences():
                                 ]
                         if persistent.defeated_perfect_tate or preferences.developer_mode:
                             textbutton _("Tate EX"):
-                                hovered [Function(get_mouse), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
-                                tooltip _("WARNING: This theme may not run well on lower-end computers. Turn on Craptop Mode first.")
+                                
+                                if not preferences.craptop_mode:
+                                    hovered [Function(get_mouse), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
+                                    tooltip _("WARNING: This theme may not run well on lower-end hardware. Turn on Craptop Mode if it's lagging the game.")
+
                                 action [
                                     Function (reload_theme, "tate", True),
                                     SetField(preferences, "gui_theme", "tate"),
@@ -987,7 +1038,7 @@ screen preferences():
                             label _("Text Speed")
                             
                             textbutton _("Reset"):
-                                action SetField(preferences, "text_cps", 40)
+                                action [ SelectedIf(False), SetField(preferences, "text_cps", 40) ]
                                 xalign 1.0 yalign 1.0
                                 text_size 24 text_align 1.0
                         hbox:
@@ -1004,7 +1055,7 @@ screen preferences():
                         hbox:
                             label _("Auto-Forward Time")
                             textbutton _("Reset"):
-                                action SetField(preferences, "afm_time", 15)
+                                action [ SelectedIf(False), SetField(preferences, "afm_time", 15) ]
                                 xalign 1.0 yalign 1.0
                                 text_size 24 text_align 1.0
                         hbox:

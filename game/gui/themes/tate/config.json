@@ -1,9 +1,9 @@
 {
     "accent_color": "#00FFFF",
-    "idle_color": "#888888",
+    "idle_color": "#BBBBBB",
     "idle_small_color": "#BBBBBB",
-    "hover_color": "#66C1E0",
-    "selected_color": "#FFFFFF",
+    "hover_color": "#FFFF00",
+    "selected_color": "#FF00FF",
     "insensitive_color": "#8888887F",
     "muted_color": "#003D51",
     "hover_muted_color": "#006582",
@@ -13,7 +13,7 @@
     "choice_button_text_hover_color": "#FFFFFF",
     "choice_button_text_insensitive_color": "#8888887F",
 
-    "screen_transparency_layer": "#323E42BF",
+    "screen_transparency_layer": "/gui/themes/tate/overlay/menu_alpha.png",
     "image_button_idle": "#003D51",
     "image_button_hover": "#0099CC",
     "image_button_selected_idle": "#65C0DF",
