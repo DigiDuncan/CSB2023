@@ -1,4 +1,6 @@
 {
+    "theme_name": "CSBDX Default",
+
     "accent_color": "#0099CC",
     "idle_color": "#888888",
     "idle_small_color": "#BBBBBB",
@@ -19,6 +21,8 @@
     "image_button_selected_idle": "#65C0DF",
     "image_button_selected_hover": "#A1E6FF",
     "image_button_insensitive": "#888888",
+
+    "hover_filter_color": "#808000",
 
     "menu_theme": "bubble_tea.ogg",
     "menu_theme_skip_splash": "<from 16.53>bubble_tea.ogg",

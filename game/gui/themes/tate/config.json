@@ -1,4 +1,6 @@
 {
+    "theme_name": "Tate EX",
+
     "accent_color": "#00FFFF",
     "idle_color": "#BBBBBB",
     "idle_small_color": "#BBBBBB",
@@ -14,11 +16,13 @@
     "choice_button_text_insensitive_color": "#8888887F",
 
     "screen_transparency_layer": "/gui/themes/tate/overlay/menu_alpha.png",
-    "image_button_idle": "#003D51",
-    "image_button_hover": "#0099CC",
-    "image_button_selected_idle": "#65C0DF",
-    "image_button_selected_hover": "#A1E6FF",
-    "image_button_insensitive": "#888888",
+    "image_button_idle": "#008080",
+    "image_button_hover": "#ff00ff",
+    "image_button_selected_idle": "#FFFF00",
+    "image_button_selected_hover": "#FFFFBD",
+    "image_button_insensitive": "#800080",
+
+    "hover_filter_color": "#808000",
 
     "menu_theme": "sugar_tea.ogg",
     "menu_theme_skip_splash": "<from 10.538>sugar_tea.ogg",

@@ -30,7 +30,8 @@ init python:
                 renpy.notify("You're already using this theme!")
             else:
                 logger.info(f"Loaded theme '{theme_name}'.")
-                renpy.notify(f"Loaded theme '{theme_name}'.")
+                if force_changed:
+                    renpy.notify(f"Loaded theme {j["theme_name"]}.")
 
             # Force-change colors
             if force_changed:

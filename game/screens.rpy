@@ -88,6 +88,12 @@ init python:
         except:
             pass
 
+
+    def delete_all_saves():
+        for savegame in renpy.list_saved_games(fast=True):
+            renpy.unlink_save(savegame)
+
+
 ################################################################################
 ## Initialization
 ################################################################################
@@ -1200,7 +1206,10 @@ screen preferences():
 
                         # Clear Save Data
                         textbutton  _("Clear Persistent Data\n{size=-12}Clear your saved data. This cannot be undone."):
-                            action Jump("clear_screen")
+                            action Jump("clear_data")
+
+                        textbutton  _("Clear Save Slots\n{size=-12}Clears all the save slots. This cannot be undone."):
+                            action Jump("clear_saves")
 
 
         ##### Developer options - everything else!

@@ -336,3 +336,24 @@ label before_main_menu:
 label start:  # this might be required??
     # yep, it's required, but i'm fixing it to default to main menu instead - tate
     return
+
+### DATA MANAGEMENT ###
+
+label clear_data:
+    call screen confirm(message="ARE YOU SURE? This will ERASE all data.", yes_action=Jump("reset_vector"), no_action=[Hide("confirm"), Return()])
+    return
+
+label reset_vector:
+    $ persistent._clear(progress=True)
+    $ renpy.quit(relaunch = True)
+
+label clear_saves:
+    call screen confirm(message="ARE YOU SURE? This will erase ALL your save slots.", yes_action=Jump("reset_saves"), no_action=[Hide("confirm"), Return()])
+
+label reset_saves:
+    python:
+        for savegame in renpy.list_saved_games(fast=True):
+            renpy.unlink_save(savegame)
+    $ renpy.quit(relaunch = True)
+
+

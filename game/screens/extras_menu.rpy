@@ -98,11 +98,3 @@ style codex_label_text:
     size gui.label_text_size
 style codex_scrollbar is gui_vscrollbar:
     xoffset 100
-
-label clear_screen:
-    call screen confirm(message="ARE YOU SURE? This will ERASE all data.", yes_action=Jump("reset_vector"), no_action=[Hide("confirm"), Return()])
-    return
-
-label reset_vector:
-    $ persistent._clear(progress=True)
-    $ renpy.quit(relaunch = True)

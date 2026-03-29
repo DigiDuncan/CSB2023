@@ -1,4 +1,4 @@
-init -10 python:
+init -1 python:
     ########## DUSK SHADER
     duskmatrix = TintMatrix("#ffaa49")
 
@@ -57,9 +57,9 @@ init -10 python:
     config.displayable_prefix["sepia"] = shade_sepia
     config.displayable_prefix["sepia:flip"] = shade_sepia_flip
 
-    ########## YELLOW SELECTABLE FILTER
+    ########## SELECTABLE FILTER
     # Full disclosure: this one single line was partially-written by AI.
-    shade_select_matrix = ColorizeMatrix("#808000","#FFFFFF")
+    shade_select_matrix = ColorizeMatrix( gui_theme_map["hover_filter_color"], "#FFFFFF")
 
     def shade_select(s):
         return Transform(s, xzoom = 1, matrixcolor = shade_select_matrix)
