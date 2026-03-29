@@ -19,9 +19,12 @@
 # DB05
 
 label ce_start:
+
     # Save the current theme for later.
     $ persistent.pre_christmas_theme = preferences.gui_theme
     $ reload_theme("christmas", True)
+
+    $ renpy.call_screen("special_unlock", "You've unlocked a festive new theme! Check it out in CSettings!")
 
     scene black
     $ renpy.movie_cutscene(intro_credits_1)

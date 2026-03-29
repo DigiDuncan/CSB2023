@@ -24,7 +24,7 @@ init python:
     else:
         max_fun_label = "Off"
 
-    awawa_chance_label = f"{preferences.awawa_chance}%" if preferences.awawa_mode else "100%"
+    awawa_chance_label = f"{preferences.awawa_chance}%" if preferences.awawa_mode else f"{preferences.awawa_chance}%"
 
     def change_bounciness(new_bounciness):
         global bounciness_label
@@ -994,14 +994,22 @@ screen preferences():
                     textbutton _("Skip After Choices") action Preference("after choices", "toggle")
 
                     # Disable transitions (auto-disabled with Craptop mode)
-                    textbutton _("Disable Transitions"):
-                        if preferences.craptop_mode:
-                            hovered [Function(get_mouse), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
-                            tooltip _("Disable Craptop Mode to change this setting.")
-                            sensitive (False)
-                        else:
+                    if not preferences.craptop_mode:
+                        textbutton _("Disable Transitions"):
                             action InvertSelected(Preference("transitions", "toggle"))
+                    else:
+                        hbox:
+                            add "gui/themes/[preferences.gui_theme]/button/radio_selected_foreground.png"
+                            textbutton _("Disable Transitions"):
+                                
+                                text_color gui.insensitive_color
+                                xoffset -27
 
+                                hovered [Function(get_mouse), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
+                                action NullAction()
+
+                                tooltip _("Disable Craptop Mode to change this setting.")
+   
                 hbox:
                     # Themes
                     vbox:
@@ -1014,7 +1022,7 @@ screen preferences():
                                 Function(gui.rebuild),
                                 Function(renpy.restart_interaction)
                             ]
-                        if persistent.saved_christmas or preferences.developer_mode:
+                        if renpy.seen_label("ce_start") or preferences.developer_mode:
                             textbutton _("Christmas"):
                                 action [
                                     Function (reload_theme, "christmas", True),
