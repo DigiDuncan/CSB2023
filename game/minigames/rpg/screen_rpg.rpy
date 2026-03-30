@@ -209,7 +209,7 @@ screen rpg_stat_box(fighter, current_ally_mode):
                                 hbox:
                                     xmaximum 110
                                     spacing 5
-                                    add "gui/rpg_common/attack.png":
+                                    add "gui/themes/[preferences.gui_theme]/rpg/attack.png":
                                         xalign 0 yalign 0.5
                                     text str(fighter.attack):
                                         size 32
@@ -221,7 +221,7 @@ screen rpg_stat_box(fighter, current_ally_mode):
                                 hbox:
                                     xmaximum 110
                                     spacing 5
-                                    add "gui/rpg_common/defense.png":
+                                    add "gui/themes/[preferences.gui_theme]/rpg/defense.png":
                                         xalign 0 yalign 0.5
                                     text str(fighter.defense):
                                         size 32
@@ -240,7 +240,7 @@ screen rpg_stat_box(fighter, current_ally_mode):
                     ### HP bar handling
                     hbox:
                         spacing 5
-                        add "gui/rpg_common/hp.png" yalign 0.5
+                        add "gui/themes/[preferences.gui_theme]/rpg/hp.png" yalign 0.5
                         frame:
                             background Solid("#132F83")
                             padding(0,0)

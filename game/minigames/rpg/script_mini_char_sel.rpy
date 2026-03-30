@@ -259,18 +259,18 @@ screen _rpg_selection(char_list = ["CS"], locked_slots = []):
                                                             else:
                                                                 hp_text = str(rpg_hovered_data[1].base_hp)
 
-                                                        text "{image=gui/inline_text/hp.png} "+hp_text:
+                                                        text "{image=gui/themes/[preferences.gui_theme]/rpg/hp_inline.png} "+hp_text:
                                                             xalign 0.5
 
                                                     frame:
                                                         background None
                                                         xsize 200
-                                                        text "{image=gui/inline_text/atk.png} "+str(rpg_hovered_data[1].base_atk):
+                                                        text "{image=gui/themes/[preferences.gui_theme]/rpg/attack_inline.png} "+str(rpg_hovered_data[1].base_atk):
                                                             xalign 0.5
                                                     frame:
                                                         background None
                                                         xsize 200
-                                                        text "{image=gui/inline_text/def.png} "+str(rpg_hovered_data[1].base_def):
+                                                        text "{image=gui/themes/[preferences.gui_theme]/rpg/defense_inline.png} "+str(rpg_hovered_data[1].base_def):
                                                             xalign 0.5
                                         frame:
                                             background None

@@ -336,20 +336,20 @@ screen people():
                                                                                 else:
                                                                                     hp_text = str(hp)
 
-                                                                            text "{image=gui/inline_text/hp.png} "+hp_text:
+                                                                            text "{image=gui/themes/[preferences.gui_theme]/rpg//hp_inline.png} "+hp_text:
                                                                                 xalign 0.5
                                                                                 text_align 0.5
 
                                                                         frame:
                                                                             background None
                                                                             xsize 200
-                                                                            text "{image=gui/inline_text/atk.png} "+str(attack):
+                                                                            text "{image=gui/themes/[preferences.gui_theme]/rpg/attack_inline.png} "+str(attack):
                                                                                 xalign 0.5
                                                                                 text_align 0.5
                                                                         frame:
                                                                             background None
                                                                             xsize 200
-                                                                            text "{image=gui/inline_text/def.png} "+str(defense):
+                                                                            text "{image=gui/themes/[preferences.gui_theme]/rpg//defense_inline.png} "+str(defense):
                                                                                 xalign 0.5
                                                                                 text_align 0.5
 
