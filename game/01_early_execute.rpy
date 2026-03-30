@@ -134,7 +134,7 @@ init python:
     config.ftfont_scale["YuGothL.ttc"] = 0.8    
     config.ftfont_scale["Source Han Sans CN Light.otf"] = 0.8
     config.ftfont_scale["Aller_Std_Lt_0.ttf"] = 0.8
-    config.ftfont_scale["AllerDisplay_Std_Rg_0.ttf"] = 0.8
+    config.ftfont_scale["AllerDisplay_Std_Rg_0.ttf"] = 1.0
     config.ftfont_scale["comic.ttf"] = 0.75 # Dyslexia mode
 
     config.ftfont_vertical_extent_scale["FiraCode-Retina.ttf"] = 1.0
@@ -410,10 +410,10 @@ init python:
         return f"{', '.join(items[:-1])}{ox if len(items) >= 3 else ''} {joiner} {items[-1]}"
 
     # FUN VALUES
-    renpy.image("_fun_value", "gui/fun_value/fun_value.png")
-    renpy.image("_fun_value_music","gui/fun_value/fun_value_music.png")
-    renpy.image("_fun_value_fish","gui/fun_value/fun_value_fish.png")
-    renpy.image("_fun_value_found","gui/fun_value/fun_value_found.png")
+    renpy.image("_fun_value", "gui/themes/[preferences.gui_theme]/fun_value/fun_value.png")
+    renpy.image("_fun_value_music","gui/themes/[preferences.gui_theme]/fun_value/fun_value_music.png")
+    renpy.image("_fun_value_fish","gui/themes/[preferences.gui_theme]/fun_value/fun_value_fish.png")
+    renpy.image("_fun_value_found","gui/themes/[preferences.gui_theme]/fun_value/fun_value_found.png")
 
     # Fun value handler
     def fun_value(rarity: int, id: str = None, *, confusing = False, fish = False) -> bool:

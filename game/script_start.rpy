@@ -343,7 +343,7 @@ label start:  # this might be required??
 ### DATA MANAGEMENT ###
 
 label clear_data:
-    call screen confirm(message="ARE YOU SURE? This will ERASE all data.", yes_action=Jump("reset_vector"), no_action=[Hide("confirm"), Return()])
+    call screen confirm(message="ARE YOU SURE? This will ERASE all data.", yes_action=Jump("reset_vector"), no_action=[Hide("confirm")])
     return
 
 label reset_vector:
@@ -351,7 +351,7 @@ label reset_vector:
     $ renpy.quit(relaunch = True)
 
 label clear_saves:
-    call screen confirm(message="ARE YOU SURE? This will erase ALL your save slots.", yes_action=Jump("reset_saves"), no_action=[Hide("confirm"), Return()])
+    call screen confirm(message="ARE YOU SURE? This will erase ALL your save slots.", yes_action=Jump("reset_saves"), no_action=[Hide("confirm")])
 
 label reset_saves:
     python:

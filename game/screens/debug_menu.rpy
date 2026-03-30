@@ -13,6 +13,9 @@ screen debug_menu():
             Function(renpy.show_layer_at, t_blur_off, layer='master')
         ]
 
+    if "main_menu":
+        add gui.game_menu_background
+
     add gui_theme_map["screen_transparency_layer"]
 
     python:

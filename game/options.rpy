@@ -135,9 +135,7 @@ define config.window_hide_transition = Dissolve(.2)
 
 ## Preference defaults #########################################################
 
-## Controls the default text speed. The default, 0, is infinite, while any other
-## number is the number of characters per second to type out.
-
+## CSB Custom Preferences
 default preferences.text_beeps = True
 default preferences.bounciness_enable = True
 default preferences.music_joke_enable = False
@@ -154,6 +152,9 @@ default preferences.awawa_chance = 100
 default preferences.force_mute = False
 default preferences.disable_menu_theme = False
 default preferences.gui_theme = "default"
+
+## Controls the default text speed. The default, 0, is infinite, while any other
+## number is the number of characters per second to type out.
 
 default preferences.text_cps = 40.0
 

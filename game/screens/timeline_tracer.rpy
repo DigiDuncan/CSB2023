@@ -22,6 +22,8 @@ screen timeline_tracer():
     default info_y = 0
 
     # add background color
+    if "main_menu":
+        add gui.game_menu_background
     add gui_theme_map["screen_transparency_layer"]
 
     text "Timeline Tracer":

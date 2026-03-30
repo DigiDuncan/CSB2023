@@ -1,5 +1,7 @@
 screen achievements():
     tag menu
+    if "main_menu":
+        add gui.game_menu_background
     add gui_theme_map["screen_transparency_layer"]
 
     text "Achievements":

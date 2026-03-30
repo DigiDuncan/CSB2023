@@ -21,6 +21,8 @@ screen people():
     default current_bios_page = 0
     default current_bios_sorting_mode = 0
 
+    if "main_menu":
+        add gui.game_menu_background
     add gui_theme_map["screen_transparency_layer"]
 
     python:

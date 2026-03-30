@@ -49,8 +49,12 @@ screen _ucn2_selection():
     default rpg_bgm_art = "images/jukebox/"+MUSIC_MAP[rpg_bgm]["album_art"]
 
     ### Add background color / prep video
-    add Color("#000")
-    add gui_theme_map["screen_transparency_layer"]
+
+    if "main_menu":
+        add gui.game_menu_background
+    else:
+        add gui_theme_map["screen_transparency_layer"]
+
     showif rpg_ready == True and not preferences.craptop_mode:
         add Movie(size=(1920,1080), play="movies/Fire.webm", side_mask=True) at _rpg_ready_flames
 

@@ -1022,8 +1022,8 @@ screen preferences():
                             action [
                                 Function(reload_theme, "default", True),
                                 SetField(preferences, "gui_theme", "default"),
-                                Function(gui.rebuild),
                                 Function(fix_text),
+                                Function(gui.rebuild),
                                 Function(renpy.restart_interaction)
                             ]
 
@@ -1042,8 +1042,8 @@ screen preferences():
                                 action [
                                     Function(reload_theme, "christmas", True),
                                     SetField(preferences, "gui_theme", "christmas"),
-                                    Function(gui.rebuild),
                                     Function(fix_text),
+                                    Function(gui.rebuild),
                                     Function(renpy.restart_interaction)
                                 ]
 
@@ -1058,8 +1058,8 @@ screen preferences():
                                 action [
                                     Function(reload_theme, "tate", True),
                                     SetField(preferences, "gui_theme", "tate"),
-                                    Function(gui.rebuild),
                                     Function(fix_text),
+                                    Function(gui.rebuild),
                                     Function(renpy.restart_interaction)
                                 ]
 
