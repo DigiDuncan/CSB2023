@@ -24,7 +24,7 @@ screen special_unlock(flavor_text):
 
     frame:
         xysize (1920, 1080)
-        background "gui/themes/[preferences.gui_theme]/special_unlock.png"
+        background get_themed_attribute("special_unlock")
 
         # unlock text
         frame:

@@ -1987,7 +1987,7 @@ image reversi_rules:
     xanchor 0.5
     yanchor 0.5
     contains:
-        Frame("gui/themes/[preferences.gui_theme]/frame.png")
+        Frame(get_themed_attribute("frame"))
     contains:
         Text("{size=+16}Reversi!", xalign=0.5, yalign=0.075)
     contains:
@@ -2094,7 +2094,7 @@ image anne_shirt = "gifts/anne_shirt.png"
 image blockbuster = "gifts/blockbuster.png"
 
 # Misc.
-image game_menu = "gui/themes/[preferences.gui_theme]/game_menu.png"
+image game_menu = get_themed_attribute("game_menu")
 image michael_calendar = "bg/books_misc/michael_calendar.png"
 image nursing_home = "bg/books_misc/nursing_home.png"
 image caboose_interior = "bg/books_misc/caboose_interior.png"
@@ -2215,7 +2215,7 @@ image tate_fallen_2 = "characters/tate/secret/tate_fallen_2.png"
 image tate_fallen_3 = "characters/tate/secret/tate_fallen_3.png"
 image tate_fallen_4 = "characters/tate/secret/tate_fallen_4.png"
 image tate_fallen_5 = "characters/tate/secret/tate_fallen_5.png"
-image yeetable_textbox = "/gui/themes/[preferences.gui_theme]/textbox.png"
+image yeetable_textbox = get_themed_attribute("textbox")
 
 # Train Route misc generated images
 image fake_rpg_miss = Text("{size=50}{color=#FFAAAA}Miss!", text_align=0.5)
@@ -2278,7 +2278,7 @@ image txt_no_d:
     xanchor 0.5
     yanchor 0.5
     contains:
-        Frame("gui/themes/[preferences.gui_theme]/frame.png")
+        Frame(get_themed_attribute("frame"))
     contains:
         Text("{size=+16}NO DIABETES", xalign=0.5, yalign=0.5)
 
@@ -2288,7 +2288,7 @@ image txt_t1d:
     xanchor 0.5
     yanchor 0.5
     contains:
-        Frame("gui/themes/[preferences.gui_theme]/frame.png")
+        Frame(get_themed_attribute("frame"))
     contains:
         Text("{size=+16}TYPE 1 DIABETES", xalign=0.5, yalign=0.5)
 
@@ -2298,7 +2298,7 @@ image txt_t2d:
     xanchor 0.5
     yanchor 0.5
     contains:
-        Frame("gui/themes/[preferences.gui_theme]/frame.png")
+        Frame(get_themed_attribute("frame"))
     contains:
         Text("{size=+16}TYPE 2 DIABETES", xalign=0.5, yalign=0.5)
 

@@ -306,7 +306,7 @@ python early:
 label splashscreen:
     python:
         if preferences.disable_menu_theme == False:
-            renpy.movie_cutscene(f"gui/themes/{preferences.gui_theme}/splash.webm")
+            renpy.movie_cutscene(get_themed_attribute("splash", "webm"))
             
         persistent.seen_splash = True
         persistent.heard.add(gui_theme_map["menu_theme_jukebox_id"])

@@ -82,7 +82,7 @@ screen say_rpg(rpg_what):
         xalign 0.5 yalign 1.0
         padding(80, 5)
         xysize(1916, 262)
-        background "gui/themes/[preferences.gui_theme]/rpg/main_box.png"
+        background get_themed_attribute("rpg/main_box")
         frame:
             background None
             xsize 1.0 ysize 1.0
@@ -107,7 +107,7 @@ screen rpg_stat_box(fighter, current_ally_mode):
 
             ### Enemy only
             if fighter in RPG.encounter.enemies:
-                background "gui/themes/[preferences.gui_theme]/rpg/small_box.png"
+                background get_themed_attribute("rpg/small_box")
                 xysize(475,105)
 
             ### For allies
@@ -116,7 +116,7 @@ screen rpg_stat_box(fighter, current_ally_mode):
                 if current_fighter and current_fighter == fighter:
 
                     if fighter in RPG.encounter.allies:
-                        background "gui/themes/[preferences.gui_theme]/rpg/tall_box.png"
+                        background get_themed_attribute("rpg/tall_box")
                         xysize(475,201)
 
                         # The attack button
@@ -127,9 +127,9 @@ screen rpg_stat_box(fighter, current_ally_mode):
                             
                             imagebutton:
                                 align(0.0, 1.0)
-                                idle "gui/themes/[preferences.gui_theme]/rpg/attack_button.png"
-                                hover "selectable:gui/themes/[preferences.gui_theme]/rpg/attack_button.png"
-                                insensitive "insensitive:gui/themes/[preferences.gui_theme]/rpg/attack_button.png"
+                                idle get_themed_attribute("rpg/attack_button")
+                                hover get_themed_attribute("rpg/attack_button", prefix = "selectable")
+                                insensitive get_themed_attribute("rpg/attack_button", prefix = "insensitive")
                                 hover_sound "audio/sfx/sfx_select.ogg"
                                 action [
                                     SensitiveIf(current_ally_mode != "TGT"),
@@ -141,9 +141,9 @@ screen rpg_stat_box(fighter, current_ally_mode):
                             # The defend button
                             imagebutton:
                                 align(1.0, 1.0)
-                                idle "gui/themes/[preferences.gui_theme]/rpg/defend_button.png"
-                                hover "selectable:gui/themes/[preferences.gui_theme]/rpg/defend_button.png"
-                                insensitive "insensitive:gui/themes/[preferences.gui_theme]/rpg/defend_button.png"
+                                idle get_themed_attribute("rpg/defend_button")
+                                hover get_themed_attribute("rpg/defend_button", prefix = "selectable")
+                                insensitive get_themed_attribute("rpg/defend_button", prefix = "insensitive")
                                 hover_sound "audio/sfx/sfx_select.ogg"
                                 action [
                                     SensitiveIf(current_ally_mode != "TGT"),
@@ -154,10 +154,10 @@ screen rpg_stat_box(fighter, current_ally_mode):
 
                 ### For unselected allies
                 else:
-                    background "gui/themes/[preferences.gui_theme]/rpg/small_box.png"
+                    background get_themed_attribute("rpg/small_box")
                     # TODO: these two lines don't work, this button IS functional just not changing visually when hovered yet
-                    idle_background "gui/themes/[preferences.gui_theme]/rpg/small_box.png"
-                    hover_background "selectable:gui/themes/[preferences.gui_theme]/rpg/small_box.png"
+                    idle_background get_themed_attribute("rpg/small_box")
+                    hover_background get_themed_attribute("rpg/small_box", prefix = "selectable")
                     xysize(475,105)
                     yalign 1.0
 
@@ -209,7 +209,7 @@ screen rpg_stat_box(fighter, current_ally_mode):
                                 hbox:
                                     xmaximum 110
                                     spacing 5
-                                    add "gui/themes/[preferences.gui_theme]/rpg/attack.png":
+                                    add get_themed_attribute("rpg/attack"):
                                         xalign 0 yalign 0.5
                                     text str(fighter.attack):
                                         size 32
@@ -221,7 +221,7 @@ screen rpg_stat_box(fighter, current_ally_mode):
                                 hbox:
                                     xmaximum 110
                                     spacing 5
-                                    add "gui/themes/[preferences.gui_theme]/rpg/defense.png":
+                                    add get_themed_attribute("rpg/defense"):
                                         xalign 0 yalign 0.5
                                     text str(fighter.defense):
                                         size 32
@@ -240,7 +240,7 @@ screen rpg_stat_box(fighter, current_ally_mode):
                     ### HP bar handling
                     hbox:
                         spacing 5
-                        add "gui/themes/[preferences.gui_theme]/rpg/hp.png" yalign 0.5
+                        add get_themed_attribute("rpg/hp") yalign 0.5
                         frame:
                             background Solid("#132F83")
                             padding(0,0)
@@ -265,7 +265,7 @@ screen rpg_stat_box(fighter, current_ally_mode):
                             elif fighter.infinite:
                                 $ inf_bar = renpy.get_registered_image("hp_bar_inf")
                                 add inf_bar corner1(0,0) corner2(228,32) xalign 1.0
-                                add "gui/themes/[preferences.gui_theme]/rpg/infinite.png" xalign 1.0 yalign 0.5
+                                add get_themed_attribute("rpg/infinite") xalign 1.0 yalign 0.5
                             # Overheal
                             # TODO: should we have a case for custom + overheal for non-infinite?
                             elif fighter.hit_points > fighter.max_hp and not fighter.character.custom_health_bar:
@@ -416,7 +416,7 @@ screen screen_rpg(no_stat_boxes = False):
             frame:
                 padding(80, 5)
                 xysize(1916, 262)
-                background "gui/themes/[preferences.gui_theme]/rpg/main_box.png"
+                background get_themed_attribute("rpg/main_box")
                 xalign 0.5
                 grid 2 1:
                     xfill True yfill True
@@ -509,8 +509,8 @@ screen screen_rpg(no_stat_boxes = False):
                                         imagebutton:
                                             xalign 1.0
                                             yalign 1.0
-                                            idle "gui/themes/[preferences.gui_theme]/rpg/confirm_button.png"
-                                            hover "selectable:gui/themes/[preferences.gui_theme]/rpg/confirm_button.png"
+                                            idle get_themed_attribute("rpg/confirm_button")
+                                            hover get_themed_attribute("rpg/confirm_button", prefix = "selectable")
                                             hover_sound "audio/sfx/sfx_select.ogg"
                                             action [
                                                 Play("sound", "audio/sfx/sfx_valid.ogg"),
@@ -609,8 +609,8 @@ screen screen_rpg(no_stat_boxes = False):
         if all(f.next_attack is not None for f in RPG.encounter.allies) and all(f.next_attack.attack.target_count == len(f.next_targets) for f in RPG.encounter.allies):
             imagebutton:
                 xpos 1581 ypos 970 # it wanted to be stupid so it gets the manual positioning
-                idle "gui/themes/[preferences.gui_theme]/rpg/confirm_button.png"
-                hover "selectable:gui/themes/[preferences.gui_theme]/rpg/confirm_button.png"
+                idle get_themed_attribute("rpg/confirm_button")
+                hover get_themed_attribute("rpg/confirm_button", prefix = "selectable")
                 hover_sound "audio/sfx/sfx_select.ogg"
                 action [
                     Play("sound", "audio/sfx/sfx_valid.ogg"),

@@ -156,7 +156,7 @@ screen carchasegame():
         action Play("sound", "audio/sfx/sfx_bucket.ogg"), Jump("cultist_firing")
 
 screen reloadbutton():
-    add "gui/themes/[preferences.gui_theme]/frame.png":
+    add get_themed_attribute("frame"):
         yalign 0.5
         xalign 0.5
     vbox xalign 0.5 yalign 0.5:

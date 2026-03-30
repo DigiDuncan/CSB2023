@@ -255,22 +255,23 @@ screen _rpg_selection(char_list = ["CS"], locked_slots = []):
                                                         # Handle infinite health here
                                                         python:
                                                             if str(rpg_hovered_data[1].base_hp) == "inf":
-                                                                hp_text = "{image=gui/themes/[preferences.gui_theme]/rpg/infinite_text.png}"
+                                                                img = get_themed_attribute("rpg/infinite_text")
+                                                                hp_text = f"{{image={img}}}"
                                                             else:
                                                                 hp_text = str(rpg_hovered_data[1].base_hp)
 
-                                                        text "{image=gui/themes/[preferences.gui_theme]/rpg/hp_inline.png} "+hp_text:
+                                                        text "{image=[get_themed_attribute('rpg/hp_inline')]} "+hp_text:
                                                             xalign 0.5
 
                                                     frame:
                                                         background None
                                                         xsize 200
-                                                        text "{image=gui/themes/[preferences.gui_theme]/rpg/attack_inline.png} "+str(rpg_hovered_data[1].base_atk):
+                                                        text "{image=[get_themed_attribute('rpg/attack_inline')]} "+str(rpg_hovered_data[1].base_atk):
                                                             xalign 0.5
                                                     frame:
                                                         background None
                                                         xsize 200
-                                                        text "{image=gui/themes/[preferences.gui_theme]/rpg/defense_inline.png} "+str(rpg_hovered_data[1].base_def):
+                                                        text "{image=[get_themed_attribute('rpg/defense_inline')]} "+str(rpg_hovered_data[1].base_def):
                                                             xalign 0.5
                                         frame:
                                             background None
@@ -307,9 +308,9 @@ screen _rpg_selection(char_list = ["CS"], locked_slots = []):
             ready_transform = _rpg_ready_button_no
 
     imagebutton:
-        insensitive "bw:gui/themes/[preferences.gui_theme]/rpg/ready.png"
-        idle "gui/themes/[preferences.gui_theme]/rpg/ready.png"
-        hover "selectable:gui/themes/[preferences.gui_theme]/rpg/ready.png"
+        insensitive get_themed_attribute("rpg/ready", prefix = "bw")
+        idle get_themed_attribute("rpg/ready")
+        hover get_themed_attribute("rpg/ready", prefix = "selectable")
         hover_sound "audio/sfx/sfx_select.ogg"
         action [
             SensitiveIf(rpg_ready == True),

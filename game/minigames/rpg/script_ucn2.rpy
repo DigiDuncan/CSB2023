@@ -421,9 +421,9 @@ screen _ucn2_selection():
                 ready_transform = _rpg_ready_button_no
 
         imagebutton:
-            insensitive "bw:gui/themes/[preferences.gui_theme]/rpg/ready.png"
-            idle "gui/themes/[preferences.gui_theme]/rpg/ready.png"
-            hover "selectable:gui/themes/[preferences.gui_theme]/rpg/ready.png"
+            insensitive get_themed_attribute("rpg/ready", prefix = "bw")
+            idle get_themed_attribute("rpg/ready")
+            hover get_themed_attribute("rpg/ready", prefix = "hover")
             hover_sound "audio/sfx/sfx_select.ogg"
             action [
                 SensitiveIf(rpg_ready == True),

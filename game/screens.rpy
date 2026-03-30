@@ -137,38 +137,38 @@ style prompt_text is gui_text:
 
 style bar:
     ysize gui.bar_size
-    left_bar Frame("gui/themes/[preferences.gui_theme]/bar/left.png", gui.bar_borders, tile=gui.bar_tile)
-    right_bar Frame("gui/themes/[preferences.gui_theme]/bar/right.png", gui.bar_borders, tile=gui.bar_tile)
+    left_bar Frame(get_themed_attribute("bar/left"), gui.bar_borders, tile=gui.bar_tile)
+    right_bar Frame(get_themed_attribute("bar/right"), gui.bar_borders, tile=gui.bar_tile)
 
 style vbar:
     xsize gui.bar_size
-    top_bar Frame("gui/themes/[preferences.gui_theme]/bar/top.png", gui.vbar_borders, tile=gui.bar_tile)
-    bottom_bar Frame("gui/themes/[preferences.gui_theme]/bar/bottom.png", gui.vbar_borders, tile=gui.bar_tile)
+    top_bar Frame(get_themed_attribute("bar/top"), gui.vbar_borders, tile=gui.bar_tile)
+    bottom_bar Frame(get_themed_attribute("bar/bottom"), gui.vbar_borders, tile=gui.bar_tile)
 
 style scrollbar:
     ysize gui.scrollbar_size
-    base_bar Frame("gui/themes/[preferences.gui_theme]/scrollbar/horizontal_[prefix_]bar.png", gui.scrollbar_borders, tile=gui.scrollbar_tile)
-    thumb Frame("gui/themes/[preferences.gui_theme]/scrollbar/horizontal_[prefix_]thumb.png", gui.scrollbar_borders, tile=gui.scrollbar_tile)
+    base_bar Frame(get_themed_attribute("scrollbar/horizontal_[prefix_]bar"), gui.scrollbar_borders, tile=gui.scrollbar_tile)
+    thumb Frame(get_themed_attribute("scrollbar/horizontal_[prefix_]thumb"), gui.scrollbar_borders, tile=gui.scrollbar_tile)
 
 style vscrollbar:
     xsize gui.scrollbar_size
-    base_bar Frame("gui/themes/[preferences.gui_theme]/scrollbar/vertical_[prefix_]bar.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
-    thumb Frame("gui/themes/[preferences.gui_theme]/scrollbar/vertical_[prefix_]thumb.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
+    base_bar Frame(get_themed_attribute("scrollbar/vertical_[prefix_]bar"), gui.vscrollbar_borders, tile=gui.scrollbar_tile)
+    thumb Frame(get_themed_attribute("scrollbar/vertical_[prefix_]thumb"), gui.vscrollbar_borders, tile=gui.scrollbar_tile)
 
 style slider:
     ysize gui.slider_size
-    base_bar Frame("gui/themes/[preferences.gui_theme]/slider/horizontal_[prefix_]bar.png", gui.slider_borders, tile=gui.slider_tile)
-    thumb "gui/themes/[preferences.gui_theme]/slider/horizontal_[prefix_]thumb.png"
+    base_bar Frame(get_themed_attribute("slider/horizontal_[prefix_]bar"), gui.slider_borders, tile=gui.slider_tile)
+    thumb get_themed_attribute("slider/horizontal_[prefix_]thumb")
 
 style vslider:
     xsize gui.slider_size
-    base_bar Frame("gui/themes/[preferences.gui_theme]/slider/vertical_[prefix_]bar.png", gui.vslider_borders, tile=gui.slider_tile)
-    thumb "gui/themes/[preferences.gui_theme]/slider/vertical_[prefix_]thumb.png"
+    base_bar Frame(get_themed_attribute("slider/vertical_[prefix_]bar"), gui.vslider_borders, tile=gui.slider_tile)
+    thumb get_themed_attribute("slider/vertical_[prefix_]thumb")
 
 
 style frame:
     padding gui.frame_borders.padding
-    background Frame("gui/themes/[preferences.gui_theme]/frame.png", gui.frame_borders, tile=gui.frame_tile)
+    background Frame(get_themed_attribute("frame"), gui.frame_borders, tile=gui.frame_tile)
 
 
 
@@ -232,7 +232,7 @@ style window:
     yalign gui.textbox_yalign
     ysize gui.textbox_height
 
-    background Image("gui/themes/"+preferences.gui_theme+"/textbox.png", xalign=0.5, yalign=1.0)
+    background Image(get_themed_attribute("textbox"), xalign=0.5, yalign=1.0)
 
 style namebox:
     xpos gui.name_xpos
@@ -241,7 +241,7 @@ style namebox:
     ypos gui.name_ypos
     ysize gui.namebox_height
 
-    background Frame("gui/themes/[preferences.gui_theme]/namebox.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
+    background Frame(get_themed_attribute("namebox"), gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
     padding gui.namebox_borders.padding
 
 style say_label:
@@ -500,7 +500,7 @@ screen main_menu():
     tag menu
     add gui.main_menu_background
 
-    add "gui/themes/[preferences.gui_theme]/subtitle.png":
+    add get_themed_attribute("subtitle"):
         at dx_fade( gui_theme_map["menu_subtitle_anchor"], gui_theme_map["menu_subtitle_xalign"], gui_theme_map["menu_subtitle_yalign"], gui_theme_map["menu_subtitle_zoom"] )
     viewport:
         xysize(666,720)
@@ -546,7 +546,7 @@ style main_menu_frame:
     xsize 420
     yfill True
 
-    background "gui/themes/[preferences.gui_theme]/overlay/main_menu.png"
+    background get_themed_attribute("overlay/main_menu")
 
 style main_menu_vbox:
     xalign 1.0
@@ -664,7 +664,7 @@ style game_menu_outer_frame:
     bottom_padding 45
     top_padding 180
 
-    background "gui/themes/[preferences.gui_theme]/overlay/game_menu.png"
+    background get_themed_attribute("overlay/game_menu")
 
 style game_menu_navigation_frame:
     xsize 420
@@ -904,7 +904,7 @@ screen preferences():
 
             # Screen
             button:
-                selected_background "gui/themes/[preferences.gui_theme]/button/radio_selected_foreground.png"
+                selected_background get_themed_attribute("button/radio_selected_foreground")
                 text _("Screen"):
                     color gui.idle_color
                     hover_color gui.hover_color
@@ -914,7 +914,7 @@ screen preferences():
 
             # Audio
             button:
-                selected_background "gui/themes/[preferences.gui_theme]/button/radio_selected_foreground.png"
+                selected_background get_themed_attribute("button/radio_selected_foreground")
                 text _("Audio"):
                     color gui.idle_color
                     hover_color gui.hover_color
@@ -924,7 +924,7 @@ screen preferences():
 
             # Gameplay
             button:
-                selected_background "gui/themes/[preferences.gui_theme]/button/radio_selected_foreground.png"
+                selected_background get_themed_attribute("button/radio_selected_foreground")
                 text _("Gameplay"):
                     color gui.idle_color
                     hover_color gui.hover_color
@@ -935,7 +935,7 @@ screen preferences():
             # Developer
             if preferences.developer_mode or persistent.creative_mode:
                 button:
-                    selected_background "gui/themes/[preferences.gui_theme]/button/radio_selected_foreground.png"
+                    selected_background get_themed_attribute("button/radio_selected_foreground")
                     text _("Developer"):
                         color gui.idle_color
                         hover_color gui.hover_color
@@ -1002,7 +1002,7 @@ screen preferences():
                             action InvertSelected(Preference("transitions", "toggle"))
                     else:
                         hbox:
-                            add "gui/themes/[preferences.gui_theme]/button/radio_selected_foreground.png"
+                            add get_themed_attribute("button/radio_selected_foreground")
                             textbutton _("Disable Transitions"):
                                 
                                 text_color gui.insensitive_color
@@ -1321,7 +1321,7 @@ style radio_vbox:
 
 style radio_button:
     properties custom_button_properties("radio_button")
-    foreground "gui/themes/[preferences.gui_theme]/button/radio_[prefix_]foreground.png"
+    foreground get_themed_attribute("button/radio_[prefix_]foreground")
 
 style radio_button_text:
     properties gui.button_text_properties("radio_button")
@@ -1332,7 +1332,7 @@ style check_vbox:
 
 style check_button:
     properties custom_button_properties("check_button")
-    foreground "gui/themes/[preferences.gui_theme]/button/check_[prefix_]foreground.png"
+    foreground get_themed_attribute("button/check_[prefix_]foreground")
 
 style check_button_text:
     properties gui.button_text_properties("check_button")
@@ -1631,7 +1631,7 @@ screen confirm(message, yes_action, no_action):
 
     style_prefix "confirm"
 
-    add "gui/themes/[preferences.gui_theme]/overlay/confirm.png"
+    add get_themed_attribute("overlay/confirm")
 
     frame:
 
@@ -1662,7 +1662,7 @@ style confirm_button is gui_medium_button
 style confirm_button_text is gui_medium_button_text
 
 style confirm_frame:
-    background Frame([ "gui/confirm_frame.png", "gui/themes/[preferences.gui_theme]/frame.png" ], gui.confirm_frame_borders, tile=gui.frame_tile)
+    background Frame([ "gui/confirm_frame.png", get_themed_attribute("frame") ], gui.confirm_frame_borders, tile=gui.frame_tile)
     padding gui.confirm_frame_borders.padding
     xalign .5
     yalign .5
@@ -1722,7 +1722,7 @@ style skip_triangle is skip_text
 
 style skip_frame:
     ypos gui.skip_ypos
-    background Frame("gui/themes/[preferences.gui_theme]/skip.png", gui.skip_frame_borders, tile=gui.frame_tile)
+    background Frame(get_themed_attribute("skip"), gui.skip_frame_borders, tile=gui.frame_tile)
     padding gui.skip_frame_borders.padding
 
 style skip_text:
@@ -1771,7 +1771,7 @@ style notify_text is gui_text
 style notify_frame:
     ypos gui.notify_ypos
 
-    background Frame("gui/themes/[preferences.gui_theme]/notify.png", gui.notify_frame_borders, tile=gui.frame_tile)
+    background Frame(get_themed_attribute("notify"), gui.notify_frame_borders, tile=gui.frame_tile)
     padding gui.notify_frame_borders.padding
 
 style notify_text:

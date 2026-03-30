@@ -11,6 +11,11 @@ init offset = -2
 
 # Default has to be here for some reason
 define gui_theme_map = {}
+define default_theme_map = {}
+
+python:
+    with renpy.open_file("gui/themes/default/config.json") as f:
+        default_theme_map = json.load(f)
 
 init python:
     gui.init(1920, 1080)
@@ -19,24 +24,21 @@ init python:
         global gui_theme_map
         global gui
 
-        with renpy.open_file("gui/themes/default/config.json") as f:
-            default_j = json.load(f)
-
         # Attempt to load in theme. 
         try:
             with renpy.open_file(f"gui/themes/{theme_name}/config.json") as f:
                 j = json.load(f)
 
             def _get(k):
-                nonlocal j, default_j
+                nonlocal j
+                global default_theme_map
                 if k in j:
                     return j[k]
-                elif k in default_j:
+                elif k in default_theme_map:
                     return default_j[k]
                 else:
                     logger.warn(f"{k} not in theme, and fallback failed!")
                     raise ValueError(k)
-
 
             # Handler for if a theme is already in use.
             if preferences.gui_theme == theme_name and force_changed:
@@ -86,6 +88,41 @@ init python:
     # Run it once as the game loads. We'll call it again in CSettings.
     reload_theme(preferences.gui_theme, False)
 
+    def get_themed_attribute(file_path, ext = "png", prefix = "") -> str:
+        sub_path = file_path + "." + ext
+        file_name = sub_path.split("/")[-1]
+        # You can add more places to check in this list if you want
+        check_these_paths = [
+            f"gui/themes/{preferences.gui_theme}/{sub_path}",
+            f"gui/themes/{preferences.gui_theme}/{file_name}",
+            f"gui/themes/default/{sub_path}",
+            f"gui/themes/default/{file_name}",
+        ]
+
+        all_paths = []
+        # Deal with Ren'Py [prefix_] subsititutions:
+        # https://www.renpy.org/doc/html/style_properties.html#style-prefix-search
+        # This is hacky for now, what I think we should do in general is avoid use of [prefix_]
+        for path in check_these_paths:
+            all_paths.append(path.replace(R"[prefix_]", "idle_"))
+            all_paths.append(path.replace(R"[prefix_]", ""))
+            all_paths.append(path.replace(R"[prefix_]", "hover_"))
+
+        # Add missing texture as fallback fallback
+        all_paths.append("gui/missing_texture." + ext)
+
+        # Deal with .. and //, since for some reason an interal function produces them
+        all_paths = [p.replace("..", ".").replace("//", "/") for p in all_paths]
+
+        for path in all_paths:
+            folder, name = path.rsplit("/", 1)
+            if renpy.loadable(name, folder):
+                return path if not prefix else f"{prefix}:{path}"
+
+        logger.error(f"{file_path} not found in theme or fallback!")
+        print(all_paths)
+        raise ValueError(file_path)
+
 init python:
     def custom_button_properties(kind):
         g = globals()
@@ -107,12 +144,12 @@ init python:
         backgrounds = [ ]
 
         if kind != "button":
-            backgrounds.append(f"gui/themes/{preferences.gui_theme}/button/" + kind[:-7] + "_[prefix_]background" + gui.button_image_extension)
+            backgrounds.append(get_themed_attribute("/button/" + kind[:-7] + "_[prefix_]background", gui.button_image_extension))
 
-        backgrounds.append(f"gui/themes/{preferences.gui_theme}/button/[prefix_]background" + gui.button_image_extension)
+        backgrounds.append(get_themed_attribute("/button/[prefix_]background", gui.button_image_extension))
 
         if renpy.variant("small"):
-            backgrounds = [ i.replace(f"gui/themes/{preferences.gui_theme}/button", f"gui/phone/themes/{preferences.gui_theme}/button") for i in backgrounds ] + backgrounds
+            backgrounds = [ i.replace("gui/themes/", "gui/phone/themes") for i in backgrounds ] + backgrounds
 
         rv = {
             "background" : Frame(backgrounds, borders or gui.button_borders, tile=tile),
@@ -217,30 +254,30 @@ define gui.header_text_font = gui.preference("font_header", gui_theme_map["heade
 ## Always include a fallback image.
 
 define gui.main_menu_background = ConditionSwitch(
-    "preferences.craptop_mode == True", "gui/themes/" + preferences.gui_theme + "/main_menu.png",
+    "preferences.craptop_mode == True", get_themed_attribute("main_menu"),
 
     "gui_theme_map.get('menu_background_filetype') == 'webm'", Movie(
-        play="gui/themes/" + preferences.gui_theme + "/main_menu.webm", 
+        play=get_themed_attribute("main_menu", "webm"), 
         loop=True,
-        start_image="gui/themes/" + preferences.gui_theme + "/main_menu_first_frame.png"
+        start_image=get_themed_attribute("main_menu_first_frame")
     ),
 
-    "gui_theme_map.get('menu_background_filetype') == 'png'", "gui/themes/" + preferences.gui_theme + "/main_menu.png",
+    "gui_theme_map.get('menu_background_filetype') == 'png'", get_themed_attribute("main_menu"),
 
-    "True", "gui/themes/"+preferences.gui_theme+"/main_menu.png"
+    "True", get_themed_attribute("main_menu")
 )
 
 define gui.game_menu_background = ConditionSwitch(
-    "preferences.craptop_mode == True", "gui/themes/" + preferences.gui_theme + "/game_menu.png",
+    "preferences.craptop_mode == True", get_themed_attribute("game_menu"),
 
     "gui_theme_map.get('game_menu_filetype') == 'webm'", Movie(
-        play="gui/themes/" + preferences.gui_theme + "/game_menu.webm", 
+        play=get_themed_attribute("game_menu", "webm"), 
         loop=True, 
-        start_image="gui/themes/" + preferences.gui_theme + "/game_menu_first_frame.png"
+        start_image=get_themed_attribute("game_menu_first_frame")
     ),
-    "gui_theme_map.get('game_menu_filetype') == 'png'", "gui/themes/" + preferences.gui_theme + "/game_menu.png",
+    "gui_theme_map.get('game_menu_filetype') == 'png'", get_themed_attribute("game_menu"),
     
-    "True", "gui/themes/"+preferences.gui_theme+"/game_menu.png"
+    "True", get_themed_attribute("game_menu")
 )
 
 ## Dialogue ####################################################################

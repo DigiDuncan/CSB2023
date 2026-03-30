@@ -334,24 +334,25 @@ screen people():
                                                                             # Handle infinite health here
                                                                             python:
                                                                                 if str(hp) == "inf":
-                                                                                    hp_text = "{image=gui/themes/[preferences.gui_theme]/rpg/infinite_text.png}"
+                                                                                    img = get_themed_attribute("rpg/infinite_text")
+                                                                                    hp_text = f"{{image={img}}}"
                                                                                 else:
                                                                                     hp_text = str(hp)
 
-                                                                            text "{image=gui/themes/[preferences.gui_theme]/rpg//hp_inline.png} "+hp_text:
+                                                                            text "{image=[get_themed_attribute('rpg/hp_inline')]} "+hp_text:
                                                                                 xalign 0.5
                                                                                 text_align 0.5
 
                                                                         frame:
                                                                             background None
                                                                             xsize 200
-                                                                            text "{image=gui/themes/[preferences.gui_theme]/rpg/attack_inline.png} "+str(attack):
+                                                                            text "{image=[get_themed_attribute('rpg/attack_inline')]} "+str(attack):
                                                                                 xalign 0.5
                                                                                 text_align 0.5
                                                                         frame:
                                                                             background None
                                                                             xsize 200
-                                                                            text "{image=gui/themes/[preferences.gui_theme]/rpg//defense_inline.png} "+str(defense):
+                                                                            text "{image=[get_themed_attribute('rpg/defense_inline')]} "+str(defense):
                                                                                 xalign 0.5
                                                                                 text_align 0.5
 
