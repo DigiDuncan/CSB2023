@@ -19,10 +19,24 @@ init python:
         global gui_theme_map
         global gui
 
+        with renpy.open_file("gui/themes/default/config.json") as f:
+            default_j = json.load(f)
+
         # Attempt to load in theme. 
         try:
             with renpy.open_file(f"gui/themes/{theme_name}/config.json") as f:
                 j = json.load(f)
+
+            def _get(k):
+                nonlocal j, default_j
+                if k in j:
+                    return j[k]
+                elif k in default_j:
+                    return default_j[k]
+                else:
+                    logger.warn(f"{k} not in theme, and fallback failed!")
+                    raise ValueError(k)
+
 
             # Handler for if a theme is already in use.
             if preferences.gui_theme == theme_name and force_changed:
@@ -35,25 +49,25 @@ init python:
 
             # Force-change colors
             if force_changed:
-                gui.accent_color = j["accent_color"]
-                gui.idle_color = j["idle_color"]
-                gui.idle_small_color = j["idle_small_color"]
-                gui.hover_color = j["hover_color"]
-                gui.selected_color = j["selected_color"]
-                gui.insensitive_color = j["insensitive_color"]
-                gui.muted_color = j["muted_color"]
-                gui.hover_muted_color = j["hover_muted_color"]
-                gui.text_color = j["text_color"]
-                gui.interface_text_color = j["interface_text_color"]
-                gui.choice_button_text_idle_color = j["choice_button_text_idle_color"]
-                gui.choice_button_text_hover_color = j["choice_button_text_hover_color"]
-                gui.choice_button_text_insensitive_color = j["choice_button_text_insensitive_color"]
+                gui.accent_color = _get("accent_color")
+                gui.idle_color = _get("idle_color")
+                gui.idle_small_color = _get("idle_small_color")
+                gui.hover_color = _get("hover_color")
+                gui.selected_color = _get("selected_color")
+                gui.insensitive_color = _get("insensitive_color")
+                gui.muted_color = _get("muted_color")
+                gui.hover_muted_color = _get("hover_muted_color")
+                gui.text_color = _get("text_color")
+                gui.interface_text_color = _get("interface_text_color")
+                gui.choice_button_text_idle_color = _get("choice_button_text_idle_color")
+                gui.choice_button_text_hover_color = _get("choice_button_text_hover_color")
+                gui.choice_button_text_insensitive_color = _get("choice_button_text_insensitive_color")
 
                 # Reset all fonts
-                config.font_name_map["default"] = j["main_font"]
-                config.font_name_map["cn"] = j["cn_font"]
-                config.font_name_map["jp"] = j["jp_font"]
-                config.font_name_map["music_text"] = FontGroup().add("FiraCode-Retina.ttf", 0x2206, 0x2206).add( j["jp_font"] , 0x2600, 0x9fff).add( j["main_font"] , 0x0000, 0xffff)
+                config.font_name_map["default"] = _get("main_font")
+                config.font_name_map["cn"] = _get("cn_font")
+                config.font_name_map["jp"] = _get("jp_font")
+                config.font_name_map["music_text"] = FontGroup().add("FiraCode-Retina.ttf", 0x2206, 0x2206).add( _get("jp_font") , 0x2600, 0x9fff).add( _get("main_font") , 0x0000, 0xffff)
 
                 # Switch music
                 if main_menu:
@@ -61,8 +75,7 @@ init python:
                     persistent.heard.add( j["menu_theme_jukebox_id"] )
 
         except:
-            with renpy.open_file("gui/themes/default/config.json") as f:
-                j = json.load(f)
+            j = default_j
             preferences.gui_theme = "default" # force-reset it
             logger.warn(f"Couldn't load color data for theme '{theme_name}'. Using default theme.")
             renpy.notify(f"Couldn't load color data for theme '{theme_name}'. Using default theme.")
