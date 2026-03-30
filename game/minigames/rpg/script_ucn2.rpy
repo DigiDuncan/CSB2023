@@ -423,7 +423,7 @@ screen _ucn2_selection():
         imagebutton:
             insensitive get_themed_attribute("rpg/ready", prefix = "bw")
             idle get_themed_attribute("rpg/ready")
-            hover get_themed_attribute("rpg/ready", prefix = "hover")
+            hover get_themed_attribute("rpg/ready", prefix = "selectable")
             hover_sound "audio/sfx/sfx_select.ogg"
             action [
                 SensitiveIf(rpg_ready == True),
