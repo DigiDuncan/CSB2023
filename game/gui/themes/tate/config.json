@@ -3,6 +3,7 @@
 
     "main_font": "Aller_Std_Lt_0.ttf",
     "name_font": "AllerDisplay_Std_Rg_0.ttf",
+    "header_font": "AllerDisplay_Std_Rg_0.ttf",
     "cn_font": "Source Han Sans CN Light.otf",
     "jp_font": "YuGothL.ttc",
 

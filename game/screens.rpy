@@ -689,7 +689,7 @@ style game_menu_label:
     ysize 180
 
 style game_menu_label_text:
-    font gui_theme_map["name_font"]
+    font gui_theme_map["header_font"]
     size gui.title_text_size
     color gui.accent_color
     yalign 0.5
