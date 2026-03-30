@@ -76,7 +76,7 @@ init python:
         preferences.force_mute = not preferences.force_mute     
 
     def fix_text():
-        if gui.text_font == "dyslexia":
+        if preferences.dyslexia_mode:
             config.font_name_map["music_text"] = DYSLEXIA_GROUP
         else:
             config.font_name_map["music_text"] = FontGroup().add("FiraCode-Retina.ttf", 0x2206, 0x2206).add( gui_theme_map["jp_font"] , 0x2600, 0x9fff).add( gui_theme_map["main_font"] , 0x0000, 0xffff)
