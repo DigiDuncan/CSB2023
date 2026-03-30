@@ -2,6 +2,10 @@ screen achievements():
     tag menu
     add gui_theme_map["screen_transparency_layer"]
 
+    text "Achievements":
+        style "game_menu_label_text"
+        xpos 25 ypos 80
+
 ###################################################### PREP
     python:
         story_count = 0
@@ -51,6 +55,7 @@ screen achievements():
     frame:
         background None
         xsize 1920 ysize 945
+
         vbox:
             xfill True yfill True
 
@@ -59,8 +64,6 @@ screen achievements():
                 background None
                 xsize 1855 ysize 100
 
-                text "{size=+12}Achievements":
-                    xoffset 25 yalign 1.0
                 text "[percent_unlocked_display]% Unlocked":
                     xalign 1.0 yalign 1.0
                     text_align 1.0

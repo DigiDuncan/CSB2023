@@ -11,16 +11,18 @@
 ##-----------------------------------------------
 screen category_nav():
 
-    #This is where we create the menu where we can select the category.
-
     #Add background image
     add gui_theme_map["screen_transparency_layer"]
+
+    text "Extras":
+        style "game_menu_label_text"
+        xpos 25 ypos 80
 
     frame:
         background None
         xpos 25
         ypos 50
-        text "{size=+12}Extras"
+
 
     viewport:
         if persistent.creative_mode or preferences.developer_mode:

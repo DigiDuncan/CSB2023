@@ -56,6 +56,10 @@ init python:
                 config.font_name_map["jp"] = j["jp_font"]
                 config.font_name_map["music_text"] = FontGroup().add("FiraCode-Retina.ttf", 0x2206, 0x2206).add( j["jp_font"] , 0x2600, 0x9fff).add( j["main_font"] , 0x0000, 0xffff)
 
+                # Switch music
+                renpy.music.play( j["menu_theme"], loop=False )
+                persistent.heard.add( j["menu_theme_jukebox_id"] )
+
         except:
             with renpy.open_file("gui/themes/default/config.json") as f:
                 j = json.load(f)

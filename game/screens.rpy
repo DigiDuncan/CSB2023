@@ -689,6 +689,7 @@ style game_menu_label:
     ysize 180
 
 style game_menu_label_text:
+    font gui_theme_map["name_font"]
     size gui.title_text_size
     color gui.accent_color
     yalign 0.5
@@ -908,7 +909,7 @@ screen preferences():
                     color gui.idle_color
                     hover_color gui.hover_color
                     selected_color gui.selected_color
-                    yoffset -4
+                    yoffset -7
                 action [ SetScreenVariable("preferences_category", "Screen"), With(dissolve) ]
 
             # Audio
@@ -918,7 +919,7 @@ screen preferences():
                     color gui.idle_color
                     hover_color gui.hover_color
                     selected_color gui.selected_color
-                    yoffset -4
+                    yoffset -7
                 action [ SetScreenVariable("preferences_category", "Audio"), With(dissolve) ]
 
             # Gameplay
@@ -928,7 +929,7 @@ screen preferences():
                     color gui.idle_color
                     hover_color gui.hover_color
                     selected_color gui.selected_color
-                    yoffset -4
+                    yoffset -7
                 action [ SetScreenVariable("preferences_category", "Gameplay"), With(dissolve) ]
 
             # Developer
@@ -939,7 +940,7 @@ screen preferences():
                         color gui.idle_color
                         hover_color gui.hover_color
                         selected_color gui.selected_color
-                        yoffset -4
+                        yoffset -7
                     action [ SetScreenVariable("preferences_category", "Developer"), With(dissolve) ]
 
             null height 100
@@ -1210,38 +1211,41 @@ screen preferences():
                                     null width 20
                                     label "[awawa_chance_label]" xminimum 200 yoffset -12
 
-                        null height 20
+                        vbox:
+                            style_prefix "check"
+                            xsize 0.75 xoffset -20
 
-                        # Clear Save Data
-                        textbutton  _("Clear Persistent Data\n{size=-12}Clear your saved data. This cannot be undone."):
-                            action Jump("clear_data")
+                            # Clear Save Data
+                            textbutton  _("Clear Persistent Data\n{size=-12}Clear your saved data. This cannot be undone."):
+                                action Jump("clear_data")
 
-                        textbutton  _("Clear Save Slots\n{size=-12}Clears all the save slots. This cannot be undone."):
-                            action Jump("clear_saves")
+                            # Clear Save Slots
+                            textbutton  _("Clear Save Slots\n{size=-12}Clears all the save slots. This cannot be undone."):
+                                action Jump("clear_saves")
 
 
         ##### Developer options - everything else!
         elif preferences_category == "Developer":
             vbox:
-                hbox:
-                    box_wrap True
-                    vbox:
-                        label _("Developer Options")
-                        # MOVED ALL THE DEV MODE STUFF HERE
-                  
-                        if preferences.developer_mode or persistent.creative_mode:
-                            textbutton "Debug Menu\n{size=-12}Jump to specific sections of the game." action ShowMenu("debug_menu")
+                style_prefix "check"
+                xsize 0.75
 
-                            textbutton "Test Scene\n{size=-12}A sandbox for testing various features." action Start("test")
+                label _("Developer Options")
+                # MOVED ALL THE DEV MODE STUFF HERE
+            
+                if preferences.developer_mode or persistent.creative_mode:
+                    textbutton "Debug Menu\n{size=-12}Jump to specific sections of the game." action ShowMenu("debug_menu")
 
-                            textbutton "{image=gui/inline_text/dx_text.png} Tate's Test Room\n{size=-12}Another test screen. Awawa." action Start("_awawa_tate_test")
+                    textbutton "Test Scene\n{size=-12}A sandbox for testing various features." action Start("test")
 
-                            #textbutton "{image=gui/inline_text/dx_text.png} Asset Debugger\n{size=-12}Make sure all assets load correctly." action Jump("asset_debugger")
+                    textbutton "Tate's Test Room\n{size=-12}Another test screen. Awawa." action Start("_awawa_tate_test")
 
-                        if preferences.developer_mode:
-                            textbutton "Jump To Label Start\n{size=-12}What we do here is go back{size=-12} back{size=-12} back{size=-12} back..." action Function(jump_to_label_start)
+                    #textbutton "{image=gui/inline_text/dx_text.png} Asset Debugger\n{size=-12}Make sure all assets load correctly." action Jump("asset_debugger")
 
-                            textbutton "Unlock All\n{size=-12}Adds all unlockables to persistent." action Function(unlock_all)          
+                if preferences.developer_mode:
+                    textbutton "Jump To Label Start\n{size=-12}What we do here is go back{size=-12} back{size=-12} back{size=-12} back..." action Function(jump_to_label_start)
+
+                    textbutton "Unlock All\n{size=-12}Adds all unlockables to persistent." action Function(unlock_all)          
 
     # TODO: make this prettier later
     $ info = GetTooltip()
@@ -1288,6 +1292,7 @@ style pref_label:
     bottom_margin 3
 
 style pref_label_text:
+    font gui_theme_map["name_font"]
     yalign 1.0
 
 style pref_vbox:

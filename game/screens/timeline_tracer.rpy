@@ -24,6 +24,10 @@ screen timeline_tracer():
     # add background color
     add gui_theme_map["screen_transparency_layer"]
 
+    text "Timeline Tracer":
+        style "game_menu_label_text"
+        xpos 25 ypos 80            
+
     # declare default colors for now. we'll make em images with outlines later
     $ col_locked = "#BBBBBB"
     $ col_prereq = "#FF8AC8"
@@ -38,9 +42,6 @@ screen timeline_tracer():
         background None
         xpos 25
         ypos 25
-        text "{size=+12}Timeline Tracer"
-        text "{size=-16}Click on an unlocked ending to replay it!":
-            ypos 54
 
         # make a key for the player
         # this implementation is stupid

@@ -178,7 +178,7 @@
     "elizabeth_bday": {
         "title": "Elizabeth's Birthday \nExtravaganza 2024!",
         "desc": "{image=gui/inline_text/dx_text.png} The silly spin-off where Digi makes it \njust in time for Elizabeth's birthday!",
-        "x_pos": 800,
+        "x_pos": 754,
         "y_pos": 441,
         "kind": "label",
         "destination": "CSB3_EBEEP12024FDEADNYWFFEAGM",
@@ -196,7 +196,7 @@
     "pee": {
         "title": "Why Is My Pee Clear?",
         "desc": "{image=gui/inline_text/dx_text.png} For ages 18 months to 3 years.",
-        "x_pos": 774,
+        "x_pos": 728,
         "y_pos": 540,
         "kind": "label",
         "destination": "book_peeing",
@@ -205,7 +205,7 @@
     "underpants": {
         "title": "The Adventures of Captain Underpants and the Giant Evil Mika",
         "desc": "{image=gui/inline_text/dx_text.png} Inspired by a light-night game of Mad Libs, join Pakoo on an adventure with George and Harold to stop the giant evil Mika with the help of the man himself, Captain Underpants!",
-        "x_pos": 600,
+        "x_pos": 772,
         "y_pos": 390,
         "kind": "label",
         "destination": "book_underpants"
@@ -240,7 +240,7 @@
     "minigame_toytrains": {
         "title": "Off To The Races!",
         "desc": "{image=gui/inline_text/dx_text.png} Race some trains!\n...Wait, who the fuck is Longas?",
-        "x_pos": 792,
+        "x_pos": 793,
         "y_pos": 801,
         "kind": "label",
         "destination": "play_toytrains_game",
@@ -249,7 +249,7 @@
     "minigame_editing": {
         "title": "Adobe Premiere",
         "desc": "Hopefully it doesn't fucking crash again.",
-        "x_pos": 758,
+        "x_pos": 759,
         "y_pos": 800,
         "kind": "label",
         "destination": "play_edit_game",

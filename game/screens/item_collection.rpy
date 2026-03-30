@@ -14,6 +14,13 @@ screen item_collection():
     default current_item = None
 
     tag menu
+
+    add gui_theme_map["screen_transparency_layer"]
+
+    text "Item Collection":
+        style "game_menu_label_text"
+        xpos 25 ypos 80
+
     use item_nav
 
     if current_item == None:
@@ -25,10 +32,6 @@ screen item_collection():
 screen item_nav():
     default loaded_imgs = 0
     default loaded_state = "loading"
-
-    add gui_theme_map["screen_transparency_layer"]
-    text "{size=+12}Item Collection":
-        xpos 0.18 ypos 80
 
     # Attempt to preload items
     on "show":
