@@ -72,8 +72,8 @@ init python:
                 config.font_name_map["music_text"] = FontGroup().add("FiraCode-Retina.ttf", 0x2206, 0x2206).add( _get("jp_font") , 0x2600, 0x9fff).add( _get("main_font") , 0x0000, 0xffff)
 
                 # Switch music
-                if main_menu:
-                    renpy.music.play( _get("main_font"), loop=False )
+                if main_menu and not preferences.disable_menu_theme:
+                    renpy.music.play( _get("menu_theme"), loop=False )
                     persistent.heard.add( _get("menu_theme_jukebox_id") )
 
         except:
