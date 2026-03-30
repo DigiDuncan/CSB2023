@@ -265,7 +265,7 @@ screen rpg_stat_box(fighter, current_ally_mode):
                             elif fighter.infinite:
                                 $ inf_bar = renpy.get_registered_image("hp_bar_inf")
                                 add inf_bar corner1(0,0) corner2(228,32) xalign 1.0
-                                add "gui/rpg_common/infinite.png" xalign 1.0 yalign 0.5
+                                add "gui/themes/[preferences.gui_theme]/rpg/infinite.png" xalign 1.0 yalign 0.5
                             # Overheal
                             # TODO: should we have a case for custom + overheal for non-infinite?
                             elif fighter.hit_points > fighter.max_hp and not fighter.character.custom_health_bar:

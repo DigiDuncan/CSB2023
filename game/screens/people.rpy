@@ -332,7 +332,7 @@ screen people():
                                                                             # Handle infinite health here
                                                                             python:
                                                                                 if str(hp) == "inf":
-                                                                                    hp_text = "{image=gui/inline_text/infinite_text.png}"
+                                                                                    hp_text = "{image=gui/themes/[preferences.gui_theme]/rpg/infinite_text.png}"
                                                                                 else:
                                                                                     hp_text = str(hp)
 

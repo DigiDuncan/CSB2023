@@ -255,7 +255,7 @@ screen _rpg_selection(char_list = ["CS"], locked_slots = []):
                                                         # Handle infinite health here
                                                         python:
                                                             if str(rpg_hovered_data[1].base_hp) == "inf":
-                                                                hp_text = "{image=gui/inline_text/infinite_text.png}"
+                                                                hp_text = "{image=gui/themes/[preferences.gui_theme]/rpg/infinite_text.png}"
                                                             else:
                                                                 hp_text = str(rpg_hovered_data[1].base_hp)
 
