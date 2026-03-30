@@ -79,7 +79,7 @@ init python:
         if gui.text_font == "dyslexia":
             config.font_name_map["music_text"] = DYSLEXIA_GROUP
         else:
-            config.font_name_map["music_text"] = REGULAR_GROUP
+            config.font_name_map["music_text"] = FontGroup().add("FiraCode-Retina.ttf", 0x2206, 0x2206).add( gui_theme_map["jp_font"] , 0x2600, 0x9fff).add( gui_theme_map["main_font"] , 0x0000, 0xffff)
 
     def kill_menu_music():
         try:
@@ -689,7 +689,7 @@ style game_menu_label:
     ysize 180
 
 style game_menu_label_text:
-    font gui_theme_map["header_font"]
+    font gui.header_text_font
     size gui.title_text_size
     color gui.accent_color
     yalign 0.5
@@ -979,7 +979,9 @@ screen preferences():
                         action [ 
                             ToggleVariable("preferences.dyslexia_mode"),
                             SelectedIf( preferences.dyslexia_mode == True ),
-                            gui.TogglePreference("font", "dyslexia", "default"),
+                            gui.TogglePreference("font", "dyslexia", gui_theme_map["main_font"]),
+                            gui.TogglePreference("font_name", "dyslexia", gui_theme_map["name_font"]),
+                            gui.TogglePreference("font_header", "dyslexia", gui_theme_map["header_font"]),
                             Function(fix_text),
                             Function(renpy.restart_interaction)
                         ]

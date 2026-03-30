@@ -51,7 +51,6 @@ init python:
 
                 # Reset all fonts
                 config.font_name_map["default"] = j["main_font"]
-                config.font_name_map["say"] = j["name_font"]
                 config.font_name_map["cn"] = j["cn_font"]
                 config.font_name_map["jp"] = j["jp_font"]
                 config.font_name_map["music_text"] = FontGroup().add("FiraCode-Retina.ttf", 0x2206, 0x2206).add( j["jp_font"] , 0x2600, 0x9fff).add( j["main_font"] , 0x0000, 0xffff)
@@ -165,13 +164,13 @@ define gui.interface_text_color = gui_theme_map["interface_text_color"]
 ## Fonts and Font Sizes ########################################################
 
 ## The font used for in-game text.
-define gui.text_font = gui.preference("font", "default")
+define gui.text_font = gui.preference("font", gui_theme_map["main_font"])
 
 ## The font used for character names.
-define gui.name_text_font = gui_theme_map["name_font"]
+define gui.name_text_font = gui.preference("font_name", gui_theme_map["name_font"])
 
 ## The font used for out-of-game text.
-define gui.interface_text_font = gui.preference("font", "default")
+define gui.interface_text_font = gui.preference("font", gui_theme_map["main_font"])
 
 ## The size of normal dialogue text.
 define gui.text_size = 46 * gui.preference("fsm", 1)
@@ -190,6 +189,9 @@ define gui.notify_text_size = 24 * gui.preference("fsm", 1)
 
 ## The size of the game's title.
 define gui.title_text_size = 75 * gui.preference("fsm", 1)
+
+## Custom: Font for page header elements
+define gui.header_text_font = gui.preference("font_header", gui_theme_map["header_font"])
 
 
 ## Main and Game Menus #########################################################

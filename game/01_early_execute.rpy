@@ -113,7 +113,6 @@ init python:
 
     # Theme handling
     config.font_name_map["default"] = gui_theme_map["main_font"]
-    config.font_name_map["say"] = gui_theme_map["name_font"]
     config.font_name_map["cn"] = gui_theme_map["cn_font"]
     config.font_name_map["jp"] = gui_theme_map["jp_font"]
 
@@ -146,7 +145,7 @@ init python:
     config.ftfont_vertical_extent_scale["Source Han Sans CN Light.otf"] = 1.0
     config.ftfont_vertical_extent_scale["Aller_Std_Lt_0.ttf"] = 1.0
     config.ftfont_vertical_extent_scale["AllerDisplay_Std_Rg_0.ttf"] = 1.0
-    config.ftfont_vertical_extent_scale["comic.ttf"] = 1.0  # Dyslexia mode
+    config.ftfont_vertical_extent_scale["comic.ttf"] = 0.95 # Dyslexia mode
 
 # Default values for unlocks, etc
 define determination = Dissolve(0.0)
