@@ -73,8 +73,8 @@ init python:
 
                 # Switch music
                 if main_menu:
-                    renpy.music.play( j["menu_theme"], loop=False )
-                    persistent.heard.add( j["menu_theme_jukebox_id"] )
+                    renpy.music.play( _get("main_font"), loop=False )
+                    persistent.heard.add( _get("menu_theme_jukebox_id") )
 
         except:
             j = default_j
