@@ -1028,7 +1028,7 @@ screen preferences():
                             ]
 
                         # If no new themes unlocked yet, show this text
-                        if len(persistent.unlocked_themes) == 0:
+                        if len(persistent.unlocked_themes) == 0 and not preferences.developer_mode:
                             frame:
                                 background None
                                 xsize 0.75
