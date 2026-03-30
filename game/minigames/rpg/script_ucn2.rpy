@@ -103,8 +103,8 @@ screen _ucn2_selection():
                                         $ portrait = character.portrait.filename
 
                                         # This bit is stupid lmao
-                                        if portrait == "gui/rpg/portraits/blank.png":
-                                            $ hover_portrait = "selectable:gui/rpg/portraits/blank_hover.png"
+                                        if portrait == "gui/rpg_common/portraits/blank.png":
+                                            $ hover_portrait = "selectable:gui/rpg_common/portraits/blank_hover.png"
                                         else:
                                             $ hover_portrait = "selectable:"+portrait
 
@@ -136,8 +136,8 @@ screen _ucn2_selection():
                                 ### Sandbag
                                 imagebutton:
                                     xysize(88,88)
-                                    idle "gui/rpg/portraits/sandbag.png"
-                                    hover "selectable:gui/rpg/portraits/sandbag.png"
+                                    idle "gui/rpg_common/portraits/sandbag.png"
+                                    hover "selectable:gui/rpg_common/portraits/sandbag.png"
                                     hover_sound "audio/sfx/sfx_select.ogg"
                                     hovered [
                                         SetScreenVariable("ucn2_hovered_data", ["{image=gui/inline_text/ucn_text.png} Sandbag", RPG.Characters.SANDBAG])
@@ -155,8 +155,8 @@ screen _ucn2_selection():
                                 ### Random
                                 imagebutton:
                                     xysize(88,88)
-                                    idle "gui/rpg/portraits/unknown.png"
-                                    hover "selectable:gui/rpg/portraits/unknown.png"
+                                    idle "gui/rpg_common/portraits/unknown.png"
+                                    hover "selectable:gui/rpg_common/portraits/unknown.png"
                                     hover_sound "audio/sfx/sfx_select.ogg"
                                     hovered [
                                         SetScreenVariable("ucn2_hovered_data", ["(Random)", RPG.Characters.random()])
@@ -174,8 +174,8 @@ screen _ucn2_selection():
                                 ### For leaving slots deliberately empty
                                 imagebutton:
                                     xysize(88,88)
-                                    idle "gui/rpg/portraits/none.png"
-                                    hover "selectable:gui/rpg/portraits/none.png"
+                                    idle "gui/rpg_common/portraits/none.png"
+                                    hover "selectable:gui/rpg_common/portraits/none.png"
                                     hover_sound "audio/sfx/sfx_select.ogg"
                                     hovered SetScreenVariable("ucn2_hovered_data", ["(None)", None])
                                     unhovered SetScreenVariable("ucn2_hovered_data", [])
@@ -213,11 +213,11 @@ screen _ucn2_selection():
                                                 slot_button_idle = rpg_pending_sprite
                                                 slot_button_hover = rpg_pending_sprite_hover
                                             elif rpg_slots[a][0] == "(None)":
-                                                slot_button_idle = "gui/rpg/portraits/none.png"
-                                                slot_button_hover = "selectable:gui/rpg/portraits/none.png"
+                                                slot_button_idle = "gui/rpg_common/portraits/none.png"
+                                                slot_button_hover = "selectable:gui/rpg_common/portraits/none.png"
                                             elif rpg_slots[a][0] == "(Random)":
-                                                slot_button_idle = "gui/rpg/portraits/unknown.png"
-                                                slot_button_hover = "selectable:gui/rpg/portraits/unknown.png"
+                                                slot_button_idle = "gui/rpg_common/portraits/unknown.png"
+                                                slot_button_hover = "selectable:gui/rpg_common/portraits/unknown.png"
                                             else:
                                                 slot_button_idle = rpg_slots[a][1].portrait.filename
                                                 slot_button_hover = "selectable:"+rpg_slots[a][1].portrait.filename
@@ -228,12 +228,12 @@ screen _ucn2_selection():
                                             selected_idle Composite(
                                                 (88,88),
                                                 (0,0), slot_button_idle,
-                                                (0,0), "gui/rpg/portraits/border_sel_a.png"
+                                                (0,0), "gui/rpg_common/portraits/border_sel_a.png"
                                             )
                                             selected_hover Composite(
                                                 (88,88),
                                                 (0,0), slot_button_hover,
-                                                (0,0), "selectable:gui/rpg/portraits/border_sel_a.png"
+                                                (0,0), "selectable:gui/rpg_common/portraits/border_sel_a.png"
                                             )
                                             hover_sound "audio/sfx/sfx_select.ogg"
                                             action [
@@ -272,11 +272,11 @@ screen _ucn2_selection():
                                                 slot_button_idle = rpg_pending_sprite
                                                 slot_button_hover = rpg_pending_sprite_hover
                                             elif rpg_slots[e+4][0] == "(None)":
-                                                slot_button_idle = "gui/rpg/portraits/none.png"
-                                                slot_button_hover = "selectable:gui/rpg/portraits/none.png"
+                                                slot_button_idle = "gui/rpg_common/portraits/none.png"
+                                                slot_button_hover = "selectable:gui/rpg_common/portraits/none.png"
                                             elif rpg_slots[e+4][0] == "(Random)":
-                                                slot_button_idle = "gui/rpg/portraits/unknown.png"
-                                                slot_button_hover = "selectable:gui/rpg/portraits/unknown.png"
+                                                slot_button_idle = "gui/rpg_common/portraits/unknown.png"
+                                                slot_button_hover = "selectable:gui/rpg_common/portraits/unknown.png"
                                             else:
                                                 slot_button_idle = rpg_slots[e+4][1].portrait.filename
                                                 slot_button_hover = "selectable:"+rpg_slots[e+4][1].portrait.filename
@@ -287,12 +287,12 @@ screen _ucn2_selection():
                                             selected_idle Composite(
                                                 (88,88),
                                                 (0,0), slot_button_idle,
-                                                (0,0), "gui/rpg/portraits/border_sel_e.png"
+                                                (0,0), "gui/rpg_common/portraits/border_sel_e.png"
                                             )
                                             selected_hover Composite(
                                                 (88,88),
                                                 (0,0), slot_button_hover,
-                                                (0,0), "selectable:gui/rpg/portraits/border_sel_e.png"
+                                                (0,0), "selectable:gui/rpg_common/portraits/border_sel_e.png"
                                             )
                                             hover_sound "audio/sfx/sfx_select.ogg"
                                             action [
@@ -326,13 +326,13 @@ screen _ucn2_selection():
                                     # Handle random/none first
                                     if ucn2_hovered_data:
                                         if ucn2_hovered_data[0] == "(Random)":
-                                            add "gui/rpg/random.png":
+                                            add "gui/rpg_common/random.png":
                                                 xysize(400,400)
                                                 fit("contain")
                                                 xanchor 0.5 yanchor 1.0
                                                 xpos 0.5 ypos 0.8
                                         elif ucn2_hovered_data[0] == "(None)":
-                                            add "gui/rpg/none.png":
+                                            add "gui/rpg_common/none.png":
                                                 xysize(400,400)
                                                 fit("contain")
                                                 xanchor 0.5 yanchor 1.0
@@ -417,9 +417,9 @@ screen _ucn2_selection():
                 ready_transform = _rpg_ready_button_no
 
         imagebutton:
-            insensitive "bw:gui/rpg/ready.png"
-            idle "gui/rpg/ready.png"
-            hover "selectable:gui/rpg/ready.png"
+            insensitive "bw:gui/themes/[preferences.gui_theme]/rpg/ready.png"
+            idle "gui/themes/[preferences.gui_theme]/rpg/ready.png"
+            hover "selectable:gui/themes/[preferences.gui_theme]/rpg/ready.png"
             hover_sound "audio/sfx/sfx_select.ogg"
             action [
                 SensitiveIf(rpg_ready == True),

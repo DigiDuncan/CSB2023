@@ -83,8 +83,8 @@ screen _rpg_selection(char_list = ["CS"], locked_slots = []):
                                 $ portrait = character.portrait.filename
 
                                 # This bit is stupid lmao
-                                if portrait == "gui/rpg/portraits/blank.png":
-                                    $ hover_portrait = "selectable:gui/rpg/portraits/blank_hover.png"
+                                if portrait == "gui/rpg_common/portraits/blank.png":
+                                    $ hover_portrait = "selectable:gui/rpg_common/portraits/blank_hover.png"
                                 else:
                                     $ hover_portrait = "selectable:"+portrait
 
@@ -114,8 +114,8 @@ screen _rpg_selection(char_list = ["CS"], locked_slots = []):
 
                             imagebutton:
                                 xysize(88,88)
-                                idle "gui/rpg/portraits/none.png"
-                                hover "selectable:gui/rpg/portraits/none.png"
+                                idle "gui/rpg_common/portraits/none.png"
+                                hover "selectable:gui/rpg_common/portraits/none.png"
                                 hover_sound "audio/sfx/sfx_select.ogg"
                                 hovered SetScreenVariable("rpg_hovered_data", ["(None)", None])
                                 unhovered SetScreenVariable("rpg_hovered_data", [])
@@ -156,8 +156,8 @@ screen _rpg_selection(char_list = ["CS"], locked_slots = []):
                                             slot_button_idle = rpg_pending_sprite
                                             slot_button_hover = rpg_pending_sprite_hover
                                         elif rpg_slots[a][0] == "(None)":
-                                            slot_button_idle = "gui/rpg/portraits/none.png"
-                                            slot_button_hover = "selectable:gui/rpg/portraits/none.png"
+                                            slot_button_idle = "gui/rpg_common/portraits/none.png"
+                                            slot_button_hover = "selectable:gui/rpg_common/portraits/none.png"
                                         else:
                                             slot_button_idle = rpg_slots[a][1].portrait.filename
                                             slot_button_hover = "selectable:"+rpg_slots[a][1].portrait.filename
@@ -168,12 +168,12 @@ screen _rpg_selection(char_list = ["CS"], locked_slots = []):
                                         selected_idle Composite(
                                             (88,88),
                                             (0,0), slot_button_idle,
-                                            (0,0), "gui/rpg/portraits/border_sel_a.png"
+                                            (0,0), "gui/rpg_common/portraits/border_sel_a.png"
                                         )
                                         selected_hover Composite(
                                             (88,88),
                                             (0,0), slot_button_hover,
-                                            (0,0), "selectable:gui/rpg/portraits/border_sel_a.png"
+                                            (0,0), "selectable:gui/rpg_common/portraits/border_sel_a.png"
                                         )
                                         hover_sound "audio/sfx/sfx_select.ogg"
                                         if rpg_slots[a][0] != "(Pending)":
@@ -211,7 +211,7 @@ screen _rpg_selection(char_list = ["CS"], locked_slots = []):
                                 # Handle None first
                                 if rpg_hovered_data:
                                     if rpg_hovered_data[0] == "(None)":
-                                        add "gui/rpg/none.png":
+                                        add "gui/rpg_common/none.png":
                                             xysize(400,400)
                                             fit("contain")
                                             xanchor 0.5 yanchor 1.0
@@ -307,9 +307,9 @@ screen _rpg_selection(char_list = ["CS"], locked_slots = []):
             ready_transform = _rpg_ready_button_no
 
     imagebutton:
-        insensitive "bw:gui/rpg/ready.png"
-        idle "gui/rpg/ready.png"
-        hover "selectable:gui/rpg/ready.png"
+        insensitive "bw:gui/themes/[preferences.gui_theme]/rpg/ready.png"
+        idle "gui/themes/[preferences.gui_theme]/rpg/ready.png"
+        hover "selectable:gui/themes/[preferences.gui_theme]/rpg/ready.png"
         hover_sound "audio/sfx/sfx_select.ogg"
         action [
             SensitiveIf(rpg_ready == True),

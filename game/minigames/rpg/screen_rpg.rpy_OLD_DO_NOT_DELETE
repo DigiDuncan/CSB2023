@@ -151,7 +151,7 @@ screen rpg_stat_box(fighter, current_ally_mode):
                             if fighter.portrait:
                                 this_portrait = fighter.portrait
                             else:
-                                this_portrait = "gui/rpg/portraits/unknown.png"
+                                this_portrait = "gui/rpg_common/portraits/unknown.png"
 
                         add this_portrait:
                             xoffset -8 yoffset -9

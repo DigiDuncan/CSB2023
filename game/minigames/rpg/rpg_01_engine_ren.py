@@ -74,8 +74,8 @@ CRIT_CHANCE = 5.0 / 100.0
 MISS_CHANCE = 1.0 / 100.0
 DAMAGE_INDICATOR_TIME = 1.0
 
-UNKNOWN_FIELD = Image("gui/rpg/unknown_field_sprite.png")
-UNKNOWN_PORTRAIT = Image("gui/rpg/portraits/unknown.png")
+UNKNOWN_FIELD = Image("gui/rpg_common/unknown_field_sprite.png")
+UNKNOWN_PORTRAIT = Image("gui/rpg_common/portraits/unknown.png")
 
 # -- STR EUMS --
 
@@ -933,7 +933,7 @@ class Effects:
         name="Bleed",
         description="This fighter will take damage over time.",
         positive=False,
-        icon="/gui/rpg/status/bleed.png",
+        icon="/gui/rpg_common/status/bleed.png",
         sfx="/audio/sfx/sfx_hurt1.ogg",
         duration=0, # !: Should be overwritten by the attack
         apply="{target} started bleeding!",
@@ -945,7 +945,7 @@ class Effects:
         name="Blindness",
         description="This fighter's accuracy is drastically reduced.",
         positive=False,
-        icon="/gui/rpg/status/blindness.png",
+        icon="/gui/rpg_common/status/blindness.png",
         sfx="/audio/sfx/sfx_power_out.ogg",
         duration=1,
         apply=apply_status_effect("{target} can't see!", stat=CharacterStat.ACCURACY, amount=0.25, scale=True),
@@ -957,7 +957,7 @@ class Effects:
         name="Confusion",
         description="This fighter may attack the wrong target.",
         positive=False,
-        icon="/gui/rpg/status/confusion.png",
+        icon="/gui/rpg_common/status/confusion.png",
         sfx="/audio/sfx/sfx_gleam.ogg",
         duration=0,
         apply=apply_status_effect("{target} is confused!", stat=CharacterStat.ACCURACY, amount=0.5, scale=True),
@@ -969,7 +969,7 @@ class Effects:
         name="Defending",
         description="This fighter will take less damage, but can't attack this turn.",
         positive=True,
-        icon="/gui/rpg/status/defending.png",
+        icon="/gui/rpg_common/status/defending.png",
         sfx="/audio/sfx/snd_b.ogg",
         duration=0,
         apply=apply_status_effect(stat=CharacterStat.DEFENSE, amount=1.5, scale=True),
@@ -980,7 +980,7 @@ class Effects:
         name="Sleep",
         description="This fighter is vulnerable to attack and can't move until next turn.",
         positive=False,
-        icon="/gui/rpg/status/sleep.png",
+        icon="/gui/rpg_common/status/sleep.png",
         sfx="/audio/sfx/sfx_csnore.ogg",
         duration=0,
         apply=apply_status_effect("{target} fell asleep!", stat=CharacterStat.DEFENSE, amount=0.5, scale=True),
@@ -992,7 +992,7 @@ class Effects:
         name="Stun",
         description="This fighter can't move at all right now.",
         positive=False,
-        icon="/gui/rpg/status/stun.png",
+        icon="/gui/rpg_common/status/stun.png",
         sfx="/audio/sfx/sfx_bluescreen.ogg",
         duration=0,  # !: Should be overwritten by the attack
         apply=apply_status_effect("{target} can't move!", stat=CharacterStat.DEFENSE, amount=1.0, scale=True),

@@ -1038,7 +1038,7 @@ screen preferences():
                                 
                                 if not preferences.craptop_mode:
                                     hovered [Function(get_mouse), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
-                                    tooltip _("WARNING: This theme may not run well on lower-end hardware. Turn on Craptop Mode if it's lagging the game.")
+                                    tooltip _("WARNING: This theme may not run well on lower-end hardware.\nEnable Craptop Mode for better performance.")
 
                                 action [
                                     Function (reload_theme, "tate", True),
@@ -1097,7 +1097,7 @@ screen preferences():
                         label _("Audio Options")
                         textbutton _("Text Beeps") action ToggleField(preferences, "text_beeps"):
                             hovered [Function(get_mouse), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
-                            tooltip _("Enable character speech.")
+                            tooltip _("Enables character speech.")
                         textbutton _("Mute ALL Audio"):
                             action [ 
                                 Function(toggle_mute),
@@ -1161,17 +1161,17 @@ screen preferences():
                             tooltip _("For those who want to see the true ending quickly.")
                         textbutton _("Toggle Bounciness") action ToggleField(preferences, "bounciness_enable"): 
                             hovered [Function(get_mouse), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
-                            tooltip _("Silly, random events that add jokes and scenes to the story.")
+                            tooltip _("Enables random events that add jokes and scenes to the story.")
                         textbutton _("Musical Puns") action ToggleField(preferences, "music_joke_enable"):
                             hovered [Function(get_mouse), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
-                            tooltip _("Enable BGM-based puns, which may be confusing if you haven't played the game yet. (Requires Bounciness)")
+                            tooltip _("Enables BGM-based puns that may be confusing if you\nhaven't played the game yet. (Requires Bounciness)")
                         textbutton _("Confusing Jokes") action ToggleField(preferences, "confusing_joke_enable"):
                             hovered [Function(get_mouse), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
-                            tooltip _("Enable random events which may be confusing if you haven't played the game yet. (Requires Bounciness)")
+                            tooltip _("Enables random events that may be confusing if you\nhaven't played the game yet. (Requires Bounciness)")
                         if persistent.awawa_mode == True:
                             textbutton _("Awawa Mode") action ToggleField(preferences, "awawa_mode"):
                                 hovered [Function(get_mouse), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
-                                tooltip "Replace the dialogue with nonsense!"
+                                tooltip "Replaces the dialogue with nonsense!"
                         textbutton _("Developer Mode") action ToggleField(preferences, "developer_mode")
 
                     # Bounciness / Awawa Mode sliders (will only appear if those options are enabled)
@@ -1260,7 +1260,7 @@ screen preferences():
             ypos info_y - 25
             text info:
                 text_align 0.5
-                size 20
+                size 24
 
 style pref_label is gui_label
 style pref_label_text is gui_label_text
