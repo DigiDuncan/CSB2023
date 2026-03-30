@@ -109,7 +109,7 @@ init python:
             all_paths.append(path.replace(R"[prefix_]", "hover_"))
 
         # Add missing texture as fallback fallback
-        all_paths.append("gui/missing_texture." + ext)
+        # all_paths.append("gui/missing_texture." + ext)
 
         # Deal with .. and //, since for some reason an interal function produces them
         all_paths = [p.replace("..", ".").replace("//", "/") for p in all_paths]
@@ -122,6 +122,18 @@ init python:
         logger.error(f"{file_path} not found in theme or fallback!")
         print(all_paths)
         raise ValueError(file_path)
+
+    def get_themed_menu(which: str):
+        file_type = gui_theme_map.get(f"{which}_filetype", "png")
+        if file_type == "png":
+            return get_themed_attribute(which)
+        elif file_type == "webm":
+            return Movie(play = get_themed_attribute(which, "webm"),
+                        loop = True,
+                        start_image = get_themed_attribute(f"{which}_first_frame"))
+        else:
+            raise ValueError(f"Unsupported menu filetype: {file_type}")
+
 
 init python:
     def custom_button_properties(kind):
@@ -253,32 +265,8 @@ define gui.header_text_font = gui.preference("font_header", gui_theme_map["heade
 ## Craptop mode, webm handling, png fallback.
 ## Always include a fallback image.
 
-define gui.main_menu_background = ConditionSwitch(
-    "preferences.craptop_mode == True", get_themed_attribute("main_menu"),
-
-    "gui_theme_map.get('menu_background_filetype') == 'webm'", Movie(
-        play=get_themed_attribute("main_menu", "webm"), 
-        loop=True,
-        start_image=get_themed_attribute("main_menu_first_frame")
-    ),
-
-    "gui_theme_map.get('menu_background_filetype') == 'png'", get_themed_attribute("main_menu"),
-
-    "True", get_themed_attribute("main_menu")
-)
-
-define gui.game_menu_background = ConditionSwitch(
-    "preferences.craptop_mode == True", get_themed_attribute("game_menu"),
-
-    "gui_theme_map.get('game_menu_filetype') == 'webm'", Movie(
-        play=get_themed_attribute("game_menu", "webm"), 
-        loop=True, 
-        start_image=get_themed_attribute("game_menu_first_frame")
-    ),
-    "gui_theme_map.get('game_menu_filetype') == 'png'", get_themed_attribute("game_menu"),
-    
-    "True", get_themed_attribute("game_menu")
-)
+define gui.main_menu_background = get_themed_menu("main_menu")
+define gui.game_menu_background = get_themed_menu("game_menu")
 
 ## Dialogue ####################################################################
 ##

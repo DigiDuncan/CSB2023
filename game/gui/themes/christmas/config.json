@@ -34,7 +34,7 @@
     "menu_theme_skip_splash": "<from 14.7>christmas_tea.ogg",
     "menu_theme_jukebox_id": "christmas_tea",
 
-    "menu_background_filetype": "png",
+    "main_menu_filetype": "png",
     "menu_subtitle_anchor": 0,
     "menu_subtitle_xalign": 0.8,
     "menu_subtitle_yalign": 0.225,
