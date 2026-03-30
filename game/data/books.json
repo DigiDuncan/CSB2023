@@ -204,7 +204,7 @@
     },
     "underpants": {
         "title": "The Adventures of Captain Underpants and the Giant Evil Mika",
-        "desc": "{image=gui/inline_text/dx_text.png} Inspired by a light-night game of Mad Libs!",
+        "desc": "{image=gui/inline_text/dx_text.png} Inspired by a late-night game of Mad Libs!",
         "x_pos": 772,
         "y_pos": 390,
         "kind": "label",
