@@ -156,7 +156,7 @@ init python:
 
     def get_themed_menu(which: str):
         file_type = gui_theme_map.get(f"{which}_filetype", "png")
-        if file_type == "png":
+        if file_type == "png" or preferences.craptop_mode:
             return get_themed_attribute(which)
         elif file_type == "webm":
             return Movie(play = get_themed_attribute(which, "webm"),
