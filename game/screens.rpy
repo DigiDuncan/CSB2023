@@ -1025,11 +1025,10 @@ screen preferences():
                     # Dyslexia mode
                     textbutton _("Dyslexia Mode"):
                         action [ 
-                            ToggleVariable("preferences.dyslexia_mode"),
-                            SelectedIf(preferences.dyslexia_mode),
-                            gui.TogglePreference("font", gui_theme_map["dyslexia_font"], gui_theme_map["main_font"]),
-                            gui.TogglePreference("font_name", gui_theme_map["dyslexia_font"], gui_theme_map["name_font"]),
-                            gui.TogglePreference("font_header", gui_theme_map["dyslexia_font"], gui_theme_map["header_font"]),
+                            SelectedIf(ToggleField(preferences, "dyslexia_mode", False, True)),
+                            If(preferences.dyslexia_mode, gui.SetPreference("font", gui_theme_map["dyslexia_font"]), gui.SetPreference("font", gui_theme_map["main_font"])),
+                            If(preferences.dyslexia_mode, gui.SetPreference("font_name", gui_theme_map["dyslexia_font"]), gui.SetPreference("font_name", gui_theme_map["name_font"])),
+                            If(preferences.dyslexia_mode, gui.SetPreference("font_header", gui_theme_map["dyslexia_font"]), gui.SetPreference("font_header", gui_theme_map["header_font"])),
                             Function(fix_text),
                             Function(renpy.restart_interaction)
                         ]

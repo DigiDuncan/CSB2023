@@ -146,6 +146,7 @@ init python:
 
         # Add missing texture as fallback fallback
         all_paths.append("gui/missing_texture." + ext)
+        all_paths.append("gui/missing_texture.png")
 
         # Deal with .. and //, since for some reason an interal function produces them
         all_paths = [p.replace("..", ".").replace("//", "/") for p in all_paths]
