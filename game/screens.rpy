@@ -554,7 +554,7 @@ screen main_menu():
                     size 40
                 null:
                     width 20
-                imagebutton auto "menu/cs_button_%s.png" hover_sound "audio/sfx/sfx_popcat_0.ogg":
+                imagebutton auto "gui/cs_button/cs_button_%s.png" hover_sound "audio/sfx/sfx_popcat_0.ogg":
                     at transform:
                         zoom 0.15
                         xalign 0.5
