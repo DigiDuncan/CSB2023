@@ -1099,13 +1099,11 @@ screen preferences():
                                     Function(renpy.restart_interaction)
                                 ]
 
-                    vbox:
-                        style_prefix "slider"
-                        
+                    vbox:                        
                         # Text speed
                         hbox:
-                            label _("Text Speed")
-                            
+                            xsize 675
+                            label _("Text Speed") style_prefix "slider"
                             textbutton _("Reset"):
                                 action [ SelectedIf(False), SetField(preferences, "text_cps", 40) ]
                                 xalign 1.0 yalign 1.0
@@ -1117,12 +1115,13 @@ screen preferences():
                                 range 100
                                 xsize 675
                             null width 20
-                            label  "[preferences.__dict__['text_cps']:.1f]cps" xminimum 200 yoffset -12
+                            label  "[preferences.__dict__['text_cps']:.1f]cps" xminimum 200 yalign 0.5
 
 
                         # Auto-forward
                         hbox:
-                            label _("Auto-Forward Time")
+                            xsize 675
+                            label _("Auto-Forward Time") style_prefix "slider"
                             textbutton _("Reset"):
                                 action [ SelectedIf(False), SetField(preferences, "afm_time", 15) ]
                                 xalign 1.0 yalign 1.0
@@ -1130,11 +1129,11 @@ screen preferences():
                         hbox:
                             bar:
                                 style "slider"
-                                value Preference("auto-forward time")
+                                value Preference("auto-forward time") 
                                 range 100
                                 xsize 675
                             null width 20
-                            label "[preferences.__dict__['afm_time']:.1f]s" xminimum 200 yoffset -12
+                            label "[preferences.__dict__['afm_time']:.1f]s" xminimum 200 yalign 0.5
 
 
         ##### Audio options - these include all the music volume sliders and ability to mute all audio
@@ -1164,43 +1163,46 @@ screen preferences():
 
                     # Channel volume sliders
                     vbox:
-                        style_prefix "slider"
-
                         if preferences.force_mute == False:
-                            label _("Music Volume")
+                            label _("Music Volume") style_prefix "slider"
                             hbox:
                                 bar value Preference("music volume"):
+                                    style "slider"
                                     xsize 675
                                 null width 20
-                                label str(round(_preferences.get_mixer("music")*100))+"%" xminimum 200 yoffset -12
+                                label str(round(_preferences.get_mixer("music")*100))+"%" xminimum 200 yalign 0.5
 
-                            label _("Sound Volume")
+                            label _("Sound Volume") style_prefix "slider"
                             hbox:
                                 bar value Preference("sound volume"):
+                                    style "slider"
                                     xsize 675
                                 null width 20
-                                label str(round(_preferences.get_mixer("sfx")*100))+"%" xminimum 200 yoffset -12
+                                label str(round(_preferences.get_mixer("sfx")*100))+"%" xminimum 200 yalign 0.5
                                 if config.sample_sound:
                                     textbutton _("Test") action Play("sound", config.sample_sound)
 
-                            label _("Beep Volume")
+                            label _("Beep Volume") style_prefix "slider"
                             hbox:
                                 bar value Preference("voice volume"):
+                                    style "slider"
                                     xsize 675
                                 null width 20
-                                label str(round(_preferences.get_mixer("voice")*100))+"%" xminimum 200 yoffset -12
+                                label str(round(_preferences.get_mixer("voice")*100))+"%" xminimum 200 yalign 0.5
                                 if config.sample_voice:
                                     textbutton _("Test") action Play("voice", config.sample_voice)
                         else:
-                            text _("Audio is muted."):
-                                color "#888888"
-                                xalign 0.5 yoffset 120
-                                text_align 0.5
-                                italic True
+                            frame:
+                                background None
+                                xsize 675 yoffset 100
+                                text _("Audio is muted."):
+                                    color gui.idle_color
+                                    xalign 0.5 yalign 0.5
+                                    text_align 0.5
+                                    italic True
 
         ##### Gameplay options - bounciness, joke toggles, awawa mode (if unlocked), streamer mode, clear data
         elif preferences_category == "Gameplay":
-            
             vbox:
                 hbox:
                     box_wrap True
@@ -1229,10 +1231,8 @@ screen preferences():
                     # Bounciness / Awawa Mode sliders (will only appear if those options are enabled)
                     vbox:
                         vbox:
-                            style_prefix "slider"
-
                             if preferences.bounciness_enable:
-                                label _("Bounciness Chance")
+                                label _("Bounciness Chance") style_prefix "slider"
                                 hbox:
                                     bar:
                                         style "slider"
@@ -1241,8 +1241,8 @@ screen preferences():
                                         xsize 675
                                         changed(change_bounciness)
                                     null width 20
-                                    label "[bounciness_label]" xminimum 200 yoffset -12
-                                label _("Max Bounciness Rarity")
+                                    label "[bounciness_label]" xminimum 200 yalign 0.5
+                                label _("Max Bounciness Rarity") style_prefix "slider"
                                 hbox:
                                     bar:
                                         style "slider"
@@ -1251,10 +1251,10 @@ screen preferences():
                                         xsize 675
                                         changed(change_max_fun)
                                     null width 20
-                                    label "[max_fun_label]" xminimum 200 yoffset -12
+                                    label "[max_fun_label]" xminimum 200 yalign 0.5
                         
                             if persistent.awawa_mode == True and preferences.awawa_mode:
-                                label _("Awawa Chance")
+                                label _("Awawa Chance") style_prefix "slider"
                                 hbox:
                                     bar:
                                         style "slider"
@@ -1263,7 +1263,7 @@ screen preferences():
                                         xsize 675
                                         changed(change_awawa_chance)
                                     null width 20
-                                    label "[awawa_chance_label]" xminimum 200 yoffset -12
+                                    label "[awawa_chance_label]" xminimum 200 yalign 0.5
 
                         vbox:
                             style_prefix "check"
