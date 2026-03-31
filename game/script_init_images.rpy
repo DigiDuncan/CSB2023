@@ -1556,12 +1556,12 @@ image black = Solid(("#000000"))
 image green_screen = Solid(("#00FF00"))
 
 ## Generated images for CSBI
-image spent_11_88 = Text("{size=50}{color=#369100}-$11.88", text_align=0.5)
-image spent_bits = Text("{image=bits.png} {size=50}{color=#BD62FF}-200,000", text_align=0.5)
+image spent_11_88 = Text( _("{size=50}{color=#369100}-$11.88"), text_align=0.5)
+image spent_bits = Text( _("{image=bits.png} {size=50}{color=#BD62FF}-200,000"), text_align=0.5)
 # this bit is so stupid - tate
-image speedrun_genergy_cost = Text("{size=50}{color=#369100}$2.50", text_align=0.5)
-image speedrun_pringles_cost = Text("{size=50}{color=#369100}$5.83", text_align=0.5)
-image speedrun_tax_cost = Text("{size=50}{color=#FFFF00}Taxed! 8.875%", text_align=0.5)
+image speedrun_genergy_cost = Text( _("{size=50}{color=#369100}$2.50"), text_align=0.5)
+image speedrun_pringles_cost = Text( _("{size=50}{color=#369100}$5.83"), text_align=0.5)
+image speedrun_tax_cost = Text( _("{size=50}{color=#FFFF00}Taxed! 8.875%"), text_align=0.5)
 
 ## CSBII
 image helipad = "bg/csb2/helipad.png"
@@ -1884,8 +1884,8 @@ image cultcon_leader = "characters/cultleader.png"
 image cultcon_leader flipped = "flip:characters/cultleader.png"
 
 # Back to the future: CS edition generated assets
-image after_true_title = Text("{size=+196}Spring 202X", text_align=0.5)
-image christmas_finisher = Text("{size=+108}To be continued...", text_align=0.5)
+image after_true_title = Text( _("{size=+196}Spring 202X"), text_align=0.5)
+image christmas_finisher = Text( _("{size=+108}To be continued..."), text_align=0.5)
 
 # CS Holiday Special characters
 image avgn = "characters/avgn.png"
@@ -1979,7 +1979,7 @@ image right_table = "bg/ce/table/right_table.png"
 image night_bg = "bg/ce/table/night_bg.png"
 
 # CS Holiday Special Generated Images
-image spent_target = Text("{size=50}{color=#369100}-$81.88", text_align=0.5)
+image spent_target = Text( _("{size=50}{color=#369100}-$81.88"), text_align=0.5)
 
 image reversi_rules:
     xanchor 0.5 yanchor 0.5
@@ -1989,7 +1989,7 @@ image reversi_rules:
     contains:
         VBox(
             Text( _("{size=+16}Reversi!"), xalign=0.5, text_align=0.5),
-            Text(""),
+            Text( _("") ),
             Text( _("• Each player places down one piece per turn.\n• The goal is to capture your opponent's pieces by trapping them in between your own pieces on the board. \n• A legal move will capture at least one of your opponent's pieces. Depending on placement, you can capture entire rows in any direction on the grid.\n• The game ends when either the board is full or there are no legal moves left.\n• Whoever controls the most pieces at the end wins!"), xanchor=0.5, xalign=0.5, xmaximum=1400),
 
             xalign=0.5, yalign=0.5, padding=(50,50,50,50)
@@ -2218,11 +2218,11 @@ image tate_fallen_5 = "characters/tate/secret/tate_fallen_5.png"
 image yeetable_textbox = get_themed_attribute("textbox")
 
 # Train Route misc generated images
-image fake_rpg_miss = Text("{size=50}{color=#FFAAAA}Miss!", text_align=0.5)
-image oof_45 = Text("{size=50}{color=#FFEE00}4'5\"", text_align=0.5)
-image oof_54 = Text("{size=50}{color=#CE256E}5'4\"", text_align=0.5)
-image oof_52 = Text("{size=50}{color=#233260}5'2\"", text_align=0.5)
-image spent_19_95 = Text("{size=50}{color=#369100}-$19.95", text_align=0.5)
+image fake_rpg_miss = Text( _("{size=50}{color=#FFAAAA}Miss!"), text_align=0.5)
+image oof_45 = Text( _("{size=50}{color=#FFEE00}4'5\""), text_align=0.5)
+image oof_54 = Text( _("{size=50}{color=#CE256E}5'4\""), text_align=0.5)
+image oof_52 = Text( _("{size=50}{color=#233260}5'2\""), text_align=0.5)
+image spent_19_95 = Text( _("{size=50}{color=#369100}-$19.95"), text_align=0.5)
 
 # TODO: this still sucks, but it's not NEARLY as bad as it was
 image petals_falling = Fixed(
@@ -2280,7 +2280,7 @@ image txt_no_d:
     contains:
         Frame(get_themed_attribute("frame"))
     contains:
-        Text("{size=+16}NO DIABETES", xalign=0.5, yalign=0.5)
+        Text( _("{size=+16}NO DIABETES"), xalign=0.5, yalign=0.5)
 
 image txt_t1d:
     xsize 500
@@ -2290,7 +2290,7 @@ image txt_t1d:
     contains:
         Frame(get_themed_attribute("frame"))
     contains:
-        Text("{size=+16}TYPE 1 DIABETES", xalign=0.5, yalign=0.5)
+        Text( _("{size=+16}TYPE 1 DIABETES"), xalign=0.5, yalign=0.5) 
 
 image txt_t2d:
     xsize 500
@@ -2300,7 +2300,7 @@ image txt_t2d:
     contains:
         Frame(get_themed_attribute("frame"))
     contains:
-        Text("{size=+16}TYPE 2 DIABETES", xalign=0.5, yalign=0.5)
+        Text( _("{size=+16}TYPE 2 DIABETES"), xalign=0.5, yalign=0.5)
 
 # TODO: can we turn these into a function instead?
 image txt_insulin:
@@ -2309,7 +2309,7 @@ image txt_insulin:
     xanchor 0.5
     yanchor 0.5
     contains:
-        Text("{size=+12}Insulin", xalign=0.5, yalign=0.5)
+        Text( _("{size=+12}Insulin"), xalign=0.5, yalign=0.5)
 
 image txt_insulint:
     xsize 500
@@ -2317,7 +2317,7 @@ image txt_insulint:
     xanchor 0.5
     yanchor 0.5
     contains:
-        Text("{size=+12}Insulin't", xalign=0.5, yalign=0.5)
+        Text( _("{size=+12}Insulin't"), xalign=0.5, yalign=0.5)
 
 image txt_pump:
     xsize 500
@@ -2325,7 +2325,7 @@ image txt_pump:
     xanchor 0.5
     yanchor 0.5
     contains:
-        Text("{size=+12}Insulin Pump", xalign=0.5, yalign=0.5)
+        Text( _("{size=+12}Insulin Pump"), xalign=0.5, yalign=0.5)
 
 image arrow_white = "sil_white:/gui/arrows/left_on.png"
 image arrow_white flipped = "flip:sil_white:/gui/arrows/left_on.png"

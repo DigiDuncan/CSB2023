@@ -88,7 +88,7 @@ init python:
             ### Text Elements
 
             # Lap Counter
-            laps_left_txt_render = renpy.render(Text("LAP: "+str(self.current_lap)+"/"+str(self.total_laps), color = "#FFFFFF", size = 72), 300, 100, st, at)
+            laps_left_txt_render = renpy.render(Text( _("LAP: "+str(self.current_lap)+"/"+str(self.total_laps)), color = "#FFFFFF", size = 72), 300, 100, st, at)
             r.blit(laps_left_txt_render, (16, 4))
 
             # HP
@@ -111,7 +111,7 @@ init python:
                 self.win = False
 
             # debug health display
-            # hp_left_txt_render = renpy.render(Text("HP: "+str(self.hp), color = "#FFFFFF", size = 72), 300, 100, st, at)
+            # hp_left_txt_render = renpy.render(Text( _("HP: "+str(self.hp)), color = "#FFFFFF", size = 72), 300, 100, st, at)
             # r.blit(hp_left_txt_render, (16, 60))
 
             # Temporary

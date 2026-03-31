@@ -240,7 +240,7 @@ label _awawa_tate_test:
                             xanchor 0.5
                             yanchor 0.5
                             contains:
-                                Text("{size=+12}In-Engine", xalign=0.5, yalign=0.5)
+                                Text( _("{size=+12}In-Engine"), xalign=0.5, yalign=0.5)
 
                         image txt_awawa_image:
                             xsize 500
@@ -248,7 +248,7 @@ label _awawa_tate_test:
                             xanchor 0.5
                             yanchor 0.5
                             contains:
-                                Text("{size=+12}Image", xalign=0.5, yalign=0.5)
+                                Text( _("{size=+12}Image"), xalign=0.5, yalign=0.5)
 
                         ### TEST 1: CS ###
 
@@ -626,7 +626,7 @@ label _awawa_tate_test:
                         tate "Is this what you wanted?"
                         hide cs_run
                     "CS Health Indicator":
-                        image health_test = Fixed("/minigames/perfecttate/heart.png", Text("100", size=69, xanchor=0.5, yanchor=0.5, xalign=0.5, yalign=0.4, text_align=0.5), xysize=(128,128))
+                        image health_test = Fixed("/minigames/perfecttate/heart.png", Text( _("100"), size=69, xanchor=0.5, yanchor=0.5, xalign=0.5, yalign=0.4, text_align=0.5), xysize=(128,128))
                         show health_test at manual_pos(8, 8, 0)
                         tate "Is that correct?"
                         hide health_test

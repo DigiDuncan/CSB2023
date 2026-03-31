@@ -58,21 +58,21 @@ init python:
                     if not self.three_played:
                         renpy.sound.play("minigames/pencil/sfx_smash_3.ogg")
                         self.three_played = True
-                    countdown_renderer = renpy.render(Text("3", color="FF0000", size=200), 1920, 1080, st, at)
+                    countdown_renderer = renpy.render(Text( _("3"), color="FF0000", size=200), 1920, 1080, st, at)
                     r.blit(countdown_renderer, (960, 540))
                 elif 1 < current_time < 2:
                     # Display 2
                     if not self.two_played:
                         renpy.sound.play("minigames/pencil/sfx_smash_2.ogg")
                         self.two_played = True
-                    countdown_renderer = renpy.render(Text("2", color="FFFF00", size=200), 1920, 1080, st, at)
+                    countdown_renderer = renpy.render(Text( _("2"), color="FFFF00", size=200), 1920, 1080, st, at)
                     r.blit(countdown_renderer, (960, 540))
                 elif 2 < current_time < 3:
                     # Display 1
                     if not self.one_played:
                         renpy.sound.play("minigames/pencil/sfx_smash_1.ogg")
                         self.one_played = True
-                    countdown_renderer = renpy.render(Text("1", color="00FF00", size=200), 1920, 1080, st, at)
+                    countdown_renderer = renpy.render(Text( _("1"), color="00FF00", size=200), 1920, 1080, st, at)
                     r.blit(countdown_renderer, (960, 540))
                 elif current_time > 3:
                     # Yell Go at the player
@@ -120,11 +120,11 @@ init python:
                     time_renderer = renpy.render(Text(str(GAME_LENGTH - math.ceil(current_time)), color = "#FF0000", size = 144), 150, 100, st, at)
                     r.blit(time_renderer, (0, 0))
                 else:
-                    time_renderer = renpy.render(Text("0", color = "#FF0000", size = 144), 100, 100, st, at)
+                    time_renderer = renpy.render(Text( _("0") , color = "#FF0000", size = 144), 100, 100, st, at)
                     r.blit(time_renderer, (50, 0))
                 
             # Render the remaining pencils
-            count_renderer = renpy.render(Text(str(PENCIL_LIMIT - self.pencils) + " pencils remaining", color = "#FF0000", size = 72), 1000, 100, st, at)
+            count_renderer = renpy.render(Text( _(str(PENCIL_LIMIT - self.pencils) + " pencils remaining"), color = "#FF0000", size = 72), 1000, 100, st, at)
             r.blit(count_renderer, (50, 125))
 
             # Render in the keys

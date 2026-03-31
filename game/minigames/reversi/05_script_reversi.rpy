@@ -21,12 +21,12 @@ init python:
 
             self.wait_timer = 1.0
 
-            self.player_name_text = Text("You", color = "#FFFFFF", size = 67, outlines=[(5, "#000000", absolute(0), absolute(0))])
-            self.player_score_text = Text("2", color = "#FFFFFF", size = 67, outlines=[(5, "#000000", absolute(0), absolute(0))])
+            self.player_name_text = Text( _("You"), color = "#FFFFFF", size = 67, outlines=[(5, "#000000", absolute(0), absolute(0))])
+            self.player_score_text = Text( _("2"), color = "#FFFFFF", size = 67, outlines=[(5, "#000000", absolute(0), absolute(0))])
             self.enemy_name_text = Text(self.ai.name, color = "#000000", size = 72)
-            self.enemy_score_text = Text("2", color = "#000000", size = 72)
+            self.enemy_score_text = Text( _("2"), color = "#000000", size = 72)
 
-            self.help_text = Text("Press I for info!", color = "#FFFFFF", size = 36, outlines=[(4, "#000000", absolute(0), absolute(0))])
+            self.help_text = Text( _("Press I for info!"), color = "#FFFFFF", size = 36, outlines=[(4, "#000000", absolute(0), absolute(0))])
             self.help_modal = renpy.get_registered_image("reversi_rules")
             self.showing_help = False
 

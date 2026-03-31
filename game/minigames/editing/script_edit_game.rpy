@@ -50,21 +50,21 @@ init python:
                     if not self.three_played:
                         renpy.sound.play("minigames/editing/sfx_count_beep.ogg")
                         self.three_played = True
-                    countdown_renderer = renpy.render(Text("3", color = "FF0000", size=200), 1920, 1080, st, at)
+                    countdown_renderer = renpy.render(Text( _("3"), color = "FF0000", size=200), 1920, 1080, st, at)
                     r.blit(countdown_renderer, (960, 540))
                 elif 1 < current_time < 2:
                     # Display 2
                     if not self.two_played:
                         renpy.sound.play("minigames/editing/sfx_count_beep.ogg")
                         self.two_played = True
-                    countdown_renderer = renpy.render(Text("2", color = "FFFF00", size=200), 1920, 1080, st, at)
+                    countdown_renderer = renpy.render(Text( _("2"), color = "FFFF00", size=200), 1920, 1080, st, at)
                     r.blit(countdown_renderer, (960, 540))
                 elif 2 < current_time < 3:
                     # Display 1
                     if not self.one_played:
                         renpy.sound.play("minigames/editing/sfx_count_beep.ogg")
                         self.one_played = True
-                    countdown_renderer = renpy.render(Text("1", color = "00FF00", size=200), 1920, 1080, st, at)
+                    countdown_renderer = renpy.render(Text( _("1"), color = "00FF00", size=200), 1920, 1080, st, at)
                     r.blit(countdown_renderer, (960, 540))
                 elif current_time > 3:
                     # Yell Go at the player
@@ -115,7 +115,7 @@ init python:
             r.blit(score_renderer, (50, 950))
             left_renderer = renpy.render(Text(str(TOTAL_ROUNDS - self.attempts) + " cuts left!", size=72), 1920, 1080, st, at)
             r.blit(left_renderer, (50, 1000))
-            middle_renderer = renpy.render(Text("Press [[SPACE] to cut!", size=72), 1920, 1080, st, at)
+            middle_renderer = renpy.render(Text( _("Press [[SPACE] to cut!", size=72)), 1920, 1080, st, at)
             r.blit(middle_renderer, (900, 1000))
 
             # Return if game over

@@ -36,7 +36,7 @@ label where_are_they_now:
         blur 10
         xpos 0.4 ypos 1.0
         linear 20 xpos 0.6
-    show screen where_text("CS returned home to his normal life of streaming and making YTPs.\nThe cops don't mess with him since taking out the corrupt Copguy.")
+    show screen where_text( _("CS returned home to his normal life of streaming and making YTPs.\nThe cops don't mess with him since taking out the corrupt Copguy.") )
     show cs happy:
         xanchor 0.5 yanchor 1.0
         xpos 0.2 ypos 1.0
@@ -59,7 +59,7 @@ label where_are_they_now:
         blur 10
         xpos 0.4 ypos 1.0
         linear 20 xpos 0.6
-    show screen where_text("Arceus moved to the UK to be with his partner, Kitty. The two lead a peaceful life now. Kitty makes fursuits for a living while Arceus has found work with a mysterious organization.")
+    show screen where_text( _("Arceus moved to the UK to be with his partner, Kitty. The two lead a peaceful life now. Kitty makes fursuits for a living while Arceus has found work with a mysterious organization.") )
     show kitty:
         xanchor 0.5 yanchor 1.0
         xpos 0.35 ypos 1.0
@@ -87,7 +87,7 @@ label where_are_they_now:
         blur 10
         xpos 0.4 ypos 1.0
         linear 20 xpos 0.6
-    show screen where_text("Mika moved in with their partner Pakoo in Nebraska.\nPakoo works at Black Mesa while Mika got a job at Robert Space Industries.")
+    show screen where_text( _("Mika moved in with their partner Pakoo in Nebraska.\nPakoo works at Black Mesa while Mika got a job at Robert Space Industries.") )
     show mika:
         xanchor 0.5 yanchor 1.0
         xpos 0.35 ypos 1.0
@@ -115,7 +115,7 @@ label where_are_they_now:
         blur 10
         xpos 0.4 ypos 1.0
         linear 20 xpos 0.6
-    show screen where_text("Digi and Aria still hang out as much as they can in spite of their busy schedules. Digi has devoted their life to perfecting their cybernetic body mods while Aria continues to be an entity doing entity things.")
+    show screen where_text( _("Digi and Aria still hang out as much as they can in spite of their busy schedules. Digi has devoted their life to perfecting their cybernetic body mods while Aria continues to be an entity doing entity things.") )
     show aria:
         xanchor 0.5 yanchor 1.0
         xpos 0.35 ypos 1.0
@@ -143,7 +143,7 @@ label where_are_they_now:
         blur 10
         xpos 0.4 ypos 1.0
         linear 20 xpos 0.6
-    show screen where_text("Nova and Blanknam3d, both musicians, but with very different tastes, have ended up in semi-friendly competition to see who can attract more fans. Nova performs under the stage name xtkakeru.")
+    show screen where_text( _("Nova and Blanknam3d, both musicians, but with very different tastes, have ended up in semi-friendly competition to see who can attract more fans. Nova performs under the stage name xtkakeru.") )
     show blank flipped:
         xanchor 0.5 yanchor 1.0
         xpos 0.0 ypos 1.0
@@ -171,7 +171,7 @@ label where_are_they_now:
         blur 10
         xpos 0.4 ypos 1.0
         linear 20 xpos 0.6
-    show screen where_text("Annorexorcist created a CS-themed mod for a hit video game.\nDB05 continues to care for his dogs and be late for streams.")
+    show screen where_text( _("Annorexorcist created a CS-themed mod for a hit video game.\nDB05 continues to care for his dogs and be late for streams.") )
     show anno:
         xanchor 0.5 yanchor 1.0
         xpos 0.0 ypos 1.0
@@ -199,7 +199,7 @@ label where_are_they_now:
         blur 10
         xpos 0.4 ypos 1.0
         linear 20 xpos 0.6
-    show screen where_text("Midgalicis returned home to the Phillipines, where she unexpectedly landed an illustration job with Amazon.")
+    show screen where_text( _("Midgalicis returned home to the Phillipines, where she unexpectedly landed an illustration job with Amazon.") )
     show midge:
         xanchor 0.5 yanchor 1.0
         xpos 0.2 ypos 1.0
@@ -221,7 +221,7 @@ label where_are_they_now:
     
     stop music
 
-    show screen where_text("As for Tate...") with dissolve
+    show screen where_text( _("As for Tate...") ) with dissolve
     $ renpy.pause(3,hard=True)
 
     show final_destination:
@@ -232,9 +232,9 @@ label where_are_they_now:
     with dissolve
     $ renpy.pause(2,hard=True)
 
-    show screen where_text("They mentioned something about starting over... {color=#00000000}{outlinecolor=#00000000}somewhere else.{/color}{/outlinecolor}") with dissolve
+    show screen where_text( _("They mentioned something about starting over... {color=#00000000}{outlinecolor=#00000000}somewhere else.{/color}{/outlinecolor}") ) with dissolve
     $ renpy.pause(3,hard=True)
-    show screen where_text("They mentioned something about starting over... somewhere else.") with dissolve
+    show screen where_text( _("They mentioned something about starting over... somewhere else.") ) with dissolve
     $ renpy.pause(3,hard=True)
     hide screen where_text with Dissolve(2.0)
     $ renpy.pause(2,hard=True)
