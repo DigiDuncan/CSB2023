@@ -761,7 +761,7 @@ label _ucn2_battle():
             $e4
         on_win "_ucn2_after"
         on_lose "_ucn2_after"
-        intro_text _("Begin!")
+        intro_text "Begin!"
 
 label _ucn2_after:
     window hide

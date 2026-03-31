@@ -1183,7 +1183,7 @@ label south_noairport:
     show cs disappointed
     mika "And then the guy says \"HAHAHAHAHAHAH! Dude, those animals are so fucking funny! They make me want to merge without looking!\""
     mika "Anyways..."
-    $ translate_this_line = "If you want to beat the Russians, call us Finns and play the {i}Säkkijärven polkkaa."
+    $ translate_this_line = _("If you want to beat the Russians, call us Finns and play the {i}Säkkijärven polkkaa.")
     mika "{a=show:show_tl}Jos haluatte voittaa venäläiset, kutsukaa meitä suomalaisiksi ja soittakaa Säkkijärven polkkaa.{/a}"
     hide mika with moveoutbottom
     arceus "CS? Was that in the scrip--{nw}"

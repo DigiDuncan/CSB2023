@@ -418,7 +418,8 @@ screen screen_rpg(no_stat_boxes = False):
                 xysize(1916, 262)
                 background get_themed_attribute("rpg/main_box")
                 xalign 0.5
-                grid 2 1:
+                frame:
+                    background None
                     xfill True yfill True
 
                     # The options.
@@ -428,96 +429,86 @@ screen screen_rpg(no_stat_boxes = False):
 
                         ### If you choose to attack, get access to the attacks.
                         if current_ally_mode == "ATK":
-                            grid 2 1:
+                                                       
+                            viewport:
+                                xsize 0.75 ysize 1.0
+                                                                
+                                # Mostly for Copguy EX
+                                if current_ally.attacks and len(current_ally.attacks) > 4:
+                                    scrollbars "vertical"
+                                    mousewheel True
 
-                                ### Attack side
-                                frame:
-                                    background None
-                                    viewport:
-                                        xsize 1.0 ysize 1.0
-                                        
-                                        # Mostly for Copguy EX
-                                        if current_ally.attacks and len(current_ally.attacks) > 4:
-                                            scrollbars "vertical"
-                                            mousewheel True
+                                grid 2 len(current_ally.attacks) / 2 + 1:
+                                    xsize 0.5 ysize 1.0
+                                    
+                                    for attack in current_ally.attacks:
+                                        python:
+                                            attack_actions = []
+                                            # If the attack is not available, make this insensitive
+                                            attack_actions.append(Function(current_ally.set_next_attack, attack))
+                                            attack_actions.append(Function(clear_list, working_list))
+                                            attack_actions.append(SetVariable("current_ally_mode", "TGT"))
+                                            # This might be needed if the attack has 0 targets
+                                            if attack.attack.target_count == 0:
+                                                attack_actions.append(Function(current_ally.set_next_targets, []))
 
-                                        grid 2 len(current_ally.attacks) / 2 + 1:
-                                            xsize 0.5 ysize 0.5
+                                        # Adds selectable attack texts/descriptions
+                                        frame:
+                                            background None
+                                            xsize 1.0 ymaximum 120
+                                            button:
+                                                hover_sound "audio/sfx/sfx_select.ogg"
+                                                action [
+                                                    Play("sound", "audio/sfx/sfx_valid.ogg"),
+                                                    *attack_actions
+                                                ]
+                                                if not attack.available:
+                                                    sensitive False
 
-                                            for attack in current_ally.attacks:
-                                                python:
-                                                    attack_actions = []
-                                                    # If the attack is not available, make this insensitive
-                                                    attack_actions.append(Function(current_ally.set_next_attack, attack))
-                                                    attack_actions.append(Function(clear_list, working_list))
-                                                    attack_actions.append(SetVariable("current_ally_mode", "TGT"))
-                                                    # This might be needed if the attack has 0 targets
-                                                    if attack.attack.target_count == 0:
-                                                        attack_actions.append(Function(current_ally.set_next_targets, []))
+                                                vbox:
+                                                    text attack.name:
+                                                        size 40
+                                                        color gui.text_color
+                                                        hover_color gui.hover_color
+                                                        selected_color gui.selected_color
+                                                        insensitive_color gui.insensitive_color
 
-                                                # Adds selectable attack texts/descriptions
-                                                button:
-                                                    xfill True
-                                                    yminimum 1.0 ymaximum 120
-                                                    hover_sound "audio/sfx/sfx_select.ogg"
-                                                    action [
-                                                        Play("sound", "audio/sfx/sfx_valid.ogg"),
-                                                        *attack_actions
-                                                    ]
-                                                    if not attack.available:
-                                                        sensitive False
+                                                    text "("+attack.attack.properties+")":
+                                                        xoffset 32
+                                                        size 21
+                                                        color gui.text_color
+                                                        hover_color gui.hover_color
+                                                        selected_color gui.selected_color
+                                                        insensitive_color gui.insensitive_color
 
-                                                    frame:
-                                                        background None
-                                                        yalign 0.5
-
-                                                        vbox:
-                                                            text "{size=40}"+attack.name+" {/size}{size=21}("+attack.attack.properties+"){/size}":
-                                                                if attack is current_ally.next_attack:
-                                                                    color "#FF8A00"
-                                                                    hover_color "#F5DD00"
-                                                                    insensitive_color "#888888"
-                                                                else:
-                                                                    color "#FFFFFF"
-                                                                    hover_color "#0099CC"
-                                                                    insensitive_color "#888888"
-                                                            text "{size=21}"+attack.attack.description+"{/size}":
-                                                                first_indent 32
-                                                                if attack is current_ally.next_attack:
-                                                                    color "#844200"
-                                                                    hover_color "#7B6F00"
-                                                                    insensitive_color "#888888"
-                                                                else:
-                                                                    color "#848484"
-                                                                    hover_color "#006582"
-                                                                    insensitive_color "#888888"
+                                                    text "{alpha=0.5}"+attack.attack.description+"{/alpha}":
+                                                        xoffset 32
+                                                        size 21
+                                                        color gui.text_color
+                                                        hover_color gui.hover_color
+                                                        selected_color gui.selected_color
+                                                        insensitive_color gui.insensitive_color
+                        
                                
                         ### If you choose to defend, do that.
                         elif current_ally_mode == "DEF":
                             frame:
                                 background None
-                                grid 2 1:
-                                    frame:
-                                        background None
-                                        xsize 1.0 ysize 1.0
-                                        text current_ally.display_name+" will defend this turn!"
+                                xsize 1.0 ysize 1.0
+                                text current_ally.display_name+" will defend this turn!"
 
-                                    frame:
-                                        background None
-                                        xsize 1.0 ysize 1.0
-
-                                        imagebutton:
-                                            xalign 1.0
-                                            yalign 1.0
-                                            idle get_themed_attribute("rpg/confirm_button")
-                                            hover get_themed_attribute("rpg/confirm_button", prefix = "selectable")
-                                            hover_sound "audio/sfx/sfx_select.ogg"
-                                            action [
-                                                Play("sound", "audio/sfx/sfx_valid.ogg"),
-                                                Function(current_ally.set_next_attack, RPG.encounter.DEFEND_ACTION),
-                                                SetVariable("current_ally_mode", None),
-                                                IncrementVariable("RPG.encounter.subturn")
-                                            ]
+                                imagebutton:
+                                    xalign 1.0
+                                    yalign 1.0
+                                    idle get_themed_attribute("rpg/confirm_button")
+                                    hover get_themed_attribute("rpg/confirm_button", prefix = "selectable")
+                                    hover_sound "audio/sfx/sfx_select.ogg"
+                                    action [
+                                        Play("sound", "audio/sfx/sfx_valid.ogg"),
+                                        Function(current_ally.set_next_attack, RPG.encounter.DEFEND_ACTION),
+                                        SetVariable("current_ally_mode", None),
+                                        IncrementVariable("RPG.encounter.subturn")
+                                    ]
 
                         elif current_ally_mode == "TGT":
                             $ targets = RPG.encounter.possible_targets(current_ally, current_ally.next_attack.attack)
@@ -572,10 +563,10 @@ screen screen_rpg(no_stat_boxes = False):
                                                     )
 
                                                 text "{size=-12}"+target.display_name:
-                                                    color "#FFFFFF"
-                                                    hover_color "#0099CC"
-                                                    selected_color "#FF8A00"
-                                                    selected_hover_color "#F5DD00"
+                                                    color gui.text_color
+                                                    hover_color gui.hover_color
+                                                    selected_color gui.selected_color
+                                                    selected_hover_color gui.accent_color
                                                     xalign 0.5 yalign 1.0
                                                     text_align 0.5
 
@@ -583,25 +574,22 @@ screen screen_rpg(no_stat_boxes = False):
                         else:
                             frame:
                                 background None
-                                grid 1 1: # This is to keep the text lined up consistently with other screens
-                                    frame: 
-                                        background None
+                                
+                                # If the player goes back to a previous subturn, text will vary based on what the player chose to do
+                                if current_ally.next_attack:
+                                    if current_ally.next_attack.attack.target_count == 0:
+                                        text _(current_ally.display_name+" will use "+current_ally.next_attack.name+"!")
+                                    else:
+                                        python:
+                                            targets_list = []
+                                            for t in current_ally.next_targets:
+                                                targets_list.append(t)
+                                            targets_list = list(set(targets_list))
+                                            targets_list = sentence_join([t.display_name for t in targets_list], oxford=True)
 
-                                        # If the player goes back to a previous subturn, text will vary based on what the player chose to do
-                                        if current_ally.next_attack:
-                                            if current_ally.next_attack.attack.target_count == 0:
-                                                text _(current_ally.display_name+" will use "+current_ally.next_attack.name+"!")
-                                            else:
-                                                python:
-                                                    targets_list = []
-                                                    for t in current_ally.next_targets:
-                                                        targets_list.append(t)
-                                                    targets_list = list(set(targets_list))
-                                                    targets_list = sentence_join([t.display_name for t in targets_list], oxford=True)
-
-                                                text current_ally.display_name+" will use "+current_ally.next_attack.name+" on "+targets_list+"!"
-                                        else:
-                                            text _("What will "+current_ally.display_name+" do?")
+                                        text current_ally.display_name+" will use "+current_ally.next_attack.name+" on "+targets_list+"!"
+                                else:
+                                    text _("What will "+current_ally.display_name+" do?")
 
 
         # If everything is set and good to go, show the confirm button)
@@ -655,7 +643,7 @@ screen screen_rpg(no_stat_boxes = False):
                             size 21
                         
                     text effect_info[3]: # effect source info
-                        color Color("#AAAAAA")
+                        color gui.idle_color
                         italic True
                         xalign 0.5
                         text_align 0.5

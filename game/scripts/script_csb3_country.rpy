@@ -1893,7 +1893,7 @@ label sweden:
     cs "That guy looks like he'd be able to help."
     cs "Excuse, me, sir, do you know where the bus stop is?"
 
-    $ translate_this_line = "My hovercraft is filled with eels."
+    $ translate_this_line = _("My hovercraft is filled with eels.")
     average_swede "{a=show:show_tl}Min svävare är full med ålar.{/a}"
 
     show cs disappointed flipped
@@ -1936,7 +1936,7 @@ label sweden_second:
     cs "That guy looks like he'd be able to help."
     cs "Excuse, me, sir, do you know where the bus stop is?"
 
-    $ translate_this_line = "My hovercraft is filled with eels."
+    $ translate_this_line = _("My hovercraft is filled with eels.")
     average_swede "{a=show:show_tl}Min svävare är full med ålar.{/a}"
 
     show cs disappointed flipped

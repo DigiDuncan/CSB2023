@@ -59,7 +59,7 @@ label test:
                             scale 1.0
                             on_win "secret_dx"
                             on_lose "secret_dx"
-                            intro_text _("Let the test battle commence!")
+                            intro_text "Let the test battle commence!"
 
                 "Matrix Test":
                     stop music

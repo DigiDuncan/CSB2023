@@ -359,7 +359,7 @@ class Attacks:
             AttackComponent(damage_over_time(duration = 3))
         ],
         accuracy = 75)
-    RAVE = ComboAttack("Rave", "Blast your enemies' eardrums! (Damages enemies while lowering their defense.)",
+    RAVE = ComboAttack("Rave", "Blast your enemies' eardrums!",
     [
         AttackComponent(change_stat(stat = CharacterStat.DEFENSE, mult = 0.5)),
         AttackComponent(damage_fighters(mult = 0.5))
