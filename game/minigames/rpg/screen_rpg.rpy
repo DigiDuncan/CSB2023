@@ -704,7 +704,7 @@ screen screen_rpg(no_stat_boxes = False):
     # text debug_text:
     #     xoffset 25
     #     yoffset 25
-    #     outlines [(2.5, "#000000", absolute(0), absolute(0))]
+    #     outlines [(2.25, "#000000", absolute(0), absolute(0))]
 
     # Dev Backdoor
     key "K_END" action Jump("pass_rpg")
