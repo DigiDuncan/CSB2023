@@ -315,9 +315,14 @@ define gui.notify_text_size = 24 * gui.preference("fsm", 1)
 ## The size of the game's title.
 define gui.title_text_size = 75 * gui.preference("fsm", 1)
 
-## Custom: Font for page header elements
-define gui.header_text_font = gui.preference("font_header", gui_theme_map["header_font"])
+## CSB CUSTOM ELEMENTS #########################################################
 
+## Color of the big number on the die in D20 Viewer
+define gui.d20_text_color = gui_theme_map["d20_text_color"]
+define gui.d20_text_outline_color = gui_theme_map["d20_text_outline_color"]
+
+## Font for page header elements (CSettings, etc.)
+define gui.header_text_font = gui.preference("font_header", gui_theme_map["header_font"])
 
 ## Main and Game Menus #########################################################
 
@@ -411,11 +416,6 @@ define gui.button_text_insensitive_color = gui.insensitive_color
 ## The horizontal alignment of the button text. (0.0 is left, 0.5 is center, 1.0
 ## is right).
 define gui.button_text_xalign = 0.0
-
-## CSB CUSTOM ELEMENTS
-
-## Color of the big number on the die in D20 Viewer
-define gui.d20_text_color = gui_theme_map["d20_text_color"]
 
 ## These variables override settings for different kinds of buttons. Please see
 ## the gui documentation for the kinds of buttons available, and what each is

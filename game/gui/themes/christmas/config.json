@@ -44,5 +44,6 @@
 
     "game_menu_filetype": "png",
 
-    "d20_text_color": "#FF8A00"
+    "d20_text_color": "#1BB320",
+    "d20_text_outline_color": "#FFFFFF"
 }

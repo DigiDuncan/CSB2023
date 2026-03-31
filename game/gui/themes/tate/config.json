@@ -44,5 +44,6 @@
 
     "game_menu_filetype": "webm",
 
-    "d20_text_color": "#FF00FF"
+    "d20_text_color": "#00FFFF",
+    "d20_text_outline_color": "#FFFFFF"
 }

@@ -19,7 +19,7 @@ screen d20_viewer_screen():
             color gui.idle_color
             xalign 0.5
     
-    image "gui/d20.png":
+    image get_themed_attribute("d20"):
         xalign 0.5
         yalign 0.6
 
@@ -43,6 +43,7 @@ screen d20_viewer_screen():
 
     text str(d20):
         color gui.d20_text_color
+        outlines [(9, gui.d20_text_outline_color, absolute(0), absolute(0))]
         xalign 0.5
         yalign 0.55
         size 288
