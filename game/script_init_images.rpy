@@ -1982,19 +1982,19 @@ image night_bg = "bg/ce/table/night_bg.png"
 image spent_target = Text("{size=50}{color=#369100}-$81.88", text_align=0.5)
 
 image reversi_rules:
-    xsize 1500
-    ysize 500
-    xanchor 0.5
-    yanchor 0.5
+    xanchor 0.5 yanchor 0.5
+    xsize 1500 ysize 600 # TODO: don't hard-code this size, but idk why it doesn't just stretch properly with the text?
     contains:
         Frame(get_themed_attribute("frame"))
     contains:
-        Text("{size=+16}Reversi!", xalign=0.5, yalign=0.075)
-    contains:
-        Null(xysize=(100,100))
-    contains:
-        Text("• Each player places down one piece per turn.\n• The goal is to capture your opponent's pieces by trapping them in between your own pieces on the board. \n• A legal move will capture at least one of your opponent's pieces. Depending on placement, you can capture entire rows in any direction on the grid.\n• The game ends when either the board is full or there are no legal moves left.\n• Whoever controls the most pieces at the end wins!", xanchor=0.5, yanchor=1.0, xalign=0.5, yalign=0.925, xmaximum=1450)
+        VBox(
+            Text( _("{size=+16}Reversi!"), xalign=0.5, text_align=0.5),
+            Text(""),
+            Text( _("• Each player places down one piece per turn.\n• The goal is to capture your opponent's pieces by trapping them in between your own pieces on the board. \n• A legal move will capture at least one of your opponent's pieces. Depending on placement, you can capture entire rows in any direction on the grid.\n• The game ends when either the board is full or there are no legal moves left.\n• Whoever controls the most pieces at the end wins!"), xanchor=0.5, xalign=0.5, xmaximum=1400),
 
+            xalign=0.5, yalign=0.5, padding=(50,50,50,50)
+        )
+        
 # CS wacky Kuwait Adventures: Mika Edition (Deluxe Content [With Funky Kong {And Dante from Devil may Cry}])
 image kuwait_lieutenant_snow = "characters/kuwait_lieutenant_snow.png"
 image kuwait_nurse_1 = "characters/k_nurse.png"

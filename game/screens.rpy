@@ -1288,18 +1288,16 @@ screen preferences():
                 # MOVED ALL THE DEV MODE STUFF HERE
             
                 if preferences.developer_mode or persistent.creative_mode:
-                    textbutton "Debug Menu\n{size=-12}Jump to specific secDysletions of the game." action ShowMenu("debug_menu")
+                    textbutton _("Debug Menu\n{size=-12}Jump to specific secDysletions of the game.") action ShowMenu("debug_menu")
 
-                    textbutton "Test Scene\n{size=-12}A sandbox for testing various features." action Start("test")
+                    textbutton _("Test Scene\n{size=-12}A sandbox for testing various features.") action Start("test")
 
-                    textbutton "Tate's Test Room\n{size=-12}Another test screen. Awawa." action Start("_awawa_tate_test")
-
-                    #textbutton "{image=gui/inline_text/dx_text.png} Asset Debugger\n{size=-12}Make sure all assets load correctly." action Jump("asset_debugger")
+                    textbutton _("Tate's Test Room\n{size=-12}Another test screen. Awawa.") action Start("_awawa_tate_test")
 
                 if preferences.developer_mode:
-                    textbutton "Jump To Label Start\n{size=-12}What we do here is go back{size=-12} back{size=-12} back{size=-12} back..." action Function(jump_to_label_start)
+                    textbutton _("Jump To Label Start\n{size=-12}What we do here is go back{size=-12} back{size=-12} back{size=-12} back...") action Function(jump_to_label_start)
 
-                    textbutton "Unlock All\n{size=-12}Adds all unlockables to persistent." action Function(unlock_all)          
+                    textbutton _("Unlock All\n{size=-12}Adds all unlockables to persistent.") action Function(unlock_all)          
 
     # TODO: make this prettier later
     $ info = GetTooltip()

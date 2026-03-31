@@ -77,7 +77,7 @@ init python:
                 if theme_name in font_cache:
                     return font_cache[theme_name]
                 else:
-                    font_cache[theme_name] = FontGroup().add("FiraCode-Retina.ttf", 0x2206, 0x2206).add( _get("jp_font") , 0x2600, 0x9fff).add( _get("dyslexia_font") , 0x0000, 0xffff)
+                    font_cache[theme_name] = FontGroup().add("FiraCode-Retina.ttf", 0x2206, 0x2206).add( _get("jp_font") , 0xA1, 0xfc4a).add( _get("cn_font") , 0x88a1, 0xfc4b).add( _get("ru_font") , 0x8440, 0x8491).add( _get("dyslexia_font") , 0x0000, 0xffff)
                     return font_cache[theme_name]
 
             config.font_transforms["dyslexia"] = _dyslexia_font
