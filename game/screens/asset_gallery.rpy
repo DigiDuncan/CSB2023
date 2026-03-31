@@ -265,7 +265,7 @@ screen unused_gallery():
                             textalign 0.5
 
     # Return Buttons
-    textbutton "Back":
+    textbutton _("Back"):
         xoffset 25 yoffset 950
         action [
             Stop("music2"),
@@ -276,7 +276,7 @@ screen unused_gallery():
             Hide("unused_gallery"),
             ShowMenu("category_welcome")
         ]
-    textbutton "Main Menu":
+    textbutton _("Main Menu"):
         xoffset 25 yoffset 1000
         action [
             Stop("music2"),

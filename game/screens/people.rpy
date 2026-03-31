@@ -37,7 +37,7 @@ screen people():
         # maybe future sort modes will be added
         if current_bios_sorting_mode == 0:
             sort_mode = sorted(persistent.seen, key=lambda character: name_map[character]["full_name"].upper())
-            sort_text = "All"
+            sort_text = _("All")
         elif current_bios_sorting_mode == 1:
             presort = []
             for c in name_map:
@@ -45,7 +45,7 @@ screen people():
                     if "rpg" in name_map[c]:
                         presort.append(c)
             sort_mode = sorted(presort, key=lambda character: name_map[character]["full_name"].upper())
-            sort_text = "RPG Fighters Only"
+            sort_text = _("RPG Fighters Only")
         elif current_bios_sorting_mode == 2:
             presort = []
             for c in name_map:
@@ -53,7 +53,7 @@ screen people():
                     if "dx" in name_map[c]:
                         presort.append(c)
             sort_mode = sorted(presort, key=lambda character: name_map[character]["full_name"].upper())
-            sort_text = "New To DX"
+            sort_text = _("New To DX")
         elif current_bios_sorting_mode == 3:
             presort = []
             for c in name_map:
@@ -61,7 +61,7 @@ screen people():
                     if "ce" in name_map[c]:
                         presort.append(c)
             sort_mode = sorted(presort, key=lambda character: name_map[character]["full_name"].upper())
-            sort_text = "New To CE"
+            sort_text = _("New To CE")
 
     frame:
         background None
@@ -157,8 +157,8 @@ screen people():
                     vbox:
                         xsize 0.8
                         xalign 0.5 yalign 0.6
-                        text "View bios about all the wacky characters you've seen!"
-                        text "([unlocked_bio_count]/[bio_count] unlocked)"
+                        text _("View bios about all the wacky characters you've seen!")
+                        text _("([unlocked_bio_count]/[bio_count] unlocked)")
                 else:
                     ####### CURRENT NAME / PRONOUNS
                     vbox:
@@ -274,7 +274,7 @@ screen people():
                                                 xsize 1.0
                                                 background None
 
-                                                text "{size=+8}RPG Stats":
+                                                text _("{size=+8}RPG Stats"):
                                                     xalign 0.5
                                                     yalign 0.5
                                                     text_align 0.5
@@ -467,10 +467,10 @@ screen people():
                                                             hover "/gui/arrows/right_on_small.png"
                                                             action IncrementScreenVariable("current_bios_sprite")
     ###################### Back / forward
-    textbutton "Back":
+    textbutton _("Back"):
         yoffset 950 xoffset 25
         action ShowMenu("category_welcome")
-    textbutton "Main Menu":
+    textbutton _("Main Menu"):
         yoffset 1000 xoffset 25
         action Return()
 

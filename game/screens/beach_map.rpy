@@ -99,7 +99,7 @@ screen beach_overworld_map(
                 ]
                 unhovered SetScreenVariable("location_tooltip", "")
                 action [
-                    Notify("You are here!"),
+                    Notify( _("You are here!") ),
                     Play("sound", "audio/sfx/sfx_valid.ogg")
                 ]
 

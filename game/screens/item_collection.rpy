@@ -19,7 +19,7 @@ screen item_collection():
         add gui.game_menu_background
     add gui_theme_map["screen_transparency_layer"]
 
-    text "Item Collection":
+    text _("Item Collection"):
         style "game_menu_label_text"
         xpos 25 ypos 80
 
@@ -53,7 +53,7 @@ screen item_nav():
             frame:
                 background None
                 xpos 0.19 ypos 0.5
-                text "Fetching Items...\n"+load_percent+"%":
+                text _("Fetching Items...\n"+load_percent+"%"):
                     xalign 0.5 yalign 0.5
                     text_align 0.5
         else:
@@ -123,10 +123,10 @@ screen item_nav():
     else: # This should NEVER happen!
         $ renpy.jump("secret_dx")
 
-    textbutton "Back":
+    textbutton _("Back"):
         yoffset 950 xoffset 25
         action ShowMenu("category_welcome")
-    textbutton "Main Menu":
+    textbutton _("Main Menu"):
         yoffset 1000 xoffset 25
         action Return()
 
@@ -145,7 +145,7 @@ screen item_welcome():
         xsize 775
         xalign 0.5 yalign 0.5
         xoffset 450
-        text "Check out all this neat stuff you've found!\n([unlocked_item_count]/[item_count] unlocked)"
+        text _("Check out all this neat stuff you've found!\n([unlocked_item_count]/[item_count] unlocked)")
 
 ##-----------------------------------------------
 ##----------ENTRIES START HERE-------------------
@@ -193,4 +193,4 @@ screen items(l):
                     xalign 0.5
                     color gui_theme_map["idle_small_color"]
 
-                text "\nOwner: " + ITEM_MAP[l]['owner'] + "\n\n" + fetched_desc
+                text _("\nOwner: ") + ITEM_MAP[l]['owner'] + "\n\n" + fetched_desc

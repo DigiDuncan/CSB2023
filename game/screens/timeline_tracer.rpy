@@ -26,7 +26,7 @@ screen timeline_tracer():
         add gui.game_menu_background
     add gui_theme_map["screen_transparency_layer"]
 
-    text "Timeline Tracer":
+    text _("Timeline Tracer"):
         style "game_menu_label_text"
         xpos 25 ypos 80            
 
@@ -50,14 +50,14 @@ screen timeline_tracer():
 
         python:
             key_list = {
-                "Locked": col_locked,
-                "Check": col_prereq,
-                "Start": col_start,
-                "Choice": col_choice,
-                "Outcome": col_outcome,
-                "Minigame": col_minigame,
-                "Ending": col_end,
-                "Bad Ending": col_badend
+                _("Locked"): col_locked,
+                _("Check"): col_prereq,
+                _("Start"): col_start,
+                _("Choice"): col_choice,
+                _("Outcome"): col_outcome,
+                _("Minigame"): col_minigame,
+                _("Ending"): col_end,
+                _("Bad Ending"): col_badend
             }
 
         frame:
@@ -309,7 +309,7 @@ screen timeline_tracer():
                                 SetScreenVariable("info_x", this_x),
                                 SetScreenVariable("info_y", this_y-50)
                             ]
-                            tooltip "Replay!"
+                            tooltip _("Replay!")
 
                             hover_sound "audio/sfx/sfx_select.ogg"
 
@@ -324,14 +324,14 @@ screen timeline_tracer():
                         text tooltip:
                             text_align 0.5
 
-    text "Total Events Seen: [total_seen_events] of [total_events]\nTotal Endings Seen: [total_seen_endings] of [total_endings]":
+    text _("Total Events Seen: [total_seen_events] of [total_events]\nTotal Endings Seen: [total_seen_endings] of [total_endings]"):
         xanchor 1.0
         xoffset 1895
         yoffset 950
 
-    textbutton "Back":
+    textbutton _("Back"):
         xoffset 25 yoffset 950
         action ShowMenu("category_welcome")
-    textbutton "Main Menu":
+    textbutton _("Main Menu"):
         xoffset 25 yoffset 1000
         action Return()

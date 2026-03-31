@@ -4,7 +4,7 @@ screen achievements():
         add gui.game_menu_background
     add gui_theme_map["screen_transparency_layer"]
 
-    text "Achievements":
+    text _("Achievements"):
         style "game_menu_label_text"
         xpos 25 ypos 80
 
@@ -66,7 +66,7 @@ screen achievements():
                 background None
                 xsize 1855 ysize 100
 
-                text "[percent_unlocked_display]% Unlocked":
+                text _("[percent_unlocked_display]% Unlocked"):
                     xalign 1.0 yalign 1.0
                     text_align 1.0
                     color gui_theme_map["idle_small_color"]
@@ -86,7 +86,7 @@ screen achievements():
 
                     vbox:
                         if achievement_manager.unlocked:
-                            text "Unlocked Achievements ([unlocked_count]/[total_count])"
+                            text _("Unlocked Achievements ([unlocked_count]/[total_count])")
 
                             vpgrid:
                                 cols 2
@@ -111,7 +111,7 @@ screen achievements():
                             null height 50
 
                         if achievement_manager.locked:
-                            text "Locked Achievements ([locked_count]/[locked_remaining_count], [hidden_count] hidden)"
+                            text _("Locked Achievements ([locked_count]/[locked_remaining_count], [hidden_count] hidden)")
 
                             vpgrid:
                                 cols 2
@@ -147,9 +147,9 @@ screen achievements():
 
 ###################################################### BOTTOM BUTTONS
 
-    textbutton "Back":
+    textbutton _("Back"):
         yoffset 950 xoffset 25
         action ShowMenu("category_welcome")
-    textbutton "Main Menu":
+    textbutton _("Main Menu"):
         yoffset 1000 xoffset 25
         action Return()

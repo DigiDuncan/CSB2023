@@ -136,8 +136,8 @@ screen jukebox():
                     vbox:
                         xsize 0.8
                         xalign 0.5 yalign 0.6
-                        text "Here, you can listen to all the sweet tunes you've discovered throughout CS' adventures!"
-                        text "\n([unlocked_music_count]/[music_count] unlocked)"
+                        text _("Here, you can listen to all the sweet tunes you've discovered throughout CS' adventures!")
+                        text _("\n([unlocked_music_count]/[music_count] unlocked)")
                 else:
                     frame:
                         background None
@@ -248,7 +248,7 @@ screen jukebox():
 
 ###################################################### BOTTOM BUTTON
 
-    textbutton "Back":
+    textbutton _("Back"):
         yoffset 1000 xoffset 25
         action [
             Stop("jukebox"),

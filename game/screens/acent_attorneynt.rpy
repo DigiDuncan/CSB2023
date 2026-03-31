@@ -7,6 +7,7 @@ screen acent_attorneynt(chosen_evidence):
         renpy.choice_for_skipping()
 
         ##### the items
+        # TODO: read this from json, don't hard-code it
         items_list = [
             ["Leftover Donut", "images/donut_2.png", "It's a little stale, but there's no mold yet,\nso it's probably fine!"],
             ["Plastic Spoon", "images/spoon.png", "This has no right being as sturdy as it is!"],

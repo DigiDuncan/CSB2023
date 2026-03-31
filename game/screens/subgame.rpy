@@ -150,7 +150,7 @@ screen subgame():
                     # this should NEVER happen
                     action [ Notify("Something's broken! Yell at Tate!") ]
 
-    textbutton "Main Menu":
+    textbutton _("Main Menu"):
         style "subgame_return"
         action Return()
         yoffset 1000

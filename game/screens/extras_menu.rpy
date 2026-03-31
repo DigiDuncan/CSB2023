@@ -17,7 +17,7 @@ screen category_nav():
 
     add gui_theme_map["screen_transparency_layer"]
 
-    text "Extras":
+    text _("Extras"):
         style "game_menu_label_text"
         xpos 25 ypos 80
 
@@ -47,17 +47,17 @@ screen category_nav():
             # Here you list the categories
             # I wanted to use {dx} tag here but it crashes - Tate
 
-            textbutton "Achievements\n{size=-12}Look at all you've accomplished!" action ShowMenu("achievements")
+            textbutton _("Achievements\n{size=-12}Look at all you've accomplished!") action ShowMenu("achievements")
 
-            textbutton "Bios\n{size=-12}Learn more about the characters you've met!" action ShowMenu("people")
+            textbutton _("Bios\n{size=-12}Learn more about the characters you've met!") action ShowMenu("people")
 
-            textbutton "{image=gui/inline_text/dx_text.png} Item Collection\n{size=-12}Inspect items you've found while playing!" action ShowMenu("item_collection")
+            textbutton _("{image=gui/inline_text/dx_text.png} Item Collection\n{size=-12}Inspect items you've found while playing!") action ShowMenu("item_collection")
 
-            textbutton "{image=gui/inline_text/dx_text.png} Asset Gallery\n{size=-12}A gallery of beta assets, unused sprites, programmer art, concept art, and more!" action ShowMenu("unused_gallery"), PauseAudio("music", True), Play("music2", "audio/what_the_night_will_bring.ogg")
+            textbutton _("{image=gui/inline_text/dx_text.png} Asset Gallery\n{size=-12}A gallery of beta assets, unused sprites, programmer art, concept art, and more!") action ShowMenu("unused_gallery"), PauseAudio("music", True), Play("music2", "audio/what_the_night_will_bring.ogg")
 
-            textbutton "{image=gui/inline_text/dx_text.png} Timeline Tracer\n{size=-12}Revisit endings and track where you've been!" action ShowMenu("timeline_tracer")
+            textbutton _("{image=gui/inline_text/dx_text.png} Timeline Tracer\n{size=-12}Revisit endings and track where you've been!") action ShowMenu("timeline_tracer")
 
-            textbutton "{image=gui/inline_text/dx_text.png} Woohoo Counter\n{size=-12}How many can you find?" action Jump("woohoo_counter")
+            textbutton _("{image=gui/inline_text/dx_text.png} Woohoo Counter\n{size=-12}How many can you find?") action Jump("woohoo_counter")
 
             if preferences.developer_mode or achievement_manager.get("beat_copguy").unlocked:
                 textbutton "{image=gui/inline_text/dx_text.png} Ultimate Custom Night 2\n{size=-12}Put together your own RPG battles!" action PauseAudio("music", True), ShowMenu("_ucn2_selection")
@@ -67,7 +67,7 @@ screen category_nav():
             if preferences.developer_mode or persistent.creative_mode:
                 text "If you're looking for the dev options, they're in CSettings now. There's a whole tab for 'em!"
 
-    textbutton "Main Menu" action Return() yoffset 1000 xoffset 25
+    textbutton _("Main Menu") action Return() yoffset 1000 xoffset 25
 
 ##-----------------------------------------------
 ##-------------CODEX WELCOME---------------------

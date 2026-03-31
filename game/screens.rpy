@@ -1449,6 +1449,10 @@ screen history():
                         ## set.
                         if "color" in h.who_args:
                             text_color h.who_args["color"]
+                else:
+                    label _("Narrator"):
+                        style "history_name"
+                        substitute False
 
                 $ what = renpy.filter_text_tags(h.what, allow=gui.history_allow_tags)
                 text what:
