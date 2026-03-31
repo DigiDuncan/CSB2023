@@ -31,7 +31,7 @@ screen acent_attorneynt(chosen_evidence):
         xpos 0.5
         ypos 0.5
 
-    text "Evidence":
+    text _("Evidence"):
         color "#F7F6F2"
         size 64
         xpos 98
@@ -59,7 +59,7 @@ screen acent_attorneynt(chosen_evidence):
         xpos 1650
         ypos 908
 
-        text "Present":
+        text _("Present"):
             size 64
             text_align 0.5
             color("#0099cc")

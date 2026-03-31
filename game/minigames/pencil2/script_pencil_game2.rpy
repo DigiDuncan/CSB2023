@@ -181,7 +181,7 @@ screen pencil2game():
     add "minigames/pencil2/pencilboss.png"
     add "minigames/pencil/table.png" at transform:
         yalign 1.0
-    text "Press [[SPACE] to move on to the next pencil!":
+    text _("Press [[SPACE] to move on to the next pencil!"):
         xalign 0.5
         yalign 0.0625
         size 60

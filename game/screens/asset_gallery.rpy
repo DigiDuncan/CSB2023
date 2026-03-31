@@ -180,7 +180,7 @@ screen unused_gallery():
                         frame:
                             xalign 0.5 yalign 1.0
                             button:
-                                text "Click To Play!":
+                                text _("Click To Play!"):
                                     text_align 0.5
                                     color "#FFFFFF"
                                     hover_color "#0099CC"

@@ -33,7 +33,7 @@ init python:
 
         @property
         def current_controller(self) -> str:
-            return self.controller_names[persistent.controller_id] if self.controller_count else "No Controller"
+            return self.controller_names[persistent.controller_id] if self.controller_count else _("No Controller")
 
         def render(self, width, height, st, at):
             if self.start_time is None:
@@ -72,7 +72,7 @@ init python:
                 middle_renderer = renpy.render(t, 1920, 1080, st, at)
                 r.blit(middle_renderer, (1920 / 2 - (middle_renderer.width / 2), 200))
             else:
-                nc_txt = "No controller detected.\nPlug your controller in, restart the game, and try again."
+                nc_txt = _("No controller detected.\nPlug your controller in, restart the game, and try again.")
                 nc_txt_render = renpy.render(Text(nc_txt, color = "#FFFFFF", size = 50, text_align = 0.5), 1920, 500, st, at)
                 r.blit(nc_txt_render, (475, 500))
 
@@ -101,13 +101,19 @@ screen controllertest():
     add controllertest
 
     # TODO: we need a way to return to the previous menu that is compatible with all types of controls. i got nothing - tate
-    textbutton "Back":
+    textbutton _("Back"):
         xoffset 25 yoffset 950
-        action ShowMenu("subgame")
+        action [
+            Show("subgame"), # TODO: this acts weird but it mostly-works
+            With(dissolve)
+        ]
 
-    textbutton "Main Menu":
+    textbutton _("Main Menu"):
         xoffset 25 yoffset 1000
-        action Return()
+        action [
+            Return(), # TODO: this acts weird but it mostly-works
+            With(dissolve)
+        ]
 
 
 label play_controllertest:

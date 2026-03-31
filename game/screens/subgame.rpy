@@ -24,17 +24,6 @@ python early:
             self.hover_spine = f"selectable:gui/books/{book_id}/side.png"
             self.front = f"gui/books/{book_id}/cover.png"
 
-style subgame_return is button:
-    # this is the closest thing to a blank line i can do here, but the tag needs to exist or it'll crash - tate
-    background None
-
-style subgame_return_text is text:
-    color "#000000"
-    outlines [(5, "#FFFFFF", absolute(0), absolute(0))]
-
-    hover_color "#FFFFFF"
-    hover_outlines [(5, "#000000", absolute(0), absolute(0))]
-
 screen subgame():
     tag menu
     image "gui/subgame_menu.png"
@@ -107,7 +96,7 @@ screen subgame():
                         xalign 0.5  yalign 0.5
                         text current_subgame_name:
                             color Color("#FFFFFF")
-                            outlines [(5, "#000000", absolute(0), absolute(0))]
+                            outlines [(4.5, "#000000", absolute(0), absolute(0))]
                             size 72
                             xalign 0.5
                             text_align 0.5
@@ -115,7 +104,7 @@ screen subgame():
                         # Description of the game
                         text current_subgame_desc:
                             color Color("#FFFFFF")
-                            outlines [(5, "#000000", absolute(0), absolute(0))]
+                            outlines [(4.5, "#000000", absolute(0), absolute(0))]
                             text_align 0.5
                             xalign 0.5
 
@@ -151,7 +140,13 @@ screen subgame():
                     action [ Notify("Something's broken! Yell at Tate!") ]
 
     textbutton _("Main Menu"):
-        style "subgame_return"
+        background None
+        xoffset 25 yoffset 1000
+    
+        text_color "#000000"
+        text_outlines [(4.5, "#FFFFFF", absolute(0), absolute(0))]
+
+        text_hover_color "#FFFFFF"
+        text_hover_outlines [(4.5, "#000000", absolute(0), absolute(0))]
         action Return()
-        yoffset 1000
-        xoffset 25
+       

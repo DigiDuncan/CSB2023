@@ -412,6 +412,10 @@ define gui.button_text_insensitive_color = gui.insensitive_color
 ## is right).
 define gui.button_text_xalign = 0.0
 
+## CSB CUSTOM ELEMENTS
+
+## Color of the big number on the die in D20 Viewer
+define gui.d20_text_color = gui_theme_map["d20_text_color"]
 
 ## These variables override settings for different kinds of buttons. Please see
 ## the gui documentation for the kinds of buttons available, and what each is

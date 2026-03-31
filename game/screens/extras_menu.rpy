@@ -62,10 +62,11 @@ screen category_nav():
             if preferences.developer_mode or achievement_manager.get("beat_copguy").unlocked:
                 textbutton "{image=gui/inline_text/dx_text.png} Ultimate Custom Night 2\n{size=-12}Put together your own RPG battles!" action PauseAudio("music", True), ShowMenu("_ucn2_selection")
 
-            text "{color=#888888}{size=-12}------------------------------------------------"
+            text "{size=-12}------------------------------------------------":
+                color gui.idle_color
 
             if preferences.developer_mode or persistent.creative_mode:
-                text "If you're looking for the dev options, they're in CSettings now. There's a whole tab for 'em!"
+                text _("If you're looking for the dev options, they're in CSettings now. There's a whole tab for 'em!")
 
     textbutton _("Main Menu") action Return() yoffset 1000 xoffset 25
 

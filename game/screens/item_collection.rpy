@@ -60,7 +60,7 @@ screen item_nav():
             frame:
                 background None
                 xpos 0.17 ypos 0.5
-                text "Preparing Collection...":
+                text _("Preparing Collection..."):
                     xalign 0.5 yalign 0.5
                     text_align 0.5
 

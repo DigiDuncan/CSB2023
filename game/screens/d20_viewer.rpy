@@ -5,16 +5,20 @@ screen d20_viewer_screen():
 
     add gui.game_menu_background
 
-    text "{size=+48}D20 Viewer":
+    text _("{size=+48}D20 Viewer"):
         xalign 0.5
         yalign 0.1
         text_align 0.5
 
-    text "See what fate could have been...\n{size=-12}{color=#BBBBBB}(Or, more accurately, see who would have arrived at the Christmas party first.)":
-        xalign 0.5
-        yalign 0.19
-        text_align 0.5
-
+    vbox:
+        xalign 0.5 yalign 0.19
+        
+        text _("See what fate could have been..."):
+            xalign 0.5
+        text _("(Or, more accurately, see who would have arrived at the Christmas party first.)"):
+            color gui.idle_color
+            xalign 0.5
+    
     image "gui/d20.png":
         xalign 0.5
         yalign 0.6
@@ -37,19 +41,21 @@ screen d20_viewer_screen():
             xalign 0.7
             yalign 0.55
 
-    text "{color=#FF6A00}"+str(d20):
+    text str(d20):
+        color gui.d20_text_color
         xalign 0.5
         yalign 0.55
         size 288
 
-    textbutton "{size=69}View" action Replay("ce_party_before", scope={"d20":d20}):
+    textbutton _("View") action Replay("ce_party_before", scope={"d20":d20}):
+        text_size 69
         xalign 0.5
         yalign 0.9
 
-    textbutton "Back":
+    textbutton _("Back"):
         xoffset 25 yoffset 950
         action ShowMenu("subgame")
 
-    textbutton "Main Menu":
+    textbutton _("Main Menu"):
         xoffset 25 yoffset 1000
         action Return()

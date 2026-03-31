@@ -155,7 +155,7 @@ screen jukebox():
                         xalign 0.5 yalign 1.0
 
                         if jukebox_playing:
-                            image "images/jukebox/record.png":
+                            image "gui/jukebox/record.png":
                                 xysize(500, 500)
                                 xalign 0.8 yalign 0
                                 yoffset -100 # idk why this needs this - tate
@@ -164,7 +164,7 @@ screen jukebox():
                                     linear 5.0 rotate 360.0
                                     repeat
                         else:
-                            image "images/jukebox/record.png":
+                            image "gui/jukebox/record.png":
                                 xysize(500, 500)
                                 xalign 0.8 yalign 0
                                 yoffset -100 # idk why this needs this - tate
@@ -172,11 +172,11 @@ screen jukebox():
                                     rotate 0 # TODO: make it stop at current position when paused?
 
                         if current_track["album_art"] is None:
-                            image "images/jukebox/csbi.png":
+                            image "gui/jukebox/csbi.png":
                                 xysize(512, 512)
                                 xalign 0.5 yalign 0
                         else:
-                            image f"images/jukebox/"+current_track["album_art"]:
+                            image f"gui/jukebox/"+current_track["album_art"]:
                                 xysize(512, 512)
                                 xalign 0.5 yalign 0
 

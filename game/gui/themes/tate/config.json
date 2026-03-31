@@ -25,7 +25,7 @@
 
     "screen_transparency_layer": "/gui/themes/tate/overlay/menu_alpha.png",
     "image_button_idle": "#008080",
-    "image_button_hover": "#ff00ff",
+    "image_button_hover": "#FF00FF",
     "image_button_selected_idle": "#FFFF00",
     "image_button_selected_hover": "#FFFFBD",
     "image_button_insensitive": "#800080",
@@ -42,5 +42,7 @@
     "menu_subtitle_yalign": 0,
     "menu_subtitle_zoom": 1.0,
 
-    "game_menu_filetype": "webm"
+    "game_menu_filetype": "webm",
+
+    "d20_text_color": "#FF00FF"
 }

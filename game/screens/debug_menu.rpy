@@ -46,9 +46,9 @@ screen debug_menu():
         xpos 25 ypos 50
         xsize 1895 ysize 850
 
-        text "{size=+12}Debug Screen 2.0{/size}":
+        text _("{size=+12}Debug Screen 2.0{/size}"):
             xalign 0.0 ypos 0
-        text"{size=-24}(Some labels have been hidden for sanity.){/size}":
+        text _("{size=-24}(Some labels have been hidden for sanity.){/size}"):
             xalign 1.0 ypos 24
             text_align 1.0
 
@@ -81,13 +81,13 @@ screen debug_menu():
                         ]
 
     if chosen_label == None:
-        textbutton "Pick a label first!":
+        textbutton _("Pick a label first!"):
             yoffset 1000 xoffset 1895
             xanchor 1.0
             text_align 1.0
             sensitive False
     else:
-        textbutton "Jump to [chosen_label]":
+        textbutton _("Jump to [chosen_label]"):
             yoffset 1000 xoffset 1895
             xanchor 1.0
             text_align 1.0
@@ -97,13 +97,13 @@ screen debug_menu():
                 Start(chosen_label)
             ]
 
-    textbutton "Back to CSettings":
+    textbutton _("Back to CSettings"):
         yoffset 950 xoffset 25
         action [
             SetVariable("chosen_label", None),
             ShowMenu("preferences")
         ]
-    textbutton "Main Menu":
+    textbutton _("Main Menu"):
         yoffset 1000 xoffset 25
         action [
             SetVariable("chosen_label", None),

@@ -12,12 +12,12 @@ screen ce_minigame_screen():
 
     add "gui/themes/{preferences.gui_theme}/game_menu.png"
     
-    text "{size=+48}Minigames":
+    text _("{size=+48}Minigames"):
         xalign 0.5
         ypos 0.1 yanchor 0.5
         text_align 0.5
 
-    text "Go back and play your favorite games from Christmas Edition!":
+    text _("Go back and play your favorite games from Christmas Edition!"):
         xalign 0.5
         ypos 0.17 yanchor 0.5
         text_align 0.5

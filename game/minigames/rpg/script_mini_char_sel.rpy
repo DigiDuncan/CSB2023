@@ -45,7 +45,7 @@ screen _rpg_selection(char_list = ["CS"], locked_slots = []):
 
     ###################### Bounding box for everything
 
-    text "{size=+24}Select Your Characters!":
+    text _("{size=+24}Select Your Characters!"):
         xalign 0.5
         yalign 0.04
         text_align 0.5
@@ -141,7 +141,7 @@ screen _rpg_selection(char_list = ["CS"], locked_slots = []):
                             background None
                             xsize 0.5 xoffset -10
                             xalign 1.0
-                            text "{size=+8}Allies":
+                            text _("{size=+8}Allies"):
                                 xalign 1.0
 
                             # Selected character portraits
@@ -244,7 +244,7 @@ screen _rpg_selection(char_list = ["CS"], locked_slots = []):
                                             xmaximum 500 ymaximum 200
 
                                             vbox:
-                                                text "Stats":
+                                                text _("Stats"):
                                                     xalign 0.5
                                                     text_align 0.5
                                                 grid 3 1:
@@ -280,7 +280,7 @@ screen _rpg_selection(char_list = ["CS"], locked_slots = []):
                                             xsize 500 ysize 363
 
                                             vbox: 
-                                                text "Moves":
+                                                text _("Moves"):
                                                     xalign 0.5
                                                     text_align 0.5
 

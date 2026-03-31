@@ -550,7 +550,7 @@ screen main_menu():
         xanchor -2.1
         if persistent.show_cs_button and not preferences.developer_mode:
             hbox:
-                text "{bt=a3-p10-s1}Are you CS? Click here!":
+                text _("{bt=a3-p10-s1}Are you CS? Click here!"):
                     size 40
                 null:
                     width 20
@@ -679,7 +679,7 @@ screen game_menu(title, scroll=None, yinitial=0.0):
 
     label title
     if _current_song and _current_artist:
-        text "Now Playing: {font=music_text}[_current_song] - [_current_artist]"
+        text _("Now Playing: {font=music_text}[_current_song] - [_current_artist]")
 
     if main_menu:
         key "game_menu" action ShowMenu("main_menu")

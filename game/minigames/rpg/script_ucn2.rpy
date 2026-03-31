@@ -46,7 +46,7 @@ screen _ucn2_selection():
     default loaded_imgs = 0
     default rpg_img = "images/bg/csb3_ch2_south/casino1.png"
     default rpg_bgm = "card_castle"
-    default rpg_bgm_art = "images/jukebox/"+MUSIC_MAP[rpg_bgm]["album_art"]
+    default rpg_bgm_art = "gui/jukebox/"+MUSIC_MAP[rpg_bgm]["album_art"]
 
     ### Add background color / prep video
 
@@ -74,7 +74,7 @@ screen _ucn2_selection():
 
         ###################### Bounding box for everything
 
-        text "{size=+24}Select Your Characters!":
+        text _("{size=+24}Select Your Characters!"):
             xalign 0.5
             yalign 0.04
             text_align 0.5
@@ -204,7 +204,7 @@ screen _ucn2_selection():
                             frame:
                                 background None
                                 xsize 0.5 xoffset 10
-                                text "{size=+8}Allies"
+                                text _("{size=+8}Allies")
 
                                 # Selected character portraits
                                 grid 4 1:
@@ -261,7 +261,7 @@ screen _ucn2_selection():
                                 background None
                                 xsize 0.5 xoffset -10
                                 xalign 1.0
-                                text "{size=+8}Enemies":
+                                text _("{size=+8}Enemies"):
                                     xalign 1.0
 
                                 # Selected character portraits
@@ -365,7 +365,7 @@ screen _ucn2_selection():
         ### Buttons
         $ screen_check = renpy.get_screen("category_welcome")
 
-        textbutton "Back":
+        textbutton _("Back"):
             xoffset 25 yoffset 950
 
             if screen_check:
@@ -385,7 +385,7 @@ screen _ucn2_selection():
                     ShowMenu("category_welcome")
                 ]
 
-        textbutton "Main Menu":
+        textbutton _("Main Menu"):
             sensitive True
             xoffset 25 yoffset 1000
             action [
@@ -397,7 +397,7 @@ screen _ucn2_selection():
             ]
 
         ################################################### DEBUG BUTTONS
-        textbutton "[[DEBUG] Toggle ready state.":
+        textbutton _("[[DEV] Toggle ready state."):
             yoffset 50 xoffset 25
             action [
                 SetScreenVariable("rpg_ready", (not rpg_ready) )
@@ -405,7 +405,7 @@ screen _ucn2_selection():
 
         # Debug only
         if rpg_ready == True:
-            textbutton "[[DEV] Skip aesthetic screens":
+            textbutton _("[[DEV] Skip aesthetic screens"):
                 xoffset 1395 yoffset 950
                 action [
                     Play("sound", "audio/sfx/sfx_valid.ogg"),
@@ -437,7 +437,7 @@ screen _ucn2_selection():
 
     elif rpg_selection_stage == "scale":
 
-        text "{size=+24}Select Party Scale":
+        text _("{size=+24}Select Party Scale"):
             xalign 0.5
             yalign 0.04
             text_align 0.5
@@ -448,7 +448,7 @@ screen _ucn2_selection():
             xsize 0.9 ysize 0.75
             xalign 0.5 yalign 0.5
 
-            text "The higher the scale, the harder the fight!\nDefault is Level 2.":
+            text _("The higher the scale, the harder the fight!\nDefault is Level 2."):
                 xalign 0.5 yalign 0.2
                 text_align 0.5
 
@@ -461,19 +461,19 @@ screen _ucn2_selection():
 
             $ rpg_scale = ((rpg_level - 1) / 4 + 0.75)
 
-            text "Current Level:\n[rpg_level] (×[rpg_scale])":
+            text _("Current Level:\n[rpg_level] (×[rpg_scale])"):
                 xalign 0.5 yalign 0.7
                 text_align 0.5
 
         ###################### Back / forward
-        textbutton "Previous Screen":
+        textbutton _("Previous Screen"):
             xoffset 25 yoffset 1000
             action [
                 Play("sound", "audio/sfx/sfx_valid.ogg"),
                 SetScreenVariable("rpg_selection_stage", "party")
             ]
 
-        textbutton "Next Screen":
+        textbutton _("Next Screen"):
             xoffset 1674 yoffset 1000
             action [
                 Play("sound", "audio/sfx/sfx_valid.ogg"),
@@ -494,11 +494,11 @@ screen _ucn2_selection():
             $ loaded_imgs += 1
             $ load_percent = str( int((loaded_imgs * 100) / len(ucn_bg_list)) )
 
-            text "Fetching Backgrounds...\n"+load_percent+"%":
+            text _("Fetching Backgrounds...\n"+load_percent+"%"):
                 xalign 0.5 yalign 0.5
                 text_align 0.5
         else:
-            text "Preparing Selection...":
+            text _("Preparing Selection..."):
                 xalign 0.5 yalign 0.5
                 text_align 0.5
             timer 0.001:
@@ -507,7 +507,7 @@ screen _ucn2_selection():
     ###################### Actual selection
     elif rpg_selection_stage == "img":
 
-        text "{size=+24}Select Background Image":
+        text _("{size=+24}Select Background Image"):
             xalign 0.5
             yalign 0.04
             text_align 0.5
@@ -566,14 +566,14 @@ screen _ucn2_selection():
                         text_align 0.5
 
         ###################### Back / forward
-        textbutton "Previous Screen":
+        textbutton _("Previous Screen"):
             xoffset 25 yoffset 1000
             action [
                 Play("sound", "audio/sfx/sfx_valid.ogg"),
                 SetScreenVariable("rpg_selection_stage", "scale")
             ]
 
-        textbutton "Next Screen":
+        textbutton _("Next Screen"):
             xoffset 1674 yoffset 1000
             action [
                 Play("sound", "audio/sfx/sfx_valid.ogg"),
@@ -584,7 +584,7 @@ screen _ucn2_selection():
 
     elif rpg_selection_stage == "bgm":
 
-        text "{size=+24}Select BGM":
+        text _("{size=+24}Select BGM"):
             xalign 0.5
             yalign 0.04
             text_align 0.5
@@ -609,7 +609,7 @@ screen _ucn2_selection():
                             action [
                                 Play("sound", "audio/sfx/sfx_valid.ogg"),
                                 SelectedIf( SetScreenVariable("rpg_bgm", i) ),
-                                SetScreenVariable("rpg_bgm_art", Image("/images/jukebox/"+MUSIC_MAP[i]["album_art"])),
+                                SetScreenVariable("rpg_bgm_art", Image("/gui/jukebox/"+MUSIC_MAP[i]["album_art"])),
                                 SetScreenVariable("rpg_bgm", i)
                             ]
 
@@ -629,14 +629,14 @@ screen _ucn2_selection():
                         fit("contain")
 
         ###################### Back / forward
-        textbutton "Previous Screen":
+        textbutton _("Previous Screen"):
             xoffset 25 yoffset 1000
             action [
                 Play("sound", "audio/sfx/sfx_valid.ogg"),
                 SetScreenVariable("rpg_selection_stage", "img")
             ]
 
-        textbutton "Next Screen":
+        textbutton _("Next Screen"):
             xoffset 1674 yoffset 1000
             action [
                 Play("sound", "audio/sfx/sfx_valid.ogg"),
@@ -680,14 +680,14 @@ screen _ucn2_selection():
             text output
 
         ###################### Back / forward
-        textbutton "Previous Screen":
+        textbutton _("Previous Screen"):
             xoffset 25 yoffset 1000
             action [
                 Play("sound", "audio/sfx/sfx_valid.ogg"),
                 SetScreenVariable("rpg_selection_stage", "img")
             ]
 
-        textbutton "BEGIN!":
+        textbutton _("BEGIN!"):
             xoffset 1674 yoffset 1000
             action [
                 Play("sound", "audio/sfx/sfx_valid.ogg"),
@@ -761,7 +761,7 @@ label _ucn2_battle():
             $e4
         on_win "_ucn2_after"
         on_lose "_ucn2_after"
-        intro_text "Begin!"
+        intro_text _("Begin!")
 
 label _ucn2_after:
     window hide

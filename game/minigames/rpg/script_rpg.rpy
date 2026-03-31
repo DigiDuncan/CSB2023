@@ -16,7 +16,7 @@ label rpg_test:
         scale 1.0
         on_win "secret_dx"
         on_lose "secret_dx"
-        intro_text "Let the test battle commence!"
+        intro_text _("Let the test battle commence!")
 
 label rpg_fanboy_fight_amd:
     rpg:
@@ -31,7 +31,7 @@ label rpg_fanboy_fight_amd:
         scale 1.0
         on_win "friend_after_fanboy"
         on_lose "friend_fanboy_lose"
-        intro_text "AMD fanboys have come to cancel you!"
+        intro_text _("AMD fanboys have come to cancel you!")
 
 label rpg_fanboy_fight_nvidia:
     rpg:
@@ -46,7 +46,7 @@ label rpg_fanboy_fight_nvidia:
         on_win "friend_after_fanboy"
         on_lose "friend_fanboy_lose"
         music "nordic_report_2"
-        intro_text "NVIDIA fanboys have come to cancel you!"
+        intro_text _("NVIDIA fanboys have come to cancel you!")
 
 label rpg_cop_fight_1:
     rpg:
@@ -63,7 +63,7 @@ label rpg_cop_fight_1:
         scale 1.0
         on_win "secret_dx"
         on_lose "friend_so_join"
-        intro_text "Copguy is here to detain you!"
+        intro_text _("Copguy is here to detain you!")
 
 label rpg_cop_fight_2:
     rpg:
@@ -78,7 +78,7 @@ label rpg_cop_fight_2:
         scale 1.0
         on_win "friend_after_cop_fight"
         on_lose "rpg_cop_fight_2"
-        intro_text "Copguy is ready for more!"
+        intro_text _("Copguy is ready for more!")
 
 label rpg_cop_fight_3:
     rpg:
@@ -92,7 +92,7 @@ label rpg_cop_fight_3:
         scale 1.0
         on_win "friend2_cs_meetup"
         on_lose "rpg_cop_fight_3"
-        intro_text "The cops ready their pistols!"
+        intro_text _("The cops ready their pistols!")
 
 label rpg_cop_fight_4:
     rpg:
@@ -107,7 +107,7 @@ label rpg_cop_fight_4:
         scale 1.0
         on_win "friend2_cs_meetup_2"
         on_lose "rpg_cop_fight_4"
-        intro_text "The cops are suspicious of you!"
+        intro_text _("The cops are suspicious of you!")
 
 label rpg_ng_fight:
     python:
@@ -135,7 +135,7 @@ label rpg_ng_fight:
         scale 1.7
         on_win "friend2_cs_rage"
         on_lose "rpg_ng_fight"
-        intro_text "The National Guard has crosshairs on you!"
+        intro_text _("The National Guard has crosshairs on you!")
 
 label rpg_final_fight_1:
     python:
@@ -163,7 +163,7 @@ label rpg_final_fight_1:
         scale 1.75
         on_win "friend2_between_1"
         on_lose "rpg_final_fight_1"
-        intro_text "Reinforcements have arrived!"
+        intro_text _("Reinforcements have arrived!")
 
 label rpg_final_fight_2:
     python:
@@ -191,7 +191,7 @@ label rpg_final_fight_2:
         scale 2.0
         on_win "friend2_between_2"
         on_lose "rpg_final_fight_1"
-        intro_text "Another squadron enters the fray!"
+        intro_text _("Another squadron enters the fray!")
 
 label rpg_final_fight_3:
     python:
@@ -217,7 +217,7 @@ label rpg_final_fight_3:
         scale 2.0
         on_win "friend2_weapon_of_choice"
         on_lose "rpg_final_fight_1"
-        intro_text "Copguy EX is here to end this!"
+        intro_text _("Copguy EX is here to end this!")
 
 label rpg_error:
     rpg:
@@ -230,7 +230,7 @@ label rpg_error:
         scale 2.0
         on_win "secret_dx"
         on_lose "after_error_fight"
-        intro_text "Pakoo has come to restore order!"
+        intro_text _("Pakoo has come to restore order!")
 
 label rpg_archival:
     rpg:
@@ -245,7 +245,7 @@ label rpg_archival:
         on_win "archival_finale"
         on_lose "rpg_archival"
         music "broken_sky"
-        intro_text "The odd trio blocks your path!"
+        intro_text _("The odd trio blocks your path!")
 
 label rpg_bronsonbattle:
     rpg:
@@ -260,7 +260,7 @@ label rpg_bronsonbattle:
         on_win "michigan_bronson_win"
         on_lose "rpg_bronsonbattle"
         music "error"
-        intro_text "You are challenged by... Copguy?"
+        intro_text _("You are challenged by... Copguy?")
 
 label rpg_tate_ex:
 
@@ -286,7 +286,7 @@ label rpg_tate_ex:
         on_win "train_tate_ex_win"
         on_lose "train_tate_ex_lose"
         music "space"
-        intro_text "Tate EX challenges you!"
+        intro_text _("Tate EX challenges you!")
 
 
 label rpg_diabetes_1:
@@ -302,7 +302,7 @@ label rpg_diabetes_1:
         on_win "bt1d_after_fight_1"
         on_lose "rpg_diabetes_1"
         music "error"
-        intro_text "The CEO is late for a meeting."
+        intro_text _("The CEO is late for a meeting.")
 
 label rpg_diabetes_2:
     rpg:
@@ -317,7 +317,7 @@ label rpg_diabetes_2:
         on_win "bt1d_after_fight_2"
         on_lose "rpg_diabetes_2"
         music "error"
-        intro_text "The secretary will see you now."
+        intro_text _("The secretary will see you now.")
 
 label rpg_diabetes_3:
     rpg:
@@ -333,5 +333,5 @@ label rpg_diabetes_3:
         on_win "bt1d_ending"
         on_lose "rpg_diabetes_3"
         music "error"
-        intro_text "The C-Suite is ready to end this meeting!"
+        intro_text _("The C-Suite is ready to end this meeting!")
 

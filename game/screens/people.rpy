@@ -200,7 +200,7 @@ screen people():
                                         xalign 0.5 yalign 0
 
                                         # debug line
-                                        #text "This character has "+str(current_bios_total_pages)+" pages."
+                                        #text _("This character has "+str(current_bios_total_pages)+" pages.")
 
                                         ##### get number of pages for this character
                                         python:
@@ -224,7 +224,7 @@ screen people():
                                                     hover "/gui/arrows/left_on_small.png"
                                                     action IncrementScreenVariable("current_bios_page", -1)
 
-                                            text "Page [current_bios_page+1] of [current_bios_total_pages]":
+                                            text _("Page [current_bios_page+1] of [current_bios_total_pages]"):
                                                 xalign 0.5 yalign 0.5
                                                 text_align 0.5
 
@@ -362,14 +362,17 @@ screen people():
                                                                         a_name = a[0]
                                                                         a_props = a[1]
                                                                         a_desc = a[2]
-                                                                    text "[a_name]\n    {size=-12}{color=BBBBBB}([a_props])"
-                                                                    text "    {i}{color=BBBBBB}[a_desc]{/i}"
+                                                                    text "[a_name]\n    {size=-12}([a_props])"
+                                                                        
+                                                                    text "    {i}[a_desc]{/i}":
+                                                                        color gui.idle_color
                                                                 null height 32
                                                             else:
-                                                                text "???":
+                                                                text _("???"):
                                                                     xalign 0.5
                                                                     text_align 0.5
-                                                                text "{size=-12}{color=BBBBBB}Keep playing to see these stats.":
+                                                                text _("{size=-12}Keep playing to see these stats."):
+                                                                    color gui.idle_color
                                                                     xalign 0.5
                                                                     text_align 0.5
                                                                 null height 32
@@ -378,7 +381,7 @@ screen people():
                                             if current_person != "lad":
                                                 text "\"" + name_map[current_person]["quote"] + "\"\n\n" + (fetched)
                                             else:
-                                                textbutton "\"*jingling sounds*\"":
+                                                textbutton _("\"*jingling sounds*\""):
                                                     action Play("sound","/audio/sfx/sfx_lad.ogg")
                                                 text  "\n\n" + (fetched)
 

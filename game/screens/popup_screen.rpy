@@ -7,7 +7,7 @@ screen popup(a):
         at popup_appear
         xmaximum 360
         xminimum 360
-        background Frame("gui/popup.png", 100, 100)
+        background Frame("gui/achievements/popup.png", 100, 100)
         hbox:
             spacing 10
             frame:
@@ -18,7 +18,7 @@ screen popup(a):
                     yalign 0.5
                     xalign 0.5
                     xysize(100,100)
-                add Image("gui/icon_border.png"):
+                add Image("gui/achievements/icon_border.png"):
                     yalign 0.5
                     xalign 0.5
             vbox:

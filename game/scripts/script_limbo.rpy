@@ -161,7 +161,7 @@ screen reloadbutton():
         xalign 0.5
     vbox xalign 0.5 yalign 0.5:
         spacing 25
-        textbutton "Reload!":
+        textbutton _("Reload!"):
             xalign 0.5
             text_textalign 0.5
             text_size 150
@@ -174,82 +174,82 @@ screen limbo_csbutton():
     vbox xalign 0.5 yalign 0.5:
         spacing 25
         add "gui/warning.png" xalign 0.5
-        text "This will apply your achivements and unlocks from the original game." textalign 0.5 size 72 xalign 0.5
-        text "THIS WILL DELETE YOUR CURRENT SAVE." textalign 0.5 size 64 xalign 0.5
-        textbutton "Go back!":
+        text _("This will apply your achivements and unlocks from the original game.") textalign 0.5 size 72 xalign 0.5
+        text _("THIS WILL DELETE YOUR CURRENT SAVE.") textalign 0.5 size 64 xalign 0.5
+        textbutton _("Go back!"):
             xalign 0.5
             text_textalign 0.5
             text_size 72
             action Hide("limbo_csbutton")
-        textbutton "Proceed":
+        textbutton _("Proceed"):
             xalign 0.5
             text_textalign 0.5
             text_size 72
             action Jump("csdata")
 
 screen rockstar_check():
-    text "Band Name: [band_name]" textalign 0.5 size 36 xalign 0.0 yalign 0.05
+    text _("Band Name: [band_name]") textalign 0.5 size 36 xalign 0.0 yalign 0.05
     hbox xalign 0.0 yalign 0.25:
         spacing 50
-    text "EP Name: [ep_name]" textalign 0.5 size 36 xalign 0.0 yalign 0.1
+    text _("EP Name: [ep_name]") textalign 0.5 size 36 xalign 0.0 yalign 0.1
     hbox xalign 0.0 yalign 0.25:
         spacing 50
-    text "Song Name 1: [song_name_1]" textalign 0.5 size 36 xalign 0.0 yalign 0.15
+    text _("Song Name 1: [song_name_1]") textalign 0.5 size 36 xalign 0.0 yalign 0.15
     hbox xalign 0.0 yalign 0.25:
         spacing 50
-    text "Song Name 2: [song_name_2]" textalign 0.5 size 36 xalign 0.0 yalign 0.2
+    text _("Song Name 2: [song_name_2]") textalign 0.5 size 36 xalign 0.0 yalign 0.2
     hbox xalign 0.0 yalign 0.25:
         spacing 50
-    text "Song Name 3: [song_name_3]" textalign 0.5 size 36 xalign 0.0 yalign 0.25
+    text _("Song Name 3: [song_name_3]") textalign 0.5 size 36 xalign 0.0 yalign 0.25
     hbox xalign 0.0 yalign 0.25:
         spacing 50
-    text "Song Name 4: [song_name_4]" textalign 0.5 size 36 xalign 0.0 yalign 0.3
+    text _("Song Name 4: [song_name_4]") textalign 0.5 size 36 xalign 0.0 yalign 0.3
     hbox xalign 0.0 yalign 0.25:
         spacing 50
-    text "Song Name 5: [song_name_5]" textalign 0.5 size 36 xalign 0.0 yalign 0.35
+    text _("Song Name 5: [song_name_5]") textalign 0.5 size 36 xalign 0.0 yalign 0.35
     hbox xalign 0.0 yalign 0.25:
         spacing 50
-    text "Line 1: [line_1]" textalign 0.5 size 36 xalign 0.0 yalign 0.4
+    text _("Line 1: [line_1]") textalign 0.5 size 36 xalign 0.0 yalign 0.4
     hbox xalign 0.0 yalign 0.25:
         spacing 50
-    text "Line 2: [line_2]" textalign 0.5 size 36 xalign 0.0 yalign 0.45
+    text _("Line 2: [line_2]") textalign 0.5 size 36 xalign 0.0 yalign 0.45
     hbox xalign 0.0 yalign 0.25:
         spacing 50
-    text "Line 3: [line_3]" textalign 0.5 size 36 xalign 0.0 yalign 0.5
+    text _("Line 3: [line_3]") textalign 0.5 size 36 xalign 0.0 yalign 0.5
     hbox xalign 0.0 yalign 0.25:
         spacing 50
-    text "Line 4: [line_4]" textalign 0.5 size 36 xalign 0.0 yalign 0.55
+    text _("Line 4: [line_4]") textalign 0.5 size 36 xalign 0.0 yalign 0.55
     hbox xalign 0.0 yalign 0.25:
         spacing 50
-    text "Line 5: [line_5]" textalign 0.5 size 36 xalign 0.0 yalign 0.6
+    text _("Line 5: [line_5]") textalign 0.5 size 36 xalign 0.0 yalign 0.6
     hbox xalign 0.0 yalign 0.25:
         spacing 50
-    text "Line 6: [line_6]" textalign 0.5 size 36 xalign 0.0 yalign 0.65
+    text _("Line 6: [line_6]") textalign 0.5 size 36 xalign 0.0 yalign 0.65
     hbox xalign 0.0 yalign 0.25:
         spacing 50
-    text "Line 7: [line_7]" textalign 0.5 size 36 xalign 0.0 yalign 0.7
+    text _("Line 7: [line_7]") textalign 0.5 size 36 xalign 0.0 yalign 0.7
     hbox xalign 0.0 yalign 0.25:
         spacing 50
-    text "Line 8: [line_8]" textalign 0.5 size 36 xalign 0.0 yalign 0.75
+    text _("Line 8: [line_8]") textalign 0.5 size 36 xalign 0.0 yalign 0.75
     hbox xalign 0.0 yalign 0.25:
         spacing 50
-    text "Line 9: [line_9]" textalign 0.5 size 36 xalign 0.0 yalign 0.8
+    text _("Line 9: [line_9]") textalign 0.5 size 36 xalign 0.0 yalign 0.8
     hbox xalign 0.0 yalign 0.25:
         spacing 50
-    text "Line 10: [line_10]" textalign 0.5 size 36 xalign 0.0 yalign 0.85
+    text _("Line 10: [line_10]") textalign 0.5 size 36 xalign 0.0 yalign 0.85
     hbox xalign 0.0 yalign 0.25:
         spacing 50
-    text "Line 11: [line_11]" textalign 0.5 size 36 xalign 0.0 yalign 0.9
+    text _("Line 11: [line_11]") textalign 0.5 size 36 xalign 0.0 yalign 0.9
     hbox xalign 0.0 yalign 0.25:
         spacing 50
-    text "Line 12: [line_12]" textalign 0.5 size 36 xalign 0.0 yalign 0.95
+    text _("Line 12: [line_12]") textalign 0.5 size 36 xalign 0.0 yalign 0.95
     hbox xalign 0.0 yalign 0.25:
         spacing 50
 
 ########## CS' Data ##########
 
 # TODO: NOTE TO TATE - DON'T TOUCH THESE VALUES, THESE ARE CS' VALUES
-# TODO: although, whoever is managing these? please update the persistent to use new formatting
+# TODO: although, whoever is managing these? please update the persistent to use new formatting + include a 100% CE save (less the DX content)
 
 label csdata:
     scene black

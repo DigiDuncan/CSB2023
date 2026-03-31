@@ -85,7 +85,7 @@ screen beach_overworld_map(
             text current_location[2]:
                 xalign 0.5
                 text_align 0.5
-                outlines [(5, "#000000", absolute(0), absolute(0))]
+                outlines [(4.5, "#000000", absolute(0), absolute(0))]
                 
             imagebutton:
                 xalign 0.5 yalign 1.0
@@ -118,7 +118,7 @@ screen beach_overworld_map(
                 text jp[2]:
                     xalign 0.5
                     text_align 0.5
-                    outlines [(5, "#000000", absolute(0), absolute(0))]
+                    outlines [(4.5, "#000000", absolute(0), absolute(0))]
 
                 imagebutton:
                     xalign 0.5 yalign 1.0

@@ -342,8 +342,8 @@ init python:
             Transform(Image("gui/music_note.png"), zoom = 0.2, xoffset = 25),
             Null(width = 35),
             VBox(
-                Text("{font=music_text}" + _current_song if _current_song is not None else "", size = 72, outlines = [(5, "#000000", 0, 0)]),
-                Text("{font=music_text}" + _current_artist if _current_artist is not None else "", size = 32, outlines = [(3, "#000000", 0, 0)])
+                Text("{font=music_text}" + _current_song if _current_song is not None else "", size = 72, outlines = [(4.5, "#000000", 0, 0)]),
+                Text("{font=music_text}" + _current_artist if _current_artist is not None else "", size = 32, outlines = [(2.25, "#000000", 0, 0)])
             ),
             margin = (35, 25)
         ), None

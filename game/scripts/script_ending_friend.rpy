@@ -7,7 +7,7 @@ screen where_text(string):
 
         text string:
             color "#FFFFFF"
-            outlines [(5, "#000000", absolute(0), absolute(0))]
+            outlines [(4.5, "#000000", absolute(0), absolute(0))]
             size 64
             text_align 0.5
             xalign 0.5 yalign 1.0

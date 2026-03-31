@@ -42,5 +42,7 @@
     "menu_subtitle_yalign": 0.225,
     "menu_subtitle_zoom": 0.4,
 
-    "game_menu_filetype": "png"
+    "game_menu_filetype": "png",
+
+    "d20_text_color": "#FF8A00"
 }

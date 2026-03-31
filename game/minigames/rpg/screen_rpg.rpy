@@ -330,7 +330,7 @@ screen rpg_stat_box(fighter, current_ally_mode):
                                             xoffset 33 yoffset -11
                                             text_align 1.0
                                             color Color("#FFFFFF")
-                                            outlines [(2.5, "#000000", absolute(0), absolute(0))]
+                                            outlines [(2.25, "#000000", absolute(0), absolute(0))]
 
         ### For dead fighters
         else:
@@ -529,7 +529,7 @@ screen screen_rpg(no_stat_boxes = False):
 
                             # Create visual buttons for target selection
                             vbox:
-                                text "Select target:"
+                                text _("Select target for [attack.name]:")
                                 hbox:
                                     for target in targets:
                                         frame:
@@ -590,7 +590,7 @@ screen screen_rpg(no_stat_boxes = False):
                                         # If the player goes back to a previous subturn, text will vary based on what the player chose to do
                                         if current_ally.next_attack:
                                             if current_ally.next_attack.attack.target_count == 0:
-                                                text current_ally.display_name+" will use "+current_ally.next_attack.name+"!"
+                                                text _(current_ally.display_name+" will use "+current_ally.next_attack.name+"!")
                                             else:
                                                 python:
                                                     targets_list = []
@@ -601,7 +601,7 @@ screen screen_rpg(no_stat_boxes = False):
 
                                                 text current_ally.display_name+" will use "+current_ally.next_attack.name+" on "+targets_list+"!"
                                         else:
-                                            text "What will "+current_ally.display_name+" do?"
+                                            text _("What will "+current_ally.display_name+" do?")
 
 
         # If everything is set and good to go, show the confirm button)
@@ -649,7 +649,7 @@ screen screen_rpg(no_stat_boxes = False):
                         size 32
 
                     if effect_info[2] != "1":
-                        text "(×"+effect_info[2]+" multiplier)": # effect multiplier info
+                        text _("(×"+effect_info[2]+" multiplier)"): # effect multiplier info
                             xalign 0.5
                             text_align 0.5
                             size 21
@@ -686,7 +686,7 @@ screen screen_rpg(no_stat_boxes = False):
                 if isinstance(signal, RPG.IndicatorSignal):   
                     text output_string at t_rpg_text(0.5, 0.5):
                         color output_color
-                        outlines [(5, "#000000", absolute(0), absolute(0))]
+                        outlines [(4.5, "#000000", absolute(0), absolute(0))]
 
                 elif isinstance(signal, RPG.MessageSignal):   
                     use say_rpg( signal.message )
@@ -695,8 +695,8 @@ screen screen_rpg(no_stat_boxes = False):
                 #     text str(signal)
                 #     if isinstance(signal, RPG.IndicatorSignal):
 
-                #         text "{size=-12}{color=#AAAAAA}Pssst, Tate! This is an indicator! It's for [signal.target.name], it's type [signal.typ.name], and value [signal.value]!"
-                #     textbutton "Next" action Function(renpy.restart_interaction)
+                #         text _("{size=-12}{color=#AAAAAA}Pssst, Tate! This is an indicator! It's for [signal.target.name], it's type [signal.typ.name], and value [signal.value]!")
+                #     textbutton _("Next") action Function(renpy.restart_interaction)
 
     # Debug
     # python:
