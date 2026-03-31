@@ -77,7 +77,7 @@ init python:
 
     def fix_text():
         if preferences.dyslexia_mode:
-            config.font_name_map["music_text"] = DYSLEXIA_GROUP
+            config.font_name_map["music_text"] = FontGroup().add("FiraCode-Retina.ttf", 0x2206, 0x2206).add( gui_theme_map["jp_font"] , 0x2600, 0x9fff).add( gui_theme_map["dyslexia_font"] , 0x0000, 0xffff)
         else:
             config.font_name_map["music_text"] = FontGroup().add("FiraCode-Retina.ttf", 0x2206, 0x2206).add( gui_theme_map["jp_font"] , 0x2600, 0x9fff).add( gui_theme_map["main_font"] , 0x0000, 0xffff)
 
@@ -1015,7 +1015,7 @@ screen preferences():
                         action [ 
                             ToggleVariable("preferences.craptop_mode"),
                             Preference("transitions", "none"),
-                            SelectedIf( preferences.craptop_mode == True ),
+                            SelectedIf(preferences.craptop_mode == True),
                             Function(gui.rebuild),
                             Function(renpy.restart_interaction)
                         ]
@@ -1026,10 +1026,10 @@ screen preferences():
                     textbutton _("Dyslexia Mode"):
                         action [ 
                             ToggleVariable("preferences.dyslexia_mode"),
-                            SelectedIf( preferences.dyslexia_mode == True ),
-                            gui.TogglePreference("font", "dyslexia", gui_theme_map["main_font"]),
-                            gui.TogglePreference("font_name", "dyslexia", gui_theme_map["name_font"]),
-                            gui.TogglePreference("font_header", "dyslexia", gui_theme_map["header_font"]),
+                            SelectedIf(preferences.dyslexia_mode),
+                            gui.TogglePreference("font", gui_theme_map["dyslexia_font"], gui_theme_map["main_font"]),
+                            gui.TogglePreference("font_name", gui_theme_map["dyslexia_font"], gui_theme_map["name_font"]),
+                            gui.TogglePreference("font_header", gui_theme_map["dyslexia_font"], gui_theme_map["header_font"]),
                             Function(fix_text),
                             Function(renpy.restart_interaction)
                         ]

@@ -7,6 +7,7 @@
     "cn_font": "ZCOOLKuaiLe-Regular.ttf",
     "jp_font": "MochiyPopOne-Regular.ttf",
     "ru_font": "BalsamiqSans-Bold.ttf",
+    "dyslexia_font": "comic.ttf",
 
     "accent_color": "#1BB320",
     "idle_color": "#888888",

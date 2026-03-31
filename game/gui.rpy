@@ -67,10 +67,19 @@ init python:
                 gui.choice_button_text_insensitive_color = _get("choice_button_text_insensitive_color")
 
                 # Reset all fonts
-                config.font_name_map["default"] = _get("main_font")
-                config.font_name_map["cn"] = _get("cn_font")
-                config.font_name_map["jp"] = _get("jp_font")
-                config.font_name_map["music_text"] = FontGroup().add("FiraCode-Retina.ttf", 0x2206, 0x2206).add( _get("jp_font") , 0x2600, 0x9fff).add( _get("main_font") , 0x0000, 0xffff)
+                if not preferences.dyslexia_mode:
+                    config.font_name_map["default"] = _get("main_font")
+                    config.font_name_map["cn"] = _get("cn_font")
+                    config.font_name_map["jp"] = _get("jp_font")
+                    config.font_name_map["ru"] = _get("ru_font")
+                    config.font_name_map["music_text"] = FontGroup().add("FiraCode-Retina.ttf", 0x2206, 0x2206).add( _get("jp_font") , 0x2600, 0x9fff).add( _get("main_font") , 0x0000, 0xffff)
+                else:
+                    config.font_name_map["default"] = _get("dyslexia_font")
+                    config.font_name_map["cn"] = _get("cn_font")
+                    config.font_name_map["jp"] = _get("jp_font")
+                    config.font_name_map["ru"] = _get("ru_font")
+                    config.font_name_map["music_text"] = FontGroup().add("FiraCode-Retina.ttf", 0x2206, 0x2206).add( _get("jp_font") , 0x2600, 0x9fff).add( _get("dyslexia_font") , 0x0000, 0xffff)
+
 
                 # Switch music
                 if main_menu and not preferences.disable_menu_theme:

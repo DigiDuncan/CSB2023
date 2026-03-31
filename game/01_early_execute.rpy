@@ -139,7 +139,9 @@ init python:
     config.ftfont_scale["Raleway-VariableFont_wght.ttf"] = 0.8 # RU - Tate EX Theme
     config.ftfont_scale["Aller_Std_Lt_0.ttf"] = 0.8 # Tate EX Theme Main
     config.ftfont_scale["AllerDisplay_Std_Rg_0.ttf"] = 1.0 # Tate EX Theme Accent
-    config.ftfont_scale["comic.ttf"] = 0.75 # Dyslexia mode
+    config.ftfont_scale["comic.ttf"] = 0.75 # Dyslexia - CSB/CE Themes
+    config.ftfont_scale["CenturyGothicPaneuropeanLight.ttf"] = 0.85 # Dyslexia - Tate EX Theme
+   
 
     config.ftfont_vertical_extent_scale["FiraCode-Retina.ttf"] = 1.0 # Triangle
     config.ftfont_vertical_extent_scale["ZCOOLKuaiLe-Regular.ttf"] = 1.0 # CN - CSB/CE Themes
@@ -151,7 +153,8 @@ init python:
     config.ftfont_vertical_extent_scale["Raleway-VariableFont_wght.ttf"] = 1.0 # RU - Tate EX Theme
     config.ftfont_vertical_extent_scale["Aller_Std_Lt_0.ttf"] = 1.0 # Tate EX Theme Main
     config.ftfont_vertical_extent_scale["AllerDisplay_Std_Rg_0.ttf"] = 1.0 # Tate EX Theme Accent
-    config.ftfont_vertical_extent_scale["comic.ttf"] = 0.95 # Dyslexia mode
+    config.ftfont_vertical_extent_scale["comic.ttf"] = 0.95 # Dyslexia - CSB/CE Themes
+    config.ftfont_vertical_extent_scale["CenturyGothicPaneuropeanLight.ttf"] = 1.2 # Dyslexia - Tate EX Theme
 
 # Default values for unlocks, etc
 define determination = Dissolve(0.0)
