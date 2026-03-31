@@ -120,11 +120,7 @@ init python:
     # Force multilingual text for music popup, jukebox, credits 
     DYSLEXIA_GROUP = FontGroup().add("FiraCode-Retina.ttf", 0x2206, 0x2206).add("MochiyPopOne-Regular.ttf", 0x2600, 0x9fff).add("comic.ttf", 0x0000, 0xffff)
 
-    if preferences.dyslexia_mode:
-        config.font_name_map["music_text"] = DYSLEXIA_GROUP
-    else:
-        config.font_name_map["music_text"] = FontGroup().add("FiraCode-Retina.ttf", 0x2206, 0x2206).add( gui_theme_map["jp_font"] , 0x2600, 0x9fff).add( gui_theme_map["main_font"] , 0x0000, 0xffff)
-
+    config.font_name_map["music_text"] = FontGroup().add("FiraCode-Retina.ttf", 0x2206, 0x2206).add( gui_theme_map["jp_font"] , 0x2600, 0x9fff).add( gui_theme_map["main_font"] , 0x0000, 0xffff)
     config.font_name_map["credits_music"] = FontGroup().add("FiraCode-Retina.ttf", 0x2206, 0x2206).add("CP_Font_1.otf", 0x2600, 0x9fff).add("impact.ttf", 0x0000, 0xffff)
 
     # Scale all fonts here (overall size first, then line spacing if needed)
@@ -141,7 +137,6 @@ init python:
     config.ftfont_scale["AllerDisplay_Std_Rg_0.ttf"] = 1.0 # Tate EX Theme Accent
     config.ftfont_scale["comic.ttf"] = 0.75 # Dyslexia - CSB/CE Themes
     config.ftfont_scale["CenturyGothicPaneuropeanLight.ttf"] = 0.85 # Dyslexia - Tate EX Theme
-   
 
     config.ftfont_vertical_extent_scale["FiraCode-Retina.ttf"] = 1.0 # Triangle
     config.ftfont_vertical_extent_scale["ZCOOLKuaiLe-Regular.ttf"] = 1.0 # CN - CSB/CE Themes
@@ -155,6 +150,12 @@ init python:
     config.ftfont_vertical_extent_scale["AllerDisplay_Std_Rg_0.ttf"] = 1.0 # Tate EX Theme Accent
     config.ftfont_vertical_extent_scale["comic.ttf"] = 0.95 # Dyslexia - CSB/CE Themes
     config.ftfont_vertical_extent_scale["CenturyGothicPaneuropeanLight.ttf"] = 1.2 # Dyslexia - Tate EX Theme
+
+    # Dyslexia mode
+    def dyslexia_font(f):
+        return _font_transform(f, config.font_name_map["dyslexia"], "00-FFFF")
+
+    config.font_transforms["dyslexia"] = dyslexia_font
 
 # Default values for unlocks, etc
 define determination = Dissolve(0.0)

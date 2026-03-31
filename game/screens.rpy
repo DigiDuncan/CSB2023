@@ -73,13 +73,7 @@ init python:
                 mixer_volume[m] = preferences.get_mixer(m)
                 preferences.set_mixer(m, 0.0) # TODO: this crashes sometimes?
 
-        preferences.force_mute = not preferences.force_mute     
-
-    def fix_text():
-        if preferences.dyslexia_mode:
-            config.font_name_map["music_text"] = FontGroup().add("FiraCode-Retina.ttf", 0x2206, 0x2206).add( gui_theme_map["jp_font"] , 0x2600, 0x9fff).add( gui_theme_map["dyslexia_font"] , 0x0000, 0xffff)
-        else:
-            config.font_name_map["music_text"] = FontGroup().add("FiraCode-Retina.ttf", 0x2206, 0x2206).add( gui_theme_map["jp_font"] , 0x2600, 0x9fff).add( gui_theme_map["main_font"] , 0x0000, 0xffff)
+        preferences.force_mute = not preferences.force_mute
 
     def kill_menu_music():
         try:
@@ -1024,12 +1018,10 @@ screen preferences():
 
                     # Dyslexia mode
                     textbutton _("Dyslexia Mode"):
-                        action [ 
-                            SelectedIf(ToggleField(preferences, "dyslexia_mode", False, True)),
-                            If(preferences.dyslexia_mode, gui.SetPreference("font", gui_theme_map["dyslexia_font"]), gui.SetPreference("font", gui_theme_map["main_font"])),
-                            If(preferences.dyslexia_mode, gui.SetPreference("font_name", gui_theme_map["dyslexia_font"]), gui.SetPreference("font_name", gui_theme_map["name_font"])),
-                            If(preferences.dyslexia_mode, gui.SetPreference("font_header", gui_theme_map["dyslexia_font"]), gui.SetPreference("font_header", gui_theme_map["header_font"])),
-                            Function(fix_text),
+                        action [
+                            ToggleField(preferences, "dyslexia_mode"),
+                            SelectedIf(not preferences.dyslexia_mode),
+                            If(preferences.dyslexia_mode, Preference("font transform", "dyslexia"), Preference("font transform", None)),
                             Function(renpy.restart_interaction)
                         ]
                         hovered [Function(get_mouse), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
@@ -1069,7 +1061,6 @@ screen preferences():
                             action [
                                 Function(reload_theme, "default", True),
                                 SetField(preferences, "gui_theme", "default"),
-                                Function(fix_text),
                                 Function(gui.rebuild),
                                 Function(renpy.restart_interaction)
                             ]
@@ -1089,7 +1080,6 @@ screen preferences():
                                 action [
                                     Function(reload_theme, "christmas", True),
                                     SetField(preferences, "gui_theme", "christmas"),
-                                    Function(fix_text),
                                     Function(gui.rebuild),
                                     Function(renpy.restart_interaction)
                                 ]
@@ -1105,7 +1095,6 @@ screen preferences():
                                 action [
                                     Function(reload_theme, "tate", True),
                                     SetField(preferences, "gui_theme", "tate"),
-                                    Function(fix_text),
                                     Function(gui.rebuild),
                                     Function(renpy.restart_interaction)
                                 ]

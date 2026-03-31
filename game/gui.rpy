@@ -21,6 +21,8 @@ python:
 init python:
     gui.init(1920, 1080)
 
+    font_cache = {}
+
     def reload_theme(theme_name, force_changed):
         global gui_theme_map
         global gui
@@ -36,7 +38,7 @@ init python:
                 if k in j:
                     return j[k]
                 elif k in default_theme_map:
-                    return default_j[k]
+                    return default_theme_map[k]
                 else:
                     logger.warn(f"{k} not in theme, and fallback failed!")
                     raise ValueError(k)
@@ -51,43 +53,42 @@ init python:
                     renpy.notify(f"Loaded theme {j["theme_name"]}.")
 
             # Force-change colors
-            if force_changed:
-                gui.accent_color = _get("accent_color")
-                gui.idle_color = _get("idle_color")
-                gui.idle_small_color = _get("idle_small_color")
-                gui.hover_color = _get("hover_color")
-                gui.selected_color = _get("selected_color")
-                gui.insensitive_color = _get("insensitive_color")
-                gui.muted_color = _get("muted_color")
-                gui.hover_muted_color = _get("hover_muted_color")
-                gui.text_color = _get("text_color")
-                gui.interface_text_color = _get("interface_text_color")
-                gui.choice_button_text_idle_color = _get("choice_button_text_idle_color")
-                gui.choice_button_text_hover_color = _get("choice_button_text_hover_color")
-                gui.choice_button_text_insensitive_color = _get("choice_button_text_insensitive_color")
+            gui.accent_color = _get("accent_color")
+            gui.idle_color = _get("idle_color")
+            gui.idle_small_color = _get("idle_small_color")
+            gui.hover_color = _get("hover_color")
+            gui.selected_color = _get("selected_color")
+            gui.insensitive_color = _get("insensitive_color")
+            gui.muted_color = _get("muted_color")
+            gui.hover_muted_color = _get("hover_muted_color")
+            gui.text_color = _get("text_color")
+            gui.interface_text_color = _get("interface_text_color")
+            gui.choice_button_text_idle_color = _get("choice_button_text_idle_color")
+            gui.choice_button_text_hover_color = _get("choice_button_text_hover_color")
+            gui.choice_button_text_insensitive_color = _get("choice_button_text_insensitive_color")
 
-                # Reset all fonts
-                if not preferences.dyslexia_mode:
-                    config.font_name_map["default"] = _get("main_font")
-                    config.font_name_map["cn"] = _get("cn_font")
-                    config.font_name_map["jp"] = _get("jp_font")
-                    config.font_name_map["ru"] = _get("ru_font")
-                    config.font_name_map["music_text"] = FontGroup().add("FiraCode-Retina.ttf", 0x2206, 0x2206).add( _get("jp_font") , 0x2600, 0x9fff).add( _get("main_font") , 0x0000, 0xffff)
+            config.font_name_map["default"] = _get("main_font")
+            config.font_name_map["cn"] = _get("cn_font")
+            config.font_name_map["jp"] = _get("jp_font")
+            config.font_name_map["ru"] = _get("ru_font")
+            config.font_name_map["music_text"] = FontGroup().add("FiraCode-Retina.ttf", 0x2206, 0x2206).add( _get("jp_font") , 0x2600, 0x9fff).add( _get("main_font") , 0x0000, 0xffff)
+
+            def _dyslexia_font(f):
+                if theme_name in font_cache:
+                    return font_cache[theme_name]
                 else:
-                    config.font_name_map["default"] = _get("dyslexia_font")
-                    config.font_name_map["cn"] = _get("cn_font")
-                    config.font_name_map["jp"] = _get("jp_font")
-                    config.font_name_map["ru"] = _get("ru_font")
-                    config.font_name_map["music_text"] = FontGroup().add("FiraCode-Retina.ttf", 0x2206, 0x2206).add( _get("jp_font") , 0x2600, 0x9fff).add( _get("dyslexia_font") , 0x0000, 0xffff)
+                    font_cache[theme_name] = FontGroup().add("FiraCode-Retina.ttf", 0x2206, 0x2206).add( _get("jp_font") , 0x2600, 0x9fff).add( _get("dyslexia_font") , 0x0000, 0xffff)
+                    return font_cache[theme_name]
 
+            config.font_transforms["dyslexia"] = _dyslexia_font
 
-                # Switch music
-                if main_menu and not preferences.disable_menu_theme:
-                    renpy.music.play( _get("menu_theme"), loop=False )
-                    persistent.heard.add( _get("menu_theme_jukebox_id") )
+            # Switch music
+            if main_menu and not preferences.disable_menu_theme and force_changed:
+                renpy.music.play( _get("menu_theme"), loop=False )
+                persistent.heard.add( _get("menu_theme_jukebox_id") )
 
         except:
-            j = default_j
+            j = default_theme_map
             preferences.gui_theme = "default" # force-reset it
             logger.warn(f"Couldn't load color data for theme '{theme_name}'. Using default theme.")
             renpy.notify(f"Couldn't load color data for theme '{theme_name}'. Using default theme.")
@@ -96,7 +97,7 @@ init python:
         gui_theme_map = j
 
     # Run it once as the game loads. We'll call it again in CSettings.
-    reload_theme(preferences.gui_theme, False)
+    reload_theme(preferences.gui_theme if hasattr(preferences, "gui_theme") else "default", False)
 
     def get_themed_attribute(file_path, ext = "png", prefix = "") -> str:
         sub_path = file_path + "." + ext

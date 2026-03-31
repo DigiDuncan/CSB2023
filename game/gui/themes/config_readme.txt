@@ -10,7 +10,9 @@ If you add any extra values/features into this file, you have to add it to *all*
 Color codes already include alpha, so you do not need to specify an alpha value (unless you really want/need to).
 
 If you want to use a webm for menu backgrounds:
-- Be sure to include a png version as a fallback for craptop mode.
-- Include a first_frame.png to prevent the bug where the video goes black for one frame.
+- Be sure to include a png version as a fallback for Craptop Mode.
+- Include a first_frame.png to attempt to prevent the bug where the video goes black for one frame.
 
-If adding new fonts, be sure to adjust scaling in 01_early_execute.
+If adding new fonts:
+- Be sure to adjust both font scaling and line scaling in 01_early_execute.
+- Be ready to include matching fonts for JP/CN/RU/dyslexia-friendly text.
