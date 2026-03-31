@@ -115,6 +115,7 @@ init python:
     config.font_name_map["default"] = gui_theme_map["main_font"]
     config.font_name_map["cn"] = gui_theme_map["cn_font"]
     config.font_name_map["jp"] = gui_theme_map["jp_font"]
+    config.font_name_map["ru"] = gui_theme_map["ru_font"]
 
     # Force multilingual text for music popup, jukebox, credits 
     DYSLEXIA_GROUP = FontGroup().add("FiraCode-Retina.ttf", 0x2206, 0x2206).add("MochiyPopOne-Regular.ttf", 0x2600, 0x9fff).add("comic.ttf", 0x0000, 0xffff)
@@ -127,24 +128,29 @@ init python:
     config.font_name_map["credits_music"] = FontGroup().add("FiraCode-Retina.ttf", 0x2206, 0x2206).add("CP_Font_1.otf", 0x2600, 0x9fff).add("impact.ttf", 0x0000, 0xffff)
 
     # Scale all fonts here (overall size first, then line spacing if needed)
-    config.ftfont_scale["FiraCode-Retina.ttf"] = 0.825
-    config.ftfont_scale["ZCOOLKuaiLe-Regular.ttf"] = 0.75
-    config.ftfont_scale["MochiyPopOne-Regular.ttf"] = 0.75
-    config.ftfont_scale["CP_Font_1.otf"] = 0.825
-    config.ftfont_scale["YuGothL.ttc"] = 0.8    
-    config.ftfont_scale["Source Han Sans CN Light.otf"] = 0.8
-    config.ftfont_scale["Aller_Std_Lt_0.ttf"] = 0.8
-    config.ftfont_scale["AllerDisplay_Std_Rg_0.ttf"] = 1.0
+    
+    config.ftfont_scale["FiraCode-Retina.ttf"] = 0.825 # Triangle
+    config.ftfont_scale["ZCOOLKuaiLe-Regular.ttf"] = 0.75 # CP - CSB/CE Themes
+    config.ftfont_scale["MochiyPopOne-Regular.ttf"] = 0.75 # JP - CSB/CE Themes
+    config.ftfont_scale["BalsamiqSans-Bold.ttf"] = 0.825 # RU - CSB/CE Themes
+    config.ftfont_scale["CP_Font_1.otf"] = 0.825 # JP - Credits
+    config.ftfont_scale["YuGothL.ttc"] = 0.8 # JP - Tate EX Theme   
+    config.ftfont_scale["Source Han Sans CN Light.otf"] = 0.8 # CN - Tate EX Theme
+    config.ftfont_scale["Raleway-VariableFont_wght.ttf"] = 0.8 # RU - Tate EX Theme
+    config.ftfont_scale["Aller_Std_Lt_0.ttf"] = 0.8 # Tate EX Theme Main
+    config.ftfont_scale["AllerDisplay_Std_Rg_0.ttf"] = 1.0 # Tate EX Theme Accent
     config.ftfont_scale["comic.ttf"] = 0.75 # Dyslexia mode
 
-    config.ftfont_vertical_extent_scale["FiraCode-Retina.ttf"] = 1.0
-    config.ftfont_vertical_extent_scale["ZCOOLKuaiLe-Regular.ttf"] = 1.0
-    config.ftfont_vertical_extent_scale["MochiyPopOne-Regular.ttf"] = 1.0
-    config.ftfont_vertical_extent_scale["CP_Font_1.otf"] = 1.0
-    config.ftfont_vertical_extent_scale["YuGothL.ttc"] = 1.0
-    config.ftfont_vertical_extent_scale["Source Han Sans CN Light.otf"] = 1.0
-    config.ftfont_vertical_extent_scale["Aller_Std_Lt_0.ttf"] = 1.0
-    config.ftfont_vertical_extent_scale["AllerDisplay_Std_Rg_0.ttf"] = 1.0
+    config.ftfont_vertical_extent_scale["FiraCode-Retina.ttf"] = 1.0 # Triangle
+    config.ftfont_vertical_extent_scale["ZCOOLKuaiLe-Regular.ttf"] = 1.0 # CN - CSB/CE Themes
+    config.ftfont_vertical_extent_scale["MochiyPopOne-Regular.ttf"] = 1.0 # JP - CSB/CE Themes
+    config.ftfont_vertical_extent_scale["BalsamiqSans-Bold.ttf"] = 1.0 # RU - CSB/CE Themes
+    config.ftfont_vertical_extent_scale["CP_Font_1.otf"] = 1.0 # JP - Credits
+    config.ftfont_vertical_extent_scale["YuGothL.ttc"] = 1.0 # JP - Tate EX Theme
+    config.ftfont_vertical_extent_scale["Source Han Sans CN Light.otf"] = 1.0 # CN - Tate EX Theme
+    config.ftfont_vertical_extent_scale["Raleway-VariableFont_wght.ttf"] = 1.0 # RU - Tate EX Theme
+    config.ftfont_vertical_extent_scale["Aller_Std_Lt_0.ttf"] = 1.0 # Tate EX Theme Main
+    config.ftfont_vertical_extent_scale["AllerDisplay_Std_Rg_0.ttf"] = 1.0 # Tate EX Theme Accent
     config.ftfont_vertical_extent_scale["comic.ttf"] = 0.95 # Dyslexia mode
 
 # Default values for unlocks, etc

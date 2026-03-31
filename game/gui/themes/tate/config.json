@@ -6,6 +6,7 @@
     "header_font": "AllerDisplay_Std_Rg_0.ttf",
     "cn_font": "Source Han Sans CN Light.otf",
     "jp_font": "YuGothL.ttc",
+    "ru_font": "Raleway-VariableFont_wght.ttf",
 
     "accent_color": "#00FFFF",
     "idle_color": "#BBBBBB",

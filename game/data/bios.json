@@ -664,7 +664,7 @@
             "Worried": "images/characters/eliza/eliza_worried.png",
             "Angry": "images/characters/eliza/eliza_angry.png"
         },
-        "quote": "{font=OpenSans-Regular.ttf}Счастливого пути, советский ковбой.{/font}",
+        "quote": "{font=ru}Счастливого пути, советский ковбой.{/font}",
         "bio": "Been 'round for a bit less than Anne and Grace. Served her country proud! Started as boots on the ground and worked her way up through the Air Force. Last spotted doing an undercover mission in the Soviet Union, 1986. Mostly a loner who directs Anne and Grace.",
         "ce": true
     },
