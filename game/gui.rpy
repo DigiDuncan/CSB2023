@@ -100,13 +100,39 @@ init python:
         ]
 
         all_paths = []
-        # Deal with Ren'Py [prefix_] subsititutions:
+        # Deal with Ren'Py [prefix_] style subsititutions:
         # https://www.renpy.org/doc/html/style_properties.html#style-prefix-search
-        # This is hacky for now, what I think we should do in general is avoid use of [prefix_]
+
         for path in check_these_paths:
-            all_paths.append(path.replace(R"[prefix_]", "idle_"))
-            all_paths.append(path.replace(R"[prefix_]", ""))
-            all_paths.append(path.replace(R"[prefix_]", "hover_"))
+            if r"[idle_]" in path:
+                all_paths.append(path.replace(r"[idle_]", "idle_"))
+                all_paths.append(path.replace(r"[idle_]", ""))
+            elif r"[hover_]" in path:
+                all_paths.append(path.replace(r"[hover_]", "hover_"))
+                all_paths.append(path.replace(r"[hover_]", ""))
+            elif r"[insensitive_]" in path:
+                all_paths.append(path.replace(r"[insensitive_]", "insensitive_"))
+                all_paths.append(path.replace(r"[insensitive_]", ""))
+                all_paths.append(path.replace(r"[insensitive_]", "idle_"))
+            elif r"[selected_idle_]" in path:
+                all_paths.append(path.replace(r"[selected_idle_]", "selected_idle_"))
+                all_paths.append(path.replace(r"[selected_idle_]", "idle_"))
+                all_paths.append(path.replace(r"[selected_idle_]", "selected_"))
+                all_paths.append(path.replace(r"[selected_idle_]", ""))
+            elif r"[selected_hover_]" in path:
+                all_paths.append(path.replace(r"[selected_hover_]", "selected_hover_"))
+                all_paths.append(path.replace(r"[selected_hover_]", "hover_"))
+                all_paths.append(path.replace(r"[selected_hover_]", "selected_"))
+                all_paths.append(path.replace(r"[selected_hover_]", ""))
+            elif r"[selected_insensitive_]" in path:
+                all_paths.append(path.replace(r"[selected_insensitive_]", "selected_insensitive_"))
+                all_paths.append(path.replace(r"[selected_insensitive_]", "hover_"))
+                all_paths.append(path.replace(r"[selected_insensitive_]", "selected_"))
+                all_paths.append(path.replace(r"[selected_insensitive_]", ""))
+                all_paths.append(path.replace(r"[selected_insensitive_]", "selected_idle_"))
+                all_paths.append(path.replace(r"[selected_insensitive_]", "idle_"))
+            else:
+                all_paths.append(path)
 
         # Add missing texture as fallback fallback
         all_paths.append("gui/missing_texture." + ext)

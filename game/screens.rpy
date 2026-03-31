@@ -147,23 +147,71 @@ style vbar:
 
 style scrollbar:
     ysize gui.scrollbar_size
-    base_bar Frame(get_themed_attribute("scrollbar/horizontal_[prefix_]bar"), gui.scrollbar_borders, tile=gui.scrollbar_tile)
-    thumb Frame(get_themed_attribute("scrollbar/horizontal_[prefix_]thumb"), gui.scrollbar_borders, tile=gui.scrollbar_tile)
+
+    idle_base_bar Frame(get_themed_attribute("scrollbar/horizontal_[idle_]bar"), gui.scrollbar_borders, tile=gui.scrollbar_tile)
+    hover_base_bar Frame(get_themed_attribute("scrollbar/horizontal_[hover_]bar"), gui.scrollbar_borders, tile=gui.scrollbar_tile)
+    insensitive_base_bar Frame(get_themed_attribute("scrollbar/horizontal_[insensitive_]bar"), gui.scrollbar_borders, tile=gui.scrollbar_tile)
+    selected_idle_base_bar Frame(get_themed_attribute("scrollbar/horizontal_[selected_idle_]bar"), gui.scrollbar_borders, tile=gui.scrollbar_tile)
+    selected_hover_base_bar Frame(get_themed_attribute("scrollbar/horizontal_[selected_hover_]bar"), gui.scrollbar_borders, tile=gui.scrollbar_tile)
+    selected_insensitive_base_bar Frame(get_themed_attribute("scrollbar/horizontal_[selected_insensitive_]bar"), gui.scrollbar_borders, tile=gui.scrollbar_tile)
+
+    idle_thumb Frame(get_themed_attribute("scrollbar/horizontal_[idle_]thumb"), gui.scrollbar_borders, tile=gui.scrollbar_tile)
+    hover_thumb Frame(get_themed_attribute("scrollbar/horizontal_[hover_]thumb"), gui.scrollbar_borders, tile=gui.scrollbar_tile)
+    insensitive_thumb Frame(get_themed_attribute("scrollbar/horizontal_[insensitive_]thumb"), gui.scrollbar_borders, tile=gui.scrollbar_tile)
+    selected_idle_thumb Frame(get_themed_attribute("scrollbar/horizontal_[selected_idle_]thumb"), gui.scrollbar_borders, tile=gui.scrollbar_tile)
+    selected_hover_thumb Frame(get_themed_attribute("scrollbar/horizontal_[selected_hover_]thumb"), gui.scrollbar_borders, tile=gui.scrollbar_tile)
+    selected_insensitive_thumb Frame(get_themed_attribute("scrollbar/horizontal_[selected_insensitive_]thumb"), gui.scrollbar_borders, tile=gui.scrollbar_tile)
 
 style vscrollbar:
     xsize gui.scrollbar_size
-    base_bar Frame(get_themed_attribute("scrollbar/vertical_[prefix_]bar"), gui.vscrollbar_borders, tile=gui.scrollbar_tile)
-    thumb Frame(get_themed_attribute("scrollbar/vertical_[prefix_]thumb"), gui.vscrollbar_borders, tile=gui.scrollbar_tile)
+
+    idle_base_bar Frame(get_themed_attribute("scrollbar/vertical_[idle_]bar"), gui.scrollbar_borders, tile=gui.scrollbar_tile)
+    hover_base_bar Frame(get_themed_attribute("scrollbar/vertical_[hover_]bar"), gui.scrollbar_borders, tile=gui.scrollbar_tile)
+    insensitive_base_bar Frame(get_themed_attribute("scrollbar/vertical_[insensitive_]bar"), gui.scrollbar_borders, tile=gui.scrollbar_tile)
+    selected_idle_base_bar Frame(get_themed_attribute("scrollbar/vertical_[selected_idle_]bar"), gui.scrollbar_borders, tile=gui.scrollbar_tile)
+    selected_hover_base_bar Frame(get_themed_attribute("scrollbar/vertical_[selected_hover_]bar"), gui.scrollbar_borders, tile=gui.scrollbar_tile)
+    selected_insensitive_base_bar Frame(get_themed_attribute("scrollbar/vertical_[selected_insensitive_]bar"), gui.scrollbar_borders, tile=gui.scrollbar_tile)
+
+    idle_thumb Frame(get_themed_attribute("scrollbar/vertical_[idle_]thumb"), gui.scrollbar_borders, tile=gui.scrollbar_tile)
+    hover_thumb Frame(get_themed_attribute("scrollbar/vertical_[hover_]thumb"), gui.scrollbar_borders, tile=gui.scrollbar_tile)
+    insensitive_thumb Frame(get_themed_attribute("scrollbar/vertical_[insensitive_]thumb"), gui.scrollbar_borders, tile=gui.scrollbar_tile)
+    selected_idle_thumb Frame(get_themed_attribute("scrollbar/vertical_[selected_idle_]thumb"), gui.scrollbar_borders, tile=gui.scrollbar_tile)
+    selected_hover_thumb Frame(get_themed_attribute("scrollbar/vertical_[selected_hover_]thumb"), gui.scrollbar_borders, tile=gui.scrollbar_tile)
+    selected_insensitive_thumb Frame(get_themed_attribute("scrollbar/vertical_[selected_insensitive_]thumb"), gui.scrollbar_borders, tile=gui.scrollbar_tile)
 
 style slider:
     ysize gui.slider_size
-    base_bar Frame(get_themed_attribute("slider/horizontal_[prefix_]bar"), gui.slider_borders, tile=gui.slider_tile)
-    thumb get_themed_attribute("slider/horizontal_[prefix_]thumb")
+    
+    idle_base_bar Frame(get_themed_attribute("scrollbar/horizontal_[idle_]bar"), gui.scrollbar_borders, tile=gui.scrollbar_tile)
+    hover_base_bar Frame(get_themed_attribute("scrollbar/horizontal_[hover_]bar"), gui.scrollbar_borders, tile=gui.scrollbar_tile)
+    insensitive_base_bar Frame(get_themed_attribute("scrollbar/horizontal_[insensitive_]bar"), gui.scrollbar_borders, tile=gui.scrollbar_tile)
+    selected_idle_base_bar Frame(get_themed_attribute("scrollbar/horizontal_[selected_idle_]bar"), gui.scrollbar_borders, tile=gui.scrollbar_tile)
+    selected_hover_base_bar Frame(get_themed_attribute("scrollbar/horizontal_[selected_hover_]bar"), gui.scrollbar_borders, tile=gui.scrollbar_tile)
+    selected_insensitive_base_bar Frame(get_themed_attribute("scrollbar/horizontal_[selected_insensitive_]bar"), gui.scrollbar_borders, tile=gui.scrollbar_tile)
+
+    idle_thumb Frame(get_themed_attribute("scrollbar/horizontal_[idle_]thumb"), gui.scrollbar_borders, tile=gui.scrollbar_tile)
+    hover_thumb Frame(get_themed_attribute("scrollbar/horizontal_[hover_]thumb"), gui.scrollbar_borders, tile=gui.scrollbar_tile)
+    insensitive_thumb Frame(get_themed_attribute("scrollbar/horizontal_[insensitive_]thumb"), gui.scrollbar_borders, tile=gui.scrollbar_tile)
+    selected_idle_thumb Frame(get_themed_attribute("scrollbar/horizontal_[selected_idle_]thumb"), gui.scrollbar_borders, tile=gui.scrollbar_tile)
+    selected_hover_thumb Frame(get_themed_attribute("scrollbar/horizontal_[selected_hover_]thumb"), gui.scrollbar_borders, tile=gui.scrollbar_tile)
+    selected_insensitive_thumb Frame(get_themed_attribute("scrollbar/horizontal_[selected_insensitive_]thumb"), gui.scrollbar_borders, tile=gui.scrollbar_tile)
 
 style vslider:
     xsize gui.slider_size
-    base_bar Frame(get_themed_attribute("slider/vertical_[prefix_]bar"), gui.vslider_borders, tile=gui.slider_tile)
-    thumb get_themed_attribute("slider/vertical_[prefix_]thumb")
+    
+    idle_base_bar Frame(get_themed_attribute("scrollbar/vertical_[idle_]bar"), gui.scrollbar_borders, tile=gui.scrollbar_tile)
+    hover_base_bar Frame(get_themed_attribute("scrollbar/vertical_[hover_]bar"), gui.scrollbar_borders, tile=gui.scrollbar_tile)
+    insensitive_base_bar Frame(get_themed_attribute("scrollbar/vertical_[insensitive_]bar"), gui.scrollbar_borders, tile=gui.scrollbar_tile)
+    selected_idle_base_bar Frame(get_themed_attribute("scrollbar/vertical_[selected_idle_]bar"), gui.scrollbar_borders, tile=gui.scrollbar_tile)
+    selected_hover_base_bar Frame(get_themed_attribute("scrollbar/vertical_[selected_hover_]bar"), gui.scrollbar_borders, tile=gui.scrollbar_tile)
+    selected_insensitive_base_bar Frame(get_themed_attribute("scrollbar/vertical_[selected_insensitive_]bar"), gui.scrollbar_borders, tile=gui.scrollbar_tile)
+
+    idle_thumb Frame(get_themed_attribute("scrollbar/vertical_[idle_]thumb"), gui.scrollbar_borders, tile=gui.scrollbar_tile)
+    hover_thumb Frame(get_themed_attribute("scrollbar/vertical_[hover_]thumb"), gui.scrollbar_borders, tile=gui.scrollbar_tile)
+    insensitive_thumb Frame(get_themed_attribute("scrollbar/vertical_[insensitive_]thumb"), gui.scrollbar_borders, tile=gui.scrollbar_tile)
+    selected_idle_thumb Frame(get_themed_attribute("scrollbar/vertical_[selected_idle_]thumb"), gui.scrollbar_borders, tile=gui.scrollbar_tile)
+    selected_hover_thumb Frame(get_themed_attribute("scrollbar/vertical_[selected_hover_]thumb"), gui.scrollbar_borders, tile=gui.scrollbar_tile)
+    selected_insensitive_thumb Frame(get_themed_attribute("scrollbar/vertical_[selected_insensitive_]thumb"), gui.scrollbar_borders, tile=gui.scrollbar_tile)
 
 
 style frame:
@@ -1252,7 +1300,7 @@ screen preferences():
                 # MOVED ALL THE DEV MODE STUFF HERE
             
                 if preferences.developer_mode or persistent.creative_mode:
-                    textbutton "Debug Menu\n{size=-12}Jump to specific sections of the game." action ShowMenu("debug_menu")
+                    textbutton "Debug Menu\n{size=-12}Jump to specific secDysletions of the game." action ShowMenu("debug_menu")
 
                     textbutton "Test Scene\n{size=-12}A sandbox for testing various features." action Start("test")
 
@@ -1321,7 +1369,13 @@ style radio_vbox:
 
 style radio_button:
     properties custom_button_properties("radio_button")
-    foreground get_themed_attribute("button/radio_[prefix_]foreground")
+
+    idle_foreground get_themed_attribute("button/radio_[idle_]foreground")
+    hover_foreground get_themed_attribute("button/radio_[hover_]foreground")
+    insensitive_foreground get_themed_attribute("button/radio_[insensitive_]foreground")
+    selected_idle_foreground get_themed_attribute("button/radio_[selected_idle_]foreground")
+    selected_hover_foreground get_themed_attribute("button/radio_[selected_hover_]foreground")
+    selected_insensitive_foreground get_themed_attribute("button/radio_[selected_insensitive_]foreground")
 
 style radio_button_text:
     properties gui.button_text_properties("radio_button")
@@ -1332,7 +1386,13 @@ style check_vbox:
 
 style check_button:
     properties custom_button_properties("check_button")
-    foreground get_themed_attribute("button/check_[prefix_]foreground")
+    
+    idle_foreground get_themed_attribute("button/check_[idle_]foreground")
+    hover_foreground get_themed_attribute("button/check_[hover_]foreground")
+    insensitive_foreground get_themed_attribute("button/check_[insensitive_]foreground")
+    selected_idle_foreground get_themed_attribute("button/check_[selected_idle_]foreground")
+    selected_hover_foreground get_themed_attribute("button/check_[selected_hover_]foreground")
+    selected_insensitive_foreground get_themed_attribute("button/check_[selected_insensitive_]foreground")
 
 style check_button_text:
     properties gui.button_text_properties("check_button")
