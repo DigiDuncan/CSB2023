@@ -12,6 +12,7 @@ init offset = -2
 # Default has to be here for some reason
 define gui_theme_map = {}
 define default_theme_map = {}
+define missing_images = []
 
 python:
     with renpy.open_file("gui/themes/default/config.json") as f:
@@ -140,9 +141,13 @@ init python:
         # Deal with .. and //, since for some reason an interal function produces them
         all_paths = [p.replace("..", ".").replace("//", "/") for p in all_paths]
 
+        global missing_images
         for path in all_paths:
             folder, name = path.rsplit("/", 1)
             if renpy.loadable(name, folder):
+                if name == "missing_texture.png" and sub_path not in missing_images:
+                    logger.warn(f"Missing image: {sub_path}")
+                    missing_images.append(sub_path)
                 return path if not prefix else f"{prefix}:{path}"
 
         logger.error(f"{file_path} not found in theme or fallback!")
@@ -179,18 +184,38 @@ init python:
         if tile is None:
             tile = gui.button_tile
 
-        backgrounds = [ ]
+        idle_backgrounds = []
+        hover_backgrounds = []
+        insensitive_backgrounds = []
+        selected_idle_backgrounds = []
+        selected_hover_backgrounds = []
+        selected_insensitive_backgrounds = []
 
         if kind != "button":
-            backgrounds.append(get_themed_attribute("/button/" + kind[:-7] + "_[prefix_]background", gui.button_image_extension))
+            idle_backgrounds.append(get_themed_attribute("/button/" + kind[:-7] + "_[idle_]background", gui.button_image_extension))
+            hover_backgrounds.append(get_themed_attribute("/button/" + kind[:-7] + "_[hover_]background", gui.button_image_extension))
+            insensitive_backgrounds.append(get_themed_attribute("/button/" + kind[:-7] + "_[insensitive_]background", gui.button_image_extension))
+            selected_idle_backgrounds.append(get_themed_attribute("/button/" + kind[:-7] + "_[selected_idle_]background", gui.button_image_extension))
+            selected_hover_backgrounds.append(get_themed_attribute("/button/" + kind[:-7] + "_[selected_hover_]background", gui.button_image_extension))
+            selected_insensitive_backgrounds.append(get_themed_attribute("/button/" + kind[:-7] + "_[selected_insensitive_]background", gui.button_image_extension))
 
-        backgrounds.append(get_themed_attribute("/button/[prefix_]background", gui.button_image_extension))
+        idle_backgrounds.append(get_themed_attribute("/button/[idle_]background", gui.button_image_extension))
+        hover_backgrounds.append(get_themed_attribute("/button/[hover_]background", gui.button_image_extension))
+        insensitive_backgrounds.append(get_themed_attribute("/button/[insensitive_]background", gui.button_image_extension))
+        selected_idle_backgrounds.append(get_themed_attribute("/button/[selected_idle_]background", gui.button_image_extension))
+        selected_hover_backgrounds.append(get_themed_attribute("/button/[selected_hover_]background", gui.button_image_extension))
+        selected_insensitive_backgrounds.append(get_themed_attribute("/button/[selected_insensitive_]background", gui.button_image_extension))
 
         if renpy.variant("small"):
             backgrounds = [ i.replace("gui/themes/", "gui/phone/themes") for i in backgrounds ] + backgrounds
 
         rv = {
-            "background" : Frame(backgrounds, borders or gui.button_borders, tile=tile),
+            "idle_background" : Frame(idle_backgrounds, borders or gui.button_borders, tile=tile),
+            "hover_background" : Frame(hover_backgrounds, borders or gui.button_borders, tile=tile),
+            "insensitive_background" : Frame(insensitive_backgrounds, borders or gui.button_borders, tile=tile),
+            "selected_idle_background" : Frame(selected_idle_backgrounds, borders or gui.button_borders, tile=tile),
+            "selected_hover_background" : Frame(selected_hover_backgrounds, borders or gui.button_borders, tile=tile),
+            "selected_insensitive_background" : Frame(selected_insensitive_backgrounds, borders or gui.button_borders, tile=tile),
         }
 
         if borders is not None:
