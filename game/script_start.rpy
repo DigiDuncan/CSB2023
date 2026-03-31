@@ -309,7 +309,7 @@ label splashscreen:
             renpy.movie_cutscene(get_themed_attribute("splash", "webm"))
             
         persistent.seen_splash = True
-        persistent.heard.add(gui_theme_map["menu_theme_jukebox_id"])
+        persistent.heard.add(gui_theme_map["menu_music_jukebox_id"])
     return
 
 label before_main_menu:
@@ -326,10 +326,10 @@ label before_main_menu:
         if preferences.disable_menu_theme == False:
             if not persistent.seen_splash:
                 if not renpy.music.is_playing():
-                    renpy.music.play(gui_theme_map["menu_theme"], loop = False, channel="music")
+                    renpy.music.play(gui_theme_map["menu_music"], loop = False, channel="music")
             else:
                 if not renpy.music.is_playing():
-                    renpy.music.play(gui_theme_map["menu_theme_skip_splash"], loop = False, channel="music")
+                    renpy.music.play(gui_theme_map["menu_music_skip_splash"], loop = False, channel="music")
                     persistent.seen_splash = False
 
         reload_theme(preferences.gui_theme, False)

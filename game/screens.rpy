@@ -77,7 +77,7 @@ init python:
 
     def kill_menu_music():
         try:
-            if gui_theme_map["menu_theme"] in renpy.music.get_playing(channel="music"):
+            if gui_theme_map["menu_music"] in renpy.music.get_playing(channel="music"):
                 renpy.music.stop("music")
         except:
             pass

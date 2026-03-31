@@ -1,7 +1,7 @@
 screen special_unlock(flavor_text):
 
     if renpy.context_nesting_level() != 0:
-        dismiss action Play("music", gui_theme_map["menu_theme"], loop = False), Jump("start")
+        dismiss action Play("music", gui_theme_map["menu_music"], loop = False), Jump("start")
     else:
         dismiss action Return()
 

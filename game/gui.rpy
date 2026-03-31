@@ -84,8 +84,8 @@ init python:
 
             # Switch music
             if main_menu and not preferences.disable_menu_theme and force_changed:
-                renpy.music.play( _get("menu_theme"), loop=False )
-                persistent.heard.add( _get("menu_theme_jukebox_id") )
+                renpy.music.play( _get("menu_music"), loop=False )
+                persistent.heard.add( _get("menu_music_jukebox_id") )
 
         except:
             j = default_theme_map

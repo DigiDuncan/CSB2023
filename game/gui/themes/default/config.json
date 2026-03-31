@@ -32,9 +32,9 @@
 
     "hover_filter_color": "#808000",
 
-    "menu_theme": "bubble_tea.ogg",
-    "menu_theme_skip_splash": "<from 16.53>bubble_tea.ogg",
-    "menu_theme_jukebox_id": "bubble_tea",
+    "menu_music": "bubble_tea.ogg",
+    "menu_music_skip_splash": "<from 16.53>bubble_tea.ogg",
+    "menu_music_jukebox_id": "bubble_tea",
 
     "main_menu_filetype": "png",
     "menu_subtitle_anchor": 0.5,
