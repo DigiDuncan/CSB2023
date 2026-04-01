@@ -1084,6 +1084,14 @@ screen preferences():
                                     Function(renpy.restart_interaction)
                                 ]
 
+                        textbutton _("Baker"):
+                            action [
+                                Function(reload_theme, "baker", True),
+                                SetField(preferences, "gui_theme", "baker"),
+                                Function(gui.rebuild),
+                                Function(renpy.restart_interaction)
+                            ]
+
                         # Tate EX
                         if "tate" in persistent.unlocked_themes or preferences.developer_mode:
                             textbutton _("Tate EX"):
