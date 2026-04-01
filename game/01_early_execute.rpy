@@ -108,12 +108,13 @@ init -1 python:
                 theme_j[d] = {
                     "display_name": j["display_name"],
                     "unlock_value": j["unlock_value"],
-                    "perf_warning": j["perf_warning"]
+                    "perf_warning": j["perf_warning"],
+                    "sort_order": j["sort_order"]
                 }
                 logger.info(f"Scanned theme {d}.")
 
     THEME_MAP = theme_j
-    #print(THEME_MAP)
+    print(THEME_MAP)
 
 init python:
     # Add more screen layers

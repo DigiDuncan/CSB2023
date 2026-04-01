@@ -1059,7 +1059,7 @@ screen preferences():
                         label _("Theme")
 
                         # Load theme buttons
-                        for theme in THEME_MAP:
+                        for theme in sorted(THEME_MAP, key=lambda k: THEME_MAP[k]['sort_order']):
                             if THEME_MAP[theme]["unlock_value"] in persistent.unlocked_themes or preferences.developer_mode:
                                 textbutton (THEME_MAP[theme]["display_name"]):
                                     action [
