@@ -12,6 +12,7 @@ init -3 python:
     logger.addHandler(dfhandler)
 
 init -1 python:
+    from pathlib import Path
 
     # This is a weird place to define these, but I have to I think.
     FUN_VALUE_UNOBTRUSIVE = 5
@@ -94,6 +95,25 @@ init -1 python:
         logger.info(f"Loaded credits.")
 
     CREDITS_MAP = j
+
+    # Themes
+    theme_j = {}
+    theme_folder = Path(renpy.loader.get_path("gui/themes"))
+    theme_dirs = os.listdir(theme_folder)
+    for d in theme_dirs:
+        p = theme_folder / d
+        if (p).is_dir():
+            with renpy.open_file(str((p / "config.json").absolute()).replace("\\", "/")) as f:
+                j = json.load(f)
+                theme_j[d] = {
+                    "menu_name": j["menu_name"],
+                    "unlock_value": j["unlock_value"],
+                    "perf_warning": j["perf_warning"]
+                }
+                logger.info(f"Scanned theme {d}.")
+
+    THEME_MAP = theme_j
+    print(THEME_MAP)
 
 init python:
     # Add more screen layers
