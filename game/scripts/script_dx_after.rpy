@@ -9,7 +9,7 @@ label dx_after_true:
         n "As for Billy, he's still on the road, hearing his baby: Spring Remix, and pitching his various products."
     else:
         n "As for Billy, he's still on the road, pitching his various products."
-
+    window hide
     show after_true_title at truecenter with dissolve
     pause 3.0
     hide after_true_title with dissolve
@@ -63,7 +63,7 @@ label dx_after_true:
     cs "Exactly. I trust him."
     show cs
     show arceus
-    arceus "{i}Sigh..."
+    n "Arceus sighs."
     arceus "Alright, I guess you have a point. Let's do this."
     billy "Great! You're gonna love it!"
     scene black with dissolve
@@ -203,7 +203,7 @@ label dx_after_true:
     n "As CS is leaving, he sees the sign with the date of the renovation."
     cs "\"Opening 2004\"? Is this outdated?"
     show renovator at right with moveinright
-    renovator "Are you insane or high, dude? It's 2003! Are you okay?"
+    renovator "Are you high, dude? It's 2003! Are you okay?"
     play sound sfx_somethingchanged
     n "CS' heart drops."
     show cs disappointed
@@ -211,7 +211,7 @@ label dx_after_true:
     show cs disappointed flipped with determination
     hide cs with moveoutleft
     renovator "{size=-15}Fuckin' drunkards..."
-    renovator "You're {i}also{/i} in Wisconsin, in case you're too drunk or high to even remember where you live!"
+    renovator "You're {i}also{/i} in Wisconsin, in case you're too drunk or high to even remember where you live!" # I fucking hate this line - Pakoo
     scene hobbytown with dissolve
     show cs disappointed at center with moveinleft
     n "CS' head is spinning."
@@ -339,7 +339,7 @@ label dx_after_back_to_story:
     cs "Why can't you speak to your cult yourself?"
     csgod "Okay, let me explain this to you."
     csgod "Every time they do one of their rituals, it's like if one of your ecstatic fans called you on Discord."
-    csgod "You let that shit go to voicemail, man, otherwise you're gonna get spammed until the end of time."
+    csgod "You just gotta leave it on read, and move on."
     cs "So, you just want a middle man to do it for you."
     csgod "Well, yeah? Kinda?"
     show cs pissed
@@ -390,7 +390,7 @@ label dx_after_back_to_story:
     cultist "Well, we appreciate it."
     cs "You mean, you {i}hate{/i} it?"
     cultist "Exactly."
-    cultist "It's a good thing you showed up. We are mainly lacking enough members to win this year."
+    cultist "It's a good thing you showed up. We could use another member."
     cultist "We need someone that can influence the other cults to put their votes in for us."
     cs "Well, I can certainly help with that. The prize this year is really something special."
     cultist_3 "Is it? It just looks like a big pot. In fact, I kinda hate it."
@@ -426,7 +426,7 @@ label dx_after_cultcon_ask:
     show cultist behind cultist_2 at mid_right
     show cs cultist at left
     cs "Tell me more about how CultCon works."
-    cultist "Well, you see, CultCon is mainly just an event for cultists to meet up and share ideas, teachings, and other cult-related topics."
+    cultist "Well, you see, CultCon is mostly just for cultists to meet up and share ideas, teachings, and other cult-related topics."
     cultist "The Cult Competiton is a side thing that only a few cults try to participate in."
     cultist "If they win, not only do they win the advertised prize, but they get bragging rights about how awesome their cult is, which usually grows their cult in the process."
     cultist "{i}That's{/i} what we are interested in."
@@ -442,8 +442,9 @@ label dx_after_competitors_ask:
     cs "Who are the main competitors this year?"
     cultist "Well, there are the pencil guys who usually end up in dead last, so they give their vote to us most of the time."
     cultist "Our main opponent is the Scientologists. They have so many numbers, and they aren't {i}completely{/i} psycho."
-    cultist "We had the Branch Davidians here that one year, and, lemme just tell you... Yikes, those guys are fucking oblivious to anything their leader says."
-    cultist "Anyway, yeah, they mainly have an advantage because they got that guy from Top Gun in their ranks now."
+    cultist "We had the Branch Davidians here that one year, and, lemme just tell you..."
+    cultist "Those guys are fucking oblivious."
+    cultist "Anyway, yeah, they have an advantage because they got that guy from Top Gun in their ranks now."
     cs "Tom Cruise?"
     cultist "Yeah, fuck that guy. If there is {i}one{/i} thing that I hate more than everything else, it's gotta be him."
     cultist "I don't think the rest of the groups are as bad as them, so I believe you'll have an easy time winning them over."
@@ -2212,14 +2213,16 @@ label dx_after_yes_renault:
     show cs disappointed
     show carguy at right
     carguy "Sweet! Come with me!"
-    show cs with determination
+    show cs 
+    show carguy flipped
+    with determination
     hide cs
     hide carguy
     with moveoutright
     scene black with dissolve
     pause 1.0
     scene cs_street
-    show renault
+    show renault #TODO: Make this look better
     $ collect("renault")
     with dissolve
     show carguy flipped at mid_left
@@ -2242,7 +2245,10 @@ label dx_after_yes_renault:
     with dissolve
     cs "Wow! This car feels super smooth to drive!"
     carguy "This car is like the R5 back in its day, a popular and essential car, but with a modern twist: silent, high-tech, environmentally-friendly, and cheeky."
-    cs "I love it already!"
+    if fun_value(FUN_VALUE_RARE):
+        cs "I hate it already!"
+    else:       
+        cs "I love it already!"
     scene black
     play sound sfx_doorslam
     pause 0.4
