@@ -106,14 +106,14 @@ init -1 python:
             with renpy.open_file(str((p / "config.json").absolute()).replace("\\", "/")) as f:
                 j = json.load(f)
                 theme_j[d] = {
-                    "menu_name": j["menu_name"],
+                    "display_name": j["display_name"],
                     "unlock_value": j["unlock_value"],
                     "perf_warning": j["perf_warning"]
                 }
                 logger.info(f"Scanned theme {d}.")
 
     THEME_MAP = theme_j
-    print(THEME_MAP)
+    #print(THEME_MAP)
 
 init python:
     # Add more screen layers
@@ -199,7 +199,6 @@ default persistent.defeated_perfect_tate = False
 
 # Theme handling
 default persistent.unlocked_themes = set()
-$ persistent.unlocked_themes.add("default")
 
 # Achievement progress
 default persistent.seen_original_endings = set()

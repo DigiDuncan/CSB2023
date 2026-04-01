@@ -1,8 +1,9 @@
 {
-    "menu_name": "Default",
+    "display_name": "Default",
     "theme_name": "CSBDX Default",
-    "unlock_value": null,
+    "unlock_value": "default",
     "perf_warning": false,
+    "sort_order": 0,
 
     "main_font": "Yokelvision.otf",
     "name_font": "impact.ttf",

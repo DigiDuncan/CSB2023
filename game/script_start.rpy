@@ -316,6 +316,9 @@ label before_main_menu:
     python:
         renpy.free_memory()
 
+        if "default" not in persistent.unlocked_themes:
+            persistent.unlocked_themes.add("default")
+
         if ending_manager.all_seen() == True:
             if "fin" not in persistent.unlocked_achievements:
                 achievement_manager.unlock("fin", show_screen = False)

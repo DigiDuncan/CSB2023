@@ -1058,53 +1058,28 @@ screen preferences():
                         style_prefix "radio"
                         label _("Theme")
 
-
-                        
-
-
-
-
-                        textbutton _("Default"):
-                            action [
-                                Function(reload_theme, "default", True),
-                                SetField(preferences, "gui_theme", "default"),
-                                Function(gui.rebuild),
-                                Function(renpy.restart_interaction)
-                            ]
+                        # Load theme buttons
+                        for theme in THEME_MAP:
+                            if THEME_MAP[theme]["unlock_value"] in persistent.unlocked_themes or preferences.developer_mode:
+                                textbutton (THEME_MAP[theme]["display_name"]):
+                                    action [
+                                        Function(reload_theme, THEME_MAP[theme]["unlock_value"], True),
+                                        SetField(preferences, "gui_theme", THEME_MAP[theme]["unlock_value"]),
+                                        Function(gui.rebuild),
+                                        Function(renpy.restart_interaction)
+                                    ]
+                                    if not preferences.craptop_mode and THEME_MAP[theme]["perf_warning"]:
+                                        hovered [Function(get_mouse), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
+                                        tooltip _("WARNING: This theme may not run well on lower-end hardware.\nEnable Craptop Mode for better performance.")
 
                         # If no new themes unlocked yet, show this text
-                        if len(persistent.unlocked_themes) == 0 and not preferences.developer_mode:
+                        if len(persistent.unlocked_themes) == 1 and not preferences.developer_mode:
                             frame:
                                 background None
                                 xsize 0.75
                                 text _("More themes will be unlocked as you play!"):
                                     color gui.insensitive_color
                                     size 24
-
-                        # Christmas
-                        if "christmas" in persistent.unlocked_themes  or preferences.developer_mode:
-                            textbutton _("Christmas"):
-                                action [
-                                    Function(reload_theme, "christmas", True),
-                                    SetField(preferences, "gui_theme", "christmas"),
-                                    Function(gui.rebuild),
-                                    Function(renpy.restart_interaction)
-                                ]
-
-                        # Tate EX
-                        if "tate" in persistent.unlocked_themes or preferences.developer_mode:
-                            textbutton _("Tate EX"):
-                                
-                                if not preferences.craptop_mode:
-                                    hovered [Function(get_mouse), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
-                                    tooltip _("WARNING: This theme may not run well on lower-end hardware.\nEnable Craptop Mode for better performance.")
-
-                                action [
-                                    Function(reload_theme, "tate", True),
-                                    SetField(preferences, "gui_theme", "tate"),
-                                    Function(gui.rebuild),
-                                    Function(renpy.restart_interaction)
-                                ]
 
                     vbox:                        
                         # Text speed

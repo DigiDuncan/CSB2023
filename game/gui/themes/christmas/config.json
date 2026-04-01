@@ -1,8 +1,9 @@
 {
-    "menu_name": "Christmas",
+    "display_name": "Christmas",
     "theme_name": "Christmas Edition",
     "unlock_value": "christmas",
     "perf_warning": false,
+    "sort_order": 1,
 
     "main_font": "Yokelvision.otf",
     "name_font": "impact.ttf",
