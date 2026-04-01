@@ -1,5 +1,7 @@
 {
     "theme_name": "CSBDX Default",
+    "unlock_value": null,
+    "perf_warning": false,
 
     "main_font": "Yokelvision.otf",
     "name_font": "impact.ttf",

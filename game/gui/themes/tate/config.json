@@ -1,5 +1,7 @@
 {
     "theme_name": "Tate EX",
+    "unlock_value": "tate",
+    "perf_warning": true,
 
     "main_font": "Aller_Std_Lt_0.ttf",
     "name_font": "AllerDisplay_Std_Rg_0.ttf",

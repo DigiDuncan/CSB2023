@@ -53,8 +53,8 @@ screen jukebox():
                         xalign 0.0 yalign 0.5
                         xysize 64, 64
 
-                        idle "/gui/arrows/left_off_small.png"
-                        hover "/gui/arrows/left_on_small.png"
+                        idle get_themed_attribute("arrows/left_off_small")
+                        hover get_themed_attribute("arrows/left_on_small")
 
                         action SetScreenVariable("current_jukebox_tag_index", current_jukebox_tag_index-1)
 
@@ -64,8 +64,8 @@ screen jukebox():
                         xalign 1.0 yalign 0.5
                         xysize 64, 64
 
-                        idle "/gui/arrows/right_off_small.png"
-                        hover "/gui/arrows/right_on_small.png"
+                        idle get_themed_attribute("arrows/right_off_small")
+                        hover get_themed_attribute("arrows/right_on_small")
 
                         action SetScreenVariable("current_jukebox_tag_index", current_jukebox_tag_index+1)
 

@@ -54,7 +54,9 @@ screen unused_gallery():
                 xysize(128,128)
                 xalign 0 yalign 0.5
                 if unused_page>0:
-                    imagebutton idle "gui/arrows/left_off.png" hover "gui/arrows/left_on.png":
+                    imagebutton:
+                        idle get_themed_attribute("arrows/left_off")
+                        hover get_themed_attribute("arrows/left_on")
                         if list(asset_dict.values())[unused_page-1]["type"] == "audio":
                             action [
                                 PauseAudio("music2"),
@@ -111,7 +113,9 @@ screen unused_gallery():
                 xysize(128,128)
                 xalign 1.0 yalign 0.5
                 if unused_page+1<len(list(asset_dict.keys())):
-                    imagebutton idle "gui/arrows/right_off.png" hover "gui/arrows/right_on.png":
+                    imagebutton:
+                        idle get_themed_attribute("arrows/right_off")
+                        hover get_themed_attribute("arrows/right_on")
                         if list(asset_dict.values())[unused_page+1]["type"] == "audio":
                             action [
                                 PauseAudio("music2"),
@@ -228,8 +232,8 @@ screen unused_gallery():
                                     imagebutton:
                                         xalign 0.5 yalign 0.5
                                         xysize 64, 64
-                                        idle "/gui/arrows/left_off_small.png"
-                                        hover "/gui/arrows/left_on_small.png"
+                                        idle get_themed_attribute("arrows/left_off_small")
+                                        hover get_themed_attribute("arrows/left_on_small")
                                         action IncrementScreenVariable("current_gallery_img", -1)
 
                             frame:
@@ -249,8 +253,8 @@ screen unused_gallery():
                                     imagebutton:
                                         xalign 1.0 yalign 0.5
                                         xysize 64, 64
-                                        idle "/gui/arrows/right_off_small.png"
-                                        hover "/gui/arrows/right_on_small.png"
+                                        idle get_themed_attribute("arrows/right_off_small")
+                                        hover get_themed_attribute("arrows/right_on_small")
                                         action IncrementScreenVariable("current_gallery_img", 1)
                 # Caption
                 frame:

@@ -26,8 +26,8 @@ screen d20_viewer_screen():
     # decrease roll
     if d20 > 0:
         imagebutton:
-            idle "gui/arrows/left_off.png"
-            hover "gui/arrows/left_on.png"
+            idle get_themed_attribute("arrows/left_off")
+            hover get_themed_attribute("arrows/left_on")
             action IncrementVariable("d20", amount=-1), Show("d20_viewer_screen", None)
             xalign 0.3
             yalign 0.55
@@ -35,8 +35,8 @@ screen d20_viewer_screen():
     # increase roll
     if d20 < 20:
         imagebutton:
-            idle "gui/arrows/right_off.png"
-            hover "gui/arrows/right_on.png"
+            idle get_themed_attribute("arrows/right_off")
+            hover get_themed_attribute("arrows/right_on")
             action IncrementVariable("d20"), Show("d20_viewer_screen")
             xalign 0.7
             yalign 0.55

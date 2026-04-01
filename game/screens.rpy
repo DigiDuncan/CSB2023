@@ -1057,6 +1057,13 @@ screen preferences():
                     vbox:
                         style_prefix "radio"
                         label _("Theme")
+
+
+                        
+
+
+
+
                         textbutton _("Default"):
                             action [
                                 Function(reload_theme, "default", True),
@@ -1083,14 +1090,6 @@ screen preferences():
                                     Function(gui.rebuild),
                                     Function(renpy.restart_interaction)
                                 ]
-
-                        textbutton _("Baker"):
-                            action [
-                                Function(reload_theme, "baker", True),
-                                SetField(preferences, "gui_theme", "baker"),
-                                Function(gui.rebuild),
-                                Function(renpy.restart_interaction)
-                            ]
 
                         # Tate EX
                         if "tate" in persistent.unlocked_themes or preferences.developer_mode:
