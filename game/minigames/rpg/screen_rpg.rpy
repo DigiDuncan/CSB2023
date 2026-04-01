@@ -468,7 +468,7 @@ screen screen_rpg(no_stat_boxes = False):
                                                 vbox:
                                                     text attack.name:
                                                         size 40
-                                                        color gui.text_color
+                                                        color gui.idle_color
                                                         hover_color gui.hover_color
                                                         selected_color gui.selected_color
                                                         insensitive_color gui.insensitive_color
@@ -476,7 +476,7 @@ screen screen_rpg(no_stat_boxes = False):
                                                     text "("+attack.attack.properties+")":
                                                         xoffset 32
                                                         size 21
-                                                        color gui.text_color
+                                                        color gui.idle_color
                                                         hover_color gui.hover_color
                                                         selected_color gui.selected_color
                                                         insensitive_color gui.insensitive_color
@@ -484,7 +484,7 @@ screen screen_rpg(no_stat_boxes = False):
                                                     text "{alpha=0.5}"+attack.attack.description+"{/alpha}":
                                                         xoffset 32
                                                         size 21
-                                                        color gui.text_color
+                                                        color gui.idle_color
                                                         hover_color gui.hover_color
                                                         selected_color gui.selected_color
                                                         insensitive_color gui.insensitive_color
@@ -563,7 +563,7 @@ screen screen_rpg(no_stat_boxes = False):
                                                     )
 
                                                 text "{size=-12}"+target.display_name:
-                                                    color gui.text_color
+                                                    color gui.idle_color
                                                     hover_color gui.hover_color
                                                     selected_color gui.selected_color
                                                     selected_hover_color gui.accent_color
