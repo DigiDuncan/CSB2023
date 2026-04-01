@@ -66,7 +66,7 @@ init python:
         if preferences.force_mute:
             # Set all the volume back.
             for m in mixers:
-                preferences.set_mixer(m, mixer_volume[m])
+                preferences.set_mixer(m, mixer_volume.get(m, 0.50))
         else:
             # Remember all the volume.
             for m in mixers:
