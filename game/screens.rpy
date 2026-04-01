@@ -1237,7 +1237,7 @@ screen preferences():
                                     null width 20
                                     label "[max_fun_label]" xminimum 200 yalign 0.5
                         
-                            if persistent.awawa_mode and preferences.awawa_mode:
+                            if preferences.awawa_mode:
                                 label _("Awawa Chance") style_prefix "slider"
                                 hbox:
                                     bar:
