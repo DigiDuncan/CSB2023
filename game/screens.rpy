@@ -1206,7 +1206,7 @@ screen preferences():
                         textbutton _("Confusing Jokes") action ToggleField(preferences, "confusing_joke_enable"):
                             hovered [Function(get_mouse), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
                             tooltip _("Enables random events that may be confusing if you\nhaven't played the game yet. (Requires Bounciness)")
-                        if persistent.awawa_mode == True:
+                        if persistent.awawa_mode or preferences.developer_mode:
                             textbutton _("Awawa Mode") action ToggleField(preferences, "awawa_mode"):
                                 hovered [Function(get_mouse), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
                                 tooltip "Replaces the dialogue with nonsense!"
@@ -1237,7 +1237,7 @@ screen preferences():
                                     null width 20
                                     label "[max_fun_label]" xminimum 200 yalign 0.5
                         
-                            if persistent.awawa_mode == True and preferences.awawa_mode:
+                            if persistent.awawa_mode and preferences.awawa_mode:
                                 label _("Awawa Chance") style_prefix "slider"
                                 hbox:
                                     bar:
