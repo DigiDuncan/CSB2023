@@ -651,6 +651,16 @@
         "steps": "item_count",
         "tracker": "collected"
     },
+    "themes":{
+        "name": "Graphic Design Is My Passion",
+        "locked": "Collect all the themes.",
+        "unlocked": "Collect all the themes.",
+        "img": "item_collection",
+        "type": "extra",
+        "dx": true,
+        "steps": "theme_count",
+        "tracker": "unlocked_themes"
+    },
     "pun_values":{
         "name": "Tons Of Pun Fun",
         "locked": "Find every music fun value.",
