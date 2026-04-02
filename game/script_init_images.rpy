@@ -2573,7 +2573,7 @@ image watermark3 = "wm3.png"
 image watermark4 = "wm4.png"
 image ytx = Transform("ytx.png", zoom = 0.333)
 image ytx_drive = "ytx_drive.png"
-image map_kuwait = "gui/map_kuwait.png"
+image map_kuwait = "gui/kuwait_map/map_kuwait.png"
 
 # CSBDX: Holiday Special Gift Boxes
 image gift_anne_grace = "images/gifts/present_boxes/anne_grace.png"

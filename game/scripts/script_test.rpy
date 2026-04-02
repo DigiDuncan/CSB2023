@@ -44,7 +44,7 @@ label test:
                     #jump play_screenrpnggame # this label doesn't exist so here have a new fight
 
                         rpg:
-                            bg "images/bg/casino1.png"
+                            bg "images/bg/csb3_ch2_south/casino1.png"
                             music "card_castle"
                             allies:
                                 cs
