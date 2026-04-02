@@ -677,8 +677,7 @@ label _awawa_tate_test:
 
 screen test_ttt():
     modal True
-    on "show":
-        action renpy.music.play("in_the_room")
+    #$ renpy.music.play("in_the_room.ogg", if_changed=True)
     
     default ttt_grid = [
         "","","",
@@ -686,7 +685,6 @@ screen test_ttt():
         "","",""
     ]
     default ttt_state = "turns"
-    default who_first = ""
     default player_symbol = ""
     default opponent_symbol = ""
     default whose_turn = None
@@ -704,13 +702,13 @@ screen test_ttt():
             textbutton "CS":
                 xalign 0.3 yalign 0.8 text_align 0.5
                 action [
-                    SetScreenVariable("who_first", "cs"),
+                    SetScreenVariable("whose_turn", 0),
                     SetScreenVariable("ttt_state", "symbols")
                 ]
             textbutton "Tate":
                 xalign 0.7 yalign 0.8 text_align 0.5
                 action [
-                    SetScreenVariable("who_first", "tate"),
+                    SetScreenVariable("whose_turn", 1),
                     SetScreenVariable("ttt_state", "symbols")
                 ]
     # X or O?
@@ -755,10 +753,30 @@ screen test_ttt():
 
                         button: 
                             xsize 1.0 ysize 1.0
-                            hovered Notify("This is box "+str(t)+".")
-                            action [
-                                SetDict(ttt_grid, t, player_symbol),
-                                Function(renpy.restart_interaction)
-                            ]
 
-        text str(ttt_grid)
+                            if ttt_won is None:
+                                if whose_turn == 0:
+                                    #hovered Notify("This is box "+str(t)+".")
+                                    action [
+                                        SetDict(ttt_grid, t, player_symbol),
+                                        SetScreenVariable("whose_turn", 1),
+                                        Function(renpy.restart_interaction)
+                                    ]
+                                    
+                                elif whose_turn == 1:
+                                    
+                                    python:
+                                        opponent_filled = renpy.random.randrange(0,9)
+
+                                        while True and "" in ttt_grid:
+                                            opponent_filled = renpy.random.randrange(0,9)
+                                            if ttt_grid[opponent_filled] == "":
+                                                ttt_grid[opponent_filled] = opponent_symbol
+                                                break
+
+                                        whose_turn = 0
+
+                            elif ttt_won is True:
+                                $ renpy.notify("You won!")
+                            elif ttt_won is False:
+                                $ renpy.notify("You lost!")
