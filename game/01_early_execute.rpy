@@ -112,11 +112,11 @@ init -1 python:
                     "sort_order": j["sort_order"]
                 }
 
-                logger.info(f"Scanned theme {d}.")
+                logger.info(f"Scanned theme '{d}'.")
 
     THEME_MAP = theme_j
     theme_count = len(THEME_MAP)
-    print(THEME_MAP)
+    #print(THEME_MAP)
 
 init python:
     # Add more screen layers
