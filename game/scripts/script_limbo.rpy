@@ -102,7 +102,7 @@ label back_out_perfect_tate:
 ########## Game Menus ##########
 
 label kuwait_select:
-    scene map_kuwait
+    scene black
     stop music
     call screen kuwait_map
 

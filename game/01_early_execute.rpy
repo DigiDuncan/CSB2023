@@ -372,6 +372,26 @@ init python:
 
     renpy.image("_music_text", DynamicDisplayable(_music_gen_text))
 
+    # GET CURRENT SONG
+    def set_currently_playing():
+
+        global _current_song
+        global _current_artist
+        global _current_internal_id
+
+        current = re.sub(r'(<.*>)', "", str(renpy.music.get_playing("music")), flags=re.IGNORECASE)
+
+        if not current:
+            pass
+        else:
+            for t in MUSIC_MAP:
+                if current in MUSIC_MAP[t]["file"]:
+                    _current_internal_id = t
+                    _current_song = MUSIC_MAP[t]["title"]
+                    _current_artist = MUSIC_MAP[t]["artist"]
+
+            return _current_internal_id
+
     # ANIM CODE LITERALLY FROM CHARM
     def clamp(minVal, val, maxVal):
         """Clamp a `val` to be no lower than `minVal`, and no higher than `maxVal`."""

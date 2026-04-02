@@ -369,7 +369,6 @@ screen choice(items):
                 xsize gui.choice_button_width 
                 ysize 0.5
                 yalign 0.4
-                
 
             vbox:
                 xalign 0.5 yalign 0.5
@@ -407,7 +406,6 @@ screen choice(items):
                             text_color "#888888"
                             text_hover_color "#FFFFFF"
                             action i.action
-
 
 style choice_vbox is vbox
 style choice_button is button
@@ -699,6 +697,7 @@ screen game_menu(title, scroll=None, yinitial=0.0):
         action Return()
 
     label title
+    $ set_currently_playing()
     if _current_song and _current_artist:
         text _("Now Playing: {font=music_text}[_current_song] - [_current_artist]")
 
@@ -708,7 +707,6 @@ screen game_menu(title, scroll=None, yinitial=0.0):
 style game_menu_text:
     top_padding 10
     xpos 10
-
 
 style game_menu_outer_frame is empty
 style game_menu_navigation_frame is empty
