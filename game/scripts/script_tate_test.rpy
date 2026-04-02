@@ -621,28 +621,29 @@ label _awawa_tate_test:
                             jump .awawa_menu
                 menu:
                     tate "Alright, which test?{fast}"
+
                     "CS Running Animation":
                         show cs_run at manual_pos(0.75, 0.5, 0.5)
                         tate "Is this what you wanted?"
                         hide cs_run
+
                     "CS Health Indicator":
                         image health_test = Fixed("/minigames/perfecttate/heart.png", Text( _("100"), size=69, xanchor=0.5, yanchor=0.5, xalign=0.5, yalign=0.4, text_align=0.5), xysize=(128,128))
                         show health_test at manual_pos(8, 8, 0)
                         tate "Is that correct?"
                         hide health_test
+
                     "Sigil Test 1":
                         show tate_sigil at truecenter behind tate
                         show tate srs
                         tate "It {i}is{/i} drawn {i}correctly{/i} this time, right?"
                         hide tate_sigil
-                    "Sigil Test 2":
 
+                    "Sigil Test 2":
                         show amtrak_reality_break
                         tate "Is that right?"
-
                         show tate_ex at center
                         tate "Am I doing this right??"
-
                         hide amtrak_reality_break
                         hide tate_ex
                         with dissolve
@@ -657,8 +658,107 @@ label _awawa_tate_test:
                         jump .awawa_menu
                 jump .awawa_menu
 
+            #################### GAME TESTS ####################
+            "Game Tests":
+                menu:
+                    tate "Which one?"
+                    "Tic-Tac-Toe":
+                        tate "Alright, let's play!"
+                        call screen test_ttt
+                jump .awawa_menu
+
             #################### Cancel ####################
 
             "None, I'm Done":
                 tate "Cool. See ya later!"
                 $ renpy.full_restart
+
+####################################################################################################
+
+screen test_ttt():
+    modal True
+    on "show":
+        action renpy.music.play("in_the_room")
+    
+    default ttt_grid = [
+        "","","",
+        "","","",
+        "","",""
+    ]
+    default ttt_state = "turns"
+    default who_first = ""
+    default player_symbol = ""
+    default opponent_symbol = ""
+    default whose_turn = None
+    default ttt_won = None
+
+    # Who goes first?
+    if ttt_state == "turns":
+        frame: 
+            xsize 950 ysize 200
+            xalign 0.5 yalign 0.5
+
+            text "Who should go first?":
+                xalign 0.5 yalign 0.2 text_align 0.5
+
+            textbutton "CS":
+                xalign 0.3 yalign 0.8 text_align 0.5
+                action [
+                    SetScreenVariable("who_first", "cs"),
+                    SetScreenVariable("ttt_state", "symbols")
+                ]
+            textbutton "Tate":
+                xalign 0.7 yalign 0.8 text_align 0.5
+                action [
+                    SetScreenVariable("who_first", "tate"),
+                    SetScreenVariable("ttt_state", "symbols")
+                ]
+    # X or O?
+    elif ttt_state == "symbols":
+        frame: 
+            xsize 950 ysize 200
+            xalign 0.5 yalign 0.5
+
+            text "Do you want to use X or O?":
+                xalign 0.5 yalign 0.2 text_align 0.5
+
+            textbutton "X":
+                xalign 0.3 yalign 0.8 text_align 0.5
+                action [
+                    SetScreenVariable("player_symbol", "X"),
+                    SetScreenVariable("opponent_symbol", "O"),
+                    SetScreenVariable("ttt_state", "play")
+                ]
+            textbutton "O":
+                xalign 0.7 yalign 0.8 text_align 0.5
+                action [
+                    SetScreenVariable("player_symbol", "O"),
+                    SetScreenVariable("opponent_symbol", "X"),
+                    SetScreenVariable("ttt_state", "play")
+                ]
+    # Play the game!
+    elif ttt_state == "play":
+        frame:
+            xsize 950 ysize 950
+            xalign 0.5 yalign 0.5
+
+            grid 3 3:
+                xalign 0.5 yalign 0.5
+
+                for t in range(len(ttt_grid)):
+
+                    frame:
+                        xsize 300 ysize 300
+                        text ttt_grid[t]:
+                            xalign 0.5 yalign 0.5 text_align 0.5
+                            size 112
+
+                        button: 
+                            xsize 1.0 ysize 1.0
+                            hovered Notify("This is box "+str(t)+".")
+                            action [
+                                SetScreenVariable(ttt_grid[t], player_symbol),
+                                Function(renpy.restart_interaction)
+                            ]
+
+        text str(ttt_grid)
