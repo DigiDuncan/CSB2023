@@ -319,6 +319,9 @@ label before_main_menu:
         if "default" not in persistent.unlocked_themes:
             persistent.unlocked_themes.add("default")
 
+        reload_theme(preferences.gui_theme, False)
+        gui.rebuild()
+
         if ending_manager.all_seen() == True:
             if "fin" not in persistent.unlocked_achievements:
                 achievement_manager.unlock("fin", show_screen = False)
@@ -335,8 +338,6 @@ label before_main_menu:
                     renpy.music.play(gui_theme_map["menu_music_skip_splash"], loop = False, channel="music")
                     persistent.seen_splash = False
 
-        reload_theme(preferences.gui_theme, False)
-        gui.rebuild()
     return
 
 label start:  # this might be required??
