@@ -757,7 +757,7 @@ screen test_ttt():
                             xsize 1.0 ysize 1.0
                             hovered Notify("This is box "+str(t)+".")
                             action [
-                                SetScreenVariable(ttt_grid[t], player_symbol),
+                                SetDict(ttt_grid, t, player_symbol),
                                 Function(renpy.restart_interaction)
                             ]
 
