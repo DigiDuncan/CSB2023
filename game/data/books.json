@@ -340,10 +340,12 @@
         "kind": "label",
         "destinations": {
             "play_pencil_game": {
-                "need_label": "play_pencil_game"
+                "need_label": "play_pencil_game",
+                "custom_button": "NORMAL"
             },
             "play_pencil2_game": {
-                "need_label": "play_pencil2_game"
+                "need_label": "play_pencil2_game",
+                "custom_button": "HARD"
             }
         }
     },

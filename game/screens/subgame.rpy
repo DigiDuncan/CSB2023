@@ -130,10 +130,17 @@ screen subgame():
                     spacing 24
 
                     for l, d in current_subgame_destinations.items():
-                        $ k, v = list(d.items())[0] if len(d) != 0 else (None, None)  # THIS IS HACKY AND SUCKS
-                        if ((k == "need_label" and renpy.seen_label(v)) or
-                            (k == "need_persistent" and getattr(persistent, v)) or
-                            k is None):
+                        python:
+                            button_text = d.get("custom_button", "PLAY")
+                            show_this = True
+                            if "need_label" in d:
+                                if not renpy.seen_label(d["need_label"]):
+                                    show_this = False
+                            if "need_persistent" in d:
+                                if not getattr(persistent, d["need_persistent"]):
+                                    show_this = False
+
+                        if show_this:
                             button:
                                 xsize 215 ysize 87
                                 xalign 0.5 yalign 1.0
@@ -142,7 +149,7 @@ screen subgame():
                                 hover_background get_themed_attribute("button/button", prefix="selectable")
                                 hover_sound "audio/sfx/sfx_select.ogg"
 
-                                text _("PLAY"):
+                                text _(button_text):
                                     xalign 0.5 yalign 0.5
                                     text_align 0.5
                                     size 64
@@ -162,10 +169,17 @@ screen subgame():
                     spacing 24
 
                     for l, d in current_subgame_destinations.items():
-                        $ k, v = list(d.items())[0] if len(d) != 0 else (None, None)  # THIS IS HACKY AND SUCKS
-                        if ((k == "need_label" and renpy.seen_label(v)) or
-                            (k == "need_persistent" and getattr(persistent, v)) or
-                            k is None):
+                        python:
+                            button_text = d.get("custom_button", "OPEN")
+                            show_this = True
+                            if "need_label" in d:
+                                if not renpy.seen_label(d["need_label"]):
+                                    show_this = False
+                            if "need_persistent" in d:
+                                if not getattr(persistent, d["need_persistent"]):
+                                    show_this = False
+
+                        if show_this:
                             button:
                                 xsize 215 ysize 87
                                 xalign 0.5 yalign 1.0
@@ -174,7 +188,7 @@ screen subgame():
                                 hover_background get_themed_attribute("button/button", prefix="selectable")
                                 hover_sound "audio/sfx/sfx_select.ogg"
 
-                                text _("PLAY"):
+                                text _(button_text):
                                     xalign 0.5 yalign 0.5
                                     text_align 0.5
                                     size 64
