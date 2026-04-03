@@ -714,6 +714,7 @@ screen test_ttt():
     default opponent_symbol = ""
     default whose_turn = None
     default ttt_won = None
+    default next_state = None
 
     #text str(ttt_won)
 
@@ -786,6 +787,8 @@ screen test_ttt():
                                     if ttt_grid[t] == "":
                                         action [
                                             SetDict(ttt_grid, t, player_symbol),
+                                            SetScreenVariable("ttt_state", "wait"),
+                                            SetScreenVariable("next_state", "play"),
                                             SetScreenVariable("whose_turn", 1),
                                             SetScreenVariable("ttt_won", who_won_ttt(ttt_grid)),
                                             Function(renpy.restart_interaction)
@@ -819,6 +822,9 @@ screen test_ttt():
                     Stop("music", fadeout=0.5),
                     Jump("_awawa_tate_test.awawa_menu")
                 ]
+
+    elif ttt_state == "wait":
+        timer 1.0 action SetScreenVariable("ttt_state", next_state)
 
     # This is how we have to do logic in screens.
     # Basically, we check to see if we're in the right state, and then execute the code we want.
