@@ -825,6 +825,20 @@ screen test_ttt():
 
     elif ttt_state == "wait":
         timer 1.0 action SetScreenVariable("ttt_state", next_state)
+        frame:
+            xsize 950 ysize 950
+            xalign 0.5 yalign 0.5
+
+            grid 3 3:
+                xalign 0.5 yalign 0.5
+
+                for t in range(len(ttt_grid)):
+
+                    frame:
+                        xsize 300 ysize 300
+                        text ttt_grid[t]:
+                            xalign 0.5 yalign 0.5 text_align 0.5
+                            size 112
 
     # This is how we have to do logic in screens.
     # Basically, we check to see if we're in the right state, and then execute the code we want.
