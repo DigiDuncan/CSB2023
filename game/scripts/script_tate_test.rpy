@@ -675,6 +675,27 @@ label _awawa_tate_test:
 
 ####################################################################################################
 
+init python:
+    def who_won_ttt(grid: list[str]) -> str | None:
+        # 0 1 2
+        # 3 4 5
+        # 6 7 8
+        win_states = ((0, 1, 2), (3, 4, 5), (6, 7, 8),
+                      (0, 3, 6), (1, 4, 7), (2, 5, 8),
+                      (0, 4, 8), (2, 4, 6))
+
+        if "" not in grid:
+            print('t')
+            return "T"
+
+        for player in ["X", "O"]:
+            for state in win_states:
+                if all([grid[pos] == player for pos in state]):
+                    print(player)
+                    return player
+        print("none")
+        return None
+
 screen test_ttt():
     modal True
     #$ renpy.music.play("in_the_room.ogg", if_changed=True)
@@ -689,6 +710,8 @@ screen test_ttt():
     default opponent_symbol = ""
     default whose_turn = None
     default ttt_won = None
+
+    text str(ttt_won)
 
     # Who goes first?
     if ttt_state == "turns":
@@ -760,23 +783,48 @@ screen test_ttt():
                                     action [
                                         SetDict(ttt_grid, t, player_symbol),
                                         SetScreenVariable("whose_turn", 1),
+                                        SetScreenVariable("ttt_won", who_won_ttt(ttt_grid)),
                                         Function(renpy.restart_interaction)
                                     ]
-                                    
-                                elif whose_turn == 1:
-                                    
-                                    python:
-                                        opponent_filled = renpy.random.randrange(0,9)
 
-                                        while True and "" in ttt_grid:
-                                            opponent_filled = renpy.random.randrange(0,9)
-                                            if ttt_grid[opponent_filled] == "":
-                                                ttt_grid[opponent_filled] = opponent_symbol
-                                                break
+    elif ttt_state == "end":
+        if ttt_won == player_symbol:
+            text "YOUR\nWINNER":
+                size 150
+                textalign 0.5
+                align (0.5, 0.5)
+                outlines [(4.5, "#000000", absolute(0), absolute(0))]
+        elif ttt_won == opponent_symbol:
+            text "YOU'RRRE\nSTOOPID":
+                size 150
+                textalign 0.5
+                align (0.5, 0.5)
+                outlines [(4.5, "#000000", absolute(0), absolute(0))]
+        else:
+            text "DRAW":
+                size 150
+                textalign 0.5
+                align (0.5, 0.5)
+                outlines [(4.5, "#000000", absolute(0), absolute(0))]
 
-                                        whose_turn = 0
+    # This is how we have to do logic in screens.
+    # Basically, we check to see if we're in the right state, and then execute the code we want.
+    # This is because the if/elif in the screen ALWAYS runs, so we need to lock it down.
+    python:
+        # ENEMY TURN
+        if ttt_state == "play" and whose_turn == 1:
+            opponent_filled = renpy.random.randrange(0,9)
+            while True and "" in ttt_grid:
+                opponent_filled = renpy.random.randrange(0,9)
+                if ttt_grid[opponent_filled] == "":
+                    ttt_grid[opponent_filled] = opponent_symbol
+                    break
 
-                            elif ttt_won is True:
-                                $ renpy.notify("You won!")
-                            elif ttt_won is False:
-                                $ renpy.notify("You lost!")
+            ttt_won = who_won_ttt(ttt_grid)
+            whose_turn = 0
+            renpy.restart_interaction()
+
+        # TEST FOR MOVE TO END STATE
+        if ttt_state == "play" and ttt_won is not None:
+            ttt_state = "end"
+            renpy.restart_interaction()
