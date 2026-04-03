@@ -24,8 +24,9 @@ init python:
             if slots_list[checked_slot][0] == "(Pending)" and checked_slot not in locked_slots:
                 return checked_slot
 
-        # Failsafe - just give me the next slot
-        return (current_slot + 1) % total_slots
+        # Failsafe - just give me the next slots
+        unlocked_slots = [slot for slot in range(slots_list) if slot not in locked_slots]
+        return unlocked_slots[0]
 
 
 transform _rpg_ready_button_yes:
