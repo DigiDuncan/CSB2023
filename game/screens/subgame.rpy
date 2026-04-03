@@ -96,12 +96,17 @@ screen subgame():
 
             if book.book_id not in persistent.opened:
                 add get_themed_attribute("new"):
-                    xalign 0.5 yalign 1.0
-                    xoffset 6 yoffset 55
-            
+                    at transform:
+                        xalign 0.5 yalign 1.0
+                        xoffset 6 yoffset 55
 
-            
-
+                        block:
+                            alpha 0
+                            linear 0.75 alpha 0
+                            alpha 1.0
+                            linear 0.75 alpha 1.0
+                            repeat
+                
     if current_book is not None:
         frame:
             background None
