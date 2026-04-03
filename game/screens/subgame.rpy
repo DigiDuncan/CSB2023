@@ -9,7 +9,7 @@ python early:
             book_id: str,
             title: str, description: str,
             x_pos: int, y_pos: int,
-            kind: str, destination: str
+            kind: str, destination: list
         ):
             self.book_id = book_id
             self.title = title
@@ -119,27 +119,35 @@ screen subgame():
                         fit("contain")
 
             # Play button
-            imagebutton:
-                idle "gui/play_button.png"
-                hover "selectable:gui/play_button.png"
-                xalign 0.5 yalign 1.0
-                hover_sound "audio/sfx/sfx_select.ogg"
+            if current_subgame_kind == "label":
+                for l in current_subgame_destination:
+                    imagebutton:
+                        idle "gui/play_button.png"
+                        hover "selectable:gui/play_button.png"
+                        xalign 0.5 yalign 1.0
+                        hover_sound "audio/sfx/sfx_select.ogg"
 
-                if current_subgame_kind == "label":
-                    action [
-                        Play("sound", "audio/sfx/sfx_valid.ogg"),
-                        Start(current_subgame_destination)
-                    ]
-                elif current_subgame_kind == "menu":
+                        action [
+                            Play("sound", "audio/sfx/sfx_valid.ogg"),
+                            Start(l)
+                        ]
+                        
+            elif current_subgame_kind == "menu":
+                imagebutton:
+                    idle "gui/play_button.png"
+                    hover "selectable:gui/play_button.png"
+                    xalign 0.5 yalign 1.0
+                    hover_sound "audio/sfx/sfx_select.ogg"
+
                     action [
                         Play("sound", "audio/sfx/sfx_valid.ogg"),
                         ShowMenu(current_subgame_destination)
                     ]
-                else:
-                    # this should NEVER happen
-                    action [ Notify("Something's broken! Yell at Tate!") ]
+            else:
+                # this should NEVER happen
+                $ renpy.notify("Something's broken! Yell at Tate!")
 
-    textbutton _("Main Menu"):
+    textbutton _("Back"):
         background None
         xoffset 25 yoffset 1000
     

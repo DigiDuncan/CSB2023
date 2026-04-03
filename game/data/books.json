@@ -5,7 +5,7 @@
         "x_pos": 0,
         "y_pos": 36,
         "kind": "label",
-        "destination": "csbi_start"
+        "destination": ["csbi_start"]
     },
     "csbii": {
         "title": "CSBII",
@@ -13,7 +13,7 @@
         "x_pos": 46,
         "y_pos": 36,
         "kind": "label",
-        "destination": "csbii_start",
+        "destination": ["csbii_start"],
         "need_label": "csbii_start"
     },
     "csbiii_1": {
@@ -22,7 +22,7 @@
         "x_pos": 92,
         "y_pos": 36,
         "kind": "label",
-        "destination": "csbiii_start",
+        "destination": ["csbiii_start"],
         "need_label": "csbiii_start"
     },
     "csbiii_2": {
@@ -31,7 +31,7 @@
         "x_pos": 138,
         "y_pos": 36,
         "kind": "label",
-        "destination": "csbiii_choose_direction",
+        "destination": ["csbiii_choose_direction"],
         "need_label": "csbiii_choose_direction"
     },
     "afterstory": {
@@ -40,7 +40,7 @@
         "x_pos": 184,
         "y_pos": 36,
         "kind": "label",
-        "destination": "dx_after_true",
+        "destination": ["dx_after_true"],
         "need_label": "dx_after_true"
     },
     "finale": {
@@ -49,7 +49,7 @@
         "x_pos": 230,
         "y_pos": 36,
         "kind": "label",
-        "destination": "finale_fun_value_land",
+        "destination": ["finale_fun_value_land"],
         "need_label": "finale_fun_value_land"
     },
     "beach": {
@@ -58,7 +58,7 @@
         "x_pos": 276,
         "y_pos": 36,
         "kind": "label",
-        "destination": "beach_start",
+        "destination": ["beach_start"],
         "need_label": "beach_start"
     },
     "train_winner": {
@@ -67,7 +67,7 @@
         "x_pos": 322,
         "y_pos": 36,
         "kind": "label",
-        "destination": "train_start_good",
+        "destination": ["train_start_good"],
         "need_label": "train_start_good"
     },
     "train_thief": {
@@ -76,7 +76,7 @@
         "x_pos": 368,
         "y_pos": 36,
         "kind": "label",
-        "destination": "train_start_bad",
+        "destination": ["train_start_bad"],
         "need_label": "train_start_bad"
     },
     "bt1d": {
@@ -85,7 +85,7 @@
         "x_pos": 414,
         "y_pos": 36,
         "kind": "label",
-        "destination": "bt1d_start",
+        "destination": ["bt1d_start"],
         "need_label": "bt1d_start"
     },
     "kuwait": {
@@ -94,7 +94,7 @@
         "x_pos": 460,
         "y_pos": 36,
         "kind": "label",
-        "destination": "kuwait_travel",
+        "destination": ["kuwait_travel"],
         "need_label": "kuwait_travel"
     },
     "plane": {
@@ -103,7 +103,7 @@
         "x_pos": 506,
         "y_pos": 36,
         "kind": "label",
-        "destination": "plane_intro_start",
+        "destination": ["plane_intro_start"],
         "need_label": "plane_intro_start"
     },
     "speedrun": {
@@ -112,8 +112,8 @@
         "x_pos": 552,
         "y_pos": 36,
         "kind": "label",
-        "need_label": "vibration",
-        "destination": "vibration"
+        "destination": ["vibration"],
+        "need_label": "vibration"
     },
     "bronson": {
         "title": "Bronson",
@@ -121,7 +121,7 @@
         "x_pos": 598,
         "y_pos": 36,
         "kind": "label",
-        "destination": "michigan_bronson",
+        "destination": ["michigan_bronson"],
         "need_label": "michigan_bronson"
     },
     "jukebox": {
@@ -130,7 +130,7 @@
         "x_pos": 833,
         "y_pos": 187,
         "kind": "menu",
-        "destination": "jukebox"
+        "destination": ["jukebox"]
     },
     "controller_setup": {
         "title": "Controller Setup",
@@ -138,7 +138,7 @@
         "x_pos": 40,
         "y_pos": 920,
         "kind": "label",
-        "destination": "play_controllertest"
+        "destination": ["play_controllertest"]
     },
     "ce": {
         "title": "CSBounciness: Christmas Edition",
@@ -146,7 +146,7 @@
         "x_pos": 864,
         "y_pos": 390,
         "kind": "label",
-        "destination": "ce_start",
+        "destination": ["ce_start"],
         "need_label": "true_streaming"
     },
     "d20_viewer":{
@@ -155,7 +155,7 @@
         "x_pos": 655,
         "y_pos": 635,
         "kind": "menu",
-        "destination": "d20_viewer_screen",
+        "destination": ["d20_viewer_screen"],
         "need_persistent": "saved_christmas"
     },
     "space": {
@@ -164,7 +164,7 @@
         "x_pos": 818,
         "y_pos": 390,
         "kind": "label",
-        "destination": "secret_dx"
+        "destination": ["secret_dx"]
     },
     "pt_aftermath": {
         "title": "Celestial Sightseeing",
@@ -172,7 +172,7 @@
         "x_pos": 0,
         "y_pos": 608,
         "kind": "label",
-        "destination": "book_celestial_sightseeing",
+        "destination": ["book_celestial_sightseeing"],
         "need_persistent": "defeated_perfect_tate"
     },
     "elizabeth_bday": {
@@ -181,7 +181,7 @@
         "x_pos": 754,
         "y_pos": 441,
         "kind": "label",
-        "destination": "book_CSB3_EBEEP12024FDEADNYWFFEAGM",
+        "destination": ["book_CSB3_EBEEP12024FDEADNYWFFEAGM"],
         "need_label": "ce_epilogue"
     },
     "iwi_box": {
@@ -190,7 +190,7 @@
         "x_pos": 15,
         "y_pos": 509,
         "kind": "label",
-        "destination": "book_iwi_box",
+        "destination": ["book_iwi_box"],
         "need_label": "train_dialogue"
     },
     "pee": {
@@ -199,7 +199,7 @@
         "x_pos": 728,
         "y_pos": 540,
         "kind": "label",
-        "destination": "book_peeing",
+        "destination": ["book_peeing"],
         "need_label": "ce_epilogue"
     },
     "underpants": {
@@ -208,7 +208,8 @@
         "x_pos": 772,
         "y_pos": 390,
         "kind": "label",
-        "destination": "book_underpants"
+        "destination": ["book_underpants"],
+        "need_label": "where_are_they_now"
     },
     "minigame_car_chase": {
         "title": "Car Chase",
@@ -216,7 +217,7 @@
         "x_pos": 827,
         "y_pos": 900,
         "kind": "label",
-        "destination": "play_car_game",
+        "destination": ["play_car_game"],
         "need_label": "true_after_ufo"
     },
     "minigame_carrot": {
@@ -225,7 +226,7 @@
         "x_pos": 810,
         "y_pos": 801,
         "kind": "label",
-        "destination": "play_carrotgame",
+        "destination": ["play_carrotgame"],
         "need_label": "ce_win_carrot"
     },
     "minigame_reversi": {
@@ -234,7 +235,7 @@
         "x_pos": 864,
         "y_pos": 750,
         "kind": "label",
-        "destination": "play_ce_reversi",
+        "destination": ["play_ce_reversi"],
         "need_label": "ce_win_reversi"
     },
     "minigame_toytrains": {
@@ -243,7 +244,7 @@
         "x_pos": 793,
         "y_pos": 801,
         "kind": "label",
-        "destination": "play_toytrains_game",
+        "destination": ["play_toytrains_game"],
         "need_label": "play_toytrains_game"
     },
     "minigame_editing": {
@@ -252,8 +253,17 @@
         "x_pos": 759,
         "y_pos": 800,
         "kind": "label",
-        "destination": "play_edit_game",
+        "destination": ["play_edit_game"],
         "need_label": "play_edit_game"
+    },
+    "minigame_pencil": {
+        "title": "Pencil Sharpening Day",
+        "desc": "Can you get a perfect score?",
+        "x_pos": 300,
+        "y_pos": 815,
+        "kind": "multi_label",
+        "destination": ["play_pencil_game", "play_pencil2_game"],
+        "need_label": "play_pencil_game"
     },
     "minigame_perfecttate": {     
         "title": "VS Perfect Tate",
@@ -261,8 +271,7 @@
         "x_pos": 200,
         "y_pos": 408,
         "kind": "label",
-        "destination": "play_perfecttate_game",
+        "destination": ["play_perfecttate_game"],
         "need_persistent": "defeated_perfect_tate"
     }
-
 }
