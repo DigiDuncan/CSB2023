@@ -680,9 +680,11 @@ init python:
         # 0 1 2
         # 3 4 5
         # 6 7 8
-        win_states = ((0, 1, 2), (3, 4, 5), (6, 7, 8),
-                      (0, 3, 6), (1, 4, 7), (2, 5, 8),
-                      (0, 4, 8), (2, 4, 6))
+        win_states = (
+            (0, 1, 2), (3, 4, 5), (6, 7, 8),
+            (0, 3, 6), (1, 4, 7), (2, 5, 8),
+            (0, 4, 8), (2, 4, 6)
+        )
 
         for player in ["X", "O"]:
             for state in win_states:
@@ -696,7 +698,11 @@ init python:
 
 screen test_ttt():
     modal True
-    #$ renpy.music.play("in_the_room.ogg", if_changed=True)
+    
+    on "show":
+        action [
+            Function(renpy.music.play, audio.in_the_room, if_changed=True)
+        ]
     
     default ttt_grid = [
         "","","",
@@ -709,7 +715,7 @@ screen test_ttt():
     default whose_turn = None
     default ttt_won = None
 
-    text str(ttt_won)
+    #text str(ttt_won)
 
     # Who goes first?
     if ttt_state == "turns":
@@ -777,33 +783,42 @@ screen test_ttt():
 
                             if ttt_won is None:
                                 if whose_turn == 0:
-                                    #hovered Notify("This is box "+str(t)+".")
-                                    action [
-                                        SetDict(ttt_grid, t, player_symbol),
-                                        SetScreenVariable("whose_turn", 1),
-                                        SetScreenVariable("ttt_won", who_won_ttt(ttt_grid)),
-                                        Function(renpy.restart_interaction)
-                                    ]
+                                    if ttt_grid[t] == "":
+                                        action [
+                                            SetDict(ttt_grid, t, player_symbol),
+                                            SetScreenVariable("whose_turn", 1),
+                                            SetScreenVariable("ttt_won", who_won_ttt(ttt_grid)),
+                                            Function(renpy.restart_interaction)
+                                        ]
 
     elif ttt_state == "end":
         if ttt_won == player_symbol:
-            text "YOUR\nWINNER":
-                size 150
-                textalign 0.5
-                align (0.5, 0.5)
-                outlines [(4.5, "#000000", absolute(0), absolute(0))]
+            $ result = "You win!"
         elif ttt_won == opponent_symbol:
-            text "YOU'RRRE\nSTOOPID":
-                size 150
-                textalign 0.5
-                align (0.5, 0.5)
-                outlines [(4.5, "#000000", absolute(0), absolute(0))]
+            $ result = "Tate wins!"
         else:
-            text "DRAW":
-                size 150
-                textalign 0.5
-                align (0.5, 0.5)
-                outlines [(4.5, "#000000", absolute(0), absolute(0))]
+            $ result = "It's a draw!"
+
+        frame: 
+            xsize 950 ysize 200
+            xalign 0.5 yalign 0.5
+
+            text result+" Play again?":
+                xalign 0.5 yalign 0.2 text_align 0.5
+
+            textbutton "Yes":
+                xalign 0.3 yalign 0.8 text_align 0.5
+                action [
+                    SelectedIf(False),
+                    Hide("test_ttt"),
+                    ShowTransient("test_ttt")
+                ]
+            textbutton "No":
+                xalign 0.7 yalign 0.8 text_align 0.5
+                action [
+                    Stop("music", fadeout=0.5),
+                    Jump("_awawa_tate_test.awawa_menu")
+                ]
 
     # This is how we have to do logic in screens.
     # Basically, we check to see if we're in the right state, and then execute the code we want.
