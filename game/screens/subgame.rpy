@@ -131,7 +131,7 @@ screen subgame():
 
                     for l, d in current_subgame_destinations.items():
                         $ k, v = list(d.items())[0] if len(d) != 0 else (None, None)  # THIS IS HACKY AND SUCKS
-                        if ((k == "need_label" and v in renpy.seen_label(v)) or
+                        if ((k == "need_label" and renpy.seen_label(v)) or
                             (k == "need_persistent" and getattr(persistent, v)) or
                             k is None):
                             imagebutton:
@@ -153,7 +153,7 @@ screen subgame():
 
                     for l, d in current_subgame_destinations.items():
                         $ k, v = list(d.items())[0] if len(d) != 0 else (None, None)  # THIS IS HACKY AND SUCKS
-                        if ((k == "need_label" and v in renpy.seen_label(v)) or
+                        if ((k == "need_label" and renpy.seen_label(v)) or
                             (k == "need_persistent" and getattr(persistent, v)) or
                             k is None):
                             imagebutton:
