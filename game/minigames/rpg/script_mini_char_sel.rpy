@@ -105,7 +105,7 @@ screen _rpg_selection(char_list = ["CS"], locked_slots = []):
                                         SensitiveIf( [character.name, character] not in rpg_slots),
                                         Play("sound", "audio/sfx/sfx_valid.ogg"),
                                         Function(rpg_fill_slot, rpg_slots, rpg_selected_slot, rpg_hovered_data),
-                                        SetScreenVariable("rpg_selected_slot", rpg_slot_autoselect(rpg_slots, rpg_selected_slot, locked_slots)),
+                                        SetScreenVariable("rpg_selected_slot", rpg_slot_autoselect(rpg_slots, rpg_selected_slot, range(len(locked_slots)))),
                                         SetScreenVariable("rpg_hovered_data", []),
                                         With(determination)
                                     ]
