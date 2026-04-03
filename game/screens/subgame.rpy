@@ -9,7 +9,7 @@ python early:
             book_id: str,
             title: str, description: str,
             x_pos: int, y_pos: int,
-            kind: str, destination: list
+            kind: str, destinations: list
         ):
             self.book_id = book_id
             self.title = title
@@ -18,7 +18,7 @@ python early:
             self.y_pos = y_pos
 
             self.kind = kind
-            self.destination = destination
+            self.destinations = destinations
 
             self.spine = f"gui/books/{book_id}/side.png"
             self.hover_spine = f"selectable:gui/books/{book_id}/side.png"
@@ -33,7 +33,7 @@ screen subgame():
     default current_subgame_desc = None
     default current_subgame_art = None
     default current_subgame_kind = None
-    default current_subgame_destination = None
+    default current_subgame_destinations = None
 
     python:
         bookshelf = []
@@ -60,7 +60,7 @@ screen subgame():
                         BOOKS_MAP[book]["x_pos"],
                         BOOKS_MAP[book]["y_pos"],
                         BOOKS_MAP[book]["kind"],
-                        BOOKS_MAP[book]["destination"]
+                        BOOKS_MAP[book]["destinations"]
                     )
                 )
 
@@ -75,7 +75,7 @@ screen subgame():
                 SetScreenVariable("current_subgame_desc", book.description),
                 SetScreenVariable("current_subgame_art", book.front),
                 SetScreenVariable("current_subgame_kind", book.kind),
-                SetScreenVariable("current_subgame_destination", book.destination)
+                SetScreenVariable("current_subgame_destinations", book.destinations)
             ]
             xpos book.x_pos
             ypos book.y_pos
@@ -85,7 +85,7 @@ screen subgame():
             background None
             xsize 0.5 ysize 1.0
             xalign 1.0 yalign 1.0
-
+        
             vbox:
                 # Name of the game
                 frame:
@@ -120,8 +120,12 @@ screen subgame():
 
             # Play button
             if current_subgame_kind == "label":
-                for l in current_subgame_destination:
-                    vbox:
+                hbox:
+                    xalign 0.5 yalign 1.0
+                    yoffset -24
+                    spacing 24
+
+                    for l in current_subgame_destinations:
                         imagebutton:
                             idle "gui/play_button.png"
                             hover "selectable:gui/play_button.png"
@@ -134,8 +138,12 @@ screen subgame():
                             ]
 
             elif current_subgame_kind == "menu":
-                for l in current_subgame_destination:
-                    vbox:
+                hbox:
+                    xalign 0.5 yalign 1.0
+                    yoffset -24
+                    spacing 24
+
+                    for l in current_subgame_destinations:  
                         imagebutton:
                             idle "gui/play_button.png"
                             hover "selectable:gui/play_button.png"
