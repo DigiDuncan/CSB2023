@@ -119,32 +119,61 @@ screen rpg_stat_box(fighter, current_ally_mode):
                         background get_themed_attribute("rpg/tall_box")
                         xysize(475,201)
 
-                        # The attack button
+                        # Button container
                         frame:
                             background None
                             xsize 1.0 ysize 87
                             xalign 0.5 yalign 1.0
-                            
-                            imagebutton:
-                                align(0.0, 1.0)
-                                idle get_themed_attribute("rpg/attack_button")
-                                hover get_themed_attribute("rpg/attack_button", prefix = "selectable")
-                                insensitive get_themed_attribute("rpg/attack_button", prefix = "insensitive")
+
+                            # The attack button       
+                            button:
+                                xsize 215 ysize 87
+                                xalign 0 yalign 0.5
+                                yoffset -5
+
+                                idle_background get_themed_attribute("button/button")
+                                hover_background get_themed_attribute("button/button", prefix = "selectable")
+                                insensitive_background get_themed_attribute("button/button", prefix = "insensitive")
                                 hover_sound "audio/sfx/sfx_select.ogg"
+
+                                text _("ATTACK"):
+                                    xalign 0.5 yalign 0.5
+                                    text_align 0.5
+                                    size 64
+
+                                    color gui.text_color
+                                    hover_color gui.text_color
+                                    selected_color gui.selected_color
+                                    insensitive_color gui.insensitive_color
+
                                 action [
                                     SensitiveIf(current_ally_mode != "TGT"),
                                     Play("sound", "audio/sfx/sfx_valid.ogg"),
                                     SetVariable("current_ally_mode", "ATK")
                                     # Notify("Attack pressed on fighter "+str(fighter.display_name)+"!")
-                                ]
-
+                                ]               
+                      
                             # The defend button
-                            imagebutton:
-                                align(1.0, 1.0)
-                                idle get_themed_attribute("rpg/defend_button")
-                                hover get_themed_attribute("rpg/defend_button", prefix = "selectable")
-                                insensitive get_themed_attribute("rpg/defend_button", prefix = "insensitive")
+                            button:
+                                xsize 215 ysize 87
+                                xalign 1.0 yalign 0.5
+                                yoffset -5
+
+                                idle_background get_themed_attribute("button/button")
+                                hover_background get_themed_attribute("button/button", prefix = "selectable")
+                                insensitive_background get_themed_attribute("button/button", prefix = "insensitive")
                                 hover_sound "audio/sfx/sfx_select.ogg"
+
+                                text _("DEFEND"):
+                                    xalign 0.5 yalign 0.5
+                                    text_align 0.5
+                                    size 64
+
+                                    color gui.text_color
+                                    hover_color gui.text_color
+                                    selected_color gui.selected_color
+                                    insensitive_color gui.insensitive_color
+
                                 action [
                                     SensitiveIf(current_ally_mode != "TGT"),
                                     Play("sound", "audio/sfx/sfx_valid.ogg"),

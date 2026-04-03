@@ -81,9 +81,9 @@
             }
         }
     },
-    "trains": {
+    "train": {
         "title": "CSBDX: Train Route",
-        "desc": "{image=gui/inline_text/dx_text.png} (Winner Version) Taking the scenic route home.",
+        "desc": "{image=gui/inline_text/dx_text.png} Taking the scenic route home.",
         "x_pos": 322,
         "y_pos": 36,
         "kind": "label",       
@@ -99,7 +99,7 @@
     "bt1d": {
         "title": "BT1D",
         "desc": "{image=gui/inline_text/dx_text.png} Fight the CEO Of Diabetes!",
-        "x_pos": 414,
+        "x_pos": 368,
         "y_pos": 36,
         "kind": "label",
         "destinations": {
@@ -111,7 +111,7 @@
     "kuwait": {
         "title": "Kuwait",
         "desc": "{image=gui/inline_text/dx_text.png} A vacation gone awry...",
-        "x_pos": 460,
+        "x_pos": 414,
         "y_pos": 36,
         "kind": "label",
         "destinations": {
@@ -123,7 +123,7 @@
     "plane": {
         "title": "Plane",
         "desc": "{image=gui/inline_text/dx_text.png} A thrilling flight home!",
-        "x_pos": 506,
+        "x_pos": 460,
         "y_pos": 36,
         "kind": "label",
         "destinations": {
@@ -135,7 +135,7 @@
     "speedrun": {
         "title": "Speedrun",
         "desc": "{image=gui/inline_text/dx_text.png} NYOOM",
-        "x_pos": 552,
+        "x_pos": 506,
         "y_pos": 36,
         "kind": "label",
         "destinations": {
@@ -147,7 +147,7 @@
     "bronson": {
         "title": "Bronson",
         "desc": "{image=gui/inline_text/dx_text.png} Oh, great, another creepypasta.",
-        "x_pos": 598,
+        "x_pos": 552,
         "y_pos": 36,
         "kind": "label",
         "destinations": {

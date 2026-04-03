@@ -134,11 +134,21 @@ screen subgame():
                         if ((k == "need_label" and renpy.seen_label(v)) or
                             (k == "need_persistent" and getattr(persistent, v)) or
                             k is None):
-                            imagebutton:
-                                idle "gui/play_button.png"
-                                hover "selectable:gui/play_button.png"
+                            button:
+                                xsize 215 ysize 87
                                 xalign 0.5 yalign 1.0
+
+                                idle_background get_themed_attribute("button/button")
+                                hover_background get_themed_attribute("button/button", prefix="selectable")
                                 hover_sound "audio/sfx/sfx_select.ogg"
+
+                                text _("PLAY"):
+                                    xalign 0.5 yalign 0.5
+                                    text_align 0.5
+                                    size 64
+
+                                    color gui.text_color
+                                    hover_color gui.text_color
 
                                 action [
                                     Play("sound", "audio/sfx/sfx_valid.ogg"),
@@ -156,11 +166,21 @@ screen subgame():
                         if ((k == "need_label" and renpy.seen_label(v)) or
                             (k == "need_persistent" and getattr(persistent, v)) or
                             k is None):
-                            imagebutton:
-                                idle "gui/play_button.png"
-                                hover "selectable:gui/play_button.png"
+                            button:
+                                xsize 215 ysize 87
                                 xalign 0.5 yalign 1.0
+
+                                idle_background get_themed_attribute("button/button")
+                                hover_background get_themed_attribute("button/button", prefix="selectable")
                                 hover_sound "audio/sfx/sfx_select.ogg"
+
+                                text _("PLAY"):
+                                    xalign 0.5 yalign 0.5
+                                    text_align 0.5
+                                    size 64
+
+                                    color gui.text_color
+                                    hover_color gui.text_color
 
                                 action [
                                     Play("sound", "audio/sfx/sfx_valid.ogg"),

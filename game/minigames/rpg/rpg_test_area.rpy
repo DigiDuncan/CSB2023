@@ -21,7 +21,7 @@ screen rpg_test_grounds():
         text "C"
 
     frame:
-        background get_themed_attribute("rpg/button_frame")
+        background get_themed_attribute("button/button")
         hover_background "selectable:"+get_themed_attribute("rpg/button_frame")
         
         xsize 215 ysize 87
@@ -29,7 +29,7 @@ screen rpg_test_grounds():
 
         button:
             xsize 1.0 ysize 1.0
-            text "Attack":
+            text "ATTACK":
                 xalign 0.5 yalign 0.5
 
                 color gui.idle_color
