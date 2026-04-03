@@ -67,12 +67,20 @@ init python:
             gui.choice_button_text_hover_color = _get("choice_button_text_hover_color")
             gui.choice_button_text_insensitive_color = _get("choice_button_text_insensitive_color")
 
+            # Fix fonts
             config.font_name_map["default"] = _get("main_font")
             config.font_name_map["cn"] = _get("cn_font")
             config.font_name_map["jp"] = _get("jp_font")
             config.font_name_map["ru"] = _get("ru_font")
             config.font_name_map["music_text"] = FontGroup().add("FiraCode-Retina.ttf", 0x2206, 0x2206).add( _get("jp_font") , 0x2600, 0x9fff).add( _get("main_font") , 0x0000, 0xffff)
 
+            # Fix Fun Value icons (doesn't work yet, just crashes)
+            #_fun_value = Image(get_themed_attribute("fun_value/fun_value"))
+            # renpy.image("_fun_value_music", get_themed_attribute("fun_value/fun_value_music"))
+            # renpy.image("_fun_value_fish", get_themed_attribute("fun_value/fun_value_fish"))
+            # renpy.image("_fun_value_found", get_themed_attribute("fun_value/fun_value_found"))
+
+            # Dyslexia Mode
             def _dyslexia_font(f):
                 if theme_name in font_cache:
                     return font_cache[theme_name]

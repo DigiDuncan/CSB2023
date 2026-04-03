@@ -598,6 +598,8 @@ label bt1d_basketball:
 
     show basketball at manual_pos(0.975, 0.75, 0.5):
         zoom 0.25
+    
+    with dissolve
 
     digi "In a normal body, your body happily makes nice, round basketballs. They go through the hoop just fine!"
 
@@ -635,23 +637,51 @@ label bt1d_basketball:
         linear 0.25 ypos 0.065
 
     show red_x at manual_pos(0.85, 0.7, 0.5)
+    with dissolve
+
     digi "In my body, with Type 1 Diabetes, I don't make any basketballs."
 
     # a cardboard box drops into the scene. a basketball comes out the box, and flies into the hoop.
-    # TODO: use different box sprite later
-    show linus_box at manual_pos(0.5, 0.6, 0.5) with { "master": moveintop }
+    show cardboard_box_full behind txt_t1d at manual_pos(0.5, 0.6, 0.5) with { "master": moveintop }:
+        zoom 0.3
     pause 0.5
     play sound sfx_punch
     with vpunch
+    
+    show pump at manual_pos(0.5, 0.7, 0.5):
+        zoom 0.5
+        crop (0, 0, 670, 0)
+    show cardboard_box_foreground at manual_pos(0.5, 0.6, 0.5):
+        zoom 0.3
+    with determination
+
+    show pump:
+        xanchor 0.5 yanchor 0.5
+        zoom 0.5
+        xpos 0.5
+        parallel:
+            linear 0.5 crop (0, 0, 671, 441)
+        parallel:
+            linear 0.5 ypos 0.4    
+    show txt_pump at manual_pos(0.5, 0.2, 0.5)
+    show arrow_white flipped as second:
+        xanchor 0.5 yanchor 0.5
+        rotate 90
+        zoom 0.3
+        xpos 0.5
+
+        block:
+            ypos 0.25
+            linear 0.5 ypos 0.25
+            ypos 0.265
+            linear 0.5 ypos 0.265
+            repeat
+    with { "master": dissolve }
+
     digi "So I have to \"import\" some."
 
     show basketball
-
-    hide txt_insulin
-    hide red_x
-    show txt_pump at manual_pos(0.85, 0.5, 0.5)
-    show pump at manual_pos(0.85, 0.7, 0.5):
-        zoom 0.5
+    
     digi "That's what my pump is for."
 
     show txt_t1d:
@@ -669,10 +699,26 @@ label bt1d_basketball:
         linear 0.25 ypos 0.065
     with determination
 
+    hide red_x
+    hide txt_insulin
     hide txt_pump
+    hide arrow_white flipped as second
     hide pump
-    hide linus_box
+    hide cardboard_box_full
+    hide cardboard_box_foreground
     show txt_insulint at manual_pos(0.85, 0.5, 0.5)
+    show arrow_white flipped:
+        xanchor 0.5 yanchor 0.5
+        rotate 90
+        zoom 0.3
+        xpos 0.85
+
+        block:
+            ypos 0.55
+            linear 0.5 ypos 0.55
+            ypos 0.565
+            linear 0.5 ypos 0.565
+            repeat
     show basketballnt as first at manual_pos(0.975, 0.75, 0.5):
         zoom 0.25
     with dissolve

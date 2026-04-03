@@ -2327,8 +2327,8 @@ image txt_pump:
     contains:
         Text( _("{size=+12}Insulin Pump"), xalign=0.5, yalign=0.5)
 
-image arrow_white = "sil_white:/gui/arrows/left_on.png"
-image arrow_white flipped = "flip:sil_white:/gui/arrows/left_on.png"
+image arrow_white = get_themed_attribute("arrows/left_on", prefix="sil_white")
+image arrow_white flipped = get_themed_attribute("arrows/left_on", prefix="flip:sil_white")
 
 # DX Holiday Special Misc.
 image smoke = SnowBlossom("smoke.png", count = 400, fast = False, xspeed = (0,0), yspeed = (0, -100), border = 32)
