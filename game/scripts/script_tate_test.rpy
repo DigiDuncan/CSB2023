@@ -684,16 +684,14 @@ init python:
                       (0, 3, 6), (1, 4, 7), (2, 5, 8),
                       (0, 4, 8), (2, 4, 6))
 
-        if "" not in grid:
-            print('t')
-            return "T"
-
         for player in ["X", "O"]:
             for state in win_states:
                 if all([grid[pos] == player for pos in state]):
-                    print(player)
                     return player
-        print("none")
+
+        if "" not in grid:
+            return "T"
+
         return None
 
 screen test_ttt():
