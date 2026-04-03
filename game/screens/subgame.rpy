@@ -9,7 +9,7 @@ python early:
             book_id: str,
             title: str, description: str,
             x_pos: int, y_pos: int,
-            kind: str, destinations: list
+            kind: str, destinations: dict
         ):
             self.book_id = book_id
             self.title = title
@@ -39,16 +39,20 @@ screen subgame():
         bookshelf = []
         for book in BOOKS_MAP:
             # only show the book if's unlocked
-            # default is unlocked
-            this_unlocked = True
+            # default is locked
+            this_unlocked = False
 
-            # unlock by label
-            if "need_label" in BOOKS_MAP[book] and not renpy.seen_label(BOOKS_MAP[book]["need_label"]):
-                this_unlocked = False
+            for destination in BOOKS_MAP[book]["destinations"]:
+                # unlock by label
+                if "need_label" in BOOKS_MAP[book]["destinations"][destination] and renpy.seen_label(BOOKS_MAP[book]["destinations"][destination]["need_label"]):
+                    this_unlocked = True
 
-            # unlock by persistent value
-            if "need_persistent" in BOOKS_MAP[book] and not getattr(persistent, "saved_christmas"):
-                this_unlocked = False
+                # unlock by persistent value
+                if "need_persistent" in BOOKS_MAP[book]["destinations"][destination] and getattr(persistent, BOOKS_MAP[book]["destinations"][destination]["need_persistent"]):
+                    this_unlocked = True
+
+                if "need_label" not in BOOKS_MAP[book]["destinations"][destination] and "need_persistent" not in BOOKS_MAP[book]["destinations"][destination]:
+                    this_unlocked = True
 
             # append to shelf if unlocked
             if this_unlocked == True:
@@ -125,17 +129,21 @@ screen subgame():
                     yoffset -24
                     spacing 24
 
-                    for l in current_subgame_destinations:
-                        imagebutton:
-                            idle "gui/play_button.png"
-                            hover "selectable:gui/play_button.png"
-                            xalign 0.5 yalign 1.0
-                            hover_sound "audio/sfx/sfx_select.ogg"
+                    for l, d in current_subgame_destinations.items():
+                        $ k, v = list(d.items())[0] if len(d) != 0 else (None, None)  # THIS IS HACKY AND SUCKS
+                        if ((k == "need_label" and v in renpy.seen_label(v)) or
+                            (k == "need_persistent" and getattr(persistent, v)) or
+                            k is None):
+                            imagebutton:
+                                idle "gui/play_button.png"
+                                hover "selectable:gui/play_button.png"
+                                xalign 0.5 yalign 1.0
+                                hover_sound "audio/sfx/sfx_select.ogg"
 
-                            action [
-                                Play("sound", "audio/sfx/sfx_valid.ogg"),
-                                Start(l)
-                            ]
+                                action [
+                                    Play("sound", "audio/sfx/sfx_valid.ogg"),
+                                    Start(l)
+                                ]
 
             elif current_subgame_kind == "menu":
                 hbox:
@@ -143,20 +151,21 @@ screen subgame():
                     yoffset -24
                     spacing 24
 
-                    for l in current_subgame_destinations:  
-                        imagebutton:
-                            idle "gui/play_button.png"
-                            hover "selectable:gui/play_button.png"
-                            xalign 0.5 yalign 1.0
-                            hover_sound "audio/sfx/sfx_select.ogg"
+                    for l, d in current_subgame_destinations.items():
+                        $ k, v = list(d.items())[0] if len(d) != 0 else (None, None)  # THIS IS HACKY AND SUCKS
+                        if ((k == "need_label" and v in renpy.seen_label(v)) or
+                            (k == "need_persistent" and getattr(persistent, v)) or
+                            k is None):
+                            imagebutton:
+                                idle "gui/play_button.png"
+                                hover "selectable:gui/play_button.png"
+                                xalign 0.5 yalign 1.0
+                                hover_sound "audio/sfx/sfx_select.ogg"
 
-                            action [
-                                Play("sound", "audio/sfx/sfx_valid.ogg"),
-                                ShowMenu(l)
-                            ]
-            else:
-                # this should NEVER happen
-                $ renpy.notify("Something's broken! Yell at Tate!")
+                                action [
+                                    Play("sound", "audio/sfx/sfx_valid.ogg"),
+                                    ShowMenu(l)
+                                ]
 
     textbutton _("Back"):
         background None

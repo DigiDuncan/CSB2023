@@ -6,9 +6,7 @@
         "y_pos": 36,
         "kind": "label",
         "destinations": {
-            "csbi_start": {
-                "need_label": null
-            }
+            "csbi_start": {}
         }
     },
     "csbii": {
@@ -165,9 +163,7 @@
         "y_pos": 187,
         "kind": "menu",
         "destinations": {
-            "jukebox": {
-                "need_label": null
-            }
+            "jukebox": {}
         }
     },
     "controller_setup": {
@@ -177,9 +173,7 @@
         "y_pos": 920,
         "kind": "label",
         "destinations": {
-            "play_controllertest": {
-                "need_label": null
-            }
+            "play_controllertest": {}
         }
     },
     "ce": {
@@ -214,7 +208,7 @@
         "kind": "label",
         "destinations": {
             "secret_dx": {
-                "need_persistent": null
+                "need_label": "secret_dx"
             }
         }
     },
