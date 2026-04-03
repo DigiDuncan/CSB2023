@@ -90,12 +90,14 @@ screen subgame():
                 action [
                     Play("sound", "audio/sfx/sfx_valid.ogg"),
                     SelectedIf(SetScreenVariable("current_book", book)),
+                    AddToSet(persistent.opened, book.book_id),
                     With(Dissolve(0.25))
                 ]
 
-            add get_themed_attribute("new"):
-                xalign 0.5 yalign 1.0
-                xoffset 6 yoffset 55
+            if book.book_id not in persistent.opened:
+                add get_themed_attribute("new"):
+                    xalign 0.5 yalign 1.0
+                    xoffset 6 yoffset 55
             
 
             

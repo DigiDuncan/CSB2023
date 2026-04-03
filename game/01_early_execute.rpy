@@ -188,6 +188,7 @@ default persistent.heard = set()
 default persistent.collected = set()
 default persistent.seen_music_pun = set()
 default persistent.read = set()
+default persistent.opened = set()
 default persistent.unlocked_achievements = set()
 default persistent.fun = set()
 default persistent.creative_mode = False
