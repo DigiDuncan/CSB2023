@@ -356,6 +356,13 @@ python early:
         lint = lint_dxcom,
         execute = execute_dxcom)
 
+screen fun_value_indicator(t):
+    # TODO: TATE DO THIS FOR ME I'M LAZY
+    tag fun_value_indicator
+    modal False
+    text t:
+        align (0.0, 1.0)
+
 init python:
     import re
 
@@ -464,20 +471,11 @@ init python:
 
         return f"{', '.join(items[:-1])}{ox if len(items) >= 3 else ''} {joiner} {items[-1]}"
 
-    # FUN VALUES
-    renpy.image("_fun_value", get_themed_attribute("fun_value/fun_value"))
-    renpy.image("_fun_value_music", get_themed_attribute("fun_value/fun_value_music"))
-    renpy.image("_fun_value_fish", get_themed_attribute("fun_value/fun_value_fish"))
-    renpy.image("_fun_value_found", get_themed_attribute("fun_value/fun_value_found"))
-
     # Fun value handler
     def fun_value(rarity: int, id: str = None, *, confusing = False, fish = False) -> bool:
 
         # hide any previous instance of the indicator
-        renpy.hide("_fun_value")
-        renpy.hide("_fun_value_music")
-        renpy.hide("_fun_value_fish")
-        renpy.hide("_fun_value_found")
+        renpy.hide_screen("fun_value_indicator")
 
         if not preferences.bounciness_enable:
             return False
@@ -502,14 +500,14 @@ init python:
             # Show the indicator. It'll fade out on its own and be hidden next time this runs.
             if rarity == FUN_VALUE_MUSIC:
                 # Music indicator
-                renpy.show("_fun_value_music",[_fun_value_fade,_fun_value_motion],"fun_icon")
+                renpy.show_screen("fun_value_indicator", "music")
             else:
                 if renpy.random.random() < FUN_VALUE_FISH_CHANCE or fish:
                     # Fish indicator
-                    renpy.show("_fun_value_fish",[_fun_value_fade,_fun_value_motion],"fun_icon")
+                    renpy.show_screen("fun_value_indicator", "fish")
                 else:
                     # Normal indicator
-                    renpy.show("_fun_value",[_fun_value_fade,_fun_value_motion],"fun_icon")
+                    renpy.show_screen("fun_value_indicator", "normal")
             renpy.play("audio/sfx/sfx_sparkle.ogg", channel = "notification")
         return ret
 
