@@ -781,7 +781,8 @@
             "Clap": "images/characters/hendry_clap2.png"
         },
         "quote": "I believe in Joe Hendry!",
-        "bio": "Joe Hendry is a well-known hero, from London, to Paris, to Tokyo! Just say his name and he will appear!"
+        "bio": "Joe Hendry is a well-known hero, from London, to Paris, to Tokyo! Just say his name and he will appear!",
+        "dx": true
     },
     "hoh_worker": {
         "full_name": "HoH SiS Workers",
