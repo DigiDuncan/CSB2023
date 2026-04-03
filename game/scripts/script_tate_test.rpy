@@ -824,7 +824,7 @@ screen test_ttt():
                 ]
 
     elif ttt_state == "wait":
-        timer 1.0 action SetScreenVariable("ttt_state", next_state)
+        timer 0.5 action SetScreenVariable("ttt_state", next_state)
         frame:
             xsize 950 ysize 950
             xalign 0.5 yalign 0.5
