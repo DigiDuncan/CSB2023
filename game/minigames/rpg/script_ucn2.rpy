@@ -6,6 +6,7 @@
 ###################################################### BEGIN SCREEN
 
 screen _ucn2_selection():
+    tag menu
     modal True
 
     python:
@@ -20,11 +21,20 @@ screen _ucn2_selection():
         persistent.seen.add("sandbag")
 
     # Run these immediately in the background of all screens
-    on "show" action [
+    on "replace" action [
         If(not preferences.craptop_mode, Function(start_predict_list, ucn_bg_list), None),
         Hide("category_nav"),
-        Play("music2", "audio/riders_menu.ogg"),
-        Function(persistent.heard.add, "riders_menu")
+        Play("jukebox", "audio/riders_menu.ogg"),
+        Function(persistent.heard.add, "riders_menu"),
+
+        PauseAudio("music", True),
+        PauseAudio("music2", True),
+        PauseAudio("music3", True),
+        PauseAudio("music4", True),
+        PauseAudio("music5", True),
+        PauseAudio("sound", True),
+        PauseAudio("sound2", True),
+        PauseAudio("voice", True),
     ]
 
     ###################### Important variables for everywhere
@@ -363,26 +373,42 @@ screen _ucn2_selection():
         ######################### BOTTOM
 
         ### Buttons
-        $ screen_check = renpy.get_screen("category_welcome")
+        $ screen_check = renpy.get_screen("subgame")
 
         textbutton _("Back"):
             xoffset 25 yoffset 950
 
             if screen_check:
                 action [
+                    Stop("jukebox"),
                     PauseAudio("music", False),
-                    Stop("music2"),
+                    PauseAudio("music2", False),
+                    PauseAudio("music3", False),
+                    PauseAudio("music4", False),
+                    PauseAudio("music5", False),
+                    PauseAudio("sound", False),
+                    PauseAudio("sound2", False),
+                    PauseAudio("voice", False),
+
                     SelectedIf(False),
                     Hide("_ucn2_selection", dissolve),
                     Function(renpy.free_memory)
                 ]
             else:
                 action [
+                    Stop("jukebox"),
                     PauseAudio("music", False),
-                    Stop("music2"),
+                    PauseAudio("music2", False),
+                    PauseAudio("music3", False),
+                    PauseAudio("music4", False),
+                    PauseAudio("music5", False),
+                    PauseAudio("sound", False),
+                    PauseAudio("sound2", False),
+                    PauseAudio("voice", False),
+
                     SelectedIf(False),
                     Hide("_ucn2_selection", dissolve),
-                    ShowMenu("category_welcome")
+                    ShowMenu("subgame")
                 ]
 
         textbutton _("Main Menu"):
@@ -780,7 +806,7 @@ label _ucn2_after:
         "Play again":
             stop music
             call screen _ucn2_selection
-            # TODO: find a way to jump back to main menu in the background AND show the screen
+            # TODO: WE'RE IN THE VOID HERE, IDK HOW TO FIX IT - TATE
             # hey arc pls help you're better at context than we are
         "Return to main menu":
             $ renpy.free_memory()

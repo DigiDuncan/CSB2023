@@ -146,18 +146,6 @@
             }
         }
     },
-    "bronson": {
-        "title": "Bronson",
-        "desc": "{image=gui/inline_text/dx_text.png} Oh, great, another creepypasta.",
-        "x_pos": 552,
-        "y_pos": 36,
-        "kind": "label",
-        "destinations": {
-            "michigan_bronson": {
-                "need_label": "michigan_bronson"
-            }
-        }
-    },
     "jukebox": {
         "title": "Jukebox",
         "desc": "Jam out to songs you've heard along the way!",
@@ -374,6 +362,18 @@
         "destinations": {
             "play_slots_game": {
                 "need_label": "play_slots_game"
+            }
+        }
+    },
+    "minigame_ucn2": {
+        "title": "Ultimate Custom Night 2",
+        "desc": "{image=gui/inline_text/dx_text.png} Everyone is here!",
+        "x_pos": 696,
+        "y_pos": 750,
+        "kind": "menu",
+        "destinations": {
+            "_ucn2_selection": {
+                "need_label": "where_are_they_now"
             }
         }
     },
