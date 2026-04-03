@@ -6,7 +6,10 @@ init python:
         slots_list[current_slot] = char_stored_data
 
     # Automatically select the next unselected slot (AI-assisted)
-    def rpg_slot_autoselect(slots_list, current_slot):
+    def rpg_slot_autoselect(slots_list, current_slot, locked_slots = None):
+
+        if locked_slots is None:
+            locked_slots = []
 
         # Do NOT try party_size*2 again, it is why the screen took two clicks to update
         total_slots = len(slots_list)
@@ -18,7 +21,7 @@ init python:
         # Search for any empty slots
         for i in range(1, total_slots):
             checked_slot = (current_slot + i) % total_slots
-            if slots_list[checked_slot][0] == "(Pending)":
+            if slots_list[checked_slot][0] == "(Pending)" and checked_slot not in locked_slots:
                 return checked_slot
 
         # Failsafe - just give me the next slot
