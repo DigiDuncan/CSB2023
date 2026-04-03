@@ -315,7 +315,7 @@
     "minigame_toytrains": {
         "title": "Off To The Races!",
         "desc": "{image=gui/inline_text/dx_text.png} Race some trains!\n...Wait, who the fuck is Longas?",
-        "x_pos": 793,
+        "x_pos": 776,
         "y_pos": 801,
         "kind": "label",
         "destinations": {
@@ -324,10 +324,22 @@
             }
         }
     },
+    "minigame_rhythmchase": {
+        "title": "Rhythm Chase",
+        "desc": "{image=gui/inline_text/dx_text.png} Catch that crook!",
+        "x_pos": 793,
+        "y_pos": 801,
+        "kind": "label",
+        "destinations": {
+            "play_rhythmchase_game": {
+                "need_label": "play_rhythmchase_game"
+            }
+        }
+    },
     "minigame_editing": {
         "title": "Adobe Premiere",
         "desc": "Hopefully it doesn't fucking crash again.",
-        "x_pos": 759,
+        "x_pos": 742,
         "y_pos": 800,
         "kind": "label",
         "destinations": {
@@ -339,7 +351,7 @@
     "minigame_pencil": {
         "title": "Pencil Sharpening Day",
         "desc": "Can you get a perfect score?",
-        "x_pos": 300,
+        "x_pos": 250,
         "y_pos": 815,
         "kind": "label",
         "destinations": {
@@ -350,6 +362,18 @@
             "play_pencil2_game": {
                 "need_label": "play_pencil2_game",
                 "custom_button": "HARD"
+            }
+        }
+    },
+    "minigame_slots": {
+        "title": "Crazy Slots",
+        "desc": "{image=gui/inline_text/dx_text.png} Let's go gambling!",
+        "x_pos": 500,
+        "y_pos": 890,
+        "kind": "label",
+        "destinations": {
+            "play_slots_game": {
+                "need_label": "play_slots_game"
             }
         }
     },
