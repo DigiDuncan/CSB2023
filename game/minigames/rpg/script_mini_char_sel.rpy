@@ -11,14 +11,20 @@ screen _rpg_selection(char_list = ["CS"], locked_slots = []):
         rpg_pending_sprite = renpy.get_registered_image("rpg_pending_portrait")
         rpg_pending_sprite_hover = renpy.get_registered_image("rpg_pending_portrait_hover")
 
-
     ###################### Important variables for everywhere
     default rpg_hovered_data = []
-    default rpg_selected_slot = 0
     default rpg_ready = False
     default rpg_party_size = 4
     default rpg_final_party = []
     default rpg_slots = [ ["(Pending)"], ["(Pending)"], ["(Pending)"], ["(Pending)"] ]
+
+    if not locked_slots:
+        default rpg_selected_slot = 0
+    else:
+        default rpg_selected_slot = len(locked_slots)
+
+    # $ print(locked_slots)
+    # $ print(rpg_slots)
 
     # Pre-filled slots handler
     python:
@@ -176,14 +182,18 @@ screen _rpg_selection(char_list = ["CS"], locked_slots = []):
                                             (0,0), "selectable:gui/rpg_common/portraits/border_sel_a.png"
                                         )
                                         hover_sound "audio/sfx/sfx_select.ogg"
+                                        
                                         if rpg_slots[a][0] != "(Pending)":
                                             hovered SetScreenVariable("rpg_hovered_data", [ rpg_slots[a][0], rpg_slots[a][1] ])
                                         unhovered SetScreenVariable("rpg_hovered_data", [])
-                                        action [
-                                            SensitiveIf( rpg_slots[a][0] not in locked_slots ),
-                                            SetScreenVariable("rpg_selected_slot", a),
-                                            SelectedIf( SetScreenVariable("rpg_selected_slot", a) )
-                                        ]
+                                      
+                                        if rpg_slots[a][0] == "(Pending)" or rpg_slots[a][1].assigned_name not in locked_slots:
+                                            action [
+                                                SetScreenVariable("rpg_selected_slot", a),
+                                                SelectedIf(SetScreenVariable("rpg_selected_slot", a))
+                                            ]
+                                        else:
+                                            action NullAction()
 
                             # Selected character text
                             $ output_text = ""

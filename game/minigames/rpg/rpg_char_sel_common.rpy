@@ -25,7 +25,7 @@ init python:
                 return checked_slot
 
         # Failsafe - just give me the next slots
-        unlocked_slots = [slot for slot in range(slots_list) if slot not in locked_slots]
+        unlocked_slots = [slot for slot in range(len(slots_list)) if slot not in locked_slots]
         return unlocked_slots[0]
 
 
