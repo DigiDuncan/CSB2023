@@ -7,13 +7,13 @@ python early:
         def __init__(
             self,
             book_id: str,
-            title: str, description: str,
+            title: str, desc: str,
             x_pos: int, y_pos: int,
             kind: str, destinations: dict
         ):
             self.book_id = book_id
             self.title = title
-            self.description = description
+            self.desc = desc
             self.x_pos = x_pos
             self.y_pos = y_pos
 
@@ -29,11 +29,7 @@ screen subgame():
     image "gui/subgame_menu.png"
 
     default bookshelf = []
-    default current_subgame_name = None
-    default current_subgame_desc = None
-    default current_subgame_art = None
-    default current_subgame_kind = None
-    default current_subgame_destinations = None
+    default current_book = None
 
     python:
         bookshelf = []
@@ -70,21 +66,22 @@ screen subgame():
 
     for book in bookshelf:
         imagebutton:
-            hover book.hover_spine
             idle book.spine
+            hover book.hover_spine
+            selected_idle book.hover_spine
+            selected_hover book.hover_spine
+            selected current_book == book
             hover_sound "audio/sfx/sfx_select.ogg"
             action [
                 Play("sound", "audio/sfx/sfx_valid.ogg"),
-                SetScreenVariable("current_subgame_name", book.title),
-                SetScreenVariable("current_subgame_desc", book.description),
-                SetScreenVariable("current_subgame_art", book.front),
-                SetScreenVariable("current_subgame_kind", book.kind),
-                SetScreenVariable("current_subgame_destinations", book.destinations)
+                SelectedIf(SetScreenVariable("current_book", book)),
+                Notify(current_book),
+                With(Dissolve(0.25))
             ]
             xpos book.x_pos
             ypos book.y_pos
 
-    if current_subgame_name:
+    if current_book is not None:
         frame:
             background None
             xsize 0.5 ysize 1.0
@@ -98,7 +95,7 @@ screen subgame():
                     xsize 1.0 ysize 300
                     vbox:
                         xalign 0.5  yalign 0.5
-                        text current_subgame_name:
+                        text current_book.title:
                             color Color("#FFFFFF")
                             outlines [(4.5, "#000000", absolute(0), absolute(0))]
                             size 72
@@ -106,7 +103,7 @@ screen subgame():
                             text_align 0.5
 
                         # Description of the game
-                        text current_subgame_desc:
+                        text current_book.desc:
                             color Color("#FFFFFF")
                             outlines [(4.5, "#000000", absolute(0), absolute(0))]
                             text_align 0.5
@@ -117,19 +114,19 @@ screen subgame():
                     background None
                     xalign 0.5 yalign 0
                     xsize 1.0 ysize 600
-                    image current_subgame_art:
+                    image current_book.front:
                         xalign 0.5 yalign 0.5
                         xysize(392,600)
                         fit("contain")
 
             # Play button
-            if current_subgame_kind == "label":
+            if current_book.kind == "label":
                 hbox:
                     xalign 0.5 yalign 1.0
                     yoffset -24
                     spacing 24
 
-                    for l, d in current_subgame_destinations.items():
+                    for l, d in current_book.destinations.items():
                         python:
                             button_text = d.get("custom_button", "PLAY")
                             show_this = True
@@ -165,13 +162,13 @@ screen subgame():
                                         color gui.text_color
                                         hover_color gui.text_color
 
-            elif current_subgame_kind == "menu":
+            elif current_book.kind == "menu":
                 hbox:
                     xalign 0.5 yalign 1.0
                     yoffset -24
                     spacing 24
 
-                    for l, d in current_subgame_destinations.items():
+                    for l, d in current_book.destinations.items():
                         python:
                             button_text = d.get("custom_button", _("OPEN"))
                             show_this = True
