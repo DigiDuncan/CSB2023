@@ -89,10 +89,12 @@
         "kind": "label",       
         "destinations": {
             "train_start_good": {
-                "need_label": "train_start_good"
+                "need_label": "train_start_good",
+                "custom_button": "WINNER"
             },
             "train_start_bad": {
-                "need_label": "train_start_bad"
+                "need_label": "train_start_bad",
+                "custom_button": "THIEF"
             }
         }
     },

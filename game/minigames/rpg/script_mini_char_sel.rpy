@@ -294,7 +294,7 @@ screen _rpg_selection(char_list = ["CS"], locked_slots = []):
     ######################### BOTTOM
 
     ### DEBUG BUTTONS
-    # textbutton "[[DEBUG] Toggle ready state.":
+    # textbutton "[[DEV] Toggle ready state.":
     #     yoffset 50 xoffset 25
     #     action [
     #         SetScreenVariable("rpg_ready", (not rpg_ready) )
