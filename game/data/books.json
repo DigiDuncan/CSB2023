@@ -261,7 +261,7 @@
         "desc": "Can you get a perfect score?",
         "x_pos": 300,
         "y_pos": 815,
-        "kind": "multi_label",
+        "kind": "label",
         "destination": ["play_pencil_game", "play_pencil2_game"],
         "need_label": "play_pencil_game"
     },

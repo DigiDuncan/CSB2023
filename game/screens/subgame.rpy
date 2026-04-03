@@ -121,28 +121,31 @@ screen subgame():
             # Play button
             if current_subgame_kind == "label":
                 for l in current_subgame_destination:
-                    imagebutton:
-                        idle "gui/play_button.png"
-                        hover "selectable:gui/play_button.png"
-                        xalign 0.5 yalign 1.0
-                        hover_sound "audio/sfx/sfx_select.ogg"
+                    vbox:
+                        imagebutton:
+                            idle "gui/play_button.png"
+                            hover "selectable:gui/play_button.png"
+                            xalign 0.5 yalign 1.0
+                            hover_sound "audio/sfx/sfx_select.ogg"
 
-                        action [
-                            Play("sound", "audio/sfx/sfx_valid.ogg"),
-                            Start(l)
-                        ]
-                        
+                            action [
+                                Play("sound", "audio/sfx/sfx_valid.ogg"),
+                                Start(l)
+                            ]
+
             elif current_subgame_kind == "menu":
-                imagebutton:
-                    idle "gui/play_button.png"
-                    hover "selectable:gui/play_button.png"
-                    xalign 0.5 yalign 1.0
-                    hover_sound "audio/sfx/sfx_select.ogg"
+                for l in current_subgame_destination:
+                    vbox:
+                        imagebutton:
+                            idle "gui/play_button.png"
+                            hover "selectable:gui/play_button.png"
+                            xalign 0.5 yalign 1.0
+                            hover_sound "audio/sfx/sfx_select.ogg"
 
-                    action [
-                        Play("sound", "audio/sfx/sfx_valid.ogg"),
-                        ShowMenu(current_subgame_destination)
-                    ]
+                            action [
+                                Play("sound", "audio/sfx/sfx_valid.ogg"),
+                                ShowMenu(l)
+                            ]
             else:
                 # this should NEVER happen
                 $ renpy.notify("Something's broken! Yell at Tate!")
@@ -157,4 +160,3 @@ screen subgame():
         text_hover_color "#FFFFFF"
         text_hover_outlines [(4.5, "#000000", absolute(0), absolute(0))]
         action Return()
-       
