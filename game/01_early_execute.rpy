@@ -261,26 +261,6 @@ init:
     transform _music_top_left:
         xanchor 0 xpos 0
 
-    # For fun value
-    transform _fun_value_fade:
-        on show:
-            xanchor 0 xpos 18
-            yanchor 0 ypos 980
-            alpha 0.00
-            ease_cubic 0.5 alpha 1.00
-            time 2.5
-            ease_expo 1 alpha 0.00
-
-    transform _fun_value_motion:
-        block:
-            # back
-            ease_cubic 0.1 xpos 17
-            ease_cubic 0.01 ypos 979
-            # forward
-            ease_cubic 0.1 xpos 19
-            ease_cubic 0.01 ypos 981
-            repeat
-
 python early:
     # MUSIC POP UP
 
@@ -357,11 +337,38 @@ python early:
         execute = execute_dxcom)
 
 screen fun_value_indicator(t):
-    # TODO: TATE DO THIS FOR ME I'M LAZY
     tag fun_value_indicator
     modal False
-    text t:
-        align (0.0, 1.0)
+
+    python:
+        if t == "normal":
+            fun_icon = get_themed_attribute("fun_value/fun_value")
+        elif t == "music":
+            fun_icon = get_themed_attribute("fun_value/fun_value_music")
+        elif t == "fish":
+            fun_icon = get_themed_attribute("fun_value/fun_value_fish")
+        elif t == "found":
+            fun_icon = get_themed_attribute("fun_value/fun_value_found")
+
+    add Image(fun_icon):    
+        at transform:
+            xanchor 0 xpos 18
+            yanchor 0 ypos 980
+            alpha 0.00
+
+            parallel:
+                ease_cubic 0.5 alpha 1.00
+                time 2.5
+                ease_expo 1 alpha 0.00
+
+            parallel:
+                # back
+                ease_cubic 0.1 xpos 17
+                ease_cubic 0.01 ypos 979
+                # forward
+                ease_cubic 0.1 xpos 19
+                ease_cubic 0.01 ypos 981
+                repeat
 
 init python:
     import re
