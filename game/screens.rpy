@@ -1291,7 +1291,7 @@ screen preferences():
                 # MOVED ALL THE DEV MODE STUFF HERE
             
                 if preferences.developer_mode or persistent.creative_mode:
-                    textbutton _("Debug Menu\n{size=-12}Jump to specific secDysletions of the game.") action ShowMenu("debug_menu")
+                    textbutton _("Debug Menu\n{size=-12}Jump to specific sections of the game.") action ShowMenu("debug_menu")
 
                     textbutton _("Test Scene\n{size=-12}A sandbox for testing various features.") action Start("test")
 

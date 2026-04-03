@@ -258,6 +258,7 @@
             "amtrak_dining_day",
             "amtrak_dining_table",
             "amtrak_observation_1",
+            "amtrak_reality_break_loader",
             "amtrak_sleeper_interior",
             "amtrak_sleeper_open",
             "amtrak_sleeper_open_bg",
@@ -276,7 +277,7 @@
     {
         "files":
         [
-            "PLACEHOLDER"
+            "looptest"
         ]
     }
 }
