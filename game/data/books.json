@@ -181,7 +181,7 @@
         "x_pos": 754,
         "y_pos": 441,
         "kind": "label",
-        "destination": "CSB3_EBEEP12024FDEADNYWFFEAGM",
+        "destination": "book_CSB3_EBEEP12024FDEADNYWFFEAGM",
         "need_label": "ce_epilogue"
     },
     "iwi_box": {

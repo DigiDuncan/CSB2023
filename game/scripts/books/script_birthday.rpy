@@ -6,7 +6,7 @@ label book_CSB3_EBEEP12024FDEADNYWFFEAGM:
     with dissolve
     play music good_eatin
     music good_eatin
-    n "As the sun comes up for the day, Digi finds himself in his kitchen."
+    n "As the sun comes up for the day, Digi finds themself in their kitchen."
     digi "I really need to find something to eat..."
     show digi shock flipped
     digimom "Duncan!{w=1.0}{nw}" with vpunch
@@ -45,7 +45,7 @@ label book_CSB3_EBEEP12024FDEADNYWFFEAGM:
     play sound sfx_house_door_close
     stop music fadeout 3.0
     music end
-    n "Digi hops in his spaceship and takes off."
+    n "Digi hops in their spaceship and takes off."
     scene black with dissolve
     pause 3.0
     scene nugget_inside
@@ -62,7 +62,7 @@ label book_CSB3_EBEEP12024FDEADNYWFFEAGM:
     show digi flipped at center with moveinleft
     n "After a rather short trip, Digi shows up near Elizabeth's apartment."
     digi "Alright, almost there."
-    n "As Digi is approaching Elizabeth's house, he sees someone on the streets."
+    n "As Digi is approaching Elizabeth's house, they see someone on the streets."
     show digi happy flipped
     digi "Holy shit, is that Doug McMillon?!"
     show digi shock flipped with vpunch
