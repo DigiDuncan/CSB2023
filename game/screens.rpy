@@ -697,7 +697,7 @@ screen game_menu(title, scroll=None, yinitial=0.0):
         action Return()
 
     label title
-    $ set_currently_playing()
+    $ set_now_playing()
     if _current_song and _current_artist:
         text _("Now Playing: {font=music_text}[_current_song] - [_current_artist]")
 

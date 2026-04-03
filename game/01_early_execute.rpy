@@ -373,7 +373,7 @@ init python:
     renpy.image("_music_text", DynamicDisplayable(_music_gen_text))
 
     # GET CURRENT SONG
-    def set_currently_playing():
+    def set_now_playing():
 
         global _current_song
         global _current_artist
@@ -382,7 +382,9 @@ init python:
         current = re.sub(r'(<.*>)', "", str(renpy.music.get_playing("music")), flags=re.IGNORECASE)
 
         if not current:
-            pass
+            _current_song = None
+            _current_artist = None
+            renpy.restart_interaction()
         else:
             for t in MUSIC_MAP:
                 if current in MUSIC_MAP[t]["file"]:
