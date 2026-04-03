@@ -171,8 +171,8 @@
     "controller_setup": {
         "title": "Controller Setup",
         "desc": "Make sure your controller is working!",
-        "x_pos": 40,
-        "y_pos": 920,
+        "x_pos": 70,
+        "y_pos": 950,
         "kind": "label",
         "destinations": {
             "play_controllertest": {
