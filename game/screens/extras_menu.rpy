@@ -28,14 +28,10 @@ screen category_nav():
 
 
     viewport:
-        if persistent.creative_mode or preferences.developer_mode:
-            xpos 25
-            yalign 0.5
-            xsize 750 ysize 750
-        else:
-            xpos 25
-            yalign 0.5
-            xsize 750 ysize 750
+        xpos 25
+        yalign 0.5
+        xsize 750 ysize 750
+
         mousewheel True
         scrollbars "vertical"
         draggable True
