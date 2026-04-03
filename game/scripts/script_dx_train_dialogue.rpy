@@ -107,7 +107,7 @@ label train_dialogue:
         show mean human hat at mid_right
         show tate at left
         with dissolve
-
+        
         pause 1.0
 
         tate "Awawa awa!"
@@ -132,6 +132,7 @@ label train_dialogue:
         mean "No! Fuck you!"
         show tate sheepish
         tate "A..."
+        $ persistent.got_awawad = True
     else:
         scene
         # TODO: NEED BACKGROUND

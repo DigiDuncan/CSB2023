@@ -397,21 +397,21 @@ screen _ucn2_selection():
             ]
 
         ################################################### DEBUG BUTTONS
-        textbutton _("[[DEV] Toggle ready state."):
-            yoffset 50 xoffset 25
-            action [
-                SetScreenVariable("rpg_ready", (not rpg_ready) )
-            ]
-
-        # Debug only
-        if rpg_ready == True:
-            textbutton _("[[DEV] Skip aesthetic screens"):
-                xoffset 1395 yoffset 950
+        if preferences.developer_mode:
+            textbutton _("[[DEV] Toggle ready state."):
+                yoffset 50 xoffset 25
                 action [
-                    Play("sound", "audio/sfx/sfx_valid.ogg"),
-                    SetScreenVariable("rpg_selection_stage", "fight"),
-                    SetScreenVariable("rpg_bgm", random.choice(list(MUSIC_MAP.keys())))
+                    SetScreenVariable("rpg_ready", (not rpg_ready) )
                 ]
+
+            if rpg_ready == True:
+                textbutton _("[[DEV] Skip aesthetic screens"):
+                    xoffset 1395 yoffset 950
+                    action [
+                        Play("sound", "audio/sfx/sfx_valid.ogg"),
+                        SetScreenVariable("rpg_selection_stage", "fight"),
+                        SetScreenVariable("rpg_bgm", random.choice(list(MUSIC_MAP.keys())))
+                    ]
         ################################################### END DEBUG BUTTONS
 
         python:
@@ -680,6 +680,17 @@ screen _ucn2_selection():
             text output
 
         ###################### Back / forward
+
+        ## DEBUG BUTTONS
+        if preferences.developer_mode:
+            textbutton _("[[DEV] Back to character selection"):
+                xoffset 25 yoffset 950
+                action [
+                    SetScreenVariable("rpg_selection_stage", "party")
+                ]
+        ## END DEBUG BUTTONS
+
+
         textbutton _("Previous Screen"):
             xoffset 25 yoffset 1000
             action [

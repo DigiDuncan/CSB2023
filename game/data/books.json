@@ -106,7 +106,7 @@
         "kind": "label",
         "destinations": {
             "bt1d_start": {
-                "need_label": "bt1d_start"
+                "need_label": "true_streaming"
             }
         }
     },
@@ -248,7 +248,7 @@
         "kind": "label",
         "destinations": {
             "book_iwi_box": {
-                "need_label": "train_dialogue"
+                "need_persistent": "got_awawad"
             }
         }
     },
