@@ -24,6 +24,12 @@ python early:
             self.hover_spine = f"selectable:gui/books/{book_id}/side.png"
             self.front = f"gui/books/{book_id}/cover.png"
 
+    def __str__(self) -> str:
+        return f"<Book {self.book_id} \"{self.title}\">"
+
+    def __repr__(self) -> str:
+        return self.__str__()
+
 screen subgame():
     tag menu
     image "gui/subgame_menu.png"
