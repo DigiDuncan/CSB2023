@@ -119,12 +119,15 @@ screen people():
                         for k in sort_mode:
                             python:
                                 # DX/CE character handler
+
+                                unread_indicator = get_themed_attribute("new")
+
                                 if name_map[k].get('dx', False):
-                                    name_label = "{image=/gui/inline_text/unread.png}{image=gui/inline_text/dx_text.png} " + name_map[k]['full_name'] if k not in persistent.read else "{image=gui/inline_text/dx_text.png} " + name_map[k]['full_name']
+                                    name_label = "{image=[unread_indicator]}{image=gui/inline_text/dx_text.png} " + name_map[k]['full_name'] if k not in persistent.read else "{image=gui/inline_text/dx_text.png} " + name_map[k]['full_name']
                                 elif name_map[k].get('ce', False):
-                                    name_label = "{image=/gui/inline_text/unread.png}{image=gui/inline_text/ce_text.png} " + name_map[k]['full_name'] if k not in persistent.read else "{image=gui/inline_text/ce_text.png} " + name_map[k]['full_name']
+                                    name_label = "{image=[unread_indicator]}{image=gui/inline_text/ce_text.png} " + name_map[k]['full_name'] if k not in persistent.read else "{image=gui/inline_text/ce_text.png} " + name_map[k]['full_name']
                                 else:
-                                    name_label = "{image=/gui/inline_text/unread.png}" + name_map[k]['full_name'] if k not in persistent.read else name_map[k]['full_name']
+                                    name_label = "{image=[unread_indicator]}" + name_map[k]['full_name'] if k not in persistent.read else name_map[k]['full_name']
                             if k == "iris":
                                 textbutton name_label:
                                     action [

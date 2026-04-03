@@ -339,8 +339,8 @@
     "minigame_pencil": {
         "title": "Pencil Sharpening Day",
         "desc": "Can you get a perfect score?",
-        "x_pos": 250,
-        "y_pos": 815,
+        "x_pos": 290,
+        "y_pos": 830,
         "kind": "label",
         "destinations": {
             "play_pencil_game": {

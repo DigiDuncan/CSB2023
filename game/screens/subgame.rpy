@@ -71,20 +71,34 @@ screen subgame():
                 )
 
     for book in bookshelf:
-        imagebutton:
-            idle book.spine
-            hover book.hover_spine
-            selected_idle book.hover_spine
-            selected_hover book.hover_spine
-            selected (current_book is not None and current_book.book_id == book.book_id)
-            hover_sound "audio/sfx/sfx_select.ogg"
-            action [
-                Play("sound", "audio/sfx/sfx_valid.ogg"),
-                SelectedIf(SetScreenVariable("current_book", book)),
-                With(Dissolve(0.25))
-            ]
+        $ spine_size = get_size(book.spine)
+        frame:
+            background None
+            xoffset -6 yoffset -6
+            xsize spine_size[0] ysize spine_size[1]
+
             xpos book.x_pos
             ypos book.y_pos
+
+            imagebutton:
+                idle book.spine
+                hover book.hover_spine
+                selected_idle book.hover_spine
+                selected_hover book.hover_spine
+                selected (current_book is not None and current_book.book_id == book.book_id)
+                hover_sound "audio/sfx/sfx_select.ogg"
+                action [
+                    Play("sound", "audio/sfx/sfx_valid.ogg"),
+                    SelectedIf(SetScreenVariable("current_book", book)),
+                    With(Dissolve(0.25))
+                ]
+
+            add get_themed_attribute("new"):
+                xalign 0.5 yalign 1.0
+                xoffset 6 yoffset 55
+            
+
+            
 
     if current_book is not None:
         frame:
