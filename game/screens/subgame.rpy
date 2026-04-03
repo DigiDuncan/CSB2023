@@ -76,12 +76,11 @@ screen subgame():
             hover book.hover_spine
             selected_idle book.hover_spine
             selected_hover book.hover_spine
-            selected current_book == book
+            selected (current_book is not None and current_book.book_id == book.book_id)
             hover_sound "audio/sfx/sfx_select.ogg"
             action [
                 Play("sound", "audio/sfx/sfx_valid.ogg"),
                 SelectedIf(SetScreenVariable("current_book", book)),
-                Notify(current_book),
                 With(Dissolve(0.25))
             ]
             xpos book.x_pos
