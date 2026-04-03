@@ -513,12 +513,8 @@ init python:
 
     def fun_value_found():
         # hide any previous instance of the indicator
-        renpy.hide("_fun_value")
-        renpy.hide("_fun_value_music")
-        renpy.hide("_fun_value_fish")
-        renpy.hide("_fun_value_found")
-
-        renpy.show("_fun_value_found",[_fun_value_fade,_fun_value_motion],"fun_icon")
+        renpy.hide_screen("fun_value_indicator")
+        renpy.show_screen("fun_value_indicator", "found")
         renpy.play("audio/sfx/sfx_sparkle.ogg", channel = "notification")
 
     # File listing
