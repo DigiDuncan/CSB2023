@@ -142,25 +142,28 @@ screen subgame():
 
                         if show_this:
                             button:
-                                xsize 215 ysize 87
-                                xalign 0.5 yalign 1.0
-
-                                idle_background get_themed_attribute("button/button")
-                                hover_background get_themed_attribute("button/button", prefix="selectable")
                                 hover_sound "audio/sfx/sfx_select.ogg"
-
-                                text _(button_text):
-                                    xalign 0.5 yalign 0.5
-                                    text_align 0.5
-                                    size 64
-
-                                    color gui.text_color
-                                    hover_color gui.text_color
-
                                 action [
                                     Play("sound", "audio/sfx/sfx_valid.ogg"),
                                     Start(l)
                                 ]
+
+                                frame:
+                                    xminimum 215 xmaximum 400
+                                    ysize 87
+                                    xalign 0.5 yalign 1.0
+                                    padding (20, 0, 20, 0)
+                                    
+                                    idle_background Frame(get_themed_attribute("button/button"), 10, 10)
+                                    hover_background Frame(get_themed_attribute("button/button", prefix="selectable") , 10, 10)
+
+                                    text button_text:
+                                        xalign 0.5 yalign 0.5
+                                        text_align 0.5
+                                        size 64
+
+                                        color gui.text_color
+                                        hover_color gui.text_color
 
             elif current_subgame_kind == "menu":
                 hbox:
@@ -170,7 +173,7 @@ screen subgame():
 
                     for l, d in current_subgame_destinations.items():
                         python:
-                            button_text = d.get("custom_button", "OPEN")
+                            button_text = d.get("custom_button", _("OPEN"))
                             show_this = True
                             if "need_label" in d:
                                 if not renpy.seen_label(d["need_label"]):
@@ -181,26 +184,28 @@ screen subgame():
 
                         if show_this:
                             button:
-                                xsize 215 ysize 87
-                                xalign 0.5 yalign 1.0
-
-                                idle_background get_themed_attribute("button/button")
-                                hover_background get_themed_attribute("button/button", prefix="selectable")
                                 hover_sound "audio/sfx/sfx_select.ogg"
-
-                                text _(button_text):
-                                    xalign 0.5 yalign 0.5
-                                    text_align 0.5
-                                    size 64
-
-                                    color gui.text_color
-                                    hover_color gui.text_color
-
                                 action [
                                     Play("sound", "audio/sfx/sfx_valid.ogg"),
                                     ShowMenu(l)
                                 ]
 
+                                frame:
+                                    xminimum 215 xmaximum 400
+                                    ysize 87
+                                    xalign 0.5 yalign 1.0
+                                    padding (20, 0, 20, 0)
+                                    
+                                    idle_background Frame(get_themed_attribute("button/button"), 10, 10)
+                                    hover_background Frame(get_themed_attribute("button/button", prefix="selectable") , 10, 10)
+
+                                    text button_text:
+                                        xalign 0.5 yalign 0.5
+                                        text_align 0.5
+                                        size 64
+
+                                        color gui.text_color
+                                        hover_color gui.text_color
     textbutton _("Back"):
         background None
         xoffset 25 yoffset 1000
