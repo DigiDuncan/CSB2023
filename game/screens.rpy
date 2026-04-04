@@ -277,11 +277,9 @@ style window:
     background Image(get_themed_attribute("textbox"), xalign=0.5, yalign=1.0)
 
 style namebox:
-    xpos gui.name_xpos
+    xpos gui.name_xpos ypos gui.name_ypos
     xanchor gui.name_xalign
-    xsize gui.namebox_width
-    ypos gui.name_ypos
-    ysize gui.namebox_height
+    xsize gui.namebox_width ysize gui.namebox_height
 
     background Frame(get_themed_attribute("namebox"), gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
     padding gui.namebox_borders.padding

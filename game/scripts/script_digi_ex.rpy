@@ -3,9 +3,9 @@ init python:
     import math
     import json
 
-    line_list = renpy.open_file("secret/dd/code.txt", "utf-8").read().replace("[", "[[").split("\n")
-    chart_enemy = renpy.open_file("secret/dd/missingno_enemy.json", "utf-8").read()
-    chart_player = renpy.open_file("secret/dd/missingno_player.json", "utf-8").read()
+    line_list = renpy.open_file("minigames/digiex/code.txt", "utf-8").read().replace("[", "[[").split("\n")
+    chart_enemy = renpy.open_file("minigames/digiex/missingno_enemy.json", "utf-8").read()
+    chart_player = renpy.open_file("minigames/digiex/missingno_player.json", "utf-8").read()
 
     _current_st = 0
 
@@ -52,7 +52,7 @@ init python:
         latest_note = index.lteq(st)
         if latest_note:
             a = ease_linear(1, 0, latest_note.time + latest_note.length, latest_note.time + latest_note.length + 0.25, st)
-            return Transform(Image(f"secret/dd/{note_type}_{latest_note.lane}.png"), alpha = a), 0.01
+            return Transform(Image(f"minigames/digiex/{note_type}_{latest_note.lane}.png"), alpha = a), 0.01
         else:
             return Null(width = 128), 0.01
 
@@ -88,7 +88,7 @@ init python:
         return r
 
     def digi_ex_displayable(st, at):
-        # img = "secret/dd/digi_back.png" if 5 < st % 20 < 15 else "images/characters/digi.png"
+        # img = "minigames/digiex/digi_back.png" if 5 < st % 20 < 15 else "images/characters/digi.png"
         img = "images/characters/digi/thinking.png"
         return Transform(img,
             xanchor = 0.5, yanchor = 0.5,
@@ -399,11 +399,11 @@ init python:
     )
 
 init 0:
-    image fractal = "secret/dd/green.png"
-    image num = spritesheet_animation("secret/dd/num.png", 10, 1, looping = True)
+    image fractal = "minigames/digiex/green.png"
+    image num = spritesheet_animation("minigames/digiex/num.png", 10, 1, looping = True)
     image arrow_bf = DynamicDisplayable(charm_arrow_bf)
     image arrow_mno = DynamicDisplayable(charm_arrow_mno)
-    image digi back = "secret/dd/digi_back.png"
+    image digi back = "minigames/digiex/digi_back.png"
     image digi ex = DynamicDisplayable(digi_ex_displayable)
     image flash = DynamicDisplayable(flash_f)
 init 1:
@@ -464,13 +464,13 @@ transform note(index):
 image code = DynamicDisplayable(show_code_big)
 image code2 = DynamicDisplayable(show_code_small)
 
-define audio.missingno_start = "secret/dd/missingno_start.ogg"
-define audio.missingno_loop = "secret/dd/missingno_loop.ogg"
-define audio.missingno_end = "secret/dd/missingno_end.ogg"
+define audio.missingno_start = "minigames/digiex/missingno_start.ogg"
+define audio.missingno_loop = "minigames/digiex/missingno_loop.ogg"
+define audio.missingno_end = "minigames/digiex/missingno_end.ogg"
 
 define digi_ex = Character("Digi EX",
     callback = renpy.partial(char_callback, name = "digi", beep = "digi"),
-    window_background = "secret/dd/TextBox_Sci-Fi_02_transparent.png",
+    window_background = "minigames/digiex/TextBox_Sci-Fi_02_transparent.png",
     who_left_padding = 210, who_top_padding = 25,
     what_left_padding = 320,
     who_xoffset = 210, what_xoffset = 320,

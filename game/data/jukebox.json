@@ -1761,7 +1761,7 @@
             "trivia": "\"Y'know, I was expecting a lot more remixes of this song to exist...\" -- Tate"
         },
       "missingno" : {
-            "file": "secret/dd/missingno_full.ogg",
+            "file": "missingno_full.ogg",
             "title": "MissingNo",
             "artist": "TheInnuendo",
             "tags": ["New In DX"],
