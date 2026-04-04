@@ -32,6 +32,14 @@ python early:
 
     def read_all_books():
         for book in BOOKS_MAP:
+            show_this = True
+            d = BOOKS_MAP[book]
+            if "need_label" in d:
+                if not renpy.seen_label(d["need_label"]):
+                    show_this = False
+            if "need_persistent" in d:
+                if not getattr(persistent, d["need_persistent"]):
+                    show_this = False
             persistent.opened.add(book)
 
 
@@ -41,6 +49,7 @@ screen subgame():
 
     default bookshelf = []
     default current_book = None
+    default new_count = 0
 
     python:
         bookshelf = []
@@ -215,15 +224,21 @@ screen subgame():
         text_hover_outlines [(4.5, "#000000", absolute(0), absolute(0))]
         action Return()
 
-    textbutton _("Mark All Read"):
-        background None
-        xoffset 900 yoffset 5
-    
-        xanchor 1.0
-        text_color "#000000"
-        text_align 1.0
-        text_outlines [(4.5, "#FFFFFF", absolute(0), absolute(0))]
+    python:
+        for book in bookshelf:
+            if book.book_id not in persistent.opened:
+                new_count += 1
 
-        text_hover_color "#FFFFFF"
-        text_hover_outlines [(4.5, "#000000", absolute(0), absolute(0))]
-        action Function(read_all_books)
+    if new_count > 0:
+        textbutton _("Mark All Read"):
+            background None
+            xoffset 900 yoffset 5
+        
+            xanchor 1.0
+            text_color "#000000"
+            text_align 1.0
+            text_outlines [(4.5, "#FFFFFF", absolute(0), absolute(0))]
+
+            text_hover_color "#FFFFFF"
+            text_hover_outlines [(4.5, "#000000", absolute(0), absolute(0))]
+            action Function(read_all_books), SetScreenVariable("new_count", 0)
