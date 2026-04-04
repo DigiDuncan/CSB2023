@@ -33,6 +33,7 @@ init 10 python:
         persistent.csb3a_unlocked = True
         persistent.csb3b_unlocked = True
         persistent.defeated_perfect_tate = True
+        persistent.got_awawad = True
         persistent.awawa_mode = True
         persistent.saved_christmas = True
         for label in renpy.get_all_labels():
