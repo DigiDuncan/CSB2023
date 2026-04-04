@@ -21,4 +21,4 @@ unlock_requirement refers to a value that must be added to persistent.unlocked_t
 
 perf_warning is a warning to the player regarding themes that use heavier assets such as webm backgrounds.
 
-letterbox_color is the color behind the screen (what you'd see if there's a blank scene or something).
+letterbox_color is the color you'd see on the sides of the screen if you're not playing in fullscreen.
