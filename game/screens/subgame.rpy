@@ -24,11 +24,16 @@ python early:
             self.hover_spine = f"selectable:gui/books/{book_id}/side.png"
             self.front = f"gui/books/{book_id}/cover.png"
 
-    def __str__(self) -> str:
-        return f"<Book {self.book_id} \"{self.title}\">"
+        def __str__(self) -> str:
+            return f"<Book {self.book_id} \"{self.title}\">"
 
-    def __repr__(self) -> str:
-        return self.__str__()
+        def __repr__(self) -> str:
+            return self.__str__()
+
+    def read_all_books():
+        for book in BOOKS_MAP:
+            persistent.opened.add(book)
+
 
 screen subgame():
     tag menu
@@ -209,3 +214,15 @@ screen subgame():
         text_hover_color "#FFFFFF"
         text_hover_outlines [(4.5, "#000000", absolute(0), absolute(0))]
         action Return()
+
+    textbutton _("Read All"):
+        background None
+        xoffset 750 yoffset 1000
+    
+        text_color "#000000"
+        text_align 1.0
+        text_outlines [(4.5, "#FFFFFF", absolute(0), absolute(0))]
+
+        text_hover_color "#FFFFFF"
+        text_hover_outlines [(4.5, "#000000", absolute(0), absolute(0))]
+        action Function(read_all_books)

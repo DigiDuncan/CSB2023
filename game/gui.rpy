@@ -23,6 +23,25 @@ init python:
 
     font_cache = {}
 
+    def get_themed_config(k: str):
+        global default_theme_map
+        theme_name = preferences.gui_theme if hasattr(preferences, "gui_theme") else "default"
+
+        # Attempt to load in theme. 
+        try:
+            with renpy.open_file(f"gui/themes/{theme_name}/config.json") as f:
+                j = json.load(f)
+        except:
+            raise ValueError("Theme not loading!")
+
+        if k in j:
+            return j[k]
+        elif k in default_theme_map:
+            return default_theme_map[k]
+        else:
+            logger.warn(f"{k} not in theme, and fallback failed!")
+            raise ValueError(k)
+
     def reload_theme(theme_name, force_changed):
         global gui_theme_map
         global gui
@@ -32,6 +51,8 @@ init python:
             with renpy.open_file(f"gui/themes/{theme_name}/config.json") as f:
                 j = json.load(f)
 
+            # This is staying here despite being a copy of get_themed_config, since it
+            # is more efficent.
             def _get(k):
                 nonlocal j
                 global default_theme_map

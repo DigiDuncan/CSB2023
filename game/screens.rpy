@@ -1046,6 +1046,17 @@ screen preferences():
                         hovered [Function(get_mouse), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
                         tooltip _("Changes to an easier-to-read font.")
 
+                    # Dyslexia mode
+                    textbutton _("Force Letterbox Color to Black"):
+                        action [
+                            ToggleField(preferences, "force_letterbox_color"),
+                            SelectedIf(not preferences.force_letterbox_color),
+                            If(preferences.force_letterbox_color, SetField(config, "gl_clear_color", "#000000"), SetField(config, "gl_clear_color", get_themed_config("letterbox_color"))),
+                            Function(renpy.restart_interaction)
+                        ]
+                        hovered [Function(get_mouse), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
+                        tooltip _("Forces the side colors to black instead of the color the current theme sets.")
+
                 vbox:
                     style_prefix "check"
                     label _("Visual Options")
