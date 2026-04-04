@@ -51,6 +51,9 @@ image stage_screen = Window(Layer("broadcast", clipping = False), background = "
 # Custom URL handlers?
 define config.hyperlink_handlers["sound"] = renpy.sound.play
 
+# Blue
+define config.gl_clear_color = "#003d51"
+
 # Checks: CSB1
 default ch1_direction = "left"
 default ch1_direction_sprite = 6
