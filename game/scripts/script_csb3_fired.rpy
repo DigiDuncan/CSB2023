@@ -1059,7 +1059,7 @@ label fired_first_tour_day:
     linus "Listen, don't worry about it."
     show cs surprised
     cs "Really?"
-    linus "Yeah, I was too hard on you. Maybe too quick to fire you, too, though it looks like you're in a better position than I could have offered you."
+    linus "Yeah, I was too hard on you. Maybe too quick to fire you, too, but it looks like you're in a better position than I could have offered you."
     show cs happy
     cs "Well, thanks for the apology."
     linus "Yeah, you deserve it. Honestly, when the public learned who was editing that video, and that we axed you, they were pretty upset."

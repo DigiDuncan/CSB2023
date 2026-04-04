@@ -260,7 +260,7 @@ label csbi_walmart:
     pause 2.0
     cashier "Have a nice day."
     show cs happy
-    cs "You, too! Bye!"
+    cs "You too! Bye!"
     show cs at mid_offscreen_right with moveoutright
     pause 1.0
     hide pringles
@@ -1016,7 +1016,7 @@ label csbi_home_savers:
     cs "I'm not sure! It's a pretty big house, so it must have happened so slowly that I only {i}just{/i} noticed!"
     show cs
     cs "By the way, it's nice to see you again!"
-    ed "Hey, you, too!"
+    ed "Hey, you too!"
     ed "I've been watching some of your new videos lately. They're always a hoot!"
     ed "I'm glad to see you're still going strong!"
     show cs happy

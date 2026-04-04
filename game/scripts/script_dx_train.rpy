@@ -3575,8 +3575,9 @@ label train_lupin_win:
     mean "I {i}THOUGHT{/i} I RECOGNIZED YOU!{w=1.0}{nw}"
 
     # set up the scene
-    show scroller_forest_night at scroll(-4118,4118,0,0,200,0):
-        matrixcolor SepiaMatrix() # TODO: fix this, it's transparent for some reason in the screenshot
+    # i would use camera here but i need the image that comes after this to be unaffected
+    show scroller_forest_night behind amtrak_cab at scroll(-4118,4118,0,0,200,0):
+        matrixcolor SepiaMatrix()
     show amtrak_cab:
         matrixcolor SepiaMatrix()
     show arceus worried flipped:

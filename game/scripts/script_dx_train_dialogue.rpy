@@ -215,8 +215,8 @@ label train_dialogue:
     mean "Oh, it's CS and Arc?"
     mean "Tell 'em I said hi!"
     tate "Mean says hi!"
-    cs "Hi, Mean!"
-    arceus "Heya, Mean!"
+    cs "Hi, Mean!" (multiple=2)
+    arceus "Heya, Mean!" (multiple=2)
     tate "They both also said hi!"
     mean "Sweet."
     "..."
