@@ -845,7 +845,6 @@ label csbi_end:
     else:
         cs "Alright! Where are the head JoJites?!"
     show worker_1 at right with moveinright
-    # TODO: either this particular dxcom is really quiet or the bgm is really loud
     dxcom hohsisfight
     worker_1 "I don't know!"
     $ persistent.seen.add("hoh_worker")

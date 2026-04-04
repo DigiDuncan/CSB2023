@@ -71,7 +71,7 @@ init python:
             # Remember all the volume.
             for m in mixers:
                 mixer_volume[m] = preferences.get_mixer(m)
-                preferences.set_mixer(m, 0.0) # TODO: this crashes sometimes?
+                preferences.set_mixer(m, 0.0)
 
         preferences.force_mute = not preferences.force_mute
 
@@ -1313,7 +1313,6 @@ screen preferences():
 
                     textbutton _("Unlock All\n{size=-12}Adds all unlockables to persistent.") action Function(unlock_all)          
 
-    # TODO: make this prettier later
     $ info = GetTooltip()
     $ info_x = mouse_xy[0]
     $ info_y = mouse_xy[1]

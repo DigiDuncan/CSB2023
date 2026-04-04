@@ -1585,7 +1585,7 @@
             "trivia": "\"Since {i}Train Route{/i} had a few scenes from the point-of-view of Lupin III, I decided to swap the perspective to the main crew doing detective work.\" -- Pakoo"
         },
         "run_for_your_life" : {
-            "file": "run_for_your_life.mp3",
+            "file": "run_for_your_life.ogg",
             "title": "Run For Your Life!",
             "artist": "Tistou Blomberg (Arr. Pakoo)",
             "tags": ["CSBDX: Plane", "New In DX"],

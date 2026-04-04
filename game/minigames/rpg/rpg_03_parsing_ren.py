@@ -179,7 +179,7 @@ def lint_rpg(parsed_object: ParsedRpg):
     elif on_win is None:
         logger.warn("raise issue!!!")
     elif on_lose is None:
-        logger.warnt("raise issue!")
+        logger.warn("raise issue!")
     elif fighters is not None and allies or enemies:
         logger.warn("raise issues!")
     elif fighters:

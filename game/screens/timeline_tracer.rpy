@@ -313,7 +313,7 @@ screen timeline_tracer():
 
                             hover_sound "audio/sfx/sfx_select.ogg"
 
-                # TODO: make this prettier later
+                
                 $ tooltip = GetTooltip()
 
                 if tooltip:

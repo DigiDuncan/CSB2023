@@ -1109,7 +1109,6 @@ label csbiii_arc_escape:
     show cs worried dark
     show arceus worried dark
 
-    # TODO: implement multiple dialogue screen
     cs "{i}Shit!" (multiple=2)
     arceus "{i}Shit!" (multiple=2)
 

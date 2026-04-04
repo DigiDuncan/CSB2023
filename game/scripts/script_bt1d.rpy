@@ -1,11 +1,8 @@
 # TODO: replace image/description for achievement for completing this route
-# TODO: fill in bio info, the skeletons already exist
+# TODO: fill in bios info, the skeletons already exist
 # TODO: sprites/beeps for everyone
-# TODO: fix horse's beep
-# TODO: fix RPG stats for CEO/Secretary
+# TODO: fix RPG stats/moves for CEO/Secretary
 # TODO: fix all RPG stages, they're currently using the values from Copguy EX
-# TODO: make Lad an RPG ally?
-# TODO: where did you want Drive to play, Digi? I can't find that comment?
 
 label bt1d_start:
     scene black with dissolve
@@ -969,6 +966,9 @@ label bt1d_afterbball:
 
 label bt1d_cvs:
     play sound2 sfx_ambience_nugget loop
+    play music drive
+    music drive
+
     scene nugget_cockpit_back:
         zoom 0.5
     show digi at right
@@ -994,6 +994,7 @@ label bt1d_cvs:
     digi "Anywho, to CVS!"
     scene black with dissolve
     play sound sfx_nugget_takeoff
+    stop music fadeout 5.0
     stop sound2 fadeout 5.0
     pause 7.0
 

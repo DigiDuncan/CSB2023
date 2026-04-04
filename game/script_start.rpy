@@ -38,9 +38,8 @@ init 10 python:
         persistent.saved_christmas = True
         for label in renpy.get_all_labels():
             renpy.mark_label_seen(label)
-        # TODO: we need a better way to unlock themes
-        persistent.unlocked_themes.add("christmas")
-        persistent.unlocked_themes.add("tate")
+        for theme in sorted(THEME_MAP, key=lambda k: THEME_MAP[k]['sort_order']):
+            persistent.unlocked_themes.add(theme)
 
     def jump_to_label_start():
         renpy.jump(store.last_label)

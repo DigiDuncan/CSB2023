@@ -2271,7 +2271,6 @@ image nugget_inside = "bg/nugget/nugget_inside.png"
 # DX BT1D Generated Images
 image ewwie = SnowBlossom("cold_breath.png", count = 100, fast = True, xspeed = (0,0), yspeed = (0, -100), border = 256)
 
-# TODO: make these prettier later
 image txt_no_d:
     xsize 500
     ysize 100

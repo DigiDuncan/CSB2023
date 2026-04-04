@@ -1055,8 +1055,8 @@ label true_win_pencil:
         billy "Don't you dare take a dump in my car!"
     else:
         cs "Well, that was a lot of excitement for one day. Let's head home."
-        n "Despite working harder to support CS, Arceus can't help but look relieved to get back on track." # TODO: rewrite? - tate
         arceus "Absolutely."
+        n "Despite working harder to support CS, Arceus can't help but look relieved to get back on track."
         billy "Let's get back in my car!"
 
     scene cc_parking_lot

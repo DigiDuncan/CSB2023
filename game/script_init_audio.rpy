@@ -197,7 +197,7 @@ define audio.abra_shop = "abra_shop.ogg"
 define audio.huge_pillar = "huge_pillar.ogg"
 define audio.pyrite_town = "pyrite_town.ogg"
 define audio.cipher_lab = "cipher_lab.ogg"
-define audio.run_for_your_life = "run_for_your_life.mp3" # TODO: convert to ogg for consistency
+define audio.run_for_your_life = "run_for_your_life.ogg"
 
 # CSBDX Kuwait Music
 define audio.tmwstw = "tmwstw.ogg"
@@ -501,7 +501,7 @@ define audio.sfx_whisper = "sfx/sfx_whisper.ogg"
 define audio.sfx_wilhelm_scream = "sfx/sfx_wilhelm_scream.ogg"
 define audio.sfx_whoosh = "sfx/sfx_whoosh.ogg"
 define audio.sfx_windows_logon = "sfx/sfx_windows_logon.ogg"
-define audio.sfx_woohoo = "sfx/sfx_woohoo.wav" # TODO: why is this one a wav? is this intended? - tate
+define audio.sfx_woohoo = "sfx/sfx_woohoo.ogg"
 define audio.sfx_xbox_achieve = "sfx/sfx_xbox_achieve.ogg"
 define audio.sfx_yelling = "sfx/sfx_yelling.ogg"
 define audio.sfx_ytpintro = "sfx/sfx_ytpintro.ogg"

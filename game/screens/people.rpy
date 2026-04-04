@@ -311,7 +311,7 @@ screen people():
                                                                     hp = _fighter.base_hp
                                                                     attack = _fighter.base_atk
                                                                     defense = _fighter.base_def
-                                                                    # TODO: add accuracy + AI type?
+                                                                    ai = _fighter.base_ai.name
                                                                     attack_data = [ ]
                                                                     for a in _fighter.attacks:
                                                                         attack_data.append((a.name, a.properties, a.description))
@@ -319,6 +319,12 @@ screen people():
                                                                 text stat_set_name:
                                                                     xalign 0.5
                                                                     text_align 0.5
+
+                                                                text "AI Type: "+ai:
+                                                                    xalign 0.5
+                                                                    text_align 0.5
+                                                                    size 32
+                                                                    color gui.idle_color
 
                                                                 frame:
                                                                     xsize 1.0

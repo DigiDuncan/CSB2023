@@ -96,9 +96,8 @@ init python:
 
 
 screen controllertest():
-    default controllertest = ControllerTestDisplayable()
     # Add a background or any static images here.
-    add controllertest
+    add ControllerTestDisplayable()
 
     # TODO: we need a way to return to the previous menu that is compatible with all types of controls. i got nothing - tate
     textbutton _("Back"):
@@ -129,7 +128,3 @@ label play_controllertest:
     else:
         pass
         # Thing for lose condition
-
-label controllertest_done:
-    # Thing to do after the game if we reach here.
-    pass
