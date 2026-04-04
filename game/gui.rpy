@@ -67,6 +67,8 @@ init python:
             gui.choice_button_text_hover_color = _get("choice_button_text_hover_color")
             gui.choice_button_text_insensitive_color = _get("choice_button_text_insensitive_color")
 
+            config.gl_clear_color = _get("letterbox_color")
+
             # Fix fonts
             config.font_name_map["default"] = _get("main_font")
             config.font_name_map["cn"] = _get("cn_font")

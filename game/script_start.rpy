@@ -52,7 +52,7 @@ image stage_screen = Window(Layer("broadcast", clipping = False), background = "
 define config.hyperlink_handlers["sound"] = renpy.sound.play
 
 # Blue
-define config.gl_clear_color = "#003d51"
+define config.gl_clear_color = "#000000"
 
 # Checks: CSB1
 default ch1_direction = "left"

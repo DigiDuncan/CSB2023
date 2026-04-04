@@ -27,6 +27,7 @@
     "choice_button_text_hover_color": "#FFFFFF",
     "choice_button_text_insensitive_color": "#8888887F",
 
+    "letterbox_color": "#0B4A0D",
     "screen_transparency_layer": "#312525BF",
     "image_button_idle": "#117114",
     "image_button_hover": "#1BB320",
