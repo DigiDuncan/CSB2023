@@ -961,7 +961,7 @@
             "It's The Boi!": "images/characters/lad/bio.png",
             "Default": "images/characters/lad/default.png"
         },
-        "quote": "*jingling sounds*",
+        "quote": "{a=sound:/audio/sfx/sfx_lad.ogg}*jingling sounds*{/a}",
         "bio": "Lad is Digi's Kricketot companion, and is always by their side. Usually perched on Digi's shoulder, he may not look like much, but he's the key to many of Digi's adventures. Lad doesn't want to evolve, so he's going to stay a nugget until the end of time.",
         "dx": true,
         "rpg": {

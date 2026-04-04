@@ -119,7 +119,6 @@ screen people():
                         for k in sort_mode:
                             python:
                                 # DX/CE character handler
-
                                 unread_indicator = get_themed_attribute("new")
 
                                 if name_map[k].get('dx', False):
@@ -379,14 +378,8 @@ screen people():
                                                                     text_align 0.5
                                                                 null height 32
                                         else:
-                                            # For Digi
-                                            if current_person != "lad":
-                                                text "\"" + name_map[current_person]["quote"] + "\"\n\n" + (fetched)
-                                            else:
-                                                textbutton _("\"*jingling sounds*\""):
-                                                    action Play("sound","/audio/sfx/sfx_lad.ogg")
-                                                text  "\n\n" + (fetched)
-
+                                            text "\"" + name_map[current_person]["quote"] + "\"\n\n" + (fetched)
+                
 ###################################################### SPRITES
 
                                 ### bounding box for sprites

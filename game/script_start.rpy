@@ -48,6 +48,9 @@ init 10 python:
 define config.detached_layers += ["broadcast"]
 image stage_screen = Window(Layer("broadcast", clipping = False), background = "minigames/pencil/stage.png")
 
+# Custom URL handlers?
+define config.hyperlink_handlers["sound"] = renpy.sound.play
+
 # Checks: CSB1
 default ch1_direction = "left"
 default ch1_direction_sprite = 6
