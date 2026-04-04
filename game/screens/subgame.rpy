@@ -215,10 +215,11 @@ screen subgame():
         text_hover_outlines [(4.5, "#000000", absolute(0), absolute(0))]
         action Return()
 
-    textbutton _("Read All"):
+    textbutton _("Mark All Read"):
         background None
-        xoffset 750 yoffset 1000
+        xoffset 900 yoffset 5
     
+        xanchor 1.0
         text_color "#000000"
         text_align 1.0
         text_outlines [(4.5, "#FFFFFF", absolute(0), absolute(0))]

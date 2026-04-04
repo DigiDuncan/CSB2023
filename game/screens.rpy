@@ -1047,7 +1047,7 @@ screen preferences():
                         tooltip _("Changes to an easier-to-read font.")
 
                     # Dyslexia mode
-                    textbutton _("Force Letterbox Color to Black"):
+                    textbutton _("Force Black Letterbox"):
                         action [
                             ToggleField(preferences, "force_letterbox_color"),
                             SelectedIf(not preferences.force_letterbox_color),
@@ -1055,7 +1055,7 @@ screen preferences():
                             Function(renpy.restart_interaction)
                         ]
                         hovered [Function(get_mouse), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
-                        tooltip _("Forces the side colors to black instead of the color the current theme sets.")
+                        tooltip _("Forces the side colors to black instead of the current theme color.")
 
                 vbox:
                     style_prefix "check"
