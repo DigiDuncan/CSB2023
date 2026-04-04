@@ -90,6 +90,7 @@ screen subgame():
                 action [
                     Play("sound", "audio/sfx/sfx_valid.ogg"),
                     SelectedIf(SetScreenVariable("current_book", book)),
+                    SensitiveIf(True),
                     AddToSet(persistent.opened, book.book_id),
                     With(Dissolve(0.25))
                 ]
@@ -146,89 +147,58 @@ screen subgame():
                         fit("contain")
 
             # Play button
-            if current_book.kind == "label":
-                hbox:
-                    xalign 0.5 yalign 1.0
-                    yoffset -24
-                    spacing 24
+            hbox:
+                xalign 0.5 yalign 1.0
+                yoffset -24
+                spacing 24
 
-                    for l, d in current_book.destinations.items():
-                        python:
+                for l, d in current_book.destinations.items():
+                    python:
+                        if current_book.kind == "label":
                             button_text = d.get("custom_button", "PLAY")
-                            show_this = True
-                            if "need_label" in d:
-                                if not renpy.seen_label(d["need_label"]):
-                                    show_this = False
-                            if "need_persistent" in d:
-                                if not getattr(persistent, d["need_persistent"]):
-                                    show_this = False
+                        elif current_book.kind == "menu":
+                            button_text = d.get("custom_button", "OPEN")
+                
+                        show_this = True
+                        if "need_label" in d:
+                            if not renpy.seen_label(d["need_label"]):
+                                show_this = False
+                        if "need_persistent" in d:
+                            if not getattr(persistent, d["need_persistent"]):
+                                show_this = False
 
-                        if show_this:
-                            button:
-                                hover_sound "audio/sfx/sfx_select.ogg"
+                    if show_this:
+                        button:
+                            hover_sound "audio/sfx/sfx_select.ogg"
+
+                            if current_book.kind == "label":
                                 action [
                                     Play("sound", "audio/sfx/sfx_valid.ogg"),
                                     Start(l)
                                 ]
-
-                                frame:
-                                    xminimum 215 xmaximum 400
-                                    ysize 87
-                                    xalign 0.5 yalign 1.0
-                                    padding (20, 0, 20, 0)
-                                    
-                                    idle_background Frame(get_themed_attribute("button/button"), 10, 10)
-                                    hover_background Frame(get_themed_attribute("button/button", prefix="selectable") , 10, 10)
-
-                                    text button_text:
-                                        xalign 0.5 yalign 0.5
-                                        text_align 0.5
-                                        size 64
-
-                                        color gui.text_color
-                                        hover_color gui.text_color
-
-            elif current_book.kind == "menu":
-                hbox:
-                    xalign 0.5 yalign 1.0
-                    yoffset -24
-                    spacing 24
-
-                    for l, d in current_book.destinations.items():
-                        python:
-                            button_text = d.get("custom_button", _("OPEN"))
-                            show_this = True
-                            if "need_label" in d:
-                                if not renpy.seen_label(d["need_label"]):
-                                    show_this = False
-                            if "need_persistent" in d:
-                                if not getattr(persistent, d["need_persistent"]):
-                                    show_this = False
-
-                        if show_this:
-                            button:
-                                hover_sound "audio/sfx/sfx_select.ogg"
+                            elif current_book.kind == "menu":
                                 action [
                                     Play("sound", "audio/sfx/sfx_valid.ogg"),
                                     ShowMenu(l)
                                 ]
 
-                                frame:
-                                    xminimum 215 xmaximum 400
-                                    ysize 87
-                                    xalign 0.5 yalign 1.0
-                                    padding (20, 0, 20, 0)
-                                    
-                                    idle_background Frame(get_themed_attribute("button/button"), 10, 10)
-                                    hover_background Frame(get_themed_attribute("button/button", prefix="selectable") , 10, 10)
+                            frame:
+                                xminimum 215 xmaximum 400
+                                ysize 87
+                                xalign 0.5 yalign 1.0
+                                padding (20, 0, 20, 0)
+                                
+                                idle_background Frame(get_themed_attribute("button/button"), 10, 10)
+                                hover_background Frame(get_themed_attribute("button/button", prefix="selectable") , 10, 10)
 
-                                    text button_text:
-                                        xalign 0.5 yalign 0.5
-                                        text_align 0.5
-                                        size 64
+                                text button_text:
+                                    xalign 0.5 yalign 0.5
+                                    text_align 0.5
+                                    size 64
 
-                                        color gui.text_color
-                                        hover_color gui.text_color
+                                    color gui.text_color
+                                    hover_color gui.text_color
+
     textbutton _("Back"):
         background None
         xoffset 25 yoffset 1000
