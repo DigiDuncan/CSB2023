@@ -51,7 +51,7 @@ image stage_screen = Window(Layer("broadcast", clipping = False), background = "
 # Custom URL handlers?
 define config.hyperlink_handlers["sound"] = renpy.sound.play
 
-# Blue
+# Letterbox color
 define config.gl_clear_color = "#000000"
 
 # Checks: CSB1
