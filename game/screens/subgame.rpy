@@ -40,7 +40,8 @@ python early:
             if "need_persistent" in d:
                 if not getattr(persistent, d["need_persistent"]):
                     show_this = False
-            persistent.opened.add(book)
+            if show_this:
+                persistent.opened.add(book)
 
 
 screen subgame():
