@@ -704,18 +704,7 @@ screen game_menu(title, scroll=None, yinitial=0.0):
         action Return()
 
     label title
-    $ song = get_now_playing()
-    if song:
-        hbox:
-            add "gui/inline_text/note2.png"
-            marquee:
-                xsize 1900 ysize 70
-                animation marquee_pan(10.0)
-                always_animate True
-                frame:
-                    background None
-                    xsize 1900
-                    text _("{font=music_text}[song[0]] - [song[1]]    ")
+    use music_marquee()
 
     if main_menu:
         key "game_menu" action ShowMenu("main_menu")
