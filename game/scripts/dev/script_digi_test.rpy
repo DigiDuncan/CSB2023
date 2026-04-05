@@ -10,6 +10,7 @@ label _digi_test:
     show digi
     with dissolve
 
+    play music drive
     music drive
 
     digi "Oh, hey, welcome to the Nugget!"
