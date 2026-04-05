@@ -341,6 +341,47 @@ style input:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#choice
 
+screen choice_items(items):
+    style_prefix "choice"
+    frame:
+        background None
+        xalign 0.5 yalign 0.5
+        vbox:
+            spacing gui.choice_spacing
+
+            for i in items:
+                $ choice_type = i.kwargs.get("type")
+                if choice_type == "true" and preferences.streamer_mode:
+                    textbutton i.caption:
+                        text_color "#BA64CE"
+                        text_hover_color "#FFFFFF"
+                        action i.action
+                elif choice_type == "good" and preferences.streamer_mode:
+                    textbutton i.caption:
+                        text_color "#00FF00"
+                        text_hover_color "#FFFFFF"
+                        action i.action
+                elif choice_type == "bad" and preferences.streamer_mode:
+                    textbutton i.caption:
+                        text_color "#FF0000"
+                        text_hover_color "#FFFFFF"
+                        action i.action
+                elif choice_type == "dx":
+                    textbutton "{image=gui/inline_text/dx.png} [i.caption]":
+                        text_color "#0099CC"
+                        text_hover_color "#FFFFFF"
+                        action i.action
+                elif choice_type == "warning":
+                    textbutton "{image=gui/inline_text/warning.png} [i.caption]":
+                        text_color "#FFFF00"
+                        text_hover_color "#FFFFFF"
+                        action i.action
+                else:
+                    textbutton i.caption:
+                        text_color "#888888"
+                        text_hover_color "#FFFFFF"
+                        action i.action
+
 screen choice(items):
     style_prefix "choice"
 
@@ -360,83 +401,9 @@ screen choice(items):
                 mousewheel True
                 draggable True
                 pagekeys True
-                frame:
-                    background None
-                    xalign 0.5 yalign 0.5
-                    vbox:
-                        spacing gui.choice_spacing
-
-                        for i in items:
-                            $ choice_type = i.kwargs.get("type")
-                            if choice_type == "true" and preferences.streamer_mode:
-                                textbutton i.caption:
-                                    text_color "#BA64CE"
-                                    text_hover_color "#FFFFFF"
-                                    action i.action
-                            elif choice_type == "good" and preferences.streamer_mode:
-                                textbutton i.caption:
-                                    text_color "#00FF00"
-                                    text_hover_color "#FFFFFF"
-                                    action i.action
-                            elif choice_type == "bad" and preferences.streamer_mode:
-                                textbutton i.caption:
-                                    text_color "#FF0000"
-                                    text_hover_color "#FFFFFF"
-                                    action i.action
-                            elif choice_type == "dx":
-                                textbutton "{image=gui/inline_text/dx.png} [i.caption]":
-                                    text_color "#0099CC"
-                                    text_hover_color "#FFFFFF"
-                                    action i.action
-                            elif choice_type == "warning":
-                                textbutton "{image=gui/inline_text/warning.png} [i.caption]":
-                                    text_color "#FFFF00"
-                                    text_hover_color "#FFFFFF"
-                                    action i.action
-                            else:
-                                textbutton i.caption:
-                                    text_color "#888888"
-                                    text_hover_color "#FFFFFF"
-                                    action i.action
+                use choice_items(items)
         else:
-            frame:
-                background None
-                xalign 0.5 yalign 0.5
-                vbox:
-                    spacing gui.choice_spacing
-
-                    for i in items:
-                        $ choice_type = i.kwargs.get("type")
-                        if choice_type == "true" and preferences.streamer_mode:
-                            textbutton i.caption:
-                                text_color "#BA64CE"
-                                text_hover_color "#FFFFFF"
-                                action i.action
-                        elif choice_type == "good" and preferences.streamer_mode:
-                            textbutton i.caption:
-                                text_color "#00FF00"
-                                text_hover_color "#FFFFFF"
-                                action i.action
-                        elif choice_type == "bad" and preferences.streamer_mode:
-                            textbutton i.caption:
-                                text_color "#FF0000"
-                                text_hover_color "#FFFFFF"
-                                action i.action
-                        elif choice_type == "dx":
-                            textbutton "{image=gui/inline_text/dx.png} [i.caption]":
-                                text_color "#0099CC"
-                                text_hover_color "#FFFFFF"
-                                action i.action
-                        elif choice_type == "warning":
-                            textbutton "{image=gui/inline_text/warning.png} [i.caption]":
-                                text_color "#FFFF00"
-                                text_hover_color "#FFFFFF"
-                                action i.action
-                        else:
-                            textbutton i.caption:
-                                text_color "#888888"
-                                text_hover_color "#FFFFFF"
-                                action i.action
+            use choice_items(items)
 
 style choice_vbox is vbox
 style choice_button is button
