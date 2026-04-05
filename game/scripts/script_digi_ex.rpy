@@ -115,6 +115,8 @@ init python:
     renpy.add_layer("fore2", above = "digi")
     renpy.add_layer("fore3", above = "fore2")
 
+    config.context_clear_layers.extend(["back", "fore1", "digi", "fore2", "fore3"])
+
 init python:
     # https://www.shadertoy.com/view/tlVGDt
     renpy.register_shader(
@@ -481,7 +483,7 @@ define digi_ex = Character("Digi EX",
     what_outlines = [(absolute(2), "#1eb8c0", absolute(0), absolute(0))],
     who_outlines = [(absolute(2), "#1eb8c0", absolute(0), absolute(0))])
 
-label dx_digi_corruption:
+label dx_digi_ex:
     scene black
     stop music
     camera fore:
@@ -555,4 +557,9 @@ label dx_digi_corruption:
     $ config.window_show_transition = Dissolve(.2)
     $ config.window_hide_transition = Dissolve(.2)
 
-    return
+    python:
+        # This is required to actually get rid of everything.
+        for l in ["back", "fore1", "digi", "fore2", "fore3"]:
+            renpy.scene(layer = l)
+
+    jump _digi_test.test_digi_ex_after

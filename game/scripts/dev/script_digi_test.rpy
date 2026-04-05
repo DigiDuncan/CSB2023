@@ -73,6 +73,8 @@ label _digi_test:
                 jump .test_md
             "Text Shaders":
                 jump .test_text_shaders
+            "Digi EX":
+                jump .test_digi_ex
             "None, actually!" (type = "bad"):
                 show digi happy
                 digi "Alrighty, then!"
@@ -108,4 +110,21 @@ label _digi_test:
 
         show digi happy
         digi "That's all I can be bothered to test right now, but I think we can make our own, too."
+        jump .tests
+
+    label .test_digi_ex:
+        show digi sad
+        digi "OK, I'll take you there, but be warned, if your computer isn't up to snuff, it won't go well."
+        jump dx_digi_ex
+
+    label .test_digi_ex_after:
+        stop music
+        scene black with dissolve
+        play sound sfx_nugget
+        scene nugget_bedroom
+        show digi happy
+        with dissolve
+        play music drive
+        music drive
+        digi "I hope that went well!"
         jump .tests
