@@ -390,8 +390,8 @@ init python:
     def get_now_playing():
         current = re.sub(r'(<.*>)', "", str(renpy.music.get_playing("music")), flags=re.IGNORECASE)
 
+        song = None
         if not current:
-            song = None
             renpy.restart_interaction()
         else:
             for t in MUSIC_MAP:
