@@ -238,12 +238,25 @@ define config.bottom_layers = ["flashlight"]
 default reversi_difficulty = ReversiAI.GOBLIN
 
 # Music popup
-screen music():
+screen music(song, artist):
     layer "music"
     style_prefix "music"
 
     frame at music_appear:
-        image "_music_text"
+        hbox:
+            add "gui/music_note.png":
+                zoom 0.2
+                xoffset 25
+            null width 35
+            vbox:
+                $ song_text = "{font=music_text}" + song if song is not None else ""
+                $ artist_text = "{font=music_text}" + artist if artist is not None else ""
+                text song_text:
+                    size 72
+                    outlines [(4.5, "#000000", 0, 0)]
+                text artist_text:
+                    size 32
+                    outlines [(2.25, "#000000", 0, 0)]
 
     timer 5 action Hide(_layer='music')
 
@@ -268,10 +281,6 @@ python early:
     # MUSIC POP UP
 
     import json
-
-    _current_song = ""
-    _current_artist = ""
-    _current_internal_id = ""
     _played_songs = set()
 
     def parse_music(lexer):
@@ -286,34 +295,28 @@ python early:
         ...
 
     def execute_music(parsed_object):
+        global _played_songs
 
-        global _current_song
-        global _current_artist
-        global _current_internal_id
+        current_internal_id = None
+        current_song = None
+        current_artist = None
 
         if parsed_object is None:
-            _current_song = None
-            _current_artist = None
-            _current_internal_id = None
             return
         if isinstance(parsed_object, str):
-            _current_internal_id = str(parsed_object)
-            _current_song = MUSIC_MAP.get(_current_internal_id)["title"]
-            _current_artist = MUSIC_MAP.get(_current_internal_id)["artist"]
+            current_internal_id = str(parsed_object)
+            current_song = MUSIC_MAP.get(current_internal_id)["title"]
+            current_artist = MUSIC_MAP.get(current_internal_id)["artist"]
         else:
-            _current_internal_id = None
-            _current_song = parsed_object[0]
-            _current_artist = parsed_object[1]
+            current_song = parsed_object[0]
+            current_artist = parsed_object[1]
 
-            # for debugging
-            #logger.info(f"Currently held data: {_current_song} by {_current_artist} | Internal ID: {_current_internal_id}")
-
-        if (_current_song, _current_artist) not in _played_songs:
-            _played_songs.add((_current_song, _current_artist))
-            if _current_internal_id:
-                persistent.heard.add(_current_internal_id)
+        if (current_song, current_artist) not in _played_songs:
+            _played_songs.add((current_song, current_artist))
+            if current_internal_id:
+                persistent.heard.add(current_internal_id)
             renpy.with_statement(determination)
-            renpy.show_screen("music")
+            renpy.show_screen("music", current_song, current_artist)
             renpy.with_statement(determination)
         if all([a in persistent.heard for a in MUSIC_MAP.keys()]):
             achievement_manager.unlock("jukebox")
@@ -383,41 +386,22 @@ screen fun_value_indicator(t):
 init python:
     import re
 
-    # MUSIC POPUP
-    def _music_gen_text(st, at):
-        return HBox(
-            Transform(Image("gui/music_note.png"), zoom = 0.2, xoffset = 25),
-            Null(width = 35),
-            VBox(
-                Text("{font=music_text}" + _current_song if _current_song is not None else "", size = 72, outlines = [(4.5, "#000000", 0, 0)]),
-                Text("{font=music_text}" + _current_artist if _current_artist is not None else "", size = 32, outlines = [(2.25, "#000000", 0, 0)])
-            ),
-            margin = (35, 25)
-        ), None
-
-    renpy.image("_music_text", DynamicDisplayable(_music_gen_text))
-
     # GET CURRENT SONG
-    def set_now_playing():
-
-        global _current_song
-        global _current_artist
-        global _current_internal_id
-
+    def get_now_playing():
         current = re.sub(r'(<.*>)', "", str(renpy.music.get_playing("music")), flags=re.IGNORECASE)
 
         if not current:
-            _current_song = None
-            _current_artist = None
+            song = None
             renpy.restart_interaction()
         else:
             for t in MUSIC_MAP:
                 if current in MUSIC_MAP[t]["file"]:
-                    _current_internal_id = t
-                    _current_song = MUSIC_MAP[t]["title"]
-                    _current_artist = MUSIC_MAP[t]["artist"]
+                    song_id = t
+                    current_song = MUSIC_MAP[t]["title"]
+                    current_artist = MUSIC_MAP[t]["artist"]
+                    song = (current_song, current_artist)
 
-            return _current_internal_id
+        return song
 
     # ANIM CODE LITERALLY FROM CHARM
     def clamp(minVal, val, maxVal):

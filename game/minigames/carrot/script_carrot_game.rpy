@@ -144,13 +144,6 @@ init python:
                 renpy.music.play("minigames/carrot/hotel_disbelief.ogg", loop = False)
                 self.start_time = st
 
-                # Set music popup variables for later, also makes pause screen work
-                global _current_internal_id, _current_artist, _current_song
-                _current_internal_id = "hotel_disbelief"
-                _current_song = "Can You Really Call This A Hotel, I Didn't Receive A Mint On My Pillow Or Anything"
-                _current_artist = "Toby Fox"
-
-
             # Update song time
             t = renpy.music.get_pos()
             t = t if t is not None else SONG_LENGTH
