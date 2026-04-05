@@ -249,7 +249,6 @@ define audio.interference = "<from 0 to 275>interference.ogg"
 
 # CSBDX BT1D Music
 define audio.basketball_music = "basketball_music.ogg"
-define audio.drive = "drive.ogg"
 define audio.able_sisters = "<loop 6.249 to 31.196>able_sisters.ogg"
 define audio.insulrun = "insulrun.ogg"
 
@@ -264,6 +263,14 @@ define audio.ocean_man = "credits.ogg"
 define audio.albuquerque_full = "albuquerque.ogg"
 define audio.we_will_meet_again = "we_will_meet_again.ogg"
 define audio.riders_menu = "riders_menu.ogg"
+
+# Nugget Music
+define audio.drive = "drive.ogg"
+define audio.into_the_night = "into_the_night.ogg"
+define audio.bending_light = "bending_light.ogg"
+define audio.bring_you_back = "bring_you_back.ogg"
+define audio.escapements = "escapements.ogg"
+define audio.im_u = "im_u.ogg"
 
 # SFX
 define audio.sfx_addy_snap = "sfx/sfx_addy_snap.ogg"

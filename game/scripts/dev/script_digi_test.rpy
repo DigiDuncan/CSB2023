@@ -1,7 +1,8 @@
 init python:
     def play_nugget_playlist():
-        songs = ["drive", "into_the_night", "escapements", "im_u", "bring_you_back", "bending_light"]
-        renpy.music.queue(renpy.random.shuffle(songs), tight = True)
+        songs = [audio.drive, audio.into_the_night, audio.escapements, audio.im_u, audio.bring_you_back, audio.bending_light]
+        renpy.random.shuffle(songs)
+        renpy.music.queue(songs, tight = True)
 
 label _digi_test:
     $ chatted_with_digi = 0
@@ -10,12 +11,12 @@ label _digi_test:
     scene black with dissolve
 
     play sound sfx_nugget
+    $ play_nugget_playlist()
 
     scene nugget_bedroom
     show digi happy
     with dissolve
 
-    $ play_nugget_playlist()
     music Nugget Mix:Beacon{size=-12} (Mix by DigiDuncan)
 
     digi "Oh, hey, welcome to the Nugget!"
