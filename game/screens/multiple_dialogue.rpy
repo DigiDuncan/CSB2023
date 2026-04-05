@@ -39,8 +39,14 @@ screen digimultiple(blocks):
 
             python:
                 last_name_width = 0
+                separator_y = 0
                 for i in range(0, idx):
                     last_name_width += get_size(Text(substitutions(blocks[i][0].name), style = "namebox_label", font = gui_theme_map["name_font"]))[0] + int(gui_theme_map["dialogue_namebox_xspacing"])
+                                
+                    if preferences.dyslexia_mode:
+                        separator_y = get_size("window")[1]/2 + gui.text_size * idx           
+                    else:
+                        separator_y = get_size("window")[1]/2 + gui.text_size * idx 
 
             window:
                 id "namebox"
@@ -55,15 +61,10 @@ screen digimultiple(blocks):
                 id "what"
                 style "say_dialogue"
                 yoffset gui.text_size * idx
-
                 slow_cps preferences.text_cps
 
             if idx < len(blocks) and idx > 0:
                 frame:
                     xsize 0.6125 ysize 1
-                    xalign 0.5 yoffset get_size("window")[1]/2 + gui.text_size * idx
-                  
+                    xalign 0.5 yoffset separator_y
                     background gui.text_color
-                
-                
-                
