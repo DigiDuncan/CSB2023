@@ -160,6 +160,7 @@ init python:
     config.ftfont_scale["AllerDisplay_Std_Rg_0.ttf"] = 1.0 # Tate EX Theme Accent
     config.ftfont_scale["comic.ttf"] = 0.75 # Dyslexia - CSB/CE Themes
     config.ftfont_scale["CenturyGothicPaneuropeanSemiBold.ttf"] = 0.8 # Dyslexia - Tate EX Theme
+    config.ftfont_scale["cmunrm.ttf"] = 0.8 # Digi - math font
 
     config.ftfont_vertical_extent_scale["FiraCode-Retina.ttf"] = 1.0 # Triangle
     config.ftfont_vertical_extent_scale["ZCOOLKuaiLe-Regular.ttf"] = 1.0 # CN - CSB/CE Themes

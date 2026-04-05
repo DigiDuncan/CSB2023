@@ -20,3 +20,26 @@ screen multiple_say(who, what, multiple):
                 text new_who id "who"
 
         text what id "what"
+
+
+screen digimultiple(blocks):
+    style_prefix "say"
+
+    $ total_chars = len(blocks)
+
+    window:
+        id "window"
+
+        for idx, block in enumerate(blocks):
+            $ char = block[0]
+            $ what = block[1]
+            $ name = substitutions()
+
+            window:
+                yoffset 75 * idx
+                xoffset 125 * idx
+                id "namebox"
+                style "namebox"
+                text new_who id "who"
+
+            text what id "what"
