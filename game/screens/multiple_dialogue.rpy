@@ -29,6 +29,7 @@ screen digimultiple(blocks):
 
     window:
         id "window"
+        style "window"
 
         for idx, block in enumerate(blocks):
             $ char = block[0]
@@ -40,6 +41,10 @@ screen digimultiple(blocks):
                 xoffset 125 * idx
                 id "namebox"
                 style "namebox"
-                text name id "who"
+                text name id "who":
+                    style "namebox_label"
+                    font gui_theme_map["name_font"]
 
-            text what id "what"
+            text what id "what":
+                #style "say_dialogue"
+                font gui_theme_map["main_font"]

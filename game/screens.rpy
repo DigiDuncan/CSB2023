@@ -349,14 +349,13 @@ screen choice(items):
         xsize 1.0 ysize 1.0
 
         viewport:
-            xalign 0.5  #yoffset 405
-            #yanchor 0.5
-                
+            xalign 0.5 
+                           
             if len(items) > 5:
                 xsize (gui.choice_button_width+gui.slider_size) 
                 ysize 0.5
                 xoffset gui.slider_size/2
-                yalign 0.4
+                yanchor 0.5 ypos 430
 
                 scrollbars "vertical"
                 side_yfill True
