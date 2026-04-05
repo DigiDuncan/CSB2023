@@ -37,8 +37,10 @@ screen digimultiple(blocks):
             $ what = substitutions(block[1])
             $ name = substitutions(char.name)
 
-            $ last_name_width = len(name)*gui.text_size * idx # TODO: this math is wrong
-            $ print(last_name_width)
+            python:
+                last_name_width = 0
+                for i in range(0, idx):
+                    last_name_width += get_size(Text(substitutions(blocks[i][0].name), style = "namebox_label", font = gui_theme_map["name_font"]))[0] + 45
 
             window:
                 id "namebox"
