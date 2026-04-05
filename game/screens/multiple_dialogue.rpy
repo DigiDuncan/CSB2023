@@ -27,24 +27,37 @@ screen digimultiple(blocks):
     style_prefix "say"
 
     $ total_chars = len(blocks)
+    $ last_name_width = get_size("namebox")[0]
 
     window:
         id "window"
         style "window"
+
         for idx, block in enumerate(blocks):
             $ char = block[0]
-            $ what = block[1]
+            $ what = substitutions(block[1])
             $ name = substitutions(char.name)
 
+            $ last_name_width = get_size("namebox")[0]
+
             window:
-                # yoffset 75 * idx
-                xoffset get_size("namebox")[0] * idx
                 id "namebox"
                 style "namebox"
+
+                if idx > 0:
+                    xoffset last_name_width
+                    # yoffset 75 * idx
+                
                 text name id "who":
                     style "namebox_label"
                     font gui_theme_map["name_font"]
-            
-            text what id "what":
+   
+            text substitutions(what):
+                id "what"
                 style "say_dialogue"
                 yoffset 50 * idx
+
+                slow_cps preferences.text_cps
+                
+                
+                
