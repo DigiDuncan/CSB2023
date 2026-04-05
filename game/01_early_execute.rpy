@@ -161,6 +161,7 @@ init python:
     config.ftfont_scale["comic.ttf"] = 0.75 # Dyslexia - CSB/CE Themes
     config.ftfont_scale["CenturyGothicPaneuropeanSemiBold.ttf"] = 0.8 # Dyslexia - Tate EX Theme
     config.ftfont_scale["cmunrm.ttf"] = 0.8 # Digi - math font
+    config.ftfont_scale["NotoSans-Regular.ttf"] = 0.85 # Digi - extra characters
 
     config.ftfont_vertical_extent_scale["FiraCode-Retina.ttf"] = 1.0 # Triangle
     config.ftfont_vertical_extent_scale["ZCOOLKuaiLe-Regular.ttf"] = 1.0 # CN - CSB/CE Themes
@@ -275,7 +276,6 @@ python early:
 
     def parse_music(lexer):
         string = lexer.rest()
-        print(string)
         if string == "end":
             return None
         elif ":" in string:
@@ -290,8 +290,6 @@ python early:
         global _current_song
         global _current_artist
         global _current_internal_id
-
-        print(parsed_object)
 
         if parsed_object is None:
             _current_song = None

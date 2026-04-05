@@ -92,6 +92,7 @@ init python:
 
             # Fix fonts
             config.font_name_map["default"] = _get("main_font")
+            config.font_name_map["digi"] = FontGroup().add("BalsamiqSans-Bold.ttf", 0x00B7, 0x00B7).add("NotoSans-Regular.ttf", 0x0250, 0x02FF).add(_get("main_font"), 0x0000, 0x1FFFF)
             config.font_name_map["cn"] = _get("cn_font")
             config.font_name_map["jp"] = _get("jp_font")
             config.font_name_map["ru"] = _get("ru_font")

@@ -289,6 +289,12 @@ style say_label:
     xalign gui.name_xalign
     yalign 0.5
 
+style ruby_style is default:
+    font config.font_name_map["digi"]
+    size gui.text_size - 18
+    yoffset -40
+    color "#BBBBBB"
+
 style say_dialogue:
     properties gui.text_properties("dialogue")
 
@@ -297,6 +303,8 @@ style say_dialogue:
     ypos gui.dialogue_ypos
 
     adjust_spacing False
+    ruby_line_leading 12
+    ruby_style style.ruby_style
 
 ## Input screen ################################################################
 ##
@@ -1475,7 +1483,9 @@ style history_window is empty
 
 style history_name is gui_label
 style history_name_text is gui_label_text
-style history_text is gui_text
+style history_text is gui_text:
+    ruby_line_leading 12
+    ruby_style style.ruby_style
 
 style history_label is gui_label
 style history_label_text is gui_label_text

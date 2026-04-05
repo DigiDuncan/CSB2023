@@ -98,7 +98,23 @@ label _digi_test:
         hide screen digimultiple
         show digi sad
         digi "Did... did that work?"
-        digi "I don't think it did, but I can't see it, I'm prewritten."
+        show digi happy
+        digi "Tate might have fixed it, so I hope it did."
+
+        show digi
+        digi "Now, let's try it with the lexer..."
+        multiple:
+            digi "Hello, I'm being lexed!"
+            "awawa" "And what the fuck does that mean?"
+            mean "They're being lexed, doofus, what's there to not understand?!"
+
+        show digi thinking
+        digi "That was certainly dialouge."
+        show digi disappointed
+        digi "{font=digi}Dialouge? Dialogue? Dialog? 【/'daɪəˌɫɔɡ/|dai·uh·laag】. Whatever."
+        show digi happy
+        digi "Anywho, hope it worked for ya!"
+
         jump .tests
 
     label .test_text_shaders:
