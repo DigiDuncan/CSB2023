@@ -346,63 +346,97 @@ screen choice(items):
 
     frame:
         background None
-        xsize 1.0 ysize 1.0
-
-        viewport:
-            xalign 0.5 
-                           
-            if len(items) > 5:
-                xsize (gui.choice_button_width+gui.slider_size) 
-                ysize 0.5
+        xsize 1.0 ysize 0.75 yanchor 0.0        
+        if len(items) > 6:
+            viewport:
+                xalign 0.5
+                ysize 0.825
+                yoffset 70
+                xsize (gui.choice_button_width+gui.slider_size)
                 xoffset gui.slider_size/2
-                yanchor 0.5 ypos 430
 
                 scrollbars "vertical"
                 side_yfill True
                 mousewheel True
                 draggable True
                 pagekeys True
-            else:
-                xsize gui.choice_button_width 
-                ysize 0.5
-                yalign 0.5
+                frame:
+                    background None
+                    xalign 0.5 yalign 0.5
+                    vbox:
+                        spacing gui.choice_spacing
 
-            vbox:
+                        for i in items:
+                            $ choice_type = i.kwargs.get("type")
+                            if choice_type == "true" and preferences.streamer_mode:
+                                textbutton i.caption:
+                                    text_color "#BA64CE"
+                                    text_hover_color "#FFFFFF"
+                                    action i.action
+                            elif choice_type == "good" and preferences.streamer_mode:
+                                textbutton i.caption:
+                                    text_color "#00FF00"
+                                    text_hover_color "#FFFFFF"
+                                    action i.action
+                            elif choice_type == "bad" and preferences.streamer_mode:
+                                textbutton i.caption:
+                                    text_color "#FF0000"
+                                    text_hover_color "#FFFFFF"
+                                    action i.action
+                            elif choice_type == "dx":
+                                textbutton "{image=gui/inline_text/dx.png} [i.caption]":
+                                    text_color "#0099CC"
+                                    text_hover_color "#FFFFFF"
+                                    action i.action
+                            elif choice_type == "warning":
+                                textbutton "{image=gui/inline_text/warning.png} [i.caption]":
+                                    text_color "#FFFF00"
+                                    text_hover_color "#FFFFFF"
+                                    action i.action
+                            else:
+                                textbutton i.caption:
+                                    text_color "#888888"
+                                    text_hover_color "#FFFFFF"
+                                    action i.action
+        else:
+            frame:
+                background None
                 xalign 0.5 yalign 0.5
-                spacing gui.choice_spacing
+                vbox:
+                    spacing gui.choice_spacing
 
-                for i in items:
-                    $ choice_type = i.kwargs.get("type")
-                    if choice_type == "true" and preferences.streamer_mode:
-                        textbutton i.caption:
-                            text_color "#BA64CE"
-                            text_hover_color "#FFFFFF"
-                            action i.action
-                    elif choice_type == "good" and preferences.streamer_mode:
-                        textbutton i.caption:
-                            text_color "#00FF00"
-                            text_hover_color "#FFFFFF"
-                            action i.action
-                    elif choice_type == "bad" and preferences.streamer_mode:
-                        textbutton i.caption:
-                            text_color "#FF0000"
-                            text_hover_color "#FFFFFF"
-                            action i.action
-                    elif choice_type == "dx":
-                        textbutton "{image=gui/inline_text/dx.png} [i.caption]":
-                            text_color "#0099CC"
-                            text_hover_color "#FFFFFF"
-                            action i.action
-                    elif choice_type == "warning":
-                        textbutton "{image=gui/inline_text/warning.png} [i.caption]":
-                            text_color "#FFFF00"
-                            text_hover_color "#FFFFFF"
-                            action i.action
-                    else:
-                        textbutton i.caption:
-                            text_color "#888888"
-                            text_hover_color "#FFFFFF"
-                            action i.action
+                    for i in items:
+                        $ choice_type = i.kwargs.get("type")
+                        if choice_type == "true" and preferences.streamer_mode:
+                            textbutton i.caption:
+                                text_color "#BA64CE"
+                                text_hover_color "#FFFFFF"
+                                action i.action
+                        elif choice_type == "good" and preferences.streamer_mode:
+                            textbutton i.caption:
+                                text_color "#00FF00"
+                                text_hover_color "#FFFFFF"
+                                action i.action
+                        elif choice_type == "bad" and preferences.streamer_mode:
+                            textbutton i.caption:
+                                text_color "#FF0000"
+                                text_hover_color "#FFFFFF"
+                                action i.action
+                        elif choice_type == "dx":
+                            textbutton "{image=gui/inline_text/dx.png} [i.caption]":
+                                text_color "#0099CC"
+                                text_hover_color "#FFFFFF"
+                                action i.action
+                        elif choice_type == "warning":
+                            textbutton "{image=gui/inline_text/warning.png} [i.caption]":
+                                text_color "#FFFF00"
+                                text_hover_color "#FFFFFF"
+                                action i.action
+                        else:
+                            textbutton i.caption:
+                                text_color "#888888"
+                                text_hover_color "#FFFFFF"
+                                action i.action
 
 style choice_vbox is vbox
 style choice_button is button

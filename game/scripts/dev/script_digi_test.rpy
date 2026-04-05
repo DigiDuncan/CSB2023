@@ -193,6 +193,23 @@ label _digi_test:
             "Exit Test":
                 jump .tests
 
+        menu:
+            "Seven choices."
+            "1":
+                pass
+            "2":
+                pass
+            "3":
+                pass
+            "4":
+                pass
+            "5":
+                pass
+            "6":
+                pass
+            "Exit Test":
+                jump .tests
+
         show digi sad
         digi "Sorry about that."
         jump .tests
