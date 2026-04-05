@@ -366,7 +366,7 @@ screen choice(items):
             else:
                 xsize gui.choice_button_width 
                 ysize 0.5
-                yalign 0.4
+                yalign 0.5
 
             vbox:
                 xalign 0.5 yalign 0.5
