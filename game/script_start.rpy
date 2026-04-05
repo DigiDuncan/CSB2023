@@ -262,7 +262,6 @@ python early:
         return (text, label)
 
     def execute_bad_end(parsed_object):
-        global typewriter_text
         text, label = parsed_object
         _window_hide()
         seen_all = True
@@ -273,8 +272,7 @@ python early:
             achievement_manager.unlock("fin")
         renpy.show("bad_end_screen")
         renpy.pause(1.0)
-        typewriter_text = text
-        renpy.show("typewriter", [typewriter_location])
+        renpy.show_screen(bad_ending, text)
         renpy.pause()
         renpy.end_replay()
         renpy.jump(label)

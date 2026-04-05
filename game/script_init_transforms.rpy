@@ -200,11 +200,6 @@ init:
         anchor(0.5, 0.5)
         linear 2.0 zoom 2.5
 
-    transform typewriter_location:
-        pos (0.5, 0.7)
-        anchor(0.5, 0.5)
-        rotate(-17)
-
     transform midoffscreenright:
         pos(1.0, 0.0)
 
