@@ -63,6 +63,8 @@ label _digi_test:
     label .test_md:
         digi "Alright, let's see if we can get a few people yapping."
         show screen digimultiple([(digi, "I'm line one!"), (tate, "I'm line two!")])
+        pause
+        hide screen digimultiple
         digi "Did... did that work?"
         digi "I don't think it did, but I can't see it, I'm prewritten."
         jump .tests
