@@ -75,6 +75,8 @@ label _digi_test:
                 jump .test_text_shaders
             "Emoji":
                 jump .test_emoji
+            "Choice Menus":
+                jump .test_choices
             "Digi EX":
                 jump .test_digi_ex
             "None, actually!" (type = "bad"):
@@ -126,6 +128,73 @@ label _digi_test:
         digi "I hope that looks good!"
         digi "Apparently, you can also just use Unicode emoji, like 😅."
         digi "Did {i}that{/i} look good?"
+        jump .tests
+
+    label .test_choices:
+        show digi disappointed
+        digi "Here we go."
+        menu:
+            "One choice."
+            "1":
+                pass
+
+        menu:
+            "Two choices."
+            "1":
+                pass
+            "Exit Test":
+                jump .tests
+
+        menu:
+            "Three choices."
+            "1":
+                pass
+            "2":
+                pass
+            "Exit Test":
+                jump .tests
+        
+        menu:
+            "Four choices."
+            "1":
+                pass
+            "2":
+                pass
+            "3":
+                pass
+            "Exit Test":
+                jump .tests
+
+        menu:
+            "Five choices."
+            "1":
+                pass
+            "2":
+                pass
+            "3":
+                pass
+            "4":
+                pass
+            "Exit Test":
+                jump .tests
+
+        menu:
+            "Six choices."
+            "1":
+                pass
+            "2":
+                pass
+            "3":
+                pass
+            "4":
+                pass
+            "5":
+                pass
+            "Exit Test":
+                jump .tests
+
+        show digi sad
+        digi "Sorry about that."
         jump .tests
 
     label .test_digi_ex:
