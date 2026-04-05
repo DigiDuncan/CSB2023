@@ -3,7 +3,6 @@ screen bad_ending(text = "Why'd you do that?"):
     on "show" action Play("sound", ["<silence 0.15>", "audio/sfx/sfx_bad_ending.ogg"])
     key "dismiss" action Return()
     
-
     frame:
         background None
         xsize 3000
@@ -50,8 +49,10 @@ screen bad_ending(text = "Why'd you do that?"):
             color "#FFFFFF"
             outlines [ (absolute(18), "#000", 9, 9) ]
         
-        add DynamicDisplayable(screen_typewriter, text, 150):
+        text text:
+            slow_cps preferences.text_cps/2
+            color "#FFFFFF"
+            size 150
+            outlines [(absolute(10), "#000", absolute(0), absolute(0))]
             at transform:
                 xalign 0.5 yalign 1.0
-    
-                    

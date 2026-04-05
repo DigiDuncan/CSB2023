@@ -605,7 +605,7 @@ label _awawa_tate_test:
                     ########## BAD ENDING REDUX ##########
                     "Bad Ending V2":
                         tate "Here it is!"
-                        call screen bad_ending("Awawawiwi!")
+                        call screen bad_ending()
                         tate "Did it do?"
                         jump .awawa_menu
 
