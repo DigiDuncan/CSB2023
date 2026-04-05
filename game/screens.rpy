@@ -1293,24 +1293,28 @@ screen preferences():
         ##### Developer options - everything else!
         elif preferences_category == "Developer":
             vbox:
-                style_prefix "check"
-                xsize 0.75
+                hbox:
+                    box_wrap True
+                    vbox:
+                        style_prefix "check"
+                        label _("Developer Options")
+                        # MOVED ALL THE DEV MODE STUFF HERE
+                    
+                        if preferences.developer_mode or persistent.creative_mode:
+                            textbutton _("Debug Menu\n{size=-12}Jump to specific sections of the game.") action ShowMenu("debug_menu")
 
-                label _("Developer Options")
-                # MOVED ALL THE DEV MODE STUFF HERE
-            
-                if preferences.developer_mode or persistent.creative_mode:
-                    textbutton _("Debug Menu\n{size=-12}Jump to specific sections of the game.") action ShowMenu("debug_menu")
+                        if preferences.developer_mode:
+                            textbutton _("Jump To Label Start\n{size=-12}What we do here is go back{size=-6} back{size=-6} back") action Function(jump_to_label_start)
 
-                    textbutton _("Test Scene\n{size=-12}A sandbox for testing various features.") action Start("test")
-
-                    textbutton _("Tate's Test Room\n{size=-12}Another test screen. Awawa.") action Start("_awawa_tate_test")
-                    textbutton _("Digi's Test... Ship?\n{size=-12}Another test screen?! Really?") action Start("_digi_test")
-
-                if preferences.developer_mode:
-                    textbutton _("Jump To Label Start\n{size=-12}What we do here is go back{size=-12} back{size=-12} back{size=-12} back...") action Function(jump_to_label_start)
-
-                    textbutton _("Unlock All\n{size=-12}Adds all unlockables to persistent.") action Function(unlock_all)          
+                            textbutton _("Unlock All\n{size=-12}Adds all unlockables to persistent.") action Function(unlock_all)
+                    vbox:
+                        style_prefix "check"
+                        label _("Test Rooms")
+                        if preferences.developer_mode or persistent.creative_mode:
+                            textbutton _("Test Scene\n{size=-12}A sandbox for testing various features.") action Start("test")
+                            textbutton _("Tate's Test Room\n{size=-12}Another test screen. Awawa.") action Start("_awawa_tate_test")
+                            textbutton _("Digi's Test... Ship?\n{size=-12}Another test screen?! Really?") action Start("_digi_test")
+        
 
     $ info = GetTooltip()
     $ info_x = mouse_xy[0]
