@@ -1,3 +1,8 @@
+init python:
+    def play_nugget_playlist():
+        songs = ["drive", "into_the_night", "escapements", "im_u", "bring_you_back", "bending_light"]
+        renpy.music.queue(renpy.random.shuffle(songs), tight = True)
+
 label _digi_test:
     $ chatted_with_digi = 0
     $ entered_tests = False
@@ -10,8 +15,8 @@ label _digi_test:
     show digi happy
     with dissolve
 
-    play music drive
-    music drive
+    $ play_nugget_playlist()
+    music Nugget Mix:Beacon{size=-12} (Mix by DigiDuncan)
 
     digi "Oh, hey, welcome to the Nugget!"
     show digi

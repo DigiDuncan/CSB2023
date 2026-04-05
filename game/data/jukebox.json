@@ -28,7 +28,8 @@
         "CSBDX: Speedrun",
         "CSBDX: Train",
         "CSBDX: Misc.",
-        "CSBDX: Ringtones"
+        "CSBDX: Ringtones",
+        "Dev: Nugget"
     ],
 
     "tracks": {
@@ -1852,7 +1853,7 @@
             "file": "drive.ogg",
             "title": "Drive",
             "artist": "Beacon",
-            "tags": ["CSBDX: BT1D", "New In DX"],
+            "tags": ["CSBDX: BT1D", "New In DX", "Dev: Nugget"],
             "album_art": "beacon.png",
             "trivia": "This is one of the songs that plays in the VRChat map {i}Stellar Sail{/i} by tp.jp., which inspired The Nugget."
         },
@@ -1871,6 +1872,46 @@
             "tags": ["CSBDX: BT1D", "New In DX"],
             "album_art": "csbdx.png",
             "trivia": "Hey, Pakoo, fill this in pls?"
+        },
+        "bending_light" : {
+            "file": "bending_light.ogg",
+            "title": "Bending Light",
+            "artist": "Beacon",
+            "tags": ["New In DX", "Dev: Nugget"],
+            "album_art": "beacon.png",
+            "trivia": "This is one of the songs that plays in the VRChat map {i}Stellar Sail{/i} by tp.jp., which inspired The Nugget."
+        },
+        "im_u" : {
+            "file": "im_u.ogg",
+            "title": "IM U",
+            "artist": "Beacon",
+            "tags": ["New In DX", "Dev: Nugget"],
+            "album_art": "beacon.png",
+            "trivia": "This is one of the songs that plays in the VRChat map {i}Stellar Sail{/i} by tp.jp., which inspired The Nugget."
+        },
+        "escapements" : {
+            "file": "escapements.ogg",
+            "title": "Escapements",
+            "artist": "Beacon",
+            "tags": ["New In DX", "Dev: Nugget"],
+            "album_art": "beacon.png",
+            "trivia": "This is one of the songs that plays in the VRChat map {i}Stellar Sail{/i} by tp.jp., which inspired The Nugget."
+        },
+        "into_the_night" : {
+            "file": "into_the_night.ogg",
+            "title": "Into The Night",
+            "artist": "Beacon",
+            "tags": ["New In DX", "Dev: Nugget"],
+            "album_art": "beacon.png",
+            "trivia": "This is one of the songs that plays in the VRChat map {i}Stellar Sail{/i} by tp.jp., which inspired The Nugget."
+        },
+        "bring_you_back" : {
+            "file": "bring_you_back.ogg",
+            "title": "Bring You Back",
+            "artist": "Beacon",
+            "tags": ["New In DX", "Dev: Nugget"],
+            "album_art": "beacon.png",
+            "trivia": "This is one of the songs that plays in the VRChat map {i}Stellar Sail{/i} by tp.jp., which inspired The Nugget."
         }
     }
 }

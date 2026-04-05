@@ -275,8 +275,11 @@ python early:
 
     def parse_music(lexer):
         string = lexer.rest()
+        print(string)
         if string == "end":
             return None
+        elif ":" in string:
+            return string.rsplit(":")
         return string
 
     def lint_music(parsed_object):
@@ -288,22 +291,29 @@ python early:
         global _current_artist
         global _current_internal_id
 
+        print(parsed_object)
+
         if parsed_object is None:
             _current_song = None
             _current_artist = None
             _current_internal_id = None
             return
-        else:
+        if isinstance(parsed_object, str):
             _current_internal_id = str(parsed_object)
             _current_song = MUSIC_MAP.get(_current_internal_id)["title"]
             _current_artist = MUSIC_MAP.get(_current_internal_id)["artist"]
+        else:
+            _current_internal_id = None
+            _current_song = parsed_object[0]
+            _current_artist = parsed_object[1]
 
             # for debugging
             #logger.info(f"Currently held data: {_current_song} by {_current_artist} | Internal ID: {_current_internal_id}")
 
         if (_current_song, _current_artist) not in _played_songs:
             _played_songs.add((_current_song, _current_artist))
-            persistent.heard.add(_current_internal_id)
+            if _current_internal_id:
+                persistent.heard.add(_current_internal_id)
             renpy.with_statement(determination)
             renpy.show_screen("music")
             renpy.with_statement(determination)
