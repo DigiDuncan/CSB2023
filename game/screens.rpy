@@ -392,15 +392,17 @@ screen choice(items):
             viewport:
                 xalign 0.5
                 ysize 0.825
-                yoffset 70
+                yoffset 73
                 xsize (gui.choice_button_width+gui.slider_size)
-                xoffset gui.slider_size/2
-
+                xoffset gui.slider_size/2-6
+                
                 scrollbars "vertical"
                 side_yfill True
                 mousewheel True
                 draggable True
                 pagekeys True
+
+                
                 use choice_items(items)
         else:
             use choice_items(items)
