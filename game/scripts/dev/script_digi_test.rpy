@@ -87,7 +87,7 @@ label _digi_test:
     label .test_md:
         show digi happy
         digi "Alright, let's see if we can get a few people yapping."
-        show screen digimultiple([(digi, "I'm line one!"), (tate, "I'm line two!")])
+        show screen digimultiple([(digi, "I'm line one!"), (tate, "I'm line two!"), (mean, "I'm line three, and I have a pause in it!")])
         pause
         hide screen digimultiple
         show digi sad
