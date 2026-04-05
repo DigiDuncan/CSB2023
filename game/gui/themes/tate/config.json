@@ -27,6 +27,8 @@
     "choice_button_text_hover_color": "#FFFFFF",
     "choice_button_text_insensitive_color": "#8888887F",
 
+    "choice_menu_scroll_yoffset": 85,
+
     "letterbox_color": "#000000",
     "screen_transparency_layer": "/gui/themes/tate/overlay/menu_alpha.png",
     "image_button_idle": "#008080",

@@ -392,7 +392,7 @@ screen choice(items):
             viewport:
                 xalign 0.5
                 ysize 0.825
-                yoffset 73
+                yoffset gui_theme_map["choice_menu_scroll_yoffset"]
                 xsize (gui.choice_button_width+gui.slider_size)
                 xoffset gui.slider_size/2-6
                 
@@ -402,7 +402,6 @@ screen choice(items):
                 draggable True
                 pagekeys True
 
-                
                 use choice_items(items)
         else:
             use choice_items(items)
