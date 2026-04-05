@@ -270,10 +270,10 @@ python early:
             seen_all = False
         if seen_all:
             achievement_manager.unlock("fin")
-        renpy.show("bad_end_screen")
-        renpy.pause(1.0)
-        renpy.show_screen(bad_ending, text)
-        renpy.pause()
+        #renpy.show("bad_end_screen")
+        #renpy.pause(1.0)
+        renpy.call_screen("bad_ending", text)
+        #renpy.pause()
         renpy.end_replay()
         renpy.jump(label)
 

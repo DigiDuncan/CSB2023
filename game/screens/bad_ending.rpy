@@ -50,9 +50,9 @@ screen bad_ending(text = "Why'd you do that?"):
             outlines [ (absolute(18), "#000", 9, 9) ]
         
         text text:
+            xalign 0.5 yalign 1.0 text_align 0.5
             slow_cps preferences.text_cps/2
             color "#FFFFFF"
             size 150
             outlines [(absolute(10), "#000", absolute(0), absolute(0))]
-            at transform:
-                xalign 0.5 yalign 1.0
+                            
