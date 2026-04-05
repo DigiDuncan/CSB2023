@@ -1,5 +1,6 @@
 label _digi_test:
     $ chatted_with_digi = 0
+    $ entered_tests = False
     stop music
     scene black with dissolve
 
@@ -43,6 +44,23 @@ label _digi_test:
         jump .menu
 
     label .tests:
-        digi "Well guess what, there's no tests yet."
-        digi "Heh, sorry, didn't mean to dupe ya like that."
-        jump .menu
+        if not entered_tests:
+            digi "What test are you looking to run?"
+            $ entered_tests = True
+        else:
+            digi "What now?"
+
+        menu:
+            "What test?"
+            "Multiple Dialogue":
+                jump .test_md
+            "None, actually!" (type = "bad"):
+                digi "Alrighty, then!"
+                jump .menu
+
+    label .test_md:
+        digi "Alright, let's see if we can get a few people yapping."
+        show screen digimultiple([(digi, "I'm line one!"), (tate, "I'm line two!")])
+        digi "Did... did that work?"
+        digi "I don't think it did, but I can't see it, I'm prewritten."
+        jump .tests

@@ -33,13 +33,13 @@ screen digimultiple(blocks):
         for idx, block in enumerate(blocks):
             $ char = block[0]
             $ what = block[1]
-            $ name = substitutions()
+            $ name = substitutions(char.name)
 
             window:
                 yoffset 75 * idx
                 xoffset 125 * idx
                 id "namebox"
                 style "namebox"
-                text new_who id "who"
+                text name id "who"
 
             text what id "what"
