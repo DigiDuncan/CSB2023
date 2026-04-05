@@ -602,6 +602,13 @@ label _awawa_tate_test:
                         tate "Aight."
                         jump where_are_they_now
 
+                    ########## BAD ENDING REDUX ##########
+                    "Bad Ending V2":
+                        tate "Here it is!"
+                        call screen bad_ending("Awawawiwi!")
+                        tate "Did it do?"
+                        jump .awawa_menu
+
                     ########## GO BACK ##########
                     "Never mind.":
                         jump .awawa_menu
