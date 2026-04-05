@@ -73,6 +73,8 @@ label _digi_test:
                 jump .test_md
             "Text Shaders":
                 jump .test_text_shaders
+            "Emoji":
+                jump .test_emoji
             "Digi EX":
                 jump .test_digi_ex
             "None, actually!" (type = "bad"):
@@ -110,6 +112,20 @@ label _digi_test:
 
         show digi happy
         digi "That's all I can be bothered to test right now, but I think we can make our own, too."
+        jump .tests
+
+    label .test_emoji:
+        show digi happy
+        digi "Ooh, so I'm proud of this one."
+        digi "If you put something in the `gui/inline_text` folder, you can call it by name in text with the name, surrounded by colons."
+        digi "So, like, :read: is `:read:`."
+        digi "It's probably important that the image is ~45x45. We can't resize these on the fly."
+        digi "Also, it has to be in a string that's being run through `substitutions()`, so that's important. Ask Tate for details on that."
+        digi "Here are some emojis we have!"
+        digi ":cs: :dx: :ce: :note1: :note2: :ch1: :ch2: :ch3: :ch4: :ch5: :heart: :warning:"
+        digi "I hope that looks good!"
+        digi "Apparently, you can also just use Unicode emoji, like 😅."
+        digi "Did {i}that{/i} look good?"
         jump .tests
 
     label .test_digi_ex:

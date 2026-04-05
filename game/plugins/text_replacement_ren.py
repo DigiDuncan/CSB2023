@@ -131,7 +131,11 @@ def substitutions(s):
     s = s.replace(r"{perfect_tate}", r"{sc}{size=+24}{font=azsz}{color=#000000}") # i'd prefer this to be handled in the screen but {sc} breaks it?? - tate
 
     # for inline images
+    s = s.replace(r"`:", "`:\u200b")
     s = re.sub(r":([\w\d_]+):", r"{image=gui/inline_text/\1.png}", s, flags=re.IGNORECASE)
+
+    # for monospace text
+    s = re.sub(r"`(.+)`", r"{font=FiraCode-Retina.ttf}\1{/font}", s, flags=re.IGNORECASE)
 
     # awawa mode handling
     if preferences.awawa_mode:

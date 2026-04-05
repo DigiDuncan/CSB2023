@@ -148,7 +148,7 @@ init python:
 
     # Scale all fonts here (overall size first, then line spacing if needed)
     
-    config.ftfont_scale["FiraCode-Retina.ttf"] = 0.825 # Triangle
+    config.ftfont_scale["FiraCode-Retina.ttf"] = 0.7 # Triangle
     config.ftfont_scale["ZCOOLKuaiLe-Regular.ttf"] = 0.75 # CP - CSB/CE Themes
     config.ftfont_scale["MochiyPopOne-Regular.ttf"] = 0.75 # JP - CSB/CE Themes
     config.ftfont_scale["BalsamiqSans-Bold.ttf"] = 0.825 # RU - CSB/CE Themes
