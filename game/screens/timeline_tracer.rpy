@@ -199,10 +199,10 @@ screen timeline_tracer():
                             # get DX/CE status
                             try:
                                 if TIMELINE_MAP[event]["content_type"] == "dx":
-                                    dxiconimg = "gui/inline_text/dx_text.png"
+                                    dxiconimg = "gui/inline_text/dx.png"
                                     this_new = True
                                 elif TIMELINE_MAP[event]["content_type"] == "ce":
-                                    dxiconimg = "gui/inline_text/ce_text.png"
+                                    dxiconimg = "gui/inline_text/ce.png"
                                     this_new = True
                             except:
                                 this_new = False

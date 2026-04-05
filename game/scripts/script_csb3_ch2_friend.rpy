@@ -685,7 +685,7 @@ label friend2_car_ride_3:
 
     mika "Well, I just don't like them too much."
     show tate flipped
-    kitty "{note1}{i} The snack that breaks your back: {w=0.25}Cheese Whales!{/i} {note2}"
+    kitty ":note1:{i} The snack that breaks your back: {w=0.25}Cheese Whales!{/i} :note2:"
     n "They all laugh."
     stop music fadeout 3.0
     music end

@@ -47,7 +47,7 @@
     },
     "afterstory": {
         "title": "CSBDX: Afterstory",
-        "desc": "{image=gui/inline_text/dx_text.png} What happens next?",
+        "desc": "{image=gui/inline_text/dx.png} What happens next?",
         "x_pos": 184,
         "y_pos": 36,
         "kind": "label",
@@ -59,7 +59,7 @@
     },
     "finale": {
         "title": "CSBDX: Finale",
-        "desc": "{image=gui/inline_text/dx_text.png} The one true end.",
+        "desc": "{image=gui/inline_text/dx.png} The one true end.",
         "x_pos": 230,
         "y_pos": 36,
         "kind": "label",
@@ -71,7 +71,7 @@
     },
     "beach": {
         "title": "CSBDX: Beach Episode",
-        "desc": "{image=gui/inline_text/dx_text.png} Chill out in Cali for a day.",
+        "desc": "{image=gui/inline_text/dx.png} Chill out in Cali for a day.",
         "x_pos": 276,
         "y_pos": 36,
         "kind": "label",
@@ -83,7 +83,7 @@
     },
     "train": {
         "title": "CSBDX: Train Route",
-        "desc": "{image=gui/inline_text/dx_text.png} Taking the scenic route home.",
+        "desc": "{image=gui/inline_text/dx.png} Taking the scenic route home.",
         "x_pos": 322,
         "y_pos": 36,
         "kind": "label",       
@@ -100,7 +100,7 @@
     },
     "kuwait": {
         "title": "CSBDX: Kuwait",
-        "desc": "{image=gui/inline_text/dx_text.png} A vacation gone awry...",
+        "desc": "{image=gui/inline_text/dx.png} A vacation gone awry...",
         "x_pos": 368,
         "y_pos": 36,
         "kind": "label",
@@ -112,7 +112,7 @@
     },
     "plane": {
         "title": "CSBDX: Plane",
-        "desc": "{image=gui/inline_text/dx_text.png} A thrilling flight home!",
+        "desc": "{image=gui/inline_text/dx.png} A thrilling flight home!",
         "x_pos": 414,
         "y_pos": 36,
         "kind": "label",
@@ -124,7 +124,7 @@
     },
     "speedrun": {
         "title": "CSBDX: Speedrun",
-        "desc": "{image=gui/inline_text/dx_text.png} NYOOM",
+        "desc": "{image=gui/inline_text/dx.png} NYOOM",
         "x_pos": 460,
         "y_pos": 36,
         "kind": "label",
@@ -158,7 +158,7 @@
     },
     "ce": {
         "title": "CSBounciness: Christmas Edition",
-        "desc": "{image=gui/inline_text/ce_text.png} Save Christmas with CS and friends!",
+        "desc": "{image=gui/inline_text/ce.png} Save Christmas with CS and friends!",
         "x_pos": 864,
         "y_pos": 390,
         "kind": "label",
@@ -170,7 +170,7 @@
     },
     "d20_viewer":{
         "title": "CE Dice Viewer",
-        "desc": "{image=gui/inline_text/ce_text.png} See who could have showed up first to the party!",
+        "desc": "{image=gui/inline_text/ce.png} See who could have showed up first to the party!",
         "x_pos": 609,
         "y_pos": 635,
         "kind": "menu",
@@ -182,7 +182,7 @@
     },
     "space": {
         "title": "CSBounciness: Space Program",
-        "desc": "{image=gui/inline_text/dx_text.png} spaaaaaaaaaace",
+        "desc": "{image=gui/inline_text/dx.png} spaaaaaaaaaace",
         "x_pos": 772,
         "y_pos": 390,
         "kind": "label",
@@ -194,7 +194,7 @@
     },
     "bt1d": {
         "title": "BT1D",
-        "desc": "{image=gui/inline_text/dx_text.png} Fight the CEO Of Diabetes!",
+        "desc": "{image=gui/inline_text/dx.png} Fight the CEO Of Diabetes!",
         "x_pos": 818,
         "y_pos": 390,
         "kind": "label",
@@ -206,7 +206,7 @@
     },
     "pt_aftermath": {
         "title": "Celestial Sightseeing",
-        "desc": "{image=gui/inline_text/dx_text.png} The Aspiring Planeswalker's Guide To\nChronomancy, Synchrony, & Cosmic Safety",
+        "desc": "{image=gui/inline_text/dx.png} The Aspiring Planeswalker's Guide To\nChronomancy, Synchrony, & Cosmic Safety",
         "x_pos": 0,
         "y_pos": 608,
         "kind": "label",
@@ -218,7 +218,7 @@
     },
     "elizabeth_bday": {
         "title": "Elizabeth's Birthday \nExtravaganza 2024!",
-        "desc": "{image=gui/inline_text/dx_text.png} The silly spin-off where Digi makes it \njust in time for Elizabeth's birthday!",
+        "desc": "{image=gui/inline_text/dx.png} The silly spin-off where Digi makes it \njust in time for Elizabeth's birthday!",
         "x_pos": 708,
         "y_pos": 441,
         "kind": "label",
@@ -230,7 +230,7 @@
     },
     "iwi_box": {
         "title": "The iwi Box",
-        "desc": "{image=gui/inline_text/dx_text.png} Tate's house, I guess?",
+        "desc": "{image=gui/inline_text/dx.png} Tate's house, I guess?",
         "x_pos": 15,
         "y_pos": 509,
         "kind": "label",
@@ -242,7 +242,7 @@
     },
     "pee": {
         "title": "Why Is My Pee Clear?",
-        "desc": "{image=gui/inline_text/dx_text.png} For ages 18 months to 3 years.",
+        "desc": "{image=gui/inline_text/dx.png} For ages 18 months to 3 years.",
         "x_pos": 682,
         "y_pos": 540,
         "kind": "label",
@@ -254,7 +254,7 @@
     },
     "underpants": {
         "title": "The Adventures of Captain Underpants and the Giant Evil Mika",
-        "desc": "{image=gui/inline_text/dx_text.png} Inspired by a late-night game of Mad Libs!",
+        "desc": "{image=gui/inline_text/dx.png} Inspired by a late-night game of Mad Libs!",
         "x_pos": 726,
         "y_pos": 390,
         "kind": "label",
@@ -278,7 +278,7 @@
     },
     "minigame_carrot": {
         "title": "Carrot Chop",
-        "desc": "{image=gui/inline_text/ce_text.png} Chop to the beat!",
+        "desc": "{image=gui/inline_text/ce.png} Chop to the beat!",
         "x_pos": 810,
         "y_pos": 801,
         "kind": "label",
@@ -290,7 +290,7 @@
     },
     "minigame_reversi": {
         "title": "Reversi",
-        "desc": "{image=gui/inline_text/ce_text.png} It's WINDOWS",
+        "desc": "{image=gui/inline_text/ce.png} It's WINDOWS",
         "x_pos": 864,
         "y_pos": 750,
         "kind": "label",
@@ -302,7 +302,7 @@
     },
     "minigame_toytrains": {
         "title": "Off To The Races!",
-        "desc": "{image=gui/inline_text/dx_text.png} Race some trains!\n...Wait, who the fuck is Longas?",
+        "desc": "{image=gui/inline_text/dx.png} Race some trains!\n...Wait, who the fuck is Longas?",
         "x_pos": 776,
         "y_pos": 801,
         "kind": "label",
@@ -314,7 +314,7 @@
     },
     "minigame_rhythmchase": {
         "title": "Rhythm Chase",
-        "desc": "{image=gui/inline_text/dx_text.png} Catch that crook!",
+        "desc": "{image=gui/inline_text/dx.png} Catch that crook!",
         "x_pos": 793,
         "y_pos": 801,
         "kind": "label",
@@ -355,7 +355,7 @@
     },
     "minigame_slots": {
         "title": "Crazy Slots",
-        "desc": "{image=gui/inline_text/dx_text.png} Let's go gambling!",
+        "desc": "{image=gui/inline_text/dx.png} Let's go gambling!",
         "x_pos": 500,
         "y_pos": 890,
         "kind": "label",
@@ -367,7 +367,7 @@
     },
     "minigame_ucn2": {
         "title": "Ultimate Custom Night 2",
-        "desc": "{image=gui/inline_text/dx_text.png} Everyone is here!",
+        "desc": "{image=gui/inline_text/dx.png} Everyone is here!",
         "x_pos": 696,
         "y_pos": 750,
         "kind": "menu",
@@ -379,7 +379,7 @@
     },
     "minigame_perfecttate": {     
         "title": "VS Perfect Tate",
-        "desc": "{image=gui/inline_text/dx_text.png} Survive.",
+        "desc": "{image=gui/inline_text/dx.png} Survive.",
         "x_pos": 200,
         "y_pos": 408,
         "kind": "label",

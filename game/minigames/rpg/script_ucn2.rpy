@@ -154,7 +154,7 @@ screen _ucn2_selection():
                                     hover "selectable:gui/rpg_common/portraits/sandbag.png"
                                     hover_sound "audio/sfx/sfx_select.ogg"
                                     hovered [
-                                        SetScreenVariable("ucn2_hovered_data", ["{image=gui/inline_text/ucn_text.png} Sandbag", RPG.Characters.SANDBAG])
+                                        SetScreenVariable("ucn2_hovered_data", ["{image=gui/inline_text/ucn.png} Sandbag", RPG.Characters.SANDBAG])
                                     ]
                                     unhovered  [
                                         SetScreenVariable("ucn2_hovered_data", [])

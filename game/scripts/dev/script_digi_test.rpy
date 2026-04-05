@@ -54,6 +54,8 @@ label _digi_test:
             "What test?"
             "Multiple Dialogue":
                 jump .test_md
+            "Text Shaders":
+                jump .test_text_shaders
             "None, actually!" (type = "bad"):
                 digi "Alrighty, then!"
                 jump .menu
@@ -63,4 +65,19 @@ label _digi_test:
         show screen digimultiple([(digi, "I'm line one!"), (tate, "I'm line two!")])
         digi "Did... did that work?"
         digi "I don't think it did, but I can't see it, I'm prewritten."
+        jump .tests
+
+    label .test_text_shaders:
+        digi "Text shaders? We have those?"
+        digi "Let me check..."
+        digi "Oh, shit, yeah, we do!"
+        digi "OK, let me try some out."
+
+        digi "{shader=dissolve}This one's called dissolve, which apparently reveals the text slowly over time..."
+        digi "{shader=flip}This one's flip, I'm not quite sure what that means, though..."
+        digi "{shader=jitter}This one's jitter, but I think we have something like that already."
+        digi "{shader=linetexture:u__texture=rainbownoise.png}This is linetexture, I gave it rainbow noise as a texture."
+        digi ":read: That one's kinda messed up, I think the texture size is weird."
+
+        digi "That's all I can be bothered to test right now, but I think we can make our own, too."
         jump .tests

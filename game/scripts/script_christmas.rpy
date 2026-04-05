@@ -7211,34 +7211,34 @@ label ce_roof_moment:
     cs "Believe in Santa and in the Christmas spirit!"
     eliza "Do you really think that will work?"
     cs "We've gotta try! Sing with me guys!"
-    cs "{note1} Ohhh...{w=0} {note2}"
+    cs ":note1: Ohhh...{w=0} :note2:"
     if fun_value(FUN_VALUE_EPIC, confusing=True):
         play music star_spangled_banner if_changed
         music star_spangled_banner
-        cs "{note1} Say can you see...{w=0} {note2}"
+        cs ":note1: Say can you see...{w=0} :note2:"
         tate "{i}CS!" with vpunch
         stop music
         music end
         cs "Sorry."
-    cs "{note1} You better watch out...{w=0} {note2}"
-    cs "{note1} You better not cry...{w=0} {note2}"
-    cs "{note1} Better not pout, I'm telling you why...{w=0} {note2}"
-    cs "{note1} Santa Claus is coming to town!{w=0} {note2}"
+    cs ":note1: You better watch out...{w=0} :note2:"
+    cs ":note1: You better not cry...{w=0} :note2:"
+    cs ":note1: Better not pout, I'm telling you why...{w=0} :note2:"
+    cs ":note1: Santa Claus is coming to town!{w=0} :note2:"
     cs "Come on, guys! You've gotta sing!"
-    k17 "{note1} He's making a list...{w=0} {note2}"
-    k17 "{note1} And checking it twice...{w=0} {note2}"
+    k17 ":note1: He's making a list...{w=0} :note2:"
+    k17 ":note1: And checking it twice...{w=0} :note2:"
     play sound2 ["<silence 0.85>", sfx_pop_noice] noloop
-    grace "{note1} Gonna find out who's naughty and nice...{w=0} {note2}"
-    rich "{note1} Santa Claus is coming to town!{w=0} {note2}"
-    tate "{note1} He sees you when you're sleeping...{w=0} {note2}"
-    mean "{note1} He knows when you're awake...{w=0} {note2}"
-    db "{note1} He knows if you've been bad or good...{w=0} {note2}"
-    obama "{note1} So, you'd better be good. For goodness' sake!{w=0} {note2}"
-    cs "{note1} Ohhh...{w=0} {note2}"
-    everyone "{note1} You better watch out...{w=0} {note2}"
-    everyone "{note1} You better not cry...{w=0} {note2}"
-    everyone "{note1} Better not pout, I'm telling you why...{w=0} {note2}"
-    everyone "{note1} Santa Claus is coming to town!{w=0} {note2}"
+    grace ":note1: Gonna find out who's naughty and nice...{w=0} :note2:"
+    rich ":note1: Santa Claus is coming to town!{w=0} :note2:"
+    tate ":note1: He sees you when you're sleeping...{w=0} :note2:"
+    mean ":note1: He knows when you're awake...{w=0} :note2:"
+    db ":note1: He knows if you've been bad or good...{w=0} :note2:"
+    obama ":note1: So, you'd better be good. For goodness' sake!{w=0} :note2:"
+    cs ":note1: Ohhh...{w=0} :note2:"
+    everyone ":note1: You better watch out...{w=0} :note2:"
+    everyone ":note1: You better not cry...{w=0} :note2:"
+    everyone ":note1: Better not pout, I'm telling you why...{w=0} :note2:"
+    everyone ":note1: Santa Claus is coming to town!{w=0} :note2:"
     scene scroller_plains_night at scroll(-6072,6072,0,0,50,0):
         zoom 2.0
     show snow1

@@ -248,3 +248,4 @@ define config.default_music_volume = 0.75
 define config.default_sfx_volume = 0.75
 define config.default_voice_volume = 0.75
 
+define config.default_textshader = 'typewriter'

@@ -168,9 +168,9 @@ screen items(l):
             python:
                 try:
                     if ITEM_MAP[l].get('dx', False):
-                        fetched_desc = "{image=gui/inline_text/dx_text.png} " + ITEM_MAP[l]["desc"]
+                        fetched_desc = "{image=gui/inline_text/dx.png} " + ITEM_MAP[l]["desc"]
                     elif ITEM_MAP[l].get('ce', False):
-                        fetched_desc = "{image=gui/inline_text/ce_text.png} " + ITEM_MAP[l]["desc"]
+                        fetched_desc = "{image=gui/inline_text/ce.png} " + ITEM_MAP[l]["desc"]
                     else:
                         fetched_desc = ITEM_MAP[l]["desc"]
                 except:

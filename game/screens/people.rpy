@@ -122,9 +122,9 @@ screen people():
                                 unread_indicator = get_themed_attribute("new")
 
                                 if name_map[k].get('dx', False):
-                                    name_label = "{image=[unread_indicator]}{image=gui/inline_text/dx_text.png} " + name_map[k]['full_name'] if k not in persistent.read else "{image=gui/inline_text/dx_text.png} " + name_map[k]['full_name']
+                                    name_label = "{image=[unread_indicator]}{image=gui/inline_text/dx.png} " + name_map[k]['full_name'] if k not in persistent.read else "{image=gui/inline_text/dx.png} " + name_map[k]['full_name']
                                 elif name_map[k].get('ce', False):
-                                    name_label = "{image=[unread_indicator]}{image=gui/inline_text/ce_text.png} " + name_map[k]['full_name'] if k not in persistent.read else "{image=gui/inline_text/ce_text.png} " + name_map[k]['full_name']
+                                    name_label = "{image=[unread_indicator]}{image=gui/inline_text/ce.png} " + name_map[k]['full_name'] if k not in persistent.read else "{image=gui/inline_text/ce.png} " + name_map[k]['full_name']
                                 else:
                                     name_label = "{image=[unread_indicator]}" + name_map[k]['full_name'] if k not in persistent.read else name_map[k]['full_name']
                             if k == "iris":
@@ -251,13 +251,13 @@ screen people():
 
                                                 if current_page_type == "dx_bio":
                                                     if renpy.seen_label( name_map[current_person]['dx_bio_label'] ) == True:
-                                                        fetched = "{image=gui/inline_text/dx_text.png} " + name_map[current_person]["dx_bio"]
+                                                        fetched = "{image=gui/inline_text/dx.png} " + name_map[current_person]["dx_bio"]
                                                     else:
                                                         fetched = "???"
 
                                                 if current_page_type == "ce_bio":
                                                     if renpy.seen_label( name_map[current_person]['ce_bio_label'] ) == True:
-                                                        fetched = "{image=gui/inline_text/ce_text.png} " + name_map[current_person]["ce_bio"]
+                                                        fetched = "{image=gui/inline_text/ce.png} " + name_map[current_person]["ce_bio"]
                                                     else:
                                                         fetched = "???"
 
