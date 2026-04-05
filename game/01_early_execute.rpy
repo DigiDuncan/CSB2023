@@ -391,9 +391,7 @@ init python:
         current = re.sub(r'(<.*>)', "", str(renpy.music.get_playing("music")), flags=re.IGNORECASE)
 
         song = None
-        if not current:
-            renpy.restart_interaction()
-        else:
+        if current:
             for t in MUSIC_MAP:
                 if current in MUSIC_MAP[t]["file"]:
                     song_id = t
