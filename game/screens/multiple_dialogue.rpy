@@ -40,7 +40,7 @@ screen digimultiple(blocks):
             python:
                 last_name_width = 0
                 for i in range(0, idx):
-                    last_name_width += get_size(Text(substitutions(blocks[i][0].name), style = "namebox_label", font = gui_theme_map["name_font"]))[0] + 45
+                    last_name_width += get_size(Text(substitutions(blocks[i][0].name), style = "namebox_label", font = gui_theme_map["name_font"]))[0] + int(gui_theme_map["dialogue_namebox_xspacing"])
 
             window:
                 id "namebox"
