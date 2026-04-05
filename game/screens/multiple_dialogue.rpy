@@ -25,6 +25,7 @@ screen multiple_say(who, what, multiple):
 screen digimultiple(blocks):
     zorder 5
     style_prefix "say"
+    key "dismiss" action Hide("digimultiple")
 
     $ total_chars = len(blocks)
 
