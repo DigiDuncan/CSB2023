@@ -664,7 +664,7 @@ label _awawa_tate_test:
                         pakoo_offscreen "Hey! You,{w=0} there!"
                         pakoo_offscreen "Just what do you think you're doing down there?!"
                     "Never mind.":
-                        jump .awawa_menu
+                        pass
                 jump .awawa_menu
 
             #################### GAME TESTS ####################
@@ -674,10 +674,17 @@ label _awawa_tate_test:
                     "Tic-Tac-Toe":
                         tate "Alright, let's play!"
                         call screen test_ttt
+                
+                    "Tarot Reading":
+                        show tate sheepish
+                        tate "Sure. I'm not great at it yet, but I'll try it."
+                        call screen test_tarot
+                        tate "Now, as for what this actually means for {i}you?"
+                        tate "Hell if I know."
+
                 jump .awawa_menu
 
             #################### Cancel ####################
-
             "None, I'm Done":
                 tate "Cool. See ya later!"
                 $ renpy.full_restart
@@ -870,3 +877,250 @@ screen test_ttt():
         if ttt_state == "play" and ttt_won is not None:
             ttt_state = "end"
             renpy.restart_interaction()
+
+####################################################################################################
+
+screen test_tarot():
+    modal True
+
+    # This should probably be a JSON but uhhhhh not now lol
+    default tarot_deck = [
+# MAJOR ARCANA
+        {"name": "The Fool", "upright": "Beginnings, Innocence, Trust", "reversed": "Recklessness, Fear, Naivety"},
+        {"name": "The Magician", "upright": "Manifestation, Willpower, Skill", "reversed": "Manipulation, Disconnection, Waste"},
+        {"name": "The High Priestess", "upright": "Intuition, Mystery, Depth", "reversed": "Secrets, Confusion, Suppression"},
+        {"name": "The Empress", "upright": "Abundance, Nurturing, Fertility", "reversed": "Dependence, Smothering, Neglect"},
+        {"name": "The Emperor", "upright": "Authority, Structure, Protection", "reversed": "Tyranny, Rigidity, Insecurity"},
+        {"name": "The Hierophant", "upright": "Tradition, Belief, Ethics", "reversed": "Rebellion, Restriction, Misalignment"},
+        {"name": "The Lovers", "upright": "Love, Connection, Choice", "reversed": "Temptation, Imbalance, Conflict"},
+        {"name": "The Chariot", "upright": "Discipline, Willpower, Victory", "reversed": "Aimlessness, Aggression, Defeat"},
+        {"name": "Strength", "upright": "Courage, Restraint, Compassion", "reversed": "Doubt, Weakness, Impulse"},
+        {"name": "The Hermit", "upright": "Introspection, Solitude, Wisdom", "reversed": "Isolation, Loneliness, Withdrawal"},
+        {"name": "The Wheel Of Fortune", "upright": "Destiny, Cycles, Fortune", "reversed": "Misfortune, Resistance, Stagnation"},
+        {"name": "Justice", "upright": "Fairness, Truth, Accountability", "reversed": "Unfairness, Dishonesty, Imbalance"},
+        {"name": "The Hanged Man", "upright": "Surrender, Perspective, Waiting", "reversed": "Indecision, Delay, Resistance"},
+        {"name": "Death", "upright": "Transformation, Endings, Change", "reversed": "Resistance, Clinging, Decay"},
+        {"name": "Temperance", "upright": "Balance, Moderation, Integration", "reversed": "Imbalance, Excess, Discord"},
+        {"name": "The Devil", "upright": "Temptation, Shadow, Bondage", "reversed": "Liberation, Awareness, Reclamation"},
+        {"name": "The Tower", "upright": "Upheaval, Chaos, Revelation", "reversed": "Turmoil, Denial, Resistance"},
+        {"name": "The Star", "upright": "Hope, Renewal, Inspiration", "reversed": "Despair, Pessimism, Disconnection"},
+        {"name": "The Moon", "upright": "Illusion, Emotion, Subconscious", "reversed": "Unveiling, Deception, Anxiety"},
+        {"name": "The Sun", "upright": "Joy, Success, Vitality", "reversed": "Depression, Failure, Ego"},
+        {"name": "Judgment", "upright": "Awakening, Redemption, Reckoning", "reversed": "Doubt, Avoidance, Regret"},
+        {"name": "The World", "upright": "Completion, Achievement, Unity", "reversed": "Fragmentation, Incompletion, Delay"},
+
+        # WANDS
+        {"name": "Ace of Wands", "upright": "Creation, Willpower, Inspiration", "reversed": "Delays, Blocks, Stagnation"},
+        {"name": "2 of Wands", "upright": "Planning, Progress, Decisions", "reversed": "Indecision, Roadblocks, Fear"},
+        {"name": "3 of Wands", "upright": "Expansion, Growth, Foresight", "reversed": "Obstacles, Delays, Setbacks"},
+        {"name": "4 of Wands", "upright": "Celebration, Harmony, Home", "reversed": "Instability, Transition, Disharmony"},
+        {"name": "5 of Wands", "upright": "Conflict, Competition, Tension", "reversed": "Resolution, Compromise, Truce"},
+        {"name": "6 of Wands", "upright": "Victory, Success, Recognition", "reversed": "Failure, Ego, Pride"},
+        {"name": "7 of Wands", "upright": "Challenge, Perseverance, Defense", "reversed": "Surrender, Exhaustion, Defeat"},
+        {"name": "8 of Wands", "upright": "Movement, Speed, Progress", "reversed": "Delays, Frustration, Obstacles"},
+        {"name": "9 of Wands", "upright": "Resilience, Courage, Persistence", "reversed": "Weakness, Burnout, Exhaustion"},
+        {"name": "10 of Wands", "upright": "Burden, Responsibility, Stress", "reversed": "Overwhelm, Collapse, Delegation"},
+        {"name": "Page of Wands", "upright": "Exploration, Enthusiasm, Discovery", "reversed": "Aimlessness, Procrastination, Impulsiveness"},
+        {"name": "Knight of Wands", "upright": "Energy, Action, Adventure", "reversed": "Impatience, Recklessness, Frustration"},
+        {"name": "Queen of Wands", "upright": "Courage, Confidence, Determination", "reversed": "Selfishness, Jealousy, Dominance"},
+        {"name": "King of Wands", "upright": "Leadership, Vision, Authority", "reversed": "Impulsiveness, Dominance, Tyranny"},
+
+        # PENTACLES
+        {"name": "Ace of Pentacles", "upright": "Opportunity, Prosperity, Abundance", "reversed": "Loss, Misfortune, Scarcity"},
+        {"name": "2 of Pentacles", "upright": "Balance, Adaptability, Juggling", "reversed": "Imbalance, Disorder, Overwhelm"},
+        {"name": "3 of Pentacles", "upright": "Teamwork, Collaboration, Learning", "reversed": "Discord, Competition, Mediocrity"},
+        {"name": "4 of Pentacles", "upright": "Security, Control, Conservation", "reversed": "Hoarding, Insecurity, Greed"},
+        {"name": "5 of Pentacles", "upright": "Hardship, Loss, Isolation", "reversed": "Recovery, Growth, Assistance"},
+        {"name": "6 of Pentacles", "upright": "Charity, Generosity, Sharing", "reversed": "Manipulation, Selfishness, Debt"},
+        {"name": "7 of Pentacles", "upright": "Patience, Investment, Growth", "reversed": "Impatience, Waste, Stagnation"},
+        {"name": "8 of Pentacles", "upright": "Diligence, Skill, Craftsmanship", "reversed": "Shortcuts, Laziness, Mediocrity"},
+        {"name": "9 of Pentacles", "upright": "Independence, Luxury, Abundance", "reversed": "Materialism, Extravagance, Dependency"},
+        {"name": "10 of Pentacles", "upright": "Legacy, Wealth, Family", "reversed": "Conflict, Failure, Instability"},
+        {"name": "Page of Pentacles", "upright": "Study, Opportunity, Growth", "reversed": "Procrastination, Idleness, Stagnation"},
+        {"name": "Knight of Pentacles", "upright": "Diligence, Reliability, Patience", "reversed": "Laziness, Boredom, Stagnation"},
+        {"name": "Queen of Pentacles", "upright": "Nurturing, Practical, Abundance", "reversed": "Selfishness, Jealousy, Smothering"},
+        {"name": "King of Pentacles", "upright": "Wealth, Success, Security", "reversed": "Greed, Exploitation, Stubbornness"},
+
+        # SWORDS
+        {"name": "Ace of Swords", "upright": "Clarity, Truth, Breakthrough", "reversed": "Confusion, Deception, Hostility"},
+        {"name": "2 of Swords", "upright": "Decision, Stalemate, Balance", "reversed": "Indecision, Confusion, Overwhelm"},
+        {"name": "3 of Swords", "upright": "Heartbreak, Sorrow, Grief", "reversed": "Recovery, Forgiveness, Healing"},
+        {"name": "4 of Swords", "upright": "Rest, Recuperation, Meditation", "reversed": "Burnout, Exhaustion, Stagnation"},
+        {"name": "5 of Swords", "upright": "Conflict, Defeat, Arguments", "reversed": "Reconciliation, Resolution, Revenge"},
+        {"name": "6 of Swords", "upright": "Transition, Journey, Healing", "reversed": "Stuck, Resistance, Baggage"},
+        {"name": "7 of Swords", "upright": "Deception, Strategy, Stealth", "reversed": "Confession, Exposure, Guilt"},
+        {"name": "8 of Swords", "upright": "Restriction, Imprisonment, Limitation", "reversed": "Freedom, Release, Empowerment"},
+        {"name": "9 of Swords", "upright": "Anxiety, Worry, Fear", "reversed": "Hope, Healing, Recovery"},
+        {"name": "10 of Swords", "upright": "Endings, Loss, Crisis", "reversed": "Recovery, Regeneration, Survival"},
+        {"name": "Page of Swords", "upright": "Curiosity, Communication, Vigilance", "reversed": "Deception, Gossip, Dishonesty"},
+        {"name": "Knight of Swords", "upright": "Action, Ambition, Speed", "reversed": "Impulsiveness, Recklessness, Burnout"},
+        {"name": "Queen of Swords", "upright": "Honesty, Independence, Directness", "reversed": "Coldness, Bitterness, Cruelty"},
+        {"name": "King of Swords", "upright": "Authority, Truth, Logic", "reversed": "Tyranny, Manipulation, Cruelty"},
+
+        # CUPS
+        {"name": "Ace of Cups", "upright": "Love, Emotion, Creativity", "reversed": "Emptiness, Blockage, Loss"},
+        {"name": "2 of Cups", "upright": "Partnership, Connection, Attraction", "reversed": "Separation, Discord, Imbalance"},
+        {"name": "3 of Cups", "upright": "Celebration, Friendship, Community", "reversed": "Excess, Isolation, Exclusion"},
+        {"name": "4 of Cups", "upright": "Apathy, Contemplation, Reevaluation", "reversed": "Withdrawal, Retreat, Indulgence"},
+        {"name": "5 of Cups", "upright": "Loss, Grief, Disappointment", "reversed": "Acceptance, Healing, Forgiveness"},
+        {"name": "6 of Cups", "upright": "Nostalgia, Memories, Innocence", "reversed": "Stuck, Forward, Independence"},
+        {"name": "7 of Cups", "upright": "Choices, Fantasy, Illusion", "reversed": "Clarity, Focus, Realism"},
+        {"name": "8 of Cups", "upright": "Withdrawal, Detachment, Departure", "reversed": "Avoidance, Fear, Stagnation"},
+        {"name": "9 of Cups", "upright": "Satisfaction, Contentment, Gratitude", "reversed": "Materialism, Discontent, Greed"},
+        {"name": "10 of Cups", "upright": "Harmony, Happiness, Family", "reversed": "Disconnection, Discord, Breakdown"},
+        {"name": "Page of Cups", "upright": "Creativity, Intuition, Sensitivity", "reversed": "Immaturity, Insecurity, Blockage"},
+        {"name": "Knight of Cups", "upright": "Romance, Charm, Imagination", "reversed": "Moodiness, Jealousy, Fantasy"},
+        {"name": "Queen of Cups", "upright": "Compassion, Calm, Intuition", "reversed": "Insecurity, Dependency, Depletion"},
+        {"name": "King of Cups", "upright": "Balance, Control, Empathy", "reversed": "Volatility, Manipulation, Moodiness"}
+    ]
+
+    default tarot_state = "select"
+    default reading_type = ""
+    default drawn_cards = []
+    default position = ""
+
+    if tarot_state == "select":
+        frame: 
+            xsize 950 ysize 200
+            xalign 0.5 yalign 0.5
+
+            text "What kind of reading would you like?":
+                xalign 0.5 yalign 0.2 text_align 0.5
+
+            textbutton "Single Card":
+                xalign 0.2 yalign 0.8 text_align 0.5
+                action [
+                    SetScreenVariable("reading_type", "single"),
+                    SetScreenVariable("tarot_state", "draw")
+                ]
+            textbutton "Past/Present/Future":
+                xalign 0.8 yalign 0.8 text_align 0.5
+                action [
+                    SetScreenVariable("reading_type", "ppf"),
+                    SetScreenVariable("tarot_state", "draw")
+                ]
+
+    elif tarot_state == "draw":
+        key "dismiss" action Return()
+        if reading_type == "single":
+            frame:
+                xsize 950 ysize 500
+                xalign 0.5 yalign 0.5
+
+                vbox:
+                    xalign 0.5 yalign 0.2
+                    xsize 0.8 ysize 0.8
+
+                    text "Awawa.":
+                        xalign 0.5 text_align 0.5
+                        at transform:
+                            alpha 0
+                            linear 0.5 alpha 0
+                            linear 0 alpha 1.0
+
+                    text "Think really hard about the situation.":
+                        xalign 0.5 text_align 0.5
+                        at transform:
+                            alpha 0
+                            linear 2.0 alpha 0
+                            linear 0 alpha 1.0
+                        
+                    text "Your card is...":
+                        xalign 0.5 text_align 0.5
+
+                        at transform:
+                            alpha 0
+                            linear 5.0 alpha 0
+                            linear 0 alpha 1.0
+
+
+                $ position = renpy.random.choice(["upright", "reversed"])
+                $ drawn_cards = renpy.random.choice(tarot_deck)
+
+                vbox:
+                    xalign 0.5 yalign 0.8 
+
+                    at transform:
+                        alpha 0
+                        linear 7.0 alpha 0
+                        linear 0 alpha 1.0
+
+                    text drawn_cards["name"]:
+                        xalign 0.5 text_align 0.5
+                        size 64
+                    text "("+str.capitalize(position)+")":
+                        xalign 0.5 text_align 0.5
+                        color gui.idle_color
+                        size 36
+                    text drawn_cards[position]:
+                        xalign 0.5 text_align 0.5
+                        color gui.idle_color
+                        size 36
+                        italic True
+                                                             
+        elif reading_type == "ppf":
+            key "dismiss" action Return()
+
+            frame:
+                xsize 0.8 ysize 500
+                xalign 0.5 yalign 0.5
+
+                vbox:
+                    xalign 0.5 yalign 0.2
+                    xsize 0.9 ysize 0.9
+
+                    text "Awawa.":
+                        xalign 0.5 text_align 0.5
+                        at transform:
+                            alpha 0
+                            linear 0.5 alpha 0
+                            linear 0 alpha 1.0
+
+                    text "Think really hard about the situation.":
+                        xalign 0.5 text_align 0.5
+                        at transform:
+                            alpha 0
+                            linear 2.0 alpha 0
+                            linear 0 alpha 1.0
+                        
+                    text "Your cards are...":
+                        xalign 0.5 text_align 0.5
+
+                        at transform:
+                            alpha 0
+                            linear 5.0 alpha 0
+                            linear 0 alpha 1.0
+
+                grid 3 1:
+                    xalign 0.5 yalign 0.8
+                    xsize 1.0
+                    
+                    $ drawn_cards = [ renpy.random.choice(tarot_deck), renpy.random.choice(tarot_deck), renpy.random.choice(tarot_deck)]
+                    $ readings = ["The Past", "The Present", "The Future"]
+
+                    for idx, c in enumerate(drawn_cards):
+                        $ position = renpy.random.choice(["upright", "reversed"])
+
+                        vbox:
+                            xalign 0.5 yalign 0.8 
+
+                            at transform:
+                                alpha 0
+                                linear 7.0 alpha 0
+                                linear 0 alpha 1.0
+
+                            text readings[idx]:
+                                xalign 0.5 text_align 0.5
+                            text drawn_cards[idx]["name"]:
+                                xalign 0.5 text_align 0.5
+                                color gui.idle_color
+                                size 64
+                            text "("+str.capitalize(position)+")":
+                                xalign 0.5 text_align 0.5
+                                color gui.idle_color
+                                size 36
+                            text drawn_cards[idx][position]:
+                                xalign 0.5 text_align 0.5
+                                color gui.idle_color
+                                size 36
+                                italic True

@@ -1,7 +1,11 @@
 screen bad_ending(text = "Why'd you do that?"):
     modal True
     on "show" action Play("sound", ["<silence 0.15>", "audio/sfx/sfx_bad_ending.ogg"])
-    key "dismiss" action Return()
+    key "dismiss":
+        action [
+            Return(),
+            With("dissolve")
+        ]
     
     frame:
         background None
