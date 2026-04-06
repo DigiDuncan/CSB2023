@@ -1094,6 +1094,7 @@ screen test_tarot():
                 grid 3 1:
                     xalign 0.5 yalign 0.8
                     xsize 1.0
+                    spacing 24
                     
                     $ drawn_cards = [ renpy.random.choice(tarot_deck), renpy.random.choice(tarot_deck), renpy.random.choice(tarot_deck)]
                     $ readings = ["The Past", "The Present", "The Future"]
