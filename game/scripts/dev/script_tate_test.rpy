@@ -681,6 +681,12 @@ label _awawa_tate_test:
                         call screen test_tarot with dissolve
                         tate "Now, as for what this reading actually means for {i}you?"
                         tate "Hell if I know."
+      
+                    "Blackjack":
+                        show tate
+                        tate "Okay. This is my room, so I'll be the dealer, and we'll be playing by casino rules."
+                        tate "This means that the ace cards are {a=https://officialgamerules.org/game-rules/blackjack/}flexible{/a} and that I must hit if my hand is at or below 16."
+                        call screen blackjack
 
                 jump .awawa_menu
 
