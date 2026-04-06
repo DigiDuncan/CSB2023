@@ -382,7 +382,7 @@ label where_are_they_now:
     ################ ENDING ################
 
     centered "{size=+128}THE END{fast}"
+    $ renpy.end_replay()
 
     call screen credits_roll() with determination
-    $ renpy.end_replay()
     return

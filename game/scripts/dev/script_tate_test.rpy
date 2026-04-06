@@ -600,7 +600,9 @@ label _awawa_tate_test:
                     ########## WHERE ARE THEY NOW REDUX ##########
                     "Where Are They Now? V2":
                         tate "Aight."
-                        jump where_are_they_now
+                        $ renpy.call_replay("where_are_they_now")
+                        tate "Was that right?"
+                        jump .awawa_menu
 
                     ########## BAD ENDING REDUX ##########
                     "Bad Ending V2":
@@ -734,7 +736,7 @@ screen test_ttt():
             text "Who should go first?":
                 xalign 0.5 yalign 0.2 text_align 0.5
 
-            textbutton "CS":
+            textbutton "You":
                 xalign 0.3 yalign 0.8 text_align 0.5
                 action [
                     SetScreenVariable("whose_turn", 0),
