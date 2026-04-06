@@ -678,8 +678,8 @@ label _awawa_tate_test:
                     "Tarot Reading":
                         show tate sheepish
                         tate "Sure. I'm not great at it yet, but I'll try it."
-                        call screen test_tarot
-                        tate "Now, as for what this actually means for {i}you?"
+                        call screen test_tarot with dissolve
+                        tate "Now, as for what this reading actually means for {i}you?"
                         tate "Hell if I know."
 
                 jump .awawa_menu
@@ -883,9 +883,12 @@ screen test_ttt():
 screen test_tarot():
     modal True
 
+    add gui.game_menu_background:
+        alpha 0.5
+
     # This should probably be a JSON but uhhhhh not now lol
     default tarot_deck = [
-# MAJOR ARCANA
+        # MAJOR ARCANA
         {"name": "The Fool", "upright": "Beginnings, Innocence, Trust", "reversed": "Recklessness, Fear, Naivety"},
         {"name": "The Magician", "upright": "Manifestation, Willpower, Skill", "reversed": "Manipulation, Disconnection, Waste"},
         {"name": "The High Priestess", "upright": "Intuition, Mystery, Depth", "reversed": "Secrets, Confusion, Suppression"},
@@ -1001,7 +1004,7 @@ screen test_tarot():
                 ]
 
     elif tarot_state == "draw":
-        key "dismiss" action Return()
+
         if reading_type == "single":
             frame:
                 xsize 950 ysize 500
@@ -1012,6 +1015,7 @@ screen test_tarot():
                     xsize 0.8 ysize 0.8
 
                     text "Awawa.":
+                        slow_cps preferences.text_cps
                         xalign 0.5 text_align 0.5
                         at transform:
                             alpha 0
@@ -1059,8 +1063,11 @@ screen test_tarot():
                         italic True
                                                              
         elif reading_type == "ppf":
-            key "dismiss" action Return()
 
+            key "dismiss" action [
+                Return(),
+                With("dissolve")
+            ]
             frame:
                 xsize 0.8 ysize 500
                 xalign 0.5 yalign 0.5
@@ -1114,7 +1121,6 @@ screen test_tarot():
                                 xalign 0.5 text_align 0.5
                             text drawn_cards[idx]["name"]:
                                 xalign 0.5 text_align 0.5
-                                color gui.idle_color
                                 size 64
                             text "("+str.capitalize(position)+")":
                                 xalign 0.5 text_align 0.5
@@ -1125,3 +1131,7 @@ screen test_tarot():
                                 color gui.idle_color
                                 size 36
                                 italic True
+        key "dismiss" action [
+            Return(),
+            With("dissolve")
+        ]
