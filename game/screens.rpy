@@ -1861,31 +1861,29 @@ style notify_text:
 
 
 screen nvl(dialogue, items=None):
-
     window:
         style "nvl_window"
+        ysize 1050
 
         has vbox:
+            ymaximum 1050
             spacing gui.nvl_spacing
 
         ## Displays dialogue in either a vpgrid or the vbox.
         if gui.nvl_height:
-
             vpgrid:
                 cols 1
                 yinitial 1.0
-
                 use nvl_dialogue(dialogue)
 
         else:
-
             use nvl_dialogue(dialogue)
 
         ## Displays the menu, if given. The menu may be displayed incorrectly if
         ## config.narrator_menu is set to True.
         for i in items:
-
             textbutton i.caption:
+                xalign 0.5
                 action i.action
                 style "nvl_button"
 
@@ -1925,7 +1923,8 @@ style nvl_button is button
 style nvl_button_text is button_text
 
 style nvl_window:
-    xfill True
+    xsize 1280
+    xpos 640
     yfill True
 
     background "gui/nvl.png"
@@ -1963,9 +1962,7 @@ style nvl_thought:
     layout ("subtitle" if gui.nvl_text_xalign else "tex")
 
 style nvl_button:
-    properties custom_button_properties("nvl_button")
-    xpos gui.nvl_button_xpos
-    xanchor gui.nvl_button_xalign
+    properties custom_button_properties("button")
 
 style nvl_button_text:
     properties gui.button_text_properties("nvl_button")

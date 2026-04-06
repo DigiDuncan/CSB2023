@@ -4,6 +4,11 @@ init python:
         renpy.random.shuffle(songs)
         renpy.music.queue(songs, tight = True)
 
+# Used for the NVL test.
+define n_n = Character(None, kind=nvl, what_color="#BBBBBB", what_italic = True, callback = char_callback)
+define digi_n = Character('Digi', kind=nvl, what_color="#009dff", callback = renpy.partial(char_callback, name = "digi", beep = "digi"))
+define you_n = Character('You', kind=nvl, callback = char_callback)
+
 label _digi_test:
     $ chatted_with_digi = 0
     $ entered_tests = False
@@ -29,8 +34,10 @@ label _digi_test:
             "What do you want to do?"
             "I'd like to test things!":
                 jump .tests
-            "I want to talk!":
+            "I want to chat!":
                 jump .chat
+            "I want to talk for a while! {size=-12}(NVL mode test)":
+                jump .chat_nvl
             "I gotta head out.":
                 show digi happy
                 digi "Alright, seeya!"
@@ -105,7 +112,7 @@ label _digi_test:
         digi "Now, let's try it with the lexer..."
         multiple:
             digi "Hello, I'm being lexed!"
-            "awawa" "And what the fuck does that mean?"
+            "Awawa" "And what the fuck does that mean?"
             mean "They're being lexed, doofus, what's there to not understand?!"
 
         show digi thinking
@@ -252,3 +259,94 @@ label _digi_test:
         music drive
         digi "I hope that went well!"
         jump .tests
+
+    label .chat_nvl:
+        # Welcome to a full-scale test of NVL mode.
+        # This is going to be very custom for what I want, so if we want to do this
+        # in other parts of the game, this might be a good template, but we should
+        # definitely look into a more consistent themeing for all of this.
+        show digi at mid_left with move
+        nvl clear
+        n_n "You start chatting with Digi."
+        $ just_entered = True
+        $ mentioned_iris = False
+        digi_n "Hey! What do you want to talk about?"
+        jump .chat_nvl_topics
+
+    label .chat_nvl_topics:
+        if not just_entered:
+            digi_n "What else do you want to talk about?"
+        else:
+            $ just_entered = False
+        menu (nvl = True):
+            "What is this place?":
+                you_n "What is this place?"
+                digi_n "Well, do you mean on Layer 1, or Layer 0?"
+                jump .chat_nvl_layers
+            "Nothing else!":
+                you_n "Nothing else!"
+                jump .chat_nvl_exit
+
+    label .chat_nvl_layers:
+        menu (nvl = True):
+            "Layer 1?":
+                nvl clear
+                you_n "Layer 1?"
+                digi_n "Well, on Layer 1, this is the Nugget!"
+                digi_n """The Nugget is my spaceship. I've had it for quite a while...
+                I got it shortly after I entered this universe.
+
+                The details are hazy, but this ship used to be a lot more rinky-dink.
+                I did a lot of upgrades after acquiring it, though. It still doesn't run {i}perfectly{/i} but
+                it's a pretty good ship at this point. Iris keeps bugging me to upgrade to ion thrusters from
+                hydrogen ones, though.
+                """
+                $ mentioned_iris = True
+                jump .chat_nvl_topics
+            "Layer 0?":
+                nvl clear
+                you_n "Layer 0?"
+                digi_n "This is a test room for some features Digi{font=cmunrm.ttf}[[0]{/font} wants to mess around with."
+                digi_n "It being a seperate space gives them the creative freedom to just kinda mess around."
+                digi_n "Some problems with the game have already been spotted with this method!"
+                jump .chat_nvl_topics
+            "You keep saying layers...?":
+                nvl clear
+                you_n "You keep saying \"layers\", what do you mean by that?"
+                digi_n "Layers, like like layers of fiction."
+                digi_n """You, the person reading this, are in Layer 0. You are in the \"real world.\"
+                
+                Now, I hate to break it to ya, but I'm not. I'm in Layer 1, which to you, is fiction.
+                Going deeper into fiction increases the number. Going up the chain decreases it.
+                So, if {i}I{/i} wrote a fictional story, that story would take place in Layer 2.
+                
+                It's a theory in pataphysics, there's a great article by Dr.--
+                """
+                n_n "Digi cuts themselves off before they bore you."
+                digi_n "Sorry, never mind, it's complex."
+                jump .chat_nvl_topics
+            "Iris?" if mentioned_iris:
+                nvl clear
+                you_n "Iris?"
+                digi_n "Yeah, Iris! She's my friend and... boss? Kinda? I work for her, but the relationship isn't really formal."
+                digi_n """When I first got this universe, I was kinda... adrift, for a while. Didn't have a place to go.
+                She took me in after I had a run in with a black hole.
+
+                ...
+
+                OK, yes, it was my fault for getting that close, I don't want to talk about it right now. Some other time.
+
+                Anywho, she took me in, gave me some equipment, helped me back on my feet,
+                and gave me the opportunity to help her out with what she does.
+                """
+                you_n "What does she do?"
+                digi_n "I don't have time to get into that right now, to be honest. Another time."
+                jump .chat_nvl_topics
+        
+        jump .chat_nvl_topics
+
+    label .chat_nvl_exit:
+        digi_n "Alrighty!"
+        digi_n "{size=-12}I hope NVL mode worked well..."
+        show digi at center with move
+        jump .menu
