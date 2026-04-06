@@ -740,16 +740,16 @@ screen test_ttt():
             xsize 950 ysize 200
             xalign 0.5 yalign 0.5
 
-            text "Who should go first?":
+            text _("Who should go first?"):
                 xalign 0.5 yalign 0.2 text_align 0.5
 
-            textbutton "You":
+            textbutton _("You"):
                 xalign 0.3 yalign 0.8 text_align 0.5
                 action [
                     SetScreenVariable("whose_turn", 0),
                     SetScreenVariable("ttt_state", "symbols")
                 ]
-            textbutton "Tate":
+            textbutton _("Tate"):
                 xalign 0.7 yalign 0.8 text_align 0.5
                 action [
                     SetScreenVariable("whose_turn", 1),
@@ -761,7 +761,7 @@ screen test_ttt():
             xsize 950 ysize 200
             xalign 0.5 yalign 0.5
 
-            text "Do you want to use X or O?":
+            text _("Do you want to use X or O?"):
                 xalign 0.5 yalign 0.2 text_align 0.5
 
             textbutton "X":
@@ -812,27 +812,27 @@ screen test_ttt():
 
     elif ttt_state == "end":
         if ttt_won == player_symbol:
-            $ result = "You win!"
+            $ result = _("You win!")
         elif ttt_won == opponent_symbol:
-            $ result = "Tate wins!"
+            $ result = _("Tate wins!")
         else:
-            $ result = "It's a draw!"
+            $ result = _("It's a draw!")
 
         frame: 
             xsize 950 ysize 200
             xalign 0.5 yalign 0.5
 
-            text result+" Play again?":
+            text result+_(" Play again?"):
                 xalign 0.5 yalign 0.2 text_align 0.5
 
-            textbutton "Yes":
+            textbutton _("Yes"):
                 xalign 0.3 yalign 0.8 text_align 0.5
                 action [
                     SelectedIf(False),
                     Hide("test_ttt"),
                     ShowTransient("test_ttt")
                 ]
-            textbutton "No":
+            textbutton _("No"):
                 xalign 0.7 yalign 0.8 text_align 0.5
                 action [
                     Stop("music", fadeout=0.5),
@@ -887,6 +887,7 @@ screen test_tarot():
         alpha 0.5
 
     # This should probably be a JSON but uhhhhh not now lol
+    # TODO: figure out how to mark the whole deck translatable
     default tarot_deck = [
         # MAJOR ARCANA
         {"name": "The Fool", "upright": "Beginnings, Innocence, Trust", "reversed": "Recklessness, Fear, Naivety"},
@@ -987,16 +988,16 @@ screen test_tarot():
             xsize 950 ysize 200
             xalign 0.5 yalign 0.5
 
-            text "What kind of reading would you like?":
+            text _("What kind of reading would you like?"):
                 xalign 0.5 yalign 0.2 text_align 0.5
 
-            textbutton "Single Card":
+            textbutton _("Single Card"):
                 xalign 0.2 yalign 0.8 text_align 0.5
                 action [
                     SetScreenVariable("reading_type", "single"),
                     SetScreenVariable("tarot_state", "draw")
                 ]
-            textbutton "Past/Present/Future":
+            textbutton _("Past/Present/Future"):
                 xalign 0.8 yalign 0.8 text_align 0.5
                 action [
                     SetScreenVariable("reading_type", "ppf"),
@@ -1014,7 +1015,7 @@ screen test_tarot():
                     xalign 0.5 yalign 0.2
                     xsize 0.8 ysize 0.8
 
-                    text "Awawa.":
+                    text _("Awawa."):
                         slow_cps preferences.text_cps
                         xalign 0.5 text_align 0.5
                         at transform:
@@ -1022,14 +1023,14 @@ screen test_tarot():
                             linear 0.5 alpha 0
                             linear 0 alpha 1.0
 
-                    text "Think really hard about the situation.":
+                    text _("Think really hard about the situation."):
                         xalign 0.5 text_align 0.5
                         at transform:
                             alpha 0
                             linear 2.0 alpha 0
                             linear 0 alpha 1.0
                         
-                    text "Your card is...":
+                    text _("Your card is..."):
                         xalign 0.5 text_align 0.5
 
                         at transform:
@@ -1037,10 +1038,11 @@ screen test_tarot():
                             linear 5.0 alpha 0
                             linear 0 alpha 1.0
 
-
+                $ this_card = renpy.random.choice(tarot_deck)
+                $ drawn_cards = this_card
+                $ tarot_deck.remove(this_card)
                 $ position = renpy.random.choice(["upright", "reversed"])
-                $ drawn_cards = renpy.random.choice(tarot_deck)
-
+                
                 vbox:
                     xalign 0.5 yalign 0.8 
 
@@ -1076,21 +1078,21 @@ screen test_tarot():
                     xalign 0.5 yalign 0.2
                     xsize 0.9 ysize 0.9
 
-                    text "Awawa.":
+                    text _("Awawa."):
                         xalign 0.5 text_align 0.5
                         at transform:
                             alpha 0
                             linear 0.5 alpha 0
                             linear 0 alpha 1.0
 
-                    text "Think really hard about the situation.":
+                    text _("Think really hard about the situation."):
                         xalign 0.5 text_align 0.5
                         at transform:
                             alpha 0
                             linear 2.0 alpha 0
                             linear 0 alpha 1.0
                         
-                    text "Your cards are...":
+                    text _("Your cards are..."):
                         xalign 0.5 text_align 0.5
 
                         at transform:
@@ -1103,7 +1105,11 @@ screen test_tarot():
                     xsize 1.0
                     spacing 24
                     
-                    $ drawn_cards = [ renpy.random.choice(tarot_deck), renpy.random.choice(tarot_deck), renpy.random.choice(tarot_deck)]
+                    for x in range(3):
+                        $ this_card = renpy.random.choice(tarot_deck)
+                        $ tarot_deck.remove(this_card)
+                        $ drawn_cards += [this_card]
+
                     $ readings = ["The Past", "The Present", "The Future"]
 
                     for idx, c in enumerate(drawn_cards):
