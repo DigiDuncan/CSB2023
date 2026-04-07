@@ -26,6 +26,12 @@ init python:
 screen blackjack():
     modal True
     $ renpy.choice_for_skipping()
+    $ _skipping = False
+
+    # Prevent the skipping bug (I hope)
+    key "skip" action NullAction()
+    key "toggle_skip" action NullAction()
+    key "dismiss" action NullAction()
 
     default deck = [
         { "suit": "clubs", "rank": "Ace", "points": 11 }, 
@@ -71,9 +77,10 @@ screen blackjack():
     # default hovered_card = ""
     default game_state = "setup"
     default game_result = ""
+    default player_won = None
 
-    text game_state
-    text "\n"+game_result
+    # text game_state
+    # text "\n"+game_result
 
     if game_state == "setup":
 
@@ -177,7 +184,6 @@ screen blackjack():
                             xalign 0.5 text_align 0.5
                             action [
                                 SetScreenVariable("game_state", "stand"),
-                                Notify(_("Standing!")),
                                 Function(renpy.restart_interaction)
                             ]
 
@@ -274,8 +280,81 @@ screen blackjack():
             
 
     elif game_state == "end":
-        text game_result
 
+        # Draw the field
+        frame:
+            xalign 0.5 yalign 0.5
+            xsize 1800 ysize 900
+
+            # Deck / Hit button
+            frame:
+                background None
+                xalign 0.7 yalign 0.5
+                
+                vbox:
+                    frame:
+                        xsize card_size[0] ysize card_size[1]
+                        xalign 0.5 yalign 0
+                        if len(deck) > 0:
+                            for ndx, card in enumerate(deck):
+                                add card_back:
+                                    xalign 0.5 yalign 0.5
+                                    yoffset -0.25*ndx
+                    text _("Hit!"):
+                        xalign 0.5 text_align 0.5
+                        color gui.insensitive_color
+
+                    text _("Stand!"):
+                        xalign 0.5 text_align 0.5    
+                        color gui.insensitive_color            
+
+            # Player's side
+            vbox:
+                xsize 1.0 ysize card_size[1]
+                xalign 0.5 yalign 1.0
+
+                hbox:
+                    # Player hand
+                    for ndx, card in enumerate(player_hand):
+                        add player_hand[ndx]["image"]
+
+                # Display score
+                $ player_score = get_hand_score(player_hand)
+                text _("Score: ") + str(player_score):
+                    xalign 0.5 text_align 0.5
+
+            # Dealer's side
+            vbox:
+                xsize 1.0 ysize card_size[1]
+                xalign 0.5 yalign 0
+
+                hbox:
+                    # Dealer's hand
+                    for ndx, card in enumerate(dealer_hand):
+                        add dealer_hand[ndx]["image"]
+
+                # Display score
+                $ dealer_score = get_hand_score(dealer_hand)
+                text _("Score: ") + str(dealer_score):
+                    xalign 0.5 text_align 0.5
+
+        frame:
+            xalign 0.5 yalign 0.5
+            vbox:
+                text game_result+"!\nPlay again?":
+                    xalign 0.5 yalign 0.5 text_align 0.5
+                hbox:
+                    xalign 0.5
+                    textbutton _("Yes"):
+                        xalign 0.3 text_align 0.5
+                        action [
+                            SelectedIf(False),
+                            ShowTransient("blackjack")
+                        ]
+                    textbutton _("No"):
+                        xalign 0.7 text_align 0.5
+                        action Return()
+                    
     # elif game_state == "testing":
         # $ hovered_card = GetTooltip() or ""
         # text hovered_card
@@ -325,6 +404,9 @@ screen blackjack():
         if game_state == "draw":
             if player_score > 21:
                 game_result = "player_bust"
+                game_state = "end"
+                player_won = False
+                renpy.restart_interaction()
 
         elif game_state == "stand":
             while dealer_score < 17:
@@ -334,38 +416,42 @@ screen blackjack():
 
             if dealer_score == 21 and len(dealer_hand) == 2:
                 game_result = "dealer_blackjack"
-
-            elif dealer_score == 21:
-                game_result = "dealer_win"
+                game_state = "end"
+                player_won = False
+                renpy.restart_interaction()
 
             elif dealer_score > player_score and dealer_score <= 21:
                 game_result = "dealer_win"
+                game_state = "end"
+                player_won = False
+                renpy.restart_interaction()
 
             elif dealer_score > 21:
                 game_result = "dealer_bust"
+                game_state = "end"
+                player_won = True
+                renpy.restart_interaction()
 
-            
             elif player_score == 21 and len(player_hand) == 2:
                 game_result = "player_blackjack"
-
-            elif player_score == 21:
-                game_result = "player_win"
+                game_state = "end"
+                player_won = True
+                renpy.restart_interaction()
 
             elif player_score > dealer_score and player_score <= 21:
                 game_result = "player_win"
+                game_state = "end"
+                player_won = True
+                renpy.restart_interaction()
 
             elif player_score > 21:
                 game_result = "player_bust"
+                game_state = "end"
+                player_won = False
+                renpy.restart_interaction()
 
-          
             elif dealer_score == player_score:
                 game_result = "draw"
-            
-
-            
-
-    
-        
-
-
-            
+                game_state = "end"
+                player_won = False
+                renpy.restart_interaction()            
