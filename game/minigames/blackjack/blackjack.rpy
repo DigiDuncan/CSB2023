@@ -26,7 +26,7 @@ init python:
             deck.remove(deck[-1])
 
     def dealer_logic(deck, hand, score):
-        if score < 16:
+        if score < 17:
             draw_card(deck, hand)
         elif score >= 17 and score <= 21:
             pass # stand
@@ -34,7 +34,12 @@ init python:
 screen blackjack():
     modal True
         
-    timer 1 action Play("music", "luigis_casino.ogg", if_changed=True, loop=True)
+    timer 1:
+        action [
+            Play("music", "luigis_casino.ogg", if_changed=True, loop=True),
+            Function(persistent.heard.add, "luigis_casino")
+        ]
+
 
     default master_deck = [
         { "suit": "clubs", "rank": "Ace", "points": 11 }, 
@@ -278,7 +283,7 @@ screen blackjack():
                 
             # Try to fix blackjack (10 + ace)
             elif player_score == 21 and len(player_hand) == 2:
-                game_result = "Blackjack!"
+                game_result = "You got a Blackjack!"
                 game_state = "end"
                 player_won = True
                 renpy.restart_interaction()
@@ -292,7 +297,7 @@ screen blackjack():
 
             # Dealer gets a blackjack (10 + ace)
             elif dealer_score == 21 and len(dealer_hand) == 2:
-                game_result = "Dealer had a blackjack!"
+                game_result = "Dealer got a blackjack!"
                 game_state = "end"
                 player_won = False
                 renpy.restart_interaction()

@@ -29,7 +29,7 @@
         "CSBDX: Train",
         "CSBDX: Misc.",
         "CSBDX: Ringtones",
-        "Dev: Nugget"
+        "CSBDX: Dev Rooms"
     ],
 
     "tracks": {
@@ -1701,7 +1701,7 @@
             "file": "in_the_room.ogg",
             "title": "In The Room",
             "artist": "Shogo Sakai",
-            "tags": ["CSBDX: Train", "New In DX"],
+            "tags": ["CSBDX: Train", "New In DX", "CSBDX: Dev Rooms"],
             "album_art": "mother3.png",
             "trivia": "Nintendo, please... {i}Mother 3.{/i}"
         },
@@ -1853,7 +1853,7 @@
             "file": "drive.ogg",
             "title": "Drive",
             "artist": "Beacon",
-            "tags": ["CSBDX: BT1D", "New In DX", "Dev: Nugget"],
+            "tags": ["CSBDX: BT1D", "New In DX", "CSBDX: Dev Rooms"],
             "album_art": "beacon.png",
             "trivia": "This is one of the songs that plays in the VRChat map {i}Stellar Sail{/i} by tp.jp., which inspired The Nugget."
         },
@@ -1877,7 +1877,7 @@
             "file": "bending_light.ogg",
             "title": "Bending Light",
             "artist": "Beacon",
-            "tags": ["New In DX", "Dev: Nugget"],
+            "tags": ["New In DX", "CSBDX: Dev Rooms"],
             "album_art": "beacon.png",
             "trivia": "This is one of the songs that plays in the VRChat map {i}Stellar Sail{/i} by tp.jp., which inspired The Nugget."
         },
@@ -1885,7 +1885,7 @@
             "file": "im_u.ogg",
             "title": "IM U",
             "artist": "Beacon",
-            "tags": ["New In DX", "Dev: Nugget"],
+            "tags": ["New In DX", "CSBDX: Dev Rooms"],
             "album_art": "beacon.png",
             "trivia": "This is one of the songs that plays in the VRChat map {i}Stellar Sail{/i} by tp.jp., which inspired The Nugget."
         },
@@ -1893,7 +1893,7 @@
             "file": "escapements.ogg",
             "title": "Escapements",
             "artist": "Beacon",
-            "tags": ["New In DX", "Dev: Nugget"],
+            "tags": ["New In DX", "CSBDX: Dev Rooms"],
             "album_art": "beacon.png",
             "trivia": "This is one of the songs that plays in the VRChat map {i}Stellar Sail{/i} by tp.jp., which inspired The Nugget."
         },
@@ -1901,7 +1901,7 @@
             "file": "into_the_night.ogg",
             "title": "Into The Night",
             "artist": "Beacon",
-            "tags": ["New In DX", "Dev: Nugget"],
+            "tags": ["New In DX", "CSBDX: Dev Rooms"],
             "album_art": "beacon.png",
             "trivia": "This is one of the songs that plays in the VRChat map {i}Stellar Sail{/i} by tp.jp., which inspired The Nugget."
         },
@@ -1909,9 +1909,17 @@
             "file": "bring_you_back.ogg",
             "title": "Bring You Back",
             "artist": "Beacon",
-            "tags": ["New In DX", "Dev: Nugget"],
+            "tags": ["New In DX", "CSBDX: Dev Rooms"],
             "album_art": "beacon.png",
             "trivia": "This is one of the songs that plays in the VRChat map {i}Stellar Sail{/i} by tp.jp., which inspired The Nugget."
+        },
+        "luigis_casino" : {
+            "file": "luigis_casino.ogg",
+            "title": "Luigi's Casino",
+            "artist": "Koji Kondo",
+            "tags": ["New In DX", "CSBDX: Dev Rooms"],
+            "album_art": "sm64ds.png",
+            "trivia": "Tate's personal copy of this game probably has hundreds of hours racked up just with the casino games alone."
         }
     }
 }
