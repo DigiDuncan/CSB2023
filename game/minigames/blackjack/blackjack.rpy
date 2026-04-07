@@ -181,6 +181,7 @@ screen blackjack():
                     vbox:
                         frame:
                             xsize card_size[0] ysize card_size[1]
+                            xalign 0.5 yalign 0
                             if len(deck) > 0:
                                 for ndx, card in enumerate(deck):
                                     add deck[ndx]["image"]:
@@ -188,6 +189,11 @@ screen blackjack():
                                         yoffset -0.25*ndx
                         text _("Hit!"):
                             xalign 0.5 text_align 0.5
+
+
+                        textbutton _("Stand!"):
+                            xalign 0.5 text_align 0.5
+                            action Notify("Do something!")
 
             # Player's side
             vbox:
@@ -202,4 +208,19 @@ screen blackjack():
                 # Display score
                 $ player_score = get_hand_score(player_hand)
                 text _("Score: ") + str(player_score):
+                    xalign 0.5 text_align 0.5
+
+            # Dealer's side
+            vbox:
+                xsize 1.0 ysize card_size[1]
+                xalign 0.5 yalign 0
+
+                hbox:
+                    # Dealer's hand
+                    for ndx, card in enumerate(dealer_hand):
+                        add dealer_hand[ndx]["image"]
+
+                # Display score
+                $ dealer_score = get_hand_score(dealer_hand)
+                text _("Score: ") + str(dealer_score):
                     xalign 0.5 text_align 0.5
