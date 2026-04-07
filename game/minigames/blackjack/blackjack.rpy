@@ -35,7 +35,7 @@ screen blackjack():
 
     timer 1 action Play("music", "luigis_casino.ogg", if_changed=True, loop=True)
 
-    default deck = [
+    default master_deck = [
         { "suit": "clubs", "rank": "Ace", "points": 11 }, 
         { "suit": "clubs", "rank": "2", "points": 2 }, { "suit": "clubs", "rank": "3",  "points": 3 }, { "suit": "clubs", "rank": "4", "points": 4 }, 
         { "suit": "clubs", "rank": "5", "points": 5 }, { "suit": "clubs", "rank": "6", "points": 6 }, { "suit": "clubs", "rank": "7", "points": 7 }, 
@@ -69,6 +69,7 @@ screen blackjack():
         { "suit": "diamonds", "rank": "King",  "points": 10 }
     ]
 
+    default deck = master_deck
     default dealer_hand = []
     default player_hand = []
     default dealer_score = 0
@@ -89,6 +90,9 @@ screen blackjack():
 
         # Construct card images from the sprite sheet
         python:
+            # Also reset the deck in case we're playing again
+            deck = master_deck
+
             for ndx, card in enumerate(deck):
 
                 col_number = 0
