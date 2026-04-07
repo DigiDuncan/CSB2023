@@ -12,6 +12,16 @@ init python:
                 score += card["points"]
         return score
 
+    def check_score(hand, score):
+        if score > 21:
+            return "bust"
+        elif score == 21 and len(hand) == 2:
+            return "blackjack"
+        elif score == 21:
+            return "win"
+        else:
+            return score
+
 screen blackjack():
     modal True
     $ renpy.choice_for_skipping()
@@ -224,3 +234,5 @@ screen blackjack():
                 $ dealer_score = get_hand_score(dealer_hand)
                 text _("Score: ") + str(dealer_score):
                     xalign 0.5 text_align 0.5
+
+    
