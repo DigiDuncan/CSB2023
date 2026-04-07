@@ -25,9 +25,6 @@ init python:
 
 screen blackjack():
     modal True
-
-    # Play music. We can't use on "show" here or it just hangs?
-    $ renpy.music.play("luigis_casino.ogg", channel="music", loop=True, if_changed=True)
         
     # Prevent the skipping bug (I hope)
     $ renpy.choice_for_skipping()
@@ -36,6 +33,7 @@ screen blackjack():
     key "toggle_skip" action NullAction()
     key "dismiss" action NullAction()
 
+    timer 1 action Play("music", "luigis_casino.ogg", if_changed=True, loop=True)
 
     default deck = [
         { "suit": "clubs", "rank": "Ace", "points": 11 }, 
@@ -85,6 +83,7 @@ screen blackjack():
 
     # text game_state
     # text "\n"+game_result
+    text str(dealer_score)
 
     if game_state == "setup":
 
