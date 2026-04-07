@@ -280,9 +280,27 @@ label _digi_test:
             $ just_entered = False
         menu (nvl = True):
             "What is this place?":
+                nvl clear
                 you_n "What is this place?"
                 digi_n "Well, do you mean on Layer 1, or Layer 0?"
                 jump .chat_nvl_layers
+            "Iris?" if mentioned_iris:
+                nvl clear
+                you_n "Iris?"
+                digi_n "Yeah, Iris! She's my friend and... boss? Kinda? I work for her, but the relationship isn't really formal."
+                digi_n """When I first got this universe, I was kinda... adrift, for a while. Didn't have a place to go.
+                She took me in after I had a run in with a black hole.
+
+                ...
+
+                OK, yes, it was my fault for getting that close, I don't want to talk about it right now. Some other time.
+
+                Anywho, she took me in, gave me some equipment, helped me back on my feet,
+                and gave me the opportunity to help her out with what she does.
+                """
+                you_n "What does she do?"
+                digi_n "I don't have time to get into that right now, to be honest. Another time."
+                jump .chat_nvl_topics
             "Nothing else!":
                 you_n "Nothing else!"
                 jump .chat_nvl_exit
@@ -320,27 +338,23 @@ label _digi_test:
                 Going deeper into fiction increases the number. Going up the chain decreases it.
                 So, if {i}I{/i} wrote a fictional story, that story would take place in Layer 2.
                 
-                It's a theory in pataphysics, there's a great article by Dr.--
+                It's a theory in pataphysics, there's a write up in the {i}Report on SCP-3812's Behavioural Instability and the Implication of Existential--{/i}
                 """
                 n_n "Digi cuts themselves off before they bore you."
-                digi_n "Sorry, never mind, it's complex."
-                jump .chat_nvl_topics
-            "Iris?" if mentioned_iris:
-                nvl clear
-                you_n "Iris?"
-                digi_n "Yeah, Iris! She's my friend and... boss? Kinda? I work for her, but the relationship isn't really formal."
-                digi_n """When I first got this universe, I was kinda... adrift, for a while. Didn't have a place to go.
-                She took me in after I had a run in with a black hole.
+                digi_n "Sorry, never mind, it's complex. I won't bore you with the details."
 
-                ...
+                menu (nvl = True):
+                    "No, give me the details!":
+                        nvl clear
+                        you_n "No, give me the details!"
+                        digi_n "OK, well, here."
+                        n_n "Digi pokes at the hologram eminating from their wrist."
+                        n_n "Your phone lights up with a notification."
+                        digi_n "There, I sent you a link to the {a=https://scp-wiki.wikidot.com/scp-3812}article.{/a}"
+                        digi_n "It's a cool read."
+                    "Thank you.":
+                        pass
 
-                OK, yes, it was my fault for getting that close, I don't want to talk about it right now. Some other time.
-
-                Anywho, she took me in, gave me some equipment, helped me back on my feet,
-                and gave me the opportunity to help her out with what she does.
-                """
-                you_n "What does she do?"
-                digi_n "I don't have time to get into that right now, to be honest. Another time."
                 jump .chat_nvl_topics
         
         jump .chat_nvl_topics

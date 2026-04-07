@@ -334,3 +334,9 @@ screen blackjack():
         #                     idle deck[ndx]["image"]
         #                     tooltip this_card
         #                     action NullAction()
+
+    # Game logic
+    python:
+        if game_state == "stand":
+            while check_score(dealer_hand, dealer_score) < 17:
+                dealer_logic(deck, dealer_hand, dealer_score)

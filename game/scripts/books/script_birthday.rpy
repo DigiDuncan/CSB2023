@@ -6,7 +6,7 @@ label book_CSB3_EBEEP12024FDEADNYWFFEAGM:
     with dissolve
     play music good_eatin
     music good_eatin
-    n "As the sun comes up for the day, Digi finds themself in their kitchen."
+    n "As the sun comes up for the day, Digi finds themselves in their kitchen."
     digi "I really need to find something to eat..."
     show digi shock flipped
     digimom "Duncan!{w=1.0}{nw}" with vpunch
