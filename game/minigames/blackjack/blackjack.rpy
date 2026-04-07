@@ -78,7 +78,7 @@ screen blackjack():
                 elif card["rank"] == "King":
                     col_number = 12
                 else:
-                    col_number = int(card["rank"])
+                    col_number = int(card["rank"])-1
 
                 # Pick row by suit
                 if card["suit"] == "clubs":
@@ -118,8 +118,8 @@ screen blackjack():
             
     elif game_state == "draw":
 
-        # $ hovered_card = GetTooltip() or ""
-        # text hovered_card
+        $ hovered_card = GetTooltip() or ""
+        text hovered_card
         
         # frame:
         #     xsize 1200
@@ -172,6 +172,7 @@ screen blackjack():
                 xalign 0.7 yalign 0.5
                 button:
                     if len(deck) > 0:
+                        tooltip deck[-1]["rank"] + " of " + deck[-1]["suit"]
                         action [
                             Function(player_hand.append, deck[-1]),
                             Function(deck.remove, deck[-1]),
