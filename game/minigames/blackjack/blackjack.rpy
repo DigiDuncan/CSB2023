@@ -1,15 +1,23 @@
 init python:
     def get_hand_score(hand) -> int:
         score = 0
-        # Scoring
+        aces_held = 0
+
+        # Scoring everything but the ace
         for card in hand:
-            if "Ace" in card["rank"]:
-                if score >= 21:
-                    score += 1
-                else:
-                    score += card["points"]
-            else:
+            if "Ace" not in card["rank"]:
                 score += card["points"]
+
+            elif "Ace" in card["rank"]:
+                aces_held += 1
+
+        # Aces only
+        for a in range(aces_held):
+            if score + 11 <= 21:
+                score += 11
+            else:
+                score+= 1
+            
         return score
 
     def draw_card(deck, hand):
@@ -26,13 +34,6 @@ init python:
 screen blackjack():
     modal True
         
-    # Prevent the skipping bug (I hope)
-    $ renpy.choice_for_skipping()
-    $ _skipping = False
-    key "skip" action NullAction()
-    key "toggle_skip" action NullAction()
-    key "dismiss" action NullAction()
-
     timer 1 action Play("music", "luigis_casino.ogg", if_changed=True, loop=True)
 
     default master_deck = [
@@ -84,7 +85,7 @@ screen blackjack():
 
     # text game_state
     # text "\n"+game_result
-    text str(dealer_score)
+    # text str(dealer_score)
 
     if game_state == "setup":
 
@@ -139,8 +140,14 @@ screen blackjack():
             xalign 0.5 yalign 0.5
             vbox:
                 xalign 0.5 yalign 0.5
-                text _("Shuffling cards..."):
+                textbutton _("Shuffling cards..."):
                     xalign 0.5 yalign 0.5 text_align 0.5
+                    text_color gui.text_color
+                    # Now THIS should prevent the skipping bug.
+                    action [
+                        SensitiveIf(False),
+                        NullAction() 
+                    ]
                 if game_state == "ready":
                     timer 1:
                         action [
@@ -152,11 +159,7 @@ screen blackjack():
                             SetScreenVariable("game_state", "draw")
                         ]
 
-    elif game_state == "draw":
-
-        if player_score > 21:
-            $ game_state = "lose"
-
+    else:
         # Draw the field
         frame:
             xalign 0.5 yalign 0.5
@@ -170,6 +173,7 @@ screen blackjack():
                     if len(deck) > 0:
                         
                         action [
+                            SensitiveIf(game_state == "draw"),
                             Function(draw_card, deck, player_hand),
                             Function(renpy.restart_interaction)
                         ]
@@ -190,6 +194,7 @@ screen blackjack():
                         textbutton _("Stand!"):
                             xalign 0.5 text_align 0.5
                             action [
+                                SensitiveIf(game_state == "draw"),
                                 SetScreenVariable("game_state", "stand"),
                                 Function(renpy.restart_interaction)
                             ]
@@ -217,256 +222,113 @@ screen blackjack():
                 hbox:
                     # Dealer's hand
                     for ndx, card in enumerate(dealer_hand):
-                        if ndx == 1:
-                            add card_back
+
+                        if game_state == "draw":
+                            if ndx == 1:
+                                add card_back
+                            else:
+                                add dealer_hand[ndx]["image"]
                         else:
                             add dealer_hand[ndx]["image"]
 
                 # Display score
                 $ dealer_score = get_hand_score(dealer_hand)
-                text _("Score: ") + str(dealer_hand[0]["points"]) + "...?":
+                if game_state == "draw":
+                    $ dealer_score_text = str(dealer_hand[0]["points"]) + "...?"
+                else:
+                    $ dealer_score_text = str(dealer_score)
+
+                text _("Score: ") + dealer_score_text:
                     xalign 0.5 text_align 0.5
 
-    elif game_state == "stand":
-        # Draw the field
-        frame:
-            xalign 0.5 yalign 0.5
-            xsize 1800 ysize 900
-
-            # Deck / Hit button
+        # Draw this on top of everything else at the end
+        if game_state == "end":
             frame:
-                background None
-                xalign 0.7 yalign 0.5
+                xsize 950 ysize 200
+                xalign 0.5 yalign 0.5
                 
-                vbox:
-                    frame:
-                        xsize card_size[0] ysize card_size[1]
-                        xalign 0.5 yalign 0
-                        if len(deck) > 0:
-                            for ndx, card in enumerate(deck):
-                                add card_back:
-                                    xalign 0.5 yalign 0.5
-                                    yoffset -0.25*ndx
-                    text _("Hit!"):
-                        xalign 0.5 text_align 0.5
-                        color gui.insensitive_color
-
-                    text _("Stand!"):
-                        xalign 0.5 text_align 0.5    
-                        color gui.insensitive_color            
-
-            # Player's side
-            vbox:
-                xsize 1.0 ysize card_size[1]
-                xalign 0.5 yalign 1.0
-
-                hbox:
-                    # Player hand
-                    for ndx, card in enumerate(player_hand):
-                        add player_hand[ndx]["image"]
-
-                # Display score
-                $ player_score = get_hand_score(player_hand)
-                text _("Score: ") + str(player_score):
-                    xalign 0.5 text_align 0.5
-
-            # Dealer's side
-            vbox:
-                xsize 1.0 ysize card_size[1]
-                xalign 0.5 yalign 0
-
-                hbox:
-                    # Dealer's hand
-                    for ndx, card in enumerate(dealer_hand):
-                        add dealer_hand[ndx]["image"]
-
-                # Display score
-                $ dealer_score = get_hand_score(dealer_hand)
-                text _("Score: ") + str(dealer_score):
-                    xalign 0.5 text_align 0.5
-            
-
-    elif game_state == "end":
-
-        # Draw the field
-        frame:
-            xalign 0.5 yalign 0.5
-            xsize 1800 ysize 900
-
-            # Deck / Hit button
-            frame:
-                background None
-                xalign 0.7 yalign 0.5
-                
-                vbox:
-                    frame:
-                        xsize card_size[0] ysize card_size[1]
-                        xalign 0.5 yalign 0
-                        if len(deck) > 0:
-                            for ndx, card in enumerate(deck):
-                                add card_back:
-                                    xalign 0.5 yalign 0.5
-                                    yoffset -0.25*ndx
-                    text _("Hit!"):
-                        xalign 0.5 text_align 0.5
-                        color gui.insensitive_color
-
-                    text _("Stand!"):
-                        xalign 0.5 text_align 0.5    
-                        color gui.insensitive_color            
-
-            # Player's side
-            vbox:
-                xsize 1.0 ysize card_size[1]
-                xalign 0.5 yalign 1.0
-
-                hbox:
-                    # Player hand
-                    for ndx, card in enumerate(player_hand):
-                        add player_hand[ndx]["image"]
-
-                # Display score
-                $ player_score = get_hand_score(player_hand)
-                text _("Score: ") + str(player_score):
-                    xalign 0.5 text_align 0.5
-
-            # Dealer's side
-            vbox:
-                xsize 1.0 ysize card_size[1]
-                xalign 0.5 yalign 0
-
-                hbox:
-                    # Dealer's hand
-                    for ndx, card in enumerate(dealer_hand):
-                        add dealer_hand[ndx]["image"]
-
-                # Display score
-                $ dealer_score = get_hand_score(dealer_hand)
-                text _("Score: ") + str(dealer_score):
-                    xalign 0.5 text_align 0.5
-
-        frame:
-            xalign 0.5 yalign 0.5
-            vbox:
                 text game_result+" Play again?":
-                    xalign 0.5 yalign 0.5 text_align 0.5
-                hbox:
-                    xalign 0.5
-                    textbutton _("Yes"):
-                        xalign 0.3 text_align 0.5
-                        action [
-                            SelectedIf(False),
-                            ShowTransient("blackjack")
-                        ]
-                    textbutton _("No"):
-                        xalign 0.7 text_align 0.5
-                        action [
-                            Stop("music", fadeout=0.5),
-                            Return(player_won)
-                        ]
-                    
-    # elif game_state == "testing":
-        # $ hovered_card = GetTooltip() or ""
-        # text hovered_card
-        
-        # frame:
-        #     xsize 1200
-        #     xalign 0.5 yalign 0.5
-
-        #     vbox:
-        #         xalign 0.5 yalign 0.5
-
-        #         text _("Hi, this doesn't work yet. Have some cards."):
-        #             xalign 0.5 text_align 0.5
-
-        #         hbox:
-        #             xalign 0.5 xsize 1000
-
-        #             textbutton _("Shuffle Again"):
-        #                 xalign 0.5 text_align 0.5
-        #                 action [
-        #                     Function(renpy.random.shuffle, deck),
-        #                     Function(renpy.restart_interaction)
-        #                 ]
-
-        #             textbutton _("Done."):
-        #                 xalign 0.5 text_align 0.5
-        #                 action [
-        #                     Return(),
-        #                     With("dissolve")
-        #                 ]
-                    
-        #         vpgrid:
-        #             cols 13
-        #             xalign 0.5 yalign 0.5
-        #             spacing 5
-
-        #             for ndx, x in enumerate(deck):
-        #                 $ this_card = deck[ndx]["rank"]+" of "+deck[ndx]["suit"]
-                        
-        #                 imagebutton:
-        #                     idle deck[ndx]["image"]
-        #                     tooltip this_card
-        #                     action NullAction()
+                    xalign 0.5 yalign 0.2 text_align 0.5
+                
+                textbutton _("Yes"):
+                    xalign 0.3 yalign 0.8 text_align 0.5
+                    action [
+                        SelectedIf(False),
+                        ShowTransient("blackjack")
+                    ]
+                textbutton _("No"):
+                    xalign 0.7 yalign 0.8 text_align 0.5
+                    action [
+                        Stop("music", fadeout=0.5),
+                        Return(player_won)
+                    ]
 
     # Game logic
     python:
         if game_state == "draw":
+            # Player busts, BUT prevent the two aces on first turn == 22 thing
             if player_score > 21:
-                game_result = "Bustin' makes me feel bad!"
-                game_state = "end"
-                player_won = False
-                renpy.restart_interaction()
+                current_score = get_hand_score(player_hand) 
 
+                if current_score > 21:
+                    game_result = "Bustin' makes me feel bad!"
+                    game_state = "end"
+                    player_won = False
+                    renpy.restart_interaction()
+                
+            # Try to fix blackjack (10 + ace)
             elif player_score == 21 and len(player_hand) == 2:
                 game_result = "Blackjack!"
                 game_state = "end"
                 player_won = True
                 renpy.restart_interaction()
 
-
         elif game_state == "stand":
+            # Dealer draws
             if dealer_score < 17:
                 dealer_logic(deck, dealer_hand, dealer_score)
                 dealer_score = get_hand_score(dealer_hand)
                 renpy.restart_interaction()
 
+            # Dealer gets a blackjack (10 + ace)
             elif dealer_score == 21 and len(dealer_hand) == 2:
                 game_result = "Dealer had a blackjack!"
                 game_state = "end"
                 player_won = False
                 renpy.restart_interaction()
 
+            # Dealer is closer to 21
             elif dealer_score > player_score and dealer_score <= 21:
                 game_result = "Dealer wins!"
                 game_state = "end"
                 player_won = False
                 renpy.restart_interaction()
 
+            # Dealer busts but also prevent the aces high thing
             elif dealer_score > 21:
-                game_result = "Bust goes the dealer!"
-                game_state = "end"
-                player_won = True
-                renpy.restart_interaction()
+                current_score = get_hand_score(dealer_hand) 
 
-            elif player_score == 21 and len(player_hand) == 2:
-                game_result = "Blackjack!"
-                game_state = "end"
-                player_won = True
-                renpy.restart_interaction()
+                if current_score > 21:
+                    game_result = "Bust goes the dealer!"
+                    game_state = "end"
+                    player_won = True
+                    renpy.restart_interaction()
 
+            # Player is closer to 21
             elif player_score > dealer_score and player_score <= 21:
                 game_result = "You win!"
                 game_state = "end"
                 player_won = True
                 renpy.restart_interaction()
 
+            # Player busts
             elif player_score > 21:
                 game_result = "Bustin' makes me feel bad!"
                 game_state = "end"
                 player_won = False
                 renpy.restart_interaction()
 
+            # It's a draw
             elif dealer_score == player_score:
                 game_result = "It's a draw!"
                 game_state = "end"
