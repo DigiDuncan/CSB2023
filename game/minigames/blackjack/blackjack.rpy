@@ -1,3 +1,17 @@
+init python:
+    def get_hand_score(hand) -> int:
+        score = 0
+        # Scoring
+        for card in hand:
+            if "Ace" in card["rank"]:
+                if score >= 21:
+                    score += 1
+                else:
+                    score += card["points"]
+            else:
+                score += card["points"]
+        return score
+
 screen blackjack():
     modal True
     $ renpy.choice_for_skipping()
@@ -184,14 +198,7 @@ screen blackjack():
                     for ndx, card in enumerate(player_hand):
                         add player_hand[ndx]["image"]
 
-                        # Scoring
-                        $ player_score += player_hand[ndx]["points"]
-
-                        # Handle aces
-                        if player_score > 21:
-                            if "Ace" in player_hand[ndx]["rank"]:
-                                $ player_score =- 10
-
                 # Display score
+                $ player_score = get_hand_score(player_hand)
                 text _("Score: ") + str(player_score):
                     xalign 0.5 text_align 0.5
