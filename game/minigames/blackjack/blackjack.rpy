@@ -12,16 +12,6 @@ init python:
                 score += card["points"]
         return score
 
-    def check_score(hand, score):
-        if score > 21:
-            return "bust"
-        elif score == 21 and len(hand) == 2:
-            return "blackjack"
-        elif score == 21:
-            return "win"
-        else:
-            return score
-
     def draw_card(deck, hand):
         if deck:
             hand.append(deck[-1])
@@ -32,7 +22,6 @@ init python:
             draw_card(deck, hand)
         elif score >= 17 and score <= 21:
             pass # stand
-        
 
 screen blackjack():
     modal True
@@ -81,8 +70,10 @@ screen blackjack():
     default card_size = (73, 98) # Size of one card
     # default hovered_card = ""
     default game_state = "setup"
+    default game_result = ""
 
     text game_state
+    text "\n"+game_result
 
     if game_state == "setup":
 
@@ -137,8 +128,7 @@ screen blackjack():
                 text _("Shuffling cards..."):
                     xalign 0.5 yalign 0.5 text_align 0.5
                 if game_state == "ready":
-                    textbutton _("Ready."):
-                        xalign 0.5 yalign 0.5 text_align 0.5
+                    timer 2:
                         action [
                             # Put two cards in each player's hand
                             Function(draw_card, deck, player_hand),
@@ -283,10 +273,8 @@ screen blackjack():
                     xalign 0.5 text_align 0.5
             
 
-    elif game_state == "lose":
-        text "you lose"
-    elif game_state == "win":
-        text "you win"
+    elif game_state == "end":
+        text game_result
 
     # elif game_state == "testing":
         # $ hovered_card = GetTooltip() or ""
@@ -334,8 +322,50 @@ screen blackjack():
 
     # Game logic
     python:
-        if game_state == "stand":
+        if game_state == "draw":
+            if player_score > 21:
+                game_result = "player_bust"
+
+        elif game_state == "stand":
             while dealer_score < 17:
                 dealer_logic(deck, dealer_hand, dealer_score)
                 dealer_score = get_hand_score(dealer_hand)
                 renpy.restart_interaction()
+
+            if dealer_score == 21 and len(dealer_hand) == 2:
+                game_result = "dealer_blackjack"
+
+            elif dealer_score == 21:
+                game_result = "dealer_win"
+
+            elif dealer_score > player_score and dealer_score <= 21:
+                game_result = "dealer_win"
+
+            elif dealer_score > 21:
+                game_result = "dealer_bust"
+
+            
+            elif player_score == 21 and len(player_hand) == 2:
+                game_result = "player_blackjack"
+
+            elif player_score == 21:
+                game_result = "player_win"
+
+            elif player_score > dealer_score and player_score <= 21:
+                game_result = "player_win"
+
+            elif player_score > 21:
+                game_result = "player_bust"
+
+          
+            elif dealer_score == player_score:
+                game_result = "draw"
+            
+
+            
+
+    
+        
+
+
+            
