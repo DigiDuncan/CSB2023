@@ -135,7 +135,7 @@ screen blackjack():
                 text _("Shuffling cards..."):
                     xalign 0.5 yalign 0.5 text_align 0.5
                 if game_state == "ready":
-                    timer 2:
+                    timer 1:
                         action [
                             # Put two cards in each player's hand
                             Function(draw_card, deck, player_hand),
@@ -177,7 +177,7 @@ screen blackjack():
                                         yoffset -0.25*ndx
                         text _("Hit!"):
                             idle_color gui.idle_color
-                            hover_color gui.text_color
+                            hover_color gui.hover_color
                             xalign 0.5 text_align 0.5
 
                         textbutton _("Stand!"):
@@ -341,7 +341,7 @@ screen blackjack():
         frame:
             xalign 0.5 yalign 0.5
             vbox:
-                text game_result+"!\nPlay again?":
+                text game_result+" Play again?":
                     xalign 0.5 yalign 0.5 text_align 0.5
                 hbox:
                     xalign 0.5
@@ -403,55 +403,62 @@ screen blackjack():
     python:
         if game_state == "draw":
             if player_score > 21:
-                game_result = "player_bust"
+                game_result = "Bustin' makes me feel bad!"
                 game_state = "end"
                 player_won = False
                 renpy.restart_interaction()
 
+            elif player_score == 21 and len(player_hand) == 2:
+                game_result = "Blackjack!"
+                game_state = "end"
+                player_won = True
+                renpy.restart_interaction()
+
+
         elif game_state == "stand":
-            while dealer_score < 17:
+            if dealer_score < 17:
                 dealer_logic(deck, dealer_hand, dealer_score)
                 dealer_score = get_hand_score(dealer_hand)
                 renpy.restart_interaction()
 
-            if dealer_score == 21 and len(dealer_hand) == 2:
-                game_result = "dealer_blackjack"
+            elif dealer_score == 21 and len(dealer_hand) == 2:
+                game_result = "Dealer had a blackjack!"
                 game_state = "end"
                 player_won = False
                 renpy.restart_interaction()
 
             elif dealer_score > player_score and dealer_score <= 21:
-                game_result = "dealer_win"
+                game_result = "Dealer wins!"
                 game_state = "end"
                 player_won = False
                 renpy.restart_interaction()
 
             elif dealer_score > 21:
-                game_result = "dealer_bust"
+                game_result = "Bust goes the dealer!"
                 game_state = "end"
                 player_won = True
                 renpy.restart_interaction()
 
             elif player_score == 21 and len(player_hand) == 2:
-                game_result = "player_blackjack"
+                game_result = "Blackjack!"
                 game_state = "end"
                 player_won = True
                 renpy.restart_interaction()
 
             elif player_score > dealer_score and player_score <= 21:
-                game_result = "player_win"
+                game_result = "You win!"
                 game_state = "end"
                 player_won = True
                 renpy.restart_interaction()
 
             elif player_score > 21:
-                game_result = "player_bust"
+                game_result = "Bustin' makes me feel bad!"
                 game_state = "end"
                 player_won = False
                 renpy.restart_interaction()
 
             elif dealer_score == player_score:
-                game_result = "draw"
+                game_result = "It's a draw!"
                 game_state = "end"
                 player_won = False
                 renpy.restart_interaction()            
