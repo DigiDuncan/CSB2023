@@ -26,6 +26,13 @@ init python:
         hand.append(deck[-1])
         deck.remove(deck[-1])
 
+    def dealer_logic(deck, hand, score):
+        if score < 16:
+            draw_card(deck, hand)
+        elif score >= 17 and score <= 21:
+            pass # stand
+        
+
 screen blackjack():
     modal True
     $ renpy.choice_for_skipping()
@@ -142,6 +149,9 @@ screen blackjack():
 
     elif game_state == "draw":
 
+        if player_score > 21:
+            $ game_state = "lose"
+
         # Draw the field
         frame:
             xalign 0.5 yalign 0.5
@@ -168,12 +178,14 @@ screen blackjack():
                                         xalign 0.5 yalign 0.5
                                         yoffset -0.25*ndx
                         text _("Hit!"):
+                            idle_color gui.idle_color
+                            hover_color gui.text_color
                             xalign 0.5 text_align 0.5
 
                         textbutton _("Stand!"):
                             xalign 0.5 text_align 0.5
                             action [
-                                SetScreenVariable(game_state, "stand"),
+                                SetScreenVariable("game_state", "stand"),
                                 Notify(_("Standing!")),
                                 Function(renpy.restart_interaction)
                             ]
@@ -213,6 +225,9 @@ screen blackjack():
 
     elif game_state == "stand":
 
+        if check_score(dealer_hand, dealer_score) < 17:
+            timer 5 action Function("dealer_logic", deck, dealer_hand, dealer_score)
+
         # Draw the field
         frame:
             xalign 0.5 yalign 0.5
@@ -234,9 +249,11 @@ screen blackjack():
                                     yoffset -0.25*ndx
                     text _("Hit!"):
                         xalign 0.5 text_align 0.5
+                        color gui.insensitive_color
 
                     text _("Stand!"):
-                        xalign 0.5 text_align 0.5                
+                        xalign 0.5 text_align 0.5    
+                        color gui.insensitive_color            
 
             # Player's side
             vbox:
@@ -269,7 +286,10 @@ screen blackjack():
                     xalign 0.5 text_align 0.5
             
 
-
+    elif game_state == "lose":
+        text "you lose"
+    elif game_state == "win":
+        text "you win"
 
     # elif game_state == "testing":
         # $ hovered_card = GetTooltip() or ""
