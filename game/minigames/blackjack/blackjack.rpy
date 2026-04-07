@@ -23,8 +23,9 @@ init python:
             return score
 
     def draw_card(deck, hand):
-        hand.append(deck[-1])
-        deck.remove(deck[-1])
+        if deck:
+            hand.append(deck[-1])
+            deck.remove(deck[-1])
 
     def dealer_logic(deck, hand, score):
         if score < 16:
@@ -224,10 +225,6 @@ screen blackjack():
                     xalign 0.5 text_align 0.5
 
     elif game_state == "stand":
-
-        if check_score(dealer_hand, dealer_score) < 17:
-            timer 5 action Function("dealer_logic", deck, dealer_hand, dealer_score)
-
         # Draw the field
         frame:
             xalign 0.5 yalign 0.5
@@ -338,5 +335,7 @@ screen blackjack():
     # Game logic
     python:
         if game_state == "stand":
-            while check_score(dealer_hand, dealer_score) < 17:
+            while dealer_score < 17:
                 dealer_logic(deck, dealer_hand, dealer_score)
+                dealer_score = get_hand_score(dealer_hand)
+                renpy.restart_interaction()
