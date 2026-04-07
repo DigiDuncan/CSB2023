@@ -22,6 +22,10 @@ init python:
         else:
             return score
 
+    def draw_card(deck, hand):
+        hand.append(deck[-1])
+        deck.remove(deck[-1])
+
 screen blackjack():
     modal True
     $ renpy.choice_for_skipping()
@@ -65,9 +69,12 @@ screen blackjack():
     default dealer_score = 0
     default player_score = 0
     default card_spritesheet = "minigames/blackjack/cards.png" # You'll want to make sure the cards in this sheet are in the same order as the deck data above.
+    default card_back = "minigames/blackjack/card_back.png"
     default card_size = (73, 98) # Size of one card
-    default hovered_card = ""
+    # default hovered_card = ""
     default game_state = "setup"
+
+    text game_state
 
     if game_state == "setup":
 
@@ -124,12 +131,149 @@ screen blackjack():
                 if game_state == "ready":
                     textbutton _("Ready."):
                         xalign 0.5 yalign 0.5 text_align 0.5
-                        action SetScreenVariable("game_state", "draw")
-            
+                        action [
+                            # Put two cards in each player's hand
+                            Function(draw_card, deck, player_hand),
+                            Function(draw_card, deck, player_hand),
+                            Function(draw_card, deck, dealer_hand),
+                            Function(draw_card, deck, dealer_hand),
+                            SetScreenVariable("game_state", "draw")
+                        ]
+
     elif game_state == "draw":
 
-        $ hovered_card = GetTooltip() or ""
-        text hovered_card
+        # Draw the field
+        frame:
+            xalign 0.5 yalign 0.5
+            xsize 1800 ysize 900
+
+            # Deck / Hit button
+            frame:
+                background None
+                xalign 0.7 yalign 0.5
+                button:
+                    if len(deck) > 0:
+                        
+                        action [
+                            Function(draw_card, deck, player_hand),
+                            Function(renpy.restart_interaction)
+                        ]
+                    vbox:
+                        frame:
+                            xsize card_size[0] ysize card_size[1]
+                            xalign 0.5 yalign 0
+                            if len(deck) > 0:
+                                for ndx, card in enumerate(deck):
+                                    add card_back:
+                                        xalign 0.5 yalign 0.5
+                                        yoffset -0.25*ndx
+                        text _("Hit!"):
+                            xalign 0.5 text_align 0.5
+
+                        textbutton _("Stand!"):
+                            xalign 0.5 text_align 0.5
+                            action [
+                                SetScreenVariable(game_state, "stand"),
+                                Notify(_("Standing!")),
+                                Function(renpy.restart_interaction)
+                            ]
+
+            # Player's side
+            vbox:
+                xsize 1.0 ysize card_size[1]
+                xalign 0.5 yalign 1.0
+
+                hbox:
+                    # Player hand
+                    for ndx, card in enumerate(player_hand):
+                        add player_hand[ndx]["image"]
+
+                # Display score
+                $ player_score = get_hand_score(player_hand)
+                text _("Score: ") + str(player_score):
+                    xalign 0.5 text_align 0.5
+
+            # Dealer's side
+            vbox:
+                xsize 1.0 ysize card_size[1]
+                xalign 0.5 yalign 0
+
+                hbox:
+                    # Dealer's hand
+                    for ndx, card in enumerate(dealer_hand):
+                        if ndx == 1:
+                            add card_back
+                        else:
+                            add dealer_hand[ndx]["image"]
+
+                # Display score
+                $ dealer_score = get_hand_score(dealer_hand)
+                text _("Score: ") + str(dealer_hand[0]["points"]) + "...?":
+                    xalign 0.5 text_align 0.5
+
+    elif game_state == "stand":
+
+        # Draw the field
+        frame:
+            xalign 0.5 yalign 0.5
+            xsize 1800 ysize 900
+
+            # Deck / Hit button
+            frame:
+                background None
+                xalign 0.7 yalign 0.5
+                
+                vbox:
+                    frame:
+                        xsize card_size[0] ysize card_size[1]
+                        xalign 0.5 yalign 0
+                        if len(deck) > 0:
+                            for ndx, card in enumerate(deck):
+                                add card_back:
+                                    xalign 0.5 yalign 0.5
+                                    yoffset -0.25*ndx
+                    text _("Hit!"):
+                        xalign 0.5 text_align 0.5
+
+                    text _("Stand!"):
+                        xalign 0.5 text_align 0.5                
+
+            # Player's side
+            vbox:
+                xsize 1.0 ysize card_size[1]
+                xalign 0.5 yalign 1.0
+
+                hbox:
+                    # Player hand
+                    for ndx, card in enumerate(player_hand):
+                        add player_hand[ndx]["image"]
+
+                # Display score
+                $ player_score = get_hand_score(player_hand)
+                text _("Score: ") + str(player_score):
+                    xalign 0.5 text_align 0.5
+
+            # Dealer's side
+            vbox:
+                xsize 1.0 ysize card_size[1]
+                xalign 0.5 yalign 0
+
+                hbox:
+                    # Dealer's hand
+                    for ndx, card in enumerate(dealer_hand):
+                        add dealer_hand[ndx]["image"]
+
+                # Display score
+                $ dealer_score = get_hand_score(dealer_hand)
+                text _("Score: ") + str(dealer_score):
+                    xalign 0.5 text_align 0.5
+            
+
+
+
+    # elif game_state == "testing":
+        # $ hovered_card = GetTooltip() or ""
+        # text hovered_card
         
         # frame:
         #     xsize 1200
@@ -165,74 +309,8 @@ screen blackjack():
 
         #             for ndx, x in enumerate(deck):
         #                 $ this_card = deck[ndx]["rank"]+" of "+deck[ndx]["suit"]
-
+                        
         #                 imagebutton:
         #                     idle deck[ndx]["image"]
         #                     tooltip this_card
         #                     action NullAction()
-
-        # Draw the field
-        frame:
-            xalign 0.5 yalign 0.5
-            xsize 1800 ysize 900
-
-            # Deck / Hit button
-            frame:
-                background None
-                xalign 0.7 yalign 0.5
-                button:
-                    if len(deck) > 0:
-                        tooltip deck[-1]["rank"] + " of " + deck[-1]["suit"]
-                        action [
-                            Function(player_hand.append, deck[-1]),
-                            Function(deck.remove, deck[-1]),
-                            Function(renpy.restart_interaction)
-                        ]
-                    vbox:
-                        frame:
-                            xsize card_size[0] ysize card_size[1]
-                            xalign 0.5 yalign 0
-                            if len(deck) > 0:
-                                for ndx, card in enumerate(deck):
-                                    add deck[ndx]["image"]:
-                                        xalign 0.5 yalign 0.5
-                                        yoffset -0.25*ndx
-                        text _("Hit!"):
-                            xalign 0.5 text_align 0.5
-
-
-                        textbutton _("Stand!"):
-                            xalign 0.5 text_align 0.5
-                            action Notify("Do something!")
-
-            # Player's side
-            vbox:
-                xsize 1.0 ysize card_size[1]
-                xalign 0.5 yalign 1.0
-
-                hbox:
-                    # Player hand
-                    for ndx, card in enumerate(player_hand):
-                        add player_hand[ndx]["image"]
-
-                # Display score
-                $ player_score = get_hand_score(player_hand)
-                text _("Score: ") + str(player_score):
-                    xalign 0.5 text_align 0.5
-
-            # Dealer's side
-            vbox:
-                xsize 1.0 ysize card_size[1]
-                xalign 0.5 yalign 0
-
-                hbox:
-                    # Dealer's hand
-                    for ndx, card in enumerate(dealer_hand):
-                        add dealer_hand[ndx]["image"]
-
-                # Display score
-                $ dealer_score = get_hand_score(dealer_hand)
-                text _("Score: ") + str(dealer_score):
-                    xalign 0.5 text_align 0.5
-
-    
