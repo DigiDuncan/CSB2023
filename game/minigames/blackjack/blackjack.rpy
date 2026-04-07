@@ -362,7 +362,7 @@ screen blackjack():
                         xalign 0.7 text_align 0.5
                         action [
                             Stop("music", fadeout=0.5),
-                            Return()
+                            Return(player_won)
                         ]
                     
     # elif game_state == "testing":

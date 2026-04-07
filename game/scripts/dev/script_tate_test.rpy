@@ -685,8 +685,13 @@ label _awawa_tate_test:
                     "Blackjack":
                         show tate
                         tate "Okay. This is my room, so I'll be the dealer, and we'll be playing by casino rules."
-                        tate "This means that the ace cards are {a=https://officialgamerules.org/game-rules/blackjack/}flexible{/a} and that I must hit if my hand is at or below 16."
+                        tate "This means that ace cards are {a=https://officialgamerules.org/game-rules/blackjack/}flexible{/a} and that I must hit if my hand is below 17."
                         call screen blackjack
+                        if _return == True:
+                            tate "Nice work."
+                        else: 
+                            show tate sheepish
+                            tate "Better luck next time."
 
                 jump .awawa_menu
 
