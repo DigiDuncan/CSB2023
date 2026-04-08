@@ -31,22 +31,36 @@ init python:
         elif score >= 17 and score <= 21:
             pass # stand
 
-    def dealer_sprites(dealer_sprite, game_state, player_won):
+    def cpu_logic(deck, hand, score):
+        # This is similar to the dealer logic but with some randomness thrown in.
+        random_max = renpy.random.randint(13,18)
+        if score < random_max:
+            draw_card(deck, hand)
+        elif score >= random_max and score <= 21:
+            pass # stand
+
+    def dealer_sprites(dealer_sprite, game_state, player_won, dealer_blackjack):
         dealer_img = "minigames/blackjack/luigi_deal.png"
 
-        # Handle dealer sprites
+        # Default
         if game_state in ["setup", "stand"]:
             dealer_img = "minigames/blackjack/luigi_deal.png"
+        # Waiting for your move
         elif game_state == "draw":
             dealer_img = "minigames/blackjack/luigi_wait.png"
-        elif game_state == "end" and player_won == True:
-            dealer_img = "minigames/blackjack/luigi_wait.png"
-        elif game_state == "end" and  player_won == False:
+        # Regular win
+        elif game_state == "end" and player_won == False and not dealer_blackjack:
             dealer_img = "minigames/blackjack/luigi_win.png"
+        # Dealer blackjack win
+        elif game_state == "end" and player_won == False and dealer_blackjack:
+            dealer_img = "minigames/blackjack/luigi_win2.png"
+        # Dealer lost
+        elif game_state == "end" and player_won == True:
+            dealer_img = "minigames/blackjack/luigi_lose.png"
 
         return dealer_img
 
-screen blackjack():
+screen blackjack(cpu_1 = None, cpu_2 = None):
     modal True
         
     timer 1:
@@ -90,30 +104,38 @@ screen blackjack():
     ]
 
     default deck = master_deck
-    default dealer_hand = []
-    default player_hand = []
-    default dealer_score = 0
-    default player_score = 0
     default card_spritesheet = "minigames/blackjack/cards.png" # You'll want to make sure the cards in this sheet are in the same order as the deck data above.
     default card_back = "minigames/blackjack/card_back.png"
     default card_size = (73, 98) # Size of one card
-    # default hovered_card = ""
     default game_state = "setup"
     default game_result = ""
     default player_won = None
     default dealer_sprite = "minigames/blackjack/luigi_deal.png"
+    default dealer_blackjack = False
+
+    default dealer_hand = []
+    default dealer_score = 0
+
+    default player_hand = []
+    default player_score = 0
+
+    default cpu_1_hand = []
+    default cpu_1_score = 0
+
+    default cpu_2_hand = []
+    default cpu_2_score = 0
 
     # text game_state
     # text "\n"+game_result
     # text str(dealer_score)
 
     add "minigames/blackjack/bg.png"
-    add dealer_sprites(dealer_sprite, game_state, player_won):
+    add dealer_sprites(dealer_sprite, game_state, player_won, dealer_blackjack):
         xalign 0.5
     add "minigames/blackjack/fg.png"
 
     if game_state == "setup":
-        $ dealer_sprite = dealer_sprites(dealer_sprite, game_state, player_won)
+        $ dealer_sprite = dealer_sprites(dealer_sprite, game_state, player_won, dealer_blackjack)
         # Construct card images from the sprite sheet
         python:
             # Also reset the deck in case we're playing again
@@ -181,6 +203,10 @@ screen blackjack():
                             Function(draw_card, deck, player_hand),
                             Function(draw_card, deck, dealer_hand),
                             Function(draw_card, deck, dealer_hand),
+                            If(cpu_1 is not None, Function(draw_card, deck, cpu_1_hand), None),
+                            If(cpu_1 is not None, Function(draw_card, deck, cpu_1_hand), None),
+                            If(cpu_2 is not None, Function(draw_card, deck, cpu_2_hand), None),
+                            If(cpu_2 is not None, Function(draw_card, deck, cpu_2_hand), None),
                             SetScreenVariable("game_state", "draw")
                         ]
 
@@ -194,10 +220,9 @@ screen blackjack():
             # Deck / Hit + Stand buttons
             frame:
                 background None
-                xalign 0.8 yalign 0.5
+                xalign 0.8 yalign 0.25
                 button:
                     if len(deck) > 0:
-                        
                         action [
                             SensitiveIf(game_state == "draw"),
                             Function(draw_card, deck, player_hand),
@@ -212,9 +237,10 @@ screen blackjack():
                             if len(deck) > 0:
                                 for ndx, card in enumerate(deck):
                                     add card_back:
-                                        rotate -45
-                                        xalign 0.5 yalign 0.5
-                                        yoffset -0.25*ndx
+                                        at transform:
+                                            matrixtransform RotateMatrix(-1.5, 0, -10)
+                                            xalign 0.5 yalign 0.5
+                                            yoffset -0.375*ndx
 
                         text _("Hit!"):
                             xalign 0.5 text_align 0.5
@@ -242,6 +268,7 @@ screen blackjack():
                 xalign 0.5 yalign 1.0
 
                 hbox:
+                    xalign 0.5
                     # Player hand
                     for ndx, card in enumerate(player_hand):
                         add player_hand[ndx]["image"]:
@@ -262,6 +289,7 @@ screen blackjack():
                 box_reverse True
 
                 hbox:
+                    xalign 0.5
                     # Dealer's hand
                     for ndx, card in enumerate(dealer_hand):
 
@@ -280,7 +308,65 @@ screen blackjack():
                 else:
                     $ dealer_score_text = str(dealer_score)
 
-                text _("Score: ") + dealer_score_text:
+                text _("Luigi's Score: ") + dealer_score_text:
+                    xalign 0.5 text_align 0.5
+                    color gui.idle_color
+                    outlines [ (absolute(4.5), "#000", absolute(0), absolute(0)) ]
+                    size 28
+
+        # CPU 1 side
+        if cpu_1 is not None:
+            vbox:
+                xsize 1.0 ysize card_size[1]
+                xalign 0.125 yalign 0.9
+                box_reverse True
+
+                hbox:
+                    xalign 0.5
+                    # Dealer's hand
+                    for ndx, card in enumerate(cpu_1_hand):
+                        if game_state == "draw":
+                            add card_back
+                        else:
+                            add cpu_1_hand[ndx]["image"]
+
+                # Display score
+                $ cpu_1_score = get_hand_score(cpu_1_hand)
+                if game_state == "draw":
+                    $ cpu_1_score_text = "?"
+                else:
+                    $ cpu_1_score_text = str(cpu_1_score)
+
+                text _("[cpu_1]'s Score: ") + cpu_1_score_text:
+                    xalign 0.5 text_align 0.5
+                    color gui.idle_color
+                    outlines [ (absolute(4.5), "#000", absolute(0), absolute(0)) ]
+                    size 28
+
+        # CPU 2 side
+        if cpu_2 is not None:
+            vbox:
+                xsize 1.0 ysize card_size[1]
+                xalign 0.875 yalign 0.9
+                box_reverse True
+
+                hbox:
+                    xalign 0.5
+                    # Dealer's hand
+                    for ndx, card in enumerate(cpu_2_hand):
+                        if game_state == "draw":
+                            add card_back
+                        else:
+                            add cpu_2_hand[ndx]["image"]
+
+                # Display score
+                $ cpu_2_score = get_hand_score(cpu_2_hand)
+                if game_state == "draw":
+                    $ cpu_2_score_text = "?"
+                else:
+                    $ cpu_2_score_text = str(cpu_2_score)
+
+                text _("[cpu_2]'s Score: ") + cpu_2_score_text:
                     xalign 0.5 text_align 0.5
                     color gui.idle_color
                     outlines [ (absolute(4.5), "#000", absolute(0), absolute(0)) ]
@@ -299,7 +385,7 @@ screen blackjack():
                     xalign 0.3 yalign 0.8 text_align 0.5
                     action [
                         SelectedIf(False),
-                        ShowTransient("blackjack")
+                        ShowTransient("blackjack", cpu_1=cpu_1, cpu_2=cpu_2)
                     ]
                 textbutton _("No"):
                     xalign 0.7 yalign 0.8 text_align 0.5
@@ -329,6 +415,13 @@ screen blackjack():
                 renpy.restart_interaction()
 
         elif game_state == "stand":
+            # CPUs draw
+            if cpu_1 is not None:
+                cpu_logic(deck, cpu_1_hand, cpu_1_score)
+
+            if cpu_2 is not None:
+                cpu_logic(deck, cpu_2_hand, cpu_2_score)
+
             # Dealer draws
             if dealer_score < 17:
                 dealer_logic(deck, dealer_hand, dealer_score)
@@ -340,6 +433,7 @@ screen blackjack():
                 game_result = "Dealer got a blackjack!"
                 game_state = "end"
                 player_won = False
+                dealer_blackjack = True
                 renpy.restart_interaction()
 
             # Dealer is closer to 21
