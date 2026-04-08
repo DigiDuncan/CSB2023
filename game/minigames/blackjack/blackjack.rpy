@@ -31,6 +31,21 @@ init python:
         elif score >= 17 and score <= 21:
             pass # stand
 
+    def dealer_sprites(dealer_sprite, game_state, player_won):
+        dealer_img = "minigames/blackjack/luigi_deal.png"
+
+        # Handle dealer sprites
+        if game_state in ["setup", "stand"]:
+            dealer_img = "minigames/blackjack/luigi_deal.png"
+        elif game_state == "draw":
+            dealer_img = "minigames/blackjack/luigi_wait.png"
+        elif game_state == "end" and player_won == True:
+            dealer_img = "minigames/blackjack/luigi_wait.png"
+        elif game_state == "end" and  player_won == False:
+            dealer_img = "minigames/blackjack/luigi_win.png"
+
+        return dealer_img
+
 screen blackjack():
     modal True
         
@@ -39,7 +54,6 @@ screen blackjack():
             Play("music", "luigis_casino.ogg", if_changed=True, loop=True),
             Function(persistent.heard.add, "luigis_casino")
         ]
-
 
     default master_deck = [
         { "suit": "clubs", "rank": "Ace", "points": 11 }, 
@@ -87,13 +101,19 @@ screen blackjack():
     default game_state = "setup"
     default game_result = ""
     default player_won = None
+    default dealer_sprite = "minigames/blackjack/luigi_deal.png"
 
     # text game_state
     # text "\n"+game_result
     # text str(dealer_score)
 
-    if game_state == "setup":
+    add "minigames/blackjack/bg.png"
+    add dealer_sprites(dealer_sprite, game_state, player_won):
+        xalign 0.5
+    add "minigames/blackjack/fg.png"
 
+    if game_state == "setup":
+        $ dealer_sprite = dealer_sprites(dealer_sprite, game_state, player_won)
         # Construct card images from the sprite sheet
         python:
             # Also reset the deck in case we're playing again
@@ -164,16 +184,17 @@ screen blackjack():
                             SetScreenVariable("game_state", "draw")
                         ]
 
-    else:
+    else:        
         # Draw the field
         frame:
-            xalign 0.5 yalign 0.5
-            xsize 1800 ysize 900
+            background None
+            xalign 0.5 yalign 1.0 yoffset -24
+            xsize 1500 ysize 400
 
-            # Deck / Hit button
+            # Deck / Hit + Stand buttons
             frame:
                 background None
-                xalign 0.7 yalign 0.5
+                xalign 0.8 yalign 0.5
                 button:
                     if len(deck) > 0:
                         
@@ -184,20 +205,31 @@ screen blackjack():
                         ]
                     vbox:
                         frame:
+                            background None
+
                             xsize card_size[0] ysize card_size[1]
                             xalign 0.5 yalign 0
                             if len(deck) > 0:
                                 for ndx, card in enumerate(deck):
                                     add card_back:
+                                        rotate -45
                                         xalign 0.5 yalign 0.5
                                         yoffset -0.25*ndx
-                        text _("Hit!"):
-                            idle_color gui.idle_color
-                            hover_color gui.hover_color
-                            xalign 0.5 text_align 0.5
 
+                        text _("Hit!"):
+                            xalign 0.5 text_align 0.5
+                            idle_color gui.text_color
+                            hover_color gui.hover_color
+                            insensitive_color gui.insensitive_color
+                            outlines [ (absolute(4.5), "#000", absolute(0), absolute(0)) ]
+                            
                         textbutton _("Stand!"):
                             xalign 0.5 text_align 0.5
+                            text_idle_color gui.text_color
+                            text_hover_color gui.hover_color
+                            text_idle_outlines [ (absolute(4.5), "#000", absolute(0), absolute(0)) ]
+                            text_hover_outlines [ (absolute(4.5), "#000", absolute(0), absolute(0)) ]
+                            text_insensitive_outlines [ (absolute(4.5), "#000", absolute(0), absolute(0)) ]
                             action [
                                 SensitiveIf(game_state == "draw"),
                                 SetScreenVariable("game_state", "stand"),
@@ -212,17 +244,22 @@ screen blackjack():
                 hbox:
                     # Player hand
                     for ndx, card in enumerate(player_hand):
-                        add player_hand[ndx]["image"]
+                        add player_hand[ndx]["image"]:
+                            zoom 1.5
 
                 # Display score
                 $ player_score = get_hand_score(player_hand)
                 text _("Score: ") + str(player_score):
                     xalign 0.5 text_align 0.5
+                    color gui.idle_color
+                    outlines [ (absolute(4.5), "#000", absolute(0), absolute(0)) ]
+                    size 28
 
             # Dealer's side
             vbox:
                 xsize 1.0 ysize card_size[1]
                 xalign 0.5 yalign 0
+                box_reverse True
 
                 hbox:
                     # Dealer's hand
@@ -239,12 +276,15 @@ screen blackjack():
                 # Display score
                 $ dealer_score = get_hand_score(dealer_hand)
                 if game_state == "draw":
-                    $ dealer_score_text = str(dealer_hand[0]["points"]) + "...?"
+                    $ dealer_score_text = "?"
                 else:
                     $ dealer_score_text = str(dealer_score)
 
                 text _("Score: ") + dealer_score_text:
                     xalign 0.5 text_align 0.5
+                    color gui.idle_color
+                    outlines [ (absolute(4.5), "#000", absolute(0), absolute(0)) ]
+                    size 28
 
         # Draw this on top of everything else at the end
         if game_state == "end":
