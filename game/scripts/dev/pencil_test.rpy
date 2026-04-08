@@ -1,9 +1,13 @@
 init python: 
     config.per_frame_screens.append("pencil_test")
+    import datetime as dt
 
 screen pencil_test():
     modal True
 
+    default start_time = get_current_time()
+    default game_time = dt.timedelta(seconds = (60 + 4.5))
+    default end_time = start_time + game_time
     default score_to_beat = 250
     default max_pencil_length = int(41.2 * 20)
     default distance = 0
@@ -113,9 +117,12 @@ screen pencil_test():
         xpos 10 ypos 10
         spacing -10
 
-        $ time_left = get_current_time().strftime("%M:%S:%f")
-        
-        text str(time_left):
+        $ time_left = end_time - dt.datetime.now()
+        $ total_seconds = time_left.total_seconds()
+        $ minutes, seconds, remainder = int(total_seconds / 60), int(total_seconds) % 60, total_seconds % 1
+        $ formatted_time_left = "{:01}:{:02}.{{size=-24}}{:03}".format(minutes, seconds, int(remainder * 1000))
+
+        text str(formatted_time_left):
             text_align 0.5
             size 100
             color "#FF0000"
