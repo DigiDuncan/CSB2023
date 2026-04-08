@@ -137,9 +137,9 @@ init python:
             r.blit(fg_renderer, (0, 0))
 
             # Info
-            middle_renderer = renpy.render(Text( _("Press [[SPACE] to spin!"), size=72), 1920, 1080, st, at)
+            middle_renderer = renpy.render(Text( _("Press [[SPACE] to spin!"), size=72, outlines=[(absolute(4.5), "#000", absolute(0), absolute(0))]), 1920, 1080, st, at)
             r.blit(middle_renderer, (650, 1000))
-            money_renderer = renpy.render(Text(f"${self.dollars}\nGOAL: ${WIN_DOLLARS}", color = "#00FF00", size=72), 1920, 1080, st, at)
+            money_renderer = renpy.render(Text(f"HELD: ${self.dollars}\nGOAL: ${WIN_DOLLARS}", color = "#00FF00", size=72, outlines=[(absolute(4.5), "#000", absolute(0), absolute(0))]), 1920, 1080, st, at)
             r.blit(money_renderer, (50, 50))
 
             # Clear hit flag

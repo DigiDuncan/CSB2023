@@ -23,8 +23,8 @@ init python:
 
             self.player_name_text = Text( _("You"), color = "#FFFFFF", size = 67, outlines=[(4.5, "#000000", absolute(0), absolute(0))])
             self.player_score_text = Text( _("2"), color = "#FFFFFF", size = 67, outlines=[(4.5, "#000000", absolute(0), absolute(0))])
-            self.enemy_name_text = Text(self.ai.name, color = "#000000", size = 72)
-            self.enemy_score_text = Text( _("2"), color = "#000000", size = 72)
+            self.enemy_name_text = Text(self.ai.name, color = "#000000", size = 67, outlines=[(4.5, "#FFFFFF", absolute(0), absolute(0))])
+            self.enemy_score_text = Text( _("2"), color = "#000000", size = 67, outlines=[(4.5, "#FFFFFF", absolute(0), absolute(0))])
 
             self.help_text = Text( _("Press I for info!"), color = "#FFFFFF", size = 36, outlines=[(4.5, "#000000", absolute(0), absolute(0))])
             self.help_modal = renpy.get_registered_image("reversi_rules")
@@ -73,14 +73,15 @@ init python:
 
             w, b = self.game.get_counts()
             self.player_score_text = Text(str(w), color = "#FFFFFF", size = 67, outlines=[(4.5, "#000000", absolute(0), absolute(0))])
-            self.enemy_score_text = Text(str(b), color = "#000000", size = 72)
+            self.enemy_score_text = Text(str(b), color = "#000000", size = 67, outlines=[(4.5, "#FFFFFF", absolute(0), absolute(0))])
 
             r.place(self.player_name_text, x = 15, y = 5)
             s.circle((0,0,0), (42, 114), board_length/32)
             s.circle((255,255,255), (42, 114), board_length/42)
             r.place(self.player_score_text, x = 79, y = 75)
             r.place(self.enemy_name_text, x = 15, y = 145)
-            s.circle((0,0,0), (42, 252), board_length/32)
+            s.circle((255,255,255), (42, 252), board_length/32)
+            s.circle((0,0,0), (42, 252), board_length/42)
             r.place(self.enemy_score_text, x = 79, y = 215)
             r.place(self.help_text, x = 1675, y = 5)
 

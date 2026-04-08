@@ -141,7 +141,7 @@ init python:
 
         return dealer_img
 
-screen blackjack(cpu_1 = None, cpu_2 = None, ai_1 = BlackjackAIs.NOVICE, ai_2 = BlackjackAIs.NOVICE):
+screen minigame_blackjack(cpu_1 = None, cpu_2 = None, ai_1 = BlackjackAIs.NOVICE, ai_2 = BlackjackAIs.NOVICE):
     modal True
         
     timer 1:
@@ -325,6 +325,7 @@ screen blackjack(cpu_1 = None, cpu_2 = None, ai_1 = BlackjackAIs.NOVICE, ai_2 = 
 
                         text _("Hit!"):
                             xalign 0.5 text_align 0.5
+                            font gui.name_text_font
                             idle_color gui.text_color
                             hover_color gui.hover_color
                             insensitive_color gui.insensitive_color
@@ -332,6 +333,7 @@ screen blackjack(cpu_1 = None, cpu_2 = None, ai_1 = BlackjackAIs.NOVICE, ai_2 = 
                             
                         textbutton _("Stand!"):
                             xalign 0.5 text_align 0.5
+                            text_font gui.name_text_font
                             text_idle_color gui.text_color
                             text_hover_color gui.hover_color
                             text_idle_outlines [ (absolute(4.5), "#000", absolute(0), absolute(0)) ]
@@ -456,7 +458,7 @@ screen blackjack(cpu_1 = None, cpu_2 = None, ai_1 = BlackjackAIs.NOVICE, ai_2 = 
         # Draw this on top of everything else at the end
         if game_state == "end":
             frame:
-                xsize 950 ysize 150
+                xsize 800 ysize 150
                 xalign 0.5 yalign 0.55
                 
                 text game_result+" Play again?":
@@ -466,7 +468,7 @@ screen blackjack(cpu_1 = None, cpu_2 = None, ai_1 = BlackjackAIs.NOVICE, ai_2 = 
                     xalign 0.3 yalign 0.85 text_align 0.5
                     action [
                         SelectedIf(False),
-                        ShowTransient("blackjack", cpu_1=cpu_1, cpu_2=cpu_2)
+                        ShowTransient("minigame_blackjack", cpu_1=cpu_1, cpu_2=cpu_2)
                     ]
                 textbutton _("No"):
                     xalign 0.7 yalign 0.85 text_align 0.5

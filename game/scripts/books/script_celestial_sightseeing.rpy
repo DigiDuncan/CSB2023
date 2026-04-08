@@ -2,6 +2,7 @@
 # TODO: make sprites for tate_cyan
 
 label book_celestial_sightseeing:
+    scene black
     play music we_will_meet_again
     music we_will_meet_again
     pause 1.0
@@ -157,6 +158,9 @@ label book_celestial_sightseeing:
     show cs flipped
     extend "I hope you get well soon, other-Tate!"
     tate_cyan "Thank you."
+    # TODO: enable this when finale is finished.
+        # if renpy.seen_label("finale_end"):
+        #     tate_cyan "Should you run into Addy, do send him my regards."
     tate_cyan "And I hope {i}you{/i} enjoy the rest of your adventure."
     show cs disappointed flipped
     cs "Thanks{w=0.1}.{w=0.1}.{w=0.1}.{w=0.1}?"

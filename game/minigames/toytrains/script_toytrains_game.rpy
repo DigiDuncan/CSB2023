@@ -88,31 +88,28 @@ init python:
             ### Text Elements
 
             # Lap Counter
-            laps_left_txt_render = renpy.render(Text( _("LAP: "+str(self.current_lap)+"/"+str(self.total_laps)), color = "#FFFFFF", size = 72), 300, 100, st, at)
-            r.blit(laps_left_txt_render, (16, 4))
+            laps_left_txt_render = renpy.render(Text( _("LAP: "+str(self.current_lap)+"/"+str(self.total_laps)), color = "#FFFFFF", size = 72, outlines=[(absolute(4.5), "#000", absolute(0), absolute(0))]), 300, 100, st, at)
+            r.blit(laps_left_txt_render, (14, 4))
 
             # HP
-            if self.hp == 3:
-                r.blit(renpy.load_image(self.health_ok), (8, 88))
-                r.blit(renpy.load_image(self.health_ok), (76, 88))
-                r.blit(renpy.load_image(self.health_ok), (144, 88))
-            elif self.hp == 2:
-                r.blit(renpy.load_image(self.health_ok), (8, 88))
-                r.blit(renpy.load_image(self.health_ok), (76, 88))
-                r.blit(renpy.load_image(self.health_hit), (144, 88))
-            elif self.hp == 1:
-                r.blit(renpy.load_image(self.health_ok), (8, 88))
-                r.blit(renpy.load_image(self.health_hit), (76, 88))
-                r.blit(renpy.load_image(self.health_hit), (144, 88))
-            elif self.hp == 0:
-                r.blit(renpy.load_image(self.health_hit), (8, 88))
-                r.blit(renpy.load_image(self.health_hit), (76, 88))
-                r.blit(renpy.load_image(self.health_hit), (144, 88))
+            for heart in range(CS_TRAIN_HP):
+                heart_x = 14 + (68 * heart)
+                heart_img = self.health_hit
+
+                if heart < self.hp:
+                    heart_img = self.health_ok
+                else:
+                    heart_img = self.health_hit
+
+                if heart_img:
+                    r.blit(renpy.load_image(heart_img), (heart_x, 88))
+
+            if self.hp == 0:
                 self.win = False
 
             # debug health display
             # hp_left_txt_render = renpy.render(Text( _("HP: "+str(self.hp)), color = "#FFFFFF", size = 72), 300, 100, st, at)
-            # r.blit(hp_left_txt_render, (16, 60))
+            # r.blit(hp_left_txt_render, (50, 60))
 
             # Temporary
             temp_txt = "Hi, this doesn't work yet.\nUse arrow keys to check out the map, at least.\nPress END to \"win\", Space to \"lose.\"\nClick anywhere to test HP drop."
