@@ -35,6 +35,7 @@ init python:
             self.keyboard_q = Image("minigames/pencil/key_q.png")
             self.keyboard_e = Image("minigames/pencil/key_e.png")
             self.red_x = Image("minigames/pencil/red_x.png")
+            self.timer = self.start_time
 
             self.pencils = 0
             self.lock_out_time = None
@@ -45,6 +46,7 @@ init python:
                 self.start_time = st
             
             current_time = st - self.start_time
+            self.timer = current_time
             # Render object we return at the end
             r = renpy.Render(1920, 1080)
 
@@ -58,21 +60,21 @@ init python:
                     if not self.three_played:
                         renpy.sound.play("minigames/pencil/sfx_smash_3.ogg")
                         self.three_played = True
-                    countdown_renderer = renpy.render(Text( _("3"), color="FF0000", size=200), 1920, 1080, st, at)
+                    countdown_renderer = renpy.render(Text( _("3"), color="FF0000", size=200, outlines=[(absolute(9), "#000", absolute(0), absolute(0))]), 1920, 1080, st, at)
                     r.blit(countdown_renderer, (960, 540))
                 elif 1 < current_time < 2:
                     # Display 2
                     if not self.two_played:
                         renpy.sound.play("minigames/pencil/sfx_smash_2.ogg")
                         self.two_played = True
-                    countdown_renderer = renpy.render(Text( _("2"), color="FFFF00", size=200), 1920, 1080, st, at)
+                    countdown_renderer = renpy.render(Text( _("2"), color="FFFF00", size=200, outlines=[(absolute(9), "#000", absolute(0), absolute(0))]), 1920, 1080, st, at)
                     r.blit(countdown_renderer, (960, 540))
                 elif 2 < current_time < 3:
                     # Display 1
                     if not self.one_played:
                         renpy.sound.play("minigames/pencil/sfx_smash_1.ogg")
                         self.one_played = True
-                    countdown_renderer = renpy.render(Text( _("1"), color="00FF00", size=200), 1920, 1080, st, at)
+                    countdown_renderer = renpy.render(Text( _("1"), color="00FF00", size=200, outlines=[(absolute(9), "#000", absolute(0), absolute(0))]), 1920, 1080, st, at)
                     r.blit(countdown_renderer, (960, 540))
                 elif current_time > 3:
                     # Yell Go at the player
@@ -111,27 +113,27 @@ init python:
                 self.fail_played = False
 
             # Rendering in the score
-            score_renderer = renpy.render(Text(str(self.score) + " cm", color = "#0000FF", size = 100), 500, 100, st, at)
+            score_renderer = renpy.render(Text(str(self.score) + " cm", color = "#0000FF", size = 100, outlines=[(absolute(4.5), "#000", absolute(0), absolute(0))]), 500, 100, st, at)
             r.blit(score_renderer, (1600, 0))
 
             # Rendering in the timer
             if not current_time < 3:
                 if not (GAME_LENGTH - current_time < 0):
-                    time_renderer = renpy.render(Text(str(GAME_LENGTH - math.ceil(current_time)), color = "#FF0000", size = 144), 150, 100, st, at)
+                    time_renderer = renpy.render(Text(str(GAME_LENGTH - math.ceil(current_time)), color = "#FF0000", size = 144, outlines=[(absolute(4.5), "#000", absolute(0), absolute(0))]), 150, 100, st, at)
                     r.blit(time_renderer, (0, 0))
                 else:
                     time_renderer = renpy.render(Text( _("0") , color = "#FF0000", size = 144), 100, 100, st, at)
                     r.blit(time_renderer, (50, 0))
                 
             # Render the remaining pencils
-            count_renderer = renpy.render(Text( _(str(PENCIL_LIMIT - self.pencils) + " pencils remaining"), color = "#FF0000", size = 72), 1000, 100, st, at)
-            r.blit(count_renderer, (50, 125))
+            count_renderer = renpy.render(Text( _(str(PENCIL_LIMIT - self.pencils) + " pencils remaining"), color = "#FF0000", size = 42, text_align=0.5, outlines=[(absolute(4.5), "#000", absolute(0), absolute(0))]), 500, 100, st, at)
+            r.blit(count_renderer, (797, 765))
 
             # Render in the keys
             q_key_displayable = renpy.displayable(self.keyboard_q)
             q_key_transform = Transform(q_key_displayable, alpha = 1.0 if self.current_key else 0.33, zoom = 0.5)
             q_key_renderer = renpy.render(q_key_transform, 1920, 1080, st, at)
-            r.blit(q_key_renderer, (600, 780))
+            r.blit(q_key_renderer, (460, 780))
 
             e_key_displayable = renpy.displayable(self.keyboard_e)
             e_key_transform = Transform(e_key_displayable, alpha = 1.0 if not self.current_key else 0.33, zoom = 0.5)
@@ -181,12 +183,13 @@ screen pencilgame():
     add "minigames/pencil/stage.png"
     add "minigames/pencil/table.png" at transform:
         yalign 1.0
-    text _("Press [[SPACE] to move on to the next pencil!"):
-        xalign 0.5
-        yalign 0.0625
-        size 60
-        color "AAAAAA"
     add pencilgame
+    text _("Press [[SPACE] to move on to the next pencil!"):
+        xalign 0.5 yalign 0.7
+        text_align 0.5
+        size 48
+        color gui.idle_color
+        outlines [(absolute(9), "#000", absolute(0), absolute(0))]
 
 label minigame_pencil:
     window hide
