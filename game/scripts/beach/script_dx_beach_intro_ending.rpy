@@ -311,8 +311,10 @@ label beach_start:
     kappn "The two of ye slept like scallops fer the las' 16 hours!"
     show cs scared
     show arceus worried flipped
-    cs "16 hours?!" (multiple=2) with vpunch 
-    arceus "16 hours?!" (multiple=2) with vpunch 
+    multiple:
+        cs "16 hours?!"
+        arceus "16 hours?!"
+    with { "master": vpunch }
     scene black with dissolve
     pause 1.0
     n "CS and Arceus deboard the bus and start walking."

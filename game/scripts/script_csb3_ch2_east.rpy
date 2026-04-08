@@ -252,9 +252,13 @@ label true_montana:
     play music candle_world volume 0.4 if_changed
     music candle_world
     if fun_value(FUN_VALUE_MUSIC):
-        "CS and Arceus" "What in the candle world?"
+        multiple:
+            cs "What in the candle world?"
+            arceus "What in the candle world?"
     else:
-        "CS and Arceus" "What in the world?"
+        multiple:
+            cs "What in the world?"
+            arceus "What in the world?"
     n "Ahead lies a barricade with a bunch of strange hooded figures surrounding it."
     show cultist at mid_right behind billy with moveinright
     n "One of the strangers walks up to the driver's side and knocks on the window."

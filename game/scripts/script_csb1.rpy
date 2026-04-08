@@ -475,9 +475,10 @@ label csbi_room:
     "..."
     ed "But, now that we're here, what should we actually {i}do?"
 
-    ed "Hmm..." (multiple = 3)
-    wesley "Hmm..." (multiple = 3)
-    rich "Hmm..." (multiple = 3)
+    multiple:
+        ed "Hmm..."
+        wesley "Hmm..."
+        rich "Hmm..."
 
     pause 2.0
     wesley "Let's go check this other room. We might get some ideas."
@@ -539,9 +540,10 @@ label csbi_room:
     with moveinright
     rich "Lemme call our JoJ UFO!"
 
-    ed "I'm beaming up!" (multiple = 3)
-    wesley "I'm beaming up!" (multiple = 3)
-    rich "I'm beaming up!" (multiple = 3)
+    multiple:
+        ed "I'm beaming up!"
+        wesley "I'm beaming up!"
+        rich "I'm beaming up!"
 
     play sound sfx_beam volume 0.6
     show beam at xstretch_in

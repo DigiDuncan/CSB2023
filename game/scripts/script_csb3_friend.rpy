@@ -597,7 +597,9 @@ label friend_cool_jump:
     show cs at right with moveintop
     hide cs with moveoutbottom
     show cs at right with moveinbottom
-    "Pakoo and Linus" "WOOAHH!!"
+    multiple:
+        pakoo "WOOAHH!!"
+        linus "WOOAHH!!"
     show cs happy
     cs "Hell yeah! What did you guys think of {i}that?{/i}"
     pakoo "That was impressive, man!"
@@ -966,7 +968,9 @@ label friend_cool_car:
     copguy "Noooot so nice that you walked right into my trap!"
     copguy "We've got you guys surrounded! Get out of the car now!"
     arceus "You guys ready?"
-    "CS and Pakoo" "Yep. Let's do this."
+    multiple:
+        cs "Yep. Let's do this."
+        arceus "Yep. Let's do this."
     n "They all slowly step out of the car."
     scene dealership
     show blue_light at left
@@ -1022,7 +1026,9 @@ label friend_reg_car:
     copguy "Looks like you've walked right into my trap!"
     copguy "We've got you guys surrounded! Get out of the car now!"
     arceus "You guys ready?"
-    "CS and Pakoo" "Yep. Let's do this."
+    multiple:
+        cs "Yep. Let's do this."
+        pakoo "Yep. Let's do this."
     n "They all slowly step out of the car."
     scene dealership
     show blue_light at left
@@ -1219,7 +1225,9 @@ label friend_flint_car:
     show cs at left with moveinleft
     show pakoo at right with moveinright
     cs "Alrighty, you all in?"
-    "Pakoo and Arc" "Yeah."
+    multiple:
+        pakoo "Yeah."
+        arceus "Yeah."
     n "CS presses his feet against the pavement and struggles to move the car."
     show cs concentrate with hpunch
     cs "Hnnnnngg..."

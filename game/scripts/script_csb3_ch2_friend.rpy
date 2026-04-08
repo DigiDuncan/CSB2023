@@ -728,7 +728,10 @@ label friend2_final_meetup:
     $ renpy.movie_cutscene(midge_bl)
     $ achievement_manager.unlock("friends")
     if nice_car:
-        "Blank, Anno, and Midge" "Nice car!"
+        multiple:
+            blank "Nice car!"
+            anno "Nice car!"
+            midge "Nice car!"
         cs "Thanks! I've heard that a lot today."
     else:
         cs "Nice to finally meet you guys! Where's DB?"

@@ -260,7 +260,10 @@ label dx_eliza_party_after:
     show elizabeth angry flipped
     eliza "Stalin loved this game!"
     rex "As much as I love the economy."
-    "Scott, Terry and Rex" "Clapping and shouting about the economy"
+    multiple:
+        scott"Clapping and shouting about the economy"
+        terry "Clapping and shouting about the economy"
+        rex "Clapping and shouting about the economy"
     show elizabeth flipped
     hide dkc with dissolve
     eliza "Alright, this next gift is from Pomni."

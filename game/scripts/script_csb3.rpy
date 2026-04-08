@@ -1109,8 +1109,9 @@ label csbiii_arc_escape:
     show cs worried dark
     show arceus worried dark
 
-    cs "{i}Shit!" (multiple=2)
-    arceus "{i}Shit!" (multiple=2)
+    multiple:
+        cs "{i}Shit!"
+        arceus "{i}Shit!"
 
     arceus "Copguy's back! He's probably looking all over for us!"
     arceus "What do we do, CS?!"

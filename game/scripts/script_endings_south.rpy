@@ -16,8 +16,9 @@ label south_back_home_alt:
     cs "Well, I guess I should get some rest."
     cs "If you guys want, we can have a party at my place tomorrow to celebrate getting through all this shit!"
     show arceus happy flipped
-    arceus "Hell yeah!" (multiple = 2)
-    billy "Hell yeah!" (multiple = 2)
+    multiple:
+        arceus "Hell yeah!"
+        billy "Hell yeah!"
     show arceus at left with determination
     hide billy with moveoutleft
     hide arceus with moveoutleft

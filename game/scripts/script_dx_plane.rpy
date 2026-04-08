@@ -672,11 +672,13 @@ label plane_search:
     arceus "Do you... keep this with you?"
     cs "At all times, you never know when it could come in handy. Like now!"
     eliza "CS and Arceus, start asking people if they've seen anyone matching the description. Ges and K-19, go look for the lost items in crew areas."
-    ges "On it, eh!" (multiple=2)
-    k19 "Let's friggin' do this!" (multiple=2)
+    multiple:
+        ges "On it, eh!"
+        k19 "Let's friggin' do this!"
     pause 0.5
-    cs "Alright, cya!" (multiple=2)
-    arceus "Got it!" (multiple=2)
+    multiple:
+        cs "Alright, cya!"
+        arceus "Got it!"
     pause 0.5
     scene black with dissolve
     stop music fadeout 3.0
@@ -927,14 +929,16 @@ label plane_brothers:
     show ges at center
     with move
     #Both groups slam into eachother
-    ges "Gotcha!" (multiple=2)
-    cs "Got you!" (multiple=2)
+    multiple:
+        ges "Gotcha!"
+        cs "Got you!"
     show cs worried at mid_left
     show ges at mid_right
     with move
     pause 0.5
-    ges "Huh?" (multiple=2)
-    cs "What the?" (multiple=2)
+    multiple:
+        ges "Huh?"
+        cs "What the?"
     pause 0.5
     scene black with dissolve
     pause 1.0
@@ -1132,8 +1136,9 @@ label plane_fight_win:
     pause 5.0
     cs "O-oh..."
     k19 "I... should've figured that."
-    wilbur "Shit." (multiple=2)
-    orville "Shit." (multiple=2)
+    multiple:
+        wilbur "Shit."
+        orville "Shit."
     scene black with dissolve
     n "After everyone gets cleaned up, K-19 grabs the brothers and gives them a shakedown."
     scene cargo_hold
@@ -1292,8 +1297,9 @@ label plane_fight_win:
     cs "We returned everything back to their rightful owners!"
     eliza "Thank you guys."
     eliza "Your guy's names are CS and Arceus, correct?"
-    cs "That's me." (multiple=2)
-    arceus "That's me." (multiple=2)
+    multiple:
+        cs "That's me."
+        arceus "That's me."
     eliza "Thank you CS and Arceus, we appreciate the work you guys did. We will try to make it back to you in time."
     cs "No need, we kinda won 100 million dollars at the casino."
     eliza "Alright well, we hope that you can stay comfortable for the rest of the flight."

@@ -2553,10 +2553,14 @@ label ce_party_before:
         show cs worried christmas dark flipped at right with moveinright
         cs "That {i}is{/i} a fucking train!"
         if fun_value(FUN_VALUE_EPIC):
+            # TODO: these faces are not compatible with new multiple screen
             show mean human angry festive dark flipped at mid_left
             show tate furious festive dark at left
-            tate "I'm not a train!" (multiple = 2)
-            mean "The {i}fuck{/i} did you call me?!" (multiple = 2) with vpunch
+            with determination
+            multiple:
+                tate "I'm not a train!"
+                mean "The {i}fuck{/i} did you call me?!"
+            with { "master": vpunch }
             show mean human festive dark flipped at mid_left
             show tate festive dark at left
         tate "Hey, CS! How've you been?"
@@ -2586,8 +2590,9 @@ label ce_party_before:
         cs "Shall we get inside?"
         show tate festive dark
         show mean human happy festive dark flipped
-        tate "Yeah!" (multiple = 2)
-        mean "Yeah!" (multiple = 2)
+        multiple:
+            tate "Yeah!"
+            mean "Yeah!"
     elif d20 == 7:
         play sound sfx_car_approach_stop volume 5.0 fadein 1.0
         show cs christmas flipped at mid_left with move
@@ -3258,8 +3263,9 @@ label ce_introductions:
     linus "No, you've got the wrong cable!"
     luke "You idiots are {nw}"
     extend "{i}both{/i} wrong! That's not even the right {i}port!" with vpunch
-    digi "Ohhhhh..." (multiple = 2)
-    linus "Ohhhhh..." (multiple = 2)
+    multiple:
+        digi "Ohhhhh..."
+        linus "Ohhhhh..."
     hide screen dxcom
     pause 1.0
     show cs christmas flipped at center behind linus
@@ -4924,8 +4930,9 @@ label ce_dinner:
     play sound sfx_house_door_open
     show elizabeth worried flipped at mid_mid_left
     show k17 shock at center with vpunch
-    k17 "{cshake}Ahhh!" (multiple = 2)
-    eliza "{cshake}Woah!" (multiple = 2)
+    multiple:
+        k17 "{cshake}Ahhh!"
+        eliza "{cshake}Woah!"
     show k17 disappointed at mid_right
     show elizabeth angry flipped at mid_left
     with move
@@ -4992,8 +4999,9 @@ label ce_dinner:
     grace "That's pussy shit! Anne and I have been around for {i}wayyy{/i} longer!"
     show elizabeth worried flipped
     show anne angry with vpunch
-    anne "{size=+4}Grace, knock it off!" (multiple = 2)
-    eliza "{size=+4}Grace!" (multiple = 2)
+    multiple:
+        anne "{size=+4}Grace, knock it off!"
+        eliza "{size=+4}Grace!"
     show grace sad
     show k17
     grace "Sorry, I guess I was a {i}little{/i} too rude..."

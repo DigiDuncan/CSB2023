@@ -129,9 +129,10 @@ label beach.beach_dawn:
 
     show cs happy beach flipped
     show arceus happy flipped
-    cs "Wow, thanks!" (multiple=3)
-    arceus "Thank you so much!" (multiple=3)
-    tate "Hell yeah, thank you!" (multiple=3)
+    multiple:
+        cs "Wow, thanks!"
+        arceus "Thank you so much!"
+        tate "Hell yeah, thank you!"
 
     show arceus flipped at offscreenright
     show mean happy at manual_pos(1.3, 0.8, 1.0)

@@ -19,8 +19,9 @@ label southwest_start:
     cs "We're going to California."
     frank "We're stopping there anyways, you wanna hop in?" 
     cs "That sounds like the best time ever."
-    susan "A stranger in our car? Are you sure about this?" (multiple=2)
-    arceus "Getting in a strangers car? Are you sure CS?" (multiple=2)
+    multiple:
+        susan "A stranger in our car? Are you sure about this?"
+        arceus "Getting in a strangers car? Are you sure CS?"
     n "CS leans over to Arceus and whispers into his ear."
     cs "It's a free ride man, let's just take our chances."
     n "Arceus sighs."

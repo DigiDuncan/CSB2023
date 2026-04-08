@@ -89,8 +89,9 @@ label car_dialogue:
     billy "We're still quite a ways away!"
     cs "Aw, man..."
     arceus "Listen, at least the cops aren't after us this time."
-    billy "What?" (multiple=2)
-    digi "Huh?" (multiple=2)
+    multiple:
+        billy "What?"
+        digi "Huh?"
     cs "... Don't worry about it."
 
     pause 4.0

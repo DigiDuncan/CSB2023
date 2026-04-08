@@ -21,7 +21,9 @@ label true_back_home:
     show cs happy flipped
     cs "If you guys want, we can have a party at my place tomorrow to celebrate getting through all this shit!"
     show arceus happy flipped
-    "Arc and Billy" "Hell yeah!"
+    multiple:
+        arceus "Hell yeah!"
+        billy "Hell yeah!"
     show arceus at left with determination
     hide billy with moveoutleft
     hide arceus with moveoutleft
