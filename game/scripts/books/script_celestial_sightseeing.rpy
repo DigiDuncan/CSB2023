@@ -161,6 +161,8 @@ label book_celestial_sightseeing:
     # TODO: enable this when finale is finished.
         # if renpy.seen_label("finale_end"):
         #     tate_cyan "Should you run into Addy, do send him my regards."
+        #     tate_cyan "Please enjoy the rest of your adventure."
+        # else:
     tate_cyan "And I hope {i}you{/i} enjoy the rest of your adventure."
     show cs disappointed flipped
     cs "Thanks{w=0.1}.{w=0.1}.{w=0.1}.{w=0.1}?"

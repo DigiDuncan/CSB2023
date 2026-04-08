@@ -328,7 +328,7 @@ screen minigame_blackjack(cpu_1 = None, cpu_2 = None, ai_1 = BlackjackAIs.NOVICE
                             font gui.name_text_font
                             idle_color gui.text_color
                             hover_color gui.hover_color
-                            insensitive_color gui.insensitive_color
+                            insensitive_color gui.idle_color
                             outlines [ (absolute(4.5), "#000", absolute(0), absolute(0)) ]
                             
                         textbutton _("Stand!"):
@@ -336,6 +336,7 @@ screen minigame_blackjack(cpu_1 = None, cpu_2 = None, ai_1 = BlackjackAIs.NOVICE
                             text_font gui.name_text_font
                             text_idle_color gui.text_color
                             text_hover_color gui.hover_color
+                            text_insensitive_color gui.idle_color
                             text_idle_outlines [ (absolute(4.5), "#000", absolute(0), absolute(0)) ]
                             text_hover_outlines [ (absolute(4.5), "#000", absolute(0), absolute(0)) ]
                             text_insensitive_outlines [ (absolute(4.5), "#000", absolute(0), absolute(0)) ]
@@ -474,7 +475,8 @@ screen minigame_blackjack(cpu_1 = None, cpu_2 = None, ai_1 = BlackjackAIs.NOVICE
                     xalign 0.7 yalign 0.85 text_align 0.5
                     action [
                         Stop("music", fadeout=0.5),
-                        Return(player_won)
+                        Return(player_won),
+                        With(dissolve)
                     ]
 
     # Game logic

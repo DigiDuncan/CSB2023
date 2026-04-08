@@ -688,6 +688,7 @@ label _awawa_tate_test:
                         tate "This means that ace cards are {a=https://officialgamerules.org/game-rules/blackjack/}flexible{/a} and that the dealer must hit if his hand is below 17."
                         window hide
                         call screen minigame_blackjack(cpu_1 = "Tate", cpu_2 = "Digi")
+                        pause 1.0
                         if _return == True:
                             tate "Nice work."
                         else: 
