@@ -384,8 +384,8 @@
         "y_pos": 408,
         "kind": "label",
         "destinations": {
-            "defeated_perfect_tate": {
-                "need_label": "play_perfecttate_game"
+            "play_perfecttate_game": {
+                "need_persistent": "defeated_perfect_tate"
             }
         }
     }
