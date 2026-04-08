@@ -288,7 +288,7 @@ label _digi_test:
                 nvl clear
                 you_n "Iris?"
                 digi_n "Yeah, Iris! She's my friend and... boss? Kinda? I work for her, but the relationship isn't really formal."
-                digi_n """When I first got this universe, I was kinda... adrift, for a while. Didn't have a place to go.
+                digi_n """When I first got to this universe, I was kinda... adrift, for a while. Didn't have a place to go.
                 She took me in after I had a run in with a black hole.
 
                 ...

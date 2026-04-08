@@ -31,13 +31,94 @@ init python:
         elif score >= 17 and score <= 21:
             pass # stand
 
-    def cpu_logic(deck, hand, score):
-        # This is similar to the dealer logic but with some randomness thrown in.
-        random_max = renpy.random.randint(13,18)
-        if score < random_max:
+    # THIS IS DIGI BULLSHIT #
+
+    from typing import Literal
+    from dataclasses import dataclass
+
+    @dataclass
+    class BlackjackAI:
+        strategy: Literal["simple", "advanced", "expert"] = "advanced"
+        fear: float = 0.0  # 0.0 - 1.0
+        aggression: float = 1.0  # 0.0 - 1.0
+        always_hit: int = 11
+        always_stand: int = 17
+        simple_strategy_threshold: int = 16  # Hits below this line
+        randomness: int = 0  # Variance from known-optimal threshold
+
+    class BlackjackAIs:
+        BEGINNER = BlackjackAI("simple")
+        NOVICE = BlackjackAI()
+        PRO = BlackjackAI("expert")
+
+        DIGI = BlackjackAI(always_stand = 16, randomness = 1, fear = 0.1)
+        GREEN = BlackjackAI("expert", aggression = 0.5, randomness = 2)
+
+    def cpu_logic(deck, dealer_hand, hand, ai: BlackjackAIs = BlackjackAIs.NOVICE):
+        score = get_hand_score(hand)
+        dealer_score = get_hand_score(dealer_hand)
+        soft = ["Ace" in c['rank'] for c in dealer_hand]
+
+        VARIANCE = renpy.random.randint(-ai.randomness, ai.randomness)
+        SIMPLE_STRATEGY_THRESHOLD = ai.simple_strategy_threshold + VARIANCE
+        TWO_THREE_ADV_THRESHOLD = 13 + VARIANCE
+        FOUR_FIVE_SIX_ADV_THRESHOLD = 12 + VARIANCE
+        OTHER_ADV_THRESHOLD = 17 + VARIANCE
+        SOFT_LESS_THAN_EIGHTEEN_EXPERT_THRESHOLD = 18 + VARIANCE
+        SOFT_OTHER_EXPERT_THRESHOLD = 19 + VARIANCE
+
+        if score <= ai.always_hit:
+            # Always hit
             draw_card(deck, hand)
-        elif score >= random_max and score <= 21:
-            pass # stand
+        elif score >= ai.always_stand:
+            # Always stand
+            pass
+        else:
+            # Take in how likely the AI is to be afraid.
+            if renpy.random.random() < AI.fear:
+                pass # Stand
+            # How likely the AI is to just decide to hit, even if it's stupid.
+            elif renpy.random.random() < AI.aggression:
+                draw_card(deck, hand)
+            else:
+                # Use the strategy to determine the best choice.
+                # The simple strategy just takes into account the current score, and stands on 16.
+                # (Or a differently configured number.)
+                if ai.strategy == "simple":
+                    if score < 16:
+                        draw_card(deck, hand)
+                # The advanced strategy uses the table found on Reddit, but without thinking about aces.
+                elif ai.strategy == "advanced":
+                    if dealer_score in [2, 3]:
+                        if score < TWO_THREE_ADV_THRESHOLD:
+                            draw_card(deck, hand)
+                    elif dealer_score in [4, 5, 6]:
+                        if score < FOUR_FIVE_SIX_ADV_THRESHOLD:
+                            draw_card(deck, hand)
+                    else:
+                        if score < OTHER_ADV_THRESHOLD:
+                            draw_card(deck, hand)
+                # The expert strategy is the advanced strategy but with soft aces thought about.
+                elif ai.strategy == "expert":
+                    if soft:
+                        if dealer_score < 18:
+                            if score < SOFT_LESS_THAN_EIGHTEEN_EXPERT_THRESHOLD:
+                                draw_card(deck, hand)
+                        else:
+                            if score < SOFT_OTHER_EXPERT_THRESHOLD:
+                                draw_card(deck, hand)
+                    else:
+                        if dealer_score in [2, 3]:
+                            if score < TWO_THREE_ADV_THRESHOLD:
+                                draw_card(deck, hand)
+                        elif dealer_score in [4, 5, 6]:
+                            if score < FOUR_FIVE_SIX_ADV_THRESHOLD:
+                                draw_card(deck, hand)
+                        else:
+                            if score < OTHER_ADV_THRESHOLD:
+                                draw_card(deck, hand)
+
+    #########################
 
     def dealer_sprites(dealer_sprite, game_state, player_won, dealer_blackjack):
         dealer_img = "minigames/blackjack/luigi_deal.png"
@@ -60,7 +141,7 @@ init python:
 
         return dealer_img
 
-screen blackjack(cpu_1 = None, cpu_2 = None):
+screen blackjack(cpu_1 = None, cpu_2 = None, ai_1 = BlackjackAIs.NOVICE, ai_2 = BlackjackAIs.NOVICE):
     modal True
         
     timer 1:
@@ -417,10 +498,10 @@ screen blackjack(cpu_1 = None, cpu_2 = None):
         elif game_state == "stand":
             # CPUs draw
             if cpu_1 is not None:
-                cpu_logic(deck, cpu_1_hand, cpu_1_score)
+                cpu_logic(deck, dealer_hand, cpu_1_hand, ai_1)
 
             if cpu_2 is not None:
-                cpu_logic(deck, cpu_2_hand, cpu_2_score)
+                cpu_logic(deck, dealer_hand, cpu_2_hand, ai_2)
 
             # Dealer draws
             if dealer_score < 17:
