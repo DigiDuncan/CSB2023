@@ -301,7 +301,7 @@ screen blackjack(cpu_1 = None, cpu_2 = None, ai_1 = BlackjackAIs.NOVICE, ai_2 = 
             # Deck / Hit + Stand buttons
             frame:
                 background None
-                xalign 0.8 yalign 0.25
+                xalign 0.775 yalign 0.25
                 button:
                     if len(deck) > 0:
                         action [
@@ -456,20 +456,20 @@ screen blackjack(cpu_1 = None, cpu_2 = None, ai_1 = BlackjackAIs.NOVICE, ai_2 = 
         # Draw this on top of everything else at the end
         if game_state == "end":
             frame:
-                xsize 950 ysize 200
-                xalign 0.5 yalign 0.5
+                xsize 950 ysize 150
+                xalign 0.5 yalign 0.55
                 
                 text game_result+" Play again?":
                     xalign 0.5 yalign 0.2 text_align 0.5
                 
                 textbutton _("Yes"):
-                    xalign 0.3 yalign 0.8 text_align 0.5
+                    xalign 0.3 yalign 0.85 text_align 0.5
                     action [
                         SelectedIf(False),
                         ShowTransient("blackjack", cpu_1=cpu_1, cpu_2=cpu_2)
                     ]
                 textbutton _("No"):
-                    xalign 0.7 yalign 0.8 text_align 0.5
+                    xalign 0.7 yalign 0.85 text_align 0.5
                     action [
                         Stop("music", fadeout=0.5),
                         Return(player_won)
