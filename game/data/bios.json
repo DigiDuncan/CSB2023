@@ -1012,7 +1012,12 @@
         "full_name": "Luigi Mario",
         "pronouns": "(he/him)",
         "sprites": {
-            "Default": "images/characters/luigi.png"
+            "Default": "images/characters/luigi/luigi.png",
+            "Dealer: Dealing": "images/characters/luigi/luigi_deal.png",
+            "Dealer: Waiting": "images/characters/luigi/luigi_wait.png",
+            "Dealer: Win": "images/characters/luigi/luigi_win.png",
+            "Dealer: Blackjack": "images/characters/luigi/luigi_win2.png",
+            "Dealer: Lose": "images/characters/luigi/luigi_lose.png"
         },
         "quote": "Gouigi!",
         "bio": "After {i}The Super Mario Bros. Movie,{/i} Luigi left his home in Brooklyn to join Jerma at his casino in Vegas. It is well known that Luigi is also trying to win it big so he can buy himself a mansion."

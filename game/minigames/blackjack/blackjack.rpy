@@ -121,23 +121,23 @@ init python:
     #########################
 
     def dealer_sprites(dealer_sprite, game_state, player_won, dealer_blackjack):
-        dealer_img = "minigames/blackjack/luigi_deal.png"
+        dealer_img = "images/characters/luigi/luigi_deal.png"
 
         # Default
         if game_state in ["setup", "stand"]:
-            dealer_img = "minigames/blackjack/luigi_deal.png"
+            dealer_img = "images/characters/luigi/luigi_deal.png"
         # Waiting for your move
         elif game_state == "draw":
-            dealer_img = "minigames/blackjack/luigi_wait.png"
+            dealer_img = "images/characters/luigi/luigi_wait.png"
         # Regular win
         elif game_state == "end" and player_won == False and not dealer_blackjack:
-            dealer_img = "minigames/blackjack/luigi_win.png"
+            dealer_img = "images/characters/luigi/luigi_win.png"
         # Dealer blackjack win
         elif game_state == "end" and player_won == False and dealer_blackjack:
-            dealer_img = "minigames/blackjack/luigi_win2.png"
+            dealer_img = "images/characters/luigi/luigi_win2.png"
         # Dealer lost
         elif game_state == "end" and player_won == True:
-            dealer_img = "minigames/blackjack/luigi_lose.png"
+            dealer_img = "images/characters/luigi/luigi_lose.png"
 
         return dealer_img
 
@@ -191,7 +191,7 @@ screen blackjack(cpu_1 = None, cpu_2 = None, ai_1 = BlackjackAIs.NOVICE, ai_2 = 
     default game_state = "setup"
     default game_result = ""
     default player_won = None
-    default dealer_sprite = "minigames/blackjack/luigi_deal.png"
+    default dealer_sprite = "images/characters/luigi/luigi_deal.png"
     default dealer_blackjack = False
 
     default dealer_hand = []
