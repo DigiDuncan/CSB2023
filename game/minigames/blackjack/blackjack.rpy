@@ -75,10 +75,10 @@ init python:
             pass
         else:
             # Take in how likely the AI is to be afraid.
-            if renpy.random.random() < AI.fear:
+            if renpy.random.random() < ai.fear:
                 pass # Stand
             # How likely the AI is to just decide to hit, even if it's stupid.
-            elif renpy.random.random() < AI.aggression:
+            elif renpy.random.random() < ai.aggression:
                 draw_card(deck, hand)
             else:
                 # Use the strategy to determine the best choice.
