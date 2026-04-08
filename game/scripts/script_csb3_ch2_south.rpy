@@ -505,7 +505,11 @@ label south_vegas_done_slots:
     hide cs with moveoutleft
     n "CS sits down at the poker table and notices that the man's skin is a putrid green."
     n "CS is disgusted by the sight, but he shrugs it off, not wanting to start trouble with this powerful-looking stranger."
-    scene luigi2
+
+    scene poker_bg
+    show luigi at mid_mid_right:
+        yanchor 0.8
+    show poker_fg
     show green flipped at left
     with dissolve
     show cs disappointed flipped at right with moveinright
@@ -515,7 +519,8 @@ label south_vegas_done_slots:
         green "Deal us some cards arready! This is the Laurel Palace after all!"
     else:
         green "Deal us some cards arready!"
-    scene luigi1
+    show luigi deal at mid_mid_right:
+        yanchor 0.8
     show green flipped at left
     show cs disappointed flipped at right
     n "The house deals the cards out to Mr. Green and CS."
@@ -543,7 +548,11 @@ label south_poker:
     music laurel_palace
     cs "No. I'll stand."
     green "Bwahahaha! You think you can beat me?"
-    scene luigi1
+
+    scene poker_bg
+    show luigi deal at mid_mid_right:
+        yanchor 0.8
+    show poker_fg
     show green flipped at left
     show cs flipped at right
     pause 1.0
@@ -564,7 +573,11 @@ label south_poker2:
     music laurel_palace
     cs "I'm still gonna stand."
     green "I'm gonna be rich! You better have that money on you, boy!"
-    scene luigi1
+
+    scene poker_bg
+    show luigi deal at mid_mid_right:
+        yanchor 0.8
+    show poker_fg
     show green flipped at left
     show cs flipped at right
     pause 1.0
@@ -581,7 +594,10 @@ label south_poker2:
 label south_folded:
     play music laurel_palace volume 0.5 if_changed
     music laurel_palace
-    scene luigi2
+    scene poker_bg
+    show luigi wait at mid_mid_right:
+        yanchor 0.8
+    show poker_fg
     show green flipped at left
     show cs disappointed flipped at right
     cs "Yeah, I'm out. I can't risk that much."
@@ -702,7 +718,10 @@ label south_poker3:
     music laurel_palace
     cs "Still standing."
     green "What?! You son of a bitch, you are so scrrewed!"
-    scene luigi2
+    scene poker_bg
+    show luigi wait at mid_mid_right:
+        yanchor 0.8
+    show poker_fg
     show green flipped at left
     show cs flipped at right
     luigi "Alright, let's see your hands."
@@ -714,13 +733,16 @@ label south_poker3:
         n "CS and Mr. Green both have a royal flush with ace and king of spades."
         stop music fadeout 3.0
         music end
-        scene luigi2
+        scene poker_bg
+        show luigi wait at mid_mid_right:
+            yanchor 0.8
+        show poker_fg
         show cs disappointed flipped at right
         show green flipped at left
         cs "What? That can't be right!"
         show cs angry flipped
         cs "You cheated!"
-        green "Hehehe, it doesn't matter becasue I'm gonna take all the money anyway!"
+        green "Hehehe, it doesn't matter because I'm gonna take all the money anyway!"
         green "Hahahahahahahahahahahahahahahaha!!!!!!{nw}"
         show lancer at center with moveintop
         show lancer with vpunch
@@ -803,7 +825,10 @@ label south_poker3:
         stop music fadeout 3.0
         music end
         $ achievement_manager.unlock("poker")
-        scene luigi2
+        scene poker_bg
+        show luigi lose at mid_mid_right:
+            yanchor 0.8
+        show poker_fg
         show cs happy flipped at right
         cs "Woohoo! I won!"
         play music price_right volume 0.5 if_changed
