@@ -695,6 +695,11 @@ label _awawa_tate_test:
                             show tate sheepish
                             tate "Better luck next time."
 
+                    "Pencil 2.0":
+                        show tate sheepish
+                        tate "Hope it works."
+                        call screen pencil_test()
+
                 jump .awawa_menu
 
             #################### Cancel ####################
