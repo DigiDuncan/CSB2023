@@ -1,14 +1,11 @@
 init python: 
     config.per_frame_screens.append("pencil_test")
-    import datetime as dt
 
 screen pencil_test():
     modal True
 
-    default start_time = get_current_time()
     default time_limit = 60
-    default game_time = dt.timedelta(seconds = (time_limit + 4.5))
-    default end_time = start_time + game_time
+    default timer = Timer(time_limit+4.5)
     default time_left = time_limit
 
     default lockout = False
@@ -151,7 +148,7 @@ screen pencil_test():
 
         python:
             if game_state == "playing":
-                time_left = end_time - dt.datetime.now()
+                time_left = timer.get_remaining()
                 total_seconds = time_left.total_seconds()
                 minutes, seconds, remainder = int(total_seconds / 60), int(total_seconds) % 60, total_seconds % 1
                 formatted_time_left = "{:01}:{:02}.{{size=-24}}{:03}".format(minutes, seconds, int(remainder * 1000))
