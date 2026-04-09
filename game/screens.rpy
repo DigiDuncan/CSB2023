@@ -1051,7 +1051,7 @@ screen preferences():
                         hovered [Function(get_mouse), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
                         tooltip _("Changes to an easier-to-read font.")
 
-                    # Dyslexia mode
+                    # Black letterbox
                     textbutton _("Force Black Letterbox"):
                         action [
                             ToggleField(preferences, "force_letterbox_color"),
@@ -1061,6 +1061,16 @@ screen preferences():
                         ]
                         hovered [Function(get_mouse), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
                         tooltip _("Forces the side colors to black instead of the current theme color.")
+
+                    # Anti-mash
+                    textbutton _("No Button Mashing"):
+                        action [
+                            ToggleField(preferences, "disable_button_mashing"),
+                            SelectedIf(not preferences.disable_button_mashing),
+                            Function(renpy.restart_interaction)
+                        ]
+                        hovered [Function(get_mouse), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
+                        tooltip _("Enables alternative controls for certain minigames.")
 
                 vbox:
                     style_prefix "check"

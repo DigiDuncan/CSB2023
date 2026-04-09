@@ -146,6 +146,7 @@ default preferences.streamer_mode = False
 default preferences.dyslexia_mode = False
 default preferences.craptop_mode = False
 default preferences.force_letterbox_color = False
+default preferences.disable_button_mashing = False
 default preferences.developer_commentary = True
 default preferences.developer_mode = True
 default preferences.awawa_mode = False
