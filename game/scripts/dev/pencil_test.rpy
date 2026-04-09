@@ -135,6 +135,8 @@ screen pencil_test():
         color gui.idle_color
         outlines [(absolute(9), "#000", absolute(0), absolute(0))]
 
+    # Force-update it first
+    $ pencils_remaining = (pencils_to_sharpen - pencils_sharpened) 
     text str(pencils_remaining)+" pencils remaining!":
         xalign 0.5 yalign 0.75
         text_align 0.5
