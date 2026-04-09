@@ -12,7 +12,7 @@ screen pencil_test():
     default penalty = 2
 
     default score_to_beat = 250
-    default distance = 0
+    default distance = 0.0
 
     default initial_pencil_size = int(41.2 * 20)
     default sharpen_amount_cm = 0.5
@@ -47,6 +47,8 @@ screen pencil_test():
     add "minigames/pencil/stage.png"
     add "minigames/pencil/table.png":
         xalign 0.5 yalign 1.0
+    add "minigames/pencil/pencil_clock.png":
+        xalign -0.1 yalign 0.5
 
     if not showed_fun_value:
         if fun_value(FUN_VALUE_COMMON):
@@ -143,33 +145,49 @@ screen pencil_test():
         outlines [(absolute(4.5), "#000", absolute(0), absolute(0))]
 
     # Timer and distance covered
-    vbox:
-        xpos 10 ypos 10
-        spacing -10
-
-        python:
-            if game_state == "playing":
-                time_left = timer.get_remaining()
-                total_seconds = time_left.total_seconds()
-                minutes, seconds, remainder = int(total_seconds / 60), int(total_seconds) % 60, total_seconds % 1
-                formatted_time_left = "{:01}:{:02}.{{size=-24}}{:03}".format(minutes, seconds, int(remainder * 1000))
-                if total_seconds <= 0 or pencils_remaining == 0:
-                    game_state = "end"
-            else:
-                formatted_time_left = ""
-
-        text str(formatted_time_left):
-            text_align 0.5
-            size 100
-            color "#FF0000"
-            outlines [(absolute(4.5), "#000", absolute(0), absolute(0))]
-
+    python:
         if game_state == "playing":
-            text str(distance)+" cm":
-                text_align 0.5
-                size 100
-                color "#0000FF"
-                outlines [(absolute(4.5), "#000", absolute(0), absolute(0))]
+            time_left = timer.get_remaining()
+            total_seconds = time_left.total_seconds()
+            minutes, seconds, remainder = int(total_seconds / 60), int(total_seconds) % 60, total_seconds % 1
+            formatted_time_left = "{:01}:{:02}.{{size=-24}}{:02}".format(minutes, seconds, int(remainder * 100))
+            if total_seconds <= 0 or pencils_remaining == 0:
+                game_state = "end"
+        elif game_state == "countdown":
+            formatted_time_left = "Starting"
+        elif game_state == "end":
+            formatted_time_left = "Finish"
+
+    text str(formatted_time_left):
+        text_align 1.0
+        xpos 109 ypos 566
+        size 100
+        color "#000000"
+        font "fonts/digital-7.ttf"
+        at transform:
+            alpha 0.8
+
+    if game_state == "playing":
+        text str(distance):
+            xanchor 0.5 yanchor 0.5 text_align 0.5
+            xpos 429 ypos 593 
+            size 56
+            color "#000000"
+            font "fonts/digital-7.ttf"
+            at transform:
+                alpha 0.8
+
+        add "minigames/pencil/measurement.png":
+            xpos 368 ypos 617
+            at transform:
+                alpha 0.8
+
+                block:
+                    linear 0 alpha 0.0
+                    linear 1 alpha 0.0
+                    linear 0 alpha 1.0
+                    linear 1 alpha 1.0
+                    repeat
 
     # Handle oversharpening pencil
     if game_state == "playing":
