@@ -10,19 +10,21 @@ screen pencil_test():
     default game_time = dt.timedelta(seconds = (time_limit + 4.5))
     default end_time = start_time + game_time
     default time_left = time_limit
-    default lockout_time = 0
+
+    default lockout = False
+    default penalty = 2
 
     default score_to_beat = 250
     default distance = 0
 
-    default max_pencil_length = int(41.2 * 20)
+    default initial_pencil_size = int(41.2 * 20)
     default sharpen_amount_cm = 0.5
     default sharpen_amount_pixels = 20
-    default eraser_size = 108
+    default eraser_size = 80
 
     default pencils_to_sharpen = 15
     default pencils_sharpened = 0
-    default current_pencil_size = max_pencil_length
+    default current_pencil_size = initial_pencil_size
     default pencils_remaining = (pencils_to_sharpen - pencils_sharpened)
 
     default last_key_pressed = "e"
@@ -74,9 +76,16 @@ screen pencil_test():
         crop (0, 0, current_pencil_size, 50)
 
     # X
-    if lockout_time > 0:
+    if lockout is True:
         add "minigames/pencil/red_x.png":
             xpos 1160 ypos 300
+        timer penalty:
+            action [
+                SetScreenVariable("lockout", False),
+                If(pencils_remaining != 0, SetScreenVariable("current_pencil_size", initial_pencil_size), None),
+                If(pencils_remaining != 0, SetScreenVariable("pencils_remaining", pencils_to_sharpen - pencils_sharpened), None),
+                Function(renpy.restart_interaction)
+            ]
 
     # Buttons
     python:
@@ -97,7 +106,7 @@ screen pencil_test():
         xalign 0.7 yalign 0.95
         zoom 0.5
 
-    if lockout_time == 0:
+    if game_state == "playing" and not lockout:
         key "q":
             action [
                 SetScreenVariable("last_key_pressed", "q"),
@@ -113,7 +122,7 @@ screen pencil_test():
         key "K_SPACE":
             action [
                 If(pencils_remaining != 0, SetScreenVariable("pencils_sharpened", pencils_sharpened+1), None),
-                If(pencils_remaining != 0, SetScreenVariable("current_pencil_size", max_pencil_length), None),
+                If(pencils_remaining != 0, SetScreenVariable("current_pencil_size", initial_pencil_size), None),
                 If(pencils_remaining != 0, SetScreenVariable("pencils_remaining", pencils_to_sharpen - pencils_sharpened), None),
                 Function(renpy.restart_interaction)
             ]
@@ -155,20 +164,19 @@ screen pencil_test():
             color "#FF0000"
             outlines [(absolute(4.5), "#000", absolute(0), absolute(0))]
 
-        text str(distance)+" cm":
-            text_align 0.5
-            size 100
-            color "#0000FF"
-            outlines [(absolute(4.5), "#000", absolute(0), absolute(0))]
+        if game_state == "playing":
+            text str(distance)+" cm":
+                text_align 0.5
+                size 100
+                color "#0000FF"
+                outlines [(absolute(4.5), "#000", absolute(0), absolute(0))]
 
     # Handle oversharpening pencil
     if game_state == "playing":
         python:
-            if current_pencil_size <= eraser_size:
-                lockout_time = 2
-                lockout_countdown = time.time()
-                if time.time() > lockout_countdown + lockout_time:
-                    lockout_time = 0
+            if current_pencil_size <= eraser_size and not lockout:
+                renpy.sound.play("minigames/pencil/sfx_fail.ogg", channel="sound", loop=False)
+                lockout = True
 
     # Countdown
     if game_state == "countdown":
@@ -224,6 +232,7 @@ screen pencil_test():
 
         python:
             if distance > score_to_beat:
+                renpy.sound.play("minigames/pencil/sfx_smash_victory.ogg", channel="sound", loop=False)
                 game_won = True
             else:
                 game_won = False
