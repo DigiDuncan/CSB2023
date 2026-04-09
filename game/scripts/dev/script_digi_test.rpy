@@ -31,6 +31,8 @@ screen osu_spinner():
     default last_checkpoint = 3
     default checkpoint = 0
     default backwards = False
+    default counted = False
+
     python:
         mouse_xy = renpy.get_mouse_pos()
         angle = get_angle(center, mouse_xy)
@@ -43,10 +45,16 @@ screen osu_spinner():
                 backwards = False
                 last_checkpoint = 0
                 checkpoint = 1
-            if not backwards and last_checkpoint == 3:
-                spins += 1
-            elif backwards and last_checkpoint == 1:
-                spins += 1
+
+            if not counted:
+                counted = True
+
+                if not backwards and last_checkpoint == 3:
+                    spins += 1
+                elif backwards and last_checkpoint == 1:
+                    spins += 1
+                renpy.restart_interaction()
+
         elif checkpoint == 1:
             if (80 < angle < 100):
                 backwards = False
@@ -65,6 +73,10 @@ screen osu_spinner():
                 backwards = True
                 last_checkpoint = 2
                 checkpoint = 1
+
+            if counted:
+                counted = False
+
         elif checkpoint == 3:
             if (260 < angle < 280):
                 backwards = False
