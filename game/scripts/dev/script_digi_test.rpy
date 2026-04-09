@@ -341,8 +341,9 @@ label _digi_test:
         digi "Oh jeez, the osu!spinner."
         digi "I'll call one up. I don't know how accurate it is though."
         window hide
-        show screen osu_spinner
+        call screen osu_spinner
         pause
+        hide screen osu_spinner
         window show
         digi "Did that work well?"
         jump .tests

@@ -695,7 +695,7 @@ label _awawa_tate_test:
                             show tate sheepish
                             tate "Better luck next time."
 
-                    "Pencil 2.0":
+                    "Pencil: Rewritten":
                         show tate sheepish
                         tate "Hope it works."
                         call screen pencilgame()
