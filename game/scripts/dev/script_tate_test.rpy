@@ -699,6 +699,18 @@ label _awawa_tate_test:
                         show tate sheepish
                         tate "Hope it works."
                         call screen pencil_test()
+                        if _return[0] == True:
+                            show tate stare
+                            tate "Well, hot damn!"
+                            show tate
+                            tate "Hope your wrist doesn't hurt tomorrow."
+                        elif _return[0] == False:
+                            show tate sheepish
+                            tate "Yeah, that game's hard, huh?"
+                        else:
+                            show tate sheepish
+                            tate "Huh. I think something's busted."
+                        tate "Looks like you managed [_return[1]] centimeters."
 
                 jump .awawa_menu
 

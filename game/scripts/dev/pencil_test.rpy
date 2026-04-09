@@ -6,21 +6,26 @@ screen pencil_test():
     modal True
 
     default start_time = get_current_time()
-    default game_time = dt.timedelta(seconds = (60 + 4.5))
-    default end_time = start_time + game_time
-    default score_to_beat = 250
-    default max_pencil_length = int(41.2 * 20)
-    default distance = 0
-    default sharpen_amount = 0.5
     default time_limit = 60
+    default game_time = dt.timedelta(seconds = (time_limit + 4.5))
+    default end_time = start_time + game_time
     default time_left = time_limit
-    default eraser_size = 200
+    default lockout_time = 0
+
+    default score_to_beat = 250
+    default distance = 0
+
+    default max_pencil_length = int(41.2 * 20)
+    default sharpen_amount_cm = 0.5
+    default sharpen_amount_pixels = 20
+    default eraser_size = 108
+
     default pencils_to_sharpen = 15
     default pencils_sharpened = 0
     default current_pencil_size = max_pencil_length
     default pencils_remaining = (pencils_to_sharpen - pencils_sharpened)
+
     default last_key_pressed = "e"
-    default lockout_time = 0
     default sharpener_state = "down"
 
     default showed_fun_value = False
@@ -92,10 +97,26 @@ screen pencil_test():
         xalign 0.7 yalign 0.95
         zoom 0.5
 
-    key "q":
-        action SetScreenVariable("last_key_pressed", "q")
-    key "e":
-        action SetScreenVariable("last_key_pressed", "e")
+    if lockout_time == 0:
+        key "q":
+            action [
+                SetScreenVariable("last_key_pressed", "q"),
+                If(last_key_pressed=="e", SetScreenVariable("current_pencil_size", current_pencil_size-sharpen_amount_pixels), None),
+                If(last_key_pressed=="e", SetScreenVariable("distance", distance+sharpen_amount_cm), None)
+            ]
+        key "e":
+            action [
+                SetScreenVariable("last_key_pressed", "e"),
+                If(last_key_pressed=="q", SetScreenVariable("current_pencil_size", current_pencil_size-sharpen_amount_pixels), None),
+                If(last_key_pressed=="q", SetScreenVariable("distance", distance+sharpen_amount_cm), None)     
+            ]
+        key "K_SPACE":
+            action [
+                If(pencils_remaining != 0, SetScreenVariable("pencils_sharpened", pencils_sharpened+1), None),
+                If(pencils_remaining != 0, SetScreenVariable("current_pencil_size", max_pencil_length), None),
+                If(pencils_remaining != 0, SetScreenVariable("pencils_remaining", pencils_to_sharpen - pencils_sharpened), None),
+                Function(renpy.restart_interaction)
+            ]
 
     # Text elements
     text _("Press [[SPACE] to move on to the next pencil!"):
@@ -117,10 +138,16 @@ screen pencil_test():
         xpos 10 ypos 10
         spacing -10
 
-        $ time_left = end_time - dt.datetime.now()
-        $ total_seconds = time_left.total_seconds()
-        $ minutes, seconds, remainder = int(total_seconds / 60), int(total_seconds) % 60, total_seconds % 1
-        $ formatted_time_left = "{:01}:{:02}.{{size=-24}}{:03}".format(minutes, seconds, int(remainder * 1000))
+        python:
+            if game_state == "playing":
+                time_left = end_time - dt.datetime.now()
+                total_seconds = time_left.total_seconds()
+                minutes, seconds, remainder = int(total_seconds / 60), int(total_seconds) % 60, total_seconds % 1
+                formatted_time_left = "{:01}:{:02}.{{size=-24}}{:03}".format(minutes, seconds, int(remainder * 1000))
+                if total_seconds <= 0 or pencils_remaining == 0:
+                    game_state = "end"
+            else:
+                formatted_time_left = ""
 
         text str(formatted_time_left):
             text_align 0.5
@@ -134,19 +161,19 @@ screen pencil_test():
             color "#0000FF"
             outlines [(absolute(4.5), "#000", absolute(0), absolute(0))]
 
+    # Handle oversharpening pencil
+    if game_state == "playing":
+        python:
+            if current_pencil_size <= eraser_size:
+                lockout_time = 2
+                lockout_countdown = time.time()
+                if time.time() > lockout_countdown + lockout_time:
+                    lockout_time = 0
+
     # Countdown
     if game_state == "countdown":
         timer 1:
             action Play("sound", "minigames/pencil/sfx_smash_3.ogg")
-        timer 2:
-            action Play("sound", "minigames/pencil/sfx_smash_2.ogg")
-        timer 3:
-            action Play("sound", "minigames/pencil/sfx_smash_1.ogg")
-        timer 4:
-            action [
-                Play("sound", "minigames/pencil/sfx_smash_go.ogg"),
-                SetScreenVariable("game_state", "playing")
-            ]
         text _("3"):
             xalign 0.5 yalign 0.5
             color "#FF0000"
@@ -158,6 +185,9 @@ screen pencil_test():
                 linear 0 alpha 1.0
                 linear 1.0 alpha 1.0
                 linear 0 alpha 0
+
+        timer 2:
+            action Play("sound", "minigames/pencil/sfx_smash_2.ogg")
         text _("2"):
             xalign 0.5 yalign 0.5
             color "#FFFF00"
@@ -169,6 +199,9 @@ screen pencil_test():
                 linear 0 alpha 1.0
                 linear 1.0 alpha 1.0
                 linear 0 alpha 0
+
+        timer 3:
+            action Play("sound", "minigames/pencil/sfx_smash_1.ogg")
         text _("1"):
             xalign 0.5 yalign 0.5
             color "#00FF00"
@@ -180,3 +213,24 @@ screen pencil_test():
                 linear 0 alpha 1.0
                 linear 1.0 alpha 1.0
                 linear 0 alpha 0
+
+        timer 4:
+            action [
+                Play("sound", "minigames/pencil/sfx_smash_go.ogg"),
+                SetScreenVariable("game_state", "playing")
+            ]
+
+    if game_state == "end":
+
+        python:
+            if distance > score_to_beat:
+                game_won = True
+            else:
+                game_won = False
+
+        timer 1:
+            action [
+                Return([game_won, distance]),
+                Stop("music", fadeout=1),
+                With("dissolve")
+            ]
