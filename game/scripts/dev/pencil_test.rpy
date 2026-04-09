@@ -185,8 +185,8 @@ screen pencil_test():
                 block:
                     linear 0 alpha 0.0
                     linear 1 alpha 0.0
-                    linear 0 alpha 1.0
-                    linear 1 alpha 1.0
+                    linear 0 alpha 0.8
+                    linear 1 alpha 0.8
                     repeat
 
     # Handle oversharpening pencil
