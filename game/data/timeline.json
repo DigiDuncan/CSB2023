@@ -123,7 +123,7 @@
         "need_label": "csbi_walmart",
         "pos": [2, 6]
     },
-    "csbi_discord_arrow": {
+    "csbi_discord2_arrow": {
         "type": "arrow",
         "direction": "e",
         "pos": [1.5, 6]
@@ -2082,7 +2082,7 @@
     "dx_pencil2_lose_outcome": {
         "name": "Lose",
         "type": "outcome",
-        "need_label": "lose_pencil_game2",
+        "need_label": "lose_pencil2_game",
         "pos": [54, 10],
         "content_type": "dx"
     },
@@ -2097,7 +2097,7 @@
         "need_ending": "pencil_shart_the_sequel",
         "pos": [54, 9],
         "content_type": "dx",
-        "jump_to": "lose_pencil_game2"
+        "jump_to": "lose_pencil2_game"
     },
     "dx_pencil2_minigame_win_outcome_arrow": {
         "type": "arrow",

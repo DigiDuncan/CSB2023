@@ -1,17 +1,17 @@
 init python: 
-    config.per_frame_screens.append("pencil_test")
+    config.per_frame_screens.append("pencil2game")
 
-screen pencil_test():
+screen pencil2game():
     modal True
 
-    default time_limit = 60
+    default time_limit = 240
     default timer = Timer(time_limit+4.5)
     default time_left = time_limit
 
     default lockout = False
     default penalty = 2
 
-    default score_to_beat = 250
+    default score_to_beat = 1000
     default distance = 0.0
 
     default initial_pencil_size = int(41.2 * 20)
@@ -19,7 +19,7 @@ screen pencil_test():
     default sharpen_amount_pixels = 20
     default eraser_size = 80
 
-    default pencils_to_sharpen = 15
+    default pencils_to_sharpen = 60
     default pencils_sharpened = 0
     default current_pencil_size = initial_pencil_size
     default pencils_remaining = (pencils_to_sharpen - pencils_sharpened)
@@ -39,12 +39,12 @@ screen pencil_test():
 
     on "show":
         action [
-            Play("music", audio.rude_buster, if_changed=True),
-            Function(persistent.heard.add, "rude_buster")
+            Play("music", audio.get_the_funk, if_changed=True),
+            Function(persistent.heard.add, "get_the_funk")
         ]
 
     # Background
-    add "minigames/pencil/stage.png"
+    add "minigames/pencil2/pencilboss.png"
     add "minigames/pencil/table.png":
         xalign 0.5 yalign 1.0
     add "minigames/pencil/pencil_clock.png":
@@ -123,8 +123,16 @@ screen pencil_test():
                 If(pencils_remaining != 0, SetScreenVariable("pencils_sharpened", pencils_sharpened+1), None),
                 If(pencils_remaining != 0, SetScreenVariable("current_pencil_size", initial_pencil_size), None),
                 If(pencils_remaining != 0, SetScreenVariable("pencils_remaining", pencils_to_sharpen - pencils_sharpened), None),
-                If(current_pencil_size == 84, Play("sound", "minigames/pencil/sfx_smash_excellent.ogg", loop=False), None),
+                #If(current_pencil_size == 84, Play("sound", "minigames/pencil/sfx_smash_excellent.ogg", loop=False), None),
                 Function(renpy.restart_interaction)
+            ]
+
+    # Dev door
+    if preferences.developer_mode:
+        key "K_END":
+            action [
+                SetScreenVariable("distance", score_to_beat+5),
+                SetScreenVariable("game_state", "end")
             ]
 
     # Text elements
@@ -199,7 +207,7 @@ screen pencil_test():
     # Countdown
     if game_state == "countdown":
         timer 1:
-            action Play("sound", "minigames/pencil/sfx_smash_3.ogg")
+            action Play("sound", "minigames/pencil2/sfx_ding.ogg")
         text _("3"):
             xalign 0.5 yalign 0.5
             color "#FF0000"
@@ -213,7 +221,7 @@ screen pencil_test():
                 linear 0 alpha 0
 
         timer 2:
-            action Play("sound", "minigames/pencil/sfx_smash_2.ogg")
+            action Play("sound", "minigames/pencil2/sfx_ding.ogg")
         text _("2"):
             xalign 0.5 yalign 0.5
             color "#FFFF00"
@@ -227,7 +235,7 @@ screen pencil_test():
                 linear 0 alpha 0
 
         timer 3:
-            action Play("sound", "minigames/pencil/sfx_smash_1.ogg")
+            action Play("sound", "minigames/pencil2/sfx_ding.ogg")
         text _("1"):
             xalign 0.5 yalign 0.5
             color "#00FF00"
@@ -242,7 +250,7 @@ screen pencil_test():
 
         timer 4:
             action [
-                Play("sound", "minigames/pencil/sfx_smash_go.ogg"),
+                Play("sound", "minigames/pencil2/sfx_dong.ogg"),
                 SetScreenVariable("game_state", "playing")
             ]
 
@@ -250,7 +258,7 @@ screen pencil_test():
 
         python:
             if distance > score_to_beat:
-                renpy.sound.play("minigames/pencil/sfx_smash_victory.ogg", channel="sound", loop=False)
+                #renpy.sound.play("minigames/pencil/sfx_smash_victory.ogg", channel="sound", loop=False)
                 game_won = True
             else:
                 game_won = False
@@ -259,5 +267,22 @@ screen pencil_test():
             action [
                 Return([game_won, distance]),
                 Stop("music", fadeout=1),
-                With("dissolve")
+                With(dissolve)
             ]
+
+label minigame_pencil2:
+    window hide
+    $ quick_menu = False
+    call screen pencil2game()
+    $ quick_menu = True
+    window show
+
+    if _return[1] >= 1200:
+        $ achievement_manager.unlock("paincil")
+    elif _return[1] > 1000:
+        $ achievement_manager.unlock("pencil2")
+
+    if _return[0]:
+        $ renpy.jump(str(minigame_win))
+    else:
+        $ renpy.jump(str(minigame_loss))

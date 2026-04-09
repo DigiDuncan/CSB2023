@@ -10,7 +10,7 @@ label lose_pencil_game:
     bad_end "Try, uh, mashing... faster?" "minigame_pencil"
     return
 
-label lose_pencil_game2:
+label lose_pencil2_game:
     $ ending_manager.mark("pencil_shart_the_sequel")
     bad_end "You dumb skinfore." "play_pencil2_game"
     return
@@ -25,6 +25,10 @@ label play_car_game:
 
 label play_pencil_game:
     minigame "minigame_pencil" "minigame_pencil" "minigame_pencil"
+    return
+
+label play_pencil2_game:
+    minigame "minigame_pencil2" "minigame_pencil2" "minigame_pencil2"
     return
 
 label play_slots_game:

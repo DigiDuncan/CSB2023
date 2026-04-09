@@ -1098,7 +1098,7 @@ screen test_tarot():
 
             key "dismiss" action [
                 Return(),
-                With("dissolve")
+                With(dissolve)
             ]
             frame:
                 xsize 0.8 ysize 500
@@ -1169,5 +1169,5 @@ screen test_tarot():
                                 italic True
         key "dismiss" action [
             Return(),
-            With("dissolve")
+            With(dissolve)
         ]

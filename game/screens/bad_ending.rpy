@@ -4,7 +4,7 @@ screen bad_ending(text = "Why'd you do that?"):
     key "dismiss":
         action [
             Return(),
-            With("dissolve")
+            With(dissolve)
         ]
     
     frame:

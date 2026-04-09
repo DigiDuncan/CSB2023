@@ -607,7 +607,7 @@ label dx_after_pencil_ask:
                 pencil "I just thought about it, don't tell me."
                 n "The pencil man pulls out the sharpener and some more pencils."
                 pencil "Ready, and, go!"
-                minigame "play_pencil2_game" "dx_after_win_pencil2" "lose_pencil_game2"
+                minigame "minigame_pencil2" "dx_after_win_pencil2" "lose_pencil2_game"
     elif pencil_check:
         cs "Maybe I can try to beat my previous score."
         scene pencilroom
@@ -624,7 +624,7 @@ label dx_after_pencil_ask:
                 pencil "I just thought about it, don't tell me."
                 n "The pencil man pulls out the sharpener and some more pencils."
                 pencil "Ready, and, go!"
-                minigame "play_pencil2_game" "dx_after_win_pencil2" "lose_pencil_game2"
+                minigame "minigame_pencil2" "dx_after_win_pencil2" "lose_pencil2_game"
             "Go back":
                 cs "Sorry, I think I just got lost."
                 pencil "Yeah, it happens to me everytime."
@@ -670,7 +670,8 @@ label dx_after_pencil_ask:
     pencil "Well, aren't you cocky? Let's see this, then!"
     pencil "3, 2, 1,"
     pencil "Go!"
-    minigame "play_pencil2_game" "dx_after_win_pencil2" "lose_pencil_game2"
+    minigame "minigame_pencil2" "dx_after_win_pencil2" "lose_pencil2_game"
+    
 
     label dx_after_win_pencil2:
     hide bad_end_screen
