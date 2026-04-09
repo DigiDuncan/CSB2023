@@ -121,6 +121,7 @@ screen pencil_test():
                 If(pencils_remaining != 0, SetScreenVariable("pencils_sharpened", pencils_sharpened+1), None),
                 If(pencils_remaining != 0, SetScreenVariable("current_pencil_size", initial_pencil_size), None),
                 If(pencils_remaining != 0, SetScreenVariable("pencils_remaining", pencils_to_sharpen - pencils_sharpened), None),
+                If(current_pencil_size == 84, Play("sound", "minigames/pencil/sfx_smash_excellent.ogg", loop=False), None),
                 Function(renpy.restart_interaction)
             ]
 
