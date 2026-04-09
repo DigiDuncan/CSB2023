@@ -698,7 +698,7 @@ label _awawa_tate_test:
                     "Pencil 2.0":
                         show tate sheepish
                         tate "Hope it works."
-                        call screen pencil_test()
+                        call screen pencilgame()
                         if _return[0] == True:
                             show tate stare
                             tate "Well, hot damn!"
