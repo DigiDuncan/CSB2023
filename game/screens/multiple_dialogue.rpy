@@ -23,9 +23,14 @@ screen multiple_say(who, what, multiple):
 
 
 screen digimultiple(blocks):
-    zorder 5
+    tag say
     style_prefix "say"
-    key "dismiss" action Hide("digimultiple")
+    key "dismiss" action [
+        Hide("digimultiple"),
+        Return()
+    ]
+    if config.skipping:
+        timer 0.01 action Return()
 
     $ total_chars = len(blocks)
 
@@ -102,7 +107,7 @@ python early:
                 else:
                     rr.append((char_name, text))
 
-        renpy.show_screen("digimultiple", rr)
+        renpy.call_screen("digimultiple", rr)
 
     renpy.register_statement(name="multiple",
         block=True,
