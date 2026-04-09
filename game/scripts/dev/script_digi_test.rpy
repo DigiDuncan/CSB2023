@@ -27,7 +27,7 @@ screen osu_spinner():
     key "dismiss" action Return()
 
     default center = [960, 540]
-    default spins = -1
+    default spins = 0
     default last_checkpoint = 3
     default checkpoint = 0
     default backwards = False
@@ -37,11 +37,11 @@ screen osu_spinner():
         mouse_xy = renpy.get_mouse_pos()
         angle = get_angle(center, mouse_xy)
         if checkpoint == 0:
-            if (170 < angle < 190):
+            if (135 < angle <= 225):
                 backwards = True
                 last_checkpoint = 0
                 checkpoint = 3
-            elif (350 < angle < 360) or (0 < angle < 10):
+            elif (315 < angle <= 360) or (0 < angle <= 45):
                 backwards = False
                 last_checkpoint = 0
                 checkpoint = 1
@@ -56,20 +56,20 @@ screen osu_spinner():
                 renpy.restart_interaction()
 
         elif checkpoint == 1:
-            if (80 < angle < 100):
+            if (45 < angle <= 135):
                 backwards = False
                 last_checkpoint = 1
                 checkpoint = 2
-            elif (260 < angle < 280):
+            elif (225 < angle <= 315):
                 backwards = True
                 last_checkpoint = 1
                 checkpoint = 0
         elif checkpoint == 2:
-            if (170 < angle < 190):
+            if (135 < angle <= 225):
                 backwards = False
                 last_checkpoint = 2
                 checkpoint = 3
-            elif (350 < angle < 360) or (0 < angle < 10):
+            elif (315 < angle <= 360) or (0 < angle <= 45):
                 backwards = True
                 last_checkpoint = 2
                 checkpoint = 1
@@ -78,11 +78,11 @@ screen osu_spinner():
                 counted = False
 
         elif checkpoint == 3:
-            if (260 < angle < 280):
+            if (225 < angle <= 315):
                 backwards = False
                 last_checkpoint = 3
                 checkpoint = 0
-            elif (80 < angle < 100):
+            elif (45 < angle <= 135):
                 backwards = True
                 last_checkpoint = 3
                 checkpoint = 2
@@ -97,6 +97,7 @@ screen osu_spinner():
         text str(angle)
         text str(checkpoint) 
     text str(spins):
+        size 100 
         align (0.5, 0.5)
         text_align 0.5
 
