@@ -1,13 +1,92 @@
 init python:
+    import math
+
     def play_nugget_playlist():
         songs = [audio.drive, audio.into_the_night, audio.escapements, audio.im_u, audio.bring_you_back, audio.bending_light]
         renpy.random.shuffle(songs)
         renpy.music.queue(songs, tight = True)
+    
+    def get_angle(p1, p2):
+        dx = p2[0] - p1[0]
+        dy = p2[1] - p1[1]
+        radians = math.atan2(dy, dx)
+        degrees = math.degrees(radians)
+        if degrees < 0:
+            degrees += 360
+        return degrees
+
+    config.per_frame_screens.append("osu_spinner")
 
 # Used for the NVL test.
 define n_n = Character(None, kind=nvl, what_color="#BBBBBB", what_italic = True, callback = char_callback)
 define digi_n = Character('Digi', kind=nvl, what_color="#009dff", callback = renpy.partial(char_callback, name = "digi", beep = "digi"))
 define you_n = Character('You', kind=nvl, callback = char_callback)
+
+screen osu_spinner():
+    modal True
+    key "dismiss" action Return()
+
+    default center = [960, 540]
+    default spins = -1
+    default last_checkpoint = 3
+    default checkpoint = 0
+    default backwards = False
+    python:
+        mouse_xy = renpy.get_mouse_pos()
+        angle = get_angle(center, mouse_xy)
+        if checkpoint == 0:
+            if (170 < angle < 190):
+                backwards = True
+                last_checkpoint = 0
+                checkpoint = 3
+            elif (350 < angle < 360) or (0 < angle < 10):
+                backwards = False
+                last_checkpoint = 0
+                checkpoint = 1
+            if not backwards and last_checkpoint == 3:
+                spins += 1
+            elif backwards and last_checkpoint == 1:
+                spins += 1
+        elif checkpoint == 1:
+            if (80 < angle < 100):
+                backwards = False
+                last_checkpoint = 1
+                checkpoint = 2
+            elif (260 < angle < 280):
+                backwards = True
+                last_checkpoint = 1
+                checkpoint = 0
+        elif checkpoint == 2:
+            if (170 < angle < 190):
+                backwards = False
+                last_checkpoint = 2
+                checkpoint = 3
+            elif (350 < angle < 360) or (0 < angle < 10):
+                backwards = True
+                last_checkpoint = 2
+                checkpoint = 1
+        elif checkpoint == 3:
+            if (260 < angle < 280):
+                backwards = False
+                last_checkpoint = 3
+                checkpoint = 0
+            elif (80 < angle < 100):
+                backwards = True
+                last_checkpoint = 3
+                checkpoint = 2
+
+    button:
+        align (0.5, 0.5)
+        add get_themed_attribute("spinner"):
+            rotate angle
+        action NullAction()
+
+    vbox:
+        text str(angle)
+        text str(checkpoint) 
+    text str(spins):
+        align (0.5, 0.5)
+        text_align 0.5
 
 label _digi_test:
     $ chatted_with_digi = 0
@@ -88,6 +167,8 @@ label _digi_test:
                 jump .test_text_shaders
             "Emoji":
                 jump .test_emoji
+            "osu!spinner":
+                jump .test_osu_spinner
             "Choice Menus":
                 jump .test_choices
             "Digi EX":
@@ -241,6 +322,16 @@ label _digi_test:
 
         show digi sad
         digi "Sorry about that."
+        jump .tests
+
+    label .test_osu_spinner:
+        digi "Oh jeez, the osu!spinner."
+        digi "I'll call one up. I don't know how accurate it is though."
+        window hide
+        show screen osu_spinner
+        pause
+        window show
+        digi "Did that work well?"
         jump .tests
 
     label .test_digi_ex:
