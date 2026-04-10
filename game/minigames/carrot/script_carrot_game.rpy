@@ -217,8 +217,8 @@ init python:
 
             if self.current_beat < 8:
                 a = 1.0 if self.current_beat < 7 else 1 - (self.song_time - self.beat_time(7))
-                music_renderer = renpy.render(Transform(DynamicDisplayable(_music_gen_text), zoom = 0.5, alpha = a), 1920, 1080, st, at)
-                r.blit(music_renderer, (0, 0))
+                #music_renderer = renpy.render(Transform(DynamicDisplayable(music), zoom = 0.5, alpha = a), 1920, 1080, st, at)
+                #r.blit(music_renderer, (0, 0))
 
             # 3 2 1 Go
             if last_audio != current_audio and current_audio == START_BEAT - 4:
