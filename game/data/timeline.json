@@ -123,11 +123,6 @@
         "need_label": "csbi_walmart",
         "pos": [2, 6]
     },
-    "csbi_discord2_arrow": {
-        "type": "arrow",
-        "direction": "e",
-        "pos": [1.5, 6]
-    },
     "csbi_call_choice_arrow": {
         "type": "arrow",
         "arrow_type": "hblock",

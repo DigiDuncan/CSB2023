@@ -712,6 +712,12 @@ label _awawa_tate_test:
                             tate "Huh. I think something's busted."
                         tate "Looks like you managed [_return[1]] centimeters."
 
+                    "Click / Drag Test":
+                        show tate sheepish
+                        tate "What {i}is{/i} this?"
+                        call screen click_drag_test()
+                        tate "Well, that was weird."
+
                 jump .awawa_menu
 
             #################### Cancel ####################
@@ -1171,3 +1177,45 @@ screen test_tarot():
             Return(),
             With(dissolve)
         ]
+
+####################################################################################################
+
+screen click_drag_test():
+    modal True
+
+    default img_choices = [
+        "images/donut_1.png",
+        "images/donut_2.png",
+        "images/donut_3.png",
+        Transform("images/poo.png", zoom=0.4),
+    ]   
+
+    default poo_in_box = False
+    default donuts_in_box = []
+
+    frame:
+        xalign 0.5 yalign 0.9
+        drag:
+            drag_name "donut_box"
+            droppable True
+            xsize 300 ysize 300
+            
+
+    for id, img in enumerate(img_choices):
+        drag:
+            xpos 300 ypos id*100+400
+            drag_name img
+            draggable True
+            drag_handle(0, 0, 1.0, 1.0)
+            add img
+    
+    frame:
+        xalign 0.5 yalign 0.1
+        if len(donuts_in_box) == 3:
+            text "Yay, all donuts in the box!"
+        elif poo_in_box:
+            text "Ewww, don't poop in the box!"
+        else:
+            text "Put donuts in the box!"
+
+
