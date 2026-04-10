@@ -1,9 +1,18 @@
 init python:
+    # This works but it's cursed as hell
+    def find_id_by_filename(track):
+        for id, data in MUSIC_MAP.items():
+            if data.get("file") == track:
+                return id
+        return None
+
     def play_nugget_playlist():
         songs = [audio.drive, audio.into_the_night, audio.escapements, audio.im_u, audio.bring_you_back, audio.bending_light]
         renpy.random.shuffle(songs)
-        renpy.music.queue(songs, tight = True)
         
+        for s in songs:      
+            persistent.heard.add(find_id_by_filename(os.path.basename(getattr(s, 'filename'))))
+ 
 # Used for the NVL test.
 define n_n = Character(None, kind=nvl, what_color="#BBBBBB", what_italic = True, callback = char_callback)
 define digi_n = Character('Digi', kind=nvl, what_color="#009dff", callback = renpy.partial(char_callback, name = "digi", beep = "digi"))
@@ -16,8 +25,9 @@ label _digi_test:
     scene black with dissolve
 
     play sound sfx_nugget
+    play sound2 sfx_ambience_nugget loop
     $ play_nugget_playlist()
-
+        
     scene nugget_bedroom
     show digi happy
     with dissolve
