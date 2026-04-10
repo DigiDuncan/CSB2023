@@ -15,9 +15,9 @@ screen pencilgame():
     default distance = 0.0
 
     default initial_pencil_size = 824
-    default eraser_size = 80
+    default eraser_size = 64
     default sharpen_amount_cm = 0.5
-    default sharpen_amount_pixels = int((initial_pencil_size - eraser_size) / 39)
+    default sharpen_amount_pixels = int((initial_pencil_size - eraser_size) / 40)
 
     default pencils_to_sharpen = 15
     default pencils_sharpened = 0
@@ -211,7 +211,7 @@ screen pencilgame():
                     If(pencils_remaining != 0, SetScreenVariable("pencils_sharpened", pencils_sharpened+1), None),
                     If(pencils_remaining != 0, SetScreenVariable("current_pencil_size", initial_pencil_size), None),
                     If(pencils_remaining != 0, SetScreenVariable("pencils_remaining", pencils_to_sharpen - pencils_sharpened), None),
-                    If(current_pencil_size == 84, Play("sound", "minigames/pencil/sfx_smash_excellent.ogg", loop=False), None),
+                    If(current_pencil_size == eraser_size, Play("sound", "minigames/pencil/sfx_smash_excellent.ogg", loop=False), None),
                     Function(renpy.restart_interaction)
                 ]
     # Spinner wheel (Alternate controls)
@@ -230,15 +230,15 @@ screen pencilgame():
                     If(pencils_remaining != 0, SetScreenVariable("pencils_sharpened", pencils_sharpened+1), None),
                     If(pencils_remaining != 0, SetScreenVariable("current_pencil_size", initial_pencil_size), None),
                     If(pencils_remaining != 0, SetScreenVariable("pencils_remaining", pencils_to_sharpen - pencils_sharpened), None),
-                    If(current_pencil_size == 84, Play("sound", "minigames/pencil/sfx_smash_excellent.ogg", loop=False), None),
+                    If(current_pencil_size == eraser_size, Play("sound", "minigames/pencil/sfx_smash_excellent.ogg", loop=False), None),
                     Function(renpy.restart_interaction)
                 ]
 
         python:
             if preferences.disable_button_mashing and game_state == "playing" and not lockout:
                 if store.spins > last_spin_count:
-                    current_pencil_size = current_pencil_size-sharpen_amount_pixels * 2
-                    distance = distance+sharpen_amount_cm * 2
+                    current_pencil_size = current_pencil_size-sharpen_amount_pixels * 4
+                    distance = distance+sharpen_amount_cm * 4
                     last_spin_count = store.spins
 
     # Dev door
@@ -251,7 +251,7 @@ screen pencilgame():
     # Handle oversharpening pencil
     if game_state == "playing":
         python:
-            if current_pencil_size <= eraser_size and not lockout:
+            if current_pencil_size < eraser_size and not lockout:
                 renpy.sound.play("minigames/pencil/sfx_fail.ogg", channel="sound", loop=False)
                 lockout = True
 
@@ -320,6 +320,8 @@ screen pencilgame():
                 Stop("music", fadeout=1),
                 With(dissolve)
             ]
+        
+    text str(current_pencil_size)
 
 label minigame_pencil:
     window hide

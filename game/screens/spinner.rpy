@@ -88,7 +88,7 @@ screen osu_spinner(center = [960, 540], spinner_image = None):
     # vbox:
     #     text str(angle)
     #     text str(checkpoint) 
-    text str(spins):
-        size 100 
-        align (0.5, 0.5)
-        text_align 0.5
+    # text str(spins):
+    #     size 100 
+    #     align (0.5, 0.5)
+    #     text_align 0.5
