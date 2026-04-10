@@ -1180,42 +1180,57 @@ screen test_tarot():
 
 ####################################################################################################
 
+init python:
+    def donut_drop(drags, drop):
+        if not drop:
+            return
+
+        item = drags[0].drag_name
+        target = drop.drag_name
+
+        if target=="donut_box":
+            if item=="poo":
+                renpy.notify("Ewwww! Don't poop in the box!")
+            else:
+                renpy.notify("Ooh, donut.")
+
 screen click_drag_test():
     modal True
 
     default img_choices = [
-        "images/donut_1.png",
-        "images/donut_2.png",
-        "images/donut_3.png",
-        Transform("images/poo.png", zoom=0.4),
+        ["donut", "images/donut_1.png"],
+        ["donut", "images/donut_2.png"],
+        ["donut","images/donut_3.png"],
+        ["poo", Transform("images/poo.png", zoom=0.4)],
     ]   
 
     default poo_in_box = False
-    default donuts_in_box = []
+    default donuts_in_box = False
 
-    frame:
-        xalign 0.5 yalign 0.9
+    draggroup:
+        xsize 1.0 ysize 1.0
         drag:
             drag_name "donut_box"
             droppable True
-            xsize 300 ysize 300
+            draggable False
+
+            xalign 0.5 yalign 0.9
             
+            frame:    
+                xsize 300 ysize 300
+           
 
-    for id, img in enumerate(img_choices):
-        drag:
-            xpos 300 ypos id*100+400
-            drag_name img
-            draggable True
-            drag_handle(0, 0, 1.0, 1.0)
-            add img
-    
-    frame:
-        xalign 0.5 yalign 0.1
-        if len(donuts_in_box) == 3:
-            text "Yay, all donuts in the box!"
-        elif poo_in_box:
-            text "Ewww, don't poop in the box!"
-        else:
-            text "Put donuts in the box!"
+        for id, img in enumerate(img_choices):
+            drag:
+                drag_name img[0]
+                draggable True
+                droppable False
+                dragged donut_drop
 
-
+                xpos 300 ypos id*100+400
+   
+                add img[1]
+        
+    textbutton _("Return"):
+        xpos 15 ypos 1000
+        action Return()
