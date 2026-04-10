@@ -96,6 +96,14 @@ screen pencilgame():
     if not preferences.disable_button_mashing:
         $ text_instruction_yalign = 0.7
         $ text_remaining_yalign = 0.75
+            
+        text _("Press [[SPACE] to move on to the next pencil!"):
+            xalign 0.5 yalign text_instruction_yalign
+            text_align 0.5
+            size 48
+            color gui.idle_color
+            outlines [(absolute(9), "#000", absolute(0), absolute(0))]
+
     else:
         $ text_instruction_yalign = 0.05
         $ text_remaining_yalign = 0.1
@@ -105,14 +113,13 @@ screen pencilgame():
             size 48
             color gui.idle_color
             outlines [(absolute(9), "#000", absolute(0), absolute(0))]
-
-
-    text _("Press [[SPACE] to move on to the next pencil!"):
-        xalign 0.5 yalign text_instruction_yalign
-        text_align 0.5
-        size 48
-        color gui.idle_color
-        outlines [(absolute(9), "#000", absolute(0), absolute(0))]
+            
+        text _("Click or press [[SPACE] to move on to the next pencil!"):
+            xalign 0.5 yalign text_instruction_yalign
+            text_align 0.5
+            size 48
+            color gui.idle_color
+            outlines [(absolute(9), "#000", absolute(0), absolute(0))]
 
     # Force-update it first
     $ pencils_remaining = (pencils_to_sharpen - pencils_sharpened) 
@@ -219,7 +226,7 @@ screen pencilgame():
                 matrixcolor shade_bw_matrix
                 xanchor 0.5 yanchor 0.5
                 pos center
-        key "K_SPACE":
+        key ["mousedown_1", "K_SPACE"]:
                 action [
                     If(pencils_remaining != 0, SetScreenVariable("pencils_sharpened", pencils_sharpened+1), None),
                     If(pencils_remaining != 0, SetScreenVariable("current_pencil_size", initial_pencil_size), None),
