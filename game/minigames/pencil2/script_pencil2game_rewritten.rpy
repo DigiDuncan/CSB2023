@@ -87,7 +87,7 @@ screen pencil2game():
             ]
 
     # Buttons (Regular controls)
-    if preferences.disable_button_mashing:
+    if not preferences.disable_button_mashing:
         python:
             if last_key_pressed == "q":
                 q_key_img = Transform("minigames/pencil/key_q.png", alpha = 0.5)

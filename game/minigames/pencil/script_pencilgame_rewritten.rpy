@@ -89,7 +89,7 @@ screen pencilgame():
             ]
 
     # Buttons (Regular controls)
-    if preferences.disable_button_mashing:
+    if not preferences.disable_button_mashing:
         python:
             if last_key_pressed == "q":
                 q_key_img = Transform("minigames/pencil/key_q.png", alpha = 0.5)
@@ -149,7 +149,7 @@ screen pencilgame():
                 ]
 
         python:
-            if not preferences.disable_button_mashing and game_state == "playing" and not lockout:
+            if preferences.disable_button_mashing and game_state == "playing" and not lockout:
                 if store.spins > last_spin_count:
                     current_pencil_size = current_pencil_size-sharpen_amount_pixels * 2
                     distance = distance+sharpen_amount_cm * 2

@@ -1066,7 +1066,7 @@ screen preferences():
                     textbutton _("No Button Mashing"):
                         action [
                             ToggleVariable("preferences.disable_button_mashing"),
-                            SelectedIf(not preferences.disable_button_mashing == True),
+                            SelectedIf(preferences.disable_button_mashing == True),
                             Function(renpy.restart_interaction)
                         ]
                         hovered [Function(get_mouse), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
