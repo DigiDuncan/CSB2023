@@ -13,8 +13,7 @@ init python:
     config.per_frame_screens.append("osu_spinner")
 
 screen osu_spinner(center = [960, 540], spinner_image = None):
-    modal True
-    key "dismiss" action Return()
+    #modal True
 
     on "show":
         action SetVariable("spins", 0)
@@ -84,7 +83,7 @@ screen osu_spinner(center = [960, 540], spinner_image = None):
         anchor (0.5, 0.5)
         add spinner_image:
             rotate angle
-        action Return()
+        action NullAction()
 
     # vbox:
     #     text str(angle)

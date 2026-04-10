@@ -34,6 +34,9 @@ screen pencilgame():
     default game_state = "countdown"
     default game_won = None
 
+    default center = [960, 540]
+    default spinner_image = "minigames/pencil/spinner_square.png"
+
     if game_won is None:
         timer 1:
             action Function(renpy.restart_interaction)
@@ -88,85 +91,22 @@ screen pencilgame():
                 Function(renpy.restart_interaction)
             ]
 
-    # Buttons (Regular controls)
+    # Text elements
+    # Timer and distance covered
     if not preferences.disable_button_mashing:
-        python:
-            if last_key_pressed == "q":
-                q_key_img = Transform("minigames/pencil/key_q.png", alpha = 0.5)
-                e_key_img = Image("minigames/pencil/key_e.png")
-                sharpener_state = "down"
-            elif last_key_pressed == "e":
-                q_key_img = Image("minigames/pencil/key_q.png")
-                e_key_img = Transform("minigames/pencil/key_e.png", alpha = 0.5)
-                sharpener_state = "up"
-
-        add q_key_img:
-            xalign 0.3 yalign 0.95
-            zoom 0.5
-
-        add e_key_img:
-            xalign 0.7 yalign 0.95
-            zoom 0.5
-
-        if game_state == "playing" and not lockout:
-            key "q":
-                action [
-                    SetScreenVariable("last_key_pressed", "q"),
-                    If(last_key_pressed=="e", SetScreenVariable("current_pencil_size", current_pencil_size-sharpen_amount_pixels), None),
-                    If(last_key_pressed=="e", SetScreenVariable("distance", distance+sharpen_amount_cm), None)
-                ]
-            key "e":
-                action [
-                    SetScreenVariable("last_key_pressed", "e"),
-                    If(last_key_pressed=="q", SetScreenVariable("current_pencil_size", current_pencil_size-sharpen_amount_pixels), None),
-                    If(last_key_pressed=="q", SetScreenVariable("distance", distance+sharpen_amount_cm), None)     
-                ]
-            key "K_SPACE":
-                action [
-                    If(pencils_remaining != 0, SetScreenVariable("pencils_sharpened", pencils_sharpened+1), None),
-                    If(pencils_remaining != 0, SetScreenVariable("current_pencil_size", initial_pencil_size), None),
-                    If(pencils_remaining != 0, SetScreenVariable("pencils_remaining", pencils_to_sharpen - pencils_sharpened), None),
-                    If(current_pencil_size == 84, Play("sound", "minigames/pencil/sfx_smash_excellent.ogg", loop=False), None),
-                    Function(renpy.restart_interaction)
-                ]
-
         $ text_instruction_yalign = 0.7
         $ text_remaining_yalign = 0.75
-
-    # Spinner wheel (Alternate controls)
     else:
-        if game_state == "playing" and not lockout:
-            # If you set variables called `center` and `spinner_image` on the screen,
-            # they should get automagically passed into a screen called with no parentheses
-            use osu_spinner
-        key "K_SPACE":
-                action [
-                    If(pencils_remaining != 0, SetScreenVariable("pencils_sharpened", pencils_sharpened+1), None),
-                    If(pencils_remaining != 0, SetScreenVariable("current_pencil_size", initial_pencil_size), None),
-                    If(pencils_remaining != 0, SetScreenVariable("pencils_remaining", pencils_to_sharpen - pencils_sharpened), None),
-                    If(current_pencil_size == 84, Play("sound", "minigames/pencil/sfx_smash_excellent.ogg", loop=False), None),
-                    Function(renpy.restart_interaction)
-                ]
-
-        python:
-            if preferences.disable_button_mashing and game_state == "playing" and not lockout:
-                if store.spins > last_spin_count:
-                    current_pencil_size = current_pencil_size-sharpen_amount_pixels * 2
-                    distance = distance+sharpen_amount_cm * 2
-                    last_spin_count = store.spins
-
         $ text_instruction_yalign = 0.05
         $ text_remaining_yalign = 0.1
+        text _("Spin to sharpen!"):
+            xalign 0.5 yalign text_instruction_yalign-0.05
+            text_align 0.5
+            size 48
+            color gui.idle_color
+            outlines [(absolute(9), "#000", absolute(0), absolute(0))]
 
-    # Dev door
-    if preferences.developer_mode:
-        key "K_END":
-            action [
-                SetScreenVariable("distance", score_to_beat+5),
-                SetScreenVariable("game_state", "end")
-            ]
 
-    # Text elements
     text _("Press [[SPACE] to move on to the next pencil!"):
         xalign 0.5 yalign text_instruction_yalign
         text_align 0.5
@@ -183,7 +123,6 @@ screen pencilgame():
         color gui.hover_color
         outlines [(absolute(4.5), "#000", absolute(0), absolute(0))]
 
-    # Timer and distance covered
     python:
         if game_state == "playing":
             time_left = timer.get_remaining()
@@ -228,6 +167,81 @@ screen pencilgame():
                     linear 1 alpha 0.8
                     repeat
 
+    # Buttons (Regular controls)
+    if not preferences.disable_button_mashing:
+        python:
+            if last_key_pressed == "q":
+                q_key_img = Transform("minigames/pencil/key_q.png", alpha = 0.5)
+                e_key_img = Image("minigames/pencil/key_e.png")
+                sharpener_state = "down"
+            elif last_key_pressed == "e":
+                q_key_img = Image("minigames/pencil/key_q.png")
+                e_key_img = Transform("minigames/pencil/key_e.png", alpha = 0.5)
+                sharpener_state = "up"
+
+        add q_key_img:
+            xalign 0.3 yalign 0.95
+            zoom 0.5
+
+        add e_key_img:
+            xalign 0.7 yalign 0.95
+            zoom 0.5
+
+        if game_state == "playing" and not lockout:
+            key "q":
+                action [
+                    SetScreenVariable("last_key_pressed", "q"),
+                    If(last_key_pressed=="e", SetScreenVariable("current_pencil_size", current_pencil_size-sharpen_amount_pixels), None),
+                    If(last_key_pressed=="e", SetScreenVariable("distance", distance+sharpen_amount_cm), None)
+                ]
+            key "e":
+                action [
+                    SetScreenVariable("last_key_pressed", "e"),
+                    If(last_key_pressed=="q", SetScreenVariable("current_pencil_size", current_pencil_size-sharpen_amount_pixels), None),
+                    If(last_key_pressed=="q", SetScreenVariable("distance", distance+sharpen_amount_cm), None)     
+                ]
+            key "K_SPACE":
+                action [
+                    If(pencils_remaining != 0, SetScreenVariable("pencils_sharpened", pencils_sharpened+1), None),
+                    If(pencils_remaining != 0, SetScreenVariable("current_pencil_size", initial_pencil_size), None),
+                    If(pencils_remaining != 0, SetScreenVariable("pencils_remaining", pencils_to_sharpen - pencils_sharpened), None),
+                    If(current_pencil_size == 84, Play("sound", "minigames/pencil/sfx_smash_excellent.ogg", loop=False), None),
+                    Function(renpy.restart_interaction)
+                ]
+    # Spinner wheel (Alternate controls)
+    else:
+        if game_state == "playing" and not lockout:
+            # If you set variables called `center` and `spinner_image` on the screen,
+            # they should get automagically passed into a screen called with no parentheses
+            use osu_spinner(center, spinner_image)
+        elif game_state == "playing" and lockout:
+            add spinner_image:
+                matrixcolor shade_bw_matrix
+                xanchor 0.5 yanchor 0.5
+                pos center
+        key "K_SPACE":
+                action [
+                    If(pencils_remaining != 0, SetScreenVariable("pencils_sharpened", pencils_sharpened+1), None),
+                    If(pencils_remaining != 0, SetScreenVariable("current_pencil_size", initial_pencil_size), None),
+                    If(pencils_remaining != 0, SetScreenVariable("pencils_remaining", pencils_to_sharpen - pencils_sharpened), None),
+                    If(current_pencil_size == 84, Play("sound", "minigames/pencil/sfx_smash_excellent.ogg", loop=False), None),
+                    Function(renpy.restart_interaction)
+                ]
+
+        python:
+            if preferences.disable_button_mashing and game_state == "playing" and not lockout:
+                if store.spins > last_spin_count:
+                    current_pencil_size = current_pencil_size-sharpen_amount_pixels * 2
+                    distance = distance+sharpen_amount_cm * 2
+                    last_spin_count = store.spins
+
+    # Dev door
+    if preferences.developer_mode:
+        key "K_END":
+            action [
+                SetScreenVariable("distance", score_to_beat+5),
+                SetScreenVariable("game_state", "end")
+            ]
     # Handle oversharpening pencil
     if game_state == "playing":
         python:
