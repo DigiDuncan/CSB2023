@@ -1181,14 +1181,13 @@ screen preferences():
                                 Function(toggle_mute),
                                 SelectedIf(preferences.force_mute == True)
                             ]
-                        if preferences.developer_mode:
-                            textbutton _("Disable Menu Music"):
-                                hovered [Function(get_mouse), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
-                                tooltip _("Disables both the main menu music and its accompanying splash screen.")
-                                action [
-                                    ToggleField(preferences, "disable_menu_theme"),
-                                    Function(kill_menu_music)
-                                ]
+                        textbutton _("Disable Menu Music"):
+                            hovered [Function(get_mouse), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
+                            tooltip _("Disables both the main menu music and its accompanying splash screen.")
+                            action [
+                                ToggleField(preferences, "disable_menu_theme"),
+                                Function(kill_menu_music)
+                            ]
 
                     # Channel volume sliders
                     vbox:

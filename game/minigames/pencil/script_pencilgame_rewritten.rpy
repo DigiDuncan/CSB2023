@@ -28,14 +28,13 @@ screen pencilgame():
     default sharpener_state = "down"
 
     default last_spin_count = 0
+    default center = [960, 540]
+    default spinner_image = "minigames/pencil/spinner_square.png"
 
     default showed_fun_value = False
 
     default game_state = "countdown"
     default game_won = None
-
-    default center = [960, 540]
-    default spinner_image = "minigames/pencil/spinner_square.png"
 
     if game_won is None:
         timer 1:
