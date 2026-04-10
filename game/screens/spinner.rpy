@@ -12,11 +12,15 @@ init python:
 
     config.per_frame_screens.append("osu_spinner")
 
-screen osu_spinner(center = [960, 540], spinner_image = None):
-    #modal True
+screen osu_spinner(center = [960, 540], spinner_image = None, dismissable = False):
 
     on "show":
         action SetVariable("spins", 0)
+
+    if dismissable:
+        key "dismiss" action Return()
+        text _("Click anywhere outside the spinner to return."):
+            xalign 0.5 yalign 0.05
 
     default last_checkpoint = 3
     default checkpoint = 0

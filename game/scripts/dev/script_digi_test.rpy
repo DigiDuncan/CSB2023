@@ -3,7 +3,7 @@ init python:
         songs = [audio.drive, audio.into_the_night, audio.escapements, audio.im_u, audio.bring_you_back, audio.bending_light]
         renpy.random.shuffle(songs)
         renpy.music.queue(songs, tight = True)
-
+        
 # Used for the NVL test.
 define n_n = Character(None, kind=nvl, what_color="#BBBBBB", what_italic = True, callback = char_callback)
 define digi_n = Character('Digi', kind=nvl, what_color="#009dff", callback = renpy.partial(char_callback, name = "digi", beep = "digi"))
@@ -249,7 +249,7 @@ label _digi_test:
         digi "Oh jeez, the osu!spinner."
         digi "I'll call one up. I don't know how accurate it is though."
         window hide
-        call screen osu_spinner
+        call screen osu_spinner(dismissable = True)
         hide screen osu_spinner
         window show
         digi "Did that work well?"
