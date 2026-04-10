@@ -1,7 +1,23 @@
 init python: 
     config.per_frame_screens.append("pencilgame")
 
-screen pencilgame():
+# Defaults are for Normal difficulty. 
+# Hard mode is defined in label minigame_pencil2 at the bottom of this script.
+# If further modes are created, please put them in here.
+screen pencilgame(
+    time_limit = 60,
+    score_to_beat = 250,
+    bgm = audio.rude_buster,
+    bgm_id = "rude_buster",
+    bg_img = "minigames/pencil/stage.png",
+    sfx_countdown_3 = "minigames/pencil/sfx_smash_3.ogg",
+    sfx_countdown_2 = "minigames/pencil/sfx_smash_2.ogg",
+    sfx_countdown_1 = "minigames/pencil/sfx_smash_1.ogg", 
+    sfx_countdown_go = "minigames/pencil/sfx_smash_go.ogg",
+    sfx_execellent = "minigames/pencil/sfx_smash_excellent.ogg",
+    sfx_fail = "minigames/pencil/sfx_fail.ogg",
+    sfx_victory = "minigames/pencil/sfx_smash_victory.ogg"
+):
     modal True
 
     default time_limit = 60
@@ -29,12 +45,23 @@ screen pencilgame():
 
     default last_spin_count = 0
     default center = [960, 540]
-    default spinner_image = "minigames/pencil/spinner_square.png"
+    default spinner_image = "minigames/pencil/spinner.png"
 
     default showed_fun_value = False
 
     default game_state = "countdown"
     default game_won = None
+
+    default bgm = bgm
+    default bgm_id = bgm_id
+    default bg_img = bg_img
+    default sfx_countdown_3 = sfx_countdown_3
+    default sfx_countdown_2 = sfx_countdown_2
+    default sfx_countdown_1 = sfx_countdown_1
+    default sfx_countdown_go = sfx_countdown_go
+    default sfx_execellent = sfx_execellent
+    default sfx_fail = sfx_fail
+    default sfx_victory = sfx_victory
 
     if game_won is None:
         timer 1:
@@ -43,12 +70,12 @@ screen pencilgame():
 
     on "show":
         action [
-            Play("music", audio.rude_buster, if_changed=True),
-            Function(persistent.heard.add, "rude_buster")
+            Play("music", bgm, if_changed=True),
+            Function(persistent.heard.add, bgm_id)
         ]
 
     # Background
-    add "minigames/pencil/stage.png"
+    add bg_img
     add "minigames/pencil/table.png":
         xalign 0.5 yalign 1.0
     add "minigames/pencil/pencil_clock.png":
@@ -211,7 +238,7 @@ screen pencilgame():
                     If(pencils_remaining != 0, SetScreenVariable("pencils_sharpened", pencils_sharpened+1), None),
                     If(pencils_remaining != 0, SetScreenVariable("current_pencil_size", initial_pencil_size), None),
                     If(pencils_remaining != 0, SetScreenVariable("pencils_remaining", pencils_to_sharpen - pencils_sharpened), None),
-                    If(current_pencil_size == eraser_size, Play("sound", "minigames/pencil/sfx_smash_excellent.ogg", loop=False), None),
+                    If(current_pencil_size == eraser_size and sfx_execellent, Play("sound", sfx_execellent, loop=False), None),
                     Function(renpy.restart_interaction)
                 ]
     # Spinner wheel (Alternate controls)
@@ -230,7 +257,7 @@ screen pencilgame():
                     If(pencils_remaining != 0, SetScreenVariable("pencils_sharpened", pencils_sharpened+1), None),
                     If(pencils_remaining != 0, SetScreenVariable("current_pencil_size", initial_pencil_size), None),
                     If(pencils_remaining != 0, SetScreenVariable("pencils_remaining", pencils_to_sharpen - pencils_sharpened), None),
-                    If(current_pencil_size == eraser_size, Play("sound", "minigames/pencil/sfx_smash_excellent.ogg", loop=False), None),
+                    If(current_pencil_size == eraser_size and sfx_execellent, Play("sound", sfx_execellent, loop=False), None),
                     Function(renpy.restart_interaction)
                 ]
 
@@ -252,13 +279,13 @@ screen pencilgame():
     if game_state == "playing":
         python:
             if current_pencil_size < eraser_size and not lockout:
-                renpy.sound.play("minigames/pencil/sfx_fail.ogg", channel="sound", loop=False)
+                renpy.sound.play(sfx_fail, channel="sound", loop=False)
                 lockout = True
 
     # Countdown
     if game_state == "countdown":
         timer 1:
-            action Play("sound", "minigames/pencil/sfx_smash_3.ogg")
+            action Play("sound", sfx_countdown_3)
         text _("3"):
             xalign 0.5 yalign 0.5
             color "#FF0000"
@@ -272,7 +299,7 @@ screen pencilgame():
                 linear 0 alpha 0
 
         timer 2:
-            action Play("sound", "minigames/pencil/sfx_smash_2.ogg")
+            action Play("sound", sfx_countdown_2)
         text _("2"):
             xalign 0.5 yalign 0.5
             color "#FFFF00"
@@ -286,7 +313,7 @@ screen pencilgame():
                 linear 0 alpha 0
 
         timer 3:
-            action Play("sound", "minigames/pencil/sfx_smash_1.ogg")
+            action Play("sound", sfx_countdown_1)
         text _("1"):
             xalign 0.5 yalign 0.5
             color "#00FF00"
@@ -301,7 +328,7 @@ screen pencilgame():
 
         timer 4:
             action [
-                Play("sound", "minigames/pencil/sfx_smash_go.ogg"),
+                Play("sound",  sfx_countdown_go),
                 SetScreenVariable("game_state", "playing")
             ]
 
@@ -309,7 +336,8 @@ screen pencilgame():
 
         python:
             if distance > score_to_beat:
-                renpy.sound.play("minigames/pencil/sfx_smash_victory.ogg", channel="sound", loop=False)
+                if sfx_victory:
+                    renpy.sound.play(sfx_victory, channel="sound", loop=False)
                 game_won = True
             else:
                 game_won = False
@@ -344,3 +372,34 @@ label minigame_pencil:
             $ renpy.jump(minigame_win)
         else:
             $ renpy.jump(minigame_loss)
+
+
+label minigame_pencil2:
+    window hide
+    $ quick_menu = False
+    call screen pencilgame(
+        time_limit = 240,
+        score_to_beat = 1000,
+        bgm = audio.get_the_funk,
+        bgm_id = "get_the_funk",
+        bg_img = "minigames/pencil/pencilboss.png",
+        sfx_countdown_3 = "minigames/pencil/sfx_ding.ogg",
+        sfx_countdown_2 = "minigames/pencil/sfx_ding.ogg",
+        sfx_countdown_1 = "minigames/pencil/sfx_ding.ogg", 
+        sfx_countdown_go = "minigames/pencil/sfx_dong.ogg",
+        sfx_execellent = None,
+        sfx_fail = "minigames/pencil/sfx_fail.ogg",
+        sfx_victory = None
+    )
+    $ quick_menu = True
+    window show
+
+    if _return[1] >= 1200:
+        $ achievement_manager.unlock("paincil")
+    elif _return[1] > 1000:
+        $ achievement_manager.unlock("pencil2")
+
+    if _return[0]:
+        $ renpy.jump(str(minigame_win))
+    else:
+        $ renpy.jump(str(minigame_loss))
