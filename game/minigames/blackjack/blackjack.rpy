@@ -478,6 +478,14 @@ screen minigame_blackjack(cpu_1 = None, cpu_2 = None, ai_1 = BlackjackAIs.NOVICE
                         Return(player_won),
                         With(dissolve)
                     ]
+    # Dev door
+    if preferences.developer_mode:
+        key "K_END":
+            action [
+                Stop("music", fadeout=0.5),
+                Return(True),
+                With(dissolve)
+            ]
 
     # Game logic
     python:
