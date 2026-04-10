@@ -14,10 +14,10 @@ screen pencilgame():
     default score_to_beat = 250
     default distance = 0.0
 
-    default initial_pencil_size = int(41.2 * 20)
-    default sharpen_amount_cm = 0.5
-    default sharpen_amount_pixels = 20
+    default initial_pencil_size = 824
     default eraser_size = 80
+    default sharpen_amount_cm = 0.5
+    default sharpen_amount_pixels = int((initial_pencil_size - eraser_size) / 39)
 
     default pencils_to_sharpen = 15
     default pencils_sharpened = 0
