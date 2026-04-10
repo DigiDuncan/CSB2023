@@ -237,6 +237,9 @@ define config.bottom_layers = ["flashlight"]
 # Reversi Difficulty
 default reversi_difficulty = ReversiAI.GOBLIN
 
+# Spinner
+default spins = 0
+
 # Music popup
 screen music(song, artist):
     layer "music"

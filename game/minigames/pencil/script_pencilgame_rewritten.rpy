@@ -27,6 +27,8 @@ screen pencilgame():
     default last_key_pressed = "e"
     default sharpener_state = "down"
 
+    default last_spin_count = 0
+
     default showed_fun_value = False
 
     default game_state = "countdown"
@@ -134,8 +136,24 @@ screen pencilgame():
     # Spinner wheel (Alternate controls)
     else:
         if game_state == "playing" and not lockout:
-            pass
-            # HEY DIGI! INSERT WHEEL HERE!
+            # If you set variables called `center` and `spinner_image` on the screen,
+            # they should get automagically passed into a screen called with no parentheses
+            use osu_spinner
+        key "K_SPACE":
+                action [
+                    If(pencils_remaining != 0, SetScreenVariable("pencils_sharpened", pencils_sharpened+1), None),
+                    If(pencils_remaining != 0, SetScreenVariable("current_pencil_size", initial_pencil_size), None),
+                    If(pencils_remaining != 0, SetScreenVariable("pencils_remaining", pencils_to_sharpen - pencils_sharpened), None),
+                    If(current_pencil_size == 84, Play("sound", "minigames/pencil/sfx_smash_excellent.ogg", loop=False), None),
+                    Function(renpy.restart_interaction)
+                ]
+
+        python:
+            if not preferences.disable_button_mashing and game_state == "playing" and not lockout:
+                if store.spins > last_spin_count:
+                    current_pencil_size = current_pencil_size-sharpen_amount_pixels * 2
+                    distance = distance+sharpen_amount_cm * 2
+                    last_spin_count = store.spins
 
         $ text_instruction_yalign = 0.05
         $ text_remaining_yalign = 0.1
