@@ -14,7 +14,7 @@ screen pencilgame(
     sfx_countdown_2 = "minigames/pencil/sfx_smash_2.ogg",
     sfx_countdown_1 = "minigames/pencil/sfx_smash_1.ogg", 
     sfx_countdown_go = "minigames/pencil/sfx_smash_go.ogg",
-    sfx_execellent = "minigames/pencil/sfx_smash_excellent.ogg",
+    sfx_excellent = "minigames/pencil/sfx_smash_excellent.ogg",
     sfx_fail = "minigames/pencil/sfx_fail.ogg",
     sfx_victory = "minigames/pencil/sfx_smash_victory.ogg"
 ):
@@ -59,7 +59,7 @@ screen pencilgame(
     default sfx_countdown_2 = sfx_countdown_2
     default sfx_countdown_1 = sfx_countdown_1
     default sfx_countdown_go = sfx_countdown_go
-    default sfx_execellent = sfx_execellent
+    default sfx_excellent = sfx_excellent
     default sfx_fail = sfx_fail
     default sfx_victory = sfx_victory
 
@@ -238,7 +238,7 @@ screen pencilgame(
                     If(pencils_remaining != 0, SetScreenVariable("pencils_sharpened", pencils_sharpened+1), None),
                     If(pencils_remaining != 0, SetScreenVariable("current_pencil_size", initial_pencil_size), None),
                     If(pencils_remaining != 0, SetScreenVariable("pencils_remaining", pencils_to_sharpen - pencils_sharpened), None),
-                    If(current_pencil_size == eraser_size and sfx_execellent, Play("sound", sfx_execellent, loop=False), None),
+                    If(current_pencil_size == eraser_size and sfx_excellent, Play("sound", sfx_excellent, loop=False), None),
                     Function(renpy.restart_interaction)
                 ]
     # Spinner wheel (Alternate controls)
@@ -257,7 +257,7 @@ screen pencilgame(
                     If(pencils_remaining != 0, SetScreenVariable("pencils_sharpened", pencils_sharpened+1), None),
                     If(pencils_remaining != 0, SetScreenVariable("current_pencil_size", initial_pencil_size), None),
                     If(pencils_remaining != 0, SetScreenVariable("pencils_remaining", pencils_to_sharpen - pencils_sharpened), None),
-                    If(current_pencil_size == eraser_size and sfx_execellent, Play("sound", sfx_execellent, loop=False), None),
+                    If(current_pencil_size == eraser_size and sfx_excellent, Play("sound", sfx_excellent, loop=False), None),
                     Function(renpy.restart_interaction)
                 ]
 
@@ -387,7 +387,7 @@ label minigame_pencil2:
         sfx_countdown_2 = "minigames/pencil/sfx_ding.ogg",
         sfx_countdown_1 = "minigames/pencil/sfx_ding.ogg", 
         sfx_countdown_go = "minigames/pencil/sfx_dong.ogg",
-        sfx_execellent = None,
+        sfx_excellent = None,
         sfx_fail = "minigames/pencil/sfx_fail.ogg",
         sfx_victory = None
     )
