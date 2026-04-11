@@ -11,7 +11,6 @@ screen _ucn2_selection():
 
     python:
         show_window = False
-        #renpy.choice_for_skipping()
 
         # This is stupid but it doesn't work any other way
         rpg_pending_sprite = renpy.get_registered_image("rpg_pending_portrait")
@@ -55,8 +54,8 @@ screen _ucn2_selection():
     default rpg_level = 2
     default loaded_imgs = 0
     default rpg_img = "images/bg/csb3_ch2_south/casino1.png"
-    default rpg_bgm = "card_castle"
-    default rpg_bgm_art = "gui/jukebox/"+MUSIC_MAP[rpg_bgm]["album_art"]
+    default rpg_bgm = None
+    default rpg_bgm_art = None
 
     ### Add background color / prep video
 
@@ -582,7 +581,7 @@ screen _ucn2_selection():
                 xalign 0.5 yalign 0.5
 
                 vbox:
-                    add Image(rpg_img):
+                    add rpg_img:
                         xalign 0.5 yalign 0.5
                         xysize(576, 324)
                         fit("contain")
@@ -628,16 +627,19 @@ screen _ucn2_selection():
                 mousewheel True
 
                 vbox:
-                    for i in MUSIC_MAP:
-                        textbutton "{font=music_text}"+MUSIC_MAP[i]["title"]+"{/font}":
-                            text_align 1.0
-                            hover_sound "audio/sfx/sfx_select.ogg"
-                            action [
-                                Play("sound", "audio/sfx/sfx_valid.ogg"),
-                                SelectedIf( SetScreenVariable("rpg_bgm", i) ),
-                                SetScreenVariable("rpg_bgm_art", Image("/gui/jukebox/"+MUSIC_MAP[i]["album_art"])),
-                                SetScreenVariable("rpg_bgm", i)
-                            ]
+                    for i in (persistent.heard or []):
+                        $ song_id = str(i).split(".")[-1]
+
+                        if song_id in MUSIC_MAP:
+                            textbutton "{font=music_text}"+MUSIC_MAP[i]["title"]+"{/font}":
+                                text_align 1.0
+                                hover_sound "audio/sfx/sfx_select.ogg"
+                                action [
+                                    Play("sound", "audio/sfx/sfx_valid.ogg"),
+                                    SelectedIf( SetScreenVariable("rpg_bgm", getattr(audio, song_id)) ),
+                                    SetScreenVariable("rpg_bgm_art", Image("/gui/jukebox/"+MUSIC_MAP[song_id]["album_art"])),
+                                    SetScreenVariable("rpg_bgm", getattr(audio, song_id))
+                                ]
 
         ###################### Bounding box for album art
         frame:
@@ -649,10 +651,11 @@ screen _ucn2_selection():
                 xalign 0.5 yalign 0.5
 
                 vbox:
-                    add Image(rpg_bgm_art):
-                        xalign 0.5 yalign 0.5
-                        xysize(512,512)
-                        fit("contain")
+                    if rpg_bgm:
+                        add Image(rpg_bgm_art):
+                            xalign 0.5 yalign 0.5
+                            xysize(512,512)
+                            fit("contain")
 
         ###################### Back / forward
         textbutton _("Previous Screen"):
@@ -662,10 +665,12 @@ screen _ucn2_selection():
                 SetScreenVariable("rpg_selection_stage", "img")
             ]
 
+    
         textbutton _("Next Screen"):
             xoffset 1674 yoffset 1000
             action [
                 Play("sound", "audio/sfx/sfx_valid.ogg"),
+                SensitiveIf(rpg_bgm),
                 SetScreenVariable("rpg_selection_stage", "fight")
             ]
 
@@ -778,7 +783,7 @@ label _ucn2_battle():
         RPG.set_var_character("e4", ucn2_local_parties[7].assigned_name if ucn2_local_parties[7] else None)
 
         RPG.ucn_bg = ucn2_img
-        RPG.ucn_music = ucn2_bgm
+        RPG.ucn_music = "audio." + ucn2_bgm
         RPG.ucn_scale = ucn2_scale
 
         #ui.close()
