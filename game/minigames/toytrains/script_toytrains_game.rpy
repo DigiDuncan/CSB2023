@@ -1,8 +1,6 @@
 init python:
     import math
 
-    CS_TRAIN_HP = 3
-
     class Jig:
         def __init__(self):
             self.position = (0, 0)
@@ -30,7 +28,8 @@ init python:
         def __init__(self):
             renpy.Displayable.__init__(self)
 
-            self.hp = CS_TRAIN_HP
+            self.starting_hp = 3
+            self.hp = self.starting_hp 
             self.total_laps = 3
             self.current_lap = 1
             self.current_key = None
@@ -92,7 +91,7 @@ init python:
             r.blit(laps_left_txt_render, (14, 4))
 
             # HP
-            for heart in range(CS_TRAIN_HP):
+            for heart in range(self.starting_hp):
                 heart_x = 14 + (68 * heart)
                 heart_img = self.health_hit
 
@@ -147,7 +146,7 @@ init python:
                 self.hp = self.hp - 1
 
             if self.win is not None:
-                return self.win
+                return [self.win, self.hp]
 
         def visit(self):
             return [self.bg, self.train_cs, self.train_arceus] # Assets needed to load
@@ -167,10 +166,10 @@ label play_toytrains_game:
     $ quick_menu = True
     window show
 
-    if _return == True:
+    if _return[0] == True:
         $ achievement_manager.unlock("trains_minigame")
 
-        if CS_TRAIN_HP == 3:
+        if _return[1] == 3:
             $ achievement_manager.unlock("trains_perfect")
 
         stop music fadeout 2.0
