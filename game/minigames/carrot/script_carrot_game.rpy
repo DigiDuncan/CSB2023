@@ -330,6 +330,7 @@ label play_carrotgame:
     window auto False
     window hide
 
+    music "Can You Really Call This A Hotel, I Didn't Receive A Mint On My Pillow Or Anything:Toby Fox"
     call screen carrotgame
     $ persistent.heard.add("hotel_disbelief")
 
