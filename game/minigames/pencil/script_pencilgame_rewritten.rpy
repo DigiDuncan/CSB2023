@@ -1,6 +1,6 @@
 init python: 
     config.per_frame_screens.append("pencilgame")
-
+    
 # Defaults are for Normal difficulty. 
 # Hard mode is defined in label minigame_pencil2 at the bottom of this script.
 # If further modes are created, please put them in here.
@@ -47,14 +47,13 @@ screen pencilgame(
     default center = [960, 540]
     default spinner_image = "minigames/pencil/spinner.png"
 
-    default showed_fun_value = False
-
     default game_state = "countdown"
     default game_won = None
 
     default bgm = bgm
     default bgm_id = bgm_id
     default bg_img = bg_img
+    default pencil_img = None
     default sfx_countdown_3 = sfx_countdown_3
     default sfx_countdown_2 = sfx_countdown_2
     default sfx_countdown_1 = sfx_countdown_1
@@ -63,10 +62,12 @@ screen pencilgame(
     default sfx_fail = sfx_fail
     default sfx_victory = sfx_victory
 
-    if game_won is None:
-        timer 1:
-            action Function(renpy.restart_interaction)
-            repeat True
+    python:
+        if not renpy.predicting() and pencil_img == None:
+            if fun_value(FUN_VALUE_COMMON):
+                pencil_img = "minigames/pencil/pencilcolor.png"
+            else:
+                pencil_img = "minigames/pencil/pencil.png"
 
     on "show":
         action [
@@ -81,13 +82,6 @@ screen pencilgame(
     add "minigames/pencil/pencil_clock.png":
         xalign -0.1 yalign 0.5
 
-    if not showed_fun_value:
-        if fun_value(FUN_VALUE_COMMON):
-            default current_pencil = Image("minigames/pencil/pencilcolor.png")
-        else:           
-            default current_pencil = Image("minigames/pencil/pencil.png")
-        $ showed_fun_value = True
-
     # Sharpener
     python:
         if sharpener_state == "down":
@@ -100,10 +94,11 @@ screen pencilgame(
         xpos 1300 ypos 300
 
     # Pencil
-    add current_pencil:
-        xanchor 1.0 yanchor 0.5
-        xpos 1328 ypos 502
-        crop (0, 0, current_pencil_size, 50)
+    if pencil_img:
+        add pencil_img:
+            xanchor 1.0 yanchor 0.5
+            xpos 1328 ypos 502
+            crop (0, 0, current_pencil_size, 50)
 
     # X
     if lockout is True:

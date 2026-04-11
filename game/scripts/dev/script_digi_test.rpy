@@ -12,7 +12,7 @@ init python:
         renpy.music.queue(songs, tight = True)
         
         for s in songs:      
-            persistent.heard.add(find_id_by_filename(os.path.basename(getattr(s, 'filename',s))))
+            persistent.heard.add(find_id_by_filename(os.path.basename(getattr(s, 'filename', s))))
  
 # Used for the NVL test.
 define n_n = Character(None, kind=nvl, what_color="#BBBBBB", what_italic = True, callback = char_callback)
