@@ -385,7 +385,7 @@ label csdata:
     $ persistent.heard.add("ac_title")
     $ persistent.heard.add("the_whale")
     $ persistent.heard.add("bubble_tea")
-    $ persistent.heard.add("Lowbudget_song")
+    $ persistent.heard.add("lowbudget_song")
     $ persistent.heard.add("candle_world")
     $ persistent.heard.add("showtime")
     $ persistent.heard.add("tuna_fish")

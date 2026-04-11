@@ -421,8 +421,8 @@ label friend_after_fanboy:
     if e1:
         jump error_lowbudget
     scene alley with dissolve
-    play music Lowbudget_song loop volume 0.4 if_changed
-    music Lowbudget_song
+    play music lowbudget_song loop volume 0.4 if_changed
+    music lowbudget_song
     show arceus flipped at right
     show cs at center
     with moveinleft

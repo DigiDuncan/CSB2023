@@ -54,8 +54,8 @@ screen _ucn2_selection():
     default rpg_level = 2
     default loaded_imgs = 0
     default rpg_img = "images/bg/csb3_ch2_south/casino1.png"
-    default rpg_bgm = None
-    default rpg_bgm_art = None
+    default rpg_bgm = find_id_by_filename("card_castle.ogg")
+    default rpg_bgm_art = "gui/jukebox/"+MUSIC_MAP[rpg_bgm]["album_art"]
 
     ### Add background color / prep video
 
@@ -505,6 +505,15 @@ screen _ucn2_selection():
                 SetScreenVariable("rpg_selection_stage", "load_imgs")
             ]
 
+        ################################################### DEBUG BUTTONS
+        if preferences.developer_mode:
+            textbutton _("[[DEV] Skip background selection"):
+                xoffset 1395 yoffset 950
+                action [
+                    Play("sound", "audio/sfx/sfx_valid.ogg"),
+                    SetScreenVariable("rpg_selection_stage", "bgm")
+                ]
+
 ###################################################### STAGE 3: BACKGROUND IMAGE
 
     # Full disclosure: Portions of this section are AI-assisted because this was terrible.
@@ -628,17 +637,15 @@ screen _ucn2_selection():
 
                 vbox:
                     for i in (persistent.heard or []):
-                        $ song_id = str(i).split(".")[-1]
-
-                        if song_id in MUSIC_MAP:
+                        if i: # this is stupid
                             textbutton "{font=music_text}"+MUSIC_MAP[i]["title"]+"{/font}":
                                 text_align 1.0
                                 hover_sound "audio/sfx/sfx_select.ogg"
                                 action [
                                     Play("sound", "audio/sfx/sfx_valid.ogg"),
-                                    SelectedIf( SetScreenVariable("rpg_bgm", getattr(audio, song_id)) ),
-                                    SetScreenVariable("rpg_bgm_art", Image("/gui/jukebox/"+MUSIC_MAP[song_id]["album_art"])),
-                                    SetScreenVariable("rpg_bgm", getattr(audio, song_id))
+                                    SelectedIf( SetScreenVariable("rpg_bgm", i)),
+                                    SetScreenVariable("rpg_bgm_art", Image("/gui/jukebox/"+MUSIC_MAP[i]["album_art"])),
+                                    SetScreenVariable("rpg_bgm", i)
                                 ]
 
         ###################### Bounding box for album art
