@@ -72,3 +72,25 @@ transform t_dxcom:
         linear 0.5 alpha 0.0
 
 style dxcom_button_frame is empty
+
+python early:
+    def parse_dxcom(lexer):
+        string = lexer.rest()
+        return string
+
+    def execute_dxcom(parsed_object):
+        if parsed_object is None:
+            return
+        renpy.play("sfx/sfx_bubble.ogg", channel = "notification")
+        renpy.with_statement(determination)
+        renpy.show_screen("dxcom", parsed_object)
+        renpy.with_statement(determination)
+
+    def lint_dxcom(parsed_object):
+        if parsed_object is None:
+            pass
+
+    renpy.register_statement("dxcom",
+        parse = parse_dxcom,
+        lint = lint_dxcom,
+        execute = execute_dxcom)
