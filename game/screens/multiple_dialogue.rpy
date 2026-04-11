@@ -23,8 +23,9 @@ screen multiple_say(who, what, multiple):
 
 
 screen digimultiple(blocks):
-    tag say
     style_prefix "say"
+    zorder 5
+
     key "dismiss" action [
         Hide("digimultiple"),
         Return()
@@ -107,6 +108,7 @@ python early:
                 else:
                     rr.append((char_name, text))
 
+        renpy.hide_screen("say", immediately=True)
         renpy.call_screen("digimultiple", rr)
 
     renpy.register_statement(name="multiple",
