@@ -2553,14 +2553,12 @@ label ce_party_before:
         show cs worried christmas dark flipped at right with moveinright
         cs "That {i}is{/i} a fucking train!"
         if fun_value(FUN_VALUE_EPIC):
-            # TODO: these faces are not compatible with new multiple screen
             show mean human angry festive dark flipped at mid_left
             show tate furious festive dark at left
-            with determination
+            with { "master": vpunch }
             multiple:
                 tate "I'm not a train!"
                 mean "The {i}fuck{/i} did you call me?!"
-            with { "master": vpunch }
             show mean human festive dark flipped at mid_left
             show tate festive dark at left
         tate "Hey, CS! How've you been?"

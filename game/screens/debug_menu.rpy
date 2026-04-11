@@ -87,7 +87,12 @@ screen debug_menu():
             text_align 1.0
             sensitive False
     else:
-        textbutton _("Jump to [chosen_label]"):
+        if chosen_label == "error":
+            $ jump_text = "{chaos}"+chosen_label
+        else:
+            $ jump_text = chosen_label
+      
+        textbutton _("Jump to [jump_text]"):
             yoffset 1000 xoffset 1895
             xanchor 1.0
             text_align 1.0
