@@ -144,6 +144,9 @@ init python:
 screen minigame_blackjack(cpu_1 = None, cpu_2 = None, ai_1 = BlackjackAIs.NOVICE, ai_2 = BlackjackAIs.NOVICE):
     modal True
         
+    $ renpy.choice_for_skipping()
+    $ _skipping = False
+    
     timer 1:
         action [
             Play("music", "luigis_casino.ogg", if_changed=True, loop=True),
