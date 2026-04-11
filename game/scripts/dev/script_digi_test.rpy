@@ -1,11 +1,4 @@
 init python:
-    # This works but it's cursed as hell
-    def find_id_by_filename(track):
-        for id, data in MUSIC_MAP.items():
-            if data.get("file") == track:
-                return id
-        return None
-
     def play_nugget_playlist():
         songs = [audio.drive, audio.into_the_night, audio.escapements, audio.im_u, audio.bring_you_back, audio.bending_light]
         renpy.random.shuffle(songs)

@@ -1,6 +1,6 @@
 init python: 
     config.per_frame_screens.append("pencilgame")
-    
+
 # Defaults are for Normal difficulty. 
 # Hard mode is defined in label minigame_pencil2 at the bottom of this script.
 # If further modes are created, please put them in here.
@@ -30,6 +30,7 @@ screen pencilgame(
     default score_to_beat = 250
     default distance = 0.0
 
+    default pencil_img = None
     default initial_pencil_size = 824
     default eraser_size = 64
     default sharpen_amount_cm = 0.5
@@ -53,7 +54,6 @@ screen pencilgame(
     default bgm = bgm
     default bgm_id = bgm_id
     default bg_img = bg_img
-    default pencil_img = None
     default sfx_countdown_3 = sfx_countdown_3
     default sfx_countdown_2 = sfx_countdown_2
     default sfx_countdown_1 = sfx_countdown_1

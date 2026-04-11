@@ -241,7 +241,7 @@ default reversi_difficulty = ReversiAI.GOBLIN
 default spins = 0
 
 # Music popup
-screen music(song, artist):
+screen music(song = "", artist = ""):
     layer "music"
     style_prefix "music"
 
@@ -387,23 +387,6 @@ screen fun_value_indicator(t):
                 repeat
 
 init python:
-    import re
-
-    # GET CURRENT SONG
-    def get_now_playing():
-        current = re.sub(r'(<.*>)', "", str(renpy.music.get_playing("music")), flags=re.IGNORECASE)
-
-        song = None
-        if current:
-            for t in MUSIC_MAP:
-                if current in MUSIC_MAP[t]["file"]:
-                    song_id = t
-                    current_song = MUSIC_MAP[t]["title"]
-                    current_artist = MUSIC_MAP[t]["artist"]
-                    song = (current_song, current_artist)
-
-        return song
-
     # ANIM CODE LITERALLY FROM CHARM
     def clamp(minVal, val, maxVal):
         """Clamp a `val` to be no lower than `minVal`, and no higher than `maxVal`."""

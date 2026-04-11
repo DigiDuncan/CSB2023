@@ -21,6 +21,8 @@ init python:
     renpy.add_layer("rpg_context", above="master")
     renpy.add_layer("rpg_say", above="rpg_context")
 
+    config.per_frame_screens.append("screen_rpg")
+
     # Moving these things outside to here so that they can be accessed by the screen
     # and by functions. This isn't an ideal solution but nothing here is.
     working_list = []
@@ -732,8 +734,13 @@ label play_rpggame:
     window hide
     $ quick_menu = False
     scene image RPG.encounter.background
-    $ renpy.music.play(MUSIC_MAP[RPG.encounter.music]["file"])
-    $ persistent.heard.add(str(RPG.encounter.music))
+
+    python:
+        audio_object = renpy.python.py_eval(RPG.encounter.music)
+        raw_file_path = os.path.basename(audio_object)
+        renpy.music.play(audio_object, loop=True, if_changed=True)
+        persistent.heard.add(find_id_by_filename(raw_file_path))
+
     # This is where the game actually takes place.
     show screen screen_rpg(True) onlayer rpg_context
     show screen say_rpg(RPG.encounter.intro_text) onlayer rpg_say

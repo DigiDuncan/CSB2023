@@ -85,7 +85,7 @@ def parse_rpg(lexer) -> ParsedRpg:
                 is_ucn = True
                 background = None
         elif block.keyword("music"):
-            music = block.string()
+            music = block.simple_expression()
             if music == "ucn":
                 is_ucn = True
                 music = None

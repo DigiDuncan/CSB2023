@@ -6,7 +6,7 @@
 label rpg_test:
     rpg:
         bg "images/bg/csb3_ch2_south/casino1.png"
-        music "card_castle"
+        music audio.card_castle
         allies:
             cs
         enemies:
@@ -21,7 +21,7 @@ label rpg_test:
 label rpg_fanboy_fight_amd:
     rpg:
         bg "images/bg/csb2/linus_office_outside.png"
-        music "nordic_report_1"
+        music audio.nordic_report_1
         allies:
             cs_weak
         enemies:
@@ -36,6 +36,7 @@ label rpg_fanboy_fight_amd:
 label rpg_fanboy_fight_nvidia:
     rpg:
         bg "images/bg/csb2/linus_office_outside.png"
+        music audio.nordic_report_2
         allies:
             cs_weak
         enemies:
@@ -45,13 +46,12 @@ label rpg_fanboy_fight_nvidia:
         scale 1.0
         on_win "friend_after_fanboy"
         on_lose "friend_fanboy_lose"
-        music "nordic_report_2"
         intro_text "NVIDIA fanboys have come to cancel you!"
 
 label rpg_cop_fight_1:
     rpg:
         bg "images/bg/csb3_friend/dealership.png"
-        music "compulsion_to_obey"
+        music audio.compulsion_to_obey
         allies:
             cs
             arceus
@@ -68,7 +68,7 @@ label rpg_cop_fight_1:
 label rpg_cop_fight_2:
     rpg:
         bg "images/bg/csb3_friend/dealership.png"
-        music "for_the_people"
+        music audio.for_the_people
         allies:
             mika
             kitty
@@ -83,7 +83,7 @@ label rpg_cop_fight_2:
 label rpg_cop_fight_3:
     rpg:
         bg "images/bg/csb3_friend/cs_somewhere.png"
-        music "desert_dawn"
+        music audio.desert_dawn
         allies:
             aria
         enemies:
@@ -97,7 +97,7 @@ label rpg_cop_fight_3:
 label rpg_cop_fight_4:
     rpg:
         bg "images/bg/csb3_friend/dinerinside.png"
-        music "dinerfight"
+        music audio.dinerfight
         allies:
             digi
             nova
@@ -122,7 +122,7 @@ label rpg_ng_fight:
 
     rpg:
         bg "images/bg/csb3_friend/battle_block_without_theater.png"
-        music "thousand_march"
+        music audio.thousand_march
         allies:
             $party_1
             $party_2
@@ -150,7 +150,7 @@ label rpg_final_fight_1:
 
     rpg:
         bg "images/bg/csb3_friend/war_torn_2.png"
-        music "trans_atlantic"
+        music audio.trans_atlantic
         allies:
             $party_1
             $party_2
@@ -179,7 +179,7 @@ label rpg_final_fight_2:
 
     rpg:
         bg "images/bg/csb3_friend/war_torn_3.png"
-        music "trans_atlantic"
+        music audio.trans_atlantic
         allies:
             $party_1
             $party_2
@@ -206,7 +206,7 @@ label rpg_final_fight_3:
 
     rpg:
         bg "images/bg/csb3_friend/war_torn_4.png"
-        music "prophetpart2"
+        music audio.prophetpart2
         allies:
             cs_final
             $party_2
@@ -222,7 +222,7 @@ label rpg_final_fight_3:
 label rpg_error:
     rpg:
         bg "images/bg/archival/falling_apart.png"
-        music "prophetpart2"
+        music audio.prophetpart2
         allies:
             cs_final2
         enemies:
@@ -235,6 +235,7 @@ label rpg_error:
 label rpg_archival:
     rpg:
         bg "images/bg/archival/csmart.png"
+        music audio.broken_sky
         allies:
             cs_archival
         enemies:
@@ -244,12 +245,12 @@ label rpg_archival:
         scale 1.0
         on_win "archival_finale"
         on_lose "rpg_archival"
-        music "broken_sky"
         intro_text "The odd trio blocks your path!"
 
 label rpg_bronsonbattle:
     rpg:
         bg "images/bg/csb3_ch2_east/bronsoncrash.png"
+        music audio.error
         allies:
             cs_weak
             arceus
@@ -259,7 +260,6 @@ label rpg_bronsonbattle:
         scale 1.0
         on_win "michigan_bronson_win"
         on_lose "rpg_bronsonbattle"
-        music "error"
         intro_text "You are challenged by... Copguy?"
 
 label rpg_tate_ex:
@@ -277,7 +277,7 @@ label rpg_tate_ex:
 
     rpg:
         bg "amtrak_reality_break"
-
+        music audio.space
         allies:
             $cs_chosen_form
         enemies:
@@ -285,13 +285,13 @@ label rpg_tate_ex:
         scale 2.0
         on_win "train_tate_ex_win"
         on_lose "train_tate_ex_lose"
-        music "space"
         intro_text "Tate EX challenges you!"
 
 
 label rpg_diabetes_1:
     rpg:
         bg "images/bg/csb3_ch2_east/bronsoncrash.png"
+        music audio.error
         allies:
             cs_strong
             digi
@@ -301,12 +301,12 @@ label rpg_diabetes_1:
         scale 1.0
         on_win "bt1d_after_fight_1"
         on_lose "rpg_diabetes_1"
-        music "error"
         intro_text "The CEO is late for a meeting."
 
 label rpg_diabetes_2:
     rpg:
         bg "images/bg/csb3_ch2_east/bronsoncrash.png"
+        music audio.error
         allies:
             cs_strong
             digi
@@ -316,12 +316,12 @@ label rpg_diabetes_2:
         scale 2.0
         on_win "bt1d_after_fight_2"
         on_lose "rpg_diabetes_2"
-        music "error"
         intro_text "The secretary will see you now."
 
 label rpg_diabetes_3:
     rpg:
         bg "images/bg/csb3_ch2_east/bronsoncrash.png"
+        music audio.error
         allies:
             cs_strong
             digi
@@ -332,6 +332,5 @@ label rpg_diabetes_3:
         scale 2.0
         on_win "bt1d_ending"
         on_lose "rpg_diabetes_3"
-        music "error"
         intro_text "The C-Suite is ready to end this meeting!"
 

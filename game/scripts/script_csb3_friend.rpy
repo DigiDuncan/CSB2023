@@ -967,7 +967,7 @@ label friend_cool_car:
     copguy "Nice car!"
     copguy "Noooot so nice that you walked right into my trap!"
     copguy "We've got you guys surrounded! Get out of the car now!"
-    arceus "You guys ready?"
+    pakoo "You guys ready?"
     multiple:
         cs "Yep. Let's do this."
         arceus "Yep. Let's do this."

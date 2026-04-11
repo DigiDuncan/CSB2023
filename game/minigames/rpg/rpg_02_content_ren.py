@@ -2,7 +2,6 @@
 RPG content for CSB2023 RPG Engine (not actual fights/scenes only AI, Effects, Attacks, Characters)
 """
 from __future__ import annotations
-import random
 import renpy
 
 from renpy.display.image import Image
@@ -12,6 +11,7 @@ from rpg_01_engine_ren import Encounter, Fighter, Character, CharacterStat, atta
 
 from logging import getLogger, DEBUG
 
+random = renpy.random
 logger = getLogger("csb")
 rpg_logger = logger.getChild("rpg")
 rpg_logger.setLevel(DEBUG)
