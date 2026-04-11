@@ -108,6 +108,15 @@ python early:
                 else:
                     rr.append((char_name, text))
 
+        for block in rr:
+            char = block[0]
+            what = substitutions(block[1])
+            if isinstance(char, str):
+                name = substitutions(char)
+            else:
+                name = substitutions(char.name)
+            narrator.add_history(kind="adv", who=name, what=what)
+
         renpy.hide_screen("say", immediately=True)
         renpy.call_screen("digimultiple", rr)
 
