@@ -508,7 +508,7 @@ screen _ucn2_selection():
         ################################################### DEBUG BUTTONS
         if preferences.developer_mode:
             textbutton _("[[DEV] Skip background selection"):
-                xoffset 1395 yoffset 950
+                xoffset 1350 yoffset 950
                 action [
                     Play("sound", "audio/sfx/sfx_valid.ogg"),
                     SetScreenVariable("rpg_selection_stage", "bgm")
@@ -790,7 +790,7 @@ label _ucn2_battle():
         RPG.set_var_character("e4", ucn2_local_parties[7].assigned_name if ucn2_local_parties[7] else None)
 
         RPG.ucn_bg = ucn2_img
-        RPG.ucn_music = "audio." + ucn2_bgm
+        RPG.ucn_music = find_store_by_id(ucn2_bgm)
         RPG.ucn_scale = ucn2_scale
 
         #ui.close()

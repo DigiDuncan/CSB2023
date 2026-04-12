@@ -201,13 +201,13 @@ define audio.nyan_intro = "<from 3.6 to 22.799>nyan_of_a_lifetime.ogg"
 define audio.nyan_fight = "<from 22.799 to 228.52>nyan_of_a_lifetime.ogg"
 
 # CSBDX Plane Music
-define audio.mid_boss_battle = "mid_boss_battle.ogg"
-define audio.title_screen = "title_screen.ogg"
-define audio.cobalt_coast_day = "cobalt_coast_day.ogg"
-define audio.abra_shop = "abra_shop.ogg"
+define audio.mid_boss_battle = "<loop 1.704 to 19.456>mid_boss_battle.ogg"
+define audio.title_screen = "<loop 6.687 to 59.085>title_screen.ogg"
+define audio.cobalt_coast_day = "<loop 0.085 to 51.694>cobalt_coast_day.ogg"
+define audio.abra_shop = "<loop 0.998 to 60.484>abra_shop.ogg"
 define audio.huge_pillar = "huge_pillar.ogg"
 define audio.pyrite_town = "pyrite_town.ogg"
-define audio.cipher_lab = "cipher_lab.ogg"
+define audio.cipher_lab = "<loop 36.990 to 73.953>cipher_lab.ogg"
 define audio.run_for_your_life = "run_for_your_life.ogg"
 
 # CSBDX Kuwait Music
@@ -272,7 +272,6 @@ define audio.cobalt_coast_2 = "<loop 28.481 to 102.316>cobalt_coast_2.ogg"
 
 # Misc Music
 define audio.space_classroom = "space_classroom.ogg"
-define audio.billymusicu = "billymusicu.ogg"
 define audio.ocean_man = "credits.ogg"
 define audio.albuquerque_full = "albuquerque.ogg"
 define audio.we_will_meet_again = "we_will_meet_again.ogg"

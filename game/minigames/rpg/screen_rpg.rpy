@@ -734,12 +734,6 @@ label play_rpggame:
     window hide
     $ quick_menu = False
     scene image RPG.encounter.background
-
-    # python:
-    #     audio_object = renpy.python.py_eval(RPG.encounter.music)
-    #     raw_file_path = os.path.basename(audio_object)
-    #     renpy.music.play(audio_object, loop=True, if_changed=True)
-    #     persistent.heard.add(find_id_by_filename(raw_file_path))
     $ renpy.music.play(RPG.encounter.music, "music")
 
     # This is where the game actually takes place.

@@ -21,8 +21,10 @@ label car_dialogue:
     scene scroller_plains at scroll(-6072,6072,0,0,200,0)
     show billy car
     with dissolve
-    play music billy_mix if_changed
+    $ renpy.music.set_audio_filter("music", [telephone_af, reverb_bathroom_af, walkie_talkie_af])
+    play music billy_mix volume 0.5 if_changed
     music billy_mix
+    
     pause 2.0
     if fun_value(FUN_VALUE_MUSIC):
         cs "Well, Arceus, it's time for Billy's Mix!"

@@ -5,6 +5,10 @@ init python:
             if data.get("file") == track:
                 return id
 
+    # Given a jukebox ID, find a track in the audio store
+    def find_store_by_id(track):
+        return getattr(store.audio, track, None)
+
     # Handles the "Now Playing" in the pause menu
     def get_now_playing():
         current = re.sub(r'(<.*>)', "", str(renpy.music.get_playing("music")), flags=re.IGNORECASE)
