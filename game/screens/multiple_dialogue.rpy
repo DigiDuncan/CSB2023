@@ -43,11 +43,10 @@ screen digimultiple(blocks):
             python:
                 char = block[0]
                 what = substitutions(block[1])
-                if what and what != "None":
-                    if isinstance(char, str):
-                        name = substitutions(char)
-                    else:
-                        name = substitutions(char.name)
+                if isinstance(char, str):
+                    name = substitutions(char)
+                else:
+                    name = substitutions(char.name)
 
             python:
                 last_name_width = 0
@@ -60,14 +59,15 @@ screen digimultiple(blocks):
                         check_name = blocks[i][0].name
                     last_name_width += get_size(Text(substitutions(check_name), style = "namebox_label", font = gui_theme_map["name_font"]))[0] + int(gui_theme_map["dialogue_namebox_xspacing"])
 
-            window:
-                id "namebox"
-                style "namebox"
-                xoffset last_name_width
-                        
-                text name id "who":
-                    style "namebox_label"
-                    font gui_theme_map["name_font"]
+            if what != "None":
+                window:
+                    id "namebox"
+                    style "namebox"
+                    xoffset last_name_width
+                            
+                    text name id "who":
+                        style "namebox_label"
+                        font gui_theme_map["name_font"]
    
         vbox:
             style "say_dialogue"
