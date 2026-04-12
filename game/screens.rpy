@@ -1928,7 +1928,7 @@ style nvl_window:
     xpos 640
     yfill True
 
-    background "gui/nvl.png"
+    background get_themed_attribute("nvl")
     padding gui.nvl_borders.padding
 
 style nvl_entry:
