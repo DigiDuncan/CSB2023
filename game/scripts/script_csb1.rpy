@@ -1,5 +1,4 @@
-# TODO: add beeps to craptop and sticky note
-# TODO: discord could be a multiple dialogue
+# TODO: add beeps to sticky note?
 # TODO: add outlines to all generated text effects
 # TODO: swap static laptop image out for a video
 # TODO: when cs leaves walmart parking lot and michael's house get a background for that
@@ -78,7 +77,10 @@ label csbi_craptop:
     play sound sfx_windows_logon
     cs "Hey guys!"
     play sound sfx_ping_spam
-    discord "Hi! Hi! Hi! Hi!"
+    multiple:
+        "Discord" "Hi!"
+        "None" "Hey, CS!" 
+        "None" "OMG IT'S CS188"
     n "The Discord is overflowing with people trying to talk to CS."
     show cs at left with moveinleft
     menu:
@@ -535,7 +537,7 @@ label csbi_room:
     scene craptop_bg
     show craptop desktop
     with dissolve
-    n "Ed launches the craptop."
+    n "Ed boots up the craptop."
     play sound sfx_windows_logon
     ed "Heheh... he won't know what hit him."
     wesley "Quick! Let's get out of here before he comes back!"

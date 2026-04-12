@@ -13,7 +13,7 @@ define ycs = Character("Young CS", callback = renpy.partial(char_callback, beep 
 define carguy = Character("Carguy", callback = renpy.partial(char_callback, name = "carguy", beep = "nice"))
 define carguy_nobeep = Character("Carguy", callback = renpy.partial(char_callback, name = "carguy", play_beeps = False))
 define cashier = Character("Cashier", callback = renpy.partial(char_callback, name = "cashier"))
-define craptop = Character("Craptop", callback = renpy.partial(char_callback, name = "craptop"))
+define craptop = Character("Craptop", callback = renpy.partial(char_callback, name = "craptop", beep=["craptop_1", "craptop_2", "craptop_3", "craptop_4", "craptop_5", "craptop_6", "craptop_7", "craptop_8", "craptop_9", "craptop_10"]))
 define discord = Character("Discord", callback = char_callback)
 define doug = Character("Doug", callback = renpy.partial(char_callback, name = "doug", beep = "doug"))
 define greeter = Character("Greeter", callback = renpy.partial(char_callback, name = "doug", beep = "doug"))
