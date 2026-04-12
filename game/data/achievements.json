@@ -603,7 +603,7 @@
         "name": "Californication",
         "locked": "???",
         "unlocked": "Chill out in Cali for the day.",
-        "img": "pointclick",
+        "img": "californication",
         "type": "story",
         "dx": true
     },
@@ -611,7 +611,7 @@
         "name": "Beach Bum",
         "locked": "Damn tourists...",
         "unlocked": "Visit every attraction in San Francisco!",
-        "img": "pointclick",
+        "img": "beach_bum",
         "type": "extra",
         "dx": true
     },
@@ -620,6 +620,14 @@
         "locked": "Woah, dude, you broke it.",
         "unlocked": "Woah, dude, you broke it.",
         "img": "broke",
+        "type": "extra",
+        "dx": true
+    },
+    "fish":{
+        "name": "Gone Fishin'",
+        "locked": "You know what that means...",
+        "unlocked": "Roll a fish value!",
+        "img": "fish",
         "type": "extra",
         "dx": true
     },
@@ -655,11 +663,21 @@
         "name": "Graphic Design Is My Passion",
         "locked": "Collect all the themes.",
         "unlocked": "Collect all the themes.",
-        "img": "item_collection",
+        "img": "themes",
         "type": "extra",
         "dx": true,
         "steps": "theme_count",
         "tracker": "unlocked_themes"
+    },
+    "all_fun":{
+        "name": "Perfect Bounce Forever",
+        "locked": "Find every fun value.",
+        "unlocked": "Find every fun value.",
+        "img": "music_pun_fun",
+        "type": "extra",
+        "dx": true,
+        "steps": "fun_count",
+        "tracker": "seen_fun_values"
     },
     "pun_values":{
         "name": "Tons Of Pun Fun",
@@ -679,6 +697,16 @@
         "type": "extra",
         "steps": "original_ending_count",
         "tracker": "seen_original_endings"
+    },
+    "books":{
+        "name": "The Royal Poopindese Reading Room",
+        "locked": "Fill that shelf!",
+        "unlocked": "Completely fill the bookshelf.",
+        "img": "music_pun_fun",
+        "type": "extra",
+        "dx": true,
+        "steps": "shelf_item_count",
+        "tracker": "shelf_items_acquired"
     },
     "timeline":{
         "name": "Planeswalker's Apprentice",

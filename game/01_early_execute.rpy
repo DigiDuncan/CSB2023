@@ -92,7 +92,10 @@ init -1 python:
     # Bookshelf
     with renpy.open_file("data/books.json") as f:
         j = json.load(f)
-        logger.info(f"Loaded books.")
+        shelf_item_count = 0
+        for b in j:
+            shelf_item_count = shelf_item_count + 1
+        logger.info(f"Loaded {shelf_item_count} bookshelf items.")
 
     BOOKS_MAP = j
 
@@ -195,11 +198,11 @@ default translate_this_line = ""
 default persistent.seen = set()
 default persistent.heard = set()
 default persistent.collected = set()
-default persistent.seen_music_pun = set()
+default persistent.seen_music_puns = set()
 default persistent.read = set()
 default persistent.opened = set()
 default persistent.unlocked_achievements = set()
-default persistent.fun = set()
+default persistent.seen_fun_values = set()
 default persistent.creative_mode = False
 default persistent.show_cs_button = True
 default persistent.awawa_mode = False
@@ -221,6 +224,7 @@ default persistent.max_pencil_score = 0
 default persistent.max_pencil_score_ex = 0
 default persistent.train_routes_seen = 0
 default persistent.beach_routes_seen = 0
+default persistent.shelf_items_acquired = 0
 default persistent.timeline_trace_seen = 0
 
 # Chapter unlocks
@@ -371,9 +375,9 @@ init python:
 
         if id is not None:
             if rarity == FUN_VALUE_MUSIC:
-                persistent.seen_music_pun.add(id)
+                persistent.seen_music_puns.add(id)
             else:
-                persistent.fun.add(id)
+                persistent.seen_fun_values.add(id)
 
         r = ease_linear(rarity, 1, 0, 100, preferences.csbounciness)
         chance = 1 / r
@@ -388,6 +392,7 @@ init python:
                 if renpy.random.random() < FUN_VALUE_FISH_CHANCE or fish:
                     # Fish indicator
                     renpy.show_screen("fun_value_indicator", "fish")
+                    achievement_manager.unlock("fish")
                 else:
                     # Normal indicator
                     renpy.show_screen("fun_value_indicator", "normal")
