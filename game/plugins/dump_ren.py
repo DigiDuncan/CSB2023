@@ -109,7 +109,8 @@ def dump_stores():
 
             if write_v.startswith("<class") or write_v.startswith("<renpy") or write_v.startswith("<store") or \
                 write_v.startswith("typing.") or write_v.startswith("<partial") or write_v.startswith("<module") \
-                    or write_v.startswith("<enum") or write_v.startswith("<bound") or write_v.startswith("<built-in"):
+                    or write_v.startswith("<enum") or write_v.startswith("<bound") or write_v.startswith("<built-in") \
+                        or write_v.startswith("_Feature"):
                 # If we don't have a good representation for it, it's probably garbage.
                 return
 
@@ -149,7 +150,7 @@ def dump_stores():
     _music_c = 0
     for k in dir(audio):
         v = str(getattr(audio, k))
-        if "sfx_" not in k and "snd_" not in k and "dxcom" not in v:
+        if "sfx_" not in k and "snd_" not in k and "dxcom" not in v and "text/" not in v:
             _music_c += 1
             _write_kv(k, store = audio)
     logger.debug(f"Dumped music ({_music_c})")
@@ -172,6 +173,16 @@ def dump_stores():
             _sfx_c += 1
             _write_kv(k, store = audio)
     logger.debug(f"Dumped SFX ({_sfx_c})")
+
+    _write("\n== TEXT BEEPS ==")
+    logger.debug("Dumping text beeps...")
+    _beep_c = 0
+    for k in dir(audio):
+        v = str(getattr(audio, k))
+        if "text/" in v:
+            _beep_c += 1
+            _write_kv(k, store = audio)
+    logger.debug(f"Dumped text beeps ({_beep_c})")
 
     _write("\n=== IMAGES ===")
     logger.debug("Dumping images...")
