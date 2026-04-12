@@ -1,3 +1,5 @@
+# TODO: csgod needs a colored name
+
 label csbii_start:
     $ persistent.csb2_unlocked = True
     play music time_for_a_smackdown volume 0.2 if_changed
@@ -89,7 +91,6 @@ label csbii_chop:
     show cs angry at left
     show wesley at right
     cs "Hi-{i}yah!{/i}" # hiya is a greeting, not the sound you're looking for - tate
-    n "CS chops Wesley in the chest and he flies off the roof!"
     show cs angry at mid_mid_right with MoveTransition(0.25)
     play sound sfx_chop
     hide wesley
@@ -97,8 +98,7 @@ label csbii_chop:
     show wesleybottom at right
     show wesleytop at Move((0.7 , 0.15), (1.75, -0.3), 2, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show wesleybottom at Move((0.7 , 0.15), (1.75, 0.5), 2, repeat=False, bounce=False, xanchor="left", yanchor="top")
-
-    pause 0.5
+    n "CS chops Wesley in the chest and he flies off the roof!"
     cs "I sawed this foundation repairman in half!"
     show ed phone at offscreenright with determination
     show cs angry at left
@@ -384,20 +384,25 @@ label csbii_jail:
     pause 2.0
     scene jail_inside with dissolve
     pause 1.0
-    show cs prison flipped at offscreenright
+    show cs disappointed prison flipped at offscreenright
     show copguy at offscreenright
     with determination
-    show cs prison flipped at left
+    show cs disappointed prison flipped at left
     show copguy at right
     with move
-    show cs prison
+    show cs disappointed prison with determination
     pause 1.0
     copguy "Alright, welcome to the slammer. How tough are ya?"
-    cs "How tough am I? {cshake}How tough am I?!{/bt}"
+    show cs angry prison
+    cs "How tough am I? {nw}"
+    show cs pissed prison
+    extend "{cshake}How tough am I?!{/bt}"
+    pause 0.5
+    show cs prison
     cs "I beat {i}Cuphead!{/i}"
     copguy "So?"
     show cs happy prison
-    cs "{i}In under 90 minutes!"
+    cs "In under {i}90 minutes!"
     copguy "Hmm... okay. You're a tough enough guy to handle this cellmate, then."
     show cs prison
     show copguy flipped
@@ -412,7 +417,8 @@ label csbii_jail:
         cs "Oh, hi, Arceus. Sorry for stal-ing."
     else:
         cs "Oh, hi, Arceus."
-    arceus "Heya, CS. .w."
+    arceus "Heya, CS.{nw}"
+    extend " .w.{fast}"
     # And it's about time.
     cs "So, what're you in for?"
     arceus "Putting spyware on a politician's phone."
@@ -423,14 +429,14 @@ label csbii_jail:
     arceus "... Never mind."
     arceus "Why'd you do it, anyhow?"
     cs "I was 100%% unsatisfied."
-    arceus "As was I. As was I..."
+    arceus "As was I. {cps=20}As was I..."
     pause 1.0
     "..."
     pause 1.0
-    show cs prison at left
     arceus "Welp. I'm tired of this place. Wanna break out?"
+    show cs prison at left
     cs "Eh... sure, why not. I've played plenty of {i}The Escapists.{/i} I should be able to figure it out."
-    cs "We should break out at least one other person though."
+    cs "We should break out at least one other person though. Strength in numbers, and all that shit."
     arceus "If you say so..."
     arceus "Who were you thinking of breaking out?"
     cs "Let's just break out that guy next to us. I think his name was Anno{w=0.1}.{w=0.1}.{w=0.1}.{w=0.1}?"
@@ -483,8 +489,9 @@ label csbii_breakout:
     scene black with dissolve
     pause 0.5
 
-    n "The day comes to an end and the next one follows."
-    n "CS and Arceus gather the required essentials for their escape. Along the way, they inform Anno, who more than happily complies with the plan."
+    n "Before long, the sun rises to welcome a new day."
+    n "CS and Arceus gather the required essentials for their escape."
+    n "They also inform Anno of the plan, and he happily agrees to come along."
     pause 1.0
     centered "The next evening..."
     pause 0.5
@@ -591,13 +598,20 @@ label csbii_bordercrossing:
     border_guard "Works for me, eh."
     pause 0.5
 
-    scene canada with dissolve
+    scene canada 
+    show cs disappointed at left
+    show arceus at center
+    show anno at right
+    
+    with dissolve
     pause 1.0
     n "Some time passes as the party ventures forth into the land of Canada."
-    cs "Arceus, can we stop somewhere? I'm getting hungry."
+    cs "Arceus, can we stop somewhere? "
+    show arceus angry
+    extend "I'm getting hungry."
     anno "Yeah, we've been walking for miles now."
     arceus "Guys. We've only {i}just{/i} left the border. You can still see it behind us."
-    scene flag
+    show flag
     $ renpy.music.set_pause(True, "music")
     play music2 star_spangled_banner if_changed
     music star_spangled_banner
@@ -605,15 +619,18 @@ label csbii_bordercrossing:
         n "The crew looks behind them and hears The Star Spangled Banner playing."
     else:
         n "The crew looks behind them and still sees a faint American flag waving."
-    scene canada
+    hide flag
     stop music2
     $ renpy.music.set_pause(False, "music")
     music onett
     "..."
     cs "Prison food just isn't all that filling."
     arceus "I suppose we could find a Tim Horton's. It's as common in Canada as McDonald's is in America."
+    show cs
     n "Anno and CS nod enthusiastically."
+    show arceus
     n "Arceus sniffs the air."
+    pause 0.5
     arceus "There's one just over here, come on."
 
     scene black with dissolve
@@ -651,6 +668,9 @@ label csbii_bordercrossing:
     show cs flipped at mid_offscreen_right
     show anno at mid_offscreen_left
     show arceus full flipped at t_arc_at_tims
+    show dog at manual_pos(0.85, 0.7, 0.5) behind inside_tim_hortons_fg:
+        xzoom -1
+        zoom 0.5
     with MoveTransition(0.5)
     pause 1.0
 
@@ -669,6 +689,9 @@ label csbii_bordercrossing:
     cashier "It'll be $18. {nw}"
     show arceus full happy flipped
     arceus "Here you go! Keep the change."
+    show dog at manual_pos(0.85, 0.6, 0.5) behind inside_tim_hortons_fg with { "master": MoveTransition(0.15) }:
+        xzoom -1
+        zoom 0.5 
     arceus "Hi, doggy!"
     cashier "You're my favorite customer."
     show arceus full flipped

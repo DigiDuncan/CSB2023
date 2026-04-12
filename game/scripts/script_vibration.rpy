@@ -162,12 +162,13 @@ label vibration:
     scene black with dissolve
     pause 1.0
     scene canada
-    show cs at left
+    show cs disappointed at left
     show anno at center
     show arceus at right
     with dissolve
     cs "Man, I need a job..."
     arceus "Well, LTT is nearby..."
+    show cs happy
     cs "Sweet! Let's go check it out!"
     show arceus flipped with determination
     show cs at offscreenright
@@ -225,7 +226,7 @@ label vibration:
     show linus at right
     with moveinleft
     cs "Alright, well, I'm gonna make more YTPs for the channel!"
-    linus "No, sorry. When I gave you that card, I technically meant that it's for your own use, even though I didn't mention that at any point."
+    linus "No, sorry. When I gave you that card, I technically meant that it's for your own personal use, even though I didn't mention that at any point."
     show cs disappointed
     cs "Oh..."
     cs "What if I show you more YTPs?"
@@ -262,9 +263,9 @@ label vibration:
     with moveinleft
     show arceus dark with determination
     arceus "Alright! We made it!"
-    cs "Yeah! Now we have to trek home."
-    show copguy dark flipped at center with moveinleft
-    show copguy dark
+    cs "Yeah! Now we just have to walk home."
+    show copguy dark at manual_pos(0.75, 2.0, 1.0) with determination
+    show copguy dark at center with { "master": MoveTransition(0.25)}
     copguy "Not so fast!"
     scene black
     play sound sfx_punch
@@ -317,7 +318,7 @@ label vibration:
     show arceus at right
     with dissolve
     cs "This is gonna be a long walk."
-    show billy at center with moveinleft
+    show billy at center behind cs with moveinleft
     billy "Hi, it's Billy! If you give me $20 I'll take you home!"
     show cs happy
     cs "Awesome! Let's go!"

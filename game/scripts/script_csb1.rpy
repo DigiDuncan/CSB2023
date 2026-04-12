@@ -1,3 +1,10 @@
+# TODO: add beeps to craptop and sticky note
+# TODO: discord could be a multiple dialogue
+# TODO: add outlines to all generated text effects
+# TODO: swap static laptop image out for a video
+# TODO: when cs leaves walmart parking lot and michael's house get a background for that
+# TODO: michael facepalm sprite
+
 label csbi_start:
     $ quick_menu = False
     stop music fadeout 3.0
@@ -10,9 +17,10 @@ label csbi_start:
         show oldgame
         with dissolve
         pause 7.0
-        show pakoo at right with moveinright
+        show pakoo worried at right with moveinright
         pakoo "Oh, whoops!"
         pakoo "The old game is still here..."
+        show pakoo
         pakoo "Lemme fix that real quick for you."
         play sound sfx_page volume 5
         if e1:
@@ -84,7 +92,7 @@ label csbi_craptop:
 
     play sound sfx_ping
     cs "Okay, bedtime! Bye, guys!"
-    show nova discord at manual_pos(0.6, 0) with Dissolve(0.1)
+    show nova discord at manual_pos(0.6, 0) with { "master": Dissolve(0.1) } 
     play sound sfx_ping
     nova "But... it's, like, 8:04 AM, and you just woke up."
     play sound sfx_ping
@@ -94,7 +102,7 @@ label csbi_craptop:
     discord "CS is now offline."
     play sound sfx_ping
     nova "k bye"
-    hide nova with Dissolve(0.1)
+    hide nova with { "master": Dissolve(0.1) } 
     show craptop car
     play sound sfx_car_stop
     cs "Time to watch car crash videos for the next couple of hours!"
@@ -103,7 +111,8 @@ label csbi_craptop:
     scene cs_room
     show cs
     with dissolve
-    cs "Okay... What to do, now?"
+    cs "Okay..."
+    cs "What to do now?"
     cs "I could go outside, look at some flowers..."
     show cs happy
     stop music fadeout 3.0
@@ -141,7 +150,9 @@ label csbi_craptop:
     music end
     show cs scared at left
     cs "QUICK! START THE CAR, {i}START THE CAR!!!"
-    show cs scared at right behind carguy with MoveTransition(0.25)
+    show cs scared at right behind carguy 
+    show carguy at mid_offscreen_right
+    with MoveTransition(0.25)
     play sound sfx_doorslam
     scene cs_car_inside
     # TODO: baker needs the street view img to finish recoloring the car. cs does not drive a red car
@@ -188,9 +199,10 @@ label csbi_walmart:
     cs "Wow! It's Walmart CEO Doug McMillon! You actually {i}work{/i} here?"
     doug "Of course! We were short a greeter today, so I filled in for them!"
     doug "Enjoy your visit!"
-    hide doug with moveoutleft
+    hide doug with { "master": moveoutleft }
     n "Doug gets back to work."
-    cs "Wow! He seems like a good man!"
+    pause 0.25
+    cs "Wow! He seems like a standup guy!"
     show cs at center
     with move
     hide doug
@@ -218,8 +230,9 @@ label csbi_walmart:
     show cs flipped at left with moveinright
     pause 1.0
     show cs happy flipped
-    cs "Oooh! Pringles are on sale, too! {i}Yoink!"
-    show pringles at manual_pos(50, 300) with Dissolve(0.25)
+    cs "Oooh! Pringles are on sale, too! {nw}"
+    show pringles at manual_pos(50, 300) with { "master": Dissolve(0.25) }
+    extend "{i}Yoink!"
     $ collect("pringles")
     show pringles at manual_pos(200, 800) with MoveTransition(0.25)
     hide pringles with dissolve
@@ -283,7 +296,7 @@ label csbi_walmart:
     play sound sfx_not_so_nice_scratch
     carguy_nobeep "Nooooot so nice scratch."
     show cs worried at left
-    cs "Not {i}you,{/i} again!"
+    cs "Not {i}you{/i} again!"
     cs "I've gotta get outta here!"
     show cs at offscreenright
     show walmart_bag at offscreenright
@@ -314,7 +327,7 @@ label csbi_room:
     show cs happy flipped with moveinright
     cs "Ahhh. It's good to be home!"
     show cs surprised flipped
-    cs "What to do, now..."
+    cs "What to do now...?"
     cs "You know, I haven't put out a YTP in a while. I should work on one of my in-progress ones."
     scene craptop_bg
     show craptop edit
@@ -384,7 +397,7 @@ label csbi_room:
     hoh_operator "Alright. That will be 200,000 bits. You can pay us afterwards."
     play sound sfx_end_call
     n "The operator hangs up."
-    show cs
+    show cs with dissolve
     cs "Welp, that's one thing taken care of."
     cs "I guess I'll work on my new YTP while I wait."
     scene black with dissolve
@@ -598,7 +611,7 @@ label csbi_michael_house:
     $ collect("rosen_phone")
 
     michael "Hello!"
-    cs "Hey, Michael! How're you doin' today?"
+    cs "Hey, Michael! How're ya doin' today?"
     michael "I'm feeling rather noice today."
     show cs happy phone
     cs "That's good to hear! You mind if I head over to your place?"
@@ -609,8 +622,8 @@ label csbi_michael_house:
     cs "Mmm! That sounds delicious!"
     show cs phone flipped
     n "CS looks in the back seat of his car."
-    cs "I have some Genergy with me, if you guys want some."
-    michael "Sounds wonderful. I've never tried it, but I'm sure it's good."
+    cs "I have some Genergy with me if you guys want some."
+    michael "Sounds wonderful. I've never tried it, but I'm sure it's delicious."
     show cs happy phone
     cs "Alright, well, I'll be there soon!"
     michael "See you soon!"
@@ -652,7 +665,7 @@ label csbi_rosen_house:
     with MoveTransition(1.0)
     cs "Hey, Michael!"
     michael "Sit down and make yourself comfy. I've got a new poem I'd like you to hear!"
-    cs "Sure thing! Enlighten me."
+    cs "Sure, I've love to hear it!"
     michael "Right. This one is called{w=0.5} {i}The Library.{/i}"
     michael "There once was a man who would go on a grand adventure."
     # making him slowly doze off...
@@ -982,13 +995,13 @@ label csbi_home_savers:
     play music beautiful_hills volume 0.3 if_changed
     music beautiful_hills
     show cs
-    cs "I guess I can call Home Savers. Despite my YTPs of their company, I don't think they'd mind helping me out."
+    cs "I guess I can call Home Savers. Even though I've pooped their commercials, I don't think they'd mind helping me out."
     show cs phone
     $ collect("cs_phone")
     n "CS dials the phone number he found on their website."
     play sound sfx_dial_hohsis
     pause 10
-    show cs phone at left with move
+    show cs phone at left
     show hoh_hq at mid_offscreen_right behind ed
     show ed phone at right
     with moveinright
