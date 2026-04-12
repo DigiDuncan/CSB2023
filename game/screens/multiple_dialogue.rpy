@@ -41,9 +41,9 @@ screen digimultiple(blocks):
 
         for idx, block in enumerate(blocks):
             python:
+                char = block[0]
+                what = substitutions(block[1])
                 if what and what != "None":
-                    char = block[0]
-                    what = substitutions(block[1])
                     if isinstance(char, str):
                         name = substitutions(char)
                     else:
