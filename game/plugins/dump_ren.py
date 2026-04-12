@@ -1,20 +1,27 @@
 import renpy.exports as renpy
 import renpy.config as config
-
 import renpy.defaultstore as store
 
+import logging
+logger = logging.getLogger("csb")
 """renpy
 init python:
 """
 from pathlib import Path
-import renpy.revertable as revertable
 import pprint
 import types
 import re
 import datetime
 
+import renpy.revertable as revertable
+import renpy.display.im as im
+import renpy.display.transform as transform
+import renpy.text as text
+import renpy.display.video as video
+from renpy.display.layout import DynamicDisplayable
+
+
 def dump_stores():
-    images = renpy.display.image.images.keys()
     path = Path(config.basedir) / "dump.txt"
 
     BLACKLIST = ["chart_enemy", "chart_player", "line_list", "enemy_json_data", "player_json_data",
@@ -30,7 +37,7 @@ def dump_stores():
 
         k = str(k)
 
-        if re.match(r"^[A-Z_]+$", k):
+        if re.match(r"^[A-Z_][A-Z0-9_]+$", k):
             return
         
         if k in BLACKLIST:
@@ -81,8 +88,22 @@ def dump_stores():
         else:
             if isinstance(v, str):
                 write_v = f"\"{v}\""
-            if "Character" in str(type(v)):
+            elif "Character" in str(type(v)):
                 write_v = f"<Character {v}>"
+            elif isinstance(v, im.Image):
+                write_v = f"<Image {v.filename}>"
+            elif isinstance(v, video.Movie):
+                write_v = f"<Movie {v._original_play}>"
+            elif isinstance(v, (transform.Transform, transform.ATLTransform)):
+                return
+            elif isinstance(v, (renpy.store.LayeredImage, renpy.store.LayeredImageProxy)):
+                write_v = f"<LayeredImage {v.name}>"
+            elif isinstance(v, text.text.Text):
+                write_v = f"<Text {v.text}>"
+            elif isinstance(v, text.extras.ParameterizedText):
+                write_v = f"<ParameterizedText {v.properties}>"
+            elif isinstance(v, DynamicDisplayable):
+                write_v = f"<DynamicDisplayable>"
             else:
                 write_v = str(v)
 
@@ -102,31 +123,78 @@ def dump_stores():
     _write(f"{datetime.datetime.now()}")
 
     _write("=== STORE ===")
+    logger.debug("Dumping store...")
+    _store_c = 0
     for k in dir(store):
         v = getattr(store, k)
         if "Character" not in str(type(v)):
+            _store_c += 1
             _write_kv(k, store = store)
+    logger.debug(f"Dumped store ({_store_c})")
+
     _write("\n=== CHARACTERS ===")
+    logger.debug("Dumping characters...")
+    _char_c = 0
     for k in dir(store):
         v = getattr(store, k)
         if "Character" in str(type(v)):
+            _char_c += 1
             _write_kv(k, store = store)
+    logger.debug(f"Dumped characters ({_char_c})")
+
     _write("\n=== AUDIO ===")
+    logger.debug("Dumping audio...")
     _write("== MUSIC ==")
+    logger.debug("Dumping music...")
+    _music_c = 0
     for k in dir(audio):
-        if "sfx_" not in k:
+        v = str(getattr(audio, k))
+        if "sfx_" not in k and "snd_" not in k and "dxcom" not in v:
+            _music_c += 1
             _write_kv(k, store = audio)
+    logger.debug(f"Dumped music ({_music_c})")
+
+    _write("== DXCOM ==")
+    logger.debug("Dumping DXCOM...")
+    _dxcom_c = 0
+    for k in dir(audio):
+        v = str(getattr(audio, k))
+        if "dxcom" in v:
+            _dxcom_c += 1
+            _write_kv(k, store = audio)
+    logger.debug(f"Dumped DXCOM ({_dxcom_c})")
+
     _write("\n== SFX ==")
+    logger.debug("Dumping SFX...")
+    _sfx_c = 0
     for k in dir(audio):
-        if "sfx_" in k:
+        if "sfx_" in k or "snd_" in k:
+            _sfx_c += 1
             _write_kv(k, store = audio)
+    logger.debug(f"Dumped SFX ({_sfx_c})")
+
     _write("\n=== IMAGES ===")
-    for k in images:
-        img = renpy.get_registered_image(k)
-        _write_kv(k, v = img)
-    _write("\n=== PERSISTENT ===")
-    for k, v in persistent.__dict__.items():
+    logger.debug("Dumping images...")
+    _image_c = 0
+
+    image_dict = {}
+    for k in renpy.list_images():
+        image_dict[k] = renpy.get_registered_image(k)
+        _image_c += 1
+
+    for k, v in dict(sorted(image_dict.items(), key = lambda item: str(type(item[1])))).items():
         _write_kv(k, v = v)
+    logger.debug(f"Dumped images ({_image_c})")
+
+    _write("\n=== PERSISTENT ===")
+    logger.debug("Dumping persistent...")
+    _per_c = 0
+    for k, v in persistent.__dict__.items():
+        _per_c += 1
+        _write_kv(k, v = v)
+    logger.debug(f"Dumped persistent ({_per_c})")
 
     with path.open(mode = "w") as f:
         f.write(output_string)
+
+    logger.info(f"Dump written!")
