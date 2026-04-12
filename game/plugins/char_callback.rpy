@@ -5,7 +5,7 @@ init python:
             persistent.woohoo += 1
         if name:
             persistent.seen.add(name)
-            if all([a in persistent.seen for a in name_map.keys()]):
+            if all([a in persistent.seen for a in NAME_MAP.keys()]):
                 achievement_manager.unlock("bios")
         if preferences.text_beeps and play_beeps:
             if event == "show":

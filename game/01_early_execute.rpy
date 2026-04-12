@@ -40,6 +40,12 @@ init -1 python:
         bio_count = len(j)
         logger.info(f"Loaded {bio_count} bios.")
 
+    NAME_MAP = j
+
+    for n in persistent.seen:
+        if n not in NAME_MAP:
+            logger.warn(f"Bio '{n}' not in NAME_MAP!")
+
     # Items
     with renpy.open_file("data/item_collection.json") as f:
         j = json.load(f)

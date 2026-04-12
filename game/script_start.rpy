@@ -19,7 +19,7 @@ init 10 python:
     def unlock_all():
         for m in MUSIC_MAP.keys():
             persistent.heard.add(m)
-        for p in name_map.keys():
+        for p in NAME_MAP.keys():
             persistent.seen.add(p)
         for i in ITEM_MAP.keys():
             persistent.collected.add(i)

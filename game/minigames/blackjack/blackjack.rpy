@@ -149,7 +149,7 @@ screen minigame_blackjack(cpu_1 = None, cpu_2 = None, ai_1 = BlackjackAIs.NOVICE
     
     timer 1:
         action [
-            Play("music", "luigis_casino.ogg", if_changed=True, loop=True),
+            Play("music", audio.luigis_casino, if_changed=True, loop=True),
             Function(persistent.heard.add, "luigis_casino")
         ]
 

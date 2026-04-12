@@ -2,14 +2,6 @@ init python:
     def mark_read(k):
         persistent.read.add(k)
 
-    import json
-    with renpy.open_file('data/bios.json') as json_file:
-        name_map = json.load(json_file)
-
-    for n in persistent.seen:
-        if n not in name_map:
-            logger.warn(f"Bio '{n}' not in name_map!")
-
 ###################################################### SETUP
 
 screen people():
@@ -26,7 +18,7 @@ screen people():
     add gui_theme_map["screen_transparency_layer"]
 
     python:
-        bio_count = len(name_map.keys())
+        bio_count = len(NAME_MAP.keys())
         unlocked_bio_count = len(persistent.seen)
 
         # sorting modes
@@ -36,31 +28,31 @@ screen people():
         # 3 = new to CE only
         # maybe future sort modes will be added
         if current_bios_sorting_mode == 0:
-            sort_mode = sorted(persistent.seen, key=lambda character: name_map[character]["full_name"].upper())
+            sort_mode = sorted(persistent.seen, key=lambda character: NAME_MAP[character]["full_name"].upper())
             sort_text = _("All")
         elif current_bios_sorting_mode == 1:
             presort = []
-            for c in name_map:
+            for c in NAME_MAP:
                 if c in persistent.seen:
-                    if "rpg" in name_map[c]:
+                    if "rpg" in NAME_MAP[c]:
                         presort.append(c)
-            sort_mode = sorted(presort, key=lambda character: name_map[character]["full_name"].upper())
+            sort_mode = sorted(presort, key=lambda character: NAME_MAP[character]["full_name"].upper())
             sort_text = _("RPG Fighters Only")
         elif current_bios_sorting_mode == 2:
             presort = []
-            for c in name_map:
+            for c in NAME_MAP:
                 if c in persistent.seen:
-                    if "dx" in name_map[c]:
+                    if "dx" in NAME_MAP[c]:
                         presort.append(c)
-            sort_mode = sorted(presort, key=lambda character: name_map[character]["full_name"].upper())
+            sort_mode = sorted(presort, key=lambda character: NAME_MAP[character]["full_name"].upper())
             sort_text = _("New To DX")
         elif current_bios_sorting_mode == 3:
             presort = []
-            for c in name_map:
+            for c in NAME_MAP:
                 if c in persistent.seen:
-                    if "ce" in name_map[c]:
+                    if "ce" in NAME_MAP[c]:
                         presort.append(c)
-            sort_mode = sorted(presort, key=lambda character: name_map[character]["full_name"].upper())
+            sort_mode = sorted(presort, key=lambda character: NAME_MAP[character]["full_name"].upper())
             sort_text = _("New To CE")
 
     frame:
@@ -121,12 +113,12 @@ screen people():
                                 # DX/CE character handler
                                 unread_indicator = get_themed_attribute("new")
 
-                                if name_map[k].get('dx', False):
-                                    name_label = "{image=[unread_indicator]}{image=gui/inline_text/dx.png} " + name_map[k]['full_name'] if k not in persistent.read else "{image=gui/inline_text/dx.png} " + name_map[k]['full_name']
-                                elif name_map[k].get('ce', False):
-                                    name_label = "{image=[unread_indicator]}{image=gui/inline_text/ce.png} " + name_map[k]['full_name'] if k not in persistent.read else "{image=gui/inline_text/ce.png} " + name_map[k]['full_name']
+                                if NAME_MAP[k].get('dx', False):
+                                    name_label = "{image=[unread_indicator]}{image=gui/inline_text/dx.png} " + NAME_MAP[k]['full_name'] if k not in persistent.read else "{image=gui/inline_text/dx.png} " + NAME_MAP[k]['full_name']
+                                elif NAME_MAP[k].get('ce', False):
+                                    name_label = "{image=[unread_indicator]}{image=gui/inline_text/ce.png} " + NAME_MAP[k]['full_name'] if k not in persistent.read else "{image=gui/inline_text/ce.png} " + NAME_MAP[k]['full_name']
                                 else:
-                                    name_label = "{image=[unread_indicator]}" + name_map[k]['full_name'] if k not in persistent.read else name_map[k]['full_name']
+                                    name_label = "{image=[unread_indicator]}" + NAME_MAP[k]['full_name'] if k not in persistent.read else NAME_MAP[k]['full_name']
                             if k == "iris":
                                 textbutton name_label:
                                     action [
@@ -170,8 +162,8 @@ screen people():
 
                             python:
                                 try:
-                                    if "pronouns" in name_map[current_person]:
-                                        pronouns = name_map[current_person]['pronouns']
+                                    if "pronouns" in NAME_MAP[current_person]:
+                                        pronouns = NAME_MAP[current_person]['pronouns']
                                     else:
                                         pronouns = ""
                                 except:
@@ -179,7 +171,7 @@ screen people():
 
                             vbox:
                                 xalign 0.5
-                                text name_map[current_person]['full_name']:
+                                text NAME_MAP[current_person]['full_name']:
                                     xalign 0.5 text_align 0.5
                                     size 69
 
@@ -211,7 +203,7 @@ screen people():
                                             valid_pages = []
 
                                             for item in page_list:
-                                                if item in name_map[current_person]:
+                                                if item in NAME_MAP[current_person]:
                                                     current_bios_total_pages = current_bios_total_pages + 1
                                                     valid_pages.append(item)
 
@@ -247,17 +239,17 @@ screen people():
                                             try:
                                                 current_page_type = valid_pages[current_bios_page]
                                                 if current_page_type == "bio":
-                                                    fetched = name_map[current_person]["bio"]
+                                                    fetched = NAME_MAP[current_person]["bio"]
 
                                                 if current_page_type == "dx_bio":
-                                                    if renpy.seen_label( name_map[current_person]['dx_bio_label'] ) == True:
-                                                        fetched = "{image=gui/inline_text/dx.png} " + name_map[current_person]["dx_bio"]
+                                                    if renpy.seen_label( NAME_MAP[current_person]['dx_bio_label'] ) == True:
+                                                        fetched = "{image=gui/inline_text/dx.png} " + NAME_MAP[current_person]["dx_bio"]
                                                     else:
                                                         fetched = "???"
 
                                                 if current_page_type == "ce_bio":
-                                                    if renpy.seen_label( name_map[current_person]['ce_bio_label'] ) == True:
-                                                        fetched = "{image=gui/inline_text/ce.png} " + name_map[current_person]["ce_bio"]
+                                                    if renpy.seen_label( NAME_MAP[current_person]['ce_bio_label'] ) == True:
+                                                        fetched = "{image=gui/inline_text/ce.png} " + NAME_MAP[current_person]["ce_bio"]
                                                     else:
                                                         fetched = "???"
 
@@ -298,10 +290,10 @@ screen people():
                                                         xalign 0.5
 
                                                         # iterate through all the different forms
-                                                        for stat_set in list(name_map[current_person]['rpg'].keys()):
+                                                        for stat_set in list(NAME_MAP[current_person]['rpg'].keys()):
 
                                                             # but only if you've seen the label!
-                                                            if renpy.seen_label( name_map[current_person]['rpg'][stat_set]['need_label'] ) == True:
+                                                            if renpy.seen_label( NAME_MAP[current_person]['rpg'][stat_set]['need_label'] ) == True:
 
                                                                 # actually fetch data
                                                                 python:
@@ -384,7 +376,7 @@ screen people():
                                                                     text_align 0.5
                                                                 null height 32
                                         else:
-                                            text "\"" + name_map[current_person]["quote"] + "\"\n\n" + (fetched)
+                                            text "\"" + NAME_MAP[current_person]["quote"] + "\"\n\n" + (fetched)
                 
 ###################################################### SPRITES
 
@@ -395,7 +387,7 @@ screen people():
                                     yoffset 12
 
                                     python:
-                                        x = -1 if name_map[current_person].get("flip", False) else 1
+                                        x = -1 if NAME_MAP[current_person].get("flip", False) else 1
 
                                     # show sprite
                                     frame:
@@ -403,7 +395,7 @@ screen people():
                                         xsize 1.0
                                         ysize 700
 
-                                        image name_map[current_person]['sprites'][list(name_map[current_person]['sprites'].keys())[current_bios_sprite]]:
+                                        image NAME_MAP[current_person]['sprites'][list(NAME_MAP[current_person]['sprites'].keys())[current_bios_sprite]]:
                                             xalign 0.5
                                             yalign 1.0
                                             xsize 1.0
@@ -428,7 +420,7 @@ screen people():
 
                                                 # make sure sprite actually exists first
                                                 python:
-                                                    this_sprite = list(name_map[current_person]['sprites'].keys())[current_bios_sprite]
+                                                    this_sprite = list(NAME_MAP[current_person]['sprites'].keys())[current_bios_sprite]
 
                                                     # delimiter to handle outfit/expression names
                                                     # ex. "Default: Happy" will be split
@@ -452,7 +444,7 @@ screen people():
                                                     yalign 0.5
                                                     text_align 0.5
 
-                                                if len(name_map[current_person]['sprites'].keys()) > 1:
+                                                if len(NAME_MAP[current_person]['sprites'].keys()) > 1:
                                                     # left arrow
                                                     if current_bios_sprite-1>=0:
                                                         imagebutton:
@@ -463,7 +455,7 @@ screen people():
                                                             action IncrementScreenVariable("current_bios_sprite", -1)
 
                                                     # right arrow
-                                                    if current_bios_sprite+1 < len(name_map[current_person]['sprites']):
+                                                    if current_bios_sprite+1 < len(NAME_MAP[current_person]['sprites']):
                                                         imagebutton:
                                                             xalign 1.0 yalign 0.5
                                                             xysize 64, 64
