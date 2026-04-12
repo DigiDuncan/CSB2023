@@ -322,9 +322,11 @@ screen minigame_blackjack(cpu_1 = None, cpu_2 = None, ai_1 = BlackjackAIs.NOVICE
                                 for ndx, card in enumerate(deck):
                                     add card_back:
                                         at transform:
+                                            perspective True
                                             matrixtransform RotateMatrix(-1.5, 0, -10)
                                             xalign 0.5 yalign 0.5
-                                            yoffset -0.375*ndx
+                                            xoffset 10 yoffset 0.275*ndx
+                        null height 20
 
                         text _("Hit!"):
                             xalign 0.5 text_align 0.5
