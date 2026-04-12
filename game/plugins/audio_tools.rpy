@@ -16,7 +16,7 @@ init python:
         song = None
         if current:
             for t in MUSIC_MAP:
-                if current in MUSIC_MAP[t]["file"]:
+                if current == MUSIC_MAP[t]["file"]:
                     song_id = t
                     current_song = MUSIC_MAP[t]["title"]
                     current_artist = MUSIC_MAP[t]["artist"]
