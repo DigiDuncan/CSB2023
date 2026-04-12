@@ -10,16 +10,30 @@ from pathlib import Path
 import renpy.revertable as revertable
 import pprint
 import types
+import re
+import datetime
 
 def dump_stores():
-    images = renpy.list_images()
+    images = renpy.display.image.images.keys()
     path = Path(config.basedir) / "dump.txt"
+
+    BLACKLIST = ["chart_enemy", "chart_player", "line_list", "enemy_json_data", "player_json_data",
+                 "enemy_chart_data", "player_chart_data", "bgm_list", "bg_list"]
 
     output_string = ""
 
     def _write_kv(k: str, *, store = None, v = None, indent = 0, newline = "\n"):
         nonlocal output_string
+
+        k = str(k)
+
         if k.startswith("_"):
+            return
+
+        if re.match(r"^[A-Z_]+$", k):
+            return
+        
+        if k in BLACKLIST:
             return
         
         if v is None:
@@ -63,7 +77,8 @@ def dump_stores():
                 write_v = str(v)
 
             if write_v.startswith("<class") or write_v.startswith("<renpy") or write_v.startswith("<store") or \
-                write_v.startswith("typing.") or write_v.startswith("<partial") or write_v.startswith("<module"):
+                write_v.startswith("typing.") or write_v.startswith("<partial") or write_v.startswith("<module") \
+                    or write_v.startswith("<enum"):
                 # If we don't have a good representation for it, it's probably garbage.
                 return
 
@@ -72,6 +87,9 @@ def dump_stores():
     def _write(s: str, indent = 0, newline = "\n"):
         nonlocal output_string
         output_string += f"{' ' * indent}{s}{newline}"
+
+    _write(f"{config.name} {config.version}")
+    _write(f"{datetime.datetime.now()}")
 
     _write("=== STORE ===")
     for k in dir(store):

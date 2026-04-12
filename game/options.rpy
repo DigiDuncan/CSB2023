@@ -12,7 +12,7 @@
 ##
 ## The _() surrounding the string marks it as eligible for translation.
 
-define config.name = _("CSBounciness III DX")
+define config.name = _("CSBounciness DX")
 
 
 ## Determines if the title given above is shown on the main menu screen. Set
@@ -35,7 +35,7 @@ define config.image_cache_size = 2048
 ## Text that is placed on the game's about screen. Place the text between the
 ## triple-quotes, and leave a blank line between paragraphs.
 
-define gui.about = _p("""CSBounciness III DX
+define gui.about = _p("""CSBounciness DX
 
 Over five years in the making, relive the wild rides of CSBounciness I and II,
 and embark on a new wacky adventure with CS and the gang in the all new CSBounciness
