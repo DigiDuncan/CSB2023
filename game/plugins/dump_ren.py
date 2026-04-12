@@ -101,7 +101,7 @@ def dump_stores():
             elif isinstance(v, text.text.Text):
                 write_v = f"<Text {v.text}>"
             elif isinstance(v, text.extras.ParameterizedText):
-                write_v = f"<ParameterizedText {v.properties}>"
+                return
             elif isinstance(v, DynamicDisplayable):
                 write_v = f"<DynamicDisplayable>"
             else:
@@ -155,7 +155,7 @@ def dump_stores():
             _write_kv(k, store = audio)
     logger.debug(f"Dumped music ({_music_c})")
 
-    _write("== DXCOM ==")
+    _write("\n== DXCOM ==")
     logger.debug("Dumping DXCOM...")
     _dxcom_c = 0
     for k in dir(audio):
@@ -187,15 +187,27 @@ def dump_stores():
     _write("\n=== IMAGES ===")
     logger.debug("Dumping images...")
     _image_c = 0
+    _video_c = 0
 
     image_dict = {}
+    video_dict = {}
     for k in renpy.list_images():
-        image_dict[k] = renpy.get_registered_image(k)
-        _image_c += 1
+        v = renpy.get_registered_image(k)
+        if isinstance(v, video.Movie):
+            video_dict[k] = v
+            _video_c += 1
+        else:
+            image_dict[k] = v
+            _image_c += 1
 
     for k, v in dict(sorted(image_dict.items(), key = lambda item: str(type(item[1])))).items():
         _write_kv(k, v = v)
     logger.debug(f"Dumped images ({_image_c})")
+
+    _write("\n=== VIDEOS ===")
+    for k, v in video_dict.items():
+        _write_kv(k, v = v)
+    logger.debug(f"Dumped videos ({_video_c})")
 
     _write("\n=== PERSISTENT ===")
     logger.debug("Dumping persistent...")
