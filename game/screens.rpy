@@ -1875,7 +1875,6 @@ screen nvl(dialogue, items=None):
         style "nvl_window"
         ysize 1050
 
-
         viewport:
             mousewheel True
             draggable True
@@ -1886,7 +1885,16 @@ screen nvl(dialogue, items=None):
                 ymaximum 1050
                 spacing gui.nvl_spacing
 
-                use nvl_dialogue(dialogue)
+                for d in dialogue:
+                    frame:
+                        id d.window_id
+                        fixed:
+                            yfit gui.nvl_height is None
+                            if d.who is not None:
+                                text d.who:
+                                    id d.who_id
+                            text d.what:
+                                id d.what_id
 
                 for i in items:
                     textbutton i.caption:
@@ -1895,20 +1903,6 @@ screen nvl(dialogue, items=None):
                         style "nvl_button"
 
         add SideImage() xalign 0.0 yalign 1.0
-
-
-screen nvl_dialogue(dialogue):
-    for d in dialogue:
-        window:
-            id d.window_id
-            fixed:
-                yfit gui.nvl_height is None
-                if d.who is not None:
-                    text d.who:
-                        id d.who_id
-                text d.what:
-                    id d.what_id
-
 
 ## This controls the maximum number of NVL-mode entries that can be displayed at
 ## once.
@@ -1939,7 +1933,7 @@ style nvl_label:
     xpos gui.nvl_name_xpos
     xanchor gui.nvl_name_xalign
     ypos gui.nvl_name_ypos
-    yanchor 0.0
+    yanchor 0
     xsize gui.nvl_name_width
     min_width gui.nvl_name_width
     textalign gui.nvl_name_xalign
