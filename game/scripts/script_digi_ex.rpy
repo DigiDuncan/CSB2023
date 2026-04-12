@@ -20,6 +20,9 @@ init python:
             self.type = type
             self.length = length
 
+        def __str__(self) -> str:
+            return f"<Note {self.type}|{self.lane} @{self.time}->{self.length}>"
+
     def show_code(st, at, addtl = 100):
         lines = int(st * 5) % 171
         lines2 = lines + addtl

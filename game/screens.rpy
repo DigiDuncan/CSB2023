@@ -1323,6 +1323,7 @@ screen preferences():
                             textbutton _("Jump To Label Start\n{size=-12}What we do here is go back{size=-6} back{size=-6} back") action Function(jump_to_label_start)
 
                             textbutton _("Unlock All\n{size=-12}Adds all unlockables to persistent.") action Function(unlock_all)
+                            textbutton _("Dump\n{size=-12}Dump important variables to a file.") action Function(dump_stores)
                     vbox:
                         style_prefix "check"
                         label _("Test Rooms")
