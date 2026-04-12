@@ -1875,46 +1875,37 @@ screen nvl(dialogue, items=None):
         style "nvl_window"
         ysize 1050
 
-        has vbox:
-            ymaximum 1050
-            spacing gui.nvl_spacing
 
-        ## Displays dialogue in either a vpgrid or the vbox.
-        if gui.nvl_height:
-            vpgrid:
-                cols 1
-                yinitial 1.0
+        viewport:
+            mousewheel True
+            draggable True
+            xmaximum 1280
+            yinitial 1.0
+
+            vbox:
+                ymaximum 1050
+                spacing gui.nvl_spacing
+
                 use nvl_dialogue(dialogue)
 
-        else:
-            use nvl_dialogue(dialogue)
+                for i in items:
+                    textbutton i.caption:
+                        xalign 0.5
+                        action i.action
+                        style "nvl_button"
 
-        ## Displays the menu, if given. The menu may be displayed incorrectly if
-        ## config.narrator_menu is set to True.
-        for i in items:
-            textbutton i.caption:
-                xalign 0.5
-                action i.action
-                style "nvl_button"
-
-    add SideImage() xalign 0.0 yalign 1.0
+        add SideImage() xalign 0.0 yalign 1.0
 
 
 screen nvl_dialogue(dialogue):
-
     for d in dialogue:
-
         window:
             id d.window_id
-
             fixed:
                 yfit gui.nvl_height is None
-
                 if d.who is not None:
-
                     text d.who:
                         id d.who_id
-
                 text d.what:
                     id d.what_id
 
