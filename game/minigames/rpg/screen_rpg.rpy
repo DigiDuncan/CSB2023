@@ -734,7 +734,8 @@ label play_rpggame:
     window hide
     $ quick_menu = False
     scene image RPG.encounter.background
-    $ renpy.music.play(RPG.encounter.music, "music")
+    $ print(RPG.encounter.music)
+    $ renpy.music.play(find_store_by_id(RPG.encounter.music), "music")
 
     # This is where the game actually takes place.
     show screen screen_rpg(True) onlayer rpg_context

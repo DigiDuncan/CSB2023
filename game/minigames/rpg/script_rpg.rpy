@@ -6,7 +6,7 @@
 label rpg_test:
     rpg:
         bg "images/bg/csb3_ch2_south/casino1.png"
-        music audio.card_castle
+        music card_castle
         allies:
             cs
         enemies:
@@ -21,7 +21,7 @@ label rpg_test:
 label rpg_fanboy_fight_amd:
     rpg:
         bg "images/bg/csb2/linus_office_outside.png"
-        music audio.nordic_report_1
+        music nordic_report_1
         allies:
             cs_weak
         enemies:
@@ -36,7 +36,7 @@ label rpg_fanboy_fight_amd:
 label rpg_fanboy_fight_nvidia:
     rpg:
         bg "images/bg/csb2/linus_office_outside.png"
-        music audio.nordic_report_2
+        music nordic_report_2
         allies:
             cs_weak
         enemies:
@@ -51,7 +51,7 @@ label rpg_fanboy_fight_nvidia:
 label rpg_cop_fight_1:
     rpg:
         bg "images/bg/csb3_friend/dealership.png"
-        music audio.compulsion_to_obey
+        music compulsion_to_obey
         allies:
             cs
             arceus
@@ -68,7 +68,7 @@ label rpg_cop_fight_1:
 label rpg_cop_fight_2:
     rpg:
         bg "images/bg/csb3_friend/dealership.png"
-        music audio.for_the_people
+        music for_the_people
         allies:
             mika
             kitty
@@ -83,7 +83,7 @@ label rpg_cop_fight_2:
 label rpg_cop_fight_3:
     rpg:
         bg "images/bg/csb3_friend/cs_somewhere.png"
-        music audio.desert_dawn
+        music desert_dawn
         allies:
             aria
         enemies:
@@ -97,7 +97,7 @@ label rpg_cop_fight_3:
 label rpg_cop_fight_4:
     rpg:
         bg "images/bg/csb3_friend/dinerinside.png"
-        music audio.dinerfight
+        music dinerfight
         allies:
             digi
             nova
@@ -122,7 +122,7 @@ label rpg_ng_fight:
 
     rpg:
         bg "images/bg/csb3_friend/battle_block_without_theater.png"
-        music audio.thousand_march
+        music thousand_march
         allies:
             $party_1
             $party_2
@@ -150,7 +150,7 @@ label rpg_final_fight_1:
 
     rpg:
         bg "images/bg/csb3_friend/war_torn_2.png"
-        music audio.trans_atlantic
+        music trans_atlantic
         allies:
             $party_1
             $party_2
@@ -179,7 +179,7 @@ label rpg_final_fight_2:
 
     rpg:
         bg "images/bg/csb3_friend/war_torn_3.png"
-        music audio.trans_atlantic
+        music trans_atlantic
         allies:
             $party_1
             $party_2
@@ -206,7 +206,7 @@ label rpg_final_fight_3:
 
     rpg:
         bg "images/bg/csb3_friend/war_torn_4.png"
-        music audio.prophetpart2
+        music prophetpart2
         allies:
             cs_final
             $party_2
@@ -222,7 +222,7 @@ label rpg_final_fight_3:
 label rpg_error:
     rpg:
         bg "images/bg/archival/falling_apart.png"
-        music audio.prophetpart2
+        music prophetpart2
         allies:
             cs_final2
         enemies:
@@ -235,7 +235,7 @@ label rpg_error:
 label rpg_archival:
     rpg:
         bg "images/bg/archival/csmart.png"
-        music audio.broken_sky
+        music broken_sky
         allies:
             cs_archival
         enemies:
@@ -250,7 +250,7 @@ label rpg_archival:
 label rpg_bronsonbattle:
     rpg:
         bg "images/bg/csb3_ch2_east/bronsoncrash.png"
-        music audio.error
+        music error
         allies:
             cs_weak
             arceus
@@ -277,7 +277,7 @@ label rpg_tate_ex:
 
     rpg:
         bg "amtrak_reality_break"
-        music audio.space
+        music space
         allies:
             $cs_chosen_form
         enemies:
@@ -291,7 +291,7 @@ label rpg_tate_ex:
 label rpg_diabetes_1:
     rpg:
         bg "images/bg/csb3_ch2_east/bronsoncrash.png"
-        music audio.error
+        music error
         allies:
             cs_strong
             digi
@@ -306,7 +306,7 @@ label rpg_diabetes_1:
 label rpg_diabetes_2:
     rpg:
         bg "images/bg/csb3_ch2_east/bronsoncrash.png"
-        music audio.error
+        music error
         allies:
             cs_strong
             digi
@@ -321,7 +321,7 @@ label rpg_diabetes_2:
 label rpg_diabetes_3:
     rpg:
         bg "images/bg/csb3_ch2_east/bronsoncrash.png"
-        music audio.error
+        music error
         allies:
             cs_strong
             digi

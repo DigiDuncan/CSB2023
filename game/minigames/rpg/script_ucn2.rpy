@@ -790,7 +790,7 @@ label _ucn2_battle():
         RPG.set_var_character("e4", ucn2_local_parties[7].assigned_name if ucn2_local_parties[7] else None)
 
         RPG.ucn_bg = ucn2_img
-        RPG.ucn_music = find_store_by_id(ucn2_bgm)
+        RPG.ucn_music = ucn2_bgm
         RPG.ucn_scale = ucn2_scale
 
         #ui.close()
