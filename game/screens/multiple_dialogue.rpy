@@ -59,7 +59,7 @@ screen digimultiple(blocks):
                         check_name = blocks[i][0].name
                     last_name_width += get_size(Text(substitutions(check_name), style = "namebox_label", font = gui_theme_map["name_font"]))[0] + int(gui_theme_map["dialogue_namebox_xspacing"])
 
-            if what != "None":
+            if name != "None":
                 window:
                     id "namebox"
                     style "namebox"
