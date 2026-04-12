@@ -46,7 +46,7 @@ define audio.happy_roaming = "happy_roaming.ogg"
 
 #CSBIII True Music
 define audio.mm_select = "mm_select.ogg"
-define audio.billy_radio = "billy_radio.ogg"
+define audio.billy_radio = "billy_mays_gangsta_remix.ogg"
 define audio.weird_personalities = "weird_personalities.ogg"
 define audio.home_depot = "home_depot.ogg"
 define audio.candle_world = "candle_world.ogg"

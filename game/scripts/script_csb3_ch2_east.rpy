@@ -122,6 +122,7 @@ label true_billy_driver:
 label true_in_billy_car:
     scene carback1
     show billy car
+    $ renpy.music.set_audio_filter("music", [telephone_af, reverb_bathroom_af, walkie_talkie_af])
     play music billy_radio volume 0.3 if_changed
     music billy_radio
     if fun_value(FUN_VALUE_MUSIC):
@@ -139,6 +140,7 @@ label true_in_billy_car:
     arceus "Fair point."
     stop music fadeout 3.0
     music end
+    $ renpy.music.set_audio_filter("music", None)
     jump true_montana
 
 label true_montana:
