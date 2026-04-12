@@ -347,7 +347,7 @@ label _digi_test:
             "You keep saying layers...?":
                 nvl clear
                 you_n "You keep saying \"layers\", what do you mean by that?"
-                digi_n "Layers, like like layers of fiction."
+                digi_n "Layers, like layers of fiction."
                 digi_n """You, the person reading this, are in Layer 0. You are in the \"real world.\"
                 
                 Now, I hate to break it to ya, but I'm not. I'm in Layer 1, which to you, is fiction.

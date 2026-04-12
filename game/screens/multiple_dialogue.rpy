@@ -41,19 +41,21 @@ screen digimultiple(blocks):
 
         for idx, block in enumerate(blocks):
             python:
-                char = block[0]
-                what = substitutions(block[1])
-                if isinstance(char, str):
-                    name = substitutions(char)
-                else:
-                    name = substitutions(char.name)
+                if what and what != "None":
+                    char = block[0]
+                    what = substitutions(block[1])
+                    if isinstance(char, str):
+                        name = substitutions(char)
+                    else:
+                        name = substitutions(char.name)
 
             python:
                 last_name_width = 0
-                separator_y = 0
                 for i in range(0, idx):
                     if isinstance(blocks[i][0], str):
                         check_name = blocks[i][0]
+                        if check_name == "None":
+                            continue
                     else:
                         check_name = blocks[i][0].name
                     last_name_width += get_size(Text(substitutions(check_name), style = "namebox_label", font = gui_theme_map["name_font"]))[0] + int(gui_theme_map["dialogue_namebox_xspacing"])
