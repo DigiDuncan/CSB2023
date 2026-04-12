@@ -571,3 +571,7 @@ screen minigame_blackjack(cpu_1 = None, cpu_2 = None, ai_1 = BlackjackAIs.NOVICE
                 game_state = "end"
                 player_won = False
                 renpy.restart_interaction()            
+
+
+label play_blackjack_game:
+    call screen minigame_blackjack()
