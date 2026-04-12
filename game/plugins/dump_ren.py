@@ -18,7 +18,10 @@ def dump_stores():
     path = Path(config.basedir) / "dump.txt"
 
     BLACKLIST = ["chart_enemy", "chart_player", "line_list", "enemy_json_data", "player_json_data",
-                 "enemy_chart_data", "player_chart_data", "bgm_list", "bg_list"]
+                 "enemy_chart_data", "player_chart_data", "bgm_list", "bg_list", "gui_theme_map", "j",
+                 "ucn_bg_list", "ucn_remove"]
+    STARTSWITH_BLACKLIST = ["_", "brunoais"]
+    ENDSWITH_BLACKLIST = ["_af"]
 
     output_string = ""
 
@@ -27,14 +30,19 @@ def dump_stores():
 
         k = str(k)
 
-        if k.startswith("_"):
-            return
-
         if re.match(r"^[A-Z_]+$", k):
             return
         
         if k in BLACKLIST:
             return
+        
+        for s in STARTSWITH_BLACKLIST:
+            if k.startswith(s):
+                return
+            
+        for e in ENDSWITH_BLACKLIST:
+            if k.endswith(e):
+                return
         
         if v is None:
             if isinstance(k, dict):
@@ -73,12 +81,14 @@ def dump_stores():
         else:
             if isinstance(v, str):
                 write_v = f"\"{v}\""
+            if "Character" in str(type(v)):
+                write_v = f"<Character {v}>"
             else:
                 write_v = str(v)
 
             if write_v.startswith("<class") or write_v.startswith("<renpy") or write_v.startswith("<store") or \
                 write_v.startswith("typing.") or write_v.startswith("<partial") or write_v.startswith("<module") \
-                    or write_v.startswith("<enum"):
+                    or write_v.startswith("<enum") or write_v.startswith("<bound") or write_v.startswith("<built-in"):
                 # If we don't have a good representation for it, it's probably garbage.
                 return
 
@@ -93,10 +103,23 @@ def dump_stores():
 
     _write("=== STORE ===")
     for k in dir(store):
-        _write_kv(k, store = store)
+        v = getattr(store, k)
+        if "Character" not in str(type(v)):
+            _write_kv(k, store = store)
+    _write("\n=== CHARACTERS ===")
+    for k in dir(store):
+        v = getattr(store, k)
+        if "Character" in str(type(v)):
+            _write_kv(k, store = store)
     _write("\n=== AUDIO ===")
+    _write("== MUSIC ==")
     for k in dir(audio):
-        _write_kv(k, store = audio)
+        if "sfx_" not in k:
+            _write_kv(k, store = audio)
+    _write("\n== SFX ==")
+    for k in dir(audio):
+        if "sfx_" in k:
+            _write_kv(k, store = audio)
     _write("\n=== IMAGES ===")
     for k in images:
         img = renpy.get_registered_image(k)
