@@ -19,7 +19,8 @@ init python:
     def weed_legality():
         return hashlib.sha256(bytes(f"{datetime.date.today()}", encoding = "utf-8")).digest()[:-1] == 1
 
-screen isweedlegal:
+screen isweedlegal():
+    modal True
     $ response = "Yes." if weed_legality() else "No."
     $ today = datetime.date.today().strftime("%B %d, %Y")
 
@@ -56,9 +57,13 @@ screen isweedlegal:
         add "gui/star_hr.png":
             align (0.5, 0.95)
 
-        textbutton "Back":
-            align (0.0, 1.0)
-            action ShowMenu("category_welcome")
+        textbutton _("Return"):
+            xpos 15 ypos 1000
+            action [
+                Hide("isweedlegal"),
+                Return(),
+                With(dissolve)
+            ]
 
 label _digi_test:
     $ chatted_with_digi = 0
@@ -95,7 +100,7 @@ label _digi_test:
                 digi "Alright, seeya!"
                 $ renpy.full_restart()
             "Is weed legal today?":
-                jump is_weed_legal
+                jump .is_weed_legal
 
     label .chat:
         $ chatted_with_digi += 1
@@ -431,8 +436,9 @@ label _digi_test:
         show digi at center with move
         jump .menu
 
-label is_weed_legal:
-    window hide
-    show screen isweedlegal
-    pause
-    return
+    label .is_weed_legal:
+        window hide
+        call screen isweedlegal()
+        digi "Hope you like the result."
+        
+        jump .menu

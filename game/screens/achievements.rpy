@@ -98,7 +98,7 @@ screen achievements():
 
                                             hbox:
                                                 first_spacing 25
-                                                image a.icon:
+                                                image AlphaMask(a.icon, "gui/achievements/mask.png"):
                                                     xysize(100,100)
                                                 vbox:
                                                     text a.name
@@ -123,7 +123,7 @@ screen achievements():
 
                                             hbox:
                                                 first_spacing 25
-                                                image a.icon:
+                                                image AlphaMask(a.icon, "gui/achievements/mask.png"):
                                                     xysize(100,100)
                                                 vbox:
                                                     text a.name
