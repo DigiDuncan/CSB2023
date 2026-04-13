@@ -189,7 +189,6 @@ screen minigame_blackjack(cpu_1 = None, cpu_2 = None, ai_1 = BlackjackAIs.NOVICE
 
     default deck = master_deck
     default card_spritesheet = "minigames/blackjack/cards.png" # You'll want to make sure the cards in this sheet are in the same order as the deck data above.
-    default card_back = "minigames/blackjack/card_back.png"
     default card_size = (73, 98) # Size of one card
     default game_state = "setup"
     default game_result = ""
@@ -320,7 +319,7 @@ screen minigame_blackjack(cpu_1 = None, cpu_2 = None, ai_1 = BlackjackAIs.NOVICE
                             xalign 0.5 yalign 0
                             if len(deck) > 0:
                                 for ndx, card in enumerate(deck):
-                                    add card_back:
+                                    add get_themed_attribute("card_back"):
                                         at transform:
                                             perspective True
                                             matrixtransform RotateMatrix(-1.5, 0, -10)
@@ -384,7 +383,7 @@ screen minigame_blackjack(cpu_1 = None, cpu_2 = None, ai_1 = BlackjackAIs.NOVICE
 
                         if game_state == "draw":
                             if ndx == 1:
-                                add card_back
+                                add get_themed_attribute("card_back")
                             else:
                                 add dealer_hand[ndx]["image"]
                         else:
@@ -415,7 +414,7 @@ screen minigame_blackjack(cpu_1 = None, cpu_2 = None, ai_1 = BlackjackAIs.NOVICE
                     # Dealer's hand
                     for ndx, card in enumerate(cpu_1_hand):
                         if game_state == "draw":
-                            add card_back
+                            add get_themed_attribute("card_back")
                         else:
                             add cpu_1_hand[ndx]["image"]
 
@@ -444,7 +443,7 @@ screen minigame_blackjack(cpu_1 = None, cpu_2 = None, ai_1 = BlackjackAIs.NOVICE
                     # Dealer's hand
                     for ndx, card in enumerate(cpu_2_hand):
                         if game_state == "draw":
-                            add card_back
+                            add get_themed_attribute("card_back")
                         else:
                             add cpu_2_hand[ndx]["image"]
 
