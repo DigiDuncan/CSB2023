@@ -85,14 +85,16 @@ screen subgame():
                     )
                 )
 
+    $ persistent.shelf_items_acquired = 0
     for book in bookshelf:
-        # Handle achievement
         python:
+            spine_size = get_size(book.spine)
+
+            # Handle achievement
             persistent.shelf_items_acquired += 1
             if persistent.shelf_items_acquired == shelf_item_count:
                 achievement_manager.unlock("books")
 
-        $ spine_size = get_size(book.spine)
         frame:
             background None
             xoffset -6 yoffset -6
