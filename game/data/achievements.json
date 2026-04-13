@@ -613,7 +613,9 @@
         "unlocked": "Visit every attraction in San Francisco!",
         "img": "beach_bum",
         "type": "extra",
-        "dx": true
+        "dx": true,
+        "steps": 20,
+        "tracker": "beach_routes_seen"
     },
     "broke":{
         "name": "You Broke It!",

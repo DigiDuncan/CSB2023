@@ -136,7 +136,7 @@ screen achievements():
                                                         if a.steps != 1 and a.progress != 1:
                                                             python:
                                                                 progtext = f"{a.current_steps}/{a.steps} ({a.progress*100:.02f}%)"
-                                                            bar value a.progress*1000 range 1000 xsize 560 ysize 17
+                                                            bar value a.progress*1000 range 1000 xsize 500 ysize 17
                                                             frame:
                                                                 background None
                                                                 yanchor 1.1
