@@ -31,7 +31,7 @@ init -1 python:
     pun_count = 999
     fun_count = 999
     original_ending_count = 27
-
+    
     ##### ONLY OPEN JSON FILES ONCE #####
 
     # Bios
@@ -197,6 +197,7 @@ define determination = Dissolve(0.0)
 default translate_this_line = ""
 default persistent.seen = set()
 default persistent.heard = set()
+default persistent.dxcoms_heard = set()
 default persistent.collected = set()
 default persistent.seen_music_puns = set()
 default persistent.read = set()

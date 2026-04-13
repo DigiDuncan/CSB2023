@@ -710,6 +710,16 @@
         "steps": "shelf_item_count",
         "tracker": "shelf_items_acquired"
     },
+    "junior_dev":{
+        "name": "Junior Dev",
+        "locked": "That's a lot of yapping.",
+        "unlocked": "Listen to all the developer commentary.",
+        "img": "music_pun_fun",
+        "type": "extra",
+        "dx": true,
+        "steps": "total_dxcoms",
+        "tracker": "dxcoms_heard"
+    },
     "timeline":{
         "name": "Planeswalker's Apprentice",
         "locked": "Allow the arrows to lead you by the lines...",
