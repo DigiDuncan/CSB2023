@@ -6,7 +6,7 @@ define unknown = Character("???", callback = char_callback)
 ########## CS' Various Character Definitions
 define cs = Character("cs188", callback = renpy.partial(char_callback, name = "cs", beep = "cs"))
 define cs_fakegod = Character("cs188 (pretending to be CSGod)", callback = renpy.partial(char_callback, name = "cs", beep = "csgod"))
-define csgod = Character("CSGod", callback = renpy.partial(char_callback, name = "csgod", beep = "csgod"), what_color="#CB50FF")
+define csgod = Character("CSGod", callback = renpy.partial(char_callback, name = "csgod", beep = "csgod"), what_color="#CB50FF", who_color="#CB50FF")
 define ycs = Character("Young CS", callback = renpy.partial(char_callback, beep = "ycs"))
 
 ########## CSBI Character Definitions (Including HoH SiS)

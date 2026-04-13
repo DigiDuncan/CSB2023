@@ -1,5 +1,3 @@
-# TODO: csgod needs a colored name
-
 label csbii_start:
     $ persistent.csb2_unlocked = True
     play music time_for_a_smackdown volume 0.2 if_changed

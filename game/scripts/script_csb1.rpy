@@ -1,8 +1,8 @@
 # TODO: add beeps to sticky note?
-# TODO: add outlines to all generated text effects
 # TODO: swap static laptop image out for a video
 # TODO: when cs leaves walmart parking lot and michael's house get a background for that
 # TODO: michael facepalm sprite
+# TODO: WE NEED THAT STREET VIEW IMAGE PLEASE
 
 label csbi_start:
     $ quick_menu = False
@@ -157,7 +157,6 @@ label csbi_craptop:
     with MoveTransition(0.25)
     play sound sfx_doorslam
     scene cs_car_inside
-    # TODO: baker needs the street view img to finish recoloring the car. cs does not drive a red car
     show cs disappointed at left
     with dissolve
     play music canyon_car volume 0.2 if_changed
