@@ -12,6 +12,54 @@ define n_n = Character(None, kind=nvl, what_color="#BBBBBB", what_italic = True,
 define digi_n = Character('Digi', kind=nvl, what_color="#009dff", callback = renpy.partial(char_callback, name = "digi", beep = "digi"))
 define you_n = Character('You', kind=nvl, callback = char_callback)
 
+init python:
+    import datetime
+    import hashlib
+
+    def weed_legality():
+        return hashlib.sha256(bytes(f"{datetime.date.today()}", encoding = "utf-8")).digest()[:-1] == 1
+
+screen isweedlegal:
+    $ response = "Yes." if weed_legality() else "No."
+    $ today = datetime.date.today().strftime("%B %d, %Y")
+
+    frame:
+        background "#0C132C"
+        xfill True
+        yfill True
+        vbox:
+            align (0.5, 0.0)
+            text "THE WHITE HOUSE":
+                font "fonts/InstrumentSerif-Regular.ttf"
+                size 64
+                text_align 0.5
+                align (0.5, 0.0)
+            text "WASHINGTON, D.C.":
+                font "fonts/InstrumentSerif-Regular.ttf"
+                size 32
+                text_align 0.5
+                align (0.5, 0.0)
+            add "gui/star_hr.png"
+        vbox:
+            align (0.5, 0.5)
+            text response:
+                font "fonts/InstrumentSerif-Regular.ttf"
+                size 256
+                text_align 0.5
+                align (0.5, 0.5)
+            text "for the day of [today]":
+                font "fonts/InstrumentSerif-Italic.ttf"
+                size 64
+                text_align 0.5
+                align (0.5, 0.5)
+
+        add "gui/star_hr.png":
+            align (0.5, 0.95)
+
+        textbutton "Back":
+            align (0.0, 1.0)
+            action ShowMenu("category_welcome")
+
 label _digi_test:
     $ chatted_with_digi = 0
     $ entered_tests = False
@@ -46,6 +94,8 @@ label _digi_test:
                 show digi happy
                 digi "Alright, seeya!"
                 $ renpy.full_restart()
+            "Is weed legal today?":
+                jump is_weed_legal
 
     label .chat:
         $ chatted_with_digi += 1
@@ -380,3 +430,9 @@ label _digi_test:
         digi_n "{size=-12}I hope NVL mode worked well..."
         show digi at center with move
         jump .menu
+
+label is_weed_legal:
+    window hide
+    show screen isweedlegal
+    pause
+    return

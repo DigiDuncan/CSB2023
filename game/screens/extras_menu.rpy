@@ -55,6 +55,8 @@ screen category_nav():
 
             textbutton _("{image=gui/inline_text/dx.png} Woohoo Counter\n{size=-12}How many can you find?") action Jump("woohoo_counter")
 
+            textbutton _("{image=gui/inline_text/dx.png} Is Weed Legal Today?\n{size=-12}You have to check every day.") action ShowMenu("isweedlegal")
+
             if preferences.developer_mode or persistent.creative_mode:
                 text _("If you're looking for the dev options, they're in CSettings now.")
 
