@@ -7,6 +7,7 @@ init python:
 screen pencilgame(
     time_limit = 60,
     score_to_beat = 250,
+    pencils_to_sharpen = 15,
     bgm = audio.rude_buster,
     bgm_id = "rude_buster",
     bg_img = "minigames/pencil/stage.png",
@@ -20,7 +21,7 @@ screen pencilgame(
 ):
     modal True
 
-    default time_limit = 60
+    default time_limit = time_limit
     default timer = Timer(time_limit+4.5)
     default time_left = time_limit
 
@@ -36,7 +37,7 @@ screen pencilgame(
     default sharpen_amount_cm = 0.5
     default sharpen_amount_pixels = int((initial_pencil_size - eraser_size) / 40)
 
-    default pencils_to_sharpen = 15
+    default pencils_to_sharpen = pencils_to_sharpen
     default pencils_sharpened = 0
     default current_pencil_size = initial_pencil_size
     default pencils_remaining = (pencils_to_sharpen - pencils_sharpened)
@@ -375,6 +376,7 @@ label minigame_pencil2:
     call screen pencilgame(
         time_limit = 240,
         score_to_beat = 1000,
+        pencils_to_sharpen = 60,
         bgm = audio.get_the_funk,
         bgm_id = "get_the_funk",
         bg_img = "minigames/pencil/pencilboss.png",
