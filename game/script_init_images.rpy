@@ -1560,12 +1560,12 @@ image black = Solid(("#000000"))
 image green_screen = Solid(("#00FF00"))
 
 ## Generated images for CSBI
-image spent_11_88 = Text( _("{size=50}{color=#369100}-$11.88"), text_align=0.5)
-image spent_bits = Text( _("{image=bits.png} {size=50}{color=#BD62FF}-200,000"), text_align=0.5)
+image spent_11_88 = generate_rpg_text(_("-$11.88"), text_color="#369100")
+image spent_bits = generate_rpg_text(_("{image=bits.png} -200,000"), text_color="#BD62FF", outline_color="#FFF")
 # this bit is so stupid - tate
-image speedrun_genergy_cost = Text( _("{size=50}{color=#369100}$2.50"), text_align=0.5)
-image speedrun_pringles_cost = Text( _("{size=50}{color=#369100}$5.83"), text_align=0.5)
-image speedrun_tax_cost = Text( _("{size=50}{color=#FFFF00}Taxed! 8.875%"), text_align=0.5)
+image speedrun_genergy_cost = generate_rpg_text(_("$2.50"), text_color="#369100")
+image speedrun_pringles_cost = generate_rpg_text(_("$5.83"), text_color="#369100")
+image speedrun_tax_cost = generate_rpg_text(_("Taxed! 8.875%"), text_color="#FFFF00")
 
 ## CSBII
 image helipad = "bg/csb2/helipad.png"
@@ -1983,7 +1983,7 @@ image right_table = "bg/ce/table/right_table.png"
 image night_bg = "bg/ce/table/night_bg.png"
 
 # CS Holiday Special Generated Images
-image spent_target = Text( _("{size=50}{color=#369100}-$81.88"), text_align=0.5)
+image spent_target = generate_rpg_text(_("-$81.88"), text_color="#369100")
 
 image reversi_rules:
     xanchor 0.5 yanchor 0.5
@@ -2222,11 +2222,11 @@ image tate_fallen_5 = "characters/tate/secret/tate_fallen_5.png"
 image yeetable_textbox = get_themed_attribute("textbox")
 
 # Train Route misc generated images
-image fake_rpg_miss = Text( _("{size=50}{color=#FFAAAA}Miss!"), text_align=0.5)
-image oof_45 = Text( _("{size=50}{color=#FFEE00}4'5\""), text_align=0.5)
-image oof_54 = Text( _("{size=50}{color=#CE256E}5'4\""), text_align=0.5)
-image oof_52 = Text( _("{size=50}{color=#233260}5'2\""), text_align=0.5)
-image spent_19_95 = Text( _("{size=50}{color=#369100}-$19.95"), text_align=0.5)
+image fake_rpg_miss = generate_rpg_text(_("Miss!"), text_color="#FFAAAA", outline_color="#000")
+image oof_45 = generate_rpg_text(_("4'5\""), text_color="#FFEE00", outline_color="#000")
+image oof_54 = generate_rpg_text(_("5'4\""), text_color="#CE256E")
+image oof_52 = generate_rpg_text(_("5'2\""), text_color="#233260", outline_color="#FFF")
+image spent_19_95 = generate_rpg_text(_("-$19.95"), text_color="#369100")
 
 # TODO: this still sucks, but it's not NEARLY as bad as it was
 image petals_falling = Fixed(
