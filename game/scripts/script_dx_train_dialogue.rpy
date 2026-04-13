@@ -354,6 +354,32 @@ label train_dialogue:
     pause 3.0
     ###########################################################
 
+    cs "Hey, Arc?"
+    arceus "Hm?"
+    cs "Which do you think would be weirder? A dick with no balls, or balls but no dick?"
+    show arceus angry
+    arceus "..."
+    show cs disappointed
+    arceus "What is it with you and balls today?"
+    cs "About the same as every day."
+    show cs
+    cs "What can I say? {nw}"
+    show cs happy
+    extend "I've got poop for brains."
+    arceus "That, you do..."
+    pause 1.0
+    "..."
+    pause 1.0
+    arceus "{size=-12}I guess balls but no dick is pretty weird..."
+    
+    pause 2.0
+    show arceus
+    show cs
+    with dissolve
+
+    pause 3.0
+    ###########################################################
+
     n "CS and Arceus take it easy for the rest of the ride..."
 
     $ achievement_manager.unlock("train_dialogue")

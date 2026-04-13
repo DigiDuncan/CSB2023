@@ -801,7 +801,7 @@ label csdata:
     $ persistent.heard.add("synchronicity")
     $ persistent.heard.add("snowdin_town")
     $ persistent.heard.add("rhythm_heaven_superb")
-    $ persistent.heard.add("interference2")
+    $ persistent.heard.add("interference")
     $ persistent.heard.add("sleigh_ride")
     $ persistent.heard.add("ce_passport")
     $ persistent.heard.add("crashing_down")
