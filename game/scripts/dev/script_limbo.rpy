@@ -142,11 +142,10 @@ label back_out_i69:
 
 label back_out_perfect_tate:
     $ persistent.seen.add("tate_ex")
-    $ persistent.seen.add("perfect_tate")
     $ persistent.heard.add("nyan_of_a_lifetime")
+    $ collect("yeetable_textbox")
     $ collect("poo")
     $ collect("dasani")
-    $ achievement_manager.unlock("beat_tate")
     jump train_defeated_perfect_tate
 
 ########## Game Menus ##########
@@ -298,12 +297,14 @@ screen rockstar_check():
 
 ########## CS' Data ##########
 
-# TODO: NOTE TO TATE - DON'T TOUCH THESE VALUES, THESE ARE CS' VALUES
-# TODO: although, whoever is managing these? please update the persistent to use new formatting + include a 100% CE save (less the DX content)
+# TODO: NOTE TO TATE - DON'T TOUCH THESE VALUES UNLESS ADDING MORE, THESE ARE CS' VALUES
 
 label csdata:
     scene black
+    $ persistent._clear(progress=True)
+    n "Clearing current save...{nw}"
     # show screen rockstar_check
+    n "Now Adding CSB3 Data.{nw}"
     $ persistent.seen.add("michael")
     $ persistent.seen.add("luke")
     $ persistent.seen.add("arceus")
@@ -363,7 +364,8 @@ label csdata:
     $ persistent.seen.add("blank")
     $ persistent.seen.add("howie")
     $ persistent.seen.add("ges")
-    n "Added Characters...{nw}"
+    n "Now Adding CSB3 Data.{fast}\nAdded Characters...{nw}"
+
     $ persistent.heard.add("thousand_march")
     $ persistent.heard.add("hohsis_theme")
     $ persistent.heard.add("billy_radio")
@@ -467,7 +469,11 @@ label csdata:
     $ persistent.heard.add("goodbye_summer_hello_winter")
     $ persistent.heard.add("blazing_corridor")
     $ persistent.heard.add("dinerfight")
-    n "Added Songs...{nw}"
+    n "Now Adding CSB3 Data.{fast}\nAdded Music...{nw}"
+
+    # TODO: Get CS' seen labels!
+    n "Now Adding CSB3 Data.{fast}\nAdded Labels...{nw}"
+
     $ persistent.true_ending = True
     $ persistent.creative_mode = False
     $ persistent.seen_splash = False
@@ -475,7 +481,8 @@ label csdata:
     $ persistent.csb2_unlocked = True
     $ persistent.csb3a_unlocked = True
     $ persistent.csb3b_unlocked = True
-    n "Added Misc...{nw}"
+    n "Now Adding CSB3 Data.{fast}\nAdded Unlocks...{nw}"
+
     $ achievement_manager.unlock("no_mercy")
     $ achievement_manager.unlock("car_dialogue")
     $ achievement_manager.unlock("poker")
@@ -508,7 +515,8 @@ label csdata:
     $ achievement_manager.unlock("name_is")
     $ achievement_manager.unlock("fourth_wall")
     $ achievement_manager.unlock("cs_beat_copguy")
-    n "Added Achievements...{nw}"
+    n "Now Adding CSB3 Data.{fast}\nAdded Achievements...{nw}"
+
     $ band_name = "The Dickcheese Enthusiasts"
     $ ep_name = "The Shite Album"
     $ song_name_1 = "Your Mom Farting"
@@ -528,7 +536,198 @@ label csdata:
     $ line_10 = "JANITOR GENITALS (MINUS UNDERWEAR)"
     $ line_11 = "When I see you, I think about bananas"
     $ line_12 = "HOW I'D LIKE TO PUT THEM IN YA ANUS"
-    n "Added Rockstar Lines...{nw}"
+    n "Now Adding CSB3 Data.{fast}\nAdded Rockstar Route lines...{nw}"
+
+    n "Now Adding CE Data.{nw}"
+
+    $ persistent.seen.add("tgt_worker")
+    $ persistent.seen.add("linus")
+    $ persistent.seen.add("ed")
+    $ persistent.seen.add("grace")
+    $ persistent.seen.add("wesley")
+    $ persistent.seen.add("sheriff")
+    $ persistent.seen.add("blank")
+    $ persistent.seen.add("pomni")
+    $ persistent.seen.add("k17")
+    $ persistent.seen.add("mike")
+    $ persistent.seen.add("michael")
+    $ persistent.seen.add("arceus")
+    $ persistent.seen.add("eliza")
+    $ persistent.seen.add("copguy")
+    $ persistent.seen.add("round")
+    $ persistent.seen.add("santa")
+    $ persistent.seen.add("ges")
+    $ persistent.seen.add("obama")
+    $ persistent.seen.add("mean_human")
+    $ persistent.seen.add("nova")
+    $ persistent.seen.add("kitty")
+    $ persistent.seen.add("avgn")
+    $ persistent.seen.add("billy")
+    $ persistent.seen.add("db")
+    $ persistent.seen.add("aria")
+    $ persistent.seen.add("luke")
+    $ persistent.seen.add("digi")
+    $ persistent.seen.add("anno")
+    $ persistent.seen.add("k22")
+    $ persistent.seen.add("rich")
+    $ persistent.seen.add("tate")
+    $ persistent.seen.add("anne")
+    $ persistent.seen.add("cs")
+    $ persistent.seen.add("addy")
+    $ persistent.seen.add("iris")
+    $ persistent.seen.add("carguy")
+    n "Now Adding CE Data.{fast}\nAdded Characters...{nw}"
+
+    $ persistent.heard.add("snow_blind")
+    $ persistent.heard.add("star_spangled_banner")
+    $ persistent.heard.add("superstar_road")
+    $ persistent.heard.add("snowman")
+    $ persistent.heard.add("dont_preheat_your_oven")
+    $ persistent.heard.add("christmas_tea")
+    $ persistent.heard.add("hotel_disbelief")
+    $ persistent.heard.add("summer_fun")
+    $ persistent.heard.add("on_the_rocks")
+    $ persistent.heard.add("what_the_night_will_bring")
+    $ persistent.heard.add("lets_hear_winter")
+    $ persistent.heard.add("winter_unclearance_sale")
+    $ persistent.heard.add("polar_express")
+    $ persistent.heard.add("christmas_spirit")
+    $ persistent.heard.add("teeth_dust")
+    $ persistent.heard.add("frollo_rave")
+    $ persistent.heard.add("girl_next_door")
+    $ persistent.heard.add("winters_halloween")
+    $ persistent.heard.add("rhythm_heaven_try_again")
+    $ persistent.heard.add("rhythm_heaven_ok")
+    $ persistent.heard.add("rice_and_wine")
+    $ persistent.heard.add("snowy")
+    $ persistent.heard.add("title_theme_reprise")
+    $ persistent.heard.add("synchronicity")
+    $ persistent.heard.add("snowdin_town")
+    $ persistent.heard.add("rhythm_heaven_superb")
+    $ persistent.heard.add("interference2")
+    $ persistent.heard.add("sleigh_ride")
+    $ persistent.heard.add("ce_passport")
+    $ persistent.heard.add("crashing_down")
+    n "Now Adding CE Data.{fast}\nAdded Music...{nw}"
+    
+    # TODO: Get CS' seen labels!
+    n "Now Adding CE Data.{fast}\nAdded Labels...{nw}"
+
+    $ persistent.saved_christmas = True
+    n "Now Adding CE Data.{fast}\nAdded Unlocks...{nw}"
+    
+    $ achievement_manager.unlock("critical")
+    $ achievement_manager.unlock("paradise")
+    $ achievement_manager.unlock("reversi")
+    $ achievement_manager.unlock("power_off")
+    $ achievement_manager.unlock("shitical")
+    $ achievement_manager.unlock("shitdown")
+    $ achievement_manager.unlock("party_start")
+    $ achievement_manager.unlock("grandmaster")
+    $ achievement_manager.unlock("hoh_hoh")
+    $ achievement_manager.unlock("point_click")
+    $ achievement_manager.unlock("timber")
+    $ achievement_manager.unlock("broke")
+    $ achievement_manager.unlock("bouncy")
+    $ achievement_manager.unlock("target_circle")
+    $ achievement_manager.unlock("cheesy_dream")
+    $ achievement_manager.unlock("gb_pound")
+    $ achievement_manager.unlock("fun")
+    n "Now Adding CE Data.{fast}\nAdded Achievements...{nw}"
+
+    $ collect("anno_phone")
+    $ collect("folded_paper")
+    $ collect("fumo")
+    $ collect("peppermint_bark")
+    $ collect("burnt_turkey")
+    $ collect("cs_phone")
+    $ collect("cs_cold_hat")
+    $ collect("mean_train")
+    $ collect("pie")
+    $ collect("cs_car")
+    $ collect("mgs1")
+    $ collect("colt")
+    $ collect("crotch_doctor")
+    $ collect("big_city_sliders")
+    $ collect("cs_id")
+    $ collect("russian_radio")
+    $ collect("riffmaster")
+    $ collect("target_bags")
+    $ collect("pringles")
+    $ collect("oxygen_canister")
+    $ collect("ltt_screwdriver")
+    $ collect("snow_pile")
+    $ collect("blank_car")
+    $ collect("ges_car")
+    $ collect("cheap_shelf")
+    $ collect("roll_and_rocker")
+    $ collect("adderall")
+    $ collect("gamersupps")
+    $ collect("peach_syrup")
+    $ collect("lights_box")
+    $ collect("obama_chopper")
+    $ collect("small_city_slider")
+    $ collect("cement")
+    $ collect("snacks")
+    $ collect("melted_ice_cream")
+    $ collect("mika_car")
+    $ collect("shopping_cart")
+    $ collect("projector")
+    $ collect("sunny_d")
+    $ collect("db_car")
+    $ collect("tree_box")
+    $ collect("decor_boxes")
+    $ collect("apple_pie")
+    $ collect("nog")
+    $ collect("santa_sleigh")
+    $ collect("runaway_bus")
+    $ collect("carrot_cake")
+    $ collect("instant_pot")
+    $ collect("tate_phone")
+    $ collect("d20")
+    $ collect("mashed_potatoes")
+    $ collect("pills")
+    $ collect("rental_car")
+    $ collect("lego_train")
+    $ collect("cop_car")
+    $ collect("spray_cheese")
+    $ collect("tato_bag")
+    $ collect("carrot")
+    $ collect("letter")
+    $ collect("potato_bag")
+    $ collect("tea_and_crumpets")
+    $ collect("gravity_falls")
+    $ collect("festive_bag")
+    $ collect("monitor")
+    $ collect("rosen_car")
+    $ collect("handy_switch")
+    $ collect("hard_drive")
+    $ collect("reversi_box")
+    $ collect("pipe_gun")
+    $ collect("ltt_bottle")
+    $ collect("doi")
+    $ collect("thigh_highs")
+    $ collect("billy_car")
+    $ collect("dog_food")
+    $ collect("cutting_board")
+    $ collect("bread")
+    $ collect("ltt_car")
+    $ collect("shovel")
+    $ collect("flashlight_held")
+    $ collect("joj_ufo")
+    $ collect("rolling_rock")
+    $ collect("butter")
+    $ collect("anno_car")
+    $ collect("raspberry_pi")
+    $ collect("blank_speaker")
+    $ collect("knife")
+    $ collect("cs_wallet")
+    $ collect("genergy")
+    $ collect("old_coins")
+    $ collect("pakoo_car")
+    $ collect("old_shirt")
+    $ collect("digi_nugget")
+    n "Now Adding CE Data.{fast}\nAdded Items...{nw}"
     $ persistent.show_cs_button = False
-    n "Done!"
-    return
+    n "Completed, restarting game...{w=1}{nw}"
+    $ renpy.quit(relaunch = True)

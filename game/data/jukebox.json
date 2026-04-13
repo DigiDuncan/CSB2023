@@ -849,7 +849,7 @@
             "album_art": "lizardking.png",
             "trivia": "Sometimes, you fight for the wrong side."
         },
-        "Lowbudget_song" : {
+        "lowbudget_song" : {
             "file": "lowbudget_song.ogg",
             "title": "Lowbudget Song",
             "artist": "Dr. Awesome",

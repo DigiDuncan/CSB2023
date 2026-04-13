@@ -223,7 +223,7 @@ label book_CSB3_EBEEP12024FDEADNYWFFEAGM:
     eliza "Who would you like to verse?"
 
     label mika_reversi:
-        # TODO: probably fix character positions here but at least it's looping properly
+        # TODO: probably fix character positions here but at least gameplay is looping properly
         scene apartment_3
         show bubble flipped at left:
             zoom 0.6

@@ -687,7 +687,7 @@
         "type": "extra",
         "dx": true,
         "steps": "pun_count",
-        "tracker": "seen_music_pun"
+        "tracker": "seen_music_puns"
     },
     "fin":{
         "name": "Fin?",
