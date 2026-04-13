@@ -35,6 +35,7 @@ init python:
             self.current_key = None
 
             self.bg = Image("minigames/toytrains/bg_do_not_resize.png")
+            self.fg = Image("minigames/toytrains/fg_do_not_resize.png")
             self.train_cs = Image("minigames/toytrains/train_cs.png")
             self.train_arceus = Image("minigames/toytrains/train_arceus.png")
             self.health_hit = Image("minigames/toytrains/health_hit.png")
@@ -83,6 +84,12 @@ init python:
             train_arceus_transform = Transform(train_arceus_displayable, zoom = 0.8)
             train_arceus_renderer = renpy.render(train_arceus_transform, 475, 597, st, at)
             r.blit(train_arceus_renderer, self.jig.pos(4338, 2015))
+
+            # Moving Foreground
+            fg_displayable = renpy.displayable(self.fg)
+            fg_transform = Transform(fg_displayable)
+            fg_renderer = renpy.render(fg_transform, 0, 0, st, at)
+            r.blit(fg_renderer, self.jig.pos(0, 0))
 
             ### Text Elements
 
