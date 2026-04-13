@@ -1242,24 +1242,24 @@ screen click_drag_test():
         action Return()
 
 ####################################################################################################
+init python: 
+    config.per_frame_screens.append("rails_test")
 
 screen rails_test():
     default points_list = [
-        [255,255], 
-        [900,200], 
-        [1800,255],
-        [1300,900],
-        [200,800]
+        [255, 255], 
+        [900, 200], 
+        [1800, 255],
+        [1400, 900],
+        [200, 800]
     ]
 
     default marker = "gui/inline_text/ch1.png"
     default moving_img = Transform("images/poo.png", zoom=0.4)
-    default moving_img_coords = [100,100] # Starting point
-    default is_moving = True
-    default destination = points_list[0]
-    default next_point_index = 1
-    default next_destination = points_list[next_point_index]
-    default speed = 1 # in seconds; lower = faster
+    default current_pos = list(points_list[0]) # Starting point
+    default destination = current_pos
+    default next_dest_index = 0
+    default speed = 5
 
     # Draw the points
     for i, p in enumerate(points_list):
@@ -1267,52 +1267,40 @@ screen rails_test():
             xanchor 0.5 yanchor 0.5
             xpos p[0] ypos p[1]
 
-        text str(i+1)+"\n"+str(p):
+        text "#"+str(i+1)+"\n"+str(p):
             xanchor 0.5 yanchor 0.5
             text_align 0.5
             xpos p[0] ypos p[1]-(gui.text_size+25)
-
-    if is_moving:
-
-        python:
-            # X coordinates
-            if moving_img_coords[0] > destination[0]:
-                moving_img_coords[0] -= 1
-            elif moving_img_coords[0] < destination[0]:
-                moving_img_coords[0] += 1
-            # Y coordinates
-            elif moving_img_coords[1] < destination[1]:
-                moving_img_coords[1] -= 1
-            elif moving_img_coords[1] > destination[1]:     
-                moving_img_coords[1] += 1
-            else:
-                is_moving = False
-    else:
-        python:
-        # Don't overflow
-            if next_point_index+1 > len(points_list):
-                next_point_index = 0
-            else:
-                next_point_index += 1
-
-            next_destination = points_list[next_point_index]
-            is_moving = True
-
+        
     # Draw moving image
     add moving_img:
         xanchor 0.5 yanchor 0.5
-        xpos moving_img_coords[0] ypos moving_img_coords[1] # Starting pos
-
-        at transform:
-            parallel:
-                linear speed xpos moving_img_coords[0] 
-            parallel:
-                linear speed ypos moving_img_coords[1]
-            repeat
+        xpos current_pos[0] ypos current_pos[1]
 
     # Debug
-    text "Current position: "+str(moving_img_coords)+"\n"+"Destination: "+str(destination)
+    text "Current Position "+str(current_pos)+"\nDestination: "+str(destination)
 
     textbutton _("Return"):
         xpos 15 ypos 1000
         action Return()
+
+    python:
+        if current_pos != destination:
+            x_delta = destination[0] - current_pos[0]
+            y_delta = destination[1] - current_pos[1]
+           
+            # Move X
+            if abs(x_delta) <= speed:
+                current_pos[0] = destination[0]
+            else:
+                current_pos[0] += speed if x_delta > 0 else -speed
+
+            # Move Y
+            if abs(y_delta) <= speed:
+                current_pos[1] = destination[1]
+            else:
+                current_pos[1] += speed if y_delta > 0 else -speed            
+        else:
+            next_dest_index = (next_dest_index + 1) % len(points_list)
+            destination = points_list[next_dest_index]
+            renpy.restart_interaction()
