@@ -215,7 +215,3 @@ label minigame_pencil:
             $ renpy.jump(minigame_win)
         else:
             $ renpy.jump(minigame_loss)
-
-label pencilgame_done:
-    show arceus
-    arceus ":3"

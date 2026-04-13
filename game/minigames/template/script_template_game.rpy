@@ -46,7 +46,3 @@ label play_templategame:
     else:
         pass
         # Thing for lose condition
-
-label templategame_done:
-    # Thing to do after the game if we reach here.
-    pass

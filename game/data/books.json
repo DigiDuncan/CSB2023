@@ -308,7 +308,12 @@
         "kind": "label",
         "destinations": {
             "play_ce_reversi": {
-                "need_label": "ce_win_reversi"
+                "need_label": "ce_win_reversi",
+                "custom_button": "CHRISTMAS"
+            },
+            "play_mika_reversi": {
+                "need_label": "dx_eliza_party_after",
+                "custom_button": "BIRTHDAY"
             }
         }
     },

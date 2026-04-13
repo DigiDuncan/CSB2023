@@ -414,7 +414,3 @@ label play_carrotgame:
         window auto True
         $ renpy.end_replay()
         $ renpy.jump(minigame_loss)
-
-label carrotgame_done:
-    # Thing to do after the game if we reach here.
-    pass

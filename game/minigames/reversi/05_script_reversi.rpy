@@ -167,7 +167,3 @@ label play_reversigame:
             n "[reversi_difficulty.name] wins!"
             $ renpy.end_replay()
             $ renpy.jump(minigame_loss)
-
-label reversigame_done:
-    # Thing to do after the game if we reach here.
-    pass

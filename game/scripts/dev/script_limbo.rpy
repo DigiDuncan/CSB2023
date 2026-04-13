@@ -1,5 +1,9 @@
 ########## Minigame Jumps ##########
 
+# Returns back to previous screen
+label _minigame_done:
+    return
+
 label lose_car_game:
     $ ending_manager.mark("bad_driver")
     bad_end "100 percent%%\nunsatisfied." "true_iowa"
@@ -36,35 +40,77 @@ label play_slots_game:
     return
 
 label play_ce_carrot:
-    minigame "play_carrotgame" "play_ce_done" "play_ce_done"
+    minigame "play_carrotgame" "_minigame_done" "_minigame_done"
     return
+
 
 label play_ce_reversi:
     menu:
         "Who would you like to play against?"
         "Tate (Beginner)":
             $ reversi_difficulty = ReversiAI.TATE
-            minigame "play_reversigame" "play_ce_done" "play_ce_done"
+            minigame "play_reversigame" "_minigame_done" "_minigame_done"
             return
         "Digi (Easy)":
             $ reversi_difficulty = ReversiAI.DIGI
-            minigame "play_reversigame" "play_ce_done" "play_ce_done"
+            minigame "play_reversigame" "_minigame_done" "_minigame_done"
             return
         "K-22 (Medium)":
             $ reversi_difficulty = ReversiAI.PAKOO
-            minigame "play_reversigame" "play_ce_done" "play_ce_done"
+            minigame "play_reversigame" "_minigame_done" "_minigame_done"
             return
         "Arceus (Hard)":
             $ reversi_difficulty = ReversiAI.ARCEUS
-            minigame "play_reversigame" "play_ce_done" "play_ce_done"
+            minigame "play_reversigame" "_minigame_done" "_minigame_done"
             return
         "Aria (Expert)":
             $ reversi_difficulty = ReversiAI.ARIA
-            minigame "play_reversigame" "play_ce_done" "play_ce_done"
+            minigame "play_reversigame" "_minigame_done" "_minigame_done"
             return
 
-label play_ce_done:
-    return
+label play_mika_reversi:
+    menu:
+        "Who would you like to play against?"
+        "Billy":
+            $ reversi_difficulty = ReversiAI.BILLY
+            minigame "play_reversigame" "_minigame_done" "_minigame_done"
+            return
+        "Elizabeth":
+            $ reversi_difficulty = ReversiAI.ELIZABETH
+            minigame "play_reversigame" "_minigame_done" "_minigame_done"
+            return
+        "Terry":
+            $ reversi_difficulty = ReversiAI.TERRY
+            minigame "play_reversigame" "_minigame_done" "_minigame_done"
+            return
+        "Scott":
+            $ reversi_difficulty = ReversiAI.SCOTT
+            minigame "play_reversigame" "_minigame_done" "_minigame_done"
+            return
+        "Rex":
+            $ reversi_difficulty = ReversiAI.REX
+            minigame "play_reversigame" "_minigame_done" "_minigame_done"
+            return
+        "Pomni":
+            $ reversi_difficulty = ReversiAI.POMNI
+            minigame "play_reversigame" "_minigame_done" "_minigame_done"
+            return
+        "Luke":
+            $ reversi_difficulty = ReversiAI.LUKE
+            minigame "play_reversigame" "_minigame_done" "_minigame_done"
+            return
+        "Ges":
+            $ reversi_difficulty = ReversiAI.GES
+            minigame "play_reversigame" "_minigame_done" "_minigame_done"
+            return
+        "Bubble":
+            $ reversi_difficulty = ReversiAI.BUBBLE
+            minigame "play_reversigame" "_minigame_done" "_minigame_done"
+            return
+        "Anne":
+            $ reversi_difficulty = ReversiAI.ANNE
+            minigame "play_reversigame" "_minigame_done" "_minigame_done"
+            return
 
 ########## Warning Screens ##########
 

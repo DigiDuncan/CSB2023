@@ -221,9 +221,64 @@ label book_CSB3_EBEEP12024FDEADNYWFFEAGM:
     eliza "Who would like to play?"
     digi "Sure, I'll play a round."
     eliza "Who would you like to verse?"
-    jump play_mika_reversi
 
-    # Presents
+    label mika_reversi:
+        # TODO: probably fix character positions here but at least it's looping properly
+        scene apartment_3
+        show bubble flipped at left:
+            zoom 0.6
+        show ges flipped at mid_left
+        show pomni at center
+        show scott at right
+        show terry at mid_right
+        show rex at mid_right_right
+        show digi flipped at left
+
+        menu:
+            "Who would you like to play against?"
+            "Billy":
+                $ reversi_difficulty = ReversiAI.BILLY
+                minigame "play_reversigame" "mika_reversi_menu" "mika_reversi_menu"
+            "Elizabeth":
+                $ reversi_difficulty = ReversiAI.ELIZABETH
+                minigame "play_reversigame" "mika_reversi_menu" "mika_reversi_menu"
+            "Terry":
+                $ reversi_difficulty = ReversiAI.TERRY
+                minigame "play_reversigame" "mika_reversi_menu" "mika_reversi_menu"
+            "Scott":
+                $ reversi_difficulty = ReversiAI.SCOTT
+                minigame "play_reversigame" "mika_reversi_menu" "mika_reversi_menu"
+            "Rex":
+                $ reversi_difficulty = ReversiAI.REX
+                minigame "play_reversigame" "mika_reversi_menu" "mika_reversi_menu"
+            "Pomni":
+                $ reversi_difficulty = ReversiAI.POMNI
+                minigame "play_reversigame" "mika_reversi_menu" "mika_reversi_menu"
+            "Luke":
+                $ reversi_difficulty = ReversiAI.LUKE
+                minigame "play_reversigame" "mika_reversi_menu" "mika_reversi_menu"
+            "Ges":
+                $ reversi_difficulty = ReversiAI.GES
+                minigame "play_reversigame" "mika_reversi_menu" "mika_reversi_menu"
+            "Bubble":
+                $ reversi_difficulty = ReversiAI.BUBBLE
+                minigame "play_reversigame" "mika_reversi_menu" "mika_reversi_menu" 
+            "Anne":
+                $ reversi_difficulty = ReversiAI.ANNE
+                minigame "play_reversigame" "mika_reversi_menu" "mika_reversi_menu"
+            "I'm done playing!" if playing_reversi_again:
+                jump dx_eliza_party_after
+
+label mika_reversi_menu:
+    menu:
+        "Play Reversi again?"
+        "Yes!":
+            $ playing_reversi_again = True
+            jump mika_reversi
+        "No!":
+            jump dx_eliza_party_after
+
+# Presents
 label dx_eliza_party_after:
     stop music fadeout 3.0
     music end
@@ -349,47 +404,3 @@ label dx_eliza_party_after:
     k17 "Awesome!"
     scene black with Dissolve(5.0)
     return
-
-label play_mika_reversi:
-    menu:
-        "Who would you like to play against?"
-        "Billy":
-            $ reversi_difficulty = ReversiAI.BILLY
-            minigame "play_reversigame" "dx_eliza_party_after" "dx_eliza_party_after"
-            return
-        "Elizabeth":
-            $ reversi_difficulty = ReversiAI.ELIZABETH
-            minigame "play_reversigame" "dx_eliza_party_after" "dx_eliza_party_after"
-            return
-        "Terry":
-            $ reversi_difficulty = ReversiAI.TERRY
-            minigame "play_reversigame" "dx_eliza_party_after" "dx_eliza_party_after"
-            return
-        "Scott":
-            $ reversi_difficulty = ReversiAI.SCOTT
-            minigame "play_reversigame" "dx_eliza_party_after" "dx_eliza_party_after"
-            return
-        "Rex":
-            $ reversi_difficulty = ReversiAI.REX
-            minigame "play_reversigame" "dx_eliza_party_after" "dx_eliza_party_after"
-            return
-        "Pomni":
-            $ reversi_difficulty = ReversiAI.POMNI
-            minigame "play_reversigame" "dx_eliza_party_after" "dx_eliza_party_after"
-            return
-        "Luke":
-            $ reversi_difficulty = ReversiAI.LUKE
-            minigame "play_reversigame" "dx_eliza_party_after" "dx_eliza_party_after"
-            return
-        "Ges":
-            $ reversi_difficulty = ReversiAI.GES
-            minigame "play_reversigame" "dx_eliza_party_after" "dx_eliza_party_after"
-            return
-        "Bubble":
-            $ reversi_difficulty = ReversiAI.BUBBLE
-            minigame "play_reversigame" "dx_eliza_party_after" "dx_eliza_party_after"
-            return
-        "Anne":
-            $ reversi_difficulty = ReversiAI.ANNE
-            minigame "play_reversigame" "dx_eliza_party_after" "dx_eliza_party_after"
-            return

@@ -60,7 +60,3 @@ label play_rhythmchase_game:
     else:
         stop music fadeout 2.0
         $ renpy.jump(minigame_loss)
-
-label rhythmchasegame_done:
-    # Thing to do after the game if we reach here.
-    pass

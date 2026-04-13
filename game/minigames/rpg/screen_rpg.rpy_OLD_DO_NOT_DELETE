@@ -630,6 +630,3 @@ label pass_rpg:
     else:
         $ renpy.jump(RPG.encounter.on_lose)
         # Thing for lose condition
-
-label screenrpg_done:
-    pass

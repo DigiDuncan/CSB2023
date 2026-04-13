@@ -187,7 +187,3 @@ label play_toytrains_game:
         stop music fadeout 2.0
 
         $ renpy.jump(minigame_loss)
-
-label toytrainsgame_done:
-    # Thing to do after the game if we reach here.
-    pass
