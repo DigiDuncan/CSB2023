@@ -28,7 +28,7 @@ screen osu_spinner(center = [960, 540], spinner_image = None, dismissable = Fals
     default counted = False
 
     python:
-        spinner_image = spinner_image if spinner_image is not None else get_themed_attribute("spinner")
+        spinner_image = spinner_image if spinner_image is not None else get_themed_attribute("minigames/spinner")
         mouse_xy = renpy.get_mouse_pos()
         angle = get_angle(center, mouse_xy)
         if checkpoint == 0:
