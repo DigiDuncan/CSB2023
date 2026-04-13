@@ -99,6 +99,14 @@ init -1 python:
 
     BOOKS_MAP = j
 
+    # DXCOM
+    with renpy.open_file("data/dxcom.json") as f:
+        j = json.load(f)
+        total_dxcoms = len(j)
+        logger.info(f"Loaded {total_dxcoms} developer commentaries.")
+
+    DXCOM_MAP = j
+
     # Credits
     with renpy.open_file("data/credits.json") as f:
         j = json.load(f)

@@ -72,15 +72,16 @@ class CommentaryString:
 
 class CommentaryManager:
     def __init__(self):
-        with renpy.open_file("data/dxcom.json") as j:
-            jsondata = json.load(j)
-
         self.strings: dict[str, CommentaryString] = {}
 
-        for k, v in jsondata.items():
+        for k, v in DXCOM_MAP.items():
             self.strings[k] = CommentaryString.from_JSON(k, v)
 
     def play(self, id: str):
+        persistent.seen_dxcom.add(id)
         self.strings[id].show()
+
+        if len(persistent.seen_dxcom) == total_dxcoms:
+            achievement_manager.unlock("junior_dev")
 
 commentary_manager = CommentaryManager()
