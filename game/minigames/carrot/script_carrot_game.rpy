@@ -55,8 +55,8 @@ init python:
             self.started_playing_song = False
 
             self.bg = Image("minigames/carrot/bg.png")
-            self.csbg = Image("minigames/carrot/csbg.png")
-            self.hand = Image("minigames/carrot/hand.png")
+            self.csbg = Image(get_themed_attribute("minigames/carrot_cs"))
+            self.hand = Image(get_themed_attribute("minigames/carrot_hand"))
             self.space = Image("minigames/carrot/space.png")
             self.fg = Image("minigames/carrot/fg.png")
             self.perfect = Image("minigames/carrot/perfect.png")
