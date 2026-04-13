@@ -2352,9 +2352,9 @@ label ce_aftershop:
     # grammar fix handler
     python:
         if d20 == 8 or d20 == 11 or d20 == 18:
-            next_line = substitutions("Hey, look, I rolled an "+str(d20)+"!")
+            next_line = substitutions(_("Hey, look, I rolled an "+str(d20)+"!"))
         else:
-            next_line = substitutions("Hey, look, I rolled a "+str(d20)+"!")
+            next_line = substitutions(_("Hey, look, I rolled a "+str(d20)+"!"))
 
     cs "[next_line]"
 

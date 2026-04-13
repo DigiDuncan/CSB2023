@@ -1261,6 +1261,7 @@ screen rails_test():
     default next_destination = points_list[next_point_index]
     default speed = 1 # in seconds; lower = faster
 
+    # Draw the points
     for i, p in enumerate(points_list):
         add marker:
             xanchor 0.5 yanchor 0.5
@@ -1285,21 +1286,32 @@ screen rails_test():
             elif moving_img_coords[1] > destination[1]:     
                 moving_img_coords[1] += 1
             else:
-                # Don't overflow
-                if next_point_index+1 > len(points_list):
-                    next_point_index = 0
-                else:
-                    next_point_index += 1
-                next_destination = points_list[next_point_index]
+                is_moving = False
+    else:
+        python:
+        # Don't overflow
+            if next_point_index+1 > len(points_list):
+                next_point_index = 0
+            else:
+                next_point_index += 1
 
-        add moving_img:
-            xanchor 0.5 yanchor 0.5
-            at transform:
-                parallel:
-                    linear speed xpos moving_img_coords[0] 
-                parallel:
-                    linear speed ypos moving_img_coords[1]
-                repeat
+            next_destination = points_list[next_point_index]
+            is_moving = True
+
+    # Draw moving image
+    add moving_img:
+        xanchor 0.5 yanchor 0.5
+        xpos moving_img_coords[0] ypos moving_img_coords[1] # Starting pos
+
+        at transform:
+            parallel:
+                linear speed xpos moving_img_coords[0] 
+            parallel:
+                linear speed ypos moving_img_coords[1]
+            repeat
+
+    # Debug
+    text "Current position: "+str(moving_img_coords)+"\n"+"Destination: "+str(destination)
 
     textbutton _("Return"):
         xpos 15 ypos 1000

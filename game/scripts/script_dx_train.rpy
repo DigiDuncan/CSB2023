@@ -232,7 +232,7 @@ label train_story_begin:
         $ train_money_container = "treasure chest"
         $ train_money_stolen_dialogue_switch = "lock it shut"
 
-    $ next_line = substitutions("CS and Arceus get out of the car and grab the "+train_money_container+" of money.")
+    $ next_line = substitutions(_("CS and Arceus get out of the car and grab the "+train_money_container+" of money."))
     n "[next_line]"
 
     scene kingman_exterior with dissolve
@@ -256,10 +256,10 @@ label train_story_begin:
     else:
         show briefcase at mid_mid_left with dissolve
 
-    $ next_line = substitutions("CS quickly deconstructs the Lego car. He shoves the colorful little bricks into the " + train_money_container + " for later.")
+    $ next_line = substitutions(_("CS quickly deconstructs the Lego car. He shoves the colorful little bricks into the " + train_money_container + " for later."))
     n "[next_line]"
 
-    $ next_line = substitutions("The "+ train_money_container +" is now full to bursting, but CS just barely manages to " + train_money_stolen_dialogue_switch + ".")
+    $ next_line = substitutions(_("The "+ train_money_container +" is now full to bursting, but CS just barely manages to " + train_money_stolen_dialogue_switch + "."))
     n "[next_line]"
 
     if train_money_stolen == True:
@@ -1027,7 +1027,7 @@ label train_enter_sleeper:
     show arceus worried
 
     # begin this flip nonsense... why do i do this to myself
-    $ next_line = substitutions("I mean, all we had was the one " + train_money_container +".")
+    $ next_line = substitutions(_("I mean, all we had was the one " + train_money_container +"."))
     arceus "[next_line]"
     pause 1.0
     show arceus worried flipped
@@ -1035,7 +1035,7 @@ label train_enter_sleeper:
     show arceus worried
     pause 2.0
 
-    $ next_line = substitutions("... CS, where is the "+train_money_container+"?")
+    $ next_line = substitutions(_("... CS, where is the "+train_money_container+"?"))
     arceus "[next_line]"
     show tate shock
     show cs worried
@@ -1068,7 +1068,7 @@ label train_enter_sleeper:
         $ train_money_stolen_dialogue_switch_2 = " totally plundered"
 
     show cs disappointed flipped
-    $ next_line = substitutions("Yes, sir, we're missing a single " + train_money_stolen_dialogue_switch + " filled with money we" + train_money_stolen_dialogue_switch_2 + " while we were in Vegas.")
+    $ next_line = substitutions(_("Yes, sir, we're missing a single " + train_money_stolen_dialogue_switch + " filled with money we" + train_money_stolen_dialogue_switch_2 + " while we were in Vegas."))
     cs "[next_line]"
     arceus "And Lego bricks."
     show cs surprised
@@ -1171,7 +1171,7 @@ label train_enter_sleeper:
     show tate shock flipped
     show cs worried
     show arceus worried
-    $ next_line = substitutions("I think Mean said that someone even got " + ch2_cs_attack_used + " off of the roof!")
+    $ next_line = substitutions(_("I think Mean said that someone even got " + ch2_cs_attack_used + " off of the roof!"))
     tate "[next_line]"
     show tate sheepish flipped
     tate "But since Mean couldn't... {w=0.5}{size=-5}hold him off... {w=0.5}{size=-5}he was... {w=1.0}{size=-5}fired..."
@@ -1855,7 +1855,7 @@ label train_begin_heist:
     arceus "I doubt we can get access to it, but maybe we could get someone to check the cab."
     tate "Actually, Mean lent me his spare key to the cab in case I needed the toilet in there, so I can check it."
     arceus "Oh, nice. I know my way around the dining car, so I can look there."
-    $ next_line = substitutions("Guess I'll stick around here, then. Maybe the " + train_money_container + " is just under a seat or something.")
+    $ next_line = substitutions(_("Guess I'll stick around here, then. Maybe the " + train_money_container + " is just under a seat or something."))
     cs "[next_line]"
     arceus "Sounds like a plan."
     show tate
@@ -3365,7 +3365,7 @@ label train_lupin_win:
     elif train_money_stolen == False:
         $ train_money_container = "briefcase"
 
-    $ next_line = substitutions("CS reaches into the " + train_money_container + " and pulls out some Lego bricks!")
+    $ next_line = substitutions(_("CS reaches into the " + train_money_container + " and pulls out some Lego bricks!"))
     n "[next_line]"
     n "He feverishly begins to construct something!"
     show tate shock
