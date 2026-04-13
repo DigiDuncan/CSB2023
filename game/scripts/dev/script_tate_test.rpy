@@ -718,6 +718,12 @@ label _awawa_tate_test:
                         call screen click_drag_test()
                         tate "Well, that was weird."
 
+                    "Rails Test":
+                        show tate sheepish
+                        tate "Hoo boy. This probably won't work."
+                        call screen rails_test()
+                        tate "Was I right?"
+
                 jump .awawa_menu
 
             #################### Cancel ####################
@@ -1231,6 +1237,70 @@ screen click_drag_test():
    
                 add img[1]
         
+    textbutton _("Return"):
+        xpos 15 ypos 1000
+        action Return()
+
+####################################################################################################
+
+screen rails_test():
+    default points_list = [
+        [255,255], 
+        [900,200], 
+        [1800,255],
+        [1300,900],
+        [200,800]
+    ]
+
+    default marker = "gui/inline_text/ch1.png"
+    default moving_img = Transform("images/poo.png", zoom=0.4)
+    default moving_img_coords = [100,100] # Starting point
+    default is_moving = True
+    default destination = points_list[0]
+    default next_point_index = 1
+    default next_destination = points_list[next_point_index]
+    default speed = 1 # in seconds; lower = faster
+
+    for i, p in enumerate(points_list):
+        add marker:
+            xanchor 0.5 yanchor 0.5
+            xpos p[0] ypos p[1]
+
+        text str(i+1)+"\n"+str(p):
+            xanchor 0.5 yanchor 0.5
+            text_align 0.5
+            xpos p[0] ypos p[1]-(gui.text_size+25)
+
+    if is_moving:
+
+        python:
+            # X coordinates
+            if moving_img_coords[0] > destination[0]:
+                moving_img_coords[0] -= 1
+            elif moving_img_coords[0] < destination[0]:
+                moving_img_coords[0] += 1
+            # Y coordinates
+            elif moving_img_coords[1] < destination[1]:
+                moving_img_coords[1] -= 1
+            elif moving_img_coords[1] > destination[1]:     
+                moving_img_coords[1] += 1
+            else:
+                # Don't overflow
+                if next_point_index+1 > len(points_list):
+                    next_point_index = 0
+                else:
+                    next_point_index += 1
+                next_destination = points_list[next_point_index]
+
+        add moving_img:
+            xanchor 0.5 yanchor 0.5
+            at transform:
+                parallel:
+                    linear speed xpos moving_img_coords[0] 
+                parallel:
+                    linear speed ypos moving_img_coords[1]
+                repeat
+
     textbutton _("Return"):
         xpos 15 ypos 1000
         action Return()
