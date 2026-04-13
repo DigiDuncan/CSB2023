@@ -29,7 +29,7 @@ define config.version = "1.0a1"
 ## Image prediction cache size
 ## Default is 32-64 MB, but Tate cranked that sucker WAY up because this game is nuts
 
-define config.image_cache_size = 2048
+define config.image_cache_size = 512
 
 
 ## Text that is placed on the game's about screen. Place the text between the
