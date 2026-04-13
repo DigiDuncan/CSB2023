@@ -70,11 +70,11 @@ class Achievement:
     @property
     def icon(self) -> str:
         if self.dx:
-            d = Composite((128, 128), (0, 0), f"gui/achievements/{self.icon_image}.png", (0, 0), "gui/achievements/dx_border.png")
+            d = Composite((128, 128), (0, 0), AlphaMask(f"gui/achievements/{self.icon_image}.png", "gui/achievements/mask.png"), (0, 0), "gui/achievements/dx_border.png")
         elif self.ce:
-            d = Composite((128, 128), (0, 0), f"gui/achievements/{self.icon_image}.png", (0, 0), "gui/achievements/ce_border.png")
+            d = Composite((128, 128), (0, 0), AlphaMask(f"gui/achievements/{self.icon_image}.png", "gui/achievements/mask.png"), (0, 0), "gui/achievements/ce_border.png")
         else:
-            d = renpy.displayable(f"gui/achievements/{self.icon_image}.png")
+            d = renpy.displayable(AlphaMask(f"gui/achievements/{self.icon_image}.png", "gui/achievements/mask.png"))
 
         if self.unlocked:
             return d
