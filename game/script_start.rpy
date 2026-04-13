@@ -27,6 +27,8 @@ init 10 python:
             persistent.seen_original_endings.add(o)
         for e in ALL_ENDINGS:
             persistent.seen_all_endings.add(e)
+        for d in DXCOM_MAP.keys():
+            persistent.dxcoms_heard.add(d)
         achievement_manager.unlock_all()
         persistent.true_ending = True
         persistent.csb2_unlocked = True

@@ -1243,5 +1243,5 @@ label bt1d_ending:
     cs "Thanks, Digi, glad I could help!"
 
     # TODO: this is barely an ending
-
+    $ achievement_manager.unlock("breakthrough")
     jump secret_dx
