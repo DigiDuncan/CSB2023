@@ -217,6 +217,16 @@ def dump_stores():
         _write_kv(k, v = v)
     logger.debug(f"Dumped persistent ({_per_c})")
 
+    _write("\n=== SEEN LABELS ===")
+    _label_c = 0
+    _seen_c = 0
+    for l in renpy.get_all_labels():
+        _label_c += 1
+        if renpy.seen_label(l):
+            _seen_c += 1
+            _write(l)
+    logger.debug(f"Dumped seen labels ({_seen_c}/{_label_c})")
+
     with path.open(mode = "w") as f:
         f.write(output_string)
 
