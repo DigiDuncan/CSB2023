@@ -316,6 +316,8 @@ label _digi_test:
         else:
             $ just_entered = False
         menu (nvl = True):
+            "How are you?":
+                jump .chat_how_are_you
             "What is this place?":
                 nvl clear
                 you_n "What is this place?{fast}"
@@ -429,7 +431,7 @@ label _digi_test:
                         jump .chat_hc_science
                     "Never mind.":
                         jump .chat_topics
-            "Ask about something else":
+            "{i}Ask about something else":
                 jump .chat_topics
 
     label .chat_hc_how:
@@ -479,6 +481,100 @@ label _digi_test:
         digi_n "It's a remarkable device!"
         show digi
         digi_n "I hope I can figure out how it works one day."
+        jump .chat_topics
+
+    label .chat_how_are_you:
+        nvl clear
+        you_n "How are you?{fast}"
+        show digi happy
+        digi_n "I'm doing alright!"
+        show digi
+        $ force_hour = 0
+        $ hour = datetime.datetime.now().hour if force_hour is None else force_hour
+        if 10 <= hour <= 12:
+            digi_n "I just woke up, really."
+            digi_n "I'm not great in the mornings. I've become {i}somewhat{/i} reliant on caffeine."
+            digi_n "Oops! Addictive substance is addictive."
+            extend " Hey, it's better than other vices I could have."
+            jump .chat_how_are_you_after
+        elif 13 <= hour <= 17:
+            digi_n "Just been working on some stuff."
+            digi_n "The day is still young, you know?"
+            extend " I usually am just kinda jumping between a few different projects around this time,"
+            digi_n "Good afternoon yourself, by the way."
+            jump .chat_how_are_you_after
+        elif 18 <= hour <= 22:
+            digi_n "Starting to get hungry, though."
+            extend " I've been working on stuff all day and kinda forgot to eat..."
+            digi_n "I could really go for a burger."
+            digi_n "Ugh, do you know how hard it is to get DoorDash up here?"
+            jump .chat_how_are_you_after
+        elif (23 <= hour <= 24) or (0 <= hour <= 1):
+            digi_n "I'm running low on steam but I still have some stuff to get done today."
+            digi_n "Just hoping to get some more of the TODO list before I conk out."
+            digi_n "Ooh, that's a good point, let me add that to my TODO list."
+            # I stole this from the BT1D script, sorry Tate, I don't know how to animate
+            show digi_phone flipped with MoveTransition(0.25):
+                zoom 0.3
+                xpos 0.10
+                ypos 0.65
+                alpha 0.0
+                rotate -15
+                parallel:
+                    linear 0.25 alpha 1.0
+                parallel:
+                    linear 0.25 ypos 0.55
+            n_n "Digi takes out their phone."
+            digi_n "{i}Stop adding so much to my TODO list..."
+            hide digi_phone with dissolve
+            jump .chat_how_are_you_after
+        elif 2 <= hour <= 4:
+            digi_n "I'm pretty tired, though."
+            digi_n "I need to stop staying up this late."
+            digi_n "Hell, {i}you{/i} also probably need to stop staying up this late."
+            digi_n "I don't know, I don't know your life."
+            digi_n "Clearly I barely know mine."
+            jump .chat_how_are_you_after
+        else:
+            digi_n "I really should be asleep, though."
+            digi_n "You should too, by the way. Unless you're usually up this early?"
+            digi_n "I don't usually wake up until like 10AM, though, so I'm one to talk about schedules."
+            jump .chat_how_are_you_after
+
+    label .chat_how_are_you_after:
+        digi_n "How about yourself?"
+        menu (nvl = True):
+            "I'm doing good!":
+                you_n "I'm doing good!{fast}"
+                digi_n "That's great to hear!"
+                digi_n "It always puts a smile on my face to hear when my friends are doing well."
+                digi_n "Honestly, it's probably the thing that uplifts me the most."
+            "I'm alright.":
+                you_n "I'm alright.{fast}"
+                digi_n "That's good to hear!"
+                digi_n "Sometimes I think we take 'alright' for granted."
+                extend " Any rating over a 5/10 means it's net positive, you know?"
+                digi_n "That's good. We should capture that feeling when we get it."
+            "I'm mid.":
+                you_n "I'm mid.{fast}"
+                digi_n "Fair enough."
+                digi_n "Whether that's because things are just neutral, or because a bunch of good and bad are in balance, I hope the good outweighs the bad in the end."
+            "I'm not doing super great.":
+                you_n "I'm not doing super great.{fast}"
+                digi_n "Damn, that sucks."
+                digi_n "Whatever's got you down, I'm sure things can turn around."
+                digi_n "That's a hope I hold on to."
+            "I'm doing kinda awful.":
+                you_n "I'm doing kinda awful.{fast}"
+                digi_n "I'm sorry to hear that."
+                digi_n "Hopefully working on this silly visual novel gives you some calm, though."
+                digi_n "I may not be real, but Digi{font=cmunrm.ttf}[[0]{/font} is, so do reach out to them if you need the support."
+            "I prefer not to say right now.":
+                you_n "I prefer not to say right now.{fast}"
+                digi_n "And you know what? Valid."
+                digi_n "I'm just a pre-written dialogue in a visual novel, anyway."
+                digi_n "If you want to talk to Digi{font=cmunrm.ttf}[[0]{/font} about it, though, do reach out."
+                extend " They care a lot about you."
         jump .chat_topics
 
     label .chat_exit:
