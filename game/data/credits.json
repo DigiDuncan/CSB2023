@@ -45,12 +45,15 @@
             "Codex": ["Skolatztika"],
             "Achievements System Assistance": ["KiloOscarSix"],
             "Pixellated Transition Programming": ["AxelKong"],
+            "Music Marquee Programming": ["Feniks"],
             "Awawa Mode Programming Assistance": ["greyfade"]
         },
 
         "_testing": {
-            "Alpha Testing": ["Arceus3251"],
-            "Beta Testing": ["Tate \"alleZSoyez\"", "4Bakers", "BubbleTheSlime", "meancarnavor", "Mikapara", "UndeadKitty"]
+            "CSB3 Alpha Testing": ["Arceus3251"],
+            "CSB3 Beta Testing": ["Tate \"alleZSoyez\"", "4Bakers", "BubbleTheSlime", "meancarnavor", "Mikapara", "UndeadKitty"],
+            "CE Alpha Testing": ["Arceus3251", "Tate \"alleZSoyez\""],
+            "CE Beta Testing": ["xohorses", "BubbleTheSlime", "WaterfallStream", "meancarnavor", "SEHT"]
         },
 
         "Character Sprites": {
@@ -192,6 +195,7 @@
             "Kinetic Text Tags": ["Daniel Westfall"],
             "Codex": ["Skolatztika"],
             "Achievements System Assistance": ["KiloOscarSix"],
+            "Music Marquee Programming": ["Feniks"],
             "Awawa Mode Programming Assistance": ["greyfade"]
         },
 
