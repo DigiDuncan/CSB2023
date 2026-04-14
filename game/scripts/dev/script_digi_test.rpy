@@ -17,7 +17,7 @@ init python:
     import hashlib
 
     def weed_legality():
-        return hashlib.sha256(bytes(f"{datetime.date.today()}", encoding = "utf-8")).digest()[:-1] == 1
+        return hashlib.sha256(bytes(f"{datetime.date.today()}", encoding="utf-8")).digest()[0] % 2 == 0
 
 screen isweedlegal():
     modal True
