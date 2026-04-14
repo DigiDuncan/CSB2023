@@ -66,6 +66,7 @@ screen isweedlegal():
             ]
 
 label _digi_test:
+    $ entered_tests = False
     stop music
     scene black with dissolve
 
@@ -317,27 +318,32 @@ label _digi_test:
         menu (nvl = True):
             "What is this place?":
                 nvl clear
-                you_n "What is this place?"
+                you_n "What is this place?{fast}"
                 digi_n "Well, do you mean on Layer 1, or Layer 0?"
                 jump .chat_layers
+            "Aren't you like, small sometimes?":
+                jump .chat_small
             "Is weed legal today?":
                 jump .chat_is_weed_legal
-            "Iris?" if mentioned_iris:
+            "Who's Iris?" if mentioned_iris:
                 nvl clear
-                you_n "Iris?"
+                you_n "Who's Iris?{fast}"
+                show digi happy
                 digi_n "Yeah, Iris! She's my friend and... boss? Kinda? I work for her, but the relationship isn't really formal."
+                show digi
                 digi_n """When I first got to this universe, I was kinda... adrift, for a while. Didn't have a place to go.
-                She took me in after I had a run in with a black hole.
-
-                ...
-
-                OK, yes, it was my fault for getting that close, I don't want to talk about it right now. Some other time.
-
-                Anywho, she took me in, gave me some equipment, helped me back on my feet,
-                and gave me the opportunity to help her out with what she does.
-                """
+                She took me in after I had a run in with a black hole."""
+                show digi sad
+                digi_n "..."
+                show digi disappointed
+                digi_n "OK, yes, it was my fault for getting that close, I don't want to talk about it right now. Some other time."
+                show digi
+                digi_n "Anywho, she took me in, gave me some equipment, helped me back on my feet, and gave me the opportunity to help her out with what she does."
                 you_n "What does she do?"
-                digi_n "I don't have time to get into that right now, to be honest. Another time."
+                show digi thinking
+                digi_n "I don't have time to get into that right now, to be honest."
+                show digi
+                extend " Another time."
                 jump .chat_topics
             "Nothing else!":
                 you_n "Nothing else!"
@@ -347,7 +353,7 @@ label _digi_test:
         menu (nvl = True):
             "Layer 1?":
                 nvl clear
-                you_n "Layer 1?"
+                you_n "Layer 1?{fast}"
                 digi_n "Well, on Layer 1, this is the Nugget!"
                 digi_n """The Nugget is my spaceship. I've had it for quite a while...
                 I got it shortly after I entered this universe.
@@ -361,14 +367,14 @@ label _digi_test:
                 jump .chat_topics
             "Layer 0?":
                 nvl clear
-                you_n "Layer 0?"
+                you_n "Layer 0?{fast}"
                 digi_n "This is a test room for some features Digi{font=cmunrm.ttf}[[0]{/font} wants to mess around with."
                 digi_n "It being a seperate space gives them the creative freedom to just kinda mess around."
                 digi_n "Some problems with the game have already been spotted with this method!"
                 jump .chat_topics
             "You keep saying layers...?":
                 nvl clear
-                you_n "You keep saying \"layers\", what do you mean by that?"
+                you_n "You keep saying \"layers\", {fast}what do you mean by that?"
                 digi_n "Layers, like layers of fiction."
                 digi_n """You, the person reading this, are in Layer 0. You are in the \"real world.\"
                 
@@ -388,13 +394,25 @@ label _digi_test:
                         digi_n "OK, well, here."
                         n_n "Digi pokes at the hologram eminating from their wrist."
                         n_n "Your phone lights up with a notification."
-                        digi_n "There, I sent you a link to the {a=https://scp-wiki.wikidot.com/scp-3812}article.{/a}"
+                        digi_n "There, I sent you a link to the {a=https://scp-wiki.wikidot.com/scp-3812}{color=#ff0000}article.{/color}{/a}"
                         digi_n "It's a cool read."
                     "Thank you.":
                         pass
 
                 jump .chat_topics
         
+        jump .chat_topics
+
+    label .chat_small:
+        nvl clear
+        you_n "Aren't you like, small sometimes?{fast}"
+        show digi goober
+        digi_n "What a thing to ask a person."
+        show digi
+        digi_n "Yeah, I have a device called the {color=#FFAA00}Height Compressor{/color}."
+        digi_n "It lets me get smaller than my default height, and come back."
+        you_n "What's your default height?"
+        digi_n "Usually I'm #redacted#. Don't tell anyone!"
         jump .chat_topics
 
     label .chat_exit:
@@ -405,7 +423,7 @@ label _digi_test:
 
     label .chat_is_weed_legal:
         nvl clear
-        you_n "Is weed legal today?"
+        you_n "Is weed legal today?{fast}"
         digi_n "I mean, we can check the government website."
         digi_n "Let me pull it up."
         window hide

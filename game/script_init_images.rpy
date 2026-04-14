@@ -3012,3 +3012,95 @@ layeredimage flying_train_final:
     group ignore_me:
         attribute wow default:
             "train_fly_1"
+
+image redacted_1:
+    "gui/ob/ob0.png"
+    pause 0.05
+    "gui/ob/ob1.png"
+    pause 0.05
+    "gui/ob/ob2.png"
+    pause 0.05
+    "gui/ob/ob3.png"
+    pause 0.05
+    "gui/ob/ob4.png"
+    pause 0.05
+    "gui/ob/ob5.png"
+    pause 0.05
+    "gui/ob/ob6.png"
+    pause 0.05
+    "gui/ob/ob7.png"
+    pause 0.05
+    "gui/ob/ob8.png"
+    pause 0.05
+    "gui/ob/ob9.png"
+    pause 0.05
+    repeat
+
+image redacted_2:
+    "gui/ob/ob1.png"
+    pause 0.05
+    "gui/ob/ob2.png"
+    pause 0.05
+    "gui/ob/ob3.png"
+    pause 0.05
+    "gui/ob/ob4.png"
+    pause 0.05
+    "gui/ob/ob5.png"
+    pause 0.05
+    "gui/ob/ob6.png"
+    pause 0.05
+    "gui/ob/ob7.png"
+    pause 0.05
+    "gui/ob/ob8.png"
+    pause 0.05
+    "gui/ob/ob9.png"
+    pause 0.05
+    "gui/ob/ob0.png"
+    pause 0.05
+    repeat
+
+image redacted_3:
+    "gui/ob/ob2.png"
+    pause 0.05
+    "gui/ob/ob3.png"
+    pause 0.05
+    "gui/ob/ob4.png"
+    pause 0.05
+    "gui/ob/ob5.png"
+    pause 0.05
+    "gui/ob/ob6.png"
+    pause 0.05
+    "gui/ob/ob7.png"
+    pause 0.05
+    "gui/ob/ob8.png"
+    pause 0.05
+    "gui/ob/ob9.png"
+    pause 0.05
+    "gui/ob/ob0.png"
+    pause 0.05
+    "gui/ob/ob1.png"
+    pause 0.05
+    repeat
+
+image redacted_4:
+    "gui/ob/ob3.png"
+    pause 0.05
+    "gui/ob/ob4.png"
+    pause 0.05
+    "gui/ob/ob5.png"
+    pause 0.05
+    "gui/ob/ob6.png"
+    pause 0.05
+    "gui/ob/ob7.png"
+    pause 0.05
+    "gui/ob/ob8.png"
+    pause 0.05
+    "gui/ob/ob9.png"
+    pause 0.05
+    "gui/ob/ob0.png"
+    pause 0.05
+    "gui/ob/ob1.png"
+    pause 0.05
+    "gui/ob/ob2.png"
+    pause 0.05
+    repeat

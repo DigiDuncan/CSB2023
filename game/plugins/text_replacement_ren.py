@@ -4,6 +4,7 @@ init python:
 """
 
 import re
+import random
 
 # Awawa Mode
 def awawa_mode(input_text, frequency = 100):
@@ -121,6 +122,13 @@ def beep_spacing(s):
 
     return s
 
+def redact(match):
+    length = max(1, int(len(match.group()) / 2))
+    r = ""
+    for i in range(length):
+        r += random.choice(["{image=redacted_1}", "{image=redacted_2}", "{image=redacted_3}", "{image=redacted_4}"])
+    return r
+
 def substitutions(s):
     # beep spacing
     s = beep_spacing(s)
@@ -129,6 +137,9 @@ def substitutions(s):
     s = s.replace(r"{cshake}", r"{bt=a3-p10-s4}")
     s = s.replace(r"{ytpmagic}", r"{sc=1.88}{color=#CB50FF}")
     s = s.replace(r"{perfect_tate}", r"{sc}{size=+24}{font=azsz}{color=#000000}") # i'd prefer this to be handled in the screen but {sc} breaks it?? - tate
+
+    # redacting
+    s = re.sub(r"#([\w\d_]+)#", redact, s, flags=re.IGNORECASE)
 
     # for inline images
     s = s.replace(r"`:", "`:\u200b")
