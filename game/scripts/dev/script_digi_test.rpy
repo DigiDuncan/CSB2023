@@ -66,8 +66,6 @@ screen isweedlegal():
             ]
 
 label _digi_test:
-    $ chatted_with_digi = 0
-    $ entered_tests = False
     stop music
     scene black with dissolve
 
@@ -91,45 +89,12 @@ label _digi_test:
             "What do you want to do?"
             "I'd like to test things!":
                 jump .tests
-            "I want to chat!":
+            "I want to talk! {size=-12}(NVL mode test)":
                 jump .chat
-            "I want to talk for a while! {size=-12}(NVL mode test)":
-                jump .chat_nvl
             "I gotta head out.":
                 show digi happy
                 digi "Alright, seeya!"
                 $ renpy.full_restart()
-            "Is weed legal today?":
-                jump .is_weed_legal
-
-    label .chat:
-        $ chatted_with_digi += 1
-        if chatted_with_digi == 1:
-            show digi disappointed
-            digi "Well, unfortunately, Digi is lazy and didn't write much here yet."
-            show digi shock
-            digi "What? I'm Digi? "
-            show digi
-            extend "No, I mean Digi{font=cmunrm.ttf}[[0]{/font}."
-            show digi sad
-            digi "Don't ask. It's a lot to explain."
-            show digi happy
-            digi "Is there something else you want to do, though?"
-        elif chatted_with_digi == 2:
-            show digi disappointed
-            digi "Well, unfortunately-- "
-            show digi shock
-            extend "wait, didn't we just do this?"
-            show digi happy
-            digi "Yeah, we did! You already know I have nothing to talk about right now."
-            show digi goober
-            digi "I appreciate you wanting to talk, though. Means a lot."
-            show digi
-            digi "Anywho, there's gotta be something else you need, right? If not, you can head out, it's chill."
-        else:
-            show digi angry
-            digi "No, seriously. I'm out of stuff to say."
-        jump .menu
 
     label .tests:
         show digi
@@ -331,7 +296,7 @@ label _digi_test:
         digi "I hope that went well!"
         jump .tests
 
-    label .chat_nvl:
+    label .chat:
         # Welcome to a full-scale test of NVL mode.
         # This is going to be very custom for what I want, so if we want to do this
         # in other parts of the game, this might be a good template, but we should
@@ -342,9 +307,9 @@ label _digi_test:
         $ just_entered = True
         $ mentioned_iris = False
         digi_n "Hey! What do you want to talk about?"
-        jump .chat_nvl_topics
+        jump .chat_topics
 
-    label .chat_nvl_topics:
+    label .chat_topics:
         if not just_entered:
             digi_n "What else do you want to talk about?"
         else:
@@ -354,7 +319,9 @@ label _digi_test:
                 nvl clear
                 you_n "What is this place?"
                 digi_n "Well, do you mean on Layer 1, or Layer 0?"
-                jump .chat_nvl_layers
+                jump .chat_layers
+            "Is weed legal today?":
+                jump .chat_is_weed_legal
             "Iris?" if mentioned_iris:
                 nvl clear
                 you_n "Iris?"
@@ -371,12 +338,12 @@ label _digi_test:
                 """
                 you_n "What does she do?"
                 digi_n "I don't have time to get into that right now, to be honest. Another time."
-                jump .chat_nvl_topics
+                jump .chat_topics
             "Nothing else!":
                 you_n "Nothing else!"
-                jump .chat_nvl_exit
+                jump .chat_exit
 
-    label .chat_nvl_layers:
+    label .chat_layers:
         menu (nvl = True):
             "Layer 1?":
                 nvl clear
@@ -391,14 +358,14 @@ label _digi_test:
                 hydrogen ones, though.
                 """
                 $ mentioned_iris = True
-                jump .chat_nvl_topics
+                jump .chat_topics
             "Layer 0?":
                 nvl clear
                 you_n "Layer 0?"
                 digi_n "This is a test room for some features Digi{font=cmunrm.ttf}[[0]{/font} wants to mess around with."
                 digi_n "It being a seperate space gives them the creative freedom to just kinda mess around."
                 digi_n "Some problems with the game have already been spotted with this method!"
-                jump .chat_nvl_topics
+                jump .chat_topics
             "You keep saying layers...?":
                 nvl clear
                 you_n "You keep saying \"layers\", what do you mean by that?"
@@ -426,19 +393,26 @@ label _digi_test:
                     "Thank you.":
                         pass
 
-                jump .chat_nvl_topics
+                jump .chat_topics
         
-        jump .chat_nvl_topics
+        jump .chat_topics
 
-    label .chat_nvl_exit:
+    label .chat_exit:
         digi_n "Alrighty!"
         digi_n "{size=-12}I hope NVL mode worked well..."
         show digi at center with move
         jump .menu
 
-    label .is_weed_legal:
+    label .chat_is_weed_legal:
+        nvl clear
+        you_n "Is weed legal today?"
+        digi_n "I mean, we can check the government website."
+        digi_n "Let me pull it up."
         window hide
         call screen isweedlegal()
-        digi "Hope you like the result."
-        
-        jump .menu
+        if weed_legality():
+            digi_n "That's good to hear! This is a weird system."
+        else:
+            digi_n "Welp, looks like we're out of luck today."
+
+        jump .chat_topics
