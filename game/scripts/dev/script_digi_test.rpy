@@ -413,6 +413,72 @@ label _digi_test:
         digi_n "It lets me get smaller than my default height, and come back."
         you_n "What's your default height?"
         digi_n "Usually I'm #redacted#. Don't tell anyone!"
+        you_n "... That was redacted. I couldn't read that."
+        show digi happy
+        digi_n "I know. I haven't come up with the real answer yet."
+
+        menu (nvl = True):
+            "How does the height compressor work?":
+                you_n "How does the height compressor work?{fast}"
+                show digi thinking
+                digi_n "Well, do you mean like, scientifically, or just how I use it?"
+                menu (nvl = True):
+                    "How you use it.":
+                        jump .chat_hc_how
+                    "Scientifically.":
+                        jump .chat_hc_science
+                    "Never mind.":
+                        jump .chat_topics
+            "Ask about something else":
+                jump .chat_topics
+
+    label .chat_hc_how:
+        nvl clear
+        you_n "How you use it.{fast}"
+        digi_n "Well, the height compressor is linked to my brain."
+        show digi thinking
+        digi_n "Think of it like a neural implant, I suppose."
+        show digi
+        digi_n "So, in general, I can think about getting smaller..."
+        show digi goober:
+            zoom 1.0
+            linear 2.0 zoom 0.5
+        show digi happy
+        digi_n "And now I'm smaller!"
+        show digi sad
+        extend " There's a few caveats, though..."
+        show digi goober:
+            zoom 0.5
+            linear 2.0 zoom 1.0
+        show digi
+        digi_n "First of all, I'm not always in {i}perfect{/i} control of it."
+        digi_n "Since it's linked to what's essentially my subconcious, it can kinda act for me sometimes."
+        digi_n "So sometimes I change size before I'm prepared to."
+        digi_n "Also, I can't manually override it unless I have a calm mind."
+        digi_n "So, if I'm in a stressful situation, or preoccupied with something else, I may not be able to get back to normal size quickly."
+        digi_n "All in all though, I love the thing. Worth the tradeoffs."
+        jump .chat_topics
+
+    label .chat_hc_science:
+        $ mentioned_iris = True
+        nvl clear
+        you_n "Scientifically.{fast}"
+        show digi sad
+        digi_n "You're gonna hate the answer for this."
+        show digi shock
+        digi_n "I have no idea."
+        show digi
+        digi_n "The height compressor was one of the first things Iris gave me when I showed up in this universe."
+        show digi thinking
+        digi_n "I've been trying to deconstruct it, figure out how it works..."
+        show digi disappointed
+        digi_n "It just eludes me, honestly. It's not like any tech I've ever seen."
+        show digi
+        digi_n "Works a lot better than you can imagine, though. No atomic distortion, no spatial lensing, no cellular decomposition..."
+        show digi happy
+        digi_n "It's a remarkable device!"
+        show digi
+        digi_n "I hope I can figure out how it works one day."
         jump .chat_topics
 
     label .chat_exit:
