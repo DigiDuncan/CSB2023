@@ -489,7 +489,7 @@ label _digi_test:
         show digi happy
         digi_n "I'm doing alright!"
         show digi
-        $ force_hour = 0
+        $ force_hour = None
         $ hour = datetime.datetime.now().hour if force_hour is None else force_hour
         if 10 <= hour <= 12:
             digi_n "I just woke up, really."
