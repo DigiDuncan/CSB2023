@@ -267,8 +267,8 @@
     "minigame_blackjack": {
         "title": "Blackjack",
         "desc": "{image=gui/inline_text/dx.png} Don't go bust!",
-        "x_pos": 592,
-        "y_pos": 1000,
+        "x_pos": 675,
+        "y_pos": 950,
         "kind": "label",
         "destinations": {
             "play_blackjack_game": {
