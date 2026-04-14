@@ -675,7 +675,6 @@ label dx_after_pencil_ask:
 
     label dx_after_win_pencil2:
     hide bad_end_screen
-    hide typewriter
     stop music fadeout 3.0
     stop music2 fadeout 3.0
     stop music3 fadeout 3.0

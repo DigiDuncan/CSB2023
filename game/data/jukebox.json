@@ -617,13 +617,13 @@
             "album_art": "earthbound.png",
             "trivia": "The best song in {i}Earthbound.{/i} The {a=https://www.youtube.com/watch?v=_Cazb8GDxJ4}{i}Smash{/i} version{/a} is great, too!"
         },
-        "pokey" : {
-            "file": "pokey.ogg",
-            "title": "Pokey's House",
-            "artist": "Keiichi Suzuki",
-            "tags": ["CSBIII: East", "CSBIII: South"],
-            "album_art": "earthbound.png",
-            "trivia": "Pakoo was very mean and made this Digi's intro song."
+        "graphics_creation_screen" : {
+            "file": "graphics_creation_screen.ogg",
+            "title": "Graphics Creation Screen",
+            "artist": "Takeru Kanazaki",
+            "tags": ["CSBIII: East", "New In DX"],
+            "album_art": "warioware.png",
+            "trivia": "Digi's unofficial theme song.\n{i}WarioWare D.I.Y.{/i} was one of their favorite games growing up."
         },
         "rude_buster" : {
             "file": "rude_buster.ogg",
@@ -1113,6 +1113,14 @@
             "album_art": "priceisright.png",
             "trivia": "You won the priz-- wait, no, CS did."
         },
+        "pokey" : {
+            "file": "pokey.ogg",
+            "title": "Pokey's House",
+            "artist": "Keiichi Suzuki",
+            "tags": ["CSBIII: South"],
+            "album_art": "earthbound.png",
+            "trivia": "Guess you shouldn't have gone that way..."
+        },
         "airport" : {
             "file": "airport.ogg",
             "title": "Airport Infiltration",
@@ -1196,7 +1204,7 @@
         "apple_kid" : {
             "file": "apple_kid.ogg",
             "title": "Apple Kid's Theme",
-            "artist": "Keiichi Suzuki",
+            "artist": "Akio Ohmori, Ritsuo Kamimura, Keiichi Suzuki, Hirokazu Tanaka",
             "tags": ["CSBDX: After Story", "CSBDX: BT1D", "CSBDX: Beach Episode", "New In DX"],
             "album_art": "earthbound.png",
             "trivia": "Hello, I'm a Mac!"

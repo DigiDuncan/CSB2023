@@ -884,10 +884,10 @@ label true_pennsylvania:
     show cs at left with moveinleft
     n "CS walks to the backstage to prepare to compete when he notices a familiar face."
     show digi at right with moveinright
-    play music pokey volume 0.6 if_changed
-    music pokey
+    play music graphics_creation_screen if_changed
+    music graphics_creation_screen
     if fun_value(FUN_VALUE_MUSIC):
-        cs "Wait, Pokey?"
+        cs "Wait, Wario?"
         digi "Huh?"
         cs "I mean, Digi!"
     else:
@@ -986,7 +986,6 @@ label true_pennsylvania:
 label true_win_pencil:
     $ renpy.mark_label_seen("play_pencil_game")
     hide bad_end_screen
-    hide typewriter
     show stage_screen as stage_screen_l at t_stage_screen_l
     show con_screen at t_stage_screen_c
     show stage_screen as stage_screen_r at t_stage_screen_r
