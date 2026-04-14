@@ -111,7 +111,7 @@
         }
     },
     "plane": {
-        "title": "CSBDX: Plane",
+        "title": "CSBDX: Plane Route",
         "desc": "{image=gui/inline_text/dx.png} A thrilling flight home!",
         "x_pos": 414,
         "y_pos": 36,
@@ -123,7 +123,7 @@
         }
     },
     "speedrun": {
-        "title": "CSBDX: Speedrun",
+        "title": "CSBDX: Vibration",
         "desc": "{image=gui/inline_text/dx.png} NYOOM",
         "x_pos": 460,
         "y_pos": 36,
