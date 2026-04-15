@@ -57,9 +57,9 @@
             "album_art": "riders.png",
             "trivia": "Not often that a {i}menu theme{/i} gets people hyped."
         },
-        "space_classroom" : {
-            "file": "space_classroom.ogg",
-            "title": "Space Classroom",
+        "just_monika" : {
+            "file": "just_monika.ogg",
+            "title": "Just Monika",
             "artist": "Dan Salvato",
             "tags": ["Menus & Misc.", "CSBDX: After Story"],
             "album_art": "ddlc.png",

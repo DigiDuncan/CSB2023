@@ -9,8 +9,8 @@ label secret_dx:
     $ renpy.clear_keymap_cache()
 
     scene black with dissolve
-    play music space_classroom
-    $ persistent.heard.add("space_classroom")
+    play music just_monika
+    $ persistent.heard.add("just_monika")
     show digi at center with Dissolve(3)
     $ achievement_manager.unlock("broke")
     digi "Oh, hi."
@@ -33,8 +33,8 @@ label secret_dx:
 
 label secret_dx2:
     scene black with dissolve
-    play music space_classroom
-    $ persistent.heard.add("space_classroom")
+    play music just_monika
+    $ persistent.heard.add("just_monika")
     show pakoo at center with Dissolve(3)
     $ achievement_manager.unlock("broke")
     pakoo "Okay, that was funny, but that's {i}my{/i} joke."

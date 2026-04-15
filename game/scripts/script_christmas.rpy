@@ -3705,6 +3705,7 @@ label ce_banter:
     n "K-22 hits up Addy."
     pause 0.5
     $ renpy.music.set_pause(True, "music")
+    $ renpy.music.set_audio_filter("music2", [telephone_af, reverb_church_hall_af, walkie_talkie_af])
     play music2 frollo_rave if_changed
     music frollo_rave
     show archival_5 at mid_offscreen_right
@@ -3726,6 +3727,7 @@ label ce_banter:
     hide pakoo
     with moveoutright
     stop music2
+    $ renpy.music.set_audio_filter("music2", None)
     $ renpy.music.set_pause(False, "music")
     pause 1.0
     show k22 angry flipped

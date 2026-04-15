@@ -1243,8 +1243,8 @@ label dx_after_lunatic_jump:
     show portalbg with dissolve
     show lunatic_cultist at center with moveinright
 
-    play music space_classroom if_changed
-    music space_classroom
+    play music just_monika if_changed
+    music just_monika
     l_cultist "Alright, cs... 188?"
     show lunatic_cultist flipped
     l_cultist "That's your name, apparently..."

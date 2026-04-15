@@ -680,6 +680,7 @@ label car_dialogue:
     pause 1.0
     hide screen skip_car
     stop music fadeout 2.0
+    $ renpy.music.set_audio_filter("music", None)
     scene black
     with dissolve
     pause 2.0

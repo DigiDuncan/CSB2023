@@ -272,7 +272,7 @@ define audio.sleeping_room = "sleeping_room.ogg"
 define audio.cobalt_coast_2 = "<loop 28.481 to 102.316>cobalt_coast_2.ogg"
 
 # Misc Music
-define audio.space_classroom = "space_classroom.ogg"
+define audio.just_monika = "just_monika.ogg"
 define audio.ocean_man = "credits.ogg"
 define audio.albuquerque_full = "albuquerque.ogg"
 define audio.we_will_meet_again = "we_will_meet_again.ogg"
