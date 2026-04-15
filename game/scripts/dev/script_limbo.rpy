@@ -438,7 +438,7 @@ label csdata:
     $ persistent.heard.add("showtime")
     $ persistent.heard.add("tuna_fish")
     $ persistent.heard.add("breakout")
-    $ persistent.heard.add("hired_guns")
+    $ persistent.heard.add("worldlines_part_1")
     $ persistent.heard.add("creative_exercise")
     $ persistent.heard.add("supernova")
     $ persistent.heard.add("hohsis_remix")

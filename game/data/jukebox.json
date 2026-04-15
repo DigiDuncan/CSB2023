@@ -257,9 +257,9 @@
             "album_art": "newhorizons.png",
             "trivia": "\"Despite me begging many times, Pakoo has not yet properly played {i}Animal Crossing: New Horizons...{/i} sadly.\" -- Mika"
         },
-        "hired_guns" : {
-            "file": "hired_guns.ogg",
-            "title": "Hired Guns",
+        "worldlines_part_1" : {
+            "file": "worldlines_part_1.ogg",
+            "title": "Worldlines Part 1",
             "artist": "Brian Johnston",
             "tags": ["CSBIII"],
             "album_art": "tracker.png",
@@ -695,7 +695,7 @@
             "artist": "Pat Benatar",
             "tags": ["CSBIII: Fired"],
             "album_art": "patbenatar.png",
-            "trivia": "This absolutely awful MIDI of {i}Hit Me With Your Best Shot{/i} made Digi laugh so hard that they put it in the game. The computer used to record this MIDI must have been lagging, because the percussion is nearly constantly out of sync."
+            "trivia": "This absolutely awful MIDI of {i}Hit Me With Your Best Shot{/i} made Digi laugh so hard that they put it in the game. The computer used to record this MIDI must have been lagging because the percussion is nearly constantly out of sync."
         },
         "hightop" : {
             "file": "hightop.ogg",

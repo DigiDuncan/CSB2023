@@ -683,8 +683,8 @@ label csbiii_arceus_appears:
         arceus "CS! There you are! Hired guns are coming after us!"
     else:
         arceus "CS! There you are! We need to go, ASAP!"
-    play music hired_guns volume 0.5 if_changed
-    music hired_guns
+    play music worldlines_part_1 volume 0.5 if_changed
+    music worldlines_part_1
 
     if fanbase == "both":
         show linus
@@ -814,8 +814,8 @@ label csbiii_cops_ltt:
     bad_end "Stupid CS! You dropped\nyour lore in front of the hoes!" "csbiii_ltt_decide"
 
 label csbiii_arc_escape:
-    play music hired_guns volume 0.5 if_changed
-    music hired_guns
+    play music worldlines_part_1 volume 0.5 if_changed
+    music worldlines_part_1
     scene frontdoor
     show cs worried at center
     show linus at right
