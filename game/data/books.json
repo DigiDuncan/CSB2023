@@ -330,7 +330,7 @@
         }
     },
     "minigame_rhythmchase": {
-        "title": "Rhythm Chase",
+        "title": "The Train Heist",
         "desc": "{image=gui/inline_text/dx.png} Catch that crook!",
         "x_pos": 793,
         "y_pos": 801,
