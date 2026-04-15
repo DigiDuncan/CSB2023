@@ -1680,8 +1680,8 @@ label japan_miku_pizza:
     scott_pres "Listen, son, I hate to break it to you, but I don't think Miku is real."
     cs "What do you mean she's not real? She was dancing with you in the commerical!"
     scott_pres "I know, but that was movie magic. I'm sorry--{w=0.5}{nw}"
-    play music real_world if_changed
-    music real_world
+    play music our_town_our_life if_changed
+    music our_town_our_life
     show cs
     show miku at center with moveinbottom
     show miku with vpunch

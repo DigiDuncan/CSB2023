@@ -27,8 +27,8 @@ label plane_intro_start:
     arceus "Heh, yeah. I wish we had those."
     show arceus angry flipped
     n "Arceus sighs."
-    play music mid_boss_battle if_changed
-    music mid_boss_battle
+    play music room_guarder if_changed
+    music room_guarder
     arceus "So I guess this means we have to take a plane?"
     cs "Yeah, I think that's our best option, in my opinion."    
     cs "Arceus, is something bothering you?"

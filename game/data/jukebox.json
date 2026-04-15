@@ -457,10 +457,10 @@
             "album_art": "nekopara.png",
             "trivia": "Romanized Title: Neko To Sanpo\nEnglish Title: Walking With Cats"
         },
-        "real_world" : {
-            "file": "real_world.ogg",
-            "title": "Real World",
-            "artist": "Project SEKAI COLORFUL STAGE!",
+        "our_town_our_life" : {
+            "file": "our_town_our_life.ogg",
+            "title": "Our Town, Our Life",
+            "artist": "Keiichi Sugiyama",
             "tags": ["CSBIII: Country"],
             "album_art": "projectsekai.png",
             "trivia": "\"Haha, Digi likes Miku!\" -- Everyone Now"
@@ -1537,10 +1537,10 @@
             "album_art": "vibration.png",
             "trivia": "A sped-up version of {i}Happy Roaming.{/i}"
         },
-        "mid_boss_battle" : {
-            "file": "mid_boss_battle.ogg",
-            "title": "Mid Boss Battle",
-            "artist": "Jun Ishikawa",
+        "room_guarder" : {
+            "file": "room_guarder.ogg",
+            "title": "Room Guarder",
+            "artist": "Jun Ishikawa, Hirokazu Ando",
             "tags": ["CSBDX: Plane", "New In DX"],
             "album_art": "kirby64.png",
             "trivia": "\"For {i}Plane Route,{/i} I wanted to use the same OSTs that Tate used for {i}Train Route.\"{/i} -- Pakoo"
