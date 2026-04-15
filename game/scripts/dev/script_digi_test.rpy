@@ -307,6 +307,7 @@ label _digi_test:
         n_n "You start chatting with Digi."
         $ just_entered = True
         $ mentioned_iris = False
+        $ mentioned_height_compressor = False
         digi_n "Hey! What do you want to talk about?"
         jump .chat_topics
 
@@ -325,28 +326,12 @@ label _digi_test:
                 jump .chat_layers
             "Aren't you like, small sometimes?":
                 jump .chat_small
+            "How does the height compressor work?" if mentioned_height_compressor:
+                jump .chat_hc_menu
+            "Who's Iris?" if mentioned_iris:
+                jump .chat_iris
             "Is weed legal today?":
                 jump .chat_is_weed_legal
-            "Who's Iris?" if mentioned_iris:
-                nvl clear
-                you_n "Who's Iris?{fast}"
-                show digi happy
-                digi_n "Yeah, Iris! She's my friend and... boss? Kinda? I work for her, but the relationship isn't really formal."
-                show digi
-                digi_n """When I first got to this universe, I was kinda... adrift, for a while. Didn't have a place to go.
-                She took me in after I had a run in with a black hole."""
-                show digi sad
-                digi_n "..."
-                show digi disappointed
-                digi_n "OK, yes, it was my fault for getting that close, I don't want to talk about it right now. Some other time."
-                show digi
-                digi_n "Anywho, she took me in, gave me some equipment, helped me back on my feet, and gave me the opportunity to help her out with what she does."
-                you_n "What does she do?"
-                show digi thinking
-                digi_n "I don't have time to get into that right now, to be honest."
-                show digi
-                extend " Another time."
-                jump .chat_topics
             "Nothing else!":
                 you_n "Nothing else!"
                 jump .chat_exit
@@ -405,6 +390,27 @@ label _digi_test:
         
         jump .chat_topics
 
+    label .chat_iris:
+        nvl clear
+        you_n "Who's Iris?{fast}"
+        show digi happy
+        digi_n "Yeah, Iris! She's my friend and... boss? Kinda? I work for her, but the relationship isn't really formal."
+        show digi
+        digi_n """When I first got to this universe, I was kinda... adrift, for a while. Didn't have a place to go.
+        She took me in after I had a run in with a black hole."""
+        show digi sad
+        digi_n "..."
+        show digi disappointed
+        digi_n "OK, yes, it was my fault for getting that close, I don't want to talk about it right now. Some other time."
+        show digi
+        digi_n "Anywho, she took me in, gave me some equipment, helped me back on my feet, and gave me the opportunity to help her out with what she does."
+        you_n "What does she do?"
+        show digi thinking
+        digi_n "I don't have time to get into that right now, to be honest."
+        show digi
+        extend " Another time."
+        jump .chat_topics
+
     label .chat_small:
         nvl clear
         you_n "Aren't you like, small sometimes?{fast}"
@@ -412,13 +418,16 @@ label _digi_test:
         digi_n "What a thing to ask a person."
         show digi
         digi_n "Yeah, I have a device called the {color=#FFAA00}Height Compressor{/color}."
+        $ mentioned_height_compressor = True
         digi_n "It lets me get smaller than my default height, and come back."
         you_n "What's your default height?"
         digi_n "Usually I'm #redacted#. Don't tell anyone!"
         you_n "... That was redacted. I couldn't read that."
         show digi happy
         digi_n "I know. I haven't come up with the real answer yet."
+        jump .chat_hc_menu
 
+    label .chat_hc_menu:
         menu (nvl = True):
             "How does the height compressor work?":
                 you_n "How does the height compressor work?{fast}"
@@ -577,12 +586,6 @@ label _digi_test:
                 extend " They care a lot about you."
         jump .chat_topics
 
-    label .chat_exit:
-        digi_n "Alrighty!"
-        digi_n "{size=-12}I hope NVL mode worked well..."
-        show digi at center with move
-        jump .menu
-
     label .chat_is_weed_legal:
         nvl clear
         you_n "Is weed legal today?{fast}"
@@ -596,3 +599,9 @@ label _digi_test:
             digi_n "Welp, looks like we're out of luck today."
 
         jump .chat_topics
+
+    label .chat_exit:
+        digi_n "Alrighty!"
+        digi_n "{size=-12}I hope NVL mode worked well..."
+        show digi at center with move
+        jump .menu
