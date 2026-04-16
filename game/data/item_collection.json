@@ -325,6 +325,14 @@
         "rarity": "Common",
         "ce": true
     },
+    "detos": {
+        "img": "detos",
+        "name": "Detos",
+        "owner": "CS",
+        "desc": "{image=gui/inline_text/note1.png} {i}{a=https://www.youtube.com/watch?v=2VAmUOUVC3c&list=RD2VAmUOUVC3}Fucked up in the crib sippin' Dr. Perky--{/a}{/i}",
+        "rarity": "Rare",
+        "dx": true
+    },
     "digi_nugget": {
         "img": "nugget_full",
         "name": "The Nugget",
@@ -922,6 +930,14 @@
         "rarity": "Uncommon",
         "ce": true
     },
+    "saints_flow": {
+        "img": "saints_flow",
+        "name": "Saints Flow",
+        "owner": "CS",
+        "desc": "Some seriously unhealthy shit.",
+        "rarity": "Uncommon",
+        "dx": true
+    },
     "sansbrick": {
         "img": "sansbrick",
         "name": "Sans Brick",
@@ -975,6 +991,22 @@
         "owner": "Captain Underpants",
         "desc": "Careful, the trigger is a little... sticky.",
         "rarity": "Legendary",
+        "dx": true
+    },
+    "slushie_berry": {
+        "img": "slushie_berry",
+        "name": "Berry Slushie",
+        "owner": "Arceus",
+        "desc": "Artificially refreshing!",
+        "rarity": "Uncommon",
+        "dx": true
+    },
+    "slushie_mango": {
+        "img": "slushie_mango",
+        "name": "Mango Slushie",
+        "owner": "Arceus",
+        "desc": "Refreshingly artificial!",
+        "rarity": "Uncommon",
         "dx": true
     },
     "small_city_slider": {

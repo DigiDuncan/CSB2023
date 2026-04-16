@@ -2,7 +2,7 @@ label true_east:
 
     play music happy_roaming volume 0.5 if_changed
     music happy_roaming
-
+    window auto False
     # this is stupid. but, to prevent sprite duplication, we use a scene each time
 
     scene expression "washington_road %s" % compass_current_time
@@ -12,31 +12,61 @@ label true_east:
     arceus "Alright, that sounds like a good idea."
 
     scene black with dissolve
+    window auto True
     n "CS and Arceus keep following the road for a while until they come across a small town."
     scene town with dissolve
-    show cs at left with moveinleft
-    show arceus at right with moveinright
+    show cs at offscreenleft
+    show arceus at offscreenright
+    with determination
+    show cs at left
+    show arceus at right
+    with move
+   
     show cs happy
-    cs "Oh my God! We found civilization again!"
+    cs "Oh my God! We've found civilization!"
     arceus "Thank God."
     n "The two look around for a bit until they see a gas station close by."
+    cs "Let's head over to that gas station and pick up something to eat."
+    arceus "Great idea. I'm starving..."
     show cs
-    cs "Let's head over to that gas station so we can pick up something to eat."
-    n "CS and Arceus head over to the convenience store at the gas station."
-    hide cs with moveoutright
-    show arceus flipped at right
-    hide arceus with moveoutright
+    show arceus flipped
+    with determination
+    hide cs
+    hide arceus 
+    with moveoutright
+
     scene gasinside with dissolve
-    show cs at left with moveinleft
-    show arceus at right with moveinright
+    show cs at offscreenleft
+    show genergy at manual_pos(-0.2, 0.7, 0.5)
+    show pringles at manual_pos(-0.05, 0.7, 0.5)
+    show arceus at offscreenright
+    show donut_1 at manual_pos(1.05, 0.7, 0.5)
+    show slushie_berry at manual_pos(1.2, 0.8, 0.5):
+        zoom 0.2
+    with determination
+
+    show cs at left
+    show genergy at manual_pos(0.1, 0.7, 0.5)
+    show pringles at manual_pos(0.3, 0.7, 0.5)
+    show arceus at right 
+    show donut_1 at manual_pos(0.75, 0.7, 0.5)
+    show slushie_berry at manual_pos(0.9, 0.8, 0.5):
+        zoom 0.2
+    $ collect("slushie_berry")
+    with move
     arceus "Finally, some good fucking food."
     cs "Donuts and chips have never tasted better."
     arceus "Thank God the slushie machine was working for once."
+    show cs happy
+    cs "So nice to have Genergy again, too."
+    show cs
     cs "Okay, now that we can think about something other than food, what's our plan to get home?"
+    show cs disappointed
     arceus "Yeah... I have no clue currently."
-    arceus "At first, I thought we could take a bus, or something, but this town is too small for a bus route..."
-    arceus "Then, I thought, maybe we could hitchhike, but it might be ages before we find someone willing, if we do at all..."
+    arceus "At first, I thought we could take a bus or something, but this town is too small for a bus route..."
+    arceus "Then, I thought, maybe we could hitchhike, but it might be ages before we find someone willing to drive us, if we even do at all..."
     arceus "What do you think, CS?"
+    show cs surprised
     stop music fadeout 3.0
     music end
     menu:
@@ -48,14 +78,25 @@ label true_east:
 label true_hotwire:
     stop music
     scene gasinside
-    show cs surprised at left
-    show arceus at right
+    show cs at left
+    show genergy at manual_pos(0.1, 0.7, 0.5)
+    show pringles at manual_pos(0.3, 0.7, 0.5)
+    show arceus at right 
+    show donut_1 at manual_pos(0.75, 0.7, 0.5)
+    show slushie_berry at manual_pos(0.9, 0.8, 0.5):
+        zoom 0.2
+
+
     cs "I don't know... we {i}could{/i} just... hotwire a car?"
     arceus "I can probably do that. Let's go look."
     scene gasoutside with dissolve
     show cs at left with moveinleft
     show arceus at right with moveinright
     n "CS and Arceus approach one of the cars in front of the gas station."
+    # TODO: SFX glass breaking; actually put a car maybe
+
+    ######## TATE STOPPED EDITING HERE! ########
+
     n "Arceus smashes open the window and opens the door from the inside."
     arceus "Alright, so if we connect this to this..."
     n "The car starts up."

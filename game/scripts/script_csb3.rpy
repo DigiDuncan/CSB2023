@@ -11,30 +11,34 @@ label csbiii_start:
     play music passport volume 0.5 if_changed
     music passport
     show linus at center with moveinright
-    linus "Welcome to Linus Media Group! Come on in. I'll show you to your desk."
-    cs "Thanks, Linus."
+    linus "Welcome to Linus Media Group! Come on in."
+    linus "I'll show you to your desk."
+    cs "Thanks, Linus!"
     scene black with dissolve
-    n "Linus leads CS to his new desk."
+    n "Linus leads CS to his own little corner of the office."
     scene csdesk with dissolve
     show linus at right with moveinright
     show cs at left with moveinleft
     dxcom 5years
-    cs "Wow! I thought this was a starting office. Why do I get such a cool setup?"
+    show cs scared
+    cs "Wow! I thought this was a starting position. Why do I get such a cool setup?"
     linus "Actually, this is our {i}worst{/i} setup. You'll get upgraded after you've been here for a while."
     cs "Holy shit, really? This is way better than any setup I've seen, let alone {i}had.{/i}"
     linus "You must've had really bad setups then. This only has a 3080. Everyone else has 3090s or 4080s."
+    show cs
     cs "I have absolutely no problem with a 3080."
     linus "Well, enjoy!"
     hide linus with moveoutright
     hide screen dxcom
     pause 0.5
+    show cs happy
     cs "I guess I'd better get to work! Let's see what videos need editing..."
     show cs surprised
     cs "Hmm..."
     cs "I have the new TechQuickie video on how livestreaming works..."
     cs "Or, this video on how at least half of the keys on your keyboard should be macros..."
 
-    # this section added by tate
+    # This section added by Tate
 
     n "As CS ponders his choices, he receives a Slack message from Taran."
     play sound sfx_slack
@@ -70,7 +74,7 @@ label csbiii_no_meeting:
         "Comprehensive Keyboard Macro Guide":
             jump csbiii_boring_video
 
-    # end section added by tate
+    # End section added by Tate
 
     show cs disappointed
     cs "Damn it, Taran... You can edit your own macro fetish content."
@@ -87,8 +91,8 @@ label csbiii_no_meeting:
     cs "It's going well! I have the background all done, and I'm working on adding graphics and fixing audio now."
     linus "Wow! You're a fast worker. You'll get off of that old 3080 in no time."
     show cs happy
-    cs "Thanks, Linus."
-    linus "Speaking of livestreaming, we need a new PC for {i}The WAN Show.{/i} Can you go and buy parts for one?"
+    cs "Thanks, Linus!"
+    linus "Speaking of livestreaming, we need a new PC for {i}The WAN Show.{/i} You mind picking up some parts for me?"
 
     menu:
         "What will CS do?"
@@ -120,9 +124,9 @@ label csbiii_boring_video:
 
     play sound sfx_csnore
     cs "Zzzzz..."
+    show cs scared
     linus "{i}CS!!" with hpunch
     stop sound
-    show cs scared
     cs "Wha-- huh?!"
 
     linus "Damn it, CS!"
@@ -132,12 +136,15 @@ label csbiii_boring_video:
         linus "Asleep on the job? On your {i}first day?!"
     cs "Oh, shi--{nw}"
     linus "This is unacceptable!"
-    linus "You're {i}fired!" with hpunch
+    linus "You're {nw}"
+    extend "{i}fired!" with hpunch
 
     scene black with dissolve
     pause 1.0
     n "CS is groggily escorted out of the building."
     jump fired_new_plan
+
+    ######## TATE STOPPED EDITING HERE! ########
 
 label csbiii_edit_video:
     play music passport volume 0.5 if_changed
