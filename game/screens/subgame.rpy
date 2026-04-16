@@ -115,7 +115,9 @@ screen subgame():
                     SelectedIf(SetScreenVariable("current_book", book)),
                     SensitiveIf(True),
                     AddToSet(persistent.opened, book.book_id),
-                    With(Dissolve(0.25))
+                    With(Dissolve(0.25)),
+                    SetScreenVariable("new_count", 0),
+                    Function(renpy.restart_interaction)
                 ]
 
             if book.book_id not in persistent.opened:
