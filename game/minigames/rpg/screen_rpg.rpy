@@ -7,16 +7,6 @@ TODO list
 - Fix the smaller sprites such as the K-types that are getting Mike Wazowski'd
 """
 
-python early:
-    def bypass_append(renpy_list, element):
-        renpy_list.append(element)
-    def print_action(print_str):
-        logger.info(print_str)
-    def dev_win(current_encounter):
-        current_encounter.dev_win()
-    def clear_list(l):
-        l.clear()
-
 init python:
     renpy.add_layer("rpg_context", above="master")
     renpy.add_layer("rpg_say", above="rpg_context")
@@ -39,7 +29,6 @@ init python:
             if RPG.encounter.subturn + 1 != len(RPG.encounter.allies):
                 RPG.encounter.subturn += 1
             current_ally_mode = None
-            renpy.restart_interaction()
 
     def get_next_signal() -> RPG.Signal | None:
         while RPG.encounter.has_signals():
@@ -477,7 +466,7 @@ screen screen_rpg(no_stat_boxes = False):
                                             attack_actions = []
                                             # If the attack is not available, make this insensitive
                                             attack_actions.append(Function(current_ally.set_next_attack, attack))
-                                            attack_actions.append(Function(clear_list, working_list))
+                                            attack_actions.append(Function(working_list.clear))
                                             attack_actions.append(SetVariable("current_ally_mode", "TGT"))
                                             # This might be needed if the attack has 0 targets
                                             if attack.attack.target_count == 0:
@@ -542,10 +531,9 @@ screen screen_rpg(no_stat_boxes = False):
                                     ]
 
                         elif current_ally_mode == "TGT":
-                            $ targets = RPG.encounter.possible_targets(current_ally, current_ally.next_attack.attack)
-
                             python:
                                 if current_ally_mode == "TGT":
+                                    targets = RPG.encounter.possible_targets(current_ally, current_ally.next_attack.attack)
                                     if current_ally.next_attack.attack.target_count == 0:
                                         select_target(None)
 
@@ -625,6 +613,7 @@ screen screen_rpg(no_stat_boxes = False):
 
         # If everything is set and good to go, show the confirm button)
         # TODO: Further checks to make sure everything is good and valid.
+        $ print([(f.next_attack.attack.target_count if f.next_attack else None, [e.display_name for e in f.next_targets]) for f in RPG.encounter.allies])
         if all(f.next_attack is not None for f in RPG.encounter.allies) and all(f.next_attack.attack.target_count == len(f.next_targets) for f in RPG.encounter.allies):
             imagebutton:
                 xpos 1581 ypos 970 # it wanted to be stupid so it gets the manual positioning
