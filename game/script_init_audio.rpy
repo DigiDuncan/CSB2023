@@ -169,7 +169,7 @@ define audio.billy_mix = "billy_mix.ogg"
 define audio.moving_right_along = "moving_right_along.ogg"
 
 # CSBDX: Bronson (Michigan)
-define audio.upon_me = "upon_me.ogg"
+define audio.upon_me = "<loop 55.981>upon_me.ogg"
 define audio.error = "error.ogg"
 
 # CSBDX Train Music
