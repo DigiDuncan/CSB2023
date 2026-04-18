@@ -1,8 +1,4 @@
-
 # TODO: swap static laptop image out for a video
-# TODO: when cs leaves walmart parking lot and michael's house get a background for that
-# TODO: michael facepalm sprite
-# TODO: WE NEED THAT STREET VIEW IMAGE PLEASE
 
 label csbi_start:
     $ quick_menu = False
@@ -156,7 +152,9 @@ label csbi_craptop:
     show carguy at mid_offscreen_right
     with MoveTransition(0.25)
     play sound sfx_doorslam
-    scene cs_car_inside
+    scene outside_1:
+        ypos -200
+    show car_inside_fg
     show cs disappointed at left
     with dissolve
     play music canyon_car volume 0.2 if_changed
@@ -303,7 +301,9 @@ label csbi_walmart:
     show walmart_bag at offscreenright
     with MoveTransition(0.25)
     play sound sfx_doorslam
-    scene cs_car_inside
+    scene outside_2:
+        ypos -200
+    show car_inside_fg
     show cs scared at left
     with dissolve
     play music canyon_car volume 0.2 if_changed
@@ -588,7 +588,9 @@ label csbi_room:
 
 label csbi_michael_house:
     play sound sfx_doorslam
-    scene car_inside
+    scene outside_1:
+        ypos -200
+    show car_inside_fg
     show cs at left
     with dissolve
     play music canyon_car volume 0.2 if_changed
@@ -808,7 +810,9 @@ label csbi_rosen_house:
     jump csbi_end
 
 label csbi_end:
-    scene car_inside
+    scene outside_3:
+        ypos -200
+    show car_inside_fg
     show cs surprised at left
     with dissolve
     play sound sfx_driving volume 0.5
