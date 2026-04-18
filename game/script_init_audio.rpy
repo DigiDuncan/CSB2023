@@ -133,7 +133,7 @@ define audio.xddcc = "xddcc.ogg"
 # CSBIII Fired/Rockstar Music
 define audio.dealin_dope = "dealin_dope.ogg"
 define audio.hit_me_with_your_best_shot = "hitmewithyourbestshot.ogg"
-define audio.hightop = "hightop.ogg"
+define audio.hightop = "<loop 25.600>hightop.ogg"
 define audio.everlong = "everlong.ogg"
 define audio.local_forecast = "local_forecast.ogg"
 define audio.now_what = "now_what.ogg"
