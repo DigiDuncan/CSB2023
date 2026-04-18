@@ -1,4 +1,4 @@
-# TODO: add beeps to sticky note?
+
 # TODO: swap static laptop image out for a video
 # TODO: when cs leaves walmart parking lot and michael's house get a background for that
 # TODO: michael facepalm sprite
@@ -696,9 +696,30 @@ label csbi_rosen_house:
     show cs worried flipped
     cs "Nooooooooooooooooo...?"
     n "Michael sighs and facepalms."
+    window hide
+    camera:
+        parallel:
+            linear 1 xpos -300
+        parallel:
+            linear 1 ypos -700
+        parallel:
+            linear 1 zoom 3
+    pause 1.5
+    show michael facepalm at manual_pos(0.05, 0.25):
+        zoom 0.3
     play sound sfx_michael_facepalm
+    pause 1.25
+    show michael at left:
+        zoom 1
+    camera:
+        parallel:
+            linear 1 xpos 0
+        parallel:
+            linear 1 ypos 0
+        parallel:
+            linear 1 zoom 1
     show cs disappointed flipped
-    pause 3.0
+    pause 2.0
     play sound sfx_doorbell volume 0.5
     n "The doorbell rings."
     michael "Oh! My other guest is here! Please excuse me for just one moment..."

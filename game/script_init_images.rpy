@@ -1173,6 +1173,7 @@ image asylum_worker = "dark:characters/mohs.png"
 
 # CSB I
 image michael = "characters/michael.png"
+image michael facepalm = "characters/michael_facepalm.png"
 image michael flipped = "flip:characters/michael.png"
 image michael dark = "dark:characters/michael.png"
 image michael dark flipped = "flip:dark:characters/michael.png"
