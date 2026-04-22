@@ -1123,8 +1123,9 @@
         "full_name": "Michael Rosen",
         "pronouns": "(he/him)",
         "sprites": {
-            "Default": "images/characters/michael.png",
-            "Festive": "images/characters/michael_festive.png"
+            "Default: Neutral": "images/characters/michael/michael.png",
+            "Default: Facepalm": "images/characters/michael/michael_facepalm.png",
+            "Festive": "images/characters/michael/michael_festive.png"
         },
         "quote": "I love chocolate cake!",
         "bio": "Mr. Rosen is a poem fanatic. He's got a story to tell whenever you meet him. This man will pull the craziest tale from nothing in a matter of seconds. How does he do this? What secret talent does he have? All that is certain is that he needs his chocolate cake.",

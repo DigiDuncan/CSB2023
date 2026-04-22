@@ -458,7 +458,7 @@ class Characters:
     # Allies (UCN)
     BUBBLE = Character("{image=gui/inline_text/dx.png} Bubble", 250, 10, 35, [Attacks.STOMP, Attacks.POKE], display_name = "Bubble", portrait=Image("gui/rpg_common/portraits/bubble.png"), sprite=Image("images/characters/bubble.png"), ai = AIType.AGGRO)
     GES = Character("{image=gui/inline_text/dx.png} Ges", 170, 20, 35, [Attacks.SWORD_SLASH, Attacks.FLAMETHROWER], display_name = "Ges", portrait=Image("gui/rpg_common/portraits/ges.png"), sprite=Image("images/characters/ges.png"), ai = AIType.SMART)
-    MICHAEL = Character("Michael", 155, 15, 35, [Attacks.CHOCOLATE_CAKE, Attacks.CONFUSING_STORY, Attacks.BEDTIME_STORY], portrait=Image("gui/rpg_common/portraits/michael.png"), sprite=Image("images/characters/michael.png"), ai = AIType.DEFENSIVE)
+    MICHAEL = Character("Michael", 155, 15, 35, [Attacks.CHOCOLATE_CAKE, Attacks.CONFUSING_STORY, Attacks.BEDTIME_STORY], portrait=Image("gui/rpg_common/portraits/michael.png"), sprite=Image("images/characters/michael/michael.png"), ai = AIType.DEFENSIVE)
     BILLY = Character("Billy", 220, 10, 25, [Attacks.HYPE_UP, Attacks.PITCHMAN, Attacks.AUGMENT], portrait=Image("gui/rpg_common/portraits/billy.png"), sprite=Image("images/characters/billy/BillyMaysWithLaser.png"), ai = AIType.SMART)
     PHIL = Character("Phil", 160, 20, 40, [Attacks.HYPE_UP, Attacks.PITCHMAN, Attacks.FLEX_TAPE], portrait=Image("gui/rpg_common/portraits/phil.png"), sprite=Image("images/characters/phil.png"), ai = AIType.AGGRO)
     MEAN = Character("Mean", 150, 20, 35, [Attacks.HUG, Attacks.SPIKE_BOMB], portrait=Image("gui/rpg_common/portraits/mean.png"), sprite=Image("images/characters/mean/meanangry.png"), ai = AIType.AGGRO)
