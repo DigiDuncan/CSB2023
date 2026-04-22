@@ -51,8 +51,12 @@ label csbiii_start:
             "Yes":
                 show cs happy
                 cs "Sure thing! I'll be right there!"
-                hide taran with Dissolve(0.25)
-                hide cs with moveoutright
+
+                show taran slack at manual_pos(0.6, 0.2):
+                    linear 0.25 alpha 0
+                show cs at offscreenright 
+                with move
+
                 stop music fadeout 3.0
                 scene black with dissolve
                 pause 1.0
@@ -77,12 +81,12 @@ label csbiii_no_meeting:
     # End section added by Tate
 
     show cs disappointed
-    cs "Damn it, Taran... You can edit your own macro fetish content."
+    cs "Damn it, Taran. You can edit your own macro fetish content."
     show cs
     cs "I guess I'll edit the livestreaming one."
     scene black with dissolve
     pause 1.0
-    n "CS starts working on editing the TechQuickie video. After some time, Linus comes in to check on him."
+    n "CS starts work on the TechQuickie video. After some time, Linus comes in to check on him."
     scene csdesk
     show cs at left
     with dissolve
@@ -108,10 +112,10 @@ label csbiii_boring_video:
     music passport
     cs "I suppose that something super-technical like this could be really useful to the viewers. Maybe I'll learn something new, too."
     show cs
-    cs "Well, let's see what this is all about!"
+    cs "So... let's see what this is all about!"
     scene black with dissolve
     pause 1.0
-    n "As CS watches the footage, his eyelids grow heavy..."
+    n "As CS scrubs through 30 minutes of monotonous footage, his eyelids grow heavy..."
     centered "Two hours later..."
     play sound sfx_csnore
     pause 1.0
@@ -125,8 +129,8 @@ label csbiii_boring_video:
     play sound sfx_csnore
     cs "Zzzzz..."
     show cs scared
-    linus "{i}CS!!" with hpunch
     stop sound
+    linus "{i}CS!!" with hpunch
     cs "Wha-- huh?!"
 
     linus "Damn it, CS!"
@@ -144,19 +148,21 @@ label csbiii_boring_video:
     n "CS is groggily escorted out of the building."
     jump fired_new_plan
 
-    ######## TATE STOPPED EDITING HERE! ########
-
 label csbiii_edit_video:
     play music passport volume 0.5 if_changed
     music passport
     show csdesk
     show linus at right
     show cs at left
+
+    # TODO: this entire section isn't even remotely how a natural conversation would flow. let's workshop this - tate
     cs "Nah, I wanna finish this project first. That way, I can help you pump out videos faster."
     linus "Alright, that's fine. I'll probably send Colton to get the parts instead. He's good at sucking up and doing this kinda thing."
     cs "Alright, yeah. I definitely wasn't using this as an excuse to get out of shopping!"
     linus "... Okay? Whatever, just keep editing."
     cs "Yeah, no, don't worry, I've got this."
+    # end awkward section
+
     show linus flipped
     hide linus with moveoutright
     n "Linus leaves the room."
@@ -171,33 +177,32 @@ label csbiii_edit_video:
     if fun_value(FUN_VALUE_MUSIC):
         taran "You eatin' good, CS?"
     else:
-        taran "Need any help with anything?"
+        taran "Need help with anything?"
     show cs happy
-    cs "Hey, Taran! You wanna check out my video so far?"
+    cs "Hey, Taran! Perfect timing! You wanna check out my video so far?"
     taran "Sure, let it roll."
     # TODO: FOR THE LOVE OF GOD, CAN WE FIX THIS SCREENSHOT ALREADY? I *PROMISE* YOU CS WILL NOTICE IF WE DON'T
     scene csvideo with dissolve
     n "CS and Taran watch CS' video."
     scene csdesk
-    show cs disappointed at left
+    show cs at left
     show taran at right
     with dissolve
     cs "Well? You think it's good?"
     taran "Hey, hey! That's not half-bad!"
     show cs happy
     cs "Thanks! I guess my many years of video editing are finally paying off!"
-    taran "They definitely are."
+    taran "I'd say so."
     taran "You know what? I think this video is so good, I don't even think Linus needs to check it."
     taran "He'll be so surprised when you upload it. He's gonna wonder how you put it together so well in such little time."
     show cs
     cs "You really think so? I mean, I don't want him to be upset with me."
-    taran "Don't worry about it. If he thinks it's that bad, I'll take the blame for it."
+    taran "Don't worry about it. If he hates it, I'll take the heat."
     show cs disappointed
-    cs "That's nice and all, but do you think that's a good idea? I mean, I don't want to mess up my first chance at this."
+    cs "I appreciate it, but... are you sure? I mean, I don't want to mess up my first chance at this."
     taran "Nah, don't worry about it."
-    taran "Even if something dumb happens, he usually never gets mad at us for doing silly things like that."
-    cs "Well, if you say so, I guess it's fine."
-    cs "Let's wait and see how he reacts."
+    taran "Even if something dumb happens, he usually never gets mad at us for small mistakes."
+    cs "Well, if you say so, I guess... let's go for it."
     taran "Alrighty, then. I'll catch you later!"
     show cs happy
     cs "For tonight, this{w=0.05} is{w=0.05} C{w=0.05}S,{w=0.5} siiiiiiiiigning{w=0.05} out!"
@@ -206,7 +211,7 @@ label csbiii_edit_video:
     cs "Huh? I totally didn't say that. I'm just gonna go now."
     taran "..."
     cs "..."
-    taran "... This is {i}your{/i} office..."
+    taran "...{fast} This is {i}your{/i} office..."
     cs "..."
     taran "Okay, I'll see you later then!"
     show taran flipped at right
@@ -217,34 +222,39 @@ label csbiii_edit_video:
     show cs
     cs "Well, I guess since this video is already good enough, I should upload it now."
     cs "It's so crazy having the ability to access the LTT channels. There's so much crazy shit going on here!"
-    cs "Oh, well. Time to upload this."
+    cs "Ah, well. Time to post this."
     pause 1.0
     show cs surprised
     pause 1.0
     n "CS pauses for a moment."
     pause 1.0
-    cs "I don't know. I really don't feel like I should upload this yet."
+    cs "I don't know. I really don't feel like I should."
     cs "It doesn't feel complete. Something is missing..."
     cs "Lemme look at the project file and run through the video again."
     pause 0.5
-    n "Just as CS was about to rewatch his video, an he gets an idea."
+    n "Just as CS reaches for the mouse, he gets an idea."
     # TODO: idea lightbulb? idk
     show cs happy
-    cs "I've got it!"
+    if fun_value(FUN_VALUE_RARE):
+        cs "Urethra! {nw}"
+    else:
+        cs "Eureka! {nw}"
+    extend "I've got it!"
     cs "I know {i}exactly{/i} what to do!"
     show cs
     cs "If Taran really does mean what he says about Linus, then I'm sure he'll {i}love{/i} this!"
     show cs happy
     cs "I'm gonna turn this video into a YTP!"
+    # TODO: "they" = LMG, or the fans? can we workshop this?
     cs "It'll be perfect! No one will expect it because they probably don't even know what I've done with my life for the past 13 years!"
     show cs
     cs "As always, I should make sure it's as high-quality as possible, so both Linus {i}and{/i} the fans can enjoy it."
-    cs "But I don't have much time before Linus comes back and notices, so I need to hurry!"
+    cs "It won't be long before Linus comes back, so I'd better hurry!"
     show cs happy
     if fun_value(FUN_VALUE_MUSIC):
-        cs "Welp, time to make a supernova of a video!"
+        cs "Time to make a supernova of a video!"
     else:
-        cs "Welp, time to get to work!"
+        cs "Time to get to work!"
     scene black with dissolve
     minigame "minigame_editing" "csbiii_boost" "csbiii_bad_video"
 
@@ -265,10 +275,10 @@ label csbiii_bad_video:
     show cs at left with moveinleft
     cs "Hey guys! Did you all check out the new video?"
     show linus at right with moveinright
-    linus "Yes, and we need to talk."
+    linus "Yes. We need to talk."
     show cs happy
-    cs "Don't worry, I already know it's perfect. It's so great, isn't it?"
-    linus "It's actually the very opposite of that. You're fired."
+    cs "Don't worry, I already know it's perfect. Can't wait to start the next one!"
+    linus "It's actually the very opposite of that, and there will not {i}be{/i} a next one. You're fired."
     if fun_value(FUN_VALUE_UNOBTRUSIVE):
         play sound sfx_waterphone
     show cs worried
@@ -318,7 +328,7 @@ label csbiii_boost:
     linus "Yes, we did."
     linus "It was..."
     show cs disappointed
-    cs "Oh, shoot, it was awful, wasn't it?"
+    cs "Ah, shit. It was awful, wasn't it?"
     cs "Yeah, I should've realized my style is too crazy. I guess I should leave..."
     show cs disappointed flipped at mid_offscreen_left with move
     show linus behind cs at left with ease
@@ -338,7 +348,7 @@ label csbiii_boost:
     with move
     cs "Woah, wait! You actually {i}like{/i} YTPs?"
     linus "Yeah, man! You think I hired you on the spot just because of your obviously-fake visa?"
-    linus "I {i}love{/i} your videos! I've been secretly hoping you would YTP one of mine for the longest time!"
+    linus "I {i}love{/i} your videos! I've been secretly hoping you'd poop us for literally {i}years!"
     show cs happy with dissolve
 
     show linus at manual_pos(0.4, 0.5, 0.5)
@@ -351,69 +361,85 @@ label csbiii_boost:
     with ease
 
     n "CS' frown fades into a big grin as they share a high-five."
-    cs "Hell yeah! I never would've thought that YTPs would help me in a business setting, let alone with a boss who {i}enjoys{/i} them!"
-
-    cs "Alright! Well, I guess I'd better get back to poopin'!"
+    cs "Hell yeah! I never would've thought that YTPs would help me in a business setting."
+    cs "I certainly never thought I'd have a boss who {i}enjoys{/i} them!"
+    show cs happy
+    cs "Guess I'd better get back to poopin'!"
     show cs flipped at left
     show cs flipped at offscreenleft with ease
     show linus at mid_left with move
-    n "As CS heads out of the room, Linus shouts after him."
-    linus "Hey, later today, I've got a big surprise to show you. I'll bring it by your office and we can check it out!"
-    cs "Sure thing!"
+    n "As CS heads toward his office, Linus shouts after him."
+    linus "By the way, I've got a surprise on the way for you! I'll bring it by later!"
+    cs "Wow, thanks! I can't wait!"
     scene black with dissolve
     pause 0.5
     scene csdesk
     show cs at center
     with dissolve
-    n "As CS gets comfortable at his desk, his mind starts to race with ideas."
-    cs "Oh, man... where do I even start, now?"
+    n "As CS gets comfortable at his desk, his mind begins racing with ideas."
+    cs "Oh, man... where do I even start now?"
     cs "I have so many ideas for videos to poop. I could even try to teach Linus how to YTP..."
     show cs surprised
-    cs "I mean, with the amount of tech he drops on a daily basis, he kinda already {i}is{/i} a YTP."
+    cs "I mean, with the way he drops expensive tech on a daily basis, he kinda already {i}is{/i} a YTP."
     pause 0.5
     show cs happy
-    cs "Alright, well, back to editing!"
+    cs "Welp, I'd better get to work. These vids won't edit themselves!"
     show cs
     play sound sfx_keyboard loop
     n "The time flies by as CS dumps his ideas into Premiere."
     pause 1.0
-    cs "Doo dee doo..."
+    cs "Doot dee doo...{nw}"
+    extend " :note2:{fast}"
     show linus at offscreenright
-    n "Linus barges in."
+    show linus_box at manual_pos(1.2, 0.7, 0.5)
     stop sound
     play sound sfx_doorslam_open
     with hpunch
+    n "Linus barges in."
     show linus at center
+    show linus_box at manual_pos(0.4, 0.7, 0.5)
     with ease
     play sound sfx_punch_alt
     show cs scared with hpunch
     show cs scared at left
     show linus at right
+    show linus_box at manual_pos(0.7, 0.7, 0.5)
     with ease
     linus "CS!!!"
     show cs worried
     cs "{i}Woah, shi--{/i}{w=0.5} You scared the crap out of me!"
-    show cs
-    linus "Hah, sorry. I'm just excited to show you this!"
-    show linus_box at truecenter with dissolve
+    show cs disappointed
+    linus "Hah, sorry. I'm just so excited to show you this!"
+    show linus_box at manual_pos(0.5, 0.5, 0.5) with move
     $ collect("linus_box")
-    n "Linus holds out a rectangular box with bold black lettering. It reads, DO NOT USE."
+    n "Linus holds out a rectangular box with bold black lettering."
+    n "It reads 'DO NOT USE'."
     show cs disappointed
     cs "Umm, you sure this is the right box? It literally says--"
     linus "Yeah, I know what it says. I just wrote this on here so no one {i}else{/i} uses it."
     linus "Don't worry, I didn't, like, buy it from some creepy dude at a garage sale who claims it's haunted."
     show cs worried
     n "CS looks unnerved."
+    show linus_box behind cs at manual_pos(0.5, 0.7, 0.5) with { "master": move }
+    show ytx behind cs at manual_pos(0.5, 0.75, 0.5):
+        zoom 0.5
+    show linus_box_fg behind cs at manual_pos(0.5, 0.7, 0.5) with determination
     linus "Look, just... look inside. I'm sure you'll like it."
+    show cs disappointed at manual_pos(0.4, 1.0, 1.0) with { "master": move }
     n "CS cautiously reaches into the box."
-    show ytx at truecenter
+    show ytx at manual_pos(0.5, 0.5, 0.5):
+        zoom 0.5
+    with move
     $ collect("ytx")
+
     hide linus_box
+    hide linus_box_fg
     with dissolve
+
     n "He pulls out what looks to be a graphics card, but with a brown YouTube logo engraved onto the side."
     show cs
     cs "Woah, what {i}is{/i} this, Linus? A YouTube-brand graphics card?"
-    linus "Not exactly. It's a custom-made experimental piece of hardware that we have never used before."
+    linus "Not exactly. It's a custom-made never-before-seen experimental piece of hardware."
     show ytx at manual_pos(0.5, 0.3, 0.5) with move
     n "Linus holds the card into the air."
     linus "Behold! {w=0.5}The-- WOAH SHIT{w=0.25}{nw}"
@@ -426,23 +452,23 @@ label csbiii_boost:
     play sound sfx_michael_facepalm
     # TODO: sfx luke laughing
     n "CS facepalms while Luke can be heard laughing from across the room."
-    show cs disappointed
-    cs "Goodness, Linus. You should maybe {i}not{/i} do that next time."
-    linus "Yeah, I'm sorry. Maybe {i}you{/i} should hold it."
+    show cs disappointed behind ytx
+    cs "Jeez, Linus. Maybe {i}don't{/i} do that?"
+    linus "Yeah, I'm sorry. Maybe you should hold it."
     show ytx at manual_pos(0.3, 0.7, 0.5) with move
     pause 0.5
     linus "This card is called the YTX-9001 Ti, a PCI add-in for enhancing and optimizing YouTube Poops."
     show cs
     n "CS' eyes widen."
-    cs "Wait, whaaat? That's awesome! How does this even work?"
+    cs "Wait, whaaat? That's awesome! How does it work?"
     linus "Well... we don't actually know. We haven't tested it yet."
     linus "We don't exactly do a lot of YTPing around here... until now!"
-    linus "We were hoping you could help us test it. It even apparently has a feature called poop-tracing, which I'm especially curious about."
+    linus "We were hoping you could help us test it. It even has a feature called poop-tracing, which I am especially curious about."
     show cs happy
     cs "Well, what're we waiting for? Let's get this thing hooked up!"
     scene black with dissolve
     n "Linus and CS take apart CS' PC and install the card."
-    n "They then start the computer, and everything boots up as normal."
+    n "The system is put back together and seems to boot normally."
 
     scene csdesk
     show cs at left
@@ -450,18 +476,20 @@ label csbiii_boost:
     with dissolve
 
     linus "Alright, now that it's up and working, we need to install the drivers."
-    show ytx_drive at manual_pos(0.7, 0.5, 0.5) with dissolve
+    show ytx_drive at manual_pos(0.7, 0.5, 0.5) with { "master": moveinbottom }:
+        zoom 0.5
     $ collect("ytx_drive")
-    linus "The card came with a flash drive that includes them."
+    linus "The card came with this flash drive."
     pause 0.5
     hide ytx_drive with dissolve
-    n "As Linus inserts the flash drive, a window off the side of the screen pops up saying \"Your new Peeforce Experience drivers are available.\""
+    play sound sfx_win10_insert
+    n "As Linus inserts the flash drive, a popup appears on side of the screen."
+    pc "Your new Peeforce Experience drivers are now available."
     show cs happy
-    n "CS chuckles a bit."
+    cs "Haha, \"Peeforce\"? {nw}"
     show cs
-    cs "\"Peeforce\"? I must admit, even these driver names are a bit silly."
-    n "Linus laughs."
-    linus "If you want, we can wipe them later."
+    extend "I must admit, even these driver names are silly."
+    linus "Heh. If you want, we can wipe them later."
     show cs happy
     cs "{i}Wipe!{/i} Now {i}you're{/i} in on it!"
     n "They both laugh as the drivers finish installing. As soon as the installation completes, CS boots up Premiere."
@@ -473,6 +501,7 @@ label csbiii_boost:
     linus "Go into \"Settings\" real quick, and find the \"YTP Features\". Turn \"YTP Mode\" on to enable poop-tracing."
     cs "Alright, here goes nothing."
     # TODO: background image with the loading bar
+    # TODO: more backgrounds in this scene in general please
     n "A loading bar appears as the timeline starts shifting on its own, creating different edits in the process."
     cs "Holy crap! This is amazing! It optimized every part of my YTP!"
     linus "That's pretty cool! Let's try it on a completely new source."
@@ -482,12 +511,13 @@ label csbiii_boost:
     linus "And, hey, if you don't like the edits it makes, you can always turn it off or tweak the other options in that tab."
     linus "If all else fails, you still have the ability to edit any section the old-fashioned way!"
     scene csdesk
-    show cs at left
+    show cs happy at left
     show linus at right
     with dissolve
     cs "Wow, thank you so much for this, Linus!"
     linus "No problem! Please consider this my gift to you."
     linus "We should make a review video of it before the workday ends."
+    show cs
     cs "Sure thing. Let's take the card out real quick."
     scene black with dissolve
     pause 0.5
@@ -506,16 +536,17 @@ label csbiii_boost:
     pause 1.0
     linus "These days, video editing software is capable of producing some {i}amazing{/i} results."
     linus "Unfortunately, the process to actually {i}get{/i} to those results can, more often than not, be difficult, tedious, and even downright {i}frustrating!"
-    linus "To make matters worse, when it comes to those of us who make a living off of content creation, the YouTube algorithm has just been demanding more and {i}more{/i} from us!"
+    linus "To make matters worse, when it comes to those of us who make a living off of content creation, the YouTube algorithm just keeps demanding more and {i}more!{/i}"
     linus "If we want even a {i}chance{/i} of all our hard work getting any attention, we have to find a way to stand out from the millions of other creators on this platform."
     linus "This is why, today, we have brought along surrealist video editor cs188, who {i}also{/i} happens to be the newest addition to the LMG team!"
     show cs happy
     cs "Hey guys, CS here!"
     show cs
-    linus "CS has been turning otherwise boring videos into hilarious nonsense for over a decade, {i}and{/i} he has the subscribers and views to prove it."
+    linus "CS has been turning otherwise boring videos into hilarious nonsense for over a decade. Hundreds of thousands of subscribers have been entertained by his antics!"
+    linus "Truly, he's one of the real OGs of YTPs."
     linus "Naturally, this also makes him the {i}perfect{/i} guy to help us review the upcoming YTX-9001 Ti!"
     cs "Thanks, Linus!"
-    cs "The YTX-9001 Ti is a fantastic piece of hardware that promises to make video editing less of a chore for everyone!"
+    cs "The YTX-9001 Ti is a fantastic piece of hardware that promises to make video editing less of a chore for everyone and anyone!"
     cs "We can't wait to show you {i}all{/i} of its features in action!"
     linus "Much like we can't wait to show you this segue {w=0.25}to our {i}sponsor!"
     "..."
@@ -547,26 +578,31 @@ label csbiii_boost:
     linus "Anyway, let's take five. The crew can handle getting some B-roll clips of the card itself."
     cs "Sure thing..."
     scene black with dissolve
-    n "After some time, they recording is complete, and the footage is passed along to the editing team."
-    n "CS takes few minutes to shake off the stress of being featured in such a high-budget production for the first time."
-    n "Once he collects himself, CS heads up to Linus' office to chat."
+    n "A few hours fly by as the recording is completed. The footage is passed along to the editing team."
+    n "CS spends a few minutes shaking off the stress of being featured in such a high-budget production for the first time."
+    n "Once he collects himself, he heads up to Linus' office to chat."
     jump csbiii_ltt_decide
 
 label csbiii_ltt_decide:
     play music airport_counter volume 0.5 if_changed
     music airport_counter
-    scene loffice with dissolve
+    scene loffice 
+    show linus flipped at right
+    with dissolve
     pause 0.5
     show cs at left with moveinleft
     pause 0.5
     cs "Hey, Linus?"
-    linus "What's up, CS? What do you need help with?"
+    show linus
+    linus "What's up, CS? Ya need somethin'?"
     menu:
-        "What does CS need help with?"
-        "I want to work on YTPs." (type = "true"):
+        linus "What can I help you with?"
+        "I want to make more YTPs." (type = "true"):
             jump csbiii_ytp_edit
-        "I want to do reviews.":
+        "I want to do more reviews.":
             jump csbiii_reviews
+
+    ######## TATE STOPPED EDITING HERE! ########
 
 label csbiii_reviews:
     play music airport_counter volume 0.5 if_changed

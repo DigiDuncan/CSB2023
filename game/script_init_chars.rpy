@@ -2,6 +2,8 @@
 define n = Character(None, what_italic = True, callback = char_callback)  # Narrator
 define chat = Character("Chat", callback = char_callback)
 define unknown = Character("???", callback = char_callback)
+define pc = Character("PC", callback = char_callback)
+define everyone_generic = Character("Everyone", callback = char_callback)
 
 ########## CS' Various Character Definitions
 define cs = Character("cs188", callback = renpy.partial(char_callback, name = "cs", beep = "cs"))

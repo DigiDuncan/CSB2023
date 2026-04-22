@@ -1,5 +1,8 @@
 label csbiii_ai:
     scene linusmedia with dissolve
+    show linus at center
+    show taran at mid_mid_right
+    show luke at right
     pause 0.5
     show cs at left with moveinleft
     play music school volume 0.4 if_changed
@@ -11,18 +14,27 @@ label csbiii_ai:
     show cs surprised
     n "CS scratches his head."
     cs "Aright, team, we've got a problem. This gaming PC is overheating, and we need a fix that's... shall we say, out of the box?"
-    show luke at right with moveinright
     luke "CS, we've tried everything -- new fans, liquid cooling, you name it. Nothing seems to work!"
     cs "Well, have you tried the \"Hairdryer Cooling System\"?"
+    pause 0.15
+    show linus flipped
+    pause 0.15
+    show taran flipped
+    pause 0.15
+    show taran
     n "Everyone exchanges puzzled glances."
-    "Everyone" "The what?"
+    show linus
+    everyone_generic "The what?"
     show cs happy
     n "CS grins michevously."
     cs "Trust me, it's the ultimate cooling solution. Picture this: we attach a hairdryer to the CPU, set it to low heat, and let the breeze cool everything down. It's foolproof!"
     show linus at center with moveinright
     linus "Are you serious, CS? That sounds like a recipe for disaster."
+    show cs
     cs "Disaster? No, no, Linus. Think about it—hairdryers are designed to blow cool air, right? And what's cooler than a gentle breeze? It's foolproof, I tell you!"
-    scene hairdryercoolingsystem with dissolve
+    scene hairdryercoolingsystem 
+    show cs flipped at right
+    with dissolve
     $ collect("hair_dryer")
     n "CS188 and the team are attaching a hairdryer to the gaming PC, with everyone watching nervously."
     cs "Aright, folks, brace yourselves. It's time to unleash the \"Hairdryer Cooling System\"!"
@@ -34,11 +46,13 @@ label csbiii_ai:
     linus "CS, I can't believe it. Your hairdryer solution is... actually genius."
     scene linusmedia
     show cs happy at left
+    show linus at center
+    show taran at mid_mid_right
+    show luke at right
     with dissolve
     cs "That's how we do things in CS188 style, Linus! Unconventional, unpredictable, but effective."
     play sound sfx_cheers
     n "The team erupts into laughter and applause as the gaming PC's temperatures stabilize."
-    show linus at right with moveinright
     linus "CS, you've proven once again that there's always room for unconventional solutions in the world of tech."
     cs "Thank you, thank you. Just doing my part to keep things interesting."
     n "The team celebrates their successful, albeit unconventional, tech solution."
@@ -51,6 +65,15 @@ label csbiii_ai:
     show cs worried at left
     cs "Arceus, what in the world? Cops? I thought we were done with that prison break business!"
     arceus "Long story short, our disguise as janitors didn't quite fool them. We need to make a run for it before they catch up!"
+
+    pause 0.15
+    show linus flipped
+    pause 0.15
+    show taran flipped
+    pause 0.15
+    show linus
+    show taran
+    
     n "The colleagues in the office glance at each other, surprised and confused by the sudden turn of events."
     show cs disappointed
     cs "Okay, okay. We need a plan. "
@@ -84,17 +107,21 @@ label csbiii_ai:
     cs "Not a clue, my foxy friend! But that's what makes it an adventure, right?"
     scene park1 with dissolve
     show cs at left with moveinbottom
-    show arceus at right with moveinbottom
+    show cs at right with move
+    show arceus at left with moveinbottom
+    show arceus flipped
+    show cs flipped
     play music circus volume 0.4 if_changed
     music circus
     if fun_value(FUN_VALUE_MUSIC):
         n "They emerge from the tunnel into a surprising location—an abandoned, overgrown circus."
     else:
         n "They emerge from the tunnel into a surprising location—an abandoned, overgrown amusement park."
-    show arceus angry
+    show arceus angry flipped
     arceus "An amusement park? Seriously, CS?"
-    show cs disappointed
+    show cs disappointed flipped
     cs "Hey, when life hands you unexpected escapes, you make the most of them!"
+    show cs
     hide cs with moveoutright
     show arceus flipped with determination
     hide arceus with moveoutright
@@ -113,7 +140,7 @@ label csbiii_ai:
     hide arceus
     with moveoutbottom
     n "CS188 and Arceus duck behind a broken carousel as the cops pass by."
-    show copguy_ai at center with moveinbottom
+    show copguy_ai at center with moveinleft
     play music chase volume 0.4 if_changed
     music chase
     if fun_value(FUN_VALUE_MUSIC):
