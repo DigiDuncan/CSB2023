@@ -459,12 +459,32 @@ label _awawa_tate_test:
                         n "Let's go back."
 
                     ########## CSGOD TEST ##########
-                    "CSGod Render":
+                    "CSGod Renderer":
                         tate "Alright, let's see..."
                         show tate at left with move
-
-                        show csgodtest at center with dissolve
-                        tate "How's he lookin'?"
+                        tate "Hey, CSGod!"
+                        show expression csgod_sprite(flipped=True) as csgod at center with dissolve
+                        csgod "You rang?"
+                        tate "Sure did!"
+                        tate "Please show our guest your new glowing skills."
+                        show expression csgod_sprite("happy", 5, True) as csgod
+                        csgod "Alright."
+                        show tate stare
+                        show expression csgod_sprite("happy", 25, True) as csgod with dissolve
+                        tate "Cool."
+                        show tate
+                        tate "Can you go bigger?"
+                        show expression csgod_sprite("neutral", 25, True) as csgod
+                        csgod "Sure. Stand back!"
+                        show expression csgod_sprite("neutral", 25, False) as csgod at right with move
+                        show expression csgod_sprite("neutral", 25, True) as csgod
+                        pause 0.5
+                        show expression csgod_sprite("concentrate", 100, True) as csgod with dissolve
+                        show expression csgod_sprite("neutral", 100, True) as csgod
+                        csgod "How's that?"
+                        tate "Perfect! Thank you."
+                        show expression csgod_sprite("happy", 100, True) as csgod
+                        csgod "No problem. See ya 'round."
 
                         scene roombacks
                         show tate at left
