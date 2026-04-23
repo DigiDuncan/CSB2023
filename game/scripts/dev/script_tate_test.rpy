@@ -199,8 +199,6 @@ label _awawa_tate_test:
                         tate "Did {i}any{/i} of that work?"
                         hide tate_comp
 
-                        jump .awawa_menu
-
                     ########## SPRITE RANDOMIZER ##########
                     "Sprite Randomizer":
                         show tate sad
@@ -226,7 +224,6 @@ label _awawa_tate_test:
                             except:
                                 renpy.show("tate", what="tate sheepish")
                                 renpy.say(tate, substitutions("Something went wrong, sorry."))
-                        jump .awawa_menu
 
                     ########## SELECTABLE FILTER ##########
                     "Selection Filter":
@@ -460,7 +457,6 @@ label _awawa_tate_test:
 
                         with dissolve
                         n "Let's go back."
-                        jump .awawa_menu
 
                     ########## CSGOD TEST ##########
                     "CSGod Render":
@@ -475,11 +471,12 @@ label _awawa_tate_test:
                         with dissolve
 
                         show tate at center with move
-                        jump .awawa_menu
 
                     ########## GO BACK ##########
                     "Never mind.":
-                        jump .awawa_menu
+                        pass
+                    
+                jump .awawa_menu
 
             #################### AWAWA MODE ####################
             "Awawa Mode":
@@ -488,7 +485,7 @@ label _awawa_tate_test:
 
                 menu:
                     "No, take me back!":
-                        jump .awawa_menu
+                        pass
                     "Yes, let's do it.":
                         tate "Alright, we'll try out Awawa Mode."
                         show tate
@@ -533,7 +530,8 @@ label _awawa_tate_test:
 
                         show tate srs
                         tate "I sure hope that worked. That's hard to read..."
-                        jump .awawa_menu
+
+                jump .awawa_menu
 
             #################### SCREEN TESTS ####################
             "Screen Tests":
@@ -546,7 +544,6 @@ label _awawa_tate_test:
                         tate "Lookin' good!"
                         tate "Let's try another!"
                         $ renpy.call_screen("special_unlock", "This screen is called with a Python statement! Use this in menus!")
-                        jump .awawa_menu
 
                     ########## FORCE-TEST ACHIEVEMENTS ##########
                     "Achievement Pop-Ups":
@@ -564,8 +561,6 @@ label _awawa_tate_test:
                                 renpy.say(tate, substitutions("Did it work?"))
                             except:
                                 renpy.say(tate, substitutions("Couldn't pull achievement. Double-check the name and try again."))
-
-                        jump .awawa_menu
 
                     ########## Credits Roll ##########
                     "Credits Roll":
@@ -589,11 +584,10 @@ label _awawa_tate_test:
                                 call screen credits_roll(route="CSBDX: BT1D", duration=60) with dissolve
                                 stop music
                             "Never mind.":
-                                jump .awawa_menu
+                                pass
 
                         stop music
                         tate "Did it do what you wanted?"
-                        jump .awawa_menu
 
                     ########## REVERSI RULES ##########
                     "Reversi Rules Image":
@@ -602,7 +596,6 @@ label _awawa_tate_test:
                         pause
                         hide reversi_rules
                         tate "Did it work?"
-                        jump .awawa_menu
 
                     ########## ACEN'T ATTORNEYN'T SCREEN ##########
                     "Ace Attorney Parody":
@@ -610,25 +603,24 @@ label _awawa_tate_test:
                         call screen acent_attorneynt(chosen_evidence)
                         hide screen acent_attorneynt
                         tate "Did it work? On my end, you selected item [chosen_evidence]."
-                        jump .awawa_menu
 
                     ########## WHERE ARE THEY NOW REDUX ##########
                     "Where Are They Now? V2":
                         tate "Aight."
                         $ renpy.call_replay("where_are_they_now")
                         tate "Was that right?"
-                        jump .awawa_menu
 
                     ########## BAD ENDING REDUX ##########
                     "Bad Ending V2":
                         tate "Here it is!"
                         call screen bad_ending()
                         tate "Did it do?"
-                        jump .awawa_menu
 
                     ########## GO BACK ##########
                     "Never mind.":
-                        jump .awawa_menu
+                        pass
+                    
+                jump .awawa_menu
 
             #################### PERFECT TATE TESTS ####################
             "VS Perfect Tate Tests":
@@ -643,6 +635,7 @@ label _awawa_tate_test:
                             pass
                         "No":
                             jump .awawa_menu
+
                 menu:
                     tate "Alright, which test?{fast}"
 
@@ -680,6 +673,7 @@ label _awawa_tate_test:
                         pakoo_offscreen "Just what do you think you're doing down there?!"
                     "Never mind.":
                         pass
+
                 jump .awawa_menu
 
             #################### GAME TESTS ####################

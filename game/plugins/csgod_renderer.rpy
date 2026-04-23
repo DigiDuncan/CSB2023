@@ -1,4 +1,4 @@
-init -2 python:
+init python:
     def csgod_sprite(expression = "neutral", glow_intensity = 5, flipped=False):
 
         # Face handling
