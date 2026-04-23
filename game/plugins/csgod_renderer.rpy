@@ -25,12 +25,17 @@ init python:
         else:
             flip = 1
 
+        sprite = "images/characters/cs/csgod/"+active_expr+".png"
+
         # Get canvas size / buffer
-        canvas = renpy.image_size("images/characters/cs/csgod/neutral.png")
+        canvas = renpy.image_size(sprite)
+        canvas = [c + glow_intensity * 2 for c in canvas]
+
+        expanded = Composite(canvas, [glow_intensity * 2, 0], sprite)
 
         # Create the pieces
         glow_layer =  At(
-            "images/characters/cs/csgod/"+active_expr+".png", 
+            expanded, 
             Transform(
                 subpixel=True, 
                 matrixcolor=TintMatrix("#FF00FF") * BrightnessMatrix(1.0), 
@@ -41,7 +46,7 @@ init python:
         )
         
         base_layer = At(
-            "images/characters/cs/csgod/"+active_expr+".png",  
+            expanded,  
             Transform(
                 subpixel=True, 
                 xzoom=flip,
@@ -56,5 +61,3 @@ init python:
             xsize=canvas[0], ysize=canvas[1],
             xanchor=0.5, yanchor=1.0   
         )
-        
-        
