@@ -351,13 +351,13 @@ label csbi_room:
     cs "Oh, look, a flashback. What a coincidence..."
     play sound sfx_flashback_start
     scene cs_room with pixellate
-    show cs_young with moveinbottom
+    show cs young with moveinbottom
     ycs "Hey guys, Young CS here! Today, I'm gonna be editing a \n{cshake}CraAaAaAaAzY{/bt} video!!"
     play sound sfx_keyboard
     n "CS taps furiously on his keyboard."
     ycs "Ohhhhhh {cshake}YeeEeeEeEeeEEeEEs!{/bt} This is lookin' {i}good!"
     play sound sfx_flashback_end
-    hide cs_young
+    hide cs young
     scene cs_room
     show cs
     with pixellate

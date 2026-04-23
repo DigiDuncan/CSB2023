@@ -747,7 +747,7 @@ image cs horse flipped = "flip:characters/cs/base/horse.png"
 image cs sil_black = "sil_black:characters/cs/base/neutral.png"
 image cs sil_black flipped = "sil_black:flip:characters/cs/base/neutral.png"
 
-image young_cs = "characters/cs/csgod/cs_young.png"
+image cs young = "characters/cs/misc/cs_young.png"
 
 # These variables are going to need renaming at some point, but I don't want to break stuff. -- Digi
 image cs disappointed metal = "characters/cs/gown/eyepatch.png"
