@@ -93,7 +93,7 @@ init -1 python:
 
     config.displayable_prefix["insensitive"] = shade_insensitive
     config.displayable_prefix["insensitive:flip"] = shade_insensitive_flip
-
+    
     ########## SPRITE FLIPPER
     def xflip(s):
         return Transform(s, xzoom = -1)

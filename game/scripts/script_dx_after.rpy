@@ -331,7 +331,7 @@ label dx_after_back_to_story:
     show cs disappointed
     cs "You... {i}do{/i} that?"
     hide csgod
-    show csgod_angry at right
+    show csgod angry at right
     csgod "Look, CS, I may be a god, but we still do a lot of the same things you mortals do."
     csgod "I don't watch over you every second. Like, I'm sorry, but that would be extremely boring."
     show cs angry
@@ -345,7 +345,7 @@ label dx_after_back_to_story:
     show cs pissed
     #The only reason I want to keep caps here, is because I had to create a new sprite to show how mad he was.
     cs "I don't know how many times you have to take a shit, or whatever, but, in case you weren't watching, I AM FUCKING {i}STUCK IN THE PAST."
-    hide csgod_angry
+    hide csgod angry
     show csgod at right
     csgod "..."
     csgod "Oh."
@@ -361,7 +361,7 @@ label dx_after_back_to_story:
     show cs cultist at left with moveinleft
     cs "Yeah, well, fuck that! I'm not helping you!"
     hide csgod
-    show csgod_angry at right
+    show csgod angry at right
     csgod "Hey! Take that off right now! Your {i}god{/i} demands it!"
     cs "Until you can bring me back to the future, I'm gonna go join your cult!"
     cs "And, we are winning this competition!"

@@ -116,6 +116,7 @@ label e3_rosen:
 
     n "Pakoo shakes his head and sighs."
     pakoo "Let's finish this."
+    # TODO: hey pakoo you might want to re-render this with your new sprite
     $ renpy.movie_cutscene(error_cutscene)
     jump rpg_error
 
@@ -129,6 +130,7 @@ label error:
     jump csbi_start
 
 label after_error_fight:
+    stop music fadeout 0.5
     scene rosen_abode
     show pakoo disappointed flipped at left
     show cs angry flipped at right
@@ -144,7 +146,7 @@ label after_error_fight:
     $ ending_manager.mark("error")
     return
 
-# TODO: tate needs to proofread everything below here!
+    ######## TATE STOPPED EDITING HERE! ########
 
 label error_voodoo:
     play music morning_highway loop volume 0.4 if_changed

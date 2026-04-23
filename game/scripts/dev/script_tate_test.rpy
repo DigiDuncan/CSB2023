@@ -463,6 +463,18 @@ label _awawa_tate_test:
                         jump .awawa_menu
 
                     ########## GO BACK ##########
+                    "CSGod Render":
+                        tate "Alright, let's see..."
+                        show tate at left with move
+                        show cs at center with dissolve:
+                            matrixcolor shade_csgod_matrix
+                        tate "How's it look?"
+                        show tate at center
+                        hide cs
+                        with move
+                        jump .awawa_menu
+
+                    ########## GO BACK ##########
                     "Never mind.":
                         jump .awawa_menu
 

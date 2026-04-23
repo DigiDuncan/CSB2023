@@ -154,15 +154,11 @@ label csbiii_edit_video:
     show csdesk
     show linus at right
     show cs at left
-
-    # TODO: this entire section isn't even remotely how a natural conversation would flow. let's workshop this - tate
-    cs "Nah, I wanna finish this project first. That way, I can help you pump out videos faster."
-    linus "Alright, that's fine. I'll probably send Colton to get the parts instead. He's good at sucking up and doing this kinda thing."
+    cs "Nah, let me finish this project first. I want to help you pump out videos faster."
+    linus "Alright, that's fine. I'll probably send Colton to get the parts instead. He's great at this kinda thing!"
     cs "Alright, yeah. I definitely wasn't using this as an excuse to get out of shopping!"
     linus "... Okay? Whatever, just keep editing."
     cs "Yeah, no, don't worry, I've got this."
-    # end awkward section
-
     show linus flipped
     hide linus with moveoutright
     n "Linus leaves the room."
@@ -233,7 +229,6 @@ label csbiii_edit_video:
     cs "Lemme look at the project file and run through the video again."
     pause 0.5
     n "Just as CS reaches for the mouse, he gets an idea."
-    # TODO: idea lightbulb? idk
     show cs happy
     if fun_value(FUN_VALUE_RARE):
         cs "Urethra! {nw}"

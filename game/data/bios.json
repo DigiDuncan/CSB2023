@@ -512,8 +512,15 @@
         "full_name": "CSGod",
         "pronouns": "(he/him)",
         "sprites": {
-            "Neutral": "images/characters/cs/misc/csgod.png",
-            "Angry": "images/characters/cs/misc/csgod_angry.png"
+            "Neutral": "images/characters/cs/csgod/neutral.png",
+            "Happy": "images/characters/cs/csgod/happy.png",
+            "Disappointed": "images/characters/cs/csgod/disappointed.png",
+            "Concentrate": "images/characters/cs/csgod/concentrate.png",
+            "Angry": "images/characters/cs/csgod/angry.png",
+            "Pissed": "images/characters/cs/csgod/pissed.png",
+            "Surprised": "images/characters/cs/csgod/surprised.png",
+            "Scared": "images/characters/cs/csgod/scared.png",
+            "Worried": "images/characters/cs/csgod/worried.png"
         },
         "quote": "I have the power of YTP!",
         "bio": "﷽"

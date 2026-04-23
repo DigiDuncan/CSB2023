@@ -34,8 +34,6 @@ label csbii_punch:
     show wesley behind cs at right
     show cs angry at left
     cs "Take this!"
-    n "CS punches Wesley and knocks him out!"
-    # i'm not sorry - tate
     show cs angry at center with MoveTransition(0.25)
 
     show cs angry at mid_mid_right with MoveTransition(0.05)
@@ -57,7 +55,7 @@ label csbii_punch:
     play sound sfx_punch
     show cs angry at mid_right with MoveTransition(0.05)
     play sound sfx_punch_alt
-    show wesley behind cs with vpunch
+    show wesley behind cs with vpunch 
 
     show cs angry at center with MoveTransition(0.1)
     pause 0.5
@@ -88,15 +86,22 @@ label csbii_chop:
     scene helipad
     show cs angry at left
     show wesley at right
-    cs "Hi-{i}yah!{/i}" # hiya is a greeting, not the sound you're looking for - tate
-    show cs angry at mid_mid_right with MoveTransition(0.25)
+    with determination
+    pause 0.5
+
+    show cs angry at mid_mid_right with { "master": MoveTransition(0.25) }
+    cs "Hi-{w=0.25}{nw}"
+    extend "{i}yah!{/i}{nw}" # hiya is a greeting, not the sound you're looking for - tate
     play sound sfx_chop
+
     hide wesley
     show wesleytop at right
     show wesleybottom at right
     show wesleytop at Move((0.7 , 0.15), (1.75, -0.3), 2, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show wesleybottom at Move((0.7 , 0.15), (1.75, 0.5), 2, repeat=False, bounce=False, xanchor="left", yanchor="top")
-    n "CS chops Wesley in the chest and he flies off the roof!"
+    with { "master": determination }
+
+    pause 1.0
     cs "I sawed this foundation repairman in half!"
     show ed phone at offscreenright with determination
     show cs angry at left
@@ -302,11 +307,8 @@ label csbii_asylum:
     csgod "Quit the whining!"
     show csgod at offscreenright with determination:
         alpha 0
-    show csgod:
-        parallel:
-            linear 2.0 alpha 1.0
-        parallel:
-            linear 0.5 xpos 0.6
+    show csgod at right:
+        linear 2.0 alpha 1.0
     show cs worried insane dark at manual_pos(0.5, 1.115, 1.0)
     with MoveTransition(2.0)
     pause 1.0
