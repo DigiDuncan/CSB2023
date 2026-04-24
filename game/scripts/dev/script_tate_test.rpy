@@ -479,6 +479,8 @@ label _awawa_tate_test:
                         show expression csgod_sprite("neutral", 25, False) as csgod at right with move
                         show expression csgod_sprite("neutral", 25, True) as csgod
                         pause 0.5
+                        show expression csgod_sprite("concentrate", 25, True) as csgod
+                        pause 0.5
                         show expression csgod_sprite("concentrate", 100, True) as csgod with dissolve
                         show expression csgod_sprite("neutral", 100, True) as csgod
                         csgod "How's that?"

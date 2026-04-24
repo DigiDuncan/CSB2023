@@ -25,38 +25,15 @@ init python:
         else:
             flip = 1
 
-        sprite = "images/characters/cs/csgod/"+active_expr+".png"
+        sprite = Image("images/characters/cs/csgod/"+active_expr+".png", optimize_bounds=False, mesh=True, mesh_pad=(glow_intensity, glow_intensity))
 
         # Get canvas size / buffer
         canvas = renpy.image_size(sprite)
-        canvas = [c + glow_intensity * 2 for c in canvas]
-
-        expanded = Composite(canvas, [glow_intensity * 2, 0], sprite)
-
-        # Create the pieces
-        glow_layer =  At(
-            expanded, 
-            Transform(
-                subpixel=True, 
-                matrixcolor=TintMatrix("#FF00FF") * BrightnessMatrix(1.0), 
-                blur=glow_intensity, 
-                xzoom=flip,
-                xanchor=0.5, yanchor=1.0   
-            )
-        )
-        
-        base_layer = At(
-            expanded,  
-            Transform(
-                subpixel=True, 
-                xzoom=flip,
-            )
-        )
 
         # Put them together
         return Fixed(
-            Frame(glow_layer),
-            Frame(base_layer),
+            At(sprite, Transform(xzoom=flip, matrixcolor=TintMatrix("#FF00FF") * BrightnessMatrix(1.0), blur=glow_intensity)),
+            At(sprite, Transform(xzoom=flip)),
             subpixel=True,
             xsize=canvas[0], ysize=canvas[1],
             xanchor=0.5, yanchor=1.0   
