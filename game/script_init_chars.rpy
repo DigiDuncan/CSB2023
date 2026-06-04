@@ -218,7 +218,7 @@ define santa = Character(_("Santa Claus"), callback = renpy.partial(char_callbac
 define mike = Character(_("Mike"),  callback = renpy.partial(char_callback, name = "mike", beep = "mike"))
 
 ########## DX Finale Character Definitions
-#define perfect_billy = Character(_("Perfect Billy"), callback = renpy.partial(char_callback, name = "billy", beep = "billy"), screen = "perfect_billy_text")
+define perfect_billy = Character(_("Perfect Billy"), callback = renpy.partial(char_callback, name = "billy", beep = "billy"), screen = "perfect_billy_text")
 define fiddle = Character(_("Fiddleford"), callback = char_callback)
 define cultcon_leader = Character(_("Cultcon Leader"), callback = char_callback)
 
