@@ -11,6 +11,7 @@
     "cn_font": "ZCOOLKuaiLe-Regular.ttf",
     "jp_font": "MochiyPopOne-Regular.ttf",
     "ru_font": "BalsamiqSans-Bold.ttf",
+    "tp_font": "FairfaxPonaHD.ttf",
     "dyslexia_font": "comic.ttf",
 
     "accent_color": "#0099CC",
@@ -26,7 +27,7 @@
     "choice_button_text_idle_color": "#888888",
     "choice_button_text_hover_color": "#FFFFFF",
     "choice_button_text_insensitive_color": "#8888887F",
-    
+
     "choice_menu_scroll_yoffset": 73,
     "dialogue_namebox_xspacing": 40,
 

@@ -15,7 +15,7 @@ If you want to use a webm for menu backgrounds:
 
 If adding new fonts:
 - Be sure to adjust both font scaling and line scaling in 01_early_execute.
-- Be ready to include matching fonts for JP/CN/RU/dyslexia-friendly text.
+- Be ready to include matching fonts for JP/CN/RU/TP/dyslexia-friendly text.
 
 unlock_requirement refers to a value that must be added to persistent.unlocked_themes().
 

@@ -1016,6 +1016,30 @@ screen preferences():
             hbox:
                 box_wrap True
 
+                # Language - do not translate strings
+                vbox:
+                    style_prefix "radio"
+                    label _("Language")
+
+                    textbutton "English":
+                        action [
+                            Language(None),
+                            Function(gui.rebuild),
+                            Function(renpy.restart_interaction)
+                        ]
+                    textbutton "toki pona":
+                        action [
+                                Language("tok_sitelen_lasina"),
+                                Function(gui.rebuild),
+                                Function(renpy.restart_interaction)
+                            ]
+                    textbutton "{font=tp}󱥠󱥔":
+                        action [
+                                Language("tok_sitelen_pona"),
+                                Function(gui.rebuild),
+                                Function(renpy.restart_interaction)
+                            ]
+
                 # Fullscreen / Windowed
                 if renpy.variant("pc") or renpy.variant("web"):
                     vbox:
@@ -1026,7 +1050,7 @@ screen preferences():
                 
                 vbox:
                     style_prefix "check"
-                    label "Accessibility"
+                    label _("Accessibility")
 
                     # Craptop mode (also forcibly turns off transitions)
                     textbutton _("Craptop Mode"):
@@ -1096,7 +1120,7 @@ screen preferences():
                                 action NullAction()
 
                                 tooltip _("Disable Craptop Mode to change this setting.")
-   
+
                 hbox:
                     # Themes
                     vbox:
@@ -1253,7 +1277,7 @@ screen preferences():
                         if persistent.awawa_mode or preferences.developer_mode:
                             textbutton _("Awawa Mode") action ToggleField(preferences, "awawa_mode"):
                                 hovered [Function(get_mouse), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
-                                tooltip "Replaces the dialogue with nonsense!"
+                                tooltip _("Replaces the dialogue with nonsense!")
                         textbutton _("Developer Mode") action ToggleField(preferences, "developer_mode")
 
                     # Bounciness / Awawa Mode sliders (will only appear if those options are enabled)
