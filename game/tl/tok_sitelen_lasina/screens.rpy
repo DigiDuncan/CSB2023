@@ -48,7 +48,7 @@ translate tok_sitelen_lasina strings:
 
     # game/screens.rpy:507
     old "Extras"
-    new "ilo namako"
+    new "ijo namako"
 
     # game/screens.rpy:511
     old "Replay Intro"
@@ -56,7 +56,7 @@ translate tok_sitelen_lasina strings:
 
     # game/screens.rpy:513
     old "CSettings"
-    new "o ante e ilo"
+    new "o ante e ijo"
 
     # game/screens.rpy:517
     old "Return to Menu"
@@ -224,7 +224,7 @@ translate tok_sitelen_lasina strings:
 
     # game/screens.rpy:1107
     old "Disable Craptop Mode to change this setting."
-    new "nasin ni la, o nasin ilo ike e ante."
+    new "nasin ni la, o \"nasin pi ilo ike\" e ken ala."
 
     # game/screens.rpy:1113
     old "Theme"
@@ -248,7 +248,7 @@ translate tok_sitelen_lasina strings:
 
     # game/screens.rpy:1160
     old "Auto-Forward Time"
-    new ""
+    new "tenpo pi tawa"
 
     # game/screens.rpy:1184
     old "Audio Options"
@@ -260,7 +260,7 @@ translate tok_sitelen_lasina strings:
 
     # game/screens.rpy:1187
     old "Enables character speech."
-    new "o kalama toki e open."
+    new "o kalama toki e ken."
 
     # game/screens.rpy:1188
     old "Mute ALL Audio"
@@ -328,7 +328,7 @@ translate tok_sitelen_lasina strings:
 
     # game/screens.rpy:1261
     old "Enables random events that may be confusing if you\nhaven't played the game yet. (Requires Bounciness)"
-    new "o ken tenpo nasa. sina musi ala e musi ni la, toki li ken nasa. \"tenpo musi\" li wile."
+    new "o ken e tenpo nasa. sina musi ala e musi ni la, toki li ken nasa. \"tenpo musi\" li wile."
 
     # game/screens.rpy:1263
     old "Awawa Mode"

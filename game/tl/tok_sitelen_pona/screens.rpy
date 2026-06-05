@@ -232,7 +232,7 @@ translate tok_sitelen_pona strings:
 
     # game/screens.rpy:1109
     old "Disable Craptop Mode to change this setting."
-    new "󱤿󱥁󱤡󱥄󱤿󱤎󱤍󱤉󱤆󱦜"
+    new "󱤿󱥁󱤡󱥄「󱤿󱥍󱤎󱤍」󱤉󱤘󱤂󱦜"
 
     # game/screens.rpy:1115
     old "Theme"
@@ -248,7 +248,7 @@ translate tok_sitelen_pona strings:
 
     # game/screens.rpy:1144
     old "Text Speed"
-    new ""
+    new "󱥫󱥍󱥩"
 
     # game/screens.rpy:1145
     old "Reset"
@@ -268,7 +268,7 @@ translate tok_sitelen_pona strings:
 
     # game/screens.rpy:1189
     old "Enables character speech."
-    new "󱥄󱤕󱥬󱤉󱥇"
+    new "󱥄󱤕󱥬󱤉󱤘󱦜"
 
     # game/screens.rpy:1190
     old "Mute ALL Audio"
@@ -336,7 +336,7 @@ translate tok_sitelen_pona strings:
 
     # game/screens.rpy:1263
     old "Enables random events that may be confusing if you\nhaven't played the game yet. (Requires Bounciness)"
-    new "󱥄󱤘󱥫󱤾󱦜　󱥞󱤻󱤂󱤉󱤻󱥁󱤡󱥬󱤧󱤘󱤾󱦜　「󱥫󱤻」󱤧󱥷󱦜"
+    new "󱥄󱤘󱤉󱥫󱤾󱦜　󱥞󱤻󱤂󱤉󱤻󱥁󱤡󱥬󱤧󱤘󱤾󱦜　「󱥫󱤻」󱤧󱥷󱦜"
 
     # game/screens.rpy:1265
     old "Awawa Mode"
@@ -568,11 +568,13 @@ translate tok_sitelen_pona strings:
 
     # game/screens.rpy:2092
     old "Menu"
-    new ""# TODO: Translation updated at 2026-06-04 22:37
+    new ""
+
+# TODO: Translation updated at 2026-06-04 22:37
 
 translate tok_sitelen_pona strings:
 
     # game/screens.rpy:1280
     old "Replaces the dialogue with nonsense!"
-    new "󱥄󱤆󱤉󱥬󱥩󱥂󱤾󱦜"
+    new "󱥄󱤆󱤉󱥬󱥩󱥂󱤾!"
 

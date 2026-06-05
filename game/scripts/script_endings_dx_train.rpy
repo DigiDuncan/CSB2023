@@ -29,7 +29,7 @@ label train_very_final:
             persistent.train_routes_seen = count_seen
 
         if persistent.defeated_perfect_tate and "tate" not in persistent.unlocked_themes:
-            renpy.call_screen("special_unlock", "You've unlocked a colorful new theme! Check it out in CSettings!")
+            renpy.call_screen("special_unlock", _("You've unlocked a colorful new theme! Check it out in CSettings!"))
             persistent.unlocked_themes.add("tate")
 
         # unlock the achievement if you've seen all routes
@@ -40,5 +40,5 @@ label train_very_final:
             if "beat_tate" in persistent.unlocked_achievements:
                 if not persistent.awawa_mode:
                     persistent.awawa_mode = True
-                    renpy.call_screen("special_unlock", "Awa awawa? AAAAAA! You've unlocked Awawa Mode! Check it out in CSettings!")
+                    renpy.call_screen("special_unlock", _("Awa awawa? AAAAAA! You've unlocked Awawa Mode! Check it out in CSettings!"))
 

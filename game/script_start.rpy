@@ -104,13 +104,13 @@ default returning_from_blooper = False
 default south_car_stole_money = False
 
 # Checks: CSB3 Fired
-default band_name = "CS' Crazy Crew"
-default ep_name = "The White Album"
-default song_name_1 = "Prison Break"
-default song_name_2 = "Down to Vegas"
-default song_name_3 = "Globetrottin'"
-default song_name_4 = "Through The Battles and the Fights"
-default song_name_5 = "We Are The Winners"
+default band_name = _("CS' Crazy Crew")
+default ep_name = _("The White Album")
+default song_name_1 = _("Prison Break")
+default song_name_2 = _("Down to Vegas")
+default song_name_3 = _("Globetrottin'")
+default song_name_4 = _("Through The Battles and the Fights")
+default song_name_5 = _("We Are The Winners")
 default line_1 = ""
 default line_2 = ""
 default line_3 = ""
@@ -333,7 +333,7 @@ label before_main_menu:
                 achievement_manager.unlock("fin", show_screen = False)
                 if persistent.creative_mode == False:
                     persistent.creative_mode = True
-                    renpy.call_screen("special_unlock", "Noice! You've unlocked Creative Mode!\nLook out for new CSettings and more!")
+                    renpy.call_screen("special_unlock", _("Noice! You've unlocked Creative Mode!\nLook out for new CSettings and more!"))
 
         if preferences.disable_menu_theme == False:
             if not persistent.seen_splash:
@@ -353,7 +353,7 @@ label start:  # this might be required??
 ### DATA MANAGEMENT ###
 
 label clear_data:
-    call screen confirm(message="ARE YOU SURE? This will ERASE all data.", yes_action=Jump("reset_vector"), no_action=[Hide("confirm")])
+    call screen confirm(message=_("ARE YOU SURE? This will ERASE all data."), yes_action=Jump("reset_vector"), no_action=[Hide("confirm")])
     return
 
 label reset_vector:
@@ -361,7 +361,7 @@ label reset_vector:
     $ renpy.quit(relaunch = True)
 
 label clear_saves:
-    call screen confirm(message="ARE YOU SURE? This will erase ALL your save slots.", yes_action=Jump("reset_saves"), no_action=[Hide("confirm")])
+    call screen confirm(message=_("ARE YOU SURE? This will erase ALL your save slots."), yes_action=Jump("reset_saves"), no_action=[Hide("confirm")])
 
 label reset_saves:
     python:

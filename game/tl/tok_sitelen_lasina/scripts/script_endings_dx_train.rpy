@@ -18,3 +18,15 @@ translate tok_sitelen_lasina train_home_broke_f7e099a7:
     # "Placeholder for if you completed train route without any money."
     ""
 
+# TODO: Translation updated at 2026-06-05 08:31
+
+translate tok_sitelen_lasina strings:
+
+    # game/scripts/script_endings_dx_train.rpy:32
+    old "You've unlocked a colorful new theme! Check it out in CSettings!"
+    new ""
+
+    # game/scripts/script_endings_dx_train.rpy:43
+    old "Awa awawa? AAAAAA! You've unlocked Awawa Mode! Check it out in CSettings!"
+    new ""
+

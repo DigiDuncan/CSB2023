@@ -12480,3 +12480,11 @@ translate tok_sitelen_pona strings:
     old "Sign up for Target Circle?"
     new ""
 
+# TODO: Translation updated at 2026-06-05 08:32
+
+translate tok_sitelen_pona strings:
+
+    # game/scripts/script_christmas.rpy:31
+    old "You've unlocked a festive new theme! Check it out in CSettings!"
+    new ""
+

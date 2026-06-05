@@ -28,7 +28,7 @@ label ce_start:
         gui.rebuild()
 
         if "christmas" not in persistent.unlocked_themes:
-            renpy.call_screen("special_unlock", "You've unlocked a festive new theme! Check it out in CSettings!")
+            renpy.call_screen("special_unlock", _("You've unlocked a festive new theme! Check it out in CSettings!"))
             persistent.unlocked_themes.add("christmas")
 
     scene black
