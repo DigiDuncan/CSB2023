@@ -359,33 +359,34 @@ screen choice_items(items):
 
             for i in items:
                 $ choice_type = i.kwargs.get("type")
+                $ caption = "[i.caption!t]"
                 if choice_type == "true" and preferences.streamer_mode:
-                    textbutton i.caption:
+                    textbutton caption:
                         text_color "#BA64CE"
                         text_hover_color "#FFFFFF"
                         action i.action
                 elif choice_type == "good" and preferences.streamer_mode:
-                    textbutton i.caption:
+                    textbutton caption:
                         text_color "#00FF00"
                         text_hover_color "#FFFFFF"
                         action i.action
                 elif choice_type == "bad" and preferences.streamer_mode:
-                    textbutton i.caption:
+                    textbutton caption:
                         text_color "#FF0000"
                         text_hover_color "#FFFFFF"
                         action i.action
                 elif choice_type == "dx":
-                    textbutton "{image=gui/inline_text/dx.png} [i.caption]":
+                    textbutton "{image=gui/inline_text/dx.png} [caption]":
                         text_color "#0099CC"
                         text_hover_color "#FFFFFF"
                         action i.action
                 elif choice_type == "warning":
-                    textbutton "{image=gui/inline_text/warning.png} [i.caption]":
+                    textbutton "{image=gui/inline_text/warning.png} [caption]":
                         text_color "#FFFF00"
                         text_hover_color "#FFFFFF"
                         action i.action
                 else:
-                    textbutton i.caption:
+                    textbutton caption:
                         text_color "#888888"
                         text_hover_color "#FFFFFF"
                         action i.action
