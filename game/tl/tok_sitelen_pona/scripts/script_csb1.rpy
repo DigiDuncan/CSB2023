@@ -148,7 +148,7 @@ translate tok_sitelen_pona csbi_craptop_e011c6c2:
 translate tok_sitelen_pona csbi_craptop_a68fa991:
 
     # cs "Woah! Is that a canyon over there?"
-    cs "󱦸!　󱥆󱤧󱤰󱤯?!"
+    cs "󱦸!　󱥆󱤧󱤰󱤯󱤇󱥙"
 
 # game/scripts/script_csb1.rpy:130
 translate tok_sitelen_pona csbi_craptop_4351c9c0:
@@ -250,7 +250,7 @@ translate tok_sitelen_pona csbi_walmart_91b65cfb:
 translate tok_sitelen_pona csbi_walmart_a7427166:
 
     # cs "Wow! It's Walmart CEO Doug McMillon! You actually {i}work{/i} here?"
-    cs "󱦸! 󱤑󱤤󱥍󱥭󱦐󱥵󱤄󱤲󱤂󱦘󱦘󱦑!\n󱤑󱦐󱥩󱤀󱤕󱥰󱦑󱦐󱤰󱤌󱤲󱤍󱤤󱥆󱦆󱦑!　󱥞󱥉󱤂󱥉󱥁󱤬?"
+    cs "󱦸! 󱤑󱤤󱥍󱥭󱦐󱥵󱤄󱤲󱤂󱦘󱦘󱦑!\n󱤑󱦐󱥩󱤀󱤕󱥰󱦑󱦐󱤰󱤌󱤲󱤍󱤤󱥆󱦆󱦑!　󱥞󱥉󱤂󱥉󱥁󱤬"
 
 # game/scripts/script_csb1.rpy:199
 translate tok_sitelen_pona csbi_walmart_44bdea68:
@@ -292,7 +292,7 @@ translate tok_sitelen_pona csbi_walmart_db7856e7:
 translate tok_sitelen_pona csbi_walmart_962b6d67:
 
     # cs "Oooh! Pringles are on sale, too! {nw}"
-    cs "󱤀!　󱤶󱦐󱥋󱤌󱤘󱥰󱦑󱤧󱥷󱤲󱤨󱥹!"
+    cs "󱤀!　󱤶󱦐󱥋󱤌󱤘󱥰󱦑󱤧󱥷󱤲󱤨󱥹!　"
 
 # game/scripts/script_csb1.rpy:234
 translate tok_sitelen_pona csbi_walmart_796d7057:
@@ -1622,7 +1622,7 @@ translate tok_sitelen_pona strings:
 
     # game/scripts/script_csb1.rpy:165
     old "Get groceries?"
-    new "󱥄󱤃󱤉󱤶?"
+    new "󱥞󱥷󱤃󱤉󱤶󱤇󱥙"
 
     # game/scripts/script_csb1.rpy:375
     old "Who you gonna call?"
@@ -1638,7 +1638,7 @@ translate tok_sitelen_pona strings:
 
     # game/scripts/script_csb1.rpy:973
     old "Which way?"
-    new "󱥄󱥩󱤉󱤿󱥙?"
+    new "󱥄󱥩󱤉󱤿󱥙"
 
     # game/scripts/script_csb1.rpy:975
     old "Left"

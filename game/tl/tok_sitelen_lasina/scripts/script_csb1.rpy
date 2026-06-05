@@ -148,7 +148,7 @@ translate tok_sitelen_lasina csbi_craptop_e011c6c2:
 translate tok_sitelen_lasina csbi_craptop_a68fa991:
 
     # cs "Woah! Is that a canyon over there?"
-    cs "wa! ona li ma lupa?!"
+    cs "wa! ona li ma lupa anu seme?!"
 
 # game/scripts/script_csb1.rpy:130
 translate tok_sitelen_lasina csbi_craptop_4351c9c0:
@@ -1622,7 +1622,7 @@ translate tok_sitelen_lasina strings:
 
     # game/scripts/script_csb1.rpy:165
     old "Get groceries?"
-    new "o alasa e moku?"
+    new "sina wile alasa e moku anu seme?"
 
     # game/scripts/script_csb1.rpy:375
     old "Who you gonna call?"
