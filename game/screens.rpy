@@ -1028,6 +1028,8 @@ screen preferences():
                             Function(gui.rebuild),
                             Function(renpy.restart_interaction)
                         ]
+                        hovered [Function(get_mouse), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
+                        tooltip "Important: Non-English translations are unfinished."
                     textbutton "toki pona":
                         action [
                                 Language("tok_sitelen_lasina"),
@@ -1035,6 +1037,8 @@ screen preferences():
                                 Function(gui.rebuild),
                                 Function(renpy.restart_interaction)
                             ]
+                        hovered [Function(get_mouse), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
+                        tooltip "sona suli la: toki ante ni li pini ala."
                     textbutton "{font=tp}󱥠󱥔":
                         action [
                                 Language("tok_sitelen_pona"),
@@ -1042,6 +1046,8 @@ screen preferences():
                                 Function(gui.rebuild),
                                 Function(renpy.restart_interaction)
                             ]
+                        hovered [Function(get_mouse), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
+                        tooltip "{font=tp}󱥡󱥣󱤡󱦝󱥬󱤆󱥁󱥐󱤂󱦜"
 
                 # Fullscreen / Windowed
                 if renpy.variant("pc") or renpy.variant("web"):

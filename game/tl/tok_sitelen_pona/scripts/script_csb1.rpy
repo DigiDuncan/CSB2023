@@ -250,7 +250,7 @@ translate tok_sitelen_pona csbi_walmart_91b65cfb:
 translate tok_sitelen_pona csbi_walmart_a7427166:
 
     # cs "Wow! It's Walmart CEO Doug McMillon! You actually {i}work{/i} here?"
-    cs "󱦸! 󱤑󱤤󱥍󱥭󱦐󱥵󱤄󱤲󱤂󱦘󱦘󱦑!　󱤑󱦐󱥩󱤀󱤕󱥰󱦑󱦐󱤰󱤌󱤲󱤍󱤤󱥆󱦆󱦑!　󱥞󱥉󱤂󱥉󱥁󱤬?"
+    cs "󱦸! 󱤑󱤤󱥍󱥭󱦐󱥵󱤄󱤲󱤂󱦘󱦘󱦑!\n󱤑󱦐󱥩󱤀󱤕󱥰󱦑󱦐󱤰󱤌󱤲󱤍󱤤󱥆󱦆󱦑!　󱥞󱥉󱤂󱥉󱥁󱤬?"
 
 # game/scripts/script_csb1.rpy:199
 translate tok_sitelen_pona csbi_walmart_44bdea68:
@@ -280,7 +280,7 @@ translate tok_sitelen_pona csbi_walmart_18a09ff2:
 translate tok_sitelen_pona csbi_walmart_43eac144:
 
     # cs "Now, let's find some food!"
-    cs "󱥫󱥁󱤡󱥄󱤶󱤉󱤃!"
+    cs "󱥫󱥁󱤡󱥄󱤃󱤉󱤶!"
 
 # game/scripts/script_csb1.rpy:219
 translate tok_sitelen_pona csbi_walmart_db7856e7:

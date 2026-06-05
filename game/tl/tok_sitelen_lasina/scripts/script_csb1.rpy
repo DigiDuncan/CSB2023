@@ -280,7 +280,7 @@ translate tok_sitelen_lasina csbi_walmart_18a09ff2:
 translate tok_sitelen_lasina csbi_walmart_43eac144:
 
     # cs "Now, let's find some food!"
-    cs "tenpo ni la, o moku e alasa!"
+    cs "tenpo ni la, o alasa e moku!"
 
 # game/scripts/script_csb1.rpy:219
 translate tok_sitelen_lasina csbi_walmart_db7856e7:
