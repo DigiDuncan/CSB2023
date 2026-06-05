@@ -159,11 +159,6 @@ init python:
     config.font_name_map["ru"] = gui_theme_map["ru_font"]
     config.font_name_map["tp"] = gui_theme_map["tp_font"]
 
-    # Language handling - TOK - sitelen pona
-    if gui.language == "tok_sitelen_pona":
-        config.font_name_map["default"] = gui_theme_map["tp_font"]
-        gui_theme_map["main_font"] = gui_theme_map["tp_font"]
-
     # Force multilingual text for music popup, jukebox, credits 
     DYSLEXIA_GROUP = FontGroup().add("FiraCode-Retina.ttf", 0x2206, 0x2206).add("MochiyPopOne-Regular.ttf", 0x2600, 0x9fff).add("comic.ttf", 0x0000, 0xffff)
 
@@ -186,7 +181,7 @@ init python:
     config.ftfont_scale["CenturyGothicPaneuropeanSemiBold.ttf"] = 0.8 # Dyslexia - Tate EX Theme
     config.ftfont_scale["cmunrm.ttf"] = 0.8 # Digi - math font
     config.ftfont_scale["NotoSans-Regular.ttf"] = 0.85 # Digi - extra characters
-    config.ftfont_scale["FairfaxPonaHD.ttf"] = 0.85 # sitelen pona handling
+    config.ftfont_scale["FairfaxHD.ttf"] = 0.85 # sitelen pona handling
 
     config.ftfont_vertical_extent_scale["FiraCode-Retina.ttf"] = 1.0 # Triangle
     config.ftfont_vertical_extent_scale["ZCOOLKuaiLe-Regular.ttf"] = 1.0 # CN - CSB/CE Themes
@@ -200,7 +195,7 @@ init python:
     config.ftfont_vertical_extent_scale["AllerDisplay_Std_Rg_0.ttf"] = 1.0 # Tate EX Theme Accent
     config.ftfont_vertical_extent_scale["comic.ttf"] = 0.95 # Dyslexia - CSB/CE Themes
     config.ftfont_vertical_extent_scale["CenturyGothicPaneuropeanSemiBold.ttf"] = 1.2 # Dyslexia - Tate EX Theme
-    config.ftfont_vertical_extent_scale["FairfaxPonaHD.ttf"] = 1.0 # sitelen pona handling
+    config.ftfont_vertical_extent_scale["FairfaxHD.ttf"] = 1.0 # sitelen pona handling
 
     # Dyslexia mode
     def dyslexia_font(f):

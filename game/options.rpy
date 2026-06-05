@@ -155,6 +155,10 @@ default preferences.force_mute = False
 default preferences.disable_menu_theme = False
 default preferences.gui_theme = "default"
 
+## Translation settings
+## Only load active language at init
+define config.defer_tl_scripts = True 
+
 ## Controls the default text speed. The default, 0, is infinite, while any other
 ## number is the number of characters per second to type out.
 
