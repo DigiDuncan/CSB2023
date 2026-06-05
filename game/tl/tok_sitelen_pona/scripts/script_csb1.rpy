@@ -1606,23 +1606,23 @@ translate tok_sitelen_pona strings:
 
     # game/scripts/script_csb1.rpy:82
     old "What will CS do?"
-    new "What will CS do?"
+    new "󱤑󱦐󱥝󱤌󱤐󱤉󱥙󱥯󱦑󱥄󱥙?"
 
     # game/scripts/script_csb1.rpy:84
     old "Speedrun CSBounciness"
-    new "Speedrun CSBounciness"
+    new "󱥫󱤨󱤡󱥄󱤻󱤉󱤻󱥁"
 
     # game/scripts/script_csb1.rpy:86
     old "Respond to chat"
-    new "Respond to chat"
+    new "󱥄󱥬󱤉󱤪󱦐󱥧󱤌󱥖󱥰󱤕󱥄󱦑"
 
     # game/scripts/script_csb1.rpy:88
     old "Just... don't."
-    new "Just... don't."
+    new "󱥨󱦜󱦜󱦜　󱤂"
 
     # game/scripts/script_csb1.rpy:165
     old "Get groceries?"
-    new "Get groceries?"
+    new "󱥄󱤃󱤉󱤶?"
 
     # game/scripts/script_csb1.rpy:375
     old "Who you gonna call?"
@@ -1638,13 +1638,13 @@ translate tok_sitelen_pona strings:
 
     # game/scripts/script_csb1.rpy:973
     old "Which way?"
-    new "Which way?"
+    new "󱥄󱥩󱤉󱤿󱥙?"
 
     # game/scripts/script_csb1.rpy:975
     old "Left"
-    new "Left"
+    new "<<<"
 
     # game/scripts/script_csb1.rpy:978
     old "Right"
-    new "Right"
+    new ">>>"
 

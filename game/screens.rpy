@@ -376,12 +376,12 @@ screen choice_items(items):
                         text_hover_color "#FFFFFF"
                         action i.action
                 elif choice_type == "dx":
-                    textbutton "{image=gui/inline_text/dx.png} [caption]":
+                    textbutton "{image=gui/inline_text/dx.png} "+caption:
                         text_color "#0099CC"
                         text_hover_color "#FFFFFF"
                         action i.action
                 elif choice_type == "warning":
-                    textbutton "{image=gui/inline_text/warning.png} [caption]":
+                    textbutton "{image=gui/inline_text/warning.png} "+caption:
                         text_color "#FFFF00"
                         text_hover_color "#FFFFFF"
                         action i.action
