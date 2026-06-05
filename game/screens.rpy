@@ -1024,18 +1024,21 @@ screen preferences():
                     textbutton "English":
                         action [
                             Language(None),
+                            Function(reload_theme, preferences.gui_theme, False),
                             Function(gui.rebuild),
                             Function(renpy.restart_interaction)
                         ]
                     textbutton "toki pona":
                         action [
                                 Language("tok_sitelen_lasina"),
+                                Function(reload_theme, preferences.gui_theme, False),
                                 Function(gui.rebuild),
                                 Function(renpy.restart_interaction)
                             ]
                     textbutton "{font=tp}󱥠󱥔":
                         action [
                                 Language("tok_sitelen_pona"),
+                                Function(reload_theme, preferences.gui_theme, False),
                                 Function(gui.rebuild),
                                 Function(renpy.restart_interaction)
                             ]

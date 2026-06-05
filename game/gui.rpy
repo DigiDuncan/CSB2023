@@ -96,6 +96,7 @@ init python:
             config.font_name_map["cn"] = _get("cn_font")
             config.font_name_map["jp"] = _get("jp_font")
             config.font_name_map["ru"] = _get("ru_font")
+            config.font_name_map["tp"] = _get("tp_font")
             config.font_name_map["music_text"] = FontGroup().add("FiraCode-Retina.ttf", 0x2206, 0x2206).add( _get("jp_font") , 0x2600, 0x9fff).add( _get("main_font") , 0x0000, 0xffff)
 
             # Dyslexia Mode
