@@ -1606,7 +1606,7 @@ translate tok_sitelen_pona strings:
 
     # game/scripts/script_csb1.rpy:82
     old "What will CS do?"
-    new "󱤑󱦐󱥝󱤌󱤐󱤉󱥙󱥯󱦑󱥄󱥙?"
+    new "󱤑󱦐󱥝󱤌󱤐󱤉󱥙󱥯󱦑󱥄󱥙"
 
     # game/scripts/script_csb1.rpy:84
     old "Speedrun CSBounciness"
