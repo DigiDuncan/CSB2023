@@ -40,7 +40,7 @@ translate tok_sitelen_lasina strings:
 
     # game/script_init_chars.rpy:18
     old "Craptop"
-    new "ijo ike"
+    new "ilo ike"
 
     # game/script_init_chars.rpy:19
     old "Discord"
@@ -72,7 +72,7 @@ translate tok_sitelen_lasina strings:
 
     # game/script_init_chars.rpy:28
     old "HoH SiS Operator"
-    new "jan pi kepeken e ijo toki"
+    new "jan pi kepeken e ilo toki"
 
     # game/script_init_chars.rpy:29
     old "Richard"
@@ -160,11 +160,11 @@ translate tok_sitelen_lasina strings:
 
     # game/script_init_chars.rpy:56
     old "Worker"
-    new ""
+    new "jan pali"
 
     # game/script_init_chars.rpy:59
     old "Mr. Green"
-    new ""
+    new "mije laso"
 
     # game/script_init_chars.rpy:60
     old "Jerma"
@@ -184,7 +184,7 @@ translate tok_sitelen_lasina strings:
 
     # game/script_init_chars.rpy:64
     old "Trailer Trash"
-    new ""
+    new "jan jaki"
 
     # game/script_init_chars.rpy:65
     old "TSA Agent"
@@ -196,35 +196,35 @@ translate tok_sitelen_lasina strings:
 
     # game/script_init_chars.rpy:69
     old "Director"
-    new ""
+    new "jan pi lawa e sitelen"
 
     # game/script_init_chars.rpy:70
     old "Monika"
-    new ""
+    new "sewi Monika"
 
     # game/script_init_chars.rpy:73
     old "Billy"
-    new ""
+    new "jan Pili"
 
     # game/script_init_chars.rpy:74
     old "Carla"
-    new ""
+    new "jan Kala"
 
     # game/script_init_chars.rpy:75
     old "Cultist"
-    new ""
+    new "jan pi kulupu sewi"
 
     # game/script_init_chars.rpy:76
     old "Cultist 2"
-    new ""
+    new "jan pi kulupu sewi nanpa tu"
 
     # game/script_init_chars.rpy:77
     old "Cultist 3"
-    new ""
+    new "jan pi kulupu sewi nanpa tu wan"
 
     # game/script_init_chars.rpy:78
     old "Gnome"
-    new ""
+    new "usawi lili"
 
     # game/script_init_chars.rpy:79
     old "Host"
@@ -232,11 +232,11 @@ translate tok_sitelen_lasina strings:
 
     # game/script_init_chars.rpy:80
     old "Mario"
-    new ""
+    new "jan Malijo"
 
     # game/script_init_chars.rpy:81
     old "Peppino"
-    new ""
+    new "jan Pepino"
 
     # game/script_init_chars.rpy:82
     old "Pencil Greeter"
@@ -276,15 +276,15 @@ translate tok_sitelen_lasina strings:
 
     # game/script_init_chars.rpy:91
     old "Waitress"
-    new ""
+    new "jan pi pana e moku"
 
     # game/script_init_chars.rpy:95
     old "Crowd"
-    new ""
+    new "kulupu"
 
     # game/script_init_chars.rpy:96
     old "Guest"
-    new ""
+    new "jan awen"
 
     # game/script_init_chars.rpy:97
     old "Howie"
@@ -292,7 +292,7 @@ translate tok_sitelen_lasina strings:
 
     # game/script_init_chars.rpy:98
     old "Janitor"
-    new ""
+    new "jan pi pona e jaki"
 
     # game/script_init_chars.rpy:101
     old "Nurse"
@@ -360,7 +360,7 @@ translate tok_sitelen_lasina strings:
 
     # game/script_init_chars.rpy:124
     old "Moomin"
-    new ""
+    new "soweli Mumin"
 
     # game/script_init_chars.rpy:125
     old "Snufkin"
@@ -392,7 +392,7 @@ translate tok_sitelen_lasina strings:
 
     # game/script_init_chars.rpy:146
     old "\"Obama\""
-    new ""
+    new "jan lawa Opama"
 
     # game/script_init_chars.rpy:147
     old "\"Omaha\""
@@ -432,7 +432,7 @@ translate tok_sitelen_lasina strings:
 
     # game/script_init_chars.rpy:167
     old "Phone"
-    new ""
+    new "ilo toki"
 
     # game/script_init_chars.rpy:168
     old "CVS Employee"
@@ -552,7 +552,7 @@ translate tok_sitelen_lasina strings:
 
     # game/script_init_chars.rpy:214
     old "Walkie"
-    new ""
+    new "ilo toki"
 
     # game/script_init_chars.rpy:217
     old "Santa Claus"
@@ -576,15 +576,15 @@ translate tok_sitelen_lasina strings:
 
     # game/script_init_chars.rpy:229
     old "Da Phone"
-    new ""
+    new "ilo toki"
 
     # game/script_init_chars.rpy:231
     old "Hermaphrodite"
-    new ""
+    new "jan tonsi"
 
     # game/script_init_chars.rpy:233
     old "Zelda"
-    new ""
+    new "jan Seta"
 
     # game/script_init_chars.rpy:236
     old "Kapp'n"
@@ -600,19 +600,19 @@ translate tok_sitelen_lasina strings:
 
     # game/script_init_chars.rpy:241
     old "Anno"
-    new ""
+    new "jan Ano"
 
     # game/script_init_chars.rpy:242
     old "Arceus"
-    new ""
+    new "soweli Asiasi"
 
     # game/script_init_chars.rpy:243
     old "Aria"
-    new ""
+    new "usawi Alija"
 
     # game/script_init_chars.rpy:244
     old "Blank"
-    new ""
+    new "jan pi nimi ala"
 
     # game/script_init_chars.rpy:245
     old "DB05"
@@ -620,7 +620,7 @@ translate tok_sitelen_lasina strings:
 
     # game/script_init_chars.rpy:246
     old "Digi"
-    new ""
+    new "ijo Sisi"
 
     # game/script_init_chars.rpy:247
     old "Elizabeth"
@@ -636,11 +636,11 @@ translate tok_sitelen_lasina strings:
 
     # game/script_init_chars.rpy:250
     old "Horse"
-    new ""
+    new "soweli"
 
     # game/script_init_chars.rpy:251
     old "Iris"
-    new ""
+    new "jan Awisu"
 
     # game/script_init_chars.rpy:252
     old "K-17"
@@ -652,25 +652,25 @@ translate tok_sitelen_lasina strings:
 
     # game/script_init_chars.rpy:254
     old "Kitty"
-    new ""
+    new "soweli Kite"
 
     # game/script_init_chars.rpy:256
     old "Midge"
-    new ""
+    new "jan Misi"
 
     # game/script_init_chars.rpy:257
     old "Mika"
-    new ""
+    new "jan Mika"
 
     # game/script_init_chars.rpy:258
     old "Nova"
-    new ""
+    new "jan Nopa"
 
     # game/script_init_chars.rpy:259
     old "Pakoo"
-    new ""
+    new "jan Paku"
 
     # game/script_init_chars.rpy:261
     old "Bubble"
-    new ""
+    new "ko Papo"
 

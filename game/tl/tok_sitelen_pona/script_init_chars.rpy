@@ -52,7 +52,7 @@ translate tok_sitelen_pona strings:
 
     # game/script_init_chars.rpy:21
     old "Greeter"
-    new ""
+    new "󱤑󱥬"
 
     # game/script_init_chars.rpy:22
     old "Michael"
@@ -156,15 +156,15 @@ translate tok_sitelen_pona strings:
 
     # game/script_init_chars.rpy:55
     old "Obama"
-    new ""
+    new "󱤑󱤤󱦐󱥅󱥉󱤃󱤰󱤄󱦑"
 
     # game/script_init_chars.rpy:56
     old "Worker"
-    new ""
+    new "󱤑󱥉"
 
     # game/script_init_chars.rpy:59
     old "Mr. Green"
-    new ""
+    new "󱤵󱤣"
 
     # game/script_init_chars.rpy:60
     old "Jerma"
@@ -184,7 +184,7 @@ translate tok_sitelen_pona strings:
 
     # game/script_init_chars.rpy:64
     old "Trailer Trash"
-    new ""
+    new "󱤑󱤐"
 
     # game/script_init_chars.rpy:65
     old "TSA Agent"
@@ -196,35 +196,35 @@ translate tok_sitelen_pona strings:
 
     # game/script_init_chars.rpy:69
     old "Director"
-    new ""
+    new "󱤑󱥍󱤤󱤉󱥠"
 
     # game/script_init_chars.rpy:70
     old "Monika"
-    new ""
+    new "󱥚󱦐󱤱󱥅󱥂󱤏󱤙󱤄󱦑"
 
     # game/script_init_chars.rpy:73
     old "Billy"
-    new ""
+    new "󱤑󱦐󱥉󱤎󱤡󱤌󱤡󱦑"
 
     # game/script_init_chars.rpy:74
     old "Carla"
-    new ""
+    new "󱤑󱦐󱤕󱤃󱤤󱤀󱦑"
 
     # game/script_init_chars.rpy:75
     old "Cultist"
-    new ""
+    new "󱤑󱥍󱤟󱥚"
 
     # game/script_init_chars.rpy:76
     old "Cultist 2"
-    new ""
+    new "󱤑󱥍󱤟󱥚󱤽󱥮"
 
     # game/script_init_chars.rpy:77
     old "Cultist 3"
-    new ""
+    new "󱤑󱥍󱤟󱥚󱤽󱥮󱥳"
 
     # game/script_init_chars.rpy:78
     old "Gnome"
-    new ""
+    new "󱦷󱤨"
 
     # game/script_init_chars.rpy:79
     old "Host"
@@ -232,11 +232,11 @@ translate tok_sitelen_pona strings:
 
     # game/script_init_chars.rpy:80
     old "Mario"
-    new ""
+    new "󱤑󱦐󱤰󱤃󱥼󱤎󱥆󱦑"
 
     # game/script_init_chars.rpy:81
     old "Peppino"
-    new ""
+    new "󱤑󱦐󱥉󱤉󱥈󱤍󱤾󱥄󱦑"
 
     # game/script_init_chars.rpy:82
     old "Pencil Greeter"
@@ -276,15 +276,15 @@ translate tok_sitelen_pona strings:
 
     # game/script_init_chars.rpy:91
     old "Waitress"
-    new ""
+    new "󱤑󱥍󱥌󱤉󱤶"
 
     # game/script_init_chars.rpy:95
     old "Crowd"
-    new ""
+    new "󱤟"
 
     # game/script_init_chars.rpy:96
     old "Guest"
-    new ""
+    new "󱤑󱤈"
 
     # game/script_init_chars.rpy:97
     old "Howie"
@@ -292,7 +292,7 @@ translate tok_sitelen_pona strings:
 
     # game/script_init_chars.rpy:98
     old "Janitor"
-    new ""
+    new "󱤑󱥍󱥔󱤉󱤐"
 
     # game/script_init_chars.rpy:101
     old "Nurse"
@@ -360,7 +360,7 @@ translate tok_sitelen_pona strings:
 
     # game/script_init_chars.rpy:124
     old "Moomin"
-    new ""
+    new "󱥢󱦐󱤰󱥰󱤹󱤌󱤿󱦑"
 
     # game/script_init_chars.rpy:125
     old "Snufkin"
@@ -372,7 +372,7 @@ translate tok_sitelen_pona strings:
 
     # game/script_init_chars.rpy:127
     old "Witch"
-    new "󱤑󱦷"
+    new "󱤳󱦷"
 
     # game/script_init_chars.rpy:130
     old "K17-M4"
@@ -392,7 +392,7 @@ translate tok_sitelen_pona strings:
 
     # game/script_init_chars.rpy:146
     old "\"Obama\""
-    new ""
+    new "󱤑󱤤󱦐󱥇󱥉󱤃󱤰󱤄󱦑"
 
     # game/script_init_chars.rpy:147
     old "\"Omaha\""
@@ -400,7 +400,7 @@ translate tok_sitelen_pona strings:
 
     # game/script_init_chars.rpy:153
     old "Tate?"
-    new "󱤌󱦐󱥩󱤉󱥾󱥄󱦑󱦜󱦜󱦜"
+    new "󱤌󱦐󱥩󱤉󱥾󱥄󱦑󱦜󱦜󱦜?"
 
     # game/script_init_chars.rpy:156
     old "David"
@@ -432,7 +432,7 @@ translate tok_sitelen_pona strings:
 
     # game/script_init_chars.rpy:167
     old "Phone"
-    new ""
+    new "󱤎󱥬"
 
     # game/script_init_chars.rpy:168
     old "CVS Employee"
@@ -552,7 +552,7 @@ translate tok_sitelen_pona strings:
 
     # game/script_init_chars.rpy:214
     old "Walkie"
-    new ""
+    new "󱤎󱥬"
 
     # game/script_init_chars.rpy:217
     old "Santa Claus"
@@ -576,15 +576,15 @@ translate tok_sitelen_pona strings:
 
     # game/script_init_chars.rpy:229
     old "Da Phone"
-    new ""
+    new "󱤎󱥬"
 
     # game/script_init_chars.rpy:231
     old "Hermaphrodite"
-    new ""
+    new "󱤑󱥾"
 
     # game/script_init_chars.rpy:233
     old "Zelda"
-    new ""
+    new "󱤑󱦐󱥘󱤉󱥪󱤃󱦑"
 
     # game/script_init_chars.rpy:236
     old "Kapp'n"
@@ -600,19 +600,19 @@ translate tok_sitelen_pona strings:
 
     # game/script_init_chars.rpy:241
     old "Anno"
-    new ""
+    new "󱤑󱦐󱤂󱤾󱥇󱦑"
 
     # game/script_init_chars.rpy:242
     old "Arceus"
-    new ""
+    new "󱥢󱦐󱤃󱥡󱤎󱤄󱥙󱤌󱦑"
 
     # game/script_init_chars.rpy:243
     old "Aria"
-    new ""
+    new "󱦷󱦐󱤄󱤫󱤌󱥿󱤀󱦑"
 
     # game/script_init_chars.rpy:244
     old "Blank"
-    new ""
+    new "󱤑󱥍󱥂󱤂"
 
     # game/script_init_chars.rpy:245
     old "DB05"
@@ -620,7 +620,7 @@ translate tok_sitelen_pona strings:
 
     # game/script_init_chars.rpy:246
     old "Digi"
-    new ""
+    new "󱤌󱦐󱥤󱤎󱥡󱤌󱦑"
 
     # game/script_init_chars.rpy:247
     old "Elizabeth"
@@ -636,11 +636,11 @@ translate tok_sitelen_pona strings:
 
     # game/script_init_chars.rpy:250
     old "Horse"
-    new ""
+    new "󱥢"
 
     # game/script_init_chars.rpy:251
     old "Iris"
-    new ""
+    new "󱤑󱦐󱤄󱥶󱤌󱥙󱥰󱦑"
 
     # game/script_init_chars.rpy:252
     old "K-17"
@@ -652,25 +652,25 @@ translate tok_sitelen_pona strings:
 
     # game/script_init_chars.rpy:254
     old "Kitty"
-    new ""
+    new "󱥢󱦐󱤖󱤎󱥩󱤌󱦑"
 
     # game/script_init_chars.rpy:256
     old "Midge"
-    new ""
+    new "󱤑󱦐󱤰󱤎󱥡󱤌󱦑"
 
     # game/script_init_chars.rpy:257
     old "Mika"
-    new ""
+    new "󱤑󱦐󱤻󱤎󱤕󱤀󱦑"
 
     # game/script_init_chars.rpy:258
     old "Nova"
-    new ""
+    new "󱤑󱦐󱥸󱥇󱥉󱤃󱦑"
 
     # game/script_init_chars.rpy:259
     old "Pakoo"
-    new ""
+    new "󱤑‍󱦐󱥈󱤄󱤕󱥱󱦑"
 
     # game/script_init_chars.rpy:261
     old "Bubble"
-    new ""
+    new "󱤜󱦐󱥌󱤆󱥔󱥅󱦑"
 

@@ -92,7 +92,7 @@ translate tok_sitelen_lasina strings:
 
     # game/screens.rpy:796
     old "Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]"
-    new "musi ni la, ona li pali kepeken ijo {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]"
+    new "musi ni la, ona li pali kepeken ilo {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]"
 
     # game/screens.rpy:832
     old "Page {}"
@@ -164,19 +164,19 @@ translate tok_sitelen_lasina strings:
 
     # game/screens.rpy:1033
     old "Window"
-    new "nisin lupa"
+    new "nasin lupa"
 
     # game/screens.rpy:1034
     old "Fullscreen"
-    new "nisin ale"
+    new "nasin ale"
 
     # game/screens.rpy:1038
     old "Accessibility"
-    new "o sina e pona"
+    new "o pona e sina"
 
     # game/screens.rpy:1041
     old "Craptop Mode"
-    new "nisin pi ijo ike"
+    new "nasin pi ilo ike"
 
     # game/screens.rpy:1050
     old "Disables select visual effects in order to improve performance."
@@ -196,7 +196,7 @@ translate tok_sitelen_lasina strings:
 
     # game/screens.rpy:1072
     old "Forces the side colors to black instead of the current theme color."
-    new ""
+    new "o ante e kule poka tawa pimeja."
 
     # game/screens.rpy:1075
     old "No Button Mashing"
@@ -224,7 +224,7 @@ translate tok_sitelen_lasina strings:
 
     # game/screens.rpy:1107
     old "Disable Craptop Mode to change this setting."
-    new "nisin ni la, o nisin ijo ike e ante."
+    new "nasin ni la, o nasin ilo ike e ante."
 
     # game/screens.rpy:1113
     old "Theme"
@@ -264,7 +264,7 @@ translate tok_sitelen_lasina strings:
 
     # game/screens.rpy:1188
     old "Mute ALL Audio"
-    new "kalama ala e pini"
+    new "kalama ale e weka"
 
     # game/screens.rpy:1193
     old "Disable Menu Music"
@@ -292,7 +292,7 @@ translate tok_sitelen_lasina strings:
 
     # game/screens.rpy:1235
     old "Audio is muted."
-    new "nisin ni la, kalama li ken kute ala"
+    new "nasin ni la, kalama li ken kute ala"
 
     # game/screens.rpy:1249
     old "Gameplay Settings"
@@ -300,7 +300,7 @@ translate tok_sitelen_lasina strings:
 
     # game/screens.rpy:1250
     old "Streamer Mode"
-    new "nisin pi jan pi musi"
+    new "nasin pi jan pi musi"
 
     # game/screens.rpy:1252
     old "For those who want to see the true ending quickly."
@@ -320,7 +320,7 @@ translate tok_sitelen_lasina strings:
 
     # game/screens.rpy:1258
     old "Enables BGM-based puns that may be confusing if you\nhaven't played the game yet. (Requires Bounciness)"
-    new "o ken e toki musi pi kalama musi. sina musi ala e musi ni la, toki li ken nasa. tenpo musi li wile."
+    new "o ken e toki musi pi kalama musi. sina musi ala e musi ni la, toki li ken nasa. \"tenpo musi\" li wile."
 
     # game/screens.rpy:1259
     old "Confusing Jokes"
@@ -328,19 +328,19 @@ translate tok_sitelen_lasina strings:
 
     # game/screens.rpy:1261
     old "Enables random events that may be confusing if you\nhaven't played the game yet. (Requires Bounciness)"
-    new "o ken tenpo nasa. sina musi ala e musi ni la, toki li ken nasa. tenpo musi li wile."
+    new "o ken tenpo nasa. sina musi ala e musi ni la, toki li ken nasa. \"tenpo musi\" li wile."
 
     # game/screens.rpy:1263
     old "Awawa Mode"
-    new "nisin Awawa"
+    new "nasin Awawa"
 
     # game/screens.rpy:1266
     old "Developer Mode"
-    new "nisin pi jan pali"
+    new "nasin pi jan pali"
 
     # game/screens.rpy:1272
     old "Bounciness Chance"
-    new "nisin musi"
+    new "nasin musi"
 
     # game/screens.rpy:1282
     old "Max Bounciness Rarity"
@@ -348,7 +348,7 @@ translate tok_sitelen_lasina strings:
 
     # game/screens.rpy:1294
     old "Awawa Chance"
-    new "nisin Awawa"
+    new "nasin Awawa"
 
     # game/screens.rpy:1310
     old "Clear Persistent Data\n{size=-12}Clear your saved data. This cannot be undone."
@@ -360,7 +360,7 @@ translate tok_sitelen_lasina strings:
 
     # game/screens.rpy:1325
     old "Developer Options"
-    new "ijo ante pi jan pali"
+    new "ilo ante pi jan pali"
 
     # game/screens.rpy:1329
     old "Debug Menu\n{size=-12}Jump to specific sections of the game."
@@ -368,11 +368,11 @@ translate tok_sitelen_lasina strings:
 
     # game/screens.rpy:1332
     old "Jump To Label Start\n{size=-12}What we do here is go back{size=-6} back{size=-6} back"
-    new "o tawa e open lipu"
+    new "o tawa e lipu open"
 
     # game/screens.rpy:1334
     old "Unlock All\n{size=-12}Adds all unlockables to persistent."
-    new "o pana e ale"
+    new "o pana e ijo ale"
 
     # game/screens.rpy:1335
     old "Dump\n{size=-12}Dump important variables to a file."
@@ -384,15 +384,15 @@ translate tok_sitelen_lasina strings:
 
     # game/screens.rpy:1340
     old "Test Scene\n{size=-12}A sandbox for testing various features."
-    new "tomo alasa\n{size=-12}o alasa e ijo kule."
+    new "tomo alasa\n{size=-12}o alasa e ijo kule mute."
 
     # game/screens.rpy:1341
     old "Tate's Test Room\n{size=-12}Another test screen. Awawa."
-    new "tomo alasa pi ijo Teto\n{size=-12}awawa?"
+    new "tomo alasa pi ijo Teto\n{size=-12}awawa!"
 
     # game/screens.rpy:1342
     old "Digi's Test... Ship?\n{size=-12}Another test screen?! Really?"
-    new "tomo alasa pi ijo Tisi\n{size=-12}ni li jon ijo alasa mute..."
+    new "tomo alasa pi ijo Tisi\n{size=-12}ni li jo ijo alasa mute..."
 
     # game/screens.rpy:1482
     old "Narrator"

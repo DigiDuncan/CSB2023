@@ -4,19 +4,19 @@ translate tok_sitelen_pona strings:
 
     # game/screens.rpy:447
     old "Back"
-    new ""
+    new "o󱥩󱤸"
 
     # game/screens.rpy:448
     old "History"
-    new ""
+    new "󱤪󱥍󱥫󱥐"
 
     # game/screens.rpy:449
     old "Game Select"
-    new ""
+    new "󱥄󱥷󱤉󱤻"
 
     # game/screens.rpy:450
     old "Skip"
-    new ""
+    new "󱥩"
 
     # game/screens.rpy:451
     old "Auto"
@@ -24,7 +24,7 @@ translate tok_sitelen_pona strings:
 
     # game/screens.rpy:452
     old "Save"
-    new ""
+    new "󱥄󱤻󱤉󱤈"
 
     # game/screens.rpy:453
     old "Q.Save"
@@ -36,67 +36,67 @@ translate tok_sitelen_pona strings:
 
     # game/screens.rpy:455
     old "Prefs"
-    new ""
+    new "󱤆"
 
     # game/screens.rpy:495
     old "Game Menu"
-    new ""
+    new "󱤪󱤻"
 
     # game/screens.rpy:505
     old "Load"
-    new ""
+    new "󱥄󱤻󱤈󱤉󱥇"
 
     # game/screens.rpy:507
     old "Extras"
-    new ""
+    new "󱤎󱥸"
 
     # game/screens.rpy:511
     old "Replay Intro"
-    new ""
+    new "󱥄󱤮󱥝󱤉󱥇"
 
     # game/screens.rpy:513
     old "CSettings"
-    new "󱥄󱤎󱤉󱤆"
+    new "󱥄󱤆󱤉󱤌"
 
     # game/screens.rpy:517
     old "Return to Menu"
-    new ""
+    new "󱥄󱥩󱤉󱤪󱤸"
 
     # game/screens.rpy:521
     old "Main Menu"
-    new "󱥭󱤽󱥳"
+    new "󱥄󱥩󱤪󱤤"
 
     # game/screens.rpy:523
     old "About"
-    new ""
+    new "󱤻󱥁󱤧󱥙"
 
     # game/screens.rpy:528
     old "Help"
-    new ""
+    new "󱥄󱥔󱤉󱤴"
 
     # game/screens.rpy:534
     old "Quit"
-    new ""
+    new "󱥄󱤻󱤉󱥐"
 
     # game/screens.rpy:579
     old "{bt=a3-p10-s1}Are you CS? Click here!"
-    new ""
+    new "󱦚󱦚{󱦚bt=a3-p10-s1}󱥞󱤑󱦐󱥝󱤌󱤐󱤉󱥙󱥯󱦑󱤇󱥙?　󱥄󱤭󱤉󱥁!"
 
     # game/screens.rpy:701
     old "Return"
-    new ""
+    new "󱥄󱥩󱤸"
 
     # game/screens.rpy:790
     old "Version [config.version!t]\n"
-    new ""
+    new "󱤽󱤻　[config.version!t]\n"
 
     # game/screens.rpy:796
     old "Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]"
-    new ""
+    new "󱤻󱥁󱤡󱥆󱤧󱥉󱤙󱤎{a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]"
 
     # game/screens.rpy:832
     old "Page {}"
-    new ""
+    new "󱤪󱤽{}󱦚󱦛"
 
     # game/screens.rpy:832
     old "Automatic saves"
@@ -108,27 +108,27 @@ translate tok_sitelen_pona strings:
 
     # game/screens.rpy:874
     old "{#file_time}%A, %B %d %Y, %H:%M"
-    new ""
+    new "{#file_time}%A, %B %d %Y, %H:%M"
 
     # game/screens.rpy:874
     old "empty slot"
-    new ""
+    new "󱥓󱥍󱤓󱤂"
 
     # game/screens.rpy:894
     old "<"
-    new ""
+    new "<"
 
     # game/screens.rpy:897
     old "{#auto_page}A"
-    new ""
+    new "{#auto_page}A"
 
     # game/screens.rpy:900
     old "{#quick_page}Q"
-    new ""
+    new "{#quick_page}Q"
 
     # game/screens.rpy:906
     old ">"
-    new ""
+    new ">"
 
     # game/screens.rpy:910
     old "Upload Sync"
@@ -140,23 +140,23 @@ translate tok_sitelen_pona strings:
 
     # game/screens.rpy:974
     old "Screen"
-    new ""
+    new "󱥠󱤮"
 
     # game/screens.rpy:984
     old "Audio"
-    new ""
+    new "󱤕"
 
     # game/screens.rpy:994
     old "Gameplay"
-    new ""
+    new "󱤻"
 
     # game/screens.rpy:1005
     old "Developer"
-    new ""
+    new "󱤑󱥉󱥍󱤻󱥁"
 
     # game/screens.rpy:1023
     old "Language"
-    new ""
+    new "󱥬󱥙"
 
     # game/screens.rpy:1025
     old "English"
@@ -168,27 +168,27 @@ translate tok_sitelen_pona strings:
 
     # game/screens.rpy:1034
     old "Display"
-    new ""
+    new "󱥠"
 
     # game/screens.rpy:1035
     old "Window"
-    new ""
+    new "󱤿󱤯"
 
     # game/screens.rpy:1036
     old "Fullscreen"
-    new ""
+    new "󱤿󱤄"
 
     # game/screens.rpy:1040
     old "Accessibility"
-    new ""
+    new "󱥄󱥔󱤉󱥞"
 
     # game/screens.rpy:1043
     old "Craptop Mode"
-    new ""
+    new "󱤿󱥍󱤎󱤍"
 
     # game/screens.rpy:1052
     old "Disables select visual effects in order to improve performance."
-    new ""
+    new "󱥄󱥠󱥍󱥩󱥸󱤉󱥶󱦜"
 
     # game/screens.rpy:1055
     old "Dyslexia Mode"
@@ -196,15 +196,15 @@ translate tok_sitelen_pona strings:
 
     # game/screens.rpy:1063
     old "Changes to an easier-to-read font."
-    new ""
+    new "󱥄󱥠󱦐󱤡󱤀󱥖󱥰󱤾󱤂󱦑󱤉󱤆󱥩󱥠󱥍󱥔󱦜"
 
     # game/screens.rpy:1066
     old "Force Black Letterbox"
-    new ""
+    new "󱥄󱤙󱤉󱥓󱥏"
 
     # game/screens.rpy:1074
     old "Forces the side colors to black instead of the current theme color."
-    new ""
+    new "󱥄󱤆󱤉󱤞󱥒󱥩󱥏󱦜"
 
     # game/screens.rpy:1077
     old "No Button Mashing"
@@ -216,27 +216,27 @@ translate tok_sitelen_pona strings:
 
     # game/screens.rpy:1088
     old "Visual Options"
-    new ""
+    new "󱥄󱤆󱤉󱤮"
 
     # game/screens.rpy:1091
     old "Skip Unseen Text"
-    new ""
+    new "󱥄󱤮󱤂󱤉󱥂󱥍󱤮󱤂"
 
     # game/screens.rpy:1092
     old "Skip After Choices"
-    new ""
+    new "󱥄󱤮󱤂󱤉󱤘"
 
     # game/screens.rpy:1096
     old "Disable Transitions"
-    new ""
+    new "󱥄󱥶󱤉󱥠󱥍󱥩󱤆"
 
     # game/screens.rpy:1109
     old "Disable Craptop Mode to change this setting."
-    new ""
+    new "󱤿󱥁󱤡󱥄󱤿󱤎󱤍󱤉󱤆󱦜"
 
     # game/screens.rpy:1115
     old "Theme"
-    new ""
+    new "󱤞"
 
     # game/screens.rpy:1129
     old "WARNING: This theme may not run well on lower-end hardware.\nEnable Craptop Mode for better performance."
@@ -252,7 +252,7 @@ translate tok_sitelen_pona strings:
 
     # game/screens.rpy:1145
     old "Reset"
-    new ""
+    new "󱥄󱥝"
 
     # game/screens.rpy:1162
     old "Auto-Forward Time"
@@ -260,23 +260,23 @@ translate tok_sitelen_pona strings:
 
     # game/screens.rpy:1186
     old "Audio Options"
-    new ""
+    new "󱥄󱤆󱤉󱤕"
 
     # game/screens.rpy:1187
     old "Text Beeps"
-    new ""
+    new "󱤕󱥬"
 
     # game/screens.rpy:1189
     old "Enables character speech."
-    new ""
+    new "󱥄󱤕󱥬󱤉󱥇"
 
     # game/screens.rpy:1190
     old "Mute ALL Audio"
-    new ""
+    new "󱤕󱤄󱤉󱥶"
 
     # game/screens.rpy:1195
     old "Disable Menu Music"
-    new ""
+    new "󱤕󱤻󱥍󱤪󱤤󱤉󱥶"
 
     # game/screens.rpy:1197
     old "Disables both the main menu music and its accompanying splash screen."
@@ -284,131 +284,131 @@ translate tok_sitelen_pona strings:
 
     # game/screens.rpy:1206
     old "Music Volume"
-    new ""
+    new "󱤕󱤻"
 
     # game/screens.rpy:1214
     old "Sound Volume"
-    new ""
+    new "󱤕󱤕"
 
     # game/screens.rpy:1222
     old "Test"
-    new ""
+    new "󱤃"
 
     # game/screens.rpy:1224
     old "Beep Volume"
-    new ""
+    new "󱤕󱥬"
 
     # game/screens.rpy:1237
     old "Audio is muted."
-    new ""
+    new "󱤿󱥁󱤡󱤕󱤧󱤘󱤠󱤂󱦜"
 
     # game/screens.rpy:1251
     old "Gameplay Settings"
-    new ""
+    new "󱥄󱤆󱤉󱤻"
 
     # game/screens.rpy:1252
     old "Streamer Mode"
-    new ""
+    new "󱤿󱥍󱤑󱥍󱤻"
 
     # game/screens.rpy:1254
     old "For those who want to see the true ending quickly."
-    new ""
+    new "󱥫󱤨󱤡,󱥄󱤙󱥩󱤮󱤉󱥐󱤬󱦜"
 
     # game/screens.rpy:1255
     old "Toggle Bounciness"
-    new ""
+    new "󱥄󱥫󱤻󱤉󱤘"
 
     # game/screens.rpy:1257
     old "Enables random events that add jokes and scenes to the story."
-    new ""
+    new "󱥄󱤘󱤻󱥸󱦜"
 
     # game/screens.rpy:1258
     old "Musical Puns"
-    new ""
+    new "󱥬󱤻󱥍󱤕󱤻"
 
     # game/screens.rpy:1260
     old "Enables BGM-based puns that may be confusing if you\nhaven't played the game yet. (Requires Bounciness)"
-    new ""
+    new "󱥄󱤘󱤉󱥬󱤻󱥍󱤕󱤻󱦜　󱥞󱤻󱤂󱤉󱤻󱥁󱤡󱥬󱤧󱤘󱤾󱦜　「󱥫󱤻」󱤧󱥷󱦜"
 
     # game/screens.rpy:1261
     old "Confusing Jokes"
-    new ""
+    new "󱥬󱤻󱥍󱤾"
 
     # game/screens.rpy:1263
     old "Enables random events that may be confusing if you\nhaven't played the game yet. (Requires Bounciness)"
-    new ""
+    new "󱥄󱤘󱥫󱤾󱦜　󱥞󱤻󱤂󱤉󱤻󱥁󱤡󱥬󱤧󱤘󱤾󱦜　「󱥫󱤻」󱤧󱥷󱦜"
 
     # game/screens.rpy:1265
     old "Awawa Mode"
-    new ""
+    new "󱤿󱦐󱤀󱥵󱤀󱥵󱦑"
 
     # game/screens.rpy:1268
     old "Developer Mode"
-    new ""
+    new "󱤿󱥍󱤑󱥉"
 
     # game/screens.rpy:1274
     old "Bounciness Chance"
-    new ""
+    new "󱤿󱤻"
 
     # game/screens.rpy:1284
     old "Max Bounciness Rarity"
-    new ""
+    new "󱤻󱥣"
 
     # game/screens.rpy:1296
     old "Awawa Chance"
-    new ""
+    new "󱤿󱦐󱤀󱥵󱤀󱥵󱤀󱦑"
 
     # game/screens.rpy:1312
     old "Clear Persistent Data\n{size=-12}Clear your saved data. This cannot be undone."
-    new ""
+    new "󱥄󱥡󱤈󱤉󱥶\n{size=-12}󱥡󱤧󱥶󱥩󱥫󱤄󱦜"
 
     # game/screens.rpy:1316
     old "Clear Save Slots\n{size=-12}Clears all the save slots. This cannot be undone."
-    new ""
+    new "󱥄󱥡󱤈󱤉󱥶\n{size=-12}󱥓󱥡󱤧󱥶󱥩󱥫󱤄󱦜"
 
     # game/screens.rpy:1327
     old "Developer Options"
-    new ""
+    new "󱤎󱤆󱥍󱤑󱥉"
 
     # game/screens.rpy:1331
     old "Debug Menu\n{size=-12}Jump to specific sections of the game."
-    new ""
+    new "󱤪󱤃"
 
     # game/screens.rpy:1334
     old "Jump To Label Start\n{size=-12}What we do here is go back{size=-6} back{size=-6} back"
-    new ""
+    new "󱥄󱥩󱤉󱤪󱥇"
 
     # game/screens.rpy:1336
     old "Unlock All\n{size=-12}Adds all unlockables to persistent."
-    new ""
+    new "󱥄󱥌󱤉󱤌󱤄"
 
     # game/screens.rpy:1337
     old "Dump\n{size=-12}Dump important variables to a file."
-    new ""
+    new "󱥄󱥌󱤉󱤌󱥣󱥩󱤪"
 
     # game/screens.rpy:1340
     old "Test Rooms"
-    new ""
+    new "󱥭󱤃"
 
     # game/screens.rpy:1342
     old "Test Scene\n{size=-12}A sandbox for testing various features."
-    new ""
+    new "󱥭󱤃{size=-12}󱥄󱤃󱤉󱤌󱤞󱤼󱦜"
 
     # game/screens.rpy:1343
     old "Tate's Test Room\n{size=-12}Another test screen. Awawa."
-    new ""
+    new "󱥭󱤃󱥍󱤌󱦐󱥩󱤉󱥾󱥄󱦑\n{size=-12}「󱤀󱥵」"
 
     # game/screens.rpy:1344
     old "Digi's Test... Ship?\n{size=-12}Another test screen?! Really?"
-    new ""
+    new "󱥭󱤃󱥍󱤌󱦐󱥤󱤎󱥡󱤌󱦑\n{size=-12}󱥁󱤧󱤓󱤌󱤃󱤼󱦜󱦜󱦜"
 
     # game/screens.rpy:1484
     old "Narrator"
-    new ""
+    new "󱤑󱥬"
 
     # game/screens.rpy:1493
     old "The dialogue history is empty."
-    new ""
+    new "󱤪󱥬󱤧󱤓󱤂󱦜"
 
     # game/screens.rpy:1563
     old "Keyboard"
@@ -568,4 +568,11 @@ translate tok_sitelen_pona strings:
 
     # game/screens.rpy:2092
     old "Menu"
-    new ""
+    new ""# TODO: Translation updated at 2026-06-04 22:37
+
+translate tok_sitelen_pona strings:
+
+    # game/screens.rpy:1280
+    old "Replaces the dialogue with nonsense!"
+    new "󱥄󱤆󱤉󱥬󱥩󱥂󱤾󱦜"
+
