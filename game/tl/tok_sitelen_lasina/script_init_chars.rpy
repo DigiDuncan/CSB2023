@@ -1,4 +1,4 @@
-﻿# TODO: Translation updated at 2026-06-04 15:30
+﻿# TODO: Translation updated at 2026-06-05 11:32
 
 translate tok_sitelen_lasina strings:
 
@@ -20,7 +20,7 @@ translate tok_sitelen_lasina strings:
 
     # game/script_init_chars.rpy:10
     old "cs188 (pretending to be CSGod)"
-    new ""
+    new "cs188 (pretending to be CSGod)"
 
     # game/script_init_chars.rpy:11
     old "CSGod"
@@ -32,7 +32,7 @@ translate tok_sitelen_lasina strings:
 
     # game/script_init_chars.rpy:15
     old "Carguy"
-    new ""
+    new "Carguy"
 
     # game/script_init_chars.rpy:17
     old "Cashier"
@@ -124,39 +124,40 @@ translate tok_sitelen_lasina strings:
 
     # game/script_init_chars.rpy:43
     old "Copguy"
-    new ""
+    new "Copguy"
 
     # game/script_init_chars.rpy:44
     old "Linus"
-    new ""
+    new "Linus"
 
     # game/script_init_chars.rpy:47
     old "Colton"
-    new ""
+    new "Colton"
 
     # game/script_init_chars.rpy:48
     old "Luke"
-    new ""
+    new "Luke"
 
     # game/script_init_chars.rpy:49
     old "Sheriff"
-    new ""
+    new "Sheriff"
 
     # game/script_init_chars.rpy:50
     old "Taran"
-    new ""
+    new "Taran"
 
     # game/script_init_chars.rpy:53
     old "Omaha"
-    new ""
+    new "Omaha"
 
     # game/script_init_chars.rpy:54
     old "Cop"
-    new ""
+    new "Cop"
 
     # game/script_init_chars.rpy:55
     old "Obama"
-    new ""
+    new "Obama"
+
 
     # game/script_init_chars.rpy:56
     old "Worker"
@@ -168,19 +169,19 @@ translate tok_sitelen_lasina strings:
 
     # game/script_init_chars.rpy:60
     old "Jerma"
-    new ""
+    new "Jerma"
 
     # game/script_init_chars.rpy:61
     old "Lancer"
-    new ""
+    new "Lancer"
 
     # game/script_init_chars.rpy:62
     old "LegoBot"
-    new ""
+    new "LegoBot"
 
     # game/script_init_chars.rpy:63
     old "Luigi"
-    new ""
+    new "Luigi"
 
     # game/script_init_chars.rpy:64
     old "Trailer Trash"
@@ -188,13 +189,13 @@ translate tok_sitelen_lasina strings:
 
     # game/script_init_chars.rpy:65
     old "TSA Agent"
-    new ""
+    new "TSA Agent"
 
     # game/script_init_chars.rpy:68
     old "Billy (from off screen)"
-    new ""
+    new "Billy (from off screen)"
 
-    # game/script_init_chars.rpy:69
+     # game/script_init_chars.rpy:69
     old "Director"
     new "jan pi lawa e sitelen"
 
@@ -228,7 +229,7 @@ translate tok_sitelen_lasina strings:
 
     # game/script_init_chars.rpy:79
     old "Host"
-    new ""
+    new "Host"
 
     # game/script_init_chars.rpy:80
     old "Mario"
@@ -240,39 +241,39 @@ translate tok_sitelen_lasina strings:
 
     # game/script_init_chars.rpy:82
     old "Pencil Greeter"
-    new ""
+    new "Pencil Greeter"
 
     # game/script_init_chars.rpy:83
     old "Shaggy Too Dope"
-    new ""
+    new "Shaggy Too Dope"
 
     # game/script_init_chars.rpy:84
     old "Scott"
-    new ""
+    new "Scott"
 
     # game/script_init_chars.rpy:85
     old "Signup Helper"
-    new ""
+    new "Signup Helper"
 
     # game/script_init_chars.rpy:86
     old "Smiley"
-    new ""
+    new "Smiley"
 
     # game/script_init_chars.rpy:87
     old "Terry"
-    new ""
+    new "Terry"
 
     # game/script_init_chars.rpy:88
     old "TV Billy"
-    new ""
+    new "TV Billy"
 
     # game/script_init_chars.rpy:89
     old "Street Guy"
-    new ""
+    new "Street Guy"
 
     # game/script_init_chars.rpy:90
     old "Violent Jay"
-    new ""
+    new "Violent Jay"
 
     # game/script_init_chars.rpy:91
     old "Waitress"
@@ -288,7 +289,7 @@ translate tok_sitelen_lasina strings:
 
     # game/script_init_chars.rpy:97
     old "Howie"
-    new ""
+    new "Howie"
 
     # game/script_init_chars.rpy:98
     old "Janitor"
@@ -300,63 +301,63 @@ translate tok_sitelen_lasina strings:
 
     # game/script_init_chars.rpy:102
     old "Benrey"
-    new ""
+    new "Benrey"
 
     # game/script_init_chars.rpy:105
     old "Gordon"
-    new ""
+    new "Gordon"
 
     # game/script_init_chars.rpy:107
     old "Jeremy"
-    new ""
+    new "Jeremy"
 
     # game/script_init_chars.rpy:108
     old "James"
-    new ""
+    new "James"
 
     # game/script_init_chars.rpy:109
     old "Tom Scott"
-    new ""
+    new "Tom Scott"
 
     # game/script_init_chars.rpy:112
     old "Receptionist"
-    new ""
+    new "Receptionist"
 
     # game/script_init_chars.rpy:113
     old "Scott, President of Domino's Pizza"
-    new ""
+    new "Scott, President of Domino's Pizza"
 
     # game/script_init_chars.rpy:114
     old "Hatsune Miku"
-    new ""
+    new "Hatsune Miku"
 
     # game/script_init_chars.rpy:115
     old "Sayori"
-    new ""
+    new "Sayori"
 
     # game/script_init_chars.rpy:118
     old "Vargskelethor Joel"
-    new ""
+    new "Vargskelethor Joel"
 
     # game/script_init_chars.rpy:119
     old "Ikea Greeter"
-    new ""
+    new "Ikea Greeter"
 
     # game/script_init_chars.rpy:120
     old "Ikea Worker"
-    new ""
+    new "Ikea Worker"
 
     # game/script_init_chars.rpy:121
     old "Pomni"
-    new "jan musi Pomuni"
+    new "Pomni"
 
     # game/script_init_chars.rpy:122
     old "Swede"
-    new ""
+    new "Swede"
 
     # game/script_init_chars.rpy:123
     old "Grey"
-    new ""
+    new "Grey"
 
     # game/script_init_chars.rpy:124
     old "Moomin"
@@ -364,27 +365,27 @@ translate tok_sitelen_lasina strings:
 
     # game/script_init_chars.rpy:125
     old "Snufkin"
-    new ""
+    new "Snufkin"
 
     # game/script_init_chars.rpy:126
     old "Alicia"
-    new ""
+    new "Alicia"
 
     # game/script_init_chars.rpy:127
     old "Witch"
-    new "jan usawi"
+    new "meli usawi"
 
     # game/script_init_chars.rpy:130
     old "K17-M4"
-    new ""
+    new "K17-M4"
 
     # game/script_init_chars.rpy:131
     old "K19-M9"
-    new ""
+    new "K19-M9"
 
     # game/script_init_chars.rpy:132
     old "K20-M7"
-    new ""
+    new "K20-M7"
 
     # game/script_init_chars.rpy:145
     old "\"Ed\""
@@ -404,31 +405,31 @@ translate tok_sitelen_lasina strings:
 
     # game/script_init_chars.rpy:156
     old "David"
-    new ""
+    new "David"
 
     # game/script_init_chars.rpy:157
     old "George"
-    new ""
+    new "George"
 
     # game/script_init_chars.rpy:158
     old "Harold"
-    new ""
+    new "Harold"
 
     # game/script_init_chars.rpy:159
     old "Mr. Krupp"
-    new ""
+    new "Mr. Krupp"
 
     # game/script_init_chars.rpy:160
     old "Weird Al"
-    new ""
+    new "Weird Al"
 
     # game/script_init_chars.rpy:162
     old "DigiMom"
-    new ""
+    new "DigiMom"
 
     # game/script_init_chars.rpy:163
     old "Rex Mohs"
-    new ""
+    new "Rex Mohs"
 
     # game/script_init_chars.rpy:167
     old "Phone"
@@ -436,63 +437,63 @@ translate tok_sitelen_lasina strings:
 
     # game/script_init_chars.rpy:168
     old "CVS Employee"
-    new ""
+    new "CVS Employee"
 
     # game/script_init_chars.rpy:169
     old "Leedlelee Employee"
-    new ""
+    new "Leedlelee Employee"
 
     # game/script_init_chars.rpy:170
     old "CEO of Diabetes"
-    new ""
+    new "CEO of Diabetes"
 
     # game/script_init_chars.rpy:171
     old "Secretary of Diabetes"
-    new ""
+    new "Secretary of Diabetes"
 
     # game/script_init_chars.rpy:174
     old "Steve Baumer"
-    new ""
+    new "Steve Baumer"
 
     # game/script_init_chars.rpy:175
     old "Blind Eye Cultist"
-    new ""
+    new "Blind Eye Cultist"
 
     # game/script_init_chars.rpy:176
     old "Tom Cruise"
-    new ""
+    new "Tom Cruise"
 
     # game/script_init_chars.rpy:177
     old "Lunatic Cultist"
-    new ""
+    new "Lunatic Cultist"
 
     # game/script_init_chars.rpy:178
     old "Priest"
-    new ""
+    new "Priest"
 
     # game/script_init_chars.rpy:179
     old "Renovator"
-    new ""
+    new "Renovator"
 
     # game/script_init_chars.rpy:182
     old "Kuwait Doctor"
-    new ""
+    new "Kuwait Doctor"
 
     # game/script_init_chars.rpy:183
     old "Kuwait Nurse"
-    new ""
+    new "Kuwait Nurse"
 
     # game/script_init_chars.rpy:184
     old "Lt. Snow"
-    new ""
+    new "Lt. Snow"
 
     # game/script_init_chars.rpy:185
     old "Rocco Mem"
-    new ""
+    new "Rocco Mem"
 
     # game/script_init_chars.rpy:186
     old "Suzuki"
-    new ""
+    new "Suzuki"
 
     # game/script_init_chars.rpy:189
     old "Passenger 1"
@@ -508,31 +509,31 @@ translate tok_sitelen_lasina strings:
 
     # game/script_init_chars.rpy:192
     old "K-19"
-    new ""
+    new "K-19"
 
     # game/script_init_chars.rpy:193
     old "Orville Wright"
-    new ""
+    new "Orville Wright"
 
     # game/script_init_chars.rpy:194
     old "Wilbur Wright"
-    new ""
+    new "Wilbur Wright"
 
     # game/script_init_chars.rpy:195
     old "Mucinex Booger"
-    new ""
+    new "Mucinex Booger"
 
     # game/script_init_chars.rpy:198
     old "Conductor"
-    new ""
+    new "Conductor"
 
     # game/script_init_chars.rpy:202
     old "Stewardess"
-    new ""
+    new "Stewardess"
 
     # game/script_init_chars.rpy:203
     old "Lupin"
-    new ""
+    new "Lupin"
 
     # game/script_init_chars.rpy:206
     old "Mean"
@@ -544,11 +545,11 @@ translate tok_sitelen_lasina strings:
 
     # game/script_init_chars.rpy:212
     old "James Rolfe"
-    new ""
+    new "James Rolfe"
 
     # game/script_init_chars.rpy:213
     old "Target Employee"
-    new ""
+    new "Target Employee"
 
     # game/script_init_chars.rpy:214
     old "Walkie"
@@ -556,23 +557,23 @@ translate tok_sitelen_lasina strings:
 
     # game/script_init_chars.rpy:217
     old "Santa Claus"
-    new ""
+    new "Santa Claus"
 
     # game/script_init_chars.rpy:218
     old "Mike"
-    new ""
+    new "Mike"
 
     # game/script_init_chars.rpy:221
     old "Perfect Billy"
-    new ""
+    new "Perfect Billy"
 
     # game/script_init_chars.rpy:222
     old "Fiddleford"
-    new ""
+    new "Fiddleford"
 
     # game/script_init_chars.rpy:223
     old "Cultcon Leader"
-    new ""
+    new "Cultcon Leader"
 
     # game/script_init_chars.rpy:229
     old "Da Phone"
@@ -588,15 +589,15 @@ translate tok_sitelen_lasina strings:
 
     # game/script_init_chars.rpy:236
     old "Kapp'n"
-    new ""
+    new "Kapp'n"
 
     # game/script_init_chars.rpy:239
     old "Addy"
-    new ""
+    new "Addy"
 
     # game/script_init_chars.rpy:240
     old "Anne"
-    new ""
+    new "Anne"
 
     # game/script_init_chars.rpy:241
     old "Anno"
@@ -616,7 +617,7 @@ translate tok_sitelen_lasina strings:
 
     # game/script_init_chars.rpy:245
     old "DB05"
-    new ""
+    new "DB05"
 
     # game/script_init_chars.rpy:246
     old "Digi"
@@ -624,15 +625,16 @@ translate tok_sitelen_lasina strings:
 
     # game/script_init_chars.rpy:247
     old "Elizabeth"
-    new ""
+    new "Elizabeth"
 
     # game/script_init_chars.rpy:248
     old "Grace"
-    new ""
+    new "Grace"
 
     # game/script_init_chars.rpy:249
     old "Ges"
-    new ""
+    new "Ges"
+
 
     # game/script_init_chars.rpy:250
     old "Horse"
@@ -644,11 +646,11 @@ translate tok_sitelen_lasina strings:
 
     # game/script_init_chars.rpy:252
     old "K-17"
-    new ""
+    new "K-17"
 
     # game/script_init_chars.rpy:253
     old "K-22"
-    new ""
+    new "K-22"
 
     # game/script_init_chars.rpy:254
     old "Kitty"
@@ -673,4 +675,3 @@ translate tok_sitelen_lasina strings:
     # game/script_init_chars.rpy:261
     old "Bubble"
     new "ko Papo"
-

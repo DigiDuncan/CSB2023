@@ -1,76 +1,76 @@
-﻿# TODO: Translation updated at 2026-06-04 14:42
+﻿# TODO: Translation updated at 2026-06-05 11:32
 
 translate tok_sitelen_pona strings:
 
     # game/screens/kuwait_map.rpy:32
     old "Kuwait City"
-    new ""
+    new "Kuwait City"
 
     # game/screens/kuwait_map.rpy:42
     old "Sharq"
-    new ""
+    new "Sharq"
 
     # game/screens/kuwait_map.rpy:52
     old "Hawally"
-    new ""
+    new "Hawally"
 
     # game/screens/kuwait_map.rpy:62
     old "Bayan Water Towers"
-    new ""
+    new "Bayan Water Towers"
 
     # game/screens/kuwait_map.rpy:72
     old "Salmiya"
-    new ""
+    new "Salmiya"
 
     # game/screens/kuwait_map.rpy:82
     old "Khiran Camp"
-    new ""
+    new "Khiran Camp"
 
     # game/screens/kuwait_map.rpy:92
     old "Al Wafra"
-    new ""
+    new "Al Wafra"
 
     # game/screens/kuwait_map.rpy:102
     old "Jahra Industrial"
-    new ""
+    new "Jahra Industrial"
 
     # game/screens/kuwait_map.rpy:112
     old "Sulaibiya"
-    new ""
+    new "Sulaibiya"
 
     # game/screens/kuwait_map.rpy:122
     old "Icarus"
-    new ""
+    new "Icarus"
 
     # game/screens/kuwait_map.rpy:132
     old "Boubyan Island"
-    new ""
+    new "Boubyan Island"
 
     # game/screens/kuwait_map.rpy:142
     old "Um Al Namil"
-    new ""
+    new "Um Al Namil"
 
     # game/screens/kuwait_map.rpy:152
     old "Kubar Island"
-    new ""
+    new "Kubar Island"
 
     # game/screens/kuwait_map.rpy:162
     old "Um Al Maradim"
-    new ""
+    new "Um Al Maradim"
 
     # game/screens/kuwait_map.rpy:172
     old "Burgan Oil Fields"
-    new ""
+    new "Burgan Oil Fields"
 
     # game/screens/kuwait_map.rpy:182
     old "Saqr Airbase"
-    new ""
+    new "Saqr Airbase"
 
     # game/screens/kuwait_map.rpy:192
     old "Al-Abdally"
-    new ""
+    new "Al-Abdally"
 
     # game/screens/kuwait_map.rpy:202
     old "Mutla Ridge"
-    new ""
+    new "Mutla Ridge"
 

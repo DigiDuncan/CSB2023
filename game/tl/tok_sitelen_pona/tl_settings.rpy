@@ -1,15 +1,15 @@
 # Main fonts
 translate tok_sitelen_pona style default:
-    font "FairfaxHD.ttf"
+    font gui_theme_map["tp_font"]
 
 translate tok_sitelen_pona python:
-    gui.text_font = "FairfaxHD.ttf"
-    gui.name_text_font = "FairfaxHD.ttf"
-    gui.header_text_font = "FairfaxHD.ttf"
-    gui.system_font = "FairfaxHD.ttf"
-    gui.interface_text_font = "FairfaxHD.ttf"
-    gui.button_text_font = "FairfaxHD.ttf"
-    gui.choice_button_text_font = "FairfaxHD.ttf"
+    gui.text_font = gui_theme_map["tp_font"]
+    gui.name_text_font = gui_theme_map["tp_font"]
+    gui.header_text_font = gui_theme_map["tp_font"]
+    gui.system_font = gui_theme_map["tp_font"]
+    gui.interface_text_font = gui_theme_map["tp_font"]
+    gui.button_text_font = gui_theme_map["tp_font"]
+    gui.choice_button_text_font = gui_theme_map["tp_font"]
 
     gui_theme_map["main_font"] = gui_theme_map["tp_font"]
     gui_theme_map["name_font"] = gui_theme_map["tp_font"]

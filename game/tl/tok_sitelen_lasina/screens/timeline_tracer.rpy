@@ -1,48 +1,48 @@
-﻿# TODO: Translation updated at 2026-06-04 15:30
+﻿# TODO: Translation updated at 2026-06-05 11:32
 
 translate tok_sitelen_lasina strings:
 
     # game/screens/timeline_tracer.rpy:29
     old "Timeline Tracer"
-    new ""
+    new "Timeline Tracer"
 
     # game/screens/timeline_tracer.rpy:52
     old "Locked"
-    new ""
+    new "Locked"
 
     # game/screens/timeline_tracer.rpy:52
     old "Check"
-    new ""
+    new "Check"
 
     # game/screens/timeline_tracer.rpy:52
     old "Start"
-    new ""
+    new "Start"
 
     # game/screens/timeline_tracer.rpy:52
     old "Choice"
-    new ""
+    new "Choice"
 
     # game/screens/timeline_tracer.rpy:52
     old "Outcome"
-    new ""
+    new "Outcome"
 
     # game/screens/timeline_tracer.rpy:52
     old "Minigame"
-    new ""
+    new "Minigame"
 
     # game/screens/timeline_tracer.rpy:52
     old "Ending"
-    new ""
+    new "Ending"
 
     # game/screens/timeline_tracer.rpy:52
     old "Bad Ending"
-    new ""
+    new "Bad Ending"
 
     # game/screens/timeline_tracer.rpy:312
     old "Replay!"
-    new ""
+    new "Replay!"
 
     # game/screens/timeline_tracer.rpy:327
     old "Total Events Seen: [total_seen_events] of [total_events]\nTotal Endings Seen: [total_seen_endings] of [total_endings]"
-    new ""
+    new "Total Events Seen: [total_seen_events] of [total_events]\nTotal Endings Seen: [total_seen_endings] of [total_endings]"
 

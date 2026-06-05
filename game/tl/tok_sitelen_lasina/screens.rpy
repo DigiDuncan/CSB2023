@@ -1,4 +1,4 @@
-﻿# TODO: Translation updated at 2026-06-04 15:30
+﻿# TODO: Translation updated at 2026-06-05 11:32
 
 translate tok_sitelen_lasina strings:
 
@@ -20,7 +20,7 @@ translate tok_sitelen_lasina strings:
 
     # game/screens.rpy:451
     old "Auto"
-    new ""
+    new "Auto"
 
     # game/screens.rpy:452
     old "Save"
@@ -28,15 +28,15 @@ translate tok_sitelen_lasina strings:
 
     # game/screens.rpy:453
     old "Q.Save"
-    new ""
+    new "Q.Save"
 
     # game/screens.rpy:454
     old "Q.Load"
-    new ""
+    new "Q.Load"
 
     # game/screens.rpy:455
     old "Prefs"
-    new "ante"
+    new "o ante"
 
     # game/screens.rpy:495
     old "Game Menu"
@@ -100,11 +100,11 @@ translate tok_sitelen_lasina strings:
 
     # game/screens.rpy:832
     old "Automatic saves"
-    new ""
+    new "Automatic saves"
 
     # game/screens.rpy:832
     old "Quick saves"
-    new ""
+    new "Quick saves"
 
     # game/screens.rpy:874
     old "{#file_time}%A, %B %d %Y, %H:%M"
@@ -132,13 +132,13 @@ translate tok_sitelen_lasina strings:
 
     # game/screens.rpy:910
     old "Upload Sync"
-    new ""
+    new "Upload Sync"
 
     # game/screens.rpy:914
     old "Download Sync"
-    new ""
+    new "Download Sync"
 
-    # game/screens.rpy:974
+   # game/screens.rpy:974
     old "Screen"
     new "sitelen lukin"
 
@@ -182,29 +182,29 @@ translate tok_sitelen_lasina strings:
     old "Disables select visual effects in order to improve performance."
     new "o sitelen pi tawa namako e weka"
 
-    # game/screens.rpy:1053
+    # game/screens.rpy:1077
     old "Dyslexia Mode"
-    new ""
+    new "Dyslexia Mode"
 
-    # game/screens.rpy:1061
+    # game/screens.rpy:1085
     old "Changes to an easier-to-read font."
     new "o sitelen Lasina e ante tawa sitelen pi pona."
 
-    # game/screens.rpy:1064
+    # game/screens.rpy:1088
     old "Force Black Letterbox"
     new "o kepeken e poki pimeja"
 
-    # game/screens.rpy:1072
+    # game/screens.rpy:1096
     old "Forces the side colors to black instead of the current theme color."
-    new "o ante e kule poka tawa pimeja."
+    new " ante e kule poka tawa pimeja."
 
-    # game/screens.rpy:1075
+    # game/screens.rpy:1099
     old "No Button Mashing"
-    new ""
+    new "No Button Mashing"
 
-    # game/screens.rpy:1082
+    # game/screens.rpy:1106
     old "Enables alternative controls for certain minigames."
-    new ""
+    new "Enables alternative controls for certain minigames."
 
     # game/screens.rpy:1086
     old "Visual Options"
@@ -222,31 +222,31 @@ translate tok_sitelen_lasina strings:
     old "Disable Transitions"
     new "o weka e sitelen pi tawa ante"
 
-    # game/screens.rpy:1107
+    # game/screens.rpy:1131
     old "Disable Craptop Mode to change this setting."
     new "nasin ni la, o \"nasin pi ilo ike\" e ken ala."
 
-    # game/screens.rpy:1113
+    # game/screens.rpy:1137
     old "Theme"
     new "kule"
 
-    # game/screens.rpy:1127
+    # game/screens.rpy:1151
     old "WARNING: This theme may not run well on lower-end hardware.\nEnable Craptop Mode for better performance."
-    new ""
+    new "WARNING: This theme may not run well on lower-end hardware.\nEnable Craptop Mode for better performance."
 
-    # game/screens.rpy:1134
+    # game/screens.rpy:1158
     old "More themes will be unlocked as you play!"
-    new ""
+    new "More themes will be unlocked as you play!"
 
-    # game/screens.rpy:1142
+    # game/screens.rpy:1166
     old "Text Speed"
-    new ""
+    new "toki pi nimi tawa"
 
-    # game/screens.rpy:1143
+    # game/screens.rpy:1167
     old "Reset"
     new "o sin"
 
-    # game/screens.rpy:1160
+    # game/screens.rpy:1184
     old "Auto-Forward Time"
     new "tenpo pi tawa"
 
@@ -270,9 +270,9 @@ translate tok_sitelen_lasina strings:
     old "Disable Menu Music"
     new "kalama musi pi lipu lawa e weka"
 
-    # game/screens.rpy:1195
+    # game/screens.rpy:1219
     old "Disables both the main menu music and its accompanying splash screen."
-    new ""
+    new "Disables both the main menu music and its accompanying splash screen."
 
     # game/screens.rpy:1204
     old "Music Volume"
@@ -342,6 +342,10 @@ translate tok_sitelen_lasina strings:
     old "Bounciness Chance"
     new "nasin musi"
 
+    # game/screens.rpy:1280
+    old "Replaces the dialogue with nonsense!"
+    new "o ante e toki tawa nimi nasa!"
+
     # game/screens.rpy:1282
     old "Max Bounciness Rarity"
     new "musi suli"
@@ -402,149 +406,149 @@ translate tok_sitelen_lasina strings:
     old "The dialogue history is empty."
     new "lipu toki li jo ala."
 
-    # game/screens.rpy:1561
-    old "Keyboard"
-    new ""
-
-    # game/screens.rpy:1562
-    old "Mouse"
-    new ""
-
-    # game/screens.rpy:1565
-    old "Gamepad"
-    new ""
-
-    # game/screens.rpy:1577
-    old "Enter"
-    new ""
-
-    # game/screens.rpy:1578
-    old "Advances dialogue and activates the interface."
-    new ""
-
-    # game/screens.rpy:1581
-    old "Space"
-    new ""
-
-    # game/screens.rpy:1582
-    old "Advances dialogue without selecting choices."
-    new ""
-
     # game/screens.rpy:1585
-    old "Arrow Keys"
-    new ""
+    old "Keyboard"
+    new "Keyboard"
 
     # game/screens.rpy:1586
-    old "Navigate the interface."
-    new ""
+    old "Mouse"
+    new "Mouse"
 
     # game/screens.rpy:1589
-    old "Escape"
-    new ""
-
-    # game/screens.rpy:1590
-    old "Accesses the game menu."
-    new ""
-
-    # game/screens.rpy:1593
-    old "Ctrl"
-    new ""
-
-    # game/screens.rpy:1594
-    old "Skips dialogue while held down."
-    new ""
-
-    # game/screens.rpy:1597
-    old "Tab"
-    new ""
-
-    # game/screens.rpy:1598
-    old "Toggles dialogue skipping."
-    new ""
+    old "Gamepad"
+    new "Gamepad"
 
     # game/screens.rpy:1601
-    old "Page Up"
-    new ""
+    old "Enter"
+    new "Enter"
 
     # game/screens.rpy:1602
-    old "Rolls back to earlier dialogue."
-    new ""
+    old "Advances dialogue and activates the interface."
+    new "Advances dialogue and activates the interface."
 
     # game/screens.rpy:1605
-    old "Page Down"
-    new ""
+    old "Space"
+    new "Space"
 
     # game/screens.rpy:1606
-    old "Rolls forward to later dialogue."
-    new ""
+    old "Advances dialogue without selecting choices."
+    new "Advances dialogue without selecting choices."
+
+    # game/screens.rpy:1609
+    old "Arrow Keys"
+    new "Arrow Keys"
 
     # game/screens.rpy:1610
-    old "Hides the user interface."
-    new ""
+    old "Navigate the interface."
+    new "Navigate the interface."
+
+    # game/screens.rpy:1613
+    old "Escape"
+    new "Escape"
 
     # game/screens.rpy:1614
+    old "Accesses the game menu."
+    new "Accesses the game menu."
+
+    # game/screens.rpy:1617
+    old "Ctrl"
+    new "Ctrl"
+
+    # game/screens.rpy:1618
+    old "Skips dialogue while held down."
+    new "Skips dialogue while held down."
+
+    # game/screens.rpy:1621
+    old "Tab"
+    new "Tab"
+
+    # game/screens.rpy:1622
+    old "Toggles dialogue skipping."
+    new "Toggles dialogue skipping."
+
+    # game/screens.rpy:1625
+    old "Page Up"
+    new "Page Up"
+
+    # game/screens.rpy:1626
+    old "Rolls back to earlier dialogue."
+    new "Rolls back to earlier dialogue."
+
+    # game/screens.rpy:1629
+    old "Page Down"
+    new "Page Down"
+
+    # game/screens.rpy:1630
+    old "Rolls forward to later dialogue."
+    new "Rolls forward to later dialogue."
+
+    # game/screens.rpy:1634
+    old "Hides the user interface."
+    new "Hides the user interface."
+
+    # game/screens.rpy:1638
     old "Takes a screenshot."
     new "o pali e sitelen"
 
-    # game/screens.rpy:1618
+    # game/screens.rpy:1642
     old "Toggles assistive {a=https://www.renpy.org/l/voicing}self-voicing{/a}."
-    new ""
+    new "Toggles assistive {a=https://www.renpy.org/l/voicing}self-voicing{/a}."
 
-    # game/screens.rpy:1622
+    # game/screens.rpy:1646
     old "Opens the accessibility menu."
-    new ""
+    new "Opens the accessibility menu."
 
-    # game/screens.rpy:1626
+    # game/screens.rpy:1650
     old "Union Jacks your wiener right off!"
     new "ni li seme?!"
 
-    # game/screens.rpy:1633
+    # game/screens.rpy:1657
     old "Left Click"
-    new ""
+    new "Left Click"
 
-    # game/screens.rpy:1637
+    # game/screens.rpy:1661
     old "Middle Click"
-    new ""
+    new "Middle Click"
 
-    # game/screens.rpy:1641
+    # game/screens.rpy:1665
     old "Right Click"
-    new ""
-
-    # game/screens.rpy:1645
-    old "Mouse Wheel Up\nClick Rollback Side"
-    new ""
-
-    # game/screens.rpy:1649
-    old "Mouse Wheel Down"
-    new ""
-
-    # game/screens.rpy:1656
-    old "Right Trigger\nA/Bottom Button"
-    new ""
-
-    # game/screens.rpy:1660
-    old "Left Trigger\nLeft Shoulder"
-    new ""
-
-    # game/screens.rpy:1664
-    old "Right Shoulder"
-    new ""
+    new "Right Click"
 
     # game/screens.rpy:1669
-    old "D-Pad, Sticks"
-    new ""
+    old "Mouse Wheel Up\nClick Rollback Side"
+    new "Mouse Wheel Up\nClick Rollback Side"
 
     # game/screens.rpy:1673
-    old "Start, Guide"
-    new ""
-
-    # game/screens.rpy:1677
-    old "Y/Top Button"
-    new ""
+    old "Mouse Wheel Down"
+    new "Mouse Wheel Down"
 
     # game/screens.rpy:1680
+    old "Right Trigger\nA/Bottom Button"
+    new "Right Trigger\nA/Bottom Button"
+
+    # game/screens.rpy:1684
+    old "Left Trigger\nLeft Shoulder"
+    new "Left Trigger\nLeft Shoulder"
+
+    # game/screens.rpy:1688
+    old "Right Shoulder"
+    new "Right Shoulder"
+
+    # game/screens.rpy:1693
+    old "D-Pad, Sticks"
+    new "D-Pad, Sticks"
+
+    # game/screens.rpy:1697
+    old "Start, Guide"
+    new "Start, Guide"
+
+    # game/screens.rpy:1701
+    old "Y/Top Button"
+    new "Y/Top Button"
+
+    # game/screens.rpy:1704
     old "Calibrate"
-    new ""
+    new "Calibrate"
 
     # game/screens.rpy:1745
     old "Yes"
@@ -554,19 +558,11 @@ translate tok_sitelen_lasina strings:
     old "No"
     new "pona ala"
 
-    # game/screens.rpy:1792
+    # game/screens.rpy:1816
     old "Skipping"
-    new ""
+    new "tenpo li tawa"
 
-    # game/screens.rpy:2090
+    # game/screens.rpy:2114
     old "Menu"
     new "lipu"
-
-# TODO: Translation updated at 2026-06-04 16:42
-
-translate tok_sitelen_lasina strings:
-
-    # game/screens.rpy:1280
-    old "Replaces the dialogue with nonsense!"
-    new "o ante e toki tawa nimi nasa!"
 

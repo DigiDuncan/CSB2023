@@ -1,20 +1,20 @@
-﻿# TODO: Translation updated at 2026-06-04 14:42
+﻿# TODO: Translation updated at 2026-06-05 11:32
 
 translate tok_sitelen_pona strings:
 
     # game/minigames/editing/script_edit_game.rpy:53
     old "3"
-    new ""
+    new "3"
 
     # game/minigames/editing/script_edit_game.rpy:60
     old "2"
-    new ""
+    new "2"
 
     # game/minigames/editing/script_edit_game.rpy:67
     old "1"
-    new ""
+    new "1"
 
     # game/minigames/editing/script_edit_game.rpy:118
     old "Press [[SPACE] to cut!"
-    new ""
+    new "Press [[SPACE] to cut!"
 

@@ -181,7 +181,8 @@ init python:
     config.ftfont_scale["CenturyGothicPaneuropeanSemiBold.ttf"] = 0.8 # Dyslexia - Tate EX Theme
     config.ftfont_scale["cmunrm.ttf"] = 0.8 # Digi - math font
     config.ftfont_scale["NotoSans-Regular.ttf"] = 0.85 # Digi - extra characters
-    config.ftfont_scale["FairfaxHD.ttf"] = 0.85 # sitelen pona handling
+    config.ftfont_scale["sitelenselikiwenjuniko.ttf"] = 0.85 # CSB/CE theme sitelen pona
+    config.ftfont_scale["FairfaxHD.ttf"] = 0.85 # Tate EX theme sitelen pona
 
     config.ftfont_vertical_extent_scale["FiraCode-Retina.ttf"] = 1.0 # Triangle
     config.ftfont_vertical_extent_scale["ZCOOLKuaiLe-Regular.ttf"] = 1.0 # CN - CSB/CE Themes
@@ -195,7 +196,8 @@ init python:
     config.ftfont_vertical_extent_scale["AllerDisplay_Std_Rg_0.ttf"] = 1.0 # Tate EX Theme Accent
     config.ftfont_vertical_extent_scale["comic.ttf"] = 0.95 # Dyslexia - CSB/CE Themes
     config.ftfont_vertical_extent_scale["CenturyGothicPaneuropeanSemiBold.ttf"] = 1.2 # Dyslexia - Tate EX Theme
-    config.ftfont_vertical_extent_scale["FairfaxHD.ttf"] = 1.0 # sitelen pona handling
+    config.ftfont_vertical_extent_scale["sitelenselikiwenjuniko.ttf"] = 1.0 # CSB/CE theme sitelen pona
+    config.ftfont_vertical_extent_scale["FairfaxHD.ttf"] = 1.0 # Tate EX theme sitelen pona
 
     # Dyslexia mode
     def dyslexia_font(f):

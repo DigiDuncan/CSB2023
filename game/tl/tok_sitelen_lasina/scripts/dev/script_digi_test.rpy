@@ -1,244 +1,244 @@
-﻿# TODO: Translation updated at 2026-06-04 15:30
+﻿# TODO: Translation updated at 2026-06-05 11:32
 
 # game/scripts/dev/script_digi_test.rpy:83
 translate tok_sitelen_lasina b623e431:
 
     # digi "Oh, hey, welcome to the Nugget!"
-    digi ""
+    digi "Oh, hey, welcome to the Nugget!"
 
 # game/scripts/dev/script_digi_test.rpy:85
 translate tok_sitelen_lasina bb6b2802:
 
     # digi "I assume you're here to test something.{w=1.0} Unless you just want to chat?"
-    digi ""
+    digi "I assume you're here to test something.{w=1.0} Unless you just want to chat?"
 
 # game/scripts/dev/script_digi_test.rpy:97
 translate tok_sitelen_lasina 51e589e6:
 
     # digi "Alright, seeya!"
-    digi ""
+    digi "Alright, seeya!"
 
 # game/scripts/dev/script_digi_test.rpy:103
 translate tok_sitelen_lasina 47b6344e:
 
     # digi "What test are you looking to run?"
-    digi ""
+    digi "What test are you looking to run?"
 
 # game/scripts/dev/script_digi_test.rpy:106
 translate tok_sitelen_lasina 2ff5364b:
 
     # digi "What now?"
-    digi ""
+    digi "What now?"
 
 # game/scripts/dev/script_digi_test.rpy:124
 translate tok_sitelen_lasina 487a273d:
 
     # digi "Alrighty, then!"
-    digi ""
+    digi "Alrighty, then!"
 
 # game/scripts/dev/script_digi_test.rpy:129
 translate tok_sitelen_lasina cb956958:
 
     # digi "Alright, let's see if we can get a few people yapping."
-    digi ""
+    digi "Alright, let's see if we can get a few people yapping."
 
 # game/scripts/dev/script_digi_test.rpy:134
 translate tok_sitelen_lasina e9f86192:
 
     # digi "Did... did that work?"
-    digi ""
+    digi "Did... did that work?"
 
 # game/scripts/dev/script_digi_test.rpy:136
 translate tok_sitelen_lasina 76785202:
 
     # digi "Tate might have fixed it, so I hope it did."
-    digi ""
+    digi "Tate might have fixed it, so I hope it did."
 
 # game/scripts/dev/script_digi_test.rpy:139
 translate tok_sitelen_lasina 4cfca5d3:
 
     # digi "Now, let's try it with the lexer..."
-    digi ""
+    digi "Now, let's try it with the lexer..."
 
 # game/scripts/dev/script_digi_test.rpy:146
 translate tok_sitelen_lasina d47a253d:
 
     # digi "That was certainly dialouge."
-    digi ""
+    digi "That was certainly dialouge."
 
 # game/scripts/dev/script_digi_test.rpy:148
 translate tok_sitelen_lasina 408991ba:
 
     # digi "{font=digi}Dialouge? Dialogue? Dialog? 【/'daɪəˌɫɔɡ/|dai·uh·laag】. Whatever."
-    digi ""
+    digi "{font=digi}Dialouge? Dialogue? Dialog? 【/'daɪəˌɫɔɡ/|dai·uh·laag】. Whatever."
 
 # game/scripts/dev/script_digi_test.rpy:150
 translate tok_sitelen_lasina 214daae6:
 
     # digi "Anywho, hope it worked for ya!"
-    digi ""
+    digi "Anywho, hope it worked for ya!"
 
 # game/scripts/dev/script_digi_test.rpy:156
 translate tok_sitelen_lasina fff0b7e7:
 
     # digi "Text shaders? We have those?"
-    digi ""
+    digi "Text shaders? We have those?"
 
 # game/scripts/dev/script_digi_test.rpy:158
 translate tok_sitelen_lasina 58073a88:
 
     # digi "Let me check..."
-    digi ""
+    digi "Let me check..."
 
 # game/scripts/dev/script_digi_test.rpy:160
 translate tok_sitelen_lasina 8c118e7f:
 
     # digi "Oh, shit, yeah, we do!"
-    digi ""
+    digi "Oh, shit, yeah, we do!"
 
 # game/scripts/dev/script_digi_test.rpy:162
 translate tok_sitelen_lasina a98d78cd:
 
     # digi "OK, let me try some out."
-    digi ""
+    digi "OK, let me try some out."
 
 # game/scripts/dev/script_digi_test.rpy:164
 translate tok_sitelen_lasina 5b51e086:
 
     # digi "{shader=dissolve}This one's called dissolve, which apparently reveals the text slowly over time..."
-    digi ""
+    digi "{shader=dissolve}This one's called dissolve, which apparently reveals the text slowly over time..."
 
 # game/scripts/dev/script_digi_test.rpy:165
 translate tok_sitelen_lasina fa2effb4:
 
     # digi "{shader=flip}This one's flip, I'm not quite sure what that means, though..."
-    digi ""
+    digi "{shader=flip}This one's flip, I'm not quite sure what that means, though..."
 
 # game/scripts/dev/script_digi_test.rpy:166
 translate tok_sitelen_lasina 8698460a:
 
     # digi "{shader=jitter}This one's jitter, but I think we have something like that already."
-    digi ""
+    digi "{shader=jitter}This one's jitter, but I think we have something like that already."
 
 # game/scripts/dev/script_digi_test.rpy:167
 translate tok_sitelen_lasina 3f1957b6:
 
     # digi "{shader=linetexture:u__texture=rainbownoise.png}This is linetexture, I gave it rainbow noise as a texture."
-    digi ""
+    digi "{shader=linetexture:u__texture=rainbownoise.png}This is linetexture, I gave it rainbow noise as a texture."
 
 # game/scripts/dev/script_digi_test.rpy:169
 translate tok_sitelen_lasina abd35fc4:
 
     # digi ":read: That one's kinda messed up, I think the texture size is weird."
-    digi ""
+    digi ":read: That one's kinda messed up, I think the texture size is weird."
 
 # game/scripts/dev/script_digi_test.rpy:172
 translate tok_sitelen_lasina 38a3aa57:
 
     # digi "That's all I can be bothered to test right now, but I think we can make our own, too."
-    digi ""
+    digi "That's all I can be bothered to test right now, but I think we can make our own, too."
 
 # game/scripts/dev/script_digi_test.rpy:177
 translate tok_sitelen_lasina 4296d869:
 
     # digi "Ooh, so I'm proud of this one."
-    digi ""
+    digi "Ooh, so I'm proud of this one."
 
 # game/scripts/dev/script_digi_test.rpy:178
 translate tok_sitelen_lasina 9216ecb1:
 
     # digi "If you put something in the `gui/inline_text` folder, you can call it by name in text with the name, surrounded by colons."
-    digi ""
+    digi "If you put something in the `gui/inline_text` folder, you can call it by name in text with the name, surrounded by colons."
 
 # game/scripts/dev/script_digi_test.rpy:179
 translate tok_sitelen_lasina 9c4f95db:
 
     # digi "So, like, :read: is `:read:`."
-    digi ""
+    digi "So, like, :read: is `:read:`."
 
 # game/scripts/dev/script_digi_test.rpy:180
 translate tok_sitelen_lasina f072b68b:
 
     # digi "It's probably important that the image is ~45x45. We can't resize these on the fly."
-    digi ""
+    digi "It's probably important that the image is ~45x45. We can't resize these on the fly."
 
 # game/scripts/dev/script_digi_test.rpy:181
 translate tok_sitelen_lasina 75a4a689:
 
     # digi "Also, it has to be in a string that's being run through `substitutions()`, so that's important. Ask Tate for details on that."
-    digi ""
+    digi "Also, it has to be in a string that's being run through `substitutions()`, so that's important. Ask Tate for details on that."
 
 # game/scripts/dev/script_digi_test.rpy:182
 translate tok_sitelen_lasina 60b754bc:
 
     # digi "Here are some emojis we have!"
-    digi ""
+    digi "Here are some emojis we have!"
 
 # game/scripts/dev/script_digi_test.rpy:183
 translate tok_sitelen_lasina dc7e4ba8:
 
     # digi ":cs: :dx: :ce: :note1: :note2: :ch1: :ch2: :ch3: :ch4: :ch5: :heart: :warning:"
-    digi ""
+    digi ":cs: :dx: :ce: :note1: :note2: :ch1: :ch2: :ch3: :ch4: :ch5: :heart: :warning:"
 
 # game/scripts/dev/script_digi_test.rpy:184
 translate tok_sitelen_lasina a9f09b30:
 
     # digi "I hope that looks good!"
-    digi ""
+    digi "I hope that looks good!"
 
 # game/scripts/dev/script_digi_test.rpy:185
 translate tok_sitelen_lasina d27f7c55:
 
     # digi "Apparently, you can also just use Unicode emoji, like 😅."
-    digi ""
+    digi "Apparently, you can also just use Unicode emoji, like 😅."
 
 # game/scripts/dev/script_digi_test.rpy:186
 translate tok_sitelen_lasina e25f82cd:
 
     # digi "Did {i}that{/i} look good?"
-    digi ""
+    digi "Did {i}that{/i} look good?"
 
 # game/scripts/dev/script_digi_test.rpy:191
 translate tok_sitelen_lasina cad5e76a:
 
     # digi "Here we go."
-    digi ""
+    digi "Here we go."
 
 # game/scripts/dev/script_digi_test.rpy:270
 translate tok_sitelen_lasina eb601794:
 
     # digi "Sorry about that."
-    digi ""
+    digi "Sorry about that."
 
 # game/scripts/dev/script_digi_test.rpy:274
 translate tok_sitelen_lasina 62823cd3:
 
     # digi "Oh jeez, the osu!spinner."
-    digi ""
+    digi "Oh jeez, the osu!spinner."
 
 # game/scripts/dev/script_digi_test.rpy:275
 translate tok_sitelen_lasina 9786b03d:
 
     # digi "I'll call one up. I don't know how accurate it is though."
-    digi ""
+    digi "I'll call one up. I don't know how accurate it is though."
 
 # game/scripts/dev/script_digi_test.rpy:280
 translate tok_sitelen_lasina 83b87dd9:
 
     # digi "Did that work well?"
-    digi ""
+    digi "Did that work well?"
 
 # game/scripts/dev/script_digi_test.rpy:285
 translate tok_sitelen_lasina 73268900:
 
     # digi "OK, I'll take you there, but be warned, if your computer isn't up to snuff, it won't go well."
-    digi ""
+    digi "OK, I'll take you there, but be warned, if your computer isn't up to snuff, it won't go well."
 
 # game/scripts/dev/script_digi_test.rpy:297
 translate tok_sitelen_lasina a7804c2b:
 
     # digi "I hope that went well!"
-    digi ""
+    digi "I hope that went well!"
 
 # game/scripts/dev/script_digi_test.rpy:306
 translate tok_sitelen_lasina 41f38794:
@@ -246,19 +246,19 @@ translate tok_sitelen_lasina 41f38794:
     # nvl clear
     # n_n "You start chatting with Digi."
     nvl clear
-    n_n ""
+    n_n "You start chatting with Digi."
 
 # game/scripts/dev/script_digi_test.rpy:311
 translate tok_sitelen_lasina 3140f8cb:
 
     # digi_n "Hey! What do you want to talk about?"
-    digi_n ""
+    digi_n "Hey! What do you want to talk about?"
 
 # game/scripts/dev/script_digi_test.rpy:316
 translate tok_sitelen_lasina a0271117:
 
     # digi_n "What else do you want to talk about?"
-    digi_n ""
+    digi_n "What else do you want to talk about?"
 
 # game/scripts/dev/script_digi_test.rpy:323
 translate tok_sitelen_lasina cabc1032:
@@ -266,19 +266,19 @@ translate tok_sitelen_lasina cabc1032:
     # nvl clear
     # you_n "What is this place?{fast}"
     nvl clear
-    you_n ""
+    you_n "What is this place?{fast}"
 
 # game/scripts/dev/script_digi_test.rpy:325
 translate tok_sitelen_lasina d0f566c7:
 
     # digi_n "Well, do you mean on Layer 1, or Layer 0?"
-    digi_n ""
+    digi_n "Well, do you mean on Layer 1, or Layer 0?"
 
 # game/scripts/dev/script_digi_test.rpy:336
 translate tok_sitelen_lasina 381abd10:
 
     # you_n "Nothing else!"
-    you_n ""
+    you_n "Nothing else!"
 
 # game/scripts/dev/script_digi_test.rpy:342
 translate tok_sitelen_lasina 06cef159:
@@ -286,25 +286,25 @@ translate tok_sitelen_lasina 06cef159:
     # nvl clear
     # you_n "Layer 1?{fast}"
     nvl clear
-    you_n ""
+    you_n "Layer 1?{fast}"
 
 # game/scripts/dev/script_digi_test.rpy:344
 translate tok_sitelen_lasina 96810197:
 
     # digi_n "Well, on Layer 1, this is the Nugget!"
-    digi_n ""
+    digi_n "Well, on Layer 1, this is the Nugget!"
 
 # game/scripts/dev/script_digi_test.rpy:345
 translate tok_sitelen_lasina 92e7c5aa:
 
     # digi_n "The Nugget is my spaceship. I've had it for quite a while... I got it shortly after I entered this universe."
-    digi_n ""
+    digi_n "The Nugget is my spaceship. I've had it for quite a while... I got it shortly after I entered this universe."
 
 # game/scripts/dev/script_digi_test.rpy:345
 translate tok_sitelen_lasina d9d8edc9:
 
     # digi_n "The details are hazy, but this ship used to be a lot more rinky-dink. I did a lot of upgrades after acquiring it, though. It still doesn't run {i}perfectly{/i} but it's a pretty good ship at this point. Iris keeps bugging me to upgrade to ion thrusters from hydrogen ones, though."
-    digi_n ""
+    digi_n "The details are hazy, but this ship used to be a lot more rinky-dink. I did a lot of upgrades after acquiring it, though. It still doesn't run {i}perfectly{/i} but it's a pretty good ship at this point. Iris keeps bugging me to upgrade to ion thrusters from hydrogen ones, though."
 
 # game/scripts/dev/script_digi_test.rpy:356
 translate tok_sitelen_lasina 64e8682e:
@@ -312,25 +312,25 @@ translate tok_sitelen_lasina 64e8682e:
     # nvl clear
     # you_n "Layer 0?{fast}"
     nvl clear
-    you_n ""
+    you_n "Layer 0?{fast}"
 
 # game/scripts/dev/script_digi_test.rpy:358
 translate tok_sitelen_lasina 65deb91e:
 
     # digi_n "This is a test room for some features Digi{font=cmunrm.ttf}[[0]{/font} wants to mess around with."
-    digi_n ""
+    digi_n "This is a test room for some features Digi{font=cmunrm.ttf}[[0]{/font} wants to mess around with."
 
 # game/scripts/dev/script_digi_test.rpy:359
 translate tok_sitelen_lasina d1bb2bd3:
 
     # digi_n "It being a seperate space gives them the creative freedom to just kinda mess around."
-    digi_n ""
+    digi_n "It being a seperate space gives them the creative freedom to just kinda mess around."
 
 # game/scripts/dev/script_digi_test.rpy:360
 translate tok_sitelen_lasina 2ea561ce:
 
     # digi_n "Some problems with the game have already been spotted with this method!"
-    digi_n ""
+    digi_n "Some problems with the game have already been spotted with this method!"
 
 # game/scripts/dev/script_digi_test.rpy:363
 translate tok_sitelen_lasina 126fa2aa:
@@ -338,43 +338,43 @@ translate tok_sitelen_lasina 126fa2aa:
     # nvl clear
     # you_n "You keep saying \"layers\", {fast}what do you mean by that?"
     nvl clear
-    you_n ""
+    you_n "You keep saying \"layers\", {fast}what do you mean by that?"
 
 # game/scripts/dev/script_digi_test.rpy:365
 translate tok_sitelen_lasina 6c9bdd42:
 
     # digi_n "Layers, like layers of fiction."
-    digi_n ""
+    digi_n "Layers, like layers of fiction."
 
 # game/scripts/dev/script_digi_test.rpy:366
 translate tok_sitelen_lasina 1224dc13:
 
     # digi_n "You, the person reading this, are in Layer 0. You are in the \"real world.\""
-    digi_n ""
+    digi_n "You, the person reading this, are in Layer 0. You are in the \"real world.\""
 
 # game/scripts/dev/script_digi_test.rpy:366
 translate tok_sitelen_lasina 0c1840f0:
 
     # digi_n "Now, I hate to break it to ya, but I'm not. I'm in Layer 1, which to you, is fiction. Going deeper into fiction increases the number. Going up the chain decreases it. So, if {i}I{/i} wrote a fictional story, that story would take place in Layer 2."
-    digi_n ""
+    digi_n "Now, I hate to break it to ya, but I'm not. I'm in Layer 1, which to you, is fiction. Going deeper into fiction increases the number. Going up the chain decreases it. So, if {i}I{/i} wrote a fictional story, that story would take place in Layer 2."
 
 # game/scripts/dev/script_digi_test.rpy:366
 translate tok_sitelen_lasina 85c03000:
 
     # digi_n "It's a theory in pataphysics, there's a write up in the {i}Report on SCP-3812's Behavioural Instability and the Implication of Existential--{/i}"
-    digi_n ""
+    digi_n "It's a theory in pataphysics, there's a write up in the {i}Report on SCP-3812's Behavioural Instability and the Implication of Existential--{/i}"
 
 # game/scripts/dev/script_digi_test.rpy:374
 translate tok_sitelen_lasina 5f27c746:
 
     # n_n "Digi cuts themselves off before they bore you."
-    n_n ""
+    n_n "Digi cuts themselves off before they bore you."
 
 # game/scripts/dev/script_digi_test.rpy:375
 translate tok_sitelen_lasina 311b2355:
 
     # digi_n "Sorry, never mind, it's complex. I won't bore you with the details."
-    digi_n ""
+    digi_n "Sorry, never mind, it's complex. I won't bore you with the details."
 
 # game/scripts/dev/script_digi_test.rpy:379
 translate tok_sitelen_lasina c3692d2e:
@@ -382,37 +382,37 @@ translate tok_sitelen_lasina c3692d2e:
     # nvl clear
     # you_n "No, give me the details!"
     nvl clear
-    you_n ""
+    you_n "No, give me the details!"
 
 # game/scripts/dev/script_digi_test.rpy:381
 translate tok_sitelen_lasina b2b561b1:
 
     # digi_n "OK, well, here."
-    digi_n ""
+    digi_n "OK, well, here."
 
 # game/scripts/dev/script_digi_test.rpy:382
 translate tok_sitelen_lasina e1644f57:
 
     # n_n "Digi pokes at the hologram eminating from their wrist."
-    n_n ""
+    n_n "Digi pokes at the hologram eminating from their wrist."
 
 # game/scripts/dev/script_digi_test.rpy:383
 translate tok_sitelen_lasina ecaebaa1:
 
     # n_n "Your phone lights up with a notification."
-    n_n ""
+    n_n "Your phone lights up with a notification."
 
 # game/scripts/dev/script_digi_test.rpy:384
 translate tok_sitelen_lasina 1433f4ef:
 
     # digi_n "There, I sent you a link to the {a=https://scp-wiki.wikidot.com/scp-3812}{color=#ff0000}article.{/color}{/a}"
-    digi_n ""
+    digi_n "There, I sent you a link to the {a=https://scp-wiki.wikidot.com/scp-3812}{color=#ff0000}article.{/color}{/a}"
 
 # game/scripts/dev/script_digi_test.rpy:385
 translate tok_sitelen_lasina 14c8a316:
 
     # digi_n "It's a cool read."
-    digi_n ""
+    digi_n "It's a cool read."
 
 # game/scripts/dev/script_digi_test.rpy:394
 translate tok_sitelen_lasina fa530f9f:
@@ -420,55 +420,55 @@ translate tok_sitelen_lasina fa530f9f:
     # nvl clear
     # you_n "Who's Iris?{fast}"
     nvl clear
-    you_n ""
+    you_n "Who's Iris?{fast}"
 
 # game/scripts/dev/script_digi_test.rpy:397
 translate tok_sitelen_lasina 86f676d7:
 
     # digi_n "Yeah, Iris! She's my friend and... boss? Kinda? I work for her, but the relationship isn't really formal."
-    digi_n ""
+    digi_n "Yeah, Iris! She's my friend and... boss? Kinda? I work for her, but the relationship isn't really formal."
 
 # game/scripts/dev/script_digi_test.rpy:399
 translate tok_sitelen_lasina 030bc82b:
 
     # digi_n "When I first got to this universe, I was kinda... adrift, for a while. Didn't have a place to go. She took me in after I had a run in with a black hole."
-    digi_n ""
+    digi_n "When I first got to this universe, I was kinda... adrift, for a while. Didn't have a place to go. She took me in after I had a run in with a black hole."
 
 # game/scripts/dev/script_digi_test.rpy:402
 translate tok_sitelen_lasina 1b7dc4b3:
 
     # digi_n "..."
-    digi_n ""
+    digi_n "..."
 
 # game/scripts/dev/script_digi_test.rpy:404
 translate tok_sitelen_lasina de910a3e:
 
     # digi_n "OK, yes, it was my fault for getting that close, I don't want to talk about it right now. Some other time."
-    digi_n ""
+    digi_n "OK, yes, it was my fault for getting that close, I don't want to talk about it right now. Some other time."
 
 # game/scripts/dev/script_digi_test.rpy:406
 translate tok_sitelen_lasina 9fb40313:
 
     # digi_n "Anywho, she took me in, gave me some equipment, helped me back on my feet, and gave me the opportunity to help her out with what she does."
-    digi_n ""
+    digi_n "Anywho, she took me in, gave me some equipment, helped me back on my feet, and gave me the opportunity to help her out with what she does."
 
 # game/scripts/dev/script_digi_test.rpy:407
 translate tok_sitelen_lasina 5c83ae67:
 
     # you_n "What does she do?"
-    you_n ""
+    you_n "What does she do?"
 
 # game/scripts/dev/script_digi_test.rpy:409
 translate tok_sitelen_lasina 4f8a9ad9:
 
     # digi_n "I don't have time to get into that right now, to be honest."
-    digi_n ""
+    digi_n "I don't have time to get into that right now, to be honest."
 
 # game/scripts/dev/script_digi_test.rpy:411
 translate tok_sitelen_lasina 2234fba1:
 
     # extend " Another time."
-    extend ""
+    extend " Another time."
 
 # game/scripts/dev/script_digi_test.rpy:415
 translate tok_sitelen_lasina 98fef78e:
@@ -476,61 +476,61 @@ translate tok_sitelen_lasina 98fef78e:
     # nvl clear
     # you_n "Aren't you like, small sometimes?{fast}"
     nvl clear
-    you_n ""
+    you_n "Aren't you like, small sometimes?{fast}"
 
 # game/scripts/dev/script_digi_test.rpy:418
 translate tok_sitelen_lasina 62272b0c:
 
     # digi_n "What a thing to ask a person."
-    digi_n ""
+    digi_n "What a thing to ask a person."
 
 # game/scripts/dev/script_digi_test.rpy:420
 translate tok_sitelen_lasina 5af30ab1:
 
     # digi_n "Yeah, I have a device called the {color=#FFAA00}Height Compressor{/color}."
-    digi_n ""
+    digi_n "Yeah, I have a device called the {color=#FFAA00}Height Compressor{/color}."
 
 # game/scripts/dev/script_digi_test.rpy:422
 translate tok_sitelen_lasina 1feed679:
 
     # digi_n "It lets me get smaller than my default height, and come back."
-    digi_n ""
+    digi_n "It lets me get smaller than my default height, and come back."
 
 # game/scripts/dev/script_digi_test.rpy:423
 translate tok_sitelen_lasina ce49139f:
 
     # you_n "What's your default height?"
-    you_n ""
+    you_n "What's your default height?"
 
 # game/scripts/dev/script_digi_test.rpy:424
 translate tok_sitelen_lasina c001e192:
 
     # digi_n "Usually I'm #redacted#. Don't tell anyone!"
-    digi_n ""
+    digi_n "Usually I'm #redacted#. Don't tell anyone!"
 
 # game/scripts/dev/script_digi_test.rpy:425
 translate tok_sitelen_lasina 562f4106:
 
     # you_n "... That was redacted. I couldn't read that."
-    you_n ""
+    you_n "... That was redacted. I couldn't read that."
 
 # game/scripts/dev/script_digi_test.rpy:427
 translate tok_sitelen_lasina 245a53ea:
 
     # digi_n "I know. I haven't come up with the real answer yet."
-    digi_n ""
+    digi_n "I know. I haven't come up with the real answer yet."
 
 # game/scripts/dev/script_digi_test.rpy:433
 translate tok_sitelen_lasina ef15487c:
 
     # you_n "How does the height compressor work?{fast}"
-    you_n ""
+    you_n "How does the height compressor work?{fast}"
 
 # game/scripts/dev/script_digi_test.rpy:435
 translate tok_sitelen_lasina 00d18d3a:
 
     # digi_n "Well, do you mean like, scientifically, or just how I use it?"
-    digi_n ""
+    digi_n "Well, do you mean like, scientifically, or just how I use it?"
 
 # game/scripts/dev/script_digi_test.rpy:447
 translate tok_sitelen_lasina 7ce15498:
@@ -538,73 +538,73 @@ translate tok_sitelen_lasina 7ce15498:
     # nvl clear
     # you_n "How you use it.{fast}"
     nvl clear
-    you_n ""
+    you_n "How you use it.{fast}"
 
 # game/scripts/dev/script_digi_test.rpy:449
 translate tok_sitelen_lasina 7d898224:
 
     # digi_n "Well, the height compressor is linked to my brain."
-    digi_n ""
+    digi_n "Well, the height compressor is linked to my brain."
 
 # game/scripts/dev/script_digi_test.rpy:451
 translate tok_sitelen_lasina c00d9c16:
 
     # digi_n "Think of it like a neural implant, I suppose."
-    digi_n ""
+    digi_n "Think of it like a neural implant, I suppose."
 
 # game/scripts/dev/script_digi_test.rpy:453
 translate tok_sitelen_lasina a966beaa:
 
     # digi_n "So, in general, I can think about getting smaller..."
-    digi_n ""
+    digi_n "So, in general, I can think about getting smaller..."
 
 # game/scripts/dev/script_digi_test.rpy:458
 translate tok_sitelen_lasina 6e3df846:
 
     # digi_n "And now I'm smaller!"
-    digi_n ""
+    digi_n "And now I'm smaller!"
 
 # game/scripts/dev/script_digi_test.rpy:460
 translate tok_sitelen_lasina 7054c412:
 
     # extend " There's a few caveats, though..."
-    extend ""
+    extend " There's a few caveats, though..."
 
 # game/scripts/dev/script_digi_test.rpy:465
 translate tok_sitelen_lasina 149952b5:
 
     # digi_n "First of all, I'm not always in {i}perfect{/i} control of it."
-    digi_n ""
+    digi_n "First of all, I'm not always in {i}perfect{/i} control of it."
 
 # game/scripts/dev/script_digi_test.rpy:466
 translate tok_sitelen_lasina 64bd1b90:
 
     # digi_n "Since it's linked to what's essentially my subconcious, it can kinda act for me sometimes."
-    digi_n ""
+    digi_n "Since it's linked to what's essentially my subconcious, it can kinda act for me sometimes."
 
 # game/scripts/dev/script_digi_test.rpy:467
 translate tok_sitelen_lasina b11101ec:
 
     # digi_n "So sometimes I change size before I'm prepared to."
-    digi_n ""
+    digi_n "So sometimes I change size before I'm prepared to."
 
 # game/scripts/dev/script_digi_test.rpy:468
 translate tok_sitelen_lasina 58dc8232:
 
     # digi_n "Also, I can't manually override it unless I have a calm mind."
-    digi_n ""
+    digi_n "Also, I can't manually override it unless I have a calm mind."
 
 # game/scripts/dev/script_digi_test.rpy:469
 translate tok_sitelen_lasina a1dc11a5:
 
     # digi_n "So, if I'm in a stressful situation, or preoccupied with something else, I may not be able to get back to normal size quickly."
-    digi_n ""
+    digi_n "So, if I'm in a stressful situation, or preoccupied with something else, I may not be able to get back to normal size quickly."
 
 # game/scripts/dev/script_digi_test.rpy:470
 translate tok_sitelen_lasina d593744a:
 
     # digi_n "All in all though, I love the thing. Worth the tradeoffs."
-    digi_n ""
+    digi_n "All in all though, I love the thing. Worth the tradeoffs."
 
 # game/scripts/dev/script_digi_test.rpy:475
 translate tok_sitelen_lasina 1aab42a7:
@@ -612,55 +612,55 @@ translate tok_sitelen_lasina 1aab42a7:
     # nvl clear
     # you_n "Scientifically.{fast}"
     nvl clear
-    you_n ""
+    you_n "Scientifically.{fast}"
 
 # game/scripts/dev/script_digi_test.rpy:478
 translate tok_sitelen_lasina 7c940080:
 
     # digi_n "You're gonna hate the answer for this."
-    digi_n ""
+    digi_n "You're gonna hate the answer for this."
 
 # game/scripts/dev/script_digi_test.rpy:480
 translate tok_sitelen_lasina a1a38a2b:
 
     # digi_n "I have no idea."
-    digi_n ""
+    digi_n "I have no idea."
 
 # game/scripts/dev/script_digi_test.rpy:482
 translate tok_sitelen_lasina e109257c:
 
     # digi_n "The height compressor was one of the first things Iris gave me when I showed up in this universe."
-    digi_n ""
+    digi_n "The height compressor was one of the first things Iris gave me when I showed up in this universe."
 
 # game/scripts/dev/script_digi_test.rpy:484
 translate tok_sitelen_lasina e717c510:
 
     # digi_n "I've been trying to deconstruct it, figure out how it works..."
-    digi_n ""
+    digi_n "I've been trying to deconstruct it, figure out how it works..."
 
 # game/scripts/dev/script_digi_test.rpy:486
 translate tok_sitelen_lasina dd2e7c01:
 
     # digi_n "It just eludes me, honestly. It's not like any tech I've ever seen."
-    digi_n ""
+    digi_n "It just eludes me, honestly. It's not like any tech I've ever seen."
 
 # game/scripts/dev/script_digi_test.rpy:488
 translate tok_sitelen_lasina e174ea36:
 
     # digi_n "Works a lot better than you can imagine, though. No atomic distortion, no spatial lensing, no cellular decomposition..."
-    digi_n ""
+    digi_n "Works a lot better than you can imagine, though. No atomic distortion, no spatial lensing, no cellular decomposition..."
 
 # game/scripts/dev/script_digi_test.rpy:490
 translate tok_sitelen_lasina 6ffa37fd:
 
     # digi_n "It's a remarkable device!"
-    digi_n ""
+    digi_n "It's a remarkable device!"
 
 # game/scripts/dev/script_digi_test.rpy:492
 translate tok_sitelen_lasina c604fd5b:
 
     # digi_n "I hope I can figure out how it works one day."
-    digi_n ""
+    digi_n "I hope I can figure out how it works one day."
 
 # game/scripts/dev/script_digi_test.rpy:496
 translate tok_sitelen_lasina 26e40007:
@@ -668,319 +668,319 @@ translate tok_sitelen_lasina 26e40007:
     # nvl clear
     # you_n "How are you?{fast}"
     nvl clear
-    you_n ""
+    you_n "How are you?{fast}"
 
 # game/scripts/dev/script_digi_test.rpy:499
 translate tok_sitelen_lasina de463771:
 
     # digi_n "I'm doing alright!"
-    digi_n ""
+    digi_n "I'm doing alright!"
 
 # game/scripts/dev/script_digi_test.rpy:504
 translate tok_sitelen_lasina 8df8256a:
 
     # digi_n "I just woke up, really."
-    digi_n ""
+    digi_n "I just woke up, really."
 
 # game/scripts/dev/script_digi_test.rpy:505
 translate tok_sitelen_lasina 54df3bdc:
 
     # digi_n "I'm not great in the mornings. I've become {i}somewhat{/i} reliant on caffeine."
-    digi_n ""
+    digi_n "I'm not great in the mornings. I've become {i}somewhat{/i} reliant on caffeine."
 
 # game/scripts/dev/script_digi_test.rpy:506
 translate tok_sitelen_lasina 8e1187e7:
 
     # digi_n "Oops! Addictive substance is addictive."
-    digi_n ""
+    digi_n "Oops! Addictive substance is addictive."
 
 # game/scripts/dev/script_digi_test.rpy:507
 translate tok_sitelen_lasina 6bf7d296:
 
     # extend " Hey, it's better than other vices I could have."
-    extend ""
+    extend " Hey, it's better than other vices I could have."
 
 # game/scripts/dev/script_digi_test.rpy:510
 translate tok_sitelen_lasina 74353141:
 
     # digi_n "Just been working on some stuff."
-    digi_n ""
+    digi_n "Just been working on some stuff."
 
 # game/scripts/dev/script_digi_test.rpy:511
 translate tok_sitelen_lasina 3afa3981:
 
     # digi_n "The day is still young, you know?"
-    digi_n ""
+    digi_n "The day is still young, you know?"
 
 # game/scripts/dev/script_digi_test.rpy:512
 translate tok_sitelen_lasina 72f18c66:
 
     # extend " I usually am just kinda jumping between a few different projects around this time,"
-    extend ""
+    extend " I usually am just kinda jumping between a few different projects around this time,"
 
 # game/scripts/dev/script_digi_test.rpy:513
 translate tok_sitelen_lasina 4fd6f8cb:
 
     # digi_n "Good afternoon yourself, by the way."
-    digi_n ""
+    digi_n "Good afternoon yourself, by the way."
 
 # game/scripts/dev/script_digi_test.rpy:516
 translate tok_sitelen_lasina 61cac805:
 
     # digi_n "Starting to get hungry, though."
-    digi_n ""
+    digi_n "Starting to get hungry, though."
 
 # game/scripts/dev/script_digi_test.rpy:517
 translate tok_sitelen_lasina 03d30442:
 
     # extend " I've been working on stuff all day and kinda forgot to eat..."
-    extend ""
+    extend " I've been working on stuff all day and kinda forgot to eat..."
 
 # game/scripts/dev/script_digi_test.rpy:518
 translate tok_sitelen_lasina 4f62235a:
 
     # digi_n "I could really go for a burger."
-    digi_n ""
+    digi_n "I could really go for a burger."
 
 # game/scripts/dev/script_digi_test.rpy:519
 translate tok_sitelen_lasina 3ec8fdd6:
 
     # digi_n "Ugh, do you know how hard it is to get DoorDash up here?"
-    digi_n ""
+    digi_n "Ugh, do you know how hard it is to get DoorDash up here?"
 
 # game/scripts/dev/script_digi_test.rpy:522
 translate tok_sitelen_lasina a0aaca97:
 
     # digi_n "I'm running low on steam but I still have some stuff to get done today."
-    digi_n ""
+    digi_n "I'm running low on steam but I still have some stuff to get done today."
 
 # game/scripts/dev/script_digi_test.rpy:523
 translate tok_sitelen_lasina a447ce48:
 
     # digi_n "Just hoping to get some more of the TODO list before I conk out."
-    digi_n ""
+    digi_n "Just hoping to get some more of the TODO list before I conk out."
 
 # game/scripts/dev/script_digi_test.rpy:524
 translate tok_sitelen_lasina c508a439:
 
     # digi_n "Ooh, that's a good point, let me add that to my TODO list."
-    digi_n ""
+    digi_n "Ooh, that's a good point, let me add that to my TODO list."
 
 # game/scripts/dev/script_digi_test.rpy:536
 translate tok_sitelen_lasina 2edf909a:
 
     # n_n "Digi takes out their phone."
-    n_n ""
+    n_n "Digi takes out their phone."
 
 # game/scripts/dev/script_digi_test.rpy:537
 translate tok_sitelen_lasina 622df998:
 
     # digi_n "{i}Stop adding so much to my TODO list..."
-    digi_n ""
+    digi_n "{i}Stop adding so much to my TODO list..."
 
 # game/scripts/dev/script_digi_test.rpy:541
 translate tok_sitelen_lasina 6eb7b1d4:
 
     # digi_n "I'm pretty tired, though."
-    digi_n ""
+    digi_n "I'm pretty tired, though."
 
 # game/scripts/dev/script_digi_test.rpy:542
 translate tok_sitelen_lasina 296ba58b:
 
     # digi_n "I need to stop staying up this late."
-    digi_n ""
+    digi_n "I need to stop staying up this late."
 
 # game/scripts/dev/script_digi_test.rpy:543
 translate tok_sitelen_lasina 5263b015:
 
     # digi_n "Hell, {i}you{/i} also probably need to stop staying up this late."
-    digi_n ""
+    digi_n "Hell, {i}you{/i} also probably need to stop staying up this late."
 
 # game/scripts/dev/script_digi_test.rpy:544
 translate tok_sitelen_lasina 82ef56fc:
 
     # digi_n "I don't know, I don't know your life."
-    digi_n ""
+    digi_n "I don't know, I don't know your life."
 
 # game/scripts/dev/script_digi_test.rpy:545
 translate tok_sitelen_lasina 0641d2b4:
 
     # digi_n "Clearly I barely know mine."
-    digi_n ""
+    digi_n "Clearly I barely know mine."
 
 # game/scripts/dev/script_digi_test.rpy:548
 translate tok_sitelen_lasina b827d19d:
 
     # digi_n "I really should be asleep, though."
-    digi_n ""
+    digi_n "I really should be asleep, though."
 
 # game/scripts/dev/script_digi_test.rpy:549
 translate tok_sitelen_lasina 96311104:
 
     # digi_n "You should too, by the way. Unless you're usually up this early?"
-    digi_n ""
+    digi_n "You should too, by the way. Unless you're usually up this early?"
 
 # game/scripts/dev/script_digi_test.rpy:550
 translate tok_sitelen_lasina 85c11c55:
 
     # digi_n "I don't usually wake up until like 10AM, though, so I'm one to talk about schedules."
-    digi_n ""
+    digi_n "I don't usually wake up until like 10AM, though, so I'm one to talk about schedules."
 
 # game/scripts/dev/script_digi_test.rpy:554
 translate tok_sitelen_lasina 0f6814b9:
 
     # digi_n "How about yourself?"
-    digi_n ""
+    digi_n "How about yourself?"
 
 # game/scripts/dev/script_digi_test.rpy:557
 translate tok_sitelen_lasina 862f7462:
 
     # you_n "I'm doing good!{fast}"
-    you_n ""
+    you_n "I'm doing good!{fast}"
 
 # game/scripts/dev/script_digi_test.rpy:558
 translate tok_sitelen_lasina 23cd2a7f:
 
     # digi_n "That's great to hear!"
-    digi_n ""
+    digi_n "That's great to hear!"
 
 # game/scripts/dev/script_digi_test.rpy:559
 translate tok_sitelen_lasina 169849f1:
 
     # digi_n "It always puts a smile on my face to hear when my friends are doing well."
-    digi_n ""
+    digi_n "It always puts a smile on my face to hear when my friends are doing well."
 
 # game/scripts/dev/script_digi_test.rpy:560
 translate tok_sitelen_lasina 5f44f629:
 
     # digi_n "Honestly, it's probably the thing that uplifts me the most."
-    digi_n ""
+    digi_n "Honestly, it's probably the thing that uplifts me the most."
 
 # game/scripts/dev/script_digi_test.rpy:562
 translate tok_sitelen_lasina ce6c027a:
 
     # you_n "I'm alright.{fast}"
-    you_n ""
+    you_n "I'm alright.{fast}"
 
 # game/scripts/dev/script_digi_test.rpy:563
 translate tok_sitelen_lasina 9ee78dd5:
 
     # digi_n "That's good to hear!"
-    digi_n ""
+    digi_n "That's good to hear!"
 
 # game/scripts/dev/script_digi_test.rpy:564
 translate tok_sitelen_lasina fb1d54bc:
 
     # digi_n "Sometimes I think we take 'alright' for granted."
-    digi_n ""
+    digi_n "Sometimes I think we take 'alright' for granted."
 
 # game/scripts/dev/script_digi_test.rpy:565
 translate tok_sitelen_lasina ffb957a4:
 
     # extend " Any rating over a 5/10 means it's net positive, you know?"
-    extend ""
+    extend " Any rating over a 5/10 means it's net positive, you know?"
 
 # game/scripts/dev/script_digi_test.rpy:566
 translate tok_sitelen_lasina 156b75d3:
 
     # digi_n "That's good. We should capture that feeling when we get it."
-    digi_n ""
+    digi_n "That's good. We should capture that feeling when we get it."
 
 # game/scripts/dev/script_digi_test.rpy:568
 translate tok_sitelen_lasina 335c93cd:
 
     # you_n "I'm mid.{fast}"
-    you_n ""
+    you_n "I'm mid.{fast}"
 
 # game/scripts/dev/script_digi_test.rpy:569
 translate tok_sitelen_lasina 89e988e5:
 
     # digi_n "Fair enough."
-    digi_n ""
+    digi_n "Fair enough."
 
 # game/scripts/dev/script_digi_test.rpy:570
 translate tok_sitelen_lasina ea5f3bf1:
 
     # digi_n "Whether that's because things are just neutral, or because a bunch of good and bad are in balance, I hope the good outweighs the bad in the end."
-    digi_n ""
+    digi_n "Whether that's because things are just neutral, or because a bunch of good and bad are in balance, I hope the good outweighs the bad in the end."
 
 # game/scripts/dev/script_digi_test.rpy:572
 translate tok_sitelen_lasina facde903:
 
     # you_n "I'm not doing super great.{fast}"
-    you_n ""
+    you_n "I'm not doing super great.{fast}"
 
 # game/scripts/dev/script_digi_test.rpy:573
 translate tok_sitelen_lasina a59ecea5:
 
     # digi_n "Damn, that sucks."
-    digi_n ""
+    digi_n "Damn, that sucks."
 
 # game/scripts/dev/script_digi_test.rpy:574
 translate tok_sitelen_lasina 0b01d337:
 
     # digi_n "Whatever's got you down, I'm sure things can turn around."
-    digi_n ""
+    digi_n "Whatever's got you down, I'm sure things can turn around."
 
 # game/scripts/dev/script_digi_test.rpy:575
 translate tok_sitelen_lasina 17df3096:
 
     # digi_n "That's a hope I hold on to."
-    digi_n ""
+    digi_n "That's a hope I hold on to."
 
 # game/scripts/dev/script_digi_test.rpy:577
 translate tok_sitelen_lasina fd86eb4f:
 
     # you_n "I'm doing kinda awful.{fast}"
-    you_n ""
+    you_n "I'm doing kinda awful.{fast}"
 
 # game/scripts/dev/script_digi_test.rpy:578
 translate tok_sitelen_lasina bd3d155e:
 
     # digi_n "I'm sorry to hear that."
-    digi_n ""
+    digi_n "I'm sorry to hear that."
 
 # game/scripts/dev/script_digi_test.rpy:579
 translate tok_sitelen_lasina 39e110db:
 
     # digi_n "Hopefully working on this silly visual novel gives you some calm, though."
-    digi_n ""
+    digi_n "Hopefully working on this silly visual novel gives you some calm, though."
 
 # game/scripts/dev/script_digi_test.rpy:580
 translate tok_sitelen_lasina 90215313:
 
     # digi_n "I may not be real, but Digi{font=cmunrm.ttf}[[0]{/font} is, so do reach out to them if you need the support."
-    digi_n ""
+    digi_n "I may not be real, but Digi{font=cmunrm.ttf}[[0]{/font} is, so do reach out to them if you need the support."
 
 # game/scripts/dev/script_digi_test.rpy:582
 translate tok_sitelen_lasina 69f1ee43:
 
     # you_n "I prefer not to say right now.{fast}"
-    you_n ""
+    you_n "I prefer not to say right now.{fast}"
 
 # game/scripts/dev/script_digi_test.rpy:583
 translate tok_sitelen_lasina 7033af21:
 
     # digi_n "And you know what? Valid."
-    digi_n ""
+    digi_n "And you know what? Valid."
 
 # game/scripts/dev/script_digi_test.rpy:584
 translate tok_sitelen_lasina e150eaad:
 
     # digi_n "I'm just a pre-written dialogue in a visual novel, anyway."
-    digi_n ""
+    digi_n "I'm just a pre-written dialogue in a visual novel, anyway."
 
 # game/scripts/dev/script_digi_test.rpy:585
 translate tok_sitelen_lasina e618f870:
 
     # digi_n "If you want to talk to Digi{font=cmunrm.ttf}[[0]{/font} about it, though, do reach out."
-    digi_n ""
+    digi_n "If you want to talk to Digi{font=cmunrm.ttf}[[0]{/font} about it, though, do reach out."
 
 # game/scripts/dev/script_digi_test.rpy:586
 translate tok_sitelen_lasina 2f1f91a8:
 
     # extend " They care a lot about you."
-    extend ""
+    extend " They care a lot about you."
 
 # game/scripts/dev/script_digi_test.rpy:590
 translate tok_sitelen_lasina b294df8d:
@@ -988,223 +988,223 @@ translate tok_sitelen_lasina b294df8d:
     # nvl clear
     # you_n "Is weed legal today?{fast}"
     nvl clear
-    you_n ""
+    you_n "Is weed legal today?{fast}"
 
 # game/scripts/dev/script_digi_test.rpy:592
 translate tok_sitelen_lasina 81109f60:
 
     # digi_n "I mean, we can check the government website."
-    digi_n ""
+    digi_n "I mean, we can check the government website."
 
 # game/scripts/dev/script_digi_test.rpy:593
 translate tok_sitelen_lasina e1c9d4ab:
 
     # digi_n "Let me pull it up."
-    digi_n ""
+    digi_n "Let me pull it up."
 
 # game/scripts/dev/script_digi_test.rpy:597
 translate tok_sitelen_lasina 842ddff8:
 
     # digi_n "That's good to hear! This is a weird system."
-    digi_n ""
+    digi_n "That's good to hear! This is a weird system."
 
 # game/scripts/dev/script_digi_test.rpy:599
 translate tok_sitelen_lasina 89963118:
 
     # digi_n "Welp, looks like we're out of luck today."
-    digi_n ""
+    digi_n "Welp, looks like we're out of luck today."
 
 # game/scripts/dev/script_digi_test.rpy:604
 translate tok_sitelen_lasina f4ac3263:
 
     # digi_n "Alrighty!"
-    digi_n ""
+    digi_n "Alrighty!"
 
 # game/scripts/dev/script_digi_test.rpy:605
 translate tok_sitelen_lasina d4500a72:
 
     # digi_n "{size=-12}I hope NVL mode worked well..."
-    digi_n ""
+    digi_n "{size=-12}I hope NVL mode worked well..."
 
 translate tok_sitelen_lasina strings:
 
     # game/scripts/dev/script_digi_test.rpy:89
     old "What do you want to do?"
-    new ""
+    new "What do you want to do?"
 
     # game/scripts/dev/script_digi_test.rpy:91
     old "I'd like to test things!"
-    new ""
+    new "I'd like to test things!"
 
     # game/scripts/dev/script_digi_test.rpy:93
     old "I want to talk! {size=-12}(NVL mode test)"
-    new ""
+    new "I want to talk! {size=-12}(NVL mode test)"
 
     # game/scripts/dev/script_digi_test.rpy:95
     old "I gotta head out."
-    new ""
+    new "I gotta head out."
 
     # game/scripts/dev/script_digi_test.rpy:108
     old "What test?"
-    new ""
+    new "What test?"
 
     # game/scripts/dev/script_digi_test.rpy:110
     old "Multiple Dialogue"
-    new ""
+    new "Multiple Dialogue"
 
     # game/scripts/dev/script_digi_test.rpy:112
     old "Text Shaders"
-    new ""
+    new "Text Shaders"
 
     # game/scripts/dev/script_digi_test.rpy:114
     old "Emoji"
-    new ""
+    new "Emoji"
 
     # game/scripts/dev/script_digi_test.rpy:116
     old "osu!spinner"
-    new ""
+    new "osu!spinner"
 
     # game/scripts/dev/script_digi_test.rpy:118
     old "Choice Menus"
-    new ""
+    new "Choice Menus"
 
     # game/scripts/dev/script_digi_test.rpy:120
     old "Digi EX"
-    new ""
+    new "Digi EX"
 
     # game/scripts/dev/script_digi_test.rpy:122
     old "None, actually!"
-    new ""
+    new "None, actually!"
 
     # game/scripts/dev/script_digi_test.rpy:192
     old "One choice."
-    new ""
+    new "One choice."
 
     # game/scripts/dev/script_digi_test.rpy:197
     old "Two choices."
-    new ""
+    new "Two choices."
 
     # game/scripts/dev/script_digi_test.rpy:201
     old "Exit Test"
-    new ""
+    new "Exit Test"
 
     # game/scripts/dev/script_digi_test.rpy:204
     old "Three choices."
-    new ""
+    new "Three choices."
 
     # game/scripts/dev/script_digi_test.rpy:213
     old "Four choices."
-    new ""
+    new "Four choices."
 
     # game/scripts/dev/script_digi_test.rpy:224
     old "Five choices."
-    new ""
+    new "Five choices."
 
     # game/scripts/dev/script_digi_test.rpy:232
     old "4"
-    new ""
+    new "4"
 
     # game/scripts/dev/script_digi_test.rpy:237
     old "Six choices."
-    new ""
+    new "Six choices."
 
     # game/scripts/dev/script_digi_test.rpy:247
     old "5"
-    new ""
+    new "5"
 
     # game/scripts/dev/script_digi_test.rpy:252
     old "Seven choices."
-    new ""
+    new "Seven choices."
 
     # game/scripts/dev/script_digi_test.rpy:264
     old "6"
-    new ""
+    new "6"
 
     # game/scripts/dev/script_digi_test.rpy:320
     old "How are you?"
-    new ""
+    new "How are you?"
 
     # game/scripts/dev/script_digi_test.rpy:322
     old "What is this place?"
-    new ""
+    new "What is this place?"
 
     # game/scripts/dev/script_digi_test.rpy:327
     old "Aren't you like, small sometimes?"
-    new ""
+    new "Aren't you like, small sometimes?"
 
     # game/scripts/dev/script_digi_test.rpy:329
     old "How does the height compressor work?"
-    new ""
+    new "How does the height compressor work?"
 
     # game/scripts/dev/script_digi_test.rpy:331
     old "Who's Iris?"
-    new ""
+    new "Who's Iris?"
 
     # game/scripts/dev/script_digi_test.rpy:333
     old "Is weed legal today?"
-    new ""
+    new "Is weed legal today?"
 
     # game/scripts/dev/script_digi_test.rpy:335
     old "Nothing else!"
-    new ""
+    new "Nothing else!"
 
     # game/scripts/dev/script_digi_test.rpy:341
     old "Layer 1?"
-    new ""
+    new "Layer 1?"
 
     # game/scripts/dev/script_digi_test.rpy:355
     old "Layer 0?"
-    new ""
+    new "Layer 0?"
 
     # game/scripts/dev/script_digi_test.rpy:362
     old "You keep saying layers...?"
-    new ""
+    new "You keep saying layers...?"
 
     # game/scripts/dev/script_digi_test.rpy:378
     old "No, give me the details!"
-    new ""
+    new "No, give me the details!"
 
     # game/scripts/dev/script_digi_test.rpy:386
     old "Thank you."
-    new ""
+    new "Thank you."
 
     # game/scripts/dev/script_digi_test.rpy:437
     old "How you use it."
-    new ""
+    new "How you use it."
 
     # game/scripts/dev/script_digi_test.rpy:439
     old "Scientifically."
-    new ""
+    new "Scientifically."
 
     # game/scripts/dev/script_digi_test.rpy:441
     old "Never mind."
-    new ""
+    new "Never mind."
 
     # game/scripts/dev/script_digi_test.rpy:443
     old "{i}Ask about something else"
-    new ""
+    new "{i}Ask about something else"
 
     # game/scripts/dev/script_digi_test.rpy:556
     old "I'm doing good!"
-    new ""
+    new "I'm doing good!"
 
     # game/scripts/dev/script_digi_test.rpy:561
     old "I'm alright."
-    new ""
+    new "I'm alright."
 
     # game/scripts/dev/script_digi_test.rpy:567
     old "I'm mid."
-    new ""
+    new "I'm mid."
 
     # game/scripts/dev/script_digi_test.rpy:571
     old "I'm not doing super great."
-    new ""
+    new "I'm not doing super great."
 
     # game/scripts/dev/script_digi_test.rpy:576
     old "I'm doing kinda awful."
-    new ""
+    new "I'm doing kinda awful."
 
     # game/scripts/dev/script_digi_test.rpy:581
     old "I prefer not to say right now."
-    new ""
+    new "I prefer not to say right now."
 

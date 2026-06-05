@@ -1,20 +1,20 @@
-﻿# TODO: Translation updated at 2026-06-04 15:30
+﻿# TODO: Translation updated at 2026-06-05 11:32
 
 translate tok_sitelen_lasina strings:
 
     # game/screens/d20_viewer.rpy:8
     old "{size=+48}D20 Viewer"
-    new ""
+    new "{size=+48}D20 Viewer"
 
     # game/screens/d20_viewer.rpy:16
     old "See what fate could have been..."
-    new ""
+    new "See what fate could have been..."
 
     # game/screens/d20_viewer.rpy:18
     old "(Or, more accurately, see who would have arrived at the Christmas party first.)"
-    new ""
+    new "(Or, more accurately, see who would have arrived at the Christmas party first.)"
 
     # game/screens/d20_viewer.rpy:51
     old "View"
-    new ""
+    new "View"
 
