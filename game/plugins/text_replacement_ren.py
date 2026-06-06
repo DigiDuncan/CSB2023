@@ -131,7 +131,9 @@ def redact(match):
 
 def substitutions(s):
     # beep spacing
-    s = beep_spacing(s)
+    if preferences.language is None:
+        # Can't trust beep_spacing in non-English languages right now.
+        s = beep_spacing(s)
 
     # for text effects that are a pain to type out otherwise
     s = s.replace(r"{cshake}", r"{bt=a3-p10-s4}")

@@ -73,7 +73,8 @@ screen digimultiple(blocks):
             style "say_dialogue"
             
             for idx, block in enumerate(blocks):
-                text substitutions(block[1]):
+                $ s = block[1]
+                text substitutions("[s!t]"):
                     id "what"
                     slow_cps preferences.text_cps
 
