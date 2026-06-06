@@ -400,7 +400,7 @@ translate tok_sitelen_pona strings:
 
     # game/screens.rpy:1344
     old "Digi's Test... Ship?\n{size=-12}Another test screen?! Really?"
-    new "󱥭󱤃󱥍󱤌󱦐󱥤󱤎󱥡󱤌󱦑\n{size=-12}󱥁󱤧󱤓󱤌󱤃󱤼󱦜󱦜󱦜"
+    new "󱥭󱤃󱥍󱤌󱦐󱤕󱤎󱥡󱤌󱦑\n{size=-12}󱥁󱤧󱤓󱤌󱤃󱤼󱦜󱦜󱦜"
 
     # game/screens.rpy:1484
     old "Narrator"

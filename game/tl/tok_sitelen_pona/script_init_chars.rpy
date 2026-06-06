@@ -44,7 +44,7 @@ translate tok_sitelen_pona strings:
 
     # game/script_init_chars.rpy:19
     old "Discord"
-    new "󱤪󱦐󱥧󱤌󱥖󱥰󱤕󱥄󱦑"
+    new "󱤪󱦐󱥏󱤌󱥖󱥰󱤕󱥄󱦑"
 
     # game/script_init_chars.rpy:20
     old "Doug"
@@ -620,7 +620,7 @@ translate tok_sitelen_pona strings:
 
     # game/script_init_chars.rpy:246
     old "Digi"
-    new "󱤌󱦐󱥤󱤎󱥡󱤌󱦑"
+    new "󱤌󱦐󱤕󱤎󱥡󱤌󱦑"
 
     # game/script_init_chars.rpy:247
     old "Elizabeth"

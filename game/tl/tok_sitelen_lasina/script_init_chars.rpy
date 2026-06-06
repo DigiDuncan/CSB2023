@@ -43,8 +43,8 @@ translate tok_sitelen_lasina strings:
     new "ilo ike"
 
     # game/script_init_chars.rpy:19
-    old "Discord"
-    new "lipu Tisuko"
+    old "Pisuko"
+    new "lipu Pisuko"
 
     # game/script_init_chars.rpy:20
     old "Doug"
@@ -621,7 +621,7 @@ translate tok_sitelen_lasina strings:
 
     # game/script_init_chars.rpy:246
     old "Digi"
-    new "ijo Sisi"
+    new "ijo Kisi"
 
     # game/script_init_chars.rpy:247
     old "Elizabeth"

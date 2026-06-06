@@ -396,7 +396,7 @@ translate tok_sitelen_lasina strings:
 
     # game/screens.rpy:1342
     old "Digi's Test... Ship?\n{size=-12}Another test screen?! Really?"
-    new "tomo alasa pi ijo Tisi\n{size=-12}ni li jo ijo alasa mute..."
+    new "tomo alasa pi ijo Kisi\n{size=-12}ni li jo ijo alasa mute..."
 
     # game/screens.rpy:1482
     old "Narrator"

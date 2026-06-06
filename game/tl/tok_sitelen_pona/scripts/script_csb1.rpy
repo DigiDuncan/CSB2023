@@ -76,7 +76,7 @@ translate tok_sitelen_pona csbi_craptop_fd9fd5f6:
 translate tok_sitelen_pona csbi_craptop_e3b1207a:
 
     # n "The Discord is overflowing with people trying to talk to CS."
-    n "󱤑󱥍󱤪󱦐󱥧󱤌󱥖󱥰󱤕󱥄󱦑󱤼󱤧󱥷󱥬󱤉󱤑󱦐󱥝󱤌󱤐󱤉󱥙󱥯󱦑󱦜"
+    n "󱤑󱥍󱤪󱦐󱥏󱤌󱥖󱥰󱤕󱥄󱦑󱤼󱤧󱥷󱥬󱤉󱤑󱦐󱥝󱤌󱤐󱤉󱥙󱥯󱦑󱦜"
 
 # game/scripts/script_csb1.rpy:92
 translate tok_sitelen_pona csbi_craptop_3e32f00d:

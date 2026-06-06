@@ -76,7 +76,7 @@ translate tok_sitelen_lasina csbi_craptop_fd9fd5f6:
 translate tok_sitelen_lasina csbi_craptop_e3b1207a:
 
     # n "The Discord is overflowing with people trying to talk to CS."
-    n "jan pi lipu Tisuko mute li wile toki e jan Sijesu."
+    n "jan pi lipu Pisuko mute li wile toki e jan Sijesu."
 
 # game/scripts/script_csb1.rpy:92
 translate tok_sitelen_lasina csbi_craptop_3e32f00d:
@@ -1614,7 +1614,7 @@ translate tok_sitelen_lasina strings:
 
     # game/scripts/script_csb1.rpy:86
     old "Respond to chat"
-    new "o toki e lipu Tisuko"
+    new "o toki e lipu Pisuko"
 
     # game/scripts/script_csb1.rpy:88
     old "Just... don't."
