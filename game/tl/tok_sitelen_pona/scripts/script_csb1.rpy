@@ -1614,7 +1614,7 @@ translate tok_sitelen_pona strings:
 
     # game/scripts/script_csb1.rpy:86
     old "Respond to chat"
-    new "󱥄󱥬󱤉󱤪󱦐󱥧󱤌󱥖󱥰󱤕󱥄󱦑"
+    new "󱥄󱥬󱤉󱤪󱦐󱥏󱤌󱥖󱥰󱤕󱥄󱦑"
 
     # game/scripts/script_csb1.rpy:88
     old "Just... don't."
