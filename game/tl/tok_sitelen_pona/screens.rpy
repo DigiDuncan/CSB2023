@@ -194,7 +194,7 @@ translate tok_sitelen_pona strings:
     old "Dyslexia Mode"
     new "Dyslexia Mode"
 
-   # game/screens.rpy:1063
+    # game/screens.rpy:1063
     old "Changes to an easier-to-read font."
     new "󱥄󱤆󱤉󱥠󱦐󱤡󱤀󱥖󱥰󱤾󱤂󱦑󱥩󱥠󱥍󱥔󱦜"
 
@@ -246,7 +246,7 @@ translate tok_sitelen_pona strings:
     old "More themes will be unlocked as you play!"
     new "More themes will be unlocked as you play!"
 
-   # game/screens.rpy:1144
+    # game/screens.rpy:1144
     old "Text Speed"
     new "󱥫󱥍󱥂󱥩"
 
@@ -258,7 +258,7 @@ translate tok_sitelen_pona strings:
     old "Auto-Forward Time"
     new "Auto-Forward Time"
 
-   # game/screens.rpy:1186
+    # game/screens.rpy:1186
     old "Audio Options"
     new "󱥄󱤆󱤉󱤕"
 

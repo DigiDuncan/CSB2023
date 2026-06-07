@@ -138,7 +138,7 @@ translate tok_sitelen_lasina strings:
     old "Download Sync"
     new "Download Sync"
 
-   # game/screens.rpy:974
+    # game/screens.rpy:974
     old "Screen"
     new "sitelen lukin"
 
