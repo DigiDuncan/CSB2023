@@ -180,7 +180,7 @@ translate tok_sitelen_lasina strings:
 
     # game/screens.rpy:1050
     old "Disables select visual effects in order to improve performance."
-    new "o sitelen pi tawa namako e weka"
+    new "o weka e sitelen pi tawa namako"
 
     # game/screens.rpy:1077
     old "Dyslexia Mode"
@@ -188,7 +188,7 @@ translate tok_sitelen_lasina strings:
 
     # game/screens.rpy:1085
     old "Changes to an easier-to-read font."
-    new "o sitelen Lasina e ante tawa sitelen pi pona."
+    new "o ante e sitelen Lasina tawa sitelen pi pona."
 
     # game/screens.rpy:1088
     old "Force Black Letterbox"
@@ -196,7 +196,7 @@ translate tok_sitelen_lasina strings:
 
     # game/screens.rpy:1096
     old "Forces the side colors to black instead of the current theme color."
-    new " ante e kule poka tawa pimeja."
+    new "o ante e kule poka tawa pimeja."
 
     # game/screens.rpy:1099
     old "No Button Mashing"
@@ -204,7 +204,7 @@ translate tok_sitelen_lasina strings:
 
     # game/screens.rpy:1106
     old "Enables alternative controls for certain minigames."
-    new "Enables alternative controls for certain minigames."
+    new "musi lili la, o kepeken e luka ante."
 
     # game/screens.rpy:1086
     old "Visual Options"

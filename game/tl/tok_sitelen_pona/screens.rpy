@@ -188,7 +188,7 @@ translate tok_sitelen_pona strings:
 
     # game/screens.rpy:1052
     old "Disables select visual effects in order to improve performance."
-    new "󱥄󱥠󱥍󱥩󱥸󱤉󱥶󱦜"
+    new "󱥄󱥶󱤉󱥠󱥍󱥩󱥸󱦜"
 
     # game/screens.rpy:1077
     old "Dyslexia Mode"
@@ -196,7 +196,7 @@ translate tok_sitelen_pona strings:
 
    # game/screens.rpy:1063
     old "Changes to an easier-to-read font."
-    new "󱥄󱥠󱦐󱤡󱤀󱥖󱥰󱤾󱤂󱦑󱤉󱤆󱥩󱥠󱥍󱥔󱦜"
+    new "󱥄󱤆󱤉󱥠󱦐󱤡󱤀󱥖󱥰󱤾󱤂󱦑󱥩󱥠󱥍󱥔󱦜"
 
     # game/screens.rpy:1066
     old "Force Black Letterbox"
@@ -212,9 +212,9 @@ translate tok_sitelen_pona strings:
 
     # game/screens.rpy:1106
     old "Enables alternative controls for certain minigames."
-    new "Enables alternative controls for certain minigames."
+    new "󱤻󱤨󱤡󱥄󱤙󱤉󱤭󱤆󱦜"
 
-     # game/screens.rpy:1088
+    # game/screens.rpy:1088
     old "Visual Options"
     new "󱥄󱤆󱤉󱤮"
 

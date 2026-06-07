@@ -160,7 +160,7 @@ init python:
     config.font_name_map["tp"] = gui_theme_map["tp_font"]
 
     # Force multilingual text for music popup, jukebox, credits 
-    DYSLEXIA_GROUP = FontGroup().add("FiraCode-Retina.ttf", 0x2206, 0x2206).add("MochiyPopOne-Regular.ttf", 0x2600, 0x9fff).add("comic.ttf", 0x0000, 0xffff)
+    #DYSLEXIA_GROUP = FontGroup().add("FiraCode-Retina.ttf", 0x2206, 0x2206).add("MochiyPopOne-Regular.ttf", 0x2600, 0x9fff).add("comic.ttf", 0x0000, 0xffff)
 
     config.font_name_map["music_text"] = FontGroup().add("FiraCode-Retina.ttf", 0x2206, 0x2206).add( gui_theme_map["jp_font"] , 0x2600, 0x9fff).add( gui_theme_map["main_font"] , 0x0000, 0xffff)
     config.font_name_map["credits_music"] = FontGroup().add("FiraCode-Retina.ttf", 0x2206, 0x2206).add("CP_Font_1.otf", 0x2600, 0x9fff).add("impact.ttf", 0x0000, 0xffff)
