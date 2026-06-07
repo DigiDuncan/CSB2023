@@ -642,7 +642,7 @@ translate tok_sitelen_lasina strings:
 
     # game/script_init_chars.rpy:251
     old "Iris"
-    new "jan Awisu"
+    new "unu Awisu"
 
     # game/script_init_chars.rpy:252
     old "K-17"

@@ -640,7 +640,7 @@ translate tok_sitelen_pona strings:
 
     # game/script_init_chars.rpy:251
     old "Iris"
-    new "󱤑󱦐󱤄󱥶󱤌󱥙󱥰󱦑"
+    new "󱦶󱦐󱤄󱥶󱤌󱥙󱦷󱦑"
 
     # game/script_init_chars.rpy:252
     old "K-17"
