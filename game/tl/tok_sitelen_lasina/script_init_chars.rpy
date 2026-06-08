@@ -674,4 +674,4 @@ translate tok_sitelen_lasina strings:
 
     # game/script_init_chars.rpy:261
     old "Bubble"
-    new "ko Papo"
+    new "ko suli Papo"

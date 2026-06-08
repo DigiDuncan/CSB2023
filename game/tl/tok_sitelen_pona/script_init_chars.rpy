@@ -672,4 +672,4 @@ translate tok_sitelen_pona strings:
 
     # game/script_init_chars.rpy:261
     old "Bubble"
-    new "󱤜󱦐󱥌󱤆󱥔󱥅󱦑"
+    new "󱤜󱥣󱦐󱥌󱤆󱥔󱥅󱦑"
