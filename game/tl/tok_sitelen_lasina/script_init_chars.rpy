@@ -20,7 +20,7 @@ translate tok_sitelen_lasina strings:
 
     # game/script_init_chars.rpy:10
     old "cs188 (pretending to be CSGod)"
-    new "cs188 (pretending to be CSGod)"
+    new "jan ala sewi Sijesu"
 
     # game/script_init_chars.rpy:11
     old "CSGod"
