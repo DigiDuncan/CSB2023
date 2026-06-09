@@ -1,5 +1,6 @@
 # TODO: swap static laptop image out for a video
-
+    # Car Crash Comp Video
+    #YTP Video
 label csbi_start:
     $ quick_menu = False
     stop music fadeout 3.0
