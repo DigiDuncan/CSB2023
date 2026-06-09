@@ -508,7 +508,7 @@ translate tok_sitelen_pona strings:
 
     # game/script_init_chars.rpy:192
     old "K-19"
-    new "K-19"
+    new "󱤈󱥡󱦐󱥈󱥚󱦑"
 
     # game/script_init_chars.rpy:193
     old "Orville Wright"
@@ -644,11 +644,11 @@ translate tok_sitelen_pona strings:
 
     # game/script_init_chars.rpy:252
     old "K-17"
-    new "K-17"
+    new "󱤈󱥡󱦐󱥦󱥤󱦑"
 
     # game/script_init_chars.rpy:253
     old "K-22"
-    new "K-22"
+    new "󱤈󱥡󱦐󱤤󱥅󱦑"
 
     # game/script_init_chars.rpy:254
     old "Kitty"

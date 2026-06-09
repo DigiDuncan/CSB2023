@@ -509,7 +509,7 @@ translate tok_sitelen_lasina strings:
 
     # game/script_init_chars.rpy:192
     old "K-19"
-    new "pakala sewi"
+    new "awen sona pakala sewi"
 
     # game/script_init_chars.rpy:193
     old "Orville Wright"
@@ -646,11 +646,11 @@ translate tok_sitelen_lasina strings:
 
     # game/script_init_chars.rpy:252
     old "K-17"
-    new "suwi suno"
+    new "awen sona suwi suno"
 
     # game/script_init_chars.rpy:253
     old "K-22"
-    new "lawa olin"
+    new "awen sona lawa olin"
 
     # game/script_init_chars.rpy:254
     old "Kitty"
