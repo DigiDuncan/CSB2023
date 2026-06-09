@@ -195,7 +195,7 @@ translate tok_sitelen_lasina strings:
     old "Billy (from off screen)"
     new "Billy (from off screen)"
 
-     # game/script_init_chars.rpy:69
+    # game/script_init_chars.rpy:69
     old "Director"
     new "jan pi lawa e sitelen"
 
