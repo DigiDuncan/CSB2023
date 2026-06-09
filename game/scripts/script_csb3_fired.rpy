@@ -1549,7 +1549,7 @@ label fired_final_tour_bus:
     music end
     scene cs_door_outside with dissolve
     show cs with moveinleft
-    n "CS moves to head inside, but there's a note on his door." # TODO: i hate this line - tate
+    n "Before CS heads inside, he spots a note on his door."
     sticky "We waited for you to come home to confront you, but you took too long, so we left."
     sticky "Fuck you.\n-- HoH SiS"
     cs "Well, I guess that's the end of that."

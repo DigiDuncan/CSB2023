@@ -240,8 +240,7 @@ label csbiii_edit_video:
     cs "If Taran really does mean what he says about Linus, then I'm sure he'll {i}love{/i} this!"
     show cs happy
     cs "I'm gonna turn this video into a YTP!"
-    # TODO: "they" = LMG, or the fans? can we workshop this?
-    cs "It'll be perfect! No one will expect it because they probably don't even know what I've done with my life for the past 13 years!"
+    cs "It'll be perfect! No one will expect it because Linus and the gang probably don't even know what I've beeh doing with my life for the past 13 years!"
     show cs
     cs "As always, I should make sure it's as high-quality as possible, so both Linus {i}and{/i} the fans can enjoy it."
     cs "It won't be long before Linus comes back, so I'd better hurry!"
@@ -444,8 +443,11 @@ label csbiii_boost:
     show cs scared
     show linus with vpunch
     n "Linus loses grip of the card as it tumbles down onto the table next to him."
+    window hide
     play sound sfx_michael_facepalm
-    # TODO: sfx luke laughing
+    pause 1.0
+    play sound sfx_luke_laugh
+    pause 1.5
     n "CS facepalms while Luke can be heard laughing from across the room."
     show cs disappointed behind ytx
     cs "Jeez, Linus. Maybe {i}don't{/i} do that?"
@@ -1443,7 +1445,7 @@ label no_mercy_wait_arc:
     n "Upon witnessing this, Billy instantly takes off!"
     pause 1.0
     csgod "I have finally harnessed the power of CSGod!"
-    csgod "Time to take over the world!" # TODO: maybe a more epic line here??
+    csgod "Time to bring havoc and destruction to this mortal realm!"
     stop music
     $ ending_manager.mark("god_success")
     bad_end "This will affect\nthe local trout population!" "csbiii_forest_menu"

@@ -567,6 +567,13 @@
         "rarity": "Common",
         "ce": true
     },
+    "lego_car": {
+        "img": "lego_car",
+        "name": "Lego Car",
+        "owner": "CS",
+        "desc": "Built by CS to drive down to Vegas in.",
+        "rarity": "Legendary"
+    },
     "lego_jail": {
         "img": "lego_jail",
         "name": "Lego City Jail Cell",
@@ -772,6 +779,13 @@
         "desc": "Try spreading it on toast or crumpets, enjoying it by the spoonful, {a=https://www.youtube.com/watch?v=JlfJx1aDmR4&t=11s}stick a finger in and lick it, or even lift it up and drink a bit.{/a} Your secrets are safe here.",
         "rarity": "Common",
         "ce": true
+    },
+    "pencil": {
+        "img": "pencil.png",
+        "name": "#2 Pencil",
+        "owner": "CS, Billy, and Arceus",
+        "desc": "Useful for writing, doodling, and sharpening.",
+        "rarity": "Common"
     },
     "peppermint_bark": {
         "img": "peppermint_bark.png",

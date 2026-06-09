@@ -848,7 +848,6 @@ label csbii_ltt:
     play sound sfx_keyboard
     n "Within minutes, Arceus has hacked the Canadian government records to display CS as having a valid work visa."
     arceus "Even their security is too nice..."
-    # TODO: please replace this with an accurate image. idk what it actually looks like -tate
     show crt_magnet at manual_pos(0.35, 0.6) with dissolve
     $ collect("crt_magnet")
     n "Arceus produces the old CRT magnet he found a moment ago."

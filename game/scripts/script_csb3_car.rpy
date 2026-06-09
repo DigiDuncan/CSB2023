@@ -325,23 +325,6 @@ label car_dialogue:
 
     pause 5.0
 
-    # TODO: is this synced? is this supposed to be synced? i don't even know this song. can someone else check it? - tate
-    $ renpy.music.set_pause(True, "music")
-    play music2 moving_right_along if_changed
-    $ renpy.pause(5.0, hard = True)
-    # 0:05.0
-    cs "{cps=30}:note1: Moving right along, in search of good times and good news :note2:{w=0.8}{nw}"
-    $ renpy.pause(1.0, hard = True)
-    # 0:08.9
-    cs "{cps=30}:note1: With good friends you can't lose :note2:{w=0.8}{nw}"
-    # 0:11.4
-    arceus "{cps=30}:note1: This could become a habit! :note2:{w=0.8}{nw}"
-
-    stop music2
-    $ renpy.music.set_pause(False, "music")
-
-    pause 5.0
-
     cs "I spy, with my little eye, something blue."
     arceus "Is it the car?"
     cs "Yeah..."
@@ -630,7 +613,7 @@ label car_dialogue:
     with vpunch
     show billy car turn
     billy "What the {i}hell{/i} are you guys doing?!"
-    billy "I'm gonna {i}double{/i} the offer of this car ride if you do that again!" # TODO: this line needs help
+    billy "I'm gonna {i}double{/i} the price of this car ride if you do that again!"
     show billy car
     cs "Digi did it!"
     digi "No, I didn't! {i}You{/i} grabbed it!"

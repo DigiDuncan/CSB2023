@@ -107,15 +107,16 @@ label south_start:
     show arceus worried
     arceus "What pieces?"
     n "From seemingly thin air, CS pulls colorful plastic bricks and shapes them into a car!"
-    # TODO: put a lego car here
+    # TODO: Grab a car from sketchfab and use the legoify addon in blender
     play sound sfx_lego
     if fun_value(FUN_VALUE_MUSIC):
         cs "Brick by brick, suck my dick!"
     else:
+        window hide
         pause 3.0
     show cs happy
     with vpunch
-
+    show lego_car behind cs with moveinbottom
     ######## TATE STOPPED EDITING HERE! ########
 
     cs "Tada!"

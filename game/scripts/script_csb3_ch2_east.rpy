@@ -93,7 +93,8 @@ label true_hotwire:
     show cs at left with moveinleft
     show arceus at right with moveinright
     n "CS and Arceus approach one of the cars in front of the gas station."
-    # TODO: SFX glass breaking; actually put a car maybe
+    show cs worried with hpunch
+    play sound sfx_glass volume 2.0
 
     ######## TATE STOPPED EDITING HERE! ########
 
@@ -468,14 +469,19 @@ label true_montana:
     play sound sfx_roll_window volume 0.7
     n "Billy pulls up to the drive-thru to place his order."
     cashier "Hello, what would you like to order?"
-    billy "Hi, Billy Mays here! I would like to get the Buy 1 Get 1 Free breakfast meal for my friends here..."
-    billy "And I would also like to get the Egg McMuffin and a Big Mac for me." # TODO: is this section a reference because if it is not it needs a little help - tate
+    billy "Hi, Billy Mays here! How you doin'?"
+    cashier "Hi, how are you?"
+    billy "Good! I would like to order the Buy 1 Get 1 Free bacon egg and cheese biscuit for my friends here..."
+    billy "But wait! There's more!"
+    billy "I'd like to get a hash brown..."
+    billy "...and I would also like to get the Egg McMuffin and a Big Mac for me." # Reference: https://youtu.be/VtYdDK1uTDI?si=R_4O792eZK_GAbzJ
     cashier "Sure thing, that'll be--{nw}"
     billy "But I'm not done yet! I would like to triple the offer and get three Big Macs, and also three large sodas without any shipping!"
     cashier "Uhh, yeah, we can do that without shipping."
+    billy "Make one of those sodas diet. Gotta watch the weight."
     cashier "That'll be about, let's see..."
     cashier "$36.88."
-    billy "Wow! What a deal! I'm coming around to pick up my order!"
+    billy "Wow! What a deal! This is Billy Mays, and I'm coming around to pick up my order!"
     scene black with dissolve
     n "Billy drives through and picks up everyone's meals."
     scene mcdees
@@ -864,7 +870,25 @@ label true_pennsylvania:
     show arceus at right with moveinright
     arceus "Uh, sure?"
     pencil "Here you go!"
-    # TODO: add pencil item
+    show pencil at manual_pos (0.55,0.55):
+        zoom 0.35
+    with dissolve
+    show pencil at manual_pos (0.8,0.55) with move:
+        zoom 0.35
+    hide pencil with dissolve
+    show pencil at manual_pos (0.55,0.55):
+        zoom 0.35
+    with dissolve
+    show pencil at manual_pos (-0.2,0.55) with move:
+        zoom 0.35
+    hide pencil with dissolve
+    show pencil at manual_pos (0.55,0.55):
+        zoom 0.35
+    with dissolve
+    show pencil at manual_pos (0.25,0.52) with move:
+        linear 1 zoom 1.5
+    $ collect("pencil")
+    hide pencil with dissolve
     n "The pencil-clad man passes out a free pencil to each of them."
     pencil "Enjoy your stay!"
     show arceus flipped
