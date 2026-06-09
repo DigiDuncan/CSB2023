@@ -240,7 +240,7 @@ label csbiii_edit_video:
     cs "If Taran really does mean what he says about Linus, then I'm sure he'll {i}love{/i} this!"
     show cs happy
     cs "I'm gonna turn this video into a YTP!"
-    cs "It'll be perfect! No one will expect it because Linus and the gang probably don't even know what I've beeh doing with my life for the past 13 years!"
+    cs "It'll be perfect! No one will expect it because Linus and the gang probably don't even know what I've been doing with my life for the past 13 years!"
     show cs
     cs "As always, I should make sure it's as high-quality as possible, so both Linus {i}and{/i} the fans can enjoy it."
     cs "It won't be long before Linus comes back, so I'd better hurry!"
