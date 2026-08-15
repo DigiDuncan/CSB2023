@@ -275,6 +275,14 @@ label rpg_tate_ex:
         else:
             RPG.set_var_character("cs_chosen_form", "CS_VS_TATE_PUNCH")
 
+        # TODO: make this work pls
+        # if preferences.craptop_mode:
+        #     dynamic_bg = "images/bg/train/amtrak_reality_break_loader.png"
+        # else:
+        #     dynamic_bg = amtrak_reality_break
+
+        # print(dynamic_bg)
+        
     rpg:
         bg "amtrak_reality_break"
         music space
