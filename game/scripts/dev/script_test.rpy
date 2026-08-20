@@ -125,9 +125,57 @@ label test:
                     pakoo "This is Tate EX."
                     pakoo "Does this work? Idk"
                     $ renpy.full_restart()
-                "Perfect Billy Test":
-                    perfect_billy "I'm Perfect Billy Mays!"
-                    cs "woah that's crazy"
+                "Aqua Transition Test":
+                    scene green_screen
+                    pause
+                    show aqua_1
+                    show aqua_1_big
+                    show aqua_2
+                    show aqua_2_big
+                    show aqua_3
+                    show aqua_3_big
+                    show aqua_4
+                    show aqua_4_big
+                    show aqua_5
+                    show aqua_5_big
+                    show aqua_6
+                    show aqua_6_big
+                    show aqua_7
+                    show aqua_7_big
+                    with easeinleft
+                    pause
+                    hide aqua_1
+                    hide aqua_1_big
+                    hide aqua_2
+                    hide aqua_2_big
+                    hide aqua_3
+                    hide aqua_3_big
+                    hide aqua_4
+                    hide aqua_4_big
+                    hide aqua_5
+                    hide aqua_5_big
+                    hide aqua_6
+                    hide aqua_6_big
+                    hide aqua_7
+                    hide aqua_7_big
+                    with dissolve                
+                    pause
+                    $ renpy.full_restart()
+                "Petal Transition Test":
+                    scene green_screen
+                    pause
+                    show petal_0
+                    show petal_1
+                    show petal_2
+                    show petal_3
+                    show petal_4
+                    pause
+                    hide petal_0
+                    hide petal_1
+                    hide petal_2
+                    hide petal_3
+                    hide petal_4
+                    with dissolve
                     $ renpy.full_restart()
                 "Music Test":
                     # play music4 ten_feet_away_4 if_changed volume 0.1

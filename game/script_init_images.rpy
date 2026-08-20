@@ -2371,6 +2371,28 @@ image sleigh:
     ease 3.0 rotate 3
     repeat
 
+# Aqua
+image aqua_1 = SnowBlossom("flowers/aqua_1.png", count = 300, fast = False, xspeed = (1000, 500))
+image aqua_1_big= SnowBlossom("flowers/aqua_1_big.png", count = 200, fast = True, xspeed = (1000, 200))
+image aqua_2 = SnowBlossom("flowers/aqua_2.png", count = 400, fast = True, xspeed = (2000, 500))
+image aqua_2_big= SnowBlossom("flowers/aqua_2_big.png", count = 200, fast = False, xspeed = (6000, 100))
+image aqua_3 = SnowBlossom("flowers/aqua_3.png", count = 300, fast = False, xspeed = (1000, 200))
+image aqua_3_big= SnowBlossom("flowers/aqua_3_big.png", count = 200, fast = True, xspeed = (2000, 200))
+image aqua_4 = SnowBlossom("flowers/aqua_4.png", count = 500, fast = True, xspeed = (1000, 100))
+image aqua_4_big= SnowBlossom("flowers/aqua_4_big.png", count = 200, fast = False, xspeed = (7000, 100))
+image aqua_5 = SnowBlossom("flowers/aqua_5.png", count = 300, fast = False, xspeed = (1000, 700))
+image aqua_5_big= SnowBlossom("flowers/aqua_5_big.png", count = 200, fast = True, xspeed = (1000, 100))
+image aqua_6 = SnowBlossom("flowers/aqua_6.png", count = 400, fast = True, xspeed = (1000, 900))
+image aqua_6_big= SnowBlossom("flowers/aqua_6_big.png", count = 200, fast = False, xspeed = (1000, 100))
+image aqua_7 = SnowBlossom("flowers/aqua_7.png", count = 500, fast = False, xspeed = (1000, 500))
+image aqua_7_big= SnowBlossom("flowers/aqua_7_big.png", count = 200, fast = True, xspeed = (2000, 1000))
+
+image petal_0 = SnowBlossom("flowers/petal_0.png", count = 300, fast = False, xspeed = (1000, 500))
+image petal_1 = SnowBlossom("flowers/petal_1.png", count = 200, fast = True, xspeed = (1000, 200))
+image petal_2 = SnowBlossom("flowers/petal_2.png", count = 400, fast = True, xspeed = (2000, 500))
+image petal_3 = SnowBlossom("flowers/petal_3.png", count = 200, fast = False, xspeed = (6000, 100))
+image petal_4 = SnowBlossom("flowers/petal_4.png", count = 300, fast = False, xspeed = (1000, 200))
+
 # New in DX!
 image hendry = "characters/hendry.png"
 image hendry clap1 = "characters/hendry_clap1.png"
