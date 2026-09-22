@@ -621,7 +621,7 @@ translate tok_sitelen_lasina strings:
 
     # game/script_init_chars.rpy:246
     old "Digi"
-    new "ijo Kisi"
+    new "ijo Tesi"
 
     # game/script_init_chars.rpy:247
     old "Elizabeth"
