@@ -612,7 +612,7 @@ translate tok_sitelen_pona strings:
 
     # game/script_init_chars.rpy:244
     old "Blank"
-    new "󱤑󱥍󱥂󱤂"
+    new "「󱤑󱥍󱥂󱤂」"
 
     # game/script_init_chars.rpy:245
     old "DB05"
